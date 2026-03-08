@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShoreVest Partners — Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red:#b3213f; --ink:#0c0c0a; --ink2:#141410; --white:#fff; --off:#f6f4f0;
+      --rule:rgba(0,0,0,0.08); --mist:#888680; --serif:'EB Garamond', Georgia, serif;
+      --sans:'Inter', system-ui, sans-serif; --max:1200px; --pad:64px;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:var(--sans); background:var(--white); color:var(--ink); }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; max-width:100%; }
+    .wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+
+    #nav { position:fixed; top:0; left:0; right:0; z-index:100; height:72px; background:#fff; border-bottom:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; padding:0 var(--pad); }
+    .nav__links { list-style:none; display:flex; gap:36px; }
+    .nav__links a { font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; opacity:.45; }
+    .nav__links a.active,.nav__links a:hover { opacity:1; }
+    .nav__right { display:flex; gap:22px; align-items:center; }
+    .nav__zh { opacity:.35; font-size:13px; }
+    .nav__lp { font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; border:1px solid rgba(0,0,0,.15); padding:8px 20px; }
+
+    .pagehero { padding:140px 0 64px; border-bottom:1px solid var(--rule); }
+    .eyebrow { font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--mist); margin-bottom:18px; }
+    h1 { font-family:var(--serif); font-size:clamp(44px,7vw,86px); font-weight:400; line-height:1.04; margin-bottom:20px; }
+    h1 em { color:var(--red); font-style:italic; }
+    .hero-copy { max-width:740px; color:var(--mist); font-family:var(--serif); font-size:18px; line-height:1.8; }
+
+    #team-directory { background:var(--off); padding:72px 0 120px; }
+    .directory { display:grid; grid-template-columns:460px minmax(0,1fr); gap:64px; align-items:start; }
+    .spotlight { position:sticky; top:100px; }
+    .spotlight__photo { aspect-ratio:4/5; overflow:hidden; background:var(--ink2); margin-bottom:22px; }
+    .spotlight__photo img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .spotlight__name { font-family:var(--serif); font-size:40px; line-height:1.05; margin-bottom:8px; }
+    .spotlight__role { color:var(--red); font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; margin-bottom:16px; }
+    .spotlight__bio { color:var(--mist); font-family:var(--serif); font-size:17px; line-height:1.75; min-height:90px; }
+
+    .group { border-top:1px solid var(--rule); padding:30px 0 20px; }
+    .group:last-child { border-bottom:1px solid var(--rule); }
+    .group__title { font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--mist); margin-bottom:14px; }
+    .members { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 24px; }
+    .member { display:grid; grid-template-columns:58px 1fr auto; align-items:center; gap:14px; padding:10px 0; border-bottom:1px solid rgba(0,0,0,0.04); cursor:pointer; }
+    .member:last-child { border-bottom:none; }
+    .member__thumb { width:58px; height:72px; overflow:hidden; background:var(--ink2); }
+    .member__thumb img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .member__name { font-family:var(--serif); font-size:22px; line-height:1.1; }
+    .member__role { font-size:10px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--mist); margin-top:2px; }
+    .member__arrow { color:var(--red); opacity:0; transition:opacity .2s; }
+    .member.active .member__arrow, .member:hover .member__arrow { opacity:1; }
+    .member.active .member__name { color:var(--red); }
+
+    .member[data-key="ada-bi"] .member__thumb img,
+    .spotlight[data-key="ada-bi"] .spotlight__photo img { object-position:center 26%; }
+    .member[data-key="mike-chang"] .member__thumb img,
+    .spotlight[data-key="mike-chang"] .spotlight__photo img { object-position:center 16%; }
+
+    @media (max-width:1080px) {
+      .directory { grid-template-columns:1fr; }
+      .spotlight { position:static; }
+    }
+    @media (max-width:760px) {
+      :root { --pad:22px; }
+      .members { grid-template-columns:1fr; }
+      .spotlight__name { font-size:34px; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a href="index.html" aria-label="ShoreVest home">ShoreVest</a>
+    <ul class="nav__links">
+      <li><a href="firm.html">The Firm</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="team.html" class="active">Team</a></li>
+      <li><a href="insights.html">Insights</a></li>
+    </ul>
+    <div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a></div>
+  </nav>
+
+  <section class="pagehero">
+    <div class="wrap">
+      <div class="eyebrow">Team</div>
+      <h1>The full <em>ShoreVest team</em>.</h1>
+      <p class="hero-copy">ShoreVest combines senior investment leadership with advisory, client coverage, legal and compliance support, and affiliate platform operators onshore.</p>
+    </div>
+  </section>
+
+  <section id="team-directory">
+    <div class="wrap directory">
+      <aside class="spotlight" id="spotlight" data-key="benjamin-fanger">
+        <div class="spotlight__photo"><img id="spotlight-image" src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger"></div>
+        <div class="spotlight__name" id="spotlight-name">Benjamin Fanger</div>
+        <div class="spotlight__role" id="spotlight-role">Managing Partner</div>
+        <p class="spotlight__bio" id="spotlight-bio"></p>
+      </aside>
+
+      <div id="group-container"></div>
+    </div>
+  </section>
+
+  <script>
+    const groups = [
+      {
+        title: 'Leadership and Investment',
+        members: [
+          { key:'benjamin-fanger', name:'Benjamin Fanger', role:'Managing Partner', image:'assets/images/benjamin_fanger.jpg', bio:'' },
+          { key:'ada-bi', name:'Ada Bi', role:'Partner, CFO', image:'assets/images/ada_bi.jpg', bio:'' },
+          { key:'mecy-mei', name:'Mecy Mei', role:'Partner', image:'assets/images/mecy_mei.jpg', bio:'' },
+          { key:'hui-zheng', name:'Hui Zheng', role:'Partner', image:'assets/images/hui_zheng.jpg', bio:'' }
+        ]
+      },
+      {
+        title: 'Advisory',
+        members: [
+          { key:'john-jones', name:'John Jones', role:'Senior Advisor', image:'assets/images/john_jones.jpg', bio:'' },
+          { key:'dinny-mcmahon', name:'Dinny McMahon', role:'Senior Advisor', image:'assets/images/dinny_mcmahon.jpg', bio:'' },
+          { key:'philip-young', name:'Philip Young', role:'Senior Advisor', image:'assets/images/philip_young.jpg', bio:'' }
+        ]
+      },
+      {
+        title: 'Client Solutions and Investor Relations',
+        members: [
+          { key:'lillian-xu', name:'Lillian Xu', role:'Client Solutions', image:'assets/images/lillian_xu.jpg', bio:'' },
+          { key:'cathy-chen', name:'Cathy Chen', role:'Investor Relations', image:'assets/images/cathy_chen.jpg', bio:'' },
+          { key:'mike-chang', name:'Mike Chang', role:'Investor Relations', image:'assets/images/mike_chang.jpg', bio:'' }
+        ]
+      },
+      {
+        title: 'Legal and Compliance',
+        members: [
+          { key:'kelvin-chan', name:'Kelvin Chan', role:'Legal and Compliance', image:'assets/images/kelvin_chan.jpg', bio:'' }
+        ]
+      },
+      {
+        title: 'Affiliate Platform Leadership',
+        members: [
+          { key:'daoping-yang', name:'Daoping Yang', role:'Affiliate Platform Leadership', image:'assets/images/daoping_yang.jpg', bio:'' },
+          { key:'xiaoqiang-ji', name:'Xiaoqiang Ji', role:'Affiliate Platform Leadership', image:'assets/images/xiaoqiang_ji.jpg', bio:'' },
+          { key:'jimmy-cheung', name:'Jimmy Cheung', role:'Affiliate Platform Leadership', image:'assets/images/jimmy_cheung.jpg', bio:'' },
+          { key:'shanjuan-jiang', name:'Shanjuan Jiang', role:'Affiliate Platform Leadership', image:'assets/images/shanjuan_jiang.jpg', bio:'' }
+        ]
+      }
+    ];
+
+    const byKey = Object.fromEntries(groups.flatMap(g => g.members.map(m => [m.key, m])));
+    const container = document.getElementById('group-container');
+    const spotlight = document.getElementById('spotlight');
+    const spotlightImage = document.getElementById('spotlight-image');
+    const spotlightName = document.getElementById('spotlight-name');
+    const spotlightRole = document.getElementById('spotlight-role');
+    const spotlightBio = document.getElementById('spotlight-bio');
+
+    function setActive(key) {
+      const person = byKey[key];
+      if (!person) return;
+      spotlight.dataset.key = key;
+      spotlightImage.src = person.image;
+      spotlightImage.alt = person.name;
+      spotlightName.textContent = person.name;
+      spotlightRole.textContent = person.role;
+      spotlightBio.textContent = person.bio || '';
+      document.querySelectorAll('.member').forEach(el => el.classList.toggle('active', el.dataset.key === key));
+    }
+
+    groups.forEach(group => {
+      const section = document.createElement('section');
+      section.className = 'group';
+      section.innerHTML = `<h2 class="group__title">${group.title}</h2><div class="members"></div>`;
+      const membersEl = section.querySelector('.members');
+
+      group.members.forEach(member => {
+        const row = document.createElement('button');
+        row.type = 'button';
+        row.className = 'member';
+        row.dataset.key = member.key;
+        row.innerHTML = `
+          <span class="member__thumb"><img src="${member.image}" alt="${member.name}"></span>
+          <span>
+            <span class="member__name">${member.name}</span>
+            <span class="member__role">${member.role}</span>
+          </span>
+          <span class="member__arrow">→</span>
+        `;
+        row.addEventListener('click', () => setActive(member.key));
+        membersEl.appendChild(row);
+      });
+
+      container.appendChild(section);
+    });
+
+    setActive('benjamin-fanger');
+  </script>
+</body>
+</html>
