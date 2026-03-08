@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShoreVest Partners | Team</title>
+  <style>
+    :root{
+      --bg:#f5f3ef;
+      --paper:#f1eee8;
+      --ink:#12120f;
+      --muted:#6f6a60;
+      --line:#ddd7ce;
+      --accent:#b3213f;
+      --max:1240px;
+      --sans:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --serif:"EB Garamond", Georgia, "Times New Roman", serif;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+    body{font-family:var(--sans)}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+    nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(245,243,239,.93);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      padding:14px 24px;
+    }
+    .brand{font-family:var(--serif);font-size:28px;letter-spacing:1.3px}
+    .brand span{color:var(--accent)}
+    .nav__links{display:flex;list-style:none;gap:26px;margin:0;padding:0;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
+    .nav__links a{color:var(--muted)}
+    .nav__links a.active,.nav__links a:hover{color:var(--ink)}
+
+    .hero{padding:86px 0 46px;border-bottom:1px solid var(--line)}
+    .eyebrow{font-size:12px;letter-spacing:2.1px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+    h1{font-family:var(--serif);font-size:clamp(42px,6vw,74px);line-height:.94;margin:0 0 16px}
+    .intro{max-width:760px;color:var(--muted);line-height:1.8;font-size:17px}
+
+    .team{padding:64px 0 88px}
+    .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px}
+    .card{display:flex;flex-direction:column;gap:10px}
+    .photo{aspect-ratio:4/5;background:#d8d3ca;border:1px solid var(--line);overflow:hidden}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .name{font-family:var(--serif);font-size:23px;line-height:1.1}
+    .role{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}
+
+    @media (max-width:1120px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+    @media (max-width:760px){
+      nav{padding:12px 16px}
+      .brand{font-size:22px}
+      .nav__links{gap:14px;font-size:11px}
+      .hero{padding-top:54px}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="index.html"><span>Shore</span>Vest</a>
+    <ul class="nav__links">
+      <li><a href="firm.html">The Firm</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="team.html" class="active">Team</a></li>
+      <li><a href="insights.html">Insights</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Leadership & Investment Team</div>
+      <h1>Senior professionals.<br><em>Unmatched</em> experience.</h1>
+      <p class="intro">ShoreVest is comprised of experienced professionals across law, finance, economics, and credit operations. Our team combines local execution with institutional discipline across multiple market cycles.</p>
+    </div>
+  </header>
+
+  <main class="team">
+    <div class="wrap">
+      <section class="grid" aria-label="Team members">
+        <article class="card"><div class="photo"><img src="assets/images/ada_bi.jpg" alt="Ada Bi" loading="lazy"></div><div class="name">Ada Bi</div><div class="role">Partner, CFO</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/mecy_mei.jpg" alt="Mecy Mei" loading="lazy"></div><div class="name">Mecy Mei</div><div class="role">Partner</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/hui_zheng.jpg" alt="Hui Zheng" loading="lazy"></div><div class="name">Hui Zheng</div><div class="role">Partner</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/mike_chang.jpg" alt="Michael Chang" loading="lazy"></div><div class="name">Michael Chang</div><div class="role">Partner</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger" loading="lazy"></div><div class="name">Benjamin Fanger</div><div class="role">Managing Partner</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/philip_young.jpg" alt="Philip Young" loading="lazy"></div><div class="name">Philip Young</div><div class="role">Partner</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/cathy_chen.jpg" alt="Cathy Chen" loading="lazy"></div><div class="name">Cathy Chen</div><div class="role">Principal</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/jimmy_cheung.jpg" alt="Jimmy Cheung" loading="lazy"></div><div class="name">Jimmy Cheung</div><div class="role">Principal</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/xiaoqiang_ji.jpg" alt="Xiaoqiang Ji" loading="lazy"></div><div class="name">Xiaoqiang Ji</div><div class="role">Principal</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/shanjuan_jiang.jpg" alt="Shanjuan Jiang" loading="lazy"></div><div class="name">Shanjuan Jiang</div><div class="role">Principal</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/lillian_xu.jpg" alt="Lillian Xu" loading="lazy"></div><div class="name">Lillian Xu</div><div class="role">Director</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/kelvin_chan.jpg" alt="Kelvin Chan" loading="lazy"></div><div class="name">Kelvin Chan</div><div class="role">Director</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/dinny_mcmahon.jpg" alt="Dinny McMahon" loading="lazy"></div><div class="name">Dinny McMahon</div><div class="role">Senior Advisor</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/john_jones.jpg" alt="John Jones" loading="lazy"></div><div class="name">John Jones</div><div class="role">Advisor</div></article>
+        <article class="card"><div class="photo"><img src="assets/images/daoping_yang.jpg" alt="Daoping Yang" loading="lazy"></div><div class="name">Daoping Yang</div><div class="role">Advisor</div></article>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
