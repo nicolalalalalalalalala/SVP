@@ -2,65 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ShoreVest Partners | Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShoreVest Partners — Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#f5f3ef;
-      --paper:#f1eee8;
-      --ink:#12120f;
-      --muted:#6f6a60;
-      --line:#ddd7ce;
-      --accent:#b3213f;
-      --max:1240px;
-      --sans:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --serif:"EB Garamond", Georgia, "Times New Roman", serif;
+    :root {
+      --red:#b3213f;
+      --ink:#0c0c0a;
+      --white:#ffffff;
+      --off:#f6f4f0;
+      --rule:rgba(0,0,0,0.08);
+      --mist:#888680;
+      --serif:'EB Garamond', Georgia, serif;
+      --sans:'Inter', system-ui, sans-serif;
+      --max:1200px;
+      --pad:64px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
-    body{font-family:var(--sans)}
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
 
-    nav{
-      position:sticky;top:0;z-index:50;
-      background:rgba(245,243,239,.93);backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-      display:flex;align-items:center;justify-content:space-between;gap:20px;
-      padding:14px 24px;
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--white); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; max-width:100%; }
+    .wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+
+    #nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      height:72px; display:flex; align-items:center;
+      justify-content:space-between; padding:0 var(--pad);
+      border-bottom:1px solid var(--rule); background:#ffffff;
     }
-    .brand{font-family:var(--serif);font-size:28px;letter-spacing:1.3px}
-    .brand span{color:var(--accent)}
-    .nav__links{display:flex;list-style:none;gap:26px;margin:0;padding:0;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
-    .nav__links a{color:var(--muted)}
-    .nav__links a.active,.nav__links a:hover{color:var(--ink)}
+    .nav__links { display:flex; gap:36px; list-style:none; }
+    .nav__links a {
+      font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+      color:var(--ink); opacity:.45; transition:opacity .2s;
+    }
+    .nav__links a.active, .nav__links a:hover { opacity:1; }
+    .nav__right { display:flex; align-items:center; gap:22px; }
+    .nav__zh { font-size:13px; color:var(--ink); opacity:.35; transition:opacity .2s; }
+    .nav__zh:hover { opacity:.75; }
+    .nav__lp {
+      font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+      color:var(--ink); border:1px solid rgba(0,0,0,.15); padding:8px 20px;
+      transition:background .2s, color .2s, border-color .2s;
+    }
+    .nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
 
-    .hero{padding:86px 0 46px;border-bottom:1px solid var(--line)}
-    .eyebrow{font-size:12px;letter-spacing:2.1px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-    h1{font-family:var(--serif);font-size:clamp(42px,6vw,74px);line-height:.94;margin:0 0 16px}
-    .intro{max-width:760px;color:var(--muted);line-height:1.8;font-size:17px}
+    .eyebrow {
+      font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--mist); display:flex; align-items:center; gap:14px; margin-bottom:22px;
+    }
+    .eyebrow::after { content:''; flex:0 0 36px; height:1px; background:currentColor; }
 
-    .team{padding:64px 0 88px}
-    .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px}
-    .card{display:flex;flex-direction:column;gap:10px}
-    .photo{aspect-ratio:4/5;background:#d8d3ca;border:1px solid var(--line);overflow:hidden}
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .name{font-family:var(--serif);font-size:23px;line-height:1.1}
-    .role{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}
+    .pagehero {
+      padding-top:156px;
+      padding-bottom:72px;
+      border-bottom:1px solid var(--rule);
+      background:var(--off);
+    }
+    h1 {
+      font-family:var(--serif);
+      font-size:clamp(44px,6vw,82px);
+      font-weight:400;
+      line-height:1.04;
+      letter-spacing:-.01em;
+      margin-bottom:22px;
+    }
+    .pagehero p {
+      max-width:760px;
+      font-size:17px;
+      line-height:1.82;
+      color:var(--mist);
+      font-family:var(--serif);
+    }
 
-    @media (max-width:1120px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
-    @media (max-width:760px){
-      nav{padding:12px 16px}
-      .brand{font-size:22px}
-      .nav__links{gap:14px;font-size:11px}
-      .hero{padding-top:54px}
-      .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .team-groups { padding:56px 0 90px; }
+    .group {
+      padding:36px 0 44px;
+      border-bottom:1px solid var(--rule);
+    }
+    .group:first-child { border-top:1px solid var(--rule); }
+    .group__head {
+      display:grid;
+      grid-template-columns:minmax(280px, 1fr) 2fr;
+      gap:36px;
+      margin-bottom:26px;
+      align-items:end;
+    }
+    .group h2 {
+      font-family:var(--serif);
+      font-size:34px;
+      font-weight:400;
+      line-height:1.08;
+    }
+    .group p {
+      font-size:13px;
+      line-height:1.74;
+      color:var(--mist);
+      max-width:620px;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0, 1fr));
+      gap:22px;
+    }
+    .card { display:flex; flex-direction:column; gap:10px; }
+    .photo {
+      aspect-ratio:4/5;
+      border:1px solid var(--rule);
+      background:#e2ded6;
+      overflow:hidden;
+    }
+    .photo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .name {
+      font-family:var(--serif);
+      font-size:22px;
+      line-height:1.08;
+    }
+    .role {
+      font-size:10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--mist);
+    }
+
+    @media (max-width:1100px) {
+      :root { --pad:40px; }
+      .grid { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+      .group__head { grid-template-columns:1fr; gap:14px; }
+    }
+
+    @media (max-width:760px) {
+      :root { --pad:18px; }
+      #nav { height:64px; }
+      .nav__links { gap:16px; }
+      .nav__links a { font-size:10px; }
+      .nav__right { display:none; }
+      .nav__logo svg { height:52px; }
+      .pagehero { padding-top:116px; padding-bottom:46px; }
+      .grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
+      .group h2 { font-size:30px; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a class="brand" href="index.html"><span>Shore</span>Vest</a>
+  <nav id="nav">
+    <a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
+      <defs><linearGradient id="svgGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#8f1d35"/><stop offset="100%" stop-color="#c12a4a"/></linearGradient></defs>
+      <g transform="translate(0,2)">
+        <path d="M0 44 V0 h28 c10 0 16 5 16 13 0 6-3 10-9 12 7 2 11 7 11 14 0 9-7 15-19 15 H0z" fill="url(#svgGrad)"/>
+        <path d="M10 10 h14 c6 0 9 2 9 6s-3 6-9 6 H10z" fill="#fff" opacity="0.95"/>
+        <path d="M10 27 h16 c6 0 9 2 9 7s-3 7-9 7 H10z" fill="#fff" opacity="0.95"/>
+      </g>
+      <text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text>
+      <text x="63" y="42" font-family="Inter, Arial, sans-serif" font-size="8" letter-spacing="3" fill="#8d8a84">PARTNERS</text>
+    </svg></a>
     <ul class="nav__links">
       <li><a href="firm.html">The Firm</a></li>
       <li><a href="strategy.html">Strategy</a></li>
@@ -68,34 +168,77 @@
       <li><a href="team.html" class="active">Team</a></li>
       <li><a href="insights.html">Insights</a></li>
     </ul>
+    <div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a></div>
   </nav>
 
-  <header class="hero">
+  <section class="pagehero">
     <div class="wrap">
-      <div class="eyebrow">Leadership & Investment Team</div>
-      <h1>Senior professionals.<br><em>Unmatched</em> experience.</h1>
-      <p class="intro">ShoreVest is comprised of experienced professionals across law, finance, economics, and credit operations. Our team combines local execution with institutional discipline across multiple market cycles.</p>
+      <div class="eyebrow">Team</div>
+      <h1>ShoreVest team</h1>
+      <p>ShoreVest's team combines investment, advisory, client coverage, legal, compliance, and affiliate platform leadership. The group reflects the operating structure used across underwriting, execution, and portfolio work in China's private credit market.</p>
     </div>
-  </header>
+  </section>
 
-  <main class="team">
+  <main class="team-groups">
     <div class="wrap">
-      <section class="grid" aria-label="Team members">
-        <article class="card"><div class="photo"><img src="assets/images/ada_bi.jpg" alt="Ada Bi" loading="lazy"></div><div class="name">Ada Bi</div><div class="role">Partner, CFO</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/mecy_mei.jpg" alt="Mecy Mei" loading="lazy"></div><div class="name">Mecy Mei</div><div class="role">Partner</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/hui_zheng.jpg" alt="Hui Zheng" loading="lazy"></div><div class="name">Hui Zheng</div><div class="role">Partner</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/mike_chang.jpg" alt="Michael Chang" loading="lazy"></div><div class="name">Michael Chang</div><div class="role">Partner</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger" loading="lazy"></div><div class="name">Benjamin Fanger</div><div class="role">Managing Partner</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/philip_young.jpg" alt="Philip Young" loading="lazy"></div><div class="name">Philip Young</div><div class="role">Partner</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/cathy_chen.jpg" alt="Cathy Chen" loading="lazy"></div><div class="name">Cathy Chen</div><div class="role">Principal</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/jimmy_cheung.jpg" alt="Jimmy Cheung" loading="lazy"></div><div class="name">Jimmy Cheung</div><div class="role">Principal</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/xiaoqiang_ji.jpg" alt="Xiaoqiang Ji" loading="lazy"></div><div class="name">Xiaoqiang Ji</div><div class="role">Principal</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/shanjuan_jiang.jpg" alt="Shanjuan Jiang" loading="lazy"></div><div class="name">Shanjuan Jiang</div><div class="role">Principal</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/lillian_xu.jpg" alt="Lillian Xu" loading="lazy"></div><div class="name">Lillian Xu</div><div class="role">Director</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/kelvin_chan.jpg" alt="Kelvin Chan" loading="lazy"></div><div class="name">Kelvin Chan</div><div class="role">Director</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/dinny_mcmahon.jpg" alt="Dinny McMahon" loading="lazy"></div><div class="name">Dinny McMahon</div><div class="role">Senior Advisor</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/john_jones.jpg" alt="John Jones" loading="lazy"></div><div class="name">John Jones</div><div class="role">Advisor</div></article>
-        <article class="card"><div class="photo"><img src="assets/images/daoping_yang.jpg" alt="Daoping Yang" loading="lazy"></div><div class="name">Daoping Yang</div><div class="role">Advisor</div></article>
+      <section class="group" aria-labelledby="leadership-investment">
+        <div class="group__head">
+          <h2 id="leadership-investment">Leadership and Investment</h2>
+          <p>Senior investment decision-makers and underwriting leadership.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="photo"><img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger" loading="lazy"></div><div class="name">Benjamin Fanger</div><div class="role">Managing Partner</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/ada_bi.jpg" alt="Ada Bi" loading="lazy"></div><div class="name">Ada Bi</div><div class="role">Partner, CFO</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/mecy_mei.jpg" alt="Mecy Mei" loading="lazy"></div><div class="name">Mecy Mei</div><div class="role">Partner</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/hui_zheng.jpg" alt="Hui Zheng" loading="lazy"></div><div class="name">Hui Zheng</div><div class="role">Partner</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/mike_chang.jpg" alt="Michael Chang" loading="lazy"></div><div class="name">Michael Chang</div><div class="role">Partner</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/philip_young.jpg" alt="Philip Young" loading="lazy"></div><div class="name">Philip Young</div><div class="role">Partner</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/cathy_chen.jpg" alt="Cathy Chen" loading="lazy"></div><div class="name">Cathy Chen</div><div class="role">Principal</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/jimmy_cheung.jpg" alt="Jimmy Cheung" loading="lazy"></div><div class="name">Jimmy Cheung</div><div class="role">Principal</div></article>
+        </div>
+      </section>
+
+      <section class="group" aria-labelledby="advisory">
+        <div class="group__head">
+          <h2 id="advisory">Advisory</h2>
+          <p>Advisors supporting market perspective and transaction execution.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="photo"><img src="assets/images/dinny_mcmahon.jpg" alt="Dinny McMahon" loading="lazy"></div><div class="name">Dinny McMahon</div><div class="role">Senior Advisor</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/john_jones.jpg" alt="John Jones" loading="lazy"></div><div class="name">John Jones</div><div class="role">Advisor</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/daoping_yang.jpg" alt="Daoping Yang" loading="lazy"></div><div class="name">Daoping Yang</div><div class="role">Advisor</div></article>
+        </div>
+      </section>
+
+      <section class="group" aria-labelledby="client-solutions">
+        <div class="group__head">
+          <h2 id="client-solutions">Client Solutions and Investor Relations</h2>
+          <p>Coverage for institutional investors and partner communications.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="photo"><img src="assets/images/lillian_xu.jpg" alt="Lillian Xu" loading="lazy"></div><div class="name">Lillian Xu</div><div class="role">Director</div></article>
+        </div>
+      </section>
+
+      <section class="group" aria-labelledby="legal-compliance">
+        <div class="group__head">
+          <h2 id="legal-compliance">Legal and Compliance</h2>
+          <p>Legal structuring and compliance oversight across the platform.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="photo"><img src="assets/images/kelvin_chan.jpg" alt="Kelvin Chan" loading="lazy"></div><div class="name">Kelvin Chan</div><div class="role">Director</div></article>
+        </div>
+      </section>
+
+      <section class="group" aria-labelledby="affiliate-platform">
+        <div class="group__head">
+          <h2 id="affiliate-platform">Affiliate Platform Leadership</h2>
+          <p>Leadership roles across affiliated operating entities supporting execution.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="photo"><img src="assets/images/xiaoqiang_ji.jpg" alt="Xiaoqiang Ji" loading="lazy"></div><div class="name">Xiaoqiang Ji</div><div class="role">Principal</div></article>
+          <article class="card"><div class="photo"><img src="assets/images/shanjuan_jiang.jpg" alt="Shanjuan Jiang" loading="lazy"></div><div class="name">Shanjuan Jiang</div><div class="role">Principal</div></article>
+        </div>
       </section>
     </div>
   </main>
