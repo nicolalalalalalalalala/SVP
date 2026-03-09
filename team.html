@@ -101,8 +101,10 @@
       line-height:1.58;
       letter-spacing:.01em;
       color:#7d766d;
-      max-width:74ch;
-      white-space:normal;
+      max-width:100%;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
       padding-top:2px;
     }
 
@@ -249,6 +251,9 @@
         font-size:12px;
         line-height:1.52;
         max-width:none;
+        white-space:normal;
+        overflow:visible;
+        text-overflow:clip;
       }
       .row-bio-panel { padding:26px 20px 30px; margin-top:8px; }
       .row-bio-panel__eyebrow { margin-bottom:12px; }
