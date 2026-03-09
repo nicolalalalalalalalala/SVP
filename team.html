@@ -106,6 +106,7 @@
       border:1px solid var(--rule);
       background:#e2ded6;
       overflow:hidden;
+      cursor:pointer;
     }
     .photo img {
       width:100%;
@@ -119,6 +120,77 @@
       font-family:var(--serif);
       font-size:22px;
       line-height:1.08;
+    }
+
+    .card.is-active .photo {
+      border-color:rgba(179,33,63,.45);
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+
+    .row-bio-panel {
+      grid-column:1 / -1;
+      display:none;
+      margin-top:12px;
+      background:#fbfaf7;
+      border-top:1px solid rgba(0,0,0,.14);
+      border-bottom:1px solid rgba(0,0,0,.09);
+      padding:42px 48px 46px;
+    }
+    .row-bio-panel.is-open { display:block; }
+    .row-bio-panel__eyebrow {
+      font-size:10px;
+      font-weight:500;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:#9a948b;
+      margin-bottom:16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .row-bio-panel__eyebrow::after {
+      content:'';
+      width:28px;
+      height:1px;
+      background:currentColor;
+      opacity:.65;
+    }
+    .row-bio-panel__name {
+      font-family:var(--serif);
+      font-size:42px;
+      line-height:1.02;
+      margin-bottom:10px;
+      letter-spacing:-.015em;
+      color:#171614;
+      font-weight:400;
+    }
+    .row-bio-panel__meta {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:8px 16px;
+      margin-bottom:24px;
+      padding-bottom:16px;
+      border-bottom:1px solid rgba(0,0,0,.08);
+      font-size:11px;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      color:#7f796f;
+      font-weight:500;
+    }
+    .row-bio-panel__role {
+      color:#56514a;
+      font-weight:600;
+    }
+    .row-bio-panel__education { color:#8d867d; }
+    .row-bio-panel__text {
+      font-family:var(--serif);
+      font-size:21px;
+      line-height:1.78;
+      color:#36332e;
+      max-width:1020px;
+      white-space:pre-line;
+      text-wrap:pretty;
     }
 
     @media (max-width:1100px) {
@@ -137,6 +209,11 @@
       .pagehero { padding-top:116px; padding-bottom:46px; }
       .grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
       .group h2 { font-size:30px; }
+      .row-bio-panel { padding:26px 20px 30px; margin-top:8px; }
+      .row-bio-panel__eyebrow { margin-bottom:12px; }
+      .row-bio-panel__name { font-size:32px; margin-bottom:8px; }
+      .row-bio-panel__meta { margin-bottom:16px; padding-bottom:12px; }
+      .row-bio-panel__text { font-size:18px; line-height:1.68; }
     }
   </style>
 </head>
@@ -234,5 +311,117 @@
       </section>
     </div>
   </main>
+
+  <script>
+    const profileData = {
+      'Benjamin Fanger': {
+        role: 'Founder and Managing Partner',
+        education: 'JD, MBA — University of Chicago',
+        bio: `Benjamin Fanger is Founder and Managing Partner of ShoreVest Partners and a pioneer in China’s private credit markets. He has managed more than US$2 billion in the sector, backed by institutions from around the world, and sits on ShoreVest’s Investment Committee. Over more than two decades in Chinese private credit, Mr. Fanger has developed capital solutions alongside asset sellers, borrowers and financial institutions across China. Before founding ShoreVest and Shoreline Capital, he started several companies, two of which were later sold to public companies. During graduate school, he also worked at O’Melveny & Myers on early Chinese distressed debt and private equity transactions. Mr. Fanger has been fluent in spoken and written Chinese for nearly 30 years. He holds a JD and MBA from the University of Chicago and is admitted to practise law in the State of California.`
+      },
+      'Ada Bi': {
+        role: 'Partner and Chief Financial Officer',
+        education: 'International Trade — Guangdong University of Foreign Studies',
+        bio: `Ada Bi is a Partner and Chief Financial Officer of ShoreVest and sits on the Investment Committee. She oversees the firm’s finance, tax, fund reporting, cash management and financial control across invested projects, and has played a central role in the operational structuring of numerous transactions. Before joining ShoreVest, Ms. Bi served as CFO of Shoreline Capital from 2008 to 2016. Earlier in her career, she was Head of Finance for AIG Insurance Company’s property and casualty business in China, where she was responsible for financial reporting, treasury, tax and budgeting. She previously also held roles at CITIC-Prudential and Royal Bank of Canada. Ms. Bi is a Fellow of the Association of Chartered Certified Accountants, a member of Chartered Professional Accountants Canada, and holds a bachelor’s degree in International Trade from Guangdong University of Foreign Studies in Guangzhou.`
+      },
+      'Mecy Mei': {
+        role: 'Partner',
+        education: 'MA Economics — Nanjing University; CFA Charterholder',
+        bio: `Mecy Mei is a Partner at ShoreVest and sits on the Investment Committee. Prior to ShoreVest, she was a Partner at Shoreline Capital, where she served for eight years. Her experience spans the full spectrum of Chinese private credit investing, and she has overseen numerous transactions from sourcing, due diligence and structuring through to acquisition, negotiation, monitoring and exit. Before ShoreVest and Shoreline Capital, Ms. Mei worked at Morningstar as a fund analyst focused on fund strategy analysis, where she also worked closely with external clients on debt and equity portfolio construction in China. She holds a bachelor’s degree in Economics from Hefei University of Technology and a master’s degree in Economics from Nanjing University. She was awarded the CFA designation in 2018.`
+      },
+      'Hui Zheng': {
+        role: 'Partner',
+        education: 'LLM Economic Law — Sun Yat-sen University School of Law',
+        bio: `Hui Zheng is a Partner at ShoreVest and sits on the Investment Committee. Prior to ShoreVest, she was a Partner at Shoreline Capital, where she served for eight years. Her experience spans the full spectrum of Chinese private credit investing, and she has overseen numerous transactions from sourcing, due diligence and structuring through to acquisition, negotiation, monitoring and exit. Before ShoreVest and Shoreline Capital, Ms. Zheng worked as an attorney at a Guangdong law firm, where she was involved in the liquidation of non-performing loan assets. She has also published several papers, including “Negative Impacts the New Bankruptcy Law Has on the Liquidation of Non-performing Assets.” Ms. Zheng holds a law degree from Nanchang University and an LLM in Economic Law on Foreign Business from Sun Yat-sen University School of Law.`
+      },
+      'Mike Chang': {
+        role: 'Partner',
+        education: 'MBA — MIT Sloan; BA — Stanford University',
+        bio: `Michael Chang is a Partner at ShoreVest. He advises the firm on human resources, information technology, finance and compliance. Mr. Chang brings more than a decade of investment management experience across the United States and Asia, having worked at Stamos Capital Partners, Bridgewater Associates and Cambridge Associates. He holds an MBA from MIT Sloan and a BA from Stanford University.`
+      }
+    };
+
+    let activeCard = null;
+    let activePanel = null;
+
+    function getProfile(name) {
+      return profileData[name] || {
+        role: 'ShoreVest Team',
+        education: '',
+        bio: `${name} is part of the ShoreVest team.`
+      };
+    }
+
+    function ensurePanel() {
+      if (activePanel) return activePanel;
+      const panel = document.createElement('article');
+      panel.className = 'row-bio-panel';
+      panel.innerHTML = `
+        <div class="row-bio-panel__eyebrow">Leadership Profile</div>
+        <h3 class="row-bio-panel__name"></h3>
+        <div class="row-bio-panel__meta">
+          <span class="row-bio-panel__role"></span>
+          <span class="row-bio-panel__education"></span>
+        </div>
+        <p class="row-bio-panel__text"></p>
+      `;
+      activePanel = panel;
+      return panel;
+    }
+
+    function rowCards(grid, targetCard) {
+      const cards = Array.from(grid.querySelectorAll(':scope > .card'));
+      const targetTop = targetCard.offsetTop;
+      return cards.filter((card) => Math.abs(card.offsetTop - targetTop) < 2);
+    }
+
+    function closeCurrent() {
+      if (activeCard) activeCard.classList.remove('is-active');
+      if (activePanel) {
+        activePanel.classList.remove('is-open');
+        activePanel.remove();
+      }
+      activeCard = null;
+    }
+
+    document.querySelectorAll('.card').forEach((card) => {
+      const photo = card.querySelector('.photo');
+      const name = card.querySelector('.name')?.textContent?.trim() || 'Team Member';
+
+      photo.setAttribute('tabindex', '0');
+      photo.setAttribute('role', 'button');
+      photo.setAttribute('aria-label', `Show biography for ${name}`);
+
+      function openBio() {
+        const isSame = activeCard === card;
+        closeCurrent();
+        if (isSame) return;
+
+        const profile = getProfile(name);
+        const panel = ensurePanel();
+        panel.querySelector('.row-bio-panel__name').textContent = name;
+        panel.querySelector('.row-bio-panel__role').textContent = profile.role;
+        panel.querySelector('.row-bio-panel__education').textContent = profile.education;
+        panel.querySelector('.row-bio-panel__text').textContent = profile.bio;
+
+        const grid = card.closest('.grid');
+        const cardsInRow = rowCards(grid, card);
+        const lastInRow = cardsInRow[cardsInRow.length - 1] || card;
+        lastInRow.insertAdjacentElement('afterend', panel);
+
+        panel.classList.add('is-open');
+        card.classList.add('is-active');
+        activeCard = card;
+      }
+
+      photo.addEventListener('click', openBio);
+      photo.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openBio();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
