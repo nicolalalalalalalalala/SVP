@@ -37,7 +37,7 @@
       color:var(--ink); opacity:.45; transition:opacity .2s;
     }
     .nav__links a.active, .nav__links a:hover { opacity:1; }
-    .nav__right { display:flex; align-items:center; gap:22px; }
+    .nav__right { display:flex; align-items:center; gap:20px; }
     .nav__zh { font-size:13px; color:var(--ink); opacity:.35; transition:opacity .2s; }
     .nav__zh:hover { opacity:.75; }
     .nav__lp {
@@ -77,22 +77,33 @@
 
     .team-groups { padding:56px 0 90px; }
     .group {
-      padding:36px 0 44px;
+      padding:32px 0 40px;
       border-bottom:1px solid var(--rule);
     }
     .group:first-child { border-top:1px solid var(--rule); }
     .group__head {
-      display:grid;
-      grid-template-columns:minmax(280px, 1fr) 2fr;
-      gap:36px;
-      margin-bottom:26px;
-      align-items:end;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:6px;
+      margin-bottom:16px;
     }
     .group h2 {
       font-family:var(--serif);
-      font-size:34px;
       font-weight:400;
-      line-height:1.08;
+      font-size:clamp(24px, 2.45vw, 34px);
+      line-height:1.06;
+      letter-spacing:-.01em;
+      white-space:nowrap;
+    }
+    .group__summary {
+      font-size:13px;
+      line-height:1.58;
+      letter-spacing:.01em;
+      color:#7d766d;
+      max-width:74ch;
+      white-space:normal;
+      padding-top:2px;
     }
 
     .grid {
@@ -100,7 +111,7 @@
       grid-template-columns:repeat(5, minmax(0, 1fr));
       gap:22px;
     }
-    .card { display:flex; flex-direction:column; gap:12px; }
+    .card { display:flex; flex-direction:column; gap:9px; }
     .photo {
       aspect-ratio:4/5;
       border:1px solid var(--rule);
@@ -118,11 +129,18 @@
     }
     .name {
       font-family:var(--serif);
-      font-size:18px;
-      line-height:1.16;
-      letter-spacing:-.003em;
-      color:var(--ink);
-      margin-bottom:2px;
+      font-size:16px;
+      line-height:1.2;
+      letter-spacing:.01em;
+      color:#2a2722;
+      margin-bottom:1px;
+    }
+    .title {
+      font-size:10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#8a8378;
+      line-height:1.35;
     }
 
     .card.is-active .photo {
@@ -208,7 +226,10 @@
     @media (max-width:1100px) {
       :root { --pad:40px; }
       .grid { grid-template-columns:repeat(3, minmax(0, 1fr)); }
-      .group__head { grid-template-columns:1fr; gap:14px; }
+      .group__head {
+        gap:6px;
+        margin-bottom:12px;
+      }
     }
 
     @media (max-width:760px) {
@@ -220,7 +241,15 @@
       .nav__logo svg { height:52px; }
       .pagehero { padding-top:116px; padding-bottom:46px; }
       .grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
-      .group h2 { font-size:30px; }
+      .group h2 {
+        font-size:clamp(20px, 4.4vw, 30px);
+        white-space:normal;
+      }
+      .group__summary {
+        font-size:12px;
+        line-height:1.52;
+        max-width:none;
+      }
       .row-bio-panel { padding:26px 20px 30px; margin-top:8px; }
       .row-bio-panel__eyebrow { margin-bottom:12px; }
       .row-bio-panel__name { font-size:32px; margin-bottom:8px; }
@@ -276,6 +305,7 @@
       <section class="group" aria-labelledby="leadership-investment">
         <div class="group__head">
           <h2 id="leadership-investment">Leadership and Investment</h2>
+          <p class="group__summary">Leads portfolio construction, underwriting discipline, and investment decision-making across ShoreVest’s core private credit strategy.</p>
         </div>
 <div class="grid">
   <article class="card"><div class="photo"><img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger" loading="lazy"></div><div class="name">Benjamin Fanger</div></article>
@@ -289,6 +319,7 @@
       <section class="group" aria-labelledby="advisory">
         <div class="group__head">
           <h2 id="advisory">Advisory</h2>
+          <p class="group__summary">Provides policy, regulatory, and market context to support underwriting judgment, risk calibration, and strategic perspective.</p>
         </div>
         <div class="grid">
           <article class="card"><div class="photo"><img src="assets/images/shanjuan_jiang.jpg" alt="Shanjuan Jiang" loading="lazy"></div><div class="name">Shanjuan Jiang</div></article>
@@ -300,7 +331,8 @@
 
       <section class="group" aria-labelledby="client-solutions">
         <div class="group__head">
-          <h2 id="client-solutions">Client Solutions and Investor Relations</h2>
+          <h2 id="client-solutions">Client Solutions &amp; Investor Relations</h2>
+          <p class="group__summary">Leads investor coverage, mandate design, and reporting standards to deliver clear communication across the full client relationship.</p>
         </div>
         <div class="grid">
           <article class="card"><div class="photo"><img src="assets/images/john_jones.jpg" alt="John Jones" loading="lazy"></div><div class="name">John Jones</div></article>
@@ -311,6 +343,7 @@
       <section class="group" aria-labelledby="legal-compliance">
         <div class="group__head">
           <h2 id="legal-compliance">Legal and Compliance</h2>
+          <p class="group__summary">Oversees legal structuring, compliance management, and control frameworks that uphold institutional governance standards.</p>
         </div>
         <div class="grid">
           <article class="card"><div class="photo"><img src="assets/images/cathy_chen.jpg" alt="Cathy Chen" loading="lazy"></div><div class="name">Cathy Chen</div></article>
@@ -321,6 +354,7 @@
       <section class="group" aria-labelledby="affiliate-platform">
         <div class="group__head">
           <h2 id="affiliate-platform">Affiliate Platform Leadership</h2>
+          <p class="group__summary">Coordinates affiliate initiatives and cross-platform execution to extend origination depth and operating leverage for the broader firm.</p>
         </div>
         <div class="grid">
           <article class="card"><div class="photo"><img src="assets/images/jimmy_cheung.jpg" alt="Jimmy Cheung" loading="lazy"></div><div class="name">Jimmy Cheung</div></article>
@@ -370,6 +404,27 @@
         bio: `${name} is part of the ShoreVest team.`
       };
     }
+
+
+    function getDisplayRole(card, name) {
+      const profile = profileData[name];
+      if (profile?.role) return profile.role;
+      const sectionTitle = card.closest('.group')?.querySelector('h2')?.textContent?.trim();
+      return sectionTitle || 'ShoreVest Team';
+    }
+
+    function hydrateCardTitles() {
+      document.querySelectorAll('.card').forEach((card) => {
+        if (card.querySelector('.title')) return;
+        const name = card.querySelector('.name')?.textContent?.trim() || 'Team Member';
+        const title = document.createElement('div');
+        title.className = 'title';
+        title.textContent = getDisplayRole(card, name);
+        card.appendChild(title);
+      });
+    }
+
+    hydrateCardTitles();
 
     function ensurePanel() {
       if (activePanel) return activePanel;
