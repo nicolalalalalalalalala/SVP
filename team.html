@@ -8,11 +8,17 @@
   <style>
     :root {
       --red:#b3213f;
-      --ink:#0c0c0a;
+      --ink:#1f1c19;
+      --ink-deep:#171412;
+      --ink-soft:#4f4a43;
       --white:#ffffff;
-      --off:#f6f4f0;
-      --rule:rgba(0,0,0,0.08);
-      --mist:#888680;
+      --off:#f7f3ec;
+      --off-warm:#fcf8f1;
+      --sand:#ece4d7;
+      --hero-end:#f2ebdf;
+      --rule:rgba(48,40,34,0.12);
+      --mist:#7a7268;
+      --mist-light:#9a948b;
       --serif:'EB Garamond', Georgia, serif;
       --sans:'Inter', system-ui, sans-serif;
       --max:1200px;
@@ -29,7 +35,7 @@
       position:fixed; top:0; left:0; right:0; z-index:200;
       height:72px; display:flex; align-items:center;
       justify-content:space-between; padding:0 var(--pad);
-      border-bottom:1px solid var(--rule); background:#ffffff;
+      border-bottom:1px solid var(--rule); background:var(--white);
     }
     .nav__links { display:flex; gap:36px; list-style:none; }
     .nav__links a {
@@ -42,7 +48,7 @@
     .nav__zh:hover { opacity:.75; }
     .nav__lp {
       font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
-      color:var(--ink); border:1px solid rgba(0,0,0,.15); padding:8px 20px;
+      color:var(--ink); border:1px solid rgba(48,40,34,.2); padding:8px 20px;
       transition:background .2s, color .2s, border-color .2s;
     }
     .nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
@@ -57,7 +63,7 @@
       padding-top:156px;
       padding-bottom:72px;
       border-bottom:1px solid var(--rule);
-      background:var(--off);
+      background:linear-gradient(180deg, var(--off) 0%, var(--hero-end) 100%);
     }
     h1 {
       font-family:var(--serif);
@@ -100,7 +106,7 @@
       font-size:13px;
       line-height:1.58;
       letter-spacing:.01em;
-      color:#7d766d;
+      color:var(--mist);
       max-width:100%;
       white-space:nowrap;
       overflow:hidden;
@@ -117,7 +123,7 @@
     .photo {
       aspect-ratio:4/5;
       border:1px solid var(--rule);
-      background:#e2ded6;
+      background:var(--sand);
       overflow:hidden;
       cursor:pointer;
     }
@@ -134,7 +140,7 @@
       font-size:16px;
       line-height:1.2;
       letter-spacing:.01em;
-      color:#2a2722;
+      color:var(--ink);
       margin-bottom:1px;
     }
     .title {
@@ -146,17 +152,17 @@
     }
 
     .card.is-active .photo {
-      border-color:rgba(179,33,63,.45);
-      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      border-color:rgba(179,33,63,.52);
+      box-shadow:0 10px 24px rgba(49,39,34,.13);
     }
 
     .row-bio-panel {
       grid-column:1 / -1;
       display:none;
       margin-top:12px;
-      background:#fbfaf7;
-      border-top:1px solid rgba(0,0,0,.14);
-      border-bottom:1px solid rgba(0,0,0,.09);
+      background:var(--off-warm);
+      border-top:1px solid rgba(48,40,34,.18);
+      border-bottom:1px solid rgba(48,40,34,.12);
       padding:42px 48px 46px;
     }
     .row-bio-panel.is-open { display:block; }
@@ -165,7 +171,7 @@
       font-weight:500;
       letter-spacing:.2em;
       text-transform:uppercase;
-      color:#9a948b;
+      color:var(--mist-light);
       margin-bottom:16px;
       display:flex;
       align-items:center;
@@ -184,7 +190,7 @@
       line-height:1.04;
       margin-bottom:11px;
       letter-spacing:-.012em;
-      color:#171614;
+      color:var(--ink);
       font-weight:400;
     }
     .row-bio-panel__meta {
@@ -192,22 +198,22 @@
       gap:6px;
       margin-bottom:22px;
       padding-bottom:14px;
-      border-bottom:1px solid rgba(0,0,0,.08);
+      border-bottom:1px solid rgba(48,40,34,.12);
       font-size:12px;
       letter-spacing:.02em;
       text-transform:none;
-      color:#756f66;
+      color:var(--mist);
       font-weight:400;
     }
     .row-bio-panel__role {
-      color:#4f4a43;
+      color:var(--ink-soft);
       font-weight:500;
     }
     .row-bio-panel__text {
       font-family:var(--serif);
       font-size:21px;
       line-height:1.78;
-      color:#36332e;
+      color:var(--ink-deep);
       max-width:1020px;
       white-space:pre-line;
       text-wrap:pretty;
