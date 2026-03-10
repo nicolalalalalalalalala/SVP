@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ShoreVest Partners — Strategy</title><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ShoreVest Partners - Strategy</title><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><style>
 
 :root {
   --red:   #b3213f;
@@ -222,7 +222,7 @@ h2.about__hed { font-size:clamp(38px,5vw,66px); color:var(--ink); }
   font-family:var(--serif); margin-bottom:22px;
 }
 
-/* About pillars: image-top, label below, body — Blackstone style */
+/* About pillars: image-top, label below, body - Blackstone style */
 .about__cols { display:grid; grid-template-columns:repeat(3,1fr); gap:48px; }
 .ac__img {
   aspect-ratio:4/3; background:var(--ink2); overflow:hidden; margin-bottom:28px;
@@ -319,7 +319,7 @@ blockquote.qb {
   text-transform:uppercase; color:rgba(255,255,255,.26);
 }
 
-/* ══ FOUNDER SPLIT — editorial, Blackstone "Private Wealth" style */
+/* ══ FOUNDER SPLIT - editorial, Blackstone "Private Wealth" style */
 .founder-split {
   display:grid; grid-template-columns:1fr 1fr;
   border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
@@ -398,7 +398,7 @@ h2.cdd__hed { font-size:clamp(36px,4.5vw,60px); color:var(--ink); margin-bottom:
 }
 h2.team__hed { font-size:clamp(36px,4.5vw,60px); color:var(--ink); }
 .team__intro { font-size:17px; line-height:1.82; color:var(--mist); font-family:var(--serif); }
-/* Team grid — portrait photos, no card border */
+/* Team grid - portrait photos, no card border */
 .team__grid { display:grid; grid-template-columns:repeat(5,1fr); gap:32px; }
 .tm { cursor:default; }
 .tm__photo {
@@ -415,7 +415,7 @@ h2.team__hed { font-size:clamp(36px,4.5vw,60px); color:var(--ink); }
   text-transform:uppercase; color:var(--red);
 }
 
-/* ══ INSIGHTS — Blackstone editorial: no box, image on top, category below, serif title */
+/* ══ INSIGHTS - Blackstone editorial: no box, image on top, category below, serif title */
 #insights { background:var(--white); padding:128px 0; border-top:1px solid var(--rule); }
 .ins__hd {
   display:flex; align-items:baseline; justify-content:space-between;
@@ -529,7 +529,7 @@ h2.su__hed {
 }
 .su__submit:hover .su__submit-ring { background:var(--red); border-color:var(--red); }
 
-/* ══ FOOTER — Blackstone style: tagline left, nav columns right */
+/* ══ FOOTER - Blackstone style: tagline left, nav columns right */
 footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); padding:80px var(--pad) 48px; }
 .foot__inner { max-width:var(--max); margin:0 auto; }
 .foot__top {
@@ -552,7 +552,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 .foot__list { list-style:none; display:flex; flex-direction:column; gap:14px; }
 .foot__list a { font-size:13.5px; color:rgba(255,255,255,.38); transition:color .2s; }
 .foot__list a:hover { color:rgba(255,255,255,.82); }
-/* Bottom bar — Blackstone style: copyright left, legal links spread */
+/* Bottom bar - Blackstone style: copyright left, legal links spread */
 .foot__btm {
   display:flex; justify-content:space-between; align-items:center; gap:40px;
 }
@@ -579,7 +579,34 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 .strategy-block{background:#f6f4f0;border:1px solid var(--rule);padding:32px;scroll-margin-top:96px}
 .strategy-block h2{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1.15;margin-bottom:12px}
 .strategy-block p{color:#66625c;line-height:1.82;font-size:17px;font-family:var(--serif)}
-@media (max-width:980px){.doc-list{grid-template-columns:1fr}.strategy-block{padding:24px}.strategy-block h2{font-size:30px}}
+.strategy-block ul{margin:12px 0 16px 18px;color:#66625c;font-family:var(--serif);line-height:1.7}
+.strategy-viz{margin:24px 0 8px;padding:26px;border:1px solid rgba(179,33,63,.28);background:linear-gradient(165deg,#fff 0%,#fcfaf7 100%);box-shadow:0 10px 28px rgba(12,12,10,.05);border-radius:6px;position:relative;overflow:hidden}
+.strategy-viz::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--red),#d4556f)}
+.viz-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;font-weight:500}
+.viz-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kpi{border:1px solid rgba(179,33,63,.16);padding:16px;background:#fff;position:relative}
+.kpi::before{content:'';position:absolute;left:0;top:0;right:0;height:2px;background:var(--red)}
+.kpi strong{display:block;font-size:28px;font-family:var(--serif);font-weight:400;color:var(--ink);line-height:1.1}
+.kpi span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+.process-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:step}
+.flow-step{position:relative;border:1px solid rgba(179,33,63,.16);padding:16px 16px 14px 48px;background:#fff}
+.flow-step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:14px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;font-size:11px;font-weight:500}
+.flow-step::after{content:'›';position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink2);color:#fff;font-size:13px}
+.flow-step:last-child::after{display:none}
+.flow-step b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;color:var(--ink)}
+.flow-step small{font-size:14px;color:#66625c;font-family:var(--serif)}
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.city{border:1px solid rgba(179,33,63,.16);background:#fff;padding:14px;position:relative}
+.city::after{content:'';position:absolute;left:14px;right:14px;bottom:0;height:2px;background:linear-gradient(90deg,var(--red),rgba(179,33,63,.15))}
+.city b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.city small{display:block;margin-top:6px;color:#66625c;font-family:var(--serif);font-size:14px;line-height:1.5}
+.mini-info{margin:14px 0 20px;display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:stretch}
+.box-graphic{border:1px solid rgba(179,33,63,.2);background:linear-gradient(155deg,#fff,#f7f1ea);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.box-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.point{background:#fff;border:1px solid rgba(179,33,63,.14);padding:10px 12px}
+.point b{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#4b4640;margin-bottom:5px}
+.point span{font-size:12px;color:#66625c;line-height:1.35}
+@media (max-width:980px){.doc-list{grid-template-columns:1fr}.strategy-block{padding:24px}.strategy-block h2{font-size:30px}.viz-kpi,.process-flow,.city-grid,.box-points{grid-template-columns:1fr}.mini-info{grid-template-columns:1fr}.box-graphic{min-height:82px}.flow-step{padding-left:44px}.flow-step::after{display:none}}
 </style></head><body><nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
   <g transform="scale(0.431)">
         <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
@@ -593,4 +620,105 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text>
   <line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/>
   <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
-</svg></a><ul class="nav__links"><li><a href="firm.html" class="">The Firm</a></li><li><a href="strategy.html" class="active">Strategy</a></li><li><a href="research.html" class="">Insights</a></li><li><a href="team.html" class="">Team</a></li></ul><div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a></div></nav><section class="pagehero"><div class="wrap"><div class="eyebrow">Strategy</div><h1>Collateral first.<br><em>Structure matters.</em></h1><p>ShoreVest's strategy set applies one cycle-tested credit discipline across three distinct execution paths. In every case, we focus on collateral quality, structural control, and downside protection before pursuing return.</p></div></section><section class="pgsec"><div class="wrap"><div class="strategy-stack"><section class="strategy-block" id="asset-based-lending"><h2>Asset-Based Lending</h2><p>Direct, senior-secured lending against hard collateral where first-lien position, conservative loan-to-value thresholds, and clear covenant packages provide principal protection through volatility.</p></section><section class="strategy-block" id="asset-restructuring"><h2>Asset Restructuring</h2><p>Complex situations where capital structure redesign, legal process navigation, and active negotiation are required to stabilize value and create a viable path to repayment or controlled recovery.</p></section><section class="strategy-block" id="debt-resolutions"><h2>Debt Resolutions</h2><p>Acquisition and resolution of non-performing or distressed claims sourced from financial institutions, with in-house capability spanning diligence, enforcement, workout strategy, and ultimate asset disposition.</p></section></div></div></section></body></html>
+</svg></a><ul class="nav__links"><li><a href="firm.html" class="">The Firm</a></li><li><a href="strategy.html" class="active">Strategy</a></li><li><a href="research.html" class="">Insights</a></li><li><a href="team.html" class="">Team</a></li></ul><div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a></div></nav><section class="pagehero">
+  <div class="wrap">
+    <div class="eyebrow">Strategy</div>
+    <h1>Collateral first.<br><em>Structure second.</em></h1>
+    <p>Execution throughout.</p>
+  </div>
+</section>
+<section class="pgsec">
+  <div class="wrap">
+    <div class="strategy-stack">
+      <section class="strategy-block">
+        <h2>The opportunity</h2>
+        <div class="mini-info"><div class="box-graphic">Market</div><div class="box-points"><div class="point"><b>Access</b><span>Low foreign participation.</span></div><div class="point"><b>Supply</b><span>Distressed inventory rising.</span></div><div class="point"><b>Execution</b><span>Onshore infrastructure edge.</span></div></div></div>
+        <p>China is the world's second-largest credit market - and one of the least accessible to foreign capital. Regulatory complexity, legal opacity, and the absence of standardized processes create barriers that exclude most international managers. For those with the infrastructure to operate inside the market, the result is less competition and better pricing.</p>
+        <p>ShoreVest has operated through every phase of this cycle since 2004. We are not building infrastructure now. We built it twenty years ago.</p>
+        <div class="strategy-viz" aria-label="Market and platform snapshot">
+          <div class="viz-title">Market Snapshot</div>
+          <div class="viz-kpi">
+            <div class="kpi"><strong>#2</strong><span>Global credit market position</span></div>
+            <div class="kpi"><strong>20+ yrs</strong><span>Operating through cycles</span></div>
+            <div class="kpi"><strong>3 offices</strong><span>Integrated execution footprint</span></div>
+          </div>
+        </div>
+        <p>Dislocation in China's credit markets is structural, not cyclical. The banking system continues to shed non-performing assets. The real estate correction has accelerated distressed supply. Traditional lenders remain capital-constrained. Private credit fills the gap - for managers with the sourcing relationships, legal expertise, and on-the-ground capability to execute.</p>
+        <p>We operate across the full spectrum: performing loans backed by hard assets, restructurings requiring hands-on intervention, and NPL portfolios acquired from banks under regulatory pressure to divest. Each requires different execution. All share the same underwriting discipline.</p>
+      </section>
+      <section class="strategy-block">
+        <h2>How we invest</h2>
+        <div class="mini-info"><div class="box-graphic">Framework</div><div class="box-points"><div class="point"><b>Step 1</b><span>Collateral-first underwriting.</span></div><div class="point"><b>Step 2</b><span>Control-oriented structure.</span></div><div class="point"><b>Step 3</b><span>Full-cycle execution.</span></div></div></div>
+        <p><strong>Collateral first.</strong> Every position is secured against identifiable assets - primarily real estate - with conservative loan-to-value thresholds that provide a margin of safety independent of borrower performance. We do not underwrite to enterprise value, growth projections, or sponsor reputation. We underwrite to what we can recover if everything else fails.</p>
+        <p><strong>Structure second.</strong> First-lien priority. Enforceable documentation under PRC law. Covenant packages that give us control when it matters. In China's legal environment, structural position determines recovery. We do not invest in subordinated claims, and we do not rely on intercreditor agreements that may not hold.</p>
+        <p><strong>Execution throughout.</strong> We do not underwrite what we cannot execute. Sourcing, diligence, structuring, servicing, enforcement, and disposition are managed internally across our Guangzhou, Shanghai, and Hong Kong offices. There is no handoff between teams. The investment professionals who approve a deal are accountable for its resolution.</p>
+        <div class="strategy-viz" aria-label="End-to-end investment workflow">
+          <div class="viz-title">Integrated Workflow</div>
+          <div class="process-flow">
+            <div class="flow-step"><b>Underwrite</b><small>Collateral-led diligence and structure design.</small></div>
+            <div class="flow-step"><b>Control</b><small>First-lien documentation and covenant rights.</small></div>
+            <div class="flow-step"><b>Resolve</b><small>In-house servicing, enforcement, and exit.</small></div>
+          </div>
+        </div>
+      </section>
+      <section class="strategy-block" id="asset-based-lending">
+        <h2>Asset-Based Lending</h2>
+        <div class="mini-info"><div class="box-graphic">Lending</div><div class="box-points"><div class="point"><b>Security</b><span>Senior-secured claims.</span></div><div class="point"><b>Priority</b><span>First-lien orientation.</span></div><div class="point"><b>Sizing</b><span>Conservative LTV discipline.</span></div></div></div>
+        <p>Direct lending secured by real estate collateral with first-lien priority.</p>
+        <p>We provide senior-secured financing to performing borrowers in situations where traditional bank lending is constrained by timing, structure, or regulatory capacity. Every loan is backed by identifiable hard assets - primarily residential and commercial real estate - with conservative loan-to-value thresholds that protect principal independent of borrower cash flow.</p>
+        <p>First-lien position. Enforceable security packages. Clear covenant structures. We do not rely on borrower projections or enterprise value. We underwrite to collateral - and structure for control if repayment does not proceed as planned.</p>
+      </section>
+      <section class="strategy-block" id="asset-restructuring">
+        <h2>Asset Restructuring</h2>
+        <div class="mini-info"><div class="box-graphic">Restructuring</div><div class="box-points"><div class="point"><b>Legal</b><span>Clear enforcement path.</span></div><div class="point"><b>Financial</b><span>Balance-sheet reset.</span></div><div class="point"><b>Operational</b><span>Stabilize then exit.</span></div></div></div>
+        <p>Complex situations requiring legal, financial, and operational expertise to restructure distressed assets.</p>
+        <p>We invest where the underlying asset is sound but the capital structure is not - overleveraged borrowers, failed developments with recoverable value, or situations requiring creditor coordination and legal process navigation. These are not passive investments. They require active engagement: negotiating with multiple stakeholders, redesigning balance sheets, managing legal enforcement, and often taking operational control to stabilize or reposition the asset.</p>
+        <p>Two decades of restructuring experience across China's credit cycles - including the NPL wave of 2015–2020 and the ongoing real estate correction - gives us pattern recognition that cannot be acquired quickly. We know which situations are workable and which are not.</p>
+      </section>
+      <section class="strategy-block" id="debt-resolutions">
+        <h2>Debt Resolutions</h2>
+        <div class="mini-info"><div class="box-graphic">Resolution</div><div class="box-points"><div class="point"><b>Sourcing</b><span>Institutional claim flow.</span></div><div class="point"><b>Workout</b><span>In-house legal + negotiation.</span></div><div class="point"><b>Disposition</b><span>Disciplined value realization.</span></div></div></div>
+        <p>Acquisition and resolution of non-performing loans from banks and financial institutions.</p>
+        <p>We acquire NPL portfolios and distressed claims from banks, asset management companies, and financial institutions facing regulatory or capital pressure to divest. Our sourcing relationships - built over twenty years with China's major financial institutions - give us access to portfolios before they reach competitive auction.</p>
+        <p>Resolution is managed entirely in-house. ShoreVest Asset Solutions handles due diligence, legal enforcement, workout strategy, borrower negotiation, and ultimate asset disposition. We do not outsource execution. The same team that underwrites the acquisition carries it through to recovery.</p>
+      </section>
+      <section class="strategy-block">
+        <h2>Risk management</h2>
+        <div class="mini-info"><div class="box-graphic">Risk</div><div class="box-points"><div class="point"><b>Collateral</b><span>Stress-tested downside.</span></div><div class="point"><b>Legal</b><span>Court-practice enforceability.</span></div><div class="point"><b>Monitoring</b><span>Continuous intervention.</span></div></div></div>
+        <p>Downside protection is not a talking point. It is embedded in how we structure every investment.</p>
+        <p><strong>Loan-to-value discipline.</strong> Conservative thresholds across all strategies. We size positions to recover principal from collateral liquidation under stressed assumptions - not base case.</p>
+        <p><strong>Collateral diversification.</strong> Exposure spread across asset types, geographies, and borrowers. No single position dominates portfolio risk.</p>
+        <p><strong>Legal enforceability.</strong> Every security package is reviewed for enforceability under current PRC law and local court practice. We do not invest where the legal recovery path is uncertain.</p>
+        <p><strong>Ongoing monitoring.</strong> Active surveillance of borrower performance, collateral value, and legal status. Early intervention when warning signs appear.</p>
+      </section>
+      <section class="strategy-block">
+        <h2>Investment Committee</h2>
+        <div class="mini-info"><div class="box-graphic">Governance</div><div class="box-points"><div class="point"><b>Committee</b><span>Four voting members.</span></div><div class="point"><b>Process</b><span>Unanimous approval standard.</span></div><div class="point"><b>Cadence</b><span>Weekly meetings, quarterly reviews.</span></div></div></div>
+        <p>Investment decisions are made by a four-person committee that brings investment, legal, and financial judgment into a single forum.</p>
+        <ul>
+          <li><strong>Benjamin Fanger</strong> - Managing Partner</li>
+          <li><strong>Ada Bi</strong> - Investment Committee</li>
+          <li><strong>Mecy Mei</strong> - Investment Committee</li>
+          <li><strong>Hui Zheng</strong> - Investment Committee</li>
+        </ul>
+        <p>Every investment requires unanimous approval. The committee meets weekly and reviews all active positions quarterly. The same individuals who approve entry are accountable for monitoring and exit.</p>
+      </section>
+      <section class="strategy-block">
+        <h2>Platform integration</h2>
+        <div class="mini-info"><div class="box-graphic">Platform</div><div class="box-points"><div class="point"><b>Origination</b><span>Shanghai borrower coverage.</span></div><div class="point"><b>Servicing</b><span>Guangzhou execution base.</span></div><div class="point"><b>Management</b><span>Hong Kong investor interface.</span></div></div></div>
+        <p>The manager, its onshore entities, and ShoreVest Asset Solutions operate as one integrated platform. Origination, underwriting, servicing, and execution are not separate functions handed from one team to another - they are connected parts of the same investment process, carried through from entry to resolution.</p>
+        <div class="strategy-viz" aria-label="Office responsibilities by location">
+          <div class="viz-title">Operating Footprint</div>
+          <div class="city-grid">
+            <div class="city"><b>Guangzhou</b><small>Onshore operations and asset servicing.</small></div>
+            <div class="city"><b>Shanghai</b><small>Origination and borrower coverage.</small></div>
+            <div class="city"><b>Hong Kong</b><small>Investment management and investor relations.</small></div>
+          </div>
+        </div>
+        <p>That integration reflects the realities of China private credit. Value is created not by access alone, but by control, coordination, and follow-through. We do not hand off investments. We carry them through.</p>
+        <a class="cta cta--red" href="team.html"><span>Meet the Team</span><span class="cta__ring">→</span></a>
+      </section>
+    </div>
+  </div>
+</section>
+</body></html>
