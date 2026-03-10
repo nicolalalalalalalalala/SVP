@@ -203,13 +203,6 @@
       color:#4f4a43;
       font-weight:500;
     }
-    .row-bio-panel__education {
-      color:#817b72;
-      font-weight:400;
-    }
-    .row-bio-panel__education::before {
-      content:none;
-    }
     .row-bio-panel__text {
       font-family:var(--serif);
       font-size:21px;
@@ -493,7 +486,6 @@ Before joining ShoreVest, Ms. Xu held senior legal and compliance roles at Kingo
         <h3 class="row-bio-panel__name"></h3>
         <div class="row-bio-panel__meta">
           <span class="row-bio-panel__role"></span>
-          <span class="row-bio-panel__education"></span>
         </div>
         <p class="row-bio-panel__text"></p>
       `;
@@ -533,7 +525,6 @@ Before joining ShoreVest, Ms. Xu held senior legal and compliance roles at Kingo
         const panel = ensurePanel();
         panel.querySelector('.row-bio-panel__name').textContent = name;
         panel.querySelector('.row-bio-panel__role').textContent = profile.role;
-        panel.querySelector('.row-bio-panel__education').textContent = profile.education;
         panel.querySelector('.row-bio-panel__text').textContent = profile.bio;
 
         const grid = card.closest('.grid');
