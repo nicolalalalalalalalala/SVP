@@ -188,10 +188,8 @@
       font-weight:400;
     }
     .row-bio-panel__meta {
-      display:flex;
-      flex-wrap:nowrap;
-      align-items:center;
-      gap:12px;
+      display:grid;
+      gap:6px;
       margin-bottom:22px;
       padding-bottom:14px;
       border-bottom:1px solid rgba(0,0,0,.08);
@@ -200,7 +198,6 @@
       text-transform:none;
       color:#756f66;
       font-weight:400;
-      white-space:nowrap;
     }
     .row-bio-panel__role {
       color:#4f4a43;
@@ -211,9 +208,7 @@
       font-weight:400;
     }
     .row-bio-panel__education::before {
-      content:'•';
-      margin-right:12px;
-      color:rgba(0,0,0,.28);
+      content:none;
     }
     .row-bio-panel__text {
       font-family:var(--serif);
@@ -259,9 +254,7 @@
       .row-bio-panel__eyebrow { margin-bottom:12px; }
       .row-bio-panel__name { font-size:32px; margin-bottom:8px; }
       .row-bio-panel__meta {
-        flex-wrap:wrap;
-        white-space:normal;
-        gap:8px 12px;
+        gap:6px;
         margin-bottom:16px;
         padding-bottom:12px;
         font-size:11px;
