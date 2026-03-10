@@ -15,6 +15,7 @@
 body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--serif);font-weight:400}
 .eyebrow{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px}
 .eyebrow::after{content:'';width:36px;height:1px;background:currentColor}
 .eyebrow--ghost{color:rgba(255,255,255,.46)}
@@ -30,6 +31,7 @@ a{text-decoration:none;color:inherit}
 .nav__links a.active,.nav__links a:hover{opacity:1}
 .nav__right{display:flex;align-items:center;gap:22px}
 .nav__zh{font-size:13px;opacity:.35}.nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(0,0,0,.15);padding:8px 20px}
+.nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
 
 .research-hero{margin-top:72px;background:var(--ink);padding:92px var(--pad) 76px;border-bottom:1px solid rgba(255,255,255,.08)}
 .research-hero__grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:88px;align-items:start}
@@ -41,7 +43,7 @@ a{text-decoration:none;color:inherit}
 .issue-card__bar{display:flex;justify-content:space-between;padding:10px 20px;background:var(--red);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.74)}
 .issue-card__body{padding:30px 28px 20px}
 .issue-card__k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
-.issue-card__t{font-family:var(--serif);font-size:32px;line-height:1.14;color:#fff;margin-bottom:16px}
+.issue-card__t{font-family:var(--serif);font-size:32px;font-weight:400;line-height:1.14;color:#fff;margin-bottom:16px}
 .issue-card__s{font-size:13px;line-height:1.72;color:rgba(255,255,255,.56);margin-bottom:24px}
 .issue-card__meta{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.11)}
 .issue-card__meta div{padding:14px 0 0}
@@ -78,10 +80,50 @@ a{text-decoration:none;color:inherit}
   .research-hero__grid,.research-main__head,.latest{grid-template-columns:1fr;gap:36px}
   .findings{grid-template-columns:1fr}
 }
+
+@media (max-width:760px){
+  :root{--pad:20px}
+  body{font-size:14px}
+  #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
+  .nav__logo svg{height:48px}
+  .nav__menu-btn{display:inline-flex}
+  .nav__right{margin-left:auto;gap:10px}
+  .nav__lp{padding:6px 12px}
+  .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
+  #nav.menu-open .nav__links{display:flex}
+
+  .research-hero{margin-top:96px;padding:76px var(--pad) 64px}
+  .research-hero__grid{gap:34px}
+  .wordmark{margin:20px 0 18px;gap:16px}
+  .wordmark svg{width:42px}
+  .wordmark__title{font-size:clamp(42px,13vw,60px);line-height:.92}
+  .research-hero__desc{font-size:18px;line-height:1.72;max-width:31ch;color:rgba(255,255,255,.56)}
+  .issue-card__bar{padding:10px 14px;font-size:8px;letter-spacing:.16em}
+  .issue-card__body{padding:24px 18px 16px}
+  .issue-card__t{font-size:30px;line-height:1.1}
+  .issue-card__s{font-size:14px;line-height:1.78}
+
+  .research-main{padding:74px 0 88px}
+  .research-main__head{gap:28px;padding-bottom:46px;margin-bottom:46px}
+  .research-main__intro{font-size:18px;line-height:1.82}
+  .findings{margin-bottom:42px}
+  .finding{padding:20px 18px}
+  .finding p{font-size:14px;line-height:1.78}
+  .latest__issue{padding:28px 22px}
+  .latest__issue h3{font-size:36px;line-height:1.1}
+  .latest__issue p{font-size:16px;line-height:1.82}
+  .archive__row{padding:18px 16px}
+  .archive__row strong{font-size:22px}
+  .archive__row p{font-size:13.5px;line-height:1.76}
+
+  .research-sub{padding:58px 0}
+  .research-sub__inner{grid-template-columns:1fr;gap:22px;align-items:flex-start}
+  .research-sub p{font-size:15px;line-height:1.78;max-width:33ch}
+}
 </style>
 </head>
 <body>
-<nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners"><g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g><line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text></svg></a><ul class="nav__links"><li><a href="firm.html">The Firm</a></li><li><a href="strategy.html">Strategy</a></li><li><a href="research.html" class="active">Research</a></li><li><a href="team.html">Team</a></li><li><a href="insights.html">Insights</a></li></ul><div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a></div></nav>
+<nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners"><g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g><line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text></svg></a><ul class="nav__links" id="nav-links"><li><a href="firm.html">The Firm</a></li><li><a href="strategy.html">Strategy</a></li><li><a href="research.html" class="active">Research</a></li><li><a href="team.html">Team</a></li><li><a href="insights.html">Insights</a></li></ul><div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div></nav>
 
 <section class="research-hero">
   <div class="research-hero__grid">
@@ -152,6 +194,14 @@ a{text-decoration:none;color:inherit}
 
 <script>
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10));
+const menuBtn=document.querySelector('.nav__menu-btn');
+const nav=document.getElementById('nav');
+if(menuBtn&&nav){
+  menuBtn.addEventListener('click',()=>{
+    const isOpen=nav.classList.toggle('menu-open');
+    menuBtn.setAttribute('aria-expanded',String(isOpen));
+  });
+}
 </script>
 </body>
 </html>
