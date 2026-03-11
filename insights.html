@@ -375,12 +375,28 @@ const buildPrintEdition=()=>{
   let skippedStandfirstParagraph=false;
   let calloutText='';
 
-  Array.from(sourceArticle.children).forEach((node)=>{
+  const normalizePrintNode=(node)=>{
+    const clean=node.cloneNode(true);
+    const walker=document.createTreeWalker(clean, NodeFilter.SHOW_ELEMENT);
+    const elements=[clean];
+    while(walker.nextNode()){
+      elements.push(walker.currentNode);
+    }
+    elements.forEach((element)=>{
+      element.removeAttribute('class');
+      element.removeAttribute('style');
+      element.removeAttribute('id');
+    });
+    return clean;
+  };
+
+  const printableNodes=Array.from(sourceArticle.querySelectorAll('h3, p, ul, ol, blockquote'));
+  printableNodes.forEach((node)=>{
     if(node.classList.contains('lead')){
       return;
     }
 
-    const clone=node.cloneNode(true);
+    const clone=normalizePrintNode(node);
 
     if(clone.tagName==='H3'){
       const headingText=clone.textContent.trim().replace(/\.$/, '');
@@ -390,7 +406,7 @@ const buildPrintEdition=()=>{
         return;
       }
       const printHeading=document.createElement('h2');
-      printHeading.innerHTML=clone.innerHTML;
+      printHeading.textContent=clone.textContent;
       printBody.appendChild(printHeading);
       return;
     }
