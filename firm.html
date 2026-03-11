@@ -12,6 +12,7 @@
       --red:#b3213f;
       --ink:#0c0c0a;
       --ink2:#191915;
+      --ink3:#24221d;
       --off:#f7f5f1;
       --mist:#6f6d67;
       --rule:rgba(0,0,0,.1);
@@ -20,18 +21,25 @@
       --sans:'Inter', system-ui, sans-serif;
       --max:1200px;
       --pad:64px;
+      --radius:20px;
+      --soft-shadow:0 14px 34px rgba(16,14,10,.08);
+      --space-1:10px;
+      --space-2:16px;
+      --space-3:24px;
+      --space-4:32px;
+      --space-5:48px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.65;font-size:15px}
+    body{font-family:var(--sans);background:#f1f1ef;color:var(--ink);line-height:1.65;font-size:15px}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-    .eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+    .eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px;margin-bottom:var(--space-3)}
     .eyebrow::after{content:'';height:1px;width:44px;background:currentColor}
 
-    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(255,255,255,.97);border-bottom:1px solid var(--rule);backdrop-filter:blur(6px)}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:#f1f1ef;border-bottom:1px solid var(--rule)}
     .nav__links{display:flex;list-style:none;gap:36px}
-    .nav__links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5}
-    .nav__links a.active,.nav__links a:hover{opacity:1}
+    .nav__links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;transition:opacity .25s ease,color .25s ease}
+    .nav__links a.active,.nav__links a:hover{opacity:1;color:var(--red)}
     .nav__right{display:flex;gap:20px;align-items:center}
     .nav__zh{font-size:13px;opacity:.45}
     .nav__lp{font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(0,0,0,.2);padding:8px 18px}
@@ -39,75 +47,95 @@
     .nav__logo svg{height:62px;display:block}
 
     main{padding-top:72px}
-    section{padding:84px 0;border-top:1px solid var(--rule)}
+    section{padding:88px 0;border-top:1px solid rgba(0,0,0,.09)}
     section:first-of-type{border-top:none}
 
-    .hero{padding:98px 0 76px;background:#fbfaf8}
-    h1{font-family:var(--serif);font-size:clamp(44px,6.2vw,82px);line-height:1.05;font-weight:400;max-width:980px;letter-spacing:-.01em;margin-bottom:24px}
-    .hero .lead{max-width:920px;font-family:var(--serif);font-size:25px;line-height:1.5;color:#35332f;margin-bottom:34px}
-    .hero-thesis{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:16px;align-items:start}
+    .hero{padding:90px 0 76px;background:#f1f1ef}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:end}
+    h1{font-family:var(--serif);font-size:clamp(46px,6.2vw,84px);line-height:1.02;font-weight:400;max-width:980px;letter-spacing:-.01em;margin-bottom:20px}
+    .hero .lead{max-width:720px;font-family:var(--serif);font-size:24px;line-height:1.52;color:#35332f;margin-bottom:28px}
+    .hero-thesis{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding-top:10px;align-items:start}
     .hero-thesis p{font-size:15px;color:#393732}
+    .hero-glance{background:#0d0d0c;color:#efede8;border:1px solid rgba(255,255,255,.12);padding:22px 24px;box-shadow:0 18px 34px rgba(0,0,0,.16)}
+    .hero-glance h3{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:10px}
+    .glance-row{display:grid;grid-template-columns:1fr auto;gap:14px;padding:10px 0;border-top:1px solid rgba(255,255,255,.14)}
+    .glance-row span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+    .glance-row strong{font-family:var(--serif);font-size:38px;line-height:1;font-weight:400;color:#f5f2ec}
+    .glance-row em{font-family:var(--serif);font-size:17px;line-height:1.2;font-style:normal}
 
-    .proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px;align-items:stretch}
-    .proof-card{background:var(--off);padding:24px;border:1px solid rgba(0,0,0,.08);display:grid;gap:10px;align-content:start;min-height:100%}
+    .proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px;align-items:stretch}
+    .proof-card{background:#f8f7f3;padding:24px;border:1px solid rgba(179,33,63,.2);display:grid;gap:10px;align-content:start;min-height:100%}
     .proof-card .metric{font-family:var(--serif);font-size:44px;line-height:1}
     .proof-card h3{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4f4d47}
     .proof-card p{color:#44423d;font-size:14px}
 
-    .section-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:36px;align-items:start}
+    .section-head{display:grid;grid-template-columns:1fr 1fr;column-gap:52px;row-gap:16px;margin-bottom:30px;align-items:start}
     .section-head h2{font-family:var(--serif);font-size:clamp(36px,4.4vw,56px);font-weight:400;line-height:1.08}
     .section-head p{font-family:var(--serif);font-size:22px;color:#3a3834;line-height:1.52}
 
-    .market-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
-    .market-grid article{padding:24px;border:1px solid var(--rule);background:#fff;display:grid;align-content:start}
-    .market-grid h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+    .market-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+    .market-grid article{padding:24px;border:1px solid rgba(0,0,0,.12);background:#f7f6f2;display:grid;align-content:start}
+    .market-grid h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
     .market-grid p{font-size:14px;color:#44423d}
 
-    .platform-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
-    .platform-notes{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}
-    .platform-notes .note{padding:24px;border:1px solid var(--rule);background:#fcfbf9}
+    .intelligence{background:#eeede9}
+    .intelligence-panel{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:20px;align-items:stretch}
+    .intel-graphic,.intel-copy{background:#f8f7f3;border:1px solid rgba(0,0,0,.12);padding:24px}
+    .intel-graphic{position:relative;overflow:hidden}
+    .intel-controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+    .intel-btn{border:1px solid rgba(0,0,0,.18);padding:8px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:#f8f7f3;cursor:pointer;transition:all .2s ease}
+    .intel-btn.active,.intel-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
+    .intel-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;position:relative}
+    .intel-node{border:1px solid rgba(0,0,0,.12);background:#fff;padding:14px;min-height:120px;display:grid;align-content:start;gap:6px;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+    .intel-node strong{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .intel-node span{font-family:var(--serif);font-size:30px;line-height:1;color:var(--ink3)}
+    .intel-node p{font-size:12px;color:#58554f}
+    .intel-node.active{border-color:rgba(179,33,63,.45);transform:translateY(-2px);box-shadow:0 10px 24px rgba(179,33,63,.12)}
+    .intel-copy h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#59554e;margin-bottom:14px}
+    .intel-copy p{font-size:15px;color:#393732;margin-bottom:12px}
+    .intel-list{display:grid;gap:8px;margin-top:14px}
+    .intel-list li{list-style:none;padding-left:18px;position:relative;color:#403d37;font-size:14px}
+    .intel-list li::before{content:'';position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--red)}
+
+    .platform-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+    .platform-notes{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:10px}
+    .platform-notes .note{padding:22px;border:1px solid rgba(0,0,0,.12);background:#f8f7f3}
     .platform-notes h3{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
 
-    .platform-diagram{padding:24px;border:1px solid var(--rule);background:#faf8f4;height:100%;text-align:center}
-    .nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;align-items:stretch}
-    .node{border:1px solid var(--rule);padding:14px;min-height:108px;background:#fff;text-align:center}
-    .node strong{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
-    .node p{font-size:13px;color:#4a4741}
-
-    .footprint{margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .city{padding:12px;background:#fff;border:1px solid rgba(0,0,0,.08);font-size:13px;text-align:center}
+    .platform-diagram{padding:24px;border:1px solid rgba(0,0,0,.12);background:#f8f7f3;height:100%;text-align:center}
+    .footprint{margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .city{padding:11px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:13px;text-align:center}
     .city span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
 
     .process{background:var(--ink2);color:#f0eeea}
     .process .eyebrow{color:rgba(255,255,255,.62)}
     .process .eyebrow::after{background:rgba(255,255,255,.62)}
-    .process h2{font-family:var(--serif);font-size:clamp(34px,4.8vw,56px);font-weight:400;max-width:820px;line-height:1.1;margin-bottom:30px}
+    .process h2{font-family:var(--serif);font-size:clamp(34px,4.8vw,56px);font-weight:400;max-width:820px;line-height:1.1;margin-bottom:28px}
     .flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-    .step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:16px;position:relative;min-height:180px}
+    .step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px;position:relative;min-height:176px}
     .step::after{content:'→';position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.45);font-size:14px}
     .step:last-child::after{display:none}
     .step .num{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.58);display:block;margin-bottom:8px}
     .step h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
     .step p{font-size:13px;line-height:1.55;color:rgba(255,255,255,.82)}
 
-    .durable-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
-    .durable-grid article{padding:24px;background:#fcfbf9;border:1px solid var(--rule);display:grid;align-content:start}
-    .durable-grid h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
-    .durable-grid p{font-size:14px;color:#47453f}
-
-    .closing{background:#f8f5ef}
-    .closing-panel{border:1px solid var(--rule);padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
-    .closing h2{font-family:var(--serif);font-size:44px;font-weight:400;line-height:1.1;margin-bottom:12px}
+    .closing{background:#eeede9}
+    .closing-panel{border:1px solid rgba(0,0,0,.12);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;background:#f8f7f3}
+    .closing h2{font-family:var(--serif);font-size:44px;font-weight:400;line-height:1.1;margin-bottom:10px}
     .closing p{font-size:16px;color:#403d38;max-width:760px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
-    .btn{font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:12px 16px;border:1px solid rgba(0,0,0,.22);background:#fff;min-width:164px;text-align:center}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:12px 16px;border:1px solid rgba(0,0,0,.22);background:#fff;min-width:164px;text-align:center;transition:all .25s ease}
+    .btn:hover{background:var(--red);border-color:var(--red);color:#fff}
     .btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+    .framed-panel{background:#f5f3ef;border:1px solid rgba(0,0,0,.1);border-left:4px solid rgba(179,33,63,.74);padding:28px}
 
     @media (max-width:1080px){
       :root{--pad:28px}
-      .hero-thesis,.section-head,.platform-layout,.closing-panel{grid-template-columns:1fr}
-      .proof-grid,.market-grid,.durable-grid{grid-template-columns:1fr}
-      .nodes{grid-template-columns:1fr 1fr}
+      section{padding:72px 0}
+      .hero-grid,.hero-thesis,.section-head,.platform-layout,.closing-panel,.intelligence-panel{grid-template-columns:1fr}
+      .proof-grid,.market-grid{grid-template-columns:1fr}
+      .intel-map{grid-template-columns:1fr 1fr}
       .flow{grid-template-columns:1fr 1fr 1fr}
       .step::after{display:none}
     }
@@ -115,9 +143,12 @@
       .nav__links,.nav__zh,.nav__lp{display:none}
       .nav__menu-btn{display:inline-block;border:1px solid rgba(0,0,0,.18);background:#fff;padding:8px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
       #nav.menu-open .nav__links{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;padding:18px var(--pad);border-bottom:1px solid var(--rule);flex-direction:column;gap:14px}
-      .hero .lead{font-size:22px}
+      h1{font-size:42px}
+      .hero .lead{font-size:22px;line-height:1.44;margin-bottom:28px}
+      .hero-glance{padding:18px}
+      .glance-row strong{font-size:32px}
       .cta-row{justify-content:flex-start}
-      .nodes,.flow,.footprint{grid-template-columns:1fr}
+      .intel-map,.flow,.footprint{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -156,48 +187,60 @@
   <main>
     <section class="hero">
       <div class="wrap">
-        <div class="eyebrow">China Private Credit · Established 2004</div>
-        <h1>The Firm</h1>
-        <p class="lead">ShoreVest's asset-backed private credit strategy traces back to 2004. The current ShoreVest platform was established in 2016 by the senior team that had previously executed the same strategy through predecessor vehicles.</p>
-        <div class="hero-thesis">
-          <p>Today the firm focuses on three core sub-strategies in China: asset-based lending, asset restructuring, and debt resolutions, with headquarters in Guangzhou and a satellite office in Shanghai, and the investment team based locally in China.</p>
-          <p>ShoreVest is designed for a market where legal structure, local execution, and recoverability matter as much as headline yield — using directly enforceable onshore positions, conservative 30–60% LTV/CTV entry points, and control from underwriting through resolution.</p>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">China Private Credit · Established 2004</div>
+            <h1>The Firm</h1>
+            <p class="lead">ShoreVest's asset-backed private credit strategy traces back to 2004. The current ShoreVest platform was established in 2016 by the senior team that had previously executed the same strategy through predecessor vehicles.</p>
+            <div class="hero-thesis">
+              <p>Today the firm focuses on three core sub-strategies in China: asset-based lending, asset restructuring, and debt resolutions, with headquarters in Guangzhou and a satellite office in Shanghai, and the investment team based locally in China.</p>
+              <p>ShoreVest is designed for a market where legal structure, local execution, and recoverability matter as much as headline yield — using directly enforceable onshore positions, conservative 30–60% LTV/CTV entry points, and control from underwriting through resolution.</p>
+            </div>
+          </div>
+          <aside class="hero-glance" aria-label="At a glance">
+            <h3>At a glance</h3>
+            <div class="glance-row"><span>Operating history</span><strong>20+</strong></div>
+            <div class="glance-row"><span>Execution model</span><em>Originate to recovery</em></div>
+            <div class="glance-row"><span>Primary collateral</span><em>Hard-asset backed</em></div>
+          </aside>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <div class="section-head">
-          <h2>Institutional evidence.</h2>
-          <p>Headline figures matter only when connected to execution behavior. These metrics describe how ShoreVest runs credit risk.</p>
-        </div>
-        <div class="proof-grid" aria-label="ShoreVest proof points">
-          <article class="proof-card">
-            <h3>Capital Deployed</h3>
-            <div class="metric">US$2B+</div>
-            <p>Managed across six fund vintages by the senior team, providing long-cycle market exposure rather than point-in-time participation.</p>
-          </article>
-          <article class="proof-card">
-            <h3>Operating History</h3>
-            <div class="metric">Since 2004</div>
-            <p>Strategy in market across multiple credit and policy cycles, including expansion periods, dislocations, and workout-heavy environments.</p>
-          </article>
-          <article class="proof-card">
-            <h3>Transactions Completed</h3>
-            <div class="metric">50+</div>
-            <p>Asset-backed private credit investments in China across NPL portfolios, restructurings, and direct lending.</p>
-          </article>
-          <article class="proof-card">
-            <h3>Core Risk Discipline</h3>
-            <div class="metric">30–60%</div>
-            <p>Typical loan-to-value or cost-to-value entry points, with a focus on first-lien or directly enforceable claims on hard assets.</p>
-          </article>
-          <article class="proof-card">
-            <h3>Team Continuity</h3>
-            <div class="metric">~20 Years</div>
-            <p>Four voting Investment Committee members have worked together for roughly two decades.</p>
-          </article>
+        <div class="framed-panel">
+          <div class="section-head">
+            <h2>Institutional evidence.</h2>
+            <p>Headline figures matter only when connected to execution behavior. These metrics describe how ShoreVest runs credit risk.</p>
+          </div>
+          <div class="proof-grid" aria-label="ShoreVest proof points">
+            <article class="proof-card">
+              <h3>Capital Deployed</h3>
+              <div class="metric">US$2B+</div>
+              <p>Managed across six fund vintages by the senior team, providing long-cycle market exposure rather than point-in-time participation.</p>
+            </article>
+            <article class="proof-card">
+              <h3>Operating History</h3>
+              <div class="metric">Since 2004</div>
+              <p>Strategy in market across multiple credit and policy cycles, including expansion periods, dislocations, and workout-heavy environments.</p>
+            </article>
+            <article class="proof-card">
+              <h3>Transactions Completed</h3>
+              <div class="metric">50+</div>
+              <p>Asset-backed private credit investments in China across NPL portfolios, restructurings, and direct lending.</p>
+            </article>
+            <article class="proof-card">
+              <h3>Core Risk Discipline</h3>
+              <div class="metric">30–60%</div>
+              <p>Typical loan-to-value or cost-to-value entry points, with a focus on first-lien or directly enforceable claims on hard assets.</p>
+            </article>
+            <article class="proof-card">
+              <h3>Team Continuity</h3>
+              <div class="metric">~20 Years</div>
+              <p>Four voting Investment Committee members have worked together for roughly two decades.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -233,6 +276,41 @@
             <h3>Global experience alone is insufficient</h3>
             <p>Cross-border credit perspective is useful, but without integrated local execution capacity, investors can hold paper without controlling outcomes.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="intelligence">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Execution intelligence map.</h2>
+          <p>An integrated infographic of ShoreVest's credit workflow. Switch views to see where the platform concentrates effort and how each capability reinforces recoverability.</p>
+        </div>
+        <div class="intelligence-panel">
+          <div class="intel-graphic" aria-label="Interactive execution infographic">
+            <div class="intel-controls" role="tablist" aria-label="Execution lens selector">
+              <button class="intel-btn active" type="button" data-mode="origination">Origination</button>
+              <button class="intel-btn" type="button" data-mode="underwriting">Underwriting</button>
+              <button class="intel-btn" type="button" data-mode="resolution">Resolution</button>
+            </div>
+            <div class="intel-map">
+              <article class="intel-node" data-node="network"><strong>Network Access</strong><span>86</span><p>Local banks, AMCs, advisors.</p></article>
+              <article class="intel-node" data-node="legal"><strong>Legal Structuring</strong><span>91</span><p>Onshore enforceability design.</p></article>
+              <article class="intel-node" data-node="recovery"><strong>Recovery Control</strong><span>88</span><p>Court and workout execution.</p></article>
+              <article class="intel-node" data-node="screening"><strong>Risk Screening</strong><span>84</span><p>Downside-first asset selection.</p></article>
+              <article class="intel-node" data-node="governance"><strong>IC Governance</strong><span>90</span><p>3/4 super-majority protocol.</p></article>
+              <article class="intel-node" data-node="monitoring"><strong>Servicing Loop</strong><span>87</span><p>Monitoring to active intervention.</p></article>
+            </div>
+          </div>
+          <aside class="intel-copy">
+            <h3 id="intel-title">Origination lens</h3>
+            <p id="intel-description">Priority is proprietary access and early risk filtration before opportunities become broadly intermediated.</p>
+            <ul class="intel-list" id="intel-list">
+              <li>Relationship-first sourcing across local channels.</li>
+              <li>Early legal feasibility check before pricing.</li>
+              <li>Faster disqualification of weak recovery paths.</li>
+            </ul>
+          </aside>
         </div>
       </div>
     </section>
@@ -350,6 +428,61 @@
         });
       });
     }
+
+    const intelData = {
+      origination: {
+        title: 'Origination lens',
+        description: 'Priority is proprietary access and early risk filtration before opportunities become broadly intermediated.',
+        bullets: [
+          'Relationship-first sourcing across local channels.',
+          'Early legal feasibility check before pricing.',
+          'Faster disqualification of weak recovery paths.'
+        ],
+        active: ['network', 'screening', 'legal']
+      },
+      underwriting: {
+        title: 'Underwriting lens',
+        description: 'Underwriting pairs downside valuation with document architecture so structure and economics are decided together.',
+        bullets: [
+          '30–60% LTV/CTV discipline anchors entry.',
+          'IC legal + financial scrutiny before commitment.',
+          'Scenario modeling tied to enforceability.'
+        ],
+        active: ['legal', 'governance', 'monitoring']
+      },
+      resolution: {
+        title: 'Resolution lens',
+        description: 'ShoreVest is built to own outcomes after close through intensive servicing, court process, and negotiated exits.',
+        bullets: [
+          'Active monitoring flags stress early.',
+          'In-house coordination across legal and commercial tracks.',
+          'Recovery workflow designed to preserve value.'
+        ],
+        active: ['recovery', 'monitoring', 'governance']
+      }
+    };
+
+    const intelButtons = document.querySelectorAll('.intel-btn');
+    const intelNodes = document.querySelectorAll('.intel-node');
+    const intelTitle = document.getElementById('intel-title');
+    const intelDescription = document.getElementById('intel-description');
+    const intelList = document.getElementById('intel-list');
+
+    const setMode = (mode) => {
+      const payload = intelData[mode];
+      if (!payload || !intelTitle || !intelDescription || !intelList) return;
+      intelTitle.textContent = payload.title;
+      intelDescription.textContent = payload.description;
+      intelList.innerHTML = payload.bullets.map((item) => `<li>${item}</li>`).join('');
+      intelButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.mode === mode));
+      intelNodes.forEach((node) => node.classList.toggle('active', payload.active.includes(node.dataset.node)));
+    };
+
+    intelButtons.forEach((btn) => {
+      btn.addEventListener('click', () => setMode(btn.dataset.mode));
+    });
+
+    setMode('origination');
   </script>
 </body>
 </html>
