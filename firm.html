@@ -52,15 +52,16 @@
     section{padding:88px 0;border-top:1px solid rgba(0,0,0,.09)}
     section:first-of-type{border-top:none}
 
-    .hero{padding:90px 0 76px;background:#f1f1ef}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:end}
+    .hero{padding:112px 0 94px;background:#f1f1ef}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:start}
     h1{font-family:var(--serif);font-size:clamp(46px,6.2vw,84px);line-height:1.02;font-weight:400;max-width:980px;letter-spacing:-.01em;margin-bottom:20px}
-    .hero .lead{max-width:720px;font-family:var(--serif);font-size:24px;line-height:1.52;color:#35332f;margin-bottom:28px}
-    .hero-thesis{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding-top:10px;align-items:start}
+    .hero .lead{max-width:720px;font-family:var(--serif);font-size:24px;line-height:1.56;color:#35332f;margin-bottom:38px}
+    .hero-thesis{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding-top:20px;align-items:start}
     .hero-thesis p{font-size:15px;color:#393732}
-    .hero-glance{background:#0d0d0c;color:#efede8;border:1px solid rgba(255,255,255,.12);padding:22px 24px;box-shadow:0 18px 34px rgba(0,0,0,.16)}
-    .hero-glance h3{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:10px}
-    .glance-row{display:grid;grid-template-columns:1fr auto;gap:14px;padding:10px 0;border-top:1px solid rgba(255,255,255,.14)}
+    .hero-glance{background:#0d0d0c;color:#efede8;border:1px solid rgba(255,255,255,.12);padding:30px;box-shadow:0 18px 34px rgba(0,0,0,.16);margin-top:6px}
+    .hero-glance h3{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:14px}
+    .hero-grid > .hero-glance{width:100%;max-width:440px;justify-self:end}
+    .glance-row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
     .glance-row span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
     .glance-row strong{font-family:var(--serif);font-size:38px;line-height:1;font-weight:400;color:#f5f2ec}
     .glance-row em{font-family:var(--serif);font-size:17px;line-height:1.2;font-style:normal}
@@ -136,6 +137,7 @@
       :root{--pad:28px}
       section{padding:72px 0}
       .hero-grid,.hero-thesis,.section-head,.platform-layout,.closing-panel,.intelligence-panel{grid-template-columns:1fr}
+      .hero-grid > .hero-glance{justify-self:start;max-width:100%;margin-top:10px}
       .proof-grid,.market-grid{grid-template-columns:1fr}
       .intel-map{grid-template-columns:1fr 1fr}
       .flow{grid-template-columns:1fr 1fr 1fr}
@@ -149,6 +151,7 @@
       .nav__right{margin-left:auto;gap:10px}
       #nav.menu-open .nav__links{display:flex}
       .hero .lead{font-size:22px}
+      .hero{padding:90px 0 74px}
       .cta-row{justify-content:flex-start}
       .intel-map,.flow,.footprint{grid-template-columns:1fr}
     }
@@ -204,6 +207,8 @@
             <div class="glance-row"><span>Operating history</span><strong>20+</strong></div>
             <div class="glance-row"><span>Execution model</span><em>Originate to recovery</em></div>
             <div class="glance-row"><span>Primary collateral</span><em>Hard-asset backed</em></div>
+            <div class="glance-row"><span>Headquarters</span><em>Guangzhou</em></div>
+            <div class="glance-row"><span>China presence</span><em>Guangzhou · Shanghai</em></div>
           </aside>
         </div>
       </div>
