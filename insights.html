@@ -190,24 +190,39 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   .research-sub__inner{grid-template-columns:1fr;gap:22px;align-items:flex-start}
   .research-sub p{font-size:15px;line-height:1.78;max-width:33ch}
 }
+
+@media print{
+  @page{size:A4;margin:16mm 14mm 18mm}
+  body{font-size:11pt;line-height:1.55;color:#111;background:#fff}
+  #nav,.research-hero,.utility,.sidebar,.research-sub{display:none!important}
+  .wrap,.issue-shell{max-width:none;padding:0!important;margin:0!important}
+  .franchise-ribbon{display:block!important;border:1px solid #d9d3ca;padding:10px 14px;margin:0 0 16px!important;background:#faf8f4}
+  .franchise-ribbon__title{font-size:10pt;letter-spacing:.08em}
+  .franchise-ribbon__sub{font-size:9.5pt;color:#555}
+  .issue-header{margin:0 0 14px!important;padding:0 0 10px!important;border-bottom:1px solid #d8d8d8}
+  .issue-header h2{font-size:24pt;line-height:1.08;margin-bottom:8px}
+  .issue-header__dek{font-size:12pt;line-height:1.5;color:#333}
+  .issue-header__meta{font-size:8.5pt;color:#666;letter-spacing:.06em}
+  .reading-grid{display:block}
+  .reading{max-width:none}
+  .reading h3{font-size:19pt;line-height:1.18;margin:14px 0 8px;break-after:avoid}
+  .reading p,.reading li,.reading blockquote{font-size:11pt;line-height:1.6;color:#1f1f1f}
+  .reading p,.reading blockquote,.reading ul{orphans:3;widows:3}
+  .reading blockquote{border-left:2px solid #b3213f;padding:8px 0 8px 14px;background:transparent;color:#2f2f2f}
+  .reading ul{padding-left:20px}
+  .archive-section{break-before:page}
+  .archive-section .eyebrow,.archive-section h3{break-after:avoid}
+  .archive__list{max-height:none!important;overflow:visible!important}
+  .archive__row{break-inside:avoid;padding:10px 0;border-color:#ddd}
+  .archive__row a{display:none}
+  a[href]::after{content:""!important}
+}
+
 </style>
 </head>
 <body>
 <nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners"><g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g><line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text></svg></a><ul class="nav__links" id="nav-links"><li><a href="firm.html">The Firm</a></li><li><a href="strategy.html">Strategy</a></li><li><a href="insights.html" class="active">Insights</a></li><li><a href="team.html">Team</a></li></ul><div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="investor-access.html" class="nav__lp">Investor Access</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div></nav>
-<nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
-  <g transform="scale(0.431)">
-        <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/>
-        <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/>
-        <circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g>
-  <line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/>
-  <text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text>
-  <line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/>
-  <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
-</svg></a><ul class="nav__links"><li><a href="firm.html">The Firm</a></li><li><a href="strategy.html">Strategy</a></li><li><a href="insights.html" class="active">Insights</a></li><li><a href="team.html">Team</a></li></ul><div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="investor-access.html" class="nav__lp">Investor Access</a></div></nav>
+
 
 <section class="research-hero">
   <div class="research-hero__grid">
@@ -240,6 +255,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
     <div class="utility__actions">
       <a class="util-btn util-btn--solid" href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf" download>Download PDF</a>
       <a class="util-btn" href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf" target="_blank" rel="noopener">View PDF</a>
+      <button class="util-btn" type="button" id="print-pdf">Print / Save PDF</button>
       <a class="util-btn" href="#archive">Archived Issues</a>
       <a class="util-btn" href="index.html#signup">Subscribe</a>
     </div>
@@ -322,6 +338,10 @@ if(menuBtn&&nav){
     const isOpen=nav.classList.toggle('menu-open');
     menuBtn.setAttribute('aria-expanded',String(isOpen));
   });
+}
+const printBtn=document.getElementById('print-pdf');
+if(printBtn){
+  printBtn.addEventListener('click',()=>window.print());
 }
 </script>
 </body>
