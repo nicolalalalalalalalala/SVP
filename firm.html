@@ -44,7 +44,7 @@
     .nav__zh{font-size:13px;color:var(--ink);opacity:.35;transition:opacity .2s}
     .nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(0,0,0,.15);padding:7px 16px;transition:background .2s,color .2s,border-color .2s}
     .nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
-    .nav__logo svg{height:36px;display:block}
+    .nav__logo-wordmark{display:block;font-family:var(--serif);font-size:30px;letter-spacing:.04em;color:var(--ink);line-height:1}
     .nav__zh:hover{opacity:.75}
     .nav__lp:hover{background:var(--red);color:var(--white);border-color:var(--red)}
 
@@ -52,16 +52,18 @@
     section{padding:88px 0;border-top:1px solid rgba(0,0,0,.09)}
     section:first-of-type{border-top:none}
 
-    .hero{padding:84px 0 72px;background:#f1f1ef}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:52px;align-items:start}
+    .hero{padding:112px 0 94px;background:#f1f1ef}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:start}
     h1{font-family:var(--serif);font-size:clamp(46px,6.2vw,84px);line-height:1.02;font-weight:400;max-width:980px;letter-spacing:-.01em;margin-bottom:20px}
-    .hero .lead{max-width:720px;font-family:var(--serif);font-size:24px;line-height:1.56;color:#35332f;margin-bottom:32px}
-    .hero-thesis{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding-top:14px;align-items:start}
+    .hero .lead{max-width:720px;font-family:var(--serif);font-size:24px;line-height:1.56;color:#35332f;margin-bottom:38px}
+    .hero-thesis{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding-top:20px;align-items:start}
     .hero-thesis p{font-size:15px;color:#393732}
-    .hero-glance{background:#0d0d0c;color:#efede8;border:1px solid rgba(255,255,255,.12);padding:24px;box-shadow:0 18px 34px rgba(0,0,0,.16);margin-top:2px}
-    .hero-glance h3{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:14px}
-    .hero-grid > .hero-glance{width:100%;max-width:390px;justify-self:end}
-    .glance-row{display:grid;grid-template-columns:1fr auto;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+    .hero-side{display:grid;gap:18px;align-content:start;justify-items:start}
+    .hero-brand{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid rgba(0,0,0,.14);background:#f8f7f3;box-shadow:var(--soft-shadow)}
+    .hero-brand svg{width:228px;height:auto;display:block}
+    .hero-glance{background:#0d0d0c;color:#efede8;border:1px solid rgba(255,255,255,.12);padding:22px 24px;box-shadow:0 18px 34px rgba(0,0,0,.16)}
+    .hero-glance h3{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:10px}
+    .glance-row{display:grid;grid-template-columns:1fr auto;gap:14px;padding:10px 0;border-top:1px solid rgba(255,255,255,.14)}
     .glance-row span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
     .glance-row strong{font-family:var(--serif);font-size:36px;line-height:1;font-weight:400;color:#f5f2ec}
     .glance-row em{font-family:var(--serif);font-size:15px;line-height:1.2;font-style:normal}
@@ -137,7 +139,8 @@
       :root{--pad:28px}
       section{padding:72px 0}
       .hero-grid,.hero-thesis,.section-head,.platform-layout,.closing-panel,.intelligence-panel{grid-template-columns:1fr}
-      .hero-grid > .hero-glance{justify-self:start;max-width:100%;margin-top:10px}
+      .hero-side{justify-items:stretch}
+      .hero-brand{justify-content:center}
       .proof-grid,.market-grid{grid-template-columns:1fr}
       .intel-map{grid-template-columns:1fr 1fr}
       .flow{grid-template-columns:1fr 1fr 1fr}
@@ -146,12 +149,12 @@
     @media (max-width:760px){
       .nav__zh,.nav__lp{display:none}
       .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
-      .nav__logo svg{height:30px}
+      .nav__logo-wordmark{font-size:24px}
       .nav__menu-btn{display:inline-flex}
       .nav__right{margin-left:auto;gap:10px}
       #nav.menu-open .nav__links{display:flex}
       .hero .lead{font-size:22px}
-      .hero{padding:80px 0 68px}
+      .hero{padding:90px 0 74px}
       .cta-row{justify-content:flex-start}
       .intel-map,.flow,.footprint{grid-template-columns:1fr}
     }
@@ -159,22 +162,8 @@
 </head>
 <body>
   <nav id="nav">
-    <a href="index.html" class="nav__logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
-        <g transform="scale(0.431)">
-          <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
-          <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
-          <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/>
-          <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/>
-          <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/>
-          <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/>
-          <circle cx="48" cy="82" r="3.5" fill="#b3213f"/>
-        </g>
-        <line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/>
-        <text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text>
-        <line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/>
-        <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
-      </svg>
+    <a href="index.html" class="nav__logo" aria-label="ShoreVest home">
+      <span class="nav__logo-wordmark">ShoreVest</span>
     </a>
     <ul class="nav__links" id="nav-links">
       <li><a href="firm.html" class="active">The Firm</a></li>
@@ -202,14 +191,31 @@
               <p>ShoreVest is designed for a market where legal structure, local execution, and recoverability matter as much as headline yield — using directly enforceable onshore positions, conservative 30–60% LTV/CTV entry points, and control from underwriting through resolution.</p>
             </div>
           </div>
-          <aside class="hero-glance" aria-label="At a glance">
-            <h3>At a glance</h3>
-            <div class="glance-row"><span>Operating history</span><strong>20+</strong></div>
-            <div class="glance-row"><span>Execution model</span><em>Originate to recovery</em></div>
-            <div class="glance-row"><span>Primary collateral</span><em>Hard-asset backed</em></div>
-            <div class="glance-row"><span>Headquarters</span><em>Guangzhou</em></div>
-            <div class="glance-row"><span>China presence</span><em>Guangzhou · Shanghai</em></div>
-          </aside>
+          <div class="hero-side">
+            <div class="hero-brand" aria-hidden="true">
+              <svg viewBox="0 0 220 48" role="img" aria-label="ShoreVest Partners">
+                <g transform="scale(0.431)">
+                  <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
+                  <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
+                  <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/>
+                  <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/>
+                  <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/>
+                  <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/>
+                  <circle cx="48" cy="82" r="3.5" fill="#b3213f"/>
+                </g>
+                <line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/>
+                <text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text>
+                <line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/>
+                <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
+              </svg>
+            </div>
+            <aside class="hero-glance" aria-label="At a glance">
+              <h3>At a glance</h3>
+              <div class="glance-row"><span>Operating history</span><strong>20+</strong></div>
+              <div class="glance-row"><span>Execution model</span><em>Originate to recovery</em></div>
+              <div class="glance-row"><span>Primary collateral</span><em>Hard-asset backed</em></div>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
@@ -255,8 +261,8 @@
     <section>
       <div class="wrap">
         <div class="section-head">
-          <h2>Why this market requires specialisation.</h2>
-          <p>China private credit cannot be evaluated as a generic extension of global direct lending. Local legal architecture, enforcement practice, information asymmetry, and restructuring dynamics all shape realised outcomes.</p>
+          <h2>Why this market requires specialization.</h2>
+          <p>China private credit cannot be evaluated as a generic extension of global direct lending. Local legal architecture, enforcement practice, information asymmetry, and restructuring dynamics all shape realized outcomes.</p>
         </div>
         <div class="market-grid">
           <article>
@@ -272,7 +278,7 @@
             <p>Many opportunities emerge through local counterparties, banks, and advisors before broad market syndication. Access and judgment must be built on the ground over time.</p>
           </article>
           <article>
-            <h3>Borrower and sponsor behaviour varies by situation</h3>
+            <h3>Borrower and sponsor behavior varies by situation</h3>
             <p>Capital structure dynamics and willingness to engage can shift quickly under pressure. Local pattern recognition matters in setting terms, covenants, and engagement strategy.</p>
           </article>
           <article>
@@ -380,7 +386,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="ownership">
       <div class="wrap">
         <div class="section-head">
           <h2>How the platform is built.</h2>
