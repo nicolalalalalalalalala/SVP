@@ -82,5 +82,46 @@
   <p>This note outlines the legal and process mechanics of non-performing loan resolution, including collateral workflow, court auction dynamics, and timelines that matter to institutional investors.</p>
   <a class="back" href="insights.html">← Back to News &amp; Insights</a>
 </main>
+
+<script>
+(() => {
+  if (window.__svScrollAnimationsInit) return;
+  window.__svScrollAnimationsInit = true;
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .auto-rev { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+    .auto-rev.auto-rev--in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .auto-rev { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  const targets = document.querySelectorAll('section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm');
+  targets.forEach((el, i) => {
+    if (el.classList.contains('rev') || el.classList.contains('auto-rev')) return;
+    if (el.closest('nav')) return;
+    el.classList.add('auto-rev');
+    el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
+  });
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.auto-rev').forEach(el => el.classList.add('auto-rev--in'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('auto-rev--in');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+
+  document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
+})();
+</script>
+
 </body>
 </html>
