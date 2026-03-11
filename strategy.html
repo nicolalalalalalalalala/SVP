@@ -115,12 +115,7 @@ h2 em { font-style:italic; }
 .hero__sliver::after {
   content:'';
   position:absolute; inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(10,5,2,0.15) 0%,
-    rgba(10,5,2,0.38) 40%,
-    rgba(10,5,2,0.72) 100%
-  );
+  background:rgba(10,5,2,0.48);
 }
 .hero__overlay {
   position:relative; z-index:2;
@@ -479,10 +474,7 @@ h2.ins__hed { font-size:clamp(34px,4.5vw,58px); color:var(--ink); }
 .city-band:hover .city-band__img { transform:scale(1.05); }
 .city-band__overlay {
   position:absolute; inset:0;
-  background:linear-gradient(to bottom,
-    rgba(12,12,10,.52) 0%, rgba(12,12,10,.08) 45%,
-    rgba(12,12,10,.08) 55%, rgba(12,12,10,.62) 100%
-  );
+  background:rgba(12,12,10,.42);
 }
 .city-band__content {
   position:absolute; inset:0; display:flex; align-items:flex-end; padding:0 0 68px;
@@ -569,82 +561,73 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 .foot__legal a:hover { color:rgba(255,255,255,.55); }
 
 
-.pagehero{padding:156px var(--pad) 72px;background:#fff}
-.pagehero h1{font-size:clamp(44px,6vw,82px);max-width:900px}
-.pagehero p{max-width:860px;font-size:18px;line-height:1.82;color:#55524d;font-family:var(--serif);margin-top:18px}
-.pgsec{padding:72px 0;border-top:1px solid var(--rule)}
-.doc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.doc-link{background:#f6f4f0;border:1px solid var(--rule);padding:24px}
-.doc-link small{display:block;color:var(--mist);text-transform:uppercase;letter-spacing:.14em;font-size:10px;margin-bottom:8px}
-.doc-link strong{font-family:var(--serif);font-size:28px;font-weight:400}
-.doc-link span{display:block;margin-top:10px;color:var(--mist)}
-.strategy-stack{display:grid;gap:28px}
-.strategy-block{background:#f6f4f0;border:1px solid var(--rule);padding:32px;scroll-margin-top:96px}
-.strategy-block h2{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1.15;margin-bottom:12px}
-.strategy-block p{color:#66625c;line-height:1.82;font-size:17px;font-family:var(--serif)}
-.strategy-block ul{margin:12px 0 16px 18px;color:#66625c;font-family:var(--serif);line-height:1.7}
-.strategy-viz{margin:24px 0 8px;padding:26px;border:1px solid rgba(179,33,63,.28);background:linear-gradient(165deg,#fff 0%,#fcfaf7 100%);box-shadow:0 10px 28px rgba(12,12,10,.05);border-radius:6px;position:relative;overflow:hidden}
-.strategy-viz::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--red),#d4556f)}
+
+.pagehero{padding:148px var(--pad) 76px;background:#fff;border-bottom:1px solid var(--rule)}
+.pagehero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:end}
+.pagehero h1{font-size:clamp(46px,5.6vw,78px);max-width:700px;letter-spacing:-.02em}
+.pagehero p{max-width:700px;font-size:19px;line-height:1.8;color:#5f5a54;font-family:var(--serif);margin-top:18px}
+.hero-panel{background:#11110f;color:#fff;padding:20px 22px;border:1px solid rgba(255,255,255,.08)}
+.hero-panel h3{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.58);margin-bottom:16px}
+.hero-panel ul{list-style:none;display:grid;gap:13px}
+.hero-panel li{display:flex;justify-content:space-between;gap:10px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.1);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.hero-panel li strong{font-family:var(--serif);font-size:25px;line-height:1;color:#fff;font-weight:400;letter-spacing:0;text-transform:none}
+.pgsec{padding:72px 0 104px;background:#fff}
+.strategy-stack{display:grid;gap:46px}
+.strategy-block{background:#fff;border:1px solid rgba(0,0,0,.08);padding:38px 40px;scroll-margin-top:96px;position:relative;overflow:hidden}
+.strategy-block::after{content:'';position:absolute;left:0;top:0;height:100%;width:2px;background:rgba(179,33,63,.65)}
+.strategy-block h2{font-family:var(--serif);font-size:clamp(38px,4.4vw,52px);font-weight:400;line-height:1.12;margin-bottom:14px;letter-spacing:-.01em;max-width:640px}
+.strategy-block p{color:#66615a;line-height:1.8;font-size:17px;font-family:var(--serif);max-width:760px}
+.strategy-viz{margin:24px 0 6px;padding:22px;border:1px solid rgba(0,0,0,.09);background:#fcfbf9}
 .viz-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;font-weight:500}
 .viz-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.kpi{border:1px solid rgba(179,33,63,.16);padding:16px;background:#fff;position:relative}
-.kpi::before{content:'';position:absolute;left:0;top:0;right:0;height:2px;background:var(--red)}
-.kpi strong{display:block;font-size:28px;font-family:var(--serif);font-weight:400;color:var(--ink);line-height:1.1}
+.kpi{border:1px solid rgba(179,33,63,.16);padding:16px;background:#fff;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}
+.kpi strong{display:block;font-size:30px;font-family:var(--serif);font-weight:400;color:var(--ink);line-height:1.1}
 .kpi span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
-.kpi{cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}
-.kpi:hover,.kpi:focus-visible,.kpi.is-active{transform:translateY(-2px);border-color:rgba(179,33,63,.45);box-shadow:0 10px 18px rgba(12,12,10,.08);outline:none}
-.viz-detail{margin-top:14px;font-size:12px;color:#726d66;min-height:1.6em}
-.process-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:step}
+.kpi:hover,.kpi:focus-visible,.kpi.is-active{border-color:rgba(179,33,63,.45);outline:none}
+.viz-detail,.funnel-detail,.city-detail{margin-top:12px;font-size:12px;color:#726d66;min-height:1.6em}
+.funnel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.funnel-step{background:#fff;border:1px solid rgba(179,33,63,.16);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;transition:border-color .2s,transform .2s}
+.funnel-step b{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4b4640}
+.funnel-step small{font-family:var(--serif);font-size:17px;color:#1d1c19}
+.funnel-step:hover,.funnel-step:focus-visible,.funnel-step.is-active{border-color:rgba(179,33,63,.45);outline:none}
+.process-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;counter-reset:step}
 .flow-step{position:relative;border:1px solid rgba(179,33,63,.16);padding:16px 16px 14px 48px;background:#fff}
 .flow-step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:14px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;font-size:11px;font-weight:500}
 .flow-step::after{content:'›';position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink2);color:#fff;font-size:13px}
 .flow-step:last-child::after{display:none}
 .flow-step b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;color:var(--ink)}
 .flow-step small{font-size:14px;color:#66625c;font-family:var(--serif)}
-.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-.city{border:1px solid rgba(179,33,63,.16);background:#fff;padding:14px;position:relative}
-.city::after{content:'';position:absolute;left:14px;right:14px;bottom:0;height:2px;background:linear-gradient(90deg,var(--red),rgba(179,33,63,.15))}
-.city b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
-.city small{display:block;margin-top:6px;color:#66625c;font-family:var(--serif);font-size:14px;line-height:1.5}
-.city{cursor:pointer;transition:border-color .2s,transform .2s}
-.city:hover,.city:focus-visible,.city.is-active{border-color:rgba(179,33,63,.45);transform:translateY(-2px);outline:none}
-.city-detail{margin-top:10px;font-size:12px;color:#726d66;min-height:1.6em}
+.risk-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:14px}
+.risk-card{border:1px solid rgba(179,33,63,.15);background:#fff;padding:16px}
+.risk-card h4{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.risk-card ul{margin:0;list-style:none;display:grid;gap:8px}
+.risk-card li{font-size:13px;color:#66625c;line-height:1.55;border-left:2px solid rgba(179,33,63,.2);padding-left:10px}
+.ring-card{background:#fff;border:1px solid rgba(179,33,63,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
+.ring{width:168px;height:168px;border-radius:50%;background:#f2ede5;border:12px solid var(--red);display:grid;place-items:center;transition:border-color .35s}
+.ring::after{content:'';width:108px;height:108px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px rgba(179,33,63,.14)}
+.ring-label{text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6e6a64;line-height:1.5;position:relative;z-index:1;margin-top:-110px}
+.ring-label strong{display:block;font-family:var(--serif);font-size:30px;color:var(--ink);letter-spacing:0;text-transform:none}
+.viz-controls{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.viz-btn{border:1px solid rgba(179,33,63,.2);background:#fff;color:#655f58;padding:6px 10px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.viz-btn.is-active,.viz-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
 .alloc-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:stretch}
 .alloc-bars{display:grid;gap:10px}
 .alloc-row{background:#fff;border:1px solid rgba(179,33,63,.14);padding:10px 12px}
 .alloc-row b{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#4b4640;margin-bottom:8px}
 .alloc-track{height:8px;background:#efe8df;position:relative;overflow:hidden;border-radius:999px}
-.alloc-track span{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--red),#d4556f)}
+.alloc-track span{position:absolute;left:0;top:0;bottom:0;background:var(--red)}
 .alloc-note{font-size:12px;color:#7a756f;margin-top:6px}
-.viz-controls{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
-.viz-btn{border:1px solid rgba(179,33,63,.2);background:#fff;color:#655f58;padding:6px 10px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s}
-.viz-btn.is-active,.viz-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
-.ring-card{background:#fff;border:1px solid rgba(179,33,63,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:18px}
-.ring{width:150px;height:150px;border-radius:50%;background:conic-gradient(var(--red) 0 270deg,#eadfd1 270deg 360deg);display:grid;place-items:center}
-.ring::after{content:'';width:98px;height:98px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px rgba(179,33,63,.14)}
-.ring-label{text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6e6a64;line-height:1.5}
-.ring-label strong{display:block;font-family:var(--serif);font-size:28px;color:var(--ink);letter-spacing:0;text-transform:none}
-.funnel{display:grid;gap:8px;margin-top:16px}
-.funnel-step{background:#fff;border:1px solid rgba(179,33,63,.14);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative}
-.funnel-step::after{content:'';position:absolute;left:12px;right:12px;bottom:0;height:2px;background:linear-gradient(90deg,var(--red),rgba(179,33,63,.08))}
-.funnel-step b{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4b4640;line-height:1.35}
-.funnel-step span{font-family:var(--serif);font-size:20px;color:var(--ink);flex-shrink:0}
-.funnel-step{cursor:pointer;transition:border-color .2s,transform .2s}
-.funnel-step:hover,.funnel-step:focus-visible,.funnel-step.is-active{border-color:rgba(179,33,63,.45);transform:translateX(3px);outline:none}
-.funnel-detail{margin-top:10px;font-size:12px;color:#726d66;min-height:1.6em}
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
-.timeline .t{background:#fff;border:1px solid rgba(179,33,63,.14);padding:12px;position:relative}
-.timeline .t::before{content:'';position:absolute;left:12px;top:12px;width:8px;height:8px;border-radius:50%;background:var(--red)}
-.timeline .t b{display:block;padding-left:14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#4b4640;margin-bottom:6px}
-.timeline .t small{display:block;color:#66625c;font-family:var(--serif);font-size:14px;line-height:1.45}
-
-.mini-info{margin:14px 0 20px;display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:stretch}
-.box-graphic{border:1px solid rgba(179,33,63,.2);background:linear-gradient(155deg,#fff,#f7f1ea);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
-.box-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.point{background:#fff;border:1px solid rgba(179,33,63,.14);padding:10px 12px}
-.point b{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#4b4640;margin-bottom:5px}
-.point span{font-size:12px;color:#66625c;line-height:1.35}
-@media (max-width:980px){.doc-list{grid-template-columns:1fr}.strategy-block{padding:24px}.strategy-block h2{font-size:30px}.viz-kpi,.process-flow,.city-grid,.box-points,.alloc-grid,.timeline{grid-template-columns:1fr}.mini-info{grid-template-columns:1fr}.box-graphic{min-height:82px}.flow-step{padding-left:44px}.flow-step::after{display:none}}
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.city{border:1px solid rgba(179,33,63,.16);background:#fff;padding:14px;position:relative;cursor:pointer;transition:border-color .2s,transform .2s}
+.city::after{content:'';position:absolute;left:14px;right:14px;bottom:0;height:2px;background:rgba(179,33,63,.28)}
+.city b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.city small{display:block;margin-top:6px;color:#66625c;font-family:var(--serif);font-size:14px;line-height:1.5}
+.city:hover,.city:focus-visible,.city.is-active{border-color:rgba(179,33,63,.45);outline:none}
+.next-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px}
+.next-links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid rgba(0,0,0,.2);padding-bottom:2px}
+.next-links a:hover{color:var(--red);border-bottom-color:var(--red)}
+.strategy-stack .strategy-block:nth-child(even){background:#f6f4f0}
+@media (max-width:980px){.pagehero .wrap{grid-template-columns:1fr;gap:28px}.hero-panel{max-width:540px}.strategy-stack{gap:28px}.strategy-block{padding:24px}.strategy-block h2{font-size:34px}.viz-kpi,.process-flow,.city-grid,.alloc-grid,.funnel-grid,.risk-grid{grid-template-columns:1fr}.flow-step{padding-left:44px}.flow-step::after{display:none}}
 @media (max-width:760px){:root{--pad:18px}#nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}.nav__logo svg{height:48px}.nav__menu-btn{display:inline-flex}.nav__right{margin-left:auto;gap:10px}.nav__zh,.nav__lp{display:none}.nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}#nav.menu-open .nav__links{display:flex}.nav__links a{font-size:10px;white-space:nowrap}.funnel-step{flex-wrap:wrap}.funnel-step span{font-size:18px}}
 </style></head><body><nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
   <g transform="scale(0.431)">
@@ -661,9 +644,19 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
 </svg></a><ul class="nav__links" id="nav-links"><li><a href="firm.html" class="">The Firm</a></li><li><a href="strategy.html" class="active">Strategy</a></li><li><a href="insights.html" class="">Insights</a></li><li><a href="team.html" class="">Team</a></li></ul><div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="investor-access.html" class="nav__lp">Investor Access</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div></nav><section class="pagehero">
   <div class="wrap">
-    <div class="eyebrow">Strategy</div>
-    <h1>Strategy</h1>
-    <p>ShoreVest underwrites to recoverable value, not simply to contractual yield. Across its sub-strategies, the common elements are hard-asset collateral, conservative LTV or CTV, senior or directly enforceable positioning, and a preference for situations with multiple exit avenues.</p>
+    <div>
+      <div class="eyebrow">Strategy</div>
+      <h1>Investment Strategy</h1>
+      <p>ShoreVest underwrites to recoverable value rather than headline yield. Across all sub-strategies, every deal is anchored by hard collateral, enforceable legal control, and multiple exits so capital stays resilient through volatile cycles.</p>
+    </div>
+    <aside class="hero-panel" aria-label="Strategy highlights">
+      <h3>At a Glance</h3>
+      <ul>
+        <li><span>Core focus</span><strong>China Special Situations</strong></li>
+        <li><span>Execution model</span><strong>Originate to Recovery</strong></li>
+        <li><span>Primary collateral</span><strong>Hard-Asset Backed</strong></li>
+      </ul>
+    </aside>
   </div>
 </section>
 
@@ -672,113 +665,126 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     <div class="strategy-stack">
       <section class="strategy-block" id="opportunity">
         <h2>The Opportunity</h2>
-        <p>China is the world's second-largest credit market, but alternative credit remains materially less crowded than in the US or Europe.</p>
-        <p><strong>Shadow banking contraction.</strong> A multi-trillion-dollar capital vacuum following the shadow-banking crackdown. Traditional lenders remain capital-constrained. Private credit fills the gap — but only for managers who can convert opportunity into recovery.</p>
-        <p><strong>NPL supply.</strong> Elevated non-performing loan supply from banks under regulatory and capital pressure to divest, creating substantial availability of bank-originated assets at discounted pricing.</p>
-        <p><strong>Funding gaps.</strong> Persistent funding gaps for borrowers that fall outside rigid bank underwriting, even when underlying collateral is sound.</p>
-        <p><strong>Limited specialist buyers.</strong> Low competition for many onshore special-situation portfolios leads to better purchase prices and wider margins on recoveries.</p>
+        <p>China is the world’s second-largest credit market, but specialist alternative credit remains less crowded than developed peers. That supply-demand mismatch creates strong entry points for managers with local legal, servicing, and restructuring execution.</p>
         <div class="strategy-viz" aria-label="Market snapshot">
           <div class="viz-title">Market Snapshot</div>
           <div class="viz-kpi">
-            <div class="kpi is-active"><strong>#2</strong><span>Global credit market position</span></div>
-            <div class="kpi"><strong>Since 2004</strong><span>Strategy operating through cycles</span></div>
-            <div class="kpi"><strong>3 locations</strong><span>Guangzhou, Shanghai, Hong Kong</span></div>
+            <button class="kpi is-active" data-detail="Scale creates repeatable volume; selectivity drives quality."><strong>#2</strong><span>Global credit market rank</span></button>
+            <button class="kpi" data-detail="Experience through multiple policy and liquidity cycles."><strong>20+ yrs</strong><span>Track-record duration</span></button>
+            <button class="kpi" data-detail="Onshore sourcing and enforcement from key lending hubs."><strong>3 hubs</strong><span>Guangzhou · Shanghai · HK</span></button>
           </div>
+          <div class="viz-detail" data-kpi-detail>Scale creates repeatable volume; selectivity drives quality.</div>
         </div>
       </section>
 
       <section class="strategy-block" id="sourcing">
         <h2>Sourcing and Pipeline</h2>
-        <p>ShoreVest maintains direct relationships with banks, asset management companies (AMCs), law firms, and servicers — built over two decades. This access supports better asset selection and pricing power through bilateral sourcing and selective portfolio participation.</p>
-        <div class="funnel" aria-label="Pipeline statistics">
-          <div class="funnel-grid">
-            <div class="funnel-step"><b>~US$12.8B</b><small>Sourced opportunities</small></div>
-            <div class="funnel-step"><b>~US$6.8B</b><small>Preliminary due diligence</small></div>
-            <div class="funnel-step"><b>~US$1.2B</b><small>Full due diligence</small></div>
-            <div class="funnel-step"><b>~US$898M</b><small>To Investment Committee</small></div>
-          </div>
+        <p>Two decades of relationships with banks, AMCs, law firms, and servicers support bilateral flow, better pricing, and higher certainty of close.</p>
+        <div class="funnel-grid" aria-label="Pipeline funnel">
+          <button class="funnel-step is-active" data-detail="Wide sourcing universe allows selective deployment."><b>~US$12.8B</b><small>Sourced opportunities</small></button>
+          <button class="funnel-step" data-detail="Rapid triage screens enforceability and collateral quality."><b>~US$6.8B</b><small>Preliminary diligence</small></button>
+          <button class="funnel-step" data-detail="Deep legal + collateral underwriting before IC."><b>~US$1.2B</b><small>Full due diligence</small></button>
+          <button class="funnel-step" data-detail="Only highest-conviction deals reach committee."><b>~US$898M</b><small>Investment committee</small></button>
         </div>
+        <div class="funnel-detail" data-funnel-detail>Wide sourcing universe allows selective deployment.</div>
       </section>
 
       <section class="strategy-block" id="how-we-invest">
         <h2>How We Invest</h2>
-        <p><strong>Collateral first.</strong> Every position is secured against identifiable assets, primarily real estate, with conservative 30–60% LTV/CTV entry points. The question is always recoverability under stress.</p>
-        <p><strong>Structure second.</strong> ShoreVest requires first-lien priority or directly enforceable positioning, PRC-law documentation, and covenant packages that provide control as performance deteriorates.</p>
-        <p><strong>Why this order matters.</strong> Downside is defined before upside is considered. The strategy avoids subordinated claims, offshore unsecured debt, and structures that can delay or dilute recovery.</p>
-        <p><strong>Full-cycle execution.</strong> Sourcing, diligence, structuring, servicing, and disposition are managed as one connected workflow. The professionals who approve entry remain accountable through exit.</p>
-        <div class="timeline" aria-label="Investment lifecycle timeline">
-          <div class="t"><b>Originate</b><small>Direct borrower and institutional sourcing channels.</small></div>
-          <div class="t"><b>Structure</b><small>First-lien or directly enforceable documents with covenant controls.</small></div>
-          <div class="t"><b>Monitor</b><small>Continuous legal and collateral surveillance.</small></div>
-          <div class="t"><b>Recover</b><small>Workout, enforcement, and disciplined disposition.</small></div>
+        <p>Every position follows the same operating rhythm: secure collateral, structure control, monitor actively, and realize through the best available exit channel.</p>
+        <div class="process-flow" aria-label="Investment lifecycle">
+          <div class="flow-step"><b>Originate</b><small>Direct channels with borrowers and institutions.</small></div>
+          <div class="flow-step"><b>Structure</b><small>First-lien / enforceable documents and covenants.</small></div>
+          <div class="flow-step"><b>Monitor</b><small>Continuous legal, collateral, and cash-flow oversight.</small></div>
+          <div class="flow-step"><b>Recover</b><small>Workout, enforcement, and disciplined disposition.</small></div>
         </div>
       </section>
 
       <section class="strategy-block" id="sub-strategies">
-        <h2>Sub-Strategies</h2>
-        <p>The fund deploys across three sub-strategies, with allocation shifting based on relative opportunity.</p>
-        <div class="alloc-card">
-          <div class="alloc-row"><b><span>Asset-Based Lending</span><span>20–40%</span></b></div>
-          <div class="alloc-row"><b><span>Asset Restructuring</span><span>50–70%</span></b></div>
-          <div class="alloc-row"><b><span>Debt Resolutions</span><span>5–20%</span></b></div>
-        </div>
-      </section>
-
-      <section class="strategy-block" id="asset-based-lending">
-        <h2>Asset-Based Lending</h2>
-        <p>Senior-secured financing to performing borrowers when traditional bank lending is constrained by timing, structure, or regulatory capacity. Every loan is backed by hard assets with conservative LTVs and enforceable security packages.</p>
-      </section>
-
-      <section class="strategy-block" id="asset-restructuring">
-        <h2>Asset Restructuring</h2>
-        <p>Complex situations where assets are sound but capital structures are impaired. ShoreVest negotiates with stakeholders, redesigns balance sheets, manages legal pathways, and can assume operational control to stabilize and reposition assets before exit.</p>
-      </section>
-
-      <section class="strategy-block" id="debt-resolutions">
-        <h2>Debt Resolutions</h2>
-        <p>NPL portfolios and distressed claims acquired from banks, AMCs, and financial institutions under pressure to divest. Resolution is managed in-house through ShoreVest Asset Solutions: diligence, enforcement, workout strategy, negotiation, and disposition.</p>
-      </section>
-
-      <section class="strategy-block" id="multiple-exits">
-        <h2>Multiple Exit Avenues</h2>
-        <p>ShoreVest chooses among negotiated settlements, secondary loan sales, court auctions, and loan-to-own conversions with active asset management. Multiple exit channels reduce execution risk and improve time-to-realization flexibility.</p>
-      </section>
-
-      <section class="strategy-block" id="legal-environment">
-        <h2>Legal Environment</h2>
-        <p>PRC enforcement is more functional than many foreign allocators assume, with materially improved timelines, court-auction transparency, and greater predictability for properly structured onshore claims. Current enforcement windows are typically ~18–24 months.</p>
-      </section>
-
-      <section class="strategy-block" id="risk-management">
-        <h2>Risk Management</h2>
-        <p>Downside protection is embedded in structure: conservative LTV/CTV thresholds, diversification across assets and borrowers, enforceability review under PRC law, continuous monitoring, and prudent leverage usage.</p>
-      </section>
-
-      <section class="strategy-block" id="returns-profile">
-        <h2>Returns Profile</h2>
-        <p>The strategy seeks high-teens net fund-level returns in stronger environments, with deal-level gross IRRs often above 20% and shorter weighted-average lives than many private-market strategies. Outcomes vary by vintage and market backdrop.</p>
-      </section>
-
-      <section class="strategy-block" id="current-fund">
-        <h2>Current Fund</h2>
-        <div class="funnel" aria-label="Fund terms">
-          <div class="funnel-grid">
-            <div class="funnel-step"><b>US$500M</b><small>Target Size</small></div>
-            <div class="funnel-step"><b>5 years</b><small>Fund Life</small></div>
-            <div class="funnel-step"><b>3 years</b><small>Investment Period</small></div>
-            <div class="funnel-step"><b>US$2M</b><small>Minimum Commitment</small></div>
-            <div class="funnel-step"><b>2%</b><small>Management Fee</small></div>
-            <div class="funnel-step"><b>20%</b><small>Carried Interest</small></div>
-            <div class="funnel-step"><b>8%</b><small>Preferred Return</small></div>
-            <div class="funnel-step"><b>US$5M / 1%</b><small>GP Commitment</small></div>
+        <h2>Sub-Strategies and Dynamic Allocation</h2>
+        <p>Capital allocation flexes by cycle. Use the scenario toggles to view how portfolio balance shifts as market conditions change.</p>
+        <div class="strategy-viz">
+          <div class="viz-controls" role="tablist" aria-label="Allocation scenarios">
+            <button class="viz-btn is-active" data-scenario="base">Base</button>
+            <button class="viz-btn" data-scenario="defensive">Defensive</button>
+            <button class="viz-btn" data-scenario="offensive">Offensive</button>
+          </div>
+          <div class="alloc-grid">
+            <div class="alloc-bars">
+              <div class="alloc-row" data-base="32" data-defensive="40" data-offensive="24"><b><span>Asset-Based Lending</span><span>32%</span></b><div class="alloc-track"><span style="width:32%"></span></div></div>
+              <div class="alloc-row" data-base="53" data-defensive="46" data-offensive="61"><b><span>Asset Restructuring</span><span>53%</span></b><div class="alloc-track"><span style="width:53%"></span></div></div>
+              <div class="alloc-row" data-base="15" data-defensive="14" data-offensive="15"><b><span>Debt Resolutions</span><span>15%</span></b><div class="alloc-track"><span style="width:15%"></span></div></div>
+              <div class="alloc-note">Illustrative portfolio mix for strategy communication only.</div>
+            </div>
+            <div class="ring-card">
+              <div class="ring"></div>
+              <div class="ring-label"><strong data-ring-value>75%</strong>Target collateral coverage</div>
+            </div>
           </div>
         </div>
       </section>
 
+      <section class="strategy-block" id="legal-environment">
+        <h2>Legal Environment and Recovery Paths</h2>
+        <p>PRC enforcement is materially more functional than many offshore allocators assume, with improved auction transparency and clearer creditor pathways for properly structured claims.</p>
+        <div class="city-grid">
+          <button class="city is-active" data-detail="Tier-1 courts now process secured claims with greater timeline predictability."><b>Court Efficiency</b><small>Faster case progression on secured collateral.</small></button>
+          <button class="city" data-detail="Digital auction channels continue to deepen buyer liquidity."><b>Auction Depth</b><small>Broader discovery and monetization options.</small></button>
+          <button class="city" data-detail="Settlement and sale routes create flexibility before terminal enforcement."><b>Exit Optionality</b><small>Negotiated, secondary, and court-led routes.</small></button>
+        </div>
+        <div class="city-detail" data-city-detail>Tier-1 courts now process secured claims with greater timeline predictability.</div>
+      </section>
+
+      <section class="strategy-block" id="risk-management">
+        <h2>Risk Management Framework</h2>
+        <p>Downside management is structural—not discretionary. The portfolio is built to preserve capital first and monetize upside second.</p>
+        <div class="risk-grid">
+          <div class="risk-card">
+            <h4>Underwriting Controls</h4>
+            <ul>
+              <li>Conservative entry LTV/CTV bands with stress-tested recovery assumptions.</li>
+              <li>Priority claims, enforceability review, and PRC-law documentation standards.</li>
+              <li>No dependence on refinancing to complete value realization.</li>
+            </ul>
+          </div>
+          <div class="risk-card">
+            <h4>Portfolio Controls</h4>
+            <ul>
+              <li>Diversification by borrower, collateral, vintage, and province.</li>
+              <li>Continuous surveillance from origination through disposition.</li>
+              <li>Multiple pre-defined exits reduce duration and execution risk.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="strategy-block" id="returns-profile">
+        <h2>Returns Profile</h2>
+        <p>The strategy targets high-teens net returns in supportive environments, with deal-level gross IRRs often exceeding 20%, while maintaining shorter weighted-average duration than many private-market alternatives.</p>
+      </section>
+
+      <section class="strategy-block" id="current-fund">
+        <h2>Current Fund Parameters</h2>
+        <div class="funnel-grid" aria-label="Fund terms">
+          <div class="funnel-step"><b>US$500M</b><small>Target size</small></div>
+          <div class="funnel-step"><b>5 years</b><small>Fund life</small></div>
+          <div class="funnel-step"><b>3 years</b><small>Investment period</small></div>
+          <div class="funnel-step"><b>US$2M</b><small>Minimum commitment</small></div>
+          <div class="funnel-step"><b>2%</b><small>Management fee</small></div>
+          <div class="funnel-step"><b>20%</b><small>Carried interest</small></div>
+          <div class="funnel-step"><b>8%</b><small>Preferred return</small></div>
+          <div class="funnel-step"><b>US$5M / 1%</b><small>GP commitment</small></div>
+        </div>
+      </section>
+
       <section class="strategy-block" id="cta-next">
-        <h2>Next</h2>
-        <p>This page explains how ShoreVest invests. For institutional background and governance, see The Firm. For leadership and team composition, continue to Team.</p>
-        <p><a href="team.html">Meet the Team →</a> &nbsp; <a href="firm.html">The Firm →</a></p>
+        <h2>Continue Exploring</h2>
+        <p>For governance, institutional platform details, and team composition, continue to the related sections below.</p>
+        <div class="next-links">
+          <a href="firm.html">The Firm</a>
+          <a href="team.html">Meet the Team</a>
+          <a href="insights.html">Read Insights</a>
+        </div>
       </section>
     </div>
   </div>
@@ -841,7 +847,7 @@ const applyScenario=(scenario)=>{
   const ringPct=scenarioMap[scenario]?.ring;
   if(ring&&ringValue&&ringPct){
     const degrees=Math.round((ringPct/100)*360);
-    ring.style.background=`conic-gradient(var(--red) 0 ${degrees}deg,#eadfd1 ${degrees}deg 360deg)`;
+    ring.style.borderColor=ringPct>=80?'#8d1b31':ringPct>=70?'#b3213f':'#c64f66';
     ringValue.textContent=`${ringPct}%`;
   }
 };
