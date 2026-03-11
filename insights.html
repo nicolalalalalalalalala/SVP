@@ -229,6 +229,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 
   <section class="utility">
     <div class="utility__actions">
+      <a class="util-btn util-btn--solid" href="?printPreview=1&action=download" id="download-pdf" data-print-export="download">Download PDF</a>
+      <a class="util-btn" href="?printPreview=1&action=view" id="view-pdf" data-print-export="view">View PDF</a>
       <a class="util-btn util-btn--solid" href="#" id="download-pdf" data-print-export="download">Download PDF</a>
       <a class="util-btn" href="#" id="view-pdf" data-print-export="view">View PDF</a>
       <button class="util-btn" type="button" id="print-pdf" data-print-export="print">Print / Save PDF</button>
@@ -346,6 +348,9 @@ if(menuBtn&&nav){
 }
 const triggerPrintExport=(mode='print')=>{
   buildPrintEdition();
+  const params=new URLSearchParams({printPreview:'1',action:mode});
+  const previewUrl=`${window.location.pathname}?${params.toString()}`;
+  window.location.href=previewUrl;
   if(mode==='view'){
     const previewUrl=`${window.location.pathname}?printPreview=1`;
     window.open(previewUrl,'_blank','noopener');
@@ -357,6 +362,10 @@ const triggerPrintExport=(mode='print')=>{
 const printExportControls=document.querySelectorAll('[data-print-export]');
 printExportControls.forEach((control)=>{
   control.addEventListener('click',(event)=>{
+    const mode=control.getAttribute('data-print-export')||'print';
+    if(mode==='view'||mode==='download'){
+      event.preventDefault();
+    }
     if(control.tagName==='A'){
       event.preventDefault();
     }
@@ -435,6 +444,17 @@ const buildPrintEdition=()=>{
   printCallout.textContent=calloutText||'In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.';
 };
 
+const previewParams=new URLSearchParams(window.location.search);
+const isPrintPreviewMode=previewParams.get('printPreview')==='1';
+const previewAction=previewParams.get('action')||'view';
+if(isPrintPreviewMode){
+  document.body.classList.add('print-preview');
+}
+
+buildPrintEdition();
+
+if(isPrintPreviewMode&&(previewAction==='print'||previewAction==='download')){
+  window.setTimeout(()=>window.print(),120);
 const isPrintPreviewMode=new URLSearchParams(window.location.search).get('printPreview')==='1';
 if(isPrintPreviewMode){
   document.body.classList.add('print-preview');
