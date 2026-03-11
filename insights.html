@@ -7,6 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
 <link rel="shortcut icon" href="assets/favicon.svg?v=2">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/insights-print.css">
 <style>
 :root {
   --red:#b3213f; --ink:#0c0c0a; --ink2:#141410; --white:#ffffff; --off:#f6f4f0;
@@ -192,33 +193,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   .research-sub p{font-size:15px;line-height:1.78;max-width:33ch}
 }
 
-@media print{
-  @page{size:A4;margin:16mm 14mm 18mm}
-  body{font-size:11pt;line-height:1.55;color:#111;background:#fff}
-  #nav,.research-hero,.utility,.sidebar,.research-sub{display:none!important}
-  .wrap,.issue-shell{max-width:none;padding:0!important;margin:0!important}
-  .franchise-ribbon{display:block!important;border:1px solid #d9d3ca;padding:10px 14px;margin:0 0 16px!important;background:#faf8f4}
-  .franchise-ribbon__title{font-size:10pt;letter-spacing:.08em}
-  .franchise-ribbon__sub{font-size:9.5pt;color:#555}
-  .issue-header{margin:0 0 14px!important;padding:0 0 10px!important;border-bottom:1px solid #d8d8d8}
-  .issue-header h2{font-size:24pt;line-height:1.08;margin-bottom:8px}
-  .issue-header__dek{font-size:12pt;line-height:1.5;color:#333}
-  .issue-header__meta{font-size:8.5pt;color:#666;letter-spacing:.06em}
-  .reading-grid{display:block}
-  .reading{max-width:none}
-  .reading h3{font-size:19pt;line-height:1.18;margin:14px 0 8px;break-after:avoid}
-  .reading p,.reading li,.reading blockquote{font-size:11pt;line-height:1.6;color:#1f1f1f}
-  .reading p,.reading blockquote,.reading ul{orphans:3;widows:3}
-  .reading blockquote{border-left:2px solid #b3213f;padding:8px 0 8px 14px;background:transparent;color:#2f2f2f}
-  .reading ul{padding-left:20px}
-  .archive-section{break-before:page}
-  .archive-section .eyebrow,.archive-section h3{break-after:avoid}
-  .archive__list{max-height:none!important;overflow:visible!important}
-  .archive__row{break-inside:avoid;padding:10px 0;border-color:#ddd}
-  .archive__row a{display:none}
-  a[href]::after{content:""!important}
-}
-
 </style>
 </head>
 <body>
@@ -254,9 +228,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 
   <section class="utility">
     <div class="utility__actions">
-      <a class="util-btn util-btn--solid" href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf" download>Download PDF</a>
-      <a class="util-btn" href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf" target="_blank" rel="noopener">View PDF</a>
-      <button class="util-btn" type="button" id="print-pdf">Print / Save PDF</button>
+      <a class="util-btn util-btn--solid" href="?printPreview=1&action=download" id="download-pdf" data-print-export="download">Download PDF</a>
+      <a class="util-btn" href="?printPreview=1&action=view" id="view-pdf" data-print-export="view">View PDF</a>
+      <button class="util-btn" type="button" id="print-pdf" data-print-export="print">Print / Save PDF</button>
       <a class="util-btn" href="#archive">Archived Issues</a>
       <a class="util-btn" href="index.html#signup">Subscribe</a>
     </div>
@@ -320,6 +294,35 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   </div>
 </main>
 
+<section class="print-publication" id="print-publication" aria-hidden="true">
+  <header class="print-publication__masthead">
+    <div class="print-publication__brand">
+      <svg class="print-publication__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 116" role="img" aria-label="ShoreVest logo">
+        <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
+        <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
+        <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/>
+        <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/>
+        <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/>
+        <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/>
+        <circle cx="48" cy="82" r="3.5" fill="#b3213f"/>
+      </svg>
+      <span class="print-publication__label">ShoreVest Insights</span>
+    </div>
+    <span class="print-publication__series">China Debt Dynamics</span>
+  </header>
+  <div class="print-publication__meta" id="print-meta"></div>
+  <div class="print-publication__lead">
+    <h1 class="print-publication__title" id="print-title"></h1>
+    <p class="print-publication__standfirst" id="print-standfirst"></p>
+  </div>
+  <aside class="print-publication__callout" id="print-callout"></aside>
+  <article class="print-body" id="print-body"></article>
+  <footer class="print-publication__folio" aria-hidden="true">
+    <span>ShoreVest Partners · China Debt Dynamics</span>
+    <span>Page <span class="print-publication__folio-page"></span></span>
+  </footer>
+</section>
+
 <section class="research-sub">
   <div class="wrap research-sub__inner">
     <div>
@@ -340,9 +343,105 @@ if(menuBtn&&nav){
     menuBtn.setAttribute('aria-expanded',String(isOpen));
   });
 }
-const printBtn=document.getElementById('print-pdf');
-if(printBtn){
-  printBtn.addEventListener('click',()=>window.print());
+const triggerPrintExport=(mode='print')=>{
+  buildPrintEdition();
+  const params=new URLSearchParams({printPreview:'1',action:mode});
+  const previewUrl=`${window.location.pathname}?${params.toString()}`;
+  window.location.href=previewUrl;
+};
+
+const printExportControls=document.querySelectorAll('[data-print-export]');
+printExportControls.forEach((control)=>{
+  control.addEventListener('click',(event)=>{
+    const mode=control.getAttribute('data-print-export')||'print';
+    if(mode==='view'||mode==='download'){
+      event.preventDefault();
+    }
+    triggerPrintExport(mode);
+  });
+});
+
+const buildPrintEdition=()=>{
+  const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
+  const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||'';
+  const issueInfo=document.querySelector('.issue-header__meta span:nth-child(1)')?.textContent.trim()||'';
+  const publishedInfo=document.querySelector('.issue-header__meta span:nth-child(2)')?.textContent.trim()||'';
+  const editionInfo=document.querySelector('.issue-live__meta span:nth-child(3)')?.textContent.trim()||'Allocator Edition';
+  const sourceArticle=document.getElementById('current-issue');
+  const printMeta=document.getElementById('print-meta');
+  const printTitle=document.getElementById('print-title');
+  const printStandfirst=document.getElementById('print-standfirst');
+  const printCallout=document.getElementById('print-callout');
+  const printBody=document.getElementById('print-body');
+  if(!sourceArticle||!printMeta||!printTitle||!printStandfirst||!printCallout||!printBody){
+    return;
+  }
+
+  const metadataLine=[issueInfo,publishedInfo,editionInfo].filter(Boolean).join(' | ');
+  printMeta.textContent=metadataLine;
+  printTitle.textContent=title;
+  printStandfirst.textContent=standfirst;
+  printBody.innerHTML='';
+
+  const normalizedStandfirst=standfirst.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
+  let skippedTitleHeading=false;
+  let skippedStandfirstParagraph=false;
+  let calloutText='';
+
+  Array.from(sourceArticle.children).forEach((node)=>{
+    if(node.classList.contains('lead')){
+      return;
+    }
+
+    const clone=node.cloneNode(true);
+
+    if(clone.tagName==='H3'){
+      const headingText=clone.textContent.trim().replace(/\.$/, '');
+      const titleText=title.replace(/\.$/, '');
+      if(!skippedTitleHeading&&headingText===titleText){
+        skippedTitleHeading=true;
+        return;
+      }
+      const printHeading=document.createElement('h2');
+      printHeading.innerHTML=clone.innerHTML;
+      printBody.appendChild(printHeading);
+      return;
+    }
+
+    if(clone.tagName==='P'){
+      const paragraphText=clone.textContent.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
+      if(!skippedStandfirstParagraph&&paragraphText===normalizedStandfirst){
+        skippedStandfirstParagraph=true;
+        return;
+      }
+      if(!calloutText&&clone.textContent.includes('In reality, China was never uninvestable')){
+        calloutText=clone.textContent.trim();
+        return;
+      }
+    }
+
+    printBody.appendChild(clone);
+  });
+
+  const openingParagraph=printBody.querySelector('p');
+  if(openingParagraph){
+    openingParagraph.classList.add('print-body__opening');
+  }
+
+  printCallout.textContent=calloutText||'In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.';
+};
+
+const previewParams=new URLSearchParams(window.location.search);
+const isPrintPreviewMode=previewParams.get('printPreview')==='1';
+const previewAction=previewParams.get('action')||'view';
+if(isPrintPreviewMode){
+  document.body.classList.add('print-preview');
+}
+
+buildPrintEdition();
+
+if(isPrintPreviewMode&&(previewAction==='print'||previewAction==='download')){
+  window.setTimeout(()=>window.print(),120);
 }
 </script>
 </body>
