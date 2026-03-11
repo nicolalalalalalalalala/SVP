@@ -345,6 +345,9 @@ if(menuBtn&&nav){
   });
 }
 
+const currentIssuePdfUrl='assets/china-debt-dynamics-q1-2026.pdf';
+const currentIssuePdfFilename='china-debt-dynamics-q1-2026.pdf';
+
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
   const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||'';
@@ -417,13 +420,23 @@ const buildPrintEdition=()=>{
 };
 
 const triggerPrintExport=(mode='print')=>{
-  buildPrintEdition();
-
-  if(mode==='view'){
-    const previewUrl=`${window.location.pathname}?printPreview=1&action=view`;
-    window.open(previewUrl,'_blank','noopener');
+  if(mode==='download'){
+    const directDownload=document.createElement('a');
+    directDownload.href=currentIssuePdfUrl;
+    directDownload.download=currentIssuePdfFilename;
+    directDownload.rel='noopener';
+    document.body.appendChild(directDownload);
+    directDownload.click();
+    directDownload.remove();
     return;
   }
+
+  if(mode==='view'){
+    window.open(currentIssuePdfUrl,'_blank','noopener');
+    return;
+  }
+
+  buildPrintEdition();
 
   const action=mode==='download'?'download':'print';
   const previewUrl=`${window.location.pathname}?printPreview=1&action=${action}`;
