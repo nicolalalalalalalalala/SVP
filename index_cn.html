@@ -786,15 +786,18 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     padding:14px 0;
     border-top:1px solid rgba(255,255,255,.08);
     border-bottom:1px solid rgba(255,255,255,.08);
-    overflow:hidden;
-    white-space:nowrap;
+    overflow:visible;
+    white-space:normal;
   }
   .ticker__track {
     animation:none;
     display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px 16px;
     width:100%;
-    overflow:hidden;
-    padding:0 var(--pad);
+    overflow:visible;
+    padding:0 0 2px;
   }
   .ticker__i {
     font-size:9px;
