@@ -345,8 +345,8 @@ if(menuBtn&&nav){
   });
 }
 
-const currentIssuePdfUrl="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf";
-const currentIssuePdfFilename='china-debt-dynamics-issue-46-the-end-of-chinas-uninvestable-myth.pdf';
+const currentIssuePdfUrl='pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf';
+const currentIssuePdfFilename='china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf';
 
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
@@ -422,7 +422,7 @@ const buildPrintEdition=()=>{
 const triggerPrintExport=(mode='print')=>{
   if(mode==='download'){
     const directDownload=document.createElement('a');
-    directDownload.href=encodeURI(currentIssuePdfUrl);
+    directDownload.href=currentIssuePdfUrl;
     directDownload.download=currentIssuePdfFilename;
     directDownload.rel='noopener';
     document.body.appendChild(directDownload);
@@ -432,7 +432,7 @@ const triggerPrintExport=(mode='print')=>{
   }
 
   if(mode==='view'){
-    window.open(encodeURI(currentIssuePdfUrl),'_blank','noopener');
+    window.open(currentIssuePdfUrl,'_blank','noopener');
     return;
   }
 
