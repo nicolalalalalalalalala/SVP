@@ -335,6 +335,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 
 <script>
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10));
+
 const menuBtn=document.querySelector('.nav__menu-btn');
 const nav=document.getElementById('nav');
 if(menuBtn&&nav){
@@ -343,32 +344,6 @@ if(menuBtn&&nav){
     menuBtn.setAttribute('aria-expanded',String(isOpen));
   });
 }
-const triggerPrintExport=(mode='print')=>{
-  buildPrintEdition();
-  const params=new URLSearchParams({printPreview:'1',action:mode});
-  const previewUrl=`${window.location.pathname}?${params.toString()}`;
-  window.location.href=previewUrl;
-  if(mode==='view'){
-    const previewUrl=`${window.location.pathname}?printPreview=1`;
-    window.open(previewUrl,'_blank','noopener');
-    return;
-  }
-  window.print();
-};
-
-const printExportControls=document.querySelectorAll('[data-print-export]');
-printExportControls.forEach((control)=>{
-  control.addEventListener('click',(event)=>{
-    const mode=control.getAttribute('data-print-export')||'print';
-    if(mode==='view'||mode==='download'){
-      event.preventDefault();
-    }
-    if(control.tagName==='A'){
-      event.preventDefault();
-    }
-    triggerPrintExport(mode);
-  });
-});
 
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
@@ -382,6 +357,7 @@ const buildPrintEdition=()=>{
   const printStandfirst=document.getElementById('print-standfirst');
   const printCallout=document.getElementById('print-callout');
   const printBody=document.getElementById('print-body');
+
   if(!sourceArticle||!printMeta||!printTitle||!printStandfirst||!printCallout||!printBody){
     return;
   }
@@ -439,6 +415,29 @@ const buildPrintEdition=()=>{
 
   printCallout.textContent=calloutText||'In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.';
 };
+
+const triggerPrintExport=(mode='print')=>{
+  buildPrintEdition();
+
+  if(mode==='view'){
+    const previewUrl=`${window.location.pathname}?printPreview=1&action=view`;
+    window.open(previewUrl,'_blank','noopener');
+    return;
+  }
+
+  const action=mode==='download'?'download':'print';
+  const previewUrl=`${window.location.pathname}?printPreview=1&action=${action}`;
+  window.location.href=previewUrl;
+};
+
+const printExportControls=document.querySelectorAll('[data-print-export]');
+printExportControls.forEach((control)=>{
+  control.addEventListener('click',(event)=>{
+    event.preventDefault();
+    const mode=control.getAttribute('data-print-export')||'print';
+    triggerPrintExport(mode);
+  });
+});
 
 buildPrintEdition();
 
@@ -449,86 +448,9 @@ if(isPrintPreviewMode){
   document.body.classList.add('print-preview');
 }
 
-buildPrintEdition();
-
 if(isPrintPreviewMode&&(previewAction==='print'||previewAction==='download')){
   window.setTimeout(()=>window.print(),120);
-const isPrintPreviewMode=new URLSearchParams(window.location.search).get('printPreview')==='1';
-if(isPrintPreviewMode){
-  document.body.classList.add('print-preview');
 }
-
-const buildPrintEdition=()=>{
-  const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
-  const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||'';
-  const issueInfo=document.querySelector('.issue-header__meta span:nth-child(1)')?.textContent.trim()||'';
-  const publishedInfo=document.querySelector('.issue-header__meta span:nth-child(2)')?.textContent.trim()||'';
-  const editionInfo=document.querySelector('.issue-live__meta span:nth-child(3)')?.textContent.trim()||'Allocator Edition';
-  const sourceArticle=document.getElementById('current-issue');
-  const printMeta=document.getElementById('print-meta');
-  const printTitle=document.getElementById('print-title');
-  const printStandfirst=document.getElementById('print-standfirst');
-  const printCallout=document.getElementById('print-callout');
-  const printBody=document.getElementById('print-body');
-  if(!sourceArticle||!printMeta||!printTitle||!printStandfirst||!printCallout||!printBody){
-    return;
-  }
-
-  const metadataLine=[issueInfo,publishedInfo,editionInfo].filter(Boolean).join(' | ');
-  printMeta.textContent=metadataLine;
-  printTitle.textContent=title;
-  printStandfirst.textContent=standfirst;
-  printBody.innerHTML='';
-
-  const normalizedStandfirst=standfirst.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
-  let skippedTitleHeading=false;
-  let skippedStandfirstParagraph=false;
-  let calloutText='';
-
-  Array.from(sourceArticle.children).forEach((node)=>{
-    if(node.classList.contains('lead')){
-      return;
-    }
-
-    const clone=node.cloneNode(true);
-
-    if(clone.tagName==='H3'){
-      const headingText=clone.textContent.trim().replace(/\.$/, '');
-      const titleText=title.replace(/\.$/, '');
-      if(!skippedTitleHeading&&headingText===titleText){
-        skippedTitleHeading=true;
-        return;
-      }
-      const printHeading=document.createElement('h2');
-      printHeading.innerHTML=clone.innerHTML;
-      printBody.appendChild(printHeading);
-      return;
-    }
-
-    if(clone.tagName==='P'){
-      const paragraphText=clone.textContent.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
-      if(!skippedStandfirstParagraph&&paragraphText===normalizedStandfirst){
-        skippedStandfirstParagraph=true;
-        return;
-      }
-      if(!calloutText&&clone.textContent.includes('In reality, China was never uninvestable')){
-        calloutText=clone.textContent.trim();
-        return;
-      }
-    }
-
-    printBody.appendChild(clone);
-  });
-
-  const openingParagraph=printBody.querySelector('p');
-  if(openingParagraph){
-    openingParagraph.classList.add('print-body__opening');
-  }
-
-  printCallout.textContent=calloutText||'In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.';
-};
-
-buildPrintEdition();
 </script>
 </body>
 </html>
