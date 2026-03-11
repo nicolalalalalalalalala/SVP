@@ -8,6 +8,7 @@
 <link rel="shortcut icon" href="assets/favicon.svg?v=2">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/insights-print.css">
+<link rel="stylesheet" href="assets/css/insights-print.css" media="print">
 <style>
 :root {
   --red:#b3213f; --ink:#0c0c0a; --ink2:#141410; --white:#ffffff; --off:#f6f4f0;
@@ -438,6 +439,76 @@ const isPrintPreviewMode=new URLSearchParams(window.location.search).get('printP
 if(isPrintPreviewMode){
   document.body.classList.add('print-preview');
 }
+
+const buildPrintEdition=()=>{
+  const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
+  const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||'';
+  const issueInfo=document.querySelector('.issue-header__meta span:nth-child(1)')?.textContent.trim()||'';
+  const publishedInfo=document.querySelector('.issue-header__meta span:nth-child(2)')?.textContent.trim()||'';
+  const editionInfo=document.querySelector('.issue-live__meta span:nth-child(3)')?.textContent.trim()||'Allocator Edition';
+  const sourceArticle=document.getElementById('current-issue');
+  const printMeta=document.getElementById('print-meta');
+  const printTitle=document.getElementById('print-title');
+  const printStandfirst=document.getElementById('print-standfirst');
+  const printCallout=document.getElementById('print-callout');
+  const printBody=document.getElementById('print-body');
+  if(!sourceArticle||!printMeta||!printTitle||!printStandfirst||!printCallout||!printBody){
+    return;
+  }
+
+  const metadataLine=[issueInfo,publishedInfo,editionInfo].filter(Boolean).join(' | ');
+  printMeta.textContent=metadataLine;
+  printTitle.textContent=title;
+  printStandfirst.textContent=standfirst;
+  printBody.innerHTML='';
+
+  const normalizedStandfirst=standfirst.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
+  let skippedTitleHeading=false;
+  let skippedStandfirstParagraph=false;
+  let calloutText='';
+
+  Array.from(sourceArticle.children).forEach((node)=>{
+    if(node.classList.contains('lead')){
+      return;
+    }
+
+    const clone=node.cloneNode(true);
+
+    if(clone.tagName==='H3'){
+      const headingText=clone.textContent.trim().replace(/\.$/, '');
+      const titleText=title.replace(/\.$/, '');
+      if(!skippedTitleHeading&&headingText===titleText){
+        skippedTitleHeading=true;
+        return;
+      }
+      const printHeading=document.createElement('h2');
+      printHeading.innerHTML=clone.innerHTML;
+      printBody.appendChild(printHeading);
+      return;
+    }
+
+    if(clone.tagName==='P'){
+      const paragraphText=clone.textContent.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
+      if(!skippedStandfirstParagraph&&paragraphText===normalizedStandfirst){
+        skippedStandfirstParagraph=true;
+        return;
+      }
+      if(!calloutText&&clone.textContent.includes('In reality, China was never uninvestable')){
+        calloutText=clone.textContent.trim();
+        return;
+      }
+    }
+
+    printBody.appendChild(clone);
+  });
+
+  const openingParagraph=printBody.querySelector('p');
+  if(openingParagraph){
+    openingParagraph.classList.add('print-body__opening');
+  }
+
+  printCallout.textContent=calloutText||'In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.';
+};
 
 buildPrintEdition();
 </script>
