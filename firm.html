@@ -30,7 +30,7 @@
     #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       height: 72px; display: flex; align-items: center; justify-content: space-between;
-      padding: 0 var(--pad); border-bottom: 1px solid var(--rule); background: #ffffff;
+      padding: 0 64px; border-bottom: 1px solid var(--rule); background: #ffffff;
     }
     .nav__logo { display: inline-flex; align-items: center; height: 100%; }
     .nav__logo svg { display: block; }
@@ -123,14 +123,38 @@
     .closing-panel { padding: 28px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 18px; }
     .btn { border: 1px solid #d1cdc5; padding: 8px 14px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1100px) {
+      #nav { padding: 0 40px; }
+    }
+
+    @media (max-width: 760px) {
       .hero-grid, .section-head, .intelligence-panel, .platform-layout { grid-template-columns: 1fr; }
       .hero-thesis, .proof-grid, .market-grid, .flow, .intel-map { grid-template-columns: 1fr; }
       .small-grid { grid-template-columns: 1fr; }
-      .nav__links { display: none; }
-      .nav__menu-btn { display: inline-block; border: 1px solid var(--rule); background: #fff; padding: 6px 10px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-      #nav.menu-open .nav__links { display: flex; position: absolute; top: 72px; left: 0; right: 0; background: #f8f7f5; border-bottom: 1px solid var(--rule); padding: 12px var(--pad); }
+      #nav {
+        height: auto;
+        min-height: 72px;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 12px;
+        padding: 12px 18px;
+      }
+      .nav__logo svg { height: 48px; }
+      .nav__menu-btn { display: inline-flex; }
+      .nav__right { margin-left: auto; gap: 10px; }
+      .nav__zh,
       .nav__lp { display: none; }
+      .nav__links {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex-direction: column;
+        gap: 14px;
+        padding: 10px 0 12px;
+        border-top: 1px solid var(--rule);
+      }
+      #nav.menu-open .nav__links { display: flex; }
+      .nav__links a { font-size: 10px; white-space: nowrap; }
     }
   </style>
 </head>
