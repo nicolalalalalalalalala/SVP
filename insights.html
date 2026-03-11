@@ -166,7 +166,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
   .nav__logo svg{height:48px}
   .nav__menu-btn{display:inline-flex}
-  .nav__right{margin-left:auto;gap:10px}
+  .nav__right{width:100%;margin-left:0;justify-content:space-between;gap:10px}
   .nav__lp{padding:6px 12px}
   .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
   #nav.menu-open .nav__links{display:flex}
@@ -191,8 +191,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   .latest__issue{padding:28px 22px}
   .latest__issue h3{font-size:36px;line-height:1.1}
   .latest__issue p{font-size:16px;line-height:1.82}
+  .issue-live__meta,.issue-header__meta{gap:10px}
+  .archive__actions{flex-direction:column}
+  .archive__pdf{width:100%}
   .archive__row{padding:18px 16px}
-  .archive__row strong{font-size:27px}
+  .archive__row strong{font-size:27px;overflow-wrap:anywhere}
   .archive__row p{font-size:13.5px;line-height:1.76}
 
   .research-sub{padding:58px 0}
@@ -204,6 +207,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   #nav{padding:10px var(--pad)}
   .nav__logo svg{height:44px}
   .nav__right{width:100%;justify-content:space-between;gap:8px}
+  .nav__zh{font-size:12px}
   .nav__lp{padding:7px 10px;font-size:9px}
   .nav__menu-btn{padding:8px 12px}
 
