@@ -25,9 +25,33 @@
     font-size:15px;
     line-height:1.7;
   }
+  #nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:200;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 var(--pad);
+    border-bottom:1px solid rgba(0,0,0,.12);
+    background:#fff;
+  }
+  .nav__logo{font-family:var(--serif);font-size:24px;color:var(--ink);text-decoration:none;letter-spacing:.06em}
+  .nav__links{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+  .nav__links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);opacity:.45;text-decoration:none}
+  .nav__links a:hover,.nav__links a.active{opacity:1}
+  .nav__right{display:flex;align-items:center;gap:18px}
+  .nav__zh{font-size:13px;color:var(--ink);opacity:.35;transition:opacity .2s;text-decoration:none}
+  .nav__zh:hover{opacity:.75}
+  .nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(0,0,0,.15);padding:8px 20px;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+  .nav__lp:hover{background:var(--red);color:#fff;border-color:var(--red)}
+  .nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
   main{
     max-width:var(--max);
-    margin:88px auto;
+    margin:140px auto 88px;
     padding:0 var(--pad);
   }
   .meta{
@@ -70,18 +94,60 @@
 
   @media (max-width:760px){
     :root{--pad:20px}
-    main{margin:72px auto}
+    #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
+    .nav__menu-btn{display:inline-flex}
+    .nav__right{margin-left:auto;gap:10px}
+    .nav__zh,.nav__lp{display:none}
+    .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid rgba(0,0,0,.12)}
+    #nav.menu-open .nav__links{display:flex}
+    .nav__links a{font-size:10px;white-space:nowrap}
+    main{margin:132px auto 72px}
     p{font-size:16px;line-height:1.75}
   }
 </style>
 </head>
 <body>
+<nav id="nav">
+  <a href="index.html" class="nav__logo" aria-label="ShoreVest home">ShoreVest</a>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="firm.html">The Firm</a></li>
+    <li><a href="strategy.html">Strategy</a></li>
+    <li><a href="insights.html" class="active">Insights</a></li>
+    <li><a href="team.html">Team</a></li>
+  </ul>
+  <div class="nav__right">
+    <a href="index_cn.html" class="nav__zh">中文</a>
+    <a href="investor-access.html" class="nav__lp">Investor Access</a>
+    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  </div>
+</nav>
+
 <main>
   <div class="meta">Investment Strategy · December 2025</div>
   <h1>The Case for First-Lien: Downside Protection in Uncertain Markets</h1>
   <p>This article examines why first-lien structures continue to offer resilient risk-adjusted outcomes when volatility rises and refinancing visibility declines across private markets.</p>
   <a class="back" href="insights.html">← Back to News &amp; Insights</a>
 </main>
+
+<script>
+(() => {
+  const menuBtn = document.querySelector('.nav__menu-btn');
+  const nav = document.getElementById('nav');
+  const navLinks = document.getElementById('nav-links');
+  if (menuBtn && nav && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+})();
+</script>
 
 <script>
 (() => {
