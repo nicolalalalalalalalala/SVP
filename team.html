@@ -54,6 +54,10 @@
       transition:background .2s, color .2s, border-color .2s;
     }
     .nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
+    .nav__menu-btn {
+      display:none; border:1px solid rgba(48,40,34,.2); background:var(--white); color:var(--ink);
+      font-size:10px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; padding:8px 14px;
+    }
 
     .eyebrow {
       font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
@@ -235,12 +239,35 @@
 
     @media (max-width:760px) {
       :root { --pad:18px; }
-      #nav { height:64px; }
-      .nav__links { gap:16px; }
-      .nav__links a { font-size:10px; }
-      .nav__right { display:none; }
-      .nav__logo svg { height:52px; }
-      .pagehero { padding-top:116px; padding-bottom:46px; }
+      #nav {
+        height:auto;
+        min-height:72px;
+        align-items:center;
+        flex-wrap:wrap;
+        row-gap:12px;
+        padding:12px var(--pad);
+      }
+      .nav__logo svg { height:48px; }
+      .nav__menu-btn { display:inline-flex; }
+      .nav__right { margin-left:auto; gap:10px; }
+      .nav__zh,
+      .nav__lp { display:none; }
+      .nav__links {
+        display:none;
+        width:100%;
+        order:3;
+        flex-direction:column;
+        gap:14px;
+        padding:10px 0 12px;
+        border-top:1px solid var(--rule);
+      }
+      #nav.menu-open .nav__links { display:flex; }
+      .nav__links a {
+        font-size:10px;
+        white-space:nowrap;
+      }
+      .pagehero { padding-top:140px; padding-bottom:46px; }
+      .pagehero p { font-size:16px; line-height:1.65; }
       .grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
       .group h2 {
         font-size:clamp(20px, 4.4vw, 30px);
@@ -265,6 +292,21 @@
       }
       .row-bio-panel__text { font-size:18px; line-height:1.68; }
     }
+
+    @media (max-width:520px) {
+      .team-groups { padding-top:42px; }
+      .group { padding:24px 0 32px; }
+      .grid { grid-template-columns:1fr; gap:14px; }
+      .card { gap:8px; }
+      .photo { max-height:360px; }
+      .name { font-size:17px; }
+      .title { font-size:9px; letter-spacing:.12em; }
+      .row-bio-panel {
+        padding:22px 16px 26px;
+      }
+      .row-bio-panel__name { font-size:28px; }
+      .row-bio-panel__text { font-size:17px; line-height:1.62; }
+    }
   </style>
 </head>
 <body>
@@ -284,13 +326,13 @@
       <line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/>
       <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
     </svg></a>
-    <ul class="nav__links">
+    <ul class="nav__links" id="nav-links">
       <li><a href="firm.html">The Firm</a></li>
       <li><a href="strategy.html">Strategy</a></li>
       <li><a href="research.html">Insights</a></li>
       <li><a href="team.html" class="active">Team</a></li>
     </ul>
-    <div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a></div>
+    <div class="nav__right"><a href="index_cn.html" class="nav__zh">中文</a><a href="index.html#signup" class="nav__lp">LP Login</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
   </nav>
 
   <section class="pagehero">
@@ -487,6 +529,22 @@ Before joining ShoreVest, Ms. Xu held senior legal and compliance roles at Kingo
     }
 
     hydrateCardTitles();
+
+    const menuBtn = document.querySelector('.nav__menu-btn');
+    const nav = document.getElementById('nav');
+    const navLinks = document.getElementById('nav-links');
+    if (menuBtn && nav && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('menu-open');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('menu-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     function ensurePanel() {
       if (activePanel) return activePanel;
