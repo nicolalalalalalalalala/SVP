@@ -5,9 +5,8 @@
 
   body.print-preview {
     margin: 0;
-    background: #f1eee8;
+    background: #e8e6e3;
     color: #141310;
-    background: #f4f2ee;
   }
 
   body.print-preview > :not(.print-publication) {
@@ -17,94 +16,96 @@
   body.print-preview .print-publication {
     display: block;
     width: 100%;
-    max-width: 196mm;
-    margin: 12mm auto;
-    padding: 25.4mm 25.4mm 25.4mm;
+    max-width: 210mm;
+    margin: 16mm auto;
+    padding: 28mm 28mm 24mm;
     box-sizing: border-box;
     background: #fff;
     box-shadow: 0 2px 22px rgba(0, 0, 0, 0.08);
     font-family: 'EB Garamond', Georgia, serif;
     color: #141310;
-    font-size: 10.6pt;
-    line-height: 1.5;
-  }
-
-  body.print-preview .print-publication__folio {
-    position: static;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 8mm;
-    padding: 2.4mm 0 0;
-    border-top: 0.38pt solid #ccc5bb;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 6.9pt;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #625d56;
-  }
-
-  body.print-preview .print-publication__folio-page::before {
-    content: 'preview';
-  }
-
-  body.print-preview .print-body__opening {
-    margin-bottom: 4.8mm !important;
-  }
-
-  body.print-preview .print-body p {
-    margin: 0 0 3.2mm;
-    line-height: 1.52;
-  }
-
-  body.print-preview .print-body li,
-  body.print-preview .print-body blockquote {
-    margin: 0 0 2.6mm;
-    line-height: 1.5;
-  }
-
-  body.print-preview .print-body p + p {
-    margin-top: 0.25mm;
-  }
-
-  body.print-preview .print-body ul,
-  body.print-preview .print-body ol {
-    margin: 0 0 3.3mm;
-    padding-left: 6mm;
+    font-size: 12pt;
+    line-height: 1.45;
   }
 
   body.print-preview .print-publication__masthead {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 2.4mm;
-    margin-bottom: 2.4mm;
-    border-bottom: 0.45pt solid #c9c1b6;
+    padding-bottom: 2.3mm;
+    margin-bottom: 3.2mm;
+    border-bottom: 0.45pt solid #cbc5bc;
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 7pt;
+    font-size: 8pt;
     font-weight: 500;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #58534d;
+    color: #5d5851;
   }
 
   body.print-preview .print-publication__brand {
     display: flex;
     align-items: center;
-    gap: 2.2mm;
+    gap: 2.3mm;
   }
 
   body.print-preview .print-publication__logo {
-    width: 5.4mm;
+    width: 5mm;
     height: auto;
     flex: 0 0 auto;
   }
 
-  body.print-preview .print-publication__label,
-  body.print-preview .print-publication__series {
-    display: inline-block;
-    white-space: nowrap;
+  body.print-preview .print-publication__meta {
+    margin-bottom: 4.3mm;
+    font-size: 10.5pt;
+    line-height: 1.2;
+    color: #2a2723;
+  }
+
+  body.print-preview .print-publication__title {
+    margin: 0;
+    font-size: 45px;
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+  }
+
+  body.print-preview .print-publication__standfirst {
+    margin: 2.8mm 0 3.5mm;
+    font-size: 12pt;
+    line-height: 1.45;
+    color: #181613;
+  }
+
+  body.print-preview .print-publication__callout,
+  body.print-preview .print-publication__folio {
+    display: none;
+  }
+
+  body.print-preview .print-body h2 {
+    margin: 6mm 0 2.2mm;
+    font-size: 48px;
+    line-height: 0.98;
+    letter-spacing: -0.012em;
+    font-weight: 400;
+  }
+
+  body.print-preview .print-body > h2:first-child {
+    margin-top: 0;
+  }
+
+  body.print-preview .print-body p,
+  body.print-preview .print-body li,
+  body.print-preview .print-body blockquote {
+    margin: 0 0 3.3mm;
+    font-size: 12pt;
+    line-height: 1.43;
+  }
+
+  body.print-preview .print-body ul,
+  body.print-preview .print-body ol {
+    margin: 0 0 3.3mm;
+    padding-left: 6.2mm;
   }
 
   body.print-preview::after {
@@ -123,52 +124,6 @@
     line-height: 1.35;
     letter-spacing: 0.01em;
   }
-
-  body.print-preview .print-body p,
-  body.print-preview .print-body li,
-  body.print-preview .print-body blockquote {
-    margin: 0 0 3.2mm;
-    line-height: 1.55;
-  }
-
-  body.print-preview .print-body ul,
-  body.print-preview .print-body ol {
-    margin: 0 0 3.3mm;
-    padding-left: 6mm;
-  }
-
-  body.print-preview .print-publication__masthead {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 2.4mm;
-    margin-bottom: 2.4mm;
-    border-bottom: 0.45pt solid #c9c1b6;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 7pt;
-    font-weight: 500;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: #58534d;
-  }
-
-  body.print-preview .print-publication__brand {
-    display: flex;
-    align-items: center;
-    gap: 2.2mm;
-  }
-
-  body.print-preview .print-publication__logo {
-    width: 5.4mm;
-    height: auto;
-    flex: 0 0 auto;
-  }
-
-  body.print-preview .print-publication__label,
-  body.print-preview .print-publication__series {
-    display: inline-block;
-    white-space: nowrap;
-  }
 }
 
 @media print {
@@ -177,17 +132,13 @@
     margin: 25.4mm;
   }
 
-  :root {
-    color-scheme: light;
-  }
-
   body {
     margin: 0;
     font-family: 'EB Garamond', Georgia, serif;
     color: #141310;
     background: #fff;
-    font-size: 10.6pt;
-    line-height: 1.5;
+    font-size: 12pt;
+    line-height: 1.45;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -199,8 +150,8 @@
   .print-publication {
     display: block;
     width: 100%;
-    max-width: 196mm;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     padding: 0;
   }
 
@@ -208,122 +159,74 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 2.4mm;
-    margin-bottom: 2.4mm;
-    border-bottom: 0.45pt solid #c9c1b6;
+    padding-bottom: 2.3mm;
+    margin-bottom: 3.2mm;
+    border-bottom: 0.45pt solid #cbc5bc;
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 7pt;
+    font-size: 8pt;
     font-weight: 500;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #58534d;
+    color: #5d5851;
   }
 
   .print-publication__brand {
     display: flex;
     align-items: center;
-    gap: 2.2mm;
+    gap: 2.3mm;
   }
 
   .print-publication__logo {
-    width: 5.4mm;
+    width: 5mm;
     height: auto;
-    flex: 0 0 auto;
-  }
-
-  .print-publication__label,
-  .print-publication__series {
-    display: inline-block;
-    white-space: nowrap;
   }
 
   .print-publication__meta {
-    margin-bottom: 5.4mm;
-    padding-bottom: 1.9mm;
-    border-bottom: 0.3pt solid #d7d1c8;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 7.7pt;
-    font-weight: 500;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: #46413a;
+    margin-bottom: 4.3mm;
+    font-size: 10.5pt;
+    line-height: 1.2;
+    color: #2a2723;
   }
 
   .print-publication__title {
     margin: 0;
-    max-width: 100%;
-    font-size: 29pt;
-    line-height: 1.02;
+    font-size: 33pt;
+    line-height: 0.98;
+    letter-spacing: -0.015em;
     font-weight: 400;
-    letter-spacing: -0.012em;
-    text-wrap: balance;
   }
 
   .print-publication__standfirst {
-    margin: 3.2mm 0 0;
-    max-width: 100%;
-    font-size: 11.1pt;
-    line-height: 1.42;
-    color: #312d28;
+    margin: 2.8mm 0 3.5mm;
+    font-size: 12pt;
+    line-height: 1.45;
+    color: #181613;
   }
 
-  .print-publication__lead {
-    max-width: 100%;
-    margin-bottom: 4.2mm;
-    break-inside: avoid;
-  }
-
-  .print-publication__callout {
-    margin: 0 0 5.2mm;
-    padding: 2.6mm 3.8mm 2.9mm;
-    max-width: 100%;
-    border-left: 1.2pt solid #8f2438;
-    border-top: 0.35pt solid #d7d1c8;
-    border-right: 0.35pt solid #d7d1c8;
-    border-bottom: 0.35pt solid #d7d1c8;
-    background: transparent;
-    font-size: 10.3pt;
-    line-height: 1.4;
-    color: #29241f;
-    font-style: italic;
-    break-inside: avoid;
-  }
-
-  .print-body {
-    width: 100%;
-    margin: 0;
+  .print-publication__callout,
+  .print-publication__folio {
+    display: none;
   }
 
   .print-body h2 {
-    margin: 5mm 0 2.2mm;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 8.8pt;
-    font-weight: 500;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: #2f2b25;
+    margin: 6mm 0 2.2mm;
+    font-size: 19pt;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    font-weight: 400;
     break-after: avoid;
   }
-
 
   .print-body > h2:first-child {
     margin-top: 0;
   }
 
-  .print-body p {
-    margin: 0 0 3.2mm;
-    font-size: 10.6pt;
-    line-height: 1.52;
-    color: #171512;
-    widows: 3;
-    orphans: 3;
-  }
-
+  .print-body p,
   .print-body li,
   .print-body blockquote {
-    margin: 0 0 3.2mm;
-    font-size: 10.6pt;
-    line-height: 1.55;
+    margin: 0 0 3.3mm;
+    font-size: 12pt;
+    line-height: 1.43;
     color: #171512;
     widows: 3;
     orphans: 3;
@@ -332,43 +235,7 @@
   .print-body ul,
   .print-body ol {
     margin: 0 0 3.3mm;
-    padding-left: 6mm;
+    padding-left: 6.2mm;
     break-inside: avoid;
-  }
-
-  .print-body blockquote {
-    margin: 3.2mm 0 3.9mm;
-    padding: 0.8mm 0 0.8mm 3.6mm;
-    border-left: 1.1pt solid #7f2335;
-    color: #26211d;
-    break-inside: avoid;
-  }
-
-  .print-body__opening {
-    margin-bottom: 4.8mm !important;
-  }
-
-  .print-publication__folio {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 9.3mm;
-    padding: 1.8mm 25.4mm 0;
-    border-top: 0.38pt solid #ccc5bb;
-    background: #fff;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 6.9pt;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #625d56;
-  }
-
-  .print-publication__folio-page::before {
-    content: counter(page, decimal) " / " counter(pages, decimal);
   }
 }
