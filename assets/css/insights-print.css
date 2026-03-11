@@ -123,6 +123,52 @@
     line-height: 1.35;
     letter-spacing: 0.01em;
   }
+
+  body.print-preview .print-body p,
+  body.print-preview .print-body li,
+  body.print-preview .print-body blockquote {
+    margin: 0 0 3.2mm;
+    line-height: 1.55;
+  }
+
+  body.print-preview .print-body ul,
+  body.print-preview .print-body ol {
+    margin: 0 0 3.3mm;
+    padding-left: 6mm;
+  }
+
+  body.print-preview .print-publication__masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2.4mm;
+    margin-bottom: 2.4mm;
+    border-bottom: 0.45pt solid #c9c1b6;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #58534d;
+  }
+
+  body.print-preview .print-publication__brand {
+    display: flex;
+    align-items: center;
+    gap: 2.2mm;
+  }
+
+  body.print-preview .print-publication__logo {
+    width: 5.4mm;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  body.print-preview .print-publication__label,
+  body.print-preview .print-publication__series {
+    display: inline-block;
+    white-space: nowrap;
+  }
 }
 
 @media print {
@@ -275,16 +321,12 @@
 
   .print-body li,
   .print-body blockquote {
-    margin: 0 0 2.6mm;
+    margin: 0 0 3.2mm;
     font-size: 10.6pt;
-    line-height: 1.5;
+    line-height: 1.55;
     color: #171512;
     widows: 3;
     orphans: 3;
-  }
-
-  .print-body p + p {
-    margin-top: 0.25mm;
   }
 
   .print-body ul,
