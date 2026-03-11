@@ -229,8 +229,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 
   <section class="utility">
     <div class="utility__actions">
-      <a class="util-btn util-btn--solid" href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf" data-print-export="download" download="china-debt-dynamics-issue-46-the-end-of-chinas-uninvestable-myth.pdf">Download PDF</a>
-      <a class="util-btn" href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf" data-print-export="view" target="_blank" rel="noopener">View PDF</a>
+      <a class="util-btn util-btn--solid" href="#" data-print-export="download">Download PDF</a>
+      <a class="util-btn" href="#" data-print-export="view">View PDF</a>
       <a class="util-btn" href="#archive">Archived Issues</a>
       <a class="util-btn" href="index.html#signup">Subscribe</a>
     </div>
@@ -345,8 +345,7 @@ if(menuBtn&&nav){
   });
 }
 
-const currentIssuePdfUrl='pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf';
-const currentIssuePdfFilename='china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf';
+const currentIssuePdfFilename='shorevest-china-debt-dynamics-issue-46.pdf';
 
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
@@ -420,26 +419,21 @@ const buildPrintEdition=()=>{
 };
 
 const triggerPrintExport=(mode='print')=>{
-  if(mode==='download'){
-    const directDownload=document.createElement('a');
-    directDownload.href=currentIssuePdfUrl;
-    directDownload.download=currentIssuePdfFilename;
-    directDownload.rel='noopener';
-    document.body.appendChild(directDownload);
-    directDownload.click();
-    directDownload.remove();
-    return;
-  }
-
-  if(mode==='view'){
-    window.open(currentIssuePdfUrl,'_blank','noopener');
-    return;
-  }
-
   buildPrintEdition();
 
-  const action=mode==='download'?'download':'print';
-  const previewUrl=`${window.location.pathname}?printPreview=1&action=${action}`;
+  if(mode==='view'){
+    const previewUrl=`${window.location.pathname}?printPreview=1&action=view`;
+    window.open(previewUrl,'_blank','noopener');
+    return;
+  }
+
+  if(mode==='download'){
+    const previewUrl=`${window.location.pathname}?printPreview=1&action=download&filename=${encodeURIComponent(currentIssuePdfFilename)}`;
+    window.open(previewUrl,'_blank','noopener');
+    return;
+  }
+
+  const previewUrl=`${window.location.pathname}?printPreview=1&action=print`;
   window.location.href=previewUrl;
 };
 
@@ -459,6 +453,13 @@ const isPrintPreviewMode=previewParams.get('printPreview')==='1';
 const previewAction=previewParams.get('action')||'view';
 if(isPrintPreviewMode){
   document.body.classList.add('print-preview');
+}
+
+if(isPrintPreviewMode){
+  const suggestedFilename=previewParams.get('filename');
+  if(suggestedFilename){
+    document.title=suggestedFilename;
+  }
 }
 
 if(isPrintPreviewMode&&(previewAction==='print'||previewAction==='download')){
