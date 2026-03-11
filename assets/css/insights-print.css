@@ -16,17 +16,11 @@
 
   body.print-preview .print-publication {
     display: block;
-    width: min(196mm, calc(100vw - 24px));
-    margin: 12px auto;
-    padding: 10mm 7mm 15mm;
-    box-sizing: border-box;
-    background: #fff;
-    box-shadow: 0 2px 22px rgba(0, 0, 0, 0.08);
-    font-family: 'EB Garamond', Georgia, serif;
     width: 100%;
     max-width: 196mm;
     margin: 12mm auto;
-    padding: 10mm 7mm 15mm;
+    padding: 25.4mm 25.4mm 25.4mm;
+    box-sizing: border-box;
     background: #fff;
     box-shadow: 0 2px 22px rgba(0, 0, 0, 0.08);
     font-family: 'EB Garamond', Georgia, serif;
@@ -62,12 +56,58 @@
   body.print-preview .print-body__opening {
     margin-bottom: 3.8mm !important;
   }
+
+  body.print-preview .print-body p,
+  body.print-preview .print-body li,
+  body.print-preview .print-body blockquote {
+    margin: 0 0 3.2mm;
+    line-height: 1.55;
+  }
+
+  body.print-preview .print-body ul,
+  body.print-preview .print-body ol {
+    margin: 0 0 3.3mm;
+    padding-left: 6mm;
+  }
+
+  body.print-preview .print-publication__masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2.4mm;
+    margin-bottom: 2.4mm;
+    border-bottom: 0.45pt solid #c9c1b6;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #58534d;
+  }
+
+  body.print-preview .print-publication__brand {
+    display: flex;
+    align-items: center;
+    gap: 2.2mm;
+  }
+
+  body.print-preview .print-publication__logo {
+    width: 5.4mm;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  body.print-preview .print-publication__label,
+  body.print-preview .print-publication__series {
+    display: inline-block;
+    white-space: nowrap;
+  }
 }
 
 @media print {
   @page {
     size: A4;
-    margin: 10mm 7mm 15mm;
+    margin: 25.4mm;
   }
 
   :root {
@@ -202,15 +242,16 @@
   .print-body p,
   .print-body li,
   .print-body blockquote {
-    margin: 0 0 2.7mm;
+    margin: 0 0 3.2mm;
     font-size: 10.6pt;
-    line-height: 1.5;
+    line-height: 1.55;
     color: #171512;
     widows: 3;
     orphans: 3;
   }
 
-  .print-body ul {
+  .print-body ul,
+  .print-body ol {
     margin: 0 0 3.3mm;
     padding-left: 6mm;
     break-inside: avoid;
@@ -241,7 +282,7 @@
     justify-content: space-between;
     align-items: center;
     height: 9.3mm;
-    padding: 1.8mm 7mm 0;
+    padding: 1.8mm 25.4mm 0;
     border-top: 0.38pt solid #ccc5bb;
     background: #fff;
     font-family: 'Inter', system-ui, sans-serif;
