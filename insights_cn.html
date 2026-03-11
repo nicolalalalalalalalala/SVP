@@ -166,7 +166,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
   .nav__logo svg{height:48px}
   .nav__menu-btn{display:inline-flex}
-  .nav__right{margin-left:auto;gap:10px}
+  .nav__right{width:100%;margin-left:0;justify-content:space-between;gap:10px}
   .nav__lp{padding:6px 12px}
   .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
   #nav.menu-open .nav__links{display:flex}
@@ -200,6 +200,15 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   .research-sub{padding:58px 0}
   .research-sub__inner{grid-template-columns:1fr;gap:22px;align-items:flex-start}
   .research-sub p{font-size:15px;line-height:1.78;max-width:33ch}
+}
+
+@media (max-width:520px){
+  #nav{padding:10px var(--pad)}
+  .nav__logo svg{height:44px}
+  .nav__right{width:100%;justify-content:space-between;gap:8px}
+  .nav__zh{font-size:12px}
+  .nav__lp{padding:7px 10px;font-size:9px}
+  .nav__menu-btn{padding:8px 12px}
 }
 
 </style>
