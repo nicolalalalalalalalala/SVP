@@ -572,8 +572,8 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 .hero-panel{background:#11110f;color:#fff;padding:20px 22px;border:1px solid rgba(255,255,255,.08)}
 .hero-panel h3{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.58);margin-bottom:16px}
 .hero-panel ul{list-style:none;display:grid;gap:13px}
-.hero-panel li{display:flex;justify-content:space-between;gap:10px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.1);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72)}
-.hero-panel li strong{font-family:var(--serif);font-size:25px;line-height:1;color:#fff;font-weight:400;letter-spacing:0;text-transform:none}
+.hero-panel li{display:grid;grid-template-columns:1fr;gap:6px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.hero-panel li strong{font-family:var(--serif);font-size:clamp(17px,1.9vw,22px);line-height:1.25;color:#fff;font-weight:400;letter-spacing:0;text-transform:none;text-align:left;max-width:100%;overflow-wrap:anywhere}
 .pgsec{padding:72px 0 104px;background:#fff}
 .strategy-stack{display:grid;gap:46px}
 .strategy-block{background:#fff;border:1px solid rgba(0,0,0,.08);padding:38px 40px;scroll-margin-top:96px;position:relative;overflow:hidden}
@@ -605,11 +605,11 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 .risk-card h4{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
 .risk-card ul{margin:0;list-style:none;display:grid;gap:8px}
 .risk-card li{font-size:13px;color:#66625c;line-height:1.55;border-left:2px solid rgba(179,33,63,.2);padding-left:10px}
-.ring-card{background:#fff;border:1px solid rgba(179,33,63,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
-.ring{width:168px;height:168px;border-radius:50%;background:#f2ede5;border:12px solid var(--red);display:grid;place-items:center;transition:border-color .35s}
+.ring-card{background:#fff;border:1px solid rgba(179,33,63,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;position:relative;min-height:260px}
+.ring{--pct:75%;width:168px;height:168px;border-radius:50%;background:conic-gradient(var(--red) var(--pct),#e8dfd2 0);display:grid;place-items:center;transition:background .35s;position:relative}
 .ring::after{content:'';width:108px;height:108px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px rgba(179,33,63,.14)}
-.ring-label{text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6e6a64;line-height:1.5;position:relative;z-index:1;margin-top:-110px}
-.ring-label strong{display:block;font-family:var(--serif);font-size:30px;color:var(--ink);letter-spacing:0;text-transform:none}
+.ring-label{text-align:center;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#6e6a64;line-height:1.35;width:122px;position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.ring-label strong{display:block;font-family:var(--serif);font-size:28px;color:var(--ink);letter-spacing:0;text-transform:none;line-height:1.05;margin-bottom:4px}
 .viz-controls{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
 .viz-btn{border:1px solid rgba(179,33,63,.2);background:#fff;color:#655f58;padding:6px 10px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s}
 .viz-btn.is-active,.viz-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
@@ -631,7 +631,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 .next-links a:hover{color:var(--red);border-bottom-color:var(--red)}
 .strategy-stack .strategy-block:nth-child(even){background:#f6f4f0}
 @media (max-width:980px){.pagehero .wrap{grid-template-columns:1fr;gap:28px}.hero-panel{max-width:540px}.strategy-stack{gap:28px}.strategy-block{padding:24px}.strategy-block h2{font-size:34px}.viz-kpi,.process-flow,.city-grid,.alloc-grid,.funnel-grid,.risk-grid{grid-template-columns:1fr}.flow-step{padding-left:44px}.flow-step::after{display:none}}
-@media (max-width:760px){:root{--pad:18px}#nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}.nav__logo svg{height:48px}.nav__menu-btn{display:inline-flex}.nav__right{margin-left:auto;gap:10px}.nav__zh,.nav__lp{display:none}.nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}#nav.menu-open .nav__links{display:flex}.nav__links a{font-size:10px;white-space:nowrap}.funnel-step{flex-wrap:wrap}.funnel-step span{font-size:18px}}
+@media (max-width:760px){:root{--pad:18px}#nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}.nav__logo svg{height:48px}.nav__menu-btn{display:inline-flex}.nav__right{margin-left:auto;gap:10px}.nav__zh,.nav__lp{display:none}.nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}#nav.menu-open .nav__links{display:flex}.nav__links a{font-size:10px;white-space:nowrap}.funnel-step{flex-wrap:wrap}.funnel-step span{font-size:18px}.hero-panel li strong{font-size:18px}}
 </style></head><body><nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
   <g transform="scale(0.431)">
         <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
@@ -708,9 +708,9 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
         <p>Capital allocation flexes by cycle. Use the scenario toggles to view how portfolio balance shifts as market conditions change.</p>
         <div class="strategy-viz">
           <div class="viz-controls" role="tablist" aria-label="Allocation scenarios">
-            <button class="viz-btn is-active" data-scenario="base">Base</button>
-            <button class="viz-btn" data-scenario="defensive">Defensive</button>
-            <button class="viz-btn" data-scenario="offensive">Offensive</button>
+            <button class="viz-btn is-active" data-scenario="base" aria-pressed="true">Base</button>
+            <button class="viz-btn" data-scenario="defensive" aria-pressed="false">Defensive</button>
+            <button class="viz-btn" data-scenario="offensive" aria-pressed="false">Offensive</button>
           </div>
           <div class="alloc-grid">
             <div class="alloc-bars">
@@ -837,7 +837,11 @@ const allocRows=[...document.querySelectorAll('.alloc-row[data-base]')];
 const ring=document.querySelector('.ring');
 const ringValue=document.querySelector('[data-ring-value]');
 const applyScenario=(scenario)=>{
-  scenarioButtons.forEach((btn)=>btn.classList.toggle('is-active',btn.dataset.scenario===scenario));
+  scenarioButtons.forEach((btn)=>{
+    const active=btn.dataset.scenario===scenario;
+    btn.classList.toggle('is-active',active);
+    btn.setAttribute('aria-pressed',String(active));
+  });
   allocRows.forEach((row)=>{
     const value=row.dataset[scenario];
     const valueLabel=row.querySelector('b span:last-child');
@@ -849,10 +853,12 @@ const applyScenario=(scenario)=>{
   });
   const ringPct=scenarioMap[scenario]?.ring;
   if(ring&&ringValue&&ringPct){
-    const degrees=Math.round((ringPct/100)*360);
-    ring.style.borderColor=ringPct>=80?'#8d1b31':ringPct>=70?'#b3213f':'#c64f66';
+    ring.style.setProperty('--pct',`${ringPct}%`);
     ringValue.textContent=`${ringPct}%`;
   }
 };
 scenarioButtons.forEach((btn)=>btn.addEventListener('click',()=>applyScenario(btn.dataset.scenario)));
+if(scenarioButtons.length){
+  applyScenario('base');
+}
 </script></body></html>
