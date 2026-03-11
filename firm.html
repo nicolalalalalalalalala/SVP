@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShoreVest Partners — The Firm</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
-  <link rel="shortcut icon" href="assets/favicon.svg?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
+  <link rel="shortcut icon" href="assets/favicon.svg?v=3">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -36,15 +36,17 @@
     .eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px;margin-bottom:var(--space-3)}
     .eyebrow::after{content:'';height:1px;width:44px;background:currentColor}
 
-    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:#f1f1ef;border-bottom:1px solid var(--rule)}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid var(--rule);background:#fff}
     .nav__links{display:flex;list-style:none;gap:36px}
-    .nav__links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;transition:opacity .25s ease,color .25s ease}
-    .nav__links a.active,.nav__links a:hover{opacity:1;color:var(--red)}
-    .nav__right{display:flex;gap:20px;align-items:center}
-    .nav__zh{font-size:13px;opacity:.45}
-    .nav__lp{font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(0,0,0,.2);padding:8px 18px}
-    .nav__menu-btn{display:none}
+    .nav__links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);opacity:.45;transition:opacity .2s}
+    .nav__links a.active,.nav__links a:hover{opacity:1}
+    .nav__right{display:flex;align-items:center;gap:22px}
+    .nav__zh{font-size:13px;color:var(--ink);opacity:.35;transition:opacity .2s}
+    .nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(0,0,0,.15);padding:8px 20px;transition:background .2s,color .2s,border-color .2s}
+    .nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
     .nav__logo svg{height:62px;display:block}
+    .nav__zh:hover{opacity:.75}
+    .nav__lp:hover{background:var(--red);color:var(--white);border-color:var(--red)}
 
     main{padding-top:72px}
     section{padding:88px 0;border-top:1px solid rgba(0,0,0,.09)}
@@ -140,13 +142,13 @@
       .step::after{display:none}
     }
     @media (max-width:760px){
-      .nav__links,.nav__zh,.nav__lp{display:none}
-      .nav__menu-btn{display:inline-block;border:1px solid rgba(0,0,0,.18);background:#fff;padding:8px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
-      #nav.menu-open .nav__links{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;padding:18px var(--pad);border-bottom:1px solid var(--rule);flex-direction:column;gap:14px}
-      h1{font-size:42px}
-      .hero .lead{font-size:22px;line-height:1.44;margin-bottom:28px}
-      .hero-glance{padding:18px}
-      .glance-row strong{font-size:32px}
+      .nav__zh,.nav__lp{display:none}
+      .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
+      .nav__logo svg{height:48px}
+      .nav__menu-btn{display:inline-flex}
+      .nav__right{margin-left:auto;gap:10px}
+      #nav.menu-open .nav__links{display:flex}
+      .hero .lead{font-size:22px}
       .cta-row{justify-content:flex-start}
       .intel-map,.flow,.footprint{grid-template-columns:1fr}
     }
@@ -420,11 +422,13 @@
       menuBtn.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('menu-open');
         menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? 'Close' : 'Menu';
       });
       navLinks.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
           nav.classList.remove('menu-open');
           menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = 'Menu';
         });
       });
     }

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ShoreVest Partners — China Debt Dynamics</title>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
-<link rel="shortcut icon" href="assets/favicon.svg?v=2">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
+<link rel="shortcut icon" href="assets/favicon.svg?v=3">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/insights-print.css">
 <link rel="stylesheet" href="assets/css/insights-print.css" media="print">
@@ -25,11 +25,15 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 .eyebrow--ghost{color:rgba(255,255,255,.48)}
 .eyebrow--ghost::after{background:rgba(255,255,255,.48)}
 .cta{display:inline-flex;align-items:center;gap:14px;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase}
-.cta__ring{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid currentColor;font-size:14px}
+.cta__ring{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid currentColor;font-size:14px;transition:background-color .25s ease,color .25s ease,border-color .25s ease}
+.cta:hover .cta__ring,.cta:focus-visible .cta__ring{background:var(--white);border-color:var(--white);color:var(--red)}
 .cta--light{color:var(--white)}
 
 #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid var(--rule);background:#fff}
 #nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.05)}
+
+.nav__logo { display:inline-flex; align-items:center; height:100%; }
+.nav__logo svg { display:block; }
 .nav__links{display:flex;gap:36px;list-style:none}
 .nav__links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.45}
 .nav__links a.active,.nav__links a:hover{opacity:1}
@@ -279,15 +283,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
       <div class="archive">
         <div class="archive__head">Archived Issues · Publication History</div>
         <div class="archive__list">
-          <div class="archive__row"><small>Q4 2025 · Vol. 7 No. 4 · December 2025</small><strong>The New Price of Time in NPL Resolution.</strong><a href="assets/china-debt-dynamics-q4-2025.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q3 2025 · Vol. 7 No. 3 · September 2025</small><strong>Post-Policy Debt Negotiation Playbook.</strong><a href="assets/china-debt-dynamics-q3-2025.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q2 2025 · Vol. 7 No. 2 · June 2025</small><strong>Collateral Reality Versus Underwriting Models.</strong><a href="assets/china-debt-dynamics-q2-2025.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q1 2025 · Vol. 7 No. 1 · March 2025</small><strong>Refinancing Friction and Asset Transfer Timing.</strong><a href="assets/china-debt-dynamics-q1-2025.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q4 2024 · Vol. 6 No. 4 · December 2024</small><strong>State-Linked Buyers in Distressed Loan Workouts.</strong><a href="assets/china-debt-dynamics-q4-2024.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q3 2024 · Vol. 6 No. 3 · September 2024</small><strong>Cash Yield Illusions in Deferred Repayment Structures.</strong><a href="assets/china-debt-dynamics-q3-2024.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q2 2024 · Vol. 6 No. 2 · June 2024</small><strong>Collateral Enforcement Pathways by Province.</strong><a href="assets/china-debt-dynamics-q2-2024.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q1 2024 · Vol. 6 No. 1 · March 2024</small><strong>Platform Governance in Multi-Creditor Restructuring.</strong><a href="assets/china-debt-dynamics-q1-2024.pdf" target="_blank" rel="noopener">View PDF</a></div>
-          <div class="archive__row"><small>Q4 2023 · Vol. 5 No. 4 · December 2023</small><strong>Pricing Time Risk in China NPL Secondary Trades.</strong><a href="assets/china-debt-dynamics-q4-2023.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 46 · January 2026</small><strong>The End of the China&apos;s Uninvestable Myth.</strong><a href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 45 · 2025</small><strong>Beijing&apos;s Campaign Against Overcapacity Creates Private Credit Opportunities.</strong><a href="pdfs/45. China Debt Dynamics - Beijing’s Campaign Against Overcapacity Creates Private Credit Opportunities.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 44 · 2025</small><strong>Into the Shadows of US Private Credit.</strong><a href="pdfs/44. China Debt Dynamics_Into the Shadows of US Private Credit.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 43 · 2024</small><strong>China, An Uncorrelated Harbor in a Stormy World.</strong><a href="pdfs/43. China Debt Dynamics - China, An Uncorrelated Harbor in a Stormy World.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 42 · 2024</small><strong>Green finance: Sowing the seeds of China&apos;s next wave of NPLs.</strong><a href="pdfs/42. China Debt Dynamics - Green finance Sowing the seeds of China’s next wave of NPLs.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 41 · 2024</small><strong>United States of China.</strong><a href="pdfs/41. China Debt Dynamics - United States of China.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 40 · 2024</small><strong>Private Credit in a Reset World Order.</strong><a href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 39 · 2023</small><strong>Quantifying China&apos;s NPL Market.</strong><a href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 38 · 2023</small><strong>Bailing Out the Banks: The Hidden Significance of Beijing Property Support Measures.</strong><a href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf" target="_blank" rel="noopener">View PDF</a></div>
+          <div class="archive__row"><small>Issue 37 · 2023</small><strong>China Refocuses on Financial Risk and Ramps Up NPL Disposals.</strong><a href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf" target="_blank" rel="noopener">View PDF</a></div>
         </div>
       </div>
     </aside>
@@ -375,12 +380,28 @@ const buildPrintEdition=()=>{
   let skippedStandfirstParagraph=false;
   let calloutText='';
 
-  Array.from(sourceArticle.children).forEach((node)=>{
+  const normalizePrintNode=(node)=>{
+    const clean=node.cloneNode(true);
+    const walker=document.createTreeWalker(clean, NodeFilter.SHOW_ELEMENT);
+    const elements=[clean];
+    while(walker.nextNode()){
+      elements.push(walker.currentNode);
+    }
+    elements.forEach((element)=>{
+      element.removeAttribute('class');
+      element.removeAttribute('style');
+      element.removeAttribute('id');
+    });
+    return clean;
+  };
+
+  const printableNodes=Array.from(sourceArticle.querySelectorAll('h3, p, ul, ol, blockquote'));
+  printableNodes.forEach((node)=>{
     if(node.classList.contains('lead')){
       return;
     }
 
-    const clone=node.cloneNode(true);
+    const clone=normalizePrintNode(node);
 
     if(clone.tagName==='H3'){
       const headingText=clone.textContent.trim().replace(/\.$/, '');
@@ -390,7 +411,7 @@ const buildPrintEdition=()=>{
         return;
       }
       const printHeading=document.createElement('h2');
-      printHeading.innerHTML=clone.innerHTML;
+      printHeading.textContent=clone.textContent;
       printBody.appendChild(printHeading);
       return;
     }
