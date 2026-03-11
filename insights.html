@@ -229,8 +229,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 
   <section class="utility">
     <div class="utility__actions">
-      <a class="util-btn util-btn--solid" href="?printPreview=1&action=download" data-print-export="download">Download PDF</a>
-      <a class="util-btn" href="?printPreview=1&action=view" data-print-export="view" target="_blank" rel="noopener">View PDF</a>
+      <a class="util-btn util-btn--solid" href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf" data-print-export="download" download="china-debt-dynamics-issue-46-the-end-of-chinas-uninvestable-myth.pdf">Download PDF</a>
+      <a class="util-btn" href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf" data-print-export="view" target="_blank" rel="noopener">View PDF</a>
       <a class="util-btn" href="#archive">Archived Issues</a>
       <a class="util-btn" href="index.html#signup">Subscribe</a>
     </div>
@@ -345,6 +345,9 @@ if(menuBtn&&nav){
   });
 }
 
+const currentIssuePdfUrl="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf";
+const currentIssuePdfFilename='china-debt-dynamics-issue-46-the-end-of-chinas-uninvestable-myth.pdf';
+
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
   const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||'';
@@ -417,13 +420,23 @@ const buildPrintEdition=()=>{
 };
 
 const triggerPrintExport=(mode='print')=>{
-  buildPrintEdition();
-
-  if(mode==='view'){
-    const previewUrl=`${window.location.pathname}?printPreview=1&action=view`;
-    window.open(previewUrl,'_blank','noopener');
+  if(mode==='download'){
+    const directDownload=document.createElement('a');
+    directDownload.href=encodeURI(currentIssuePdfUrl);
+    directDownload.download=currentIssuePdfFilename;
+    directDownload.rel='noopener';
+    document.body.appendChild(directDownload);
+    directDownload.click();
+    directDownload.remove();
     return;
   }
+
+  if(mode==='view'){
+    window.open(encodeURI(currentIssuePdfUrl),'_blank','noopener');
+    return;
+  }
+
+  buildPrintEdition();
 
   const action=mode==='download'?'download':'print';
   const previewUrl=`${window.location.pathname}?printPreview=1&action=${action}`;
