@@ -124,6 +124,24 @@
     line-height: 1.35;
     letter-spacing: 0.01em;
   }
+
+  @media (max-width: 760px) {
+    body.print-preview .print-publication {
+      max-width: 100%;
+      margin: 0;
+      padding: 18px 16px 20px;
+      box-shadow: none;
+    }
+
+    body.print-preview .print-publication__title,
+    body.print-preview .print-body h2 {
+      font-size: clamp(34px, 11vw, 45px);
+    }
+
+    body.print-preview::after {
+      display: none;
+    }
+  }
 }
 
 @media print {
