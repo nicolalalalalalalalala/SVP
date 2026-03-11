@@ -7,42 +7,133 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
   <link rel="shortcut icon" href="assets/favicon.svg?v=3">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>body{font-family:Inter,system-ui,sans-serif;margin:0;background:#f6f4f0;color:#0c0c0a}main{max-width:920px;margin:0 auto;padding:72px 24px}h1{font-family:'EB Garamond',serif;font-size:56px;font-weight:400;margin-bottom:10px}h2{font-family:'EB Garamond',serif;font-size:30px;font-weight:400;margin:28px 0 12px}.card{background:#fff;border:1px solid rgba(0,0,0,.08);padding:30px}p,li{line-height:1.85;color:#262521}a{text-decoration:none;color:#b3213f}ul{padding-left:20px}.actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}.btn{border:1px solid #0c0c0a;padding:12px 16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#0c0c0a}.btn.dark{background:#0c0c0a;color:#fff}</style>
+  <style>
+    :root{--red:#b3213f;--ink:#0c0c0a;--white:#fff;--off:#f6f4f0;--rule:rgba(0,0,0,.08);--mist:#888680;--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--max:1200px;--pad:64px}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid var(--rule);background:#fff}
+    .nav__logo{display:inline-flex;align-items:center;height:100%}
+    .nav__logo svg{display:block}
+    .nav__links{display:flex;gap:36px;list-style:none}
+    .nav__links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);opacity:.45;transition:opacity .2s}
+    .nav__links a:hover,.nav__links a.active{opacity:1}
+    .nav__right{display:flex;align-items:center;gap:22px}
+    .nav__zh{font-size:13px;color:var(--ink);opacity:.35;transition:opacity .2s}
+    .nav__zh:hover{opacity:.75}
+    .nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(0,0,0,.15);padding:8px 20px;transition:background .2s,color .2s,border-color .2s}
+    .nav__lp:hover{background:var(--red);color:#fff;border-color:var(--red)}
+    .nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
+
+    main{padding:148px 0 90px;background:var(--off);min-height:100vh}
+    .panel{max-width:940px}
+    .eyebrow{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px;margin-bottom:26px}
+    .eyebrow::after{content:'';flex:0 0 36px;height:1px;background:currentColor}
+    h1{font-family:var(--serif);font-size:clamp(52px,8vw,88px);line-height:1.02;font-weight:400;letter-spacing:-.01em;margin-bottom:22px}
+    .lead{font-family:var(--serif);font-size:29px;line-height:1.45;color:#3f3a34;max-width:860px}
+    .updated{margin-top:18px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+    .card{margin-top:34px;padding:34px;border:1px solid var(--rule);background:#fff}
+    h2{font-family:var(--serif);font-size:31px;font-weight:400;line-height:1.2;margin:24px 0 14px}
+    h2:first-child{margin-top:0}
+    p{font-size:16px;line-height:1.9;color:#262521;margin-bottom:14px}
+    ul{padding-left:22px;margin-bottom:16px}
+    li{font-size:16px;line-height:1.85;color:#262521;margin-bottom:6px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border:1px solid var(--ink);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+    .btn--dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .subtle{font-size:13px;color:#6b6964;margin-top:18px}
+
+    @media (max-width:760px){
+      :root{--pad:20px}
+      #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
+      .nav__logo svg{height:48px}
+      .nav__menu-btn{display:inline-flex}
+      .nav__right{margin-left:auto;gap:10px}
+      .nav__zh,.nav__lp{display:none}
+      .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
+      #nav.menu-open .nav__links{display:flex}
+      main{padding:108px 0 80px}
+      h1{font-size:clamp(42px,14vw,62px)}
+      .lead{font-size:22px}
+      .card{padding:24px}
+    }
+  </style>
 </head>
 <body>
+  <nav id="nav">
+    <a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
+      <g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g>
+      <line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
+    </svg></a>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="firm.html">The Firm</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="index_cn.html" class="nav__zh">中文</a>
+      <a href="investor-access.html" class="nav__lp">Investor Access</a>
+      <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </div>
+  </nav>
+
   <main>
-    <h1>Privacy Notice</h1>
-    <p>This notice explains how ShoreVest Partners may collect, use, and safeguard personal information through this website and related communications.</p>
-    <div class="card">
-      <h2>Information We Collect</h2>
-      <ul>
-        <li>Contact details you submit (e.g., name, email, company, title, country).</li>
-        <li>Business correspondence and subscription preferences.</li>
-        <li>Limited technical data such as browser and device information for site performance and security.</li>
-      </ul>
+    <div class="wrap">
+      <section class="panel">
+        <p class="eyebrow">ShoreVest Partners</p>
+        <h1>Privacy Notice</h1>
+        <p class="lead">How ShoreVest Partners may collect, use, and safeguard personal information.</p>
+        <p class="updated">Last Updated: June 2026</p>
 
-      <h2>How We Use Information</h2>
-      <ul>
-        <li>Responding to inquiries and providing requested materials.</li>
-        <li>Delivering firm updates and publications where permitted.</li>
-        <li>Maintaining, protecting, and improving site operation.</li>
-        <li>Complying with legal and regulatory obligations.</li>
-      </ul>
+        <div class="card">
+          <h2>Scope of This Notice</h2>
+          <p>This Privacy Notice explains how ShoreVest Partners may collect, use, store, and disclose personal information obtained through this website and related communications.</p>
 
-      <h2>Data Sharing</h2>
-      <p>We do not sell personal information. We may share information with service providers supporting our communications and technology operations, and where required by law, regulation, or legal process.</p>
+          <h2>Information We Collect</h2>
+          <ul>
+            <li>Information you submit directly, such as name, email address, company, job title, and country.</li>
+            <li>Business correspondence, relationship information, and communication preferences.</li>
+            <li>Limited technical and usage information (for example browser type, device details, and page interactions) to help operate and secure the site.</li>
+          </ul>
 
-      <h2>Retention and Security</h2>
-      <p>Personal information is retained only as long as reasonably necessary for business, legal, or regulatory purposes. We apply administrative and technical controls designed to protect against unauthorized access and misuse.</p>
+          <h2>How We Use Information</h2>
+          <ul>
+            <li>Respond to inquiries and provide requested publications or updates.</li>
+            <li>Manage investor, partner, and stakeholder communications.</li>
+            <li>Maintain, monitor, and improve website functionality and security.</li>
+            <li>Comply with legal, regulatory, tax, and recordkeeping obligations.</li>
+          </ul>
 
-      <h2>Your Choices</h2>
-      <p>You may request to update your contact details, opt out of marketing communications, or inquire about how your information is handled by contacting us at <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>.</p>
+          <h2>Disclosure of Information</h2>
+          <p>We do not sell personal information. We may share personal information with service providers supporting communications, IT, and operations, and where disclosure is required or permitted by law, court order, or regulatory authority.</p>
 
-      <div class="actions">
-        <a class="btn dark" href="mailto:inquiries@shorevest.com">Contact Us</a>
-        <a class="btn" href="index.html#contact">Back to Main Site</a>
-      </div>
+          <h2>Retention and Protection</h2>
+          <p>Personal information is retained only for as long as reasonably necessary to fulfill business, legal, or regulatory purposes. ShoreVest Partners applies administrative, technical, and organizational safeguards to protect personal information from unauthorized access, misuse, loss, or disclosure.</p>
+
+          <h2>Your Choices and Contact</h2>
+          <p>You may request updates to your information, opt out of communications, or submit privacy inquiries by contacting <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>.</p>
+
+          <div class="actions">
+            <a class="btn btn--dark" href="mailto:inquiries@shorevest.com">Contact Us</a>
+            <a class="btn" href="index.html#contact">Back to Main Site</a>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.querySelector('.nav__menu-btn');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => {
+        const open = nav.classList.toggle('menu-open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.textContent = open ? 'Close' : 'Menu';
+      });
+    }
+  </script>
 </body>
 </html>

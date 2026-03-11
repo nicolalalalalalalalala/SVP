@@ -8,13 +8,14 @@
   <link rel="shortcut icon" href="assets/favicon.svg?v=3">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --red:#b3213f;--ink:#0c0c0a;--white:#fff;--off:#f6f4f0;--rule:rgba(0,0,0,.08);--mist:#888680;--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--max:1200px;--pad:64px; }
+    :root{--red:#b3213f;--ink:#0c0c0a;--white:#fff;--off:#f6f4f0;--rule:rgba(0,0,0,.08);--mist:#888680;--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--max:1200px;--pad:64px}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
     a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
     #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid var(--rule);background:#fff}
     .nav__logo{display:inline-flex;align-items:center;height:100%}
+    .nav__logo svg{display:block}
     .nav__links{display:flex;gap:36px;list-style:none}
     .nav__links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);opacity:.45;transition:opacity .2s}
     .nav__links a:hover,.nav__links a.active{opacity:1}
@@ -23,27 +24,49 @@
     .nav__zh:hover{opacity:.75}
     .nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(0,0,0,.15);padding:8px 20px;transition:background .2s,color .2s,border-color .2s}
     .nav__lp:hover{background:var(--red);color:#fff;border-color:var(--red)}
-    main{padding:148px 0 110px;background:var(--off);min-height:100vh}
-    .panel{max-width:920px}
+    .nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
+
+    main{padding:148px 0 90px;background:var(--off);min-height:100vh}
+    .panel{max-width:940px}
     .eyebrow{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px;margin-bottom:26px}
     .eyebrow::after{content:'';flex:0 0 36px;height:1px;background:currentColor}
-    h1{font-family:var(--serif);font-size:clamp(52px,8vw,88px);line-height:1.02;font-weight:400;letter-spacing:-.01em;margin-bottom:18px}
-    .lead{font-family:var(--serif);font-size:27px;line-height:1.45;color:#3f3a34;max-width:840px;margin-bottom:34px}
-    .card{padding:34px;border:1px solid var(--rule);background:#fff}
-    h2{font-family:var(--serif);font-size:30px;font-weight:400;margin:10px 0 14px}
-    p{font-size:16px;line-height:1.95;color:#262521;margin-bottom:14px}
-    ul{margin:0 0 18px 18px;color:#262521}
-    li{margin-bottom:8px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    h1{font-family:var(--serif);font-size:clamp(52px,8vw,88px);line-height:1.02;font-weight:400;letter-spacing:-.01em;margin-bottom:22px}
+    .lead{font-family:var(--serif);font-size:29px;line-height:1.45;color:#3f3a34;max-width:860px}
+    .updated{margin-top:18px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+    .card{margin-top:34px;padding:34px;border:1px solid var(--rule);background:#fff}
+    h2{font-family:var(--serif);font-size:31px;font-weight:400;line-height:1.2;margin:24px 0 14px}
+    h2:first-child{margin-top:0}
+    p{font-size:16px;line-height:1.9;color:#262521;margin-bottom:14px}
+    ul{padding-left:22px;margin-bottom:16px}
+    li{font-size:16px;line-height:1.85;color:#262521;margin-bottom:6px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border:1px solid var(--ink);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
     .btn--dark{background:var(--ink);color:#fff;border-color:var(--ink)}
-    @media (max-width:760px){:root{--pad:20px}#nav{height:72px;padding:0 var(--pad)}.nav__links{display:none}.nav__zh{display:none}main{padding:108px 0 80px}h1{font-size:clamp(42px,14vw,62px)}.lead{font-size:22px}.card{padding:24px}}
+    .subtle{font-size:13px;color:#6b6964;margin-top:18px}
+
+    @media (max-width:760px){
+      :root{--pad:20px}
+      #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
+      .nav__logo svg{height:48px}
+      .nav__menu-btn{display:inline-flex}
+      .nav__right{margin-left:auto;gap:10px}
+      .nav__zh,.nav__lp{display:none}
+      .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
+      #nav.menu-open .nav__links{display:flex}
+      main{padding:108px 0 80px}
+      h1{font-size:clamp(42px,14vw,62px)}
+      .lead{font-size:22px}
+      .card{padding:24px}
+    }
   </style>
 </head>
 <body>
   <nav id="nav">
-    <a href="index.html" class="nav__logo">ShoreVest Partners</a>
-    <ul class="nav__links">
+    <a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
+      <g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g>
+      <line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
+    </svg></a>
+    <ul class="nav__links" id="nav-links">
       <li><a href="firm.html">The Firm</a></li>
       <li><a href="strategy.html">Strategy</a></li>
       <li><a href="insights.html">Insights</a></li>
@@ -52,6 +75,7 @@
     <div class="nav__right">
       <a href="index_cn.html" class="nav__zh">中文</a>
       <a href="investor-access.html" class="nav__lp">Investor Access</a>
+      <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     </div>
   </nav>
 
@@ -60,29 +84,50 @@
       <section class="panel">
         <p class="eyebrow">ShoreVest Partners</p>
         <h1>Legal</h1>
-        <p class="lead">Important legal information regarding this website, its content, and use.</p>
+        <p class="lead">Important legal information regarding this website and its content.</p>
+        <p class="updated">Last Updated: June 2026</p>
 
         <div class="card">
-          <h2>Website Terms</h2>
-          <p>The information on this website is provided for general informational purposes only and does not constitute an offer to sell, or a solicitation of an offer to buy, any security, fund interest, or advisory service in any jurisdiction.</p>
-          <p>Materials are provided "as is" and may be updated, revised, or removed at any time without prior notice.</p>
+          <h2>Website Terms and Conditions</h2>
+          <p>This website is intended solely for general informational purposes. It does not constitute an offer to sell, or a solicitation of an offer to buy, any security, investment product, or advisory service in any jurisdiction.</p>
+          <p>ShoreVest Partners may update, revise, suspend, or remove website content without notice. No representation is made that website content is complete, current, or error-free at all times.</p>
 
-          <h2>No Investment Advice</h2>
-          <p>Nothing contained herein should be construed as legal, tax, accounting, or investment advice. Any investment decision should be based on formal offering documents and independent professional advice.</p>
+          <h2>No Reliance; No Advice</h2>
+          <p>Nothing on this website should be considered legal, tax, accounting, regulatory, or investment advice. Visitors should consult their own professional advisers before taking or refraining from action based on website content.</p>
+          <ul>
+            <li>Any investment decisions should be made only after review of definitive legal and offering documentation.</li>
+            <li>Statements on this site are not tailored to any particular investor profile, objective, or jurisdictional requirement.</li>
+          </ul>
 
-          <h2>Forward-Looking Statements</h2>
-          <p>Certain statements may be forward-looking and based on current expectations and assumptions. Actual outcomes may differ materially due to market, regulatory, operational, or other factors.</p>
+          <h2>Forward-Looking and Market Statements</h2>
+          <p>Certain statements may be forward-looking and are based on assumptions, expectations, and market views as of the date stated. Actual results may differ materially due to market, regulatory, macroeconomic, and operational factors.</p>
 
-          <h2>Intellectual Property</h2>
-          <p>All site content, including text, graphics, and branding elements, is owned by ShoreVest Partners or used with permission. Unauthorized reproduction, redistribution, or commercial use is prohibited.</p>
+          <h2>Intellectual Property and Use Restrictions</h2>
+          <p>All content on this website, including text, design, graphics, documents, and branding, is owned by ShoreVest Partners or used under license. Content may not be copied, modified, republished, distributed, or exploited without prior written consent.</p>
+
+          <h2>Third-Party Links</h2>
+          <p>Links to third-party websites are provided for convenience only. ShoreVest Partners does not control and is not responsible for third-party content, privacy practices, accuracy, or availability.</p>
 
           <div class="actions">
             <a class="btn btn--dark" href="mailto:inquiries@shorevest.com">Contact Us</a>
             <a class="btn" href="index.html#contact">Back to Main Site</a>
           </div>
+          <p class="subtle">For regulatory or legal inquiries, contact <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>.</p>
         </div>
       </section>
     </div>
   </main>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.querySelector('.nav__menu-btn');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => {
+        const open = nav.classList.toggle('menu-open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.textContent = open ? 'Close' : 'Menu';
+      });
+    }
+  </script>
 </body>
 </html>
