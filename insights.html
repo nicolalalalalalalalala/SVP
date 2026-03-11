@@ -243,7 +243,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   </section>
 
   <div class="reading-grid">
-    <article id="current-issue" class="reading">
+    <article id="current-issue" class="reading" data-print-article="active" data-print-filename="shorevest-china-debt-dynamics-issue-46.pdf">
       <p class="lead"><strong>Volume 10 | Issue 1</strong><br>25 January 2026</p>
 
       <h3>The End of the “China’s Uninvestable” Myth</h3>
@@ -345,7 +345,11 @@ if(menuBtn&&nav){
   });
 }
 
-const currentIssuePdfFilename='shorevest-china-debt-dynamics-issue-46.pdf';
+const defaultPrintFilename='shorevest-china-debt-dynamics-issue-46.pdf';
+
+const getPrintSourceArticle=()=>document.querySelector('[data-print-article="active"]')||document.querySelector('[data-print-article]')||document.querySelector('.reading-grid .reading');
+
+const getPrintFilename=()=>getPrintSourceArticle()?.getAttribute('data-print-filename')||defaultPrintFilename;
 
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
@@ -353,7 +357,7 @@ const buildPrintEdition=()=>{
   const issueInfo=document.querySelector('.issue-header__meta span:nth-child(1)')?.textContent.trim()||'';
   const publishedInfo=document.querySelector('.issue-header__meta span:nth-child(2)')?.textContent.trim()||'';
   const editionInfo=document.querySelector('.issue-live__meta span:nth-child(3)')?.textContent.trim()||'Allocator Edition';
-  const sourceArticle=document.getElementById('current-issue');
+  const sourceArticle=getPrintSourceArticle();
   const printMeta=document.getElementById('print-meta');
   const printTitle=document.getElementById('print-title');
   const printStandfirst=document.getElementById('print-standfirst');
@@ -375,12 +379,28 @@ const buildPrintEdition=()=>{
   let skippedStandfirstParagraph=false;
   let calloutText='';
 
-  Array.from(sourceArticle.children).forEach((node)=>{
+  const normalizePrintNode=(node)=>{
+    const clean=node.cloneNode(true);
+    const walker=document.createTreeWalker(clean, NodeFilter.SHOW_ELEMENT);
+    const elements=[clean];
+    while(walker.nextNode()){
+      elements.push(walker.currentNode);
+    }
+    elements.forEach((element)=>{
+      element.removeAttribute('class');
+      element.removeAttribute('style');
+      element.removeAttribute('id');
+    });
+    return clean;
+  };
+
+  const printableNodes=Array.from(sourceArticle.querySelectorAll('h3, p, ul, ol, blockquote'));
+  printableNodes.forEach((node)=>{
     if(node.classList.contains('lead')){
       return;
     }
 
-    const clone=node.cloneNode(true);
+    const clone=normalizePrintNode(node);
 
     if(clone.tagName==='H3'){
       const headingText=clone.textContent.trim().replace(/\.$/, '');
@@ -390,7 +410,7 @@ const buildPrintEdition=()=>{
         return;
       }
       const printHeading=document.createElement('h2');
-      printHeading.innerHTML=clone.innerHTML;
+      printHeading.textContent=clone.textContent;
       printBody.appendChild(printHeading);
       return;
     }
@@ -428,7 +448,7 @@ const triggerPrintExport=(mode='print')=>{
   }
 
   if(mode==='download'){
-    const previewUrl=`${window.location.pathname}?printPreview=1&action=download&filename=${encodeURIComponent(currentIssuePdfFilename)}`;
+    const previewUrl=`${window.location.pathname}?printPreview=1&action=download&filename=${encodeURIComponent(getPrintFilename())}`;
     window.open(previewUrl,'_blank','noopener');
     return;
   }

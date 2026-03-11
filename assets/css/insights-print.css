@@ -16,17 +16,11 @@
 
   body.print-preview .print-publication {
     display: block;
-    width: min(196mm, calc(100vw - 24px));
-    margin: 12px auto;
-    padding: 10mm 7mm 15mm;
-    box-sizing: border-box;
-    background: #fff;
-    box-shadow: 0 2px 22px rgba(0, 0, 0, 0.08);
-    font-family: 'EB Garamond', Georgia, serif;
     width: 100%;
     max-width: 196mm;
     margin: 12mm auto;
-    padding: 10mm 7mm 15mm;
+    padding: 25.4mm 25.4mm 25.4mm;
+    box-sizing: border-box;
     background: #fff;
     box-shadow: 0 2px 22px rgba(0, 0, 0, 0.08);
     font-family: 'EB Garamond', Georgia, serif;
@@ -52,22 +46,89 @@
   }
 
   body.print-preview .print-publication__folio-page::before {
-    content: '1';
-  }
-
-  body.print-preview .print-body li {
-    margin-bottom: 1.9mm;
+    content: 'preview';
   }
 
   body.print-preview .print-body__opening {
-    margin-bottom: 3.8mm !important;
+    margin-bottom: 4.8mm !important;
+  }
+
+  body.print-preview .print-body p {
+    margin: 0 0 3.2mm;
+    line-height: 1.52;
+  }
+
+  body.print-preview .print-body li,
+  body.print-preview .print-body blockquote {
+    margin: 0 0 2.6mm;
+    line-height: 1.5;
+  }
+
+  body.print-preview .print-body p + p {
+    margin-top: 0.25mm;
+  }
+
+  body.print-preview .print-body ul,
+  body.print-preview .print-body ol {
+    margin: 0 0 3.3mm;
+    padding-left: 6mm;
+  }
+
+  body.print-preview .print-publication__masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2.4mm;
+    margin-bottom: 2.4mm;
+    border-bottom: 0.45pt solid #c9c1b6;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #58534d;
+  }
+
+  body.print-preview .print-publication__brand {
+    display: flex;
+    align-items: center;
+    gap: 2.2mm;
+  }
+
+  body.print-preview .print-publication__logo {
+    width: 5.4mm;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  body.print-preview .print-publication__label,
+  body.print-preview .print-publication__series {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  body.print-preview::after {
+    content: "Preview scrolls continuously. PDF export paginates automatically across A4 pages.";
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 20;
+    max-width: min(72vw, 420px);
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    background: rgba(255, 255, 255, 0.92);
+    color: #4d483f;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 11px;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
   }
 }
 
 @media print {
   @page {
     size: A4;
-    margin: 10mm 7mm 15mm;
+    margin: 25.4mm;
   }
 
   :root {
@@ -83,7 +144,6 @@
     line-height: 1.5;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    counter-reset: page 1;
   }
 
   body > :not(.print-publication) {
@@ -189,7 +249,7 @@
   }
 
   .print-body h2 {
-    margin: 4.8mm 0 2.2mm;
+    margin: 5mm 0 2.2mm;
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 8.8pt;
     font-weight: 500;
@@ -199,10 +259,23 @@
     break-after: avoid;
   }
 
-  .print-body p,
+
+  .print-body > h2:first-child {
+    margin-top: 0;
+  }
+
+  .print-body p {
+    margin: 0 0 3.2mm;
+    font-size: 10.6pt;
+    line-height: 1.52;
+    color: #171512;
+    widows: 3;
+    orphans: 3;
+  }
+
   .print-body li,
   .print-body blockquote {
-    margin: 0 0 2.7mm;
+    margin: 0 0 2.6mm;
     font-size: 10.6pt;
     line-height: 1.5;
     color: #171512;
@@ -210,14 +283,15 @@
     orphans: 3;
   }
 
-  .print-body ul {
+  .print-body p + p {
+    margin-top: 0.25mm;
+  }
+
+  .print-body ul,
+  .print-body ol {
     margin: 0 0 3.3mm;
     padding-left: 6mm;
     break-inside: avoid;
-  }
-
-  .print-body li {
-    margin-bottom: 1.9mm;
   }
 
   .print-body blockquote {
@@ -229,7 +303,7 @@
   }
 
   .print-body__opening {
-    margin-bottom: 3.8mm !important;
+    margin-bottom: 4.8mm !important;
   }
 
   .print-publication__folio {
@@ -241,7 +315,7 @@
     justify-content: space-between;
     align-items: center;
     height: 9.3mm;
-    padding: 1.8mm 7mm 0;
+    padding: 1.8mm 25.4mm 0;
     border-top: 0.38pt solid #ccc5bb;
     background: #fff;
     font-family: 'Inter', system-ui, sans-serif;
@@ -253,6 +327,6 @@
   }
 
   .print-publication__folio-page::before {
-    content: counter(page, decimal);
+    content: counter(page, decimal) " / " counter(pages, decimal);
   }
 }
