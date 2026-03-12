@@ -187,6 +187,23 @@
       });
     }
 
+    const pressLinks = document.querySelectorAll('.press-list .press-row a[href*="https://www.google.com/search?q="]');
+    pressLinks.forEach((link) => {
+      const href = link.getAttribute('href') || '';
+      if (!href) return;
+      try {
+        const url = new URL(href);
+        const q = url.searchParams.get('q');
+        if (!q) return;
+        url.search = '';
+        url.searchParams.set('btnI', '1');
+        url.searchParams.set('q', q);
+        link.setAttribute('href', url.toString());
+      } catch (error) {
+        // Keep original URL if parsing fails.
+      }
+    });
+
     const archive = document.getElementById('press-archive');
     const moreBtn = document.getElementById('press-more-btn');
     if (archive && moreBtn) {
