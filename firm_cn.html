@@ -89,32 +89,86 @@
     .market-grid h3 { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; color: #67645e; }
 
     .intelligence { background: #ecebe8; }
-    .intelligence-panel { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
-    .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 12px; }
-    .intel-controls { display: flex; gap: 8px; margin-bottom: 10px; }
-    .intel-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      border: 1px solid #d3cfc8;
-      background: #f3f2f0;
-      padding: 0 12px;
-      font-size: 10px;
-      font-weight: 500;
+    .intelligence-panel { display: grid; gap: 16px; }
+    .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 18px; }
+    .intel-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+    .intel-stage {
+      border: 1px solid #dbd8d2;
+      background: #fbfaf8;
+      padding: 12px;
+      position: relative;
+    }
+    .intel-stage:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -11px;
+      top: 14px;
+      color: #9f9b93;
+      font-size: 16px;
+      font-weight: 600;
+      z-index: 2;
+    }
+    .intel-stage h3 {
+      font-size: 9px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      cursor: pointer;
+      color: #66625b;
+      margin-bottom: 10px;
     }
-    .intel-btn.active { background: #f6e9ec; border-color: #c67283; color: #732638; }
-    .intel-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .intel-node { border: 1px solid #dbd8d2; padding: 10px; background: #fbfaf8; }
-    .intel-node strong { display: block; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #66625b; margin-bottom: 4px; }
-    .intel-node span { display: block; font-family: var(--serif); font-size: 30px; line-height: 1; margin-bottom: 4px; }
-    .intel-node.active { border-color: #d27184; box-shadow: inset 0 0 0 1px rgba(187, 46, 70, 0.28); }
+    .capability { border-top: 1px solid #e6e2db; padding-top: 8px; margin-top: 8px; }
+    .capability:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+    .capability h4 { font-size: 12px; font-weight: 500; margin-bottom: 3px; }
+    .capability .weight {
+      font-size: 9px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #78746d;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .bar {
+      --value: 0;
+      position: relative;
+      height: 8px;
+      border-radius: 999px;
+      background: #e7e4de;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .bar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: calc(var(--value) * 1%);
+      background: linear-gradient(90deg, #9d2339, #cc7486);
+    }
+    .capability p { font-size: 12px; color: #57534d; }
     .intel-copy { padding: 16px; }
     .intel-copy h3 { font-family: var(--serif); font-size: 29px; font-weight: 400; margin-bottom: 8px; }
-    .intel-list { margin: 10px 0 0 16px; }
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .benchmark-table th,
+    .benchmark-table td {
+      border-top: 1px solid #ddd9d1;
+      padding: 8px 4px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .benchmark-table th {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: #6f6b64;
+    }
+    .provenance {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #6a655f;
+    }
 
     .platform-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 14px; }
     .platform-notes { display: grid; gap: 10px; }
@@ -156,14 +210,27 @@
 
     @media (max-width: 760px) {
       :root { --pad: 20px; }
-      .hero-grid, .section-head, .intelligence-panel, .platform-layout { grid-template-columns: 1fr; }
-      .hero-thesis, .proof-grid, .market-grid, .flow, .intel-map { grid-template-columns: 1fr; }
-      .small-grid { grid-template-columns: 1fr; }
+      section { padding: 58px 0; }
+      .hero { padding-top: 56px; }
+      h1 { font-size: clamp(40px, 12vw, 56px); }
       .dark-band h2 {
         font-size: clamp(36px, 9.5vw, 48px);
         line-height: 1.1;
         margin-bottom: 18px;
       }
+      .flow { gap: 12px; }
+      .step { padding: 16px 14px; }
+      .step h3 { font-size: 11px; }
+      .step p { font-size: 13px; }
+      .lead, .section-head p { font-size: 20px; }
+      .hero-grid, .section-head, .intelligence-panel, .platform-layout { grid-template-columns: 1fr; }
+      .hero-thesis, .proof-grid, .market-grid, .flow, .intel-flow { grid-template-columns: 1fr; }
+      .intel-stage:not(:last-child)::after { content: '↓'; right: 12px; top: auto; bottom: -11px; }
+      .small-grid { grid-template-columns: 1fr; }
+      .intelligence-panel > *,
+      .platform-layout > * { min-width: 0; }
+      .intel-graphic,
+      .intel-copy { width: 100%; }
       #nav {
         height: auto;
         min-height: 72px;
@@ -187,16 +254,7 @@
         border-top: 1px solid var(--rule);
       }
       #nav.menu-open .nav__links { display: flex; }
-      .nav__links a,
-      .nav__menu-btn,
-      .nav__lp,
-      .eyebrow,
-      .btn {
-        letter-spacing: .06em;
-        text-transform: none;
-      }
       .nav__links a { font-size: 13px; line-height: 1.5; white-space: nowrap; }
-      .lead { font-size: 23px; line-height: 1.42; }
     }
   </style>
 </head>
@@ -294,32 +352,88 @@
       <div class="wrap">
         <div class="section-head">
           <h2>执行能力地图</h2>
-          <p>以下图示展示 ShoreVest 的信贷执行流程。切换视角可查看平台资源投入重点。</p>
+          <p>执行评分用于展示平台在信贷全生命周期各环节的资源投入重点。数值越高，代表内部执行强度越高，而非依赖外部机构。</p>
         </div>
         <div class="intelligence-panel">
           <div class="intel-graphic">
-            <div class="intel-controls" role="tablist" aria-label="执行视角切换">
-              <button class="intel-btn active" data-mode="origination" type="button">获取</button>
-              <button class="intel-btn" data-mode="underwriting" type="button">尽调</button>
-              <button class="intel-btn" data-mode="resolution" type="button">处置</button>
-            </div>
-            <div class="intel-map">
-              <article class="intel-node" data-node="network"><strong>网络触达</strong><span>86</span><p>本地银行及中介渠道。</p></article>
-              <article class="intel-node" data-node="legal"><strong>法律结构</strong><span>91</span><p>境内可执行性设计。</p></article>
-              <article class="intel-node" data-node="recovery"><strong>回收控制</strong><span>88</span><p>司法与重组执行。</p></article>
-              <article class="intel-node" data-node="screening"><strong>风险筛选</strong><span>84</span><p>以下行风险优先筛选。</p></article>
-              <article class="intel-node" data-node="governance"><strong>IC 治理机制</strong><span>90</span><p>3/4 超级多数决策机制。</p></article>
-              <article class="intel-node" data-node="monitoring"><strong>投后管理闭环</strong><span>87</span><p>从持续监控到主动干预。</p></article>
+            <div class="intel-flow" aria-label="信贷生命周期能力地图">
+              <article class="intel-stage">
+                <h3>项目获取</h3>
+                <div class="capability">
+                  <h4>网络触达</h4>
+                  <span class="weight">执行强度：86</span>
+                  <div class="bar" style="--value: 86"></div>
+                  <p>通过区域银行、重组顾问与借款人网络进行直接获取，覆盖中国境内信贷市场。</p>
+                </div>
+                <div class="capability">
+                  <h4>风险筛选</h4>
+                  <span class="weight">执行强度：84</span>
+                  <div class="bar" style="--value: 84"></div>
+                  <p>坚持下行优先筛选，当可执行性、发起方行为或抵押质量偏弱时尽早剔除交易。</p>
+                </div>
+              </article>
+              <article class="intel-stage">
+                <h3>尽职调查</h3>
+                <div class="capability">
+                  <h4>法律结构设计</h4>
+                  <span class="weight">执行强度：91</span>
+                  <div class="bar" style="--value: 91"></div>
+                  <p>交易结构围绕中国法律下的可执行性设计，包括担保完善与法院可认可的抵押权主张。</p>
+                </div>
+                <div class="capability">
+                  <h4>投委会治理</h4>
+                  <span class="weight">执行强度：90</span>
+                  <div class="bar" style="--value: 90"></div>
+                  <p>每周召开投委会，投资决策须经管理合伙人同意并达到 3/4 超级多数后方可执行。</p>
+                </div>
+              </article>
+              <article class="intel-stage">
+                <h3>处置回收</h3>
+                <div class="capability">
+                  <h4>回收控制</h4>
+                  <span class="weight">执行强度：88</span>
+                  <div class="bar" style="--value: 88"></div>
+                  <p>内部协同推进司法流程、重组谈判与抵押物处置，在回收路径中保留策略主动权。</p>
+                </div>
+                <div class="capability">
+                  <h4>投后管理闭环</h4>
+                  <span class="weight">执行强度：87</span>
+                  <div class="bar" style="--value: 87"></div>
+                  <p>将持续监控与主动干预联动，在压力阶段同步触发法律与商业处置动作。</p>
+                </div>
+              </article>
             </div>
           </div>
           <aside class="intel-copy">
-            <h3 id="intel-title">项目获取视角</h3>
-            <p id="intel-description">核心在于优先获取专有项目来源，并在机会广泛中介化前完成早期风险过滤。</p>
-            <ul class="intel-list" id="intel-list">
-              <li>以关系网络为先，在本地多渠道获取项目。</li>
-              <li>定价前先进行法律可行性核验。</li>
-              <li>更快剔除回收路径薄弱的机会。</li>
-            </ul>
+            <h3>相对能力对照</h3>
+            <p>与典型离岸基金模式相比，ShoreVest 在尽调到回收的关键执行环节保留了更高比例的内部能力。</p>
+            <table class="benchmark-table" aria-label="能力对照表">
+              <thead>
+                <tr>
+                  <th>能力维度</th>
+                  <th>典型离岸基金</th>
+                  <th>ShoreVest</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>网络触达</td>
+                  <td>有限</td>
+                  <td>86</td>
+                </tr>
+                <tr>
+                  <td>法律结构设计</td>
+                  <td>中等</td>
+                  <td>91</td>
+                </tr>
+                <tr>
+                  <td>回收控制</td>
+                  <td>外包为主</td>
+                  <td>88</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="provenance">执行评分基于平台内部对 ShoreVest 交易样本的来源渠道、法律结构能力、投后管理基础设施与回收执行表现的分析。</p>
           </aside>
         </div>
       </div>
@@ -402,6 +516,8 @@
     </section>
   </main>
 
+  
+
   <script>
     const menuBtn = document.querySelector('.nav__menu-btn');
     const nav = document.getElementById('nav');
@@ -413,50 +529,8 @@
       });
     }
 
-    const intelData = {
-      origination: {
-        title: '项目获取视角',
-        description: '核心在于优先获取专有项目来源，并在机会广泛中介化前完成早期风险过滤。',
-        bullets: [
-          '以关系网络为先，在本地多渠道获取项目。',
-          '定价前先进行法律可行性核验。',
-          '更快剔除回收路径薄弱的机会。'
-        ],
-        active: ['network', 'screening', 'legal']
-      },
-      underwriting: {
-        title: '尽职调查视角',
-        description: '尽调将下行估值与法律文件结构同步设计，使结构与经济条款协同确定。',
-        bullets: ['以 30–60% LTV 纪律锚定入场。', '出手前完成法务与财务双重审查。', '情景推演与可执行性紧密挂钩。'],
-        active: ['legal', 'governance', 'monitoring']
-      },
-      resolution: {
-        title: '处置回收视角',
-        description: 'ShoreVest 通过强化投后管理、司法推进与协商退出，在成交后持续掌控结果。',
-        bullets: ['主动监控可及早识别压力信号。', '内部协同贯穿法律与商业路径。', '回收流程围绕价值保全设计。'],
-        active: ['recovery', 'monitoring', 'governance']
-      }
-    };
-
-    const intelButtons = document.querySelectorAll('.intel-btn');
-    const intelNodes = document.querySelectorAll('.intel-node');
-    const intelTitle = document.getElementById('intel-title');
-    const intelDescription = document.getElementById('intel-description');
-    const intelList = document.getElementById('intel-list');
-
-    const setMode = (mode) => {
-      const payload = intelData[mode];
-      if (!payload) return;
-      intelTitle.textContent = payload.title;
-      intelDescription.textContent = payload.description;
-      intelList.innerHTML = payload.bullets.map((item) => `<li>${item}</li>`).join('');
-      intelButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.mode === mode));
-      intelNodes.forEach((node) => node.classList.toggle('active', payload.active.includes(node.dataset.node)));
-    };
-
-    intelButtons.forEach((btn) => btn.addEventListener('click', () => setMode(btn.dataset.mode)));
-    setMode('origination');
   </script>
+
 
 <script>
 (() => {
