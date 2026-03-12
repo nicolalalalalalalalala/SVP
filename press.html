@@ -32,27 +32,17 @@
     .eyebrow::after{content:'';flex:0 0 36px;height:1px;background:currentColor}
     h1{font-family:var(--serif);font-size:clamp(46px,5.6vw,78px);line-height:1.04;font-weight:400;letter-spacing:-.02em;margin-bottom:20px}
     .lead{font-family:var(--serif);font-size:29px;line-height:1.45;color:#3f3a34;max-width:860px;margin-bottom:36px}
-    .press-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .press-card{background:#fff;border:1px solid var(--rule);padding:24px;display:flex;flex-direction:column;gap:12px}
-    .press-card small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
-    .press-card h2{font-family:var(--serif);font-size:34px;line-height:1.12;font-weight:400}
-    .press-card a{color:var(--ink);transition:color .2s}
-    .press-card a:hover{color:var(--red)}
 
-    .press-list{margin-top:16px;border:1px solid var(--rule);background:#fff}
-    .press-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:18px;align-items:start;padding:10px 14px;border-top:1px solid var(--rule)}
-    .press-row:first-child{border-top:0}
-    .press-row time{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
-    .press-row a{font-family:var(--serif);font-size:16px;line-height:1.35;color:var(--ink);transition:color .2s}
-    .press-row a:hover{color:var(--red)}
-
-    .press-more-wrap{display:flex;justify-content:center;margin-top:14px}
-    .press-more{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(0,0,0,.2);background:#fff;color:var(--ink);padding:11px 22px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-    .press-more:hover{background:var(--red);color:#fff;border-color:var(--red)}
+    .press-list{display:grid;gap:0;border:1px solid var(--rule);background:#fff}
+    .press-item{display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;padding:18px 24px;border-top:1px solid var(--rule)}
+    .press-item:first-child{border-top:0}
+    .press-item time{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+    .press-item a{font-family:var(--serif);font-size:30px;line-height:1.15;font-weight:400;color:var(--ink);transition:color .2s}
+    .press-item a:hover{color:var(--red)}
 
     .contact{margin-top:22px;padding:24px;border:1px solid var(--rule);background:#fff}
 
-    @media (max-width:960px){.press-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:960px){.press-item{grid-template-columns:140px minmax(0,1fr);gap:18px}}
     @media (max-width:760px){
       :root{--pad:20px}
       #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
@@ -64,10 +54,8 @@
       .nav__links a{font-size:10px;white-space:nowrap}
       main{padding:108px 0 80px}
       .lead{font-size:22px}
-      .press-grid{grid-template-columns:1fr}
-      .press-card h2{font-size:28px}
-      .press-row{grid-template-columns:1fr;gap:6px}
-      .press-row a{font-size:19px}
+      .press-item{grid-template-columns:1fr;gap:6px;padding:16px}
+      .press-item a{font-size:23px}
     }
   </style>
 </head>
@@ -82,7 +70,7 @@
       <li><a href="team.html">Team</a></li>
     </ul>
     <div class="nav__right">
-      <a href="index_cn.html" class="nav__zh">中文</a>
+      <a href="press_cn.html" class="nav__zh">中文</a>
       <a href="investor-access.html" class="nav__lp">Investor Access</a>
       <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     </div>
@@ -94,10 +82,82 @@
       <h1>Press</h1>
       <p class="lead">Selected media mentions and announcements from ShoreVest and related market coverage.</p>
 
-      <section class="press-grid" aria-label="Featured ShoreVest press coverage">
-        <article class="press-card"><small>11.06.25</small><h2><a href="#">FII Institute – Is Private Credit a Bubble</a></h2></article>
-        <article class="press-card"><small>07.25.25</small><h2><a href="#">Into the Shadows of US Private Credit: A China Perspective</a></h2></article>
-        <article class="press-card"><small>06.08.25</small><h2><a href="#">ShoreVest featured in PDI exploring several common misperceptions about the Chinese private debt market</a></h2></article>
+      <section class="press-list" aria-label="ShoreVest press coverage">
+        <article class="press-item"><time datetime="2026-01-26">01.26.26</time><a href="#">The End of the “China’s Univestable” Myth</a></article>
+        <article class="press-item"><time datetime="2025-11-06">11.06.25</time><a href="#">FII Institute – Is Private Credit a Bubble</a></article>
+        <article class="press-item"><time datetime="2025-07-25">07.25.25</time><a href="#">Into the Shadows of US Private Credit: A China Perspective</a></article>
+        <article class="press-item"><time datetime="2025-06-08">06.08.25</time><a href="#">ShoreVest featured in PDI exploring several common misperceptions about the Chinese private debt market</a></article>
+        <article class="press-item"><time datetime="2024-02-14">02.14.24</time><a href="#">The Economist talks with ShoreVest about China’s financial system and distressed debt</a></article>
+        <article class="press-item"><time datetime="2024-02-08">02.08.24</time><a href="#">Evergrande’s liquidation will not pay off for foreign investors</a></article>
+        <article class="press-item"><time datetime="2022-05-09">05.09.22</time><a href="#">Cambridge Associates touts fleeting China real estate opportunity</a></article>
+        <article class="press-item"><time datetime="2021-10-18">10.18.21</time><a href="#">Few foreign investors positioned for China NPLs</a></article>
+        <article class="press-item"><time datetime="2021-07-14">07.14.21</time><a href="#">[Webinar] China Private Debt – Comparative Risk/Return</a></article>
+        <article class="press-item"><time datetime="2021-05-13">05.13.21</time><a href="#">A COMPARATIVE ANALYSIS OF CHINESE PRIVATE DEBT – AllAboutAlpha</a></article>
+        <article class="press-item"><time datetime="2021-04-28">04.28.21</time><a href="#">The credit crunch happening in China: Defaults and the efficient allocation – Investment Magazine</a></article>
+        <article class="press-item"><time datetime="2020-09-15">09.15.20</time><a href="#">[Podcast] The Exchange: China’s bad debt opportunity</a></article>
+        <article class="press-item"><time datetime="2020-07-08">07.08.20</time><a href="#">[Webinar] Unique Market Dynamics in Private Credit Post COVID-19 (Europe &amp; Asia)</a></article>
+        <article class="press-item"><time datetime="2020-06-10">06.10.20</time><a href="#">Investors see return of NPL opportunities in 2H20, with potential price drop — Debtwire Webinar</a></article>
+        <article class="press-item"><time datetime="2020-06-04">06.04.20</time><a href="#">[Webinar] The New Global NPL Markets</a></article>
+        <article class="press-item"><time datetime="2020-05-27">05.27.20</time><a href="#">Why lending in China may be safer than you think</a></article>
+        <article class="press-item"><time datetime="2020-05-17">05.17.20</time><a href="#">[Podcast] Ben Fanger: Special situations, recovery rates and Chinese distressed debt</a></article>
+        <article class="press-item"><time datetime="2020-05-07">05.07.20</time><a href="#">[Webinar] China’s Credit Environment in the Wake of COVID-19</a></article>
+        <article class="press-item"><time datetime="2020-04-28">04.28.20</time><a href="#">‘Opportunity of a lifetime’ for distress investors as companies from HNA to China’s LVMH flounder and bad debts balloon</a></article>
+        <article class="press-item"><time datetime="2020-04-10">04.10.20</time><a href="#">No stranger to distress</a></article>
+        <article class="press-item"><time datetime="2020-04-06">04.06.20</time><a href="#">Welcome to the $1.5 Trillion Minefield of Defaulted Chinese Debt</a></article>
+        <article class="press-item"><time datetime="2020-01-17">01.17.20</time><a href="#">China NPL Investors Call US-China Trade Deal ‘Positive’ Development; Agreement Unlikely to Remove Main Hurdles for Investors</a></article>
+        <article class="press-item"><time datetime="2020-01-16">01.16.20</time><a href="#">U.S. Firms Could Win Lucrative Job of Cleaning Up China’s Bad Debt</a></article>
+        <article class="press-item"><time datetime="2019-01-23">01.23.19</time><a href="#">China bad debt disposals hit levels not seen for 20 years</a></article>
+        <article class="press-item"><time datetime="2019-01-17">01.17.19</time><a href="#">As China’s debt soars, the market for buying bad loans revs up</a></article>
+        <article class="press-item"><time datetime="2018-11-12">11.12.18</time><a href="#">Thick Skins and Local Savvy Needed in China’s Bad Debt Markets</a></article>
+        <article class="press-item"><time datetime="2018-08-29">08.29.18</time><a href="#">Chinese bad debt exchange opens channel to foreign investors</a></article>
+        <article class="press-item"><time datetime="2018-08-01">08.01.18</time><a href="#">China crackdown on bad debt forces wave of loans on the market</a></article>
+        <article class="press-item"><time datetime="2018-01-25">01.25.18</time><a href="#">ShoreVest: China Aims at ‘Orderly Deflating of the World’s Largest Credit Excess’</a></article>
+        <article class="press-item"><time datetime="2017-11-10">11.10.17</time><a href="#">Andrew Brown: China Committed To Market-Based Solution To Excess Debt Challenge</a></article>
+        <article class="press-item"><time datetime="2017-08-28">08.28.17</time><a href="#">Huarong chief warns of bubble in China’s distressed debt market</a></article>
+        <article class="press-item"><time datetime="2017-08-26">08.26.17</time><a href="#">Too big to ignore: the internationalisation of Chinese balance sheets</a></article>
+        <article class="press-item"><time datetime="2017-08-04">08.04.17</time><a href="#">Will China’s consumer market become the next credit bubble?</a></article>
+        <article class="press-item"><time datetime="2017-07-14">07.14.17</time><a href="#">Is China approaching a Lehman moment?</a></article>
+        <article class="press-item"><time datetime="2017-07-03">07.03.17</time><a href="#">China’s legal system came a long way in enforcing creditor claims against bad debt</a></article>
+        <article class="press-item"><time datetime="2017-06-13">06.13.17</time><a href="#">ShoreVest targets $750m for China fund</a></article>
+        <article class="press-item"><time datetime="2017-06-12">06.12.17</time><a href="#">ShoreVest eyeing China’s ‘bad debt’ industry with $750m fund</a></article>
+        <article class="press-item"><time datetime="2017-06-11">06.11.17</time><a href="#">ShoreVest launches $750m fund to tap NPL portfolios in China</a></article>
+        <article class="press-item"><time datetime="2017-06-08">06.08.17</time><a href="#">ShoreVest Capital taps into growing global interest in China NPLs</a></article>
+        <article class="press-item"><time datetime="2017-06-02">06.02.17</time><a href="#">China has a bold plan to tackle bad bank loans and its first deadline is closer than you think</a></article>
+        <article class="press-item"><time datetime="2017-06-01">06.01.17</time><a href="#">China debt ‘could prompt $7.7 trillion asset sale’</a></article>
+        <article class="press-item"><time datetime="2017-05-20">05.20.17</time><a href="#">Four reasons China is opening its bond market to the world</a></article>
+        <article class="press-item"><time datetime="2017-05-05">05.05.17</time><a href="#">China can deflate the world’s largest credit bubble in an orderly fashion</a></article>
+        <article class="press-item"><time datetime="2017-04-21">04.21.17</time><a href="#">China’s credit excess is unlike anything the world has ever seen</a></article>
+        <article class="press-item"><time datetime="2017-03-27">03.27.17</time><a href="#">Distressed Funds Find Treasure in China’s Mounting Bad Debts</a></article>
+        <article class="press-item"><time datetime="2017-03-07">03.07.17</time><a href="#">Global investors return to China’s bad debt market</a></article>
+        <article class="press-item"><time datetime="2016-12-13">12.13.16</time><a href="#">Zombies Hidden in China Debt Swaps Keep Distressed Funds Wary</a></article>
+        <article class="press-item"><time datetime="2016-11-16">11.16.16</time><a href="#">Hurdles limit Chinese NPL trades to small group of international investors so far</a></article>
+        <article class="press-item"><time datetime="2016-11-15">11.15.16</time><a href="#">Shoreline founder launches new distressed debt firm</a></article>
+        <article class="press-item"><time datetime="2016-11-11">11.11.16</time><a href="#">New firm ShoreVest launches to invest in Chinese distressed debt</a></article>
+        <article class="press-item"><time datetime="2016-11-11">11.11.16</time><a href="#">Ex-Shoreline executives reform as ShoreVest, target China NPLs</a></article>
+        <article class="press-item"><time datetime="2016-11-11">11.11.16</time><a href="#">ShoreVest Capital Partners, a Specialist in Chinese Distressed Debt and Structured Credit, Officially Launched and Started Investing in Chinese NPLs</a></article>
+        <article class="press-item"><time datetime="2016-11-11">11.11.16</time><a href="#">ShoreVest begins investing in Chinese NPLs</a></article>
+        <article class="press-item"><time datetime="2016-11-10">11.10.16</time><a href="#">ShoreVest’s Benjamin Fanger on Private Market Solutions for NPLs</a></article>
+        <article class="press-item"><time datetime="2016-06-01">06.01.16</time><a href="#">The beauty and the beast of China’s non-performing loans</a></article>
+        <article class="press-item"><time datetime="2016-05-07">05.07.16</time><a href="#">Breaking bad</a></article>
+        <article class="press-item"><time datetime="2015-11-01">11.01.15</time><a href="#">Opportunity knocks in the East</a></article>
+        <article class="press-item"><time datetime="2015-08-31">08.31.15</time><a href="#">Distressed Investors Wary of Riding China’s Bad Loan Wave</a></article>
+        <article class="press-item"><time datetime="2015-02-12">02.12.15</time><a href="#">EMPEA Professional Development Webcast: Chinese Private &amp; Distressed Debt Investing – Opportunities &amp; Challenges</a></article>
+        <article class="press-item"><time datetime="2014-12-03">12.03.14</time><a href="#">EMPEA Professional Development Webcast: Chinese PE Market Overview</a></article>
+        <article class="press-item"><time datetime="2014-07-23">07.23.14</time><a href="#">[Transcript of Podcast] Benjamin Fanger: Ballooning Bad Loans In China Are The Next Great Opportunity</a></article>
+        <article class="press-item"><time datetime="2014-07-23">07.23.14</time><a href="#">[Podcast] Benjamin Fanger: Ballooning Bad Loans In China Are The Next Great Opportunity</a></article>
+        <article class="press-item"><time datetime="2014-06-27">06.27.14</time><a href="#">China local SOE sales? More risk than opportunity</a></article>
+        <article class="press-item"><time datetime="2014-06-26">06.26.14</time><a href="#">World’s Biggest Debt Load Lures Distressed Funds to China</a></article>
+        <article class="press-item"><time datetime="2013-12-01">12.01.13</time><a href="#">Views from the Field: Reflecting on 2013 and the Outlook for EM PE in 2014</a></article>
+        <article class="press-item"><time datetime="2013-11-12">11.12.13</time><a href="#">Playing Doctor</a></article>
+        <article class="press-item"><time datetime="2013-08-05">08.05.13</time><a href="#">With few big deals, private equity moves to be Asia’s new banker</a></article>
+        <article class="press-item"><time datetime="2013-05-01">05.01.13</time><a href="#">Chinese Market Culture: How Well Can You Know a Company?</a></article>
+        <article class="press-item"><time datetime="2012-02-29">02.29.12</time><a href="#">Shoreline Capital’s Fanger On China’s Coming Debt Crisis</a></article>
+        <article class="press-item"><time datetime="2012-02-10">02.10.12</time><a href="#">China Tipped To See More NPL Deal Flow</a></article>
+        <article class="press-item"><time datetime="2010-02-10">02.10.10</time><a href="#">Industry Q&amp;A: Benjamin Fanger</a></article>
+        <article class="press-item"><time datetime="2009-11-24">11.24.09</time><a href="#">Distressed Investors Mull Challenges Posed By Chinese Law</a></article>
+        <article class="press-item"><time datetime="2009-11-05">11.05.09</time><a href="#">Distressed Investors Feel No Distress: Financial Crisis Creates Opportunities For Special Situations Funds</a></article>
+        <article class="press-item"><time datetime="2008-09-11">09.11.08</time><a href="#">Shoreline Capital Q&amp;A: The Distressed Opportunity in China</a></article>
+        <article class="press-item"><time datetime="2008-08-11">08.11.08</time><a href="#">Doing Your Homework Pays in Chinese Distressed Debt</a></article>
       </section>
 
       <section class="press-list" id="press-archive" aria-label="ShoreVest press archive">
