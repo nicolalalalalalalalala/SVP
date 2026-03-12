@@ -89,32 +89,86 @@
     .market-grid h3 { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; color: #67645e; }
 
     .intelligence { background: #ecebe8; }
-    .intelligence-panel { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
-    .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 12px; }
-    .intel-controls { display: flex; gap: 8px; margin-bottom: 10px; }
-    .intel-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      border: 1px solid #d3cfc8;
-      background: #f3f2f0;
-      padding: 0 12px;
-      font-size: 10px;
-      font-weight: 500;
+    .intelligence-panel { display: grid; gap: 16px; }
+    .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 18px; }
+    .intel-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+    .intel-stage {
+      border: 1px solid #dbd8d2;
+      background: #fbfaf8;
+      padding: 12px;
+      position: relative;
+    }
+    .intel-stage:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -11px;
+      top: 14px;
+      color: #9f9b93;
+      font-size: 16px;
+      font-weight: 600;
+      z-index: 2;
+    }
+    .intel-stage h3 {
+      font-size: 9px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      cursor: pointer;
+      color: #66625b;
+      margin-bottom: 10px;
     }
-    .intel-btn.active { background: #f6e9ec; border-color: #c67283; color: #732638; }
-    .intel-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .intel-node { border: 1px solid #dbd8d2; padding: 10px; background: #fbfaf8; }
-    .intel-node strong { display: block; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #66625b; margin-bottom: 4px; }
-    .intel-node span { display: block; font-family: var(--serif); font-size: 30px; line-height: 1; margin-bottom: 4px; }
-    .intel-node.active { border-color: #d27184; box-shadow: inset 0 0 0 1px rgba(187, 46, 70, 0.28); }
+    .capability { border-top: 1px solid #e6e2db; padding-top: 8px; margin-top: 8px; }
+    .capability:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+    .capability h4 { font-size: 12px; font-weight: 500; margin-bottom: 3px; }
+    .capability .weight {
+      font-size: 9px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #78746d;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .bar {
+      --value: 0;
+      position: relative;
+      height: 8px;
+      border-radius: 999px;
+      background: #e7e4de;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .bar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: calc(var(--value) * 1%);
+      background: linear-gradient(90deg, #9d2339, #cc7486);
+    }
+    .capability p { font-size: 12px; color: #57534d; }
     .intel-copy { padding: 16px; }
     .intel-copy h3 { font-family: var(--serif); font-size: 29px; font-weight: 400; margin-bottom: 8px; }
-    .intel-list { margin: 10px 0 0 16px; }
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .benchmark-table th,
+    .benchmark-table td {
+      border-top: 1px solid #ddd9d1;
+      padding: 8px 4px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .benchmark-table th {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: #6f6b64;
+    }
+    .provenance {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #6a655f;
+    }
 
     .platform-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 14px; }
     .platform-notes { display: grid; gap: 10px; }
@@ -170,7 +224,8 @@
       .step p { font-size: 13px; }
       .lead, .section-head p { font-size: 20px; }
       .hero-grid, .section-head, .intelligence-panel, .platform-layout { grid-template-columns: 1fr; }
-      .hero-thesis, .proof-grid, .market-grid, .flow, .intel-map { grid-template-columns: 1fr; }
+      .hero-thesis, .proof-grid, .market-grid, .flow, .intel-flow { grid-template-columns: 1fr; }
+      .intel-stage:not(:last-child)::after { content: '↓'; right: 12px; top: auto; bottom: -11px; }
       .small-grid { grid-template-columns: 1fr; }
       .intelligence-panel > *,
       .platform-layout > * { min-width: 0; }
@@ -315,33 +370,88 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Execution intelligence map.</h2>
-          <p>An integrated infographic of ShoreVest's credit workflow. Switch views to see where the platform concentrates effort.</p>
-          <p><strong>How to read the numbers:</strong> each figure is an internal execution score on a 0–100 scale (higher means stronger capability concentration), not a percentage.</p>
+          <p>Execution scores indicate where the platform concentrates operational capability across the credit lifecycle. Higher values reflect greater in-house execution intensity rather than external reliance.</p>
         </div>
         <div class="intelligence-panel">
           <div class="intel-graphic">
-            <div class="intel-controls" role="tablist" aria-label="Execution lens selector">
-              <button class="intel-btn active" data-mode="origination" type="button">Origination</button>
-              <button class="intel-btn" data-mode="underwriting" type="button">Underwriting</button>
-              <button class="intel-btn" data-mode="resolution" type="button">Resolution</button>
-            </div>
-            <div class="intel-map">
-              <article class="intel-node" data-node="network"><strong>Network Access</strong><span>86/100</span><p>Local banks and advisors.</p></article>
-              <article class="intel-node" data-node="legal"><strong>Legal Structuring</strong><span>91/100</span><p>Onshore enforceability design.</p></article>
-              <article class="intel-node" data-node="recovery"><strong>Recovery Control</strong><span>88/100</span><p>Court and workout execution.</p></article>
-              <article class="intel-node" data-node="screening"><strong>Risk Screening</strong><span>84/100</span><p>Downside-first selection.</p></article>
-              <article class="intel-node" data-node="governance"><strong>IC Governance</strong><span>90/100</span><p>3/4 super-majority protocol.</p></article>
-              <article class="intel-node" data-node="monitoring"><strong>Servicing Loop</strong><span>87/100</span><p>Monitoring to intervention.</p></article>
+            <div class="intel-flow" aria-label="Credit lifecycle capability map">
+              <article class="intel-stage">
+                <h3>Origination</h3>
+                <div class="capability">
+                  <h4>Network Access</h4>
+                  <span class="weight">Execution intensity: 86</span>
+                  <div class="bar" style="--value: 86"></div>
+                  <p>Direct sourcing through regional banks, restructuring advisors, and borrower networks across China's onshore credit market.</p>
+                </div>
+                <div class="capability">
+                  <h4>Risk Screening</h4>
+                  <span class="weight">Execution intensity: 84</span>
+                  <div class="bar" style="--value: 84"></div>
+                  <p>Downside-first screening that disqualifies transactions early when enforceability, sponsor behavior, or collateral quality is weak.</p>
+                </div>
+              </article>
+              <article class="intel-stage">
+                <h3>Underwriting</h3>
+                <div class="capability">
+                  <h4>Legal Structuring</h4>
+                  <span class="weight">Execution intensity: 91</span>
+                  <div class="bar" style="--value: 91"></div>
+                  <p>Transaction architecture designed for enforceability under PRC law, including security perfection and court-recognized collateral claims.</p>
+                </div>
+                <div class="capability">
+                  <h4>IC Governance</h4>
+                  <span class="weight">Execution intensity: 90</span>
+                  <div class="bar" style="--value: 90"></div>
+                  <p>Weekly investment committee governance with a Managing Partner required vote and 3/4 super-majority approval before commitment.</p>
+                </div>
+              </article>
+              <article class="intel-stage">
+                <h3>Resolution</h3>
+                <div class="capability">
+                  <h4>Recovery Control</h4>
+                  <span class="weight">Execution intensity: 88</span>
+                  <div class="bar" style="--value: 88"></div>
+                  <p>In-house coordination of court process, restructuring negotiations, and collateral realization to preserve recovery optionality.</p>
+                </div>
+                <div class="capability">
+                  <h4>Servicing Loop</h4>
+                  <span class="weight">Execution intensity: 87</span>
+                  <div class="bar" style="--value: 87"></div>
+                  <p>Continuous monitoring-to-intervention workflow linking portfolio surveillance with legal and commercial action during stress.</p>
+                </div>
+              </article>
             </div>
           </div>
           <aside class="intel-copy">
-            <h3 id="intel-title">Origination lens</h3>
-            <p id="intel-description">Priority is proprietary access and early risk filtration before opportunities become broadly intermediated.</p>
-            <ul class="intel-list" id="intel-list">
-              <li>Relationship-first sourcing across local channels.</li>
-              <li>Early legal feasibility check before pricing.</li>
-              <li>Faster disqualification of weak recovery paths.</li>
-            </ul>
+            <h3>Relative capability context</h3>
+            <p>Compared with a typical offshore fund model, ShoreVest retains more of the execution-critical workstreams in-house through underwriting and recovery.</p>
+            <table class="benchmark-table" aria-label="Capability benchmark comparison">
+              <thead>
+                <tr>
+                  <th>Capability</th>
+                  <th>Typical offshore fund</th>
+                  <th>ShoreVest</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Network access</td>
+                  <td>Limited</td>
+                  <td>86</td>
+                </tr>
+                <tr>
+                  <td>Legal structuring</td>
+                  <td>Moderate</td>
+                  <td>91</td>
+                </tr>
+                <tr>
+                  <td>Recovery control</td>
+                  <td>Outsourced</td>
+                  <td>88</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="provenance">Execution scores derived from internal platform analysis of sourcing channels, legal structuring capacity, servicing infrastructure, and recovery execution across ShoreVest transactions.</p>
           </aside>
         </div>
       </div>
@@ -435,49 +545,6 @@
       });
     }
 
-    const intelData = {
-      origination: {
-        title: 'Origination lens',
-        description: 'Priority is proprietary access and early risk filtration before opportunities become broadly intermediated.',
-        bullets: [
-          'Relationship-first sourcing across local channels.',
-          'Early legal feasibility check before pricing.',
-          'Faster disqualification of weak recovery paths.'
-        ],
-        active: ['network', 'screening', 'legal']
-      },
-      underwriting: {
-        title: 'Underwriting lens',
-        description: 'Underwriting pairs downside valuation with document architecture so structure and economics are decided together.',
-        bullets: ['30–60% LTV discipline anchors entry.', 'Legal + financial scrutiny before commitment.', 'Scenario modeling tied to enforceability.'],
-        active: ['legal', 'governance', 'monitoring']
-      },
-      resolution: {
-        title: 'Resolution lens',
-        description: 'ShoreVest is built to own outcomes after close through intensive servicing, court process, and negotiated exits.',
-        bullets: ['Active monitoring flags stress early.', 'In-house coordination across legal and commercial tracks.', 'Recovery workflow designed to preserve value.'],
-        active: ['recovery', 'monitoring', 'governance']
-      }
-    };
-
-    const intelButtons = document.querySelectorAll('.intel-btn');
-    const intelNodes = document.querySelectorAll('.intel-node');
-    const intelTitle = document.getElementById('intel-title');
-    const intelDescription = document.getElementById('intel-description');
-    const intelList = document.getElementById('intel-list');
-
-    const setMode = (mode) => {
-      const payload = intelData[mode];
-      if (!payload) return;
-      intelTitle.textContent = payload.title;
-      intelDescription.textContent = payload.description;
-      intelList.innerHTML = payload.bullets.map((item) => `<li>${item}</li>`).join('');
-      intelButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.mode === mode));
-      intelNodes.forEach((node) => node.classList.toggle('active', payload.active.includes(node.dataset.node)));
-    };
-
-    intelButtons.forEach((btn) => btn.addEventListener('click', () => setMode(btn.dataset.mode)));
-    setMode('origination');
   </script>
 
 <script>
