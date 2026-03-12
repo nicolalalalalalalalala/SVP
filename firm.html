@@ -263,12 +263,43 @@
 
     .dark-band { background: var(--dark); color: #f3efe8; border-top: none; }
     .dark-band .eyebrow { color: rgba(255,255,255,.52); }
-    .dark-band h2 { color: #f8f3ea; max-width: 780px; }
-    .flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
-    .step { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); padding: 12px; }
-    .num { font-size: 9px; letter-spacing: .14em; color: #b9b7b0; display: block; margin-bottom: 10px; }
-    .step h3 { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 6px; }
-    .step p { color: #c9c5bd; font-size: 12px; }
+    .dark-band h2 { color: #f8f3ea; max-width: 720px; margin-bottom: 10px; }
+    .dark-bridge {
+      max-width: 760px;
+      color: #cbc5bc;
+      font-size: 15px;
+      line-height: 1.55;
+      margin-bottom: 22px;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+    .step {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 14px;
+    }
+    .step.primary {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.18);
+      min-height: 180px;
+    }
+    .step.supporting {
+      min-height: 142px;
+    }
+    .step h3 { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 8px; }
+    .step p { color: #c9c5bd; font-size: 12px; line-height: 1.45; }
+
+    .platform-build {
+      background: #f3f1ed;
+      border-top-color: #dfdad2;
+    }
+    .platform-build .section-head p {
+      color: #3a3630;
+    }
 
     .closing-panel { padding: 28px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 18px; }
     .btn {
@@ -301,8 +332,11 @@
         line-height: 1.1;
         margin-bottom: 18px;
       }
+      .dark-bridge { font-size: 16px; }
       .flow { gap: 12px; }
-      .step { padding: 16px 14px; }
+      .step,
+      .step.primary,
+      .step.supporting { min-height: 0; padding: 16px 14px; }
       .step h3 { font-size: 11px; }
       .step p { font-size: 13px; }
       .lead, .section-head p { font-size: 20px; }
@@ -578,28 +612,29 @@
     <section class="dark-band">
       <div class="wrap">
         <div class="eyebrow">Differentiators</div>
-        <h2>What sets ShoreVest apart is execution architecture, not brand posturing.</h2>
+        <h2>The edge is execution architecture, not brand optics.</h2>
+        <p class="dark-bridge">ShoreVest's operating edge comes from how sourcing, structuring, governance, and recovery are organised onshore, with legal and investment accountability held by the same decision-makers from entry through exit.</p>
         <div class="flow">
-          <article class="step"><span class="num">01</span><h3>Long-standing local team</h3><p>Built for local pattern recognition and continuity through cycles.</p></article>
-          <article class="step"><span class="num">02</span><h3>Direct sourcing network</h3><p>Relationships across banks, AMCs, law firms, and servicers.</p></article>
-          <article class="step"><span class="num">03</span><h3>In-house structuring</h3><p>Documentation and legal design are part of underwriting.</p></article>
-          <article class="step"><span class="num">04</span><h3>Recovery-led process</h3><p>Workflow built around outcomes rather than passive ownership.</p></article>
-          <article class="step"><span class="num">05</span><h3>Integrated governance</h3><p>Investment, legal framing, and financial control in one committee.</p></article>
-          <article class="step"><span class="num">06</span><h3>Aligned accountability</h3><p>The same professionals approve, monitor, and exit each position.</p></article>
+          <article class="step primary"><h3>Direct sourcing across banks, AMCs and legal channels</h3><p>Onshore relationships across banks, AMCs, law firms, and servicing channels create proprietary deal flow and earlier workout visibility than brokered processes.</p></article>
+          <article class="step primary"><h3>Underwriting integrated with legal structuring</h3><p>Documentation design, security analysis, and enforceability checks are built into underwriting before approval, not outsourced after committee sign-off.</p></article>
+          <article class="step primary"><h3>Recovery workflow built in from day one</h3><p>Resolution planning is embedded at entry, so each position is monitored against executable recovery paths rather than passive ownership assumptions.</p></article>
+          <article class="step primary"><h3>Investment committee with legal and financial control embedded</h3><p>Investment judgment, legal framing, and financial control sit in one decision forum, reducing handoff risk and shortening execution cycles.</p></article>
+          <article class="step supporting"><h3>Long-standing mainland execution team</h3><p>Local continuity preserves pattern recognition through policy, credit, and enforcement cycles.</p></article>
+          <article class="step supporting"><h3>Same team sources, approves and exits positions</h3><p>Coverage ownership remains with approving professionals, preserving accountability from origination through recovery and exit.</p></article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="platform-build">
       <div class="wrap">
         <div class="section-head">
-          <h2>How the platform is built.</h2>
-          <p>The firm is owned and led by senior investment professionals, with leadership accountability tied directly to investment outcomes.</p>
+          <h2>Built for accountability.</h2>
+          <p>The platform is owned and led by senior investment professionals, with decision rights and operating control tied directly to realised investment outcomes.</p>
         </div>
         <div class="market-grid">
-          <article><h3>Ownership and leadership alignment</h3><p>Decision-makers are the principals responsible for performance and platform design.</p></article>
-          <article><h3>Integrated rather than modular</h3><p>Origination, underwriting, servicing, and resolution are connected workflows.</p></article>
-          <article><h3>Embedded governance</h3><p>Investment committee review combines investment, legal, and financial control.</p></article>
+          <article><h3>Ownership and leadership alignment</h3><p>Decision-makers are the principals accountable for investment performance and platform design.</p></article>
+          <article><h3>Integrated operating model</h3><p>Origination, underwriting, servicing, and resolution are managed as one connected execution chain.</p></article>
+          <article><h3>Governance inside execution</h3><p>Committee oversight combines investment, legal, and financial control before and after capital is deployed.</p></article>
         </div>
       </div>
     </section>
