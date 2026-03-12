@@ -191,7 +191,10 @@
     const archive = document.getElementById('press-archive');
     const moreBtn = document.getElementById('press-more-btn');
     if (archive && moreBtn) {
-      const rows = Array.from(archive.querySelectorAll('.press-row'));
+      const rows = Array.from(archive.querySelectorAll('.press-row')).filter((row) => {
+        const text = row.textContent || '';
+        return !/china\s+debt\s+dynamics|volume\s*\d+\s*\|\s*issue\s*\d+/i.test(text);
+      });
       const initialCount = 12;
       const batchSize = 12;
       let shown = 0;
