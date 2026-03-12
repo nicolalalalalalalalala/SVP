@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShoreVest Partners — Press</title>
+  <title>ShoreVest Partners — 新闻</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
   <link rel="shortcut icon" href="assets/favicon.svg?v=3">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -76,17 +76,17 @@
     <div class="nav__right">
       <a href="press.html" class="nav__zh">EN</a>
       <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
-      <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
     </div>
   </nav>
 
   <main>
     <div class="wrap">
-      <p class="eyebrow">Media & Announcements</p>
-      <h1>Press</h1>
-      <p class="lead">Selected ShoreVest announcements and third-party coverage across the private credit market.</p>
+      <p class="eyebrow">媒体与公告</p>
+      <h1>新闻</h1>
+      <p class="lead">精选 ShoreVest 公告及第三方对私募信贷市场的相关报道。</p>
 
-      <section class="press-list" id="press-archive" aria-label="ShoreVest press archive">
+      <section class="press-list" id="press-archive" aria-label="ShoreVest 新闻归档">
         <article class="press-row"><time datetime="2024-02-14">02.14.24</time><a href="#">The Economist speaks with ShoreVest on China’s financial system and distressed debt</a></article>
         <article class="press-row"><time datetime="2024-02-08">02.08.24</time><a href="#">Evergrande’s liquidation will not pay off for foreign investors</a></article>
         <article class="press-row"><time datetime="2022-05-09">05.09.22</time><a href="#">Cambridge Associates touts fleeting China real estate opportunity</a></article>
@@ -160,11 +160,11 @@
         <article class="press-row"><time datetime="2008-08-11">08.11.08</time><a href="#">Doing Your Homework Pays in Chinese Distressed Debt</a></article>
       </section>
       <div class="press-more-wrap">
-        <button class="press-more" id="press-more-btn" type="button" aria-controls="press-archive">Load More</button>
+        <button class="press-more" id="press-more-btn" type="button" aria-controls="press-archive">加载更多</button>
       </div>
 
       <div class="contact">
-        For media inquiries, please contact <a href="mailto:info@shorevest.com"><strong>info@shorevest.com</strong></a>.
+        如需媒体咨询，请联系 <a href="mailto:info@shorevest.com"><strong>info@shorevest.com</strong></a>。
       </div>
     </div>
   </main>
@@ -176,13 +176,13 @@
       menuBtn.addEventListener('click', () => {
         const open = nav.classList.toggle('menu-open');
         menuBtn.setAttribute('aria-expanded', String(open));
-        menuBtn.textContent = open ? 'Close' : 'Menu';
+        menuBtn.textContent = open ? '关闭' : '菜单';
       });
       document.querySelectorAll('.nav__links a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('menu-open');
           menuBtn.setAttribute('aria-expanded', 'false');
-          menuBtn.textContent = 'Menu';
+          menuBtn.textContent = '菜单';
         });
       });
     }
