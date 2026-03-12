@@ -176,7 +176,43 @@
     .note h3 { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 6px; }
     .platform-diagram { background: #f7f5f3; border: 1px solid #e0dcd5; padding: 14px; }
     .small-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
-    .small-box { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 9px; text-align: center; }
+    .small-box {
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 9px;
+      text-align: center;
+      border: 1px solid #d9d3ca;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color .2s, color .2s, transform .2s;
+    }
+    .small-box:hover,
+    .small-box:focus-visible {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .small-box.is-active {
+      border-color: var(--red);
+      color: var(--red);
+      background: #fdf8f9;
+    }
+    .small-detail {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #ddd9d1;
+      min-height: 66px;
+    }
+    .small-detail h4 {
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #706b63;
+      margin-bottom: 6px;
+    }
+    .small-detail p { font-size: 12px; color: #393632; }
 
     .dark-band { background: var(--dark); color: #f3efe8; border-top: none; }
     .dark-band .eyebrow { color: rgba(255,255,255,.52); }
@@ -454,10 +490,14 @@
           <div class="platform-diagram">
             <div class="eyebrow">决策机制</div>
             <p>投委会每周召开会议。投资决策需包含管理合伙人同意，并达到 3/4 超级多数。批准项目进入的成员将对投后监控与退出结果负责。</p>
-            <div class="small-grid">
-              <div class="small-box">投资参与度</div>
-              <div class="small-box">流程中台</div>
-              <div class="small-box">信用覆盖</div>
+            <div class="small-grid" role="tablist" aria-label="投资委员会流程图">
+              <button class="small-box is-active" type="button" role="tab" aria-selected="true" data-detail-title="投资参与度" data-detail-copy="四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。">投资参与度</button>
+              <button class="small-box" type="button" role="tab" aria-selected="false" data-detail-title="流程中台" data-detail-copy="项目获批后由统一流程中台推进法律节点、抵押物更新与服务商执行进度，确保跨职能信息一致。">流程中台</button>
+              <button class="small-box" type="button" role="tab" aria-selected="false" data-detail-title="信用覆盖" data-detail-copy="项目覆盖责任保留在批准成员手中，使尽调假设、投后监控与退出执行在同一责任链条内闭环。">信用覆盖</button>
+            </div>
+            <div class="small-detail" aria-live="polite">
+              <h4>投资参与度</h4>
+              <p>四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。</p>
             </div>
           </div>
         </div>
@@ -528,6 +568,26 @@
         menuBtn.setAttribute('aria-expanded', String(isOpen));
       });
     }
+
+    document.querySelectorAll('.platform-diagram').forEach((diagram) => {
+      const tabs = diagram.querySelectorAll('.small-box');
+      const detailTitle = diagram.querySelector('.small-detail h4');
+      const detailCopy = diagram.querySelector('.small-detail p');
+      if (!tabs.length || !detailTitle || !detailCopy) return;
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((el) => {
+            el.classList.remove('is-active');
+            el.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
+          detailTitle.textContent = tab.dataset.detailTitle || '';
+          detailCopy.textContent = tab.dataset.detailCopy || '';
+        });
+      });
+    });
 
   </script>
 

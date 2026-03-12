@@ -176,7 +176,43 @@
     .note h3 { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 6px; }
     .platform-diagram { background: #f7f5f3; border: 1px solid #e0dcd5; padding: 14px; }
     .small-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
-    .small-box { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 9px; text-align: center; }
+    .small-box {
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 9px;
+      text-align: center;
+      border: 1px solid #d9d3ca;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color .2s, color .2s, transform .2s;
+    }
+    .small-box:hover,
+    .small-box:focus-visible {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .small-box.is-active {
+      border-color: var(--red);
+      color: var(--red);
+      background: #fdf8f9;
+    }
+    .small-detail {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #ddd9d1;
+      min-height: 66px;
+    }
+    .small-detail h4 {
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #706b63;
+      margin-bottom: 6px;
+    }
+    .small-detail p { font-size: 12px; color: #393632; }
 
     .dark-band { background: var(--dark); color: #f3efe8; border-top: none; }
     .dark-band .eyebrow { color: rgba(255,255,255,.52); }
@@ -454,10 +490,14 @@
           <div class="platform-diagram">
             <div class="eyebrow">Decision protocol</div>
             <p>The committee meets weekly. Investment decisions require the Managing Partner's vote and a 3/4 super-majority. The individuals who approve entry are accountable for monitoring and exit.</p>
-            <div class="small-grid">
-              <div class="small-box">Investment Participation</div>
-              <div class="small-box">Traffic Office</div>
-              <div class="small-box">Credit Coverage</div>
+            <div class="small-grid" role="tablist" aria-label="Investment committee workflow map">
+              <button class="small-box is-active" type="button" role="tab" aria-selected="true" data-detail-title="Investment participation" data-detail-copy="All four committee members participate in screening and diligence before a vote, so legal, underwriting, and execution issues are surfaced before approval.">Investment Participation</button>
+              <button class="small-box" type="button" role="tab" aria-selected="false" data-detail-title="Traffic office" data-detail-copy="Post-approval workflow is coordinated through a central traffic office that tracks legal milestones, collateral updates, and servicing deliverables.">Traffic Office</button>
+              <button class="small-box" type="button" role="tab" aria-selected="false" data-detail-title="Credit coverage" data-detail-copy="Coverage ownership remains with the approving professionals, preserving continuity from underwriting assumptions through monitoring and exit execution.">Credit Coverage</button>
+            </div>
+            <div class="small-detail" aria-live="polite">
+              <h4>Investment participation</h4>
+              <p>All four committee members participate in screening and diligence before a vote, so legal, underwriting, and execution issues are surfaced before approval.</p>
             </div>
           </div>
         </div>
@@ -526,6 +566,26 @@
         menuBtn.setAttribute('aria-expanded', String(isOpen));
       });
     }
+
+    document.querySelectorAll('.platform-diagram').forEach((diagram) => {
+      const tabs = diagram.querySelectorAll('.small-box');
+      const detailTitle = diagram.querySelector('.small-detail h4');
+      const detailCopy = diagram.querySelector('.small-detail p');
+      if (!tabs.length || !detailTitle || !detailCopy) return;
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((el) => {
+            el.classList.remove('is-active');
+            el.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
+          detailTitle.textContent = tab.dataset.detailTitle || '';
+          detailCopy.textContent = tab.dataset.detailCopy || '';
+        });
+      });
+    });
 
   </script>
 
