@@ -277,7 +277,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   </section>
 
   <div class="reading-grid">
-    <article id="current-issue" class="reading" data-print-article="active" data-print-filename="shorevest-china-debt-dynamics-issue-46.pdf">
+    <article id="current-issue" class="reading" data-print-article="active" data-print-filename="shorevest-china-debt-dynamics-issue-46.pdf" data-print-pdf="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf">
       <p class="lead"><strong>Volume 10 | Issue 1</strong><br>25 January 2026</p>
 
       <h3>The End of the “China’s Uninvestable” Myth</h3>
@@ -408,6 +408,7 @@ const archiveIssueMap={
 const getPrintSourceArticle=()=>document.querySelector('[data-print-article="active"]')||document.querySelector('[data-print-article]')||document.querySelector('.reading-grid .reading');
 
 const getPrintFilename=()=>getPrintSourceArticle()?.getAttribute('data-print-filename')||defaultPrintFilename;
+const getPrintPdfUrl=()=>getPrintSourceArticle()?.getAttribute('data-print-pdf')||archiveIssueMap.v10i1.pdf;
 
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
@@ -529,6 +530,7 @@ buildPrintEdition();
 const previewParams=new URLSearchParams(window.location.search);
 const isPrintPreviewMode=previewParams.get('printPreview')==='1';
 const previewAction=previewParams.get('action')||'view';
+let suggestedFilename='';
 if(isPrintPreviewMode){
   document.body.classList.add('print-preview');
 }
@@ -536,7 +538,7 @@ if(isPrintPreviewMode){
 if(isPrintPreviewMode){
   const issueKey=previewParams.get('doc');
   const selectedIssue=issueKey?archiveIssueMap[issueKey]:null;
-  const suggestedFilename=previewParams.get('filename')||selectedIssue?.pdf?.split('/').pop();
+  suggestedFilename=previewParams.get('filename')||selectedIssue?.pdf?.split('/').pop()||'';
   const printMeta=document.getElementById('print-meta');
   const printTitle=document.getElementById('print-title');
   const printStandfirst=document.getElementById('print-standfirst');
@@ -572,7 +574,19 @@ if(isPrintPreviewMode){
 }
 
 if(isPrintPreviewMode&&(previewAction==='print'||(previewAction==='download'&&!previewParams.get('doc')))){
-  window.setTimeout(()=>window.print(),120);
+  if(previewAction==='download'&&!previewParams.get('doc')){
+    const downloadLink=document.createElement('a');
+    downloadLink.href=getPrintPdfUrl();
+    if(suggestedFilename){
+      downloadLink.setAttribute('download',suggestedFilename);
+    }
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    downloadLink.remove();
+    window.setTimeout(()=>window.close(),120);
+  }else{
+    window.setTimeout(()=>window.print(),120);
+  }
 }
 </script>
 
