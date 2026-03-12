@@ -8,94 +8,74 @@
   <link rel="shortcut icon" href="assets/favicon.svg?v=3">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --red:#b3213f;--ink:#111;--white:#fff;--off:#efefef;--rule:rgba(0,0,0,.1);--mist:#757575;--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--max:1200px;--pad:64px; }
+    :root { --red:#b3213f;--ink:#0c0c0a;--white:#fff;--off:#f6f4f0;--rule:rgba(0,0,0,.08);--mist:#888680;--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--max:1200px;--pad:64px; }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    body{background:var(--off);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;overflow-x:hidden}
+    body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
     a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 
-    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid #ddd;background:#efefef}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid var(--rule);background:#fff}
     .nav__logo{display:inline-flex;align-items:center;height:100%}
     .nav__logo svg{display:block}
-    .nav__links{display:flex;gap:28px;list-style:none}
+    .nav__links{display:flex;gap:36px;list-style:none}
     .nav__links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);opacity:.45;transition:opacity .2s}
     .nav__links a:hover,.nav__links a.active{opacity:1}
-    .nav__right{display:flex;align-items:center;gap:14px}
-    .nav__zh{font-size:40px;color:#9d9d9d;line-height:1; font-family:var(--serif)}
-    .nav__lp,.nav__menu-btn{font-size:12px;font-weight:500;letter-spacing:.08em;background:transparent;color:var(--ink);border:1px solid rgba(0,0,0,.18);padding:14px 28px}
-    .nav__menu-btn{display:none;cursor:pointer}
+    .nav__right{display:flex;align-items:center;gap:22px}
+    .nav__zh{font-size:13px;color:var(--ink);opacity:.35;transition:opacity .2s}
+    .nav__zh:hover{opacity:.75}
+    .nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(0,0,0,.15);padding:8px 20px;transition:background .2s,color .2s,border-color .2s}
+    .nav__lp,.nav__lp:hover{background:var(--red);color:#fff;border-color:var(--red)}
+    .nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
 
-    main{padding:140px 0 96px;background:var(--off);min-height:100vh}
-    .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#8a8a8a;margin-bottom:18px}
-    h1{font-family:var(--serif);font-size:clamp(44px,6vw,70px);line-height:1.05;font-weight:400;letter-spacing:-.02em;margin-bottom:22px}
-    .lead{font-size:52px;line-height:1.45;color:#3b3b3b;max-width:1080px;margin-bottom:58px;font-family:var(--serif)}
+    main{padding:148px 0 110px;background:var(--off);min-height:100vh}
+    .eyebrow{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px;margin-bottom:26px}
+    .eyebrow::after{content:'';flex:0 0 36px;height:1px;background:currentColor}
+    h1{font-family:var(--serif);font-size:clamp(46px,5.6vw,78px);line-height:1.04;font-weight:400;letter-spacing:-.02em;margin-bottom:20px}
+    .lead{font-family:var(--serif);font-size:29px;line-height:1.45;color:#3f3a34;max-width:860px;margin-bottom:36px}
 
-    .stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #ddd;border-left:1px solid #ddd;margin-bottom:56px}
-    .stat-card{border-right:1px solid #ddd;border-bottom:1px solid #ddd;padding:34px 26px;background:#efefef;min-height:176px}
-    .stat-value{font-family:var(--serif);font-size:68px;line-height:1.03;margin-bottom:8px}
-    .stat-label{font-size:30px;color:#7a7a7a;letter-spacing:.08em}
+    .press-list{display:grid;gap:0;border:1px solid var(--rule);background:#fff}
+    .press-row{display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;padding:18px 24px;border-top:1px solid var(--rule)}
+    .press-row:first-child{border-top:0}
+    .press-row time{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+    .press-row a{font-family:var(--serif);font-size:30px;line-height:1.15;font-weight:400;color:var(--ink);transition:color .2s}
+    .press-row a:hover{color:var(--red)}
 
-    .topic-band{background:#070707;color:#818181;padding:36px 40px;margin-bottom:56px}
-    .topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
-    .topic-col{display:flex;flex-direction:column;gap:14px}
-    .topic-item{display:flex;align-items:center;gap:10px;font-size:27px;line-height:1.4}
-    .topic-item::before{content:'';width:11px;height:11px;background:var(--red);transform:rotate(45deg);flex:0 0 11px}
+    .press-more-wrap{display:flex;justify-content:center;margin-top:12px}
+    .press-more{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(0,0,0,.2);background:#fff;color:var(--ink);padding:11px 22px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+    .press-more:hover{background:var(--red);color:#fff;border-color:var(--red)}
 
-    .press-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .press-card{background:#fff;border:1px solid var(--rule);padding:24px;display:flex;flex-direction:column;gap:10px}
-    .press-card small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
-    .press-card h2{font-family:var(--serif);font-size:30px;line-height:1.12;font-weight:400}
-    .press-card p{font-size:14px;line-height:1.8;color:#3b3934;flex:1}
-    .press-card a{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+    .contact{margin-top:16px;padding:20px 24px;border:1px solid var(--rule);background:#fff}
 
-    .contact{margin-top:22px;padding:24px;border:1px solid var(--rule);background:#fff}
-
-    @media (max-width:960px){
-      :root{--pad:32px}
-      .lead{font-size:40px}
-      .stat-value{font-size:56px}
-      .stat-label,.topic-item{font-size:22px}
-      .press-grid,.topic-grid{grid-template-columns:1fr 1fr}
-    }
+    @media (max-width:960px){.press-row{grid-template-columns:140px minmax(0,1fr);gap:18px}}
     @media (max-width:760px){
       :root{--pad:20px}
-      #nav{height:auto;min-height:86px;align-items:center;gap:12px;padding:12px var(--pad)}
-      .nav__logo svg{height:52px}
+      #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
+      .nav__logo svg{height:48px}
       .nav__menu-btn{display:inline-flex}
-      .nav__right{margin-left:auto;gap:8px}
-      .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:8px 0 10px;border-top:1px solid #ddd}
+      .nav__right{margin-left:auto;gap:10px}
+      .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}
       #nav.menu-open .nav__links{display:flex}
-      .nav__zh{font-size:18px;font-family:var(--sans)}
-      .nav__lp,.nav__menu-btn{padding:10px 16px;font-size:11px;letter-spacing:.04em}
-      main{padding:116px 0 78px}
-      h1{margin-bottom:12px}
-      .lead{font-size:18px;line-height:1.85;margin-bottom:34px;font-family:var(--sans)}
-      .stat-grid{margin-bottom:30px}
-      .stat-card{padding:16px 14px;min-height:100px}
-      .stat-value{font-size:34px}
-      .stat-label{font-size:13px;letter-spacing:.12em}
-      .topic-band{padding:22px 16px;margin:0 calc(var(--pad) * -1) 34px}
-      .topic-grid{grid-template-columns:1fr;gap:6px}
-      .topic-col{gap:6px}
-      .topic-item{font-size:12px;line-height:1.45;color:#8e8e8e}
-      .topic-item::before{width:8px;height:8px;flex-basis:8px}
-      .press-grid{grid-template-columns:1fr}
+      .nav__links a{font-size:10px;white-space:nowrap}
+      main{padding:108px 0 80px}
+      .lead{font-size:22px}
+      .press-row{grid-template-columns:1fr;gap:6px;padding:16px}
+      .press-row a{font-size:23px}
     }
   </style>
 </head>
 <body>
   <nav id="nav">
-    <a href="index_cn.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners"><g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g><line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text></svg></a>
+    <a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners"><g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g><line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text></svg></a>
     <ul class="nav__links" id="nav-links">
-      <li><a href="firm_cn.html">公司简介</a></li>
-      <li><a href="strategy_cn.html">策略</a></li>
-      <li><a href="insights_cn.html">洞察</a></li>
-      <li><a href="press_cn.html" class="active">新闻</a></li>
-      <li><a href="team_cn.html">团队</a></li>
+      <li><a href="firm.html">公司介绍</a></li>
+      <li><a href="strategy.html">投资策略</a></li>
+      <li><a href="insights.html">研究洞见</a></li>
+      <li><a href="press.html" class="active">新闻</a></li>
+      <li><a href="team.html">团队</a></li>
     </ul>
     <div class="nav__right">
-      <a href="press.html" class="nav__zh">EN</a>
-      <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
+      <a href="press_cn.html" class="nav__zh">中文</a>
+      <a href="investor-access.html" class="nav__lp">投资者入口</a>
       <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
     </div>
   </nav>
@@ -104,61 +84,87 @@
     <div class="wrap">
       <p class="eyebrow">媒体与公告</p>
       <h1>新闻</h1>
-      <p class="lead">保护——深耕一个奖励本地洞察、惩罚经验缺失的市场。自2004年以来，我们已在中国私募信贷市场累计部署逾20亿美元资金，历经每个信用周期。我们的专注不是限制，而是优势来源。</p>
+      <p class="lead">新岸资本公告精选及第三方对私募信贷市场的报道。</p>
 
-      <section class="stat-grid" aria-label="关键数据">
-        <article class="stat-card"><p class="stat-value">$2B+</p><p class="stat-label">已投放资本</p></article>
-        <article class="stat-card"><p class="stat-value">20+</p><p class="stat-label">深耕中国信贷年限</p></article>
-        <article class="stat-card"><p class="stat-value">#2</p><p class="stat-label">全球信贷市场</p></article>
-        <article class="stat-card"><p class="stat-value">2004</p><p class="stat-label">立足亚洲</p></article>
+      <section class="press-list" id="press-archive" aria-label="新岸资本新闻档案">
+        <article class="press-row"><time datetime="2024-02-14">02.14.24</time><a href="#">《经济学人》就中国金融体系与不良债务采访新岸资本</a></article>
+        <article class="press-row"><time datetime="2024-02-08">02.08.24</time><a href="#">恒大清盘不会让外国投资者获益</a></article>
+        <article class="press-row"><time datetime="2022-05-09">05.09.22</time><a href="#">Cambridge Associates：短暂的中国房地产机会值得关注</a></article>
+        <article class="press-row"><time datetime="2021-10-18">10.18.21</time><a href="#">为中国不良资产做好准备的外资投资者寥寥无几</a></article>
+        <article class="press-row"><time datetime="2021-07-14">07.14.21</time><a href="#">[网络研讨会] 中国私募债：风险/回报比较</a></article>
+        <article class="press-row"><time datetime="2021-05-13">05.13.21</time><a href="#">《中国私募债比较分析》— AllAboutAlpha</a></article>
+        <article class="press-row"><time datetime="2021-04-28">04.28.21</time><a href="#">中国正在发生的信贷紧缩：违约与效率配置 — Investment Magazine</a></article>
+        <article class="press-row"><time datetime="2020-09-15">09.15.20</time><a href="#">[播客] The Exchange：中国不良债务机会</a></article>
+        <article class="press-row"><time datetime="2020-07-08">07.08.20</time><a href="#">[网络研讨会] 后疫情时代私募信贷的独特动态（欧洲与亚洲）</a></article>
+        <article class="press-row"><time datetime="2020-06-10">06.10.20</time><a href="#">投资者预计2020年下半年NPL机会回归，价格或将下行 — Debtwire研讨会</a></article>
+        <article class="press-row"><time datetime="2020-06-04">06.04.20</time><a href="#">[网络研讨会] 全球新兴NPL市场</a></article>
+        <article class="press-row"><time datetime="2020-05-27">05.27.20</time><a href="#">为何在中国放贷可能比你想象得更安全</a></article>
+        <article class="press-row"><time datetime="2020-05-17">05.17.20</time><a href="#">[播客] Ben Fanger：特殊机会、回收率与中国困境债务</a></article>
+        <article class="press-row"><time datetime="2020-05-07">05.07.20</time><a href="#">[网络研讨会] 新冠疫情后的中国信贷环境</a></article>
+        <article class="press-row"><time datetime="2020-04-28">04.28.20</time><a href="#">从海航到“中国的LVMH”企业受挫、坏账激增，困境投资者迎来“千载难逢的机会”</a></article>
+        <article class="press-row"><time datetime="2020-04-10">04.10.20</time><a href="#">并非困境市场的陌生者</a></article>
+        <article class="press-row"><time datetime="2020-04-06">04.06.20</time><a href="#">欢迎来到1.5万亿美元中国违约债务“雷区”</a></article>
+        <article class="press-row"><time datetime="2020-01-17">01.17.20</time><a href="#">中国NPL投资者称中美贸易协议是积极进展，但关键障碍仍在</a></article>
+        <article class="press-row"><time datetime="2020-01-16">01.16.20</time><a href="#">美国机构或可在中国不良债务处置中赢得可观角色</a></article>
+        <article class="press-row"><time datetime="2019-01-23">01.23.19</time><a href="#">中国不良债务处置规模创近20年新高</a></article>
+        <article class="press-row"><time datetime="2019-01-17">01.17.19</time><a href="#">随着中国债务攀升，不良贷款收购市场加速升温</a></article>
+        <article class="press-row"><time datetime="2018-11-12">11.12.18</time><a href="#">深耕本地与强韧心态，是进入中国不良债市场的关键</a></article>
+        <article class="press-row"><time datetime="2018-08-29">08.29.18</time><a href="#">中国不良资产交易平台向外资打开通道</a></article>
+        <article class="press-row"><time datetime="2018-08-01">08.01.18</time><a href="#">中国打击不良债务推动大批贷款流入市场</a></article>
+        <article class="press-row"><time datetime="2018-01-25">01.25.18</time><a href="#">新岸资本：中方正着手“有序化解全球最大信贷过剩”</a></article>
+        <article class="press-row"><time datetime="2017-11-10">11.10.17</time><a href="#">Andrew Brown：中国致力于以市场化方式解决过剩债务</a></article>
+        <article class="press-row"><time datetime="2017-08-28">08.28.17</time><a href="#">华融高管警示中国困境债市场泡沫风险</a></article>
+        <article class="press-row"><time datetime="2017-08-26">08.26.17</time><a href="#">不容忽视：中国资产负债表的国际化</a></article>
+        <article class="press-row"><time datetime="2017-08-04">08.04.17</time><a href="#">中国消费市场会成为下一个信贷泡沫吗？</a></article>
+        <article class="press-row"><time datetime="2017-07-14">07.14.17</time><a href="#">中国是否正在接近“雷曼时刻”？</a></article>
+        <article class="press-row"><time datetime="2017-07-03">07.03.17</time><a href="#">中国法律体系在执行不良债权人权利方面已取得长足进步</a></article>
+        <article class="press-row"><time datetime="2017-06-13">06.13.17</time><a href="#">新岸资本为中国基金募资7.5亿美元</a></article>
+        <article class="press-row"><time datetime="2017-06-12">06.12.17</time><a href="#">新岸资本瞄准中国“不良债务”行业，目标规模7.5亿美元</a></article>
+        <article class="press-row"><time datetime="2017-06-11">06.11.17</time><a href="#">新岸资本推出7.5亿美元基金，布局中国NPL资产组合</a></article>
+        <article class="press-row"><time datetime="2017-06-08">06.08.17</time><a href="#">新岸资本切入全球对中国NPL日益增长的关注</a></article>
+        <article class="press-row"><time datetime="2017-06-02">06.02.17</time><a href="#">中国出台大胆计划治理银行不良贷款，首个期限比你想象更近</a></article>
+        <article class="press-row"><time datetime="2017-06-01">06.01.17</time><a href="#">中国债务“可能触发7.7万亿美元资产抛售”</a></article>
+        <article class="press-row"><time datetime="2017-05-20">05.20.17</time><a href="#">中国向世界开放债券市场的四个原因</a></article>
+        <article class="press-row"><time datetime="2017-05-05">05.05.17</time><a href="#">中国能够有序化解全球最大的信贷泡沫</a></article>
+        <article class="press-row"><time datetime="2017-04-21">04.21.17</time><a href="#">中国信贷过剩规模前所未见</a></article>
+        <article class="press-row"><time datetime="2017-03-27">03.27.17</time><a href="#">困境基金在中国不断攀升的不良债中寻找“宝藏”</a></article>
+        <article class="press-row"><time datetime="2017-03-07">03.07.17</time><a href="#">全球投资者重返中国不良债市场</a></article>
+        <article class="press-row"><time datetime="2016-12-13">12.13.16</time><a href="#">中国债转股中的“僵尸企业”令困境基金保持谨慎</a></article>
+        <article class="press-row"><time datetime="2016-11-16">11.16.16</time><a href="#">多重障碍使中国NPL交易长期局限于少数国际投资者</a></article>
+        <article class="press-row"><time datetime="2016-11-15">11.15.16</time><a href="#">Shoreline创始人成立新的困境债务公司</a></article>
+        <article class="press-row"><time datetime="2016-11-11">11.11.16</time><a href="#">新公司ShoreVest成立，投资中国困境债务</a></article>
+        <article class="press-row"><time datetime="2016-11-11">11.11.16</time><a href="#">前Shoreline高管重组为ShoreVest，瞄准中国NPL</a></article>
+        <article class="press-row"><time datetime="2016-11-11">11.11.16</time><a href="#">ShoreVest Capital Partners作为中国困境债与结构化信贷专家成立并开始投资中国NPL</a></article>
+        <article class="press-row"><time datetime="2016-11-11">11.11.16</time><a href="#">新岸资本开始投资中国NPL</a></article>
+        <article class="press-row"><time datetime="2016-11-10">11.10.16</time><a href="#">新岸资本 Benjamin Fanger 谈NPL私募市场化解决方案</a></article>
+        <article class="press-row"><time datetime="2016-06-01">06.01.16</time><a href="#">中国不良贷款的“美与兽”</a></article>
+        <article class="press-row"><time datetime="2016-05-07">05.07.16</time><a href="#">坏账突围</a></article>
+        <article class="press-row"><time datetime="2015-11-01">11.01.15</time><a href="#">东方机遇来敲门</a></article>
+        <article class="press-row"><time datetime="2015-08-31">08.31.15</time><a href="#">困境投资者谨慎看待中国不良贷款浪潮</a></article>
+        <article class="press-row"><time datetime="2015-02-12">02.12.15</time><a href="#">EMPEA专业发展网络研讨会：中国私募与困境债投资——机会与挑战</a></article>
+        <article class="press-row"><time datetime="2014-12-03">12.03.14</time><a href="#">EMPEA专业发展网络研讨会：中国私募股权市场概览</a></article>
+        <article class="press-row"><time datetime="2014-07-23">07.23.14</time><a href="#">[播客文字稿] Benjamin Fanger：中国膨胀的不良贷款是下一个重大机会</a></article>
+        <article class="press-row"><time datetime="2014-07-23">07.23.14</time><a href="#">[播客] Benjamin Fanger：中国膨胀的不良贷款是下一个重大机会</a></article>
+        <article class="press-row"><time datetime="2014-06-27">06.27.14</time><a href="#">中国地方国企出售：风险可能大于机会</a></article>
+        <article class="press-row"><time datetime="2014-06-26">06.26.14</time><a href="#">全球最大债务负担吸引困境基金涌向中国</a></article>
+        <article class="press-row"><time datetime="2013-12-01">12.01.13</time><a href="#">来自一线观点：回顾2013与2014年新兴市场私募展望</a></article>
+        <article class="press-row"><time datetime="2013-11-12">11.12.13</time><a href="#">扮演医生</a></article>
+        <article class="press-row"><time datetime="2013-08-05">08.05.13</time><a href="#">在大额交易稀少背景下，私募股权转型为亚洲“新银行家”</a></article>
+        <article class="press-row"><time datetime="2013-05-01">05.01.13</time><a href="#">中国市场文化：你究竟能多了解一家公司？</a></article>
+        <article class="press-row"><time datetime="2012-02-29">02.29.12</time><a href="#">Shoreline Capital的Fanger谈中国即将到来的债务危机</a></article>
+        <article class="press-row"><time datetime="2012-02-10">02.10.12</time><a href="#">中国预计将出现更多NPL交易流</a></article>
+        <article class="press-row"><time datetime="2010-02-10">02.10.10</time><a href="#">行业问答：Benjamin Fanger</a></article>
+        <article class="press-row"><time datetime="2009-11-24">11.24.09</time><a href="#">困境投资者审视中国法律带来的挑战</a></article>
+        <article class="press-row"><time datetime="2009-11-05">11.05.09</time><a href="#">困境投资者并不困境：金融危机为特殊机会基金创造机遇</a></article>
+        <article class="press-row"><time datetime="2008-09-11">09.11.08</time><a href="#">Shoreline Capital问答：中国的困境投资机会</a></article>
+        <article class="press-row"><time datetime="2008-08-11">08.11.08</time><a href="#">在中国困境债投资中，做好功课就有回报</a></article>
       </section>
-
-      <section class="topic-band" aria-label="策略领域">
-        <div class="topic-grid">
-          <div class="topic-col">
-            <p class="topic-item">私募信贷</p>
-            <p class="topic-item">不良贷款</p>
-            <p class="topic-item">新岸资本</p>
-            <p class="topic-item">第一顺位抵押</p>
-          </div>
-          <div class="topic-col">
-            <p class="topic-item">资产抵押贷款</p>
-            <p class="topic-item">第一顺位抵押</p>
-            <p class="topic-item">困境债务</p>
-            <p class="topic-item">中国信贷解决方案</p>
-          </div>
-          <div class="topic-col">
-            <p class="topic-item">困境债务</p>
-            <p class="topic-item">中国信贷解决方案</p>
-            <p class="topic-item">私募信贷</p>
-            <p class="topic-item">广州 · 上海 · 香港</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="press-grid">
-        <article class="press-card">
-          <small>公告 · 2026年1月</small>
-          <h2>新岸资本宣布推出新信贷机会载体</h2>
-          <p>新策略聚焦中国重点行业中的担保贷款机会，进一步完善公司投资平台。</p>
-          <a href="#">阅读公告 →</a>
-        </article>
-        <article class="press-card">
-          <small>媒体 · 2025年10月</small>
-          <h2>私募信贷展望：中国市场焦点</h2>
-          <p>公司管理层在近期采访中分享了市场结构变化、放贷行为以及组合定位观点。</p>
-          <a href="#">阅读文章 →</a>
-        </article>
-        <article class="press-card">
-          <small>公告 · 2025年7月</small>
-          <h2>新岸资本完成某工业平台追加融资</h2>
-          <p>该交易为区域工业借款人提供增长资本与重组支持，助力其持续经营发展。</p>
-          <a href="#">阅读公告 →</a>
-        </article>
-      </section>
+      <div class="press-more-wrap">
+        <button class="press-more" id="press-more-btn" type="button" aria-controls="press-archive">加载更多</button>
+      </div>
 
       <div class="contact">
-        媒体咨询请联系 <a href="mailto:info@shorevest.com"><strong>info@shorevest.com</strong></a>。
+        媒体问询请联系 <a href="mailto:info@shorevest.com"><strong>info@shorevest.com</strong></a>.
       </div>
     </div>
   </main>
@@ -180,6 +186,34 @@
         });
       });
     }
+
+
+    const archive = document.getElementById('press-archive');
+    const moreBtn = document.getElementById('press-more-btn');
+    if (archive && moreBtn) {
+      const rows = Array.from(archive.querySelectorAll('.press-row'));
+      const initialCount = 12;
+      const batchSize = 12;
+      let shown = 0;
+
+      const renderRows = () => {
+        rows.forEach((row, idx) => {
+          row.style.display = idx < shown ? '' : 'none';
+        });
+        if (shown >= rows.length) {
+          moreBtn.style.display = 'none';
+        }
+      };
+
+      shown = Math.min(initialCount, rows.length);
+      renderRows();
+
+      moreBtn.addEventListener('click', () => {
+        shown = Math.min(shown + batchSize, rows.length);
+        renderRows();
+      });
+    }
+
   </script>
 </body>
 </html>
