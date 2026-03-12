@@ -91,6 +91,36 @@
     .intelligence { background: #ecebe8; }
     .intelligence-panel { display: grid; gap: 16px; }
     .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 18px; }
+    .intel-graphic > .intel-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .intel-graphic > h3 {
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #68635b;
+      margin-bottom: 12px;
+    }
+    .lifecycle-track {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #736f67;
+    }
+    .lifecycle-track::before,
+    .lifecycle-track::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #d4d0c8;
+    }
     .intel-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
     .intel-stage {
       border: 1px solid #dbd8d2;
@@ -117,7 +147,20 @@
     }
     .capability { border-top: 1px solid #e6e2db; padding-top: 8px; margin-top: 8px; }
     .capability:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
-    .capability h4 { font-size: 12px; font-weight: 500; margin-bottom: 3px; }
+    .capability h4 {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    .capability h4 span:last-child {
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1;
+      color: #28241f;
+    }
     .capability .weight {
       font-size: 9px;
       letter-spacing: .13em;
@@ -140,9 +183,13 @@
       position: absolute;
       inset: 0;
       width: calc(var(--value) * 1%);
-      background: linear-gradient(90deg, #9d2339, #cc7486);
+      background: #b2334d;
     }
-    .capability p { font-size: 12px; color: #57534d; }
+    .stage-description {
+      font-size: 12px;
+      color: #57534d;
+      margin-top: 8px;
+    }
     .intel-copy { padding: 16px; }
     .intel-copy h3 { font-family: var(--serif); font-size: 29px; font-weight: 400; margin-bottom: 8px; }
     .benchmark-table {
@@ -388,55 +435,55 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Execution intelligence map.</h2>
-          <p>Execution scores indicate where the platform concentrates operational capability across the credit lifecycle. Higher values reflect greater in-house execution intensity rather than external reliance.</p>
+          <p>Execution scores reflect internal analysis of platform resources deployed across sourcing, structuring, governance and recovery activities. Scores measure operational concentration rather than investment performance.</p>
         </div>
         <div class="intelligence-panel">
           <div class="intel-graphic">
+            <div class="intel-title">Execution intelligence map.</div>
+            <h3>Credit lifecycle capability distribution</h3>
+            <div class="lifecycle-track" aria-hidden="true">Origination ↓ Underwriting ↓ Resolution</div>
             <div class="intel-flow" aria-label="Credit lifecycle capability map">
               <article class="intel-stage">
                 <h3>Origination</h3>
                 <div class="capability">
-                  <h4>Network Access</h4>
-                  <span class="weight">Execution intensity: 86</span>
-                  <div class="bar" style="--value: 86"></div>
-                  <p>Direct sourcing through regional banks, restructuring advisors, and borrower networks across China's onshore credit market.</p>
+                  <h4><span>Network Access</span><span>85</span></h4>
+                  <span class="weight">Execution intensity</span>
+                  <div class="bar" style="--value: 85"></div>
                 </div>
                 <div class="capability">
-                  <h4>Risk Screening</h4>
-                  <span class="weight">Execution intensity: 84</span>
-                  <div class="bar" style="--value: 84"></div>
-                  <p>Downside-first screening that disqualifies transactions early when enforceability, sponsor behavior, or collateral quality is weak.</p>
+                  <h4><span>Risk Screening</span><span>85</span></h4>
+                  <span class="weight">Execution intensity</span>
+                  <div class="bar" style="--value: 85"></div>
                 </div>
+                <p class="stage-description">Direct sourcing through regional banks, restructuring advisors and borrower networks. Early risk filtration eliminates transactions where enforceability, sponsor behavior or collateral quality is weak.</p>
               </article>
               <article class="intel-stage">
                 <h3>Underwriting</h3>
                 <div class="capability">
-                  <h4>Legal Structuring</h4>
-                  <span class="weight">Execution intensity: 91</span>
-                  <div class="bar" style="--value: 91"></div>
-                  <p>Transaction architecture designed for enforceability under PRC law, including security perfection and court-recognized collateral claims.</p>
+                  <h4><span>Legal Structuring</span><span>90</span></h4>
+                  <span class="weight">Execution intensity</span>
+                  <div class="bar" style="--value: 90"></div>
                 </div>
                 <div class="capability">
-                  <h4>IC Governance</h4>
-                  <span class="weight">Execution intensity: 90</span>
+                  <h4><span>IC Governance</span><span>90</span></h4>
+                  <span class="weight">Execution intensity</span>
                   <div class="bar" style="--value: 90"></div>
-                  <p>Weekly investment committee governance with a Managing Partner required vote and 3/4 super-majority approval before commitment.</p>
                 </div>
+                <p class="stage-description">Transaction architecture is designed for enforceability under PRC law, with security perfection and court-recognized collateral claims. Weekly investment committee governance requires a Managing Partner vote and 3/4 super-majority before commitment.</p>
               </article>
               <article class="intel-stage">
                 <h3>Resolution</h3>
                 <div class="capability">
-                  <h4>Recovery Control</h4>
-                  <span class="weight">Execution intensity: 88</span>
-                  <div class="bar" style="--value: 88"></div>
-                  <p>In-house coordination of court process, restructuring negotiations, and collateral realization to preserve recovery optionality.</p>
+                  <h4><span>Recovery Control</span><span>90</span></h4>
+                  <span class="weight">Execution intensity</span>
+                  <div class="bar" style="--value: 90"></div>
                 </div>
                 <div class="capability">
-                  <h4>Servicing Loop</h4>
-                  <span class="weight">Execution intensity: 87</span>
-                  <div class="bar" style="--value: 87"></div>
-                  <p>Continuous monitoring-to-intervention workflow linking portfolio surveillance with legal and commercial action during stress.</p>
+                  <h4><span>Servicing Loop</span><span>85</span></h4>
+                  <span class="weight">Execution intensity</span>
+                  <div class="bar" style="--value: 85"></div>
                 </div>
+                <p class="stage-description">In-house coordination of court process, restructuring negotiations and collateral realization preserves recovery optionality. Continuous monitoring linking portfolio surveillance with legal and commercial intervention during stress.</p>
               </article>
             </div>
           </div>
@@ -455,21 +502,36 @@
                 <tr>
                   <td>Network access</td>
                   <td>Limited</td>
-                  <td>86</td>
+                  <td>85</td>
+                </tr>
+                <tr>
+                  <td>Risk screening</td>
+                  <td>Standardized</td>
+                  <td>85</td>
                 </tr>
                 <tr>
                   <td>Legal structuring</td>
                   <td>Moderate</td>
-                  <td>91</td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>IC governance</td>
+                  <td>Investment committee only</td>
+                  <td>90</td>
                 </tr>
                 <tr>
                   <td>Recovery control</td>
                   <td>Outsourced</td>
-                  <td>88</td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>Servicing loop</td>
+                  <td>External servicer</td>
+                  <td>85</td>
                 </tr>
               </tbody>
             </table>
-            <p class="provenance">Execution scores derived from internal platform analysis of sourcing channels, legal structuring capacity, servicing infrastructure, and recovery execution across ShoreVest transactions.</p>
+            <p class="provenance">Execution scores reflect internal analysis of platform resources deployed across sourcing, structuring, governance and recovery activities. Scores measure operational concentration rather than investment performance.</p>
           </aside>
         </div>
       </div>
