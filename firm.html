@@ -90,12 +90,9 @@
 
     .intelligence { background: #ecebe8; }
     .intelligence-panel { display: grid; gap: 16px; }
-    .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 18px; }
+    .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 20px; }
     .intel-graphic > .intel-title {
-      font-family: var(--serif);
-      font-size: clamp(28px, 3vw, 38px);
-      font-weight: 400;
-      margin-bottom: 6px;
+      display: none;
     }
     .intel-graphic > h3 {
       font-size: 10px;
@@ -108,7 +105,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-size: 10px;
       letter-spacing: .13em;
       text-transform: uppercase;
@@ -121,11 +118,11 @@
       height: 1px;
       background: #d4d0c8;
     }
-    .intel-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+    .intel-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
     .intel-stage {
       border: 1px solid #dbd8d2;
       background: #fbfaf8;
-      padding: 12px;
+      padding: 14px;
       position: relative;
     }
     .intel-stage:not(:last-child)::after {
@@ -172,7 +169,7 @@
     .bar {
       --value: 0;
       position: relative;
-      height: 8px;
+      height: 7px;
       border-radius: 999px;
       background: #e7e4de;
       overflow: hidden;
@@ -190,18 +187,18 @@
       color: #57534d;
       margin-top: 8px;
     }
-    .intel-copy { padding: 16px; }
-    .intel-copy h3 { font-family: var(--serif); font-size: 29px; font-weight: 400; margin-bottom: 8px; }
+    .intel-copy { padding: 18px; }
+    .intel-copy h3 { font-family: var(--serif); font-size: 48px; font-weight: 400; margin-bottom: 8px; line-height: 1.02; }
     .benchmark-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 12px;
     }
     .benchmark-table th,
     .benchmark-table td {
       border-top: 1px solid #ddd9d1;
-      padding: 8px 4px;
+      padding: 7px 4px;
       text-align: left;
       vertical-align: top;
     }
@@ -217,11 +214,20 @@
       color: #6a655f;
     }
 
+    .committee-section,
+    .validation-section {
+      background: #ecebe8;
+    }
+
+    .committee-section {
+      border-top-color: #ddd9d2;
+    }
+
     .platform-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 14px; }
     .platform-notes { display: grid; gap: 10px; }
-    .note { padding: 12px; }
+    .note { padding: 14px; background: #f7f6f4; }
     .note h3 { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 6px; }
-    .platform-diagram { background: #f7f5f3; border: 1px solid #e0dcd5; padding: 14px; }
+    .platform-diagram { background: #f7f6f4; border: 1px solid #ddd9d1; padding: 14px; }
     .small-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
     .small-box {
       font-size: 10px;
@@ -230,7 +236,7 @@
       padding: 9px;
       text-align: center;
       border: 1px solid #d9d3ca;
-      background: #fff;
+      background: #f9f8f6;
       cursor: pointer;
       transition: border-color .2s, color .2s, transform .2s;
     }
@@ -517,13 +523,13 @@
                   <span class="weight">Execution intensity</span>
                   <div class="bar" style="--value: 85"></div>
                 </div>
-                <p class="stage-description">In-house coordination of court process, restructuring negotiations and collateral realization preserves recovery optionality. Continuous monitoring linking portfolio surveillance with legal and commercial intervention during stress.</p>
+                <p class="stage-description">In-house coordination of court process, restructuring negotiations and collateral realization preserves recovery optionality. Continuous monitoring linking portfolio surveillance with legal and commercial intervention in periods of stress.</p>
               </article>
             </div>
           </div>
           <aside class="intel-copy">
-            <h3>Relative capability context</h3>
-            <p>Compared with a typical offshore fund model, ShoreVest retains more of the execution-critical workstreams in-house through underwriting and recovery.</p>
+            <h3>Operational capability comparison</h3>
+            <p>Compared with a typical offshore fund model, ShoreVest retains more of the execution-critical workstreams in-house through underwriting and recovery. This concentration of legal and recovery capability reflects the structural reality of China's credit market, where enforceability and workout execution determine realized value.</p>
             <table class="benchmark-table" aria-label="Capability benchmark comparison">
               <thead>
                 <tr>
@@ -535,17 +541,17 @@
               <tbody>
                 <tr>
                   <td>Network access</td>
-                  <td>Limited</td>
+                  <td>Limited sourcing network</td>
                   <td>85</td>
                 </tr>
                 <tr>
                   <td>Risk screening</td>
-                  <td>Standardized</td>
+                  <td>Standardized credit screens</td>
                   <td>85</td>
                 </tr>
                 <tr>
                   <td>Legal structuring</td>
-                  <td>Moderate</td>
+                  <td>Moderate legal structuring capacity</td>
                   <td>90</td>
                 </tr>
                 <tr>
@@ -571,7 +577,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="committee-section">
       <div class="wrap">
         <div class="section-head">
           <h2>Investment Committee</h2>
@@ -600,7 +606,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="validation-section">
       <div class="wrap">
         <div class="section-head">
           <h2>Validated by institutional capital.</h2>
@@ -609,48 +615,7 @@
       </div>
     </section>
 
-    <section class="dark-band">
-      <div class="wrap">
-        <div class="eyebrow">Differentiators</div>
-        <h2>The edge is execution architecture, not brand optics.</h2>
-        <p class="dark-bridge">ShoreVest's operating edge comes from how sourcing, structuring, governance, and recovery are organised onshore, with legal and investment accountability held by the same decision-makers from entry through exit.</p>
-        <div class="flow">
-          <article class="step primary"><h3>Direct sourcing across banks, AMCs and legal channels</h3><p>Onshore relationships across banks, AMCs, law firms, and servicing channels create proprietary deal flow and earlier workout visibility than brokered processes.</p></article>
-          <article class="step primary"><h3>Underwriting integrated with legal structuring</h3><p>Documentation design, security analysis, and enforceability checks are built into underwriting before approval, not outsourced after committee sign-off.</p></article>
-          <article class="step primary"><h3>Recovery workflow built in from day one</h3><p>Resolution planning is embedded at entry, so each position is monitored against executable recovery paths rather than passive ownership assumptions.</p></article>
-          <article class="step primary"><h3>Investment committee with legal and financial control embedded</h3><p>Investment judgment, legal framing, and financial control sit in one decision forum, reducing handoff risk and shortening execution cycles.</p></article>
-          <article class="step supporting"><h3>Long-standing mainland execution team</h3><p>Local continuity preserves pattern recognition through policy, credit, and enforcement cycles.</p></article>
-          <article class="step supporting"><h3>Same team sources, approves and exits positions</h3><p>Coverage ownership remains with approving professionals, preserving accountability from origination through recovery and exit.</p></article>
-        </div>
-      </div>
-    </section>
 
-    <section class="platform-build">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Built for accountability.</h2>
-          <p>The platform is owned and led by senior investment professionals, with decision rights and operating control tied directly to realised investment outcomes.</p>
-        </div>
-        <div class="market-grid">
-          <article><h3>Ownership and leadership alignment</h3><p>Decision-makers are the principals accountable for investment performance and platform design.</p></article>
-          <article><h3>Integrated operating model</h3><p>Origination, underwriting, servicing, and resolution are managed as one connected execution chain.</p></article>
-          <article><h3>Governance inside execution</h3><p>Committee oversight combines investment, legal, and financial control before and after capital is deployed.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="closing-panel">
-          <div>
-            <div class="eyebrow">Next</div>
-            <h2>Continue into the strategy and process behind the platform.</h2>
-            <p>This page explains ShoreVest as an institution. For investment approach, continue to Strategy.</p>
-          </div>
-          <a class="btn" href="strategy.html">View Strategy</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <script>
