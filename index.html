@@ -205,18 +205,6 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
 .hs__n { font-family:var(--serif); font-size:42px; font-weight:400; color:var(--ink); line-height:1; letter-spacing:-.02em; }
 .hs__l { font-size:9px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--mist); margin-top:7px; }
 
-/* ══ TICKER */
-.ticker {
-  background:var(--ink2); overflow:hidden; padding:13px 0; white-space:nowrap;
-  border-top:1px solid rgba(255,255,255,.04);
-}
-.ticker__track { display:inline-flex; animation:ticker 44s linear infinite; }
-@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.ticker__i {
-  font-size:10px; font-weight:400; letter-spacing:.14em; text-transform:uppercase;
-  color:rgba(255,255,255,.22); padding:0 30px;
-}
-.ticker__sep { color:var(--red); margin-right:6px; }
 
 /* ══ ABOUT */
 #about { background:var(--white); padding:128px 0; }
@@ -861,29 +849,6 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .dp { padding:24px 0 24px; border-right:none; border-left:none; }
   .dp__t { font-size:24px; }
 
-  .ticker {
-    padding:14px 0;
-    border-top:1px solid rgba(255,255,255,.08);
-    border-bottom:1px solid rgba(255,255,255,.08);
-    overflow:hidden;
-    white-space:nowrap;
-  }
-  .ticker__track {
-    animation:ticker 36s linear infinite;
-    display:inline-flex;
-    flex-wrap:nowrap;
-    justify-content:flex-start;
-    gap:0;
-    width:max-content;
-    padding:0 0 2px;
-  }
-  .ticker__i {
-    font-size:9px;
-    letter-spacing:.16em;
-    color:rgba(255,255,255,.42);
-    padding:0 18px;
-  }
-
   #about {
     padding:104px 0 90px;
   }
@@ -995,7 +960,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 <!-- HERO STATS -->
 <section id="hero" class="wrap">
   <div class="hero__intro">
-    <p class="hero__copy">ShoreVest Partners is a specialist investment manager focused on China private credit and special situations. Investments are underwritten to hard collateral, enforceable control, and defined recovery routes, with returns driven by disciplined origination, restructuring, and exits.</p>
+    <p class="hero__copy">ShoreVest Partners is a specialist investment manager focused on China private credit and special situations. Investments are underwritten to hard collateral, enforceable control, and defined recovery routes.</p>
   </div>
   <div class="hero__right">
     <div class="hero__stats">
@@ -1019,7 +984,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
       </div>
       <div class="rev d2">
         <p>ShoreVest invests in asset-backed credit situations where legal process, collateral control, and workout execution determine outcomes. The team underwrites to downside first, then structures for recovery and exit.</p>
-        <p>In China, quoted terms are only the starting point. Realized returns depend on local diligence, documentation, servicing, and enforcement. ShoreVest operates these steps as one integrated process.</p>
+        <p>In China, terms alone do not determine outcomes. ShoreVest integrates diligence, documentation, servicing, and enforcement as one execution process.</p>
         <a href="team.html" class="cta cta--dark" style="margin-top:8px;"><span>MEET THE LEADERSHIP TEAM</span><div class="cta__ring">→</div></a>
       </div>
     </div>
@@ -1053,9 +1018,9 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     <div class="diff-band__hd">
       <div>
         <div class="eyebrow eyebrow--ghost rev">Execution Differentiators</div>
-        <h2 class="diff-band__hed rev d1">Why outcomes are repeatable.<br><em>Not accidental.</em></h2>
+        <h2 class="diff-band__hed rev d1">Execution that supports repeatable outcomes.</h2>
       </div>
-      <p class="diff-band__bridge rev d2">China private credit is not won at term sheet stage. Control must be built into legal structure, information rights, collateral pathways, and governance from day one through workout.</p>
+      <p class="diff-band__bridge rev d2">Returns are shaped by legal control, collateral pathways, and workout execution.</p>
     </div>
     <div class="diff-band__grid">
       <article class="dp rev">
@@ -1073,21 +1038,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
         <h3 class="dp__t">PRC Documentation Architecture</h3>
         <p class="dp__b">Documentation is built for PRC-law enforceability: security perfection, covenant architecture, and trigger mechanics are drafted for practical use in contested scenarios, not presentation optics.</p>
       </article>
-      <article class="dp rev d1">
-        <div class="dp__k">04 · Servicing Integrity</div>
-        <h3 class="dp__t">Live Portfolio Surveillance</h3>
-        <p class="dp__b">Post-close monitoring tracks collateral condition, cash controls, and borrower conduct so intervention can begin early and negotiations are driven by current facts rather than delayed reporting.</p>
-      </article>
-      <article class="dp rev d2">
-        <div class="dp__k">05 · Workout Capability</div>
-        <h3 class="dp__t">Integrated Restructuring Execution</h3>
-        <p class="dp__b">The same team that underwrites also runs restructurings and resolutions, tightening feedback loops between entry assumptions, restructuring pathways, and realized recoveries.</p>
-      </article>
-      <article class="dp rev d3">
-        <div class="dp__k">06 · Governance Accountability</div>
-        <h3 class="dp__t">Decision Rights Tied to Outcomes</h3>
-        <p class="dp__b">Investment committee oversight extends through workout milestones and exits, with accountability linked to net recovery performance rather than origination volume.</p>
-      </article>
+      
     </div>
   </div>
 </section>
@@ -1098,7 +1049,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     <div class="strat__hd">
       <div>
         <div class="eyebrow eyebrow--red rev">Investment Strategies</div>
-        <h2 class="strat__hed rev d1">Three strategies with one underwriting framework.</h2>
+        <h2 class="strat__hed rev d1">Three strategies. One underwriting discipline.</h2>
       </div>
       <p class="strat__intro rev d2">Each strategy applies the same recovery-led framework: collateral-backed entry, enforceable legal position, active servicing, and controlled exit execution.</p>
     </div>
@@ -1202,7 +1153,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
       <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;">
         <div>
           <div class="eyebrow eyebrow--red rev">Why Subscribe</div>
-          <h2 style="font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:20px;" class="rev d1">Research archive built from live transaction work.</h2>
+          <h2 style="font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:20px;" class="rev d1">Research from active market execution.</h2>
           <p style="font-size:15px;line-height:1.82;color:var(--mist);font-family:var(--serif);margin-bottom:32px;" class="rev d2">Coverage includes recurring issues, archived notes, and thematic work tied directly to underwriting and workout practice.</p>
           <div class="rev d3"><a href="#signup" class="cta cta--dark"><span>Request Access</span><div class="cta__ring">→</div></a></div>
         </div>
@@ -1235,7 +1186,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     <div class="team__hd">
       <div>
         <div class="eyebrow rev">Leadership</div>
-        <h2 class="team__hed rev d1">Senior professionals with deep restructuring and credit experience.</h2>
+        <h2 class="team__hed rev d1">Senior team across investing, legal, and restructuring.</h2>
       </div>
       <p class="team__intro rev d2">The senior team combines investing, legal, and operating responsibilities across origination, underwriting, execution, and resolution in China private credit.</p>
     </div>
@@ -1258,7 +1209,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     <div class="city-band__inner">
       <div>
         <div class="eyebrow eyebrow--ghost rev">Guangzhou · Pearl River Delta</div>
-        <h2 class="city-band__title rev d1">Local execution with institutional governance and controls.</h2>
+        <h2 class="city-band__title rev d1">Local execution in Guangzhou.</h2>
       </div>
       <div class="city-band__right rev d2">
         <p class="city-band__sub">ShoreVest is anchored in Guangzhou with onshore execution capabilities and cross-border structuring support. Origination, diligence, documentation, servicing, and resolution are run as one coordinated process.</p>
@@ -1273,9 +1224,9 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <div class="wrap">
     <div class="su__wrap">
       <div>
-        <div class="eyebrow eyebrow--ghost rev">Contact & Updates</div>
-        <h2 class="su__hed rev d1">Request investor materials or direct contact with ShoreVest.</h2>
-        <p class="su__sub rev d2">Use this form for strategy materials, due-diligence follow-up, or direct outreach to the investor relations team.</p>
+        <div class="eyebrow eyebrow--ghost rev">Investor Access</div>
+        <h2 class="su__hed rev d1">Investor access and due-diligence requests.</h2>
+        <p class="su__sub rev d2">Use this form for investor materials, diligence questions, or direct contact with the ShoreVest team.</p>
       </div>
       <div class="su__form rev d2">
         <div class="su__field"><input type="email" placeholder="Email Address *" autocomplete="email"></div>
