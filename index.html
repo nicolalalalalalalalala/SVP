@@ -273,24 +273,43 @@ h2.about__hed { font-size:clamp(38px,5vw,66px); color:var(--ink); }
 .ac__link::after { content:'→'; font-size:13px; }
 .ac__link:hover { color:var(--red); gap:14px; }
 
-/* ══ NUMBERS BAND */
-.num-band { background:var(--ink); padding:80px 0; }
-.num-band__inner {
-  display:grid; grid-template-columns:repeat(4,1fr);
-  border-left:1px solid rgba(255,255,255,.07);
+/* ══ DIFFERENTIATORS BAND */
+.diff-band { background:var(--ink); padding:96px 0 88px; }
+.diff-band__hd {
+  display:grid; grid-template-columns:5fr 7fr;
+  gap:80px; align-items:start; margin-bottom:54px;
 }
-.nb { padding:44px 44px; border-right:1px solid rgba(255,255,255,.07); }
-.nb__n {
-  font-family:var(--serif); font-size:clamp(44px,5vw,66px);
-  font-weight:400; color:var(--white); line-height:1; margin-bottom:10px;
+h2.diff-band__hed { font-size:clamp(36px,4.5vw,60px); color:var(--white); }
+.diff-band__bridge {
+  font-size:17px; line-height:1.78;
+  color:rgba(255,255,255,.62); font-family:var(--serif);
+  max-width:52ch;
 }
-.nb__l {
-  font-size:10px; font-weight:400; letter-spacing:.12em;
-  text-transform:uppercase; color:rgba(255,255,255,.3);
+.diff-band__grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(255,255,255,.1);
+  border-left:1px solid rgba(255,255,255,.1);
+}
+.dp {
+  padding:30px 30px 34px;
+  border-right:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.dp__k {
+  font-size:9px; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(255,255,255,.44); margin-bottom:14px;
+}
+.dp__t {
+  font-family:var(--serif); font-size:28px;
+  line-height:1.1; color:var(--white); margin-bottom:12px;
+}
+.dp__b {
+  font-size:13.5px; line-height:1.7;
+  color:rgba(255,255,255,.58);
 }
 
 /* ══ STRATEGY */
-#strategy { background:var(--off); padding:128px 0; }
+#strategy { background:var(--white); padding:128px 0; border-top:1px solid var(--rule); }
 .strat__hd {
   display:grid; grid-template-columns:5fr 7fr;
   gap:80px; align-items:end; margin-bottom:64px;
@@ -320,12 +339,6 @@ h2.strat__hed { font-size:clamp(36px,4.5vw,60px); color:var(--ink); }
   border-top:1px solid var(--rule);
 }
 .strat__actions .cta {
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-}
-#about .ac a.cta--dark[href="firm.html#ownership"],
-#strategy .strat__actions > a.cta--dark {
   width:100%;
   display:flex;
   justify-content:space-between;
@@ -779,7 +792,8 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   #hero,
   .about__intro,
   .about__cols,
-  .num-band__inner,
+  .diff-band__hd,
+  .diff-band__grid,
   .strat__hd,
   .strat__grid,
   .founder-split,
@@ -842,9 +856,10 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 
   .sg,
   .sg:nth-child(2),
-  .sg:last-child,
-  .nb { padding:24px 0 !important; border-right:none; }
-  .num-band { padding:52px 0; }
+  .sg:last-child { padding:24px 0 !important; border-right:none; }
+  .diff-band { padding:64px 0 56px; }
+  .dp { padding:24px 0 24px; border-right:none; border-left:none; }
+  .dp__t { font-size:24px; }
 
   .ticker {
     padding:14px 0;
@@ -980,7 +995,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 <!-- HERO STATS -->
 <section id="hero" class="wrap">
   <div class="hero__intro">
-    <p class="hero__copy">ShoreVest Partners is a specialist investment manager focused on China private credit and special situations. The strategy roots date to 2004; the current ShoreVest platform was established in 2016. Investments are underwritten to hard collateral, enforceable control, and defined recovery routes, with returns driven by disciplined origination, restructuring, and exits.</p>
+    <p class="hero__copy">ShoreVest Partners is a specialist investment manager focused on China private credit and special situations. Investments are underwritten to hard collateral, enforceable control, and defined recovery routes, with returns driven by disciplined origination, restructuring, and exits.</p>
   </div>
   <div class="hero__right">
     <div class="hero__stats">
@@ -1054,43 +1069,76 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   </div>
 </section>
 
-<!-- NUMBERS BAND -->
-<div class="num-band">
+<!-- DIFFERENTIATORS BAND -->
+<section class="diff-band">
   <div class="wrap">
-    <div class="num-band__inner rev">
-      <div class="nb"><div class="nb__n">$2B+</div><div class="nb__l">Capital Deployed Across China Credit Situations</div></div>
-      <div class="nb"><div class="nb__n">20+</div><div class="nb__l">Years in China Private Credit</div></div>
-      <div class="nb"><div class="nb__n">50+</div><div class="nb__l">Transactions Executed and Resolved</div></div>
-      <div class="nb"><div class="nb__n">2004</div><div class="nb__l">Strategy Origins (Pre-ShoreVest Platform)</div></div>
+    <div class="diff-band__hd">
+      <div>
+        <div class="eyebrow eyebrow--ghost rev">Execution Differentiators</div>
+        <h2 class="diff-band__hed rev d1">Why outcomes are repeatable.<br><em>Not accidental.</em></h2>
+      </div>
+      <p class="diff-band__bridge rev d2">China private credit is not won at term sheet stage. Control must be built into legal structure, information rights, collateral pathways, and governance from day one through workout.</p>
+    </div>
+    <div class="diff-band__grid">
+      <article class="dp rev">
+        <div class="dp__k">01 · Sourcing Precision</div>
+        <h3 class="dp__t">Onshore Origination Discipline</h3>
+        <p class="dp__b">Transactions are sourced through local operating networks, advisors, and financial institutions, allowing early screening of sponsor behaviour, collateral quality, and creditor alignment before pricing discussions.</p>
+      </article>
+      <article class="dp rev d1">
+        <div class="dp__k">02 · Underwriting Control</div>
+        <h3 class="dp__t">Collateral and Claim Design</h3>
+        <p class="dp__b">Structures prioritize enforceable claims, clean security packages, and conservative attachment points so downside recovery is supported by legal rights, not only enterprise value assumptions.</p>
+      </article>
+      <article class="dp rev d2">
+        <div class="dp__k">03 · Legal Enforceability</div>
+        <h3 class="dp__t">PRC Documentation Architecture</h3>
+        <p class="dp__b">Documentation is built for PRC-law enforceability: security perfection, covenant architecture, and trigger mechanics are drafted for practical use in contested scenarios, not presentation optics.</p>
+      </article>
+      <article class="dp rev d1">
+        <div class="dp__k">04 · Servicing Integrity</div>
+        <h3 class="dp__t">Live Portfolio Surveillance</h3>
+        <p class="dp__b">Post-close monitoring tracks collateral condition, cash controls, and borrower conduct so intervention can begin early and negotiations are driven by current facts rather than delayed reporting.</p>
+      </article>
+      <article class="dp rev d2">
+        <div class="dp__k">05 · Workout Capability</div>
+        <h3 class="dp__t">Integrated Restructuring Execution</h3>
+        <p class="dp__b">The same team that underwrites also runs restructurings and resolutions, tightening feedback loops between entry assumptions, restructuring pathways, and realized recoveries.</p>
+      </article>
+      <article class="dp rev d3">
+        <div class="dp__k">06 · Governance Accountability</div>
+        <h3 class="dp__t">Decision Rights Tied to Outcomes</h3>
+        <p class="dp__b">Investment committee oversight extends through workout milestones and exits, with accountability linked to net recovery performance rather than origination volume.</p>
+      </article>
     </div>
   </div>
-</div>
+</section>
 
 <!-- STRATEGY -->
 <section id="strategy">
   <div class="wrap">
     <div class="strat__hd">
       <div>
-        <div class="eyebrow rev">What We Do</div>
-        <h2 class="strat__hed rev d1">Three strategies.<br><em>One discipline.</em></h2>
+        <div class="eyebrow eyebrow--red rev">Investment Strategies</div>
+        <h2 class="strat__hed rev d1">Where the framework is deployed.<br><em>Across three entry channels.</em></h2>
       </div>
-      <p class="strat__intro rev d2">These three buckets are connected expressions of one underwriting framework: collateral-backed entry, legal enforceability, active servicing, and disciplined resolution.</p>
+      <p class="strat__intro rev d2">Each strategy applies the same recovery-led framework: collateral-backed entry, enforceable legal position, active servicing, and controlled exit execution.</p>
     </div>
     <div class="strat__grid">
       <div class="sg rev" id="asset-based-lending">
         <div class="sg__n">Strategy 01</div>
         <div class="sg__title">Asset-Based Lending</div>
-        <div class="sg__body">Senior-secured financing to performing borrowers when bank liquidity is constrained. Loans are backed by hard assets, typically with conservative leverage and first-lien protection.</div>
+        <div class="sg__body">Senior-secured loans to performing borrowers with temporary liquidity dislocations. Structures emphasize first-lien collateral, disciplined leverage, and clear cash-flow control mechanisms.</div>
       </div>
       <div class="sg rev d1" id="asset-restructuring">
         <div class="sg__n">Strategy 02</div>
         <div class="sg__title">Asset Restructuring</div>
-        <div class="sg__body">Situations where asset quality and capital structure are misaligned. Investments require creditor coordination, restructuring design, and active control of execution through to exit.</div>
+        <div class="sg__body">Capital solutions for borrowers with viable assets but impaired balance sheets. Returns depend on creditor coordination, enforceable restructuring terms, and tight execution through completion.</div>
       </div>
       <div class="sg rev d2" id="debt-resolutions">
         <div class="sg__n">Strategy 03</div>
         <div class="sg__title">Debt Resolutions</div>
-        <div class="sg__body">Acquisition and resolution of non-performing loans and stressed claims from financial institutions. Sourcing, diligence, enforcement, and disposition are managed as an integrated workflow.</div>
+        <div class="sg__body">Acquisition and resolution of non-performing loans and stressed claims from financial institutions, executed through integrated sourcing, forensic diligence, enforcement planning, and disposition.</div>
       </div>
     </div>
     <div class="strat__actions rev d3">
@@ -1111,7 +1159,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
         <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="white"/>
         <circle cx="48" cy="82" r="3.5" fill="white"/></svg>
     <blockquote class="qb">"In China private credit, underwriting is only the first step. Outcomes are determined by collateral control, legal process, and execution quality."</blockquote>
-    <p class="qb-attr">ShoreVest Partners — Investment Discipline</p>
+    <p class="qb-attr">ShoreVest Partners — Recovery-Led Framework</p>
   </div>
 </div>
 
@@ -1119,7 +1167,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 <div class="founder-split">
   <div class="fs__left">
     <div class="eyebrow rev">Track Record Context</div>
-    <blockquote class="fs__q rev d1">"Our strategy has roots in 2004. The ShoreVest platform was established in 2016 to institutionalize that experience under one operating model."</blockquote>
+    <blockquote class="fs__q rev d1">"In this market, recovery is produced by structure and control, not by optimistic entry assumptions."</blockquote>
     <cite class="fs__cite rev d2">Benjamin Fanger — Managing Partner & Founder</cite>
     <div style="margin-top:36px;" class="rev d3">
       <a href="team.html" class="cta cta--dark"><span>MEET THE TEAM</span><div class="cta__ring">→</div></a>
