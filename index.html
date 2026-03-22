@@ -666,6 +666,66 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 }
 .foot__legal a:hover { color:rgba(255,255,255,.55); }
 
+.cdd-subscribe {
+  padding:80px var(--pad) 96px;
+}
+.cdd-subscribe__wrap {
+  max-width:var(--max);
+  margin:0 auto;
+}
+.cdd-subscribe__grid {
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 2fr);
+  gap:80px;
+  align-items:start;
+}
+.cdd-subscribe__copy {
+  min-width:0;
+}
+.cdd-subscribe__title {
+  font-family:var(--serif);
+  font-size:clamp(32px,3.5vw,50px);
+  font-weight:400;
+  color:var(--ink);
+  line-height:1.1;
+  margin-bottom:20px;
+}
+.cdd-subscribe__text {
+  font-size:15px;
+  line-height:1.82;
+  color:var(--mist);
+  font-family:var(--serif);
+  margin-bottom:32px;
+}
+.cdd-subscribe__cards {
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:0;
+  border-left:1px solid var(--rule);
+}
+.cdd-subscribe__card {
+  padding:32px 36px;
+  min-width:0;
+}
+.cdd-subscribe__card:nth-child(-n+2) {
+  border-bottom:1px solid var(--rule);
+}
+.cdd-subscribe__card:nth-child(odd) {
+  border-right:1px solid var(--rule);
+}
+.cdd-subscribe__card-title {
+  font-family:var(--serif);
+  font-size:22px;
+  color:var(--ink);
+  margin-bottom:10px;
+  line-height:1.2;
+}
+.cdd-subscribe__card-copy {
+  font-size:13px;
+  line-height:1.72;
+  color:var(--mist);
+}
+
 /* ══ RESPONSIVE */
 .nav__menu-btn {
   display:none;
@@ -682,6 +742,27 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 @media (max-width: 1024px) {
   :root { --pad: 32px; }
   .hero__sliver { height:540px; }
+  .cdd-subscribe__grid {
+    grid-template-columns:minmax(0, 1fr);
+    gap:32px;
+  }
+  .cdd-subscribe__cards {
+    border-left:0;
+    border-top:1px solid var(--rule);
+  }
+  .cdd-subscribe__card {
+    padding:26px 0;
+    border-right:0 !important;
+    border-bottom:1px solid var(--rule) !important;
+  }
+  .cdd-subscribe__card:first-child {
+    padding-top:22px;
+  }
+  .cdd-subscribe__card:last-child {
+    border-bottom:0 !important;
+    padding-bottom:0;
+  }
+
   #hero,
   .about__intro,
   .strat__hd,
@@ -1190,31 +1271,31 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   </div>
 
   <!-- What it covers — white section below masthead -->
-  <div style="padding:80px var(--pad) 96px;">
-    <div style="max-width:var(--max);margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;">
-        <div>
+  <div class="cdd-subscribe">
+    <div class="cdd-subscribe__wrap">
+      <div class="cdd-subscribe__grid">
+        <div class="cdd-subscribe__copy">
           <div class="eyebrow eyebrow--red rev">Why Subscribe</div>
-          <h2 style="font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:20px;" class="rev d1">Institutional depth.<br><em>Unfiltered.</em></h2>
-          <p style="font-size:15px;line-height:1.82;color:var(--mist);font-family:var(--serif);margin-bottom:32px;" class="rev d2">China Debt Dynamics is read by allocators at sovereign wealth funds, pension funds, and endowments who need to understand China credit beyond surface-level coverage.</p>
+          <h2 class="cdd-subscribe__title rev d1">Institutional depth.<br><em>Unfiltered.</em></h2>
+          <p class="cdd-subscribe__text rev d2">China Debt Dynamics is read by allocators at sovereign wealth funds, pension funds, and endowments who need to understand China credit beyond surface-level coverage.</p>
           <div class="rev d3"><a href="#signup" class="cta cta--dark"><span>Subscribe Free</span><div class="cta__ring">→</div></a></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-left:1px solid var(--rule);" class="rev d2">
-          <div style="padding:32px 36px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">Cycle Analysis</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">Where China's credit cycle actually is — versus consensus narrative.</div>
+        <div class="cdd-subscribe__cards rev d2">
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">Cycle Analysis</div>
+            <div class="cdd-subscribe__card-copy">Where China's credit cycle actually is — versus consensus narrative.</div>
           </div>
-          <div style="padding:32px 36px;border-bottom:1px solid var(--rule);">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">NPL Deep Dives</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">How non-performing loan resolution works in China, step by step.</div>
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">NPL Deep Dives</div>
+            <div class="cdd-subscribe__card-copy">How non-performing loan resolution works in China, step by step.</div>
           </div>
-          <div style="padding:32px 36px;border-right:1px solid var(--rule);">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">Structural Views</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">The mechanics of enforcement, collateral, and recovery that drive realized returns.</div>
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">Structural Views</div>
+            <div class="cdd-subscribe__card-copy">The mechanics of enforcement, collateral, and recovery that drive realized returns.</div>
           </div>
-          <div style="padding:32px 36px;">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">Regulatory Reads</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">What policy shifts in Beijing mean for credit markets — from people who are there.</div>
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">Regulatory Reads</div>
+            <div class="cdd-subscribe__card-copy">What policy shifts in Beijing mean for credit markets — from people who are there.</div>
           </div>
         </div>
       </div>
