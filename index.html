@@ -737,14 +737,44 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     row-gap:12px;
     padding:12px var(--pad);
   }
+  .nav__logo {
+    width:100%;
+    height:auto;
+  }
   .nav__logo svg { height:48px; }
-  .nav__menu-btn { display:inline-flex; }
-  .nav__right { margin-left:auto; gap:10px; }
-  .nav__lp { padding:6px 12px; }
+  .nav__menu-btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:10px 14px;
+  }
+  .nav__right {
+    width:100%;
+    margin-left:0;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
+  .nav__zh {
+    order:1;
+    font-size:12px;
+    margin-right:auto;
+    padding-right:8px;
+  }
+  .nav__lp {
+    order:2;
+    padding:10px 14px;
+    font-size:9px;
+    letter-spacing:.12em;
+  }
+  .nav__menu-btn {
+    order:3;
+  }
   .nav__links {
     display:none;
     width:100%;
-    order:3;
+    order:4;
     flex-direction:column;
     gap:14px;
     padding:10px 0 12px;
@@ -889,8 +919,43 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   #cdd > div:first-child {
     padding:56px var(--pad) !important;
   }
-  #cdd > div:first-child [style*="grid-template-columns:1fr 1fr"] {
+  .cdd-masthead,
+  .cdd-findings,
+  .cdd-subscribe,
+  .cdd-subscribe-grid {
+    grid-template-columns:1fr !important;
+  }
+  .cdd-masthead,
+  .cdd-subscribe {
     gap:38px !important;
+  }
+  .cdd-brand {
+    gap:16px !important;
+    margin-bottom:24px !important;
+  }
+  .cdd-brand svg {
+    width:38px;
+  }
+  .cdd-card-top,
+  .cdd-card-body,
+  .cdd-card-bottom {
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+  .cdd-card-top {
+    align-items:flex-start !important;
+    gap:8px;
+    flex-direction:column;
+  }
+  .cdd-findings {
+    gap:18px !important;
+  }
+  .cdd-subscribe-grid {
+    border-left:none !important;
+  }
+  .cdd-subscribe-grid > div {
+    border-right:none !important;
+    padding:24px 0 !important;
   }
   #cdd .issue-card {
     border-color:rgba(255,255,255,.22);
@@ -1137,11 +1202,11 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <!-- Publication masthead — full width, editorial -->
   <div style="background:var(--ink);padding:80px var(--pad);">
     <div style="max-width:var(--max);margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div class="cdd-masthead" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
         <div>
           <div class="eyebrow eyebrow--ghost rev" style="margin-bottom:28px;">SHOREVEST INSIGHTS · EST. 2018</div>
           <!-- Publication logotype -->
-          <div style="display:flex;align-items:flex-start;gap:24px;margin-bottom:32px;">
+          <div class="cdd-brand" style="display:flex;align-items:flex-start;gap:24px;margin-bottom:32px;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 116" width="52" height="auto" style="flex-shrink:0;margin-top:6px;">
         <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
         <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
@@ -1159,14 +1224,14 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
         <div class="rev d2">
           <!-- Latest issue card — editorial weight -->
           <div style="border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);">
-            <div style="padding:10px 24px;background:var(--red);display:flex;align-items:center;justify-content:space-between;">
+            <div class="cdd-card-top" style="padding:10px 24px;background:var(--red);display:flex;align-items:center;justify-content:space-between;">
               <span style="font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);">Latest Issue · January 2026</span>
               <span style="font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);">25 January 2026</span>
             </div>
-            <div style="padding:32px 28px 24px;">
+            <div class="cdd-card-body" style="padding:32px 28px 24px;">
               <div style="font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:white;line-height:1.22;margin-bottom:16px;">The End of China's "Uninvestable" Myth</div>
               <div style="font-size:14px;line-height:1.72;color:rgba(255,255,255,.35);margin-bottom:24px;font-family:var(--serif);">China was never one market and never one trade. This issue examines why the broad "uninvestable" label missed the mechanics that continued to matter for disciplined private credit investors on the ground.</div>
-              <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="cdd-findings" style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                 <div>
                   <div style="font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Findings</div>
                   <div style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.28);border-left:2px solid rgba(179,33,63,.35);padding-left:10px;margin-bottom:8px;">Long-term policy shifts improved creditor protections</div>
@@ -1179,7 +1244,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
                 </div>
               </div>
             </div>
-            <div style="padding:16px 28px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;">
+            <div class="cdd-card-bottom" style="padding:16px 28px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;">
               <a href="insights.html#current-issue" class="cta cta--light" style="font-size:10px;"><span>READ ISSUE</span><div class="cta__ring" style="width:36px;height:36px;font-size:13px;border-color:rgba(255,255,255,.2);">→</div></a>
               <span style="font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.1em;text-transform:uppercase;">Vol. 10 · No. 1</span>
             </div>
@@ -1192,14 +1257,14 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <!-- What it covers — white section below masthead -->
   <div style="padding:80px var(--pad) 96px;">
     <div style="max-width:var(--max);margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;">
+      <div class="cdd-subscribe" style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;">
         <div>
           <div class="eyebrow eyebrow--red rev">Why Subscribe</div>
           <h2 style="font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:20px;" class="rev d1">Institutional depth.<br><em>Unfiltered.</em></h2>
           <p style="font-size:15px;line-height:1.82;color:var(--mist);font-family:var(--serif);margin-bottom:32px;" class="rev d2">China Debt Dynamics is read by allocators at sovereign wealth funds, pension funds, and endowments who need to understand China credit beyond surface-level coverage.</p>
           <div class="rev d3"><a href="#signup" class="cta cta--dark"><span>Subscribe Free</span><div class="cta__ring">→</div></a></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-left:1px solid var(--rule);" class="rev d2">
+        <div class="cdd-subscribe-grid rev d2" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-left:1px solid var(--rule);">
           <div style="padding:32px 36px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);">
             <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">Cycle Analysis</div>
             <div style="font-size:13px;line-height:1.72;color:var(--mist);">Where China's credit cycle actually is — versus consensus narrative.</div>
