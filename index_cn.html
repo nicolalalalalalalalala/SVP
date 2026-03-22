@@ -211,7 +211,7 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
   background:var(--ink2); overflow:hidden; padding:13px 0; white-space:nowrap;
   border-top:1px solid rgba(255,255,255,.04);
 }
-.ticker__track { display:inline-flex; animation:ticker 44s linear infinite; }
+.ticker__track { display:inline-flex; animation:ticker 44s linear infinite; will-change:transform; transform:translate3d(0,0,0); }
 @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 .ticker__i {
   font-size:10px; font-weight:400; letter-spacing:.14em; text-transform:uppercase;
