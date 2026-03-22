@@ -734,18 +734,6 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     border-top:1px solid var(--rule);
   }
   #nav.menu-open .nav__links { display:flex; }
-  .nav__links a,
-  .nav__menu-btn,
-  .nav__lp,
-  .eyebrow,
-  .hero__kicker {
-    letter-spacing:.06em;
-    text-transform:none;
-  }
-  .nav__links a {
-    font-size:13px;
-    line-height:1.5;
-  }
 
   .hero__sliver {
     height:min(84vh, 760px);
@@ -786,9 +774,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .foot__top,
   .issue-takes,
   #insights [style*="grid-template-columns:1fr 1fr"],
-  #insights [style*="grid-template-columns:1fr 2fr"],
-  #cdd [style*="grid-template-columns:1fr 1fr"],
-  #cdd [style*="grid-template-columns:1fr 2fr"] {
+  #insights [style*="grid-template-columns:1fr 2fr"] {
     grid-template-columns:1fr !important;
   }
 
@@ -849,13 +835,11 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     white-space:nowrap;
   }
   .ticker__track {
-    animation:ticker 36s linear infinite;
-    display:inline-flex;
-    flex-wrap:nowrap;
-    justify-content:flex-start;
-    gap:0;
-    width:max-content;
-    padding:0 0 2px;
+    animation:none;
+    display:flex;
+    width:100%;
+    overflow:hidden;
+    padding:0 var(--pad);
   }
   .ticker__i {
     font-size:9px;
@@ -927,7 +911,6 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     max-width:380px;
   }
   .foot__address { text-align:left; }
-  .foot__legal { justify-content:flex-start; }
 }
 
 
@@ -1071,17 +1054,17 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
       <p class="strat__intro rev d2">每项策略均以资产抵押为基础，在中国私募信贷的每个周期中，始终坚持本金保护并追求稳定回报。</p>
     </div>
     <div class="strat__grid">
-      <div class="sg rev">
+      <div class="sg rev" id="asset-based-lending">
         <div class="sg__n">策略 01</div>
         <div class="sg__title">资产抵押贷款</div>
         <div class="sg__body">以不动产抵押并享有第一顺位优先权的直接贷款。通过审慎的贷款价值比管理住宅与商业资产，实现下行保护。</div>
       </div>
-      <div class="sg rev d1">
+      <div class="sg rev d1" id="asset-restructuring">
         <div class="sg__n">策略 02</div>
         <div class="sg__title">资产重组</div>
         <div class="sg__body">针对复杂困境资产的重组，依托法律、金融与运营协同能力。在中国信贷市场多个重组周期中积累了深厚经验。</div>
       </div>
-      <div class="sg rev d2">
+      <div class="sg rev d2" id="debt-resolutions">
         <div class="sg__n">策略 03</div>
         <div class="sg__title">债务处置</div>
         <div class="sg__body">从银行及金融机构收购并处置不良贷款，具备从项目获取、法律处置到资产退出的端到端能力。</div>
