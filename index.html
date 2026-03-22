@@ -970,8 +970,22 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   #cdd > div:first-child {
     padding:56px var(--pad) !important;
   }
-  #cdd > div:first-child [style*="grid-template-columns:1fr 1fr"] {
-    gap:38px !important;
+  .cdd-hero__grid {
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:34px !important;
+  }
+  .cdd-hero__copy,
+  .cdd-hero__panel,
+  .cdd-hero__card {
+    min-width:0;
+    max-width:100%;
+  }
+  .cdd-hero__panel {
+    width:100%;
+  }
+  .cdd-hero__card-grid {
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:14px !important;
   }
   #cdd .issue-card {
     border-color:rgba(255,255,255,.22);
@@ -1218,8 +1232,8 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <!-- Publication masthead — full width, editorial -->
   <div style="background:var(--ink);padding:80px var(--pad);">
     <div style="max-width:var(--max);margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-        <div>
+      <div class="cdd-hero__grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div class="cdd-hero__copy">
           <div class="eyebrow eyebrow--ghost rev" style="margin-bottom:28px;">SHOREVEST INSIGHTS · EST. 2018</div>
           <!-- Publication logotype -->
           <div style="display:flex;align-items:flex-start;gap:24px;margin-bottom:32px;">
@@ -1237,9 +1251,9 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
           </div>
           <div style="font-family:var(--serif);font-size:18px;line-height:1.72;color:rgba(255,255,255,.42);max-width:440px;" class="rev d2">Institutional analysis of China's private credit markets — built on local underwriting, legal process, and on-the-ground execution. Not commentary. Mechanism.</div>
         </div>
-        <div class="rev d2">
+        <div class="cdd-hero__panel rev d2">
           <!-- Latest issue card — editorial weight -->
-          <div style="border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);">
+          <div class="cdd-hero__card" style="border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);">
             <div style="padding:10px 24px;background:var(--red);display:flex;align-items:center;justify-content:space-between;">
               <span style="font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);">Latest Issue · January 2026</span>
               <span style="font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);">25 January 2026</span>
@@ -1247,7 +1261,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
             <div style="padding:32px 28px 24px;">
               <div style="font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:white;line-height:1.22;margin-bottom:16px;">The End of China's "Uninvestable" Myth</div>
               <div style="font-size:14px;line-height:1.72;color:rgba(255,255,255,.35);margin-bottom:24px;font-family:var(--serif);">China was never one market and never one trade. This issue examines why the broad "uninvestable" label missed the mechanics that continued to matter for disciplined private credit investors on the ground.</div>
-              <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="cdd-hero__card-grid" style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                 <div>
                   <div style="font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Findings</div>
                   <div style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.28);border-left:2px solid rgba(179,33,63,.35);padding-left:10px;margin-bottom:8px;">Long-term policy shifts improved creditor protections</div>
