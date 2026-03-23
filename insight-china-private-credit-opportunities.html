@@ -96,16 +96,29 @@
 
   @media (max-width:760px){
     :root{--pad:20px}
-    #nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}
-    .nav__menu-btn{display:inline-flex}
-    .nav__right{margin-left:auto;gap:10px}
-    .nav__lp{display:inline-flex}
+    #nav{height:auto;min-height:72px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:12px;padding:12px var(--pad)}
+    .nav__menu-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;flex-shrink:0}
+    .nav__right{grid-column:1 / -1;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px 12px;width:100%;margin-left:0}
+    .nav__zh{justify-self:start}.nav__lp{display:inline-flex;align-items:center;justify-content:center;justify-self:end;min-height:44px;padding:0 16px;text-align:center}
     .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid rgba(0,0,0,.12)}
     #nav.menu-open .nav__links{display:flex}
     .nav__links a{font-size:10px;white-space:nowrap}
     main{margin:132px auto 72px}
     p{font-size:16px;line-height:1.75}
   }
+
+
+
+@media (max-width:520px){
+  #nav{column-gap:10px;row-gap:10px}
+  .nav__logo{max-width:min(100%,210px)}
+  .nav__logo svg{height:auto;max-height:44px;width:100%}
+  .nav__right{width:100%;margin-left:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+  .nav__zh{font-size:12px}
+  .nav__lp,.nav__menu-btn{width:100%;min-height:42px;padding:0 12px}
+  .nav__lp{font-size:9px;justify-self:stretch}
+}
+
 </style>
 </head>
 <body>
