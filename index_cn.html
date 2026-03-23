@@ -536,14 +536,19 @@ h2.su__hed {
   color:var(--white); padding:4px 0;
 }
 .su__field input::placeholder { color:rgba(255,255,255,.2); }
+.su__field input:focus { box-shadow:none; }
 .su__small { font-size:11px; color:rgba(255,255,255,.13); line-height:1.65; margin-top:22px; }
+.su__status { margin-top:18px; font-size:13px; line-height:1.7; }
+.su__status[data-state='success'] { color:#d9c6ab; }
+.su__status[data-state='error'] { color:#f08d82; }
 /* Blackstone-style submit: just text + ring */
 .su__submit {
-  display:flex; align-items:center; gap:14px; margin-top:40px;
+  display:flex; align-items:center; gap:14px; margin-top:40px; width:max-content;
   background:none; border:none; cursor:pointer; font-family:var(--sans);
-  color:var(--white); transition:gap .2s;
+  color:var(--white); transition:gap .2s, opacity .2s;
 }
 .su__submit:hover { gap:20px; }
+.su__submit:disabled { cursor:progress; opacity:.58; }
 .su__submit span { font-size:15px; font-weight:400; }
 .su__submit-ring {
   width:48px; height:48px; border-radius:50%;
@@ -551,7 +556,8 @@ h2.su__hed {
   display:flex; align-items:center; justify-content:center;
   font-size:18px; transition:background .2s, border-color .2s;
 }
-.su__submit:hover .su__submit-ring { background:var(--red); border-color:var(--red); }
+.su__submit:hover .su__submit-ring,
+.su__submit:focus-visible .su__submit-ring { background:var(--red); border-color:var(--red); }
 
 /* ══ FOOTER — Blackstone style: tagline left, nav columns right */
 footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); padding:88px var(--pad) 48px; }
@@ -1249,19 +1255,20 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
         <h2 class="su__hed rev d1">订阅我们的最新洞察与公司动态。</h2>
         <p class="su__sub rev d2">订阅《中国债务动态》，将 ShoreVest 的机构级洞察直达您的邮箱。</p>
       </div>
-      <div class="su__form rev d2">
-        <div class="su__field"><input type="email" placeholder="邮箱地址 *" autocomplete="email"></div>
-        <div class="su__field"><input type="text" placeholder="名字 *" autocomplete="given-name"></div>
-        <div class="su__field"><input type="text" placeholder="姓氏 *" autocomplete="family-name"></div>
-        <div class="su__field"><input type="text" placeholder="公司" autocomplete="organization"></div>
-        <div class="su__field"><input type="text" placeholder="职位"></div>
-        <div class="su__field"><input type="text" placeholder="国家/地区 *" autocomplete="country-name"></div>
+      <form class="su__form rev d2" data-newsletter-signup data-signup-language="zh" data-consent-text="提交即表示您同意接收 ShoreVest Partners 新岸資本 的沟通信息。详情请参阅我们的隐私政策。" data-messages='{"success":"感谢订阅，您已加入 ShoreVest 更新邮件列表。","error":"当前无法提交您的请求，请稍后再试。","notConfigured":"HubSpot 订阅尚未配置。请在 assets/js/newsletter-signup.js 中填入 ShoreVest 的 portal 和 form ID。"}'>
+        <div class="su__field"><input type="email" name="email" placeholder="邮箱地址 *" autocomplete="email" required></div>
+        <div class="su__field"><input type="text" name="firstName" placeholder="名字 *" autocomplete="given-name" required></div>
+        <div class="su__field"><input type="text" name="lastName" placeholder="姓氏 *" autocomplete="family-name" required></div>
+        <div class="su__field"><input type="text" name="company" placeholder="公司" autocomplete="organization"></div>
+        <div class="su__field"><input type="text" name="jobTitle" placeholder="职位" autocomplete="organization-title"></div>
+        <div class="su__field"><input type="text" name="country" placeholder="国家/地区 *" autocomplete="country-name" required></div>
         <p class="su__small">提交即表示您同意接收 ShoreVest Partners 新岸資本 的沟通信息。详情请参阅我们的隐私政策。</p>
-        <button class="su__submit" type="button">
+        <p class="su__status" data-signup-status hidden aria-live="polite"></p>
+        <button class="su__submit" type="submit" data-signup-submit>
           <span>提交</span>
           <div class="su__submit-ring">→</div>
         </button>
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1396,6 +1403,8 @@ if (menuBtn && nav) {
   document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
 })();
 </script>
+
+<script src="assets/js/newsletter-signup.js"></script>
 
 </body>
 </html>

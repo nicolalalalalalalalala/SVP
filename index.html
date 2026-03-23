@@ -562,14 +562,19 @@ h2.su__hed {
   color:var(--white); padding:4px 0;
 }
 .su__field input::placeholder { color:rgba(255,255,255,.2); }
+.su__field input:focus { box-shadow:none; }
 .su__small { font-size:11px; color:rgba(255,255,255,.13); line-height:1.65; margin-top:22px; }
+.su__status { margin-top:18px; font-size:13px; line-height:1.7; }
+.su__status[data-state='success'] { color:#d9c6ab; }
+.su__status[data-state='error'] { color:#f08d82; }
 /* Blackstone-style submit: just text + ring */
 .su__submit {
-  display:flex; align-items:center; gap:14px; margin-top:40px;
+  display:flex; align-items:center; gap:14px; margin-top:40px; width:max-content;
   background:none; border:none; cursor:pointer; font-family:var(--sans);
-  color:var(--white); transition:gap .2s;
+  color:var(--white); transition:gap .2s, opacity .2s;
 }
 .su__submit:hover { gap:20px; }
+.su__submit:disabled { cursor:progress; opacity:.58; }
 .su__submit span { font-size:15px; font-weight:400; }
 .su__submit-ring {
   width:48px; height:48px; border-radius:50%;
@@ -577,7 +582,8 @@ h2.su__hed {
   display:flex; align-items:center; justify-content:center;
   font-size:18px; transition:background .2s, border-color .2s;
 }
-.su__submit:hover .su__submit-ring { background:var(--red); border-color:var(--red); }
+.su__submit:hover .su__submit-ring,
+.su__submit:focus-visible .su__submit-ring { background:var(--red); border-color:var(--red); }
 
 /* ══ FOOTER — Blackstone style: tagline left, nav columns right */
 footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); padding:88px var(--pad) 48px; }
@@ -1366,19 +1372,20 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
         <h2 class="su__hed rev d1">Sign up for institutional insights and firm announcements.</h2>
         <p class="su__sub rev d2">Subscribe to China Debt Dynamics and receive ShoreVest's analysis directly to your inbox.</p>
       </div>
-      <div class="su__form rev d2">
-        <div class="su__field"><input type="email" placeholder="Email Address *" autocomplete="email"></div>
-        <div class="su__field"><input type="text" placeholder="First Name *" autocomplete="given-name"></div>
-        <div class="su__field"><input type="text" placeholder="Last Name *" autocomplete="family-name"></div>
-        <div class="su__field"><input type="text" placeholder="Company" autocomplete="organization"></div>
-        <div class="su__field"><input type="text" placeholder="Job Title"></div>
-        <div class="su__field"><input type="text" placeholder="Country *" autocomplete="country-name"></div>
+      <form class="su__form rev d2" data-newsletter-signup data-signup-language="en" data-consent-text="By submitting, you consent to receive communications from ShoreVest Partners 新岸資本. See our Privacy Policy for details." data-messages='{"success":"Thank you. You are now subscribed to ShoreVest updates.","error":"We could not submit your request right now. Please try again shortly.","notConfigured":"HubSpot signup is not configured yet. Add the ShoreVest portal and form IDs in assets/js/newsletter-signup.js."}'>
+        <div class="su__field"><input type="email" name="email" placeholder="Email Address *" autocomplete="email" required></div>
+        <div class="su__field"><input type="text" name="firstName" placeholder="First Name *" autocomplete="given-name" required></div>
+        <div class="su__field"><input type="text" name="lastName" placeholder="Last Name *" autocomplete="family-name" required></div>
+        <div class="su__field"><input type="text" name="company" placeholder="Company" autocomplete="organization"></div>
+        <div class="su__field"><input type="text" name="jobTitle" placeholder="Job Title" autocomplete="organization-title"></div>
+        <div class="su__field"><input type="text" name="country" placeholder="Country *" autocomplete="country-name" required></div>
         <p class="su__small">By submitting, you consent to receive communications from ShoreVest Partners 新岸資本. See our Privacy Policy for details.</p>
-        <button class="su__submit" type="button">
+        <p class="su__status" data-signup-status hidden aria-live="polite"></p>
+        <button class="su__submit" type="submit" data-signup-submit>
           <span>Submit</span>
           <div class="su__submit-ring">→</div>
         </button>
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1515,6 +1522,8 @@ if (menuBtn && nav) {
   document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
 })();
 </script>
+
+<script src="assets/js/newsletter-signup.js"></script>
 
 </body>
 </html>
