@@ -74,18 +74,20 @@
 
     .eyebrow {
       font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
-      color:var(--mist); display:flex; align-items:center; gap:14px; margin-bottom:22px;
+      color:var(--mist); display:flex; align-items:center; gap:14px; min-height:12px; margin-bottom:24px;
     }
     .eyebrow::after { content:''; flex:0 0 36px; height:1px; background:currentColor; }
 
     .pagehero {
       min-height:420px;
-      padding-top:156px;
-      padding-bottom:72px;
+      padding:148px 0 76px;
       border-bottom:1px solid var(--rule);
       background:var(--cream);
       display:flex;
-      align-items:flex-start;
+      align-items:center;
+    }
+    .pagehero .wrap {
+      width:100%;
     }
     h1 {
       font-family:var(--serif);
@@ -94,13 +96,15 @@
       line-height:1.04;
       letter-spacing:-.02em;
       margin-bottom:22px;
+      max-width:700px;
     }
     .pagehero p {
-      max-width:760px;
-      font-size:17px;
-      line-height:1.82;
+      max-width:700px;
+      font-size:19px;
+      line-height:1.8;
       color:var(--mist);
       font-family:var(--serif);
+      margin-top:18px;
     }
 
     .team-groups { padding:72px 0 90px; }
@@ -288,16 +292,8 @@
         border-top:1px solid var(--rule);
       }
       #nav.menu-open .nav__links { display:flex; }
-      .nav__links a,
-      .nav__menu-btn,
-      .eyebrow,
-      .title {
-        letter-spacing:.06em;
-        text-transform:none;
-      }
       .nav__links a {
-        font-size:13px;
-        line-height:1.5;
+        font-size:10px;
         white-space:nowrap;
       }
       .pagehero { min-height:auto; padding-top:140px; padding-bottom:46px; }
@@ -454,7 +450,7 @@
     <div class="wrap">
       <div class="eyebrow">团队</div>
       <h1>ShoreVest 团队</h1>
-      <p>ShoreVest 在同一中国私募信贷平台下整合投资、顾问、客户覆盖、法务合规与关联平台管理能力。</p>
+      <p>ShoreVest 在同一中国私募信贷平台下整合投资、顾问、客户覆盖、法务合规与关联平台管理能力。点击任意成员卡片可展开查看完整简介。</p>
     </div>
   </section>
 
