@@ -171,9 +171,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   .nav__logo{max-width:min(100%,260px);min-width:0}
   .nav__logo svg{height:48px;max-width:100%}
   .nav__menu-btn{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:44px;padding:0 16px}
-  .nav__right{grid-column:1 / -1;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px 12px;width:100%}
-  .nav__zh{justify-self:start}
-  .nav__lp{display:inline-flex;align-items:center;justify-content:center;justify-self:end;min-height:44px;padding:0 16px;text-align:center}
+  .nav__right{display:inline-flex;align-items:center;justify-content:flex-end;gap:10px;margin-left:auto;min-width:0;flex-wrap:nowrap}
+  .nav__zh{flex:0 0 auto;white-space:nowrap}
+  .nav__lp{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;flex:0 0 auto;white-space:nowrap;text-align:center}
   .nav__links{display:none;grid-column:1 / -1;width:100%;order:3;flex-direction:column;gap:14px;padding:14px 0 4px;border-top:1px solid var(--rule)}
   #nav.menu-open .nav__links{display:flex}
   .nav__links a{font-size:10px;white-space:nowrap}
@@ -223,10 +223,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   #nav{padding:10px var(--pad);column-gap:10px;row-gap:10px}
   .nav__logo{max-width:min(100%,210px)}
   .nav__logo svg{height:auto;max-height:44px;width:100%}
-  .nav__right{grid-template-columns:minmax(0,1fr);gap:8px;width:100%}
-  .nav__zh{font-size:12px}
-  .nav__lp,.nav__menu-btn{width:100%}
-  .nav__lp{padding:0 12px;font-size:9px;justify-self:stretch}
+  .nav__right{display:inline-flex;gap:8px;width:auto}
+  .nav__zh{display:none}
+  .nav__lp,.nav__menu-btn{width:auto}
+  .nav__lp{padding:0 12px;font-size:9px}
   .nav__menu-btn{padding:0 12px}
 
   .research-hero{margin-top:136px;padding:54px var(--pad) 40px}
