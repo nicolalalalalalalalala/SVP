@@ -99,7 +99,8 @@ h2 em { font-style:italic; }
   color:var(--ink); border:1px solid rgba(0,0,0,.15); padding:8px 20px;
   transition:background .2s, color .2s, border-color .2s;
 }
-.nav__lp, .nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
+.nav__lp { background:var(--white); color:var(--ink); }
+    .nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
 .nav__menu-btn{display:none;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
 
 /* Performance: removed legacy inline base64 hero styles to reduce CSS/HTML parse cost on mobile scroll. */
@@ -475,7 +476,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 
 
 
-.pagehero{padding:148px var(--pad) 76px;background:#fff;border-bottom:1px solid var(--rule)}
+.pagehero{min-height:420px;padding:148px var(--pad) 76px;background:#fff;border-bottom:1px solid var(--rule);display:flex;align-items:center}
 .pagehero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:end}
 .pagehero h1{font-size:clamp(46px,5.6vw,78px);max-width:700px;letter-spacing:-.02em}
 .pagehero p{max-width:700px;font-size:19px;line-height:1.8;color:#5f5a54;font-family:var(--serif);margin-top:18px}
@@ -551,7 +552,99 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 .next-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
 .strategy-stack .strategy-block:nth-child(even){background:#f6f4f0}
 @media (max-width:980px){.pagehero .wrap{grid-template-columns:1fr;gap:28px}.hero-panel{max-width:540px}.strategy-stack{gap:28px}.strategy-block{padding:24px}.strategy-block h2{font-size:34px}.viz-kpi,.process-flow,.city-grid,.alloc-grid,.funnel-grid,.risk-grid,.data-grid{grid-template-columns:1fr}.flow-step{padding-left:44px}.flow-step::after{display:none}}
-@media (max-width:760px){:root{--pad:18px}#nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}.nav__logo svg{height:48px}.nav__menu-btn{display:inline-flex}.nav__right{margin-left:auto;gap:10px}.nav__lp{display:inline-flex}.nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}#nav.menu-open .nav__links{display:flex}.nav__links a{font-size:10px;white-space:nowrap}.pgsec{padding:56px 0 48px}.strategy-stack{gap:22px}.strategy-block{padding:24px 20px}.funnel-step{flex-wrap:wrap}.funnel-step span{font-size:18px}.hero-panel li strong{font-size:18px}}
+@media (max-width:760px){:root{--pad:18px}.pagehero{min-height:auto}#nav{height:auto;min-height:72px;align-items:center;flex-wrap:wrap;row-gap:12px;padding:12px var(--pad)}.nav__logo svg{height:48px}.nav__menu-btn{display:inline-flex}.nav__right{margin-left:auto;gap:10px}.nav__lp{display:inline-flex}.nav__links{display:none;width:100%;order:3;flex-direction:column;gap:14px;padding:10px 0 12px;border-top:1px solid var(--rule)}#nav.menu-open .nav__links{display:flex}.nav__links a{font-size:10px;white-space:nowrap}.pgsec{padding:56px 0 48px}.strategy-stack{gap:22px}.strategy-block{padding:24px 20px}.funnel-step{flex-wrap:wrap}.funnel-step span{font-size:18px}.hero-panel li strong{font-size:18px}}
+
+/* ══ MOBILE NAV REFINEMENT */
+@media (max-width:820px) {
+  #nav {
+    height:auto;
+    min-height:72px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;
+    column-gap:12px;
+    row-gap:12px;
+  }
+  .nav__logo {
+    min-width:0;
+    max-width:min(100%,260px);
+  }
+  .nav__logo svg {
+    height:48px;
+    max-width:100%;
+  }
+  .nav__menu-btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:0 16px;
+    flex-shrink:0;
+  }
+  .nav__right {
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    align-items:center;
+    gap:10px 12px;
+    width:100%;
+    margin-left:0;
+  }
+  .nav__zh {
+    justify-self:start;
+  }
+  .nav__lp {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    justify-self:end;
+    min-height:44px;
+    padding:0 16px;
+    text-align:center;
+  }
+  .nav__links {
+    grid-column:1 / -1;
+    width:100%;
+    padding:14px 0 4px;
+  }
+}
+
+@media (max-width:520px) {
+  #nav {
+    column-gap:10px;
+    row-gap:10px;
+  }
+  .nav__logo {
+    max-width:min(100%,210px);
+  }
+  .nav__logo svg {
+    height:auto;
+    max-height:44px;
+    width:100%;
+  }
+  .nav__right {
+    grid-template-columns:minmax(0,1fr);
+    gap:8px;
+  }
+  .nav__zh,
+  .nav__lp,
+  .nav__menu-btn {
+    width:100%;
+  }
+  .nav__lp,
+  .nav__menu-btn {
+    min-height:42px;
+    padding:0 12px;
+  }
+  .nav__lp {
+    justify-self:stretch;
+    font-size:9px;
+  }
+  .nav__zh {
+    font-size:12px;
+  }
+}
+
 </style></head><body><nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
   <g transform="scale(0.431)">
         <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
