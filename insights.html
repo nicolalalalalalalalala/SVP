@@ -45,7 +45,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 .nav__lp:hover{background:var(--red);color:#fff;border-color:var(--red)}
 .nav__menu-btn{display:none;border:1px solid rgba(48,40,34,.2);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
 
-.research-hero{margin-top:72px;background:linear-gradient(180deg,#10100d 0%,#0c0c0a 82%);padding:88px var(--pad) 56px;border-bottom:1px solid rgba(255,255,255,.08)}
+.research-hero{min-height:420px;margin-top:72px;background:linear-gradient(180deg,#10100d 0%,#0c0c0a 82%);padding:88px var(--pad) 56px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:end}
 .research-hero__grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:end}
 .wordmark{margin:24px 0 22px;display:flex;align-items:flex-start;gap:20px}
 .wordmark__title{font-family:var(--serif);font-size:clamp(50px,7vw,86px);line-height:.9;color:#fff;letter-spacing:-.02em}
@@ -147,7 +147,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 @media(max-width:720px){
   :root{--pad:24px}
   #nav{height:66px;padding:0 var(--pad)}
-  .research-hero{margin-top:66px;padding:72px var(--pad) 44px}
+  .research-hero{min-height:auto;margin-top:66px;padding:72px var(--pad) 44px}
   .issue-live h1{font-size:34px}
   .franchise-ribbon{display:block}
   .franchise-ribbon__sub{margin-top:6px;font-size:17px}
