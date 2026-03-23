@@ -167,14 +167,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   body{font-size:14px;overflow-x:hidden}
   .issue-shell{padding:36px 0 52px}
   .research-sub{margin-top:56px;padding:52px 0}
-  #nav{height:auto;min-height:72px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:12px;padding:12px var(--pad)}
-  .nav__logo{max-width:min(100%,260px);min-width:0}
-  .nav__logo svg{height:48px;max-width:100%}
-  .nav__menu-btn{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:44px;padding:0 16px}
-  .nav__right{grid-column:1 / -1;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px 12px;width:100%}
-  .nav__zh{justify-self:start}
-  .nav__lp{display:inline-flex;align-items:center;justify-content:center;justify-self:end;min-height:44px;padding:0 16px;text-align:center}
-  .nav__links{display:none;grid-column:1 / -1;width:100%;order:3;flex-direction:column;gap:14px;padding:14px 0 4px;border-top:1px solid var(--rule)}
+  #nav{height:auto;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px var(--pad)}
+  .nav__logo{max-width:min(100%,150px);min-width:0;flex:0 1 150px}
+  .nav__logo svg{height:auto;max-height:34px;width:100%}
+  .nav__menu-btn{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:38px;padding:0 12px;border-radius:999px;font-size:9px;letter-spacing:.1em}
+  .nav__right{margin-left:auto;display:flex;align-items:center;gap:8px;flex:0 0 auto;width:auto}
+  .nav__zh{font-size:11px;opacity:.55}
+  .nav__lp{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 12px;border-radius:999px;font-size:9px;letter-spacing:.1em;text-align:center}
+  .nav__links{display:none;width:100%;order:3;flex-direction:column;gap:12px;padding:12px 0 4px;border-top:1px solid var(--rule)}
   #nav.menu-open .nav__links{display:flex}
   .nav__links a{font-size:10px;white-space:nowrap}
 
@@ -220,14 +220,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 @media (max-width:520px){
   :root{--pad:20px}
   .wrap,.issue-shell.wrap{padding-left:var(--pad);padding-right:var(--pad)}
-  #nav{padding:10px var(--pad);column-gap:10px;row-gap:10px}
-  .nav__logo{max-width:min(100%,210px)}
-  .nav__logo svg{height:auto;max-height:44px;width:100%}
-  .nav__right{grid-template-columns:minmax(0,1fr);gap:8px;width:100%}
-  .nav__zh{font-size:12px}
-  .nav__lp,.nav__menu-btn{width:100%}
-  .nav__lp{min-height:42px;padding:0 12px;font-size:9px;justify-self:stretch}
-  .nav__menu-btn{width:100%;min-height:42px;padding:0 12px}
+  #nav{padding:8px var(--pad);gap:8px}
+  .nav__logo{max-width:min(100%,128px);flex-basis:128px}
+  .nav__logo svg{height:auto;max-height:30px;width:100%}
+  .nav__right{width:auto;display:flex;align-items:center;gap:6px;margin-left:auto}
+  .nav__zh{font-size:10px;opacity:.6}
+  .nav__lp,.nav__menu-btn{width:auto}
+  .nav__lp{min-height:34px;padding:0 10px;font-size:8px;border-radius:999px}
+  .nav__menu-btn{width:auto;min-height:34px;padding:0 10px;border-radius:999px;font-size:8px;letter-spacing:.08em}
 
   .research-hero{margin-top:136px;padding:54px var(--pad) 40px}
   .wordmark{align-items:flex-start;gap:14px}
