@@ -59,6 +59,7 @@
     .nav__right { display:flex; align-items:center; gap:20px; }
     .nav__zh { font-size:13px; color:var(--ink); opacity:.35; transition:opacity .2s; }
     .nav__zh:hover { opacity:.75; }
+.nav__mobile-lang{display:none}
     .nav__lp {
       font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
       color:var(--ink); border:1px solid rgba(48,40,34,.2); padding:8px 20px;
@@ -274,6 +275,8 @@
       .nav__logo svg { height:48px; }
       .nav__menu-btn { display:inline-flex; }
       .nav__right { margin-left:auto; gap:10px; }
+      .nav__zh { display: none; }
+      .nav__mobile-lang { display: inline-flex; }
       .nav__lp { display:inline-flex; }
       .nav__links {
         display:none;
@@ -436,8 +439,7 @@
       <li><a href="insights.html">Insights</a></li>
       <li><a href="press.html">Press</a></li>
       <li><a href="team.html" class="active">Team</a></li>
-    </ul>
-    <div class="nav__right"><a href="team_cn.html" class="nav__zh">中文</a><a href="investor-access.html" class="nav__lp">Investor Access</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
+    <li class="nav__mobile-lang"><a href="team_cn.html">中文</a></li></ul><div class="nav__right"><a href="team_cn.html" class="nav__zh">中文</a><a href="investor-access.html" class="nav__lp">Investor Access</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
   </nav>
 
   <section class="pagehero">
