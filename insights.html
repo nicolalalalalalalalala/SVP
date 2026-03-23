@@ -46,8 +46,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 .nav__lp:hover{background:var(--red);color:#fff;border-color:var(--red)}
 .nav__menu-btn{display:none;border:1px solid rgba(48,40,34,.2);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
 
-.research-hero{min-height:420px;margin-top:72px;background:linear-gradient(180deg,#10100d 0%,#0c0c0a 82%);padding:88px var(--pad) 56px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:end}
-.research-hero__grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:start}
+.research-hero{min-height:420px;margin-top:72px;background:linear-gradient(180deg,#10100d 0%,#0c0c0a 82%);padding:88px 0 56px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:end}
+.research-hero__grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:start}
 .wordmark{margin:24px 0 22px;display:flex;align-items:flex-start;gap:20px}
 .wordmark__title{font-family:var(--serif);font-size:clamp(50px,7vw,86px);line-height:.9;color:#fff;letter-spacing:-.02em}
 .wordmark__title em{color:var(--red);font-style:italic}
@@ -148,7 +148,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 @media(max-width:720px){
   :root{--pad:24px}
   #nav{height:66px;padding:0 var(--pad)}
-  .research-hero{min-height:auto;margin-top:66px;padding:72px var(--pad) 44px}
+  .research-hero{min-height:auto;margin-top:66px;padding:72px 0 44px}
   .issue-live h1{font-size:34px}
   .franchise-ribbon{display:block}
   .franchise-ribbon__sub{margin-top:6px;font-size:17px}
@@ -179,7 +179,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   #nav.menu-open .nav__links{display:flex}
   .nav__links a{font-size:10px;white-space:nowrap}
 
-  .research-hero{margin-top:96px;padding:76px var(--pad) 64px;overflow:hidden}
+  .research-hero{margin-top:96px;padding:76px 0 64px;overflow:hidden}
   .research-hero__grid{grid-template-columns:minmax(0,1fr);gap:34px}
   .research-hero__grid > *{min-width:0}
   .wordmark{margin:20px 0 18px;gap:16px;align-items:flex-start}
@@ -230,7 +230,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   .nav__lp{padding:0 12px;font-size:9px}
   .nav__menu-btn{padding:0 12px}
 
-  .research-hero{margin-top:136px;padding:54px var(--pad) 40px}
+  .research-hero{margin-top:136px;padding:54px 0 40px}
   .wordmark{align-items:flex-start;gap:14px}
   .wordmark__title{font-size:clamp(36px,12vw,50px)}
   .research-hero__desc{font-size:16px;line-height:1.7;max-width:100%}
@@ -332,7 +332,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 
 
 <section class="research-hero">
-  <div class="research-hero__grid">
+  <div class="wrap research-hero__grid">
     <div>
       <div class="eyebrow eyebrow--ghost">ShoreVest Insights · Est. 2018</div>
       <div class="wordmark">
