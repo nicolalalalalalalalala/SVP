@@ -644,6 +644,11 @@
         const title = document.createElement('div');
         title.className = 'title';
         title.textContent = getDisplayRole(card, name);
+        const bio = card.querySelector('.card-bio');
+        if (bio) {
+          card.insertBefore(title, bio);
+          return;
+        }
         card.appendChild(title);
       });
     }
