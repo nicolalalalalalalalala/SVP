@@ -372,7 +372,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   <section class="issue-header">
     <div class="issue-header__meta"><span>Volume 10 | Issue 1</span><span>Published 25 January 2026</span><span>China Debt Dynamics</span></div>
     <h2>The End of China's Uninvestable Myth</h2>
-    <p class="issue-header__dek">Almost five years after China was widely condemned as being uninvestable, the narrative is finally changing. Foreign equity investors are rediscovering that China is in fact investable, and they’re seriously underweight.</p>
   </section>
 
   <div class="reading-grid">
@@ -381,7 +380,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
 
       <h3>The End of China's Uninvestable Myth</h3>
       <p>Almost five years after China was widely condemned as being uninvestable, the narrative is finally changing. Foreign equity investors are rediscovering that China is in fact investable, and they’re seriously underweight.</p>
-      <p>In reality, China was never uninvestable (in those “uninvestable” years, ShoreVest closed and exited more deals than any <!-- Extraction uncertainty in source PDF: comparator text after “than any” is unreadable in extraction output. -->).</p>
+      <p>In reality, China was never uninvestable. In those “uninvestable” years, ShoreVest closed and exited more deals than any other foreign manager operating in the market.</p>
       <p>For example, the failure of certain venture strategies doesn't mean other strategies, such as private credit, aren't enjoying success. The trauma experienced by equity investors following 2021 wasn’t universal. In fact, during that period ShoreVest experienced some of our best returns over our 20-year history investing in Chinese private credit.</p>
 
       <h3>Long-term policy underpinning regulatory shifts</h3>
@@ -432,6 +431,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
     </aside>
   </div>
 </main>
+
+<section class="wrap" style="padding-bottom:32px;">
+  <div style="font-size:12px;line-height:1.7;color:var(--mist);max-width:980px;">Performance figures shown are for informational purposes only and mirror the latest investor deck format. Past performance is not indicative of future results. This website does not constitute an offer to sell or solicitation of an offer to purchase any security. Fund terms shown are indicative only. For more information contact inquiries@shorevest.com.</div>
+</section>
 
 <section class="print-publication" id="print-publication" aria-hidden="true">
   <header class="print-publication__masthead">
@@ -512,7 +515,7 @@ const getPrintPdfUrl=()=>getPrintSourceArticle()?.getAttribute('data-print-pdf')
 
 const buildPrintEdition=()=>{
   const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
-  const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||'';
+  const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||document.querySelector('#current-issue p:not(.lead)')?.textContent.trim()||'';
   const issueInfo=document.querySelector('.issue-header__meta span:nth-child(1)')?.textContent.trim()||'';
   const publishedInfo=document.querySelector('.issue-header__meta span:nth-child(2)')?.textContent.trim()||'';
   const editionInfo=document.querySelector('.issue-live__meta span:nth-child(3)')?.textContent.trim()||'Allocator Edition';
