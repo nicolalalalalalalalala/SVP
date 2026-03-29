@@ -273,7 +273,7 @@
     .dark-band .eyebrow { color: rgba(255,255,255,.52); }
     .dark-band h2 { color: #f8f3ea; max-width: 720px; margin-bottom: 10px; }
     .dark-bridge {
-      max-width: 760px;
+      max-width: 767px;
       color: #cbc5bc;
       font-size: 15px;
       line-height: 1.55;
@@ -330,7 +330,7 @@
       border-color: var(--red);
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 767px) {
       :root { --pad: 20px; }
       section { padding: 58px 0; }
       .hero { min-height: auto; padding-top: 56px; padding-bottom: 0; }
@@ -462,6 +462,13 @@
   }
 }
 
+
+/* Ensure desktop nav is always expanded at 768px+ */
+@media (min-width:768px){
+  #nav .nav__menu-btn{display:none !important}
+  #nav .nav__links{display:flex !important}
+}
+
 </style>
 </head>
 <body>
@@ -487,9 +494,7 @@
       <li><a href="insights_cn.html">洞察</a></li>
       <li><a href="press_cn.html">新闻</a></li>
       <li><a href="team_cn.html">团队</a></li>
-    <li class="nav__mobile-lang"><a href="firm.html">EN</a></li></ul><div class="nav__right">
-      <a href="firm.html" class="nav__zh">EN</a>
-      <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
+    <li class="nav__mobile-lang"><a href="firm.html">EN</a></li></ul><div class="nav__right"><a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
       <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
     </div>
   </nav>

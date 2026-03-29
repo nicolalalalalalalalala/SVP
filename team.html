@@ -271,7 +271,7 @@
       }
     }
 
-    @media (max-width:760px) {
+    @media (max-width:767px) {
       :root { --pad:18px; }
       #nav {
         height:auto;
@@ -423,6 +423,13 @@
   }
 }
 
+
+/* Ensure desktop nav is always expanded at 768px+ */
+@media (min-width:768px){
+  #nav .nav__menu-btn{display:none !important}
+  #nav .nav__links{display:flex !important}
+}
+
 </style>
 </head>
 <body>
@@ -448,7 +455,7 @@
       <li><a href="insights.html">Insights</a></li>
       <li><a href="press.html">Press</a></li>
       <li><a href="team.html" class="active">Team</a></li>
-    <li class="nav__mobile-lang"><a href="team_cn.html">中文</a></li></ul><div class="nav__right"><a href="team_cn.html" class="nav__zh">中文</a><a href="investor-access.html" class="nav__lp">Investor Access</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
+    <li class="nav__mobile-lang"><a href="team_cn.html">中文</a></li></ul><div class="nav__right"><a href="investor-access.html" class="nav__lp">Investor Access</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
   </nav>
 
   <section class="pagehero">
