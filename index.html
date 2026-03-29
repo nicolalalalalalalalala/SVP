@@ -1631,7 +1631,7 @@ if (menuBtn && nav) {
 
   const style = document.createElement('style');
   style.textContent = `
-    .auto-rev { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+    .auto-rev { opacity: 0; transform: translateY(16px); transition: opacity .45s ease, transform .45s ease; will-change: opacity, transform; }
     .auto-rev.auto-rev--in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       .auto-rev { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -1644,7 +1644,7 @@ if (menuBtn && nav) {
     if (el.classList.contains('rev') || el.classList.contains('auto-rev')) return;
     if (el.closest('nav')) return;
     el.classList.add('auto-rev');
-    el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
+    el.style.transitionDelay = `${Math.min((i % 4) * 0.04, 0.12)}s`;
   });
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1658,7 +1658,7 @@ if (menuBtn && nav) {
       entry.target.classList.add('auto-rev--in');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.01, rootMargin: '0px 0px 12% 0px' });
 
   document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
 })();
