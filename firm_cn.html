@@ -1,825 +1,1402 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShoreVest Partners 新岸资本 — 公司简介</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
-  <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #f2f1ef;
-      --panel: #f8f7f5;
-      --ink: #1d1c1a;
-      --muted: #7b7870;
-      --rule: rgba(0, 0, 0, 0.1);
-      --red: #bb2e46;
-      --dark: #10100f;
-      --serif: 'EB Garamond', Georgia, serif;
-      --sans: 'Inter', system-ui, sans-serif;
-      --max: 1200px;
-      --pad: 64px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.55; font-size: 14px; }
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-
-    #nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      height: 72px; display: flex; align-items: center; justify-content: space-between;
-      padding: 0 var(--pad); border-bottom: 1px solid var(--rule); background: #ffffff;
-    }
-    .nav__logo { display: inline-flex; align-items: center; height: 100%; }
-    .nav__logo svg { display: block; }
-    .nav__links { list-style: none; display: flex; gap: 36px; }
-    .nav__links a {
-      font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--ink); opacity: .45; transition: opacity .2s;
-    }
-    .nav__links a.active, .nav__links a:hover { opacity: 1; }
-    .nav__right { display: flex; align-items: center; gap: 22px; }
-    .nav__zh { font-size: 13px; color: var(--ink); opacity: .35; transition: opacity .2s; }
-    .nav__zh:hover { opacity: .75; }
-.nav__mobile-lang{display:none}
-    .nav__lp {
-      font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--ink); border: 1px solid rgba(48,40,34,.2); padding: 8px 20px;
-      transition: background .2s, color .2s, border-color .2s;
-    }
-    .nav__lp { background: var(--white); color: var(--ink); }
-    .nav__lp:hover { background: var(--red); color: #fff; border-color: var(--red); }
-    .nav__menu-btn {
-      display: none; border: 1px solid rgba(48,40,34,.2); background: #fff; color: var(--ink);
-      font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px;
-    }
-
-    main { padding-top: 72px; }
-    section { padding: 72px 0; border-top: 1px solid var(--rule); }
-    section:first-child { border-top: none; }
-
-    .eyebrow { display: inline-flex; gap: 10px; align-items: center; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: #8e8b84; margin-bottom: 18px; }
-    .eyebrow::after { content: ''; width: 42px; height: 1px; background: currentColor; }
-
-    .hero { min-height: 420px; padding-top: 110px; padding-bottom: 72px; display: flex; align-items: center; }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; }
-    h1 { font-family: var(--serif); font-size: clamp(46px, 5.6vw, 78px); font-weight: 400; line-height: 1.04; letter-spacing: -.02em; margin-bottom: 14px; }
-    .lead { font-family: var(--serif); font-size: 25px; line-height: 1.35; max-width: 690px; color: #393631; margin-bottom: 28px; }
-    .hero-thesis { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; color: #4a4740; }
-
-    .hero-glance { margin-top: 24px; background: #0f0f0f; color: #ece8df; padding: 18px 20px; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
-    .hero-glance h3 { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 8px; }
-    .glance-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; border-top: 1px solid rgba(255,255,255,.16); padding: 10px 0; }
-    .glance-row span { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.65); }
-    .glance-row strong { font-family: var(--serif); font-size: 38px; font-weight: 400; line-height: 1; }
-    .glance-row em { font-family: var(--serif); font-size: 15px; font-style: normal; }
-
-    .framed-panel { background: var(--panel); border: 1px solid rgba(187,46,70,.3); border-left: 3px solid var(--red); padding: 28px; }
-    .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 22px; }
-    .section-head h2 { font-family: var(--serif); font-size: clamp(36px, 4.2vw, 52px); font-weight: 400; line-height: 1.08; }
-    .section-head p { font-family: var(--serif); font-size: 21px; color: #45423c; line-height: 1.42; }
-
-    .proof-grid, .market-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .proof-card, .market-grid article, .note, .small-box, .intel-copy, .closing-panel { background: #f9f8f6; border: 1px solid #e5e2dc; }
-    .proof-card { padding: 16px; }
-    .proof-card h3 { font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: #7d7a73; margin-bottom: 8px; }
-    .proof-card .metric { font-family: var(--serif); font-size: 42px; line-height: 1; margin-bottom: 8px; }
-
-    .market-grid article { padding: 16px; }
-    .market-grid h3 { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; color: #67645e; }
-
-    .intelligence { background: #ecebe8; }
-    .intelligence-panel { display: grid; gap: 16px; }
-    .intel-graphic { background: #f7f6f4; border: 1px solid #dfdcd6; padding: 20px; }
-    .intel-graphic > .intel-title {
-      display: none;
-    }
-    .intel-graphic > h3 {
-      font-size: 10px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: #68635b;
-      margin-bottom: 12px;
-    }
-    .lifecycle-track {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      font-size: 10px;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: #736f67;
-    }
-    .lifecycle-track::before,
-    .lifecycle-track::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #d4d0c8;
-    }
-    .intel-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
-    .intel-stage {
-      border: 1px solid #dbd8d2;
-      background: #fbfaf8;
-      padding: 14px;
-      position: relative;
-    }
-    .intel-stage:not(:last-child)::after {
-      content: '→';
-      position: absolute;
-      right: -11px;
-      top: 14px;
-      color: #9f9b93;
-      font-size: 16px;
-      font-weight: 600;
-      z-index: 2;
-    }
-    .intel-stage h3 {
-      font-size: 9px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: #66625b;
-      margin-bottom: 10px;
-    }
-    .capability { border-top: 1px solid #e6e2db; padding-top: 8px; margin-top: 8px; }
-    .capability:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
-    .capability h4 {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 500;
-      margin-bottom: 3px;
-    }
-    .capability h4 span:last-child {
-      font-family: var(--serif);
-      font-size: 16px;
-      line-height: 1;
-      color: #28241f;
-    }
-    .capability .weight {
-      font-size: 9px;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: #78746d;
-      margin-bottom: 4px;
-      display: block;
-    }
-    .bar {
-      --value: 0;
-      position: relative;
-      height: 7px;
-      border-radius: 999px;
-      background: #e7e4de;
-      overflow: hidden;
-      margin-bottom: 6px;
-    }
-    .bar::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      width: calc(var(--value) * 1%);
-      background: #b2334d;
-    }
-    .stage-description {
-      font-size: 12px;
-      color: #57534d;
-      margin-top: 8px;
-    }
-    .intel-copy { padding: 18px; }
-    .intel-copy h3 { font-family: var(--serif); font-size: 48px; font-weight: 400; margin-bottom: 8px; line-height: 1.02; }
-    .benchmark-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 14px;
-      font-size: 12px;
-    }
-    .benchmark-table th,
-    .benchmark-table td {
-      border-top: 1px solid #ddd9d1;
-      padding: 7px 4px;
-      text-align: left;
-      vertical-align: top;
-    }
-    .benchmark-table th {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: .13em;
-      color: #6f6b64;
-    }
-    .provenance {
-      margin-top: 10px;
-      font-size: 11px;
-      color: #6a655f;
-    }
-
-    .committee-section,
-    .validation-section {
-      background: #ecebe8;
-    }
-
-    .committee-section {
-      border-top-color: #ddd9d2;
-    }
-
-    .platform-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 14px; }
-    .platform-notes { display: grid; gap: 10px; }
-    .note { padding: 14px; background: #f7f6f4; }
-    .note h3 { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 6px; }
-    .platform-diagram { background: #f7f6f4; border: 1px solid #ddd9d1; padding: 14px; }
-    .small-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
-    .small-box {
-      font-size: 10px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 9px;
-      text-align: center;
-      border: 1px solid #d9d3ca;
-      background: #f9f8f6;
-      cursor: pointer;
-      transition: border-color .2s, color .2s, transform .2s;
-    }
-    .small-box:hover,
-    .small-box:focus-visible {
-      border-color: var(--red);
-      color: var(--red);
-      transform: translateY(-1px);
-      outline: none;
-    }
-    .small-box.is-active {
-      border-color: var(--red);
-      color: var(--red);
-      background: #fdf8f9;
-    }
-    .small-detail {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid #ddd9d1;
-      min-height: 66px;
-    }
-    .small-detail h4 {
-      font-size: 9px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: #706b63;
-      margin-bottom: 6px;
-    }
-    .small-detail p { font-size: 12px; color: #393632; }
-
-    .dark-band { background: var(--dark); color: #f3efe8; border-top: none; }
-    .dark-band .eyebrow { color: rgba(255,255,255,.52); }
-    .dark-band h2 { color: #f8f3ea; max-width: 720px; margin-bottom: 10px; }
-    .dark-bridge {
-      max-width: 767px;
-      color: #cbc5bc;
-      font-size: 15px;
-      line-height: 1.55;
-      margin-bottom: 22px;
-    }
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      align-items: start;
-    }
-    .step {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      padding: 14px;
-    }
-    .step.primary {
-      background: rgba(255,255,255,.09);
-      border-color: rgba(255,255,255,.18);
-      min-height: 180px;
-    }
-    .step.supporting {
-      min-height: 142px;
-    }
-    .step h3 { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 8px; }
-    .step p { color: #c9c5bd; font-size: 12px; line-height: 1.45; }
-
-    .platform-build {
-      background: #f3f1ed;
-      border-top-color: #dfdad2;
-    }
-    .platform-build .section-head p {
-      color: #3a3630;
-    }
-
-    .closing-panel { padding: 28px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 18px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      border: 1px solid var(--ink);
-      padding: 0 18px;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--ink);
-      transition: background .2s, color .2s, border-color .2s;
-    }
-    .btn:hover {
-      background: var(--red);
-      color: #fff;
-      border-color: var(--red);
-    }
-
-    @media (max-width: 767px) {
-      :root { --pad: 20px; }
-      section { padding: 58px 0; }
-      .hero { min-height: auto; padding-top: 56px; padding-bottom: 0; }
-      h1 { font-size: clamp(40px, 12vw, 56px); }
-      .dark-band h2 {
-        font-size: clamp(36px, 9.5vw, 48px);
-        line-height: 1.1;
-        margin-bottom: 18px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoreVest Partners 新岸资本 — 公司简介</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
+    <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f2f1ef;
+        --panel: #f8f7f5;
+        --ink: #1d1c1a;
+        --muted: #7b7870;
+        --rule: rgba(0, 0, 0, 0.1);
+        --red: #bb2e46;
+        --dark: #10100f;
+        --serif: "EB Garamond", Georgia, serif;
+        --sans: "Inter", system-ui, sans-serif;
+        --max: 1200px;
+        --pad: 64px;
       }
-      .dark-bridge { font-size: 16px; }
-      .flow { gap: 12px; }
-      .step,
-      .step.primary,
-      .step.supporting { min-height: 0; padding: 16px 14px; }
-      .step h3 { font-size: 11px; }
-      .step p { font-size: 13px; }
-      .lead, .section-head p { font-size: 20px; }
-      .hero-grid, .section-head, .intelligence-panel, .platform-layout { grid-template-columns: 1fr; }
-      .hero-thesis, .proof-grid, .market-grid, .flow, .intel-flow { grid-template-columns: 1fr; }
-      .intel-stage:not(:last-child)::after { content: '↓'; right: 12px; top: auto; bottom: -11px; }
-      .small-grid { grid-template-columns: 1fr; }
-      .intelligence-panel > *,
-      .platform-layout > * { min-width: 0; }
-      .intel-graphic,
-      .intel-copy { width: 100%; }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: var(--sans);
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+        font-size: 14px;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--pad);
+      }
+
       #nav {
-        height: auto;
-        min-height: 72px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        height: 72px;
+        display: flex;
         align-items: center;
-        flex-wrap: wrap;
-        row-gap: 12px;
-        padding: 12px var(--pad);
+        justify-content: space-between;
+        padding: 0 var(--pad);
+        border-bottom: 1px solid var(--rule);
+        background: #ffffff;
       }
-      :root { --nav-pad: 18px; }
-      .nav__logo svg { height: 48px; }
-      .nav__menu-btn { display: inline-flex; }
-      .nav__right { margin-left: auto; gap: 10px; }
-      .nav__zh { display: none; }
-      .nav__mobile-lang { display: inline-flex; }
-      .nav__lp { display: inline-flex; }
+      .nav__logo {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+      }
+      .nav__logo svg {
+        display: block;
+      }
       .nav__links {
+        list-style: none;
+        display: flex;
+        gap: 36px;
+      }
+      .nav__links a {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        opacity: 0.45;
+        transition: opacity 0.2s;
+      }
+      .nav__links a.active,
+      .nav__links a:hover {
+        opacity: 1;
+      }
+      .nav__right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .nav__zh {
+        font-size: 13px;
+        color: var(--ink);
+        opacity: 0.35;
+        transition: opacity 0.2s;
+      }
+      .nav__zh:hover {
+        opacity: 0.75;
+      }
+      .nav__mobile-lang {
         display: none;
-        width: 100%;
-        order: 3;
-        flex-direction: column;
-        gap: 14px;
-        padding: 10px 0 12px;
+      }
+      .nav__lp {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        border: 1px solid rgba(48, 40, 34, 0.2);
+        padding: 8px 20px;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .nav__lp {
+        background: var(--white);
+        color: var(--ink);
+      }
+      .nav__lp:hover {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+      .nav__menu-btn {
+        display: none;
+        border: 1px solid rgba(48, 40, 34, 0.2);
+        background: #fff;
+        color: var(--ink);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 8px 14px;
+      }
+
+      main {
+        padding-top: 72px;
+      }
+      section {
+        padding: 72px 0;
         border-top: 1px solid var(--rule);
       }
-      #nav.menu-open .nav__links { display: flex; }
-      .nav__links a { font-size: 13px; line-height: 1.5; white-space: nowrap; }
-    }
-  
-/* ══ MOBILE NAV REFINEMENT */
-@media (max-width:767px) {
-  #nav {
-    height:auto;
-    min-height:72px;
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    align-items:center;
-    column-gap:12px;
-    row-gap:12px;
-  }
-  .nav__logo {
-    min-width:0;
-    max-width:min(100%,260px);
-  }
-  .nav__logo svg {
-    height:48px;
-    max-width:100%;
-  }
-  .nav__right {
-    display:inline-flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:10px;
-    margin-left:auto;
-    min-width:0;
-    flex-wrap:nowrap;
-  }
-  .nav__menu-btn,
-  .nav__lp {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:44px;
-    padding:0 16px;
-    flex:0 0 auto;
-    white-space:nowrap;
-  }
-  .nav__zh {
-    flex:0 0 auto;
-    white-space:nowrap;
-  }
-  .nav__links {
-    grid-column:1 / -1;
-    width:100%;
-    padding:14px 0 4px;
-  }
-}
+      section:first-child {
+        border-top: none;
+      }
 
-@media (max-width:520px) {
-  #nav {
-    column-gap:10px;
-    row-gap:10px;
-  }
-  .nav__logo {
-    max-width:min(100%,180px);
-  }
-  .nav__logo svg {
-    height:auto;
-    max-height:42px;
-    width:100%;
-  }
-  .nav__right {
-    gap:8px;
-  }
-  .nav__zh {
-    display:none;
-  }
-  .nav__lp,
-  .nav__menu-btn {
-    min-height:40px;
-    padding:0 12px;
-  }
-  .nav__lp {
-    font-size:9px;
-  }
-}
+      .eyebrow {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #8e8b84;
+        margin-bottom: 18px;
+      }
+      .eyebrow::after {
+        content: "";
+        width: 42px;
+        height: 1px;
+        background: currentColor;
+      }
 
+      .hero {
+        min-height: 420px;
+        padding-top: 110px;
+        padding-bottom: 72px;
+        display: flex;
+        align-items: center;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-size: clamp(46px, 5.6vw, 78px);
+        font-weight: 400;
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+      }
+      .lead {
+        font-family: var(--serif);
+        font-size: 25px;
+        line-height: 1.35;
+        max-width: 690px;
+        color: #393631;
+        margin-bottom: 28px;
+      }
+      .hero-thesis {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+        color: #4a4740;
+      }
 
+      .hero-glance {
+        margin-top: 24px;
+        background: #0f0f0f;
+        color: #ece8df;
+        padding: 18px 20px;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+      }
+      .hero-glance h3 {
+        font-size: 9px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 8px;
+      }
+      .glance-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        padding: 10px 0;
+      }
+      .glance-row span {
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .glance-row strong {
+        font-family: var(--serif);
+        font-size: 38px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .glance-row em {
+        font-family: var(--serif);
+        font-size: 15px;
+        font-style: normal;
+      }
 
-/* ══ LEGAL DISCLAIMER FOOTER */
-.legal-disclaimer {
-  background:#0c0c0a;
-  color:rgba(246,244,240,0.6);
-  padding:26px var(--pad) 30px;
-}
-.legal-disclaimer__inner {
-  max-width:var(--max);
-  margin:0 auto;
-}
-.legal-disclaimer__rule {
-  height:1px;
-  background:rgba(139,26,47,0.2);
-  margin-bottom:14px;
-}
-.legal-disclaimer__text {
-  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
-  font-size:12px;
-  line-height:1.6;
-  letter-spacing:.08em;
-  font-variant:small-caps;
-}
-.legal-disclaimer--cn .legal-disclaimer__text {
-  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
-  font-variant:normal;
-}
-@media (max-width:900px){
-  .legal-disclaimer { padding:22px 28px 26px; }
-}
+      .framed-panel {
+        background: var(--panel);
+        border: 1px solid rgba(187, 46, 70, 0.3);
+        border-left: 3px solid var(--red);
+        padding: 28px;
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 22px;
+      }
+      .section-head h2 {
+        font-family: var(--serif);
+        font-size: clamp(36px, 4.2vw, 52px);
+        font-weight: 400;
+        line-height: 1.08;
+      }
+      .section-head p {
+        font-family: var(--serif);
+        font-size: 21px;
+        color: #45423c;
+        line-height: 1.42;
+      }
 
-</style>
-</head>
-<body>
-  <nav id="nav">
-    <a href="index_cn.html" class="nav__logo" aria-label="ShoreVest home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
-      <g transform="scale(0.431)">
-        <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/>
-        <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/>
-        <circle cx="48" cy="82" r="3.5" fill="#b3213f"/>
-      </g>
-      <line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/>
-      <text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text>
-      <line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/>
-      <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
-    </svg></a>
-    <ul class="nav__links" id="nav-links">
-      <li><a href="firm_cn.html" class="active">公司简介</a></li>
-      <li><a href="strategy_cn.html">策略</a></li>
-      <li><a href="insights_cn.html">洞察</a></li>
-      <li><a href="press_cn.html">新闻</a></li>
-      <li><a href="team_cn.html">团队</a></li>
-    <li class="nav__mobile-lang"><a href="firm.html">EN</a></li></ul><div class="nav__right">
-      <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
-      <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
-    </div>
-  </nav>
+      .proof-grid,
+      .market-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .proof-card,
+      .market-grid article,
+      .note,
+      .small-box,
+      .intel-copy,
+      .closing-panel {
+        background: #f9f8f6;
+        border: 1px solid #e5e2dc;
+      }
+      .proof-card {
+        padding: 16px;
+      }
+      .proof-card h3 {
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #7d7a73;
+        margin-bottom: 8px;
+      }
+      .proof-card .metric {
+        font-family: var(--serif);
+        font-size: 42px;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow">中国特殊资产私募信贷 · 始于 2004</div>
-            <h1>公司简介</h1>
-            <p class="lead">ShoreVest 以资产担保为核心的私募信贷策略可追溯至 2004 年。现有 ShoreVest 平台由核心高管团队于 2016 年创立，该团队此前已在前序载体中持续执行同一策略。</p>
-            <div class="hero-thesis">
-              <p>目前公司在中国聚焦三大子策略：资产抵押借贷、资产重组及债务处置。总部位于广州，并在上海设有办公室，投资团队均在中国本地开展工作。</p>
-              <p>ShoreVest 面向一个“法律结构、本地执行与可回收性”与收益率同等重要的市场，采用境内可直接执行的法律权益、30–60% LTV/CTV 的审慎入场区间，并将控制力从尽调延伸至退出处置全流程。</p>
+      .market-grid article {
+        padding: 16px;
+      }
+      .market-grid h3 {
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        color: #67645e;
+      }
+
+      .intelligence {
+        background: #ecebe8;
+      }
+      .intelligence-panel {
+        display: grid;
+        gap: 16px;
+      }
+      .intel-graphic {
+        background: #f7f6f4;
+        border: 1px solid #dfdcd6;
+        padding: 20px;
+      }
+      .intel-graphic > .intel-title {
+        display: none;
+      }
+      .intel-graphic > h3 {
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #68635b;
+        margin-bottom: 12px;
+      }
+      .lifecycle-track {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        font-size: 10px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: #736f67;
+      }
+      .lifecycle-track::before,
+      .lifecycle-track::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #d4d0c8;
+      }
+      .intel-flow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      .intel-stage {
+        border: 1px solid #dbd8d2;
+        background: #fbfaf8;
+        padding: 14px;
+        position: relative;
+      }
+      .intel-stage:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        right: -11px;
+        top: 14px;
+        color: #9f9b93;
+        font-size: 16px;
+        font-weight: 600;
+        z-index: 2;
+      }
+      .intel-stage h3 {
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #66625b;
+        margin-bottom: 10px;
+      }
+      .capability {
+        border-top: 1px solid #e6e2db;
+        padding-top: 8px;
+        margin-top: 8px;
+      }
+      .capability:first-of-type {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+      }
+      .capability h4 {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 3px;
+      }
+      .capability h4 span:last-child {
+        font-family: var(--serif);
+        font-size: 16px;
+        line-height: 1;
+        color: #28241f;
+      }
+      .capability .weight {
+        font-size: 9px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: #78746d;
+        margin-bottom: 4px;
+        display: block;
+      }
+      .bar {
+        --value: 0;
+        position: relative;
+        height: 7px;
+        border-radius: 999px;
+        background: #e7e4de;
+        overflow: hidden;
+        margin-bottom: 6px;
+      }
+      .bar::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: calc(var(--value) * 1%);
+        background: #b2334d;
+      }
+      .stage-description {
+        font-size: 12px;
+        color: #57534d;
+        margin-top: 8px;
+      }
+      .intel-copy {
+        padding: 18px;
+      }
+      .intel-copy h3 {
+        font-family: var(--serif);
+        font-size: 48px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        line-height: 1.02;
+      }
+      .benchmark-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 14px;
+        font-size: 12px;
+      }
+      .benchmark-table th,
+      .benchmark-table td {
+        border-top: 1px solid #ddd9d1;
+        padding: 7px 4px;
+        text-align: left;
+        vertical-align: top;
+      }
+      .benchmark-table th {
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+        color: #6f6b64;
+      }
+      .provenance {
+        margin-top: 10px;
+        font-size: 11px;
+        color: #6a655f;
+      }
+
+      .committee-section,
+      .validation-section {
+        background: #ecebe8;
+      }
+
+      .committee-section {
+        border-top-color: #ddd9d2;
+      }
+
+      .platform-layout {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 14px;
+      }
+      .platform-notes {
+        display: grid;
+        gap: 10px;
+      }
+      .note {
+        padding: 14px;
+        background: #f7f6f4;
+      }
+      .note h3 {
+        font-size: 9px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .platform-diagram {
+        background: #f7f6f4;
+        border: 1px solid #ddd9d1;
+        padding: 14px;
+      }
+      .small-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .small-box {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 9px;
+        text-align: center;
+        border: 1px solid #d9d3ca;
+        background: #f9f8f6;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          color 0.2s,
+          transform 0.2s;
+      }
+      .small-box:hover,
+      .small-box:focus-visible {
+        border-color: var(--red);
+        color: var(--red);
+        transform: translateY(-1px);
+        outline: none;
+      }
+      .small-box.is-active {
+        border-color: var(--red);
+        color: var(--red);
+        background: #fdf8f9;
+      }
+      .small-detail {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #ddd9d1;
+        min-height: 66px;
+      }
+      .small-detail h4 {
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #706b63;
+        margin-bottom: 6px;
+      }
+      .small-detail p {
+        font-size: 12px;
+        color: #393632;
+      }
+
+      .dark-band {
+        background: var(--dark);
+        color: #f3efe8;
+        border-top: none;
+      }
+      .dark-band .eyebrow {
+        color: rgba(255, 255, 255, 0.52);
+      }
+      .dark-band h2 {
+        color: #f8f3ea;
+        max-width: 720px;
+        margin-bottom: 10px;
+      }
+      .dark-bridge {
+        max-width: 767px;
+        color: #cbc5bc;
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 22px;
+      }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        align-items: start;
+      }
+      .step {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 14px;
+      }
+      .step.primary {
+        background: rgba(255, 255, 255, 0.09);
+        border-color: rgba(255, 255, 255, 0.18);
+        min-height: 180px;
+      }
+      .step.supporting {
+        min-height: 142px;
+      }
+      .step h3 {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 8px;
+      }
+      .step p {
+        color: #c9c5bd;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .platform-build {
+        background: #f3f1ed;
+        border-top-color: #dfdad2;
+      }
+      .platform-build .section-head p {
+        color: #3a3630;
+      }
+
+      .closing-panel {
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 18px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border: 1px solid var(--ink);
+        padding: 0 18px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .btn:hover {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+
+      @media (max-width: 767px) {
+        :root {
+          --pad: 20px;
+        }
+        section {
+          padding: 58px 0;
+        }
+        .hero {
+          min-height: auto;
+          padding-top: 56px;
+          padding-bottom: 0;
+        }
+        h1 {
+          font-size: clamp(40px, 12vw, 56px);
+        }
+        .dark-band h2 {
+          font-size: clamp(36px, 9.5vw, 48px);
+          line-height: 1.1;
+          margin-bottom: 18px;
+        }
+        .dark-bridge {
+          font-size: 16px;
+        }
+        .flow {
+          gap: 12px;
+        }
+        .step,
+        .step.primary,
+        .step.supporting {
+          min-height: 0;
+          padding: 16px 14px;
+        }
+        .step h3 {
+          font-size: 11px;
+        }
+        .step p {
+          font-size: 13px;
+        }
+        .lead,
+        .section-head p {
+          font-size: 20px;
+        }
+        .hero-grid,
+        .section-head,
+        .intelligence-panel,
+        .platform-layout {
+          grid-template-columns: 1fr;
+        }
+        .hero-thesis,
+        .proof-grid,
+        .market-grid,
+        .flow,
+        .intel-flow {
+          grid-template-columns: 1fr;
+        }
+        .intel-stage:not(:last-child)::after {
+          content: "↓";
+          right: 12px;
+          top: auto;
+          bottom: -11px;
+        }
+        .small-grid {
+          grid-template-columns: 1fr;
+        }
+        .intelligence-panel > *,
+        .platform-layout > * {
+          min-width: 0;
+        }
+        .intel-graphic,
+        .intel-copy {
+          width: 100%;
+        }
+        #nav {
+          height: auto;
+          min-height: 72px;
+          align-items: center;
+          flex-wrap: wrap;
+          row-gap: 12px;
+          padding: 12px var(--pad);
+        }
+        :root {
+          --nav-pad: 18px;
+        }
+        .nav__logo svg {
+          height: 48px;
+        }
+        .nav__menu-btn {
+          display: inline-flex;
+        }
+        .nav__right {
+          margin-left: auto;
+          gap: 10px;
+        }
+        .nav__zh {
+          display: none;
+        }
+        .nav__mobile-lang {
+          display: inline-flex;
+        }
+        .nav__lp {
+          display: inline-flex;
+        }
+        .nav__links {
+          display: none;
+          width: 100%;
+          order: 3;
+          flex-direction: column;
+          gap: 14px;
+          padding: 10px 0 12px;
+          border-top: 1px solid var(--rule);
+        }
+        #nav.menu-open .nav__links {
+          display: flex;
+        }
+        .nav__links a {
+          font-size: 13px;
+          line-height: 1.5;
+          white-space: nowrap;
+        }
+      }
+
+      /* ══ MOBILE NAV REFINEMENT */
+      @media (max-width: 767px) {
+        #nav {
+          height: auto;
+          min-height: 72px;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          column-gap: 12px;
+          row-gap: 12px;
+        }
+        .nav__logo {
+          min-width: 0;
+          max-width: min(100%, 260px);
+        }
+        .nav__logo svg {
+          height: 48px;
+          max-width: 100%;
+        }
+        .nav__right {
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+          margin-left: auto;
+          min-width: 0;
+          flex-wrap: nowrap;
+        }
+        .nav__menu-btn,
+        .nav__lp {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
+          padding: 0 16px;
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+        .nav__zh {
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+        .nav__links {
+          grid-column: 1 / -1;
+          width: 100%;
+          padding: 14px 0 4px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        #nav {
+          column-gap: 10px;
+          row-gap: 10px;
+        }
+        .nav__logo {
+          max-width: min(100%, 180px);
+        }
+        .nav__logo svg {
+          height: auto;
+          max-height: 42px;
+          width: 100%;
+        }
+        .nav__right {
+          gap: 8px;
+        }
+        .nav__zh {
+          display: none;
+        }
+        .nav__lp,
+        .nav__menu-btn {
+          min-height: 40px;
+          padding: 0 12px;
+        }
+        .nav__lp {
+          font-size: 9px;
+        }
+      }
+
+      /* ══ LEGAL DISCLAIMER FOOTER */
+      .legal-disclaimer {
+        background: #0c0c0a;
+        color: rgba(246, 244, 240, 0.6);
+        padding: 26px var(--pad) 30px;
+      }
+      .legal-disclaimer__inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .legal-disclaimer__rule {
+        height: 1px;
+        background: rgba(139, 26, 47, 0.2);
+        margin-bottom: 14px;
+      }
+      .legal-disclaimer__text {
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+        font-variant: small-caps;
+      }
+      .legal-disclaimer--cn .legal-disclaimer__text {
+        font-family:
+          "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-variant: normal;
+      }
+      @media (max-width: 900px) {
+        .legal-disclaimer {
+          padding: 22px 28px 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <a href="index_cn.html" class="nav__logo" aria-label="ShoreVest home"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 220 52"
+          height="62"
+          width="auto"
+          role="img"
+          aria-label="ShoreVest Partners"
+        >
+          <g transform="scale(0.431)">
+            <path
+              d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z"
+              fill="#b3213f"
+            />
+            <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f" />
+            <circle cx="48" cy="82" r="3.5" fill="#b3213f" />
+          </g>
+          <line
+            x1="52"
+            y1="8"
+            x2="52"
+            y2="44"
+            stroke="#b3213f"
+            stroke-width="0.5"
+            opacity="0.22"
+          />
+          <text
+            x="62"
+            y="28"
+            font-family="EB Garamond, Georgia, serif"
+            font-weight="400"
+            font-size="24"
+            letter-spacing="2"
+            fill="#0c0c0a"
+          >
+            ShoreVest
+          </text>
+          <line
+            x1="62"
+            y1="32"
+            x2="210"
+            y2="32"
+            stroke="#b3213f"
+            stroke-width="0.4"
+            opacity="0.4"
+          />
+          <text
+            x="62"
+            y="44"
+            font-family="Inter, sans-serif"
+            font-weight="300"
+            font-size="9.5"
+            letter-spacing="4"
+            fill="#0c0c0a"
+            opacity="0.45"
+          >
+            新 岸 資 本
+          </text>
+        </svg></a
+      >
+      <ul class="nav__links" id="nav-links">
+        <li><a href="firm_cn.html" class="active">公司简介</a></li>
+        <li><a href="strategy_cn.html">策略</a></li>
+        <li><a href="insights_cn.html">洞察</a></li>
+        <li><a href="press_cn.html">新闻</a></li>
+        <li><a href="team_cn.html">团队</a></li>
+        <li class="nav__mobile-lang"><a href="firm.html">EN</a></li>
+      </ul>
+      <div class="nav__right">
+        <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
+        <button
+          class="nav__menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          菜单
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">中国特殊资产私募信贷 · 始于 2004</div>
+              <h1>公司简介</h1>
+              <p class="lead">
+                ShoreVest 以资产担保为核心的私募信贷策略可追溯至 2004 年。现有
+                ShoreVest 平台由核心高管团队于 2016
+                年创立，该团队此前已在前序载体中持续执行同一策略。
+              </p>
+              <div class="hero-thesis">
+                <p>
+                  目前公司在中国聚焦三大子策略：资产抵押借贷、资产重组及债务处置。总部位于广州，并在上海设有办公室，投资团队均在中国本地开展工作。
+                </p>
+                <p>
+                  ShoreVest
+                  面向一个“法律结构、本地执行与可回收性”与收益率同等重要的市场，采用境内可直接执行的法律权益、30–60%
+                  LTV/CTV 的审慎入场区间，并将控制力从尽调延伸至退出处置全流程。
+                </p>
+              </div>
+            </div>
+            <aside class="hero-glance" aria-label="核心概览">
+              <h3>核心概览</h3>
+              <div class="glance-row">
+                <span>运营历史</span><strong>20+</strong>
+              </div>
+              <div class="glance-row">
+                <span>执行纪录</span><em>获取 · 处置</em>
+              </div>
+              <div class="glance-row">
+                <span>主要抵押品</span><em>实物资产担保</em>
+              </div>
+              <div class="glance-row">
+                <span>项目获取机制</span><em>合规与效率并重</em>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="framed-panel">
+            <div class="section-head">
+              <h2>机构化能力证明</h2>
+              <p>
+                关键指标只有与执行能力结合才有意义。以下数据体现 ShoreVest
+                如何识别、承接并管理信用风险。
+              </p>
+            </div>
+            <div class="proof-grid">
+              <article class="proof-card">
+                <h3>累计投放资本</h3>
+                <div class="metric">US$2B+</div>
+                <p>由核心团队管理，覆盖六期基金。</p>
+              </article>
+              <article class="proof-card">
+                <h3>运营年限</h3>
+                <div class="metric">自 2004 年起</div>
+                <p>跨越多个信用周期与不良处置阶段持续运作。</p>
+              </article>
+              <article class="proof-card">
+                <h3>完成交易数</h3>
+                <div class="metric">50+</div>
+                <p>覆盖不良资产与重组机会的资产担保私募信贷投资。</p>
+              </article>
+              <article class="proof-card">
+                <h3>核心风控纪律</h3>
+                <div class="metric">30–60%</div>
+                <p>以具备直接执行权的债权结构，通常在较低抵押率区间进入。</p>
+              </article>
+              <article class="proof-card">
+                <h3>团队连续性</h3>
+                <div class="metric">约 20 年</div>
+                <p>四位投委会投票成员已协作数十年。</p>
+              </article>
             </div>
           </div>
-          <aside class="hero-glance" aria-label="核心概览">
-            <h3>核心概览</h3>
-            <div class="glance-row"><span>运营历史</span><strong>20+</strong></div>
-            <div class="glance-row"><span>执行纪录</span><em>获取 · 处置</em></div>
-            <div class="glance-row"><span>主要抵押品</span><em>实物资产担保</em></div>
-            <div class="glance-row"><span>项目获取机制</span><em>合规与效率并重</em></div>
-          </aside>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <div class="wrap">
-        <div class="framed-panel">
+      <section>
+        <div class="wrap">
           <div class="section-head">
-            <h2>机构化能力证明</h2>
-            <p>关键指标只有与执行能力结合才有意义。以下数据体现 ShoreVest 如何识别、承接并管理信用风险。</p>
+            <h2>为何该市场需要专业化能力</h2>
+            <p>
+              中国私募信贷不能简单视为全球直贷的延伸。真正决定结果的是本地法律结构与执行路径。
+            </p>
           </div>
-          <div class="proof-grid">
-            <article class="proof-card"><h3>累计投放资本</h3><div class="metric">US$2B+</div><p>由核心团队管理，覆盖六期基金。</p></article>
-            <article class="proof-card"><h3>运营年限</h3><div class="metric">自 2004 年起</div><p>跨越多个信用周期与不良处置阶段持续运作。</p></article>
-            <article class="proof-card"><h3>完成交易数</h3><div class="metric">50+</div><p>覆盖不良资产与重组机会的资产担保私募信贷投资。</p></article>
-            <article class="proof-card"><h3>核心风控纪律</h3><div class="metric">30–60%</div><p>以具备直接执行权的债权结构，通常在较低抵押率区间进入。</p></article>
-            <article class="proof-card"><h3>团队连续性</h3><div class="metric">约 20 年</div><p>四位投委会投票成员已协作数十年。</p></article>
+          <div class="market-grid">
+            <article>
+              <h3>法律文件与担保结构是首要风控工具</h3>
+              <p>收益往往由担保顺位、可执行性与文件完整度决定。</p>
+            </article>
+            <article>
+              <h3>执行处置高度依赖流程能力</h3>
+              <p>回收需通过司法程序、重组与谈判的主动推进实现。</p>
+            </article>
+            <article>
+              <h3>项目获取依赖关系网络</h3>
+              <p>优质机会通常先在本地交易对手网络中出现，而非公开分销。</p>
+            </article>
+            <article>
+              <h3>借款人与发起方行为具有情境差异</h3>
+              <p>在压力环境下识别行为模式，是管理结果的关键。</p>
+            </article>
+            <article>
+              <h3>存续管理能力影响价值保全</h3>
+              <p>投后监控与干预决定损失程度与可选路径。</p>
+            </article>
+            <article>
+              <h3>仅有国际经验并不足够</h3>
+              <p>
+                缺乏本地执行能力时，投资人可能只“持有债权”，却无法主导结果。
+              </p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <div class="wrap">
-        <div class="section-head">
-          <h2>为何该市场需要专业化能力</h2>
-          <p>中国私募信贷不能简单视为全球直贷的延伸。真正决定结果的是本地法律结构与执行路径。</p>
+      <section class="intelligence">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>执行能力地图</h2>
+            <p>
+              执行评分用于展示平台在信贷全生命周期各环节的资源投入重点。数值越高，代表内部执行强度越高，而非依赖外部机构。
+            </p>
+          </div>
+          <div class="intelligence-panel">
+            <div class="intel-graphic">
+              <div class="intel-title">执行能力地图</div>
+              <h3>信贷生命周期能力分布</h3>
+              <div class="lifecycle-track" aria-hidden="true">
+                项目获取 ↓ 尽职调查 ↓ 处置回收
+              </div>
+              <div class="intel-flow" aria-label="信贷生命周期能力地图">
+                <article class="intel-stage">
+                  <h3>项目获取</h3>
+                  <div class="capability">
+                    <h4><span>网络触达</span><span>85</span></h4>
+                    <span class="weight">执行强度</span>
+                    <div class="bar" style="--value: 85"></div>
+                  </div>
+                  <div class="capability">
+                    <h4><span>风险筛选</span><span>85</span></h4>
+                    <span class="weight">执行强度</span>
+                    <div class="bar" style="--value: 85"></div>
+                  </div>
+                  <p class="stage-description">
+                    通过区域银行、重组顾问与借款人网络进行直接获取。坚持下行优先筛选，当可执行性、发起方行为或抵押质量偏弱时尽早剔除交易。
+                  </p>
+                </article>
+                <article class="intel-stage">
+                  <h3>尽职调查</h3>
+                  <div class="capability">
+                    <h4><span>法律结构设计</span><span>90</span></h4>
+                    <span class="weight">执行强度</span>
+                    <div class="bar" style="--value: 90"></div>
+                  </div>
+                  <div class="capability">
+                    <h4><span>投委会治理</span><span>90</span></h4>
+                    <span class="weight">执行强度</span>
+                    <div class="bar" style="--value: 90"></div>
+                  </div>
+                  <p class="stage-description">
+                    交易结构围绕中国法律下的可执行性设计，包括担保完善与法院可认可的抵押权主张。每周召开投委会，投资决策须经管理合伙人同意并达到
+                    3/4 超级多数后方可执行。
+                  </p>
+                </article>
+                <article class="intel-stage">
+                  <h3>处置回收</h3>
+                  <div class="capability">
+                    <h4><span>回收控制</span><span>90</span></h4>
+                    <span class="weight">执行强度</span>
+                    <div class="bar" style="--value: 90"></div>
+                  </div>
+                  <div class="capability">
+                    <h4><span>投后管理闭环</span><span>85</span></h4>
+                    <span class="weight">执行强度</span>
+                    <div class="bar" style="--value: 85"></div>
+                  </div>
+                  <p class="stage-description">
+                    内部协同推进司法流程、重组谈判与抵押物处置，在回收路径中保留策略主动权。将持续监控与主动干预联动，在压力阶段同步触发法律与商业处置动作。
+                  </p>
+                </article>
+              </div>
+            </div>
+            <aside class="intel-copy">
+              <h3>运营能力对照</h3>
+              <p>
+                与典型离岸基金模式相比，ShoreVest
+                在尽调到回收的关键执行环节保留了更高比例的内部能力。这种法律与回收能力的内部集中，反映了中国信贷市场“可执行性与处置效率决定最终价值实现”的结构特征。
+              </p>
+              <table class="benchmark-table" aria-label="能力对照表">
+                <thead>
+                  <tr>
+                    <th>能力维度</th>
+                    <th>典型离岸基金</th>
+                    <th>ShoreVest</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>网络触达</td>
+                    <td>有限项目来源网络</td>
+                    <td>85</td>
+                  </tr>
+                  <tr>
+                    <td>风险筛选</td>
+                    <td>标准化信用筛选</td>
+                    <td>85</td>
+                  </tr>
+                  <tr>
+                    <td>法律结构设计</td>
+                    <td>中等法律结构能力</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <td>投委会治理</td>
+                    <td>仅投委会审批</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <td>回收控制</td>
+                    <td>外包为主</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <td>投后管理闭环</td>
+                    <td>依赖外部服务商</td>
+                    <td>85</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="provenance">
+                执行评分反映平台内部对项目获取、结构设计、治理与回收环节资源投入的分析。评分衡量的是执行资源集中度，而非投资业绩表现。
+              </p>
+            </aside>
+          </div>
         </div>
-        <div class="market-grid">
-          <article><h3>法律文件与担保结构是首要风控工具</h3><p>收益往往由担保顺位、可执行性与文件完整度决定。</p></article>
-          <article><h3>执行处置高度依赖流程能力</h3><p>回收需通过司法程序、重组与谈判的主动推进实现。</p></article>
-          <article><h3>项目获取依赖关系网络</h3><p>优质机会通常先在本地交易对手网络中出现，而非公开分销。</p></article>
-          <article><h3>借款人与发起方行为具有情境差异</h3><p>在压力环境下识别行为模式，是管理结果的关键。</p></article>
-          <article><h3>存续管理能力影响价值保全</h3><p>投后监控与干预决定损失程度与可选路径。</p></article>
-          <article><h3>仅有国际经验并不足够</h3><p>缺乏本地执行能力时，投资人可能只“持有债权”，却无法主导结果。</p></article>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="intelligence">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>执行能力地图</h2>
-          <p>执行评分用于展示平台在信贷全生命周期各环节的资源投入重点。数值越高，代表内部执行强度越高，而非依赖外部机构。</p>
-        </div>
-        <div class="intelligence-panel">
-          <div class="intel-graphic">
-            <div class="intel-title">执行能力地图</div>
-            <h3>信贷生命周期能力分布</h3>
-            <div class="lifecycle-track" aria-hidden="true">项目获取 ↓ 尽职调查 ↓ 处置回收</div>
-            <div class="intel-flow" aria-label="信贷生命周期能力地图">
-              <article class="intel-stage">
-                <h3>项目获取</h3>
-                <div class="capability">
-                  <h4><span>网络触达</span><span>85</span></h4>
-                  <span class="weight">执行强度</span>
-                  <div class="bar" style="--value: 85"></div>
-                </div>
-                <div class="capability">
-                  <h4><span>风险筛选</span><span>85</span></h4>
-                  <span class="weight">执行强度</span>
-                  <div class="bar" style="--value: 85"></div>
-                </div>
-                <p class="stage-description">通过区域银行、重组顾问与借款人网络进行直接获取。坚持下行优先筛选，当可执行性、发起方行为或抵押质量偏弱时尽早剔除交易。</p>
+      <section class="committee-section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>投资委员会</h2>
+            <p>
+              投资决策由四人投委会作出，将投资、法务与财务判断整合于统一决策机制中。
+            </p>
+          </div>
+          <div class="platform-layout">
+            <div class="platform-notes">
+              <article class="note">
+                <h3>方杰明</h3>
+                <p>管理合伙人</p>
               </article>
-              <article class="intel-stage">
-                <h3>尽职调查</h3>
-                <div class="capability">
-                  <h4><span>法律结构设计</span><span>90</span></h4>
-                  <span class="weight">执行强度</span>
-                  <div class="bar" style="--value: 90"></div>
-                </div>
-                <div class="capability">
-                  <h4><span>投委会治理</span><span>90</span></h4>
-                  <span class="weight">执行强度</span>
-                  <div class="bar" style="--value: 90"></div>
-                </div>
-                <p class="stage-description">交易结构围绕中国法律下的可执行性设计，包括担保完善与法院可认可的抵押权主张。每周召开投委会，投资决策须经管理合伙人同意并达到 3/4 超级多数后方可执行。</p>
+              <article class="note">
+                <h3>毕凤笙</h3>
+                <p>合伙人兼首席财务官</p>
               </article>
-              <article class="intel-stage">
-                <h3>处置回收</h3>
-                <div class="capability">
-                  <h4><span>回收控制</span><span>90</span></h4>
-                  <span class="weight">执行强度</span>
-                  <div class="bar" style="--value: 90"></div>
-                </div>
-                <div class="capability">
-                  <h4><span>投后管理闭环</span><span>85</span></h4>
-                  <span class="weight">执行强度</span>
-                  <div class="bar" style="--value: 85"></div>
-                </div>
-                <p class="stage-description">内部协同推进司法流程、重组谈判与抵押物处置，在回收路径中保留策略主动权。将持续监控与主动干预联动，在压力阶段同步触发法律与商业处置动作。</p>
+              <article class="note">
+                <h3>梅翠 / 郑慧</h3>
+                <p>合伙人</p>
               </article>
             </div>
-          </div>
-          <aside class="intel-copy">
-            <h3>运营能力对照</h3>
-            <p>与典型离岸基金模式相比，ShoreVest 在尽调到回收的关键执行环节保留了更高比例的内部能力。这种法律与回收能力的内部集中，反映了中国信贷市场“可执行性与处置效率决定最终价值实现”的结构特征。</p>
-            <table class="benchmark-table" aria-label="能力对照表">
-              <thead>
-                <tr>
-                  <th>能力维度</th>
-                  <th>典型离岸基金</th>
-                  <th>ShoreVest</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>网络触达</td>
-                  <td>有限项目来源网络</td>
-                  <td>85</td>
-                </tr>
-                <tr>
-                  <td>风险筛选</td>
-                  <td>标准化信用筛选</td>
-                  <td>85</td>
-                </tr>
-                <tr>
-                  <td>法律结构设计</td>
-                  <td>中等法律结构能力</td>
-                  <td>90</td>
-                </tr>
-                <tr>
-                  <td>投委会治理</td>
-                  <td>仅投委会审批</td>
-                  <td>90</td>
-                </tr>
-                <tr>
-                  <td>回收控制</td>
-                  <td>外包为主</td>
-                  <td>90</td>
-                </tr>
-                <tr>
-                  <td>投后管理闭环</td>
-                  <td>依赖外部服务商</td>
-                  <td>85</td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="provenance">执行评分反映平台内部对项目获取、结构设计、治理与回收环节资源投入的分析。评分衡量的是执行资源集中度，而非投资业绩表现。</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="committee-section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>投资委员会</h2>
-          <p>投资决策由四人投委会作出，将投资、法务与财务判断整合于统一决策机制中。</p>
-        </div>
-        <div class="platform-layout">
-          <div class="platform-notes">
-            <article class="note"><h3>方杰明</h3><p>管理合伙人</p></article>
-            <article class="note"><h3>毕凤笙</h3><p>合伙人兼首席财务官</p></article>
-            <article class="note"><h3>梅翠 / 郑慧</h3><p>合伙人</p></article>
-          </div>
-          <div class="platform-diagram">
-            <div class="eyebrow">决策机制</div>
-            <p>投委会每周召开会议。投资决策需包含管理合伙人同意，并达到 3/4 超级多数。批准项目进入的成员将对投后监控与退出结果负责。</p>
-            <div class="small-grid" role="tablist" aria-label="投资委员会流程图">
-              <button class="small-box is-active" type="button" role="tab" aria-selected="true" data-detail-title="投资参与度" data-detail-copy="四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。">投资参与度</button>
-              <button class="small-box" type="button" role="tab" aria-selected="false" data-detail-title="流程中台" data-detail-copy="项目获批后由统一流程中台推进法律节点、抵押物更新与服务商执行进度，确保跨职能信息一致。">流程中台</button>
-              <button class="small-box" type="button" role="tab" aria-selected="false" data-detail-title="信用覆盖" data-detail-copy="项目覆盖责任保留在批准成员手中，使尽调假设、投后监控与退出执行在同一责任链条内闭环。">信用覆盖</button>
-            </div>
-            <div class="small-detail" aria-live="polite">
-              <h4>投资参与度</h4>
-              <p>四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。</p>
+            <div class="platform-diagram">
+              <div class="eyebrow">决策机制</div>
+              <p>
+                投委会每周召开会议。投资决策需包含管理合伙人同意，并达到 3/4
+                超级多数。批准项目进入的成员将对投后监控与退出结果负责。
+              </p>
+              <div
+                class="small-grid"
+                role="tablist"
+                aria-label="投资委员会流程图"
+              >
+                <button
+                  class="small-box is-active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  data-detail-title="投资参与度"
+                  data-detail-copy="四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。"
+                >
+                  投资参与度
+                </button>
+                <button
+                  class="small-box"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-detail-title="流程中台"
+                  data-detail-copy="项目获批后由统一流程中台推进法律节点、抵押物更新与服务商执行进度，确保跨职能信息一致。"
+                >
+                  流程中台
+                </button>
+                <button
+                  class="small-box"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-detail-title="信用覆盖"
+                  data-detail-copy="项目覆盖责任保留在批准成员手中，使尽调假设、投后监控与退出执行在同一责任链条内闭环。"
+                >
+                  信用覆盖
+                </button>
+              </div>
+              <div class="small-detail" aria-live="polite">
+                <h4>投资参与度</h4>
+                <p>
+                  四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="validation-section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>获机构资本验证</h2>
-          <p>ShoreVest 的出资人覆盖北美、亚洲、中东与欧洲机构投资者，包括主权财富基金、养老金、捐赠基金及家族办公室。</p>
+      <section class="validation-section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>获机构资本验证</h2>
+            <p>
+              ShoreVest
+              的出资人覆盖北美、亚洲、中东与欧洲机构投资者，包括主权财富基金、养老金、捐赠基金及家族办公室。
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
+    <script>
+      const menuBtn = document.querySelector(".nav__menu-btn");
+      const nav = document.getElementById("nav");
+      const navLinks = document.getElementById("nav-links");
+      if (menuBtn && nav && navLinks) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("menu-open");
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+      }
 
-  </main>
+      document.querySelectorAll(".platform-diagram").forEach((diagram) => {
+        const tabs = diagram.querySelectorAll(".small-box");
+        const detailTitle = diagram.querySelector(".small-detail h4");
+        const detailCopy = diagram.querySelector(".small-detail p");
+        if (!tabs.length || !detailTitle || !detailCopy) return;
 
-  
-
-  <script>
-    const menuBtn = document.querySelector('.nav__menu-btn');
-    const nav = document.getElementById('nav');
-    const navLinks = document.getElementById('nav-links');
-    if (menuBtn && nav && navLinks) {
-      menuBtn.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('menu-open');
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-      });
-    }
-
-    document.querySelectorAll('.platform-diagram').forEach((diagram) => {
-      const tabs = diagram.querySelectorAll('.small-box');
-      const detailTitle = diagram.querySelector('.small-detail h4');
-      const detailCopy = diagram.querySelector('.small-detail p');
-      if (!tabs.length || !detailTitle || !detailCopy) return;
-
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          tabs.forEach((el) => {
-            el.classList.remove('is-active');
-            el.setAttribute('aria-selected', 'false');
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((el) => {
+              el.classList.remove("is-active");
+              el.setAttribute("aria-selected", "false");
+            });
+            tab.classList.add("is-active");
+            tab.setAttribute("aria-selected", "true");
+            detailTitle.textContent = tab.dataset.detailTitle || "";
+            detailCopy.textContent = tab.dataset.detailCopy || "";
           });
-          tab.classList.add('is-active');
-          tab.setAttribute('aria-selected', 'true');
-          detailTitle.textContent = tab.dataset.detailTitle || '';
-          detailCopy.textContent = tab.dataset.detailCopy || '';
         });
       });
-    });
+    </script>
 
-  </script>
+    <script>
+      (() => {
+        if (window.__svScrollAnimationsInit) return;
+        window.__svScrollAnimationsInit = true;
 
-
-<script>
-(() => {
-  if (window.__svScrollAnimationsInit) return;
-  window.__svScrollAnimationsInit = true;
-
-  const style = document.createElement('style');
-  style.textContent = `
+        const style = document.createElement("style");
+        style.textContent = `
     .auto-rev { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
     .auto-rev.auto-rev--in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       .auto-rev { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
   `;
-  document.head.appendChild(style);
+        document.head.appendChild(style);
 
-  const targets = document.querySelectorAll('section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm');
-  targets.forEach((el, i) => {
-    if (el.classList.contains('rev') || el.classList.contains('auto-rev')) return;
-    if (el.closest('nav')) return;
-    el.classList.add('auto-rev');
-    el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
-  });
+        const targets = document.querySelectorAll(
+          "section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
+        );
+        targets.forEach((el, i) => {
+          if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
+            return;
+          if (el.closest("nav")) return;
+          el.classList.add("auto-rev");
+          el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
+        });
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.auto-rev').forEach(el => el.classList.add('auto-rev--in'));
-    return;
-  }
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document
+            .querySelectorAll(".auto-rev")
+            .forEach((el) => el.classList.add("auto-rev--in"));
+          return;
+        }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('auto-rev--in');
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.01, rootMargin: '35% 0px 35% 0px' });
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("auto-rev--in");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.01, rootMargin: "35% 0px 35% 0px" },
+        );
 
-  document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
-})();
-</script>
+        document
+          .querySelectorAll(".auto-rev")
+          .forEach((el) => observer.observe(el));
+      })();
+    </script>
 
-
-<footer class="legal-disclaimer legal-disclaimer--cn" aria-label="Legal disclaimer">
-  <div class="legal-disclaimer__inner">
-    <div class="legal-disclaimer__rule" aria-hidden="true"></div>
-    <p class="legal-disclaimer__text">
-  © 新岸資本（ShoreVest Partners, Ltd.）版权所有。
-  本网站仅供参考，不构成任何证券的出售要约或购买要约的邀请。
-  过往业绩不代表未来表现。新岸资本未在任何监管机构注册为投资顾问。
-  潜在投资者在作出投资决定前，应仔细阅读所有基金文件，并咨询其自身的法律、
-  税务及财务顾问。
-    </p>
-  </div>
-</footer>
-
-</body>
+    <footer
+      class="legal-disclaimer legal-disclaimer--cn"
+      aria-label="Legal disclaimer"
+    >
+      <div class="legal-disclaimer__inner">
+        <div class="legal-disclaimer__rule" aria-hidden="true"></div>
+        <p class="legal-disclaimer__text">
+          © 新岸資本（ShoreVest Partners, Ltd.）版权所有。
+          本网站仅供参考，不构成任何证券的出售要约或购买要约的邀请。
+          过往业绩不代表未来表现。新岸资本未在任何监管机构注册为投资顾问。
+          潜在投资者在作出投资决定前，应仔细阅读所有基金文件，并咨询其自身的法律、
+          税务及财务顾问。
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
