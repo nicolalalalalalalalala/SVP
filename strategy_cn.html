@@ -68,6 +68,7 @@
         display: flex;
         align-items: center;
         gap: 14px;
+        min-height: 12px;
         margin-bottom: 24px;
       }
       .eyebrow::after {
@@ -1589,6 +1590,68 @@
         color: #7a756f;
         margin-top: 6px;
       }
+      .data-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .data-card {
+        border: 1px solid var(--rule);
+        background: #fff;
+        padding: 18px;
+      }
+      .data-card h3 {
+        font-size: 12px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: #6f6a63;
+        margin-bottom: 10px;
+      }
+      .metric-list {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      .metric-list li {
+        padding-left: 16px;
+        position: relative;
+        color: #2a2824;
+        line-height: 1.55;
+      }
+      .metric-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--red);
+      }
+      .deal-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      .deal-table th,
+      .deal-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--rule);
+        text-align: left;
+      }
+      .deal-table th {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #6f6a63;
+      }
+      .deal-table td:last-child,
+      .deal-table th:last-child {
+        text-align: right;
+      }
+      .data-note {
+        font-size: 12px;
+        color: #7a756f;
+        margin-top: 10px;
+      }
       .city-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1666,7 +1729,8 @@
         .city-grid,
         .alloc-grid,
         .funnel-grid,
-        .risk-grid {
+        .risk-grid,
+        .data-grid {
           grid-template-columns: 1fr;
         }
         .flow-step {
@@ -1722,24 +1786,18 @@
         #nav.menu-open .nav__links {
           display: flex;
         }
-        .nav__links a,
-        .nav__menu-btn,
-        .eyebrow {
-          letter-spacing: 0.06em;
-          text-transform: none;
-        }
         .nav__links a {
-          font-size: 13px;
-          line-height: 1.5;
+          font-size: 10px;
           white-space: nowrap;
         }
-        h1 {
-          font-size: clamp(40px, 12vw, 54px);
-          line-height: 1.04;
+        .pgsec {
+          padding: 56px 0 48px;
         }
-        p {
-          font-size: 17px;
-          line-height: 1.78;
+        .strategy-stack {
+          gap: 22px;
+        }
+        .strategy-block {
+          padding: 24px 20px;
         }
         .funnel-step {
           flex-wrap: wrap;
@@ -2011,12 +2069,89 @@
                   class="kpi"
                   data-detail="依托核心借贷枢纽实现境内项目来源与执行回收。"
                 >
-                  <strong>三大枢纽</strong><span>广州 · 上海 · 香港</span>
+                  <strong>2个枢纽</strong><span>广州 · 香港</span>
                 </button>
               </div>
               <div class="viz-detail" data-kpi-detail>
                 规模带来可复制的交易量，选择性决定资产质量。
               </div>
+            </div>
+          </section>
+
+          <section class="strategy-block" id="track-record-data">
+            <h2>业绩记录与当前机会集</h2>
+            <p>
+              近期组合结果与当前投放环境持续支持 ShoreVest
+              的核心判断：在中国另类信贷市场，资本损失概率较低，且单笔交易具备较高收益潜力。
+            </p>
+            <div class="data-grid" aria-label="业绩数据要点">
+              <article class="data-card">
+                <h3>平台亮点</h3>
+                <ul class="metric-list">
+                  <li>
+                    20 年已实现业绩记录，覆盖 50+
+                    笔另类信贷交易，单笔交易层面无本金亏损。
+                  </li>
+                  <li>
+                    累计管理约 20 亿美元聚焦中国的另类信贷资本，服务全球机构投资者。
+                  </li>
+                  <li>
+                    近期交易平均实现约 20%
+                    高位区间净单笔 IRR（不加杠杆），加权平均存续期约 18
+                    个月，年化现金收益约 8%–12%。
+                  </li>
+                  <li>
+                    当前市场环境被视为公司 20 年历史中最具吸引力的投放窗口。
+                  </li>
+                </ul>
+              </article>
+              <article class="data-card">
+                <h3>近期机会集</h3>
+                <table class="deal-table">
+                  <thead>
+                    <tr>
+                      <th>交易</th>
+                      <th>年份</th>
+                      <th>净 IRR</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>交易 18</td>
+                      <td>2024</td>
+                      <td>14.6%</td>
+                    </tr>
+                    <tr>
+                      <td>交易 19</td>
+                      <td>2024</td>
+                      <td>22.0%</td>
+                    </tr>
+                    <tr>
+                      <td>交易 20</td>
+                      <td>2024</td>
+                      <td>25.5%</td>
+                    </tr>
+                    <tr>
+                      <td>交易 21</td>
+                      <td>2024</td>
+                      <td>39.8%</td>
+                    </tr>
+                    <tr>
+                      <td>交易 22</td>
+                      <td>2024</td>
+                      <td>27.4%</td>
+                    </tr>
+                    <tr>
+                      <td>交易 24–27</td>
+                      <td>2025</td>
+                      <td>22.0%–44.9%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="data-note">
+                  业绩数据仅供说明，展示方式与最新投资者路演材料一致（含已退出、部分退出与在投项目）。
+                </p>
+              </article>
             </div>
           </section>
 
@@ -2217,8 +2352,8 @@
           <section class="strategy-block" id="returns-profile">
             <h2>收益画像</h2>
             <p>
-              在有利市场环境下，策略目标为净回报十几至接近二十个百分点；单项目层面的税前
-              IRR 通常可超过 20%，同时加权平均久期短于许多私募市场替代策略。
+              该策略目标是在美元口径、基金层面不加杠杆的前提下实现约 10%–15%
+              的净回报，并聚焦当期现金收益、本金保护以及相较多数私募市场替代策略更短的流动性实现路径。
             </p>
           </section>
 
@@ -2228,16 +2363,23 @@
               <div class="funnel-step">
                 <b>US$500M</b><small>目标规模</small>
               </div>
-              <div class="funnel-step"><b>5年</b><small>基金期限</small></div>
+              <div class="funnel-step">
+                <b>3 + 2 年</b><small>投资期 + 剩余期限</small>
+              </div>
               <div class="funnel-step"><b>3年</b><small>投资期</small></div>
               <div class="funnel-step"><b>US$2M</b><small>最低认缴</small></div>
-              <div class="funnel-step"><b>2%</b><small>管理费</small></div>
+              <div class="funnel-step">
+                <b>2% / 1.5%</b><small>管理费（投资期 / 投资期后）</small>
+              </div>
               <div class="funnel-step"><b>20%</b><small>业绩报酬</small></div>
               <div class="funnel-step"><b>8%</b><small>优先回报</small></div>
               <div class="funnel-step">
                 <b>US$5M / 1%</b><small>GP 跟投</small>
               </div>
             </div>
+            <p class="data-note">
+              以上条款仅为指示性信息。任何基金结构、费用条款及可投状态均以最终法律文件、投资者适当性及适用法律监管要求为准。
+            </p>
           </section>
 
           <section class="strategy-block" id="cta-next">
@@ -2258,6 +2400,22 @@
             </div>
           </section>
         </div>
+      </div>
+    </section>
+
+    <section class="wrap" style="padding: 0 var(--pad) 56px">
+      <div
+        class="page-disclaimer"
+        style="
+          font-size: 12px;
+          line-height: 1.7;
+          color: var(--mist);
+          max-width: 980px;
+        "
+      >
+        页面所示业绩数据仅供参考，展示口径与最新投资者路演材料一致。过往业绩不代表未来表现。
+        本网站不构成任何证券的出售要约或购买要约邀请。页面中的基金条款仅为指示性信息。
+        如需进一步信息，请联系 inquiries@shorevest.com。
       </div>
     </section>
 
@@ -2395,10 +2553,7 @@
       })();
     </script>
 
-    <footer
-      class="legal-disclaimer legal-disclaimer--cn"
-      aria-label="Legal disclaimer"
-    >
+    <footer class="legal-disclaimer" aria-label="Legal disclaimer">
       <div class="legal-disclaimer__inner">
         <div class="legal-disclaimer__rule" aria-hidden="true"></div>
         <p class="legal-disclaimer__text">
