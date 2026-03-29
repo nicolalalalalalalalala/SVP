@@ -1,799 +1,2542 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ShoreVest Partners — China Debt Dynamics</title>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
-<link rel="shortcut icon" href="assets/favicon.svg?v=3">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/insights-print.css">
-<link rel="stylesheet" href="assets/css/insights-print.css" media="print">
-<style>
-:root {
-  --red:#b3213f; --ink:#0c0c0a; --ink2:#141410; --white:#ffffff; --off:#f6f4f0;
-  --rule:rgba(0,0,0,0.09); --mist:#7d786f; --serif:'EB Garamond', Georgia, serif;
-  --sans:'Inter', system-ui, sans-serif; --max:1200px; --pad:64px;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7}
-a{text-decoration:none;color:inherit}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-h1,h2,h3{font-family:var(--serif);font-weight:400}
-.eyebrow{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:14px;min-height:12px;margin-bottom:24px}
-.eyebrow::after{content:'';width:36px;height:1px;background:currentColor}
-.eyebrow--ghost{color:rgba(255,255,255,.48)}
-.eyebrow--ghost::after{background:rgba(255,255,255,.48)}
-.cta{display:inline-flex;align-items:center;gap:14px;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase}
-.cta__ring{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid currentColor;font-size:14px;transition:background-color .25s ease,color .25s ease,border-color .25s ease}
-.cta:hover .cta__ring,.cta:focus-visible .cta__ring{background:var(--white);border-color:var(--white);color:var(--red)}
-.cta--light{color:var(--white)}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoreVest Partners — China Debt Dynamics</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
+    <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/insights-print.css" />
+    <link rel="stylesheet" href="assets/css/insights-print.css" media="print" />
+    <style>
+      :root {
+        --red: #b3213f;
+        --ink: #0c0c0a;
+        --ink2: #141410;
+        --white: #ffffff;
+        --off: #f6f4f0;
+        --rule: rgba(0, 0, 0, 0.09);
+        --mist: #7d786f;
+        --serif: "EB Garamond", Georgia, serif;
+        --sans: "Inter", system-ui, sans-serif;
+        --max: 1200px;
+        --pad: 64px;
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--white);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--pad);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+      }
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mist);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 12px;
+        margin-bottom: 24px;
+      }
+      .eyebrow::after {
+        content: "";
+        width: 36px;
+        height: 1px;
+        background: currentColor;
+      }
+      .eyebrow--ghost {
+        color: rgba(255, 255, 255, 0.48);
+      }
+      .eyebrow--ghost::after {
+        background: rgba(255, 255, 255, 0.48);
+      }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .cta__ring {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid currentColor;
+        font-size: 14px;
+        transition:
+          background-color 0.25s ease,
+          color 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .cta:hover .cta__ring,
+      .cta:focus-visible .cta__ring {
+        background: var(--white);
+        border-color: var(--white);
+        color: var(--red);
+      }
+      .cta--light {
+        color: var(--white);
+      }
 
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid var(--rule);background:#fff}
-#nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.05)}
+      #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 var(--pad);
+        border-bottom: 1px solid var(--rule);
+        background: #fff;
+      }
+      #nav.scrolled {
+        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
+      }
 
-.nav__logo { display:inline-flex; align-items:center; height:100%; }
-.nav__logo svg { display:block; }
-.nav__links{display:flex;gap:36px;list-style:none}
-.nav__links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.45}
-.nav__links a.active,.nav__links a:hover{opacity:1}
-.nav__right{display:flex;align-items:center;gap:22px}
-.nav__zh{font-size:13px;color:var(--ink);opacity:.35;transition:opacity .2s}
-.nav__zh:hover{opacity:.75}
-.nav__mobile-lang{display:none}
-.nav__lp{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(48,40,34,.2);padding:8px 20px;transition:background .2s,color .2s,border-color .2s}
-.nav__lp{background:var(--white);color:var(--ink)}
-.nav__lp:hover{background:var(--red);color:#fff;border-color:var(--red)}
-.nav__menu-btn{display:none;border:1px solid rgba(48,40,34,.2);background:#fff;color:var(--ink);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
+      .nav__logo {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+      }
+      .nav__logo svg {
+        display: block;
+      }
+      .nav__links {
+        display: flex;
+        gap: 36px;
+        list-style: none;
+      }
+      .nav__links a {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        opacity: 0.45;
+      }
+      .nav__links a.active,
+      .nav__links a:hover {
+        opacity: 1;
+      }
+      .nav__right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .nav__zh {
+        font-size: 13px;
+        color: var(--ink);
+        opacity: 0.35;
+        transition: opacity 0.2s;
+      }
+      .nav__zh:hover {
+        opacity: 0.75;
+      }
+      .nav__mobile-lang {
+        display: none;
+      }
+      .nav__lp {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        border: 1px solid rgba(48, 40, 34, 0.2);
+        padding: 8px 20px;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .nav__lp {
+        background: var(--white);
+        color: var(--ink);
+      }
+      .nav__lp:hover {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+      .nav__menu-btn {
+        display: none;
+        border: 1px solid rgba(48, 40, 34, 0.2);
+        background: #fff;
+        color: var(--ink);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 8px 14px;
+      }
 
-.research-hero{min-height:420px;margin-top:72px;background:linear-gradient(180deg,#10100d 0%,#0c0c0a 82%);padding:88px 0 56px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:end}
-.research-hero__grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:start}
-.wordmark{margin:24px 0 22px;display:flex;align-items:flex-start;gap:20px}
-.wordmark__title{font-family:var(--serif);font-size:clamp(50px,7vw,86px);line-height:.9;color:#fff;letter-spacing:-.02em}
-.wordmark__title em{color:var(--red);font-style:italic}
-.research-hero__desc{max-width:490px;font-family:var(--serif);font-size:19px;line-height:1.66;color:rgba(255,255,255,.48)}
-.issue-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03)}
-.issue-card__bar{display:flex;justify-content:space-between;padding:10px 20px;background:var(--red);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.74)}
-.issue-card__body{padding:30px 28px 20px}
-.issue-card__k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
-.issue-card__t{font-family:var(--serif);font-size:32px;font-weight:400;line-height:1.14;color:#fff;margin-bottom:16px}
-.issue-card__s{font-size:13px;line-height:1.72;color:rgba(255,255,255,.56);margin-bottom:24px}
-.issue-card__meta{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.11)}
-.issue-card__meta div{padding:14px 0 0}
-.issue-card__meta div:last-child{text-align:right}
+      .research-hero {
+        min-height: 420px;
+        margin-top: 72px;
+        background: linear-gradient(180deg, #10100d 0%, #0c0c0a 82%);
+        padding: 88px 0 56px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: end;
+      }
+      .research-hero__grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 64px;
+        align-items: start;
+      }
+      .wordmark {
+        margin: 24px 0 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .wordmark__title {
+        font-family: var(--serif);
+        font-size: clamp(50px, 7vw, 86px);
+        line-height: 0.9;
+        color: #fff;
+        letter-spacing: -0.02em;
+      }
+      .wordmark__title em {
+        color: var(--red);
+        font-style: italic;
+      }
+      .research-hero__desc {
+        max-width: 490px;
+        font-family: var(--serif);
+        font-size: 19px;
+        line-height: 1.66;
+        color: rgba(255, 255, 255, 0.48);
+      }
+      .issue-card {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .issue-card__bar {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background: var(--red);
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.74);
+      }
+      .issue-card__body {
+        padding: 30px 28px 20px;
+      }
+      .issue-card__k {
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 10px;
+      }
+      .issue-card__t {
+        font-family: var(--serif);
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1.14;
+        color: #fff;
+        margin-bottom: 16px;
+      }
+      .issue-card__s {
+        font-size: 13px;
+        line-height: 1.72;
+        color: rgba(255, 255, 255, 0.56);
+        margin-bottom: 24px;
+      }
+      .issue-card__meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 1px solid rgba(255, 255, 255, 0.11);
+      }
+      .issue-card__meta div {
+        padding: 14px 0 0;
+      }
+      .issue-card__meta div:last-child {
+        text-align: right;
+      }
 
-.research-main{padding:88px 0 100px}
-.research-main__head{display:grid;grid-template-columns:1fr 1.2fr;gap:84px;padding-bottom:58px;border-bottom:1px solid var(--rule);margin-bottom:58px}
-.research-main h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.8vw,58px);line-height:1.05}
-.research-main h2 em{color:var(--red);font-style:italic}
-.research-main__intro{font-family:var(--serif);font-size:17px;line-height:1.86;color:var(--mist);max-width:680px}
-.findings{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-bottom:56px}
-.finding{padding:28px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.finding small{display:block;font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-.finding p{font-size:14px;line-height:1.7;color:var(--mist)}
-.latest{display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:start}
-.latest__issue{padding:38px;border:1px solid var(--rule);background:var(--off)}
-.latest__issue .meta{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-bottom:18px}
-.latest__issue h3{font-family:var(--serif);font-size:42px;font-weight:400;line-height:1.08;margin-bottom:16px}
-.latest__issue p{font-size:15px;line-height:1.78;color:#5f5b56;margin-bottom:26px}
-.archive{border:1px solid var(--rule)}
-.archive__row{padding:20px 22px;border-bottom:1px solid var(--rule)}
-.research-hero__desc{max-width:520px;font-family:var(--serif);font-size:19px;line-height:1.62;color:rgba(255,255,255,.5)}
-.issue-live{border-top:1px solid rgba(255,255,255,.25);padding-top:18px;align-self:end}
-.issue-live__k{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.56);margin-bottom:10px}
-.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff2d2d;margin-right:8px;box-shadow:0 0 0 rgba(255,45,45,.85);animation:liveBlink 1.2s ease-in-out infinite;vertical-align:middle}
-@keyframes liveBlink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,45,45,.75)}50%{opacity:.25;box-shadow:0 0 0 6px rgba(255,45,45,0)}}
-.issue-live h1{font-family:var(--serif);font-size:42px;line-height:1.06;font-weight:400;color:#fff;margin-bottom:12px}
-.issue-live p{font-size:15px;line-height:1.72;color:rgba(255,255,255,.64);margin-bottom:14px}
-.issue-live__meta{display:flex;gap:20px;flex-wrap:wrap;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.58)}
+      .research-main {
+        padding: 88px 0 100px;
+      }
+      .research-main__head {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 84px;
+        padding-bottom: 58px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 58px;
+      }
+      .research-main h2 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(34px, 4.8vw, 58px);
+        line-height: 1.05;
+      }
+      .research-main h2 em {
+        color: var(--red);
+        font-style: italic;
+      }
+      .research-main__intro {
+        font-family: var(--serif);
+        font-size: 17px;
+        line-height: 1.86;
+        color: var(--mist);
+        max-width: 680px;
+      }
+      .findings {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--rule);
+        border-left: 1px solid var(--rule);
+        margin-bottom: 56px;
+      }
+      .finding {
+        padding: 28px;
+        border-right: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .finding small {
+        display: block;
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 12px;
+      }
+      .finding p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--mist);
+      }
+      .latest {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 42px;
+        align-items: start;
+      }
+      .latest__issue {
+        padding: 38px;
+        border: 1px solid var(--rule);
+        background: var(--off);
+      }
+      .latest__issue .meta {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mist);
+        margin-bottom: 18px;
+      }
+      .latest__issue h3 {
+        font-family: var(--serif);
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 1.08;
+        margin-bottom: 16px;
+      }
+      .latest__issue p {
+        font-size: 15px;
+        line-height: 1.78;
+        color: #5f5b56;
+        margin-bottom: 26px;
+      }
+      .archive {
+        border: 1px solid var(--rule);
+      }
+      .archive__row {
+        padding: 20px 22px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .research-hero__desc {
+        max-width: 520px;
+        font-family: var(--serif);
+        font-size: 19px;
+        line-height: 1.62;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .issue-live {
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        padding-top: 18px;
+        align-self: end;
+      }
+      .issue-live__k {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.56);
+        margin-bottom: 10px;
+      }
+      .live-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ff2d2d;
+        margin-right: 8px;
+        box-shadow: 0 0 0 rgba(255, 45, 45, 0.85);
+        animation: liveBlink 1.2s ease-in-out infinite;
+        vertical-align: middle;
+      }
+      @keyframes liveBlink {
+        0%,
+        100% {
+          opacity: 1;
+          box-shadow: 0 0 0 0 rgba(255, 45, 45, 0.75);
+        }
+        50% {
+          opacity: 0.25;
+          box-shadow: 0 0 0 6px rgba(255, 45, 45, 0);
+        }
+      }
+      .issue-live h1 {
+        font-family: var(--serif);
+        font-size: 42px;
+        line-height: 1.06;
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 12px;
+      }
+      .issue-live p {
+        font-size: 15px;
+        line-height: 1.72;
+        color: rgba(255, 255, 255, 0.64);
+        margin-bottom: 14px;
+      }
+      .issue-live__meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.58);
+      }
 
-.issue-shell{padding:48px 0 96px}
-.issue-shell > *{max-width:980px;margin-left:auto;margin-right:auto}
-.issue-shell > .reading-grid{max-width:1100px}
-.franchise-ribbon{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 18px;border:1px solid var(--rule);border-left:3px solid var(--red);margin-bottom:22px;background:#fff}
-.franchise-ribbon__title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#222}
-.franchise-ribbon__sub{font-family:var(--serif);font-size:18px;color:#3f3a34}
-.utility{display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:12px 0 24px;border-bottom:1px solid var(--rule)}
-.utility__actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;width:100%;margin:0}
-.util-btn{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--rule);padding:11px 15px;background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center}
-.util-btn--solid{background:var(--ink);border-color:var(--ink);color:#fff}
+      .issue-shell {
+        padding: 48px 0 96px;
+      }
+      .issue-shell > * {
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .issue-shell > .reading-grid {
+        max-width: 1100px;
+      }
+      .franchise-ribbon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 16px 18px;
+        border: 1px solid var(--rule);
+        border-left: 3px solid var(--red);
+        margin-bottom: 22px;
+        background: #fff;
+      }
+      .franchise-ribbon__title {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #222;
+      }
+      .franchise-ribbon__sub {
+        font-family: var(--serif);
+        font-size: 18px;
+        color: #3f3a34;
+      }
+      .utility {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        padding: 12px 0 24px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .utility__actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 100%;
+        margin: 0;
+      }
+      .util-btn {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 11px 15px;
+        background: #fff;
+        color: var(--ink);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .util-btn--solid {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #fff;
+      }
 
-.issue-header{padding:34px 0 36px;border-bottom:1px solid var(--rule);margin-bottom:40px}
-.issue-header__meta{display:flex;gap:18px;flex-wrap:wrap;font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--mist);margin-bottom:14px}
-.issue-header h2{font-family:var(--serif);font-size:clamp(44px,5vw,62px);line-height:1.03;font-weight:400;letter-spacing:-.01em;margin-bottom:14px;max-width:940px}
-.issue-header__dek{font-family:var(--serif);font-size:24px;line-height:1.52;color:#4d4942;max-width:900px;margin-bottom:26px}
-.findings-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule)}
-.finding{padding:16px 18px;border-right:1px solid var(--rule);background:var(--off)}
-.finding:last-child{border-right:none}
-.finding small{display:block;font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--red);margin-bottom:7px}
-.finding p{font-size:13px;line-height:1.68;color:#4f4a44}
+      .issue-header {
+        padding: 34px 0 36px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 40px;
+      }
+      .issue-header__meta {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 10px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        color: var(--mist);
+        margin-bottom: 14px;
+      }
+      .issue-header h2 {
+        font-family: var(--serif);
+        font-size: clamp(44px, 5vw, 62px);
+        line-height: 1.03;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        margin-bottom: 14px;
+        max-width: 940px;
+      }
+      .issue-header__dek {
+        font-family: var(--serif);
+        font-size: 24px;
+        line-height: 1.52;
+        color: #4d4942;
+        max-width: 900px;
+        margin-bottom: 26px;
+      }
+      .findings-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid var(--rule);
+      }
+      .finding {
+        padding: 16px 18px;
+        border-right: 1px solid var(--rule);
+        background: var(--off);
+      }
+      .finding:last-child {
+        border-right: none;
+      }
+      .finding small {
+        display: block;
+        font-size: 9px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 7px;
+      }
+      .finding p {
+        font-size: 13px;
+        line-height: 1.68;
+        color: #4f4a44;
+      }
 
-.reading-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:66px;align-items:start}
-.reading{font-family:var(--serif)}
-.reading h3{font-size:31px;line-height:1.15;font-weight:400;margin:42px 0 14px}
-.reading p{font-size:23px;line-height:1.57;color:#181714;margin-bottom:16px}
-.reading p.lead{font-size:25px;color:#211f1b}
-.reading blockquote{border-left:2px solid var(--red);padding-left:18px;margin:28px 0;font-size:24px;line-height:1.5;color:#2b2721}
-.reading ul{margin:8px 0 18px 1.15em;padding:0}
-.reading li{font-size:23px;line-height:1.57;color:#181714;margin:0 0 8px}
+      .reading-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+        gap: 66px;
+        align-items: start;
+      }
+      .reading {
+        font-family: var(--serif);
+      }
+      .reading h3 {
+        font-size: 31px;
+        line-height: 1.15;
+        font-weight: 400;
+        margin: 42px 0 14px;
+      }
+      .reading p {
+        font-size: 23px;
+        line-height: 1.57;
+        color: #181714;
+        margin-bottom: 16px;
+      }
+      .reading p.lead {
+        font-size: 25px;
+        color: #211f1b;
+      }
+      .reading blockquote {
+        border-left: 2px solid var(--red);
+        padding-left: 18px;
+        margin: 28px 0;
+        font-size: 24px;
+        line-height: 1.5;
+        color: #2b2721;
+      }
+      .reading ul {
+        margin: 8px 0 18px 1.15em;
+        padding: 0;
+      }
+      .reading li {
+        font-size: 23px;
+        line-height: 1.57;
+        color: #181714;
+        margin: 0 0 8px;
+      }
 
-.sidebar{position:sticky;top:96px}
-.sidebar__card{border:1px solid var(--rule);padding:22px;background:var(--off);margin-bottom:16px}
-.sidebar__card h4{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);font-weight:500;margin-bottom:10px}
-.sidebar__card p{font-size:14px;color:#4e4a44;line-height:1.74}
-.archive{border:1px solid var(--rule);background:#fff}
-.archive__list{max-height:640px;overflow:auto}
-.archive__head{padding:14px 18px;border-bottom:1px solid var(--rule);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
-.archive__row{padding:18px;border-bottom:1px solid var(--rule)}
-.archive__row:last-child{border-bottom:none}
-.archive__row small{display:flex;gap:12px;flex-wrap:wrap;font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--mist);margin-bottom:12px}
-.archive__row strong{font-family:var(--serif);font-size:31px;font-weight:400;line-height:1.15;letter-spacing:-.01em;display:block;color:#181714}
-.archive__actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.archive__pdf{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--rule);padding:11px 15px;background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center}
-.archive__pdf--solid{background:var(--ink);border-color:var(--ink);color:#fff}
+      .sidebar {
+        position: sticky;
+        top: 96px;
+      }
+      .sidebar__card {
+        border: 1px solid var(--rule);
+        padding: 22px;
+        background: var(--off);
+        margin-bottom: 16px;
+      }
+      .sidebar__card h4 {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mist);
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      .sidebar__card p {
+        font-size: 14px;
+        color: #4e4a44;
+        line-height: 1.74;
+      }
+      .archive {
+        border: 1px solid var(--rule);
+        background: #fff;
+      }
+      .archive__list {
+        max-height: 640px;
+        overflow: auto;
+      }
+      .archive__head {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--rule);
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mist);
+      }
+      .archive__row {
+        padding: 18px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .archive__row:last-child {
+        border-bottom: none;
+      }
+      .archive__row small {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        font-size: 10px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        color: var(--mist);
+        margin-bottom: 12px;
+      }
+      .archive__row strong {
+        font-family: var(--serif);
+        font-size: 31px;
+        font-weight: 400;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        display: block;
+        color: #181714;
+      }
+      .archive__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .archive__pdf {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 11px 15px;
+        background: #fff;
+        color: var(--ink);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .archive__pdf--solid {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #fff;
+      }
 
-.research-sub{background:var(--ink);padding:74px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:80px}
-.research-sub__inner{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
-.research-sub h3{font-family:var(--serif);font-size:clamp(30px,4vw,48px);font-weight:400;color:#fff;line-height:1.08}
-.research-sub p{font-size:14px;line-height:1.8;color:rgba(255,255,255,.5);max-width:560px}
+      .research-sub {
+        background: var(--ink);
+        padding: 74px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 80px;
+      }
+      .research-sub__inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 30px;
+        align-items: center;
+      }
+      .research-sub h3 {
+        font-family: var(--serif);
+        font-size: clamp(30px, 4vw, 48px);
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.08;
+      }
+      .research-sub p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 560px;
+      }
 
-@media(max-width:1080px){
-  :root{--pad:34px}
-  .research-hero__grid,.reading-grid,.findings-strip,.latest{grid-template-columns:1fr}
-  .utility{display:grid;gap:12px;padding-bottom:20px;justify-items:start}
-  .utility__actions{justify-content:flex-start;width:100%}
-  .finding{border-right:none;border-bottom:1px solid var(--rule)}
-  .finding:last-child{border-bottom:none}
-  .sidebar{position:static}
-  .archive__list{max-height:none;overflow:visible}
-}
-@media(max-width:720px){
-  :root{--pad:24px}
-  #nav{height:66px;padding:0 var(--pad)}
-  .research-hero{min-height:auto;margin-top:66px;padding:72px 0 44px}
-  .issue-live h1{font-size:34px}
-  .franchise-ribbon{display:block}
-  .franchise-ribbon__sub{margin-top:6px;font-size:17px}
-  .utility{padding:14px 0 22px}
-  .utility__actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;justify-items:stretch;width:min(100%,420px)}
-  .util-btn{width:100%;min-height:52px;padding:14px 18px}
-  .issue-header{padding:28px 0 30px;margin-bottom:28px}
-  .issue-header h2{font-size:36px}
-  .issue-header__dek{font-size:18px;line-height:1.56}
-  .reading h3{font-size:27px}
-  .reading p,.reading p.lead,.reading blockquote{font-size:18px;line-height:1.65}
-  .reading li{font-size:18px;line-height:1.65}
-}
+      @media (max-width: 1080px) {
+        :root {
+          --pad: 34px;
+        }
+        .research-hero__grid,
+        .reading-grid,
+        .findings-strip,
+        .latest {
+          grid-template-columns: 1fr;
+        }
+        .utility {
+          display: grid;
+          gap: 12px;
+          padding-bottom: 20px;
+          justify-items: start;
+        }
+        .utility__actions {
+          justify-content: flex-start;
+          width: 100%;
+        }
+        .finding {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .finding:last-child {
+          border-bottom: none;
+        }
+        .sidebar {
+          position: static;
+        }
+        .archive__list {
+          max-height: none;
+          overflow: visible;
+        }
+      }
+      @media (max-width: 720px) {
+        :root {
+          --pad: 24px;
+        }
+        #nav {
+          height: 66px;
+          padding: 0 var(--pad);
+        }
+        .research-hero {
+          min-height: auto;
+          margin-top: 66px;
+          padding: 72px 0 44px;
+        }
+        .issue-live h1 {
+          font-size: 34px;
+        }
+        .franchise-ribbon {
+          display: block;
+        }
+        .franchise-ribbon__sub {
+          margin-top: 6px;
+          font-size: 17px;
+        }
+        .utility {
+          padding: 14px 0 22px;
+        }
+        .utility__actions {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 10px;
+          justify-items: stretch;
+          width: min(100%, 420px);
+        }
+        .util-btn {
+          width: 100%;
+          min-height: 52px;
+          padding: 14px 18px;
+        }
+        .issue-header {
+          padding: 28px 0 30px;
+          margin-bottom: 28px;
+        }
+        .issue-header h2 {
+          font-size: 36px;
+        }
+        .issue-header__dek {
+          font-size: 18px;
+          line-height: 1.56;
+        }
+        .reading h3 {
+          font-size: 27px;
+        }
+        .reading p,
+        .reading p.lead,
+        .reading blockquote {
+          font-size: 18px;
+          line-height: 1.65;
+        }
+        .reading li {
+          font-size: 18px;
+          line-height: 1.65;
+        }
+      }
 
-@media (max-width:767px){
-  :root{--pad:24px}
-  body{font-size:14px;overflow-x:hidden}
-  .issue-shell{padding:36px 0 52px}
-  .research-sub{margin-top:56px;padding:52px 0}
-  #nav{height:auto;min-height:72px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:12px;padding:12px var(--pad)}
-  .nav__logo{max-width:min(100%,260px);min-width:0}
-  .nav__logo svg{height:48px;max-width:100%}
-  .nav__menu-btn{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:44px;padding:0 16px}
-  .nav__right{display:inline-flex;align-items:center;justify-content:flex-end;gap:10px;margin-left:auto;min-width:0;flex-wrap:nowrap}
-  .nav__zh{flex:0 0 auto;white-space:nowrap}
-  .nav__lp{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;flex:0 0 auto;white-space:nowrap;text-align:center}
-  .nav__links{display:none;grid-column:1 / -1;width:100%;order:3;flex-direction:column;gap:14px;padding:14px 0 4px;border-top:1px solid var(--rule)}
-  #nav.menu-open .nav__links{display:flex}
-  .nav__links a{font-size:10px;white-space:nowrap}
+      @media (max-width: 767px) {
+        :root {
+          --pad: 24px;
+        }
+        body {
+          font-size: 14px;
+          overflow-x: hidden;
+        }
+        .issue-shell {
+          padding: 36px 0 52px;
+        }
+        .research-sub {
+          margin-top: 56px;
+          padding: 52px 0;
+        }
+        #nav {
+          height: auto;
+          min-height: 72px;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          column-gap: 12px;
+          row-gap: 12px;
+          padding: 12px var(--pad);
+        }
+        .nav__logo {
+          max-width: min(100%, 260px);
+          min-width: 0;
+        }
+        .nav__logo svg {
+          height: 48px;
+          max-width: 100%;
+        }
+        .nav__menu-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          min-height: 44px;
+          padding: 0 16px;
+        }
+        .nav__right {
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+          margin-left: auto;
+          min-width: 0;
+          flex-wrap: nowrap;
+        }
+        .nav__zh {
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+        .nav__lp {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
+          padding: 0 16px;
+          flex: 0 0 auto;
+          white-space: nowrap;
+          text-align: center;
+        }
+        .nav__links {
+          display: none;
+          grid-column: 1 / -1;
+          width: 100%;
+          order: 3;
+          flex-direction: column;
+          gap: 14px;
+          padding: 14px 0 4px;
+          border-top: 1px solid var(--rule);
+        }
+        #nav.menu-open .nav__links {
+          display: flex;
+        }
+        .nav__links a {
+          font-size: 10px;
+          white-space: nowrap;
+        }
 
-  .research-hero{margin-top:96px;padding:76px 0 64px;overflow:hidden}
-  .research-hero__grid{grid-template-columns:minmax(0,1fr);gap:34px}
-  .research-hero__grid > *{min-width:0}
-  .wordmark{margin:20px 0 18px;gap:16px;align-items:flex-start}
-  .wordmark svg{width:42px;flex:0 0 auto}
-  .wordmark__title{font-size:clamp(42px,13vw,60px);line-height:.92;overflow-wrap:anywhere}
-  .research-hero__desc{font-size:18px;line-height:1.72;max-width:31ch;color:rgba(255,255,255,.56)}
-  .issue-live{max-width:100%;min-width:0}
-  .issue-live h1{overflow-wrap:anywhere}
-  .issue-live__meta,.issue-header__meta{gap:10px}
-  .issue-live__meta span,.issue-header__meta span{min-width:0}
-  .issue-card__bar{padding:10px 14px;font-size:8px;letter-spacing:.16em}
-  .issue-card__body{padding:24px 18px 16px}
-  .issue-card__t{font-size:30px;line-height:1.1}
-  .issue-card__s{font-size:14px;line-height:1.78}
+        .research-hero {
+          margin-top: 96px;
+          padding: 76px 0 64px;
+          overflow: hidden;
+        }
+        .research-hero__grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 34px;
+        }
+        .research-hero__grid > * {
+          min-width: 0;
+        }
+        .wordmark {
+          margin: 20px 0 18px;
+          gap: 16px;
+          align-items: flex-start;
+        }
+        .wordmark svg {
+          width: 42px;
+          flex: 0 0 auto;
+        }
+        .wordmark__title {
+          font-size: clamp(42px, 13vw, 60px);
+          line-height: 0.92;
+          overflow-wrap: anywhere;
+        }
+        .research-hero__desc {
+          font-size: 18px;
+          line-height: 1.72;
+          max-width: 31ch;
+          color: rgba(255, 255, 255, 0.56);
+        }
+        .issue-live {
+          max-width: 100%;
+          min-width: 0;
+        }
+        .issue-live h1 {
+          overflow-wrap: anywhere;
+        }
+        .issue-live__meta,
+        .issue-header__meta {
+          gap: 10px;
+        }
+        .issue-live__meta span,
+        .issue-header__meta span {
+          min-width: 0;
+        }
+        .issue-card__bar {
+          padding: 10px 14px;
+          font-size: 8px;
+          letter-spacing: 0.16em;
+        }
+        .issue-card__body {
+          padding: 24px 18px 16px;
+        }
+        .issue-card__t {
+          font-size: 30px;
+          line-height: 1.1;
+        }
+        .issue-card__s {
+          font-size: 14px;
+          line-height: 1.78;
+        }
 
-  .research-main{padding:74px 0 88px}
-  .research-main__head{grid-template-columns:minmax(0,1fr);gap:28px;padding-bottom:46px;margin-bottom:46px}
-  .research-main__intro{font-size:18px;line-height:1.82;max-width:none}
-  .findings{grid-template-columns:minmax(0,1fr);margin-bottom:42px}
-  .finding{padding:20px 18px}
-  .finding p{font-size:14px;line-height:1.78}
-  .latest{grid-template-columns:minmax(0,1fr)}
-  .latest__issue{padding:28px 22px}
-  .latest__issue h3{font-size:36px;line-height:1.1}
-  .latest__issue p{font-size:16px;line-height:1.82}
-  .reading-grid{grid-template-columns:minmax(0,1fr);gap:32px}
-  .reading,.sidebar,.archive,.archive__list{min-width:0;max-width:100%}
-  .archive__actions{flex-direction:column}
-  .archive__pdf{width:100%}
-  .archive__row{padding:18px 16px}
-  .archive__row strong{font-size:27px;overflow-wrap:anywhere}
+        .research-main {
+          padding: 74px 0 88px;
+        }
+        .research-main__head {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 28px;
+          padding-bottom: 46px;
+          margin-bottom: 46px;
+        }
+        .research-main__intro {
+          font-size: 18px;
+          line-height: 1.82;
+          max-width: none;
+        }
+        .findings {
+          grid-template-columns: minmax(0, 1fr);
+          margin-bottom: 42px;
+        }
+        .finding {
+          padding: 20px 18px;
+        }
+        .finding p {
+          font-size: 14px;
+          line-height: 1.78;
+        }
+        .latest {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .latest__issue {
+          padding: 28px 22px;
+        }
+        .latest__issue h3 {
+          font-size: 36px;
+          line-height: 1.1;
+        }
+        .latest__issue p {
+          font-size: 16px;
+          line-height: 1.82;
+        }
+        .reading-grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 32px;
+        }
+        .reading,
+        .sidebar,
+        .archive,
+        .archive__list {
+          min-width: 0;
+          max-width: 100%;
+        }
+        .archive__actions {
+          flex-direction: column;
+        }
+        .archive__pdf {
+          width: 100%;
+        }
+        .archive__row {
+          padding: 18px 16px;
+        }
+        .archive__row strong {
+          font-size: 27px;
+          overflow-wrap: anywhere;
+        }
 
-  .research-sub{padding:58px 0}
-  .research-sub__inner{grid-template-columns:minmax(0,1fr);gap:22px;align-items:flex-start}
-  .research-sub p{font-size:15px;line-height:1.78;max-width:33ch}
-}
+        .research-sub {
+          padding: 58px 0;
+        }
+        .research-sub__inner {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 22px;
+          align-items: flex-start;
+        }
+        .research-sub p {
+          font-size: 15px;
+          line-height: 1.78;
+          max-width: 33ch;
+        }
+      }
 
-@media (max-width:520px){
-  :root{--pad:20px}
-  .wrap,.issue-shell.wrap{padding-left:var(--pad);padding-right:var(--pad)}
-  #nav{padding:10px var(--pad);column-gap:10px;row-gap:10px}
-  .nav__logo{max-width:min(100%,210px)}
-  .nav__logo svg{height:auto;max-height:44px;width:100%}
-  .nav__right{display:inline-flex;gap:8px;width:auto}
-  .nav__zh{display:none}
-  .nav__lp,.nav__menu-btn{width:auto}
-  .nav__lp{padding:0 12px;font-size:9px}
-  .nav__menu-btn{padding:0 12px}
+      @media (max-width: 520px) {
+        :root {
+          --pad: 20px;
+        }
+        .wrap,
+        .issue-shell.wrap {
+          padding-left: var(--pad);
+          padding-right: var(--pad);
+        }
+        #nav {
+          padding: 10px var(--pad);
+          column-gap: 10px;
+          row-gap: 10px;
+        }
+        .nav__logo {
+          max-width: min(100%, 210px);
+        }
+        .nav__logo svg {
+          height: auto;
+          max-height: 44px;
+          width: 100%;
+        }
+        .nav__right {
+          display: inline-flex;
+          gap: 8px;
+          width: auto;
+        }
+        .nav__zh {
+          display: none;
+        }
+        .nav__lp,
+        .nav__menu-btn {
+          width: auto;
+        }
+        .nav__lp {
+          padding: 0 12px;
+          font-size: 9px;
+        }
+        .nav__menu-btn {
+          padding: 0 12px;
+        }
 
-  .research-hero{margin-top:136px;padding:54px 0 40px}
-  .wordmark{align-items:flex-start;gap:14px}
-  .wordmark__title{font-size:clamp(36px,12vw,50px)}
-  .research-hero__desc{font-size:16px;line-height:1.7;max-width:100%}
-  .issue-live h1{font-size:30px;line-height:1.1}
-  .issue-live p{font-size:14px;line-height:1.65}
+        .research-hero {
+          margin-top: 136px;
+          padding: 54px 0 40px;
+        }
+        .wordmark {
+          align-items: flex-start;
+          gap: 14px;
+        }
+        .wordmark__title {
+          font-size: clamp(36px, 12vw, 50px);
+        }
+        .research-hero__desc {
+          font-size: 16px;
+          line-height: 1.7;
+          max-width: 100%;
+        }
+        .issue-live h1 {
+          font-size: 30px;
+          line-height: 1.1;
+        }
+        .issue-live p {
+          font-size: 14px;
+          line-height: 1.65;
+        }
 
-  .utility__actions{grid-template-columns:minmax(0,1fr);width:100%}
-  .util-btn{justify-content:center;width:100%;padding:14px 18px}
+        .utility__actions {
+          grid-template-columns: minmax(0, 1fr);
+          width: 100%;
+        }
+        .util-btn {
+          justify-content: center;
+          width: 100%;
+          padding: 14px 18px;
+        }
 
-  .issue-header h2{font-size:31px;line-height:1.08}
-  .issue-header__dek{font-size:16px;line-height:1.62}
-  .reading h3{font-size:24px;line-height:1.14}
-  .reading p,.reading p.lead,.reading blockquote,.reading li{font-size:17px;line-height:1.68}
-}
+        .issue-header h2 {
+          font-size: 31px;
+          line-height: 1.08;
+        }
+        .issue-header__dek {
+          font-size: 16px;
+          line-height: 1.62;
+        }
+        .reading h3 {
+          font-size: 24px;
+          line-height: 1.14;
+        }
+        .reading p,
+        .reading p.lead,
+        .reading blockquote,
+        .reading li {
+          font-size: 17px;
+          line-height: 1.68;
+        }
+      }
 
+      /* ══ MOBILE NAV REFINEMENT */
+      @media (max-width: 767px) {
+        #nav {
+          height: auto;
+          min-height: 72px;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          column-gap: 12px;
+          row-gap: 12px;
+        }
+        .nav__logo {
+          min-width: 0;
+          max-width: min(100%, 260px);
+        }
+        .nav__logo svg {
+          height: 48px;
+          max-width: 100%;
+        }
+        .nav__right {
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+          margin-left: auto;
+          min-width: 0;
+          flex-wrap: nowrap;
+        }
+        .nav__menu-btn,
+        .nav__lp {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
+          padding: 0 16px;
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+        .nav__zh {
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+        .nav__links {
+          grid-column: 1 / -1;
+          width: 100%;
+          padding: 14px 0 4px;
+        }
+      }
 
-/* ══ MOBILE NAV REFINEMENT */
-@media (max-width:767px) {
-  #nav {
-    height:auto;
-    min-height:72px;
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    align-items:center;
-    column-gap:12px;
-    row-gap:12px;
-  }
-  .nav__logo {
-    min-width:0;
-    max-width:min(100%,260px);
-  }
-  .nav__logo svg {
-    height:48px;
-    max-width:100%;
-  }
-  .nav__right {
-    display:inline-flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:10px;
-    margin-left:auto;
-    min-width:0;
-    flex-wrap:nowrap;
-  }
-  .nav__menu-btn,
-  .nav__lp {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:44px;
-    padding:0 16px;
-    flex:0 0 auto;
-    white-space:nowrap;
-  }
-  .nav__zh {
-    flex:0 0 auto;
-    white-space:nowrap;
-  }
-  .nav__links {
-    grid-column:1 / -1;
-    width:100%;
-    padding:14px 0 4px;
-  }
-}
+      @media (max-width: 520px) {
+        #nav {
+          column-gap: 10px;
+          row-gap: 10px;
+        }
+        .nav__logo {
+          max-width: min(100%, 180px);
+        }
+        .nav__logo svg {
+          height: auto;
+          max-height: 42px;
+          width: 100%;
+        }
+        .nav__right {
+          gap: 8px;
+        }
+        .nav__zh {
+          display: none;
+        }
+        .nav__lp,
+        .nav__menu-btn {
+          min-height: 40px;
+          padding: 0 12px;
+        }
+        .nav__lp {
+          font-size: 9px;
+        }
+      }
 
-@media (max-width:520px) {
-  #nav {
-    column-gap:10px;
-    row-gap:10px;
-  }
-  .nav__logo {
-    max-width:min(100%,180px);
-  }
-  .nav__logo svg {
-    height:auto;
-    max-height:42px;
-    width:100%;
-  }
-  .nav__right {
-    gap:8px;
-  }
-  .nav__zh {
-    display:none;
-  }
-  .nav__lp,
-  .nav__menu-btn {
-    min-height:40px;
-    padding:0 12px;
-  }
-  .nav__lp {
-    font-size:9px;
-  }
-}
-
-
-
-/* ══ LEGAL DISCLAIMER FOOTER */
-.legal-disclaimer {
-  background:#0c0c0a;
-  color:rgba(246,244,240,0.6);
-  padding:26px var(--pad) 30px;
-}
-.legal-disclaimer__inner {
-  max-width:var(--max);
-  margin:0 auto;
-}
-.legal-disclaimer__rule {
-  height:1px;
-  background:rgba(139,26,47,0.2);
-  margin-bottom:14px;
-}
-.legal-disclaimer__text {
-  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
-  font-size:12px;
-  line-height:1.6;
-  letter-spacing:.08em;
-  font-variant:small-caps;
-}
-.legal-disclaimer--cn .legal-disclaimer__text {
-  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
-  font-variant:normal;
-}
-@media (max-width:900px){
-  .legal-disclaimer { padding:22px 28px 26px; }
-}
-
-</style>
-</head>
-<body>
-<nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners"><g transform="scale(0.431)"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></g><line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/><text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text><line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/><text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text></svg></a><ul class="nav__links" id="nav-links"><li><a href="firm.html">The Firm</a></li><li><a href="strategy.html">Strategy</a></li><li><a href="insights.html" class="active">Insights</a></li><li><a href="press.html">Press</a></li><li><a href="team.html">Team</a></li><li class="nav__mobile-lang"><a href="insights_cn.html">中文</a></li></ul><div class="nav__right"><a href="insights_cn.html" class="nav__zh">中文</a>
-    <a href="investor-access.html" class="nav__lp">Investor Access</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div></nav>
-
-
-<section class="research-hero">
-  <div class="wrap research-hero__grid">
-    <div>
-      <div class="eyebrow eyebrow--ghost">ShoreVest Insights · Est. 2018</div>
-      <div class="wordmark">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 116" width="52" height="auto"><path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/><path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/><path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/><path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/><path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/><path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/><circle cx="48" cy="82" r="3.5" fill="#b3213f"/></svg>
-        <div class="wordmark__title">China<br>Debt<br><em>Dynamics.</em></div>
-      </div>
-      <p class="research-hero__desc">The institutional insights series on China's private credit markets — written from the ground, not from a terminal. Mechanism, not commentary.</p>
-    </div>
-    <article class="issue-live">
-      <div class="issue-live__k"><span class="live-dot" aria-hidden="true"></span>Live Edition · Current Issue</div>
-      <h1>The End of China's Uninvestable Myth.</h1>
-      <p>Almost five years after China was widely condemned as being uninvestable, the narrative is finally changing. Foreign equity investors are rediscovering that China is in fact investable, and they’re seriously underweight.</p>
-      <div class="issue-live__meta"><span>Vol. 10 · No. 1</span><span>25 January 2026</span><span>Allocator Edition</span></div>
-    </article>
-  </div>
-</section>
-
-<main class="issue-shell wrap">
-  <div class="franchise-ribbon">
-    <div>
-      <div class="franchise-ribbon__title">China Debt Dynamics · Institutional Publication</div>
-      <div class="franchise-ribbon__sub">Current issue presented in full HTML with committee-ready PDF access.</div>
-    </div>
-  </div>
-
-  <section class="utility">
-    <div class="utility__actions">
-      <a class="util-btn util-btn--solid" href="#" data-print-export="download">Download issue PDF</a>
-      <a class="util-btn" href="#" data-print-export="view">Open issue PDF</a>
-      <a class="util-btn" href="#archive">Archived Issues</a>
-      <a class="util-btn" href="index.html#signup">Subscribe</a>
-    </div>
-  </section>
-
-  <section class="issue-header">
-    <div class="issue-header__meta"><span>Volume 10 | Issue 1</span><span>Published 25 January 2026</span><span>China Debt Dynamics</span></div>
-    <h2>The End of China's Uninvestable Myth</h2>
-  </section>
-
-  <div class="reading-grid">
-    <article id="current-issue" class="reading" data-print-article="active" data-print-filename="shorevest-china-debt-dynamics-issue-46.pdf" data-print-pdf="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf">
-      <p class="lead"><strong>Volume 10 | Issue 1</strong><br>25 January 2026</p>
-
-      <h3>The End of China's Uninvestable Myth</h3>
-      <p>Almost five years after China was widely condemned as being uninvestable, the narrative is finally changing. Foreign equity investors are rediscovering that China is in fact investable, and they’re seriously underweight.</p>
-      <p>In reality, China was never uninvestable. In those “uninvestable” years, ShoreVest closed and exited more deals than any other foreign manager operating in the market.</p>
-      <p>For example, the failure of certain venture strategies doesn't mean other strategies, such as private credit, aren't enjoying success. The trauma experienced by equity investors following 2021 wasn’t universal. In fact, during that period ShoreVest experienced some of our best returns over our 20-year history investing in Chinese private credit.</p>
-
-      <h3>Long-term policy underpinning regulatory shifts</h3>
-      <p>Of course, the uninvestable narrative wasn't just about returns. It was about the unpredictability of a system where the state reserves the right to intervene in the economy without considering the interests of investors. And yet, even as equity investors claimed China was uninvestable, Beijing was consciously making ShoreVest’s private credit space far more predictable and "investable."</p>
-      <p>Long-time followers of ShoreVest will be familiar with the transformation. About a decade ago, Beijing recognized the importance of private sector investors in helping clean up the banking system. To that end, authorities overhauled the legal system to better protect creditors' rights, and formalized the asset resolution process so that secured credit investors could usually be confident of a legal resolution in about 18 months. Collateral assets were then auctioned publicly and transparently by the courts using online platforms like JD.com and Alibaba's Taobao.</p>
-      <p>Beijing also cleaned up its financial system by reining in property development lending, as well as shutting down most of the shadow banking system. Although some of this short-term pain contributed to global allocators’ reluctance to invest in China, ultimately the moves have put China’s financial system and property markets on surer footing for the long-term.</p>
-      <p>We're now seeing regulators reforming China's stocks markets in ways comparable to what we previously experienced in private credit. For decades, China's stock markets have been relatively peripheral to China's economic performance. That's now changing. Beijing wants innovative tech firms - which typically struggle to tap bank credit - to fund themselves via the capital market. It also wants the capital market to replace housing as the engine for middle class wealth generation. And with China's population rapidly aging - and the state pension system inadequately funded to meet the needs of a rising number of retirees - rising stock valuations could help finance the pension system.</p>
-      <p>To that end, Beijing wants to deliver a "slow bull" market whereby - notwithstanding two-way volatility, and the occasional correction - stock prices gradually rise over time. Since Q1 2023, the government has been striving to deliver this by:</p>
-      <ul>
-        <li>Building public trust in the market by imposing discipline on market participants.</li>
-        <li>Delivering real returns.</li>
-        <li>Ensuring corrections are short-lived by rebalancing the market away from retail investors toward long-term institutional investors.</li>
-        <li>Creating exciting investment opportunities by encouraging companies with innovative technologies to list.</li>
+      /* ══ LEGAL DISCLAIMER FOOTER */
+      .legal-disclaimer {
+        background: #0c0c0a;
+        color: rgba(246, 244, 240, 0.6);
+        padding: 26px var(--pad) 30px;
+      }
+      .legal-disclaimer__inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .legal-disclaimer__rule {
+        height: 1px;
+        background: rgba(139, 26, 47, 0.2);
+        margin-bottom: 14px;
+      }
+      .legal-disclaimer__text {
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+        font-variant: small-caps;
+      }
+      .legal-disclaimer--cn .legal-disclaimer__text {
+        font-family:
+          "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-variant: normal;
+      }
+      @media (max-width: 900px) {
+        .legal-disclaimer {
+          padding: 22px 28px 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <a href="index.html" class="nav__logo"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 220 52"
+          height="62"
+          width="auto"
+          role="img"
+          aria-label="ShoreVest Partners"
+        >
+          <g transform="scale(0.431)">
+            <path
+              d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z"
+              fill="#b3213f"
+            />
+            <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f" />
+            <circle cx="48" cy="82" r="3.5" fill="#b3213f" />
+          </g>
+          <line
+            x1="52"
+            y1="8"
+            x2="52"
+            y2="44"
+            stroke="#b3213f"
+            stroke-width="0.5"
+            opacity="0.22"
+          />
+          <text
+            x="62"
+            y="28"
+            font-family="EB Garamond, Georgia, serif"
+            font-weight="400"
+            font-size="24"
+            letter-spacing="2"
+            fill="#0c0c0a"
+          >
+            ShoreVest
+          </text>
+          <line
+            x1="62"
+            y1="32"
+            x2="210"
+            y2="32"
+            stroke="#b3213f"
+            stroke-width="0.4"
+            opacity="0.4"
+          />
+          <text
+            x="62"
+            y="44"
+            font-family="Inter, sans-serif"
+            font-weight="300"
+            font-size="9.5"
+            letter-spacing="4"
+            fill="#0c0c0a"
+            opacity="0.45"
+          >
+            新 岸 資 本
+          </text>
+        </svg></a
+      >
+      <ul class="nav__links" id="nav-links">
+        <li><a href="firm.html">The Firm</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li class="nav__mobile-lang"><a href="insights_cn.html">中文</a></li>
       </ul>
-      <p>Beijing has demanded that listed companies increase the size and frequency of dividend payouts, and it's pushed companies to do share buybacks, which the PBoC has enabled by providing cheap credit. Efforts to boost the role of long-term investors have mostly focused on reducing the amount of capital insurance companies need to hold, and relaxing the rules governing how much they can invest in stocks.</p>
-      <p>Regulators are trying to create exciting investment opportunities by allowing innovative firms in certain industries to list even if they have not yet turned a profit. And they're building public trust by prosecuting financial crimes more aggressively, exerting greater oversight over what types of companies can IPO, cracking down on the revolving door of regulators going to work in the financial sector, tightening financial penalties for corporate malfeasance, making it harder for insiders to sell shares, providing better protection for whistleblowers, and forcing loss-making companies to delist.</p>
-      <p>Beyond stocks, Beijing has been engaged in a wide-ranging campaign to ensure the capital market is capable of meeting the diverse needs of both companies and investors. Authorities have overhauled rules to facilitate more M&amp;A deals, giving start-up founders - and their VC investors - more opportunities to exit, and large firms an opportunity to acquire the tech they need. Authorities have been experimenting with green bonds and bonds to fund tech startups, and encouraging the securitization of infrastructure. Furthermore, authorities have been gradually liberalizing rules to make it easier for foreigners to trade futures and fixed income products.</p>
-      <p>The goal isn't to replicate Western-style capital markets. The state remains very hands on, taking responsibility for decisions typically made by private institutions in the US - like deciding who gets to launch an IPO. But just because Beijing insists on maintaining a role, doesn't mean that role will be destructive. Beijing was caught off-guard by the market reaction to the tech crackdown and its education sector reforms, and has become more mindful of how its actions impact investors.</p>
-      <p>Beijing's drive to overhaul its capital markets isn't about making them "investable" - they've already been that for years. Rather, it's about harnessing the capital market to support the rapidly changing needs of the economy. That requires China's capital market to grow far bigger and more diverse than it currently is.</p>
-      <p>To achieve that growth, Beijing is striving to make capital markets more professional, sophisticated, and trustworthy, with less friction. In short, China's authorities are building the foundations of a more mature market capable of absorbing far more capital. That process will take time, but the net effect will be an environment foreigners are far more comfortable investing in.</p>
-    </article>
-
-    <aside class="sidebar" id="archive">
-      <div class="sidebar__card">
-        <h4>Issue Metadata</h4>
-        <p>China Debt Dynamics · Vol. 10 No. 1<br>Published 25 January 2026<br>ShoreVest Insights · Allocator Edition</p>
+      <div class="nav__right">
+        <a href="insights_cn.html" class="nav__zh">中文</a>
+        <a href="investor-access.html" class="nav__lp">Investor Access</a
+        ><button
+          class="nav__menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          Menu
+        </button>
       </div>
-      <div class="archive">
-        <div class="archive__head">Archived Issues · Publication History</div>
-        <div class="archive__list">
-          <div class="archive__row">
-            <small>Volume 10 | Issue 1 | Published 25 January 2026 | Allocator Edition</small>
-            <strong>The End of China's Uninvestable Myth</strong>
-            <div class="archive__actions">
-              <a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf" target="_blank" rel="noopener" download>Download issue PDF</a>
-              <a class="archive__pdf" href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf" target="_blank" rel="noopener">Open issue PDF</a>
+    </nav>
+
+    <section class="research-hero">
+      <div class="wrap research-hero__grid">
+        <div>
+          <div class="eyebrow eyebrow--ghost">
+            ShoreVest Insights · Est. 2018
+          </div>
+          <div class="wordmark">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 96 116"
+              width="52"
+              height="auto"
+            >
+              <path
+                d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z"
+                fill="#b3213f"
+              />
+              <path
+                d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z"
+                fill="#b3213f"
+              />
+              <path
+                d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z"
+                fill="#b3213f"
+              />
+              <path
+                d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z"
+                fill="#b3213f"
+              />
+              <path
+                d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z"
+                fill="#b3213f"
+              />
+              <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f" />
+              <circle cx="48" cy="82" r="3.5" fill="#b3213f" />
+            </svg>
+            <div class="wordmark__title">
+              China<br />Debt<br /><em>Dynamics.</em>
             </div>
           </div>
-          <div class="archive__row"><small>Volume 9 | Issue 4 | Published Q4 2025 | Allocator Edition</small><strong>Beijing's Campaign Against Overcapacity Creates Private Credit Opportunities.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 9 | Issue 3 | Published Q3 2025 | Allocator Edition</small><strong>Into the Shadows of US Private Credit.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 9 | Issue 2 | Published Q2 2025 | Allocator Edition</small><strong>China, An Uncorrelated Harbor in a Stormy World.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 9 | Issue 1 | Published Q1 2024 | Allocator Edition</small><strong>Green finance: Sowing the seeds of China's next wave of NPLs.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 8 | Issue 4 | Published Q4 2023 | Allocator Edition</small><strong>United States of China.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-united-states-of-china.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/china-debt-dynamics-united-states-of-china.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 8 | Issue 3 | Published Q3 2023 | Allocator Edition</small><strong>Private Credit in a Reset World Order.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 8 | Issue 2 | Published Q2 2023 | Allocator Edition</small><strong>Quantifying China's NPL Market.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 8 | Issue 1 | Published Q1 2023 | Allocator Edition</small><strong>Bailing Out the Banks: The Hidden Significance of Beijing Property Support Measures.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 7 | Issue 4 | Published Q4 2022 | Allocator Edition</small><strong>China Refocuses on Financial Risk and Ramps Up NPL Disposals.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 7 | Issue 1 | Published 2022 | Allocator Edition</small><strong>Where's the Stimulus? Parsing Beijing's Lackluster Response to Growth.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 6 | Issue 3 | Published 2022 | Allocator Edition</small><strong>New Regulations Set to Accelerate NPL Disposals.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 6 | Issue 2 | Published 2022 | Allocator Edition</small><strong>China's Property Support Measures: Rescue, Not Reflation.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 6 | Issue 1 | Published September 2021 | Allocator Edition</small><strong>Evergrande.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-evergrande.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/china-debt-dynamics-evergrande.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
-          <div class="archive__row"><small>Volume 5 | Issue 2 | Published April 2021 | Allocator Edition</small><strong>Sustained Shadow Banking Contraction Creating Private Credit Opportunities.</strong><div class="archive__actions"><a class="archive__pdf archive__pdf--solid" href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf" target="_blank" rel="noopener" download>Download issue PDF</a><a class="archive__pdf" href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf" target="_blank" rel="noopener">Open issue PDF</a></div></div>
+          <p class="research-hero__desc">
+            The institutional insights series on China's private credit markets
+            — written from the ground, not from a terminal. Mechanism, not
+            commentary.
+          </p>
+        </div>
+        <article class="issue-live">
+          <div class="issue-live__k">
+            <span class="live-dot" aria-hidden="true"></span>Live Edition ·
+            Current Issue
+          </div>
+          <h1>The End of China's Uninvestable Myth.</h1>
+          <p>
+            Almost five years after China was widely condemned as being
+            uninvestable, the narrative is finally changing. Foreign equity
+            investors are rediscovering that China is in fact investable, and
+            they’re seriously underweight.
+          </p>
+          <div class="issue-live__meta">
+            <span>Vol. 10 · No. 1</span><span>25 January 2026</span
+            ><span>Allocator Edition</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <main class="issue-shell wrap">
+      <div class="franchise-ribbon">
+        <div>
+          <div class="franchise-ribbon__title">
+            China Debt Dynamics · Institutional Publication
+          </div>
+          <div class="franchise-ribbon__sub">
+            Current issue presented in full HTML with committee-ready PDF
+            access.
+          </div>
         </div>
       </div>
-    </aside>
-  </div>
-</main>
 
-<section class="wrap" style="padding-bottom:32px;">
-  <div style="font-size:12px;line-height:1.7;color:var(--mist);max-width:980px;">Performance figures shown are for informational purposes only and mirror the latest investor deck format. Past performance is not indicative of future results. This website does not constitute an offer to sell or solicitation of an offer to purchase any security. Fund terms shown are indicative only. For more information contact inquiries@shorevest.com.</div>
-</section>
+      <section class="utility">
+        <div class="utility__actions">
+          <a
+            class="util-btn util-btn--solid"
+            href="#"
+            data-print-export="download"
+            >Download issue PDF</a
+          >
+          <a class="util-btn" href="#" data-print-export="view"
+            >Open issue PDF</a
+          >
+          <a class="util-btn" href="#archive">Archived Issues</a>
+          <a class="util-btn" href="index.html#signup">Subscribe</a>
+        </div>
+      </section>
 
-<section class="print-publication" id="print-publication" aria-hidden="true">
-  <header class="print-publication__masthead">
-    <div class="print-publication__brand">
-      <svg class="print-publication__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 116" role="img" aria-label="ShoreVest logo">
-        <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/>
-        <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/>
-        <circle cx="48" cy="82" r="3.5" fill="#b3213f"/>
-      </svg>
-      <span class="print-publication__label">ShoreVest Insights</span>
-    </div>
-    <span class="print-publication__series">China Debt Dynamics</span>
-  </header>
-  <div class="print-publication__meta" id="print-meta"></div>
-  <div class="print-publication__lead">
-    <h1 class="print-publication__title" id="print-title"></h1>
-    <p class="print-publication__standfirst" id="print-standfirst"></p>
-  </div>
-  <aside class="print-publication__callout" id="print-callout"></aside>
-  <article class="print-body" id="print-body"></article>
-  <footer class="print-publication__folio" aria-hidden="true">
-    <span>ShoreVest Partners · China Debt Dynamics</span>
-    <span class="print-publication__folio-page"></span>
-  </footer>
-</section>
+      <section class="issue-header">
+        <div class="issue-header__meta">
+          <span>Volume 10 | Issue 1</span><span>Published 25 January 2026</span
+          ><span>China Debt Dynamics</span>
+        </div>
+        <h2>The End of China's Uninvestable Myth</h2>
+      </section>
 
-<section class="research-sub">
-  <div class="wrap" style="padding-bottom:24px;font-size:12px;line-height:1.7;color:rgba(255,255,255,.46);">Important notice: China Debt Dynamics is provided for informational purposes only and does not constitute investment advice, an offer to invest, or a recommendation regarding any security, fund, or transaction.</div>
-  <div class="wrap research-sub__inner">
-    <div>
-      <h3>Receive China Debt Dynamics directly.</h3>
-      <p>Institutional research on China private credit, written from onshore perspective for global allocators and investment committees.</p>
-    </div>
-    <a href="index.html#signup" class="cta cta--light"><span>Subscribe</span><span class="cta__ring">→</span></a>
-  </div>
-</section>
+      <div class="reading-grid">
+        <article
+          id="current-issue"
+          class="reading"
+          data-print-article="active"
+          data-print-filename="shorevest-china-debt-dynamics-issue-46.pdf"
+          data-print-pdf="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
+        >
+          <p class="lead">
+            <strong>Volume 10 | Issue 1</strong><br />25 January 2026
+          </p>
 
-<script>
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10));
+          <h3>The End of China's Uninvestable Myth</h3>
+          <p>
+            Almost five years after China was widely condemned as being
+            uninvestable, the narrative is finally changing. Foreign equity
+            investors are rediscovering that China is in fact investable, and
+            they’re seriously underweight.
+          </p>
+          <p>
+            In reality, China was never uninvestable. In those “uninvestable”
+            years, ShoreVest closed and exited more deals than any other foreign
+            manager operating in the market.
+          </p>
+          <p>
+            For example, the failure of certain venture strategies doesn't mean
+            other strategies, such as private credit, aren't enjoying success.
+            The trauma experienced by equity investors following 2021 wasn’t
+            universal. In fact, during that period ShoreVest experienced some of
+            our best returns over our 20-year history investing in Chinese
+            private credit.
+          </p>
 
-const menuBtn=document.querySelector('.nav__menu-btn');
-const nav=document.getElementById('nav');
-if(menuBtn&&nav){
-  menuBtn.addEventListener('click',()=>{
-    const isOpen=nav.classList.toggle('menu-open');
-    menuBtn.setAttribute('aria-expanded',String(isOpen));
-  });
-}
+          <h3>Long-term policy underpinning regulatory shifts</h3>
+          <p>
+            Of course, the uninvestable narrative wasn't just about returns. It
+            was about the unpredictability of a system where the state reserves
+            the right to intervene in the economy without considering the
+            interests of investors. And yet, even as equity investors claimed
+            China was uninvestable, Beijing was consciously making ShoreVest’s
+            private credit space far more predictable and "investable."
+          </p>
+          <p>
+            Long-time followers of ShoreVest will be familiar with the
+            transformation. About a decade ago, Beijing recognized the
+            importance of private sector investors in helping clean up the
+            banking system. To that end, authorities overhauled the legal system
+            to better protect creditors' rights, and formalized the asset
+            resolution process so that secured credit investors could usually be
+            confident of a legal resolution in about 18 months. Collateral
+            assets were then auctioned publicly and transparently by the courts
+            using online platforms like JD.com and Alibaba's Taobao.
+          </p>
+          <p>
+            Beijing also cleaned up its financial system by reining in property
+            development lending, as well as shutting down most of the shadow
+            banking system. Although some of this short-term pain contributed to
+            global allocators’ reluctance to invest in China, ultimately the
+            moves have put China’s financial system and property markets on
+            surer footing for the long-term.
+          </p>
+          <p>
+            We're now seeing regulators reforming China's stocks markets in ways
+            comparable to what we previously experienced in private credit. For
+            decades, China's stock markets have been relatively peripheral to
+            China's economic performance. That's now changing. Beijing wants
+            innovative tech firms - which typically struggle to tap bank credit
+            - to fund themselves via the capital market. It also wants the
+            capital market to replace housing as the engine for middle class
+            wealth generation. And with China's population rapidly aging - and
+            the state pension system inadequately funded to meet the needs of a
+            rising number of retirees - rising stock valuations could help
+            finance the pension system.
+          </p>
+          <p>
+            To that end, Beijing wants to deliver a "slow bull" market whereby -
+            notwithstanding two-way volatility, and the occasional correction -
+            stock prices gradually rise over time. Since Q1 2023, the government
+            has been striving to deliver this by:
+          </p>
+          <ul>
+            <li>
+              Building public trust in the market by imposing discipline on
+              market participants.
+            </li>
+            <li>Delivering real returns.</li>
+            <li>
+              Ensuring corrections are short-lived by rebalancing the market
+              away from retail investors toward long-term institutional
+              investors.
+            </li>
+            <li>
+              Creating exciting investment opportunities by encouraging
+              companies with innovative technologies to list.
+            </li>
+          </ul>
+          <p>
+            Beijing has demanded that listed companies increase the size and
+            frequency of dividend payouts, and it's pushed companies to do share
+            buybacks, which the PBoC has enabled by providing cheap credit.
+            Efforts to boost the role of long-term investors have mostly focused
+            on reducing the amount of capital insurance companies need to hold,
+            and relaxing the rules governing how much they can invest in stocks.
+          </p>
+          <p>
+            Regulators are trying to create exciting investment opportunities by
+            allowing innovative firms in certain industries to list even if they
+            have not yet turned a profit. And they're building public trust by
+            prosecuting financial crimes more aggressively, exerting greater
+            oversight over what types of companies can IPO, cracking down on the
+            revolving door of regulators going to work in the financial sector,
+            tightening financial penalties for corporate malfeasance, making it
+            harder for insiders to sell shares, providing better protection for
+            whistleblowers, and forcing loss-making companies to delist.
+          </p>
+          <p>
+            Beyond stocks, Beijing has been engaged in a wide-ranging campaign
+            to ensure the capital market is capable of meeting the diverse needs
+            of both companies and investors. Authorities have overhauled rules
+            to facilitate more M&amp;A deals, giving start-up founders - and
+            their VC investors - more opportunities to exit, and large firms an
+            opportunity to acquire the tech they need. Authorities have been
+            experimenting with green bonds and bonds to fund tech startups, and
+            encouraging the securitization of infrastructure. Furthermore,
+            authorities have been gradually liberalizing rules to make it easier
+            for foreigners to trade futures and fixed income products.
+          </p>
+          <p>
+            The goal isn't to replicate Western-style capital markets. The state
+            remains very hands on, taking responsibility for decisions typically
+            made by private institutions in the US - like deciding who gets to
+            launch an IPO. But just because Beijing insists on maintaining a
+            role, doesn't mean that role will be destructive. Beijing was caught
+            off-guard by the market reaction to the tech crackdown and its
+            education sector reforms, and has become more mindful of how its
+            actions impact investors.
+          </p>
+          <p>
+            Beijing's drive to overhaul its capital markets isn't about making
+            them "investable" - they've already been that for years. Rather,
+            it's about harnessing the capital market to support the rapidly
+            changing needs of the economy. That requires China's capital market
+            to grow far bigger and more diverse than it currently is.
+          </p>
+          <p>
+            To achieve that growth, Beijing is striving to make capital markets
+            more professional, sophisticated, and trustworthy, with less
+            friction. In short, China's authorities are building the foundations
+            of a more mature market capable of absorbing far more capital. That
+            process will take time, but the net effect will be an environment
+            foreigners are far more comfortable investing in.
+          </p>
+        </article>
 
-const defaultPrintFilename='shorevest-china-debt-dynamics-issue-46.pdf';
+        <aside class="sidebar" id="archive">
+          <div class="sidebar__card">
+            <h4>Issue Metadata</h4>
+            <p>
+              China Debt Dynamics · Vol. 10 No. 1<br />Published 25 January
+              2026<br />ShoreVest Insights · Allocator Edition
+            </p>
+          </div>
+          <div class="archive">
+            <div class="archive__head">
+              Archived Issues · Publication History
+            </div>
+            <div class="archive__list">
+              <div class="archive__row">
+                <small
+                  >Volume 10 | Issue 1 | Published 25 January 2026 | Allocator
+                  Edition</small
+                >
+                <strong>The End of China's Uninvestable Myth</strong>
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  >
+                  <a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 9 | Issue 4 | Published Q4 2025 | Allocator
+                  Edition</small
+                ><strong
+                  >Beijing's Campaign Against Overcapacity Creates Private
+                  Credit Opportunities.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 9 | Issue 3 | Published Q3 2025 | Allocator
+                  Edition</small
+                ><strong>Into the Shadows of US Private Credit.</strong>
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 9 | Issue 2 | Published Q2 2025 | Allocator
+                  Edition</small
+                ><strong
+                  >China, An Uncorrelated Harbor in a Stormy World.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 9 | Issue 1 | Published Q1 2024 | Allocator
+                  Edition</small
+                ><strong
+                  >Green finance: Sowing the seeds of China's next wave of
+                  NPLs.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 8 | Issue 4 | Published Q4 2023 | Allocator
+                  Edition</small
+                ><strong>United States of China.</strong>
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-united-states-of-china.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-united-states-of-china.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 8 | Issue 3 | Published Q3 2023 | Allocator
+                  Edition</small
+                ><strong>Private Credit in a Reset World Order.</strong>
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 8 | Issue 2 | Published Q2 2023 | Allocator
+                  Edition</small
+                ><strong>Quantifying China's NPL Market.</strong>
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 8 | Issue 1 | Published Q1 2023 | Allocator
+                  Edition</small
+                ><strong
+                  >Bailing Out the Banks: The Hidden Significance of Beijing
+                  Property Support Measures.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 7 | Issue 4 | Published Q4 2022 | Allocator
+                  Edition</small
+                ><strong
+                  >China Refocuses on Financial Risk and Ramps Up NPL
+                  Disposals.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 7 | Issue 1 | Published 2022 | Allocator
+                  Edition</small
+                ><strong
+                  >Where's the Stimulus? Parsing Beijing's Lackluster Response
+                  to Growth.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 6 | Issue 3 | Published 2022 | Allocator
+                  Edition</small
+                ><strong
+                  >New Regulations Set to Accelerate NPL Disposals.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 6 | Issue 2 | Published 2022 | Allocator
+                  Edition</small
+                ><strong
+                  >China's Property Support Measures: Rescue, Not
+                  Reflation.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 6 | Issue 1 | Published September 2021 | Allocator
+                  Edition</small
+                ><strong>Evergrande.</strong>
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-evergrande.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-evergrande.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 5 | Issue 2 | Published April 2021 | Allocator
+                  Edition</small
+                ><strong
+                  >Sustained Shadow Banking Contraction Creating Private Credit
+                  Opportunities.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
 
-const archiveIssueMap={
-  v10i1:{title:"The End of China's Uninvestable Myth",meta:'Volume 10 | Issue 1 | Published 25 January 2026 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf'},
-  v9i4:{title:"Beijing's Campaign Against Overcapacity Creates Private Credit Opportunities.",meta:'Volume 9 | Issue 4 | Published Q4 2025 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf'},
-  v9i3:{title:'Into the Shadows of US Private Credit.',meta:'Volume 9 | Issue 3 | Published Q3 2025 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf'},
-  v9i2:{title:'China, An Uncorrelated Harbor in a Stormy World.',meta:'Volume 9 | Issue 2 | Published Q2 2025 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf'},
-  v9i1:{title:"Green finance: Sowing the seeds of China's next wave of NPLs.",meta:'Volume 9 | Issue 1 | Published Q1 2024 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf'},
-  v8i4:{title:'United States of China.',meta:'Volume 8 | Issue 4 | Published Q4 2023 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-united-states-of-china.pdf'},
-  v8i3:{title:'Private Credit in a Reset World Order.',meta:'Volume 8 | Issue 3 | Published Q3 2023 | Allocator Edition',pdf:'pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf'},
-  v8i2:{title:"Quantifying China's NPL Market.",meta:'Volume 8 | Issue 2 | Published Q2 2023 | Allocator Edition',pdf:'pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf'},
-  v8i1:{title:'Bailing Out the Banks: The Hidden Significance of Beijing Property Support Measures.',meta:'Volume 8 | Issue 1 | Published Q1 2023 | Allocator Edition',pdf:'pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf'},
-  v7i4:{title:'China Refocuses on Financial Risk and Ramps Up NPL Disposals.',meta:'Volume 7 | Issue 4 | Published Q4 2022 | Allocator Edition',pdf:'pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf'},
-  v7i1:{title:"Where's the Stimulus? Parsing Beijing's Lackluster Response to Growth.",meta:'Volume 7 | Issue 1 | Published 2022 | Allocator Edition',pdf:'pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf'},
-  v6i3:{title:'New Regulations Set to Accelerate NPL Disposals.',meta:'Volume 6 | Issue 3 | Published 2022 | Allocator Edition',pdf:'pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf'},
-  v6i2:{title:"China's Property Support Measures: Rescue, Not Reflation.",meta:'Volume 6 | Issue 2 | Published 2022 | Allocator Edition',pdf:'pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf'},
-  v6i1:{title:'Evergrande.',meta:'Volume 6 | Issue 1 | Published September 2021 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-evergrande.pdf'},
-  v5i2:{title:'Sustained Shadow Banking Contraction Creating Private Credit Opportunities.',meta:'Volume 5 | Issue 2 | Published April 2021 | Allocator Edition',pdf:'pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf'}
-};
+    <section class="wrap" style="padding-bottom: 32px">
+      <div
+        style="
+          font-size: 12px;
+          line-height: 1.7;
+          color: var(--mist);
+          max-width: 980px;
+        "
+      >
+        Performance figures shown are for informational purposes only and mirror
+        the latest investor deck format. Past performance is not indicative of
+        future results. This website does not constitute an offer to sell or
+        solicitation of an offer to purchase any security. Fund terms shown are
+        indicative only. For more information contact inquiries@shorevest.com.
+      </div>
+    </section>
 
-const getPrintSourceArticle=()=>document.querySelector('[data-print-article="active"]')||document.querySelector('[data-print-article]')||document.querySelector('.reading-grid .reading');
+    <section
+      class="print-publication"
+      id="print-publication"
+      aria-hidden="true"
+    >
+      <header class="print-publication__masthead">
+        <div class="print-publication__brand">
+          <svg
+            class="print-publication__logo"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 96 116"
+            role="img"
+            aria-label="ShoreVest logo"
+          >
+            <path
+              d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z"
+              fill="#b3213f"
+            />
+            <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f" />
+            <circle cx="48" cy="82" r="3.5" fill="#b3213f" />
+          </svg>
+          <span class="print-publication__label">ShoreVest Insights</span>
+        </div>
+        <span class="print-publication__series">China Debt Dynamics</span>
+      </header>
+      <div class="print-publication__meta" id="print-meta"></div>
+      <div class="print-publication__lead">
+        <h1 class="print-publication__title" id="print-title"></h1>
+        <p class="print-publication__standfirst" id="print-standfirst"></p>
+      </div>
+      <aside class="print-publication__callout" id="print-callout"></aside>
+      <article class="print-body" id="print-body"></article>
+      <footer class="print-publication__folio" aria-hidden="true">
+        <span>ShoreVest Partners · China Debt Dynamics</span>
+        <span class="print-publication__folio-page"></span>
+      </footer>
+    </section>
 
-const getPrintFilename=()=>getPrintSourceArticle()?.getAttribute('data-print-filename')||defaultPrintFilename;
-const getPrintPdfUrl=()=>getPrintSourceArticle()?.getAttribute('data-print-pdf')||archiveIssueMap.v10i1.pdf;
+    <section class="research-sub">
+      <div
+        class="wrap"
+        style="
+          padding-bottom: 24px;
+          font-size: 12px;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.46);
+        "
+      >
+        Important notice: China Debt Dynamics is provided for informational
+        purposes only and does not constitute investment advice, an offer to
+        invest, or a recommendation regarding any security, fund, or
+        transaction.
+      </div>
+      <div class="wrap research-sub__inner">
+        <div>
+          <h3>Receive China Debt Dynamics directly.</h3>
+          <p>
+            Institutional research on China private credit, written from onshore
+            perspective for global allocators and investment committees.
+          </p>
+        </div>
+        <a href="index.html#signup" class="cta cta--light"
+          ><span>Subscribe</span><span class="cta__ring">→</span></a
+        >
+      </div>
+    </section>
 
-const buildPrintEdition=()=>{
-  const title=document.querySelector('.issue-header h2')?.textContent.trim()||'';
-  const standfirst=document.querySelector('.issue-header__dek')?.textContent.trim()||document.querySelector('#current-issue p:not(.lead)')?.textContent.trim()||'';
-  const issueInfo=document.querySelector('.issue-header__meta span:nth-child(1)')?.textContent.trim()||'';
-  const publishedInfo=document.querySelector('.issue-header__meta span:nth-child(2)')?.textContent.trim()||'';
-  const editionInfo=document.querySelector('.issue-live__meta span:nth-child(3)')?.textContent.trim()||'Allocator Edition';
-  const sourceArticle=getPrintSourceArticle();
-  const printMeta=document.getElementById('print-meta');
-  const printTitle=document.getElementById('print-title');
-  const printStandfirst=document.getElementById('print-standfirst');
-  const printCallout=document.getElementById('print-callout');
-  const printBody=document.getElementById('print-body');
+    <script>
+      window.addEventListener("scroll", () =>
+        document
+          .getElementById("nav")
+          .classList.toggle("scrolled", window.scrollY > 10),
+      );
 
-  if(!sourceArticle||!printMeta||!printTitle||!printStandfirst||!printCallout||!printBody){
-    return;
-  }
-
-  const metadataLine=[issueInfo,publishedInfo,editionInfo].filter(Boolean).join(' | ');
-  printMeta.textContent=metadataLine;
-  printTitle.textContent=title;
-  if(printTitle.textContent.trim()==='#'){
-    printTitle.remove();
-  }
-  printStandfirst.textContent=standfirst;
-  printBody.innerHTML='';
-
-  const normalizedStandfirst=standfirst.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
-  let skippedTitleHeading=false;
-  let skippedStandfirstParagraph=false;
-  let calloutText='';
-
-  const normalizePrintNode=(node)=>{
-    const clean=node.cloneNode(true);
-    const walker=document.createTreeWalker(clean, NodeFilter.SHOW_ELEMENT);
-    const elements=[clean];
-    while(walker.nextNode()){
-      elements.push(walker.currentNode);
-    }
-    elements.forEach((element)=>{
-      element.removeAttribute('class');
-      element.removeAttribute('style');
-      element.removeAttribute('id');
-    });
-    return clean;
-  };
-
-  const printableNodes=Array.from(sourceArticle.querySelectorAll('h3, p, ul, ol, blockquote'));
-  printableNodes.forEach((node)=>{
-    if(node.classList.contains('lead')){
-      return;
-    }
-
-    const clone=normalizePrintNode(node);
-
-    if(clone.tagName==='H3'){
-      const headingText=clone.textContent.trim().replace(/\.$/, '');
-      const titleText=title.replace(/\.$/, '');
-      if(!skippedTitleHeading&&headingText===titleText){
-        skippedTitleHeading=true;
-        return;
+      const menuBtn = document.querySelector(".nav__menu-btn");
+      const nav = document.getElementById("nav");
+      if (menuBtn && nav) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("menu-open");
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+        });
       }
-      const printHeading=document.createElement('h2');
-      printHeading.textContent=clone.textContent;
-      printBody.appendChild(printHeading);
-      return;
-    }
 
-    if(clone.tagName==='P'){
-      const paragraphText=clone.textContent.replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().toLowerCase();
-      if(!skippedStandfirstParagraph&&paragraphText===normalizedStandfirst){
-        skippedStandfirstParagraph=true;
-        return;
+      const defaultPrintFilename = "shorevest-china-debt-dynamics-issue-46.pdf";
+
+      const archiveIssueMap = {
+        v10i1: {
+          title: "The End of China's Uninvestable Myth",
+          meta: "Volume 10 | Issue 1 | Published 25 January 2026 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf",
+        },
+        v9i4: {
+          title:
+            "Beijing's Campaign Against Overcapacity Creates Private Credit Opportunities.",
+          meta: "Volume 9 | Issue 4 | Published Q4 2025 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf",
+        },
+        v9i3: {
+          title: "Into the Shadows of US Private Credit.",
+          meta: "Volume 9 | Issue 3 | Published Q3 2025 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf",
+        },
+        v9i2: {
+          title: "China, An Uncorrelated Harbor in a Stormy World.",
+          meta: "Volume 9 | Issue 2 | Published Q2 2025 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf",
+        },
+        v9i1: {
+          title:
+            "Green finance: Sowing the seeds of China's next wave of NPLs.",
+          meta: "Volume 9 | Issue 1 | Published Q1 2024 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf",
+        },
+        v8i4: {
+          title: "United States of China.",
+          meta: "Volume 8 | Issue 4 | Published Q4 2023 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-united-states-of-china.pdf",
+        },
+        v8i3: {
+          title: "Private Credit in a Reset World Order.",
+          meta: "Volume 8 | Issue 3 | Published Q3 2023 | Allocator Edition",
+          pdf: "pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf",
+        },
+        v8i2: {
+          title: "Quantifying China's NPL Market.",
+          meta: "Volume 8 | Issue 2 | Published Q2 2023 | Allocator Edition",
+          pdf: "pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf",
+        },
+        v8i1: {
+          title:
+            "Bailing Out the Banks: The Hidden Significance of Beijing Property Support Measures.",
+          meta: "Volume 8 | Issue 1 | Published Q1 2023 | Allocator Edition",
+          pdf: "pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf",
+        },
+        v7i4: {
+          title:
+            "China Refocuses on Financial Risk and Ramps Up NPL Disposals.",
+          meta: "Volume 7 | Issue 4 | Published Q4 2022 | Allocator Edition",
+          pdf: "pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf",
+        },
+        v7i1: {
+          title:
+            "Where's the Stimulus? Parsing Beijing's Lackluster Response to Growth.",
+          meta: "Volume 7 | Issue 1 | Published 2022 | Allocator Edition",
+          pdf: "pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf",
+        },
+        v6i3: {
+          title: "New Regulations Set to Accelerate NPL Disposals.",
+          meta: "Volume 6 | Issue 3 | Published 2022 | Allocator Edition",
+          pdf: "pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf",
+        },
+        v6i2: {
+          title: "China's Property Support Measures: Rescue, Not Reflation.",
+          meta: "Volume 6 | Issue 2 | Published 2022 | Allocator Edition",
+          pdf: "pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf",
+        },
+        v6i1: {
+          title: "Evergrande.",
+          meta: "Volume 6 | Issue 1 | Published September 2021 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-evergrande.pdf",
+        },
+        v5i2: {
+          title:
+            "Sustained Shadow Banking Contraction Creating Private Credit Opportunities.",
+          meta: "Volume 5 | Issue 2 | Published April 2021 | Allocator Edition",
+          pdf: "pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf",
+        },
+      };
+
+      const getPrintSourceArticle = () =>
+        document.querySelector('[data-print-article="active"]') ||
+        document.querySelector("[data-print-article]") ||
+        document.querySelector(".reading-grid .reading");
+
+      const getPrintFilename = () =>
+        getPrintSourceArticle()?.getAttribute("data-print-filename") ||
+        defaultPrintFilename;
+      const getPrintPdfUrl = () =>
+        getPrintSourceArticle()?.getAttribute("data-print-pdf") ||
+        archiveIssueMap.v10i1.pdf;
+
+      const buildPrintEdition = () => {
+        const title =
+          document.querySelector(".issue-header h2")?.textContent.trim() || "";
+        const standfirst =
+          document.querySelector(".issue-header__dek")?.textContent.trim() ||
+          document
+            .querySelector("#current-issue p:not(.lead)")
+            ?.textContent.trim() ||
+          "";
+        const issueInfo =
+          document
+            .querySelector(".issue-header__meta span:nth-child(1)")
+            ?.textContent.trim() || "";
+        const publishedInfo =
+          document
+            .querySelector(".issue-header__meta span:nth-child(2)")
+            ?.textContent.trim() || "";
+        const editionInfo =
+          document
+            .querySelector(".issue-live__meta span:nth-child(3)")
+            ?.textContent.trim() || "Allocator Edition";
+        const sourceArticle = getPrintSourceArticle();
+        const printMeta = document.getElementById("print-meta");
+        const printTitle = document.getElementById("print-title");
+        const printStandfirst = document.getElementById("print-standfirst");
+        const printCallout = document.getElementById("print-callout");
+        const printBody = document.getElementById("print-body");
+
+        if (
+          !sourceArticle ||
+          !printMeta ||
+          !printTitle ||
+          !printStandfirst ||
+          !printCallout ||
+          !printBody
+        ) {
+          return;
+        }
+
+        const metadataLine = [issueInfo, publishedInfo, editionInfo]
+          .filter(Boolean)
+          .join(" | ");
+        printMeta.textContent = metadataLine;
+        printTitle.textContent = title;
+        if (printTitle.textContent.trim() === "#") {
+          printTitle.remove();
+        }
+        printStandfirst.textContent = standfirst;
+        printBody.innerHTML = "";
+
+        const normalizedStandfirst = standfirst
+          .replace(/[“”]/g, '"')
+          .replace(/\s+/g, " ")
+          .trim()
+          .toLowerCase();
+        let skippedTitleHeading = false;
+        let skippedStandfirstParagraph = false;
+        let calloutText = "";
+
+        const normalizePrintNode = (node) => {
+          const clean = node.cloneNode(true);
+          const walker = document.createTreeWalker(
+            clean,
+            NodeFilter.SHOW_ELEMENT,
+          );
+          const elements = [clean];
+          while (walker.nextNode()) {
+            elements.push(walker.currentNode);
+          }
+          elements.forEach((element) => {
+            element.removeAttribute("class");
+            element.removeAttribute("style");
+            element.removeAttribute("id");
+          });
+          return clean;
+        };
+
+        const printableNodes = Array.from(
+          sourceArticle.querySelectorAll("h3, p, ul, ol, blockquote"),
+        );
+        printableNodes.forEach((node) => {
+          if (node.classList.contains("lead")) {
+            return;
+          }
+
+          const clone = normalizePrintNode(node);
+
+          if (clone.tagName === "H3") {
+            const headingText = clone.textContent.trim().replace(/\.$/, "");
+            const titleText = title.replace(/\.$/, "");
+            if (!skippedTitleHeading && headingText === titleText) {
+              skippedTitleHeading = true;
+              return;
+            }
+            const printHeading = document.createElement("h2");
+            printHeading.textContent = clone.textContent;
+            printBody.appendChild(printHeading);
+            return;
+          }
+
+          if (clone.tagName === "P") {
+            const paragraphText = clone.textContent
+              .replace(/[“”]/g, '"')
+              .replace(/\s+/g, " ")
+              .trim()
+              .toLowerCase();
+            if (
+              !skippedStandfirstParagraph &&
+              paragraphText === normalizedStandfirst
+            ) {
+              skippedStandfirstParagraph = true;
+              return;
+            }
+            if (
+              !calloutText &&
+              clone.textContent.includes(
+                "In reality, China was never uninvestable",
+              )
+            ) {
+              calloutText = clone.textContent.trim();
+              return;
+            }
+          }
+
+          printBody.appendChild(clone);
+        });
+
+        const openingParagraph = printBody.querySelector("p");
+        if (openingParagraph) {
+          openingParagraph.classList.add("print-body__opening");
+        }
+
+        printCallout.textContent =
+          calloutText ||
+          "In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.";
+      };
+
+      const triggerPrintExport = (mode = "print") => {
+        buildPrintEdition();
+
+        if (mode === "view") {
+          const previewUrl = `${window.location.pathname}?printPreview=1&action=view`;
+          window.open(previewUrl, "_blank", "noopener");
+          return;
+        }
+
+        if (mode === "download") {
+          const previewUrl = `${window.location.pathname}?printPreview=1&action=download&filename=${encodeURIComponent(getPrintFilename())}`;
+          window.open(previewUrl, "_blank", "noopener");
+          return;
+        }
+
+        const previewUrl = `${window.location.pathname}?printPreview=1&action=print`;
+        window.location.href = previewUrl;
+      };
+
+      const printExportControls = document.querySelectorAll(
+        "[data-print-export]",
+      );
+      printExportControls.forEach((control) => {
+        control.addEventListener("click", (event) => {
+          event.preventDefault();
+          const mode = control.getAttribute("data-print-export") || "print";
+          triggerPrintExport(mode);
+        });
+      });
+
+      buildPrintEdition();
+
+      const previewParams = new URLSearchParams(window.location.search);
+      const isPrintPreviewMode = previewParams.get("printPreview") === "1";
+      const previewAction = previewParams.get("action") || "view";
+      let suggestedFilename = "";
+      if (isPrintPreviewMode) {
+        document.body.classList.add("print-preview");
       }
-      if(!calloutText&&clone.textContent.includes('In reality, China was never uninvestable')){
-        calloutText=clone.textContent.trim();
-        return;
+
+      if (isPrintPreviewMode) {
+        const issueKey = previewParams.get("doc");
+        const selectedIssue = issueKey ? archiveIssueMap[issueKey] : null;
+        suggestedFilename =
+          previewParams.get("filename") ||
+          selectedIssue?.pdf?.split("/").pop() ||
+          "";
+        const printMeta = document.getElementById("print-meta");
+        const printTitle = document.getElementById("print-title");
+        const printStandfirst = document.getElementById("print-standfirst");
+        const printBody = document.getElementById("print-body");
+        let handledArchiveIssue = false;
+
+        if (
+          selectedIssue &&
+          (previewAction === "view" || previewAction === "download")
+        ) {
+          if (previewAction === "download") {
+            const downloadLink = document.createElement("a");
+            downloadLink.href = selectedIssue.pdf;
+            if (suggestedFilename) {
+              downloadLink.setAttribute("download", suggestedFilename);
+            }
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+          } else {
+            window.location.replace(selectedIssue.pdf);
+          }
+          handledArchiveIssue = true;
+        }
+
+        if (
+          !handledArchiveIssue &&
+          selectedIssue &&
+          printMeta &&
+          printTitle &&
+          printStandfirst &&
+          printBody
+        ) {
+          printMeta.textContent = selectedIssue.meta;
+          printTitle.textContent = selectedIssue.title;
+          if (printTitle.textContent.trim() === "#") {
+            printTitle.remove();
+          }
+          printStandfirst.textContent =
+            "ShoreVest Insights · China Debt Dynamics";
+          printBody.innerHTML = `<iframe src="${selectedIssue.pdf}" title="${selectedIssue.title}" style="width:100%;min-height:70vh;border:1px solid rgba(0,0,0,.12);"></iframe>`;
+        }
+
+        if (!handledArchiveIssue && suggestedFilename) {
+          document.title = suggestedFilename;
+        }
       }
-    }
 
-    printBody.appendChild(clone);
-  });
-
-  const openingParagraph=printBody.querySelector('p');
-  if(openingParagraph){
-    openingParagraph.classList.add('print-body__opening');
-  }
-
-  printCallout.textContent=calloutText||'In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.';
-};
-
-const triggerPrintExport=(mode='print')=>{
-  buildPrintEdition();
-
-  if(mode==='view'){
-    const previewUrl=`${window.location.pathname}?printPreview=1&action=view`;
-    window.open(previewUrl,'_blank','noopener');
-    return;
-  }
-
-  if(mode==='download'){
-    const previewUrl=`${window.location.pathname}?printPreview=1&action=download&filename=${encodeURIComponent(getPrintFilename())}`;
-    window.open(previewUrl,'_blank','noopener');
-    return;
-  }
-
-  const previewUrl=`${window.location.pathname}?printPreview=1&action=print`;
-  window.location.href=previewUrl;
-};
-
-const printExportControls=document.querySelectorAll('[data-print-export]');
-printExportControls.forEach((control)=>{
-  control.addEventListener('click',(event)=>{
-    event.preventDefault();
-    const mode=control.getAttribute('data-print-export')||'print';
-    triggerPrintExport(mode);
-  });
-});
-
-buildPrintEdition();
-
-const previewParams=new URLSearchParams(window.location.search);
-const isPrintPreviewMode=previewParams.get('printPreview')==='1';
-const previewAction=previewParams.get('action')||'view';
-let suggestedFilename='';
-if(isPrintPreviewMode){
-  document.body.classList.add('print-preview');
-}
-
-if(isPrintPreviewMode){
-  const issueKey=previewParams.get('doc');
-  const selectedIssue=issueKey?archiveIssueMap[issueKey]:null;
-  suggestedFilename=previewParams.get('filename')||selectedIssue?.pdf?.split('/').pop()||'';
-  const printMeta=document.getElementById('print-meta');
-  const printTitle=document.getElementById('print-title');
-  const printStandfirst=document.getElementById('print-standfirst');
-  const printBody=document.getElementById('print-body');
-  let handledArchiveIssue=false;
-
-  if(selectedIssue&&(previewAction==='view'||previewAction==='download')){
-    if(previewAction==='download'){
-      const downloadLink=document.createElement('a');
-      downloadLink.href=selectedIssue.pdf;
-      if(suggestedFilename){
-        downloadLink.setAttribute('download',suggestedFilename);
+      if (
+        isPrintPreviewMode &&
+        (previewAction === "print" ||
+          (previewAction === "download" && !previewParams.get("doc")))
+      ) {
+        if (previewAction === "download" && !previewParams.get("doc")) {
+          const downloadLink = document.createElement("a");
+          downloadLink.href = getPrintPdfUrl();
+          if (suggestedFilename) {
+            downloadLink.setAttribute("download", suggestedFilename);
+          }
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          downloadLink.remove();
+          window.setTimeout(() => window.close(), 120);
+        } else {
+          window.setTimeout(() => window.print(), 120);
+        }
       }
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      downloadLink.remove();
-    }else{
-      window.location.replace(selectedIssue.pdf);
-    }
-    handledArchiveIssue=true;
-  }
+    </script>
 
-  if(!handledArchiveIssue&&selectedIssue&&printMeta&&printTitle&&printStandfirst&&printBody){
-    printMeta.textContent=selectedIssue.meta;
-    printTitle.textContent=selectedIssue.title;
-    if(printTitle.textContent.trim()==='#'){
-      printTitle.remove();
-    }
-    printStandfirst.textContent='ShoreVest Insights · China Debt Dynamics';
-    printBody.innerHTML=`<iframe src="${selectedIssue.pdf}" title="${selectedIssue.title}" style="width:100%;min-height:70vh;border:1px solid rgba(0,0,0,.12);"></iframe>`;
-  }
+    <script>
+      (() => {
+        if (window.__svScrollAnimationsInit) return;
+        window.__svScrollAnimationsInit = true;
 
-  if(!handledArchiveIssue&&suggestedFilename){
-    document.title=suggestedFilename;
-  }
-}
-
-if(isPrintPreviewMode&&(previewAction==='print'||(previewAction==='download'&&!previewParams.get('doc')))){
-  if(previewAction==='download'&&!previewParams.get('doc')){
-    const downloadLink=document.createElement('a');
-    downloadLink.href=getPrintPdfUrl();
-    if(suggestedFilename){
-      downloadLink.setAttribute('download',suggestedFilename);
-    }
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    downloadLink.remove();
-    window.setTimeout(()=>window.close(),120);
-  }else{
-    window.setTimeout(()=>window.print(),120);
-  }
-}
-</script>
-
-<script>
-(() => {
-  if (window.__svScrollAnimationsInit) return;
-  window.__svScrollAnimationsInit = true;
-
-  const style = document.createElement('style');
-  style.textContent = `
+        const style = document.createElement("style");
+        style.textContent = `
     .auto-rev { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
     .auto-rev.auto-rev--in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       .auto-rev { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
   `;
-  document.head.appendChild(style);
+        document.head.appendChild(style);
 
-  const targets = document.querySelectorAll('section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm');
-  targets.forEach((el, i) => {
-    if (el.classList.contains('rev') || el.classList.contains('auto-rev')) return;
-    if (el.closest('nav')) return;
-    el.classList.add('auto-rev');
-    el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
-  });
+        const targets = document.querySelectorAll(
+          "section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
+        );
+        targets.forEach((el, i) => {
+          if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
+            return;
+          if (el.closest("nav")) return;
+          el.classList.add("auto-rev");
+          el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
+        });
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.auto-rev').forEach(el => el.classList.add('auto-rev--in'));
-    return;
-  }
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document
+            .querySelectorAll(".auto-rev")
+            .forEach((el) => el.classList.add("auto-rev--in"));
+          return;
+        }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('auto-rev--in');
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.01, rootMargin: '35% 0px 35% 0px' });
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("auto-rev--in");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.01, rootMargin: "35% 0px 35% 0px" },
+        );
 
-  document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
-})();
-</script>
+        document
+          .querySelectorAll(".auto-rev")
+          .forEach((el) => observer.observe(el));
+      })();
+    </script>
 
-
-<footer class="legal-disclaimer" aria-label="Legal disclaimer">
-  <div class="legal-disclaimer__inner">
-    <div class="legal-disclaimer__rule" aria-hidden="true"></div>
-    <p class="legal-disclaimer__text">
-  © ShoreVest Partners, Ltd. All rights reserved.
-  This website is for informational purposes only and does not constitute
-  an offer to sell or a solicitation of an offer to buy any security.
-  Past performance is not indicative of future results. ShoreVest Partners,
-  Ltd. is not registered as an investment adviser with any regulatory
-  authority. Prospective investors should review all fund documentation
-  carefully and consult their own legal, tax, and financial advisers before
-  investing.
-    </p>
-  </div>
-</footer>
-
-</body>
+    <footer class="legal-disclaimer" aria-label="Legal disclaimer">
+      <div class="legal-disclaimer__inner">
+        <div class="legal-disclaimer__rule" aria-hidden="true"></div>
+        <p class="legal-disclaimer__text">
+          © ShoreVest Partners, Ltd. All rights reserved. This website is for
+          informational purposes only and does not constitute an offer to sell
+          or a solicitation of an offer to buy any security. Past performance is
+          not indicative of future results. ShoreVest Partners, Ltd. is not
+          registered as an investment adviser with any regulatory authority.
+          Prospective investors should review all fund documentation carefully
+          and consult their own legal, tax, and financial advisers before
+          investing.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

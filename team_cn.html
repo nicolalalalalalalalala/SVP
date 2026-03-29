@@ -1,719 +1,1222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShoreVest Partners — 团队</title>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
-<link rel="shortcut icon" href="assets/favicon.svg?v=3">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --red:#b3213f;
-      --ink:#1f1c19;
-      --ink-deep:#171412;
-      --ink-soft:#4f4a43;
-      --white:#ffffff;
-      --cream:#f6f4f0;
-      --off:#f9eef1;
-      --off-warm:#fcf3f5;
-      --sand:#f2dfe5;
-      --hero-end:#f4e2e8;
-      --rose-pale:#f8eaee;
-      --rule:rgba(48,40,34,0.12);
-      --mist:#7a7268;
-      --mist-light:#9a948b;
-      --serif:'EB Garamond', Georgia, serif;
-      --sans:'Inter', system-ui, sans-serif;
-      --max:1200px;
-      --pad:64px;
-    }
-
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-padding-top:96px; }
-    body { background:var(--white); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    img { display:block; max-width:100%; }
-    .wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
-
-    #nav {
-      position:fixed;
-      top:0; left:0; right:0;
-      z-index:200;
-      height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 var(--pad);
-      border-bottom:1px solid var(--rule);
-      background:var(--white);
-    }
-    .nav__logo { display:inline-flex; align-items:center; height:100%; }
-    .nav__logo svg { display:block; }
-    .nav__links { display:flex; gap:36px; list-style:none; }
-    .nav__links a {
-      font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
-      color:var(--ink); opacity:.45; transition:opacity .2s;
-    }
-    .nav__links a.active, .nav__links a:hover { opacity:1; }
-    .nav__right { display:flex; align-items:center; gap:22px; }
-    .nav__zh { font-size:13px; color:var(--ink); opacity:.35; transition:opacity .2s; }
-    .nav__zh:hover { opacity:.75; }
-.nav__mobile-lang{display:none}
-    .nav__lp {
-      font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
-      color:var(--ink); border:1px solid rgba(48,40,34,.2); padding:8px 20px;
-      transition:background .2s, color .2s, border-color .2s;
-    }
-    .nav__lp { background:var(--white); color:var(--ink); }
-    .nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
-    .nav__menu-btn {
-      display:none; border:1px solid rgba(48,40,34,.2); background:var(--white); color:var(--ink);
-      font-size:10px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; padding:8px 14px;
-    }
-
-    .eyebrow {
-      font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
-      color:var(--mist); display:flex; align-items:center; gap:14px; min-height:12px; margin-bottom:24px;
-    }
-    .eyebrow::after { content:''; flex:0 0 36px; height:1px; background:currentColor; }
-
-    .pagehero {
-      min-height:420px;
-      padding:148px 0 76px;
-      border-bottom:1px solid var(--rule);
-      background:var(--cream);
-      display:flex;
-      align-items:center;
-    }
-    .pagehero .wrap {
-      width:100%;
-    }
-    h1 {
-      font-family:var(--serif);
-      font-size:clamp(46px,5.6vw,78px);
-      font-weight:400;
-      line-height:1.04;
-      letter-spacing:-.02em;
-      margin-bottom:22px;
-      max-width:700px;
-    }
-    .pagehero p {
-      max-width:700px;
-      font-size:19px;
-      line-height:1.8;
-      color:var(--mist);
-      font-family:var(--serif);
-      margin-top:18px;
-    }
-
-    .team-groups { padding:72px 0 90px; }
-    .team-groups {
-      background:var(--white);
-    }
-    .group {
-      padding:32px 0 40px;
-      border-bottom:1px solid var(--rule);
-      scroll-margin-top:96px;
-    }
-    .group:first-child { border-top:1px solid var(--rule); }
-    .group__head {
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      gap:6px;
-      margin-bottom:16px;
-    }
-    .group h2 {
-      font-family:var(--serif);
-      font-weight:400;
-      font-size:clamp(24px, 2.45vw, 34px);
-      line-height:1.06;
-      letter-spacing:-.01em;
-      white-space:nowrap;
-    }
-    .group__summary {
-      font-size:13px;
-      line-height:1.58;
-      letter-spacing:.01em;
-      color:var(--mist);
-      max-width:100%;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      padding-top:2px;
-    }
-
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(5, minmax(0, 1fr));
-      gap:22px;
-    }
-    .card { display:flex; flex-direction:column; gap:9px; }
-    .photo {
-      width:100%;
-      aspect-ratio:4/5;
-      border:1px solid var(--rule);
-      background:var(--sand);
-      overflow:hidden;
-      cursor:pointer;
-    }
-    .photo img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      filter:grayscale(100%);
-      transition:filter .3s ease;
-    }
-    .card:hover .photo img,
-    .card:focus-within .photo img,
-    .card.is-active .photo img {
-      filter:grayscale(0%);
-    }
-    .photo img[alt="Steve Poon"] {
-      object-position:50% 38%;
-    }
-    .name {
-      font-family:var(--serif);
-      font-size:16px;
-      line-height:1.2;
-      letter-spacing:.01em;
-      color:var(--ink);
-      margin-bottom:1px;
-    }
-    .title {
-      font-size:10px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--red);
-      line-height:1.35;
-    }
-    .card-bio {
-      font-size:12px;
-      line-height:1.65;
-      color:rgba(246,244,240,.75);
-    }
-
-
-    .card.is-active .photo {
-      border-color:rgba(179,33,63,.52);
-      box-shadow:0 10px 24px rgba(49,39,34,.13);
-    }
-
-    .row-bio-panel {
-      grid-column:1 / -1;
-      display:none;
-      margin-top:12px;
-      background:var(--cream);
-      border-top:1px solid rgba(48,40,34,.18);
-      border-bottom:1px solid rgba(48,40,34,.12);
-      padding:42px 48px 46px;
-    }
-    .row-bio-panel.is-open { display:block; }
-    .row-bio-panel__eyebrow {
-      font-size:10px;
-      font-weight:500;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-      color:var(--mist-light);
-      margin-bottom:16px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .row-bio-panel__eyebrow::after {
-      content:'';
-      width:28px;
-      height:1px;
-      background:currentColor;
-      opacity:.65;
-    }
-    .row-bio-panel__name {
-      font-family:var(--serif);
-      font-size:40px;
-      line-height:1.04;
-      margin-bottom:11px;
-      letter-spacing:-.012em;
-      color:var(--ink);
-      font-weight:400;
-    }
-    .row-bio-panel__meta {
-      display:grid;
-      gap:6px;
-      margin-bottom:22px;
-      padding-bottom:14px;
-      border-bottom:1px solid rgba(48,40,34,.12);
-      font-size:12px;
-      letter-spacing:.02em;
-      text-transform:none;
-      color:var(--mist);
-      font-weight:400;
-    }
-    .row-bio-panel__role {
-      color:var(--ink-soft);
-      font-weight:500;
-    }
-    .row-bio-panel__text {
-      font-family:var(--serif);
-      font-size:21px;
-      line-height:1.78;
-      color:var(--ink-deep);
-      max-width:1020px;
-      white-space:pre-line;
-      text-wrap:pretty;
-    }
-
-    @media (max-width:1100px) {
-      :root { --pad:40px; }
-      .grid { grid-template-columns:repeat(3, minmax(0, 1fr)); }
-      .group__head {
-        gap:6px;
-        margin-bottom:12px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoreVest Partners — 团队</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
+    <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --red: #b3213f;
+        --ink: #1f1c19;
+        --ink-deep: #171412;
+        --ink-soft: #4f4a43;
+        --white: #ffffff;
+        --cream: #f6f4f0;
+        --off: #f9eef1;
+        --off-warm: #fcf3f5;
+        --sand: #f2dfe5;
+        --hero-end: #f4e2e8;
+        --rose-pale: #f8eaee;
+        --rule: rgba(48, 40, 34, 0.12);
+        --mist: #7a7268;
+        --mist-light: #9a948b;
+        --serif: "EB Garamond", Georgia, serif;
+        --sans: "Inter", system-ui, sans-serif;
+        --max: 1200px;
+        --pad: 64px;
       }
-    }
 
-    @media (max-width:767px) {
-      :root { --pad:18px; }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-padding-top: 96px;
+      }
+      body {
+        background: var(--white);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--pad);
+      }
+
       #nav {
-        height:auto;
-        min-height:72px;
-        align-items:center;
-        flex-wrap:wrap;
-        row-gap:12px;
-        padding:12px var(--pad);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 var(--pad);
+        border-bottom: 1px solid var(--rule);
+        background: var(--white);
       }
-      .nav__logo svg { height:48px; }
-      .nav__menu-btn { display:inline-flex; }
-      .nav__right { margin-left:auto; gap:10px; }
-      .nav__zh { display: none; }
-      .nav__mobile-lang { display: inline-flex; }
-      .nav__lp { display:inline-flex; }
+      .nav__logo {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+      }
+      .nav__logo svg {
+        display: block;
+      }
       .nav__links {
-        display:none;
-        width:100%;
-        order:3;
-        flex-direction:column;
-        gap:14px;
-        padding:10px 0 12px;
-        border-top:1px solid var(--rule);
+        display: flex;
+        gap: 36px;
+        list-style: none;
       }
-      #nav.menu-open .nav__links { display:flex; }
       .nav__links a {
-        font-size:10px;
-        white-space:nowrap;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        opacity: 0.45;
+        transition: opacity 0.2s;
       }
-      .pagehero { min-height:auto; padding-top:140px; padding-bottom:46px; }
-      .pagehero p { font-size:16px; line-height:1.65; }
-      .grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
+      .nav__links a.active,
+      .nav__links a:hover {
+        opacity: 1;
+      }
+      .nav__right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .nav__zh {
+        font-size: 13px;
+        color: var(--ink);
+        opacity: 0.35;
+        transition: opacity 0.2s;
+      }
+      .nav__zh:hover {
+        opacity: 0.75;
+      }
+      .nav__mobile-lang {
+        display: none;
+      }
+      .nav__lp {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        border: 1px solid rgba(48, 40, 34, 0.2);
+        padding: 8px 20px;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .nav__lp {
+        background: var(--white);
+        color: var(--ink);
+      }
+      .nav__lp:hover {
+        background: var(--red);
+        color: var(--white);
+        border-color: var(--red);
+      }
+      .nav__menu-btn {
+        display: none;
+        border: 1px solid rgba(48, 40, 34, 0.2);
+        background: var(--white);
+        color: var(--ink);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 8px 14px;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mist);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 12px;
+        margin-bottom: 24px;
+      }
+      .eyebrow::after {
+        content: "";
+        flex: 0 0 36px;
+        height: 1px;
+        background: currentColor;
+      }
+
+      .pagehero {
+        min-height: 420px;
+        padding: 148px 0 76px;
+        border-bottom: 1px solid var(--rule);
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+      }
+      .pagehero .wrap {
+        width: 100%;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-size: clamp(46px, 5.6vw, 78px);
+        font-weight: 400;
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        margin-bottom: 22px;
+        max-width: 700px;
+      }
+      .pagehero p {
+        max-width: 700px;
+        font-size: 19px;
+        line-height: 1.8;
+        color: var(--mist);
+        font-family: var(--serif);
+        margin-top: 18px;
+      }
+
+      .team-groups {
+        padding: 72px 0 90px;
+      }
+      .team-groups {
+        background: var(--white);
+      }
+      .group {
+        padding: 32px 0 40px;
+        border-bottom: 1px solid var(--rule);
+        scroll-margin-top: 96px;
+      }
+      .group:first-child {
+        border-top: 1px solid var(--rule);
+      }
+      .group__head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
       .group h2 {
-        font-size:clamp(20px, 4.4vw, 30px);
-        white-space:normal;
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(24px, 2.45vw, 34px);
+        line-height: 1.06;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
       }
       .group__summary {
-        font-size:12px;
-        line-height:1.52;
-        max-width:none;
-        white-space:normal;
-        overflow:visible;
-        text-overflow:clip;
+        font-size: 13px;
+        line-height: 1.58;
+        letter-spacing: 0.01em;
+        color: var(--mist);
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-top: 2px;
       }
-      .row-bio-panel { padding:26px 20px 30px; margin-top:8px; }
-      .row-bio-panel__eyebrow { margin-bottom:12px; }
-      .row-bio-panel__name { font-size:32px; margin-bottom:8px; }
-      .row-bio-panel__meta {
-        gap:6px;
-        margin-bottom:16px;
-        padding-bottom:12px;
-        font-size:11px;
-      }
-      .row-bio-panel__text { font-size:18px; line-height:1.68; }
-    }
 
-    @media (max-width:520px) {
-      .team-groups { padding-top:42px; }
-      .group { padding:24px 0 32px; }
-      .grid { grid-template-columns:1fr; gap:14px; }
-      .card { gap:8px; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
       .photo {
-        max-height:none;
+        width: 100%;
+        aspect-ratio: 4/5;
+        border: 1px solid var(--rule);
+        background: var(--sand);
+        overflow: hidden;
+        cursor: pointer;
       }
-      .name { font-size:17px; }
-      .title { font-size:9px; letter-spacing:.12em; }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+      .card:hover .photo img,
+      .card:focus-within .photo img,
+      .card.is-active .photo img {
+        filter: grayscale(0%);
+      }
+      .photo img[alt="Steve Poon"] {
+        object-position: 50% 38%;
+      }
+      .name {
+        font-family: var(--serif);
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        color: var(--ink);
+        margin-bottom: 1px;
+      }
+      .title {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--red);
+        line-height: 1.35;
+      }
+      .card-bio {
+        font-size: 12px;
+        line-height: 1.65;
+        color: rgba(246, 244, 240, 0.75);
+      }
+
+      .card.is-active .photo {
+        border-color: rgba(179, 33, 63, 0.52);
+        box-shadow: 0 10px 24px rgba(49, 39, 34, 0.13);
+      }
+
       .row-bio-panel {
-        padding:22px 16px 26px;
+        grid-column: 1 / -1;
+        display: none;
+        margin-top: 12px;
+        background: var(--cream);
+        border-top: 1px solid rgba(48, 40, 34, 0.18);
+        border-bottom: 1px solid rgba(48, 40, 34, 0.12);
+        padding: 42px 48px 46px;
       }
-      .row-bio-panel__name { font-size:28px; }
-      .row-bio-panel__text { font-size:17px; line-height:1.62; }
-    }
-  
-/* ══ MOBILE NAV REFINEMENT */
-@media (max-width:767px) {
-  #nav {
-    height:auto;
-    min-height:72px;
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    align-items:center;
-    column-gap:12px;
-    row-gap:12px;
-  }
-  .nav__logo {
-    min-width:0;
-    max-width:min(100%,260px);
-  }
-  .nav__logo svg {
-    height:48px;
-    max-width:100%;
-  }
-  .nav__right {
-    display:inline-flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:10px;
-    margin-left:auto;
-    min-width:0;
-    flex-wrap:nowrap;
-  }
-  .nav__menu-btn,
-  .nav__lp {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:44px;
-    padding:0 16px;
-    flex:0 0 auto;
-    white-space:nowrap;
-  }
-  .nav__zh {
-    flex:0 0 auto;
-    white-space:nowrap;
-  }
-  .nav__links {
-    grid-column:1 / -1;
-    width:100%;
-    padding:14px 0 4px;
-  }
-}
-
-@media (max-width:520px) {
-  #nav {
-    column-gap:10px;
-    row-gap:10px;
-  }
-  .nav__logo {
-    max-width:min(100%,180px);
-  }
-  .nav__logo svg {
-    height:auto;
-    max-height:42px;
-    width:100%;
-  }
-  .nav__right {
-    gap:8px;
-  }
-  .nav__zh {
-    display:none;
-  }
-  .nav__lp,
-  .nav__menu-btn {
-    min-height:40px;
-    padding:0 12px;
-  }
-  .nav__lp {
-    font-size:9px;
-  }
-}
-
-
-
-/* ══ LEGAL DISCLAIMER FOOTER */
-.legal-disclaimer {
-  background:#0c0c0a;
-  color:rgba(246,244,240,0.6);
-  padding:26px var(--pad) 30px;
-}
-.legal-disclaimer__inner {
-  max-width:var(--max);
-  margin:0 auto;
-}
-.legal-disclaimer__rule {
-  height:1px;
-  background:rgba(139,26,47,0.2);
-  margin-bottom:14px;
-}
-.legal-disclaimer__text {
-  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
-  font-size:12px;
-  line-height:1.6;
-  letter-spacing:.08em;
-  font-variant:small-caps;
-}
-.legal-disclaimer--cn .legal-disclaimer__text {
-  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
-  font-variant:normal;
-}
-@media (max-width:900px){
-  .legal-disclaimer { padding:22px 28px 26px; }
-}
-
-</style>
-</head>
-<body>
-  <nav id="nav">
-    <a href="index_cn.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
-      <g transform="scale(0.431)">
-        <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="#b3213f"/>
-        <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="#b3213f"/>
-        <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f"/>
-        <circle cx="48" cy="82" r="3.5" fill="#b3213f"/>
-      </g>
-      <line x1="52" y1="8" x2="52" y2="44" stroke="#b3213f" stroke-width="0.5" opacity="0.22"/>
-      <text x="62" y="28" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="24" letter-spacing="2" fill="#0c0c0a">ShoreVest</text>
-      <line x1="62" y1="32" x2="210" y2="32" stroke="#b3213f" stroke-width="0.4" opacity="0.4"/>
-      <text x="62" y="44" font-family="Inter, sans-serif" font-weight="300" font-size="9.5" letter-spacing="4" fill="#0c0c0a" opacity="0.45">新 岸 資 本</text>
-    </svg></a>
-    <ul class="nav__links" id="nav-links">
-      <li><a href="firm_cn.html">公司简介</a></li>
-      <li><a href="strategy_cn.html">策略</a></li>
-      <li><a href="insights_cn.html">洞察</a></li>
-      <li><a href="press_cn.html">新闻</a></li>
-      <li><a href="team_cn.html" class="active">团队</a></li>
-    <li class="nav__mobile-lang"><a href="team.html">EN</a></li></ul><div class="nav__right"><a href="investor-access_cn.html" class="nav__lp">投资者入口</a><button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button></div>
-  </nav>
-
-  <section class="pagehero">
-    <div class="wrap">
-      <div class="eyebrow">团队</div>
-      <h1>ShoreVest 团队</h1>
-      <p>ShoreVest 在同一中国私募信贷平台下整合投资、顾问、客户覆盖、法务合规与关联平台管理能力。点击任意成员卡片可展开查看完整简介。</p>
-    </div>
-  </section>
-
-  <main class="team-groups">
-    <div class="wrap">
-      <section class="group" aria-labelledby="leadership-investment">
-        <div class="group__head">
-          <h2 id="leadership-investment">领导层与投资</h2>
-          <p class="group__summary">负责 ShoreVest 核心私募信贷策略的组合构建、承销纪律与投资决策。</p>
-        </div>
-<div class="grid">
-  <article class="card"><div class="photo"><img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger" loading="eager" decoding="async"></div><div class="name">方杰明</div><p class="card-bio">ShoreVest Partners 创始人及公司中国私募信贷策略的架构设计者。2004 年曾共同创立 Shoreline Capital——中国最早专注困境债务的平台之一。在中国信贷市场拥有逾二十年的项目开发、交易结构设计与回收执行经验，常驻广州。</p></article>
-  <article class="card"><div class="photo"><img src="assets/images/ada_bi.jpg" alt="毕凤笙" loading="eager" decoding="async"></div><div class="name">毕凤笙</div><p class="card-bio">负责 ShoreVest 平台的财务管理、基金运营与投资者报告工作。在中国另类资产管理领域拥有丰富的基金运营经验与机构化财务管控能力。</p></article>
-  <article class="card"><div class="photo"><img src="assets/images/mecy_mei.jpg" alt="梅翠" loading="eager" decoding="async"></div><div class="name">梅翠</div><p class="card-bio">投资委员会成员。负责 ShoreVest 核心私募信贷组合的承做与资产管理，在中国法律结构设计与担保执行方面经验深厚。</p></article>
-  <article class="card"><div class="photo"><img src="assets/images/hui_zheng.jpg" alt="郑 慧" loading="eager" decoding="async"></div><div class="name">郑慧</div><p class="card-bio">投资委员会成员。专注于项目开发、交易结构设计与回收执行，尤其擅长在中国法律框架下开展资产抵押贷款与困境处置。</p></article>
-  <article class="card"><div class="photo"><img src="assets/images/mike_chang.jpg" alt="张健恩" loading="eager" decoding="async"></div><div class="name">张健恩</div><p class="card-bio">支持 ShoreVest 私募信贷平台的项目来源开发、承做与投后组合管理。</p></article>
-</div>
-      </section>
-
-      <section class="group" aria-labelledby="advisory">
-        <div class="group__head">
-          <h2 id="advisory">顾问团队</h2>
-          <p class="group__summary">提供政策、监管与市场洞察，支持承销判断、风险校准与战略决策。</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="photo"><img src="assets/images/shanjuan_jiang.jpg" alt="Shanjuan Jiang" loading="eager" decoding="async"></div><div class="name">江珊娟</div><p class="card-bio">凭借其在中国金融行业与机构网络中的深厚经验，提供战略及监管相关顾问支持。</p></article>
-          <article class="card"><div class="photo"><img src="assets/images/philip_young.jpg" alt="Philip Young" loading="eager" decoding="async"></div><div class="name">杨斐立</div><p class="card-bio">为 ShoreVest 投资论点提供政策与宏观经济视角，重点关注中国监管环境与信贷周期变化。</p></article>
-          <article class="card"><div class="photo"><img src="assets/images/dinny_mcmahon.jpg" alt="马德宁" loading="eager" decoding="async"></div><div class="name">马德宁</div><p class="card-bio">中国金融体系、债务市场及影子银行领域的作者与专家。为 ShoreVest 的研究与投资者沟通提供分析支持与市场背景。</p></article>
-          <article class="card"><div class="photo"><img src="assets/images/steve_poon.jpg" alt="Steve Poon" loading="eager" decoding="async"></div><div class="name">潘世维</div><p class="card-bio">为 ShoreVest 顾问职能带来结构化融资与信贷市场专长，重点支持交易结构设计与交易对手关系拓展。</p></article>
-        </div>
-      </section>
-
-      <section class="group" aria-labelledby="business-function-heads">
-        <div class="group__head">
-          <h2 id="business-function-heads">业务职能负责人</h2>
-          <p class="group__summary">负责支撑 ShoreVest 私募信贷策略的平台执行职能，包括资本解决方案、运营及公司基础架构。</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="photo"><img src="assets/images/james_li.jpeg" alt="James Li" loading="eager" decoding="async"></div><div class="name">李杰明</div><p class="card-bio">负责资本结构顾问与项目开发工作，连接借款人与机构交易对手，推进 ShoreVest 投资管线中的交易落地。</p></article>
-        </div>
-      </section>
-
-      <section class="group" aria-labelledby="client-solutions">
-        <div class="group__head">
-          <h2 id="client-solutions">客户解决方案</h2>
-          <p class="group__summary">负责 ShoreVest 私募信贷平台的投资者关系、募资沟通与客户覆盖。</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="photo"><img src="assets/images/john_jones.jpg" alt="John Jones" loading="eager" decoding="async"></div><div class="name">约翰·琼斯</div><p class="card-bio">负责 ShoreVest 在亚洲以外 LP 的投资者关系覆盖，支持 Fund III 的募资与持续投资者沟通。</p></article>
-          <article class="card"><div class="photo"><img src="assets/images/kelvin_chan.jpg" alt="Kelvin Chan" loading="eager" decoding="async"></div><div class="name">陈启文</div><p class="card-bio">负责 ShoreVest 在亚洲地区的投资者关系覆盖，管理区域内机构 LP 关系并支持公司基金募资。</p></article>
-        </div>
-      </section>
-
-      <section class="group" aria-labelledby="legal-compliance">
-        <div class="group__head">
-          <h2 id="legal-compliance">法务与合规</h2>
-          <p class="group__summary">负责法律架构、合规管理与内控体系建设，保障机构治理标准。</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="photo"><img src="assets/images/lillian_xu.jpg" alt="Lillian Xu" loading="eager" decoding="async"></div><div class="name">徐丽莲</div><p class="card-bio">负责 ShoreVest 投资平台及基金载体的法律结构设计、监管合规与治理体系建设。</p></article>
-          <article class="card"><div class="photo"><img src="assets/images/cathy_chen.jpg" alt="Cathy Chen" loading="eager" decoding="async"></div><div class="name">陈凯茜</div><p class="card-bio">负责 ShoreVest 中国境内实体的合规运营、监管报备与内部控制流程管理。</p></article>
-        </div>
-      </section>
-
-      <section class="group" aria-labelledby="affiliate-platform">
-        <div class="group__head">
-          <h2 id="affiliate-platform">资产处置平台管理层</h2>
-          <p class="group__summary">通过在中国重点区域的项目发掘、资产服务与执行能力，支持 ShoreVest 投资平台。</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="photo"><img src="assets/images/jimmy_cheung.jpg" alt="张志明" loading="eager" decoding="async"></div><div class="name">张志明</div><p class="card-bio">负责 ShoreVest 香港团队的项目开发与资产管理工作，支持交易来源拓展与处置执行。</p></article>
-          <article class="card"><div class="photo"><img src="assets/images/daoping_yang.jpg" alt="杨道平" loading="eager" decoding="async"></div><div class="name">杨道平</div><p class="card-bio">负责 ShoreVest 广州业务的项目开发、资产服务与回收执行，并直接统筹本地投后组合管理。</p></article>
-          <article class="card"><div class="photo"><img src="assets/images/xiaoqiang_ji.jpg" alt="季小强" loading="eager" decoding="async"></div><div class="name">季小强</div><p class="card-bio">支持 ShoreVest 在上海区域的项目开发与投后资产服务，重点覆盖区域交易来源与借款人管理。</p></article>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <script>
-    const profileData = {
-      '方杰明': {
-        role: '管理合伙人兼创始人',
-        education: '法学博士（JD）、工商管理硕士（MBA）— 芝加哥大学',
-        bio: `本杰明·方杰明是 ShoreVest Partners 的管理合伙人兼创始人，也是中国私募信贷市场的先行者之一。他担任公司投资委员会委员，在该领域已管理超过 20 亿美元资金，背后投资人来自全球多家机构。在二十余年的中国私募信贷从业经历中，他长期直接与资产出售方、借款人及金融机构合作，在复杂且往往高度博弈的情境下设计并推动各类资本解决方案的落地。创立 ShoreVest 和 Shoreline Capital 之前，方先生曾创办多家公司，其中两家成功出售给上市公司。研究生期间，他曾在美迈斯律师事务所（O’Melveny & Myers）参与中国早期不良债务及私募股权交易。方先生熟练掌握中文口语及书面语，拥有芝加哥大学法学博士和工商管理硕士学位，并持有美国加利福尼亚州律师执业资格。`
-      },
-      '毕凤笙': {
-        role: '合伙人兼首席财务官',
-        education: '国际贸易学士 — 广东外语外贸大学',
-        bio: `Ada Bi 是 ShoreVest Partners 的合伙人兼首席财务官，同时为公司投资委员会委员。她负责公司的财务、税务、基金报告、现金管理以及已投项目的财务控制，并在多项交易的运营架构设计中发挥了核心作用。她的经验横跨基金层面的财务管理，以及中国复杂私募信贷投资所涉及的执行与管控要求。加入 ShoreVest 之前，Bi 女士于 2008 年至 2016 年担任 Shoreline Capital 首席财务官。更早之前，她曾任 AIG 中国财产险业务财务负责人，负责财务报告、资金管理、税务及预算工作，也曾在中信保诚和加拿大皇家银行任职。她是英国特许公认会计师公会资深会员、加拿大注册专业会计师，并拥有广东外语外贸大学国际贸易学士学位。`
-      },
-      '梅翠': {
-        role: '合伙人',
-        education: '经济学硕士 — 南京大学；CFA 持证人',
-        bio: `Mecy Mei 是 ShoreVest Partners 的合伙人及投资委员会委员。她的投资经验覆盖中国私募信贷与特殊机会交易的全生命周期，包括项目开发、尽职调查、结构设计、收购、谈判、投后管理以及退出。她已主导并完成多项符合公司策略方向的投资，在复杂信贷承做及组合构建方面经验尤为丰富。加入 ShoreVest 之前，Mei 女士曾在 Shoreline Capital 担任合伙人长达八年。更早之前，她曾任晨星基金分析师，专注于基金策略分析，并与外部客户合作构建中国债券及股票投资组合。她拥有合肥工业大学经济学学士、南京大学经济学硕士学位，并于 2018 年取得 CFA 特许资格。`
-      },
-      '郑慧': {
-        role: '合伙人',
-        education: '涉外经济法硕士（LLM）— 中山大学法学院',
-        bio: `Hui Zheng 是 ShoreVest Partners 的合伙人及投资委员会委员。她的经验涵盖中国私募信贷投资的全流程，包括项目开发、法律评估、交易结构设计、收购、谈判、投后管理及退出。她曾直接参与多项特殊机会及不良贷款交易，将投资执行经验与深厚的法律程序和资产回收背景结合起来。加入 ShoreVest 之前，Zheng 女士曾在 Shoreline Capital 担任合伙人八年。更早之前，她曾在广东一家律师事务所执业，参与不良资产的清算与回收工作，并就相关议题发表过多篇论文，其中包括关于中国当时新实施破产法对不良资产清算负面影响的研究。她拥有中山大学法学院涉外经济法法学硕士学位。`
-      },
-      '张健恩': {
-        role: '合伙人',
-        education: 'MBA — 麻省理工学院斯隆管理学院；学士 — 斯坦福大学',
-        bio: `Michael Chang 是 ShoreVest Partners 的合伙人。他为公司的人力资源、信息技术、财务及合规事务提供支持与建议，凭借其在美国及亚洲逾十年的投资管理经验，为公司带来跨职能、跨区域的综合视角。他的背景融合了机构投资经验与运营、组织管理能力，支持 ShoreVest 平台的整体建设与发展。加入 ShoreVest 之前，Chang 先生曾任职于 Stamos Capital Partners、桥水基金和 Cambridge Associates。他拥有麻省理工学院斯隆管理学院 MBA 学位，以及斯坦福大学文学学士学位。`
-      },
-      '江珊娟': {
-        role: '高级顾问合伙人',
-        education: '金融 MBA — 加州大学戴维斯分校；机械工程博士 — 加州大学洛杉矶分校；工程物理学士 — 清华大学',
-        bio: `江珊娟是 ShoreVest 的高级顾问合伙人，主要就公司在中国另类投资领域的战略、项目开发及市场拓展提供建议。她拥有逾十五年经验，历经机构投资、基金管理及跨境资本募集等多个领域，曾在富兰克林邓普顿、中金前海发展基金管理公司、CalPERS 及 CalSTRS 等机构担任高级职务。她的经验覆盖公开市场与私募市场、中国另类投资，以及连接全球资本与中国境内投资机会的平台建设。加入 ShoreVest 之前，江女士曾任富兰克林邓普顿高级副总裁兼中国另类投资负责人，此前亦曾担任中金前海发展基金管理公司董事总经理。职业早期，她曾先后在加州公务员退休基金（CalPERS）和加州教师退休基金（CalSTRS）担任投资官，专注于私募股权及投资策略。她的职业生涯始于通用电气。江女士拥有加州大学戴维斯分校管理学院金融 MBA、加州大学洛杉矶分校机械工程博士学位，以及清华大学工程物理学学士学位。`
-      },
-      '杨斐立': {
-        role: '高级顾问合伙人',
-        education: '理学学士 — 台湾大学；MBA — 芝加哥大学；国际投资文凭 — 斯坦福大学',
-        bio: `Philip Young 是 ShoreVest 的高级顾问合伙人，主要就投资策略及业务发展向公司提供建议。他在大中华区及更广泛亚洲市场的保险、财富管理和资本市场领域拥有数十年经验，并在金融行业高层建立了深厚而长期的关系网络。他的职业背景横跨传统资产和另类资产，对机构资本的配置与管理具有尤其深入的经验。加入 ShoreVest 之前，Young 先生曾担任台湾 TransGlobe Life Insurance 独立董事，并在中国多家财富管理公司担任高级顾问职务。更早之前，他曾为多家中日保险机构负责投资事务，在亚洲资本市场积累了广泛经验，同时也参与过亚洲以外地区的投资活动。他拥有台湾大学理学学士学位、芝加哥大学 MBA 学位，以及斯坦福大学国际投资文凭。Young 先生目前亦于台北台湾大学财务金融学系及香港大学中国商业学院授课，并著有《财富管理的本质》一书，于 2022 年出版。`
-      },
-      '马德宁': {
-        role: '经济顾问',
-        education: '国际关系（中文项目）— 约翰斯·霍普金斯大学 SAIS 南京校区',
-        bio: `Dinny McMahon 是 ShoreVest Partners 的经济顾问，主要协助公司分析中国信贷市场的运行动态，并支持投资委员会的战略判断。他的研究重点包括中国商业银行体系、不良贷款的规模与性质、金融体系出清进程，以及影响公司项目来源与执行环境的更广泛宏观经济力量。McMahon 先生曾在中国从事近十年财经新闻报道，其中包括在《华尔街日报》北京分社工作六年、在道琼斯通讯社上海分社工作四年，并曾为《远东经济评论》撰稿。2015 年，他离开中国，赴华盛顿哥伦比亚特区伍德罗·威尔逊国际学者中心担任研究员，并在此期间撰写《中国债务长城》一书，该书于 2018 年出版。此后，他又以保尔森研究所智库 MacroPolo 研究员身份，撰写有关中国金融体系出清的研究，并持续为金融服务机构开展中国金融体系相关研究工作。他精通中文，曾在北京和昆明学习中文，之后又在约翰斯·霍普金斯大学高级国际问题研究学院南京校区以中文修读一年国际关系课程。`
-      },
-      '潘世维': {
-        role: '高级顾问合伙人',
-        education: '会计学硕士 — 澳大利亚新南威尔士大学；金融学士 — 澳大利亚麦考瑞大学',
-        bio: `Steve Poon 是 ShoreVest 的高级顾问合伙人，主要就亚洲私募信贷、特殊机会及困境债务投资提供建议，重点聚焦于项目开发、交易结构设计及分销安排。他在投资银行、自有资金投资及信贷市场领域拥有逾二十五年经验，曾在凯雷、平安、法国兴业银行、渣打银行、法国巴黎银行及美林等机构担任高级职务。他的职业背景涵盖高收益债、夹层融资、不良贷款、资本重组、杠杆融资及其他结构化信贷解决方案，并在中国及香港市场拥有深厚经验。加入 ShoreVest 之前，Poon 先生曾任凯雷董事总经理，参与建立并管理凯雷亚洲私募信贷业务，重点覆盖高收益及特殊机会投资。更早之前，他曾在平安担任多个高级管理职务，负责发展聚焦于高收益夹层债、境内外企业信贷、不良贷款及重组机会的投资平台。他亦曾担任法国兴业银行中国特殊机会业务主管，此前还曾在渣打银行、法国巴黎银行及美林从事债务资本市场、结构化解决方案、并购顾问及中国投资银行等相关工作。Poon 先生是英格兰及威尔士特许会计师协会会员，并拥有谢菲尔德大学 MBA 学位。`
-      },
-      '李杰明': {
-        role: '资本解决方案团队董事',
-        education: '金融工程硕士 — 康奈尔大学；应用数学、经济学双学位 — 加州大学圣地亚哥分校',
-        bio: `李杰明是 ShoreVest 资本解决方案团队董事，负责公司私募信贷平台下的资本结构顾问服务及特殊机会项目执行。他拥有逾十年经验，长期参与重组、负债管理及跨境资本市场相关的复杂交易结构设计与执行。加入 ShoreVest 之前，李先生曾在 Perella Weinberg Partners 参与多项具有代表性的重组项目顾问工作。该机构是全球最具影响力的重组顾问平台之一。此后，他亦曾任职于 Cowen 特殊机会团队，并在花旗集团工作近九年，于首席投资办公室负责跨资产风险策略及资本市场配置相关事务。李先生拥有康奈尔大学金融工程硕士学位，以及加州大学圣地亚哥分校应用数学和经济学双学位。`
-      },
-      '约翰·琼斯': {
-        role: '客户解决方案部董事（亚洲以外地区）',
-        education: '经济学学士 — 南加州大学；MBA — 芝加哥大学',
-        bio: `John Jones 是 ShoreVest Partners 客户解决方案部董事 - 亚洲以外地区，负责美洲、欧洲及中东地区的客户拓展与维护工作。他拥有逾十五年经验，曾主导横跨公开及私募信贷投资策略的业务发展工作，兼具机构募资经验，以及对保险资金和另类投资平台的深入理解。加入 ShoreVest 之前，Jones 先生任职于 PIMCO 金融机构业务团队，向保险公司一般账户投资提供资产管理及顾问服务。他其后亦曾服务于两家新兴系统化另类资产管理机构，主要负责企业战略及募资工作。Jones 先生拥有南加州大学经济学学士学位和芝加哥大学 MBA 学位。本科期间，他曾以普通话参与教会服务传道活动两年。`
-      },
-      '陈启文': {
-        role: '亚洲客户解决方案部董事',
-        education: '会计与数学专业（荣誉）— 滑铁卢大学；CFA、CA、CPA',
-        bio: `陈启文是 ShoreVest 亚洲客户解决方案部董事，专注于公司平台层面的投资者关系、客户覆盖及战略发展工作。他常驻香港，围绕投资者沟通、关系维护及公司定位与外部机构密切合作，其职业背景横跨私募股权、战略发展、金融科技投资及金融服务研究分析。他的经验结合了机构资本市场视角，以及在投资和成长阶段企业环境中的运营与战略判断。加入 ShoreVest 之前，陈先生于 2024 年 12 月前担任 500 Global 战略发展副总监，其工作包括东南亚成长基金的组合分析、项目管线评估、募资与投资者关系，以及退出执行。更早之前，他曾在蚂蚁金服、复星恒利证券及平安资产管理担任投资及战略发展相关职务，覆盖国际投资、战略收购、海外私募股权平台建设及组合管理等领域。他的职业生涯早期在 SGS Asset Management 和 National Bank Financial 从事私募股权及金融服务研究工作，此前亦曾任职于德勤咨询。陈先生毕业于滑铁卢大学会计与数学专业，成绩优异，并持有 CFA、CA 及 CPA 专业资格。`
-      },
-      '徐丽莲': {
-        role: '高级法律顾问',
-        education: '法学学士 — 浙江大学；法学硕士（中国商法）— 香港中文大学',
-        bio: `徐丽莲是 ShoreVest 的高级法律顾问，并担任投资委员会列席成员。她常驻广州，负责就公司投资平台相关的法律及监管事务提供意见，拥有十四年经验，职业背景涵盖律师事务所执业、基金管理及企业内部合规管理。自 2024 年 8 月加入 ShoreVest 以来，她持续支持公司在交易执行、尽职调查、基金相关事务及持续性风险监督方面的法律工作。加入 ShoreVest 之前，徐女士曾在金奥金融、前兴资本管理、广州金控基金管理及中财国龙资本管理担任高级法律及合规职务。职业早期，她曾在中伦律师事务所广州办公室执业。徐女士拥有浙江大学法学学士学位及香港中文大学中国商法法学硕士学位，并持有中国律师执业资格。`
-      },
-      '陈凯茜': {
-        role: '法律顾问',
-        education: '法学学位 — 复旦大学；中国法律职业资格',
-        bio: `陈凯茜是 ShoreVest Partners 的法律顾问，常驻公司广州办公室。她负责贯穿投资全流程的法律事务，包括募资、尽职调查、投资分析、交易谈判、投后管理及退出。她的职业背景结合了交易法律工作与投资端实务经验，因此在风险管理与项目执行两方面均具备较强的实务判断。加入 ShoreVest 之前，陈女士曾在海航投资担任法律及投资相关职务，包括风控部法务经理及投行事业部投资经理，重点处理私募股权基金、融资租赁、股权质押融资等相关法律事务，以及各类商业和公司纠纷。职业早期，她曾先后在君合律师事务所及 Rajah & Tann 任职，参与首次公开募股、私募股权投资、跨境股权及资产收购、股权投资及公司重组等项目。陈女士毕业于复旦大学法学专业，并已取得中国法律职业资格。`
-      },
-      '张志明': {
-        role: '资产处置平台董事长',
-        education: '物理学学士 — 台湾成功大学；生物物理博士 — 堪萨斯大学',
-        bio: `张志明是 ShoreVest Partners 的顾问合伙人，同时担任 ShoreVest Asset Solutions 董事长。ShoreVest Asset Solutions 为公司自有的资产服务平台。作为一位企业家及长期深耕大中华区的投资人，他曾在多个行业创建并运营业务，覆盖房地产开发、能源、基础设施、医疗健康、酒店及金融服务等多个领域。他的经验融合了交易执行、经营判断及区域内长期资本配置能力。张先生的职业生涯始于西屋电气。1994 年至 1997 年期间，他主导支持欧洲跨国企业在大中华区开展大型发电项目的出售及融资工作，相关交易总额接近 20 亿美元。此后数十年间，他持续活跃于投资和经营管理岗位。他亦曾作为有限合伙人投资 ShoreVest 旗下多只基金，并曾担任 ShoreVest 其中一位创始人的导师。张先生拥有台湾成功大学物理学学士学位，以及堪萨斯大学生物物理学博士学位。`
-      },
-      '杨道平': {
-        role: '华东区董事总经理',
-        education: '工商管理硕士 — 中国人民大学；市场营销课程 — 佐治亚理工学院；企业管理文学学士 — 中央广播电视大学',
-        bio: `杨道平是 ShoreVest Ventures 华东区董事总经理，同时为 We-Dare Ventures (Shanghai), LLC 的创始人。他是一位资深管理者，拥有逾三十五年横跨石油、石化、另类投资及困境资产处置领域的丰富经验，在产业运营与金融市场两方面都具备少见的深度。杨先生曾在中石化仪征化纤工作近二十年，历任科研、质量控制及国际业务开发等职务，后升任上海石化工贸副总经理。在该岗位上，他负责全球供应链、进出口谈判，以及每年数百万吨石化产品的定价与贸易。自 2015 年以来，杨先生专注于另类投资，带领团队在华东地区执行自国有资产管理公司收购不良贷款后的处置与回收工作。他亦创办了 We-Dare Ventures，并通过该平台投资于高科技、生态环保、生物医药及传媒等领域的初创企业。职业早期，杨先生曾任 Amoco Corporate Inc. 中国业务的销售代表及经理，在美国建立买卖双方网络并提供现场客户服务。杨先生拥有中国人民大学工商管理硕士学位，曾于佐治亚理工学院修读市场营销课程，并拥有中央广播电视大学企业管理文学学士学位。`
-      },
-      '季小强': {
-        role: '华北区董事总经理',
-        education: '高级管理人员工商管理硕士 — 清华大学；理学学士 — 华北电力大学',
-        bio: `季小强是 ShoreVest Asset Solutions 董事总经理兼北京负责人，负责华北地区的项目开发及资产服务工作。他拥有扎实的经营与商业管理经验，职业背景涵盖另类投资、合资企业管理以及中国国有体系内的大型工业资源配置。加入 ShoreVest Asset Solutions 之前，季先生曾以个人身份投资另类资产，并担任一家与杭州热联集团合资企业的首席执行官。杭州热联集团是中国最大的钢铁贸易企业之一。更早之前，他曾在一家国有企业工作十六年，负责全国国有发电企业所使用煤炭及石油资源的配置与运输。他所负责煤炭及石油的年价值超过 1,500 亿美元。季先生拥有清华大学高级管理人员工商管理硕士学位，以及华北电力大学理学学士学位。`
+      .row-bio-panel.is-open {
+        display: block;
       }
-    };
+      .row-bio-panel__eyebrow {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mist-light);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .row-bio-panel__eyebrow::after {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.65;
+      }
+      .row-bio-panel__name {
+        font-family: var(--serif);
+        font-size: 40px;
+        line-height: 1.04;
+        margin-bottom: 11px;
+        letter-spacing: -0.012em;
+        color: var(--ink);
+        font-weight: 400;
+      }
+      .row-bio-panel__meta {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 22px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(48, 40, 34, 0.12);
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        text-transform: none;
+        color: var(--mist);
+        font-weight: 400;
+      }
+      .row-bio-panel__role {
+        color: var(--ink-soft);
+        font-weight: 500;
+      }
+      .row-bio-panel__text {
+        font-family: var(--serif);
+        font-size: 21px;
+        line-height: 1.78;
+        color: var(--ink-deep);
+        max-width: 1020px;
+        white-space: pre-line;
+        text-wrap: pretty;
+      }
 
-    let activeCard = null;
-    let activePanel = null;
-
-    function getProfile(name) {
-      return profileData[name] || {
-        role: 'ShoreVest 团队',
-        education: '',
-        bio: `${name} 是 ShoreVest 团队成员。`
-      };
-    }
-
-
-    function getDisplayRole(card, name) {
-      const profile = profileData[name];
-      if (profile?.role) return profile.role;
-      const sectionTitle = card.closest('.group')?.querySelector('h2')?.textContent?.trim();
-      return sectionTitle || 'ShoreVest 团队';
-    }
-
-    function hydrateCardTitles() {
-      document.querySelectorAll('.card').forEach((card) => {
-        if (card.querySelector('.title')) return;
-        const name = card.querySelector('.name')?.textContent?.trim() || '团队成员';
-        const title = document.createElement('div');
-        title.className = 'title';
-        title.textContent = getDisplayRole(card, name);
-        const bio = card.querySelector('.card-bio');
-        if (bio) {
-          card.insertBefore(title, bio);
-          return;
+      @media (max-width: 1100px) {
+        :root {
+          --pad: 40px;
         }
-        card.appendChild(title);
-      });
-    }
+        .grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .group__head {
+          gap: 6px;
+          margin-bottom: 12px;
+        }
+      }
 
-    hydrateCardTitles();
+      @media (max-width: 767px) {
+        :root {
+          --pad: 18px;
+        }
+        #nav {
+          height: auto;
+          min-height: 72px;
+          align-items: center;
+          flex-wrap: wrap;
+          row-gap: 12px;
+          padding: 12px var(--pad);
+        }
+        .nav__logo svg {
+          height: 48px;
+        }
+        .nav__menu-btn {
+          display: inline-flex;
+        }
+        .nav__right {
+          margin-left: auto;
+          gap: 10px;
+        }
+        .nav__zh {
+          display: none;
+        }
+        .nav__mobile-lang {
+          display: inline-flex;
+        }
+        .nav__lp {
+          display: inline-flex;
+        }
+        .nav__links {
+          display: none;
+          width: 100%;
+          order: 3;
+          flex-direction: column;
+          gap: 14px;
+          padding: 10px 0 12px;
+          border-top: 1px solid var(--rule);
+        }
+        #nav.menu-open .nav__links {
+          display: flex;
+        }
+        .nav__links a {
+          font-size: 10px;
+          white-space: nowrap;
+        }
+        .pagehero {
+          min-height: auto;
+          padding-top: 140px;
+          padding-bottom: 46px;
+        }
+        .pagehero p {
+          font-size: 16px;
+          line-height: 1.65;
+        }
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
+        .group h2 {
+          font-size: clamp(20px, 4.4vw, 30px);
+          white-space: normal;
+        }
+        .group__summary {
+          font-size: 12px;
+          line-height: 1.52;
+          max-width: none;
+          white-space: normal;
+          overflow: visible;
+          text-overflow: clip;
+        }
+        .row-bio-panel {
+          padding: 26px 20px 30px;
+          margin-top: 8px;
+        }
+        .row-bio-panel__eyebrow {
+          margin-bottom: 12px;
+        }
+        .row-bio-panel__name {
+          font-size: 32px;
+          margin-bottom: 8px;
+        }
+        .row-bio-panel__meta {
+          gap: 6px;
+          margin-bottom: 16px;
+          padding-bottom: 12px;
+          font-size: 11px;
+        }
+        .row-bio-panel__text {
+          font-size: 18px;
+          line-height: 1.68;
+        }
+      }
 
-    const menuBtn = document.querySelector('.nav__menu-btn');
-    const nav = document.getElementById('nav');
-    const navLinks = document.getElementById('nav-links');
-    if (menuBtn && nav && navLinks) {
-      menuBtn.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('menu-open');
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-      });
-      navLinks.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          nav.classList.remove('menu-open');
-          menuBtn.setAttribute('aria-expanded', 'false');
+      @media (max-width: 520px) {
+        .team-groups {
+          padding-top: 42px;
+        }
+        .group {
+          padding: 24px 0 32px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .card {
+          gap: 8px;
+        }
+        .photo {
+          max-height: none;
+        }
+        .name {
+          font-size: 17px;
+        }
+        .title {
+          font-size: 9px;
+          letter-spacing: 0.12em;
+        }
+        .row-bio-panel {
+          padding: 22px 16px 26px;
+        }
+        .row-bio-panel__name {
+          font-size: 28px;
+        }
+        .row-bio-panel__text {
+          font-size: 17px;
+          line-height: 1.62;
+        }
+      }
+
+      /* ══ MOBILE NAV REFINEMENT */
+      @media (max-width: 767px) {
+        #nav {
+          height: auto;
+          min-height: 72px;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          column-gap: 12px;
+          row-gap: 12px;
+        }
+        .nav__logo {
+          min-width: 0;
+          max-width: min(100%, 260px);
+        }
+        .nav__logo svg {
+          height: 48px;
+          max-width: 100%;
+        }
+        .nav__right {
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+          margin-left: auto;
+          min-width: 0;
+          flex-wrap: nowrap;
+        }
+        .nav__menu-btn,
+        .nav__lp {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
+          padding: 0 16px;
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+        .nav__zh {
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+        .nav__links {
+          grid-column: 1 / -1;
+          width: 100%;
+          padding: 14px 0 4px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        #nav {
+          column-gap: 10px;
+          row-gap: 10px;
+        }
+        .nav__logo {
+          max-width: min(100%, 180px);
+        }
+        .nav__logo svg {
+          height: auto;
+          max-height: 42px;
+          width: 100%;
+        }
+        .nav__right {
+          gap: 8px;
+        }
+        .nav__zh {
+          display: none;
+        }
+        .nav__lp,
+        .nav__menu-btn {
+          min-height: 40px;
+          padding: 0 12px;
+        }
+        .nav__lp {
+          font-size: 9px;
+        }
+      }
+
+      /* ══ LEGAL DISCLAIMER FOOTER */
+      .legal-disclaimer {
+        background: #0c0c0a;
+        color: rgba(246, 244, 240, 0.6);
+        padding: 26px var(--pad) 30px;
+      }
+      .legal-disclaimer__inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .legal-disclaimer__rule {
+        height: 1px;
+        background: rgba(139, 26, 47, 0.2);
+        margin-bottom: 14px;
+      }
+      .legal-disclaimer__text {
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+        font-variant: small-caps;
+      }
+      .legal-disclaimer--cn .legal-disclaimer__text {
+        font-family:
+          "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-variant: normal;
+      }
+      @media (max-width: 900px) {
+        .legal-disclaimer {
+          padding: 22px 28px 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <a href="index_cn.html" class="nav__logo"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 220 52"
+          height="62"
+          width="auto"
+          role="img"
+          aria-label="ShoreVest Partners"
+        >
+          <g transform="scale(0.431)">
+            <path
+              d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z"
+              fill="#b3213f"
+            />
+            <path
+              d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z"
+              fill="#b3213f"
+            />
+            <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="#b3213f" />
+            <circle cx="48" cy="82" r="3.5" fill="#b3213f" />
+          </g>
+          <line
+            x1="52"
+            y1="8"
+            x2="52"
+            y2="44"
+            stroke="#b3213f"
+            stroke-width="0.5"
+            opacity="0.22"
+          />
+          <text
+            x="62"
+            y="28"
+            font-family="EB Garamond, Georgia, serif"
+            font-weight="400"
+            font-size="24"
+            letter-spacing="2"
+            fill="#0c0c0a"
+          >
+            ShoreVest
+          </text>
+          <line
+            x1="62"
+            y1="32"
+            x2="210"
+            y2="32"
+            stroke="#b3213f"
+            stroke-width="0.4"
+            opacity="0.4"
+          />
+          <text
+            x="62"
+            y="44"
+            font-family="Inter, sans-serif"
+            font-weight="300"
+            font-size="9.5"
+            letter-spacing="4"
+            fill="#0c0c0a"
+            opacity="0.45"
+          >
+            新 岸 資 本
+          </text>
+        </svg></a
+      >
+      <ul class="nav__links" id="nav-links">
+        <li><a href="firm_cn.html">公司简介</a></li>
+        <li><a href="strategy_cn.html">策略</a></li>
+        <li><a href="insights_cn.html">洞察</a></li>
+        <li><a href="press_cn.html">新闻</a></li>
+        <li><a href="team_cn.html" class="active">团队</a></li>
+        <li class="nav__mobile-lang"><a href="team.html">EN</a></li>
+      </ul>
+      <div class="nav__right">
+        <a href="investor-access_cn.html" class="nav__lp">投资者入口</a
+        ><button
+          class="nav__menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          菜单
+        </button>
+      </div>
+    </nav>
+
+    <section class="pagehero">
+      <div class="wrap">
+        <div class="eyebrow">团队</div>
+        <h1>ShoreVest 团队</h1>
+        <p>
+          ShoreVest
+          在同一中国私募信贷平台下整合投资、顾问、客户覆盖、法务合规与关联平台管理能力。点击任意成员卡片可展开查看完整简介。
+        </p>
+      </div>
+    </section>
+
+    <main class="team-groups">
+      <div class="wrap">
+        <section class="group" aria-labelledby="leadership-investment">
+          <div class="group__head">
+            <h2 id="leadership-investment">领导层与投资</h2>
+            <p class="group__summary">
+              负责 ShoreVest 核心私募信贷策略的组合构建、承销纪律与投资决策。
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/benjamin_fanger.jpg"
+                  alt="Benjamin Fanger"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">方杰明</div>
+              <p class="card-bio">
+                ShoreVest Partners
+                创始人及公司中国私募信贷策略的架构设计者。2004 年曾共同创立
+                Shoreline
+                Capital——中国最早专注困境债务的平台之一。在中国信贷市场拥有逾二十年的项目开发、交易结构设计与回收执行经验，常驻广州。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/ada_bi.jpg"
+                  alt="毕凤笙"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">毕凤笙</div>
+              <p class="card-bio">
+                负责 ShoreVest
+                平台的财务管理、基金运营与投资者报告工作。在中国另类资产管理领域拥有丰富的基金运营经验与机构化财务管控能力。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/mecy_mei.jpg"
+                  alt="梅翠"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">梅翠</div>
+              <p class="card-bio">
+                投资委员会成员。负责 ShoreVest
+                核心私募信贷组合的承做与资产管理，在中国法律结构设计与担保执行方面经验深厚。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/hui_zheng.jpg"
+                  alt="郑 慧"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">郑慧</div>
+              <p class="card-bio">
+                投资委员会成员。专注于项目开发、交易结构设计与回收执行，尤其擅长在中国法律框架下开展资产抵押贷款与困境处置。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/mike_chang.jpg"
+                  alt="张健恩"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">张健恩</div>
+              <p class="card-bio">
+                支持 ShoreVest 私募信贷平台的项目来源开发、承做与投后组合管理。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="advisory">
+          <div class="group__head">
+            <h2 id="advisory">顾问团队</h2>
+            <p class="group__summary">
+              提供政策、监管与市场洞察，支持承销判断、风险校准与战略决策。
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/shanjuan_jiang.jpg"
+                  alt="Shanjuan Jiang"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">江珊娟</div>
+              <p class="card-bio">
+                凭借其在中国金融行业与机构网络中的深厚经验，提供战略及监管相关顾问支持。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/philip_young.jpg"
+                  alt="Philip Young"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">杨斐立</div>
+              <p class="card-bio">
+                为 ShoreVest
+                投资论点提供政策与宏观经济视角，重点关注中国监管环境与信贷周期变化。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/dinny_mcmahon.jpg"
+                  alt="马德宁"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">马德宁</div>
+              <p class="card-bio">
+                中国金融体系、债务市场及影子银行领域的作者与专家。为 ShoreVest
+                的研究与投资者沟通提供分析支持与市场背景。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/steve_poon.jpg"
+                  alt="Steve Poon"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">潘世维</div>
+              <p class="card-bio">
+                为 ShoreVest
+                顾问职能带来结构化融资与信贷市场专长，重点支持交易结构设计与交易对手关系拓展。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="business-function-heads">
+          <div class="group__head">
+            <h2 id="business-function-heads">业务职能负责人</h2>
+            <p class="group__summary">
+              负责支撑 ShoreVest
+              私募信贷策略的平台执行职能，包括资本解决方案、运营及公司基础架构。
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/james_li.jpeg"
+                  alt="James Li"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">李杰明</div>
+              <p class="card-bio">
+                负责资本结构顾问与项目开发工作，连接借款人与机构交易对手，推进
+                ShoreVest 投资管线中的交易落地。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="client-solutions">
+          <div class="group__head">
+            <h2 id="client-solutions">客户解决方案</h2>
+            <p class="group__summary">
+              负责 ShoreVest 私募信贷平台的投资者关系、募资沟通与客户覆盖。
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/john_jones.jpg"
+                  alt="John Jones"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">约翰·琼斯</div>
+              <p class="card-bio">
+                负责 ShoreVest 在亚洲以外 LP 的投资者关系覆盖，支持 Fund III
+                的募资与持续投资者沟通。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/kelvin_chan.jpg"
+                  alt="Kelvin Chan"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">陈启文</div>
+              <p class="card-bio">
+                负责 ShoreVest 在亚洲地区的投资者关系覆盖，管理区域内机构 LP
+                关系并支持公司基金募资。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="legal-compliance">
+          <div class="group__head">
+            <h2 id="legal-compliance">法务与合规</h2>
+            <p class="group__summary">
+              负责法律架构、合规管理与内控体系建设，保障机构治理标准。
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/lillian_xu.jpg"
+                  alt="Lillian Xu"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">徐丽莲</div>
+              <p class="card-bio">
+                负责 ShoreVest
+                投资平台及基金载体的法律结构设计、监管合规与治理体系建设。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/cathy_chen.jpg"
+                  alt="Cathy Chen"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">陈凯茜</div>
+              <p class="card-bio">
+                负责 ShoreVest
+                中国境内实体的合规运营、监管报备与内部控制流程管理。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="affiliate-platform">
+          <div class="group__head">
+            <h2 id="affiliate-platform">资产处置平台管理层</h2>
+            <p class="group__summary">
+              通过在中国重点区域的项目发掘、资产服务与执行能力，支持 ShoreVest
+              投资平台。
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/jimmy_cheung.jpg"
+                  alt="张志明"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">张志明</div>
+              <p class="card-bio">
+                负责 ShoreVest
+                香港团队的项目开发与资产管理工作，支持交易来源拓展与处置执行。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/daoping_yang.jpg"
+                  alt="杨道平"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">杨道平</div>
+              <p class="card-bio">
+                负责 ShoreVest
+                广州业务的项目开发、资产服务与回收执行，并直接统筹本地投后组合管理。
+              </p>
+            </article>
+            <article class="card">
+              <div class="photo">
+                <img
+                  src="assets/images/xiaoqiang_ji.jpg"
+                  alt="季小强"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="name">季小强</div>
+              <p class="card-bio">
+                支持 ShoreVest
+                在上海区域的项目开发与投后资产服务，重点覆盖区域交易来源与借款人管理。
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const profileData = {
+        方杰明: {
+          role: "管理合伙人兼创始人",
+          education: "法学博士（JD）、工商管理硕士（MBA）— 芝加哥大学",
+          bio: `本杰明·方杰明是 ShoreVest Partners 的管理合伙人兼创始人，也是中国私募信贷市场的先行者之一。他担任公司投资委员会委员，在该领域已管理超过 20 亿美元资金，背后投资人来自全球多家机构。在二十余年的中国私募信贷从业经历中，他长期直接与资产出售方、借款人及金融机构合作，在复杂且往往高度博弈的情境下设计并推动各类资本解决方案的落地。创立 ShoreVest 和 Shoreline Capital 之前，方先生曾创办多家公司，其中两家成功出售给上市公司。研究生期间，他曾在美迈斯律师事务所（O’Melveny & Myers）参与中国早期不良债务及私募股权交易。方先生熟练掌握中文口语及书面语，拥有芝加哥大学法学博士和工商管理硕士学位，并持有美国加利福尼亚州律师执业资格。`,
+        },
+        毕凤笙: {
+          role: "合伙人兼首席财务官",
+          education: "国际贸易学士 — 广东外语外贸大学",
+          bio: `Ada Bi 是 ShoreVest Partners 的合伙人兼首席财务官，同时为公司投资委员会委员。她负责公司的财务、税务、基金报告、现金管理以及已投项目的财务控制，并在多项交易的运营架构设计中发挥了核心作用。她的经验横跨基金层面的财务管理，以及中国复杂私募信贷投资所涉及的执行与管控要求。加入 ShoreVest 之前，Bi 女士于 2008 年至 2016 年担任 Shoreline Capital 首席财务官。更早之前，她曾任 AIG 中国财产险业务财务负责人，负责财务报告、资金管理、税务及预算工作，也曾在中信保诚和加拿大皇家银行任职。她是英国特许公认会计师公会资深会员、加拿大注册专业会计师，并拥有广东外语外贸大学国际贸易学士学位。`,
+        },
+        梅翠: {
+          role: "合伙人",
+          education: "经济学硕士 — 南京大学；CFA 持证人",
+          bio: `Mecy Mei 是 ShoreVest Partners 的合伙人及投资委员会委员。她的投资经验覆盖中国私募信贷与特殊机会交易的全生命周期，包括项目开发、尽职调查、结构设计、收购、谈判、投后管理以及退出。她已主导并完成多项符合公司策略方向的投资，在复杂信贷承做及组合构建方面经验尤为丰富。加入 ShoreVest 之前，Mei 女士曾在 Shoreline Capital 担任合伙人长达八年。更早之前，她曾任晨星基金分析师，专注于基金策略分析，并与外部客户合作构建中国债券及股票投资组合。她拥有合肥工业大学经济学学士、南京大学经济学硕士学位，并于 2018 年取得 CFA 特许资格。`,
+        },
+        郑慧: {
+          role: "合伙人",
+          education: "涉外经济法硕士（LLM）— 中山大学法学院",
+          bio: `Hui Zheng 是 ShoreVest Partners 的合伙人及投资委员会委员。她的经验涵盖中国私募信贷投资的全流程，包括项目开发、法律评估、交易结构设计、收购、谈判、投后管理及退出。她曾直接参与多项特殊机会及不良贷款交易，将投资执行经验与深厚的法律程序和资产回收背景结合起来。加入 ShoreVest 之前，Zheng 女士曾在 Shoreline Capital 担任合伙人八年。更早之前，她曾在广东一家律师事务所执业，参与不良资产的清算与回收工作，并就相关议题发表过多篇论文，其中包括关于中国当时新实施破产法对不良资产清算负面影响的研究。她拥有中山大学法学院涉外经济法法学硕士学位。`,
+        },
+        张健恩: {
+          role: "合伙人",
+          education: "MBA — 麻省理工学院斯隆管理学院；学士 — 斯坦福大学",
+          bio: `Michael Chang 是 ShoreVest Partners 的合伙人。他为公司的人力资源、信息技术、财务及合规事务提供支持与建议，凭借其在美国及亚洲逾十年的投资管理经验，为公司带来跨职能、跨区域的综合视角。他的背景融合了机构投资经验与运营、组织管理能力，支持 ShoreVest 平台的整体建设与发展。加入 ShoreVest 之前，Chang 先生曾任职于 Stamos Capital Partners、桥水基金和 Cambridge Associates。他拥有麻省理工学院斯隆管理学院 MBA 学位，以及斯坦福大学文学学士学位。`,
+        },
+        江珊娟: {
+          role: "高级顾问合伙人",
+          education:
+            "金融 MBA — 加州大学戴维斯分校；机械工程博士 — 加州大学洛杉矶分校；工程物理学士 — 清华大学",
+          bio: `江珊娟是 ShoreVest 的高级顾问合伙人，主要就公司在中国另类投资领域的战略、项目开发及市场拓展提供建议。她拥有逾十五年经验，历经机构投资、基金管理及跨境资本募集等多个领域，曾在富兰克林邓普顿、中金前海发展基金管理公司、CalPERS 及 CalSTRS 等机构担任高级职务。她的经验覆盖公开市场与私募市场、中国另类投资，以及连接全球资本与中国境内投资机会的平台建设。加入 ShoreVest 之前，江女士曾任富兰克林邓普顿高级副总裁兼中国另类投资负责人，此前亦曾担任中金前海发展基金管理公司董事总经理。职业早期，她曾先后在加州公务员退休基金（CalPERS）和加州教师退休基金（CalSTRS）担任投资官，专注于私募股权及投资策略。她的职业生涯始于通用电气。江女士拥有加州大学戴维斯分校管理学院金融 MBA、加州大学洛杉矶分校机械工程博士学位，以及清华大学工程物理学学士学位。`,
+        },
+        杨斐立: {
+          role: "高级顾问合伙人",
+          education:
+            "理学学士 — 台湾大学；MBA — 芝加哥大学；国际投资文凭 — 斯坦福大学",
+          bio: `Philip Young 是 ShoreVest 的高级顾问合伙人，主要就投资策略及业务发展向公司提供建议。他在大中华区及更广泛亚洲市场的保险、财富管理和资本市场领域拥有数十年经验，并在金融行业高层建立了深厚而长期的关系网络。他的职业背景横跨传统资产和另类资产，对机构资本的配置与管理具有尤其深入的经验。加入 ShoreVest 之前，Young 先生曾担任台湾 TransGlobe Life Insurance 独立董事，并在中国多家财富管理公司担任高级顾问职务。更早之前，他曾为多家中日保险机构负责投资事务，在亚洲资本市场积累了广泛经验，同时也参与过亚洲以外地区的投资活动。他拥有台湾大学理学学士学位、芝加哥大学 MBA 学位，以及斯坦福大学国际投资文凭。Young 先生目前亦于台北台湾大学财务金融学系及香港大学中国商业学院授课，并著有《财富管理的本质》一书，于 2022 年出版。`,
+        },
+        马德宁: {
+          role: "经济顾问",
+          education: "国际关系（中文项目）— 约翰斯·霍普金斯大学 SAIS 南京校区",
+          bio: `Dinny McMahon 是 ShoreVest Partners 的经济顾问，主要协助公司分析中国信贷市场的运行动态，并支持投资委员会的战略判断。他的研究重点包括中国商业银行体系、不良贷款的规模与性质、金融体系出清进程，以及影响公司项目来源与执行环境的更广泛宏观经济力量。McMahon 先生曾在中国从事近十年财经新闻报道，其中包括在《华尔街日报》北京分社工作六年、在道琼斯通讯社上海分社工作四年，并曾为《远东经济评论》撰稿。2015 年，他离开中国，赴华盛顿哥伦比亚特区伍德罗·威尔逊国际学者中心担任研究员，并在此期间撰写《中国债务长城》一书，该书于 2018 年出版。此后，他又以保尔森研究所智库 MacroPolo 研究员身份，撰写有关中国金融体系出清的研究，并持续为金融服务机构开展中国金融体系相关研究工作。他精通中文，曾在北京和昆明学习中文，之后又在约翰斯·霍普金斯大学高级国际问题研究学院南京校区以中文修读一年国际关系课程。`,
+        },
+        潘世维: {
+          role: "高级顾问合伙人",
+          education:
+            "会计学硕士 — 澳大利亚新南威尔士大学；金融学士 — 澳大利亚麦考瑞大学",
+          bio: `Steve Poon 是 ShoreVest 的高级顾问合伙人，主要就亚洲私募信贷、特殊机会及困境债务投资提供建议，重点聚焦于项目开发、交易结构设计及分销安排。他在投资银行、自有资金投资及信贷市场领域拥有逾二十五年经验，曾在凯雷、平安、法国兴业银行、渣打银行、法国巴黎银行及美林等机构担任高级职务。他的职业背景涵盖高收益债、夹层融资、不良贷款、资本重组、杠杆融资及其他结构化信贷解决方案，并在中国及香港市场拥有深厚经验。加入 ShoreVest 之前，Poon 先生曾任凯雷董事总经理，参与建立并管理凯雷亚洲私募信贷业务，重点覆盖高收益及特殊机会投资。更早之前，他曾在平安担任多个高级管理职务，负责发展聚焦于高收益夹层债、境内外企业信贷、不良贷款及重组机会的投资平台。他亦曾担任法国兴业银行中国特殊机会业务主管，此前还曾在渣打银行、法国巴黎银行及美林从事债务资本市场、结构化解决方案、并购顾问及中国投资银行等相关工作。Poon 先生是英格兰及威尔士特许会计师协会会员，并拥有谢菲尔德大学 MBA 学位。`,
+        },
+        李杰明: {
+          role: "资本解决方案团队董事",
+          education:
+            "金融工程硕士 — 康奈尔大学；应用数学、经济学双学位 — 加州大学圣地亚哥分校",
+          bio: `李杰明是 ShoreVest 资本解决方案团队董事，负责公司私募信贷平台下的资本结构顾问服务及特殊机会项目执行。他拥有逾十年经验，长期参与重组、负债管理及跨境资本市场相关的复杂交易结构设计与执行。加入 ShoreVest 之前，李先生曾在 Perella Weinberg Partners 参与多项具有代表性的重组项目顾问工作。该机构是全球最具影响力的重组顾问平台之一。此后，他亦曾任职于 Cowen 特殊机会团队，并在花旗集团工作近九年，于首席投资办公室负责跨资产风险策略及资本市场配置相关事务。李先生拥有康奈尔大学金融工程硕士学位，以及加州大学圣地亚哥分校应用数学和经济学双学位。`,
+        },
+        "约翰·琼斯": {
+          role: "客户解决方案部董事（亚洲以外地区）",
+          education: "经济学学士 — 南加州大学；MBA — 芝加哥大学",
+          bio: `John Jones 是 ShoreVest Partners 客户解决方案部董事 - 亚洲以外地区，负责美洲、欧洲及中东地区的客户拓展与维护工作。他拥有逾十五年经验，曾主导横跨公开及私募信贷投资策略的业务发展工作，兼具机构募资经验，以及对保险资金和另类投资平台的深入理解。加入 ShoreVest 之前，Jones 先生任职于 PIMCO 金融机构业务团队，向保险公司一般账户投资提供资产管理及顾问服务。他其后亦曾服务于两家新兴系统化另类资产管理机构，主要负责企业战略及募资工作。Jones 先生拥有南加州大学经济学学士学位和芝加哥大学 MBA 学位。本科期间，他曾以普通话参与教会服务传道活动两年。`,
+        },
+        陈启文: {
+          role: "亚洲客户解决方案部董事",
+          education: "会计与数学专业（荣誉）— 滑铁卢大学；CFA、CA、CPA",
+          bio: `陈启文是 ShoreVest 亚洲客户解决方案部董事，专注于公司平台层面的投资者关系、客户覆盖及战略发展工作。他常驻香港，围绕投资者沟通、关系维护及公司定位与外部机构密切合作，其职业背景横跨私募股权、战略发展、金融科技投资及金融服务研究分析。他的经验结合了机构资本市场视角，以及在投资和成长阶段企业环境中的运营与战略判断。加入 ShoreVest 之前，陈先生于 2024 年 12 月前担任 500 Global 战略发展副总监，其工作包括东南亚成长基金的组合分析、项目管线评估、募资与投资者关系，以及退出执行。更早之前，他曾在蚂蚁金服、复星恒利证券及平安资产管理担任投资及战略发展相关职务，覆盖国际投资、战略收购、海外私募股权平台建设及组合管理等领域。他的职业生涯早期在 SGS Asset Management 和 National Bank Financial 从事私募股权及金融服务研究工作，此前亦曾任职于德勤咨询。陈先生毕业于滑铁卢大学会计与数学专业，成绩优异，并持有 CFA、CA 及 CPA 专业资格。`,
+        },
+        徐丽莲: {
+          role: "高级法律顾问",
+          education: "法学学士 — 浙江大学；法学硕士（中国商法）— 香港中文大学",
+          bio: `徐丽莲是 ShoreVest 的高级法律顾问，并担任投资委员会列席成员。她常驻广州，负责就公司投资平台相关的法律及监管事务提供意见，拥有十四年经验，职业背景涵盖律师事务所执业、基金管理及企业内部合规管理。自 2024 年 8 月加入 ShoreVest 以来，她持续支持公司在交易执行、尽职调查、基金相关事务及持续性风险监督方面的法律工作。加入 ShoreVest 之前，徐女士曾在金奥金融、前兴资本管理、广州金控基金管理及中财国龙资本管理担任高级法律及合规职务。职业早期，她曾在中伦律师事务所广州办公室执业。徐女士拥有浙江大学法学学士学位及香港中文大学中国商法法学硕士学位，并持有中国律师执业资格。`,
+        },
+        陈凯茜: {
+          role: "法律顾问",
+          education: "法学学位 — 复旦大学；中国法律职业资格",
+          bio: `陈凯茜是 ShoreVest Partners 的法律顾问，常驻公司广州办公室。她负责贯穿投资全流程的法律事务，包括募资、尽职调查、投资分析、交易谈判、投后管理及退出。她的职业背景结合了交易法律工作与投资端实务经验，因此在风险管理与项目执行两方面均具备较强的实务判断。加入 ShoreVest 之前，陈女士曾在海航投资担任法律及投资相关职务，包括风控部法务经理及投行事业部投资经理，重点处理私募股权基金、融资租赁、股权质押融资等相关法律事务，以及各类商业和公司纠纷。职业早期，她曾先后在君合律师事务所及 Rajah & Tann 任职，参与首次公开募股、私募股权投资、跨境股权及资产收购、股权投资及公司重组等项目。陈女士毕业于复旦大学法学专业，并已取得中国法律职业资格。`,
+        },
+        张志明: {
+          role: "资产处置平台董事长",
+          education: "物理学学士 — 台湾成功大学；生物物理博士 — 堪萨斯大学",
+          bio: `张志明是 ShoreVest Partners 的顾问合伙人，同时担任 ShoreVest Asset Solutions 董事长。ShoreVest Asset Solutions 为公司自有的资产服务平台。作为一位企业家及长期深耕大中华区的投资人，他曾在多个行业创建并运营业务，覆盖房地产开发、能源、基础设施、医疗健康、酒店及金融服务等多个领域。他的经验融合了交易执行、经营判断及区域内长期资本配置能力。张先生的职业生涯始于西屋电气。1994 年至 1997 年期间，他主导支持欧洲跨国企业在大中华区开展大型发电项目的出售及融资工作，相关交易总额接近 20 亿美元。此后数十年间，他持续活跃于投资和经营管理岗位。他亦曾作为有限合伙人投资 ShoreVest 旗下多只基金，并曾担任 ShoreVest 其中一位创始人的导师。张先生拥有台湾成功大学物理学学士学位，以及堪萨斯大学生物物理学博士学位。`,
+        },
+        杨道平: {
+          role: "华东区董事总经理",
+          education:
+            "工商管理硕士 — 中国人民大学；市场营销课程 — 佐治亚理工学院；企业管理文学学士 — 中央广播电视大学",
+          bio: `杨道平是 ShoreVest Ventures 华东区董事总经理，同时为 We-Dare Ventures (Shanghai), LLC 的创始人。他是一位资深管理者，拥有逾三十五年横跨石油、石化、另类投资及困境资产处置领域的丰富经验，在产业运营与金融市场两方面都具备少见的深度。杨先生曾在中石化仪征化纤工作近二十年，历任科研、质量控制及国际业务开发等职务，后升任上海石化工贸副总经理。在该岗位上，他负责全球供应链、进出口谈判，以及每年数百万吨石化产品的定价与贸易。自 2015 年以来，杨先生专注于另类投资，带领团队在华东地区执行自国有资产管理公司收购不良贷款后的处置与回收工作。他亦创办了 We-Dare Ventures，并通过该平台投资于高科技、生态环保、生物医药及传媒等领域的初创企业。职业早期，杨先生曾任 Amoco Corporate Inc. 中国业务的销售代表及经理，在美国建立买卖双方网络并提供现场客户服务。杨先生拥有中国人民大学工商管理硕士学位，曾于佐治亚理工学院修读市场营销课程，并拥有中央广播电视大学企业管理文学学士学位。`,
+        },
+        季小强: {
+          role: "华北区董事总经理",
+          education:
+            "高级管理人员工商管理硕士 — 清华大学；理学学士 — 华北电力大学",
+          bio: `季小强是 ShoreVest Asset Solutions 董事总经理兼北京负责人，负责华北地区的项目开发及资产服务工作。他拥有扎实的经营与商业管理经验，职业背景涵盖另类投资、合资企业管理以及中国国有体系内的大型工业资源配置。加入 ShoreVest Asset Solutions 之前，季先生曾以个人身份投资另类资产，并担任一家与杭州热联集团合资企业的首席执行官。杭州热联集团是中国最大的钢铁贸易企业之一。更早之前，他曾在一家国有企业工作十六年，负责全国国有发电企业所使用煤炭及石油资源的配置与运输。他所负责煤炭及石油的年价值超过 1,500 亿美元。季先生拥有清华大学高级管理人员工商管理硕士学位，以及华北电力大学理学学士学位。`,
+        },
+      };
+
+      let activeCard = null;
+      let activePanel = null;
+
+      function getProfile(name) {
+        return (
+          profileData[name] || {
+            role: "ShoreVest 团队",
+            education: "",
+            bio: `${name} 是 ShoreVest 团队成员。`,
+          }
+        );
+      }
+
+      function getDisplayRole(card, name) {
+        const profile = profileData[name];
+        if (profile?.role) return profile.role;
+        const sectionTitle = card
+          .closest(".group")
+          ?.querySelector("h2")
+          ?.textContent?.trim();
+        return sectionTitle || "ShoreVest 团队";
+      }
+
+      function hydrateCardTitles() {
+        document.querySelectorAll(".card").forEach((card) => {
+          if (card.querySelector(".title")) return;
+          const name =
+            card.querySelector(".name")?.textContent?.trim() || "团队成员";
+          const title = document.createElement("div");
+          title.className = "title";
+          title.textContent = getDisplayRole(card, name);
+          const bio = card.querySelector(".card-bio");
+          if (bio) {
+            card.insertBefore(title, bio);
+            return;
+          }
+          card.appendChild(title);
         });
-      });
-    }
+      }
 
-    function ensurePanel() {
-      if (activePanel) return activePanel;
-      const panel = document.createElement('article');
-      panel.className = 'row-bio-panel';
-      panel.innerHTML = `
+      hydrateCardTitles();
+
+      const menuBtn = document.querySelector(".nav__menu-btn");
+      const nav = document.getElementById("nav");
+      const navLinks = document.getElementById("nav-links");
+      if (menuBtn && nav && navLinks) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("menu-open");
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            nav.classList.remove("menu-open");
+            menuBtn.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      function ensurePanel() {
+        if (activePanel) return activePanel;
+        const panel = document.createElement("article");
+        panel.className = "row-bio-panel";
+        panel.innerHTML = `
         <div class="row-bio-panel__eyebrow">核心成员简介</div>
         <h3 class="row-bio-panel__name"></h3>
         <div class="row-bio-panel__meta">
@@ -721,117 +1224,130 @@
         </div>
         <p class="row-bio-panel__text"></p>
       `;
-      activePanel = panel;
-      return panel;
-    }
-
-    function rowCards(grid, targetCard) {
-      const cards = Array.from(grid.querySelectorAll(':scope > .card'));
-      const targetTop = targetCard.offsetTop;
-      return cards.filter((card) => Math.abs(card.offsetTop - targetTop) < 2);
-    }
-
-    function closeCurrent() {
-      if (activeCard) activeCard.classList.remove('is-active');
-      if (activePanel) {
-        activePanel.classList.remove('is-open');
-        activePanel.remove();
-      }
-      activeCard = null;
-    }
-
-    document.querySelectorAll('.card').forEach((card) => {
-      const photo = card.querySelector('.photo');
-      const name = card.querySelector('.name')?.textContent?.trim() || '团队成员';
-
-      photo.setAttribute('tabindex', '0');
-      photo.setAttribute('role', 'button');
-      photo.setAttribute('aria-label', `Show biography for ${name}`);
-
-      function openBio() {
-        const isSame = activeCard === card;
-        closeCurrent();
-        if (isSame) return;
-
-        const profile = getProfile(name);
-        const panel = ensurePanel();
-        panel.querySelector('.row-bio-panel__name').textContent = name;
-        panel.querySelector('.row-bio-panel__role').textContent = profile.role;
-        panel.querySelector('.row-bio-panel__text').textContent = profile.bio;
-
-        const grid = card.closest('.grid');
-        const cardsInRow = rowCards(grid, card);
-        const lastInRow = cardsInRow[cardsInRow.length - 1] || card;
-        lastInRow.insertAdjacentElement('afterend', panel);
-
-        panel.classList.add('is-open');
-        card.classList.add('is-active');
-        activeCard = card;
+        activePanel = panel;
+        return panel;
       }
 
-      photo.addEventListener('click', openBio);
-      photo.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          openBio();
+      function rowCards(grid, targetCard) {
+        const cards = Array.from(grid.querySelectorAll(":scope > .card"));
+        const targetTop = targetCard.offsetTop;
+        return cards.filter((card) => Math.abs(card.offsetTop - targetTop) < 2);
+      }
+
+      function closeCurrent() {
+        if (activeCard) activeCard.classList.remove("is-active");
+        if (activePanel) {
+          activePanel.classList.remove("is-open");
+          activePanel.remove();
         }
+        activeCard = null;
+      }
+
+      document.querySelectorAll(".card").forEach((card) => {
+        const photo = card.querySelector(".photo");
+        const name =
+          card.querySelector(".name")?.textContent?.trim() || "团队成员";
+
+        photo.setAttribute("tabindex", "0");
+        photo.setAttribute("role", "button");
+        photo.setAttribute("aria-label", `Show biography for ${name}`);
+
+        function openBio() {
+          const isSame = activeCard === card;
+          closeCurrent();
+          if (isSame) return;
+
+          const profile = getProfile(name);
+          const panel = ensurePanel();
+          panel.querySelector(".row-bio-panel__name").textContent = name;
+          panel.querySelector(".row-bio-panel__role").textContent =
+            profile.role;
+          panel.querySelector(".row-bio-panel__text").textContent = profile.bio;
+
+          const grid = card.closest(".grid");
+          const cardsInRow = rowCards(grid, card);
+          const lastInRow = cardsInRow[cardsInRow.length - 1] || card;
+          lastInRow.insertAdjacentElement("afterend", panel);
+
+          panel.classList.add("is-open");
+          card.classList.add("is-active");
+          activeCard = card;
+        }
+
+        photo.addEventListener("click", openBio);
+        photo.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openBio();
+          }
+        });
       });
-    });
-  </script>
+    </script>
 
-<script>
-(() => {
-  if (window.__svScrollAnimationsInit) return;
-  window.__svScrollAnimationsInit = true;
+    <script>
+      (() => {
+        if (window.__svScrollAnimationsInit) return;
+        window.__svScrollAnimationsInit = true;
 
-  const style = document.createElement('style');
-  style.textContent = `
+        const style = document.createElement("style");
+        style.textContent = `
     .auto-rev { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
     .auto-rev.auto-rev--in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       .auto-rev { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
   `;
-  document.head.appendChild(style);
+        document.head.appendChild(style);
 
-  const targets = document.querySelectorAll('section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm');
-  targets.forEach((el, i) => {
-    if (el.classList.contains('rev') || el.classList.contains('auto-rev')) return;
-    if (el.closest('nav')) return;
-    el.classList.add('auto-rev');
-    el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
-  });
+        const targets = document.querySelectorAll(
+          "section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
+        );
+        targets.forEach((el, i) => {
+          if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
+            return;
+          if (el.closest("nav")) return;
+          el.classList.add("auto-rev");
+          el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
+        });
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.auto-rev').forEach(el => el.classList.add('auto-rev--in'));
-    return;
-  }
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document
+            .querySelectorAll(".auto-rev")
+            .forEach((el) => el.classList.add("auto-rev--in"));
+          return;
+        }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('auto-rev--in');
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.01, rootMargin: '35% 0px 35% 0px' });
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("auto-rev--in");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.01, rootMargin: "35% 0px 35% 0px" },
+        );
 
-  document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
-})();
-</script>
+        document
+          .querySelectorAll(".auto-rev")
+          .forEach((el) => observer.observe(el));
+      })();
+    </script>
 
-
-<footer class="legal-disclaimer legal-disclaimer--cn" aria-label="Legal disclaimer">
-  <div class="legal-disclaimer__inner">
-    <div class="legal-disclaimer__rule" aria-hidden="true"></div>
-    <p class="legal-disclaimer__text">
-  © 新岸資本（ShoreVest Partners, Ltd.）版权所有。
-  本网站仅供参考，不构成任何证券的出售要约或购买要约的邀请。
-  过往业绩不代表未来表现。新岸资本未在任何监管机构注册为投资顾问。
-  潜在投资者在作出投资决定前，应仔细阅读所有基金文件，并咨询其自身的法律、
-  税务及财务顾问。
-    </p>
-  </div>
-</footer>
-
-</body>
+    <footer
+      class="legal-disclaimer legal-disclaimer--cn"
+      aria-label="Legal disclaimer"
+    >
+      <div class="legal-disclaimer__inner">
+        <div class="legal-disclaimer__rule" aria-hidden="true"></div>
+        <p class="legal-disclaimer__text">
+          © 新岸資本（ShoreVest Partners, Ltd.）版权所有。
+          本网站仅供参考，不构成任何证券的出售要约或购买要约的邀请。
+          过往业绩不代表未来表现。新岸资本未在任何监管机构注册为投资顾问。
+          潜在投资者在作出投资决定前，应仔细阅读所有基金文件，并咨询其自身的法律、
+          税务及财务顾问。
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
