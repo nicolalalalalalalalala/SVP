@@ -1182,10 +1182,10 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   </div>
   <div class="hero__right">
     <div class="hero__stats">
-      <div class="hs"><div class="hs__n">$2B+</div><div class="hs__l">已投放资本</div></div>
-      <div class="hs"><div class="hs__n">20+</div><div class="hs__l">深耕中国信贷年限</div></div>
-      <div class="hs"><div class="hs__n">50+</div><div class="hs__l">已完成交易</div></div>
-      <div class="hs"><div class="hs__n">2016</div><div class="hs__l">ShoreVest平台成立</div></div>
+      <div class="hs"><div class="hs__n" data-countup data-target="2" data-prefix="$" data-suffix="B+">$0B+</div><div class="hs__l">已投放资本</div></div>
+      <div class="hs"><div class="hs__n" data-countup data-target="20" data-suffix="+">0+</div><div class="hs__l">深耕中国信贷年限</div></div>
+      <div class="hs"><div class="hs__n" data-countup data-target="50" data-suffix="+">0+</div><div class="hs__l">已完成交易</div></div>
+      <div class="hs"><div class="hs__n" data-countup data-target="2016">0</div><div class="hs__l">ShoreVest平台成立</div></div>
     </div>
   </div>
 </section>
@@ -1557,6 +1557,57 @@ document.querySelectorAll('.go').forEach((el, i) => {
     el.style.transform = 'none';
   }, (0.08 + i * 0.12) * 1000 + 100);
 });
+
+// Hero stat count-up effect
+const statNumbers = document.querySelectorAll('[data-countup]');
+if (statNumbers.length) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const formatCount = (el, value) => {
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    return `${prefix}${value.toLocaleString('en-US')}${suffix}`;
+  };
+
+  const runCountUp = (el) => {
+    if (el.dataset.animated === 'true') return;
+    el.dataset.animated = 'true';
+
+    const target = Number(el.dataset.target || 0);
+    if (prefersReducedMotion || target <= 0) {
+      el.textContent = formatCount(el, target);
+      return;
+    }
+
+    const duration = 1400;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      el.textContent = formatCount(el, current);
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = formatCount(el, target);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      runCountUp(entry.target);
+      countObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.5 });
+
+  statNumbers.forEach((el) => countObserver.observe(el));
+}
 
 const nav = document.getElementById('nav');
 const menuBtn = document.querySelector('.nav__menu-btn');
