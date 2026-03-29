@@ -418,6 +418,38 @@
   }
 }
 
+
+
+/* ══ LEGAL DISCLAIMER FOOTER */
+.legal-disclaimer {
+  background:#0c0c0a;
+  color:rgba(246,244,240,0.6);
+  padding:26px var(--pad) 30px;
+}
+.legal-disclaimer__inner {
+  max-width:var(--max);
+  margin:0 auto;
+}
+.legal-disclaimer__rule {
+  height:1px;
+  background:rgba(139,26,47,0.2);
+  margin-bottom:14px;
+}
+.legal-disclaimer__text {
+  font-family:var(--sans);
+  font-size:12px;
+  line-height:1.6;
+  letter-spacing:.08em;
+  font-variant:small-caps;
+}
+.legal-disclaimer--cn .legal-disclaimer__text {
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  font-variant:normal;
+}
+@media (max-width:900px){
+  .legal-disclaimer { padding:22px 28px 26px; }
+}
+
 </style>
 </head>
 <body>
@@ -780,6 +812,20 @@
   document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
 })();
 </script>
+
+
+<footer class="legal-disclaimer legal-disclaimer--cn" aria-label="Legal disclaimer">
+  <div class="legal-disclaimer__inner">
+    <div class="legal-disclaimer__rule" aria-hidden="true"></div>
+    <p class="legal-disclaimer__text">
+  © 新岸資本（ShoreVest Partners, Ltd.）版权所有。
+  本网站仅供参考，不构成任何证券的出售要约或购买要约的邀请。
+  过往业绩不代表未来表现。新岸资本未在任何监管机构注册为投资顾问。
+  潜在投资者在作出投资决定前，应仔细阅读所有基金文件，并咨询其自身的法律、
+  税务及财务顾问。
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>
