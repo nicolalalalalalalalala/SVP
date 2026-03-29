@@ -656,6 +656,66 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 }
 .foot__legal a:hover { color:rgba(255,255,255,.55); }
 
+.cdd-subscribe {
+  padding:80px var(--pad) 96px;
+}
+.cdd-subscribe__wrap {
+  max-width:var(--max);
+  margin:0 auto;
+}
+.cdd-subscribe__grid {
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 2fr);
+  gap:80px;
+  align-items:start;
+}
+.cdd-subscribe__copy {
+  min-width:0;
+}
+.cdd-subscribe__title {
+  font-family:var(--serif);
+  font-size:clamp(32px,3.5vw,50px);
+  font-weight:400;
+  color:var(--ink);
+  line-height:1.1;
+  margin-bottom:20px;
+}
+.cdd-subscribe__text {
+  font-size:15px;
+  line-height:1.82;
+  color:var(--mist);
+  font-family:var(--serif);
+  margin-bottom:32px;
+}
+.cdd-subscribe__cards {
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:0;
+  border-left:1px solid var(--rule);
+}
+.cdd-subscribe__card {
+  padding:32px 36px;
+  min-width:0;
+}
+.cdd-subscribe__card:nth-child(-n+2) {
+  border-bottom:1px solid var(--rule);
+}
+.cdd-subscribe__card:nth-child(odd) {
+  border-right:1px solid var(--rule);
+}
+.cdd-subscribe__card-title {
+  font-family:var(--serif);
+  font-size:22px;
+  color:var(--ink);
+  margin-bottom:10px;
+  line-height:1.2;
+}
+.cdd-subscribe__card-copy {
+  font-size:13px;
+  line-height:1.72;
+  color:var(--mist);
+}
+
 
 /* ══ RESPONSIVE */
 .nav__menu-btn {
@@ -673,6 +733,26 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 @media (max-width: 1024px) {
   :root { --pad: 32px; }
   .hero__sliver { height:540px; }
+  .cdd-subscribe__grid {
+    grid-template-columns:minmax(0, 1fr);
+    gap:32px;
+  }
+  .cdd-subscribe__cards {
+    border-left:0;
+    border-top:1px solid var(--rule);
+  }
+  .cdd-subscribe__card {
+    padding:26px 0;
+    border-right:0 !important;
+    border-bottom:1px solid var(--rule) !important;
+  }
+  .cdd-subscribe__card:first-child {
+    padding-top:22px;
+  }
+  .cdd-subscribe__card:last-child {
+    border-bottom:0 !important;
+    padding-bottom:0;
+  }
   #hero,
   .about__intro,
   .strat__hd,
@@ -885,8 +965,22 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   #cdd > div:first-child {
     padding:56px var(--pad) !important;
   }
-  #cdd > div:first-child [style*="grid-template-columns:1fr 1fr"] {
-    gap:38px !important;
+  .cdd-hero__grid {
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:34px !important;
+  }
+  .cdd-hero__copy,
+  .cdd-hero__panel,
+  .cdd-hero__card {
+    min-width:0;
+    max-width:100%;
+  }
+  .cdd-hero__panel {
+    width:100%;
+  }
+  .cdd-hero__card-grid {
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:14px !important;
   }
   #cdd .issue-card {
     border-color:rgba(255,255,255,.22);
@@ -1240,8 +1334,8 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <!-- Publication masthead — full width, editorial -->
   <div style="background:var(--ink);padding:80px var(--pad);">
     <div style="max-width:var(--max);margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-        <div>
+      <div class="cdd-hero__grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div class="cdd-hero__copy">
           <div class="eyebrow eyebrow--ghost rev" style="margin-bottom:28px;">ShoreVest 洞察 · 创刊于2018</div>
           <!-- Publication logotype -->
           <div style="display:flex;align-items:flex-start;gap:24px;margin-bottom:32px;">
@@ -1259,9 +1353,9 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
           </div>
           <div style="font-family:var(--serif);font-size:18px;line-height:1.72;color:rgba(255,255,255,.42);max-width:440px;" class="rev d2">聚焦中国私募信贷市场的机构级洞察系列——来自一线实践，而非屏幕解读。不是评论，而是机制。</div>
         </div>
-        <div class="rev d2">
+        <div class="cdd-hero__panel rev d2">
           <!-- Latest issue card — editorial weight -->
-          <div style="border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);">
+          <div class="cdd-hero__card" style="border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);">
             <div style="padding:10px 24px;background:var(--red);display:flex;align-items:center;justify-content:space-between;">
               <span style="font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);">最新刊 · 2026年Q1</span>
               <span style="font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);">2026年2月</span>
@@ -1269,7 +1363,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
             <div style="padding:32px 28px 24px;">
               <div style="font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:white;line-height:1.22;margin-bottom:16px;">周期切换中的机会：数据真正告诉了我们什么</div>
               <div style="font-size:14px;line-height:1.72;color:rgba(255,255,255,.35);margin-bottom:24px;font-family:var(--serif);">中国房地产信贷市场并非“复苏”，而是在“重构”。对于具备本地执行能力的一押放贷机构，这一差异意义重大。</div>
-              <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="cdd-hero__card-grid" style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                 <div>
                   <div style="font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px;">核心发现</div>
                   <div style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.28);border-left:2px solid rgba(179,33,63,.35);padding-left:10px;margin-bottom:8px;">不良资产规模同比增长34%</div>
@@ -1293,31 +1387,31 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   </div>
 
   <!-- What it covers — white section below masthead -->
-  <div style="padding:80px var(--pad) 96px;">
-    <div style="max-width:var(--max);margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;">
-        <div>
+  <div class="cdd-subscribe">
+    <div class="cdd-subscribe__wrap">
+      <div class="cdd-subscribe__grid">
+        <div class="cdd-subscribe__copy">
           <div class="eyebrow eyebrow--red rev">为什么订阅</div>
-          <h2 style="font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:20px;" class="rev d1">机构深度。<br><em>不加滤镜。</em></h2>
-          <p style="font-size:15px;line-height:1.82;color:var(--mist);font-family:var(--serif);margin-bottom:32px;" class="rev d2">《中国债务动态》读者包括主权基金、养老金与捐赠基金的配置决策者，他们希望超越西方媒体叙事，更真实地理解中国信贷。</p>
+          <h2 class="cdd-subscribe__title rev d1">机构深度。<br><em>不加滤镜。</em></h2>
+          <p class="cdd-subscribe__text rev d2">《中国债务动态》读者包括主权基金、养老金与捐赠基金的配置决策者，他们希望超越西方媒体叙事，更真实地理解中国信贷。</p>
           <div class="rev d3"><a href="#signup" class="cta cta--dark"><span>免费订阅</span><div class="cta__ring">→</div></a></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-left:1px solid var(--rule);" class="rev d2">
-          <div style="padding:32px 36px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">周期分析</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">中国信贷周期真实所处位置——与西方媒体报道的差异。</div>
+        <div class="cdd-subscribe__cards rev d2">
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">周期分析</div>
+            <div class="cdd-subscribe__card-copy">中国信贷周期真实所处位置——与西方媒体报道的差异。</div>
           </div>
-          <div style="padding:32px 36px;border-bottom:1px solid var(--rule);">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">不良资产深度研究</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">分步骤解析中国不良贷款处置机制。</div>
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">不良资产深度研究</div>
+            <div class="cdd-subscribe__card-copy">分步骤解析中国不良贷款处置机制。</div>
           </div>
-          <div style="padding:32px 36px;border-right:1px solid var(--rule);">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">误区澄清</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">纠正海外配置者对中国房地产债务最常见的误判。</div>
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">误区澄清</div>
+            <div class="cdd-subscribe__card-copy">纠正海外配置者对中国房地产债务最常见的误判。</div>
           </div>
-          <div style="padding:32px 36px;">
-            <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;">监管解读</div>
-            <div style="font-size:13px;line-height:1.72;color:var(--mist);">从一线视角解读北京政策变化对信贷市场的真实影响。</div>
+          <div class="cdd-subscribe__card">
+            <div class="cdd-subscribe__card-title">监管解读</div>
+            <div class="cdd-subscribe__card-copy">从一线视角解读北京政策变化对信贷市场的真实影响。</div>
           </div>
         </div>
       </div>
