@@ -633,6 +633,38 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   }
 }
 
+
+
+/* ══ LEGAL DISCLAIMER FOOTER */
+.legal-disclaimer {
+  background:#0c0c0a;
+  color:rgba(246,244,240,0.6);
+  padding:26px var(--pad) 30px;
+}
+.legal-disclaimer__inner {
+  max-width:var(--max);
+  margin:0 auto;
+}
+.legal-disclaimer__rule {
+  height:1px;
+  background:rgba(139,26,47,0.2);
+  margin-bottom:14px;
+}
+.legal-disclaimer__text {
+  font-family:'Cormorant Garamond','EB Garamond',Georgia,serif;
+  font-size:12px;
+  line-height:1.6;
+  letter-spacing:.08em;
+  font-variant:small-caps;
+}
+.legal-disclaimer--cn .legal-disclaimer__text {
+  font-family:'Noto Serif SC','Songti SC','STSong',serif;
+  font-variant:normal;
+}
+@media (max-width:900px){
+  .legal-disclaimer { padding:22px 28px 26px; }
+}
+
 </style></head><body><nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
   <g transform="scale(0.431)">
         <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>
@@ -935,5 +967,22 @@ if(scenarioButtons.length){
   document.querySelectorAll('.auto-rev').forEach(el => observer.observe(el));
 })();
 </script>
+
+
+<footer class="legal-disclaimer" aria-label="Legal disclaimer">
+  <div class="legal-disclaimer__inner">
+    <div class="legal-disclaimer__rule" aria-hidden="true"></div>
+    <p class="legal-disclaimer__text">
+  © ShoreVest Partners, Ltd. All rights reserved.
+  This website is for informational purposes only and does not constitute
+  an offer to sell or a solicitation of an offer to buy any security.
+  Past performance is not indicative of future results. ShoreVest Partners,
+  Ltd. is not registered as an investment adviser with any regulatory
+  authority. Prospective investors should review all fund documentation
+  carefully and consult their own legal, tax, and financial advisers before
+  investing.
+    </p>
+  </div>
+</footer>
 
 </body></html>
