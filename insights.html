@@ -461,7 +461,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400}
   <article class="print-body" id="print-body"></article>
   <footer class="print-publication__folio" aria-hidden="true">
     <span>ShoreVest Partners · China Debt Dynamics</span>
-    <span>Page <span class="print-publication__folio-page"></span></span>
+    <span class="print-publication__folio-page"></span>
   </footer>
 </section>
 
@@ -533,6 +533,9 @@ const buildPrintEdition=()=>{
   const metadataLine=[issueInfo,publishedInfo,editionInfo].filter(Boolean).join(' | ');
   printMeta.textContent=metadataLine;
   printTitle.textContent=title;
+  if(printTitle.textContent.trim()==='#'){
+    printTitle.remove();
+  }
   printStandfirst.textContent=standfirst;
   printBody.innerHTML='';
 
@@ -667,6 +670,9 @@ if(isPrintPreviewMode){
   if(!handledArchiveIssue&&selectedIssue&&printMeta&&printTitle&&printStandfirst&&printBody){
     printMeta.textContent=selectedIssue.meta;
     printTitle.textContent=selectedIssue.title;
+    if(printTitle.textContent.trim()==='#'){
+      printTitle.remove();
+    }
     printStandfirst.textContent='ShoreVest Insights · China Debt Dynamics';
     printBody.innerHTML=`<iframe src="${selectedIssue.pdf}" title="${selectedIssue.title}" style="width:100%;min-height:70vh;border:1px solid rgba(0,0,0,.12);"></iframe>`;
   }
