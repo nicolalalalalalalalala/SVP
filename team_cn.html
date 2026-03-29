@@ -202,6 +202,45 @@
         margin-top: 18px;
       }
 
+
+      .founder-note {
+        padding: 48px 0;
+        border-bottom: 1px solid var(--rule);
+        background: var(--off-warm);
+      }
+      .founder-note__grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+      }
+      .founder-note blockquote {
+        font-family: var(--serif);
+        font-size: clamp(30px, 3.2vw, 42px);
+        line-height: 1.18;
+        color: var(--ink-deep);
+        margin-bottom: 12px;
+      }
+      .founder-note cite {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--mist);
+      }
+      .founder-note__stat {
+        font-family: var(--serif);
+        font-size: clamp(46px, 4.6vw, 64px);
+        line-height: 0.95;
+        color: var(--red);
+        margin-bottom: 10px;
+      }
+      .founder-note__copy {
+        font-family: var(--serif);
+        font-size: 18px;
+        line-height: 1.62;
+        color: var(--ink-soft);
+      }
+
       .team-groups {
         padding: 72px 0 90px;
       }
@@ -436,6 +475,18 @@
           font-size: 16px;
           line-height: 1.65;
         }
+        .founder-note {
+          padding: 32px 0;
+        }
+        .founder-note__grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .founder-note__copy {
+          font-size: 16px;
+          line-height: 1.58;
+        }
+
         .grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 16px;
@@ -731,6 +782,24 @@
           ShoreVest
           在同一中国私募信贷平台下整合投资、顾问、客户覆盖、法务合规与关联平台管理能力。点击任意成员卡片可展开查看完整简介。
         </p>
+      </div>
+    </section>
+
+    <section class="founder-note">
+      <div class="wrap founder-note__grid">
+        <div>
+          <div class="eyebrow">二十年</div>
+          <blockquote>
+            “自 2004 年以来，我们经历了中国信贷市场的每一轮周期——繁荣、收紧与重组。这份机构记忆，就是我们的优势。”
+          </blockquote>
+          <cite>范本杰明 — 管理合伙人兼创始人</cite>
+        </div>
+        <div>
+          <div class="founder-note__stat">$2B+</div>
+          <p class="founder-note__copy">
+            自 2004 年以来在中国私募信贷市场累计投放。ShoreVest 完整经历了中国现代信贷市场的发展轨迹——从扩张期到监管周期、不良资产浪潮，再到当下重组环境。
+          </p>
+        </div>
       </div>
     </section>
 
