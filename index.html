@@ -218,16 +218,18 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
   gap:0;
   border-top:1px solid rgba(12,12,10,.12);
   border-bottom:1px solid rgba(12,12,10,.12);
+  align-items:stretch;
 }
 .hs {
   position:relative;
   padding:18px 14px 16px;
   border-right:1px solid rgba(12,12,10,.1);
   background:transparent;
+  min-width:0;
 }
 .hs:last-child { border-right:none; }
-.hs__n { font-family:var(--serif); font-size:clamp(34px,3.2vw,44px); font-weight:400; color:var(--ink); line-height:1; letter-spacing:-.02em; }
-.hs__l { font-size:11px; font-weight:500; letter-spacing:.05em; text-transform:none; color:#6e6a63; margin-top:8px; line-height:1.45; }
+.hs__n { font-family:var(--serif); font-size:clamp(30px,2.7vw,44px); font-weight:400; color:var(--ink); line-height:1.06; letter-spacing:-.02em; white-space:nowrap; }
+.hs__l { font-size:11px; font-weight:500; letter-spacing:.05em; text-transform:none; color:#6e6a63; margin-top:8px; line-height:1.45; overflow-wrap:anywhere; }
 
 /* ══ TICKER */
 .ticker {
@@ -1049,6 +1051,17 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   }
   .foot__address { text-align:left; }
   .foot__legal { justify-content:flex-start; }
+}
+
+@media (max-width: 1180px) {
+  .hero__stats {
+    grid-template-columns:1fr 1fr;
+  }
+  .hs {
+    border-bottom:1px solid rgba(12,12,10,.1);
+  }
+  .hs:nth-child(2n) { border-right:none; }
+  .hs:nth-last-child(-n+2) { border-bottom:none; }
 }
 
 
