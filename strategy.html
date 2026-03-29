@@ -633,6 +633,13 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   }
 }
 
+
+/* Ensure desktop nav is always expanded at 768px+ */
+@media (min-width:768px){
+  #nav .nav__menu-btn{display:none !important}
+  #nav .nav__links{display:flex !important}
+}
+
 </style></head><body><nav id="nav"><a href="index.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="62" width="auto" role="img" aria-label="ShoreVest Partners">
   <g transform="scale(0.431)">
         <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="#b3213f"/>

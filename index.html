@@ -791,7 +791,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   :root { --pad: 16px; }
   body { font-size:14px; }
 
@@ -1120,6 +1120,13 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .nav__lp {
     font-size:9px;
   }
+}
+
+
+/* Ensure desktop nav is always expanded at 768px+ */
+@media (min-width:768px){
+  #nav .nav__menu-btn{display:none !important}
+  #nav .nav__links{display:flex !important}
 }
 
 </style>
