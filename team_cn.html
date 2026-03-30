@@ -1487,7 +1487,9 @@
         const name =
           card.querySelector(".name")?.textContent?.trim() || "团队成员";
         const profileKey =
-          card.querySelector("img")?.getAttribute("alt")?.trim() || name;
+          card.querySelector(".name")?.textContent?.trim() ||
+          card.querySelector("img")?.getAttribute("alt")?.trim() ||
+          name;
 
         photo.setAttribute("tabindex", "0");
         photo.setAttribute("role", "button");
