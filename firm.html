@@ -177,8 +177,7 @@
       }
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 60px;
+        grid-template-columns: 1fr;
       }
       h1 {
         font-family: var(--serif);
@@ -203,44 +202,34 @@
         color: #4a4740;
       }
 
-      .hero-glance {
-        margin-top: 24px;
-        background: #0f0f0f;
-        color: #ece8df;
-        padding: 18px 20px;
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-        animation: floatCard 5.5s ease-in-out infinite;
-      }
-      .hero-glance h3 {
-        font-size: 9px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.6);
-        margin-bottom: 8px;
-      }
-      .glance-row {
+      .hero-stats {
         display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 8px;
-        border-top: 1px solid rgba(255, 255, 255, 0.16);
-        padding: 10px 0;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(12, 12, 10, 0.15);
+        padding: 2rem 0;
       }
-      .glance-row span {
-        font-size: 9px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.65);
+      .hero-stat {
+        padding: 0 1.25rem;
       }
-      .glance-row strong {
-        font-family: var(--serif);
-        font-size: 38px;
+      .hero-stat:first-child {
+        padding-left: 0;
+      }
+      .hero-stat + .hero-stat {
+        border-left: 1px solid rgba(12, 12, 10, 0.15);
+      }
+      .hero-stat__value {
+        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-size: 1.6rem;
         font-weight: 400;
-        line-height: 1;
+        color: #0c0c0a;
       }
-      .glance-row em {
-        font-family: var(--serif);
-        font-size: 15px;
-        font-style: normal;
+      .hero-stat__label {
+        margin-top: 0.3rem;
+        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #8b1a2f;
       }
 
       .framed-panel {
@@ -756,16 +745,6 @@
         border-color: var(--red);
       }
 
-      @keyframes floatCard {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-5px);
-        }
-      }
-
       @media (max-width: 767px) {
         :root {
           --pad: 20px;
@@ -804,8 +783,17 @@
         .step p {
           font-size: 13px;
         }
-        .hero-glance {
-          animation: none;
+        .hero-stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          padding: 1.5rem 0;
+          gap: 1rem 0.75rem;
+        }
+        .hero-stat,
+        .hero-stat:first-child {
+          padding: 0;
+        }
+        .hero-stat + .hero-stat {
+          border-left: none;
         }
         .lead,
         .section-head p {
@@ -1151,21 +1139,24 @@
                 </p>
               </div>
             </div>
-            <aside class="hero-glance" aria-label="At a glance">
-              <h3>At a glance</h3>
-              <div class="glance-row">
-                <span>Operating history</span><strong>20+ years</strong>
-              </div>
-              <div class="glance-row">
-                <span>Execution track record</span><em>Originate · Resolve</em>
-              </div>
-              <div class="glance-row">
-                <span>Primary collateral</span><em>Hard-asset backed</em>
-              </div>
-              <div class="glance-row">
-                <span>Process discipline</span><em>Legal-first underwriting</em>
-              </div>
-            </aside>
+          </div>
+          <div class="hero-stats" aria-label="At a glance stats">
+            <div class="hero-stat">
+              <div class="hero-stat__value">20+</div>
+              <div class="hero-stat__label">Years in market</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__value">Originate · Resolve</div>
+              <div class="hero-stat__label">Execution model</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__value">Hard-asset backed</div>
+              <div class="hero-stat__label">Primary collateral</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__value">Legal-first</div>
+              <div class="hero-stat__label">Underwriting discipline</div>
+            </div>
           </div>
         </div>
       </section>
