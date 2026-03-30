@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShoreVest Partners 新岸资本 — 策略</title>
+    <title>ShoreVest Partners - Strategy</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
     <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
     <link
@@ -288,39 +288,6 @@
       }
 
       /* Performance: removed legacy inline base64 hero styles to reduce CSS/HTML parse cost on mobile scroll. */
-
-      /* ══ TICKER */
-      .ticker {
-        background: var(--ink2);
-        overflow: hidden;
-        padding: 13px 0;
-        white-space: nowrap;
-        border-top: 1px solid rgba(255, 255, 255, 0.04);
-      }
-      .ticker__track {
-        display: inline-flex;
-        animation: ticker 44s linear infinite;
-      }
-      @keyframes ticker {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-      .ticker__i {
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.22);
-        padding: 0 30px;
-      }
-      .ticker__sep {
-        color: var(--red);
-        margin-right: 6px;
-      }
 
       /* ══ ABOUT */
       #about {
@@ -1590,6 +1557,32 @@
         color: #7a756f;
         margin-top: 6px;
       }
+      .strategy-details {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .strategy-detail {
+        border: 1px solid rgba(179, 33, 63, 0.14);
+        background: #fff;
+        padding: 14px;
+      }
+      .strategy-detail h3 {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #514c45;
+        margin-bottom: 8px;
+      }
+      .strategy-detail p {
+        max-width: none;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.65;
+        color: #5e5952;
+      }
+
       .data-grid {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
@@ -1728,6 +1721,7 @@
         .process-flow,
         .city-grid,
         .alloc-grid,
+        .strategy-details,
         .funnel-grid,
         .risk-grid,
         .data-grid {
@@ -1924,7 +1918,7 @@
   </head>
   <body>
     <nav id="nav">
-      <a href="index_cn.html" class="nav__logo"
+      <a href="index.html" class="nav__logo"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 220 52"
@@ -2001,247 +1995,210 @@
         </svg></a
       >
       <ul class="nav__links" id="nav-links">
-        <li><a href="firm_cn.html" class="">公司简介</a></li>
-        <li><a href="strategy_cn.html" class="active">策略</a></li>
-        <li><a href="insights_cn.html" class="">洞察</a></li>
-        <li><a href="press_cn.html" class="">新闻</a></li>
-        <li><a href="team_cn.html" class="">团队</a></li>
-        <li class="nav__mobile-lang"><a href="strategy.html">EN</a></li>
+        <li><a href="firm.html" class="">The Firm</a></li>
+        <li><a href="strategy.html" class="active">Strategy</a></li>
+        <li><a href="insights.html" class="">Insights</a></li>
+        <li><a href="press.html" class="">Press</a></li>
+        <li><a href="team.html" class="">Team</a></li>
+        <li class="nav__mobile-lang"><a href="index_cn.html">中文</a></li>
       </ul>
       <div class="nav__right">
-        <a href="strategy.html" class="nav__zh">EN</a>
-        <a href="investor-access.html" class="nav__lp">投资者入口</a
+        <a href="index_cn.html" class="nav__zh">中文</a>
+        <a href="investor-access.html" class="nav__lp">Investor Access</a
         ><button
           class="nav__menu-btn"
           type="button"
           aria-expanded="false"
           aria-controls="nav-links"
         >
-          菜单
+          Menu
         </button>
       </div>
     </nav>
     <section class="pagehero">
       <div class="wrap">
         <div>
-          <div class="eyebrow">策略</div>
-          <h1>投资策略</h1>
+          <div class="eyebrow">Strategy</div>
+          <h1>Investment Strategy</h1>
           <p>
-            三项子策略。统一承销标准。资本配置横跨资产抵押贷款、资产重组与不良债务解决——每笔投资均以硬资产担保、可执行法律定位及明确的回收路径为基础。配置比例随周期动态调整。
+            Three sub-strategies. One underwriting standard. Capital is deployed
+            across asset-based lending, asset restructuring, and debt
+            resolutions — each anchored by hard collateral, enforceable legal
+            positioning, and a defined path to recovery. Allocation shifts by
+            cycle.
           </p>
-          <p style="margin-top:14px;font-size:14px;color:var(--muted);">有关上述策略的法律与市场背景，请参阅 <a href='firm_cn.html'>公司简介 →</a></p>
+          <p
+            style="
+              margin-top: 8px;
+              font-family: 'Cormorant Garamond', Georgia, serif;
+              font-style: italic;
+              font-size: 0.85rem;
+              color: #8b1a2f;
+            "
+          >
+            For the legal and market context underpinning these strategies, see
+            <a href="firm.html">The Firm →</a>
+          </p>
         </div>
-        <aside class="hero-panel" aria-label="策略要点">
-          <h3>核心要点</h3>
-          <ul>
-            <li><span>核心聚焦</span><strong>中国特殊机会</strong></li>
-            <li><span>执行模式</span><strong>从起源到回收</strong></li>
-            <li><span>主要抵押品</span><strong>硬资产支持</strong></li>
-          </ul>
-        </aside>
       </div>
     </section>
 
     <section class="pgsec">
       <div class="wrap">
         <div class="strategy-stack">
-          <section class="strategy-block" id="opportunity">
-            <h2>平台亮点</h2>
-            <p>
-              中国是全球第二大信贷市场，但专业化另类信贷赛道相比发达市场同业仍不拥挤。这样的供需错配，为具备本地法律、服务与重组执行能力的管理人创造了有吸引力的入场窗口。
-            </p>
-            <div class="strategy-viz" aria-label="市场概览">
-              <div class="viz-title">市场概览</div>
-              <div class="viz-kpi">
-                <button
-                  class="kpi is-active"
-                  data-detail="规模带来可复制的交易量，选择性决定资产质量。"
-                >
-                  <strong>#2</strong><span>全球信贷市场排名</span>
-                </button>
-                <button
-                  class="kpi"
-                  data-detail="穿越多轮政策与流动性周期所沉淀的实战经验。"
-                >
-                  <strong>20年以上</strong><span>业绩记录年限</span>
-                </button>
-                <button
-                  class="kpi"
-                  data-detail="依托核心借贷枢纽实现境内项目来源与执行回收。"
-                >
-                  <strong>2个枢纽</strong><span>广州 · 香港</span>
-                </button>
-              </div>
-              <div class="viz-detail" data-kpi-detail>
-                规模带来可复制的交易量，选择性决定资产质量。
-              </div>
-            </div>
-          </section>
-
           <section class="strategy-block" id="track-record-data">
-            <h2>历史业绩与当前机遇</h2>
+            <h2>Track Record and Current Opportunity Set</h2>
             <p>
-              近期组合结果与当前投放环境持续支持 ShoreVest
-              的核心判断：在中国另类信贷市场，资本损失概率较低，且单笔交易具备较高收益潜力。
+              Recent portfolio outcomes and current deployment conditions
+              continue to support ShoreVest’s core thesis: low probability of
+              capital loss with high deal-level return potential in China
+              private credit.
             </p>
-            <div class="data-grid" aria-label="业绩数据要点">
+            <div class="data-grid" aria-label="Track record data highlights">
               <article class="data-card">
-                <h3>平台亮点</h3>
+                <h3>Platform Highlights</h3>
                 <ul class="metric-list">
                   <li>
-                    20 年已实现业绩记录，覆盖 50+
-                    笔另类信贷交易，单笔交易层面无本金亏损。
+                    20-year realized track record across 50+ private credit
+                    deals with no principal loss on a deal basis.
                   </li>
                   <li>
-                    累计管理约 20 亿美元聚焦中国的另类信贷资本，服务全球机构投资者。
+                    Managed approximately US$2 billion of China-focused private
+                    credit capital for global institutional investors.
                   </li>
                   <li>
-                    近期交易平均实现约 20%
-                    高位区间净单笔 IRR（不加杠杆），加权平均存续期约 18
-                    个月，年化现金收益约 8%–12%。
+                    Recent deals averaged high-20% net deal-level IRRs
+                    (unlevered), with ~18-month weighted average life and 8–12%
+                    annual cash yield.
                   </li>
                   <li>
-                    当前市场环境被视为公司 20 年历史中最具吸引力的投放窗口。
+                    Current market backdrop is viewed as the most attractive
+                    deployment window in the firm’s 20-year history.
                   </li>
                 </ul>
               </article>
               <article class="data-card">
-                <h3>近期机会集</h3>
+                <h3>Recent Opportunity Set</h3>
                 <table class="deal-table">
                   <thead>
                     <tr>
-                      <th>交易</th>
-                      <th>年份</th>
-                      <th>净 IRR</th>
+                      <th>Deal</th>
+                      <th>Year</th>
+                      <th>Net IRR</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>交易 18</td>
+                      <td>Deal 18</td>
                       <td>2024</td>
                       <td>14.6%</td>
                     </tr>
                     <tr>
-                      <td>交易 19</td>
+                      <td>Deal 19</td>
                       <td>2024</td>
                       <td>22.0%</td>
                     </tr>
                     <tr>
-                      <td>交易 20</td>
+                      <td>Deal 20</td>
                       <td>2024</td>
                       <td>25.5%</td>
                     </tr>
                     <tr>
-                      <td>交易 21</td>
+                      <td>Deal 21</td>
                       <td>2024</td>
                       <td>39.8%</td>
                     </tr>
                     <tr>
-                      <td>交易 22</td>
+                      <td>Deal 22</td>
                       <td>2024</td>
                       <td>27.4%</td>
                     </tr>
                     <tr>
-                      <td>交易 24–27</td>
+                      <td>Deal 24–27</td>
                       <td>2025</td>
                       <td>22.0%–44.9%</td>
                     </tr>
                   </tbody>
                 </table>
                 <p class="data-note">
-                  业绩数据仅供说明，展示方式与最新投资者路演材料一致（含已退出、部分退出与在投项目）。
+                  Performance references are shown for informational purposes
+                  and mirror the latest investor deck format (fully exited,
+                  partially exited, and invested outcomes).
                 </p>
               </article>
             </div>
           </section>
 
           <section class="strategy-block" id="sourcing">
-            <h2>项目来源与管线</h2>
+            <h2>Sourcing and Pipeline</h2>
             <p>
-              与银行、AMC、律师事务所及服务机构二十年的合作关系，支持双边项目流、更优定价与更高交割确定性。
+              Long-term relationships with banks, AMCs, law firms, and servicers
+              support repeat deal flow, better structuring access, and higher
+              certainty of close.
             </p>
-            <div class="funnel-grid" aria-label="项目筛选漏斗">
+            <div class="funnel-grid" aria-label="Pipeline funnel">
               <button
                 class="funnel-step is-active"
-                data-detail="广泛的项目来源支持更审慎、更有选择性的资金投放。"
+                data-detail="Wide sourcing universe allows selective deployment."
               >
-                <b>~US$12.8B</b><small>已获取项目机会</small>
+                <b>~US$12.8B</b><small>Sourced opportunities</small>
               </button>
               <button
                 class="funnel-step"
-                data-detail="快速初筛重点检验法律可执行性与抵押品质量。"
+                data-detail="Rapid triage screens enforceability and collateral quality."
               >
-                <b>~US$6.8B</b><small>初步尽调</small>
+                <b>~US$6.8B</b><small>Preliminary diligence</small>
               </button>
               <button
                 class="funnel-step"
-                data-detail="进入投委会前进行深度法律与抵押品承做分析。"
+                data-detail="Deep legal + collateral underwriting before IC."
               >
-                <b>~US$1.2B</b><small>全面尽调</small>
+                <b>~US$1.2B</b><small>Full due diligence</small>
               </button>
               <button
                 class="funnel-step"
-                data-detail="仅高确定性项目进入投资委员会审议。"
+                data-detail="Only highest-conviction deals reach committee."
               >
-                <b>~US$898M</b><small>投资委员会审议</small>
+                <b>~US$898M</b><small>Investment committee</small>
               </button>
             </div>
             <div class="funnel-detail" data-funnel-detail>
-              广泛的项目来源支持更审慎、更有选择性的资金投放。
-            </div>
-          </section>
-
-          <section class="strategy-block" id="how-we-invest">
-            <h2>近期交易概览</h2>
-            <p>
-              每个项目都遵循同一执行节奏：锁定抵押、搭建控制、主动监控，并通过最优可行退出通道实现回收。
-            </p>
-            <div class="process-flow" aria-label="投资生命周期">
-              <div class="flow-step">
-                <b>项目获取</b><small>通过借款人与机构渠道直接获取项目。</small>
-              </div>
-              <div class="flow-step">
-                <b>交易结构</b
-                ><small>第一顺位抵押/可执行法律文件及契约条款。</small>
-              </div>
-              <div class="flow-step">
-                <b>持续监控</b
-                ><small>持续跟踪法律进展、抵押品状态与现金流。</small>
-              </div>
-              <div class="flow-step">
-                <b>处置回收</b
-                ><small>通过重组、执行与纪律化处置实现回收。</small>
-              </div>
+              Wide sourcing universe allows selective deployment.
             </div>
           </section>
 
           <section class="strategy-block" id="sub-strategies">
-            <h2>子策略与动态配置</h2>
+            <h2>Sub-Strategies and Dynamic Allocation</h2>
             <p>
-              资本配置会随周期灵活调整。请使用情景切换查看在不同市场环境下组合权重如何变化。
+              Capital allocation flexes by cycle. Use the scenario toggles to
+              view how portfolio balance shifts as market conditions change.
             </p>
             <div class="strategy-viz">
-              <div class="viz-controls" role="tablist" aria-label="配置情景">
+              <div
+                class="viz-controls"
+                role="tablist"
+                aria-label="Allocation scenarios"
+              >
                 <button
                   class="viz-btn is-active"
                   data-scenario="base"
                   aria-pressed="true"
                 >
-                  基准
+                  Base
                 </button>
                 <button
                   class="viz-btn"
                   data-scenario="defensive"
                   aria-pressed="false"
                 >
-                  防御
+                  Defensive
                 </button>
                 <button
                   class="viz-btn"
                   data-scenario="offensive"
                   aria-pressed="false"
                 >
-                  进攻
+                  Offensive
                 </button>
               </div>
               <div class="alloc-grid">
@@ -2252,7 +2209,7 @@
                     data-defensive="40"
                     data-offensive="24"
                   >
-                    <b><span>资产抵押贷款</span><span>32%</span></b>
+                    <b><span>Asset-Based Lending</span><span>32%</span></b>
                     <div class="alloc-track">
                       <span style="width: 32%"></span>
                     </div>
@@ -2263,7 +2220,7 @@
                     data-defensive="46"
                     data-offensive="61"
                   >
-                    <b><span>资产重组</span><span>53%</span></b>
+                    <b><span>Asset Restructuring</span><span>53%</span></b>
                     <div class="alloc-track">
                       <span style="width: 53%"></span>
                     </div>
@@ -2274,128 +2231,192 @@
                     data-defensive="14"
                     data-offensive="15"
                   >
-                    <b><span>债务处置</span><span>15%</span></b>
+                    <b><span>Debt Resolutions</span><span>15%</span></b>
                     <div class="alloc-track">
                       <span style="width: 15%"></span>
                     </div>
                   </div>
-                  <div class="alloc-note">该组合仅用于策略沟通示意。</div>
+                  <div class="alloc-note">
+                    Illustrative portfolio mix for strategy communication only.
+                  </div>
                 </div>
                 <div class="ring-card">
                   <div class="ring"></div>
                   <div class="ring-label">
-                    <strong data-ring-value>75%</strong>目标抵押覆盖率
+                    <strong data-ring-value>75%</strong>Target collateral
+                    coverage
                   </div>
                 </div>
+              </div>
+              <div class="strategy-details" aria-label="Sub-strategy detail">
+                <article class="strategy-detail">
+                  <h3>First-Lien Asset-Based Lending</h3>
+                  <p>
+                    Transactions are typically structured at 30–60% entry LTV
+                    against hard collateral, with first-lien priority under PRC
+                    law to improve control rights and recovery sequencing.
+                  </p>
+                </article>
+                <article class="strategy-detail">
+                  <h3>Asset Restructuring &amp; Workouts</h3>
+                  <p>
+                    The team runs creditor coordination and balance-sheet
+                    redesign programs, informed by two-decade pattern
+                    recognition across China’s restructuring cycles.
+                  </p>
+                </article>
+                <article class="strategy-detail">
+                  <h3>Debt Resolutions &amp; Recoveries</h3>
+                  <p>
+                    ShoreVest Asset Solutions operates as the in-house
+                    resolution vehicle, with sourcing, diligence, legal
+                    enforcement, and disposition managed internally.
+                  </p>
+                </article>
               </div>
             </div>
           </section>
 
           <section class="strategy-block" id="legal-environment">
-            <h2>法律环境与回收路径</h2>
+            <h2>Legal Environment and Recovery Paths</h2>
             <p>
-              中国内地的执行环境比许多离岸投资者预期更具可操作性；随着拍卖透明度提升与债权路径清晰化，结构完善的债权回收可预期性更高。
+              PRC enforcement is materially more functional than many offshore
+              allocators assume, with improved auction transparency and clearer
+              creditor pathways for properly structured claims.
             </p>
             <div class="city-grid">
               <button
                 class="city is-active"
-                data-detail="一线法院处理有担保债权的时间表可预测性显著提升。"
+                data-detail="Tier-1 courts now process secured claims with greater timeline predictability."
               >
-                <b>法院效率</b><small>有担保案件推进速度更快。</small>
+                <b>Court Efficiency</b
+                ><small>Faster case progression on secured collateral.</small>
               </button>
               <button
                 class="city"
-                data-detail="数字化拍卖渠道持续提升买方流动性。"
+                data-detail="Digital auction channels continue to deepen buyer liquidity."
               >
-                <b>拍卖深度</b><small>价格发现与变现路径更加多元。</small>
+                <b>Auction Depth</b
+                ><small>Broader discovery and monetization options.</small>
               </button>
               <button
                 class="city"
-                data-detail="在最终执行前，和解与转让路径提升退出灵活性。"
+                data-detail="Settlement and sale routes create flexibility before terminal enforcement."
               >
-                <b>退出灵活性</b
-                ><small>可通过协商、二级转让及法院主导等路径退出。</small>
+                <b>Exit Optionality</b
+                ><small>Negotiated, secondary, and court-led routes.</small>
               </button>
             </div>
             <div class="city-detail" data-city-detail>
-              一线法院处理有担保债权的时间表可预测性显著提升。
+              Tier-1 courts now process secured claims with greater timeline
+              predictability.
             </div>
           </section>
 
           <section class="strategy-block" id="risk-management">
-            <h2>风险管理框架</h2>
+            <h2>Risk Management Framework</h2>
             <p>
-              下行管理是结构性的，而非主观裁量。组合构建坚持先保本、后增值。
+              Downside management is structural, not discretionary. Portfolio
+              construction is designed to protect principal first and monetize
+              upside through execution.
             </p>
             <div class="risk-grid">
               <div class="risk-card">
-                <h4>承做控制</h4>
+                <h4>Underwriting Controls</h4>
                 <ul>
                   <li>
-                    采用审慎的入场 LTV/CTV 区间，并对回收假设进行压力测试。
+                    Conservative entry LTV/CTV bands with stress-tested recovery
+                    assumptions.
                   </li>
-                  <li>确保债权优先级、可执行性审查及中国法文件标准。</li>
-                  <li>价值实现不依赖再融资。</li>
+                  <li>
+                    Priority claims, enforceability review, and PRC-law
+                    documentation standards.
+                  </li>
+                  <li>
+                    No dependence on refinancing to complete value realization.
+                  </li>
                 </ul>
               </div>
               <div class="risk-card">
-                <h4>组合控制</h4>
+                <h4>Portfolio Controls</h4>
                 <ul>
-                  <li>按借款人、抵押品、投放批次与省份进行分散配置。</li>
-                  <li>从项目获取到最终处置全程持续监测。</li>
-                  <li>多条预设退出路径降低久期与执行风险。</li>
+                  <li>
+                    Diversification by borrower, collateral, vintage, and
+                    province.
+                  </li>
+                  <li>
+                    Continuous surveillance from origination through
+                    disposition.
+                  </li>
+                  <li>
+                    Multiple predefined exits reduce duration and execution
+                    risk.
+                  </li>
                 </ul>
               </div>
             </div>
           </section>
 
           <section class="strategy-block" id="returns-profile">
-            <h2>回报概况</h2>
+            <h2>Returns Profile</h2>
             <p>
-              该策略目标是在美元口径、基金层面不加杠杆的前提下实现约 10%–15%
-              的净回报，并聚焦当期现金收益、本金保护以及相较多数私募市场替代策略更短的流动性实现路径。
+              The strategy targets approximately 10–15% net returns in USD terms
+              without fund-level leverage, with a focus on current cash yield,
+              principal protection, and shorter path-to-liquidity than many
+              private-market alternatives.
             </p>
           </section>
 
           <section class="strategy-block" id="current-fund">
-            <h2>Fund III 基本条款（参考）</h2>
-            <div class="funnel-grid" aria-label="基金条款">
+            <h2>Indicative Fund III Snapshot</h2>
+            <div class="funnel-grid" aria-label="Indicative fund terms">
               <div class="funnel-step">
-                <b>US$500M</b><small>目标规模</small>
+                <b>US$500M</b><small>Target size</small>
               </div>
               <div class="funnel-step">
-                <b>3 + 2 年</b><small>投资期 + 剩余期限</small>
+                <b>3 + 2 years</b><small>Investment + remaining term</small>
               </div>
-              <div class="funnel-step"><b>3年</b><small>投资期</small></div>
-              <div class="funnel-step"><b>US$2M</b><small>最低认缴</small></div>
               <div class="funnel-step">
-                <b>2% / 1.5%</b><small>管理费（投资期 / 投资期后）</small>
+                <b>3 years</b><small>Investment period</small>
               </div>
-              <div class="funnel-step"><b>20%</b><small>业绩报酬</small></div>
-              <div class="funnel-step"><b>8%</b><small>优先回报</small></div>
               <div class="funnel-step">
-                <b>US$5M / 1%</b><small>GP 跟投</small>
+                <b>US$2M</b><small>Minimum commitment</small>
+              </div>
+              <div class="funnel-step">
+                <b>2% / 1.5%</b><small>Mgmt fee (invest / post-invest)</small>
+              </div>
+              <div class="funnel-step">
+                <b>20%</b><small>Carried interest</small>
+              </div>
+              <div class="funnel-step">
+                <b>8%</b><small>Preferred return</small>
+              </div>
+              <div class="funnel-step">
+                <b>US$5M / 1%</b><small>GP commitment</small>
               </div>
             </div>
             <p class="data-note">
-              以上条款仅为指示性信息。任何基金结构、费用条款及可投状态均以最终法律文件、投资者适当性及适用法律监管要求为准。
+              Indicative terms only. Any fund structure, economics, and
+              availability are subject to final documentation, investor
+              eligibility, and applicable legal and regulatory requirements.
             </p>
           </section>
 
           <section class="strategy-block" id="cta-next">
-            <h2>进一步了解</h2>
+            <h2>Continue Exploring</h2>
             <p>
-              如需了解治理架构、机构化平台细节与团队构成，请继续查看以下相关页面。
+              For governance details, platform design, and team composition,
+              continue to the related sections below.
             </p>
             <div class="next-links">
-              <a href="firm_cn.html" class="cta cta--dark"
-                ><span>公司简介</span><span class="cta__ring">→</span></a
+              <a href="firm.html" class="cta cta--dark"
+                ><span>The Firm</span><span class="cta__ring">→</span></a
               >
-              <a href="team_cn.html" class="cta cta--dark"
-                ><span>团队介绍</span><span class="cta__ring">→</span></a
+              <a href="team.html" class="cta cta--dark"
+                ><span>Meet the Team</span><span class="cta__ring">→</span></a
               >
-              <a href="insights_cn.html" class="cta cta--dark"
-                ><span>洞察文章</span><span class="cta__ring">→</span></a
+              <a href="insights.html" class="cta cta--dark"
+                ><span>Read Insights</span><span class="cta__ring">→</span></a
               >
             </div>
           </section>
@@ -2413,12 +2434,13 @@
           max-width: 980px;
         "
       >
-        页面所示业绩数据仅供参考，展示口径与最新投资者路演材料一致。过往业绩不代表未来表现。
-        本网站不构成任何证券的出售要约或购买要约邀请。页面中的基金条款仅为指示性信息。
-        如需进一步信息，请联系 inquiries@shorevest.com。
+        Performance figures shown are for informational purposes only and mirror
+        the latest investor deck format. Past performance is not indicative of
+        future results. This website does not constitute an offer to sell or
+        solicitation of an offer to purchase any security. Fund terms shown are
+        indicative only. For more information contact inquiries@shorevest.com.
       </div>
     </section>
-
     <script>
       const menuBtn = document.querySelector(".nav__menu-btn");
       const nav = document.getElementById("nav");
