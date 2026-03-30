@@ -595,79 +595,7 @@ h2.su__hed {
 .su__submit:hover .su__submit-ring,
 .su__submit:focus-visible .su__submit-ring { background:var(--red); border-color:var(--red); }
 
-/* ══ FOOTER — Blackstone style: tagline left, nav columns right */
-footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); padding:88px var(--pad) 48px; }
-.foot__inner { max-width:var(--max); margin:0 auto; }
-.foot__top {
-  display:grid;
-  grid-template-columns:minmax(280px, 1.15fr) minmax(180px, .9fr) minmax(280px, 1fr);
-  align-items:start;
-  gap:clamp(32px, 3.6vw, 56px);
-  padding-bottom:56px;
-  border-bottom:1px solid rgba(255,255,255,.06); margin-bottom:36px;
-}
-.foot__brand {
-  display:flex;
-  flex-direction:column;
-  gap:0;
-  max-width:340px;
-}
-.foot__col {
-  display:flex;
-  flex-direction:column;
-  gap:0;
-}
-.foot__top > .foot__col + .foot__col {
-  border-left:1px solid rgba(255,255,255,.05);
-  padding-left:clamp(24px, 2.8vw, 40px);
-}
-.foot__tagline {
-  font-family:var(--serif); font-size:clamp(22px,2.5vw,32px);
-  color:var(--white); line-height:1.2; margin-bottom:18px;
-  font-style:italic; opacity:.72;
-}
-.foot__tagline strong { font-style:normal; font-weight:400; }
-.foot__brand-mark { margin-bottom:0; opacity:.55; transform:translateX(2px); }
-.foot__col-hd {
-  font-size:9px; font-weight:500; letter-spacing:.24em;
-  text-transform:uppercase; color:rgba(255,255,255,.22); margin-bottom:22px;
-}
-.foot__list { list-style:none; display:flex; flex-direction:column; gap:14px; }
-.foot__list a { font-size:13.5px; color:rgba(255,255,255,.38); transition:color .2s; }
-.foot__list a:hover { color:rgba(255,255,255,.82); }
-.foot__col--contact .foot__list {
-  gap:10px;
-}
-.foot__contact {
-  margin-top:18px;
-  padding:18px 20px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.02);
-  border-radius:14px;
-}
-.foot__contact-row {
-  font-size:13px;
-  color:rgba(255,255,255,.58);
-  line-height:1.55;
-}
-.foot__contact-row + .foot__contact-row {
-  margin-top:8px;
-  padding-top:8px;
-  border-top:1px solid rgba(255,255,255,.08);
-}
-.foot__contact-link {
-  color:rgba(255,255,255,.82);
-  transition:color .2s;
-}
-.foot__contact-link:hover { color:var(--white); }
-/* Bottom bar — Blackstone style: copyright left, legal links spread */
-.foot__btm {
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:28px;
-}
-.foot__copy { font-size:11.5px; color:rgba(255,255,255,.18); }
+/* ══ FOOTER — Blackstone style: tagline left, nav columns right */.foot__copy { font-size:11.5px; color:rgba(255,255,255,.18); }
 .foot__address {
   font-size:11px;
   color:rgba(255,255,255,.26);
@@ -787,11 +715,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .su__wrap,
   .city-band__inner { gap:48px; }
   .team__grid { grid-template-columns:repeat(3,1fr); }
-  .foot__top {
-    grid-template-columns:minmax(220px, 1fr) minmax(220px, 1fr);
-    gap:30px;
-  }
-  .foot__brand {
+.foot__brand {
     max-width:none;
   }
   .foot__col--contact {
@@ -893,7 +817,6 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .team__grid,
   .city-band__inner,
   .su__wrap,
-  .foot__top,
   .issue-takes,
   #insights [style*="grid-template-columns:1fr 1fr"],
   #insights [style*="grid-template-columns:1fr 2fr"] {
@@ -1000,16 +923,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .city-band__content { padding-bottom:32px; }
   .city-band__right { align-items:flex-start; }
   .city-band__sub { text-align:left; }
-  .foot__btm {
-    grid-template-columns:1fr;
-    justify-items:flex-start;
-    gap:14px;
-  }
-  .foot__top > .foot__col + .foot__col {
-    border-left:none;
-    padding-left:0;
-  }
-  .foot__col--contact {
+.foot__col--contact {
     max-width:380px;
   }
   .foot__address { text-align:left; }
@@ -1108,33 +1022,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 
 
 /* ══ LEGAL DISCLAIMER FOOTER */
-.legal-disclaimer {
-  background:#0c0c0a;
-  color:rgba(246,244,240,0.6);
-  padding:26px var(--pad) 30px;
-}
-.legal-disclaimer__inner {
-  max-width:var(--max);
-  margin:0 auto;
-}
-.legal-disclaimer__rule {
-  height:1px;
-  background:rgba(139,26,47,0.2);
-  margin-bottom:14px;
-}
-.legal-disclaimer__text {
-  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
-  font-size:12px;
-  line-height:1.6;
-  letter-spacing:.08em;
-  font-variant:small-caps;
-}
-.legal-disclaimer--cn .legal-disclaimer__text {
-  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
-  font-variant:normal;
-}
 @media (max-width:900px){
-  .legal-disclaimer { padding:22px 28px 26px; }
 }
 
 
@@ -1154,6 +1042,28 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
         transform: translateY(0);
       }
 
+
+@media (max-width: 768px) {
+  footer > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  footer > div:first-child > div:last-child {
+    text-align: left;
+  }
+  footer > div:last-child {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  footer > div:last-child > div:last-child {
+    text-align: left;
+    max-width: 100%;
+  }
+  footer nav {
+    gap: 1rem;
+  }
+}
 </style>
 </head>
 <body id="top">
@@ -1356,41 +1266,6 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 <!-- CITY BAND -->
 
 <!-- FOOTER — Blackstone style -->
-<footer id="contact">
-  <div class="foot__inner">
-    <div class="foot__top">
-      <div class="foot__brand">
-<div class="foot__brand-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 158" width="72" height="auto" role="img" aria-label="ShoreVest">
-        <path d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z" fill="white"/>
-        <path d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z" fill="white"/>
-        <path d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z" fill="white"/>
-        <path d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z" fill="white"/>
-        <path d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z" fill="white"/>
-        <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="white"/>
-        <circle cx="48" cy="82" r="3.5" fill="white"/>
-  <text x="48" y="134" font-family="EB Garamond, Georgia, serif" font-weight="400" font-size="18" letter-spacing="2" fill="white" text-anchor="middle">ShoreVest</text>
-  <line x1="6" y1="138" x2="90" y2="138" stroke="white" stroke-width="0.4" opacity="0.3"/>
-  <text x="48" y="151" font-family="Inter, sans-serif" font-weight="300" font-size="7" letter-spacing="3.5" fill="white" text-anchor="middle" opacity="0.4">新 岸 資 本</text>
-</svg></div>
-      </div>
-      <div class="foot__col foot__col--links">
-        <div class="foot__col-hd">快速链接</div>
-        <ul class="foot__list">
-          <li><a href="firm_cn.html">公司简介</a></li>
-          <li><a href="strategy_cn.html">策略</a></li>
-          <li><a href="insights_cn.html">洞察</a></li>
-          <li><a href="press_cn.html">新闻</a></li>
-          <li><a href="team_cn.html">团队</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot__btm">
-      <div class="foot__copy">© 2026 ShoreVest Partners 新岸资本。保留所有权利。</div>
-      <div class="foot__address">广州 · 上海 · 香港</div>
-
-    </div>
-  </div>
-</footer>
 
 <script>
 // Scroll reveal for .rev elements
@@ -1528,14 +1403,47 @@ if (menuBtn && nav) {
 
 <script src="assets/js/newsletter-signup.js"></script>
 
+<footer style="background-color:#0c0c0a;padding:3rem 2rem 2rem 2rem;margin-top:0;">
 
-<footer class="legal-disclaimer" aria-label="Legal disclaimer">
-  <div class="legal-disclaimer__inner">
-    <div class="legal-disclaimer__rule" aria-hidden="true"></div>
-    <p class="legal-disclaimer__text">
-          © ShoreVest Partners, Ltd. All rights reserved. This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future results. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before investing.
-        </p>
+  <!-- Top row: logo left, nav centre, contact right -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,244,240,0.12);">
+
+    <!-- Logo -->
+    <div style="flex:0 0 auto;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:#f6f4f0;letter-spacing:0.05em;">ShoreVest</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:0.75rem;color:rgba(246,244,240,0.5);letter-spacing:0.2em;margin-top:0.25rem;">新 岸 資 本</div>
+    </div>
+
+    <!-- Nav links -->
+    <nav style="display:flex;gap:2rem;flex-wrap:wrap;align-items:center;">
+      <a href="firm_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">公司简介</a>
+      <a href="strategy_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">策略</a>
+      <a href="insights_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">洞察</a>
+      <a href="press_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">新闻</a>
+      <a href="team_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">团队</a>
+    </nav>
+
+    <!-- Contact and location -->
+    <div style="flex:0 0 auto;text-align:right;">
+      <a href="mailto:inquiries@shorevest.com" style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:rgba(246,244,240,0.6);text-decoration:none;display:block;">inquiries@shorevest.com</a>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;color:rgba(246,244,240,0.35);margin-top:0.5rem;">广州 &middot; 上海 &middot; 香港</div>
+    </div>
+
   </div>
+
+  <!-- Bottom row: copyright left, legal disclaimer right -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;">
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:0.72rem;color:rgba(246,244,240,0.3);letter-spacing:0.04em;">
+      &copy; ShoreVest Partners, Ltd. All rights reserved.
+    </div>
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:0.72rem;color:rgba(246,244,240,0.3);max-width:640px;text-align:right;line-height:1.6;">
+      This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future results. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before investing.
+    </div>
+
+  </div>
+
 </footer>
 
 </body>

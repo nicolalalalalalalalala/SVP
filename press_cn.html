@@ -561,37 +561,8 @@
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
-      .legal-disclaimer {
-        background: #0c0c0a;
-        color: rgba(246, 244, 240, 0.6);
-        padding: 26px var(--pad) 30px;
-      }
-      .legal-disclaimer__inner {
-        max-width: var(--max);
-        margin: 0 auto;
-      }
-      .legal-disclaimer__rule {
-        height: 1px;
-        background: rgba(139, 26, 47, 0.2);
-        margin-bottom: 14px;
-      }
-      .legal-disclaimer__text {
-        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-        font-size: 12px;
-        line-height: 1.6;
-        letter-spacing: 0.08em;
-        font-variant: small-caps;
-      }
-      .legal-disclaimer--cn .legal-disclaimer__text {
-        font-family:
-          "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-        font-variant: normal;
-      }
-      @media (max-width: 900px) {
-        .legal-disclaimer {
-          padding: 22px 28px 26px;
-        }
-      }
+@media (max-width: 900px) {
+}
 
       @media (max-width: 768px) {
         .press-hero {
@@ -1723,13 +1694,48 @@
       })();
     </script>
 
-    <footer class="legal-disclaimer" aria-label="Legal disclaimer">
-      <div class="legal-disclaimer__inner">
-        <div class="legal-disclaimer__rule" aria-hidden="true"></div>
-        <p class="legal-disclaimer__text">
-          © ShoreVest Partners, Ltd. 保留所有权利。本网站仅供信息参考，不构成任何出售证券之要约或购买证券之要约邀请。过往业绩不代表未来表现。ShoreVest Partners, Ltd. 未在任何监管机构注册为投资顾问。潜在投资者在投资前应仔细审阅全部基金文件，并咨询其自身法律、税务及财务顾问。
-        </p>
-      </div>
-    </footer>
-  </body>
+<footer style="background-color:#0c0c0a;padding:3rem 2rem 2rem 2rem;margin-top:0;">
+
+  <!-- Top row: logo left, nav centre, contact right -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,244,240,0.12);">
+
+    <!-- Logo -->
+    <div style="flex:0 0 auto;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:#f6f4f0;letter-spacing:0.05em;">ShoreVest</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:0.75rem;color:rgba(246,244,240,0.5);letter-spacing:0.2em;margin-top:0.25rem;">新 岸 資 本</div>
+    </div>
+
+    <!-- Nav links -->
+    <nav style="display:flex;gap:2rem;flex-wrap:wrap;align-items:center;">
+      <a href="firm_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">公司简介</a>
+      <a href="strategy_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">策略</a>
+      <a href="insights_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">洞察</a>
+      <a href="press_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">新闻</a>
+      <a href="team_cn.html" style="font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,244,240,0.6);text-decoration:none;">团队</a>
+    </nav>
+
+    <!-- Contact and location -->
+    <div style="flex:0 0 auto;text-align:right;">
+      <a href="mailto:inquiries@shorevest.com" style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:rgba(246,244,240,0.6);text-decoration:none;display:block;">inquiries@shorevest.com</a>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;color:rgba(246,244,240,0.35);margin-top:0.5rem;">广州 &middot; 上海 &middot; 香港</div>
+    </div>
+
+  </div>
+
+  <!-- Bottom row: copyright left, legal disclaimer right -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;">
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:0.72rem;color:rgba(246,244,240,0.3);letter-spacing:0.04em;">
+      &copy; ShoreVest Partners, Ltd. All rights reserved.
+    </div>
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:0.72rem;color:rgba(246,244,240,0.3);max-width:640px;text-align:right;line-height:1.6;">
+      This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future results. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before investing.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
 </html>
