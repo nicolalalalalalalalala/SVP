@@ -2004,7 +2004,24 @@
           padding: 22px 28px 26px;
         }
       }
-    </style>
+    
+      /* Global eyebrow stabilization */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        white-space: nowrap;
+      }
+      .eyebrow::after {
+        content: "";
+        display: block;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 1px;
+        transform: translateY(0);
+      }
+
+</style>
   </head>
   <body>
     <nav id="nav">
