@@ -267,6 +267,32 @@
         line-height: 1.42;
       }
 
+
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .pillar-card {
+        background: #f9f8f6;
+        border: 1px solid #e5e2dc;
+        padding: 16px;
+      }
+      .pillar-card h3 {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #3f3b35;
+      }
+      .location-line {
+        margin-top: 16px;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #6b665d;
+      }
+
       .proof-grid,
       .market-grid {
         display: grid;
@@ -692,6 +718,7 @@
         .hero-thesis,
         .proof-grid,
         .market-grid,
+        .pillar-grid,
         .flow,
         .intel-flow {
           grid-template-columns: 1fr;
@@ -1020,6 +1047,51 @@
                 <span>Process discipline</span><em>Legal-first underwriting</em>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>How ShoreVest is built.</h2>
+            <p>
+              Three operating pillars shape origination, underwriting, and portfolio management from entry through exit.
+            </p>
+          </div>
+          <div class="pillar-grid">
+            <article class="pillar-card">
+              <h3>Proprietary Sourcing</h3>
+              <p>
+                Direct relationships with banks, AMCs, law firms, and servicers built over two decades. Access to opportunities before competitive auction, with the ability to source bilaterally or select from larger portfolios.
+              </p>
+            </article>
+            <article class="pillar-card">
+              <h3>Disciplined Underwriting</h3>
+              <p>
+                Every transaction anchored to hard-asset collateral, conservative loan-to-value or cost-to-value thresholds of typically 30–60%, and first-lien or otherwise directly enforceable positioning. Downside defined before upside.
+              </p>
+            </article>
+            <article class="pillar-card">
+              <h3>Alignment of Interests</h3>
+              <p>
+                Senior team continuity of approximately twenty years. GP commitment of US$5 million or 1% of fund commitments. The people who approve investments are accountable for monitoring and exit.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="framed-panel">
+            <div class="section-head" style="margin-bottom:0;">
+              <h2>On the ground.</h2>
+              <p>
+                Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China — sourcing, diligence, structuring, servicing, and resolution run through an integrated onshore process.
+              </p>
+            </div>
+            <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
           </div>
         </div>
       </section>
