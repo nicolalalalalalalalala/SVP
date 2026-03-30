@@ -1293,7 +1293,18 @@ Before joining ShoreVest, Ms. Xu held senior legal and compliance roles at Kingo
         });
       }
 
+      function hydrateCardBios() {
+        document.querySelectorAll(".card").forEach((card) => {
+          const name =
+            card.querySelector(".name")?.textContent?.trim() || "Team Member";
+          const bio = card.querySelector(".card-bio");
+          if (!bio) return;
+          bio.textContent = getProfile(name).bio;
+        });
+      }
+
       hydrateCardTitles();
+      hydrateCardBios();
 
       const menuBtn = document.querySelector(".nav__menu-btn");
       const nav = document.getElementById("nav");
