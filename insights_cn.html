@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShoreVest Partners — 洞察</title>
+    <title>ShoreVest Partners — China Debt Dynamics</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
     <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
     <link
@@ -466,13 +466,17 @@
       .franchise-ribbon {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         gap: 20px;
         padding: 16px 18px;
         border: 1px solid var(--rule);
         border-left: 3px solid var(--red);
-        margin-bottom: 22px;
+        margin-bottom: 28px;
         background: #fff;
+      }
+      .franchise-ribbon__info {
+        flex: 1 1 auto;
+        max-width: 620px;
       }
       .franchise-ribbon__title {
         font-size: 10px;
@@ -485,21 +489,15 @@
         font-size: 18px;
         color: #3f3a34;
       }
-      .utility {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 12px;
-        padding: 12px 0 24px;
-        border-bottom: 1px solid var(--rule);
-      }
       .utility__actions {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
-        justify-items: stretch;
-        width: 100%;
-        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 10px;
+        width: auto;
+        max-width: 340px;
+        flex: 0 0 auto;
       }
       .util-btn {
         font-size: 10px;
@@ -513,7 +511,9 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: auto;
+        min-width: 152px;
+        white-space: nowrap;
       }
       .util-btn--solid {
         background: var(--ink);
@@ -750,21 +750,16 @@
         .latest {
           grid-template-columns: 1fr;
         }
-        .utility {
-          display: grid;
-          gap: 12px;
-          padding-bottom: 20px;
-          justify-items: start;
-        }
         .utility__actions {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
           gap: 10px;
-          justify-items: stretch;
-          width: 100%;
+          width: auto;
+          max-width: none;
         }
         .util-btn {
-          width: 100%;
+          width: auto;
           min-height: 52px;
           padding: 14px 18px;
           text-align: center;
@@ -804,23 +799,25 @@
         .franchise-ribbon {
           display: block;
         }
+        .franchise-ribbon__info {
+          max-width: none;
+        }
         .franchise-ribbon__sub {
           margin-top: 6px;
           font-size: 17px;
         }
-        .utility {
-          padding: 14px 0 22px;
-        }
         .utility__actions {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
           gap: 10px;
-          justify-items: stretch;
-          width: 100%;
+          width: auto;
           max-width: none;
+          margin-top: 14px;
         }
         .util-btn {
-          width: 100%;
+          min-width: 0;
+          width: auto;
           min-height: 52px;
           padding: 14px 18px;
           text-align: center;
@@ -905,8 +902,14 @@
           flex: 0 0 auto;
           white-space: nowrap;
         }
-        .nav__mobile-lang {
+        .nav__zh {
           display: none;
+        }
+        .nav__mobile-lang {
+          display: list-item;
+        }
+        .nav__mobile-lang a {
+          opacity: 1;
         }
         .nav__lp {
           display: inline-flex;
@@ -938,7 +941,7 @@
 
         .research-hero {
           margin-top: 0;
-          padding: 172px 0 64px;
+          padding: 128px 0 64px;
           overflow: hidden;
         }
         .research-hero__grid {
@@ -1109,9 +1112,6 @@
         .nav__zh {
           display: none;
         }
-        .nav__mobile-lang {
-          display: inline-flex;
-        }
         .nav__lp,
         .nav__menu-btn {
           width: auto;
@@ -1126,7 +1126,7 @@
 
         .research-hero {
           margin-top: 0;
-          padding: 54px 0 40px;
+          padding: 128px 0 40px;
         }
         .wordmark {
           align-items: flex-start;
@@ -1150,12 +1150,14 @@
         }
 
         .utility__actions {
-          grid-template-columns: minmax(0, 1fr);
-          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          width: auto;
         }
         .util-btn {
           justify-content: center;
-          width: 100%;
+          width: auto;
           padding: 14px 18px;
         }
 
@@ -1294,7 +1296,7 @@
   </head>
   <body>
     <nav id="nav">
-      <a href="index_cn.html" class="nav__logo"
+      <a href="index.html" class="nav__logo"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 220 52"
@@ -1371,22 +1373,24 @@
         </svg></a
       >
       <ul class="nav__links" id="nav-links">
-        <li><a href="firm_cn.html">公司简介</a></li>
-        <li><a href="strategy_cn.html">策略</a></li>
-        <li><a href="insights_cn.html" class="active">洞察</a></li>
-        <li><a href="press_cn.html">新闻</a></li>
-        <li><a href="team_cn.html">团队</a></li>
-        <li class="nav__mobile-lang"><a href="insights.html">EN</a></li>
+        <li><a href="firm.html">The Firm</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li class="nav__mobile-lang"><a href="index_cn.html">中文</a></li>
       </ul>
       <div class="nav__right">
-        <a href="insights.html" class="nav__zh">EN</a>
-        <a href="investor-access.html" class="nav__lp">投资者入口</a
+        <a href="index_cn.html" class="nav__zh">中文</a>
+        <a href="investor-access.html" class="nav__lp">Investor Access</a
         ><button
           class="nav__menu-btn"
           type="button"
           aria-expanded="false"
           aria-controls="nav-links"
-        >菜单</button>
+        >
+          Menu
+        </button>
       </div>
     </nav>
 
@@ -1394,7 +1398,7 @@
       <div class="wrap research-hero__grid">
         <div>
           <div class="eyebrow eyebrow--ghost">
-            ShoreVest 洞察 · 创刊于 2018
+            ShoreVest Insights · Est. 2018
           </div>
           <div class="wordmark">
             <svg
@@ -1431,20 +1435,26 @@
             </div>
           </div>
           <p class="research-hero__desc">
-            《中国债务动态》是新岸资本的机构研究出版物，专注于中国私募信贷市场分析。研究内容以本地承销实践、法律流程与实地交易经验为基础，自2018年起持续发布。
+            China Debt Dynamics is ShoreVest's institutional research
+            publication, covering China's private credit markets. Analysis is
+            grounded in local underwriting practice, legal process, and
+            on-the-ground deal experience. Published since 2018.
           </p>
         </div>
         <article class="issue-live">
           <div class="issue-live__k">
-            <span class="live-dot" aria-hidden="true"></span>本期上线 · 最新刊
+            <span class="live-dot" aria-hidden="true"></span>Live Edition ·
+            Current Issue
           </div>
           <h1>The End of China's Uninvestable Myth.</h1>
           <p>
-            在“中国不可投资”被广泛渲染近五年后，市场叙事终于开始逆转。海外股票投资者正重新认识到：中国依然可投资，而且当前明显低配。
+            This issue examines how policy and regulatory changes since 2021
+            have affected perceptions of investability in China, with a focus
+            on implications for private credit and public market participation.
           </p>
           <div class="issue-live__meta">
-            <span>Vol. 10 · No. 1</span><span>2026年1月25日</span
-            ><span>机构配置版</span>
+            <span>Vol. 10 · No. 1</span><span>25 January 2026</span
+            ><span>Allocator Edition</span>
           </div>
         </article>
       </div>
@@ -1452,36 +1462,32 @@
 
     <main class="issue-shell wrap">
       <div class="franchise-ribbon">
-        <div>
+        <div class="franchise-ribbon__info">
           <div class="franchise-ribbon__title">
-            《中国债务动态》· 机构级出版物
+            China Debt Dynamics · Institutional Publication
           </div>
           <div class="franchise-ribbon__sub">
-            建议推进《中国债务动态》中文版：优先翻译执行摘要与关键图表，在保留英文原文严谨性的同时，显著提升本地读者触达与传播效率。
+            Current issue and archive access in HTML and PDF formats.
           </div>
         </div>
-      </div>
-
-      <section class="utility">
         <div class="utility__actions">
           <a
             class="util-btn util-btn--solid"
             href="#"
             data-print-export="download"
-            >下载 PDF</a
+            >Download issue PDF</a
           >
           <a class="util-btn" href="#" data-print-export="view"
-            >查看 PDF</a
+            >Open issue PDF</a
           >
-          <a class="util-btn" href="#archive">往期归档</a>
-
+          <a class="util-btn" href="#archive">Archived Issues</a>
         </div>
-      </section>
+      </div>
 
       <section class="issue-header">
         <div class="issue-header__meta">
-          <span>第10卷｜第1期</span><span>发布于 2026年1月25日</span
-          ><span>中国债务动态</span>
+          <span>Volume 10 | Issue 1</span><span>Published 25 January 2026</span
+          ><span>China Debt Dynamics</span>
         </div>
         <h2>The End of China's Uninvestable Myth</h2>
       </section>
@@ -1495,12 +1501,15 @@
           data-print-pdf="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
         >
           <p class="lead">
-            <strong>第10卷｜第1期</strong><br />2026年1月25日
+            <strong>Volume 10 | Issue 1</strong><br />25 January 2026
           </p>
 
           <h3>The End of China's Uninvestable Myth</h3>
           <p>
-            在“中国不可投资”被广泛渲染近五年后，市场叙事终于开始逆转。海外股票投资者正重新认识到：中国依然可投资，而且当前明显低配。
+            Almost five years after China was widely condemned as being
+            uninvestable, the narrative is finally changing. Foreign equity
+            investors are rediscovering that China is in fact investable, and
+            they’re seriously underweight.
           </p>
           <p>
             In reality, China was never uninvestable. In those “uninvestable”
@@ -1639,19 +1648,21 @@
 
         <aside class="sidebar" id="archive">
           <div class="sidebar__card">
-            <h4>刊物信息</h4>
+            <h4>Issue Metadata</h4>
             <p>
-              中国债务动态 · Vol. 10 No. 1<br />发布于 2026年1月25日<br />ShoreVest 洞察 · 机构配置版
+              China Debt Dynamics · Vol. 10 No. 1<br />Published 25 January
+              2026<br />ShoreVest Insights · Allocator Edition
             </p>
           </div>
           <div class="archive">
             <div class="archive__head">
-              往期归档 · Publication History
+              Archived Issues · Publication History
             </div>
             <div class="archive__list">
               <div class="archive__row">
                 <small
-                  >第10卷｜第1期 | 发布于 2026年1月25日 | 机构配置版</small
+                  >Volume 10 | Issue 1 | Published 25 January 2026 | Allocator
+                  Edition</small
                 >
                 <strong>The End of China's Uninvestable Myth</strong>
                 <div class="archive__actions">
@@ -1661,14 +1672,14 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   >
                   <a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1687,13 +1698,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1709,13 +1720,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1733,13 +1744,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1758,13 +1769,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1780,13 +1791,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-united-states-of-china.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1802,13 +1813,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1824,13 +1835,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1849,13 +1860,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1874,13 +1885,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1899,13 +1910,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1923,13 +1934,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1948,13 +1959,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1970,13 +1981,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-evergrande.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -1995,13 +2006,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >下载 PDF</a
+                    >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
                     target="_blank"
                     rel="noopener"
-                    >查看 PDF</a
+                    >Open issue PDF</a
                   >
                 </div>
               </div>
@@ -2101,8 +2112,8 @@
         <div>
           <h3>Receive China Debt Dynamics directly.</h3>
           <p>
-            Institutional research on China private credit, written from onshore
-            perspective for global allocators and investment committees.
+            Quarterly publication updates on China's private credit markets for
+            subscribers.
           </p>
         </div>
         <a href="index.html#signup" class="cta cta--light"
@@ -2132,7 +2143,7 @@
       const archiveIssueMap = {
         v10i1: {
           title: "The End of China's Uninvestable Myth",
-          meta: "第10卷｜第1期 | 发布于 2026年1月25日 | 机构配置版",
+          meta: "Volume 10 | Issue 1 | Published 25 January 2026 | Allocator Edition",
           pdf: "pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf",
         },
         v9i4: {
