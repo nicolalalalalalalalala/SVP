@@ -253,6 +253,47 @@
         gap: 0;
         max-width: var(--content);
       }
+      .press-filters {
+        max-width: var(--content);
+        margin: 0 0 20px;
+        display: grid;
+        gap: 14px;
+      }
+      .press-filter-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+      }
+      .press-filter-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(12, 12, 10, 0.68);
+        margin-right: 4px;
+      }
+      .press-filter-btn {
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        background: transparent;
+        color: var(--ink);
+        padding: 7px 12px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .press-filter-btn:hover,
+      .press-filter-btn.is-active {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
       .press-intro {
         font-family: "Cormorant Garamond", var(--serif);
         font-style: italic;
@@ -711,6 +752,10 @@
           inquiries@shorevest.com.
         </div>
         <p class="press-intro">Selected coverage of ShoreVest and China's private credit markets.</p>
+        <div class="press-filters" id="press-filters" aria-label="Press archive filters">
+          <div class="press-filter-group" id="press-year-filters" aria-label="Filter by year"></div>
+          <div class="press-filter-group" id="press-publication-filters" aria-label="Filter by publication"></div>
+        </div>
         <section
           class="press-list"
           id="press-archive"
@@ -1467,7 +1512,11 @@
 
       const archive = document.getElementById("press-archive");
       const moreBtn = document.getElementById("press-more-btn");
-      if (archive && moreBtn) {
+      const yearFilters = document.getElementById("press-year-filters");
+      const publicationFilters = document.getElementById(
+        "press-publication-filters",
+      );
+      if (archive && moreBtn && yearFilters && publicationFilters) {
         const rows = Array.from(archive.querySelectorAll(".press-row")).filter(
           (row) => {
             const text = row.textContent || "";
@@ -1478,22 +1527,114 @@
         );
         const initialCount = 12;
         const batchSize = 12;
+        let selectedYear = "All";
+        let selectedPublication = "All";
         let shown = 0;
 
+        const getRowYear = (row) => {
+          const datetime =
+            row.querySelector(".press-date")?.getAttribute("datetime") || "";
+          return datetime.slice(0, 4) || "Unknown";
+        };
+        const getRowPublication = (row) => {
+          const publication =
+            row.querySelector(".press-publication")?.textContent || "";
+          const normalized = publication.replace(/\s+/g, " ").trim();
+          return normalized || "Other Coverage";
+        };
+
+        rows.forEach((row) => {
+          row.dataset.year = getRowYear(row);
+          row.dataset.publication = getRowPublication(row);
+        });
+
+        const years = Array.from(new Set(rows.map((row) => row.dataset.year)))
+          .filter((year) => year !== "Unknown")
+          .sort((a, b) => Number(b) - Number(a));
+        if (rows.some((row) => row.dataset.year === "Unknown")) {
+          years.push("Unknown");
+        }
+
+        const publications = Array.from(
+          new Set(rows.map((row) => row.dataset.publication)),
+        ).sort((a, b) => a.localeCompare(b));
+
+        const createFilterButton = (value, activeValue, onClick) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "press-filter-btn";
+          if (value === activeValue) {
+            button.classList.add("is-active");
+          }
+          button.textContent = value;
+          button.addEventListener("click", () => onClick(value));
+          return button;
+        };
+
+        const renderFilterButtons = () => {
+          yearFilters.innerHTML = "";
+          publicationFilters.innerHTML = "";
+
+          const yearLabel = document.createElement("span");
+          yearLabel.className = "press-filter-label";
+          yearLabel.textContent = "Year";
+          yearFilters.appendChild(yearLabel);
+
+          const publicationLabel = document.createElement("span");
+          publicationLabel.className = "press-filter-label";
+          publicationLabel.textContent = "Publication";
+          publicationFilters.appendChild(publicationLabel);
+
+          ["All", ...years].forEach((year) => {
+            yearFilters.appendChild(
+              createFilterButton(year, selectedYear, (value) => {
+                selectedYear = value;
+                shown = Math.min(initialCount, getFilteredRows().length);
+                renderFilterButtons();
+                renderRows();
+              }),
+            );
+          });
+
+          ["All", ...publications].forEach((publication) => {
+            publicationFilters.appendChild(
+              createFilterButton(publication, selectedPublication, (value) => {
+                selectedPublication = value;
+                shown = Math.min(initialCount, getFilteredRows().length);
+                renderFilterButtons();
+                renderRows();
+              }),
+            );
+          });
+        };
+
+        const getFilteredRows = () =>
+          rows.filter((row) => {
+            const yearMatches =
+              selectedYear === "All" || row.dataset.year === selectedYear;
+            const publicationMatches =
+              selectedPublication === "All" ||
+              row.dataset.publication === selectedPublication;
+            return yearMatches && publicationMatches;
+          });
+
         const renderRows = () => {
-          rows.forEach((row, idx) => {
+          const filteredRows = getFilteredRows();
+          rows.forEach((row) => {
+            row.style.display = "none";
+          });
+          filteredRows.forEach((row, idx) => {
             row.style.display = idx < shown ? "" : "none";
           });
-          if (shown >= rows.length) {
-            moreBtn.style.display = "none";
-          }
+          moreBtn.style.display = shown >= filteredRows.length ? "none" : "";
         };
 
         shown = Math.min(initialCount, rows.length);
+        renderFilterButtons();
         renderRows();
 
         moreBtn.addEventListener("click", () => {
-          shown = Math.min(shown + batchSize, rows.length);
+          shown = Math.min(shown + batchSize, getFilteredRows().length);
           renderRows();
         });
       }
