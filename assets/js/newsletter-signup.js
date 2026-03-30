@@ -26,6 +26,21 @@
     redirectUrl: "",
   };
 
+  const I18N = {
+    en: {
+      progress: "Required fields completed",
+      valid: "Looks good.",
+      invalid: "This field is required.",
+      ready: "Ready to submit",
+    },
+    zh: {
+      progress: "必填项完成进度",
+      valid: "填写正确。",
+      invalid: "此项为必填项。",
+      ready: "可提交",
+    },
+  };
+
   const config = window.SVPHubSpotSignupConfig || DEFAULT_CONFIG;
 
   function getCookie(name) {
@@ -36,6 +51,10 @@
 
   function getFormConfig(language) {
     return config.forms?.[language] || config.forms?.en || null;
+  }
+
+  function getLocaleCopy(language) {
+    return I18N[language] || I18N.en;
   }
 
   function setStatus(form, message, type) {
@@ -119,6 +138,113 @@
     return payload;
   }
 
+  function ensureEnhancementStyles() {
+    if (document.getElementById("svp-signup-enhancements")) return;
+    const style = document.createElement("style");
+    style.id = "svp-signup-enhancements";
+    style.textContent = `
+      .su__progress { margin-bottom: 14px; }
+      .su__progress-label { display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin-bottom:8px; }
+      .su__progress-track { width:100%; height:4px; background:rgba(255,255,255,.14); border-radius:999px; overflow:hidden; }
+      .su__progress-fill { height:100%; width:0; background:var(--red); transition:width .25s ease; }
+      .su__hint { margin-top:8px; font-size:12px; color:rgba(255,255,255,.45); }
+      .su__field.is-invalid { border-bottom-color: rgba(179,33,63,.9); }
+      .su__field.is-valid { border-bottom-color: rgba(255,255,255,.32); }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function initFormInteractions(form) {
+    ensureEnhancementStyles();
+
+    const language = form.dataset.signupLanguage || "en";
+    const copy = getLocaleCopy(language);
+    const requiredInputs = Array.from(form.querySelectorAll("input[required]"));
+    const submit = form.querySelector("[data-signup-submit]");
+
+    if (!requiredInputs.length || !submit) return;
+
+    const progress = document.createElement("div");
+    progress.className = "su__progress";
+    progress.innerHTML = `
+      <span class="su__progress-label">${copy.progress}: 0/${requiredInputs.length}</span>
+      <div class="su__progress-track" aria-hidden="true">
+        <div class="su__progress-fill"></div>
+      </div>
+    `;
+
+    const consent = form.querySelector(".su__small");
+    form.insertBefore(progress, consent || submit);
+
+    const progressLabel = progress.querySelector(".su__progress-label");
+    const progressFill = progress.querySelector(".su__progress-fill");
+
+    const updateFieldState = (input) => {
+      const wrap = input.closest(".su__field");
+      if (!wrap) return;
+
+      let hint = wrap.querySelector(".su__hint");
+      if (!hint) {
+        hint = document.createElement("p");
+        hint.className = "su__hint";
+        wrap.appendChild(hint);
+      }
+
+      const touched = input.dataset.touched === "true";
+      const hasValue = input.value.trim().length > 0;
+      const valid = input.checkValidity();
+
+      wrap.classList.toggle("is-valid", valid && hasValue);
+      wrap.classList.toggle("is-invalid", touched && !valid);
+
+      if (!touched) {
+        hint.textContent = "";
+      } else if (valid && hasValue) {
+        hint.textContent = copy.valid;
+      } else {
+        hint.textContent = input.validationMessage || copy.invalid;
+      }
+    };
+
+    const updateProgress = () => {
+      const validCount = requiredInputs.filter((input) => input.checkValidity()).length;
+      const percent = Math.round((validCount / requiredInputs.length) * 100);
+
+      progressLabel.textContent = `${copy.progress}: ${validCount}/${requiredInputs.length}${
+        validCount === requiredInputs.length ? ` · ${copy.ready}` : ""
+      }`;
+      progressFill.style.width = `${percent}%`;
+      submit.disabled = validCount !== requiredInputs.length;
+    };
+
+    requiredInputs.forEach((input) => {
+      updateFieldState(input);
+      input.addEventListener("input", () => {
+        updateFieldState(input);
+        updateProgress();
+      });
+      input.addEventListener("blur", () => {
+        input.dataset.touched = "true";
+        updateFieldState(input);
+        updateProgress();
+      });
+    });
+
+    updateProgress();
+    form.addEventListener("reset", () => {
+      requiredInputs.forEach((input) => {
+        delete input.dataset.touched;
+        const wrap = input.closest(".su__field");
+        if (wrap) {
+          wrap.classList.remove("is-valid", "is-invalid");
+          const hint = wrap.querySelector(".su__hint");
+          if (hint) hint.textContent = "";
+        }
+      });
+      updateProgress();
+    });
+  }
+
   async function submitToHubSpot(form) {
     const language = form.dataset.signupLanguage || "en";
     const messages = JSON.parse(form.dataset.messages || "{}");
@@ -163,6 +289,8 @@
   }
 
   document.querySelectorAll("[data-newsletter-signup]").forEach((form) => {
+    initFormInteractions(form);
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       clearStatus(form);
