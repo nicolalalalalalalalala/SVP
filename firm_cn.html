@@ -267,6 +267,31 @@
         line-height: 1.42;
       }
 
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .pillar-card {
+        background: #f9f8f6;
+        border: 1px solid #e5e2dc;
+        padding: 16px;
+      }
+      .pillar-card h3 {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #3f3b35;
+      }
+      .location-line {
+        margin-top: 16px;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #6b665d;
+      }
+
       .proof-grid,
       .market-grid {
         display: grid;
@@ -692,6 +717,7 @@
         .hero-thesis,
         .proof-grid,
         .market-grid,
+        .pillar-grid,
         .flow,
         .intel-flow {
           grid-template-columns: 1fr;
@@ -1012,6 +1038,53 @@
                 <span>项目获取机制</span><em>合规与效率并重</em>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>ShoreVest 的平台构建方式。</h2>
+            <p>
+              三大运营支柱贯穿项目获取、尽职调查与组合管理，覆盖从入场到退出的完整执行链路。
+            </p>
+          </div>
+          <div class="pillar-grid">
+            <article class="pillar-card">
+              <h3>专有项目来源</h3>
+              <p>
+                与银行、AMC、律所和服务机构建立二十余年直接关系。在公开竞价前识别机会，并可按交易特征进行双边承接或组合筛选。
+              </p>
+            </article>
+            <article class="pillar-card">
+              <h3>纪律化尽调</h3>
+              <p>
+                每笔交易均以实物资产担保为锚，通常采用 30–60%
+                的抵押率/成本覆盖区间，并优先选择一押或可直接执行的法律结构，先定义下行，再评估上行。
+              </p>
+            </article>
+            <article class="pillar-card">
+              <h3>利益一致性</h3>
+              <p>
+                核心团队协作约二十年。GP 承诺为 500 万美元或基金承诺规模的
+                1%。做出投资决策的人，也对投后监控和退出结果承担责任。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="framed-panel">
+            <div class="section-head" style="margin-bottom:0;">
+              <h2>在地执行能力。</h2>
+              <p>
+                总部位于广州，在上海设有办事处。投资团队常驻中国境内——项目来源、尽调、结构设计、投后管理与处置回收通过一体化境内流程完成。
+              </p>
+            </div>
+            <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
           </div>
         </div>
       </section>
