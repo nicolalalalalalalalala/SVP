@@ -1792,10 +1792,10 @@
           gap: 28px;
         }
         .pagehero__media {
-          justify-self: start;
-          width: 100%;
+          justify-self: end;
+          width: min(115%, 620px);
           max-width: 620px;
-          margin-right: 0;
+          margin-right: clamp(-96px, -10vw, -24px);
         }
         .hero-panel {
           max-width: 540px;
@@ -1942,6 +1942,13 @@
           grid-column: 1 / -1;
           width: 100%;
           padding: 14px 0 4px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .pagehero__media {
+          width: min(130%, 620px);
+          margin-right: clamp(-140px, -34vw, -64px);
         }
       }
 
