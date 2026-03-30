@@ -1202,11 +1202,11 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   <div class="hero__right">
     <div class="hero__stats" role="list" aria-label="ShoreVest highlights">
       <div class="hs" role="listitem">
-        <div class="hs__n" data-countup data-target="2" data-prefix="US$" data-suffix="B+">US$2B+</div>
+        <div class="hs__n" data-countup data-target="2" data-count-decimals="1" data-prefix="US$" data-suffix="B+">US$2B+</div>
         <div class="hs__l">Capital Deployed to Date</div>
       </div>
       <div class="hs" role="listitem">
-        <div class="hs__n" data-countup data-target="6" data-suffix="">6</div>
+        <div class="hs__n" data-countup data-target="6" data-count-decimals="1" data-suffix="">6</div>
         <div class="hs__l">Institutional Fund Vintages</div>
       </div>
       <div class="hs" role="listitem">
@@ -1419,10 +1419,14 @@ const statNumbers = document.querySelectorAll('[data-countup]');
 if (statNumbers.length) {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const formatCount = (el, value) => {
+  const formatCount = (el, value, decimals = 0) => {
     const prefix = el.dataset.prefix || '';
     const suffix = el.dataset.suffix || '';
-    return `${prefix}${value.toLocaleString('en-US')}${suffix}`;
+    const formatted = Number(value).toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+    return `${prefix}${formatted}${suffix}`;
   };
 
   const runCountUp = (el) => {
@@ -1430,8 +1434,13 @@ if (statNumbers.length) {
     el.dataset.animated = 'true';
 
     const target = Number(el.dataset.target || 0);
+    const animatedDecimals = Number(el.dataset.countDecimals || 0);
+    const finalDecimals = Number.isFinite(Number(el.dataset.finalDecimals))
+      ? Number(el.dataset.finalDecimals)
+      : (Number.isInteger(target) ? 0 : animatedDecimals);
+
     if (prefersReducedMotion || target <= 0) {
-      el.textContent = formatCount(el, target);
+      el.textContent = formatCount(el, target, finalDecimals);
       return;
     }
 
@@ -1441,13 +1450,14 @@ if (statNumbers.length) {
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(target * eased);
-      el.textContent = formatCount(el, current);
+      const current = target * eased;
+      const displayValue = animatedDecimals > 0 ? current : Math.round(current);
+      el.textContent = formatCount(el, displayValue, animatedDecimals);
 
       if (progress < 1) {
         requestAnimationFrame(tick);
       } else {
-        el.textContent = formatCount(el, target);
+        el.textContent = formatCount(el, target, finalDecimals);
       }
     };
 
