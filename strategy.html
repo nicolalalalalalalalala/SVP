@@ -1220,6 +1220,44 @@
         padding: 72px 0 104px;
         background: #fff;
       }
+      .strategy-tools {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+      .strategy-tools p {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #7e786f;
+      }
+      .jump-nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .jump-nav button {
+        border: 1px solid rgba(179, 33, 63, 0.2);
+        background: #fff;
+        color: #5c564f;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 7px 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .jump-nav button:hover,
+      .jump-nav button:focus-visible,
+      .jump-nav button.is-active {
+        border-color: var(--red);
+        background: var(--red);
+        color: #fff;
+        outline: none;
+      }
       .strategy-stack {
         display: grid;
         gap: 46px;
@@ -1697,10 +1735,62 @@
         flex-wrap: wrap;
         margin-top: 18px;
       }
+      .expand {
+        margin-top: 16px;
+        border-top: 1px solid var(--rule);
+        padding-top: 14px;
+      }
+      .expand__trigger {
+        width: 100%;
+        background: #fff;
+        border: 1px solid rgba(179, 33, 63, 0.16);
+        color: #4f4a43;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 10px 12px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: border-color 0.2s;
+      }
+      .expand__trigger:hover,
+      .expand__trigger:focus-visible {
+        border-color: rgba(179, 33, 63, 0.42);
+        outline: none;
+      }
+      .expand__trigger::after {
+        content: "＋";
+        font-size: 14px;
+      }
+      .expand__trigger[aria-expanded="true"]::after {
+        content: "－";
+      }
+      .expand__panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+      }
+      .expand__panel p {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.7;
+        color: #66615a;
+        max-width: 100%;
+      }
       .strategy-stack .strategy-block:nth-child(even) {
         background: #f6f4f0;
       }
       @media (max-width: 980px) {
+        .strategy-tools {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .jump-nav {
+          justify-content: flex-start;
+        }
         .pagehero .wrap {
           grid-template-columns: 1fr;
           gap: 28px;
@@ -2050,6 +2140,22 @@
 
     <section class="pgsec">
       <div class="wrap">
+        <div class="strategy-tools" aria-label="Strategy interactions">
+          <p>Interactive navigation</p>
+          <div class="jump-nav" data-jump-nav>
+            <button type="button" data-target="track-record-data">
+              Track Record
+            </button>
+            <button type="button" data-target="sub-strategies">
+              Allocation
+            </button>
+            <button type="button" data-target="legal-environment">Legal</button>
+            <button type="button" data-target="risk-management">Risk</button>
+            <button type="button" data-target="current-fund">
+              Fund Snapshot
+            </button>
+          </div>
+        </div>
         <div class="strategy-stack">
           <section class="strategy-block" id="track-record-data">
             <h2>Track Record and Current Opportunity Set</h2>
@@ -2370,6 +2476,24 @@
               principal protection, and shorter path-to-liquidity than many
               private-market alternatives.
             </p>
+            <div class="expand">
+              <button
+                type="button"
+                class="expand__trigger"
+                aria-expanded="false"
+                aria-controls="returns-profile-extra"
+              >
+                What this means for LP portfolios
+              </button>
+              <div class="expand__panel" id="returns-profile-extra">
+                <p>
+                  The target profile is designed to emphasize cash-paying
+                  distributions and reduced mark-to-market sensitivity versus
+                  long-duration private market strategies, while still preserving
+                  upside through execution alpha at the deal level.
+                </p>
+              </div>
+            </div>
           </section>
 
           <section class="strategy-block" id="current-fund">
@@ -2405,6 +2529,23 @@
               availability are subject to final documentation, investor
               eligibility, and applicable legal and regulatory requirements.
             </p>
+            <div class="expand">
+              <button
+                type="button"
+                class="expand__trigger"
+                aria-expanded="false"
+                aria-controls="current-fund-extra"
+              >
+                View implementation notes
+              </button>
+              <div class="expand__panel" id="current-fund-extra">
+                <p>
+                  Term sheet examples and implementation mechanics can be shared
+                  through investor access materials, including capital call pacing,
+                  fee step-down mechanics, and governance rights by vehicle.
+                </p>
+              </div>
+            </div>
           </section>
 
           <section class="strategy-block" id="cta-next">
@@ -2529,6 +2670,48 @@
       if (scenarioButtons.length) {
         applyScenario("base");
       }
+
+      const jumpButtons = [...document.querySelectorAll("[data-jump-nav] button")];
+      const jumpSections = jumpButtons
+        .map((btn) => document.getElementById(btn.dataset.target))
+        .filter(Boolean);
+      const setJumpActive = (id) => {
+        jumpButtons.forEach((btn) =>
+          btn.classList.toggle("is-active", btn.dataset.target === id),
+        );
+      };
+      jumpButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = document.getElementById(btn.dataset.target);
+          if (!target) return;
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          setJumpActive(btn.dataset.target);
+        });
+      });
+      if (jumpSections.length) {
+        const jumpObserver = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible?.target?.id) setJumpActive(visible.target.id);
+          },
+          { rootMargin: "-30% 0px -55% 0px", threshold: [0.2, 0.45, 0.7] },
+        );
+        jumpSections.forEach((section) => jumpObserver.observe(section));
+      }
+
+      const expandTriggers = [...document.querySelectorAll(".expand__trigger")];
+      expandTriggers.forEach((trigger) => {
+        const panelId = trigger.getAttribute("aria-controls");
+        const panel = panelId ? document.getElementById(panelId) : null;
+        if (!panel) return;
+        trigger.addEventListener("click", () => {
+          const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+          trigger.setAttribute("aria-expanded", String(!isExpanded));
+          panel.style.maxHeight = isExpanded ? "0px" : `${panel.scrollHeight}px`;
+        });
+      });
     </script>
     <script>
       (() => {
