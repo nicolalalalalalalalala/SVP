@@ -209,6 +209,7 @@
         color: #ece8df;
         padding: 18px 20px;
         box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+        animation: floatCard 5.5s ease-in-out infinite;
       }
       .hero-glance h3 {
         font-size: 9px;
@@ -277,6 +278,15 @@
         background: #f9f8f6;
         border: 1px solid #e5e2dc;
         padding: 16px;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .pillar-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 24px rgba(22, 18, 14, 0.08);
+        border-color: rgba(187, 46, 70, 0.35);
       }
       .pillar-card h3 {
         font-size: 11px;
@@ -310,6 +320,15 @@
       }
       .proof-card {
         padding: 16px;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .proof-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 24px rgba(22, 18, 14, 0.08);
+        border-color: rgba(187, 46, 70, 0.35);
       }
       .proof-card h3 {
         font-size: 9px;
@@ -327,6 +346,15 @@
 
       .market-grid article {
         padding: 16px;
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .market-grid article:hover {
+        transform: translateY(-4px);
+        border-color: rgba(187, 46, 70, 0.35);
+        box-shadow: 0 14px 24px rgba(22, 18, 14, 0.06);
       }
       .market-grid h3 {
         font-size: 9px;
@@ -386,6 +414,15 @@
         background: #fbfaf8;
         padding: 14px;
         position: relative;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .intel-stage:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 18px rgba(22, 18, 14, 0.08);
+        border-color: rgba(187, 46, 70, 0.35);
       }
       .intel-stage:not(:last-child)::after {
         content: "→";
@@ -451,6 +488,12 @@
         inset: 0;
         width: calc(var(--value) * 1%);
         background: #b2334d;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 1s ease;
+      }
+      .bar.bar--animate::before {
+        transform: scaleX(1);
       }
       .stage-description {
         font-size: 12px;
@@ -516,6 +559,15 @@
       .note {
         padding: 14px;
         background: #f7f6f4;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .note:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 20px rgba(22, 18, 14, 0.06);
+        border-color: rgba(187, 46, 70, 0.28);
       }
       .note h3 {
         font-size: 9px;
@@ -608,6 +660,15 @@
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 14px;
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          background 0.35s ease;
+      }
+      .step:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255, 255, 255, 0.32);
+        background: rgba(255, 255, 255, 0.12);
       }
       .step.primary {
         background: rgba(255, 255, 255, 0.09);
@@ -667,6 +728,16 @@
         border-color: var(--red);
       }
 
+      @keyframes floatCard {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
       @media (max-width: 767px) {
         :root {
           --pad: 20px;
@@ -704,6 +775,9 @@
         }
         .step p {
           font-size: 13px;
+        }
+        .hero-glance {
+          animation: none;
         }
         .lead,
         .section-head p {
@@ -1596,6 +1670,10 @@
             entries.forEach((entry) => {
               if (!entry.isIntersecting) return;
               entry.target.classList.add("auto-rev--in");
+              entry.target.querySelectorAll(".bar").forEach((bar, i) => {
+                bar.style.transitionDelay = `${i * 0.14}s`;
+                bar.classList.add("bar--animate");
+              });
               observer.unobserve(entry.target);
             });
           },
