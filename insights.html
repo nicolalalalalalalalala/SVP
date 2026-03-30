@@ -466,13 +466,17 @@
       .franchise-ribbon {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         gap: 20px;
         padding: 16px 18px;
         border: 1px solid var(--rule);
         border-left: 3px solid var(--red);
-        margin-bottom: 22px;
+        margin-bottom: 28px;
         background: #fff;
+      }
+      .franchise-ribbon__info {
+        flex: 1 1 auto;
+        max-width: 620px;
       }
       .franchise-ribbon__title {
         font-size: 10px;
@@ -485,21 +489,15 @@
         font-size: 18px;
         color: #3f3a34;
       }
-      .utility {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 12px;
-        padding: 12px 0 24px;
-        border-bottom: 1px solid var(--rule);
-      }
       .utility__actions {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
-        justify-items: stretch;
-        width: 100%;
-        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 10px;
+        width: auto;
+        max-width: 340px;
+        flex: 0 0 auto;
       }
       .util-btn {
         font-size: 10px;
@@ -513,7 +511,9 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: auto;
+        min-width: 152px;
+        white-space: nowrap;
       }
       .util-btn--solid {
         background: var(--ink);
@@ -750,21 +750,16 @@
         .latest {
           grid-template-columns: 1fr;
         }
-        .utility {
-          display: grid;
-          gap: 12px;
-          padding-bottom: 20px;
-          justify-items: start;
-        }
         .utility__actions {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
           gap: 10px;
-          justify-items: stretch;
-          width: 100%;
+          width: auto;
+          max-width: none;
         }
         .util-btn {
-          width: 100%;
+          width: auto;
           min-height: 52px;
           padding: 14px 18px;
           text-align: center;
@@ -804,23 +799,25 @@
         .franchise-ribbon {
           display: block;
         }
+        .franchise-ribbon__info {
+          max-width: none;
+        }
         .franchise-ribbon__sub {
           margin-top: 6px;
           font-size: 17px;
         }
-        .utility {
-          padding: 14px 0 22px;
-        }
         .utility__actions {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
           gap: 10px;
-          justify-items: stretch;
-          width: 100%;
+          width: auto;
           max-width: none;
+          margin-top: 14px;
         }
         .util-btn {
-          width: 100%;
+          min-width: 0;
+          width: auto;
           min-height: 52px;
           padding: 14px 18px;
           text-align: center;
@@ -1153,12 +1150,14 @@
         }
 
         .utility__actions {
-          grid-template-columns: minmax(0, 1fr);
-          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          width: auto;
         }
         .util-btn {
           justify-content: center;
-          width: 100%;
+          width: auto;
           padding: 14px 18px;
         }
 
@@ -1463,7 +1462,7 @@
 
     <main class="issue-shell wrap">
       <div class="franchise-ribbon">
-        <div>
+        <div class="franchise-ribbon__info">
           <div class="franchise-ribbon__title">
             China Debt Dynamics · Institutional Publication
           </div>
@@ -1471,9 +1470,6 @@
             Current issue and archive access in HTML and PDF formats.
           </div>
         </div>
-      </div>
-
-      <section class="utility">
         <div class="utility__actions">
           <a
             class="util-btn util-btn--solid"
@@ -1486,7 +1482,7 @@
           >
           <a class="util-btn" href="#archive">Archived Issues</a>
         </div>
-      </section>
+      </div>
 
       <section class="issue-header">
         <div class="issue-header__meta">
