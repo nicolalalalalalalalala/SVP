@@ -1156,6 +1156,18 @@
         font-family: var(--serif);
         margin-top: 18px;
       }
+      .pagehero__media {
+        justify-self: end;
+        width: min(100%, 620px);
+      }
+      .pagehero__media img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        filter: grayscale(1);
+        mix-blend-mode: multiply;
+      }
       .hero-panel {
         background: #11110f;
         color: #fff;
@@ -1776,6 +1788,11 @@
           grid-template-columns: 1fr;
           gap: 28px;
         }
+        .pagehero__media {
+          justify-self: start;
+          width: 100%;
+          max-width: 700px;
+        }
         .hero-panel {
           max-width: 540px;
         }
@@ -2284,6 +2301,9 @@
             ><span>The Firm</span><span class="cta__ring">→</span></a
           >
         </div>
+        <figure class="pagehero__media" aria-hidden="true">
+          <img src="assets/images/strategy_hero.jpg" alt="" />
+        </figure>
       </div>
     </section>
 
