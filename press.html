@@ -547,7 +547,7 @@
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        white-space: nowrap;
+        max-width: 100%;
       }
       .eyebrow::after {
         content: "";
@@ -556,6 +556,23 @@
         width: 36px;
         height: 1px;
         transform: translateY(0);
+      }
+      .press-archive-note {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 8px;
+      }
+
+      @media (max-width: 767px) {
+        .press-archive-note {
+          display: block;
+          white-space: normal;
+          letter-spacing: 0.14em;
+          line-height: 1.7;
+        }
+        .press-archive-note::after {
+          display: none;
+        }
       }
 
 </style>
