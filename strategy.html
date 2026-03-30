@@ -1158,7 +1158,8 @@
       }
       .pagehero__media {
         justify-self: end;
-        width: min(100%, 560px);
+        width: min(100%, 680px);
+        margin-right: clamp(-140px, -9vw, -56px);
       }
       .pagehero__media img {
         display: block;
@@ -1166,6 +1167,8 @@
         height: auto;
         object-fit: cover;
         filter: grayscale(1);
+        transform: scale(1.12);
+        transform-origin: right center;
       }
       .hero-panel {
         background: #11110f;
@@ -1791,6 +1794,7 @@
           justify-self: start;
           width: 100%;
           max-width: 620px;
+          margin-right: 0;
         }
         .hero-panel {
           max-width: 540px;
