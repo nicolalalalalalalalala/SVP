@@ -756,8 +756,17 @@
           justify-items: start;
         }
         .utility__actions {
-          justify-content: flex-start;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 10px;
+          justify-items: stretch;
           width: 100%;
+        }
+        .util-btn {
+          width: 100%;
+          min-height: 52px;
+          padding: 14px 18px;
+          text-align: center;
         }
         .finding {
           border-right: none;
