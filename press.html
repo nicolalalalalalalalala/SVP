@@ -179,24 +179,17 @@
         max-width: 767px;
         margin-bottom: 0;
       }
-      .press-intro > div {
-        max-width: 767px;
-      }
-
       .press-shell {
         max-width: var(--max);
+        margin-top: 48px;
       }
-      .press-intro {
+      .press-hero {
         position: relative;
         overflow: hidden;
-        min-height: 520px;
+        width: 100%;
+        min-height: 620px;
         display: grid;
-        grid-template-columns: minmax(0, 5fr) minmax(260px, 3fr);
-        gap: 64px;
         align-items: end;
-        margin-bottom: 48px;
-        padding: 148px 48px 52px;
-        border-bottom: 1px solid var(--rule);
         background:
           linear-gradient(
             to bottom,
@@ -204,20 +197,36 @@
             rgba(12, 12, 10, 0.45) 45%,
             rgba(12, 12, 10, 0.75) 100%
           ),
-          url("assets/images/benjamin_fanger.jpg") center 26% / cover no-repeat;
+          url("assets/images/DFBDF5F2-D9B5-4449-8400-390809409C9B.jpg") center
+            38% / cover no-repeat;
       }
-      .press-intro > div,
-      .press-intro .press-note {
+      .press-hero__inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 148px var(--pad) 56px;
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(260px, 3fr);
+        gap: 64px;
+        align-items: end;
+      }
+      .press-hero__copy {
+        max-width: 767px;
+      }
+      .press-hero__copy,
+      .press-hero .press-note {
         position: relative;
         z-index: 1;
       }
-      .press-intro .eyebrow {
+      .press-hero .eyebrow {
         color: rgba(255, 255, 255, 0.7);
       }
-      .press-intro h1,
-      .press-intro .lead,
-      .press-intro .press-note span,
-      .press-intro .press-note p {
+      .press-hero h1,
+      .press-hero .lead,
+      .press-hero .press-note span,
+      .press-hero .press-note p {
         color: #fff;
       }
       .press-note {
@@ -318,7 +327,13 @@
       }
 
       @media (max-width: 960px) {
-        .press-intro {
+        .press-shell {
+          margin-top: 36px;
+        }
+        .press-hero {
+          min-height: 560px;
+        }
+        .press-hero__inner {
           grid-template-columns: minmax(0, 1fr);
           gap: 24px;
         }
@@ -385,11 +400,15 @@
         .lead {
           font-size: 20px;
         }
-        .press-intro {
+        .press-shell {
+          margin-top: 28px;
+        }
+        .press-hero {
           min-height: auto;
+        }
+        .press-hero__inner {
           gap: 20px;
-          margin-bottom: 30px;
-          padding: 108px 0 22px;
+          padding: 108px var(--pad) 22px;
         }
         .press-row {
           grid-template-columns: 1fr;
@@ -516,10 +535,12 @@
       }
 
       @media (max-width: 768px) {
-        .press-intro {
+        .press-hero {
           min-height: 480px;
-          padding: 126px 24px 36px;
           background-position: center 20%;
+        }
+        .press-hero__inner {
+          padding: 126px 24px 36px;
         }
       }
     </style>
@@ -625,9 +646,9 @@
     </nav>
 
     <main>
-      <div class="wrap press-shell">
-        <div class="press-intro">
-          <div>
+      <section class="press-hero">
+        <div class="press-hero__inner">
+          <div class="press-hero__copy">
             <p class="eyebrow">Media & Announcements</p>
             <h1>Press</h1>
             <p class="lead">
@@ -643,7 +664,9 @@
             </p>
           </aside>
         </div>
+      </section>
 
+      <div class="wrap press-shell">
         <div class="eyebrow" style="margin-bottom: 16px">
           Coverage through February 2024. For recent media enquiries contact
           inquiries@shorevest.com.
