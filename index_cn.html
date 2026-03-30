@@ -1059,6 +1059,23 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .legal-disclaimer { padding:22px 28px 26px; }
 }
 
+
+      /* Global eyebrow stabilization */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        white-space: nowrap;
+      }
+      .eyebrow::after {
+        content: "";
+        display: block;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 1px;
+        transform: translateY(0);
+      }
+
 </style>
 </head>
 <body id="top">
