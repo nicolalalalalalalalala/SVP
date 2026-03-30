@@ -1493,6 +1493,7 @@
             >打开当期 PDF</a
           >
           <a class="util-btn" href="#archive">往期归档</a>
+          <a class="util-btn" href="#subscribe">订阅</a>
         </div>
       </div>
 
@@ -2014,7 +2015,7 @@
       </footer>
     </section>
 
-    <section class="research-sub">
+    <section class="research-sub" id="subscribe">
       <div
         class="wrap"
         style="
@@ -2032,10 +2033,32 @@
           <p>
             为订阅者提供聚焦中国私募信贷市场的季度更新。
           </p>
+          <form class="research-sub__form" action="index_cn.html#signup" method="get">
+            <label class="research-sub__field" for="subscribe-name">
+              <input
+                id="subscribe-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="姓名"
+                required
+              />
+            </label>
+            <label class="research-sub__field" for="subscribe-email">
+              <input
+                id="subscribe-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="电子邮箱"
+                required
+              />
+            </label>
+            <button class="research-sub__submit" type="submit">
+              <span>订阅</span><span class="research-sub__submit-arrow">→</span>
+            </button>
+          </form>
         </div>
-        <a href="index_cn.html#signup" class="cta cta--light"
-          ><span>订阅</span><span class="cta__ring">→</span></a
-        >
       </div>
     </section>
 
