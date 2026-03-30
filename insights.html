@@ -739,6 +739,63 @@
         color: rgba(255, 255, 255, 0.5);
         max-width: 560px;
       }
+      .research-sub__form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+      .research-sub__field {
+        flex: 1 1 220px;
+        min-width: 0;
+      }
+      .research-sub__field input {
+        width: 100%;
+        min-height: 52px;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        font-family: var(--sans);
+        font-size: 13px;
+        letter-spacing: 0.01em;
+        padding: 0 15px;
+      }
+      .research-sub__field input::placeholder {
+        color: rgba(255, 255, 255, 0.52);
+      }
+      .research-sub__field input:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.7);
+        outline-offset: 1px;
+      }
+      .research-sub__submit {
+        min-height: 52px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: #fff;
+        color: var(--ink);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 22px;
+        cursor: pointer;
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .research-sub__submit:hover,
+      .research-sub__submit:focus-visible {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+      .research-sub__submit-arrow {
+        font-size: 14px;
+        line-height: 1;
+      }
 
       @media (max-width: 1080px) {
         :root {
@@ -1079,6 +1136,16 @@
           font-size: 15px;
           line-height: 1.78;
           max-width: 33ch;
+        }
+        .research-sub__form {
+          width: 100%;
+        }
+        .research-sub__field {
+          flex-basis: 100%;
+        }
+        .research-sub__submit {
+          width: 100%;
+          justify-content: center;
         }
       }
 
@@ -2133,10 +2200,32 @@
             Quarterly publication updates on China's private credit markets for
             subscribers.
           </p>
+          <form class="research-sub__form" action="index.html#signup" method="get">
+            <label class="research-sub__field" for="subscribe-name">
+              <input
+                id="subscribe-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Full name"
+                required
+              />
+            </label>
+            <label class="research-sub__field" for="subscribe-email">
+              <input
+                id="subscribe-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Email address"
+                required
+              />
+            </label>
+            <button class="research-sub__submit" type="submit">
+              <span>Subscribe</span><span class="research-sub__submit-arrow">→</span>
+            </button>
+          </form>
         </div>
-        <a href="index.html#signup" class="cta cta--light"
-          ><span>Subscribe</span><span class="cta__ring">→</span></a
-        >
       </div>
     </section>
 
