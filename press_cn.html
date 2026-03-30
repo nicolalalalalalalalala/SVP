@@ -691,13 +691,13 @@
             <p class="eyebrow">媒体与公告</p>
             <h1>新闻</h1>
             <p class="lead">
-              精选 ShoreVest 公告及第三方对中国私募信贷、重组与特殊机会的相关报道。
+              精选 ShoreVest 的公告，以及第三方关于中国私募信贷、重组和特殊机会的报道。
             </p>
           </div>
           <aside class="press-note" aria-label="新闻归档说明">
             <span>归档</span>
             <p>
-              按时间倒序整理的精选报道、访谈与市场观点，便于快速浏览与检索。
+              按时间倒序整理的精选评论、访谈与市场观察。
             </p>
           </aside>
         </div>
@@ -705,9 +705,9 @@
 
       <div class="wrap press-shell">
         <div class="eyebrow press-archive-note" style="margin-bottom: 16px">
-          报道更新至 2024 年 2 月。如有近期媒体咨询，请联系 inquiries@shorevest.com。
+          报道覆盖至 2024 年 2 月。如需近期媒体咨询，请联系 inquiries@shorevest.com。
         </div>
-        <p class="press-intro">精选 ShoreVest 及中国私募信贷市场相关报道。</p>
+        <p class="press-intro">ShoreVest 与中国私募信贷市场精选报道。</p>
         <section
           class="press-list"
           id="press-archive"
@@ -1461,6 +1461,18 @@
           });
         });
       }
+
+
+      document.querySelectorAll(".press-date[datetime]").forEach((dateEl) => {
+        const iso = dateEl.getAttribute("datetime");
+        if (!iso) return;
+        const dt = new Date(`${iso}T00:00:00Z`);
+        if (Number.isNaN(dt.getTime())) return;
+        const year = dt.getUTCFullYear();
+        const month = dt.getUTCMonth() + 1;
+        const day = dt.getUTCDate();
+        dateEl.textContent = `${year}年${month}月${day}日`;
+      });
 
       const archive = document.getElementById("press-archive");
       const moreBtn = document.getElementById("press-more-btn");
