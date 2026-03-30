@@ -256,14 +256,16 @@
       .press-filters {
         max-width: var(--content);
         margin: 0 0 20px;
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         gap: 14px;
       }
       .press-filter-group {
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        min-width: min(260px, 100%);
       }
       .press-filter-label {
         font-size: 10px;
@@ -271,28 +273,39 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: rgba(12, 12, 10, 0.68);
-        margin-right: 4px;
       }
-      .press-filter-btn {
+      .press-filter-select {
+        width: 100%;
+        min-height: 40px;
         border: 1px solid rgba(0, 0, 0, 0.18);
-        background: transparent;
+        background: #fff;
         color: var(--ink);
-        padding: 7px 12px;
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.1em;
+        padding: 9px 36px 9px 12px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
+        font-weight: 500;
         cursor: pointer;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--red) 50%),
+          linear-gradient(135deg, var(--red) 50%, transparent 50%);
+        background-position:
+          calc(100% - 18px) calc(50% - 3px),
+          calc(100% - 12px) calc(50% - 3px);
+        background-size: 6px 6px, 6px 6px;
+        background-repeat: no-repeat;
       }
-      .press-filter-btn:hover,
-      .press-filter-btn.is-active {
-        background: var(--red);
-        color: #fff;
-        border-color: var(--red);
+      .press-filter-select:focus-visible {
+        outline: 2px solid rgba(179, 33, 63, 0.25);
+        outline-offset: 1px;
+      }
+      @media (max-width: 760px) {
+        .press-filter-group {
+          width: 100%;
+          min-width: 0;
+        }
       }
       .press-intro {
         font-family: "Cormorant Garamond", var(--serif);
@@ -748,13 +761,23 @@
 
       <div class="wrap press-shell">
         <div class="eyebrow press-archive-note" style="margin-bottom: 16px">
-          Coverage through February 2024. For recent media enquiries contact
+          Coverage through January 2026. For recent media enquiries contact
           inquiries@shorevest.com.
         </div>
         <p class="press-intro">Selected coverage of ShoreVest and China's private credit markets.</p>
         <div class="press-filters" id="press-filters" aria-label="Press archive filters">
-          <div class="press-filter-group" id="press-year-filters" aria-label="Filter by year"></div>
-          <div class="press-filter-group" id="press-publication-filters" aria-label="Filter by publication"></div>
+          <div class="press-filter-group">
+            <label class="press-filter-label" for="press-year-select">Year</label>
+            <select class="press-filter-select" id="press-year-select" aria-label="Filter by year">
+              <option value="All">All Years</option>
+            </select>
+          </div>
+          <div class="press-filter-group">
+            <label class="press-filter-label" for="press-publication-select">Publication</label>
+            <select class="press-filter-select" id="press-publication-select" aria-label="Filter by publication">
+              <option value="All">All Publications</option>
+            </select>
+          </div>
         </div>
         <section
           class="press-list"
@@ -1542,11 +1565,9 @@
 
       const archive = document.getElementById("press-archive");
       const moreBtn = document.getElementById("press-more-btn");
-      const yearFilters = document.getElementById("press-year-filters");
-      const publicationFilters = document.getElementById(
-        "press-publication-filters",
-      );
-      if (archive && moreBtn && yearFilters && publicationFilters) {
+      const yearSelect = document.getElementById("press-year-select");
+      const publicationSelect = document.getElementById("press-publication-select");
+      if (archive && moreBtn && yearSelect && publicationSelect) {
         const rows = Array.from(archive.querySelectorAll(".press-row")).filter(
           (row) => {
             const text = row.textContent || "";
@@ -1589,53 +1610,21 @@
           new Set(rows.map((row) => row.dataset.publication)),
         ).sort((a, b) => a.localeCompare(b));
 
-        const createFilterButton = (value, activeValue, onClick) => {
-          const button = document.createElement("button");
-          button.type = "button";
-          button.className = "press-filter-btn";
-          if (value === activeValue) {
-            button.classList.add("is-active");
-          }
-          button.textContent = value;
-          button.addEventListener("click", () => onClick(value));
-          return button;
-        };
+        const renderSelectOptions = (selectEl, options, allLabel, selectedValue) => {
+          selectEl.innerHTML = "";
+          const allOption = document.createElement("option");
+          allOption.value = "All";
+          allOption.textContent = allLabel;
+          selectEl.appendChild(allOption);
 
-        const renderFilterButtons = () => {
-          yearFilters.innerHTML = "";
-          publicationFilters.innerHTML = "";
-
-          const yearLabel = document.createElement("span");
-          yearLabel.className = "press-filter-label";
-          yearLabel.textContent = "Year";
-          yearFilters.appendChild(yearLabel);
-
-          const publicationLabel = document.createElement("span");
-          publicationLabel.className = "press-filter-label";
-          publicationLabel.textContent = "Publication";
-          publicationFilters.appendChild(publicationLabel);
-
-          ["All", ...years].forEach((year) => {
-            yearFilters.appendChild(
-              createFilterButton(year, selectedYear, (value) => {
-                selectedYear = value;
-                shown = Math.min(initialCount, getFilteredRows().length);
-                renderFilterButtons();
-                renderRows();
-              }),
-            );
+          options.forEach((value) => {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent = value;
+            selectEl.appendChild(option);
           });
 
-          ["All", ...publications].forEach((publication) => {
-            publicationFilters.appendChild(
-              createFilterButton(publication, selectedPublication, (value) => {
-                selectedPublication = value;
-                shown = Math.min(initialCount, getFilteredRows().length);
-                renderFilterButtons();
-                renderRows();
-              }),
-            );
-          });
+          selectEl.value = selectedValue;
         };
 
         const getFilteredRows = () =>
@@ -1660,8 +1649,25 @@
         };
 
         shown = Math.min(initialCount, rows.length);
-        renderFilterButtons();
+        renderSelectOptions(yearSelect, years, "All Years", selectedYear);
+        renderSelectOptions(
+          publicationSelect,
+          publications,
+          "All Publications",
+          selectedPublication,
+        );
         renderRows();
+
+        yearSelect.addEventListener("change", (event) => {
+          selectedYear = event.target.value;
+          shown = Math.min(initialCount, getFilteredRows().length);
+          renderRows();
+        });
+        publicationSelect.addEventListener("change", (event) => {
+          selectedPublication = event.target.value;
+          shown = Math.min(initialCount, getFilteredRows().length);
+          renderRows();
+        });
 
         moreBtn.addEventListener("click", () => {
           shown = Math.min(shown + batchSize, getFilteredRows().length);
