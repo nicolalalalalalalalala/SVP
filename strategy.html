@@ -289,39 +289,6 @@
 
       /* Performance: removed legacy inline base64 hero styles to reduce CSS/HTML parse cost on mobile scroll. */
 
-      /* ══ TICKER */
-      .ticker {
-        background: var(--ink2);
-        overflow: hidden;
-        padding: 13px 0;
-        white-space: nowrap;
-        border-top: 1px solid rgba(255, 255, 255, 0.04);
-      }
-      .ticker__track {
-        display: inline-flex;
-        animation: ticker 44s linear infinite;
-      }
-      @keyframes ticker {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-      .ticker__i {
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.22);
-        padding: 0 30px;
-      }
-      .ticker__sep {
-        color: var(--red);
-        margin-right: 6px;
-      }
-
       /* ══ ABOUT */
       #about {
         background: var(--white);
@@ -1590,6 +1557,31 @@
         color: #7a756f;
         margin-top: 6px;
       }
+      .strategy-details {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .strategy-detail {
+        border: 1px solid rgba(179, 33, 63, 0.14);
+        background: #fff;
+        padding: 14px;
+      }
+      .strategy-detail h3 {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #514c45;
+        margin-bottom: 8px;
+      }
+      .strategy-detail p {
+        max-width: none;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.65;
+        color: #5e5952;
+      }
 
       .data-grid {
         display: grid;
@@ -1729,6 +1721,7 @@
         .process-flow,
         .city-grid,
         .alloc-grid,
+        .strategy-details,
         .funnel-grid,
         .risk-grid,
         .data-grid {
@@ -2327,6 +2320,32 @@
                     coverage
                   </div>
                 </div>
+              </div>
+              <div class="strategy-details" aria-label="Sub-strategy detail">
+                <article class="strategy-detail">
+                  <h3>First-Lien Asset-Based Lending</h3>
+                  <p>
+                    Transactions are typically structured at 30–60% entry LTV
+                    against hard collateral, with first-lien priority under PRC
+                    law to improve control rights and recovery sequencing.
+                  </p>
+                </article>
+                <article class="strategy-detail">
+                  <h3>Asset Restructuring &amp; Workouts</h3>
+                  <p>
+                    The team runs creditor coordination and balance-sheet
+                    redesign programs, informed by two-decade pattern
+                    recognition across China’s restructuring cycles.
+                  </p>
+                </article>
+                <article class="strategy-detail">
+                  <h3>Debt Resolutions &amp; Recoveries</h3>
+                  <p>
+                    ShoreVest Asset Solutions operates as the in-house
+                    resolution vehicle, with sourcing, diligence, legal
+                    enforcement, and disposition managed internally.
+                  </p>
+                </article>
               </div>
             </div>
           </section>
