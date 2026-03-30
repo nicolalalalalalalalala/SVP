@@ -103,11 +103,11 @@ h2 em { font-style:italic; }
 .nav__mobile-lang{display:none}
 .nav__lp {
   font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink); border:1px solid rgba(0,0,0,.15); padding:8px 20px;
+  color:var(--ink); border:1px solid rgba(48,40,34,.2); padding:8px 20px;
   transition:background .2s, color .2s, border-color .2s;
 }
 .nav__lp { background:var(--white); color:var(--ink); }
-    .nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
+    .nav__lp:hover { background:var(--red); color:#fff; border-color:var(--red); }
 
 
 /* ══ HERO IMAGE BAND */
@@ -758,7 +758,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
 /* ══ RESPONSIVE */
 .nav__menu-btn {
   display:none;
-  border:1px solid rgba(0,0,0,.14);
+  border:1px solid rgba(48,40,34,.2);
   background:#fff;
   color:var(--ink);
   font-size:10px;
@@ -852,6 +852,7 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
   .nav__right { margin-left:auto; gap:10px; }
   .nav__zh { display:none; }
   .nav__mobile-lang { display:inline-flex; }
+  .nav__lp { display:inline-flex; }
   .nav__links {
     display:none;
     width:100%;
@@ -862,7 +863,8 @@ footer { background:var(--ink2); border-top:1px solid rgba(255,255,255,.05); pad
     border-top:1px solid var(--rule);
   }
   .nav__links a {
-    font-size:10px;
+    font-size:13px;
+    line-height:1.5;
     white-space:nowrap;
   }
   #nav.menu-open .nav__links { display:flex; }
