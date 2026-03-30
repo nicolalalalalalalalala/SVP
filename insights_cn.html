@@ -757,8 +757,17 @@
           justify-items: start;
         }
         .utility__actions {
-          justify-content: flex-start;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 10px;
+          justify-items: stretch;
           width: 100%;
+        }
+        .util-btn {
+          width: 100%;
+          min-height: 52px;
+          padding: 14px 18px;
+          text-align: center;
         }
         .finding {
           border-right: none;
@@ -789,7 +798,8 @@
           padding: 138px 0 44px;
         }
         .issue-live h1 {
-          font-size: 34px;
+          font-size: 46px;
+          line-height: 1.04;
         }
         .franchise-ribbon {
           display: block;
@@ -894,6 +904,9 @@
         .nav__zh {
           flex: 0 0 auto;
           white-space: nowrap;
+        }
+        .nav__mobile-lang {
+          display: none;
         }
         .nav__lp {
           display: inline-flex;
@@ -1096,6 +1109,9 @@
         .nav__zh {
           display: none;
         }
+        .nav__mobile-lang {
+          display: inline-flex;
+        }
         .nav__lp,
         .nav__menu-btn {
           width: auto;
@@ -1109,7 +1125,7 @@
         }
 
         .research-hero {
-          margin-top: 136px;
+          margin-top: 0;
           padding: 54px 0 40px;
         }
         .wordmark {
@@ -1125,8 +1141,8 @@
           max-width: 100%;
         }
         .issue-live h1 {
-          font-size: 30px;
-          line-height: 1.1;
+          font-size: 46px;
+          line-height: 1.04;
         }
         .issue-live p {
           font-size: 14px;
