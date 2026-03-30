@@ -177,8 +177,8 @@
       }
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 60px;
+        grid-template-columns: 1fr;
+        margin-bottom: 36px;
       }
       h1 {
         font-family: var(--serif);
@@ -202,45 +202,41 @@
         gap: 26px;
         color: #4a4740;
       }
+      .hero-thesis p {
+        margin: 0;
+        line-height: 1.65;
+      }
 
-      .hero-glance {
-        margin-top: 24px;
-        background: #0f0f0f;
-        color: #ece8df;
-        padding: 18px 20px;
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-        animation: floatCard 5.5s ease-in-out infinite;
-      }
-      .hero-glance h3 {
-        font-size: 9px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.6);
-        margin-bottom: 8px;
-      }
-      .glance-row {
+      .hero-stats {
         display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 8px;
-        border-top: 1px solid rgba(255, 255, 255, 0.16);
-        padding: 10px 0;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(12, 12, 10, 0.15);
+        margin-top: 6px;
+        padding: 2.4rem 0 2.1rem;
       }
-      .glance-row span {
-        font-size: 9px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.65);
+      .hero-stat {
+        padding: 0 1.25rem;
       }
-      .glance-row strong {
-        font-family: var(--serif);
-        font-size: 38px;
+      .hero-stat:first-child {
+        padding-left: 0;
+      }
+      .hero-stat + .hero-stat {
+        border-left: 1px solid rgba(12, 12, 10, 0.15);
+      }
+      .hero-stat__value {
+        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-size: 1.6rem;
         font-weight: 400;
-        line-height: 1;
+        color: #0c0c0a;
+        line-height: 1.2;
       }
-      .glance-row em {
-        font-family: var(--serif);
-        font-size: 15px;
-        font-style: normal;
+      .hero-stat__label {
+        margin-top: 0.5rem;
+        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #8b1a2f;
       }
 
       .framed-panel {
@@ -756,16 +752,6 @@
         border-color: var(--red);
       }
 
-      @keyframes floatCard {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-5px);
-        }
-      }
-
       @media (max-width: 767px) {
         :root {
           --pad: 20px;
@@ -804,8 +790,18 @@
         .step p {
           font-size: 13px;
         }
-        .hero-glance {
-          animation: none;
+        .hero-stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          margin-top: 10px;
+          padding: 1.75rem 0 1.4rem;
+          gap: 1.25rem 0.9rem;
+        }
+        .hero-stat,
+        .hero-stat:first-child {
+          padding: 0;
+        }
+        .hero-stat + .hero-stat {
+          border-left: none;
         }
         .lead,
         .section-head p {
@@ -824,6 +820,9 @@
         .flow,
         .intel-flow {
           grid-template-columns: 1fr;
+        }
+        .hero-thesis {
+          gap: 16px;
         }
         .intel-stage:not(:last-child)::after {
           content: "↓";
@@ -1118,39 +1117,40 @@
         <div class="wrap">
           <div class="hero-grid">
             <div>
-              <div class="eyebrow">中国特殊资产私募信贷 · 始于 2004</div>
+              <div class="eyebrow">中国私募信贷 · 始于 2004</div>
               <h1>公司简介</h1>
               <p class="lead">
-                ShoreVest 以资产担保为核心的私募信贷策略可追溯至 2004 年。现有
-                ShoreVest 平台由核心高管团队于 2016
-                年创立，该团队此前已在前序载体中持续执行同一策略。
+                ShoreVest 的中国私募信贷策略可追溯至 2004 年。现有 ShoreVest
+                平台由核心高管团队于 2016 年创立；该团队此前已通过前序载体持续执行相关的资产担保与重组策略。
               </p>
               <div class="hero-thesis">
                 <p>
-                  目前公司在中国聚焦三大子策略：资产抵押借贷、资产重组及债务处置。总部位于广州，在上海设有办事处。投资团队常驻中国境内——项目来源、尽职调查、交易结构、贷后服务与处置回收均通过一体化境内流程执行。
+                  目前公司在中国聚焦三大核心子策略：资产抵押借贷、资产重组与债务处置。总部及核心执行团队位于广州，并以境内团队覆盖项目获取、尽职调查与回收处置全流程。
                 </p>
                 <p>
                   ShoreVest
-                  面向一个“法律结构、本地执行与可回收性”与收益率同等重要的市场，采用境内可直接执行的法律权益、30–60%
-                  LTV/CTV 的审慎入场区间，并将控制力从尽调延伸至退出处置全流程。
+                  为“法律结构、本地执行与可回收性”与票息同等重要的市场而构建。平台强调可执行的境内法律权益、审慎入场基础，并将主动控制从承做到处置退出贯穿始终。
                 </p>
               </div>
             </div>
-            <aside class="hero-glance" aria-label="核心概览">
-              <h3>核心概览</h3>
-              <div class="glance-row">
-                <span>运营历史</span><strong>20+ 年</strong>
-              </div>
-              <div class="glance-row">
-                <span>执行纪录</span><em>获取 · 处置</em>
-              </div>
-              <div class="glance-row">
-                <span>主要抵押品</span><em>实物资产担保</em>
-              </div>
-              <div class="glance-row">
-                <span>项目获取机制</span><em>合规与效率并重</em>
-              </div>
-            </aside>
+          </div>
+          <div class="hero-stats" aria-label="核心概览指标">
+            <div class="hero-stat">
+              <div class="hero-stat__value">20+ 年</div>
+              <div class="hero-stat__label">市场经验</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__value">获取 · 处置</div>
+              <div class="hero-stat__label">执行模式</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__value">实物资产担保</div>
+              <div class="hero-stat__label">核心抵押品</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__value">法律优先</div>
+              <div class="hero-stat__label">尽调纪律</div>
+            </div>
           </div>
         </div>
       </section>
