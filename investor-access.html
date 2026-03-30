@@ -395,7 +395,165 @@
   }
 }
 </style>
-  </head>
+  <style>
+.sv-footer {
+  background-color: #0c0c0a;
+  padding: 2.5rem 3rem;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+/* STRATEGY ONLY — performance disclaimer strip */
+.sv-footer__disclaimer-perf {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(246,244,240,0.1);
+}
+.sv-footer__disclaimer-perf p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem;
+  color: rgba(246,244,240,0.3);
+  line-height: 1.7;
+  margin: 0;
+}
+.sv-footer__disclaimer-perf a {
+  color: rgba(246,244,240,0.3);
+  text-decoration: none;
+}
+
+/* Main row */
+.sv-footer__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(246,244,240,0.1);
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Logo block */
+.sv-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+.sv-footer__logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+.sv-footer__logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.sv-footer__logo-wordmark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #f6f4f0;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.sv-footer__logo-chinese {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.65rem;
+  color: rgba(246,244,240,0.4);
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+/* Location */
+.sv-footer__location {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(246,244,240,0.35);
+  flex: 0 0 auto;
+}
+
+/* Contact */
+.sv-footer__contact {
+  flex: 0 0 auto;
+  text-align: right;
+}
+.sv-footer__contact a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.82rem;
+  color: rgba(246,244,240,0.55);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.sv-footer__contact a:hover {
+  color: #f6f4f0;
+}
+
+/* Bottom row */
+.sv-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.sv-footer__copyright {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  color: rgba(246,244,240,0.25);
+  letter-spacing: 0.03em;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.sv-footer__legal {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  color: rgba(246,244,240,0.25);
+  line-height: 1.7;
+  max-width: 560px;
+  text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sv-footer {
+    padding: 2rem 1.5rem;
+  }
+  .sv-footer__main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+  }
+  .sv-footer__location {
+    order: 3;
+  }
+  .sv-footer__contact {
+    text-align: left;
+    order: 2;
+  }
+  .sv-footer__bottom {
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1.25rem;
+  }
+  .sv-footer__legal {
+    text-align: left;
+    max-width: 100%;
+  }
+  .sv-footer__copyright {
+    white-space: normal;
+  }
+}
+</style>
+
+</head>
   <body>
     <nav id="nav">
       <a href="index.html" class="nav__logo"
@@ -599,45 +757,29 @@
           .forEach((el) => observer.observe(el));
       })();
     </script>
+<footer class="sv-footer">
 
-<footer style="background-color:#0c0c0a;padding:3rem 2rem 2rem 2rem;margin-top:0;">
+    <div class="sv-footer__main">
 
-  <!-- Top row: logo left, nav centre, contact right -->
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,244,240,0.12);">
-
-    <!-- Logo -->
-    <div style="flex:0 0 auto;">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;text-align:center;">
-        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%20116'%3E%3Cpath%20d='M%2048%2082%20%20L%2052.5%2066%20%20L%2048%2046%20%20L%2043.5%2066%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2064.61%2081.34%20%20L%2082.24%2070.88%20%20L%2061.83%2072.78%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2061.05%2092.29%20%20L%2069.17%20111.12%20%20L%2053.77%2097.59%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2042.23%2097.59%20%20L%2026.83%20111.12%20%20L%2034.95%2092.29%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2031.39%2081.34%20%20L%2013.76%2070.88%20%20L%2034.17%2072.78%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2046.5%2052%20%20L%2048%204%20%20L%2049.5%2052%20%20Z'%20fill='%23b3213f'/%3E%3Ccircle%20cx='48'%20cy='82'%20r='3.5'%20fill='%23b3213f'/%3E%3C/svg%3E" alt="ShoreVest" style="height:42px;width:auto;opacity:0.9;filter:brightness(0) invert(1);">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:#f6f4f0;letter-spacing:0.08em;line-height:1;">ShoreVest</div>
-        <div style="width:100%;max-width:260px;height:1px;background:rgba(246,244,240,0.35);"></div>
-        <div style="font-family:'Noto Serif SC',serif;font-size:0.8rem;color:rgba(246,244,240,0.65);letter-spacing:0.45em;line-height:1;">新 岸 資 本</div>
+    <a href="index.html" class="sv-footer__logo">
+      <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%20116'%3E%3Cpath%20d='M%2048%2082%20%20L%2052.5%2066%20%20L%2048%2046%20%20L%2043.5%2066%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2064.61%2081.34%20%20L%2082.24%2070.88%20%20L%2061.83%2072.78%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2061.05%2092.29%20%20L%2069.17%20111.12%20%20L%2053.77%2097.59%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2042.23%2097.59%20%20L%2026.83%20111.12%20%20L%2034.95%2092.29%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2048%2082%20%20L%2031.39%2081.34%20%20L%2013.76%2070.88%20%20L%2034.17%2072.78%20%20Z'%20fill='%23b3213f'/%3E%3Cpath%20d='M%2046.5%2052%20%20L%2048%204%20%20L%2049.5%2052%20%20Z'%20fill='%23b3213f'/%3E%3Ccircle%20cx='48'%20cy='82'%20r='3.5'%20fill='%23b3213f'/%3E%3C/svg%3E" alt="ShoreVest">
+      <div class="sv-footer__logo-text">
+        <span class="sv-footer__logo-wordmark">ShoreVest</span>
+        <span class="sv-footer__logo-chinese">新 岸 資 本</span>
       </div>
-    </div>>
+    </a>
 
-    <!-- Nav links -->
-    <nav style="display:flex;gap:2rem;flex-wrap:wrap;align-items:center;">
-</nav>
+    <div class="sv-footer__location">Guangzhou &middot; Shanghai &middot; Hong Kong</div>
 
-    <!-- Contact and location -->
-    <div style="flex:0 0 auto;text-align:right;">
-      <a href="mailto:inquiries@shorevest.com" style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:rgba(246,244,240,0.6);text-decoration:none;display:block;">inquiries@shorevest.com</a>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;color:rgba(246,244,240,0.35);margin-top:0.5rem;">Guangzhou &middot; Shanghai &middot; Hong Kong</div>
+    <div class="sv-footer__contact">
+      <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
     </div>
 
   </div>
 
-  <!-- Bottom row: copyright left, legal disclaimer right -->
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;">
-
-    <div style="font-family:'Cormorant Garamond',serif;font-size:0.72rem;color:rgba(246,244,240,0.3);letter-spacing:0.04em;">
-      &copy; ShoreVest Partners, Ltd. All rights reserved.
-    </div>
-
-    <div style="font-family:'Cormorant Garamond',serif;font-size:0.72rem;color:rgba(246,244,240,0.3);max-width:640px;text-align:right;line-height:1.6;">
-      This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future results. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before investing.
-    </div>
-
+  <div class="sv-footer__bottom">
+    <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
+    <div class="sv-footer__legal">This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future results. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before investing.</div>
   </div>
 
 </footer>
