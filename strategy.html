@@ -1515,7 +1515,7 @@
         line-height: 1.35;
         max-width: 180px;
       }
-      .ring-label strong {
+      .ring-label [data-ring-value] {
         display: block;
         font-family: var(--serif);
         font-size: 28px;
@@ -1524,6 +1524,7 @@
         text-transform: none;
         line-height: 1.05;
         margin-bottom: 4px;
+        font-weight: 400;
       }
       .viz-controls {
         display: flex;
@@ -1563,7 +1564,7 @@
         border: 1px solid rgba(179, 33, 63, 0.14);
         padding: 10px 12px;
       }
-      .alloc-row b {
+      .alloc-row .alloc-label {
         display: flex;
         justify-content: space-between;
         font-size: 11px;
@@ -1571,6 +1572,7 @@
         text-transform: uppercase;
         color: #4b4640;
         margin-bottom: 8px;
+        font-weight: 400;
       }
       .alloc-track {
         height: 8px;
@@ -2502,7 +2504,7 @@
                     data-defensive="40"
                     data-offensive="24"
                   >
-                    <b><span>Asset-Based Lending</span><span>32%</span></b>
+                    <span class="alloc-label"><span>Asset-Based Lending</span><span>32%</span></span>
                     <div class="alloc-track">
                       <span style="width: 32%"></span>
                     </div>
@@ -2513,7 +2515,7 @@
                     data-defensive="46"
                     data-offensive="61"
                   >
-                    <b><span>Asset Restructuring</span><span>53%</span></b>
+                    <span class="alloc-label"><span>Asset Restructuring</span><span>53%</span></span>
                     <div class="alloc-track">
                       <span style="width: 53%"></span>
                     </div>
@@ -2524,7 +2526,7 @@
                     data-defensive="14"
                     data-offensive="15"
                   >
-                    <b><span>Debt Resolutions</span><span>15%</span></b>
+                    <span class="alloc-label"><span>Debt Resolutions</span><span>15%</span></span>
                     <div class="alloc-track">
                       <span style="width: 15%"></span>
                     </div>
@@ -2536,7 +2538,7 @@
                 <div class="ring-card">
                   <div class="ring"></div>
                   <div class="ring-label">
-                    <strong data-ring-value>75%</strong>Target collateral
+                    <span data-ring-value>75%</span>Target collateral
                     coverage
                   </div>
                 </div>
