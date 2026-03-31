@@ -888,6 +888,9 @@
           line-height: 1.5;
           white-space: nowrap;
         }
+        .btn {
+          width: 100%;
+        }
       }
 
       /* ══ MOBILE NAV REFINEMENT */
@@ -1484,163 +1487,21 @@
 
       <section class="intelligence">
         <div class="wrap">
-          <div class="section-head">
-            <h2>执行能力图谱</h2>
+          <div>
+            <div class="eyebrow">执行能力如何形成集中优势。</div>
             <p>
-              执行评分用于展示平台在信贷全生命周期各环节的资源投入重点。数值越高，代表内部执行强度越高，而非依赖外部机构。
+              与典型离岸基金模式相比，ShoreVest 将项目来源、法律结构设计、投资委员会治理与回收协调等关键环节保留在内部执行。这种集中化反映了中国信贷市场的结构现实：可执行性与处置执行决定最终价值实现，而这些流程难以被有效外包。
             </p>
           </div>
-          <div class="intelligence-panel">
-            <div class="intel-graphic">
-              <div class="intel-title">执行能力地图</div>
-              <h3>信贷生命周期能力分布</h3>
-              <div class="lifecycle-track" aria-hidden="true">
-                项目获取 ↓ 尽职调查 ↓ 处置回收
-              </div>
-              <div class="intel-flow" aria-label="信贷生命周期能力地图">
-                <article class="intel-stage">
-                  <h3>项目获取</h3>
-                  <div class="capability">
-                    <h4><span>网络触达</span><span>85</span></h4>
-                    <span class="weight">执行强度</span>
-                    <div class="bar" style="--value: 85"></div>
-                  </div>
-                  <div class="capability">
-                    <h4><span>风险筛选</span><span>85</span></h4>
-                    <span class="weight">执行强度</span>
-                    <div class="bar" style="--value: 85"></div>
-                  </div>
-                  <p class="stage-description">
-                    通过区域银行、重组顾问与借款人网络进行直接获取。坚持下行优先筛选，当可执行性、发起方行为或抵押质量偏弱时尽早剔除交易。
-                  </p>
-                </article>
-                <article class="intel-stage">
-                  <h3>尽职调查</h3>
-                  <div class="capability">
-                    <h4><span>法律结构设计</span><span>90</span></h4>
-                    <span class="weight">执行强度</span>
-                    <div class="bar" style="--value: 90"></div>
-                  </div>
-                  <div class="capability">
-                    <h4><span>投委会治理</span><span>90</span></h4>
-                    <span class="weight">执行强度</span>
-                    <div class="bar" style="--value: 90"></div>
-                  </div>
-                  <p class="stage-description">
-                    交易结构围绕中国法律下的可执行性设计，包括担保完善与法院可认可的抵押权主张。每周召开投委会，投资决策须经管理合伙人同意并达到
-                    3/4 超级多数后方可执行。
-                  </p>
-                </article>
-                <article class="intel-stage">
-                  <h3>处置回收</h3>
-                  <div class="capability">
-                    <h4><span>回收控制</span><span>90</span></h4>
-                    <span class="weight">执行强度</span>
-                    <div class="bar" style="--value: 90"></div>
-                  </div>
-                  <div class="capability">
-                    <h4><span>投后管理闭环</span><span>85</span></h4>
-                    <span class="weight">执行强度</span>
-                    <div class="bar" style="--value: 85"></div>
-                  </div>
-                  <p class="stage-description">
-                    内部协同推进司法流程、重组谈判与抵押物处置，在回收路径中保留策略主动权。将持续监控与主动干预联动，在压力阶段同步触发法律与商业处置动作。
-                  </p>
-                </article>
-              </div>
-            </div>
-            <aside class="intel-copy">
-              <h3>运营能力对照</h3>
-              <p>
-                与典型离岸基金模式相比，ShoreVest
-                在尽调到回收的关键执行环节保留了更高比例的内部能力。这种法律与回收能力的内部集中，反映了中国信贷市场“可执行性与处置效率决定最终价值实现”的结构特征。
-              </p>
-              <table class="benchmark-table" aria-label="能力对照表">
-                <thead>
-                  <tr>
-                    <th>能力维度</th>
-                    <th>ShoreVest（执行评分 /100）</th>
-                    <th>典型离岸基金</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>网络触达</td>
-                    <td>85</td>
-                    <td>
-                      项目来源网络有限
-                      <span class="benchmark-ref">（估算值 40–55）</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>风险筛选</td>
-                    <td>85</td>
-                    <td>
-                      对外部筛选依赖较高
-                      <span class="benchmark-ref">（估算值 45–55）</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>法律结构设计</td>
-                    <td>90</td>
-                    <td>
-                      法律架构多外包
-                      <span class="benchmark-ref">（估算值 40–50）</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>投委会治理</td>
-                    <td>90</td>
-                    <td>
-                      审批节奏整合度较低
-                      <span class="benchmark-ref">（估算值 55–65）</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>回收控制</td>
-                    <td>90</td>
-                    <td>
-                      以被动处置为主
-                      <span class="benchmark-ref">（估算值 25–40）</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>投后管理闭环</td>
-                    <td>85</td>
-                    <td>
-                      交割后干预不连续
-                      <span class="benchmark-ref">（估算值 30–45）</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p class="provenance">
-                执行评分反映平台内部对项目获取、结构设计、治理与回收环节资源投入的分析。评分衡量的是执行资源集中度，而非投资业绩表现。
-              </p>
-              <p class="provenance">
-                ShoreVest 将项目获取、法律结构设计、治理与回收协调紧密放在投资团队内部执行，因为这些工作流会实质性影响中国私募信贷的最终结果实现。
-              </p>
-            </aside>
-          </div>
-          <p
-            style="
-              margin-top: 14px;
-              font-size: 12px;
-              line-height: 1.7;
-              color: var(--muted);
-            "
-          >
-            执行评分仅基于平台内部分析，用于示意说明。
-          </p>
         </div>
       </section>
 
       <section class="committee-section">
         <div class="wrap">
           <div class="section-head">
-            <h2>投资委员会</h2>
+            <h2>投资委员会。</h2>
             <p>
-              投资决策由四人投委会作出，将投资、法务与财务判断整合于统一决策机制中。
+              投资决策由四人委员会作出，在每周统一会议机制中整合投资、法律与运营判断。每项决策须包含管理合伙人投票并达到 3/4 超级多数。
             </p>
           </div>
           <div class="platform-layout">
@@ -1654,48 +1515,19 @@
                 <p>合伙人兼首席财务官</p>
               </article>
               <article class="note">
-                <h3>梅翠 / 郑慧</h3>
+                <h3>梅翠</h3>
+                <p>合伙人</p>
+              </article>
+              <article class="note">
+                <h3>郑慧</h3>
                 <p>合伙人</p>
               </article>
             </div>
             <div class="platform-diagram">
               <div class="eyebrow">决策机制</div>
               <p>
-                投委会每周召开会议。投资决策需包含管理合伙人同意，并达到 3/4
-                超级多数。批准项目进入的成员将对投后监控与退出结果负责。
+                投委会每周召开会议。每项投资决策均需管理合伙人投票同意并达到 3/4 超级多数。批准项目进入的成员将持续对投后监控与退出结果负责——决策人与组合管理执行之间不存在职责切换。
               </p>
-              <div
-                class="small-grid"
-                role="tablist"
-                aria-label="投资委员会流程图"
-              >
-                <button
-                  class="small-box is-active"
-                  type="button"
-                  role="tab"
-                  aria-selected="true"
-                  data-detail-title="投资参与度"
-                  data-detail-copy="四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。"
-                >
-                  投资参与度
-                </button>
-                <button
-                  class="small-box"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-detail-title="流程中台"
-                  data-detail-copy="项目获批后由统一流程中台推进法律节点、抵押物更新与服务商执行进度，确保跨职能信息一致。"
-                >
-                  流程中台
-                </button>
-              </div>
-              <div class="small-detail" aria-live="polite">
-                <h4>投资参与度</h4>
-                <p>
-                  四位投委会成员共同参与筛选与尽调，在正式投票前同步识别法律、定价与执行层面的关键问题。
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -1704,10 +1536,12 @@
       <section class="validation-section">
         <div class="wrap">
           <div class="section-head">
-            <h2>获机构资本验证</h2>
+            <h2>资本基础。</h2>
             <p>
-              ShoreVest
-              的出资人覆盖北美、亚洲、中东与欧洲机构投资者，包括主权财富基金、养老金、捐赠基金及家族办公室。
+              ShoreVest 的投资人基础涵盖来自北美、亚洲、中东与欧洲的主权财富基金、养老金、捐赠基金、保险机构与家族办公室。基金三期目前向符合条件的机构投资者开放。
+            </p>
+            <p style="margin-top:14px;">
+              <a href="investor-access_cn.html" class="btn">投资者入口 <span aria-hidden="true">→</span></a>
             </p>
           </div>
         </div>
@@ -1724,22 +1558,6 @@
         </div>
       </section>
 
-      <section>
-        <div class="wrap">
-          <div
-            style="
-              font-size: 12px;
-              line-height: 1.7;
-              color: var(--muted);
-              max-width: 980px;
-              padding-bottom: 56px;
-            "
-          >
-            本网站展示数据仅供信息参考，并与最新投资者材料口径保持一致。过往业绩不代表未来结果。本网站不构成任何证券的出售要约或购买邀请。页面所示基金条款仅为指示性信息。如需进一步资料，请联系
-            inquiries@shorevest.com。
-          </div>
-        </div>
-      </section>
     </main>
 
     <script>
