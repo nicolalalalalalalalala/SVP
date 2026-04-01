@@ -500,19 +500,14 @@
         flex: 0 0 auto;
       }
       .util-btn {
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 500;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        border: 1px solid rgba(20, 20, 16, 0.16);
-        padding: 10px 14px;
+        border: 1px solid var(--rule);
+        padding: 11px 15px;
         background: #fff;
-        color: #181714;
-        border-radius: 999px;
-        transition:
-          background-color 0.2s ease,
-          border-color 0.2s ease,
-          color 0.2s ease;
+        color: var(--ink);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -679,59 +674,43 @@
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
-        font-size: 13px;
-        letter-spacing: 0.01em;
-        text-transform: none;
-        color: #585249;
-        margin-bottom: 10px;
-        line-height: 1.45;
+        font-size: 10px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        color: var(--mist);
+        margin-bottom: 12px;
       }
       .archive__row strong {
         font-family: var(--serif);
-        font-size: clamp(32px, 3.4vw, 42px);
+        font-size: 31px;
         font-weight: 400;
-        line-height: 1.04;
-        letter-spacing: -0.012em;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
         display: block;
         color: #181714;
       }
       .archive__actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 16px;
+        gap: 8px;
+        margin-top: 14px;
       }
       .archive__pdf {
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 500;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        border: 1px solid rgba(20, 20, 16, 0.16);
-        padding: 10px 14px;
+        border: 1px solid var(--rule);
+        padding: 11px 15px;
         background: #fff;
-        color: #181714;
-        border-radius: 999px;
-        transition:
-          background-color 0.2s ease,
-          border-color 0.2s ease,
-          color 0.2s ease;
+        color: var(--ink);
         display: inline-flex;
         align-items: center;
         justify-content: center;
       }
       .archive__pdf--solid {
-        background: #181714;
-        border-color: #181714;
-        color: #fff;
-      }
-      .archive__pdf:hover,
-      .archive__pdf:focus-visible {
-        border-color: #181714;
-      }
-      .archive__pdf--solid:hover,
-      .archive__pdf--solid:focus-visible {
-        background: var(--red);
-        border-color: var(--red);
+        background: var(--ink);
+        border-color: var(--ink);
         color: #fff;
       }
 
