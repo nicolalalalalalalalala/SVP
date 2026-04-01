@@ -2516,7 +2516,7 @@
                 <div class="ring-card">
                   <div class="ring"></div>
                   <div class="ring-label">
-                    <strong data-ring-value>75%</strong>目标抵押覆盖率
+                    <strong data-ring-value>68%</strong>目标抵押覆盖率
                   </div>
                 </div>
               </div>
@@ -2749,7 +2749,7 @@
       );
 
       const scenarioMap = {
-        base: { ring: 75 },
+        base: { ring: 68 },
         defensive: { ring: 82 },
         offensive: { ring: 68 },
       };
@@ -2767,7 +2767,7 @@
         });
         allocRows.forEach((row) => {
           const value = row.dataset[scenario];
-          const valueLabel = row.querySelector("b span:last-child");
+          const valueLabel = row.querySelector(".alloc-label span:last-child, b span:last-child");
           const track = row.querySelector(".alloc-track span");
           if (value && valueLabel && track) {
             valueLabel.textContent = `${value}%`;
