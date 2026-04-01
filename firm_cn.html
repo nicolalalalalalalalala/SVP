@@ -66,8 +66,34 @@
         align-items: center;
         height: 100%;
       }
-      .nav__logo svg {
+      .nav__logo-mark {
         display: block;
+        height: 32px;
+        width: auto;
+      }
+      .nav__logo-mark {
+        height: 22px;
+        width: auto;
+        flex: 0 0 auto;
+      }
+      .nav__logo-lockup {
+        display: inline-flex;
+        flex-direction: column;
+        margin-left: 10px;
+        line-height: 1;
+      }
+      .nav__logo-en {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: var(--ink);
+      }
+      .nav__logo-cn {
+        margin-top: 3px;
+        font-size: 9px;
+        letter-spacing: 0.28em;
+        color: var(--ink);
+        opacity: 0.55;
       }
       .nav__links {
         list-style: none;
@@ -852,7 +878,7 @@
         :root {
           --nav-pad: 18px;
         }
-        .nav__logo svg {
+        .nav__logo-mark {
           height: 48px;
         }
         .nav__menu-btn {
@@ -908,7 +934,7 @@
           min-width: 0;
           max-width: min(100%, 260px);
         }
-        .nav__logo svg {
+        .nav__logo-mark {
           height: 48px;
           max-width: 100%;
         }
@@ -950,7 +976,7 @@
         .nav__logo {
           max-width: min(100%, 180px);
         }
-        .nav__logo svg {
+        .nav__logo-mark {
           height: auto;
           max-height: 42px;
           width: 100%;
@@ -1178,81 +1204,11 @@
   <body>
     <nav id="nav">
       <a href="index_cn.html" class="nav__logo" aria-label="ShoreVest home"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 220 52"
-          height="62"
-          width="auto"
-          role="img"
-          aria-label="ShoreVest Partners"
-        >
-          <g transform="scale(0.431)">
-            <path
-              d="M 48 82  L 52.5 66  L 48 46  L 43.5 66  Z"
-              fill="var(--red)"
-            />
-            <path
-              d="M 48 82  L 64.61 81.34  L 82.24 70.88  L 61.83 72.78  Z"
-              fill="var(--red)"
-            />
-            <path
-              d="M 48 82  L 61.05 92.29  L 69.17 111.12  L 53.77 97.59  Z"
-              fill="var(--red)"
-            />
-            <path
-              d="M 48 82  L 42.23 97.59  L 26.83 111.12  L 34.95 92.29  Z"
-              fill="var(--red)"
-            />
-            <path
-              d="M 48 82  L 31.39 81.34  L 13.76 70.88  L 34.17 72.78  Z"
-              fill="var(--red)"
-            />
-            <path d="M 46.5 52  L 48 4  L 49.5 52  Z" fill="var(--red)" />
-            <circle cx="48" cy="82" r="3.5" fill="var(--red)" />
-          </g>
-          <line
-            x1="52"
-            y1="8"
-            x2="52"
-            y2="44"
-            stroke="var(--red)"
-            stroke-width="0.5"
-            opacity="0.22"
-          />
-          <text
-            x="62"
-            y="28"
-            font-family="EB Garamond, Georgia, serif"
-            font-weight="400"
-            font-size="24"
-            letter-spacing="2"
-            fill="var(--ink)"
-          >
-            ShoreVest
-          </text>
-          <line
-            x1="62"
-            y1="32"
-            x2="210"
-            y2="32"
-            stroke="var(--red)"
-            stroke-width="0.4"
-            opacity="0.4"
-          />
-          <text
-            x="62"
-            y="44"
-            font-family="Inter, sans-serif"
-            font-weight="300"
-            font-size="9.5"
-            letter-spacing="4"
-            fill="var(--ink)"
-            opacity="0.45"
-          >
-            新 岸 資 本
-          </text>
-        </svg></a
-      >
+        ><img class="nav__logo-mark" src="assets/images/logo-mark.svg" alt="ShoreVest">
+        <span class="nav__logo-lockup"
+          ><span class="nav__logo-en">ShoreVest</span
+          ><span class="nav__logo-cn">新 岸 資 本</span></span
+        ></a>
       <ul class="nav__links" id="nav-links">
         <li><a href="firm_cn.html">公司简介</a></li>
         <li><a href="strategy_cn.html">策略</a></li>
@@ -1698,6 +1654,7 @@
   <div class="sv-footer__bottom">
     <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
     <div class="sv-footer__legal">本网站仅供信息参考之用，不构成出售任何证券的要约或购买任何证券要约之邀请。过往业绩不代表未来表现。ShoreVest Partners, Ltd. 未在任何监管机构注册为投资顾问。潜在投资者在投资前应仔细审阅所有基金文件，并咨询其自身的法律、税务及财务顾问。</div>
+    <div class="sv-footer__legal-links"> <a href="privacy-policy_cn.html">隐私政策</a> | <a href="terms-of-use_cn.html">使用条款</a></div>
   </div>
 
 </footer>
