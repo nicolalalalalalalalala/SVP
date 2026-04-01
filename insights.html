@@ -500,14 +500,19 @@
         flex: 0 0 auto;
       }
       .util-btn {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 500;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        border: 1px solid var(--rule);
-        padding: 11px 15px;
+        border: 1px solid rgba(20, 20, 16, 0.16);
+        padding: 10px 14px;
         background: #fff;
-        color: var(--ink);
+        color: #181714;
+        border-radius: 999px;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -674,43 +679,59 @@
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
-        font-size: 10px;
-        letter-spacing: 0.17em;
-        text-transform: uppercase;
-        color: var(--mist);
-        margin-bottom: 12px;
+        font-size: 13px;
+        letter-spacing: 0.01em;
+        text-transform: none;
+        color: #585249;
+        margin-bottom: 10px;
+        line-height: 1.45;
       }
       .archive__row strong {
         font-family: var(--serif);
-        font-size: 31px;
+        font-size: clamp(32px, 3.4vw, 42px);
         font-weight: 400;
-        line-height: 1.15;
-        letter-spacing: -0.01em;
+        line-height: 1.04;
+        letter-spacing: -0.012em;
         display: block;
         color: #181714;
       }
       .archive__actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 14px;
+        gap: 10px;
+        margin-top: 16px;
       }
       .archive__pdf {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 500;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        border: 1px solid var(--rule);
-        padding: 11px 15px;
+        border: 1px solid rgba(20, 20, 16, 0.16);
+        padding: 10px 14px;
         background: #fff;
-        color: var(--ink);
+        color: #181714;
+        border-radius: 999px;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
         display: inline-flex;
         align-items: center;
         justify-content: center;
       }
       .archive__pdf--solid {
-        background: var(--ink);
-        border-color: var(--ink);
+        background: #181714;
+        border-color: #181714;
+        color: #fff;
+      }
+      .archive__pdf:hover,
+      .archive__pdf:focus-visible {
+        border-color: #181714;
+      }
+      .archive__pdf--solid:hover,
+      .archive__pdf--solid:focus-visible {
+        background: var(--red);
+        border-color: var(--red);
         color: #fff;
       }
 
@@ -1712,10 +1733,10 @@
             class="util-btn util-btn--solid"
             href="#"
             data-print-export="download"
-            >Download issue PDF</a
+            >Download PDF</a
           >
           <a class="util-btn" href="#" data-print-export="view"
-            >Open issue PDF</a
+            >Open PDF</a
           >
           <a class="util-btn" href="#archive">Archived Issues</a>
           <a class="util-btn" href="#subscribe">Subscribe</a>
@@ -1910,14 +1931,14 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   >
                   <a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -1936,13 +1957,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -1958,13 +1979,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -1982,13 +2003,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2007,13 +2028,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2029,13 +2050,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-united-states-of-china.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2051,13 +2072,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2073,13 +2094,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2098,13 +2119,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2123,13 +2144,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2148,13 +2169,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2172,13 +2193,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2197,13 +2218,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2219,13 +2240,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-evergrande.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
@@ -2244,13 +2265,13 @@
                     target="_blank"
                     rel="noopener"
                     download
-                    >Download issue PDF</a
+                    >Download PDF</a
                   ><a
                     class="archive__pdf"
                     href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
                     target="_blank"
                     rel="noopener"
-                    >Open issue PDF</a
+                    >Open PDF</a
                   >
                 </div>
               </div>
