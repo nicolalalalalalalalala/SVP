@@ -66,10 +66,34 @@
         align-items: center;
         height: 100%;
       }
-      .nav__logo img {
+      .nav__logo-mark {
         display: block;
         height: 32px;
         width: auto;
+      }
+      .nav__logo-mark {
+        height: 22px;
+        width: auto;
+        flex: 0 0 auto;
+      }
+      .nav__logo-lockup {
+        display: inline-flex;
+        flex-direction: column;
+        margin-left: 10px;
+        line-height: 1;
+      }
+      .nav__logo-en {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: var(--ink);
+      }
+      .nav__logo-cn {
+        margin-top: 3px;
+        font-size: 9px;
+        letter-spacing: 0.28em;
+        color: var(--ink);
+        opacity: 0.55;
       }
       .nav__links {
         list-style: none;
@@ -855,7 +879,7 @@
         :root {
           --nav-pad: 18px;
         }
-        .nav__logo img {
+        .nav__logo-mark {
           height: 48px;
         }
         .nav__menu-btn {
@@ -911,7 +935,7 @@
           min-width: 0;
           max-width: min(100%, 260px);
         }
-        .nav__logo img {
+        .nav__logo-mark {
           height: 48px;
           max-width: 100%;
         }
@@ -953,7 +977,7 @@
         .nav__logo {
           max-width: min(100%, 180px);
         }
-        .nav__logo img {
+        .nav__logo-mark {
           height: auto;
           max-height: 42px;
           width: 100%;
@@ -1181,7 +1205,11 @@
   <body>
     <nav id="nav">
       <a href="index.html" class="nav__logo" aria-label="ShoreVest home"
-        ><img src="assets/images/logo-mark.svg" alt="ShoreVest"><span class="nav__logo-wordmark" style="margin-left:10px;font-size:14px;font-weight:600;letter-spacing:.08em;color:var(--ink);">ShoreVest</span></a>
+        ><img class="nav__logo-mark" src="assets/images/logo-mark.svg" alt="ShoreVest">
+        <span class="nav__logo-lockup"
+          ><span class="nav__logo-en">ShoreVest</span
+          ><span class="nav__logo-cn">新 岸 資 本</span></span
+        ></a>
       <ul class="nav__links" id="nav-links">
         <li><a href="firm.html" class="active">The Firm</a></li>
         <li><a href="strategy.html">Strategy</a></li>
