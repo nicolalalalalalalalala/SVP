@@ -91,6 +91,7 @@ h2 em { font-style:italic; }
 }
 .nav__logo { display:inline-flex; align-items:center; height:100%; }
 .nav__logo img { display:block; }
+.nav__logo-mark { width:34px; height:34px; flex:0 0 34px; }
 .nav__links { display:flex; gap:36px; list-style:none; }
 .nav__links a {
   font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
@@ -758,7 +759,7 @@ h2.su__hed {
     row-gap:12px;
     padding:12px var(--pad);
   }
-  .nav__logo img { height:48px; }
+  .nav__logo-mark { width:34px; height:34px; flex-basis:34px; }
   .nav__menu-btn { display:inline-flex; }
   .nav__right { margin-left:auto; gap:10px; }
   .nav__zh { display:none; }
@@ -944,9 +945,10 @@ h2.su__hed {
     min-width:0;
     max-width:min(100%,260px);
   }
-  .nav__logo img {
-    height:48px;
-    max-width:100%;
+  .nav__logo-mark {
+    width:32px;
+    height:32px;
+    flex-basis:32px;
   }
   .nav__right {
     display:inline-flex;
@@ -986,10 +988,10 @@ h2.su__hed {
   .nav__logo {
     max-width:min(100%,180px);
   }
-  .nav__logo img {
-    height:auto;
-    max-height:42px;
-    width:100%;
+  .nav__logo-mark {
+    width:30px;
+    height:30px;
+    flex-basis:30px;
   }
   .nav__right {
     gap:8px;
