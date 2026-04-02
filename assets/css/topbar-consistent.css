@@ -24,36 +24,36 @@ html {
 #nav .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   height: 100%;
   min-width: 0;
   flex: 1 1 auto;
 }
 
 #nav .nav__logo-mark {
-  width: 31px;
-  height: 31px;
-  flex: 0 0 31px;
+  width: 33px;
+  height: 33px;
+  flex: 0 0 33px;
 }
 
 #nav .nav__logo-lockup {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 31px;
+  min-height: 32px;
   line-height: 1;
   row-gap: 2px;
-  padding-left: 3px;
+  padding-left: 2px;
   border-left: 0;
 }
 
 #nav .nav__logo-en {
   display: inline-block;
   font-family: "EB Garamond", Georgia, serif;
-  font-size: 17px;
+  font-size: 16.6px;
   font-weight: 500;
-  letter-spacing: 0.09em;
-  line-height: 1;
+  letter-spacing: 0.062em;
+  line-height: 1.02;
   color: rgba(20, 20, 16, 0.96);
   padding: 0;
   border-bottom: 0;
@@ -64,7 +64,7 @@ html {
   font-family: "Noto Serif SC", "Songti SC", serif;
   font-size: 11.4px;
   line-height: 1;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: rgba(33, 33, 30, 0.82);
 }
 
