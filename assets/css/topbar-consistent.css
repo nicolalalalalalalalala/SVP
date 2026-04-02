@@ -238,3 +238,17 @@ html {
     line-height: 1.4;
   }
 }
+
+/* Global interactive button hover state */
+:where(
+  button,
+  [type="button"],
+  [type="submit"],
+  [type="reset"],
+  a.btn,
+  a.cta
+):hover {
+  background-color: #c8102e !important;
+  border-color: #c8102e !important;
+  color: #ffffff !important;
+}
