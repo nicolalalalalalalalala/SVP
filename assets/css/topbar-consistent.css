@@ -1,6 +1,7 @@
 :root {
   --topbar-height: 72px;
   --topbar-pad: 64px;
+  --topbar-pad-left: 24px;
   --nav-link-gap: 36px;
 }
 
@@ -19,6 +20,7 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--topbar-pad);
+  padding-left: var(--topbar-pad-left);
 }
 
 #nav .nav__logo {
@@ -114,6 +116,7 @@ html {
 @media (max-width: 1200px) {
   :root {
     --topbar-pad: 32px;
+    --topbar-pad-left: 18px;
     --nav-link-gap: 24px;
   }
 
@@ -126,6 +129,7 @@ html {
   :root {
     --topbar-height: 74px;
     --topbar-pad: 14px;
+    --topbar-pad-left: 14px;
   }
 
   #nav {
