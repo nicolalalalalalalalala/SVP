@@ -23,37 +23,37 @@ html {
 #nav .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap:9px;
   height: 100%;
   min-width: 0;
 }
 
 #nav .nav__logo-mark {
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
+  width:36px;
+  height:36px;
+  flex:0 0 36px;
 }
 
 #nav .nav__logo-lockup {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 34px;
+  min-height:36px;
   line-height: 1;
-  row-gap: 1px;
-  padding-left: 9px;
+  row-gap:2px;
+  padding-left:10px;
   border-left: 1px solid rgba(109, 114, 120, 0.34);
 }
 
 #nav .nav__logo-en {
   display: inline-block;
   font-family: "EB Garamond", Georgia, serif;
-  font-size: 20px;
+  font-size:20.5px;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing:0.014em;
   line-height: 1;
   color: rgba(20, 20, 16, 0.96);
-  padding: 0 0 2px;
+  padding:0 0 3px;
   border-bottom: 1px solid rgba(109, 114, 120, 0.3);
 }
 
@@ -62,7 +62,7 @@ html {
   font-family: "Noto Serif SC", "Songti SC", serif;
   font-size: 10px;
   line-height: 1;
-  letter-spacing: .15em;
+  letter-spacing:.135em;
   color: rgba(33, 33, 30, 0.66);
 }
 
@@ -136,7 +136,7 @@ html {
 
   #nav .nav__logo-lockup {
     min-height: 28px;
-    row-gap: 1px;
+    row-gap:2px;
     padding-left: 8px;
   }
 
