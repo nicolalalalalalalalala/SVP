@@ -3,11 +3,11 @@
   --topbar-pad: 64px;
   --topbar-pad-left: 24px;
   --nav-link-gap: 36px;
-  --nav-logo-en-size: 28px;
+  --nav-logo-en-size: 24px;
   --nav-logo-en-line-height: 0.78;
-  --nav-logo-cn-size: 11px;
+  --nav-logo-cn-size: 10px;
   --nav-logo-cn-line-height: 1;
-  --nav-logo-lockup-gap: 6px;
+  --nav-logo-lockup-gap: 5px;
   --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap));
 }
 
@@ -32,7 +32,7 @@ html {
 #nav .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 7px;
   height: 100%;
   min-width: 0;
   flex: 1 1 auto;
@@ -51,7 +51,7 @@ html {
   line-height:1;
   row-gap: var(--nav-logo-lockup-gap);
   padding-left:6px;
-  min-height:34px;
+  min-height:30px;
 }
 
 #nav .nav__logo-en {
@@ -87,7 +87,7 @@ html {
 #nav .nav__links a {
   display: inline-flex;
   align-items: center;
-  font-size: 11px;
+  font-size: 9px;
   line-height: 1;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -103,7 +103,7 @@ html {
 }
 
 #nav .nav__zh {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1;
 }
 
@@ -137,7 +137,7 @@ html {
     --topbar-height: 74px;
     --topbar-pad: 14px;
     --topbar-pad-left: 14px;
-    --nav-logo-en-size: 25px;
+    --nav-logo-en-size: 22px;
     --nav-logo-cn-size: 10px;
     --nav-logo-lockup-gap: 5px;
   }
