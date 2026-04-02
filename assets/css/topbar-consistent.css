@@ -229,6 +229,7 @@ html {
   .sv-footer__contact {
     width: 100%;
     align-items: flex-start;
+    gap: 8px;
   }
 
   .sv-footer__contact a {
@@ -236,6 +237,32 @@ html {
     white-space: normal;
     text-align: left;
     line-height: 1.4;
+  }
+
+  .sv-footer__main {
+    row-gap: 12px;
+  }
+
+  .sv-footer__bottom {
+    row-gap: 10px;
+  }
+
+  .sv-footer__legal {
+    line-height: 1.85;
+  }
+
+  .sv-footer__legal-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0;
+  }
+
+  .sv-footer__legal-links a {
+    font-size: 0.68rem;
+    line-height: 1.4;
+    white-space: nowrap;
   }
 }
 
