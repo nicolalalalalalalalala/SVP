@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ShoreVest logo">
   <title>ShoreVest logo</title>
-  <rect width="512" height="512" fill="#f5f2f2"/>
-
   <g fill="none" stroke="#c91f32" stroke-linecap="round" stroke-linejoin="round">
     <!-- outer ring with top opening -->
     <path d="M125 300a131 131 0 1 0 262 0" stroke-width="12"/>
