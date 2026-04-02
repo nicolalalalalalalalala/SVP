@@ -1,50 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="新岸资本 logo">
   <title>新岸资本 logo</title>
-
   <defs>
     <style>
       .mark {
         fill: none;
         stroke: #be1e47;
-        stroke-width: 22;
+        stroke-width: 28;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
       .word {
         fill: #be1e47;
         font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-        font-size: 78px;
+        font-size: 74px;
         font-weight: 700;
-        letter-spacing: 16px;
+        letter-spacing: 10px;
       }
     </style>
-    <path id="word-arc" d="M338 170A255 255 0 0 1 686 170" />
+    <path id="word-arc" d="M300 170A275 275 0 0 1 724 170" />
   </defs>
 
   <g class="mark">
-    <path d="M160 536A352 352 0 0 1 296 250" />
-    <path d="M864 536A352 352 0 0 0 728 250" />
-    <path d="M160 536A352 352 0 0 0 864 536" />
+    <path d="M112 536A402 402 0 0 1 286 212" />
+    <path d="M912 536A402 402 0 0 0 738 212" />
+    <path d="M112 536A400 400 0 0 0 912 536" />
 
-    <path d="M512 265V830" />
+    <path d="M512 238V864" />
 
-    <path d="M512 316l-56-58" />
-    <path d="M512 316l10-84" />
-    <path d="M512 316l70-64" />
+    <path d="M512 338l-94-90" />
+    <path d="M512 338l8-118" />
+    <path d="M512 338l116-82" />
 
-    <path d="M512 388c-70-16-122-38-206-54" />
-    <path d="M512 388c58-12 132-42 236-66" />
+    <path d="M512 438c-94-42-160-84-216-120" />
+    <path d="M512 438c96-34 184-72 276-104" />
 
-    <path d="M512 490c-86-18-172-46-260-74" />
-    <path d="M512 490c80-14 172-40 272-76" />
+    <path d="M512 560c-112-44-206-90-284-124" />
+    <path d="M512 560c110-30 226-68 320-112" />
 
-    <path d="M512 618c-98-10-196-20-250-12" />
-    <path d="M512 618c86 8 176 2 244-18" />
+    <path d="M512 690c-106-16-226-28-294-24" />
+    <path d="M512 690c86 18 192 30 238 30" />
 
-    <path d="M348 738h130" />
-    <path d="M548 738h164" />
-    <path d="M368 772h88" />
-    <path d="M556 772h102" />
+    <path d="M310 794h144" />
+    <path d="M570 794h142" />
+    <path d="M372 834h78" />
+    <path d="M568 834h88" />
   </g>
 
   <text class="word">
