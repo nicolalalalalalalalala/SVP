@@ -1,23 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ShoreVest icon">
   <rect width="512" height="512" fill="#f5f2f2"/>
-  <g fill="none" stroke="#c91f32" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M125 300a131 131 0 1 0 262 0" stroke-width="18"/>
-    <path d="M160 192a131 131 0 0 1 25-19" stroke-width="18"/>
-    <path d="M327 173a131 131 0 0 1 25 19" stroke-width="18"/>
+  <g fill="none" stroke="#bf1e33" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M143 190a142 142 0 1 0 226 0" stroke-width="17"/>
 
-    <path d="M256 372V162" stroke-width="16"/>
-    <path d="M256 188l-33-34" stroke-width="13"/>
-    <path d="M256 188l7-42" stroke-width="13"/>
-    <path d="M256 188l34-34" stroke-width="13"/>
-    <path d="M256 214l-43-25" stroke-width="13"/>
-    <path d="M256 214l43-25" stroke-width="13"/>
-    <path d="M256 246l-76-18" stroke-width="13"/>
-    <path d="M256 246l76-18" stroke-width="13"/>
-    <path d="M256 279l-84-5" stroke-width="13"/>
-    <path d="M256 279l84-5" stroke-width="13"/>
-    <path d="M194 332h48" stroke-width="10"/>
-    <path d="M270 332h48" stroke-width="10"/>
-    <path d="M208 344h27" stroke-width="10"/>
-    <path d="M277 344h27" stroke-width="10"/>
+    <path d="M256 369V166" stroke-width="15"/>
+    <path d="M256 193l-35-33" stroke-width="12"/>
+    <path d="M256 193l4-46" stroke-width="12"/>
+    <path d="M256 193l36-31" stroke-width="12"/>
+    <path d="M256 220l-49-27" stroke-width="12"/>
+    <path d="M256 220l48-25" stroke-width="12"/>
+    <path d="M256 252l-82-19" stroke-width="12"/>
+    <path d="M256 252l84-18" stroke-width="12"/>
+    <path d="M256 287l-93-7" stroke-width="12"/>
+    <path d="M256 287l94-6" stroke-width="12"/>
+    <path d="M193 334h46" stroke-width="9"/>
+    <path d="M273 334h46" stroke-width="9"/>
+    <path d="M209 346h26" stroke-width="9"/>
+    <path d="M277 346h26" stroke-width="9"/>
   </g>
 </svg>
