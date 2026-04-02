@@ -3,31 +3,37 @@
   <rect width="512" height="512" fill="#f5f2f2"/>
 
   <g fill="none" stroke="#c91f32" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M118 300a138 138 0 1 0 276 0" stroke-width="12"/>
-    <path d="M188 161a132 132 0 0 0-30 24" stroke-width="12"/>
-    <path d="M324 161a132 132 0 0 1 30 24" stroke-width="12"/>
+    <!-- outer ring with top opening -->
+    <path d="M125 300a131 131 0 1 0 262 0" stroke-width="12"/>
+    <path d="M160 192a131 131 0 0 1 25-19" stroke-width="12"/>
+    <path d="M327 173a131 131 0 0 1 25 19" stroke-width="12"/>
 
-    <path d="M256 373V154" stroke-width="11"/>
+    <!-- trunk -->
+    <path d="M256 372V162" stroke-width="10"/>
 
-    <path d="M256 184l-30-32" stroke-width="9"/>
-    <path d="M256 184l30-32" stroke-width="9"/>
+    <!-- upper crown -->
+    <path d="M256 188l-33-34" stroke-width="8"/>
+    <path d="M256 188l7-42" stroke-width="8"/>
+    <path d="M256 188l34-34" stroke-width="8"/>
 
-    <path d="M256 211l-45-27" stroke-width="9"/>
-    <path d="M256 211l45-27" stroke-width="9"/>
+    <!-- middle branches -->
+    <path d="M256 214l-43-25" stroke-width="8"/>
+    <path d="M256 214l43-25" stroke-width="8"/>
+    <path d="M256 246l-76-18" stroke-width="8"/>
+    <path d="M256 246l76-18" stroke-width="8"/>
 
-    <path d="M256 243l-80-19" stroke-width="9"/>
-    <path d="M256 243l80-19" stroke-width="9"/>
+    <!-- lower branches -->
+    <path d="M256 279l-84-5" stroke-width="8"/>
+    <path d="M256 279l84-5" stroke-width="8"/>
 
-    <path d="M256 275h-84" stroke-width="9"/>
-    <path d="M256 275h84" stroke-width="9"/>
-
-    <path d="M198 334h46" stroke-width="6"/>
-    <path d="M268 334h46" stroke-width="6"/>
-    <path d="M210 346h30" stroke-width="6"/>
-    <path d="M272 346h30" stroke-width="6"/>
+    <!-- roots -->
+    <path d="M194 332h48" stroke-width="6"/>
+    <path d="M270 332h48" stroke-width="6"/>
+    <path d="M208 344h27" stroke-width="6"/>
+    <path d="M277 344h27" stroke-width="6"/>
   </g>
 
-  <path id="shorevest-arc" d="M194 150a86 86 0 0 1 124 0" fill="none"/>
+  <path id="shorevest-arc" d="M198 151a83 83 0 0 1 116 0" fill="none"/>
   <text fill="#c91f32" font-size="34" font-family="'Noto Serif SC','Songti SC','STSong',serif" letter-spacing="8">
     <textPath href="#shorevest-arc" startOffset="50%" text-anchor="middle">新岸资本</textPath>
   </text>
