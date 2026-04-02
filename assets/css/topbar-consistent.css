@@ -49,9 +49,9 @@ html {
 #nav .nav__logo-en {
   display: inline-block;
   font-family: "EB Garamond", Georgia, serif;
-  font-size: 20.5px;
+  font-size: 18px;
   font-weight: 500;
-  letter-spacing: 0.012em;
+  letter-spacing: 0.08em;
   line-height: 1;
   color: rgba(20, 20, 16, 0.96);
   padding: 0 0 3px;
@@ -155,8 +155,8 @@ html {
   }
 
   #nav .nav__logo-en {
-    font-size: 22px;
-    letter-spacing: 0.008em;
+    font-size: 16px;
+    letter-spacing: 0.12em;
     padding: 0;
     border-bottom: 0;
     line-height: 1;
@@ -164,7 +164,9 @@ html {
   }
 
   #nav .nav__logo-cn {
-    display: none;
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.16em;
   }
 
   #nav .nav__right {
