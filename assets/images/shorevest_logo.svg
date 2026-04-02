@@ -1,36 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ShoreVest logo">
   <title>ShoreVest logo</title>
-  <g fill="none" stroke="#bf1e33" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#be1e2d" stroke-linecap="round" stroke-linejoin="round">
     <!-- outer ring with top opening -->
-    <path d="M143 190a142 142 0 1 0 226 0" stroke-width="11"/>
+    <path d="M133 292a123 123 0 0 0 246 0" stroke-width="12"/>
+    <path d="M133 292a123 123 0 0 1 52-100" stroke-width="12"/>
+    <path d="M379 292a123 123 0 0 0-52-100" stroke-width="12"/>
 
     <!-- trunk -->
-    <path d="M256 369V166" stroke-width="10"/>
+    <path d="M256 170v236" stroke-width="11"/>
 
-    <!-- upper crown -->
-    <path d="M256 193l-35-33" stroke-width="8"/>
-    <path d="M256 193l4-46" stroke-width="8"/>
-    <path d="M256 193l36-31" stroke-width="8"/>
+    <!-- crown and branches -->
+    <path d="M256 188l-24-26" stroke-width="7"/>
+    <path d="M256 188l8-46" stroke-width="7"/>
+    <path d="M256 188l30-28" stroke-width="7"/>
 
-    <!-- middle branches -->
-    <path d="M256 220l-49-27" stroke-width="8"/>
-    <path d="M256 220l48-25" stroke-width="8"/>
-    <path d="M256 252l-82-19" stroke-width="8"/>
-    <path d="M256 252l84-18" stroke-width="8"/>
+    <path d="M256 212c-20-10-42-20-62-24" stroke-width="9"/>
+    <path d="M256 212c18-8 37-19 56-30" stroke-width="9"/>
 
-    <!-- lower branches -->
-    <path d="M256 287l-93-7" stroke-width="8"/>
-    <path d="M256 287l94-6" stroke-width="8"/>
+    <path d="M256 244c-32-8-65-20-86-26" stroke-width="9"/>
+    <path d="M256 244c30-7 64-17 89-27" stroke-width="9"/>
+
+    <path d="M256 281c-39-5-78-11-102-8" stroke-width="9"/>
+    <path d="M256 281c36 2 76-1 101-9" stroke-width="9"/>
 
     <!-- roots -->
-    <path d="M193 334h46" stroke-width="6"/>
-    <path d="M273 334h46" stroke-width="6"/>
-    <path d="M209 346h26" stroke-width="6"/>
-    <path d="M277 346h26" stroke-width="6"/>
+    <path d="M196 339h45" stroke-width="6"/>
+    <path d="M271 339h45" stroke-width="6"/>
+    <path d="M210 352h25" stroke-width="6"/>
+    <path d="M278 352h25" stroke-width="6"/>
   </g>
 
-  <path id="shorevest-arc" d="M197 151a88 88 0 0 1 118 0" fill="none"/>
-  <text fill="#bf1e33" font-size="34" font-family="'Noto Serif SC','Songti SC','STSong',serif" letter-spacing="6">
+  <path id="shorevest-arc" d="M206 152a76 76 0 0 1 100 0" fill="none"/>
+  <text fill="#be1e2d" font-size="34" font-family="'Noto Serif SC','Songti SC','STSong',serif" letter-spacing="7">
     <textPath href="#shorevest-arc" startOffset="50%" text-anchor="middle">新岸资本</textPath>
   </text>
 </svg>
