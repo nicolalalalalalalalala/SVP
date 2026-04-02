@@ -1,37 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ShoreVest logo">
-  <title>ShoreVest logo</title>
-  <g fill="none" stroke="#be1e2d" stroke-linecap="round" stroke-linejoin="round">
-    <!-- outer ring with top opening -->
-    <path d="M133 292a123 123 0 0 0 246 0" stroke-width="12"/>
-    <path d="M133 292a123 123 0 0 1 52-100" stroke-width="12"/>
-    <path d="M379 292a123 123 0 0 0-52-100" stroke-width="12"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="新岸资本 logo">
+  <title>新岸资本 logo</title>
+  <rect width="512" height="512" fill="#000000"/>
 
-    <!-- trunk -->
-    <path d="M256 170v236" stroke-width="11"/>
+  <defs>
+    <style>
+      .outline{fill:none;stroke:#f4e9ec;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+      .mark{fill:none;stroke:#be1e2d;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+      .text-outline{fill:#f4e9ec;font-family:'Noto Serif SC','Songti SC','STSong',serif;font-size:35px;letter-spacing:6px}
+      .text-mark{fill:#be1e2d;font-family:'Noto Serif SC','Songti SC','STSong',serif;font-size:33px;letter-spacing:6px}
+    </style>
+    <path id="word-arc" d="M186 170a102 102 0 0 1 140 0" fill="none"/>
+  </defs>
 
-    <!-- crown and branches -->
-    <path d="M256 188l-24-26" stroke-width="7"/>
-    <path d="M256 188l8-46" stroke-width="7"/>
-    <path d="M256 188l30-28" stroke-width="7"/>
+  <g class="outline">
+    <path d="M124 310a134 134 0 0 1 58-112"/>
+    <path d="M388 310a134 134 0 0 0-58-112"/>
+    <path d="M124 310a132 132 0 0 0 264 0"/>
 
-    <path d="M256 212c-20-10-42-20-62-24" stroke-width="9"/>
-    <path d="M256 212c18-8 37-19 56-30" stroke-width="9"/>
+    <path d="M256 190v208"/>
 
-    <path d="M256 244c-32-8-65-20-86-26" stroke-width="9"/>
-    <path d="M256 244c30-7 64-17 89-27" stroke-width="9"/>
+    <path d="M256 210l-30-32"/>
+    <path d="M256 210l8-52"/>
+    <path d="M256 210l38-35"/>
 
-    <path d="M256 281c-39-5-78-11-102-8" stroke-width="9"/>
-    <path d="M256 281c36 2 76-1 101-9" stroke-width="9"/>
+    <path d="M256 236c-26-10-52-20-74-24"/>
+    <path d="M256 236c20-7 43-19 69-32"/>
 
-    <!-- roots -->
-    <path d="M196 339h45" stroke-width="6"/>
-    <path d="M271 339h45" stroke-width="6"/>
-    <path d="M210 352h25" stroke-width="6"/>
-    <path d="M278 352h25" stroke-width="6"/>
+    <path d="M256 267c-36-8-72-18-98-24"/>
+    <path d="M256 267c34-7 72-16 100-25"/>
+
+    <path d="M256 300c-42-5-86-8-112-5"/>
+    <path d="M256 300c38 3 82-1 109-8"/>
+
+    <path d="M181 346h56"/>
+    <path d="M275 346h56"/>
+    <path d="M191 361h38"/>
+    <path d="M283 361h38"/>
   </g>
 
-  <path id="shorevest-arc" d="M206 152a76 76 0 0 1 100 0" fill="none"/>
-  <text fill="#be1e2d" font-size="34" font-family="'Noto Serif SC','Songti SC','STSong',serif" letter-spacing="7">
-    <textPath href="#shorevest-arc" startOffset="50%" text-anchor="middle">新岸资本</textPath>
+  <g class="mark">
+    <path d="M124 310a134 134 0 0 1 58-112"/>
+    <path d="M388 310a134 134 0 0 0-58-112"/>
+    <path d="M124 310a132 132 0 0 0 264 0"/>
+
+    <path d="M256 190v208"/>
+
+    <path d="M256 210l-30-32"/>
+    <path d="M256 210l8-52"/>
+    <path d="M256 210l38-35"/>
+
+    <path d="M256 236c-26-10-52-20-74-24"/>
+    <path d="M256 236c20-7 43-19 69-32"/>
+
+    <path d="M256 267c-36-8-72-18-98-24"/>
+    <path d="M256 267c34-7 72-16 100-25"/>
+
+    <path d="M256 300c-42-5-86-8-112-5"/>
+    <path d="M256 300c38 3 82-1 109-8"/>
+
+    <path d="M181 346h56"/>
+    <path d="M275 346h56"/>
+    <path d="M191 361h38"/>
+    <path d="M283 361h38"/>
+  </g>
+
+  <text class="text-outline">
+    <textPath href="#word-arc" startOffset="50%" text-anchor="middle">新岸资本</textPath>
+  </text>
+  <text class="text-mark">
+    <textPath href="#word-arc" startOffset="50%" text-anchor="middle">新岸资本</textPath>
   </text>
 </svg>

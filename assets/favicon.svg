@@ -1,28 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ShoreVest icon">
-  <rect width="512" height="512" fill="#f5f2f2"/>
-  <g fill="none" stroke="#be1e2d" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M133 292a123 123 0 0 0 246 0" stroke-width="18"/>
-    <path d="M133 292a123 123 0 0 1 52-100" stroke-width="18"/>
-    <path d="M379 292a123 123 0 0 0-52-100" stroke-width="18"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="新岸资本 icon">
+  <rect width="512" height="512" fill="#000"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#f4e9ec" stroke-width="20">
+      <path d="M128 312a130 130 0 0 1 58-108"/>
+      <path d="M384 312a130 130 0 0 0-58-108"/>
+      <path d="M128 312a128 128 0 0 0 256 0"/>
 
-    <path d="M256 170v236" stroke-width="16"/>
+      <path d="M256 194v204"/>
+      <path d="M256 214l-28-30"/>
+      <path d="M256 214l8-48"/>
+      <path d="M256 214l34-31"/>
 
-    <path d="M256 188l-24-26" stroke-width="12"/>
-    <path d="M256 188l8-46" stroke-width="12"/>
-    <path d="M256 188l30-28" stroke-width="12"/>
+      <path d="M256 240c-24-10-50-18-72-23"/>
+      <path d="M256 240c20-8 42-18 66-30"/>
+      <path d="M256 270c-34-7-69-17-94-22"/>
+      <path d="M256 270c31-6 67-16 94-23"/>
+      <path d="M256 302c-41-4-81-8-106-5"/>
+      <path d="M256 302c38 3 78 0 104-7"/>
 
-    <path d="M256 212c-20-10-42-20-62-24" stroke-width="13"/>
-    <path d="M256 212c18-8 37-19 56-30" stroke-width="13"/>
+      <path d="M182 346h54"/>
+      <path d="M276 346h54"/>
+      <path d="M194 360h34"/>
+      <path d="M284 360h34"/>
+    </g>
+    <g stroke="#be1e2d" stroke-width="13">
+      <path d="M128 312a130 130 0 0 1 58-108"/>
+      <path d="M384 312a130 130 0 0 0-58-108"/>
+      <path d="M128 312a128 128 0 0 0 256 0"/>
 
-    <path d="M256 244c-32-8-65-20-86-26" stroke-width="13"/>
-    <path d="M256 244c30-7 64-17 89-27" stroke-width="13"/>
+      <path d="M256 194v204"/>
+      <path d="M256 214l-28-30"/>
+      <path d="M256 214l8-48"/>
+      <path d="M256 214l34-31"/>
 
-    <path d="M256 281c-39-5-78-11-102-8" stroke-width="13"/>
-    <path d="M256 281c36 2 76-1 101-9" stroke-width="13"/>
+      <path d="M256 240c-24-10-50-18-72-23"/>
+      <path d="M256 240c20-8 42-18 66-30"/>
+      <path d="M256 270c-34-7-69-17-94-22"/>
+      <path d="M256 270c31-6 67-16 94-23"/>
+      <path d="M256 302c-41-4-81-8-106-5"/>
+      <path d="M256 302c38 3 78 0 104-7"/>
 
-    <path d="M196 339h45" stroke-width="10"/>
-    <path d="M271 339h45" stroke-width="10"/>
-    <path d="M210 352h25" stroke-width="10"/>
-    <path d="M278 352h25" stroke-width="10"/>
+      <path d="M182 346h54"/>
+      <path d="M276 346h54"/>
+      <path d="M194 360h34"/>
+      <path d="M284 360h34"/>
+    </g>
   </g>
 </svg>
