@@ -50,3 +50,33 @@ picture {
     animation: none !important;
   }
 }
+
+/* Shared navbar logo lockup tuning to avoid per-page inline edits */
+#nav .nav__logo-lockup {
+  margin-left: 14px !important;
+  padding-left: 16px !important;
+  line-height: 1 !important;
+}
+
+#nav .nav__logo-lockup > span[aria-hidden="true"] {
+  background: rgba(0, 0, 0, 0.12) !important;
+}
+
+#nav .nav__logo-en {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 19px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  color: #111 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35) !important;
+  padding: 0 32px 5px 0 !important;
+}
+
+#nav .nav__logo-cn {
+  font-family: 'Noto Serif SC', serif !important;
+  margin-top: 5px !important;
+  font-size: 10px !important;
+  letter-spacing: 0.22em !important;
+  color: #111 !important;
+  opacity: 0.7 !important;
+}
