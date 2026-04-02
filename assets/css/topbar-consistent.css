@@ -3,6 +3,7 @@
   --topbar-pad: 64px;
   --topbar-pad-left: 24px;
   --nav-link-gap: 36px;
+  --nav-logo-diameter: 39px;
 }
 
 html {
@@ -33,9 +34,9 @@ html {
 }
 
 #nav .nav__logo-mark {
-  width: 33px;
-  height: 33px;
-  flex: 0 0 33px;
+  width: var(--nav-logo-diameter);
+  height: var(--nav-logo-diameter);
+  flex: 0 0 var(--nav-logo-diameter);
 }
 
 #nav .nav__logo-lockup {
