@@ -3,6 +3,10 @@
   --topbar-pad: 64px;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 #nav {
   position: fixed;
   top: 0;
