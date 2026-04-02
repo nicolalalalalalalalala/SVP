@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ShoreVest tree logo">
-  <circle cx="256" cy="256" r="238" fill="none" stroke="#c2185b" stroke-width="16"/>
-  <g fill="none" stroke="#c2185b" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="256" cy="256" r="238" fill="none" stroke="#b3213f" stroke-width="16"/>
+  <g fill="none" stroke="#b3213f" stroke-linecap="round" stroke-linejoin="round">
     <path d="M256 90v404" stroke-width="14"/>
     <path d="M256 134l-34-30" stroke-width="10"/>
     <path d="M256 134l34-28" stroke-width="10"/>
