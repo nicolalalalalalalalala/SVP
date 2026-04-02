@@ -1,28 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ShoreVest logo">
   <title>ShoreVest logo</title>
-  <g fill="none" stroke="#c91f32" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+
+  <g fill="none" stroke="#c91f32" stroke-linecap="round" stroke-linejoin="round">
     <!-- Open ring -->
-    <path d="M110 196 A150 150 0 1 0 402 196" />
+    <path d="M114 280a142 142 0 1 0 284 0" stroke-width="12" />
+
     <!-- Trunk -->
-    <path d="M256 355 L256 150" />
+    <path d="M256 365V162" stroke-width="10" />
+
     <!-- Branches -->
-    <path d="M256 182 L229 153" />
-    <path d="M256 182 L283 153" />
-    <path d="M256 203 L214 179" />
-    <path d="M256 203 L298 179" />
-    <path d="M256 232 L182 214" />
-    <path d="M256 232 L330 214" />
-    <path d="M256 262 L162 254" />
-    <path d="M256 262 L350 254" />
+    <path d="M256 191l-28-31" stroke-width="9" />
+    <path d="M256 191l28-31" stroke-width="9" />
+    <path d="M256 214l-44-25" stroke-width="9" />
+    <path d="M256 214l44-25" stroke-width="9" />
+    <path d="M256 245l-75-18" stroke-width="9" />
+    <path d="M256 245l75-18" stroke-width="9" />
+    <path d="M256 274l-82 0" stroke-width="9" />
+    <path d="M256 274l82 0" stroke-width="9" />
+
     <!-- Ground lines -->
-    <path d="M196 326 H244" />
-    <path d="M268 326 H316" />
-    <path d="M206 341 H236" />
-    <path d="M276 341 H306" />
+    <path d="M196 333h46" stroke-width="6" />
+    <path d="M270 333h46" stroke-width="6" />
+    <path d="M208 345h30" stroke-width="6" />
+    <path d="M274 345h30" stroke-width="6" />
   </g>
 
-  <path id="arc" d="M186 135 A95 95 0 0 1 326 135" fill="none" />
-  <text fill="#c91f32" font-size="30" font-family="'Noto Serif SC','Songti SC','STSong',serif" letter-spacing="5">
-    <textPath href="#arc" startOffset="50%" text-anchor="middle">新岸资本</textPath>
+  <path id="shorevest-arc" d="M193 149a84 84 0 0 1 126 0" fill="none" />
+  <text fill="#c91f32" font-size="30" font-family="'Noto Serif TC','PingFang TC','Songti TC',serif" letter-spacing="6">
+    <textPath href="#shorevest-arc" startOffset="50%" text-anchor="middle">新岸英本</textPath>
   </text>
 </svg>
