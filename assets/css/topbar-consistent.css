@@ -23,48 +23,48 @@ html {
 #nav .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
   height: 100%;
   min-width: 0;
   flex: 1 1 auto;
 }
 
 #nav .nav__logo-mark {
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
 }
 
 #nav .nav__logo-lockup {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 38px;
+  min-height: 56px;
   line-height: 1;
-  row-gap: 6px;
-  padding-left: 11px;
-  border-left: 1px solid rgba(109, 114, 120, 0.28);
+  row-gap: 10px;
+  padding-left: 24px;
+  border-left: 2px solid rgba(109, 114, 120, 0.24);
 }
 
 #nav .nav__logo-en {
   display: inline-block;
   font-family: "EB Garamond", Georgia, serif;
-  font-size: 18px;
+  font-size: 31px;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   line-height: 1;
   color: rgba(20, 20, 16, 0.96);
-  padding: 0 0 3px;
-  border-bottom: 1px solid rgba(109, 114, 120, 0.3);
+  padding: 0;
+  border-bottom: 0;
 }
 
 #nav .nav__logo-cn {
   margin-top: 0;
   font-family: "Noto Serif SC", "Songti SC", serif;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1;
-  letter-spacing: 0.125em;
-  color: rgba(33, 33, 30, 0.74);
+  letter-spacing: 0.18em;
+  color: rgba(33, 33, 30, 0.62);
 }
 
 #nav .nav__links {
@@ -136,37 +136,39 @@ html {
   }
 
   #nav .nav__logo {
-    gap: 8px;
+    gap: 10px;
     flex: 1 1 auto;
     min-width: 0;
     margin-right: 8px;
   }
 
   #nav .nav__logo-mark {
-    width: 34px;
-    height: 34px;
-    flex-basis: 34px;
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
   }
 
   #nav .nav__logo-lockup {
-    min-height: 34px;
-    padding-left: 8px;
-    border-left-color: rgba(109, 114, 120, 0.3);
+    min-height: 42px;
+    padding-left: 12px;
+    row-gap: 6px;
+    border-left-width: 1px;
+    border-left-color: rgba(109, 114, 120, 0.28);
   }
 
   #nav .nav__logo-en {
-    font-size: 16px;
-    letter-spacing: 0.12em;
+    font-size: 20px;
+    letter-spacing: 0.08em;
     padding: 0;
-    border-bottom: 1px solid rgba(109, 114, 120, 0.3);
+    border-bottom: 0;
     line-height: 1;
     white-space: nowrap;
   }
 
   #nav .nav__logo-cn {
     display: inline-block;
-    font-size: 9px;
-    letter-spacing: 0.16em;
+    font-size: 10px;
+    letter-spacing: 0.17em;
   }
 
   #nav .nav__right {
