@@ -214,3 +214,27 @@ html {
   }
 
 }
+
+/* Footer contact CTA consistency (desktop + mobile) */
+.sv-footer__contact {
+  max-width: 100%;
+}
+
+.sv-footer__contact a {
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .sv-footer__contact {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .sv-footer__contact a {
+    justify-content: flex-start;
+    white-space: normal;
+    text-align: left;
+    line-height: 1.4;
+  }
+}
