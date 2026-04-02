@@ -3,7 +3,12 @@
   --topbar-pad: 64px;
   --topbar-pad-left: 24px;
   --nav-link-gap: 36px;
-  --nav-logo-diameter: 39px;
+  --nav-logo-en-size: 28px;
+  --nav-logo-en-line-height: 0.78;
+  --nav-logo-cn-size: 11px;
+  --nav-logo-cn-line-height: 1;
+  --nav-logo-lockup-gap: 6px;
+  --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap));
 }
 
 html {
@@ -44,30 +49,30 @@ html {
   flex-direction:column;
   justify-content:center;
   line-height:1;
-  row-gap:6px;
+  row-gap: var(--nav-logo-lockup-gap);
   padding-left:6px;
   min-height:34px;
 }
 
 #nav .nav__logo-en {
   font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
-  font-size: 28px;
+  font-size: var(--nav-logo-en-size);
   font-weight: 400;
   letter-spacing: .018em;
   color:#171717;
   display:inline-block;
-  line-height:.78;
+  line-height: var(--nav-logo-en-line-height);
 }
 
 #nav .nav__logo-cn {
   font-family:'Noto Serif SC','Songti SC','STSong',serif;
   margin-top:0;
-  font-size:11px;
+  font-size: var(--nav-logo-cn-size);
   font-weight:300;
   letter-spacing:.58em;
   color: rgba(33,33,30,.72);
   opacity:1;
-  line-height:1;
+  line-height: var(--nav-logo-cn-line-height);
 }
 
 #nav .nav__links {
@@ -132,6 +137,9 @@ html {
     --topbar-height: 74px;
     --topbar-pad: 14px;
     --topbar-pad-left: 14px;
+    --nav-logo-en-size: 25px;
+    --nav-logo-cn-size: 10px;
+    --nav-logo-lockup-gap: 5px;
   }
 
   #nav {
@@ -146,12 +154,7 @@ html {
     margin-right: 8px;
   }
 
-  #nav .nav__logo-en {
-    font-size: 25px;
-  }
-
   #nav .nav__logo-cn {
-    font-size: 10px;
     letter-spacing: .5em;
   }
 
