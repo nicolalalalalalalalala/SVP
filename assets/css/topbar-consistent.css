@@ -174,12 +174,19 @@ html {
     row-gap: 0;
   }
 
-  #nav .nav__lp {
-    display: none;
+  #nav .nav__right {
+    gap: 8px;
+  }
+
+  #nav .nav__lp,
+  #nav .nav__menu-btn {
+    min-width: 102px;
+    min-height: 40px;
+    padding: 0 10px;
   }
 
   #nav .nav__menu-btn {
-    min-width: 56px;
+    min-width: 84px;
   }
 
   #nav .nav__links {
