@@ -89,9 +89,41 @@ h2 em { font-style:italic; }
   border-bottom-color:var(--rule);
   box-shadow:0 1px 20px rgba(0,0,0,.05);
 }
-.nav__logo { display:inline-flex; align-items:center; height:100%; }
+.nav__logo {
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  height:100%;
+}
 .nav__logo img { display:block; }
 .nav__logo-mark { width:34px; height:34px; flex:0 0 34px; }
+.nav__logo-lockup {
+  display:inline-flex;
+  flex-direction:column;
+  justify-content:center;
+  line-height:1;
+  border-left:1px solid rgba(169,36,79,.24);
+  padding-left:16px;
+  min-height:36px;
+}
+.nav__logo-en {
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+  font-weight:500;
+  letter-spacing:.03em;
+  color:#171717;
+  display:inline-block;
+  padding:0 14px 5px 0;
+  border-bottom:1px solid rgba(169,36,79,.30);
+}
+.nav__logo-cn {
+  font-family:'Noto Serif SC',serif;
+  margin-top:7px;
+  font-size:12px;
+  letter-spacing:.48em;
+  color:#6d6d6d;
+  opacity:.88;
+}
 .nav__links { display:flex; gap:36px; list-style:none; }
 .nav__links a {
   font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
@@ -944,11 +976,23 @@ h2.su__hed {
   .nav__logo {
     min-width:0;
     max-width:min(100%,260px);
+    gap:10px;
   }
   .nav__logo-mark {
     width:32px;
     height:32px;
     flex-basis:32px;
+  }
+  .nav__logo-lockup {
+    padding-left:12px;
+  }
+  .nav__logo-en {
+    font-size:20px;
+    padding-right:10px;
+  }
+  .nav__logo-cn {
+    font-size:11px;
+    letter-spacing:.4em;
   }
   .nav__right {
     display:inline-flex;
@@ -992,6 +1036,20 @@ h2.su__hed {
     width:30px;
     height:30px;
     flex-basis:30px;
+  }
+  .nav__logo-lockup {
+    min-height:32px;
+    padding-left:10px;
+  }
+  .nav__logo-en {
+    font-size:18px;
+    padding-right:6px;
+    padding-bottom:4px;
+  }
+  .nav__logo-cn {
+    margin-top:6px;
+    font-size:10px;
+    letter-spacing:.3em;
   }
   .nav__right {
     gap:8px;
@@ -1231,7 +1289,7 @@ h2.su__hed {
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#top" class="nav__logo"><img class="nav__logo-mark" src="assets/images/logo-mark-site-red.svg" alt="ShoreVest"><span class="nav__logo-lockup" style="display:inline-flex;flex-direction:column;line-height:1;border-left:1px solid rgba(169,36,79,.22);margin-left:14px;padding-left:20px;"><span class="nav__logo-en" style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;letter-spacing:.04em;color:#111;border-bottom:1px solid rgba(169,36,79,.34);padding:0 18px 6px 0;display:inline-block;">ShoreVest</span><span class="nav__logo-cn" style="font-family:'Noto Serif SC',serif;margin-top:10px;font-size:13px;letter-spacing:.52em;color:#6b6b6b;opacity:.82;">新 岸 資 本</span></span></a>
+  <a href="#top" class="nav__logo"><img class="nav__logo-mark" src="assets/images/logo-mark-site-red.svg" alt="ShoreVest"><span class="nav__logo-lockup"><span class="nav__logo-en">ShoreVest</span><span class="nav__logo-cn">新 岸 資 本</span></span></a>
   <ul class="nav__links" id="nav-links">
     <li><a href="firm.html">The Firm</a></li>
     <li><a href="strategy.html">Strategy</a></li>
