@@ -48,9 +48,9 @@ html {
 
 #nav .nav__logo-en {
   font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
-  font-size: 28px;
-  font-weight: 300;
-  letter-spacing: .01em;
+  font-size: 26px;
+  font-weight: 200;
+  letter-spacing: .015em;
   color:#171717;
   display:inline-block;
   line-height:.84;
@@ -141,7 +141,7 @@ html {
   }
 
   #nav .nav__logo-en {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   #nav .nav__logo-cn {
