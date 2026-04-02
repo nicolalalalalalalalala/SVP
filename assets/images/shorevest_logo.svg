@@ -1,52 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="新岸资本 logo">
-  <title>新岸资本 logo</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="新庫廣本 logo">
+  <title>新庫廣本 logo</title>
   <defs>
+    <linearGradient id="crimson" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c4204d" />
+      <stop offset="100%" stop-color="#a90f3f" />
+    </linearGradient>
     <style>
       .mark {
         fill: none;
-        stroke: #be1e47;
-        stroke-width: 28;
+        stroke: url(#crimson);
+        stroke-width: 26;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
       .word {
-        fill: #be1e47;
+        fill: url(#crimson);
         font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-        font-size: 74px;
+        font-size: 72px;
         font-weight: 700;
         letter-spacing: 10px;
       }
     </style>
-    <path id="word-arc" d="M300 170A275 275 0 0 1 724 170" />
+    <path id="word-arc" d="M300 185A275 275 0 0 1 724 185" />
   </defs>
 
+  <rect width="1024" height="1024" fill="#060606" />
+
   <g class="mark">
-    <path d="M112 536A402 402 0 0 1 286 212" />
-    <path d="M912 536A402 402 0 0 0 738 212" />
-    <path d="M112 536A400 400 0 0 0 912 536" />
+    <path d="M120 545A395 395 0 0 1 288 237" />
+    <path d="M904 545A395 395 0 0 0 736 237" />
+    <path d="M120 545A392 392 0 0 0 904 545" />
 
-    <path d="M512 238V864" />
+    <path d="M512 255V870" />
 
-    <path d="M512 338l-94-90" />
-    <path d="M512 338l8-118" />
-    <path d="M512 338l116-82" />
+    <path d="M512 350l-105-100" />
+    <path d="M512 350l10-128" />
+    <path d="M512 350l115-86" />
 
-    <path d="M512 438c-94-42-160-84-216-120" />
-    <path d="M512 438c96-34 184-72 276-104" />
+    <path d="M512 450c-90-38-164-84-216-122" />
+    <path d="M512 450c102-36 188-74 284-102" />
 
-    <path d="M512 560c-112-44-206-90-284-124" />
-    <path d="M512 560c110-30 226-68 320-112" />
+    <path d="M512 575c-114-42-206-88-292-124" />
+    <path d="M512 575c108-32 222-70 320-110" />
 
-    <path d="M512 690c-106-16-226-28-294-24" />
-    <path d="M512 690c86 18 192 30 238 30" />
+    <path d="M512 700c-104-16-228-30-292-24" />
+    <path d="M512 700c88 18 194 30 240 30" />
 
-    <path d="M310 794h144" />
-    <path d="M570 794h142" />
-    <path d="M372 834h78" />
-    <path d="M568 834h88" />
+    <path d="M300 795h160" />
+    <path d="M570 795h156" />
+    <path d="M372 834h86" />
+    <path d="M570 834h92" />
   </g>
 
   <text class="word">
-    <textPath href="#word-arc" startOffset="50%" text-anchor="middle">新岸资本</textPath>
+    <textPath href="#word-arc" startOffset="50%" text-anchor="middle">新庫廣本</textPath>
   </text>
 </svg>
