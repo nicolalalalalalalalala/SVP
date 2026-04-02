@@ -5,25 +5,37 @@
     <path d="M456 268A200 200 0 0 0 370 108" />
     <path d="M56 268A200 200 0 0 0 456 268" />
 
-    <path d="M256 118V432" />
+  <g fill="none" stroke="#be1e47" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer ring -->
+    <path d="M57 272A199 199 0 0 1 145 111" stroke-width="22"/>
+    <path d="M455 272A199 199 0 0 0 367 111" stroke-width="22"/>
+    <path d="M57 272A199 199 0 0 0 455 272" stroke-width="22"/>
 
-    <path d="M256 168l-46-44" />
-    <path d="M256 168l4-58" />
-    <path d="M256 168l56-40" />
+    <!-- Trunk -->
+    <path d="M256 122V432" stroke-width="20"/>
 
-    <path d="M256 218c-46-20-78-42-104-58" />
-    <path d="M256 218c46-16 88-34 132-50" />
+    <!-- Top branches -->
+    <path d="M256 170L214 130" stroke-width="18"/>
+    <path d="M256 170L260 114" stroke-width="18"/>
+    <path d="M256 170L302 136" stroke-width="18"/>
 
-    <path d="M256 278c-54-22-100-44-138-60" />
-    <path d="M256 278c54-14 110-34 156-54" />
+    <!-- Middle branches -->
+    <path d="M256 222C219 205 186 188 150 176" stroke-width="16"/>
+    <path d="M256 222C298 207 341 192 388 184" stroke-width="16"/>
 
-    <path d="M256 342c-52-8-108-14-140-12" />
-    <path d="M256 342c40 8 90 14 114 14" />
+    <!-- Lower branches -->
+    <path d="M256 282C209 265 166 248 116 238" stroke-width="16"/>
+    <path d="M256 282C305 268 356 252 408 242" stroke-width="16"/>
 
-    <path d="M160 392h68" />
-    <path d="M282 392h68" />
-    <path d="M186 412h38" />
-    <path d="M282 412h42" />
+    <!-- Bottom branches -->
+    <path d="M256 342C208 336 161 330 135 326" stroke-width="15"/>
+    <path d="M256 342C296 348 337 352 380 352" stroke-width="15"/>
+
+    <!-- Base lines -->
+    <path d="M158 392H226" stroke-width="12"/>
+    <path d="M286 392H354" stroke-width="12"/>
+    <path d="M186 412H224" stroke-width="10"/>
+    <path d="M286 412H324" stroke-width="10"/>
   </g>
 
   <path id="word-arc" d="M122 133A170 170 0 0 1 390 133" fill="none" />
