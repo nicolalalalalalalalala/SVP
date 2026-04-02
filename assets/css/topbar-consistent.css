@@ -23,35 +23,35 @@ html {
 #nav .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
   height: 100%;
   min-width: 0;
   flex: 1 1 auto;
 }
 
 #nav .nav__logo-mark {
-  width: 56px;
-  height: 56px;
-  flex: 0 0 56px;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
 }
 
 #nav .nav__logo-lockup {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 56px;
+  min-height: 42px;
   line-height: 1;
-  row-gap: 10px;
-  padding-left: 24px;
-  border-left: 2px solid rgba(109, 114, 120, 0.24);
+  row-gap: 6px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(109, 114, 120, 0.28);
 }
 
 #nav .nav__logo-en {
   display: inline-block;
   font-family: "EB Garamond", Georgia, serif;
-  font-size: 31px;
+  font-size: 20px;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   line-height: 1;
   color: rgba(20, 20, 16, 0.96);
   padding: 0;
@@ -61,9 +61,9 @@ html {
 #nav .nav__logo-cn {
   margin-top: 0;
   font-family: "Noto Serif SC", "Songti SC", serif;
-  font-size: 13px;
+  font-size: 10px;
   line-height: 1;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.17em;
   color: rgba(33, 33, 30, 0.62);
 }
 
@@ -137,39 +137,7 @@ html {
   }
 
   #nav .nav__logo {
-    gap: 10px;
-    flex: 1 1 auto;
-    min-width: 0;
     margin-right: 8px;
-  }
-
-  #nav .nav__logo-mark {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
-  }
-
-  #nav .nav__logo-lockup {
-    min-height: 42px;
-    padding-left: 12px;
-    row-gap: 6px;
-    border-left-width: 1px;
-    border-left-color: rgba(109, 114, 120, 0.28);
-  }
-
-  #nav .nav__logo-en {
-    font-size: 20px;
-    letter-spacing: 0.08em;
-    padding: 0;
-    border-bottom: 0;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
-  #nav .nav__logo-cn {
-    display: inline-block;
-    font-size: 10px;
-    letter-spacing: 0.17em;
   }
 
   #nav .nav__right {
