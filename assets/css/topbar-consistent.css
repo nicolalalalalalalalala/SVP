@@ -1,6 +1,7 @@
 :root {
   --topbar-height: 72px;
   --topbar-pad: 64px;
+  --nav-link-gap: 36px;
 }
 
 html {
@@ -70,7 +71,7 @@ html {
 #nav .nav__links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: var(--nav-link-gap);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -89,8 +90,8 @@ html {
 #nav .nav__right {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-left: 30px;
+  gap: var(--nav-link-gap);
+  margin-left: var(--nav-link-gap);
   flex-shrink: 0;
 }
 
@@ -115,6 +116,7 @@ html {
 @media (max-width: 1200px) {
   :root {
     --topbar-pad: 32px;
+    --nav-link-gap: 24px;
   }
 
   #nav .nav__links {
