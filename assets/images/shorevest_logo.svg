@@ -1,58 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="新庫廣本 logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="新庫廣本 logo">
   <title>新庫廣本 logo</title>
-  <defs>
-    <linearGradient id="crimson" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#c4204d" />
-      <stop offset="100%" stop-color="#a90f3f" />
-    </linearGradient>
-    <style>
-      .mark {
-        fill: none;
-        stroke: url(#crimson);
-        stroke-width: 26;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-      .word {
-        fill: url(#crimson);
-        font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-        font-size: 72px;
-        font-weight: 700;
-        letter-spacing: 10px;
-      }
-    </style>
-    <path id="word-arc" d="M300 185A275 275 0 0 1 724 185" />
-  </defs>
+  <g fill="none" stroke="#be1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="14">
+    <path d="M56 268A200 200 0 0 1 142 108" />
+    <path d="M456 268A200 200 0 0 0 370 108" />
+    <path d="M56 268A200 200 0 0 0 456 268" />
 
-  <rect width="1024" height="1024" fill="#060606" />
+    <path d="M256 118V432" />
 
-  <g class="mark">
-    <path d="M120 545A395 395 0 0 1 288 237" />
-    <path d="M904 545A395 395 0 0 0 736 237" />
-    <path d="M120 545A392 392 0 0 0 904 545" />
+    <path d="M256 168l-46-44" />
+    <path d="M256 168l4-58" />
+    <path d="M256 168l56-40" />
 
-    <path d="M512 255V870" />
+    <path d="M256 218c-46-20-78-42-104-58" />
+    <path d="M256 218c46-16 88-34 132-50" />
 
-    <path d="M512 350l-105-100" />
-    <path d="M512 350l10-128" />
-    <path d="M512 350l115-86" />
+    <path d="M256 278c-54-22-100-44-138-60" />
+    <path d="M256 278c54-14 110-34 156-54" />
 
-    <path d="M512 450c-90-38-164-84-216-122" />
-    <path d="M512 450c102-36 188-74 284-102" />
+    <path d="M256 342c-52-8-108-14-140-12" />
+    <path d="M256 342c40 8 90 14 114 14" />
 
-    <path d="M512 575c-114-42-206-88-292-124" />
-    <path d="M512 575c108-32 222-70 320-110" />
-
-    <path d="M512 700c-104-16-228-30-292-24" />
-    <path d="M512 700c88 18 194 30 240 30" />
-
-    <path d="M300 795h160" />
-    <path d="M570 795h156" />
-    <path d="M372 834h86" />
-    <path d="M570 834h92" />
+    <path d="M160 392h68" />
+    <path d="M282 392h68" />
+    <path d="M186 412h38" />
+    <path d="M282 412h42" />
   </g>
 
-  <text class="word">
+  <path id="word-arc" d="M122 133A170 170 0 0 1 390 133" fill="none" />
+  <text fill="#be1e47" font-family="'Noto Serif SC','Songti SC','STSong',serif" font-size="42" font-weight="700" letter-spacing="8">
     <textPath href="#word-arc" startOffset="50%" text-anchor="middle">新庫廣本</textPath>
   </text>
 </svg>
