@@ -187,11 +187,32 @@ html {
 }
 
 @media (max-width: 760px) {
+  #nav {
+    min-height: var(--topbar-height);
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
   #nav .nav__lp {
     display: none;
   }
 
   #nav .nav__menu-btn {
-    min-width: 44px;
+    min-width: 56px;
   }
+
+  #nav .nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: auto;
+    order: initial;
+    margin: 0;
+    padding: 14px var(--topbar-pad) 16px;
+    background: rgba(249, 248, 244, 0.98);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  }
+
 }
