@@ -821,27 +821,34 @@ h2.su__hed {
   #nav.menu-open .nav__links { display:flex; }
 
   .hero__sliver {
-    height:min(84vh, 760px);
-    min-height:620px;
-    background-position:56% 34%;
+    height:min(90vh, 820px);
+    min-height:680px;
+    background-position:58% 34%;
   }
   .hero__overlay {
-    padding:0 var(--pad) 80px;
+    padding:0 var(--pad) 104px;
   }
   .hero__overlay .hero__kicker {
-    margin-bottom:20px;
+    margin-bottom:24px;
     color:rgba(255,255,255,.66);
+    font-size:10.5px;
+    letter-spacing:.2em;
   }
   .hero__overlay h1.hero__hed {
-    font-size:clamp(42px,12.4vw,60px);
-    line-height:1.03;
-    margin-bottom:38px;
-    max-width:8.9ch;
+    font-size:clamp(50px,14.2vw,68px);
+    line-height:1.01;
+    margin-bottom:42px;
+    max-width:9.2ch;
+    text-wrap:balance;
   }
   .hero__overlay .cta {
-    gap:12px;
-    font-size:10.5px;
-    letter-spacing:.14em;
+    gap:13px;
+    font-size:11px;
+    letter-spacing:.13em;
+  }
+  .hero__overlay .cta__ring {
+    width:46px;
+    height:46px;
   }
 
   #hero,
@@ -863,7 +870,7 @@ h2.su__hed {
   }
 
   #hero {
-    padding:76px var(--pad) 88px;
+    padding:86px var(--pad) 96px;
     gap:52px;
   }
   .hero__intro { max-width:100%; }
