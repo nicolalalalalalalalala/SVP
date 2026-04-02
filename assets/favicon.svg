@@ -1,23 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ShoreVest icon">
   <rect width="512" height="512" fill="#f5f2f2"/>
-  <g fill="none" stroke="#c91f32" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M125 300a131 131 0 1 0 262 0" stroke-width="18"/>
-    <path d="M160 192a131 131 0 0 1 25-19" stroke-width="18"/>
-    <path d="M327 173a131 131 0 0 1 25 19" stroke-width="18"/>
+  <g fill="none" stroke="#be1e2d" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M133 292a123 123 0 0 0 246 0" stroke-width="18"/>
+    <path d="M133 292a123 123 0 0 1 52-100" stroke-width="18"/>
+    <path d="M379 292a123 123 0 0 0-52-100" stroke-width="18"/>
 
-    <path d="M256 372V162" stroke-width="16"/>
-    <path d="M256 188l-33-34" stroke-width="13"/>
-    <path d="M256 188l7-42" stroke-width="13"/>
-    <path d="M256 188l34-34" stroke-width="13"/>
-    <path d="M256 214l-43-25" stroke-width="13"/>
-    <path d="M256 214l43-25" stroke-width="13"/>
-    <path d="M256 246l-76-18" stroke-width="13"/>
-    <path d="M256 246l76-18" stroke-width="13"/>
-    <path d="M256 279l-84-5" stroke-width="13"/>
-    <path d="M256 279l84-5" stroke-width="13"/>
-    <path d="M194 332h48" stroke-width="10"/>
-    <path d="M270 332h48" stroke-width="10"/>
-    <path d="M208 344h27" stroke-width="10"/>
-    <path d="M277 344h27" stroke-width="10"/>
+    <path d="M256 170v236" stroke-width="16"/>
+
+    <path d="M256 188l-24-26" stroke-width="12"/>
+    <path d="M256 188l8-46" stroke-width="12"/>
+    <path d="M256 188l30-28" stroke-width="12"/>
+
+    <path d="M256 212c-20-10-42-20-62-24" stroke-width="13"/>
+    <path d="M256 212c18-8 37-19 56-30" stroke-width="13"/>
+
+    <path d="M256 244c-32-8-65-20-86-26" stroke-width="13"/>
+    <path d="M256 244c30-7 64-17 89-27" stroke-width="13"/>
+
+    <path d="M256 281c-39-5-78-11-102-8" stroke-width="13"/>
+    <path d="M256 281c36 2 76-1 101-9" stroke-width="13"/>
+
+    <path d="M196 339h45" stroke-width="10"/>
+    <path d="M271 339h45" stroke-width="10"/>
+    <path d="M210 352h25" stroke-width="10"/>
+    <path d="M278 352h25" stroke-width="10"/>
   </g>
 </svg>
