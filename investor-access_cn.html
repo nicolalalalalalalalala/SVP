@@ -358,38 +358,143 @@
         }
       }
 
-      /* ══ LEGAL DISCLAIMER FOOTER */
-      .legal-disclaimer {
-        background: #0c0c0a;
-        color: rgba(246, 244, 240, 0.6);
-        padding: 26px var(--pad) 30px;
-      }
-      .legal-disclaimer__inner {
-        max-width: var(--max);
-        margin: 0 auto;
-      }
-      .legal-disclaimer__rule {
-        height: 1px;
-        background: rgba(139, 26, 47, 0.2);
-        margin-bottom: 14px;
-      }
-      .legal-disclaimer__text {
-        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-        font-size: 12px;
-        line-height: 1.6;
-        letter-spacing: 0.08em;
-        font-variant: small-caps;
-      }
-      .legal-disclaimer--cn .legal-disclaimer__text {
-        font-family:
-          "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-        font-variant: normal;
-      }
-      @media (max-width: 900px) {
-        .legal-disclaimer {
-          padding: 22px 28px 26px;
-        }
-      }
+      .sv-footer {
+  background-color: #0c0c0a;
+  padding: 2.5rem 3rem;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+/* Main row */
+.sv-footer__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(246,244,240,0.1);
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Logo block */
+.sv-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+.sv-footer__logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+.sv-footer__logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.sv-footer__logo-wordmark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #f6f4f0;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.sv-footer__logo-chinese {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.65rem;
+  color: rgba(246,244,240,0.4);
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+/* Location */
+.sv-footer__location {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(246,244,240,0.35);
+  flex: 0 0 auto;
+}
+
+/* Contact */
+.sv-footer__contact {
+  flex: 0 0 auto;
+  text-align: right;
+}
+.sv-footer__contact a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.82rem;
+  color: rgba(246,244,240,0.55);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.sv-footer__contact a:hover {
+  color: #f6f4f0;
+}
+
+/* Bottom row */
+.sv-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.sv-footer__copyright {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  color: rgba(246,244,240,0.25);
+  letter-spacing: 0.03em;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.sv-footer__legal {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  color: rgba(246,244,240,0.25);
+  line-height: 1.7;
+  max-width: 560px;
+  text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sv-footer {
+    padding: 2rem 1.5rem;
+  }
+  .sv-footer__main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+  }
+  .sv-footer__location {
+    order: 3;
+  }
+  .sv-footer__contact {
+    text-align: left;
+    order: 2;
+  }
+  .sv-footer__bottom {
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1.25rem;
+  }
+  .sv-footer__legal {
+    text-align: left;
+    max-width: 100%;
+  }
+  .sv-footer__copyright {
+    white-space: normal;
+  }
+}
     
       /* Global eyebrow stabilization */
       .eyebrow {
@@ -578,15 +683,33 @@
       })();
     </script>
 
-    <footer class="legal-disclaimer" aria-label="法律声明">
-      <div class="legal-disclaimer__inner">
-        <div class="legal-disclaimer__rule" aria-hidden="true"></div>
-        <p class="legal-disclaimer__text">
-          © ShoreVest Partners, Ltd. 版权所有。本网站仅供信息参考之用，不构成出售任何证券的要约或购买任何证券要约之邀请。过往业绩不代表未来表现。ShoreVest Partners, Ltd. 未在任何监管机构注册为投资顾问。潜在投资者在投资前应仔细审阅所有基金文件，并咨询其自身的法律、税务及财务顾问。
-        </p>
-        <p class="legal-disclaimer__text"><a href="privacy-policy_cn.html">隐私政策</a> | <a href="terms-of-use_cn.html">使用条款</a></p>
+<footer class="sv-footer">
+
+    <div class="sv-footer__main">
+
+    <a href="index_cn.html" class="sv-footer__logo">
+      <img src="assets/images/shorevest_logo.svg" alt="ShoreVest">
+      <div class="sv-footer__logo-text">
+        <span class="sv-footer__logo-wordmark">ShoreVest</span>
+        <span class="sv-footer__logo-chinese">新岸資本</span>
       </div>
-    </footer>
+    </a>
+
+    <div class="sv-footer__location">广州 &middot; 上海 &middot; 香港</div>
+
+    <div class="sv-footer__contact">
+      <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+    </div>
+
+  </div>
+
+  <div class="sv-footer__bottom">
+    <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. 版权所有。</div>
+    <div class="sv-footer__legal">本网站仅供信息参考之用，不构成出售任何证券的要约或购买任何证券要约之邀请。过往业绩不代表未来表现。ShoreVest Partners, Ltd. 未在任何监管机构注册为投资顾问。潜在投资者在投资前应仔细审阅所有基金文件，并咨询其自身的法律、税务及财务顾问。</div>
+    <div class="sv-footer__legal-links"> <a href="privacy-policy_cn.html">隐私政策</a> | <a href="terms-of-use_cn.html">使用条款</a></div>
+  </div>
+
+</footer>
   
 <script src="assets/js/site-motion.js" defer></script>
 </body>
