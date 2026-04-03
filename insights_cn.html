@@ -6,6 +6,8 @@
     <title>中国债务动态 - ShoreVest</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=5" />
     <link rel="shortcut icon" href="assets/favicon.svg?v=5" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -651,68 +653,97 @@
       .archive {
         border: 1px solid var(--rule);
         background: #fff;
+        opacity: 0.92;
       }
       .archive__list {
         max-height: 640px;
         overflow: auto;
+        background: #fff;
       }
       .archive__head {
-        padding: 14px 18px;
+        padding: 14px 20px;
         border-bottom: 1px solid var(--rule);
         font-size: 10px;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--mist);
+        background: #fff;
+      }
+      .archive__disclaimer {
+        margin: 0;
+        padding: 14px 20px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #7d786f;
+        background: #fff;
+        border-bottom: 1px solid var(--rule);
       }
       .archive__row {
-        padding: 18px;
-        border-bottom: 1px solid var(--rule);
+        padding: 16px 20px 18px;
+        border-bottom: 1px solid rgba(20, 20, 16, 0.1);
+        background: #fff;
       }
       .archive__row:last-child {
         border-bottom: none;
       }
       .archive__row small {
-        display: flex;
+        display: block;
         gap: 12px;
-        flex-wrap: wrap;
-        font-size: 10px;
-        letter-spacing: 0.17em;
-        text-transform: uppercase;
-        color: var(--mist);
-        margin-bottom: 12px;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        text-transform: none;
+        color: #4c463d;
+        margin-bottom: 10px;
+        font-family: var(--serif);
       }
       .archive__row strong {
         font-family: var(--serif);
-        font-size: 31px;
+        font-size: clamp(20px, 1.7vw, 24px);
         font-weight: 400;
-        line-height: 1.15;
+        line-height: 1.28;
         letter-spacing: -0.01em;
         display: block;
-        color: #181714;
+        color: #3a352d;
       }
       .archive__actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 14px;
+        gap: 10px;
+        margin-top: 12px;
       }
       .archive__pdf {
         font-size: 10px;
         font-weight: 500;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        border: 1px solid var(--rule);
-        padding: 11px 15px;
+        border: 1px solid rgba(20, 20, 16, 0.16);
+        padding: 10px 14px;
         background: #fff;
-        color: var(--ink);
+        color: #4c463d;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .archive__pdf:hover,
+      .archive__pdf:focus-visible {
+        background: #f6f4f0;
+        border-color: rgba(20, 20, 16, 0.28);
+        color: #2b2721;
       }
       .archive__pdf--solid {
-        background: var(--ink);
-        border-color: var(--ink);
-        color: #fff;
+        background: #f6f4f0;
+        border-color: rgba(20, 20, 16, 0.16);
+        color: #4c463d;
+      }
+      .archive__pdf--solid:hover,
+      .archive__pdf--solid:focus-visible {
+        background: #f0ece3;
+        border-color: rgba(20, 20, 16, 0.28);
+        color: #2b2721;
       }
 
       .research-sub {
@@ -892,7 +923,7 @@
           line-height: 1.56;
         }
         .reading h3 {
-          font-size: 27px;
+          font-size: 24px;
         }
         .reading p,
         .reading p.lead,
@@ -1123,7 +1154,7 @@
           padding: 18px 16px;
         }
         .archive__row strong {
-          font-size: 27px;
+          font-size: 24px;
           overflow-wrap: anywhere;
         }
 
@@ -1601,27 +1632,18 @@
         </div>
       </div>
 
-      <section id="issue-header" class="issue-header">
-        <div class="issue-header__meta">
-          <span>第10卷 | 第1期</span><span>发布于 2026年1月25日</span
-          ><span>中国债务动态</span>
-        </div>
-        <h2>“中国不可投资”神话的终结</h2>
-      </section>
-
       <div class="reading-grid">
         <article
           id="current-issue"
           class="reading"
           data-print-article="active"
           data-print-filename="shorevest-china-debt-dynamics-issue-46.pdf"
-          data-print-pdf="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
+          data-print-pdf="pdfs/46. China Debt Dynamics - The End of the 'China Is Uninvestable' Myth.pdf"
         >
           <p class="lead">
             <strong>第10卷 | 第1期</strong><br />2026年1月25日
           </p>
 
-          <h3>“中国不可投资”神话的终结</h3>
           <p>
             在中国被广泛贴上“不可投资”标签近五年后，这一叙事终于开始转向。
             海外股票投资者正在重新认识到：中国事实上具备可投资性，而他们目前对中国配置明显偏低。
@@ -1710,6 +1732,9 @@
             <div class="archive__head">
               往期归档 · Publication History
             </div>
+            <p class="archive__disclaimer">
+              中国债务动态代表 ShoreVest Partners 的观点与分析，仅供信息参考。其不构成投资建议、投资邀约或任何证券出售要约。接收方应在作出任何投资决策前进行独立研究并咨询专业顾问。文中提及的过往业绩不代表未来结果。部分表述可能构成前瞻性陈述，实际结果可能与所述存在重大差异。
+            </p>
             <div class="archive__list">
               <div class="archive__row">
                 <small
@@ -1719,15 +1744,14 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v10i1&filename=46.%20China%20Debt%20Dynamics%20-%20The%20End%20of%20China%20Is%20Uninvestable%20Myth.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   >
                   <a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v10i1"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1743,14 +1767,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v9i4&filename=china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v9i4"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1764,14 +1787,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v9i3&filename=china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v9i3"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1787,14 +1809,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v9i2&filename=china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v9i2"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1803,21 +1824,20 @@
               </div>
               <div class="archive__row">
                 <small
-                  >第9卷 | 第1期 | 发布于 2024年第一季度 | 资产配置人版</small
+                  >第9卷 | 第1期 | 发布于 2025年第一季度 | 资产配置人版</small
                 ><strong
                   >绿色金融：播下中国下一轮不良贷款浪潮的种子。</strong
                 >
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v9i1&filename=china-debt-dynamics-green-finance-next-wave-npls.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v9i1"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1826,19 +1846,18 @@
               </div>
               <div class="archive__row">
                 <small
-                  >第8卷 | 第4期 | 发布于 2023年第四季度 | 资产配置人版</small
+                  >第8卷 | 第4期 | 发布于 2024年第四季度 | 资产配置人版</small
                 ><strong>中国的“合众国”时刻。</strong>
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-united-states-of-china.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v8i4&filename=china-debt-dynamics-united-states-of-china.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-united-states-of-china.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v8i4"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1847,19 +1866,18 @@
               </div>
               <div class="archive__row">
                 <small
-                  >第8卷 | 第3期 | 发布于 2023年第三季度 | 资产配置人版</small
+                  >第8卷 | 第3期 | 发布于 2024年第三季度 | 资产配置人版</small
                 ><strong>重置中的世界秩序下的私募信贷。</strong>
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v8i3&filename=40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v8i3"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1868,19 +1886,18 @@
               </div>
               <div class="archive__row">
                 <small
-                  >第8卷 | 第2期 | 发布于 2023年第二季度 | 资产配置人版</small
+                  >第8卷 | 第2期 | 发布于 2024年第二季度 | 资产配置人版</small
                 ><strong>量化中国不良贷款市场。</strong>
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v8i2&filename=39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v8i2"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1889,21 +1906,20 @@
               </div>
               <div class="archive__row">
                 <small
-                  >第8卷 | 第1期 | 发布于 2023年第一季度 | 资产配置人版</small
+                  >第8卷 | 第1期 | 发布于 2024年第一季度 | 资产配置人版</small
                 ><strong
                   >纾困银行：北京房地产支持政策的隐含意义。</strong
                 >
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v8i1&filename=38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v8i1"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1912,21 +1928,20 @@
               </div>
               <div class="archive__row">
                 <small
-                  >第7卷 | 第4期 | 发布于 2022年第四季度 | 资产配置人版</small
+                  >第7卷 | 第4期 | 发布于 2023年第四季度 | 资产配置人版</small
                 ><strong
                   >中国重新聚焦金融风险并加速不良资产处置。</strong
                 >
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v7i4&filename=37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v7i4"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1942,14 +1957,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v7i1&filename=34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v7i1"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1965,14 +1979,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v6i3&filename=32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v6i3"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -1988,14 +2001,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v6i2&filename=31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v6i2"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -2009,14 +2021,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-evergrande.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v6i1&filename=china-debt-dynamics-evergrande.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-evergrande.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v6i1"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -2032,14 +2043,13 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
+                    href="insights_cn.html?printPreview=1&action=download&doc=v5i2&filename=china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
                     target="_blank"
                     rel="noopener"
-                    download
                     >下载 PDF</a
                   ><a
                     class="archive__pdf"
-                    href="pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
+                    href="insights_cn.html?printPreview=1&action=view&doc=v5i2"
                     target="_blank"
                     rel="noopener"
                     >打开 PDF</a
@@ -2169,34 +2179,34 @@
         v9i1: {
           title:
             "绿色金融：播下中国下一轮不良贷款浪潮的种子。",
-          meta: "第9卷 | 第1期 | 发布于 2024年第一季度 | 资产配置人版",
+          meta: "第9卷 | 第1期 | 发布于 2025年第一季度 | 资产配置人版",
           pdf: "pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf",
         },
         v8i4: {
           title: "中国的“合众国”时刻。",
-          meta: "第8卷 | 第4期 | 发布于 2023年第四季度 | 资产配置人版",
+          meta: "第8卷 | 第4期 | 发布于 2024年第四季度 | 资产配置人版",
           pdf: "pdfs/china-debt-dynamics-united-states-of-china.pdf",
         },
         v8i3: {
           title: "重置中的世界秩序下的私募信贷。",
-          meta: "第8卷 | 第3期 | 发布于 2023年第三季度 | 资产配置人版",
+          meta: "第8卷 | 第3期 | 发布于 2024年第三季度 | 资产配置人版",
           pdf: "pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf",
         },
         v8i2: {
           title: "量化中国不良贷款市场。",
-          meta: "第8卷 | 第2期 | 发布于 2023年第二季度 | 资产配置人版",
+          meta: "第8卷 | 第2期 | 发布于 2024年第二季度 | 资产配置人版",
           pdf: "pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf",
         },
         v8i1: {
           title:
             "纾困银行：北京房地产支持政策的隐含意义。",
-          meta: "第8卷 | 第1期 | 发布于 2023年第一季度 | 资产配置人版",
+          meta: "第8卷 | 第1期 | 发布于 2024年第一季度 | 资产配置人版",
           pdf: "pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf",
         },
         v7i4: {
           title:
             "中国重新聚焦金融风险并加速不良资产处置。",
-          meta: "第7卷 | 第4期 | 发布于 2022年第四季度 | 资产配置人版",
+          meta: "第7卷 | 第4期 | 发布于 2023年第四季度 | 资产配置人版",
           pdf: "pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf",
         },
         v7i1: {
@@ -2242,20 +2252,20 @@
 
       const buildPrintEdition = () => {
         const title =
-          document.querySelector(".issue-header h2")?.textContent.trim() || "";
+          document.querySelector(".issue-live h1")?.textContent.trim() || "";
         const standfirst =
-          document.querySelector(".issue-header__dek")?.textContent.trim() ||
+          document.querySelector(".issue-live p")?.textContent.trim() ||
           document
             .querySelector("#current-issue p:not(.lead)")
             ?.textContent.trim() ||
           "";
         const issueInfo =
           document
-            .querySelector(".issue-header__meta span:nth-child(1)")
+            .querySelector(".issue-live__meta span:nth-child(1)")
             ?.textContent.trim() || "";
         const publishedInfo =
           document
-            .querySelector(".issue-header__meta span:nth-child(2)")
+            .querySelector(".issue-live__meta span:nth-child(2)")
             ?.textContent.trim() || "";
         const editionInfo =
           document
@@ -2419,7 +2429,7 @@
 
       if (isPrintPreviewMode) {
         const issueKey = previewParams.get("doc");
-        const selected期= issueKey ? archiveIssueMap[issueKey] : null;
+        const selectedIssue = issueKey ? archiveIssueMap[issueKey] : null;
         suggestedFilename =
           previewParams.get("filename") ||
           selectedIssue?.pdf?.split("/").pop() ||
@@ -2428,10 +2438,10 @@
         const printTitle = document.getElementById("print-title");
         const printStandfirst = document.getElementById("print-standfirst");
         const printBody = document.getElementById("print-body");
-        let handledArchive期= false;
+        let handledArchiveIssue = false;
 
         if (
-          selected期&&
+          selectedIssue &&
           (previewAction === "view" || previewAction === "download")
         ) {
           if (previewAction === "download") {
@@ -2446,12 +2456,12 @@
           } else {
             window.location.replace(selectedIssue.pdf);
           }
-          handledArchive期= true;
+          handledArchiveIssue = true;
         }
 
         if (
-          !handledArchive期&&
-          selected期&&
+          !handledArchiveIssue &&
+          selectedIssue &&
           printMeta &&
           printTitle &&
           printStandfirst &&
@@ -2467,7 +2477,7 @@
           printBody.innerHTML = `<iframe src="${selectedIssue.pdf}" title="${selectedIssue.title}" style="width:100%;min-height:70vh;border:1px solid rgba(0,0,0,.12);"></iframe>`;
         }
 
-        if (!handledArchive期&& suggestedFilename) {
+        if (!handledArchiveIssue && suggestedFilename) {
           document.title = `${suggestedFilename} - ShoreVest`;
         }
       }
@@ -2515,6 +2525,13 @@
           if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
             return;
           if (el.closest("nav")) return;
+          if (
+            el.closest(".reading-grid") ||
+            el.classList.contains("issue-header") ||
+            el.classList.contains("franchise-ribbon")
+          ) {
+            return;
+          }
           el.classList.add("auto-rev");
           el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
         });
@@ -2540,6 +2557,12 @@
         document
           .querySelectorAll(".auto-rev")
           .forEach((el) => observer.observe(el));
+
+        window.setTimeout(() => {
+          document
+            .querySelectorAll(".auto-rev:not(.auto-rev--in)")
+            .forEach((el) => el.classList.add("auto-rev--in"));
+        }, 1000);
       })();
     </script>
 <footer class="sv-footer">
@@ -2549,6 +2572,8 @@
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">联系我们</span>
         <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+        <a href="mailto:ir@shorevest.com">ir@shorevest.com</a>
+        <a href="tel:+16502224488">+1 650 222 4488</a>
       </div>
     </div>
 
