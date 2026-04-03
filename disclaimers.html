@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Notices &amp; Disclaimers - ShoreVest</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4" />
+  <link rel="shortcut icon" href="assets/favicon.svg?v=4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/topbar-consistent.css" />
+  <link rel="stylesheet" href="assets/css/typography-consistent.css" />
+  <style>
+    :root {
+      --red: #b3213f;
+      --ink: #0c0c0a;
+      --white: #ffffff;
+      --off: #f6f4f0;
+      --rule: rgba(12, 12, 10, 0.12);
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --max: 1200px;
+      --pad: 64px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--white);
+    }
+    a { color: inherit; text-decoration: none; }
+
+    #nav {
+      height: 72px;
+    }
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 100%;
+    }
+    .nav__logo img { display: block; }
+    .nav__logo-mark {
+      width: 31px;
+      height: 31px;
+      flex: 0 0 31px;
+    }
+    .nav__logo-lockup {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1;
+      row-gap: 1px;
+      min-height: 31px;
+      padding-left: 4px;
+    }
+    .nav__logo-en {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.035em;
+      color: #171717;
+      line-height: 1;
+    }
+    .nav__logo-cn {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: rgba(33, 33, 30, 0.66);
+      line-height: 1;
+    }
+    .nav__links a {
+      color: var(--ink);
+      opacity: 0.45;
+    }
+    .nav__links a:hover,
+    .nav__links a.active {
+      opacity: 1;
+    }
+    .nav__zh {
+      font-size: 13px;
+      color: var(--ink);
+      opacity: 0.35;
+    }
+    .nav__zh:hover { opacity: 0.75; }
+
+    main {
+      padding: 132px var(--pad) 86px;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .disclaimer-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .intro {
+      margin: 14px 0 34px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(12, 12, 10, 0.74);
+    }
+    section {
+      border-top: 1px solid var(--rule);
+      padding-top: 22px;
+      margin-top: 22px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      color: var(--ink);
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.78;
+      color: rgba(12, 12, 10, 0.86);
+    }
+    .disclaimer-note {
+      margin-top: 30px;
+      border-top: 1px solid var(--rule);
+      padding-top: 18px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(12, 12, 10, 0.76);
+    }
+
+    .sv-footer {
+      background: #141410;
+      color: #f6f4f0;
+      padding: 42px var(--pad);
+    }
+    .sv-footer__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .sv-footer__main {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(246, 244, 240, 0.2);
+    }
+    .sv-footer__brand {
+      font-family: var(--serif);
+      font-size: 24px;
+      color: #fff;
+    }
+    .sv-footer__contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .sv-footer__contact a {
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 13px;
+      color: #fff;
+      opacity: 0.88;
+    }
+    .sv-footer__bottom {
+      padding-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+    .sv-footer__copyright,
+    .sv-footer__legal-links {
+      font-size: 10px;
+      line-height: 1.8;
+      color: rgba(246, 244, 240, 0.82);
+      letter-spacing: 0.03em;
+    }
+    .sv-footer__legal-links a {
+      color: rgba(246, 244, 240, 0.92);
+      opacity: 0.88;
+    }
+    .sv-footer__legal-links a:hover { opacity: 1; }
+
+    @media (max-width: 980px) {
+      main,
+      .sv-footer,
+      #nav {
+        --pad: 24px;
+      }
+      main { padding-top: 116px; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="nav" aria-label="Primary">
+    <a class="nav__logo" href="index.html" aria-label="ShoreVest home">
+      <img src="assets/images/logo-master.svg" alt="" class="nav__logo-mark" />
+      <span class="nav__logo-lockup">
+        <span class="nav__logo-en">ShoreVest</span>
+        <span class="nav__logo-cn">新岸资本</span>
+      </span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="firm.html">Firm</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="press.html">Press</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="index_cn.html" class="nav__zh">中文</a>
+      <a href="investor-access.html" class="nav__lp">Investor Access</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="disclaimer-wrap">
+      <h1>Legal Notices &amp; Disclaimers</h1>
+      <p class="intro">The following disclosures govern your access to and use of this website.</p>
+
+      <section>
+        <h2>No Offer to Sell</h2>
+        <p>Nothing on this website constitutes an offer to sell, or a solicitation of an offer to purchase, any security, future, or other financial instrument or product. Any such offer or solicitation will be made only by means of a formal confidential private placement memorandum or other offering document and only in jurisdictions where permitted by applicable law. The information on this website is provided for general informational purposes only and should not be relied upon as the basis for any investment decision.</p>
+      </section>
+
+      <section>
+        <h2>Past Performance</h2>
+        <p>Past performance is not indicative of future results. There can be no assurance that any ShoreVest fund or investment will achieve its objectives or avoid substantial losses. Returns shown on this website are for informational purposes only and may reflect selected investments. Individual investor results may vary based on timing of investment, fee arrangements, fund vintage, and other factors. Net returns, where referenced, reflect the deduction of management fees, carried interest, fund expenses, and other applicable charges. There can be no assurance that unrealized investments will be realized at the values shown.</p>
+      </section>
+
+      <section>
+        <h2>Forward-Looking Statements</h2>
+        <p>Certain information on this website constitutes forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995 (Section 27A of the Securities Act of 1933, as amended, and Section 21E of the Securities Exchange Act of 1934, as amended). Forward-looking statements may be identified by terminology such as 'may,' 'will,' 'should,' 'seek,' 'expect,' 'anticipate,' 'project,' 'estimate,' 'intend,' 'continue,' 'target,' or 'believe,' or the negatives thereof or comparable terminology. Due to various risks and uncertainties, including changes in market conditions, regulatory developments, geopolitical dynamics, and competitive conditions, actual events or results may differ materially from those reflected in such statements. ShoreVest undertakes no obligation to update or revise any forward-looking statements, whether as a result of new information, future events, or otherwise.</p>
+      </section>
+
+      <section>
+        <h2>Jurisdiction Restrictions</h2>
+        <p>The information on this website is not intended for distribution to, or use by, any person or entity in any jurisdiction or country where such distribution or use would be contrary to applicable law or regulation. It is the responsibility of any person accessing this website to satisfy themselves as to full observance of the laws and regulations of any relevant jurisdiction, including obtaining any governmental or other consent that may be required and complying with any other necessary formality.</p>
+      </section>
+
+      <section>
+        <h2>Investor Qualification</h2>
+        <p>The information on this website is directed only at institutional investors, qualified purchasers as defined under the Investment Company Act of 1940 (as amended), accredited investors as defined under Regulation D of the Securities Act of 1933 (as amended), and equivalent categories of sophisticated investors under applicable local law. This website is not directed at retail investors and is not intended for distribution to persons in jurisdictions where such distribution would be unlawful. By accessing this website, you represent and warrant that you meet at least one of the eligibility criteria above and that you are accessing this website for informational purposes only.</p>
+      </section>
+
+      <section>
+        <h2>Regulatory Status</h2>
+        <p>ShoreVest Partners, Ltd. is not registered as an investment adviser with the U.S. Securities and Exchange Commission or any other regulatory authority. Nothing on this website should be construed as investment, legal, tax, accounting, regulatory, or ERISA advice. The information contained herein does not take into account the particular investment objectives, financial situation, or specific needs of any prospective investor. Prospective investors should consult their own legal, tax, financial, and regulatory advisors before making any investment decision.</p>
+      </section>
+
+      <section>
+        <h2>Tax and ERISA Considerations</h2>
+        <p>Nothing on this website constitutes tax, accounting, legal, or ERISA advice. Tax treatment depends on the individual circumstances of each investor and may be subject to change. ERISA considerations, including plan asset rules, vary by investor type and fund structure. Prospective investors subject to ERISA or similar regulations should review all fund documentation carefully and seek independent professional advice prior to making any investment.</p>
+      </section>
+
+      <p class="disclaimer-note">&copy; ShoreVest Partners, Ltd. All rights reserved. This page was last reviewed January 2026. For questions regarding these notices, contact <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>.</p>
+    </div>
+  </main>
+
+  <footer class="sv-footer">
+    <div class="sv-footer__inner">
+      <div class="sv-footer__main">
+        <div class="sv-footer__brand">ShoreVest Partners</div>
+        <div class="sv-footer__contact">
+          <span class="sv-footer__contact-label">Contact</span>
+          <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+        </div>
+      </div>
+      <div class="sv-footer__bottom">
+        <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
+        <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
