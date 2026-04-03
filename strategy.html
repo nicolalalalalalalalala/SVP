@@ -1236,22 +1236,34 @@
         font-family: var(--serif);
       }
       .strategy-intro-actions {
-        border: 1px solid rgba(179, 33, 63, 0.2);
-        background: #fcfbf9;
-        padding: 22px 20px;
+        border: 1px solid rgba(179, 33, 63, 0.24);
+        background: linear-gradient(180deg, #fcfbf9 0%, #f7f2ec 100%);
+        padding: 24px 22px;
         justify-self: end;
         width: min(100%, 320px);
+        border-radius: 4px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
       }
       .strategy-intro-actions p {
         font-size: 10px;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: #7a746b;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
       }
       .strategy-intro-content .cta {
-        margin-top: 6px;
+        margin-top: 4px;
         display: inline-flex;
+      }
+      .strategy-intro-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .strategy-intro-link .strategy-intro-link__title {
+        font-size: 14px;
       }
       .hero-panel {
         background: #11110f;
@@ -2428,8 +2440,8 @@
           </div>
           <div class="strategy-intro-actions">
             <p>Explore platform context</p>
-            <a href="firm.html" class="cta cta--dark"
-              ><span>The Firm</span><span class="cta__ring">→</span></a
+            <a href="firm.html" class="cta cta--dark strategy-intro-link"
+              ><span class="strategy-intro-link__title">The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a
             >
           </div>
         </div>
