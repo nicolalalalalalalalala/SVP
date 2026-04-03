@@ -1158,6 +1158,16 @@
         font-family: var(--serif);
         margin-top: 18px;
       }
+      .market-context {
+        margin-top: 28px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 40px;
+      }
+      .market-context + p {
+        margin-top: 0;
+      }
       .pagehero__media {
         justify-self: end;
         width: min(100%, 760px);
@@ -1755,6 +1765,13 @@
         flex-wrap: wrap;
         margin-top: 18px;
       }
+      #cta-next {
+        text-align: center;
+      }
+      #cta-next .next-links {
+        justify-content: center;
+        gap: 24px;
+      }
       .expand {
         margin-top: 16px;
         border-top: 1px solid var(--rule);
@@ -2256,7 +2273,7 @@
           <div class="eyebrow">Strategy</div>
           <h1>Investment Strategy</h1>
 
-          <section class="market-context" aria-labelledby="market-context-heading" style="margin-top: 28px">
+          <section class="market-context" aria-labelledby="market-context-heading">
             <div class="eyebrow eyebrow--red">Market Context</div>
             <h2 id="market-context-heading" style="font-size: clamp(1.9rem, 3.2vw, 2.5rem); margin-bottom: 18px">
               The perception gap and what it creates.
