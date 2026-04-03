@@ -1273,6 +1273,16 @@ He holds an EMBA from Tsinghua University and a BS from North China Electric Pow
         return sectionTitle || "ShoreVest Team";
       }
 
+      function getBioSummary(profile) {
+        const fullBio = profile?.bio?.trim();
+        if (!fullBio) return "";
+        const leadParagraph = fullBio
+          .split(/\n\s*\n/)
+          .map((part) => part.trim())
+          .find(Boolean);
+        return leadParagraph || fullBio;
+      }
+
       function hydrateCardTitles() {
         document.querySelectorAll(".card").forEach((card) => {
           if (card.querySelector(".title")) return;
@@ -1357,8 +1367,9 @@ He holds an EMBA from Tsinghua University and a BS from North China Electric Pow
           const panel = ensurePanel();
           panel.querySelector(".row-bio-panel__name").textContent = name;
           panel.querySelector(".row-bio-panel__role").textContent =
-            profile.role;
-          panel.querySelector(".row-bio-panel__text").textContent = profile.bio;
+            profile.role || getDisplayRole(card, name);
+          panel.querySelector(".row-bio-panel__text").textContent =
+            getBioSummary(profile);
 
           const grid = card.closest(".grid");
           const cardsInRow = rowCards(grid, card);
