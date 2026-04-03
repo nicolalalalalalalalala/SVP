@@ -180,6 +180,51 @@
         color: #3f3a34;
         max-width: 840px;
       }
+      .investor-gate {
+        margin: 22px 0 28px;
+        padding: 30px;
+        border: 1px solid var(--rule);
+        background: #fff;
+      }
+      .investor-gate__prompt {
+        font-size: 14px;
+        letter-spacing: 0.01em;
+        color: #2d2924;
+        margin-bottom: 16px;
+      }
+      .investor-gate__actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .investor-gate__actions .btn {
+        text-transform: none;
+        font-size: 11px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding: 12px 16px;
+        min-height: 52px;
+        text-align: left;
+      }
+      .investor-gate__actions .btn--dark {
+        max-width: 100%;
+      }
+      .investor-gate__note {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 1.75;
+        color: #59544d;
+      }
+      .investor-gate__exit-message {
+        display: none;
+        margin-top: 14px;
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--red);
+      }
+      .investor-content[hidden] {
+        display: none;
+      }
 
       .card {
         margin-top: 34px;
@@ -269,6 +314,12 @@
         }
         .lead {
           font-size: 22px;
+        }
+        .investor-gate {
+          padding: 22px;
+        }
+        .investor-gate__actions .btn {
+          width: 100%;
         }
         .card {
           padding: 24px;
@@ -568,31 +619,71 @@
         <section class="panel">
           <p class="eyebrow">ShoreVest Partners</p>
           <h1>Investor Access</h1>
-          <p class="lead">
-            Access to fund materials is restricted to qualified institutional investors, accredited investors, existing limited partners, and authorized parties.
-          </p>
-
-          <div class="card">
-            <p>
-              Existing investors may request access to ShoreVest reporting
-              materials and fund documentation through the firm's investor
-              communications channel.
+          <div class="investor-gate" id="investor-gate">
+            <p class="investor-gate__prompt">
+              Please confirm your investor status to continue.
             </p>
-            <p>
-              By requesting access, you confirm you meet applicable investor qualification requirements in your jurisdiction.
-            </p>
-            <p>
-              For portal credentials or document requests, please contact
-              Investor Relations at
-              <a href="mailto:ir@shorevest.com"
-                ><strong>ir@shorevest.com</strong></a
-              >.
-            </p>
-            <div class="actions">
-              <a class="btn btn--dark" href="mailto:ir@shorevest.com"
-                >Contact Investor Relations</a
+            <div class="investor-gate__actions">
+              <button
+                class="btn btn--dark"
+                type="button"
+                id="attestation-proceed"
               >
-              <a class="btn" href="index.html#contact">Back to Main Site</a>
+                I confirm that I am an institutional investor, qualified
+                purchaser, accredited investor, or equivalent sophisticated
+                investor under applicable law, and that I am accessing this page
+                for informational purposes only.
+              </button>
+              <button class="btn" type="button" id="attestation-exit">
+                I do not meet these criteria.
+              </button>
+            </div>
+            <p class="investor-gate__note">
+              The materials accessible through this page are intended solely for
+              institutional investors and qualified purchasers as defined under
+              applicable securities laws. They are not intended for distribution
+              to retail investors or to persons in jurisdictions where such
+              distribution would be unlawful. By proceeding, you represent that
+              you meet the applicable eligibility criteria and accept full
+              responsibility for compliance with local laws and regulations.
+            </p>
+            <p class="investor-gate__exit-message" id="attestation-exit-message">
+              This section is intended for qualified institutional investors
+              only. Please contact inquiries@shorevest.com for general
+              information.
+            </p>
+          </div>
+
+          <div class="investor-content" id="investor-content" hidden>
+            <p class="lead">
+              Access to fund materials is restricted to qualified institutional
+              investors, accredited investors, existing limited partners, and
+              authorized parties.
+            </p>
+
+            <div class="card">
+              <p>
+                Existing investors may request access to ShoreVest reporting
+                materials and fund documentation through the firm's investor
+                communications channel.
+              </p>
+              <p>
+                By requesting access, you confirm you meet applicable investor
+                qualification requirements in your jurisdiction.
+              </p>
+              <p>
+                For portal credentials or document requests, please contact
+                Investor Relations at
+                <a href="mailto:ir@shorevest.com"
+                  ><strong>ir@shorevest.com</strong></a
+                >.
+              </p>
+              <div class="actions">
+                <a class="btn btn--dark" href="mailto:ir@shorevest.com"
+                  >Contact Investor Relations</a
+                >
+                <a class="btn" href="index.html#contact">Back to Main Site</a>
+              </div>
             </div>
           </div>
         </section>
@@ -615,6 +706,28 @@
             menuBtn.setAttribute("aria-expanded", "false");
             menuBtn.textContent = "Menu";
           });
+        });
+      }
+
+      const proceedButton = document.getElementById("attestation-proceed");
+      const exitButton = document.getElementById("attestation-exit");
+      const gate = document.getElementById("investor-gate");
+      const investorContent = document.getElementById("investor-content");
+      const exitMessage = document.getElementById("attestation-exit-message");
+
+      if (proceedButton && gate && investorContent) {
+        proceedButton.addEventListener("click", () => {
+          gate.style.display = "none";
+          investorContent.hidden = false;
+        });
+      }
+
+      if (exitButton && exitMessage) {
+        exitButton.addEventListener("click", () => {
+          exitMessage.style.display = "block";
+          window.setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1300);
         });
       }
     </script>
