@@ -273,7 +273,7 @@ html {
 
 @media (max-width: 980px) {
   :root {
-    --topbar-height: 74px;
+    --topbar-height: 68px;
     --topbar-pad: var(--site-page-margin, 18px);
     --topbar-pad-left: var(--site-page-margin, 18px);
     --nav-logo-en-size: 22px;
@@ -305,14 +305,14 @@ html {
 
   #nav .nav__lp,
   #nav .nav__menu-btn {
-    min-height: 40px;
-    padding: 0 14px;
-    font-size: 11px;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 10px;
     letter-spacing: 0.11em;
   }
 
   #nav .nav__lp {
-    padding-inline: 11px;
+    padding-inline: 10px;
   }
 }
 
@@ -329,13 +329,13 @@ html {
 
   #nav .nav__lp,
   #nav .nav__menu-btn {
-    min-width: 102px;
-    min-height: 40px;
-    padding: 0 10px;
+    min-width: 94px;
+    min-height: 36px;
+    padding: 0 9px;
   }
 
   #nav .nav__menu-btn {
-    min-width: 84px;
+    min-width: 78px;
   }
 
   #nav .nav__links {
@@ -421,12 +421,24 @@ html {
     word-break: break-word;
   }
 
+  .sv-footer__contact-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+  }
+
+  .sv-footer__brand {
+    font-size: clamp(2rem, 8.8vw, 2.4rem);
+    line-height: 1.08;
+  }
+
   .sv-footer__main {
-    row-gap: 12px;
+    row-gap: 10px;
+    padding-bottom: 14px;
   }
 
   .sv-footer__bottom {
-    row-gap: 10px;
+    row-gap: 8px;
+    padding-top: 12px;
   }
 
   .sv-footer__legal {
