@@ -10,6 +10,12 @@
   --nav-logo-cn-line-height: 1;
   --nav-logo-lockup-gap: 5px;
   --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap) + 8px);
+  --control-radius-pill: 999px;
+  --control-radius-soft: 14px;
+  --control-brand: #b3213f;
+  --control-ink: #0c0c0a;
+  --control-ink-strong: #171717;
+  --control-paper: #ffffff;
 }
 
 html {
@@ -119,6 +125,50 @@ html {
   letter-spacing: .14em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+/* Shared action/control consistency (shape, color, and focus treatment) */
+#nav .nav__lp,
+#nav .nav__menu-btn,
+.btn,
+.util-btn,
+.research-sub__submit,
+.jump-nav button,
+.viz-btn {
+  border-radius: var(--control-radius-pill);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#nav .nav__lp,
+#nav .nav__menu-btn,
+.btn,
+.util-btn,
+.jump-nav button,
+.viz-btn {
+  border-color: rgba(23, 23, 23, 0.2);
+  background: var(--control-paper);
+  color: var(--control-ink);
+}
+
+#nav .nav__lp:hover,
+#nav .nav__menu-btn:hover,
+.btn:hover,
+.util-btn:hover,
+.jump-nav button:hover,
+.viz-btn:hover,
+#nav .nav__lp:focus-visible,
+#nav .nav__menu-btn:focus-visible,
+.btn:focus-visible,
+.util-btn:focus-visible,
+.jump-nav button:focus-visible,
+.viz-btn:focus-visible {
+  border-color: var(--control-brand);
+  color: var(--control-paper);
+  background: var(--control-brand);
+}
+
+.research-sub__submit {
+  border-radius: var(--control-radius-soft);
 }
 
 @media (max-width: 1200px) {
