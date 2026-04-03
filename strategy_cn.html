@@ -1158,6 +1158,16 @@
         font-family: var(--serif);
         margin-top: 18px;
       }
+      .market-context {
+        margin-top: 28px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 40px;
+      }
+      .market-context + p {
+        margin-top: 0;
+      }
       .pagehero__media {
         justify-self: end;
         width: min(100%, 760px);
@@ -1171,6 +1181,89 @@
         filter: grayscale(1);
         transform: scale(1.24);
         transform-origin: right center;
+      }
+      .market-context-section {
+        width: 100%;
+        padding: 72px 0;
+        background: #fff;
+      }
+      .market-context-content {
+        max-width: 780px;
+        margin: 0;
+      }
+      .market-context-content h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+        margin-bottom: 18px;
+      }
+      .market-context-content p {
+        max-width: 100%;
+        font-size: 19px;
+        line-height: 1.8;
+        color: #5f5a54;
+        font-family: var(--serif);
+        margin-top: 14px;
+      }
+      .market-context-content p:first-of-type {
+        margin-top: 0;
+      }
+      .market-context-content .market-context-disclaimer {
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #888680;
+        font-family: var(--sans);
+      }
+      .strategy-intro-section {
+        width: 100%;
+        padding: 0 0 72px;
+        background: #fff;
+        border-bottom: 1px solid var(--rule);
+      }
+      .strategy-intro-content {
+        max-width: 980px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+        gap: 28px;
+        align-items: center;
+      }
+      .strategy-intro-lead p {
+        max-width: 100%;
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.8;
+        color: #5f5a54;
+        font-family: var(--serif);
+      }
+      .strategy-intro-actions {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        justify-self: end;
+        width: min(100%, 280px);
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .strategy-intro-actions p {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #7a746b;
+        margin-bottom: 10px;
+      }
+      .strategy-intro-content .cta {
+        margin-top: 4px;
+        display: inline-flex;
+      }
+      .strategy-intro-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .strategy-intro-link .strategy-intro-link__title {
+        font-size: 14px;
       }
       .hero-panel {
         background: #11110f;
@@ -1448,7 +1541,7 @@
       }
       .risk-grid {
         display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
         margin-top: 14px;
       }
@@ -1516,7 +1609,7 @@
         line-height: 1.35;
         max-width: 180px;
       }
-      .ring-label strong {
+      .ring-label [data-ring-value] {
         display: block;
         font-family: var(--serif);
         font-size: 28px;
@@ -1525,11 +1618,14 @@
         text-transform: none;
         line-height: 1.05;
         margin-bottom: 4px;
+        font-weight: 400;
       }
       .viz-controls {
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         margin: 0 0 14px;
       }
       .viz-btn {
@@ -1551,9 +1647,9 @@
       }
       .alloc-grid {
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
-        align-items: stretch;
+        align-items: center;
       }
       .alloc-bars {
         display: grid;
@@ -1564,7 +1660,7 @@
         border: 1px solid rgba(179, 33, 63, 0.14);
         padding: 10px 12px;
       }
-      .alloc-row b {
+      .alloc-row .alloc-label {
         display: flex;
         justify-content: space-between;
         font-size: 11px;
@@ -1572,6 +1668,7 @@
         text-transform: uppercase;
         color: #4b4640;
         margin-bottom: 8px;
+        font-weight: 400;
       }
       .alloc-track {
         height: 8px;
@@ -1677,6 +1774,30 @@
       .deal-table th:last-child {
         text-align: right;
       }
+      .strategy-callout {
+        margin-top: 16px;
+        padding: 16px 18px;
+        background: #f6f4f0;
+        border: 1px solid rgba(179, 33, 63, 0.14);
+        border-left: 4px solid rgba(179, 33, 63, 0.55);
+      }
+      .strategy-callout__label {
+        margin: 0 0 8px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: var(--red);
+      }
+      .strategy-callout p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.65;
+        color: #2f2c28;
+      }
+      .strategy-callout p + p {
+        margin-top: 10px;
+      }
       .data-note {
         font-size: 12px;
         color: #7a756f;
@@ -1729,10 +1850,22 @@
         outline: none;
       }
       .next-links {
-        display: flex;
-        gap: 18px;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 14px;
         margin-top: 18px;
+      }
+      .next-links .cta {
+        width: 100%;
+        justify-content: space-between;
+        border: 1px solid rgba(179, 33, 63, 0.18);
+        padding: 12px 14px;
+      }
+      #cta-next {
+        text-align: left;
+      }
+      #cta-next .next-links {
+        gap: 12px;
       }
       .expand {
         margin-top: 16px;
@@ -1779,6 +1912,11 @@
         color: #66615a;
         max-width: 100%;
       }
+      .expand__panel .data-note {
+        font-size: 12px;
+        line-height: 1.65;
+        color: #6b7280;
+      }
       .strategy-stack .strategy-block:nth-child(even) {
         background: #f6f4f0;
       }
@@ -1805,6 +1943,14 @@
         }
         .strategy-stack {
           gap: 28px;
+        }
+        .strategy-intro-content {
+          grid-template-columns: 1fr;
+        }
+        .strategy-intro-actions {
+          justify-self: start;
+          width: 100%;
+          max-width: 420px;
         }
         .strategy-block {
           padding: 24px;
@@ -1835,10 +1981,6 @@
         }
         .pagehero {
           min-height: auto;
-        }
-        .pagehero__media {
-          width: min(130%, 620px);
-          margin-right: clamp(-140px, -34vw, -64px);
         }
         #nav {
           height: auto;
@@ -1892,8 +2034,31 @@
         .strategy-block {
           padding: 24px 20px;
         }
+        .strategy-block h2 {
+          font-size: clamp(42px, 11vw, 56px);
+          line-height: 1.08;
+          hyphens: none;
+          word-break: normal;
+          overflow-wrap: normal;
+        }
+        .strategy-block p {
+          hyphens: none;
+          overflow-wrap: normal;
+        }
         .funnel-step {
           flex-wrap: wrap;
+        }
+        .funnel-step small {
+          hyphens: none;
+        }
+        .alloc-row .alloc-label {
+          gap: 8px;
+        }
+        .alloc-row .alloc-label span:first-child {
+          min-width: 0;
+          overflow-wrap: normal;
+          word-break: normal;
+          hyphens: none;
         }
         .funnel-step span {
           font-size: 18px;
@@ -1954,6 +2119,13 @@
         }
       }
 
+      @media (max-width: 767px) {
+        .pagehero__media {
+          width: min(130%, 620px);
+          margin-right: clamp(-140px, -34vw, -64px);
+        }
+      }
+
       @media (max-width: 520px) {
         #nav {
           column-gap: 10px;
@@ -1970,6 +2142,9 @@
           max-height: 42px;
           width: 100%;
         }
+        .nav__logo-cn {
+          display: none;
+        }
         .nav__right {
           gap: 8px;
         }
@@ -1983,6 +2158,16 @@
         }
         .nav__lp {
           font-size: 9px;
+        }
+        .viz-controls {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 6px;
+        }
+        .viz-btn {
+          width: 100%;
+          padding: 7px 8px;
+          letter-spacing: 0.09em;
         }
       }
 
@@ -2195,30 +2380,54 @@
         <div>
           <div class="eyebrow">策略</div>
           <h1>投资战略</h1>
-          <p>
-            三大子策略，一套承做标准。资本部署于资产抵押贷款、资产重组与债务处置三大方向——每一项均以硬抵押资产、可执行的法律地位及明确的回收路径为锚。配置会随周期动态调整。
-          </p>
-          <p
-            style="
-              margin-top: 8px;
-              font-family: 'Cormorant Garamond', Georgia, serif;
-              font-style: italic;
-              font-size: 0.85rem;
-              color: #8b1a2f;
-            "
-          >
-            如需了解支撑上述策略的法律与市场背景，请参阅
-          </p>
-          <a
-            href="firm_cn.html"
-            class="cta cta--dark"
-            style="margin-top: 10px; display: inline-flex"
-            ><span>公司简介</span><span class="cta__ring">→</span></a
-          >
         </div>
         <figure class="pagehero__media" aria-hidden="true">
           <img src="assets/images/leaf_hero.png" alt="" />
         </figure>
+      </div>
+    </section>
+
+          <section class="market-context" aria-labelledby="market-context-heading">
+            <div class="wrap">
+              <div class="market-context-content">
+                <div class="eyebrow eyebrow--red">市场背景</div>
+                <h2 id="market-context-heading">
+                  认知差距及其带来的机会。
+                </h2>
+                <p>
+                  中国是全球第二大信贷市场。长期低配并非中性选择，而是一种自带风险的组合决策。对于需要在全球信贷市场实现真正分散化的机构投资者而言，关键问题并非是否配置中国，而是应当以何种形式进行配置。
+                </p>
+                <p>
+                  历史上，中国最常被描述为“困难”或“不确定”的阶段，往往正对应于结构化得当的私募信贷最具吸引力的投资期次。使非专业配置者却步的复杂性，通常会压缩竞争、支撑定价，并拉大入场成本与可回收价值之间的安全边际。
+                </p>
+                <p>
+                  并非所有中国敞口都等同。导致离岸股权持有人或离岸无担保债权人亏损的因素（包括监管变化、房企困境与境内执行机制）与拥有中国法下直接执行权的境内第一顺位有担保债权人所面对的条件在结构上截然不同。结构决定结果。
+                </p>
+                <p>
+                  ShoreVest 自 2004 年起持续深耕中国信贷市场。公司穿越了多个监管周期、两轮不良资产浪潮及房地产调整期，在此期间单笔交易层面未出现本金亏损。市场对中国风险的叙事，往往与以纪律性、结构优先方法所获得的一线实践并不一致。
+                </p>
+                <p class="market-context-disclaimer">
+                  过往业绩不代表未来结果。所有投资均有风险，包括本金可能损失。
+                </p>
+              </div>
+            </div>
+          </section>
+
+    <section class="strategy-intro-section">
+      <div class="wrap">
+        <div class="strategy-intro-content">
+          <div class="strategy-intro-lead">
+            <p>
+              三大子策略，一套承做标准。资本部署于资产抵押贷款、资产重组与债务处置三大方向——每一项均以硬抵押资产、可执行的法律地位及明确的回收路径为锚。配置会随周期动态调整。
+            </p>
+          </div>
+          <div class="strategy-intro-actions">
+            <p>了解平台背景</p>
+            <a href="firm_cn.html" class="cta cta--dark strategy-intro-link"
+              ><span class="strategy-intro-link__title">公司简介</span><span class="cta__ring" aria-hidden="true">→</span></a
+            >
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2316,7 +2525,7 @@
                     data-defensive="40"
                     data-offensive="24"
                   >
-                    <b><span>资产抵押贷款</span><span>32%</span></b>
+                    <span class="alloc-label"><span>资产抵押贷款</span><span>32%</span></span>
                     <div class="alloc-track">
                       <span style="width: 32%"></span>
                     </div>
@@ -2327,7 +2536,7 @@
                     data-defensive="46"
                     data-offensive="61"
                   >
-                    <b><span>资产重组</span><span>53%</span></b>
+                    <span class="alloc-label"><span>资产重组</span><span>53%</span></span>
                     <div class="alloc-track">
                       <span style="width: 53%"></span>
                     </div>
@@ -2338,7 +2547,7 @@
                     data-defensive="14"
                     data-offensive="15"
                   >
-                    <b><span>债务处置</span><span>15%</span></b>
+                    <span class="alloc-label"><span>债务处置</span><span>15%</span></span>
                     <div class="alloc-track">
                       <span style="width: 15%"></span>
                     </div>
@@ -2350,25 +2559,25 @@
                 <div class="ring-card">
                   <div class="ring"></div>
                   <div class="ring-label">
-                    <strong data-ring-value>68%</strong>目标抵押覆盖率
+                    <span data-ring-value>68%</span>目标抵押覆盖率
                   </div>
                 </div>
               </div>
               <div class="strategy-details" aria-label="子策略说明">
                 <article class="strategy-detail">
-                  <h3>第一顺位抵押权（一押）资产抵押贷款</h3>
+                  <h3>First-Lien 资产抵押贷款</h3>
                   <p>
                     交易通常以 30–60% 的初始抵押率围绕硬抵押资产进行结构设计，并依托中国法下的第一顺位抵押权（一押）以提升控制权与回收优先次序。
                   </p>
                 </article>
                 <article class="strategy-detail">
-                  <h3>资产重组与困境处置</h3>
+                  <h3>资产重组 &amp; Workouts</h3>
                   <p>
                     团队主导债权人协调与资产负债表重整方案，依托二十年穿越中国重组周期所积累的模式识别能力。
                   </p>
                 </article>
                 <article class="strategy-detail">
-                  <h3>债务处置与回收</h3>
+                  <h3>债务处置 &amp; Recoveries</h3>
                   <p>
                     ShoreVest Asset Solutions 作为内部处置平台运行，项目获取、尽调、法律执行与处置退出均由团队内部管理。
                   </p>
@@ -2378,7 +2587,7 @@
           </section>
 
           <section class="strategy-block" id="legal-environment">
-            <h2>法律环境与回收路径</h2>
+            <h2>法律 Environment and Recovery Paths</h2>
             <p>
               中国境内执行体系的有效性明显高于许多离岸配置者的预期，拍卖透明度持续提升，且合规结构化债权的债权人路径更为清晰。
             </p>
@@ -2406,12 +2615,13 @@
               </button>
             </div>
             <div class="city-detail" data-city-detail>
-              一线城市法院当前对有担保债权的审理与执行时间表可预测性更高。
+              Tier-1 courts now process secured claims with greater timeline
+              predictability.
             </div>
           </section>
 
           <section class="strategy-block" id="risk-management">
-            <h2>风险管理框架</h2>
+            <h2>风控 Management Framework</h2>
             <p>
               下行风险管理依赖结构化设计，而非主观裁量。组合构建以本金保护为先，并通过执行能力兑现上行收益。
             </p>
@@ -2452,7 +2662,31 @@
             <p>
               在不使用基金层面杠杆的前提下，该策略目标为美元口径约 10–15% 的净回报，并强调当期现金收益、本金保护及相较多数私募市场替代方案更短的流动性实现路径。
             </p>
-            <p class="data-note">过往业绩不代表未来表现。任何业绩信息仅供示意并可能调整。完整业绩记录仅在签署保密协议后向适格投资者提供。</p>
+            <p class="data-note" style="font-style: italic;">
+              目标回报为基于历史组合表现与当前市场条件的假设性估算，不构成保证且可能调整。实际回报可能显著高于或低于该区间。过往业绩不代表未来结果。所有投资均存在风险，包括本金可能损失。
+            </p>
+            <div class="strategy-callout" role="note" aria-label="Portfolio construction callout">
+              <p class="strategy-callout__label">组合构建说明</p>
+              <p>
+                中国境内有担保信贷在组合构建工具箱中具有独特位置。回报主要由抵押品回收、法律执行机制与项目层面执行驱动，而非全球信用利差、利率变化或公开股票市场方向所决定。
+              </p>
+              <p>
+                对于长期配置公开信贷与权益资产的全球机构投资组合，该策略历史上与公开市场基准相关性较低，因其回报驱动在结构上差异明显，可能提供分散化收益。低相关性不保证盈利或防止亏损，且所有投资均可能发生本金损失。
+              </p>
+            </div>
+            <div class="expand">
+              <button
+                type="button"
+                class="expand__trigger"
+                aria-expanded="false"
+                aria-controls="returns-performance-note"
+              >
+                查看完整业绩披露
+              </button>
+              <div class="expand__panel" id="returns-performance-note">
+                <p class="data-note">上述业绩数据仅供信息参考，反映 ShoreVest 投资团队自 2004 年以来在前序及当前基金载体中管理的部分已实现及部分未完全实现投资。回报按净值口径展示（在适用情况下扣除管理费、业绩报酬及基金费用），并依据行业通行方法计算。过往业绩不代表未来结果。对于未实现投资能否按所示估值实现，或未来投资能否取得可比结果，均不作任何保证。本页其他位置提及的目标回报均为假设值，不构成保证，且可在不另行通知的情况下调整。投资者的实际结果会因投资时点、费用安排、基金期次及其他因素而异。本信息不构成任何出售要约或投资邀请。完整业绩信息请向本公司索取经审计财务报表，并完整审阅相关募集文件。</p>
+              </div>
+            </div>
             <div class="expand">
               <button
                 type="button"
@@ -2689,6 +2923,7 @@
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">联系我们</span>
         <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+        
       </div>
     </div>
 
