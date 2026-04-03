@@ -289,7 +289,12 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
 }
 .hs__n { font-family:var(--serif); font-size:clamp(30px,2.7vw,44px); font-weight:400; color:var(--ink); line-height:1.06; letter-spacing:-.02em; white-space:nowrap; }
 .hs__l { font-size:13px; font-weight:500; letter-spacing:.01em; text-transform:none; color:#3f3b35; margin-top:10px; line-height:1.5; overflow-wrap:anywhere; max-width:24ch; }
-
+.hero__stats-note {
+  margin-top:12px;
+  font-size:11px;
+  line-height:1.6;
+  color:var(--mist);
+}
 
 /* ══ ABOUT */
 #about { background:var(--white); padding:128px 0; }
@@ -1384,21 +1389,26 @@ h2.su__hed {
     <div class="hero__stats" role="list" aria-label="ShoreVest highlights">
       <div class="hs" role="listitem">
         <div class="hs__n" data-countup data-target="2" data-count-decimals="1" data-prefix="US$" data-suffix="B+">US$2B+</div>
-        <div class="hs__l">累计投放资本</div>
+        <div class="hs__l">已投放资本</div>
       </div>
       <div class="hs" role="listitem">
-        <div class="hs__n" data-countup data-target="6" data-count-decimals="0" data-suffix="">6</div>
-        <div class="hs__l">机构基金期次</div>
+        <div class="hs__n" data-countup data-target="6" data-count-decimals="0" data-suffix="期">6期</div>
+        <div class="hs__l">机构基金期数</div>
       </div>
       <div class="hs" role="listitem">
         <div class="hs__n" data-countup data-target="20" data-suffix="+">20+</div>
-        <div class="hs__l">策略经验年限</div>
+        <div class="hs__l">深耕中国信贷年限</div>
       </div>
       <div class="hs" role="listitem">
-        <div class="hs__n" data-countup data-target="100" data-suffix="%">100%</div>
-        <div class="hs__l">中国专注策略</div>
+        <div class="hs__n" data-countup data-target="50" data-suffix="+">50+</div>
+        <div class="hs__l">已完成交易</div>
+      </div>
+      <div class="hs" role="listitem">
+        <div class="hs__n">零</div>
+        <div class="hs__l">交易层面本金损失记录</div>
       </div>
     </div>
+    <p class="hero__stats-note">截至2026年1月。反映新岸资本投资团队自2004年起，通过前序及现有载体管理的全部已实现投资情况。历史业绩不代表未来表现。</p>
   </div>
 </section>
 
