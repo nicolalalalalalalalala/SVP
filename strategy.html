@@ -1158,6 +1158,16 @@
         font-family: var(--serif);
         margin-top: 18px;
       }
+      .market-context {
+        margin-top: 28px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 40px;
+      }
+      .market-context + p {
+        margin-top: 0;
+      }
       .pagehero__media {
         justify-self: end;
         width: min(100%, 760px);
@@ -1506,7 +1516,7 @@
       }
       .risk-grid {
         display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
         margin-top: 14px;
       }
@@ -1589,6 +1599,8 @@
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         margin: 0 0 14px;
       }
       .viz-btn {
@@ -1610,9 +1622,9 @@
       }
       .alloc-grid {
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
-        align-items: stretch;
+        align-items: center;
       }
       .alloc-bars {
         display: grid;
@@ -1812,6 +1824,13 @@
         gap: 18px;
         flex-wrap: wrap;
         margin-top: 18px;
+      }
+      #cta-next {
+        text-align: center;
+      }
+      #cta-next .next-links {
+        justify-content: center;
+        gap: 24px;
       }
       .expand {
         margin-top: 16px;
@@ -2320,48 +2339,40 @@
       </div>
     </section>
 
-    <section class="market-context-section" aria-labelledby="market-context-heading">
-      <div class="wrap">
-        <div class="market-context-content">
-          <div class="eyebrow eyebrow--red">Market Context</div>
-          <h2 id="market-context-heading">
-            The perception gap and what it creates.
-          </h2>
-          <p>
-            China is the world's second-largest credit market. Persistent underexposure to it is not a neutral
-            position. It is a portfolio choice that carries its own risk. For institutional investors whose mandates
-            require genuine diversification across global credit markets, the relevant question is not whether to
-            have China exposure, but what form that exposure should take.
-          </p>
-          <p>
-            The years in which China has been most widely described as difficult or uncertain have historically
-            coincided with the most attractive vintage conditions for properly structured private credit. Complexity
-            that deters less specialized allocators tends to compress competition, preserve pricing, and widen
-            the margin between entry basis and recoverable value.
-          </p>
-          <p>
-            Not all China exposure is equivalent. The conditions that have caused losses for offshore equity holders
-            or unsecured offshore creditors, including regulatory shifts, developer distress, and onshore enforcement
-            dynamics, are structurally distinct from the conditions facing a first-lien secured onshore creditor with
-            direct PRC enforcement rights. Structure determines outcome.
-          </p>
-          <p>
-            ShoreVest has operated continuously across China's credit markets since 2004. The firm has navigated
-            multiple regulatory cycles, two NPL waves, and the property correction, and has not recorded a principal
-            loss at the deal level across that period. The narrative around China risk has rarely matched the
-            on-the-ground experience of a disciplined, structure-first approach.
-          </p>
-          <p class="market-context-disclaimer">
-            Past performance is not indicative of future results. All investments involve risk including possible loss
-            of principal.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="strategy-intro-section">
-      <div class="wrap">
-        <div class="strategy-intro-content">
+          <section class="market-context" aria-labelledby="market-context-heading">
+            <div class="eyebrow eyebrow--red">Market Context</div>
+            <h2 id="market-context-heading" style="font-size: clamp(1.9rem, 3.2vw, 2.5rem); margin-bottom: 18px">
+              The perception gap and what it creates.
+            </h2>
+            <p>
+              China is the world's second-largest credit market. Persistent underexposure to it is not a neutral
+              position. It is a portfolio choice that carries its own risk. For institutional investors whose mandates
+              require genuine diversification across global credit markets, the relevant question is not whether to
+              have China exposure, but what form that exposure should take.
+            </p>
+            <p style="margin-top: 14px">
+              The years in which China has been most widely described as difficult or uncertain have historically
+              coincided with the most attractive vintage conditions for properly structured private credit. Complexity
+              that deters less specialized allocators tends to compress competition, preserve pricing, and widen
+              the margin between entry basis and recoverable value.
+            </p>
+            <p style="margin-top: 14px">
+              Not all China exposure is equivalent. The conditions that have caused losses for offshore equity holders
+              or unsecured offshore creditors, including regulatory shifts, developer distress, and onshore enforcement
+              dynamics, are structurally distinct from the conditions facing a first-lien secured onshore creditor with
+              direct PRC enforcement rights. Structure determines outcome.
+            </p>
+            <p style="margin-top: 14px">
+              ShoreVest has operated continuously across China's credit markets since 2004. The firm has navigated
+              multiple regulatory cycles, two NPL waves, and the property correction, and has not recorded a principal
+              loss at the deal level across that period. The narrative around China risk has rarely matched the
+              on-the-ground experience of a disciplined, structure-first approach.
+            </p>
+            <p style="margin-top: 12px; font-size: 12px; color: #888680">
+              Past performance is not indicative of future results. All investments involve risk including possible loss
+              of principal.
+            </p>
+          </section>
           <p>
             Three sub-strategies. One underwriting standard. Capital is deployed
             across asset-based lending, asset restructuring, and debt
@@ -2371,6 +2382,7 @@
           </p>
           <p class="strategy-intro-note">
             For the legal and market context underpinning these strategies, see
+            <a href="/firm.html">The Firm →</a>
           </p>
           <a href="firm.html" class="cta cta--dark"
             ><span>The Firm</span><span class="cta__ring">→</span></a
