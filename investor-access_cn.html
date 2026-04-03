@@ -359,167 +359,84 @@
       }
 
       .sv-footer {
-  background-color: #0c0c0a;
-  padding: 2.75rem 3rem 2.25rem;
-  border-top: 1px solid rgba(246,244,240,0.08);
-  margin-top: 0;
-  box-sizing: border-box;
+  background: var(--off);
+  border-top: 1px solid var(--rule);
+  padding: 34px var(--pad) 40px;
 }
-
-/* Main row */
+.sv-footer__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
 .sv-footer__main {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(246,244,240,0.1);
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule);
 }
-
-/* Logo block */
-.sv-footer__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex: 0 0 auto;
-  text-decoration: none;
+.sv-footer__brand {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: #2d2924;
+  letter-spacing: 0.01em;
 }
-.sv-footer__logo img {
-  height: 32px;
-  width: auto;
-  display: block;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
-}
-.sv-footer__logo-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.sv-footer__logo-wordmark {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #f6f4f0;
-  letter-spacing: 0.04em;
-  line-height: 1;
-}
-.sv-footer__logo-chinese {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 0.65rem;
-  color: rgba(246,244,240,0.4);
-  letter-spacing: 0.2em;
-  line-height: 1;
-}
-
-/* Location */
-
-/* Contact */
 .sv-footer__contact {
-  flex: 0 0 auto;
-  text-align: right;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.45rem;
+  align-items: center;
+  gap: 12px;
 }
 .sv-footer__contact-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(246,244,240,0.38);
+  color: var(--mist);
 }
 .sv-footer__contact a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.35rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(246,244,240,0.34);
-  border-radius: 0;
-  background: rgba(246,244,240,0.04);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.82rem;
-  color: rgba(246,244,240,0.78);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  padding: 10px 14px;
+  transition: all 0.2s ease;
 }
 .sv-footer__contact a:hover {
-  color: #f6f4f0;
-  border-color: rgba(246,244,240,0.62);
-  background: rgba(246,244,240,0.1);
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
 }
-
-/* Bottom row */
 .sv-footer__bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-top: 1.5rem;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding-top: 16px;
 }
-.sv-footer__copyright {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.68rem;
-  color: rgba(246,244,240,0.25);
-  letter-spacing: 0.03em;
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
-.sv-footer__legal {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.68rem;
-  color: rgba(246,244,240,0.25);
-  line-height: 1.7;
-  max-width: 560px;
-  text-align: right;
-}
+.sv-footer__copyright,
+.sv-footer__legal,
 .sv-footer__legal-links {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.68rem;
-  color: rgba(246,244,240,0.52);
-  letter-spacing: 0.03em;
-  margin-top: 0.45rem;
+  font-size: 11px;
+  color: #6f6a63;
+  line-height: 1.7;
 }
 .sv-footer__legal-links a {
-  color: rgba(246,244,240,0.65);
-  text-decoration: none;
+  color: var(--ink);
 }
 .sv-footer__legal-links a:hover {
-  color: #f6f4f0;
+  color: var(--red);
 }
-
-/* Mobile */
 @media (max-width: 768px) {
   .sv-footer {
-    padding: 2rem 1.5rem;
+    padding: 26px var(--pad) 34px;
   }
   .sv-footer__main {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
-    padding-bottom: 1.5rem;
   }
   .sv-footer__contact {
-    text-align: left;
-    align-items: flex-start;
-    order: 2;
-  }
-  .sv-footer__bottom {
-    flex-direction: column;
-    gap: 1rem;
-    padding-top: 1.25rem;
-  }
-  .sv-footer__legal {
-    text-align: left;
-    max-width: 100%;
-  }
-  .sv-footer__copyright {
-    white-space: normal;
+    flex-wrap: wrap;
   }
 }
     
@@ -719,23 +636,21 @@
     </script>
 
 <footer class="sv-footer">
-
+  <div class="sv-footer__inner">
     <div class="sv-footer__main">
-
-
-    <div class="sv-footer__contact">
-      <span class="sv-footer__contact-label">联系我们</span>
-      <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+      <div class="sv-footer__brand">ShoreVest Partners</div>
+      <div class="sv-footer__contact">
+        <span class="sv-footer__contact-label">Contact</span>
+        <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+      </div>
     </div>
 
+    <div class="sv-footer__bottom">
+      <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
+      <div class="sv-footer__legal">This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future results. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before investing.</div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a></div>
+    </div>
   </div>
-
-  <div class="sv-footer__bottom">
-    <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. 版权所有。</div>
-    <div class="sv-footer__legal">本网站仅供信息参考之用，不构成出售任何证券的要约或购买任何证券要约之邀请。过往业绩不代表未来表现。ShoreVest Partners, Ltd. 未在任何监管机构注册为投资顾问。潜在投资者在投资前应仔细审阅所有基金文件，并咨询其自身的法律、税务及财务顾问。</div>
-    <div class="sv-footer__legal-links"> <a href="privacy-policy_cn.html">隐私政策</a> | <a href="terms-of-use_cn.html">使用条款</a></div>
-  </div>
-
 </footer>
   
 <script src="assets/js/site-motion.js" defer></script>
