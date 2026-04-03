@@ -277,6 +277,12 @@ html {
   white-space: nowrap;
 }
 
+.sv-footer__copyright,
+.sv-footer__legal,
+.sv-footer__legal-links {
+  font-size: 10px;
+}
+
 @media (max-width: 768px) {
   html,
   body {
@@ -333,6 +339,11 @@ html {
 
   .sv-footer__legal {
     line-height: 1.85;
+  }
+
+  .sv-footer__copyright,
+  .sv-footer__legal {
+    font-size: 9px;
   }
 
   .sv-footer__legal-links {
