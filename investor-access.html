@@ -180,6 +180,51 @@
         color: #3f3a34;
         max-width: 840px;
       }
+      .investor-gate {
+        margin: 22px 0 28px;
+        padding: 30px;
+        border: 1px solid var(--rule);
+        background: #fff;
+      }
+      .investor-gate__prompt {
+        font-size: 14px;
+        letter-spacing: 0.01em;
+        color: #2d2924;
+        margin-bottom: 16px;
+      }
+      .investor-gate__actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .investor-gate__actions .btn {
+        text-transform: none;
+        font-size: 11px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding: 12px 16px;
+        min-height: 52px;
+        text-align: left;
+      }
+      .investor-gate__actions .btn--dark {
+        max-width: 100%;
+      }
+      .investor-gate__note {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 1.75;
+        color: #59544d;
+      }
+      .investor-gate__exit-message {
+        display: none;
+        margin-top: 14px;
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--red);
+      }
+      .investor-content[hidden] {
+        display: none;
+      }
 
       .card {
         margin-top: 34px;
@@ -269,6 +314,12 @@
         }
         .lead {
           font-size: 22px;
+        }
+        .investor-gate {
+          padding: 22px;
+        }
+        .investor-gate__actions .btn {
+          width: 100%;
         }
         .card {
           padding: 24px;
@@ -568,31 +619,71 @@
         <section class="panel">
           <p class="eyebrow">ShoreVest Partners</p>
           <h1>Investor Access</h1>
-          <p class="lead">
-            Access to fund materials is restricted to qualified institutional investors, accredited investors, existing limited partners, and authorized parties.
-          </p>
-
-          <div class="card">
-            <p>
-              Existing investors may request access to ShoreVest reporting
-              materials and fund documentation through the firm's investor
-              communications channel.
+          <div class="investor-gate" id="investor-gate">
+            <p class="investor-gate__prompt">
+              Please confirm your investor status to continue.
             </p>
-            <p>
-              By requesting access, you confirm you meet applicable investor qualification requirements in your jurisdiction.
-            </p>
-            <p>
-              For portal credentials or document requests, please contact
-              Investor Relations at
-              <a href="mailto:ir@shorevest.com"
-                ><strong>ir@shorevest.com</strong></a
-              >.
-            </p>
-            <div class="actions">
-              <a class="btn btn--dark" href="mailto:ir@shorevest.com"
-                >Contact Investor Relations</a
+            <div class="investor-gate__actions">
+              <button
+                class="btn btn--dark"
+                type="button"
+                id="attestation-proceed"
               >
-              <a class="btn" href="index.html#contact">Back to Main Site</a>
+                I confirm that I am an institutional investor, qualified
+                purchaser, accredited investor, or equivalent sophisticated
+                investor under applicable law, and that I am accessing this page
+                for informational purposes only.
+              </button>
+              <button class="btn" type="button" id="attestation-exit">
+                I do not meet these criteria.
+              </button>
+            </div>
+            <p class="investor-gate__note">
+              The materials accessible through this page are intended solely for
+              institutional investors and qualified purchasers as defined under
+              applicable securities laws. They are not intended for distribution
+              to retail investors or to persons in jurisdictions where such
+              distribution would be unlawful. By proceeding, you represent that
+              you meet the applicable eligibility criteria and accept full
+              responsibility for compliance with local laws and regulations.
+            </p>
+            <p class="investor-gate__exit-message" id="attestation-exit-message">
+              This section is intended for qualified institutional investors
+              only. Please contact inquiries@shorevest.com for general
+              information.
+            </p>
+          </div>
+
+          <div class="investor-content" id="investor-content" hidden>
+            <p class="lead">
+              Access to fund materials is restricted to qualified institutional
+              investors, accredited investors, existing limited partners, and
+              authorized parties.
+            </p>
+
+            <div class="card">
+              <p>
+                Existing investors may request access to ShoreVest reporting
+                materials and fund documentation through the firm's investor
+                communications channel.
+              </p>
+              <p>
+                By requesting access, you confirm you meet applicable investor
+                qualification requirements in your jurisdiction.
+              </p>
+              <p>
+                For portal credentials or document requests, please contact
+                Investor Relations at
+                <a href="mailto:ir@shorevest.com"
+                  ><strong>ir@shorevest.com</strong></a
+                >.
+              </p>
+              <div class="actions">
+                <a class="btn btn--dark" href="mailto:ir@shorevest.com"
+                  >Contact Investor Relations</a
+                >
+                <a class="btn" href="index.html#contact">Back to Main Site</a>
+              </div>
             </div>
           </div>
         </section>
@@ -615,6 +706,28 @@
             menuBtn.setAttribute("aria-expanded", "false");
             menuBtn.textContent = "Menu";
           });
+        });
+      }
+
+      const proceedButton = document.getElementById("attestation-proceed");
+      const exitButton = document.getElementById("attestation-exit");
+      const gate = document.getElementById("investor-gate");
+      const investorContent = document.getElementById("investor-content");
+      const exitMessage = document.getElementById("attestation-exit-message");
+
+      if (proceedButton && gate && investorContent) {
+        proceedButton.addEventListener("click", () => {
+          gate.style.display = "none";
+          investorContent.hidden = false;
+        });
+      }
+
+      if (exitButton && exitMessage) {
+        exitButton.addEventListener("click", () => {
+          exitMessage.style.display = "block";
+          window.setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1300);
         });
       }
     </script>
@@ -680,8 +793,8 @@
 
     <div class="sv-footer__bottom">
       <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
-      <div class="sv-footer__legal">This website is for informational purposes only. Nothing herein constitutes an offer to sell, or a solicitation of an offer to purchase, any security or financial instrument. Any such offer will be made only through formal offering documents and only where permitted by law. Past performance is not indicative of future results. There can be no assurance that any ShoreVest fund will achieve its objectives or avoid substantial losses. Certain statements on this website may constitute forward-looking statements; actual results may differ materially from those anticipated. This website is intended solely for institutional investors and qualified purchasers. It is not directed at retail investors and is not for distribution where prohibited by law. Nothing herein constitutes investment, tax, legal, or regulatory advice. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation and consult their own advisors before making any investment decision.</div>
-      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="/disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      <div class="sv-footer__legal">This website is provided strictly on an "as-is" and "as-available" basis solely for general informational and discussion purposes. It does not constitute, and must not be relied upon as, legal, tax, accounting, regulatory, investment, financial, or other professional advice; an offer to sell; a solicitation of an offer to buy; or a recommendation regarding any security, investment product, strategy, fund, or advisory service in any jurisdiction. Any offer or solicitation may be made only through definitive offering documents, only in jurisdictions where permitted by applicable law, and only to investors who satisfy all eligibility and suitability requirements. Certain statements on this website may be forward-looking and are based on assumptions, expectations, and estimates that are inherently subject to material change, market volatility, and uncertainty. Actual outcomes may differ, potentially materially. Past performance is not indicative of future results, and no representation or warranty, express or implied, is made as to the accuracy, completeness, timeliness, merchantability, fitness for a particular purpose, non-infringement, or continued availability of any content. To the fullest extent permitted by law, ShoreVest Partners, Ltd. disclaims liability for any direct, indirect, incidental, consequential, special, exemplary, or punitive loss or damage arising from use of, or reliance on, this website. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors must review all fund documentation in full and consult their own independent legal, tax, accounting, regulatory, and financial advisers before making any decision.</div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="legal-notices-disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
     </div>
   </div>
 </footer>
