@@ -188,13 +188,23 @@
       color: rgba(246, 244, 240, 0.82);
       letter-spacing: 0.03em;
     }
+    .sv-footer__legal-links {
+      margin: 0;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .sv-footer__legal-links a {
       color: rgba(246, 244, 240, 0.92);
       opacity: 0.88;
+      text-decoration: none;
+      transition: opacity .2s ease;
     }
     .sv-footer__legal-links a:visited { color: rgba(246, 244, 240, 0.92); }
     .sv-footer__legal-links a:hover,
     .sv-footer__legal-links a.active { opacity: 1; }
+    .sv-footer__legal-links a:not(:last-child)::after { content: "|"; margin-left: 8px; opacity: .55; }
 
     @media (max-width: 980px) {
       main,
@@ -283,7 +293,7 @@
       </div>
       <div class="sv-footer__bottom">
         <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
-        <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html" class="active">Legal Notices &amp; Disclaimers</a></div>
+        <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html" class="active">Legal Notices &amp; Disclaimers</a></div>
       </div>
     </div>
   </footer>
