@@ -257,13 +257,10 @@ h2 em { font-style:italic; }
 #hero {
   padding:var(--section-space-tight) var(--pad) var(--section-space-tight);
   max-width:var(--max); margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:var(--content-gap);
-  align-items:start;
+  display:block;
 }
 .hero__intro {
-  max-width:540px;
+  max-width:920px;
 }
 .hero__kicker {
   font-size:11.4px; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
@@ -276,28 +273,45 @@ h1.hero__hed {
   color:var(--ink); margin-bottom:44px; letter-spacing:-.01em;
 }
 h1.hero__hed em { color:var(--red); font-style:italic; }
-.hero__right { padding-bottom:8px; }
 .hero__copy {
   font-size:17px; line-height:1.85; color:var(--mist);
   font-family:var(--serif); margin-bottom:0;
 }
 .hero__divline { width:100%; height:1px; background:var(--rule); margin:36px 0; }
-.hero__stats {
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:12px;
-  align-items:stretch;
+
+/* ══ HOMEPAGE STATISTICS */
+.stats-section {
+  background:#1A1A1A;
+  color:var(--white);
+  padding:120px 0;
 }
-.hs {
-  position:relative;
-  padding:20px 18px 18px;
-  border:1px solid rgba(12,12,10,.14);
-  background:rgba(255,255,255,.72);
-  min-width:0;
+.stats-section__inner {
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:clamp(36px, 7vw, 120px);
+  text-align:center;
 }
-.hs__n { font-family:var(--serif); font-size:clamp(30px,2.7vw,44px); font-weight:400; color:var(--ink); line-height:1.06; letter-spacing:-.02em; white-space:nowrap; }
-.hs__n--red { color:var(--red); }
-.hs__l { font-size:13px; font-weight:500; letter-spacing:.01em; text-transform:none; color:#3f3b35; margin-top:10px; line-height:1.5; overflow-wrap:anywhere; max-width:24ch; }
+.stats-section__value {
+  font-family:var(--serif);
+  font-size:96px;
+  line-height:1;
+  letter-spacing:-.02em;
+  color:var(--white);
+}
+.stats-section__label {
+  margin-top:16px;
+  font-size:14px;
+  line-height:1.5;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--white);
+}
+.stats-divider {
+  border:none;
+  height:1px;
+  background:rgba(255,255,255,.18);
+}
 
 /* ══ ABOUT */
 #about { background:var(--white); padding:var(--section-space) 0; }
@@ -912,10 +926,8 @@ h2.su__hed {
 
   #hero {
     padding:94px var(--pad) 92px;
-    gap:46px;
   }
   .hero__intro { max-width:100%; }
-  .hero__right { width:100%; }
   .hero__copy {
     max-width:none;
     font-size:18px;
@@ -930,16 +942,17 @@ h2.su__hed {
     line-height:1.84;
   }
 
-  .hero__stats { width:100%; grid-template-columns:1fr 1fr; grid-auto-rows:1fr; gap:10px; }
-  .hs {
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    min-height:100%;
-    padding:16px 14px 14px !important;
+  .stats-section {
+    padding:80px 0;
   }
-  .hs__n { font-size:32px; }
-  .hs__l { letter-spacing:.01em; font-size:13px; }
+  .stats-section__inner {
+    flex-direction:column;
+    align-items:center;
+    gap:46px;
+  }
+  .stats-section__value {
+    font-size:clamp(56px, 16vw, 96px);
+  }
 
   .sg,
   .sg:nth-child(2),
@@ -1172,19 +1185,6 @@ h2.su__hed {
   }
 }
 
-@media (max-width: 1180px) {
-  .hero__stats {
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero__stats {
-    grid-template-columns:1fr;
-  }
-}
-
-
 /* ══ LEGAL DISCLAIMER FOOTER */
 @media (max-width:900px){
 }
@@ -1396,30 +1396,25 @@ h2.su__hed {
   <div class="hero__intro">
     <p class="hero__copy">ShoreVest Partners, 新岸资本, is a specialist private credit manager focused exclusively on China&apos;s debt markets, with zero deal-level principal losses across 50+ transactions since 2004. China onshore secured credit is structurally distinct from global liquid markets, with outcomes driven primarily by collateral coverage, enforceability under PRC law, and deal-by-deal execution, and the strategy is designed to maintain low correlation to public market benchmarks. The same senior team has applied the same underwriting and workout discipline for twenty years, from strategy inception in 2004 through the current platform established in 2016. For institutional portfolios that are already long public credit or equity, this allocation is designed to add a distinct source of risk and return. For globally diversified institutional portfolios, underexposure to the world&apos;s second-largest credit market is itself a portfolio choice that carries cost.</p>
   </div>
-  <div class="hero__right">
-    <div class="hero__stats" role="list" aria-label="ShoreVest highlights">
-      <div class="hs" role="listitem">
-        <div class="hs__n" data-countup data-target="2" data-count-decimals="1" data-prefix="US$" data-suffix="B+">US$2B+</div>
-        <div class="hs__l">Capital Deployed to Date</div>
-      </div>
-      <div class="hs" role="listitem">
-        <div class="hs__n" data-countup data-target="6" data-count-decimals="0" data-suffix="">6</div>
-        <div class="hs__l">Institutional Fund Vintages</div>
-      </div>
-      <div class="hs" role="listitem">
-        <div class="hs__n" data-countup data-target="20" data-suffix="+">20+</div>
-        <div class="hs__l">Years of Strategy Experience</div>
-      </div>
-      <div class="hs" role="listitem">
-        <div class="hs__n hs__n--red">Zero</div>
-        <div class="hs__l">Deal-Level Principal Losses</div>
-      </div>
-    </div>
-    <p class="hero__footnote" style="margin-top:14px;font-size:11px;color:#888680;">As of January 2026. Reflects all realized investments managed by the ShoreVest investment team across predecessor and current vehicles since 2004. Past performance is not indicative of future results.</p>
-  </div>
 </section>
 
-<hr style="border:none;height:1px;background:var(--rule);max-width:var(--max);margin:0 auto;">
+<section class="stats-section" aria-label="ShoreVest statistics">
+  <div class="wrap stats-section__inner" role="list">
+    <div class="stats-section__item" role="listitem">
+      <div class="stats-section__value">US$2B+</div>
+      <div class="stats-section__label">Capital Deployed &amp; Committed</div>
+    </div>
+    <div class="stats-section__item" role="listitem">
+      <div class="stats-section__value">20+</div>
+      <div class="stats-section__label">Years of Strategy Experience</div>
+    </div>
+    <div class="stats-section__item" role="listitem">
+      <div class="stats-section__value">Zero</div>
+      <div class="stats-section__label">Capital Principal Losses</div>
+    </div>
+  </div>
+</section>
+<hr class="stats-divider">
 
 <!-- ABOUT -->
 <section id="about">
