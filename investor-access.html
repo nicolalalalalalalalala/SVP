@@ -180,47 +180,53 @@
         color: #3f3a34;
         max-width: 840px;
       }
+      .investor-shell {
+        min-height: calc(100vh - 258px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .investor-shell.investor-shell--open {
+        min-height: 0;
+        display: block;
+      }
       .investor-gate {
-        margin: 22px 0 28px;
-        padding: 30px;
+        width: 100%;
+        max-width: 900px;
+        padding: 38px;
         border: 1px solid var(--rule);
         background: #fff;
       }
+      .investor-gate h1 {
+        margin-bottom: 18px;
+        font-size: clamp(42px, 5.1vw, 68px);
+      }
       .investor-gate__prompt {
-        font-size: 14px;
-        letter-spacing: 0.01em;
+        font-size: 15px;
+        line-height: 1.8;
         color: #2d2924;
-        margin-bottom: 16px;
       }
       .investor-gate__actions {
+        margin-top: 24px;
         display: flex;
         gap: 12px;
-        flex-wrap: wrap;
       }
       .investor-gate__actions .btn {
+        flex: 1 1 0;
         text-transform: none;
         font-size: 11px;
         line-height: 1.5;
-        letter-spacing: 0.02em;
-        padding: 12px 16px;
-        min-height: 52px;
+        letter-spacing: 0.01em;
+        padding: 14px 16px;
+        min-height: 78px;
         text-align: left;
+        justify-content: flex-start;
       }
-      .investor-gate__actions .btn--dark {
-        max-width: 100%;
-      }
-      .investor-gate__note {
-        margin-top: 16px;
-        font-size: 13px;
-        line-height: 1.75;
-        color: #59544d;
-      }
-      .investor-gate__exit-message {
-        display: none;
-        margin-top: 14px;
-        font-size: 13px;
-        line-height: 1.65;
-        color: var(--red);
+      .investor-gate__decline {
+        font-family: var(--serif);
+        font-size: 28px;
+        line-height: 1.45;
+        color: #3f3a34;
       }
       .investor-content[hidden] {
         display: none;
@@ -316,10 +322,14 @@
           font-size: 22px;
         }
         .investor-gate {
-          padding: 22px;
+          padding: 24px;
+        }
+        .investor-gate__actions {
+          flex-direction: column;
         }
         .investor-gate__actions .btn {
           width: 100%;
+          min-height: 68px;
         }
         .card {
           padding: 24px;
@@ -616,45 +626,34 @@
 
     <main>
       <div class="wrap">
-        <section class="panel">
-          <p class="eyebrow">ShoreVest Partners</p>
-          <h1>Investor Access</h1>
+        <section class="panel investor-shell" id="investor-shell">
           <div class="investor-gate" id="investor-gate">
+            <h1>Investor Access</h1>
             <p class="investor-gate__prompt">
-              Please confirm your investor status to continue.
+              The materials accessible through this section are intended solely
+              for institutional investors and qualified purchasers as defined
+              under applicable securities laws, including accredited investors
+              under Regulation D of the Securities Act of 1933. They are not
+              intended for distribution to retail investors or to persons in
+              jurisdictions where such distribution would be unlawful. By
+              proceeding, you represent that you meet the applicable eligibility
+              criteria and accept full responsibility for compliance with the
+              laws and regulations of your jurisdiction.
             </p>
             <div class="investor-gate__actions">
-              <button
-                class="btn btn--dark"
-                type="button"
-                id="attestation-proceed"
-              >
-                I confirm that I am an institutional investor, qualified
-                purchaser, accredited investor, or equivalent sophisticated
-                investor under applicable law, and that I am accessing this page
-                for informational purposes only.
+              <button class="btn btn--dark" type="button" id="attestation-proceed">
+                I confirm I am an institutional investor or qualified purchaser
+                and am accessing this page for informational purposes only.
               </button>
               <button class="btn" type="button" id="attestation-exit">
                 I do not meet these criteria.
               </button>
             </div>
-            <p class="investor-gate__note">
-              The materials accessible through this page are intended solely for
-              institutional investors and qualified purchasers as defined under
-              applicable securities laws. They are not intended for distribution
-              to retail investors or to persons in jurisdictions where such
-              distribution would be unlawful. By proceeding, you represent that
-              you meet the applicable eligibility criteria and accept full
-              responsibility for compliance with local laws and regulations.
-            </p>
-            <p class="investor-gate__exit-message" id="attestation-exit-message">
-              This section is intended for qualified institutional investors
-              only. Please contact inquiries@shorevest.com for general
-              information.
-            </p>
           </div>
 
           <div class="investor-content" id="investor-content" hidden>
+            <p class="eyebrow">ShoreVest Partners</p>
+            <h1>Investor Access</h1>
             <p class="lead">
               Access to fund materials is restricted to qualified institutional
               investors, accredited investors, existing limited partners, and
@@ -672,6 +671,11 @@
                 qualification requirements in your jurisdiction.
               </p>
               <p>
+                Materials available through Investor Relations include quarterly
+                reports, audited financial statements, fund documentation, DDQ
+                responses, and LP presentation materials.
+              </p>
+              <p>
                 For portal credentials or document requests, please contact
                 Investor Relations at
                 <a href="mailto:ir@shorevest.com"
@@ -685,6 +689,15 @@
                 <a class="btn" href="index.html#contact">Back to Main Site</a>
               </div>
             </div>
+          </div>
+
+          <div class="investor-content" id="investor-decline" hidden>
+            <p class="investor-gate__decline">
+              This section is intended for qualified institutional investors
+              only. For general information about ShoreVest Partners, please
+              visit our main site or contact
+              <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>.
+            </p>
           </div>
         </section>
       </div>
@@ -713,21 +726,28 @@
       const exitButton = document.getElementById("attestation-exit");
       const gate = document.getElementById("investor-gate");
       const investorContent = document.getElementById("investor-content");
-      const exitMessage = document.getElementById("attestation-exit-message");
+      const declineContent = document.getElementById("investor-decline");
+      const investorShell = document.getElementById("investor-shell");
 
-      if (proceedButton && gate && investorContent) {
+      if (proceedButton && gate && investorContent && investorShell) {
         proceedButton.addEventListener("click", () => {
-          gate.style.display = "none";
+          gate.hidden = true;
           investorContent.hidden = false;
+          if (declineContent) {
+            declineContent.hidden = true;
+          }
+          investorShell.classList.add("investor-shell--open");
         });
       }
 
-      if (exitButton && exitMessage) {
+      if (exitButton && gate && investorShell && declineContent) {
         exitButton.addEventListener("click", () => {
-          exitMessage.style.display = "block";
-          window.setTimeout(() => {
-            window.location.href = "index.html";
-          }, 1300);
+          gate.hidden = true;
+          declineContent.hidden = false;
+          if (investorContent) {
+            investorContent.hidden = true;
+          }
+          investorShell.classList.add("investor-shell--open");
         });
       }
     </script>
