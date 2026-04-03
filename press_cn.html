@@ -191,11 +191,25 @@
         min-height: 620px;
         display: grid;
         align-items: end;
+      }
+      .press-hero::before,
+      .press-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .press-hero::before {
+        background: url("assets/images/press_hero.jpg") center 38% / cover
+          no-repeat;
+        filter: grayscale(45%) brightness(0.62);
+      }
+      .press-hero::after {
         background: linear-gradient(
           to bottom,
-          #2f2a24 0%,
-          #211d19 55%,
-          #141210 100%
+          rgba(12, 12, 10, 0.16) 0%,
+          rgba(12, 12, 10, 0.46) 45%,
+          rgba(12, 12, 10, 0.8) 100%
         );
       }
       .press-hero__inner {
