@@ -3,6 +3,7 @@
   --topbar-pad: 64px;
   --topbar-pad-left: 24px;
   --nav-link-gap: 36px;
+  --nav-right-gap: 30px;
   --nav-logo-en-size: 24px;
   --nav-logo-en-line-height: 0.78;
   --nav-logo-cn-size: 10px;
@@ -87,9 +88,9 @@ html {
 #nav .nav__links a {
   display: inline-flex;
   align-items: center;
-  font-size: 9px;
+  font-size: 10.5px;
   line-height: 1;
-  letter-spacing: .14em;
+  letter-spacing: .16em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -97,13 +98,13 @@ html {
 #nav .nav__right {
   display: flex;
   align-items: center;
-  gap: var(--nav-link-gap);
-  margin-left: var(--nav-link-gap);
+  gap: var(--nav-right-gap);
+  margin-left: var(--nav-right-gap);
   flex-shrink: 0;
 }
 
 #nav .nav__zh {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -112,8 +113,8 @@ html {
   align-items: center;
   justify-content: center;
   min-height: 32px;
-  padding: 8px 20px;
-  font-size: 10px;
+  padding: 9px 24px;
+  font-size: 11.5px;
   line-height: 1;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -125,6 +126,7 @@ html {
     --topbar-pad: 32px;
     --topbar-pad-left: 18px;
     --nav-link-gap: 24px;
+    --nav-right-gap: 20px;
   }
 
   #nav .nav__links {
@@ -159,7 +161,7 @@ html {
   }
 
   #nav .nav__right {
-    gap: 6px;
+    gap: 10px;
     margin-left: 0;
     flex: 0 0 auto;
   }
@@ -167,8 +169,8 @@ html {
   #nav .nav__lp,
   #nav .nav__menu-btn {
     min-height: 40px;
-    padding: 0 12px;
-    font-size: 10px;
+    padding: 0 14px;
+    font-size: 11px;
     letter-spacing: 0.11em;
   }
 
@@ -185,7 +187,7 @@ html {
   }
 
   #nav .nav__right {
-    gap: 8px;
+    gap: 10px;
   }
 
   #nav .nav__lp,
