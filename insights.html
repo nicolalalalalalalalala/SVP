@@ -653,11 +653,12 @@
       .archive {
         border: 1px solid var(--rule);
         background: #fff;
+        opacity: 0.92;
       }
       .archive__list {
         max-height: 640px;
         overflow: auto;
-        background: #f3f0e8;
+        background: #fff;
       }
       .archive__head {
         padding: 14px 20px;
@@ -678,10 +679,9 @@
         border-bottom: 1px solid var(--rule);
       }
       .archive__row {
-        padding: 20px 20px 22px;
+        padding: 16px 20px 18px;
         border-bottom: 1px solid rgba(20, 20, 16, 0.1);
-        background: #fcfbf8;
-        box-shadow: inset 0 0 0 1px rgba(20, 20, 16, 0.04);
+        background: #fff;
       }
       .archive__row:last-child {
         border-bottom: none;
@@ -698,28 +698,28 @@
       }
       .archive__row strong {
         font-family: var(--serif);
-        font-size: clamp(24px, 2.1vw, 30px);
+        font-size: clamp(20px, 1.7vw, 24px);
         font-weight: 400;
-        line-height: 1.2;
+        line-height: 1.28;
         letter-spacing: -0.01em;
         display: block;
-        color: #181714;
+        color: #3a352d;
       }
       .archive__actions {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 16px;
+        margin-top: 12px;
       }
       .archive__pdf {
         font-size: 10px;
         font-weight: 500;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        border: 1px solid rgba(20, 20, 16, 0.24);
+        border: 1px solid rgba(20, 20, 16, 0.16);
         padding: 10px 14px;
-        background: #f9f7f2;
-        color: #1b1915;
+        background: #fff;
+        color: #4c463d;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -730,19 +730,20 @@
       }
       .archive__pdf:hover,
       .archive__pdf:focus-visible {
-        background: #1b1915;
-        border-color: #1b1915;
-        color: #fff;
+        background: #f6f4f0;
+        border-color: rgba(20, 20, 16, 0.28);
+        color: #2b2721;
       }
       .archive__pdf--solid {
-        background: #1b1915;
-        border-color: #1b1915;
-        color: #fff;
+        background: #f6f4f0;
+        border-color: rgba(20, 20, 16, 0.16);
+        color: #4c463d;
       }
       .archive__pdf--solid:hover,
       .archive__pdf--solid:focus-visible {
-        background: #b3213f;
-        border-color: #b3213f;
+        background: #f0ece3;
+        border-color: rgba(20, 20, 16, 0.28);
+        color: #2b2721;
       }
 
       .research-sub {
