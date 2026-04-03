@@ -141,6 +141,10 @@ html {
 
 #nav .nav__logo,
 #nav .nav__logo:visited,
+#nav .nav__links a,
+#nav .nav__links a:visited,
+#nav .nav__links a:hover,
+#nav .nav__links a:focus-visible,
 #nav .nav__right a,
 #nav .nav__right a:visited {
   text-decoration: none;
