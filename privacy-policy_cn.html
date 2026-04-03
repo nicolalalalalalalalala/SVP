@@ -23,8 +23,11 @@
     .legal-footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-soft)}
     .legal-footer__copy{margin:0 0 12px}
     .legal-footer__text{margin:0 0 12px}
-    .legal-footer__links{margin:0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .legal-footer__links a{text-decoration:none}
+    .legal-footer__links{margin:0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .legal-footer__links a{color:var(--ink-soft);text-decoration:none;opacity:.85;transition:opacity .2s ease}
+    .legal-footer__links a:visited{color:var(--ink-soft)}
+    .legal-footer__links a:hover,.legal-footer__links a.active{opacity:1}
+    .legal-footer__links a:not(:last-child)::after{content:"|";margin-left:8px;opacity:.55}
   </style>
 <link rel="stylesheet" href="assets/css/typography-consistent.css">
 </head>
@@ -209,7 +212,7 @@
   <footer class="legal-footer">
     <p class="legal-footer__copy">&copy; ShoreVest Partners, Ltd. 版权所有。</p>
     <p class="legal-footer__text">本网站仅供一般信息交流与讨论之用，不构成且不得被视为在任何司法辖区就任何证券、投资产品或顾问服务作出的出售要约、购买要约邀请或推荐。任何要约或邀请仅可通过正式发行文件并仅向满足适用资格要求的投资者作出。网站中的前瞻性陈述可能基于假设、预期及估计，天然存在变动与不确定性。过往业绩不代表未来表现，且不保证任何投资目标得以实现或可避免损失。ShoreVest Partners, Ltd. 未在任何监管机构登记为投资顾问。潜在投资者应完整审阅全部基金文件，并在作出任何投资决策前咨询其独立法律、税务及财务顾问。</p>
-    <p class="legal-footer__links"><a href="privacy-policy_cn.html">隐私政策</a><span>|</span><a href="terms-of-use_cn.html">使用条款</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></p>
+    <p class="legal-footer__links"><a href="privacy-policy_cn.html" class="active">隐私政策</a><a href="terms-of-use_cn.html">使用条款</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></p>
   </footer>
 </body>
 </html>

@@ -23,8 +23,11 @@
     .legal-footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-soft)}
     .legal-footer__copy{margin:0 0 12px}
     .legal-footer__text{margin:0 0 12px}
-    .legal-footer__links{margin:0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .legal-footer__links a{text-decoration:none}
+    .legal-footer__links{margin:0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .legal-footer__links a{color:var(--ink-soft);text-decoration:none;opacity:.85;transition:opacity .2s ease}
+    .legal-footer__links a:visited{color:var(--ink-soft)}
+    .legal-footer__links a:hover,.legal-footer__links a.active{opacity:1}
+    .legal-footer__links a:not(:last-child)::after{content:"|";margin-left:8px;opacity:.55}
 
     #nav{height:72px}
     .nav__logo img{display:block}
@@ -251,7 +254,7 @@
   <footer class="legal-footer">
     <p class="legal-footer__copy">&copy; ShoreVest Partners, Ltd. All rights reserved.</p>
     <p class="legal-footer__text">This website is provided solely for informational and discussion purposes and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation with respect to any security, investment product, or advisory service in any jurisdiction. Any such offer or solicitation may be made only by means of definitive offering documents and only to investors who meet applicable eligibility requirements. Certain statements on this website may be forward-looking and are based on assumptions, expectations, and estimates that are inherently subject to change and uncertainty. Past performance is not indicative of future results, and there can be no assurance that any investment objective will be achieved or that losses will be avoided. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before making any investment decision.</p>
-    <p class="legal-footer__links"><a href="privacy-policy.html" class="active">Privacy Policy</a><span>|</span><a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></p>
+    <p class="legal-footer__links"><a href="privacy-policy.html" class="active">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></p>
   </footer>
 </body>
 </html>
