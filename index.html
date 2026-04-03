@@ -105,7 +105,7 @@ h2 em { font-style:italic; }
 /* ══ NAV */
 #nav {
   position:fixed; top:0; left:0; right:0; z-index:200;
-  height:72px; display:flex; align-items:center;
+  height:62px; display:flex; align-items:center;
   justify-content:space-between; padding:0 var(--pad);
   border-bottom:1px solid var(--rule);
   background:#ffffff;
@@ -118,7 +118,7 @@ h2 em { font-style:italic; }
 .nav__logo {
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  gap:4px;
   height:100%;
 }
 .nav__logo img { display:block; }
@@ -149,24 +149,25 @@ h2 em { font-style:italic; }
   font-family:'Noto Serif SC',serif;
   margin-top:0;
   font-size:10px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
+  letter-spacing:.28em;
+  color: rgba(33,33,30,.66);
   opacity:1;
   line-height:1;
 }
-.nav__links { display:flex; gap:36px; list-style:none; }
+.nav__links { display:flex; gap:32px; list-style:none; }
 .nav__links a {
   font-size:11.4px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
   color:var(--ink); opacity:.45; transition:opacity .2s;
 }
 .nav__links a:hover { opacity:1; }
-.nav__right { display:flex; align-items:center; gap:22px; }
+.nav__right { display:flex; align-items:center; gap:14px; }
 .nav__zh { font-size:13px; color:var(--ink); opacity:.35; transition:opacity .2s; }
 .nav__zh:hover { opacity:.75; }
 .nav__mobile-lang{display:none}
+.nav__mobile-investor { display:none; }
 .nav__lp {
   font-size:11.4px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink); border:1px solid rgba(48,40,34,.2); padding:8px 20px;
+  color:var(--ink); border:1px solid rgba(48,40,34,.15); padding:7px 16px;
   transition:background .2s, color .2s, border-color .2s;
 }
 .nav__lp { background:var(--white); color:var(--ink); }
@@ -178,7 +179,7 @@ h2 em { font-style:italic; }
   position:relative;
   width:100%;
   height:620px;
-  --hero-image-position:center 38%;
+  --hero-image-position:center 30%;
   /* Keep the hero as a single composited background to avoid delayed paint on mobile. */
   background-color:#6c6864;
   background-image:
@@ -211,8 +212,8 @@ h2 em { font-style:italic; }
 }
 .hero__overlay .hero__kicker {
   justify-content:flex-start;
-  color:rgba(255,255,255,0.8);
-  letter-spacing:.22em;
+  color:rgba(255,255,255,0.9);
+  letter-spacing:.18em;
   margin-bottom:24px;
   text-shadow:0 1px 8px rgba(0,0,0,0.45);
 }
@@ -813,11 +814,11 @@ h2.su__hed {
 
   #nav {
     height:auto;
-    min-height:72px;
+    min-height:64px;
     align-items:center;
     flex-wrap:wrap;
-    row-gap:12px;
-    padding:12px var(--pad);
+    row-gap:10px;
+    padding:10px var(--pad);
   }
   .nav__logo-mark {
   width:31px;
@@ -825,10 +826,11 @@ h2.su__hed {
   flex:0 0 31px;
 }
   .nav__menu-btn { display:inline-flex; }
-  .nav__right { margin-left:auto; gap:10px; }
+  .nav__right { margin-left:auto; gap:8px; }
   .nav__zh { display:none; }
   .nav__mobile-lang { display:inline-flex; }
-  .nav__lp { display:inline-flex; }
+  .nav__mobile-investor { display:inline-flex; }
+  .nav__lp { display:none; }
   .nav__links {
     display:none;
     width:100%;
@@ -848,16 +850,16 @@ h2.su__hed {
   .hero__sliver {
     height:min(90vh, 820px);
     min-height:680px;
-    --hero-image-position:58% 34%;
+    --hero-image-position:60% 24%;
   }
   .hero__overlay {
     padding:0 var(--pad) 104px;
   }
   .hero__overlay .hero__kicker {
     margin-bottom:24px;
-    color:rgba(255,255,255,.66);
+    color:rgba(255,255,255,.82);
     font-size:10.5px;
-    letter-spacing:.2em;
+    letter-spacing:.16em;
   }
   .hero__overlay h1.hero__hed {
     font-size:clamp(50px,14.2vw,68px);
@@ -1355,6 +1357,7 @@ h2.su__hed {
     <li><a href="insights.html">Insights</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="team.html">Team</a></li>
+  <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
   <li class="nav__mobile-lang"><a href="index_cn.html">中文</a></li></ul><div class="nav__right">
     <a href="index_cn.html" class="nav__zh">中文</a>
     <a href="investor-access.html" class="nav__lp">Investor Access</a>
@@ -1366,7 +1369,7 @@ h2.su__hed {
   <div class="hero__overlay">
     <p class="hero__kicker go">CHINA PRIVATE CREDIT · ESTABLISHED 2004</p>
     <h1 class="hero__hed go">Private credit<br>in <em>China.</em></h1>
-    <a href="firm.html" class="cta cta--light go"><span>DISCOVER THE FIRM</span><div class="cta__ring">→</div></a>
+    <a href="firm.html" class="cta cta--light go"><span>EXPLORE SHOREVEST</span><div class="cta__ring">↗</div></a>
   </div>
 </div>
 
