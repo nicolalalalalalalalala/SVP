@@ -353,40 +353,47 @@ h2.about__hed { font-size:clamp(38px,5vw,66px); color:var(--ink); }
 
 /* ══ HERO STATS (legacy layout restored) */
 #stats {
-  padding:8px 0 0;
+  padding:14px 0 0;
 }
 .stats {
   max-width:760px;
   display:grid;
-  grid-template-columns:repeat(4, minmax(0, 1fr));
-  border-top:1px solid var(--rule);
-  border-bottom:1px solid var(--rule);
+  grid-template-columns:1fr;
+  gap:16px;
 }
 .stat {
-  padding:28px 20px 26px 0;
-  border-right:1px solid var(--rule);
+  padding:26px 24px 24px;
+  border:1px solid var(--rule);
+  background:#f9f9f8;
   opacity:0;
-  transform:translateY(18px);
+  transform:translateY(20px);
   animation:statReveal .8s cubic-bezier(.22,1,.36,1) forwards;
-}
-.stat:last-child {
-  border-right:none;
 }
 .stat:nth-child(2) { animation-delay:.12s; }
 .stat:nth-child(3) { animation-delay:.2s; }
 .stat:nth-child(4) { animation-delay:.28s; }
 .stat__n {
   font-family:var(--serif);
-  font-size:clamp(34px,4.2vw,52px);
+  font-size:clamp(46px,5.3vw,58px);
   line-height:1;
   color:var(--ink);
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 .stat__l {
-  font-size:10.5px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--mist);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.005em;
+  color:#2d2a25;
+}
+.stat--zero .stat__n {
+  color:var(--red);
+}
+.stats__note {
+  margin-top:18px;
+  max-width:760px;
+  color:#7d776f;
+  font-size:14px;
+  line-height:1.58;
 }
 @keyframes statReveal {
   to {
@@ -963,25 +970,21 @@ h2.su__hed {
     padding-top:10px;
   }
   .stats {
-    grid-template-columns:1fr;
     max-width:100%;
+    gap:14px;
   }
   .stat {
-    border-right:none;
-    border-bottom:1px solid var(--rule);
-    padding:22px 0 20px;
-    animation:none;
-    opacity:1;
-    transform:none;
-  }
-  .stat:last-child {
-    border-bottom:none;
+    padding:22px 20px 20px;
   }
   .stat__n {
-    font-size:40px;
+    font-size:52px;
   }
   .stat__l {
-    font-size:10px;
+    font-size:13px;
+  }
+  .stats__note {
+    font-size:13px;
+    line-height:1.55;
   }
 
   #about {
@@ -1427,17 +1430,22 @@ h2.su__hed {
     <div class="stats" aria-label="ShoreVest track record statistics">
       <div class="stat">
         <div class="stat__n">US$2B+</div>
-        <div class="stat__l">Gross Investments</div>
+        <div class="stat__l">Capital Deployed to Date</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n" data-countup data-target="6">6</div>
+        <div class="stat__l">Institutional Fund Vintages</div>
       </div>
       <div class="stat">
         <div class="stat__n" data-countup data-target="20" data-suffix="+">20+</div>
-        <div class="stat__l">Years In Market</div>
+        <div class="stat__l">Years of Strategy Experience</div>
       </div>
-      <div class="stat">
+      <div class="stat stat--zero">
         <div class="stat__n">Zero</div>
         <div class="stat__l">Deal-Level Principal Losses</div>
       </div>
     </div>
+    <p class="stats__note">As of January 2026. Reflects all realized investments managed by the ShoreVest investment team across predecessor and current vehicles since 2004. Past performance is not indicative of future results.</p>
   </div>
 </section>
 
