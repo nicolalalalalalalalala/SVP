@@ -846,7 +846,7 @@
       </a>
       <ul class="nav__links" id="nav-links">
         <li><a href="firm.html">The Firm</a></li>
-        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="strategy.html">Investment Strategy</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="press.html">Press</a></li>
         <li><a href="team.html" class="active">Team</a></li>
@@ -1442,8 +1442,13 @@ He holds an EMBA from Tsinghua University and a BS from North China Electric Pow
 
       hydrateCardTitles();
 
-      const menuBtn = document.querySelector(".nav__menu-btn");
       const nav = document.getElementById("nav");
+      const syncNavScrollState = () => {
+        nav?.classList.toggle("scrolled", window.scrollY > 10);
+      };
+      window.addEventListener("scroll", syncNavScrollState, { passive: true });
+      syncNavScrollState();
+      const menuBtn = document.querySelector(".nav__menu-btn");
       const navLinks = document.getElementById("nav-links");
       if (menuBtn && nav && navLinks) {
         menuBtn.addEventListener("click", () => {

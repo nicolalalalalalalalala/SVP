@@ -874,7 +874,7 @@
       </a>
       <ul class="nav__links" id="nav-links">
         <li><a href="firm.html">The Firm</a></li>
-        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="strategy.html">Investment Strategy</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="press.html" class="active">Press</a></li>
         <li><a href="team.html">Team</a></li>
@@ -1695,6 +1695,11 @@
 
     <script>
       const nav = document.getElementById("nav");
+      const syncNavScrollState = () => {
+        nav?.classList.toggle("scrolled", window.scrollY > 10);
+      };
+      window.addEventListener("scroll", syncNavScrollState, { passive: true });
+      syncNavScrollState();
       const menuBtn = document.querySelector(".nav__menu-btn");
       if (menuBtn && nav) {
         menuBtn.addEventListener("click", () => {
