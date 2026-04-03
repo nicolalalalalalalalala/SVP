@@ -279,40 +279,6 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
 }
 .hero__divline { width:100%; height:1px; background:var(--rule); margin:36px 0; }
 
-/* ══ HOMEPAGE STATISTICS */
-.stats-section {
-  background:#1A1A1A;
-  color:var(--white);
-  padding:120px 0;
-}
-.stats-section__inner {
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  gap:clamp(36px, 7vw, 120px);
-  text-align:center;
-}
-.stats-section__value {
-  font-family:var(--serif);
-  font-size:96px;
-  line-height:1;
-  letter-spacing:-.02em;
-  color:var(--white);
-}
-.stats-section__label {
-  margin-top:16px;
-  font-size:14px;
-  line-height:1.5;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--white);
-}
-.stats-divider {
-  border:none;
-  height:1px;
-  background:rgba(255,255,255,.18);
-}
-
 /* ══ ABOUT */
 #about { background:var(--white); padding:var(--section-space) 0; }
 
@@ -942,17 +908,6 @@ h2.su__hed {
     line-height:1.84;
   }
 
-  .stats-section {
-    padding:80px 0;
-  }
-  .stats-section__inner {
-    flex-direction:column;
-    align-items:center;
-    gap:46px;
-  }
-  .stats-section__value {
-    font-size:clamp(56px, 16vw, 96px);
-  }
 
   .sg,
   .sg:nth-child(2),
@@ -1398,23 +1353,6 @@ h2.su__hed {
   </div>
 </section>
 
-<section class="stats-section" aria-label="ShoreVest statistics">
-  <div class="wrap stats-section__inner" role="list">
-    <div class="stats-section__item" role="listitem">
-      <div class="stats-section__value">US$2B+</div>
-      <div class="stats-section__label">Capital Deployed &amp; Committed</div>
-    </div>
-    <div class="stats-section__item" role="listitem">
-      <div class="stats-section__value">20+</div>
-      <div class="stats-section__label">Years of Strategy Experience</div>
-    </div>
-    <div class="stats-section__item" role="listitem">
-      <div class="stats-section__value">Zero</div>
-      <div class="stats-section__label">Capital Principal Losses</div>
-    </div>
-  </div>
-</section>
-<hr class="stats-divider">
 
 <!-- ABOUT -->
 <section id="about">
