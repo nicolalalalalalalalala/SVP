@@ -1172,6 +1172,64 @@
         transform: scale(1.24);
         transform-origin: right center;
       }
+      .market-context-section {
+        width: 100%;
+        padding: 72px 0;
+        background: #fff;
+      }
+      .market-context-content {
+        max-width: 780px;
+        margin: 0 auto;
+      }
+      .market-context-content h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+        margin-bottom: 18px;
+      }
+      .market-context-content p {
+        max-width: 100%;
+        font-size: 19px;
+        line-height: 1.8;
+        color: #5f5a54;
+        font-family: var(--serif);
+        margin-top: 14px;
+      }
+      .market-context-content p:first-of-type {
+        margin-top: 0;
+      }
+      .market-context-content .market-context-disclaimer {
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #888680;
+        font-family: var(--sans);
+      }
+      .strategy-intro-section {
+        width: 100%;
+        padding: 0 0 72px;
+        background: #fff;
+      }
+      .strategy-intro-content {
+        max-width: 780px;
+        margin: 0 auto;
+      }
+      .strategy-intro-content p {
+        max-width: 100%;
+        font-size: 19px;
+        line-height: 1.8;
+        color: #5f5a54;
+        font-family: var(--serif);
+      }
+      .strategy-intro-content .strategy-intro-note {
+        margin-top: 8px;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-style: italic;
+        font-size: 0.85rem;
+        color: #8b1a2f;
+      }
+      .strategy-intro-content .cta {
+        margin-top: 10px;
+        display: inline-flex;
+      }
       .hero-panel {
         background: #11110f;
         color: #fff;
@@ -2255,41 +2313,55 @@
         <div>
           <div class="eyebrow">Strategy</div>
           <h1>Investment Strategy</h1>
+        </div>
+        <figure class="pagehero__media" aria-hidden="true">
+          <img src="assets/images/leaf_hero.png" alt="" />
+        </figure>
+      </div>
+    </section>
 
-          <section class="market-context" aria-labelledby="market-context-heading" style="margin-top: 28px">
-            <div class="eyebrow eyebrow--red">Market Context</div>
-            <h2 id="market-context-heading" style="font-size: clamp(1.9rem, 3.2vw, 2.5rem); margin-bottom: 18px">
-              The perception gap and what it creates.
-            </h2>
-            <p>
-              China is the world's second-largest credit market. Persistent underexposure to it is not a neutral
-              position. It is a portfolio choice that carries its own risk. For institutional investors whose mandates
-              require genuine diversification across global credit markets, the relevant question is not whether to
-              have China exposure, but what form that exposure should take.
-            </p>
-            <p style="margin-top: 14px">
-              The years in which China has been most widely described as difficult or uncertain have historically
-              coincided with the most attractive vintage conditions for properly structured private credit. Complexity
-              that deters less specialized allocators tends to compress competition, preserve pricing, and widen
-              the margin between entry basis and recoverable value.
-            </p>
-            <p style="margin-top: 14px">
-              Not all China exposure is equivalent. The conditions that have caused losses for offshore equity holders
-              or unsecured offshore creditors, including regulatory shifts, developer distress, and onshore enforcement
-              dynamics, are structurally distinct from the conditions facing a first-lien secured onshore creditor with
-              direct PRC enforcement rights. Structure determines outcome.
-            </p>
-            <p style="margin-top: 14px">
-              ShoreVest has operated continuously across China's credit markets since 2004. The firm has navigated
-              multiple regulatory cycles, two NPL waves, and the property correction, and has not recorded a principal
-              loss at the deal level across that period. The narrative around China risk has rarely matched the
-              on-the-ground experience of a disciplined, structure-first approach.
-            </p>
-            <p style="margin-top: 12px; font-size: 12px; color: #888680">
-              Past performance is not indicative of future results. All investments involve risk including possible loss
-              of principal.
-            </p>
-          </section>
+    <section class="market-context-section" aria-labelledby="market-context-heading">
+      <div class="wrap">
+        <div class="market-context-content">
+          <div class="eyebrow eyebrow--red">Market Context</div>
+          <h2 id="market-context-heading">
+            The perception gap and what it creates.
+          </h2>
+          <p>
+            China is the world's second-largest credit market. Persistent underexposure to it is not a neutral
+            position. It is a portfolio choice that carries its own risk. For institutional investors whose mandates
+            require genuine diversification across global credit markets, the relevant question is not whether to
+            have China exposure, but what form that exposure should take.
+          </p>
+          <p>
+            The years in which China has been most widely described as difficult or uncertain have historically
+            coincided with the most attractive vintage conditions for properly structured private credit. Complexity
+            that deters less specialized allocators tends to compress competition, preserve pricing, and widen
+            the margin between entry basis and recoverable value.
+          </p>
+          <p>
+            Not all China exposure is equivalent. The conditions that have caused losses for offshore equity holders
+            or unsecured offshore creditors, including regulatory shifts, developer distress, and onshore enforcement
+            dynamics, are structurally distinct from the conditions facing a first-lien secured onshore creditor with
+            direct PRC enforcement rights. Structure determines outcome.
+          </p>
+          <p>
+            ShoreVest has operated continuously across China's credit markets since 2004. The firm has navigated
+            multiple regulatory cycles, two NPL waves, and the property correction, and has not recorded a principal
+            loss at the deal level across that period. The narrative around China risk has rarely matched the
+            on-the-ground experience of a disciplined, structure-first approach.
+          </p>
+          <p class="market-context-disclaimer">
+            Past performance is not indicative of future results. All investments involve risk including possible loss
+            of principal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="strategy-intro-section">
+      <div class="wrap">
+        <div class="strategy-intro-content">
           <p>
             Three sub-strategies. One underwriting standard. Capital is deployed
             across asset-based lending, asset restructuring, and debt
@@ -2297,27 +2369,13 @@
             positioning, and a defined path to recovery. Allocation shifts by
             cycle.
           </p>
-          <p
-            style="
-              margin-top: 8px;
-              font-family: 'Cormorant Garamond', Georgia, serif;
-              font-style: italic;
-              font-size: 0.85rem;
-              color: #8b1a2f;
-            "
-          >
+          <p class="strategy-intro-note">
             For the legal and market context underpinning these strategies, see
           </p>
-          <a
-            href="firm.html"
-            class="cta cta--dark"
-            style="margin-top: 10px; display: inline-flex"
+          <a href="firm.html" class="cta cta--dark"
             ><span>The Firm</span><span class="cta__ring">→</span></a
           >
         </div>
-        <figure class="pagehero__media" aria-hidden="true">
-          <img src="assets/images/leaf_hero.png" alt="" />
-        </figure>
       </div>
     </section>
 
