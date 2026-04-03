@@ -1,5 +1,12 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const onIdle = (cb) => {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(cb, { timeout: 700 });
+      return;
+    }
+    window.setTimeout(cb, 120);
+  };
 
   const markReady = () => {
     document.body.classList.add('site-ready');
@@ -12,19 +19,14 @@
   }
 
   const primeImages = () => {
-    const viewportH = window.innerHeight || 0;
-    document.querySelectorAll('img').forEach((img) => {
-      if (!img.loading) {
-        const rect = img.getBoundingClientRect();
-        const nearViewport = rect.top < viewportH * 1.2;
-        img.loading = nearViewport ? 'eager' : 'lazy';
+    const images = document.querySelectorAll('img');
+    images.forEach((img, index) => {
+      if (!img.getAttribute('loading')) {
+        img.loading = index < 3 ? 'eager' : 'lazy';
       }
-      if (!img.decoding) img.decoding = 'async';
-      if (!img.fetchPriority) {
-        const rect = img.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top < viewportH * 0.75) {
-          img.fetchPriority = 'high';
-        }
+      if (!img.getAttribute('decoding')) img.decoding = 'async';
+      if (!img.getAttribute('fetchpriority') && index === 0) {
+        img.fetchPriority = 'high';
       }
     });
   };
@@ -91,9 +93,11 @@
 
   const init = () => {
     primeImages();
-    installReveals();
     smoothHashJump();
-    installBackToTop();
+    onIdle(() => {
+      installReveals();
+      installBackToTop();
+    });
   };
 
   if (document.readyState === 'loading') {
