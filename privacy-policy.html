@@ -20,14 +20,6 @@
     ul{padding-left:20px}
     a{color:var(--red)}
     .muted{color:#5b554f}
-    .legal-footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-soft)}
-    .legal-footer__copy{margin:0 0 12px}
-    .legal-footer__text{margin:0 0 12px}
-    .legal-footer__links{margin:0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .legal-footer__links a{color:var(--ink-soft);text-decoration:none;opacity:.85;transition:opacity .2s ease}
-    .legal-footer__links a:visited{color:var(--ink-soft)}
-    .legal-footer__links a:hover,.legal-footer__links a.active{opacity:1}
-    .legal-footer__links a:not(:last-child)::after{content:"|";margin-left:8px;opacity:.55}
 
     #nav{height:72px}
     .nav__logo img{display:block}
@@ -36,6 +28,7 @@
     .nav__links a:hover,.nav__links a.active{opacity:1}
     .nav__zh{font-size:13px;color:var(--ink);opacity:.35}
     .nav__zh:hover{opacity:.75}
+    .sv-footer--full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
   </style>
 <link rel="stylesheet" href="assets/css/topbar-consistent.css">
 <link rel="stylesheet" href="assets/css/typography-consistent.css">
@@ -251,10 +244,24 @@
 
   <p><a href="index.html">Back to homepage</a></p>
 
-  <footer class="legal-footer">
-    <p class="legal-footer__copy">&copy; ShoreVest Partners, Ltd. All rights reserved.</p>
-    <p class="legal-footer__text">This website is provided solely for informational and discussion purposes and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation with respect to any security, investment product, or advisory service in any jurisdiction. Any such offer or solicitation may be made only by means of definitive offering documents and only to investors who meet applicable eligibility requirements. Certain statements on this website may be forward-looking and are based on assumptions, expectations, and estimates that are inherently subject to change and uncertainty. Past performance is not indicative of future results, and there can be no assurance that any investment objective will be achieved or that losses will be avoided. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before making any investment decision.</p>
-    <p class="legal-footer__links"><a href="privacy-policy.html" class="active">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></p>
+  
+  <footer class="sv-footer sv-footer--full-bleed">
+    <div class="sv-footer__inner">
+      <div class="sv-footer__main">
+        <div class="sv-footer__brand">ShoreVest Partners</div>
+        <div class="sv-footer__contact">
+          <span class="sv-footer__contact-label">Contact</span>
+          <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+          <a href="mailto:investors@shorevest.com">investors@shorevest.com</a>
+          <a href="tel:+16502224488">+1 650 222 4488</a>
+        </div>
+      </div>
+      <div class="sv-footer__bottom">
+        <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
+        <div class="sv-footer__legal">This website is provided strictly on an "as-is" and "as-available" basis solely for general informational and discussion purposes. It does not constitute, and must not be relied upon as, legal, tax, accounting, regulatory, investment, financial, or other professional advice; an offer to sell; a solicitation of an offer to buy; or a recommendation regarding any security, investment product, strategy, fund, or advisory service in any jurisdiction. Any offer or solicitation may be made only through definitive offering documents, only in jurisdictions where permitted by applicable law, and only to investors who satisfy all eligibility and suitability requirements. Certain statements on this website may be forward-looking and are based on assumptions, expectations, and estimates that are inherently subject to material change, market volatility, and uncertainty. Actual outcomes may differ, potentially materially. Past performance is not indicative of future results, and no representation or warranty, express or implied, is made as to the accuracy, completeness, timeliness, merchantability, fitness for a particular purpose, non-infringement, or continued availability of any content. To the fullest extent permitted by law, ShoreVest Partners, Ltd. disclaims liability for any direct, indirect, incidental, consequential, special, exemplary, or punitive loss or damage arising from use of, or reliance on, this website. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors must review all fund documentation in full and consult their own independent legal, tax, accounting, regulatory, and financial advisers before making any decision.</div>
+        <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
