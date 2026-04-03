@@ -278,6 +278,37 @@ html {
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body * {
+    min-width: 0;
+  }
+
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  figcaption,
+  blockquote {
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
+  }
+
+  pre,
+  table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   .sv-footer__contact {
     width: 100%;
     align-items: center;
