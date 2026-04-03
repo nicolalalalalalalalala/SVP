@@ -361,6 +361,32 @@
         text-transform: uppercase;
         color: #6b665d;
       }
+      .founding-principles-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(220px, 1fr);
+        gap: 28px;
+        align-items: center;
+      }
+      .founding-principles-copy .lead {
+        font-size: 32px;
+        max-width: 920px;
+        margin-bottom: 12px;
+      }
+      .founding-tree-image {
+        width: 100%;
+        max-width: 380px;
+        height: 100%;
+        max-height: 480px;
+        object-fit: cover;
+        border-radius: 6px;
+        filter: grayscale(100%);
+        transition: filter 0.35s ease;
+        justify-self: end;
+      }
+      .founding-tree-image:hover,
+      .founding-tree-image:focus-visible {
+        filter: grayscale(0%);
+      }
 
       .proof-grid,
       .market-grid {
@@ -859,6 +885,19 @@
         .hero-thesis {
           gap: 16px;
         }
+        .founding-principles-panel {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .founding-principles-copy .lead {
+          font-size: 28px;
+          max-width: 100%;
+        }
+        .founding-tree-image {
+          max-width: 100%;
+          max-height: 340px;
+          justify-self: stretch;
+        }
         .intel-stage:not(:last-child)::after {
           content: "↓";
           right: 12px;
@@ -1338,14 +1377,22 @@
 
       <section>
         <div class="wrap">
-          <div class="framed-panel">
-            <div class="eyebrow">投资理念</div>
-            <p class="lead" style="font-size:32px;max-width:920px;margin-bottom:12px;">
-              “海岸红杉生长缓慢，却能屹立数百年。我们以此为公司象征，表达我们的目标：打造一家能够穿越周期、长期存续的 ShoreVest。”
-            </p>
-            <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6f6a61;">
-              ShoreVest Partners — 投资理念
-            </p>
+          <div class="framed-panel founding-principles-panel">
+            <div class="founding-principles-copy">
+              <div class="eyebrow">投资理念</div>
+              <p class="lead">
+                “海岸红杉生长缓慢，却能屹立数百年。我们以此为公司象征，表达我们的目标：打造一家能够穿越周期、长期存续的 ShoreVest。”
+              </p>
+              <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6f6a61;">
+                ShoreVest Partners — 投资理念
+              </p>
+            </div>
+            <img
+              class="founding-tree-image"
+              src="assets/images/leaf_hero.png"
+              alt="ShoreVest 投资理念中的海岸红杉"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
