@@ -1888,8 +1888,31 @@
         .strategy-block {
           padding: 24px 20px;
         }
+        .strategy-block h2 {
+          font-size: clamp(42px, 11vw, 56px);
+          line-height: 1.08;
+          hyphens: none;
+          word-break: normal;
+          overflow-wrap: normal;
+        }
+        .strategy-block p {
+          hyphens: none;
+          overflow-wrap: normal;
+        }
         .funnel-step {
           flex-wrap: wrap;
+        }
+        .funnel-step small {
+          hyphens: none;
+        }
+        .alloc-row .alloc-label {
+          gap: 8px;
+        }
+        .alloc-row .alloc-label span:first-child {
+          min-width: 0;
+          overflow-wrap: normal;
+          word-break: normal;
+          hyphens: none;
         }
         .funnel-step span {
           font-size: 18px;
@@ -1973,6 +1996,9 @@
           max-height: 42px;
           width: 100%;
         }
+        .nav__logo-cn {
+          display: none;
+        }
         .nav__right {
           gap: 8px;
         }
@@ -1986,6 +2012,16 @@
         }
         .nav__lp {
           font-size: 9px;
+        }
+        .viz-controls {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 6px;
+        }
+        .viz-btn {
+          width: 100%;
+          padding: 7px 8px;
+          letter-spacing: 0.09em;
         }
       }
 
