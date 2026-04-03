@@ -8,7 +8,7 @@
   --nav-logo-cn-size: 10px;
   --nav-logo-cn-line-height: 1;
   --nav-logo-lockup-gap: 5px;
-  --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap));
+  --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap) + 8px);
 }
 
 html {
