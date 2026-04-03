@@ -380,9 +380,9 @@ html {
   a,
   figcaption,
   blockquote {
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
     word-break: normal;
-    hyphens: auto;
+    hyphens: none;
   }
 
   pre,
