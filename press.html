@@ -320,11 +320,28 @@
         }
       }
       .press-intro {
-        font-family: "Cormorant Garamond", var(--serif);
-        font-style: italic;
-        font-size: 0.95rem;
-        color: #0c0c0a;
-        margin-bottom: 2rem;
+        font-family: var(--serif);
+        font-size: 1.14rem;
+        line-height: 1.75;
+        color: #2f2a25;
+        margin: 0;
+      }
+      .press-overview {
+        max-width: var(--content);
+        margin: 0 0 26px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+        gap: 22px;
+        align-items: start;
+      }
+      .press-overview__main {
+        padding: 20px 22px 22px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(12, 12, 10, 0.09);
+      }
+      .press-overview__side {
+        display: grid;
+        gap: 12px;
       }
       .press-row {
         display: block;
@@ -376,6 +393,7 @@
 
       .press-archive-note {
         color: #44546b;
+        margin-bottom: 14px;
       }
 
       .press-more-wrap {
@@ -406,17 +424,29 @@
       }
 
       .contact {
-        max-width: var(--content);
-        margin-top: 18px;
+        margin: 0;
         padding: 18px 24px;
         border: 1px solid var(--rule);
-        background: rgba(255, 255, 255, 0.8);
+        background: #fff;
         font-size: 13px;
         color: #5b544c;
       }
+      .contact span {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(12, 12, 10, 0.65);
+        margin-bottom: 7px;
+      }
+      .contact a {
+        color: var(--red);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
       .press-disclaimer {
-        max-width: var(--content);
-        margin-top: 14px;
+        margin: 0;
         padding: 14px 18px;
         border: 1px solid rgba(12, 12, 10, 0.1);
         background: rgba(255, 255, 255, 0.65);
@@ -439,6 +469,9 @@
         .press-note {
           max-width: none;
           justify-self: start;
+        }
+        .press-overview {
+          grid-template-columns: minmax(0, 1fr);
         }
       }
       @media (max-width: 767px) {
@@ -503,6 +536,9 @@
         }
         .contact {
           padding: 16px 18px;
+        }
+        .press-overview__main {
+          padding: 16px;
         }
       }
 
@@ -822,26 +858,35 @@
       </section>
 
       <div class="wrap press-shell">
-        <div class="eyebrow press-archive-note" style="margin-bottom: 16px">
-          Coverage through January 2026.
+        <div class="press-overview">
+          <div class="press-overview__main">
+            <div class="eyebrow press-archive-note">Coverage through January 2026.</div>
+            <p class="press-intro">
+              The archive below presents a chronological record of third-party
+              coverage and commentary. The breadth of coverage across market
+              cycles, from the first NPL wave through Evergrande and the
+              current restructuring environment, reflects the firm's role as one
+              of the few institutional managers with continuous onshore presence
+              throughout.
+            </p>
+          </div>
+          <aside class="press-overview__side">
+            <p class="contact">
+              <span>For media inquiries</span>
+              <a href="mailto:info@shorevest.com">info@shorevest.com</a>
+            </p>
+            <p class="press-disclaimer">
+              Third-party media coverage and external commentary referenced on
+              this page is provided for informational purposes only. ShoreVest
+              Partners does not endorse, and is not responsible for, the
+              content of external publications. Coverage does not constitute
+              investment advice or a solicitation to invest. Links to external
+              sources may require a subscription or registration to access.
+              Views expressed by third parties do not necessarily reflect the
+              views of ShoreVest Partners.
+            </p>
+          </aside>
         </div>
-        <p class="press-intro">
-          The archive below presents a chronological record of third-party
-          coverage and commentary. The breadth of coverage across market
-          cycles, from the first NPL wave through Evergrande and the current
-          restructuring environment, reflects the firm's role as one of the few
-          institutional managers with continuous onshore presence throughout.
-        </p>
-        <p class="contact">For media inquiries: info@shorevest.com</p>
-        <p class="press-disclaimer">
-          Third-party media coverage and external commentary referenced on this
-          page is provided for informational purposes only. ShoreVest Partners
-          does not endorse, and is not responsible for, the content of external
-          publications. Coverage does not constitute investment advice or a
-          solicitation to invest. Links to external sources may require a
-          subscription or registration to access. Views expressed by third
-          parties do not necessarily reflect the views of ShoreVest Partners.
-        </p>
         <div class="press-filters" id="press-filters" aria-label="Press archive filters">
           <div class="press-filter-group">
             <label class="press-filter-label" for="press-year-select">Year</label>
