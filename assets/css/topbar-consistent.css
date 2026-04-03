@@ -230,7 +230,8 @@ html {
 @media (max-width: 768px) {
   .sv-footer__contact {
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
     gap: 8px;
   }
 
