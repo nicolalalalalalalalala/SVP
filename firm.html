@@ -660,15 +660,24 @@
       .platform-layout {
         display: grid;
         grid-template-columns: 0.92fr 1.08fr;
-        gap: 14px;
+        gap: 20px;
+        align-items: start;
       }
       .platform-notes {
         display: grid;
-        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .committee-intro {
+        max-width: 840px;
       }
       .note {
-        padding: 14px;
+        padding: 16px;
         background: #f7f6f4;
+        border: 1px solid #ddd9d1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
         transition:
           transform 0.35s ease,
           box-shadow 0.35s ease,
@@ -684,17 +693,43 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         margin-bottom: 6px;
+        color: #4e4a43;
+      }
+      .note .role {
+        margin-bottom: 8px;
+        font-size: 11px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: #6e685f;
+      }
+      .note p:last-child {
+        margin-bottom: 0;
+      }
+      .accountability-note {
+        grid-column: 1 / -1;
+        border-left: 4px solid rgba(208, 165, 95, 0.78);
+        background: #f4f1ec;
+      }
+      .accountability-note h3 {
+        color: #5e594f;
       }
       .platform-diagram {
         background: #f7f6f4;
         border: 1px solid #ddd9d1;
-        padding: 14px;
+        padding: 16px;
+      }
+      .process-label {
+        margin: 12px 0 0;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #70695f;
       }
       .small-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
-        margin-top: 14px;
+        margin-top: 16px;
       }
       .small-box {
         font-size: 10px;
@@ -722,9 +757,29 @@
         color: var(--red);
         background: #fdf8f9;
       }
+      .protocol-track {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .protocol-step {
+        flex: 1;
+        border: 1px solid #d9d3ca;
+        background: #f9f8f6;
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 8px 6px;
+      }
+      .protocol-arrow {
+        color: #8d877d;
+        font-size: 12px;
+      }
       .small-detail {
-        margin-top: 12px;
-        padding-top: 12px;
+        margin-top: 14px;
+        padding-top: 14px;
         border-top: 1px solid #ddd9d1;
         min-height: 66px;
       }
@@ -928,6 +983,16 @@
         }
         .small-grid {
           grid-template-columns: 1fr;
+        }
+        .platform-notes {
+          grid-template-columns: 1fr;
+        }
+        .protocol-track {
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+        .protocol-arrow {
+          display: none;
         }
         .intelligence-panel > *,
         .platform-layout > * {
@@ -1538,50 +1603,59 @@
 
       <section class="committee-section">
         <div class="wrap">
-          <div class="section-head">
-            <h2>Investment Committee.</h2>
+          <div class="section-head committee-intro">
+            <h2>Investment Committee</h2>
             <p>
-              Investment decisions are made through a structured committee process that integrates investment, legal, and operational judgment in a unified forum.
+              ShoreVest&apos;s Investment Committee integrates investment judgment, legal structuring, and operational oversight in one decision-making forum.
             </p>
           </div>
           <div class="platform-layout">
-            <div class="platform-notes">
+            <div class="platform-notes" aria-label="Investment committee members">
               <article class="note">
                 <h3>Benjamin Fanger</h3>
-                <p>Managing Partner</p>
-                <p>Co-founded Shoreline Capital in 2004, one of China's earliest dedicated distressed debt platforms, and has led the development of ShoreVest's legal-first underwriting framework across six fund vintages.</p>
+                <p class="role">Managing Partner</p>
+                <p>Co-founded Shoreline Capital in 2004, one of China&apos;s earliest dedicated distressed debt platforms, and led the development of ShoreVest&apos;s legal-first underwriting framework across six fund vintages.</p>
               </article>
               <article class="note">
                 <h3>Ada Bi</h3>
-                <p>Partner, CFO</p>
+                <p class="role">Partner, CFO</p>
                 <p>Leads fund operations, financial controls, LP reporting, and regulatory compliance across the ShoreVest platform.</p>
               </article>
               <article class="note">
                 <h3>Mecy Mei</h3>
-                <p>Partner</p>
-                <p>Responsible for underwriting and asset management across the core private credit portfolio, with deep expertise in PRC legal structuring and collateral enforcement.</p>
+                <p class="role">Partner</p>
+                <p>Leads underwriting and asset management across the core private credit portfolio, with deep expertise in PRC legal structuring and collateral enforcement.</p>
               </article>
               <article class="note">
                 <h3>Hui Zheng</h3>
-                <p>Partner</p>
-                <p>Leads deal origination, structuring, and recovery execution across the China credit portfolio, with particular focus on asset-backed lending and workout resolution.</p>
+                <p class="role">Partner</p>
+                <p>Leads origination, structuring, and recovery execution across the China credit portfolio, focused on asset-backed lending and workout resolution.</p>
               </article>
-              <blockquote class="note" style="border-left:4px solid rgba(208, 165, 95, 0.7); font-style:italic;">
-                The same four-person team has worked together for approximately twenty years. The individuals who approve entry are responsible for monitoring and exit; there is no handoff between decision-makers and portfolio managers.
-              </blockquote>
+              <article class="note accountability-note">
+                <h3>One Team, Full-Cycle Accountability</h3>
+                <p>The same four partners have worked together for approximately twenty years. The professionals who approve each investment remain responsible for portfolio monitoring and exit execution, with no handoff between decision-makers and portfolio managers.</p>
+              </article>
             </div>
             <div class="platform-diagram">
               <div class="eyebrow">Decision protocol</div>
               <p>
-                Investment decisions and portfolio execution are managed in one integrated process, with continuous accountability from entry through realization.
+                Investment decisions and portfolio execution are managed through one continuous process.
               </p>
+              <p class="process-label">Underwrite → Approve → Execute</p>
+              <div class="protocol-track" aria-hidden="true">
+                <div class="protocol-step">Underwrite</div>
+                <span class="protocol-arrow">→</span>
+                <div class="protocol-step">Approve</div>
+                <span class="protocol-arrow">→</span>
+                <div class="protocol-step">Execute</div>
+              </div>
               <div class="small-grid" role="tablist" aria-label="Decision protocol stages">
                 <button
                   class="small-box is-active"
                   role="tab"
                   aria-selected="true"
                   data-detail-title="Originating + Underwriting"
-                  data-detail-copy="The same partners who source opportunities complete legal and asset-level diligence, define downside protections, and set the underwriting case."
+                  data-detail-copy="The same partners who source opportunities conduct legal and asset-level diligence, define downside protections, and establish the underwriting case."
                 >
                   Underwrite
                 </button>
@@ -1607,7 +1681,7 @@
               <div class="small-detail" aria-live="polite">
                 <h4>Originating + Underwriting</h4>
                 <p>
-                  The same partners who source opportunities complete legal and asset-level diligence, define downside protections, and set the underwriting case.
+                  The same partners who source opportunities conduct legal and asset-level diligence, define downside protections, and establish the underwriting case.
                 </p>
               </div>
             </div>
