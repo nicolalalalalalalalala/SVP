@@ -34,7 +34,13 @@
 
     const candidates = document.querySelectorAll('section, article, main > *, .card, .tile, .stat, .timeline__item');
     candidates.forEach((el, idx) => {
-      if (el.classList.contains('rev') || el.classList.contains('sv-reveal') || el.closest('.hero__sliver')) return;
+      if (
+        el.classList.contains('rev') ||
+        el.classList.contains('sv-reveal') ||
+        el.closest('.hero__sliver') ||
+        el.classList.contains('reading') ||
+        el.closest('.reading-grid')
+      ) return;
       if (idx < 2) return;
       el.classList.add('sv-reveal');
       el.style.transitionDelay = `${Math.min((idx % 5) * 60, 240)}ms`;
