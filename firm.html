@@ -244,32 +244,30 @@
 
       .hero-stats {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        border-top: 1px solid rgba(12, 12, 10, 0.15);
-        margin-top: 8px;
-        padding: 2.4rem 0 2.1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.9rem;
+        margin-top: 10px;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(12, 12, 10, 0.12);
       }
       .hero-stat {
-        padding: 0 1.25rem;
-      }
-      .hero-stat:first-child {
-        padding-left: 0;
-      }
-      .hero-stat + .hero-stat {
-        border-left: 1px solid rgba(12, 12, 10, 0.15);
+        background: #f9f8f6;
+        border: 1px solid rgba(12, 12, 10, 0.1);
+        border-radius: 10px;
+        padding: 1rem 1.1rem 0.95rem;
       }
       .hero-stat__value {
         font-family: "Cormorant Garamond", var(--serif), serif;
-        font-size: 1.6rem;
+        font-size: clamp(1.35rem, 1.8vw, 1.65rem);
         font-weight: 400;
         color: #0c0c0a;
-        line-height: 1.2;
+        line-height: 1.22;
       }
       .hero-stat__label {
-        margin-top: 0.5rem;
+        margin-top: 0.2rem;
         font-family: "Cormorant Garamond", var(--serif), serif;
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
         color: #8b1a2f;
       }
@@ -827,17 +825,13 @@
           font-size: 13px;
         }
         .hero-stats {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          margin-top: 10px;
-          padding: 1.75rem 0 1.4rem;
-          gap: 1.25rem 0.9rem;
+          grid-template-columns: 1fr;
+          margin-top: 12px;
+          padding-top: 1.1rem;
+          gap: 0.7rem;
         }
-        .hero-stat,
-        .hero-stat:first-child {
-          padding: 0;
-        }
-        .hero-stat + .hero-stat {
-          border-left: none;
+        .hero-stat {
+          padding: 0.95rem 1rem 0.9rem;
         }
         .lead,
         .section-head p {
