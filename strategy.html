@@ -1225,10 +1225,11 @@
         display: grid;
         grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
         gap: 28px;
-        align-items: end;
+        align-items: center;
       }
       .strategy-intro-lead p {
         max-width: 100%;
+        margin: 0;
         font-size: 19px;
         line-height: 1.8;
         color: #5f5a54;
@@ -1238,6 +1239,8 @@
         border: 1px solid rgba(179, 33, 63, 0.2);
         background: #fcfbf9;
         padding: 22px 20px;
+        justify-self: end;
+        width: min(100%, 320px);
       }
       .strategy-intro-actions p {
         font-size: 10px;
@@ -1926,6 +1929,11 @@
         }
         .strategy-intro-content {
           grid-template-columns: 1fr;
+        }
+        .strategy-intro-actions {
+          justify-self: start;
+          width: 100%;
+          max-width: 420px;
         }
         .strategy-block {
           padding: 24px;
