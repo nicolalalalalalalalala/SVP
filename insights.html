@@ -6,6 +6,8 @@
     <title>China Debt Dynamics - ShoreVest</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4" />
     <link rel="shortcut icon" href="assets/favicon.svg?v=4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -2614,6 +2616,13 @@
           if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
             return;
           if (el.closest("nav")) return;
+          if (
+            el.closest(".reading-grid") ||
+            el.classList.contains("issue-header") ||
+            el.classList.contains("franchise-ribbon")
+          ) {
+            return;
+          }
           el.classList.add("auto-rev");
           el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
         });
@@ -2639,6 +2648,12 @@
         document
           .querySelectorAll(".auto-rev")
           .forEach((el) => observer.observe(el));
+
+        window.setTimeout(() => {
+          document
+            .querySelectorAll(".auto-rev:not(.auto-rev--in)")
+            .forEach((el) => el.classList.add("auto-rev--in"));
+        }, 1000);
       })();
     </script>
 <footer class="sv-footer">
