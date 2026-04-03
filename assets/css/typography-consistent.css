@@ -21,6 +21,23 @@ button {
   font-family: var(--site-sans-en);
 }
 
+/* Keep words intact across the site (avoid splits like "ambi-tion"). */
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+figcaption {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
 h1,
 h2,
 h3,
