@@ -339,6 +339,89 @@
 }
 
 
+
+
+.sv-footer {
+  background: var(--off);
+  border-top: 1px solid var(--rule);
+  padding: 34px var(--pad) 40px;
+}
+.sv-footer__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.sv-footer__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule);
+}
+.sv-footer__brand {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: #2d2924;
+  letter-spacing: 0.01em;
+}
+.sv-footer__contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sv-footer__contact-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.sv-footer__contact a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  padding: 10px 14px;
+  transition: all 0.2s ease;
+}
+.sv-footer__contact a:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.sv-footer__bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding-top: 16px;
+}
+.sv-footer__copyright,
+.sv-footer__legal,
+.sv-footer__legal-links {
+  font-size: 11px;
+  color: #6f6a63;
+  line-height: 1.7;
+}
+.sv-footer__legal-links a {
+  color: var(--ink);
+}
+.sv-footer__legal-links a:hover {
+  color: var(--red);
+}
+@media (max-width: 768px) {
+  .sv-footer {
+    padding: 26px var(--pad) 34px;
+  }
+  .sv-footer__main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sv-footer__contact {
+    flex-wrap: wrap;
+  }
+}
 </style>
   
 <link rel="stylesheet" href="assets/css/site-motion.css">
@@ -390,10 +473,22 @@
     </main>
 
 
-<footer class="sv-footer" style="border-top:1px solid rgba(0,0,0,.08);padding:22px 64px 28px;margin-top:44px;font-size:12px;line-height:1.8;color:#5b554e;">
-  <div>&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
-  <div>This website is for informational purposes only and does not constitute an offer to sell or a solicitation to buy any securities.</div>
-  <div><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a></div>
+<footer class="sv-footer">
+  <div class="sv-footer__inner">
+    <div class="sv-footer__main">
+      <div class="sv-footer__brand">ShoreVest Partners</div>
+      <div class="sv-footer__contact">
+        <span class="sv-footer__contact-label">Contact</span>
+        <a href="mailto:inquiries@shorevest.com">inquiries@shorevest.com</a>
+      </div>
+    </div>
+
+    <div class="sv-footer__bottom">
+      <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
+      <div class="sv-footer__legal">This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future results. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before investing.</div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a></div>
+    </div>
+  </div>
 </footer>
 
     <script>
