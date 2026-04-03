@@ -60,10 +60,34 @@
     });
   };
 
+  const installBackToTop = () => {
+    if (!window.matchMedia('(max-width: 768px)').matches) return;
+
+    const button = document.createElement('button');
+    button.className = 'sv-back-to-top';
+    button.type = 'button';
+    button.setAttribute('aria-label', 'Back to top');
+    button.textContent = '↑';
+
+    const toggleVisibility = () => {
+      const shouldShow = window.scrollY > 320;
+      button.classList.toggle('is-visible', shouldShow);
+    };
+
+    button.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+
+    document.body.appendChild(button);
+    toggleVisibility();
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+  };
+
   const init = () => {
     primeImages();
     installReveals();
     smoothHashJump();
+    installBackToTop();
   };
 
   if (document.readyState === 'loading') {
