@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>法律声明与免责声明 - ShoreVest</title>
+  <link rel="icon" href="assets/favicon.svg?v=4" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #b3213f;
+      --ink: #0c0c0a;
+      --ink-soft: #3f3b36;
+      --paper: #fff;
+      --rule: rgba(12, 12, 10, 0.12);
+      --serif: "EB Garamond", Georgia, serif;
+      --sans: "Inter", "Noto Sans SC", system-ui, sans-serif;
+      --max: 1120px;
+      --pad: 32px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink-soft);
+      background: var(--paper);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--pad);
+      border-bottom: 1px solid var(--rule);
+      background: #fff;
+    }
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+    }
+    .nav__logo-mark { width: 31px; height: 31px; flex: 0 0 31px; }
+    .nav__logo-lockup {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1;
+      row-gap: 1px;
+      padding-left: 4px;
+      min-height: 31px;
+    }
+    .nav__logo-en {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: .035em;
+      color: #171717;
+      line-height: 1;
+    }
+    .nav__logo-cn {
+      font-size: 10px;
+      letter-spacing: .34em;
+      color: rgba(33,33,30,.5);
+      line-height: 1;
+    }
+    .nav__links {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav__links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      color: var(--ink);
+      opacity: .45;
+      text-transform: uppercase;
+    }
+    .nav__links a:hover,
+    .nav__links a.active { opacity: 1; }
+    .nav__right { display: flex; align-items: center; gap: 22px; }
+    .nav__zh { font-size: 13px; opacity: .45; }
+    .nav__zh:hover { opacity: .75; }
+    .nav__lp {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid rgba(48, 40, 34, 0.2);
+      padding: 8px 20px;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .nav__lp:hover {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 116px 24px 44px;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: .01em;
+      font-size: 42px;
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .intro,
+    .version-note { margin: 0 0 14px; color: #5b554f; }
+    .version-note {
+      padding: 10px 12px;
+      border-left: 2px solid var(--red);
+      background: #faf7f5;
+      font-weight: 500;
+    }
+    section {
+      border-top: 1px solid var(--rule);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    p { margin: 0; }
+
+    .back-link { margin-top: 30px; }
+    .back-link a { color: var(--red); }
+
+    .legal-footer {
+      margin-top: 52px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+    .legal-footer__copy { margin: 0 0 12px; }
+    .legal-footer__links { margin: 0; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .legal-footer__links a { color: var(--red); }
+
+    @media (max-width: 980px) {
+      .nav__links { display: none; }
+      #nav { padding: 0 18px; }
+      .nav__right { gap: 12px; }
+      .nav__lp { padding: 8px 12px; }
+      h1 { font-size: 34px; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/typography-consistent.css" />
+</head>
+<body>
+  <nav id="nav">
+    <a href="/index_cn.html" class="nav__logo">
+      <img class="nav__logo-mark" src="assets/images/logo-master.png?v=1" alt="ShoreVest logo" />
+      <span class="nav__logo-lockup">
+        <span class="nav__logo-en">ShoreVest</span>
+        <span class="nav__logo-cn">新岸資本</span>
+      </span>
+    </a>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/firm_cn.html">公司简介</a></li>
+      <li><a href="/strategy_cn.html">策略</a></li>
+      <li><a href="/insights_cn.html">洞察</a></li>
+      <li><a href="/press_cn.html">新闻</a></li>
+      <li><a href="/team_cn.html">团队</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="/disclaimers.html" class="nav__zh">EN</a>
+      <a href="/investor-access_cn.html" class="nav__lp">投资者入口</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>法律声明与免责声明</h1>
+    <p class="version-note">如英文版与中文版存在差异，以英文版为准。</p>
+    <p class="intro">ShoreVest Partners 是一家专注于中国私募信贷策略的基金管理机构，总部位于广州，并在上海及香港设有办公室。</p>
+
+    <section>
+      <h2>1. 非出售要约</h2>
+      <p>本网站任何内容均不构成对任何证券、期货或其他金融工具或产品的非出售要约，亦不构成购买要约邀请或招揽。任何该等要约或邀请仅可通过正式且保密的私募备忘录或其他发行文件作出，并且仅可在适用法律允许的司法辖区内进行。</p>
+    </section>
+
+    <section>
+      <h2>2. 历史业绩</h2>
+      <p>历史业绩不预示未来结果。ShoreVest 旗下任何基金或投资均不保证能够实现其投资目标或避免重大损失。网站所示回报仅供信息参考，投资者个体结果可能存在差异。净回报通常已扣除管理费、绩效分成、基金费用及其他相关收费。</p>
+    </section>
+
+    <section>
+      <h2>3. 前瞻性陈述</h2>
+      <p>本网站部分信息可能构成前瞻性陈述，通常可通过“可能”“将”“应当”“寻求”“预期”“预计”“预测”“估计”“拟”“继续”“目标”“相信”等措辞或其否定表述予以识别。受多种风险与不确定因素影响，实际事件或结果可能与该等前瞻性陈述所反映或设想者存在重大差异。ShoreVest 不承担更新或修订任何前瞻性陈述的义务。</p>
+    </section>
+
+    <section>
+      <h2>4. 司法辖区限制</h2>
+      <p>本网站信息不面向在任何司法辖区或国家内可能违反当地法律法规的任何人士或实体进行分发或使用。访问本网站的任何人士应自行确认并遵守相关司法辖区的全部适用法律要求，包括取得必要的政府许可或其他批准。</p>
+    </section>
+
+    <section>
+      <h2>5. 投资者资格</h2>
+      <p>本网站信息仅面向机构投资者、美国《1940年投资公司法》项下定义的合格购买者、美国《1933年证券法》Regulation D 项下定义的合格投资者，或适用地方法律规定的其他同等类别专业投资者。本网站不面向零售投资者。访问本网站即表示您声明并确认已满足前述一项或多项资格标准。</p>
+    </section>
+
+    <section>
+      <h2>6. 监管状态</h2>
+      <p>ShoreVest Partners, Ltd. 未在美国证券交易委员会或任何其他监管机构登记为投资顾问。本网站任何内容均不应被解释为投资建议。潜在投资者在作出任何投资决策前，应咨询其独立法律、税务、财务及监管顾问。</p>
+    </section>
+
+    <section>
+      <h2>7. 税务与 ERISA</h2>
+      <p>本网站任何内容均不构成税务、会计、法律或美国《雇员退休收入保障法》(ERISA)相关意见。税务处理取决于投资者个体情形且可能发生变化。潜在投资者应审慎审阅全部基金文件，并寻求独立专业意见。</p>
+    </section>
+
+    <p class="back-link"><a href="/index_cn.html">返回首页</a></p>
+
+    <footer class="legal-footer">
+      <p class="legal-footer__copy">&copy; ShoreVest Partners, Ltd. 版权所有。</p>
+      <p class="legal-footer__links">
+        <a href="/privacy-policy_cn.html">隐私政策</a><span>|</span>
+        <a href="/terms-of-use_cn.html">使用条款</a><span>|</span>
+        <a href="/disclaimers.html">English version / 英文版</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
