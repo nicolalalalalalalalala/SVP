@@ -1877,6 +1877,11 @@
         color: #66615a;
         max-width: 100%;
       }
+      .expand__panel .data-note {
+        font-size: 12px;
+        line-height: 1.65;
+        color: #6b7280;
+      }
       .strategy-stack .strategy-block:nth-child(even) {
         background: #f6f4f0;
       }
@@ -2666,7 +2671,19 @@
                 China onshore secured credit occupies a distinct place in the portfolio construction toolkit. Returns are driven by collateral recovery, legal enforcement mechanics, and deal-level execution, not by global credit spreads, rate movements, or public equity direction. For global institutional portfolios that are long public credit and equity, the strategy has historically demonstrated low correlation to public market benchmarks, potentially offering diversification benefits through return drivers that are structurally distinct. Low correlation does not guarantee a profit or protect against loss, and all investments are subject to risk including possible loss of principal.
               </p>
             </div>
-            <p class="data-note" style="font-size: 12px; color: #6b7280;">Performance data shown above is for informational purposes only and reflects selected realized and partially realized investments managed by the ShoreVest investment team across predecessor and current fund vehicles since 2004. Returns are presented on a net basis after deduction of management fees, carried interest, and fund expenses where applicable, and are calculated using standard industry conventions. Past performance is not indicative of future results. There can be no assurance that unrealized investments will be realized at the valuations shown, or that future investments will achieve comparable results. Target returns referenced elsewhere on this page are hypothetical, are not guaranteed, and are subject to change without notice. Individual investor results will vary based on timing of investment, fee arrangements, fund vintage, and other factors. This information does not constitute an offer to sell or a solicitation to invest. For complete performance information, prospective investors should request the firm's audited financial statements and review the relevant offering documents in full.</p>
+            <div class="expand">
+              <button
+                type="button"
+                class="expand__trigger"
+                aria-expanded="false"
+                aria-controls="returns-performance-note"
+              >
+                View full performance disclosure
+              </button>
+              <div class="expand__panel" id="returns-performance-note">
+                <p class="data-note">Performance data shown above is for informational purposes only and reflects selected realized and partially realized investments managed by the ShoreVest investment team across predecessor and current fund vehicles since 2004. Returns are presented on a net basis after deduction of management fees, carried interest, and fund expenses where applicable, and are calculated using standard industry conventions. Past performance is not indicative of future results. There can be no assurance that unrealized investments will be realized at the valuations shown, or that future investments will achieve comparable results. Target returns referenced elsewhere on this page are hypothetical, are not guaranteed, and are subject to change without notice. Individual investor results will vary based on timing of investment, fee arrangements, fund vintage, and other factors. This information does not constitute an offer to sell or a solicitation to invest. For complete performance information, prospective investors should request the firm's audited financial statements and review the relevant offering documents in full.</p>
+              </div>
+            </div>
             <div class="expand">
               <button
                 type="button"
