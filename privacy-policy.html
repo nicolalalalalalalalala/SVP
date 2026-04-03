@@ -11,7 +11,7 @@
   <style>
     :root{--red:#b3213f;--ink:#0c0c0a;--ink-soft:#3f3b36;--paper:#fff;--rule:rgba(12,12,10,.12);--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
     *{box-sizing:border-box}
-    body{font-family:var(--sans);max-width:900px;margin:0 auto;padding:56px 24px 40px;line-height:1.55;color:var(--ink-soft);font-size:13px;background:var(--paper)}
+    body{font-family:var(--sans);max-width:900px;margin:0 auto;padding:120px 24px 40px;line-height:1.55;color:var(--ink-soft);font-size:13px;background:var(--paper)}
     h1,h2,h3{color:var(--ink)}
     h1{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:42px;line-height:1.04;margin-bottom:8px}
     h2{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:26px;line-height:1.12;margin-top:28px}
@@ -25,10 +25,39 @@
     .legal-footer__text{margin:0 0 12px}
     .legal-footer__links{margin:0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
     .legal-footer__links a{text-decoration:none}
+
+    #nav{height:72px}
+    .nav__logo img{display:block}
+    .nav__links{list-style:none;margin:0;padding:0}
+    .nav__links a{color:var(--ink);opacity:.45}
+    .nav__links a:hover,.nav__links a.active{opacity:1}
+    .nav__zh{font-size:13px;color:var(--ink);opacity:.35}
+    .nav__zh:hover{opacity:.75}
   </style>
+<link rel="stylesheet" href="assets/css/topbar-consistent.css">
 <link rel="stylesheet" href="assets/css/typography-consistent.css">
 </head>
 <body>
+  <nav id="nav" aria-label="Primary">
+    <a class="nav__logo" href="index.html" aria-label="ShoreVest home">
+      <img src="assets/images/logo-master.png?v=1" alt="" class="nav__logo-mark" />
+      <span class="nav__logo-lockup">
+        <span class="nav__logo-en">ShoreVest</span>
+        <span class="nav__logo-cn">新岸资本</span>
+      </span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="firm.html">Firm</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="press.html">Press</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="index_cn.html" class="nav__zh">中文</a>
+      <a href="investor-access.html" class="nav__lp">Investor Access</a>
+    </div>
+  </nav>
   <h1>Privacy Policy</h1>
   <p class="muted"><strong>Effective date:</strong> April 3, 2026.</p>
   <p>
@@ -221,7 +250,7 @@
   <footer class="legal-footer">
     <p class="legal-footer__copy">&copy; ShoreVest Partners, Ltd. All rights reserved.</p>
     <p class="legal-footer__text">This website is provided solely for informational and discussion purposes and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation with respect to any security, investment product, or advisory service in any jurisdiction. Any such offer or solicitation may be made only by means of definitive offering documents and only to investors who meet applicable eligibility requirements. Certain statements on this website may be forward-looking and are based on assumptions, expectations, and estimates that are inherently subject to change and uncertainty. Past performance is not indicative of future results, and there can be no assurance that any investment objective will be achieved or that losses will be avoided. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors should review all fund documentation carefully and consult their own legal, tax, and financial advisers before making any investment decision.</p>
-    <p class="legal-footer__links"><a href="privacy-policy.html">Privacy Policy</a><span>|</span><a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></p>
+    <p class="legal-footer__links"><a href="privacy-policy.html" class="active">Privacy Policy</a><span>|</span><a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></p>
   </footer>
 </body>
 </html>
