@@ -178,21 +178,36 @@ h2 em { font-style:italic; }
   position:relative;
   width:100%;
   height:620px;
+  --hero-image-position:center 38%;
   /* Keep the hero as a single composited background to avoid delayed paint on mobile. */
   background-color:#6c6864;
   background-image:
     linear-gradient(
       to bottom,
-      rgba(10,5,2,0.15) 0%,
-      rgba(10,5,2,0.38) 40%,
-      rgba(10,5,2,0.72) 100%
-    ),
-    url('assets/images/index_hero.png');
-  background-size:cover, cover;
-  background-position:center 38%, center 38%;
+      rgba(10,5,2,0.3) 0%,
+      rgba(10,5,2,0.52) 40%,
+      rgba(10,5,2,0.8) 100%
+    );
+  background-size:cover;
+  background-position:var(--hero-image-position);
   display:flex;
   align-items:flex-end;
   overflow:hidden;
+}
+.hero__sliver::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:url('assets/images/index_hero.png') var(--hero-image-position) / cover no-repeat;
+  filter:grayscale(100%) brightness(0.6) contrast(1.08);
+  z-index:0;
+}
+.hero__sliver::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 22% 45%, rgba(0,0,0,0.26) 0%, rgba(0,0,0,0.08) 38%, rgba(0,0,0,0) 65%);
+  z-index:0;
 }
 .hero__overlay {
   position:relative; z-index:1;
@@ -203,9 +218,10 @@ h2 em { font-style:italic; }
 }
 .hero__overlay .hero__kicker {
   justify-content:flex-start;
-  color:rgba(255,255,255,0.55);
+  color:rgba(255,255,255,0.8);
   letter-spacing:.22em;
   margin-bottom:24px;
+  text-shadow:0 1px 8px rgba(0,0,0,0.45);
 }
 .hero__overlay .hero__kicker::before {
   background:var(--red);
@@ -217,15 +233,17 @@ h2 em { font-style:italic; }
   letter-spacing:-.02em;
   margin-bottom:48px;
   max-width:580px;
+  text-shadow:0 3px 18px rgba(0,0,0,0.42);
 }
 .hero__overlay h1.hero__hed em {
   color:var(--red);
   font-style:italic;
 }
 .hero__overlay .cta--light {
-  border-color:rgba(255,255,255,0.55);
+  border-color:rgba(255,255,255,0.85);
   color:#fff;
   letter-spacing:.12em;
+  background:rgba(0,0,0,0.18);
 }
 .hero__overlay .cta--light:hover {
   background:transparent;
@@ -837,7 +855,7 @@ h2.su__hed {
   .hero__sliver {
     height:min(90vh, 820px);
     min-height:680px;
-    background-position:58% 34%;
+    --hero-image-position:58% 34%;
   }
   .hero__overlay {
     padding:0 var(--pad) 104px;
