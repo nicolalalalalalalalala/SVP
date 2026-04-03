@@ -1,0 +1,61 @@
+:root {
+  --site-font-size: 15px;
+  --site-line-height: 1.6;
+  --site-sans-en: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --site-sans-zh: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
+  --site-serif-en: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --site-serif-zh: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+}
+
+html {
+  font-size: var(--site-font-size);
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-size: 1rem;
+  line-height: var(--site-line-height);
+  font-family: var(--site-sans-en);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.serif,
+[class*='serif'] {
+  font-family: var(--site-serif-en);
+}
+
+html:lang(zh) body,
+html[lang^='zh'] body,
+html:lang(zh) input,
+html:lang(zh) select,
+html:lang(zh) textarea,
+html:lang(zh) button,
+html[lang^='zh'] input,
+html[lang^='zh'] select,
+html[lang^='zh'] textarea,
+html[lang^='zh'] button {
+  font-family: var(--site-sans-zh);
+}
+
+html:lang(zh) h1,
+html:lang(zh) h2,
+html:lang(zh) h3,
+html:lang(zh) h4,
+html:lang(zh) h5,
+html:lang(zh) h6,
+html[lang^='zh'] h1,
+html[lang^='zh'] h2,
+html[lang^='zh'] h3,
+html[lang^='zh'] h4,
+html[lang^='zh'] h5,
+html[lang^='zh'] h6 {
+  font-family: var(--site-serif-zh);
+}
