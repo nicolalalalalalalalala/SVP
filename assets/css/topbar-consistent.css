@@ -109,6 +109,7 @@ html {
 }
 
 #nav .nav__links a {
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   font-size: 10.5px;
@@ -136,6 +137,13 @@ html {
 #nav .nav__links a:hover::after,
 #nav .nav__links a:focus-visible::after {
   transform: scaleX(1);
+}
+
+#nav .nav__logo,
+#nav .nav__logo:visited,
+#nav .nav__right a,
+#nav .nav__right a:visited {
+  text-decoration: none;
 }
 
 #nav .nav__right {
