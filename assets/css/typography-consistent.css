@@ -76,3 +76,24 @@ html[lang^='zh'] h5,
 html[lang^='zh'] h6 {
   font-family: var(--site-serif-zh);
 }
+
+
+/* Sitewide horizontal gutters (keeps margins consistent across templates). */
+:root {
+  --site-page-margin: 64px;
+  --pad: var(--site-page-margin);
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --site-page-margin: 32px;
+    --pad: var(--site-page-margin);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --site-page-margin: 18px;
+    --pad: var(--site-page-margin);
+  }
+}
