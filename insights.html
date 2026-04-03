@@ -668,6 +668,15 @@
         color: var(--mist);
         background: #fff;
       }
+      .archive__disclaimer {
+        margin: 0;
+        padding: 14px 20px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #7d786f;
+        background: #fff;
+        border-bottom: 1px solid var(--rule);
+      }
       .archive__row {
         padding: 20px 20px 22px;
         border-bottom: 1px solid rgba(20, 20, 16, 0.1);
@@ -1627,14 +1636,6 @@
         </div>
       </div>
 
-      <section id="issue-header" class="issue-header">
-        <div class="issue-header__meta">
-          <span>Volume 10 | Issue 1</span><span>Published 25 January 2026</span
-          ><span>China Debt Dynamics</span>
-        </div>
-        <h2>The End of China's Uninvestable Myth</h2>
-      </section>
-
       <div class="reading-grid">
         <article
           id="current-issue"
@@ -1647,11 +1648,6 @@
             <strong>Volume 10 | Issue 1</strong><br />25 January 2026
           </p>
 
-          <h3>The End of China's Uninvestable Myth</h3>
-          <blockquote>
-            China was never truly uninvestable for private credit—even when
-            equity narratives said otherwise.
-          </blockquote>
           <p>
             Almost five years after China was widely condemned as being
             uninvestable, the narrative is finally changing. Foreign equity
@@ -1660,8 +1656,8 @@
           </p>
           <p>
             In reality, China was never uninvestable. In those “uninvestable”
-            years, ShoreVest closed and exited more deals than any other foreign
-            manager operating in the market.
+            years, ShoreVest closed and exited more deals than any
+            other foreign manager actively operating in China at that time.
           </p>
           <p>
             For example, the failure of certain venture strategies doesn't mean
@@ -1805,6 +1801,9 @@
             <div class="archive__head">
               Archived Issues · Publication History
             </div>
+            <p class="archive__disclaimer">
+              China Debt Dynamics represents the views and analysis of ShoreVest Partners and is provided for informational purposes only. It does not constitute investment advice, a solicitation to invest, or an offer to sell any security. Recipients should conduct their own independent research and consult their advisors before making any investment decision. Past performance referenced herein is not indicative of future results.
+            </p>
             <div class="archive__list">
               <div class="archive__row">
                 <small
@@ -2348,20 +2347,20 @@
 
       const buildPrintEdition = () => {
         const title =
-          document.querySelector(".issue-header h2")?.textContent.trim() || "";
+          document.querySelector(".issue-live h1")?.textContent.trim() || "";
         const standfirst =
-          document.querySelector(".issue-header__dek")?.textContent.trim() ||
+          document.querySelector(".issue-live p")?.textContent.trim() ||
           document
             .querySelector("#current-issue p:not(.lead)")
             ?.textContent.trim() ||
           "";
         const issueInfo =
           document
-            .querySelector(".issue-header__meta span:nth-child(1)")
+            .querySelector(".issue-live__meta span:nth-child(1)")
             ?.textContent.trim() || "";
         const publishedInfo =
           document
-            .querySelector(".issue-header__meta span:nth-child(2)")
+            .querySelector(".issue-live__meta span:nth-child(2)")
             ?.textContent.trim() || "";
         const editionInfo =
           document
