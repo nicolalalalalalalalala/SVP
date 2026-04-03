@@ -264,10 +264,37 @@
         display: grid;
         gap: 0;
         max-width: var(--content);
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(12, 12, 10, 0.09);
+      }
+      .press-toolbar {
+        max-width: var(--content);
+        margin: 0 0 18px;
+        padding: 14px 16px;
+        border: 1px solid rgba(12, 12, 10, 0.1);
+        background: rgba(255, 255, 255, 0.75);
+      }
+      .press-toolbar__meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .press-toolbar__label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(12, 12, 10, 0.65);
+      }
+      .press-toolbar__count {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(12, 12, 10, 0.58);
       }
       .press-filters {
-        max-width: var(--content);
-        margin: 0 0 20px;
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
@@ -349,12 +376,20 @@
       }
       .press-row {
         display: block;
-        padding: 1.25rem 0;
+        padding: 0;
         border-bottom: 1px solid rgba(12, 12, 10, 0.12);
       }
       .press-row a {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        align-items: flex-start;
+        padding: 1.1rem 1rem;
         text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+      .press-row a:hover {
+        background: rgba(179, 33, 63, 0.035);
       }
       .press-publication {
         display: block;
@@ -376,11 +411,12 @@
       }
       .press-date {
         display: block;
-        margin-top: 0.4rem;
+        margin-top: 0.2rem;
         font-family: "Cormorant Garamond", var(--serif);
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         letter-spacing: 0.08em;
         color: #888;
+        white-space: nowrap;
       }
       .press-row a:hover .press-headline {
         color: #8b1a2f;
@@ -551,6 +587,18 @@
         }
         .press-overview__main {
           padding: 16px;
+        }
+        .press-toolbar {
+          padding: 12px;
+        }
+        .press-toolbar__meta {
+          align-items: flex-start;
+          flex-direction: column;
+          margin-bottom: 8px;
+        }
+        .press-row a {
+          gap: 4px;
+          padding: 1rem 0.86rem;
         }
       }
 
@@ -905,18 +953,24 @@
             </section>
           </aside>
         </div>
-        <div class="press-filters" id="press-filters" aria-label="Press archive filters">
-          <div class="press-filter-group">
-            <label class="press-filter-label" for="press-year-select">Year</label>
-            <select class="press-filter-select" id="press-year-select" aria-label="Filter by year">
-              <option value="All">All Years</option>
-            </select>
+        <div class="press-toolbar" aria-label="Press archive controls">
+          <div class="press-toolbar__meta">
+            <p class="press-toolbar__label">Archive</p>
+            <p class="press-toolbar__count" id="press-results-count" aria-live="polite"></p>
           </div>
-          <div class="press-filter-group">
-            <label class="press-filter-label" for="press-publication-select">Publication</label>
-            <select class="press-filter-select" id="press-publication-select" aria-label="Filter by publication">
-              <option value="All">All Publications</option>
-            </select>
+          <div class="press-filters" id="press-filters" aria-label="Press archive filters">
+            <div class="press-filter-group">
+              <label class="press-filter-label" for="press-year-select">Year</label>
+              <select class="press-filter-select" id="press-year-select" aria-label="Filter by year">
+                <option value="All">All Years</option>
+              </select>
+            </div>
+            <div class="press-filter-group">
+              <label class="press-filter-label" for="press-publication-select">Publication</label>
+              <select class="press-filter-select" id="press-publication-select" aria-label="Filter by publication">
+                <option value="All">All Publications</option>
+              </select>
+            </div>
           </div>
         </div>
         <section
@@ -1661,7 +1715,8 @@
       const moreBtn = document.getElementById("press-more-btn");
       const yearSelect = document.getElementById("press-year-select");
       const publicationSelect = document.getElementById("press-publication-select");
-      if (archive && moreBtn && yearSelect && publicationSelect) {
+      const resultsCount = document.getElementById("press-results-count");
+      if (archive && moreBtn && yearSelect && publicationSelect && resultsCount) {
         const rows = Array.from(archive.querySelectorAll(".press-row")).filter(
           (row) => {
             const text = row.textContent || "";
@@ -1740,6 +1795,8 @@
             row.style.display = idx < shown ? "" : "none";
           });
           moreBtn.style.display = shown >= filteredRows.length ? "none" : "";
+          const visible = Math.min(shown, filteredRows.length);
+          resultsCount.textContent = `Showing ${visible} of ${filteredRows.length} items`;
         };
 
         shown = Math.min(initialCount, rows.length);
