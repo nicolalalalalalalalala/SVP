@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="新庫廣本 logo">
   <title>新庫廣本 logo</title>
-  <g fill="none" stroke="#be1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="14">
+  <g fill="none" stroke="#b3213f" stroke-linecap="round" stroke-linejoin="round" stroke-width="14">
     <path d="M56 268A200 200 0 0 1 142 108" />
     <path d="M456 268A200 200 0 0 0 370 108" />
     <path d="M56 268A200 200 0 0 0 456 268" />
+  </g>
 
-  <g fill="none" stroke="#be1e47" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#b3213f" stroke-linecap="round" stroke-linejoin="round">
     <!-- Outer ring -->
     <path d="M57 272A199 199 0 0 1 145 111" stroke-width="22"/>
     <path d="M455 272A199 199 0 0 0 367 111" stroke-width="22"/>
@@ -39,7 +40,7 @@
   </g>
 
   <path id="word-arc" d="M122 133A170 170 0 0 1 390 133" fill="none" />
-  <text fill="#be1e47" font-family="'Noto Serif SC','Songti SC','STSong',serif" font-size="42" font-weight="700" letter-spacing="8">
+  <text fill="#b3213f" font-family="'Noto Serif SC','Songti SC','STSong',serif" font-size="42" font-weight="700" letter-spacing="8">
     <textPath href="#word-arc" startOffset="50%" text-anchor="middle">新庫廣本</textPath>
   </text>
 </svg>
