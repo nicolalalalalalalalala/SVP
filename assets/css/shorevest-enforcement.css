@@ -1,0 +1,301 @@
+:root {
+  --sv-font-sans-en: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sv-font-serif-en: "EB Garamond", "Times New Roman", serif;
+  --sv-font-sans-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif;
+  --sv-font-serif-zh: "Noto Serif SC", "Songti SC", "STSong", serif;
+  --sv-font-logo-en: "Cormorant Garamond", "EB Garamond", serif;
+
+  --sv-color-accent: #b3213f;
+  --sv-color-ink: #0c0c0a;
+  --sv-color-soft-ink: #3f3b36;
+  --sv-color-muted: #888680;
+  --sv-color-bg: #ffffff;
+  --sv-color-bg-soft: #f6f4f0;
+  --sv-color-rule: rgba(0, 0, 0, 0.08);
+
+  --sv-fs-root: 15px;
+  --sv-fs-nav: 0.72rem;
+  --sv-fs-meta: 0.82rem;
+  --sv-fs-body: 0.98rem;
+  --sv-fs-body-lg: clamp(0.94rem, 1vw, 1rem);
+  --sv-fs-h1: clamp(1.85rem, 3.6vw, 3rem);
+  --sv-fs-h2: clamp(1.45rem, 2.6vw, 2.15rem);
+  --sv-fs-h3: clamp(1.08rem, 1.8vw, 1.45rem);
+  --sv-fs-display: clamp(1.75rem, 4.8vw, 3.5rem);
+
+  --sv-lh-tight: 1.15;
+  --sv-lh-heading: 1.2;
+  --sv-lh-body: 1.68;
+  --sv-lh-meta: 1.45;
+
+  --sv-space-1: 0.4rem;
+  --sv-space-2: 0.65rem;
+  --sv-space-3: 0.95rem;
+  --sv-space-4: 1.25rem;
+  --sv-space-5: 1.8rem;
+  --sv-space-6: 2.5rem;
+  --sv-space-7: 3.5rem;
+
+  --sv-weight-light: 300;
+  --sv-weight-regular: 400;
+  --sv-weight-medium: 500;
+}
+
+html {
+  font-size: var(--sv-fs-root);
+  color: var(--sv-color-ink);
+  background: var(--sv-color-bg);
+}
+
+body {
+  font-family: var(--sv-font-sans-en);
+  font-size: var(--sv-fs-body);
+  font-weight: var(--sv-weight-regular);
+  line-height: var(--sv-lh-body);
+  color: var(--sv-color-soft-ink);
+  background: var(--sv-color-bg);
+  text-rendering: optimizeLegibility;
+}
+
+*:not(svg):not(svg *) {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading,
+.title,
+[class*="heading"],
+[class*="title"] {
+  font-family: var(--sv-font-serif-en);
+  font-weight: var(--sv-weight-regular) !important;
+  letter-spacing: 0.01em;
+  color: var(--sv-color-ink);
+  line-height: var(--sv-lh-heading);
+  margin: 0 0 var(--sv-space-3);
+}
+
+h1,
+.h1,
+.display,
+[class*="hero-title"] {
+  font-size: var(--sv-fs-h1);
+}
+
+.display-lg,
+[class*="display"] {
+  font-size: var(--sv-fs-display);
+  font-weight: var(--sv-weight-regular) !important;
+}
+
+h2,
+.h2 {
+  font-size: var(--sv-fs-h2);
+}
+
+h3,
+.h3,
+h4,
+h5,
+h6 {
+  font-size: var(--sv-fs-h3);
+}
+
+p,
+li,
+dd,
+dt,
+blockquote,
+.body,
+.copy {
+  font-size: var(--sv-fs-body);
+  line-height: var(--sv-lh-body);
+  font-weight: var(--sv-weight-regular);
+  color: var(--sv-color-soft-ink);
+  max-width: 66ch;
+}
+
+small,
+.meta,
+.muted,
+caption,
+figcaption,
+label,
+input::placeholder,
+textarea::placeholder {
+  font-size: var(--sv-fs-meta);
+  color: var(--sv-color-muted);
+  line-height: var(--sv-lh-meta);
+}
+
+strong,
+b,
+th {
+  font-weight: var(--sv-weight-medium) !important;
+}
+
+a {
+  color: var(--sv-color-accent);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--sv-color-accent);
+}
+
+nav,
+.nav,
+header nav,
+.menu,
+[class*="nav"] {
+  font-family: var(--sv-font-sans-en);
+  font-size: var(--sv-fs-nav);
+  letter-spacing: 0.06em;
+  font-weight: var(--sv-weight-medium);
+  text-transform: none;
+}
+
+button,
+.btn,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  font-family: var(--sv-font-sans-en);
+  font-size: var(--sv-fs-nav);
+  font-weight: var(--sv-weight-medium);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--sv-color-ink);
+  background: transparent;
+  border: 1px solid var(--sv-color-rule);
+  padding: 0.6rem 0.95rem;
+}
+
+section,
+article,
+main > div,
+.module,
+.card,
+.panel,
+.block {
+  margin-block: var(--sv-space-6);
+}
+
+.card,
+.module,
+.panel,
+[class*="card"],
+[class*="module"] {
+  border: 1px solid var(--sv-color-rule);
+  background: var(--sv-color-bg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--sv-fs-meta);
+}
+
+th,
+td {
+  border: 1px solid var(--sv-color-rule);
+  padding: var(--sv-space-2) var(--sv-space-3);
+  text-align: left;
+}
+
+th {
+  color: var(--sv-color-ink);
+  background: var(--sv-color-bg-soft);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--sv-font-sans-en);
+  font-size: var(--sv-fs-body);
+  color: var(--sv-color-ink);
+  border: 1px solid var(--sv-color-rule);
+  background: var(--sv-color-bg);
+  padding: 0.56rem 0.72rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--sv-color-rule);
+}
+
+[lang|="zh"] body,
+:lang(zh) {
+  font-family: var(--sv-font-sans-zh);
+}
+
+[lang|="zh"] h1,
+[lang|="zh"] h2,
+[lang|="zh"] h3,
+[lang|="zh"] h4,
+[lang|="zh"] h5,
+[lang|="zh"] h6,
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) h3,
+:lang(zh) h4,
+:lang(zh) h5,
+:lang(zh) h6 {
+  font-family: var(--sv-font-serif-zh);
+}
+
+.logo-wordmark,
+.logo-lockup,
+.brand-logo,
+[class*="logo-text"] {
+  font-family: var(--sv-font-logo-en) !important;
+}
+
+[style*="#ff2d2d" i],
+[style*="#b2334d" i],
+[style*="#bb2e46" i],
+[style*="#8b1a2f" i] {
+  color: var(--sv-color-accent) !important;
+  border-color: var(--sv-color-accent) !important;
+}
+
+.u-ink { color: var(--sv-color-ink) !important; }
+.u-soft { color: var(--sv-color-soft-ink) !important; }
+.u-muted { color: var(--sv-color-muted) !important; }
+.u-accent { color: var(--sv-color-accent) !important; }
+.u-bg-soft { background: var(--sv-color-bg-soft) !important; }
+.u-serif { font-family: var(--sv-font-serif-en) !important; }
+.u-sans { font-family: var(--sv-font-sans-en) !important; }
+
+@media (max-width: 768px) {
+  :root {
+    --sv-fs-h1: clamp(1.55rem, 8vw, 2.25rem);
+    --sv-fs-h2: clamp(1.22rem, 5.8vw, 1.72rem);
+    --sv-fs-h3: clamp(1rem, 4.4vw, 1.22rem);
+    --sv-fs-display: clamp(1.55rem, 9vw, 2.5rem);
+  }
+
+  nav,
+  .nav,
+  [class*="nav"] {
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
