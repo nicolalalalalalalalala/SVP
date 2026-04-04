@@ -398,10 +398,10 @@
         color: #6b665d;
       }
       .operations-map {
-        margin-top: 20px;
+        margin-top: 14px;
         border: 1px solid rgba(179, 33, 63, 0.24);
         border-radius: 0;
-        padding: 10px;
+        padding: 8px;
         background: linear-gradient(145deg, #f6f1ea 0%, #efe6da 100%);
         box-shadow: 0 16px 30px rgba(24, 17, 12, 0.08);
         overflow: hidden;
@@ -422,7 +422,7 @@
         align-items: center;
       }
       .founding-principles-copy .lead {
-        font-size: 27px;
+        font-size: 20px;
         max-width: 920px;
         margin-bottom: 12px;
       }
@@ -436,6 +436,23 @@
         filter: grayscale(100%);
         transition: filter 0.35s ease;
         justify-self: end;
+      }
+      .operate-principles-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .operate-principles-grid .framed-panel {
+        height: 100%;
+      }
+      .operate-principles-grid .section-head h2 {
+        font-size: 28px;
+      }
+      .operate-principles-grid .section-head p {
+        font-size: 13px;
+      }
+      .operations-copy {
+        max-width: none;
       }
       .founding-tree-image:hover,
       .founding-tree-image:focus-visible {
@@ -1073,13 +1090,16 @@
           gap: 18px;
         }
         .founding-principles-copy .lead {
-          font-size: 28px;
+          font-size: 22px;
           max-width: 100%;
         }
         .founding-tree-image {
           max-width: 100%;
           max-height: 340px;
           justify-self: stretch;
+        }
+        .operate-principles-grid {
+          grid-template-columns: 1fr;
         }
         .intel-stage:not(:last-child)::after {
           content: "↓";
@@ -1501,42 +1521,40 @@
 
       <section>
         <div class="wrap">
-          <div class="framed-panel">
-            <div class="section-head" style="margin-bottom:0;">
-              <h2>Where we operate.</h2>
-              <p class="operations-copy">
-                Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China — sourcing, diligence, structuring, servicing, and resolution run through an integrated onshore process. Local presence is not a differentiator. It is a prerequisite.
-              </p>
+          <div class="operate-principles-grid">
+            <div class="framed-panel">
+              <div class="section-head" style="margin-bottom:0;">
+                <h2>Where we operate.</h2>
+                <p class="operations-copy">
+                  Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China — sourcing, diligence, structuring, servicing, and resolution run through an integrated onshore process. Local presence is not a differentiator. It is a prerequisite.
+                </p>
+              </div>
+              <div class="operations-map">
+                <img
+                  src="assets/images/map.png"
+                  alt="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong"
+                  loading="lazy"
+                />
+              </div>
+              <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
             </div>
-            <div class="operations-map">
+
+            <div class="framed-panel founding-principles-panel">
+              <div class="founding-principles-copy">
+                <p class="lead">
+                  "The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition: building ShoreVest as a firm that outlasts cycles."
+                </p>
+                <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6f6a61;">
+                  Founding Principles
+                </p>
+              </div>
               <img
-                src="assets/images/map.png"
-                alt="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong"
+                class="founding-tree-image"
+                src="assets/images/firm_tree.jpg"
+                alt="Coastal redwood tree used as ShoreVest's founding symbol"
                 loading="lazy"
               />
             </div>
-            <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap">
-          <div class="framed-panel founding-principles-panel">
-            <div class="founding-principles-copy">
-              <p class="lead">
-                "The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition: building ShoreVest as a firm that outlasts cycles."
-              </p>
-              <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6f6a61;">
-                Founding Principles
-              </p>
-            </div>
-            <img
-              class="founding-tree-image"
-              src="assets/images/firm_tree.jpg"
-              alt="Coastal redwood tree used as ShoreVest's founding symbol"
-              loading="lazy"
-            />
           </div>
         </div>
       </section>
