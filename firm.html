@@ -33,6 +33,10 @@
         margin: 0;
         padding: 0;
       }
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
       body {
         font-family: var(--sans);
         background: var(--bg);
@@ -993,7 +997,14 @@
         }
         .lead,
         .section-head p {
-          font-size: 19px;
+          font-size: 16px;
+        }
+        .proof-card .metric {
+          font-size: 30px;
+        }
+        .proof-card p {
+          font-size: 13px;
+          line-height: 1.5;
         }
         section .section-head h2 {
           max-width: 100%;
