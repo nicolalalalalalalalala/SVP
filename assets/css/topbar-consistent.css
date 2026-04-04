@@ -427,7 +427,7 @@ html {
   }
 
   .sv-footer__brand {
-    font-size: clamp(2rem, 8.8vw, 2.4rem);
+    font-size: clamp(1.4rem, 6.2vw, 1.85rem);
     line-height: 1.08;
   }
 
