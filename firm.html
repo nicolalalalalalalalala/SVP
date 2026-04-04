@@ -178,7 +178,7 @@
         padding-top: calc(72px + var(--safe-top));
       }
       section {
-        padding: 44px 0;
+        padding: 58px 0;
         border-top: 1px solid var(--rule);
       }
       section:first-child {
@@ -215,8 +215,8 @@
 
       .hero {
         min-height: 0;
-        padding-top: 52px;
-        padding-bottom: 52px;
+        padding-top: 64px;
+        padding-bottom: 56px;
         display: flex;
         align-items: center;
       }
@@ -244,12 +244,13 @@
       .hero-thesis {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 26px;
+        gap: 30px;
         color: #4a4740;
       }
       .hero-thesis p {
         margin: 0;
         line-height: 1.6;
+        max-width: 44ch;
       }
 
       .hero-stats {
@@ -291,8 +292,8 @@
       .section-head {
         display: grid;
         grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-        gap: 28px;
-        margin-bottom: 20px;
+        gap: 32px;
+        margin-bottom: 26px;
         align-items: end;
       }
       .section-head h2 {
@@ -306,6 +307,7 @@
         font-size: 20px;
         color: #45423c;
         line-height: 1.38;
+        max-width: 38ch;
       }
       .section-head.market-intro {
         grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.35fr);
@@ -320,7 +322,7 @@
       .pillar-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
+        gap: 20px;
       }
 
       @media (min-width: 768px) and (max-width: 1023px) {
@@ -338,7 +340,7 @@
         background: var(--surface);
         border: 1px solid #e5e2dc;
         border-radius: var(--radius);
-        padding: 22px;
+        padding: 24px;
         cursor: pointer;
         transition:
           transform 0.35s ease,
@@ -357,8 +359,12 @@
         letter-spacing: 0.01em;
         text-transform: none;
         line-height: 1.2;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         color: #3f3b35;
+      }
+      .pillar-card p {
+        line-height: 1.65;
+        color: #4d4a44;
       }
       .pillar-card.is-active {
         border-color: rgba(187, 46, 70, 0.5);
@@ -370,12 +376,12 @@
         outline-offset: 2px;
       }
       .pillar-detail {
-        margin-top: 18px;
+        margin-top: 20px;
         background: var(--surface);
         border: 1px solid #e5e2dc;
         border-left: 3px solid var(--red);
         border-radius: var(--radius);
-        padding: 16px 20px;
+        padding: 18px 22px;
       }
       .pillar-detail h3 {
         font-family: var(--serif);
@@ -502,12 +508,12 @@
       .proof-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
+        gap: 14px;
       }
       .market-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 14px;
       }
       .proof-card,
       .market-card,
@@ -553,7 +559,7 @@
       }
 
       .market-card {
-        padding: 20px;
+        padding: 22px;
         transition:
           transform 0.35s ease,
           border-color 0.35s ease,
@@ -599,6 +605,8 @@
         margin: 0;
         padding-left: 36px;
         text-align: left;
+        line-height: 1.62;
+        color: #4f4b45;
       }
 
       .intelligence {
@@ -788,19 +796,19 @@
       .platform-layout {
         display: grid;
         grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-        gap: 16px;
+        gap: 18px;
         align-items: start;
       }
       .platform-notes {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
+        gap: 16px;
       }
       .committee-intro {
         max-width: 100%;
       }
       .note {
-        padding: 20px;
+        padding: 22px;
         background: var(--surface);
         border: 1px solid #ddd9d1;
         display: flex;
@@ -989,11 +997,20 @@
       }
 
       .closing-panel {
-        padding: 22px;
+        padding: 24px;
         display: grid;
         grid-template-columns: 1fr auto;
         align-items: center;
         gap: 12px;
+      }
+
+      .hero p,
+      .framed-panel p,
+      .market-card p,
+      .note p,
+      .section-head + p,
+      .validation-section p {
+        text-wrap: pretty;
       }
       .btn {
         display: inline-flex;
@@ -1028,8 +1045,8 @@
         }
         .hero {
           min-height: auto;
-          padding-top: 56px;
-          padding-bottom: 0;
+          padding-top: 50px;
+          padding-bottom: 6px;
         }
         h1 {
           font-size: clamp(40px, 12vw, 56px);
@@ -1259,6 +1276,12 @@
         .pillar-detail {
           padding: 14px 16px;
           border-left-width: 1px;
+        }
+        .pillar-card {
+          padding: 18px;
+        }
+        .note {
+          padding: 18px;
         }
       }
 
