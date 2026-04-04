@@ -14,11 +14,14 @@
       :root {
         --bg: #f2f1ef;
         --panel: #f8f7f5;
+        --surface: #f7f5f2;
+        --surface-strong: #f3f1ed;
         --ink: #1d1c1a;
         --muted: #7b7870;
         --rule: rgba(0, 0, 0, 0.1);
         --red: #b3213f;
         --dark: #10100f;
+        --radius: 10px;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
@@ -184,6 +187,10 @@
       section:first-child {
         border-top: none;
       }
+      section .section-head h2,
+      section .section-head p {
+        max-width: 28ch;
+      }
 
       .eyebrow {
         display: inline-flex;
@@ -252,9 +259,9 @@
         border-top: 1px solid rgba(12, 12, 10, 0.12);
       }
       .hero-stat {
-        background: #f9f8f6;
+        background: var(--surface);
         border: 1px solid rgba(12, 12, 10, 0.1);
-        border-radius: 10px;
+        border-radius: var(--radius);
         padding: 1rem 1.1rem 0.95rem;
       }
       .hero-stat__value {
@@ -301,7 +308,7 @@
 
       .pillar-grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
       }
 
@@ -317,8 +324,9 @@
         }
       }
       .pillar-card {
-        background: #f9f8f6;
+        background: var(--surface);
         border: 1px solid #e5e2dc;
+        border-radius: var(--radius);
         padding: 16px;
         cursor: pointer;
         transition:
@@ -352,9 +360,10 @@
       }
       .pillar-detail {
         margin-top: 14px;
-        background: #f9f8f6;
+        background: var(--surface);
         border: 1px solid #e5e2dc;
         border-left: 3px solid var(--red);
+        border-radius: var(--radius);
         padding: 14px 16px;
       }
       .pillar-detail h3 {
@@ -420,8 +429,9 @@
       .small-box,
       .intel-copy,
       .closing-panel {
-        background: #f9f8f6;
+        background: var(--surface);
         border: 1px solid #e5e2dc;
+        border-radius: var(--radius);
       }
       .proof-card {
         padding: 16px;
@@ -503,15 +513,16 @@
       }
 
       .intelligence {
-        background: #ecebe8;
+        background: var(--surface-strong);
       }
       .intelligence-panel {
         display: grid;
         gap: 16px;
       }
       .intel-graphic {
-        background: #f7f6f4;
+        background: var(--surface);
         border: 1px solid #dfdcd6;
+        border-radius: var(--radius);
         padding: 20px;
       }
       .intel-graphic > .intel-title {
@@ -678,7 +689,7 @@
 
       .committee-section,
       .validation-section {
-        background: #ecebe8;
+        background: var(--surface-strong);
       }
 
       .committee-section {
@@ -701,7 +712,7 @@
       }
       .note {
         padding: 16px;
-        background: #f7f6f4;
+        background: var(--surface);
         border: 1px solid #ddd9d1;
         display: flex;
         flex-direction: column;
@@ -746,8 +757,9 @@
         color: #5e594f;
       }
       .platform-diagram {
-        background: #f7f6f4;
+        background: var(--surface);
         border: 1px solid #ddd9d1;
+        border-radius: var(--radius);
         padding: 16px;
       }
       .small-grid {
@@ -763,7 +775,7 @@
         padding: 9px;
         text-align: center;
         border: 1px solid #d9d3ca;
-        background: #f9f8f6;
+        background: var(--surface);
         cursor: pointer;
         transition:
           border-color 0.2s,
@@ -861,7 +873,7 @@
       }
 
       .platform-build {
-        background: #f3f1ed;
+        background: var(--surface-strong);
         border-top-color: #dfdad2;
       }
       .platform-build .section-head p {
