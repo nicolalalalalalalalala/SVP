@@ -750,18 +750,11 @@
         border: 1px solid #ddd9d1;
         padding: 16px;
       }
-      .process-label {
-        margin: 12px 0 0;
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: #70695f;
-      }
       .small-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
-        margin-top: 16px;
+        margin-top: 12px;
       }
       .small-box {
         font-size: 10px;
@@ -788,26 +781,6 @@
         border-color: var(--red);
         color: var(--red);
         background: #fdf8f9;
-      }
-      .protocol-track {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 8px;
-      }
-      .protocol-step {
-        flex: 1;
-        border: 1px solid #d9d3ca;
-        background: #f9f8f6;
-        text-align: center;
-        font-size: 10px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 8px 6px;
-      }
-      .protocol-arrow {
-        color: #8d877d;
-        font-size: 12px;
       }
       .small-detail {
         margin-top: 14px;
@@ -1018,13 +991,6 @@
         }
         .platform-notes {
           grid-template-columns: 1fr;
-        }
-        .protocol-track {
-          flex-wrap: wrap;
-          gap: 6px;
-        }
-        .protocol-arrow {
-          display: none;
         }
         .intelligence-panel > *,
         .platform-layout > * {
@@ -1650,7 +1616,7 @@
           <div class="section-head committee-intro">
             <h2>Investment Committee</h2>
             <p>
-              ShoreVest&apos;s Investment Committee integrates investment judgment, legal structuring, and operational oversight in one decision-making forum.
+              ShoreVest&apos;s Investment Committee brings investment judgment, legal structuring, and portfolio oversight together in a single decision-making forum.
             </p>
           </div>
           <div class="platform-layout">
@@ -1677,7 +1643,7 @@
               </article>
               <article class="note accountability-note">
                 <h3>One Team, Full-Cycle Accountability</h3>
-                <p>The same four partners have worked together for approximately twenty years. The professionals who approve each investment remain responsible for portfolio monitoring and exit execution, with no handoff between decision-makers and portfolio managers.</p>
+                <p>The same four partners have worked together for nearly twenty years. The professionals who approve each investment remain accountable for monitoring and exit execution, with no handoff between decision-makers and portfolio managers.</p>
               </article>
             </div>
             <div class="platform-diagram">
@@ -1685,14 +1651,6 @@
               <p>
                 Investment decisions and portfolio execution are managed through one continuous process.
               </p>
-              <p class="process-label">Underwrite → Approve → Execute</p>
-              <div class="protocol-track" aria-hidden="true">
-                <div class="protocol-step">Underwrite</div>
-                <span class="protocol-arrow">→</span>
-                <div class="protocol-step">Approve</div>
-                <span class="protocol-arrow">→</span>
-                <div class="protocol-step">Execute</div>
-              </div>
               <div class="small-grid" role="tablist" aria-label="Decision protocol stages">
                 <button
                   class="small-box is-active"
