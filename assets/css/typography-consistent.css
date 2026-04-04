@@ -3,8 +3,8 @@
   --site-line-height: 1.6;
   --site-sans-en: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --site-sans-zh: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
-  --site-serif-en: var(--site-sans-en);
-  --site-serif-zh: var(--site-sans-zh);
+  --site-serif-en: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --site-serif-zh: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
 }
 
 html {
@@ -47,7 +47,6 @@ h6,
 .serif,
 [class*='serif'] {
   font-family: var(--site-serif-en);
-  font-weight: 400;
 }
 
 html:lang(zh) body,

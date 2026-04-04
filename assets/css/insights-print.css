@@ -22,7 +22,7 @@
     box-sizing: border-box;
     background: #fff;
     box-shadow: 0 2px 22px rgba(0, 0, 0, 0.08);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "EB Garamond", Georgia, serif;
     color: #141310;
     font-size: 12pt;
     line-height: 1.45;
@@ -152,7 +152,7 @@
 
   body {
     margin: 0;
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "EB Garamond", Georgia, serif;
     color: #141310;
     background: #fff;
     font-size: 12pt;
