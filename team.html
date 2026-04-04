@@ -1236,16 +1236,6 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
         return sectionTitle || "ShoreVest Team";
       }
 
-      function getBioSummary(profile) {
-        const fullBio = profile?.bio?.trim();
-        if (!fullBio) return "";
-        const leadParagraph = fullBio
-          .split(/\n\s*\n/)
-          .map((part) => part.trim())
-          .find(Boolean);
-        return leadParagraph || fullBio;
-      }
-
       function hydrateCardTitles() {
         document.querySelectorAll(".card").forEach((card) => {
           if (card.querySelector(".title")) return;
@@ -1332,7 +1322,7 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
           panel.querySelector(".row-bio-panel__role").textContent =
             profile.role || getDisplayRole(card, name);
           panel.querySelector(".row-bio-panel__text").textContent =
-            getBioSummary(profile);
+            profile.bio?.trim() || "";
 
           const grid = card.closest(".grid");
           const cardsInRow = rowCards(grid, card);
