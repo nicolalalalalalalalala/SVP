@@ -358,17 +358,25 @@
         margin: 0 0 26px;
         display: grid;
         grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
-        gap: 22px;
+        grid-template-areas:
+          "main side"
+          "disclaimer disclaimer";
+        gap: 16px 22px;
         align-items: start;
       }
       .press-overview__main {
+        grid-area: main;
         padding: 20px 22px 22px;
         background: rgba(255, 255, 255, 0.7);
         border: 1px solid rgba(12, 12, 10, 0.09);
       }
       .press-overview__side {
+        grid-area: side;
         display: grid;
         gap: 12px;
+      }
+      .press-overview__disclaimer {
+        grid-area: disclaimer;
       }
       .press-overview__side .contact {
         margin: 0;
@@ -520,6 +528,10 @@
         }
         .press-overview {
           grid-template-columns: minmax(0, 1fr);
+          grid-template-areas:
+            "main"
+            "side"
+            "disclaimer";
         }
       }
       @media (max-width: 767px) {
@@ -935,23 +947,23 @@
               <span>For media inquiries</span>
               <a href="mailto:press@shorevest.com">press@shorevest.com</a>
             </section>
-            <section class="press-disclaimer" aria-label="Third-party disclaimer">
-              <p>
-                Third-party media coverage and external commentary referenced on
-                this page is provided for informational purposes only.
-              </p>
-              <p>
-                ShoreVest Partners does not endorse, and is not responsible
-                for, the content of external publications. Coverage does not
-                constitute investment advice or a solicitation to invest.
-              </p>
-              <p>
-                Links to external sources may require a subscription or
-                registration to access. Views expressed by third parties do not
-                necessarily reflect the views of ShoreVest Partners.
-              </p>
-            </section>
           </aside>
+          <section class="press-disclaimer press-overview__disclaimer" aria-label="Third-party disclaimer">
+            <p>
+              Third-party media coverage and external commentary referenced on
+              this page is provided for informational purposes only.
+            </p>
+            <p>
+              ShoreVest Partners does not endorse, and is not responsible
+              for, the content of external publications. Coverage does not
+              constitute investment advice or a solicitation to invest.
+            </p>
+            <p>
+              Links to external sources may require a subscription or
+              registration to access. Views expressed by third parties do not
+              necessarily reflect the views of ShoreVest Partners.
+            </p>
+          </section>
         </div>
         <div class="press-toolbar" aria-label="Press archive controls">
           <div class="press-toolbar__meta">
