@@ -477,10 +477,10 @@
         box-shadow: 0 14px 24px rgba(22, 18, 14, 0.06);
       }
       .market-card-head {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 26px minmax(0, 1fr);
+        align-items: start;
+        column-gap: 10px;
         margin-bottom: 10px;
       }
       .market-index {
@@ -508,8 +508,9 @@
         color: #4f4b45;
       }
       .market-card p {
-        margin-top: 0;
-        margin-left: 36px;
+        margin: 0;
+        padding-left: 36px;
+        text-align: left;
       }
 
       .intelligence {
