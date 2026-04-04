@@ -392,6 +392,34 @@
         text-transform: uppercase;
         color: #6b665d;
       }
+      .operations-map {
+        margin-top: 20px;
+        border: 1px solid #e5e2dc;
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbf9f5;
+      }
+      .operations-map svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .operations-map .map-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        fill: #3f3b35;
+      }
+      .operations-map .map-pin {
+        fill: #bb2e46;
+      }
+      .operations-map .map-connection {
+        stroke: #bb2e46;
+        stroke-width: 1.5;
+        stroke-dasharray: 4 4;
+        fill: none;
+        opacity: 0.8;
+      }
       .founding-principles-panel {
         display: grid;
         grid-template-columns: minmax(0, 1.35fr) minmax(220px, 1fr);
@@ -1460,6 +1488,21 @@
               <p class="operations-copy">
                 Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China — sourcing, diligence, structuring, servicing, and resolution run through an integrated onshore process. Local presence is not a differentiator. It is a prerequisite.
               </p>
+            </div>
+            <div class="operations-map" aria-label="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong">
+              <svg viewBox="0 0 900 420" role="img" aria-labelledby="operationsMapTitle operationsMapDesc">
+                <title id="operationsMapTitle">ShoreVest locations in China</title>
+                <desc id="operationsMapDesc">Stylized regional map marking Guangzhou headquarters, Shanghai satellite office, and Hong Kong presence.</desc>
+                <rect x="1" y="1" width="898" height="418" rx="10" fill="#f2efe9" stroke="#ddd8cf" />
+                <path d="M130 285 L215 215 L300 225 L370 180 L485 158 L565 120 L640 138 L700 182 L730 240 L682 292 L600 313 L525 300 L438 328 L332 312 L262 326 L190 304 Z" fill="#e7e0d5" stroke="#c4bcaf" stroke-width="2" />
+                <path class="map-connection" d="M400 275 Q470 180 565 120 Q620 155 640 230 Q525 290 400 275" />
+                <circle class="map-pin" cx="400" cy="275" r="7" />
+                <circle class="map-pin" cx="565" cy="120" r="7" />
+                <circle class="map-pin" cx="640" cy="230" r="7" />
+                <text class="map-label" x="418" y="280">Guangzhou (HQ)</text>
+                <text class="map-label" x="583" y="124">Shanghai</text>
+                <text class="map-label" x="658" y="234">Hong Kong</text>
+              </svg>
             </div>
             <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
           </div>
