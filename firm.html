@@ -980,7 +980,7 @@
         }
         .lead,
         .section-head p {
-          font-size: 21px;
+          font-size: 19px;
         }
         .section-head {
           gap: 20px;
@@ -1084,6 +1084,21 @@
           font-size:11.4px;
           line-height: 1.5;
           white-space: nowrap;
+        }
+        /* Prevent narrow-screen text from protruding past the content column. */
+        p,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        blockquote,
+        figcaption {
+          overflow-wrap: anywhere;
+          word-break: normal;
+          hyphens: auto;
         }
         .btn {
           width: 100%;
