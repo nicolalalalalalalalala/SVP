@@ -399,24 +399,11 @@
         padding: 6px;
         background: #f2efe9;
       }
-      .operations-map svg {
+      .operations-map img {
         width: 100%;
         height: auto;
         display: block;
-      }
-      .operations-map .map-label {
-        font-size: 13px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        fill: #5d5750;
-      }
-      .operations-map .map-pin {
-        fill: #bb2e46;
-      }
-      .operations-map .map-outline {
-        stroke: #c4bcaf;
-        stroke-width: 1.2;
-        fill: none;
+        border-radius: 4px;
       }
       .founding-principles-panel {
         display: grid;
@@ -1487,20 +1474,12 @@
                 Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China — sourcing, diligence, structuring, servicing, and resolution run through an integrated onshore process. Local presence is not a differentiator. It is a prerequisite.
               </p>
             </div>
-            <div class="operations-map" aria-label="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong">
-              <svg viewBox="0 0 1200 650" role="img" aria-labelledby="operationsMapTitle operationsMapDesc">
-                <title id="operationsMapTitle">ShoreVest locations in China</title>
-                <desc id="operationsMapDesc">Eastern China coastline with markers for Shanghai, Guangzhou, and Hong Kong.</desc>
-                <rect x="1" y="1" width="1198" height="648" rx="10" fill="#f2efe9" stroke="#ddd8cf" />
-                <path class="map-outline" d="M730 40 L736 52 L734 66 L742 84 L740 100 L752 112 L748 126 L761 136 L756 150 L772 162 L768 176 L783 188 L778 202 L792 214 L786 230 L798 242 L792 258 L804 270 L798 286 L810 300 L804 318 L816 334 L810 352 L824 368 L818 388 L834 408 L828 430 L846 452 L842 474 L858 498 L854 522 L868 546" />
-                <path class="map-outline" d="M860 430 L900 446 L914 478 L904 520 L878 556 L868 590 L878 608" />
-                <circle class="map-pin" cx="762" cy="148" r="10" />
-                <circle class="map-pin" cx="422" cy="548" r="10" />
-                <circle class="map-pin" cx="468" cy="590" r="10" />
-                <text class="map-label" x="548" y="156">SHANGHAI</text>
-                <text class="map-label" x="205" y="562">GUANGZHOU</text>
-                <text class="map-label" x="506" y="622">HONG KONG</text>
-              </svg>
+            <div class="operations-map">
+              <img
+                src="assets/images/map.png"
+                alt="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong"
+                loading="lazy"
+              />
             </div>
             <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
           </div>
