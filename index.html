@@ -303,10 +303,17 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
   padding-bottom:clamp(54px, 6.5vw, 86px); border-bottom:1px solid var(--rule); margin-bottom:clamp(54px, 6.5vw, 86px);
 }
 h2.about__hed { font-size:clamp(38px,5vw,66px); color:var(--ink); }
+.about__body {
+  display:grid;
+  gap:22px;
+  max-width:66ch;
+}
 .about__body p {
   font-size:17px; line-height:1.86; color:var(--mist);
-  font-family:var(--serif); margin-bottom:24px;
-  max-width:62ch;
+  font-family:var(--serif); margin:0;
+}
+.about__cta {
+  margin-top:6px;
 }
 
 /* About pillars: image-top, label below, body — Blackstone style */
@@ -1490,13 +1497,17 @@ h2.su__hed {
           Our process starts with local sourcing pipelines and rigorous underwriting: collateral-first screening,
           legal-enforceability checks under PRC law, and downside cases built before capital is committed.
         </p>
-
         <p>
           The firm focuses exclusively on asset-backed private credit in China: completed, marketable, cash-flowing
-          collateral with conservative entry points and multiple exit routes. This is a market that rewards local
-          presence, legal precision, and the practical ability to enforce — and punishes those without it.
+          collateral with conservative entry points and multiple exit routes.
         </p>
-        <a href="team.html" class="cta cta--dark" style="margin-top:8px;"><span>MEET THE LEADERSHIP TEAM</span><div class="cta__ring">→</div></a>
+        <p>
+          This is a market that rewards local presence, legal precision, and the practical ability to enforce — and
+          punishes those without it.
+        </p>
+        <div class="about__cta">
+          <a href="team.html" class="cta cta--dark"><span>MEET THE LEADERSHIP TEAM</span><div class="cta__ring">→</div></a>
+        </div>
       </div>
     </div>
     <!-- Blackstone-style: image top, heading, body, link below -->
