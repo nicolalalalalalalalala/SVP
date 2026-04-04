@@ -21,7 +21,7 @@
         --rule: rgba(0, 0, 0, 0.1);
         --red: #b3213f;
         --dark: #10100f;
-        --radius: 10px;
+        --radius: 0;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
@@ -304,8 +304,13 @@
         color: #45423c;
         line-height: 1.42;
       }
-      .operations-copy {
-        line-height: 1.62;
+      .section-head.market-intro {
+        grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.35fr);
+        align-items: end;
+      }
+      .section-head.market-intro p {
+        font-size: 20px;
+        line-height: 1.36;
       }
 
 
@@ -1557,7 +1562,7 @@
 
       <section>
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head market-intro">
             <h2>Why China requires a different approach.</h2>
             <p>
               China is the world&apos;s second-largest credit market, and for global institutional investors, under-allocation can create its own portfolio imbalance alongside concentration elsewhere. The conditions that generate headline concern are often the same conditions that create the most attractive entry points for properly structured private credit. China private credit is a complex operating environment shaped by market-specific dynamics and an evolving regulatory landscape, and it consistently rewards local expertise and requires on-the-ground execution.
