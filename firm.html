@@ -238,6 +238,20 @@
         border-top: 2px solid rgba(179, 33, 63, 0.65);
         border-bottom: 1px solid var(--rule);
         padding: 18px 4px 18px 0;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .strategy-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .strategy-card.is-active {
+        border-top-color: var(--accent);
+        background: #f8f4ee;
       }
 
       .strategy-card h3 {
@@ -253,6 +267,30 @@
         border: 1px solid #d9d2c7;
         background: var(--surface);
         padding: 24px;
+      }
+
+      .strategy-detail {
+        margin-top: 20px;
+        border: 1px solid #d9d2c7;
+        background: #fff;
+        padding: 20px;
+      }
+
+      .strategy-detail__label {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #7a7369;
+      }
+
+      .strategy-detail__title {
+        margin-top: 10px;
+        font-size: 34px;
+      }
+
+      .strategy-detail__copy {
+        margin-top: 10px;
+        color: #4d463e;
       }
 
       .discipline-panel h3 {
@@ -323,6 +361,10 @@
         line-height: 1.04;
       }
 
+      .proof-value.is-counting {
+        color: var(--accent);
+      }
+
       .proof-label {
         display: block;
         margin-top: 6px;
@@ -370,6 +412,43 @@
         border-top: 1px solid #d7d0c5;
         padding-top: 14px;
         color: #433d35;
+      }
+
+      .analysis-list li button {
+        width: 100%;
+        text-align: left;
+        border: 0;
+        background: transparent;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .analysis-list li button::after {
+        content: "+";
+        font-weight: 500;
+        color: #8f877d;
+      }
+
+      .analysis-list li button[aria-expanded="true"]::after {
+        content: "−";
+      }
+
+      .analysis-list .analysis-detail {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.24s ease;
+        color: #6a6259;
+        font-size: 15px;
+      }
+
+      .analysis-list .analysis-detail p {
+        margin-top: 10px;
+        padding-right: 12px;
       }
 
       .map-wrap img {
@@ -660,18 +739,26 @@
           </header>
 
           <div class="strategy-grid" aria-label="Core private credit strategies">
-            <article class="strategy-card">
+            <article class="strategy-card is-active" data-strategy-card data-title="Asset-based lending" data-detail="Senior secured financing against identifiable hard-asset collateral, with underwriting built around enforceability, legal pathway clarity, and conservative structure from day one.">
               <h3>Asset-based lending</h3>
               <p>Senior secured financing against identifiable hard-asset collateral with documented enforcement pathways.</p>
             </article>
-            <article class="strategy-card">
+            <article class="strategy-card" data-strategy-card data-title="Asset restructurings" data-detail="Recapitalisation and restructuring opportunities where claim seniority, covenant protection, and downside controls can be contractually preserved throughout execution.">
               <h3>Asset restructurings</h3>
               <p>Recapitalisation and restructuring situations where control rights and collateral priority can be contractually preserved.</p>
             </article>
-            <article class="strategy-card">
+            <article class="strategy-card" data-strategy-card data-title="Debt resolutions" data-detail="Distressed and non-performing situations that demand coordinated legal process, active servicing, and disciplined asset resolution to optimise recoveries and timing.">
               <h3>Debt resolutions</h3>
               <p>Distressed and non-performing credit situations requiring coordinated legal process, servicing control, and recovery execution.</p>
             </article>
+          </div>
+
+          <div class="strategy-detail" id="strategy-detail" aria-live="polite">
+            <div class="strategy-detail__label">Selected focus</div>
+            <h3 class="strategy-detail__title">Asset-based lending</h3>
+            <p class="strategy-detail__copy">
+              Senior secured financing against identifiable hard-asset collateral, with underwriting built around enforceability, legal pathway clarity, and conservative structure from day one.
+            </p>
           </div>
 
           <div class="discipline-panel" aria-label="Common discipline">
@@ -690,9 +777,9 @@
         <div class="wrap section-inner">
           <p class="proof-eyebrow">AT A GLANCE</p>
           <div class="proof-grid">
-            <div class="proof-item"><span class="proof-value">2004</span><span class="proof-label">Strategy inception</span></div>
-            <div class="proof-item"><span class="proof-value">&gt;$2bn</span><span class="proof-label">AUM across six vintages</span></div>
-            <div class="proof-item"><span class="proof-value">&gt;50</span><span class="proof-label">Transactions completed</span></div>
+            <div class="proof-item"><span class="proof-value" data-count-to="2004" data-count-prefix="">2004</span><span class="proof-label">Strategy inception</span></div>
+            <div class="proof-item"><span class="proof-value" data-count-to="2" data-count-prefix="&gt;$" data-count-suffix="bn">2bn</span><span class="proof-label">AUM across six vintages</span></div>
+            <div class="proof-item"><span class="proof-value" data-count-to="50" data-count-prefix="&gt;">50</span><span class="proof-label">Transactions completed</span></div>
             <div class="proof-item"><span class="proof-value">30–60%</span><span class="proof-label">Typical entry LTV / CTV</span></div>
           </div>
         </div>
@@ -738,12 +825,30 @@
           </header>
 
           <ul class="analysis-list">
-            <li>Offshore documents alone do not determine practical control in stressed situations.</li>
-            <li>Onshore enforceability and local legal process govern timing and recoveries.</li>
-            <li>Collateral liquidity must be tested against real disposal pathways, not paper valuation.</li>
-            <li>Avoidance of unsecured offshore exposure where claim enforcement is structurally weak.</li>
-            <li>Avoidance of development-backed lending where completion and refinancing risk dominate outcomes.</li>
-            <li>Preference for situations where collateral, legal rights, and process control are aligned from day one.</li>
+            <li>
+              <button type="button" aria-expanded="false">Offshore documents alone do not determine practical control in stressed situations.</button>
+              <div class="analysis-detail"><p>Practical control often depends on local legal standing and enforceable onshore rights, especially when borrower conditions deteriorate.</p></div>
+            </li>
+            <li>
+              <button type="button" aria-expanded="false">Onshore enforceability and local legal process govern timing and recoveries.</button>
+              <div class="analysis-detail"><p>Recovery outcomes can vary materially based on process execution, court timelines, and regional enforcement behavior.</p></div>
+            </li>
+            <li>
+              <button type="button" aria-expanded="false">Collateral liquidity must be tested against real disposal pathways, not paper valuation.</button>
+              <div class="analysis-detail"><p>Underwriting is grounded in executable disposal routes and realistic timing assumptions rather than mark-to-model expectations.</p></div>
+            </li>
+            <li>
+              <button type="button" aria-expanded="false">Avoidance of unsecured offshore exposure where claim enforcement is structurally weak.</button>
+              <div class="analysis-detail"><p>ShoreVest prioritizes structures with direct claim enforceability and avoids exposures where legal remedies are uncertain.</p></div>
+            </li>
+            <li>
+              <button type="button" aria-expanded="false">Avoidance of development-backed lending where completion and refinancing risk dominate outcomes.</button>
+              <div class="analysis-detail"><p>The focus remains on hard collateral and recoverability, limiting dependence on uncertain project completion cycles.</p></div>
+            </li>
+            <li>
+              <button type="button" aria-expanded="false">Preference for situations where collateral, legal rights, and process control are aligned from day one.</button>
+              <div class="analysis-detail"><p>Alignment at entry helps preserve downside protection and creates clearer execution pathways through monitoring and resolution.</p></div>
+            </li>
           </ul>
         </div>
       </section>
@@ -874,6 +979,77 @@
           const open = nav.classList.toggle("menu-open");
           menuBtn.setAttribute("aria-expanded", String(open));
         });
+      }
+
+      const strategyCards = document.querySelectorAll("[data-strategy-card]");
+      const strategyDetail = document.getElementById("strategy-detail");
+      if (strategyCards.length && strategyDetail) {
+        const titleEl = strategyDetail.querySelector(".strategy-detail__title");
+        const copyEl = strategyDetail.querySelector(".strategy-detail__copy");
+
+        strategyCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            strategyCards.forEach((item) => item.classList.remove("is-active"));
+            card.classList.add("is-active");
+            if (titleEl && copyEl) {
+              titleEl.textContent = card.dataset.title || "";
+              copyEl.textContent = card.dataset.detail || "";
+            }
+          });
+        });
+      }
+
+      const analysisButtons = document.querySelectorAll(".analysis-list button");
+      analysisButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const expanded = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", String(!expanded));
+          const detail = button.nextElementSibling;
+          if (detail) {
+            detail.style.maxHeight = expanded ? "0px" : `${detail.scrollHeight}px`;
+          }
+        });
+      });
+
+      const proofValues = document.querySelectorAll(".proof-value[data-count-to]");
+      if (proofValues.length) {
+        const runCounters = () => {
+          proofValues.forEach((el) => {
+            const endValue = Number(el.getAttribute("data-count-to"));
+            if (!Number.isFinite(endValue)) return;
+            const prefix = el.getAttribute("data-count-prefix") || "";
+            const suffix = el.getAttribute("data-count-suffix") || "";
+            let current = 0;
+            const duration = 900;
+            const start = performance.now();
+            el.classList.add("is-counting");
+
+            const tick = (now) => {
+              const progress = Math.min((now - start) / duration, 1);
+              current = Math.round(endValue * progress);
+              el.innerHTML = `${prefix}${current}${suffix}`;
+              if (progress < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                el.classList.remove("is-counting");
+              }
+            };
+            requestAnimationFrame(tick);
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                runCounters();
+                observer.disconnect();
+              }
+            });
+          },
+          { threshold: 0.4 }
+        );
+        observer.observe(document.querySelector(".proof-strip"));
       }
     </script>
     <script src="assets/js/site-motion.js" defer></script>
