@@ -1439,6 +1439,36 @@
 <link rel="stylesheet" href="assets/css/site-motion.css">
 
 <link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
+
+<style>
+/* Firm page refresh: cleaner, cohesive hierarchy */
+.hero, section { background: #f5f3ef; }
+.hero { padding-top: 72px; padding-bottom: 48px; }
+.section-head { margin-bottom: 20px; }
+.lead { max-width: 56ch; }
+.hero-thesis p, .section-head p, .note p, .pillar-card p, .proof-card p { color: #4a463f; }
+.framed-panel, .pillar-card, .proof-card, .market-card, .note, .platform-diagram, .pillar-detail {
+  background: #fbfaf8;
+  border: 1px solid #ddd8cf;
+  box-shadow: none;
+}
+.framed-panel { border-left: 2px solid #b3213f; }
+.pillar-grid, .proof-grid, .platform-notes { gap: 16px; }
+.pillar-card:hover, .proof-card:hover, .note:hover, .market-card:hover, .step:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: #c9c2b7;
+}
+.hero-stat { background: #faf8f4; }
+.hero-stat__value { font-family: var(--serif); font-size: clamp(1.5rem,2vw,1.9rem); }
+.hero-stat__label { font-family: var(--sans); font-size: 0.62rem; letter-spacing: .15em; color: #6f685e; }
+.committee-section, .validation-section { background: #f1eee8; }
+.note h3, .pillar-card h3 { color: #2f2c26; }
+@media (max-width:767px){
+  .hero { padding-top: 48px; }
+  .framed-panel { border-left: 1px solid #ddd8cf; }
+}
+</style>
 </head>
   <body>
     <nav id="nav">
@@ -1480,35 +1510,23 @@
               <div class="eyebrow">China Private Credit · Established 2004</div>
               <h1>The Firm</h1>
               <p class="lead">
-                ShoreVest's China private credit strategy traces back to 2004. The current platform was established in 2016 by the senior team that had built and operated predecessor vehicles across collateral-backed lending, asset restructuring, and NPL resolution.
+                ShoreVest is a specialist China private credit platform built around one idea: strong outcomes come from disciplined structures and local execution.
               </p>
               <div class="hero-thesis">
                 <p>
-                  The firm focuses exclusively on three sub-strategies in China: asset-based lending, asset restructuring, and debt resolutions. Headquarters and core execution teams are based in Guangzhou, with onshore coverage across sourcing, underwriting, servicing, and recovery.
+                  Our focus is narrow and deliberate—asset-based lending, restructurings, and debt resolution. We stay in segments where legal enforceability and collateral control are clear.
                 </p>
                 <p>
-                  ShoreVest is built for markets where legal structure, local execution, and recoverability matter as much as yield. The platform emphasises enforceable onshore claims, conservative entry basis, and active control from origination through exit.
+                  The same senior team oversees sourcing, underwriting, servicing, and recovery. That full-cycle accountability keeps process, risk, and execution aligned from entry through exit.
                 </p>
               </div>
             </div>
           </div>
           <div class="hero-stats" aria-label="At a glance stats">
-            <div class="hero-stat">
-              <div class="hero-stat__value">20+</div>
-              <div class="hero-stat__label">Years in market</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat__value">Originate · Resolve</div>
-              <div class="hero-stat__label">Execution model</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat__value">Hard-asset backed</div>
-              <div class="hero-stat__label">Primary collateral</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat__value">Legal-first</div>
-              <div class="hero-stat__label">Underwriting discipline</div>
-            </div>
+            <div class="hero-stat"><div class="hero-stat__value">20+</div><div class="hero-stat__label">Years in market</div></div>
+            <div class="hero-stat"><div class="hero-stat__value">US$2B+</div><div class="hero-stat__label">Capital deployed</div></div>
+            <div class="hero-stat"><div class="hero-stat__value">50+</div><div class="hero-stat__label">Transactions completed</div></div>
+            <div class="hero-stat"><div class="hero-stat__value">30–60%</div><div class="hero-stat__label">Typical entry LTV</div></div>
           </div>
         </div>
       </section>
@@ -1516,70 +1534,30 @@
       <section>
         <div class="wrap">
           <div class="section-head">
-            <h2>How the platform operates.</h2>
-            <p>
-              Four operating pillars govern origination, underwriting, and portfolio management from entry through exit.
-            </p>
+            <h2>How we invest.</h2>
+            <p>Our operating model is intentionally simple: source with access, underwrite for downside, and execute actively to protect value.</p>
           </div>
           <div class="pillar-grid">
-            <article
-              class="pillar-card is-active"
-              role="button"
-              tabindex="0"
-              aria-pressed="true"
-              data-pillar-title="Proprietary sourcing in practice"
-              data-pillar-copy="Relationship density across banks, AMCs, law firms, and servicers helps ShoreVest access complex situations before broad auctions, which is designed to improve pricing discipline and structural control."
-            >
-              <h3>Proprietary Sourcing</h3>
-              <p>
-                ShoreVest maintains direct relationships with banks, AMCs, law firms, and servicers built over two decades. Because China's market complexity can fragment information, the platform seeks to convert that complexity into sourcing advantage through bilateral origination and selective portfolio acquisition designed to improve price discovery and structure flexibility.
-              </p>
+            <article class="pillar-card is-active" role="button" tabindex="0" aria-pressed="true" data-pillar-title="Proprietary sourcing" data-pillar-copy="Longstanding relationships with banks, AMCs, law firms, and servicers help us access complex situations early and structure them with greater control.">
+              <h3>Proprietary sourcing</h3>
+              <p>Relationship-led origination provides differentiated visibility and improves structure quality before broad market processes begin.</p>
             </article>
-            <article
-              class="pillar-card"
-              role="button"
-              tabindex="0"
-              aria-pressed="false"
-              data-pillar-title="Disciplined underwriting in practice"
-              data-pillar-copy="ShoreVest underwrites each deal from downside-out and pairs identified risks with legal and structural mitigants before setting return targets."
-            >
-              <h3>Disciplined Underwriting</h3>
-              <p>
-                ShoreVest anchors every transaction to hard-asset collateral with conservative loan-to-value or cost-to-value entry points of typically 30-60%, and first-lien or otherwise directly enforceable positioning under PRC law. If exit conditions weaken, this structure is designed to preserve control through covenants, enforceability review, and downside-first underwriting before upside assumptions are considered.
-              </p>
+            <article class="pillar-card" role="button" tabindex="0" aria-pressed="false" data-pillar-title="Downside-first underwriting" data-pillar-copy="Each deal is designed around enforceable claims, conservative collateral coverage, and realistic recovery pathways under PRC legal frameworks.">
+              <h3>Downside-first underwriting</h3>
+              <p>We prioritise legal enforceability, collateral strength, and conservative basis before considering upside scenarios.</p>
             </article>
-            <article
-              class="pillar-card"
-              role="button"
-              tabindex="0"
-              aria-pressed="false"
-              data-pillar-title="Alignment of interests in practice"
-              data-pillar-copy="The same investment team remains accountable from approval through exit, which is designed to mitigate handoff risk and strengthen execution continuity."
-            >
-              <h3>Alignment of Interests</h3>
-              <p>
-                The same team that approves investments remains accountable through monitoring and exit. This model is designed to mitigate handoff risk, and it seeks to keep underwriting assumptions, workout decisions, and realization priorities aligned through a single chain of responsibility.
-              </p>
+            <article class="pillar-card" role="button" tabindex="0" aria-pressed="false" data-pillar-title="Active asset management" data-pillar-copy="Post-close monitoring is continuous, with early intervention and in-house resolution capabilities to preserve timing and recovery outcomes.">
+              <h3>Active asset management</h3>
+              <p>Execution does not stop at closing; we manage each position through servicing, resolution, and monetisation.</p>
             </article>
-            <article
-              class="pillar-card"
-              role="button"
-              tabindex="0"
-              aria-pressed="false"
-              data-pillar-title="Active portfolio management in practice"
-              data-pillar-copy="ShoreVest monitors each asset continuously from origination through exit and activates in-house resolution and PRC court enforcement when needed to protect value."
-            >
-              <h3>Active Portfolio Management</h3>
-              <p>
-                ShoreVest continuously monitors each investment from origination through exit. If borrower performance deteriorates, the firm can escalate quickly through ShoreVest Asset Solutions, its in-house resolution capability designed to stabilize recovery outcomes. When consensual paths are insufficient, ShoreVest actively enforces creditor rights through the PRC court process to protect value and timing discipline.
-              </p>
+            <article class="pillar-card" role="button" tabindex="0" aria-pressed="false" data-pillar-title="Single-team accountability" data-pillar-copy="The same investment leaders remain accountable through approval, monitoring, and exit, reducing handoff risk and preserving decision continuity.">
+              <h3>Single-team accountability</h3>
+              <p>Decision-makers stay responsible for the assets they approve, creating tight alignment between underwriting and realised outcomes.</p>
             </article>
           </div>
           <div class="pillar-detail" aria-live="polite">
-            <h3>Proprietary sourcing in practice</h3>
-            <p>
-              Relationship density across banks, AMCs, law firms, and servicers helps ShoreVest access complex situations before broad auctions, which is designed to improve pricing discipline and structural control.
-            </p>
+            <h3>Proprietary sourcing</h3>
+            <p>Longstanding relationships with banks, AMCs, law firms, and servicers help us access complex situations early and structure them with greater control.</p>
           </div>
         </div>
       </section>
@@ -1591,42 +1569,25 @@
               <div class="section-head" style="margin-bottom:0;">
                 <h2>Where we operate.</h2>
                 <div class="operations-split">
-                  <p class="operations-copy">
-                    Headquarters in Guangzhou with a satellite office in Shanghai. The investment team is based in China, and sourcing, diligence, structuring, servicing, and resolution run through an integrated onshore process.
-                  </p>
-                  <p class="operations-presence-note">Local presence is a prerequisite.</p>
+                  <p class="operations-copy">Headquartered in Guangzhou with a Shanghai office, ShoreVest runs an integrated onshore process spanning origination, legal structuring, servicing, and recovery.</p>
+                  <p class="operations-presence-note">Local presence is core infrastructure.</p>
                   <ul class="operations-process" aria-label="Integrated onshore process steps">
-                    <li>Sourcing</li>
-                    <li>Diligence</li>
-                    <li>Structuring</li>
-                    <li>Servicing</li>
-                    <li>Resolution</li>
+                    <li>Source</li><li>Underwrite</li><li>Structure</li><li>Service</li><li>Resolve</li>
                   </ul>
                 </div>
               </div>
               <div class="operations-map">
-                <img
-                  src="assets/images/map.png"
-                  alt="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong"
-                  loading="lazy"
-                />
+                <img src="assets/images/map.png" alt="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong" loading="lazy" />
               </div>
               <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
             </div>
 
             <div class="framed-panel founding-principles-panel">
               <div class="founding-principles-copy">
-                <p class="founding-principles-tag">Founding Principles</p>
-                <p class="lead">
-                  "The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition: building ShoreVest as a firm that outlasts cycles."
-                </p>
+                <p class="founding-principles-tag">Founding principle</p>
+                <p class="lead">"Build a durable institution, not a cyclical trade." Our symbol, the coastal redwood, reflects long-horizon discipline through changing markets.</p>
               </div>
-              <img
-                class="founding-tree-image"
-                src="assets/images/firm_tree.jpg"
-                alt="Coastal redwood tree used as ShoreVest's founding symbol"
-                loading="lazy"
-              />
+              <img class="founding-tree-image" src="assets/images/firm_tree.jpg" alt="Coastal redwood tree used as ShoreVest's founding symbol" loading="lazy" />
             </div>
           </div>
         </div>
@@ -1636,131 +1597,16 @@
         <div class="wrap">
           <div class="framed-panel">
             <div class="section-head">
-              <h2>The track record.</h2>
-              <p>
-                Six fund vintages. More than two decades in market. The figures below reflect the platform's deployment history, cycle experience, and underwriting discipline.
-              </p>
+              <h2>Platform highlights.</h2>
+              <p>A concise view of scale, continuity, and risk discipline across the investment platform.</p>
             </div>
             <div class="proof-grid">
-              <article class="proof-card">
-                <h3>Capital Deployed</h3>
-                <div class="metric">US$2B+</div>
-                <p>Managed across six fund vintages by the senior team.</p>
-              </article>
-              <article class="proof-card">
-                <h3>Operating History</h3>
-                <div class="metric">Since 2004</div>
-                <p>
-                  Operating in market across multiple credit cycles and workout
-                  periods.
-                </p>
-              </article>
-              <article class="proof-card">
-                <h3>Transactions Completed</h3>
-                <div class="metric">50+</div>
-                <p>
-                  Asset-backed private credit investments across NPLs and
-                  restructurings.
-                </p>
-              </article>
-              <article class="proof-card">
-                <h3>Core Risk Discipline</h3>
-                <div class="metric">30–60%</div>
-                <p>
-                  Typical loan-to-value entry points with direct enforceable
-                  claims.
-                </p>
-              </article>
-              <article class="proof-card">
-                <h3>Team Continuity</h3>
-                <div class="metric">~20 Years</div>
-                <p>
-                  Four voting investment committee members have worked together
-                  for decades.
-                </p>
-              </article>
+              <article class="proof-card"><h3>Capital Deployed</h3><div class="metric">US$2B+</div><p>Across six fund vintages managed by the senior team.</p></article>
+              <article class="proof-card"><h3>Operating History</h3><div class="metric">Since 2004</div><p>Experience across multiple credit cycles and stressed periods.</p></article>
+              <article class="proof-card"><h3>Transactions</h3><div class="metric">50+</div><p>Asset-backed private credit investments and resolutions.</p></article>
+              <article class="proof-card"><h3>Entry Discipline</h3><div class="metric">30–60%</div><p>Typical collateral basis at initial underwriting.</p></article>
+              <article class="proof-card"><h3>Senior Team Continuity</h3><div class="metric">~20 Years</div><p>Core decision-makers have worked together for decades.</p></article>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap">
-          <div class="section-head market-intro">
-            <h2>Why China requires a different approach.</h2>
-            <p>
-              China is the world&apos;s second-largest credit market. For global institutional investors, under-allocation can create its own portfolio imbalance.
-            </p>
-            <p>
-              Periods of heightened concern often coincide with the most attractive entry points for properly structured private credit. But China&apos;s private credit market is complex and shaped by evolving regulation, which is why consistent results depend on local expertise and disciplined, on-the-ground execution.
-            </p>
-          </div>
-          <div class="market-grid">
-            <article class="market-card">
-              <div class="market-card-head">
-                <span class="market-index">01</span>
-                <span class="market-title">Documentation and legal structuring reward specialist underwriting</span>
-              </div>
-              <p>
-                In China, lien ranking, enforceability, and documentary precision are core value drivers. This market-specific dynamic rewards managers who integrate legal structuring into investment underwriting, which is how ShoreVest&apos;s platform was built to execute.
-              </p>
-            </article>
-            <article class="market-card">
-              <div class="market-card-head">
-                <span class="market-index">02</span>
-                <span class="market-title">Enforcement outcomes reward on-the-ground execution</span>
-              </div>
-              <p>
-                PRC court process, creditor coordination, and negotiated resolutions require on-the-ground execution across the full life of an investment. ShoreVest&apos;s integrated approach is designed for this complex operating environment rather than a delegated servicing model.
-              </p>
-            </article>
-            <article class="market-card">
-              <div class="market-card-head">
-                <span class="market-index">03</span>
-                <span class="market-title">Relationship-led origination rewards local expertise</span>
-              </div>
-              <p>
-                In this market, differentiated opportunities are typically relationship-led and reach established local managers first. ShoreVest&apos;s origination model is built around long-duration local coverage in a complex operating environment where access is earned over time.
-              </p>
-            </article>
-            <article class="market-card">
-              <div class="market-card-head">
-                <span class="market-index">04</span>
-                <span class="market-title">Situational borrower dynamics reward cycle-tested judgment</span>
-              </div>
-              <p>
-                Borrower and sponsor behavior changes by circumstance and cycle, making pattern recognition essential to execution quality. ShoreVest&apos;s approach is designed around market-specific dynamics that reward local expertise developed through repeated in-market decision making.
-              </p>
-            </article>
-            <article class="market-card">
-              <div class="market-card-head">
-                <span class="market-index">05</span>
-                <span class="market-title">Active servicing rewards early intervention capability</span>
-              </div>
-              <p>
-                Post-close value realization depends on active monitoring and timely intervention, not passive surveillance. ShoreVest&apos;s in-house servicing and asset management framework was built for an evolving regulatory landscape that requires on-the-ground execution.
-              </p>
-            </article>
-            <article class="market-card">
-              <div class="market-card-head">
-                <span class="market-index">06</span>
-                <span class="market-title">Local execution infrastructure distinguishes realizable value</span>
-              </div>
-              <p>
-                Global credit experience is valuable, but China outcomes are ultimately shaped by onshore legal capacity, local relationships, and PRC enforcement experience. ShoreVest&apos;s platform is structured around these capabilities because this complex operating environment rewards local expertise.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="intelligence">
-        <div class="wrap">
-          <div>
-            <div class="eyebrow">How execution is concentrated.</div>
-            <p>
-              Compared with a typical offshore fund model, ShoreVest retains sourcing, legal structuring, investment committee governance, and recovery coordination in-house. That concentration reflects the structural reality of China's credit market: enforceability and workout execution determine realised value, and those workstreams cannot be effectively outsourced.
-            </p>
           </div>
         </div>
       </section>
@@ -1769,77 +1615,25 @@
         <div class="wrap">
           <div class="section-head committee-intro">
             <h2>Investment Committee</h2>
-            <p>
-              ShoreVest&apos;s Investment Committee brings investment judgment, legal structuring, and portfolio oversight together in a single decision-making forum.
-            </p>
+            <p>Investment judgment, legal structuring, and portfolio oversight are integrated in one decision forum.</p>
           </div>
           <div class="platform-layout">
             <div class="platform-notes" aria-label="Investment committee members">
-              <article class="note">
-                <h3>Benjamin Fanger</h3>
-                <p class="role">Managing Partner</p>
-                <p>Co-founded Shoreline Capital in 2004, one of China&apos;s earliest dedicated distressed debt platforms, and led the development of ShoreVest&apos;s legal-first underwriting framework across six fund vintages.</p>
-              </article>
-              <article class="note">
-                <h3>Ada Bi</h3>
-                <p class="role">Partner, CFO</p>
-                <p>Leads fund operations, financial controls, LP reporting, and regulatory compliance across the ShoreVest platform.</p>
-              </article>
-              <article class="note">
-                <h3>Mecy Mei</h3>
-                <p class="role">Partner</p>
-                <p>Leads underwriting and asset management across the core private credit portfolio, with deep expertise in PRC legal structuring and collateral enforcement.</p>
-              </article>
-              <article class="note">
-                <h3>Hui Zheng</h3>
-                <p class="role">Partner</p>
-                <p>Leads origination, structuring, and recovery execution across the China credit portfolio, focused on asset-backed lending and workout resolution.</p>
-              </article>
+              <article class="note"><h3>Benjamin Fanger</h3><p class="role">Managing Partner</p><p>Co-founded Shoreline Capital in 2004 and helped build ShoreVest's legal-first underwriting framework across six fund vintages.</p></article>
+              <article class="note"><h3>Ada Bi</h3><p class="role">Partner, CFO</p><p>Leads fund operations, controls, LP reporting, and regulatory compliance across the platform.</p></article>
+              <article class="note"><h3>Mecy Mei</h3><p class="role">Partner</p><p>Leads underwriting and asset management with deep experience in PRC legal structuring and enforcement.</p></article>
+              <article class="note"><h3>Hui Zheng</h3><p class="role">Partner</p><p>Leads origination, structuring, and recovery execution across asset-backed opportunities.</p></article>
             </div>
             <div class="platform-diagram">
               <div class="eyebrow">Decision protocol</div>
-              <p>
-                Investment decisions and portfolio execution are managed through one continuous process.
-              </p>
+              <p>One continuous workflow from underwriting to realization.</p>
               <div class="small-grid" role="tablist" aria-label="Decision protocol stages">
-                <button
-                  class="small-box is-active"
-                  role="tab"
-                  aria-selected="true"
-                  data-detail-title="Originating + Underwriting"
-                  data-detail-copy="The same partners who source opportunities conduct legal and asset-level diligence, define downside protections, and establish the underwriting case."
-                >
-                  Underwrite
-                </button>
-                <button
-                  class="small-box"
-                  role="tab"
-                  aria-selected="false"
-                  data-detail-title="Approval + Structuring"
-                  data-detail-copy="Committee approval, structuring, and documentation happen in one forum, with legal, investment, and operations aligned before capital is committed."
-                >
-                  Approve
-                </button>
-                <button
-                  class="small-box"
-                  role="tab"
-                  aria-selected="false"
-                  data-detail-title="Monitoring + Realization"
-                  data-detail-copy="Post-close monitoring and exit execution stay with the original decision-makers, preserving accountability from entry through realization."
-                >
-                  Execute
-                </button>
+                <button class="small-box is-active" role="tab" aria-selected="true" data-detail-title="Underwrite" data-detail-copy="Opportunity selection, diligence, and legal downside design are owned by the same senior investment team.">Underwrite</button>
+                <button class="small-box" role="tab" aria-selected="false" data-detail-title="Approve" data-detail-copy="Committee approval and structuring decisions are made in one aligned forum before capital is committed.">Approve</button>
+                <button class="small-box" role="tab" aria-selected="false" data-detail-title="Execute" data-detail-copy="Post-close monitoring and exits are managed by the original decision-makers to preserve accountability.">Execute</button>
               </div>
-              <div class="small-detail" aria-live="polite">
-                <h4>Originating + Underwriting</h4>
-                <p>
-                  The same partners who source opportunities conduct legal and asset-level diligence, define downside protections, and establish the underwriting case.
-                </p>
-              </div>
-              <article class="note accountability-note">
-                <h3>One Team, Full-Cycle Accountability</h3>
-                <p>The same four partners have worked together for nearly twenty years. The professionals who approve each investment remain accountable for monitoring and exit execution, with no handoff between decision-makers and portfolio managers.</p>
-              </article>
+              <div class="small-detail" aria-live="polite"><h4>Underwrite</h4><p>Opportunity selection, diligence, and legal downside design are owned by the same senior investment team.</p></div>
+              <article class="note accountability-note"><h3>Full-cycle accountability</h3><p>The professionals who approve each deal remain accountable for monitoring and exit execution.</p></article>
             </div>
           </div>
         </div>
@@ -1849,12 +1643,8 @@
         <div class="wrap">
           <div class="section-head">
             <h2>Capital base.</h2>
-            <p>
-              ShoreVest's investor base has included sovereign wealth funds, pension funds, endowments, insurance companies, and family offices from North America, Asia, the Middle East, and Europe. Fund III is currently open for qualified institutional investors.
-            </p>
-            <p class="validation-cta">
-              <a href="investor-access.html" class="nav__lp">Investor Access <span aria-hidden="true">→</span></a>
-            </p>
+            <p>ShoreVest's investor base has included sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
+            <p class="validation-cta"><a href="investor-access.html" class="nav__lp">Investor Access <span aria-hidden="true">→</span></a></p>
           </div>
         </div>
       </section>
@@ -1863,18 +1653,10 @@
         <div class="wrap">
           <div class="note">
             <h3>Important Notice</h3>
-            <p>
-              General information only. No offer to sell, solicitation to
-              invest, or legal, tax, accounting, or regulatory advice. Strategy
-              and market information is illustrative and may be subject to
-              confidentiality, investor qualification, and jurisdiction-specific
-              restrictions.
-            </p>
+            <p>General information only. No offer to sell or solicitation to invest. Information may be subject to investor qualification, confidentiality, and jurisdiction-specific restrictions.</p>
           </div>
         </div>
       </section>
-
-      
     </main>
 
     <script>
