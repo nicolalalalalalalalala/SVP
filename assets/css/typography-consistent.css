@@ -98,3 +98,49 @@ html[lang^='zh'] h6 {
     --site-page-margin: 18px;
   }
 }
+
+/* Sitewide visual rhythm + readable type scale. */
+body {
+  letter-spacing: 0.002em;
+}
+
+p,
+li {
+  max-width: 68ch;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem) !important;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.8vw, 2.8rem) !important;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem) !important;
+  line-height: 1.22;
+}
+
+/* Cap oversized display text used in hero/stat sections across templates. */
+.hero__ttl,
+.hero-title,
+.display-title,
+.hs__n,
+.nb__n,
+.ac__img--glyph::after,
+.icard__glyph {
+  font-size: clamp(2rem, 7vw, 4.75rem) !important;
+  line-height: 1.06;
+}
+
+.about__body p,
+.city-band__sub,
+.su__sub,
+.tm__bio,
+.ac__body {
+  font-size: clamp(0.95rem, 1.25vw, 1.05rem) !important;
+  line-height: 1.75;
+}
