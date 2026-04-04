@@ -12,6 +12,7 @@
     />
     <style>
       :root {
+        --safe-top: env(safe-area-inset-top, 0px);
         --bg: #f2f1ef;
         --panel: #f8f7f5;
         --surface: #f7f5f2;
@@ -56,11 +57,11 @@
         left: 0;
         right: 0;
         z-index: 200;
-        height: 72px;
+        height: calc(72px + var(--safe-top));
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 var(--pad);
+        padding: var(--safe-top) var(--pad) 0;
         border-bottom: 1px solid var(--rule);
         background: #ffffff;
       }
@@ -170,7 +171,7 @@
       }
 
       main {
-        padding-top: 72px;
+        padding-top: calc(72px + var(--safe-top));
       }
       section {
         padding: 44px 0;
