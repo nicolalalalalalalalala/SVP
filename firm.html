@@ -458,11 +458,55 @@
         background: transparent;
       }
 
+      .map-stage {
+        position: relative;
+        overflow: hidden;
+      }
+
       .map-wrap img {
         width: 100%;
         height: auto;
         display: block;
         background: transparent;
+        transform: scale(1.08);
+        transform-origin: center;
+      }
+
+      .map-marker {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #8d1414;
+        border: 2px solid #f7f4ef;
+        box-shadow: 0 0 0 2px rgba(141, 20, 20, 0.26);
+      }
+
+      .map-marker::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #f7f4ef;
+        transform: translate(-50%, -50%);
+      }
+
+      .map-marker--guangzhou {
+        top: 63%;
+        left: 66%;
+      }
+
+      .map-marker--shanghai {
+        top: 45%;
+        left: 69%;
+      }
+
+      .map-marker--hong-kong {
+        top: 67%;
+        left: 69%;
       }
 
       .map-caption {
@@ -689,6 +733,11 @@
           border-bottom: 0;
         }
 
+        .map-wrap img {
+          transform: scale(1.12);
+          transform-origin: 62% 54%;
+        }
+
         .sv-footer {
           padding: 28px var(--pad) 34px;
         }
@@ -878,7 +927,12 @@
           </header>
 
           <figure class="map-wrap">
-            <img src="assets/images/chinaHigh.svg" alt="Map showing ShoreVest locations in Guangzhou, Shanghai, and Hong Kong" loading="lazy" />
+            <div class="map-stage">
+              <img src="assets/images/chinaHigh.svg" alt="Map showing ShoreVest locations in Guangzhou, Shanghai, and Hong Kong" loading="lazy" />
+              <span class="map-marker map-marker--guangzhou" aria-hidden="true"></span>
+              <span class="map-marker map-marker--shanghai" aria-hidden="true"></span>
+              <span class="map-marker map-marker--hong-kong" aria-hidden="true"></span>
+            </div>
           </figure>
           <div class="map-caption" aria-label="Location labels">
             <span>Guangzhou - Headquarters</span>
