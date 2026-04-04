@@ -370,7 +370,7 @@
         grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
         grid-template-areas: "main side";
         gap: 16px 22px;
-        align-items: start;
+        align-items: stretch;
       }
       .press-overview__main {
         grid-area: main;
@@ -381,11 +381,15 @@
       .press-overview__side {
         grid-area: side;
         display: grid;
+        grid-template-rows: 1fr 1fr;
         gap: 12px;
       }
       .press-overview__side .contact {
         margin: 0;
         max-width: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
       }
       .press-row {
         display: block;
@@ -505,6 +509,8 @@
         padding: 12px 14px;
         border: 1px solid rgba(12, 12, 10, 0.1);
         background: rgba(255, 255, 255, 0.65);
+        display: flex;
+        flex-direction: column;
         font-size: 11.5px;
         line-height: 1.55;
         color: #6b7280;
@@ -536,6 +542,9 @@
           grid-template-areas:
             "main"
             "side";
+        }
+        .press-overview__side {
+          grid-template-rows: auto;
         }
       }
       @media (max-width: 767px) {
@@ -952,11 +961,11 @@
           </div>
           <aside class="press-overview__side">
             <section class="contact" aria-label="Media inquiries">
-              <span>For media inquiries</span>
+              <span>FOR MEDIA INQUIRIES</span>
               <a href="mailto:press@shorevest.com">press@shorevest.com</a>
             </section>
             <section class="press-disclaimer" aria-label="Third-party disclaimer">
-              <p class="press-overview__heading">Third-party disclaimer</p>
+              <p class="press-overview__heading">THIRD-PARTY DISCLAIMER</p>
               <p>
                 Third-party media coverage and external commentary referenced on
                 this page is provided for informational purposes only.
