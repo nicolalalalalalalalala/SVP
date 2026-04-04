@@ -353,6 +353,16 @@
         color: #2f2a25;
         margin: 0;
       }
+      .press-intro + .press-intro {
+        margin-top: 12px;
+      }
+      .press-overview__heading {
+        margin: 0 0 8px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(12, 12, 10, 0.62);
+      }
       .press-overview {
         max-width: var(--content);
         margin: 0 0 26px;
@@ -509,6 +519,13 @@
       }
       .press-disclaimer p + p {
         margin-top: 9px;
+      }
+      .press-disclaimer ul {
+        margin: 8px 0 0;
+        padding-left: 16px;
+      }
+      .press-disclaimer li + li {
+        margin-top: 8px;
       }
 
       @media (max-width: 960px) {
@@ -933,12 +950,16 @@
         <div class="press-overview">
           <div class="press-overview__main">
             <div class="eyebrow press-archive-note">Coverage through January 2026.</div>
+            <p class="press-overview__heading">Archive scope</p>
             <p class="press-intro">
               The archive below presents a chronological record of third-party
-              coverage and commentary. The breadth of coverage across market
-              cycles, from the first NPL wave through Evergrande and the
-              current restructuring environment, reflects the firm's role as one
-              of the few institutional managers with continuous onshore presence
+              coverage and commentary.
+            </p>
+            <p class="press-intro">
+              The breadth of coverage across market cycles—from the first NPL
+              wave through Evergrande and the current restructuring
+              environment—reflects the firm's role as one of the few
+              institutional managers with continuous onshore presence
               throughout.
             </p>
           </div>
@@ -949,20 +970,23 @@
             </section>
           </aside>
           <section class="press-disclaimer press-overview__disclaimer" aria-label="Third-party disclaimer">
+            <p class="press-overview__heading">Third-party disclaimer</p>
             <p>
               Third-party media coverage and external commentary referenced on
               this page is provided for informational purposes only.
             </p>
-            <p>
-              ShoreVest Partners does not endorse, and is not responsible
-              for, the content of external publications. Coverage does not
-              constitute investment advice or a solicitation to invest.
-            </p>
-            <p>
-              Links to external sources may require a subscription or
-              registration to access. Views expressed by third parties do not
-              necessarily reflect the views of ShoreVest Partners.
-            </p>
+            <ul>
+              <li>
+                ShoreVest Partners does not endorse, and is not responsible
+                for, the content of external publications. Coverage does not
+                constitute investment advice or a solicitation to invest.
+              </li>
+              <li>
+                Links to external sources may require a subscription or
+                registration to access. Views expressed by third parties do not
+                necessarily reflect the views of ShoreVest Partners.
+              </li>
+            </ul>
           </section>
         </div>
         <div class="press-toolbar" aria-label="Press archive controls">
