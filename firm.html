@@ -17,14 +17,15 @@
     <style>
       :root {
         --safe-top: env(safe-area-inset-top, 0px);
-        --bg: #f3f1ed;
-        --panel: #faf8f4;
-        --ink: #1d1b18;
-        --muted: #6f695f;
-        --rule: rgba(18, 14, 10, 0.14);
+        --bg: #f4f2ee;
+        --surface: #f9f7f3;
+        --ink: #171614;
+        --text: #2d2a26;
+        --muted: #6d665d;
+        --rule: rgba(22, 18, 14, 0.14);
         --accent: #b3213f;
-        --accent-soft: rgba(179, 33, 63, 0.1);
-        --max: 1200px;
+        --accent-soft: rgba(179, 33, 63, 0.08);
+        --max: 1240px;
         --pad: 64px;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
@@ -35,20 +36,24 @@
         margin: 0;
         padding: 0;
       }
+
       html {
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
       }
+
       body {
         font-family: var(--sans);
-        color: var(--ink);
+        color: var(--text);
         background: var(--bg);
         line-height: 1.58;
       }
+
       a {
         color: inherit;
         text-decoration: none;
       }
+
       .wrap {
         width: min(100%, var(--max));
         margin: 0 auto;
@@ -60,66 +65,78 @@
         inset: 0 0 auto;
         z-index: 200;
         height: calc(72px + var(--safe-top));
-        background: #fff;
+        background: rgba(249, 247, 243, 0.96);
+        backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--rule);
         padding: var(--safe-top) var(--pad) 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
+
       .nav__logo {
         display: inline-flex;
         align-items: center;
         gap: 6px;
       }
+
       .nav__logo-mark {
         width: 31px;
         height: 31px;
       }
+
       .nav__logo-lockup {
         display: inline-flex;
         flex-direction: column;
         row-gap: 1px;
         line-height: 1;
       }
+
       .nav__logo-en {
         font-family: var(--serif);
         font-size: 20px;
         letter-spacing: 0.03em;
+        color: var(--ink);
       }
+
       .nav__logo-cn {
         font-size: 10px;
         letter-spacing: 0.32em;
-        opacity: 0.6;
+        opacity: 0.64;
       }
+
       .nav__links {
         list-style: none;
         display: flex;
-        gap: 32px;
+        gap: 30px;
       }
+
       .nav__links a {
         font-size: 11px;
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        opacity: 0.52;
+        opacity: 0.56;
       }
+
       .nav__links a.active,
       .nav__links a:hover {
         opacity: 1;
       }
+
       .nav__right {
         display: inline-flex;
         align-items: center;
         gap: 18px;
       }
+
       .nav__zh {
         font-size: 13px;
-        opacity: 0.55;
+        opacity: 0.58;
       }
-      .nav__lp,
-      .btn {
-        border: 1px solid rgba(25, 20, 16, 0.22);
+
+      .nav__lp {
+        border: 1px solid rgba(25, 20, 16, 0.24);
         min-height: 42px;
         display: inline-flex;
         align-items: center;
@@ -131,12 +148,13 @@
         text-transform: uppercase;
         transition: all 0.2s ease;
       }
-      .nav__lp:hover,
-      .btn:hover {
+
+      .nav__lp:hover {
         border-color: var(--accent);
         background: var(--accent);
         color: #fff;
       }
+
       .nav__menu-btn,
       .nav__mobile-lang {
         display: none;
@@ -145,25 +163,36 @@
       main {
         padding-top: calc(72px + var(--safe-top));
       }
+
       section {
         border-top: 1px solid var(--rule);
-        padding: 64px 0;
       }
-      section:first-child {
+
+      .section-inner {
+        padding: 82px 0;
+      }
+
+      .hero {
         border-top: 0;
+        background: linear-gradient(180deg, #faf8f4 0%, #f4f2ee 70%);
+      }
+
+      .hero .section-inner {
+        padding: 96px 0 84px;
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 12px;
+        margin-bottom: 18px;
         font-size: 10px;
         font-weight: 500;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: #7d756a;
-        margin-bottom: 22px;
+        color: #787164;
       }
+
       .eyebrow::after {
         content: "";
         width: 34px;
@@ -175,225 +204,325 @@
       h2,
       h3 {
         font-family: var(--serif);
+        color: var(--ink);
         font-weight: 500;
-        line-height: 1.1;
+        line-height: 1.08;
       }
+
       h1 {
-        font-size: clamp(44px, 6vw, 76px);
-        margin-bottom: 16px;
+        font-size: clamp(54px, 8vw, 104px);
+        margin-bottom: 20px;
       }
+
       h2 {
-        font-size: clamp(34px, 4vw, 52px);
+        font-size: clamp(34px, 4.2vw, 56px);
+        margin-bottom: 22px;
       }
 
-      .hero {
-        background: linear-gradient(180deg, #f8f6f2 0%, #f3f1ed 100%);
-        padding-top: 78px;
-      }
-      .hero-layout {
+      .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-        gap: 30px;
-        align-items: end;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 42px;
       }
-      .hero p {
-        color: #433f39;
+
+      .hero-subhead {
+        max-width: 72ch;
+        color: #35312c;
+        font-size: 19px;
       }
-      .lead {
-        font-family: var(--serif);
-        font-size: 24px;
-        max-width: 28ch;
-        margin-bottom: 18px;
-      }
-      .hero-summary {
-        max-width: 58ch;
-      }
-      .hero-aside {
-        background: var(--panel);
-        border: 1px solid #ddd7cd;
+
+      .hero-panel {
+        border: 1px solid #d9d3c8;
+        background: rgba(255, 255, 255, 0.55);
         padding: 24px;
-      }
-      .hero-aside h3 {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-      .hero-aside p {
-        color: #5a534a;
-        margin-bottom: 10px;
-      }
-      .hero-metrics {
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-      }
-      .metric-card {
-        background: #fbf9f6;
-        border: 1px solid #ddd7cd;
-        padding: 14px;
-      }
-      .metric-card b {
-        font-family: var(--serif);
-        display: block;
-        font-size: 30px;
-      }
-      .metric-card span {
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #776f64;
+        align-self: end;
       }
 
-      .split-head {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-        gap: 28px;
-        align-items: end;
-        margin-bottom: 26px;
-      }
-      .split-head p {
-        color: #4f4a42;
-        font-family: var(--serif);
-        font-size: 22px;
-      }
-
-      .model-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-      .model-card {
-        background: var(--panel);
-        border: 1px solid #ddd7cd;
-        padding: 20px;
-      }
-      .model-card h3 {
-        font-size: 24px;
-        margin-bottom: 8px;
-      }
-      .model-card p {
-        color: #534d44;
-      }
-
-      .pillars-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-      }
-      .pillar {
-        background: linear-gradient(180deg, #fcfaf7 0%, #f4efe7 100%);
-        border: 1px solid #ddd7cd;
-        padding: 20px;
-      }
-      .pillar b {
-        display: inline-flex;
-        margin-bottom: 10px;
-        font-size: 10px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: #7a7369;
-      }
-      .pillar h3 {
-        font-size: 26px;
-        margin-bottom: 8px;
-      }
-      .pillar p {
-        color: #4e483f;
-      }
-
-      .track-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-      }
-      .track-item {
-        background: var(--panel);
-        border: 1px solid #ddd7cd;
-        padding: 18px;
-      }
-      .track-item h3 {
-        font-size: 22px;
-        margin-bottom: 8px;
-      }
-      .track-item p {
-        color: #554f46;
+      .hero-panel p {
+        color: #4f4942;
         font-size: 15px;
       }
 
-      .geo-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: 18px;
-      }
-      .panel {
-        background: var(--panel);
-        border: 1px solid #ddd7cd;
-        padding: 22px;
-      }
-      .process {
-        list-style: none;
+      .hero-panel p + p {
         margin-top: 12px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .process li {
-        padding: 6px 10px;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        border: 1px solid rgba(30, 22, 16, 0.16);
-        background: #fff;
-      }
-      .map {
-        margin-top: 14px;
-        border: 1px solid rgba(179, 33, 63, 0.24);
-        padding: 8px;
-        background: #f5efe6;
-      }
-      .map img {
-        width: 100%;
-        display: block;
-      }
-      .quote {
-        border-left: 2px solid var(--accent);
-      }
-      .quote p {
-        font-family: var(--serif);
-        font-size: 25px;
-        line-height: 1.25;
       }
 
-      .people-grid {
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+        gap: 30px;
+        align-items: end;
+        margin-bottom: 34px;
+      }
+
+      .section-head p {
+        font-family: var(--serif);
+        font-size: clamp(21px, 2.1vw, 30px);
+        line-height: 1.2;
+        color: #37332d;
+      }
+
+      .control-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .card {
+        border: 1px solid #d8d1c6;
+        background: var(--surface);
+        padding: 22px;
+      }
+
+      .card h3 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #4f4941;
+      }
+
+      .discipline-list {
+        margin-top: 20px;
+        border: 1px solid #d8d1c6;
+        background: #f6f3ee;
+        padding: 22px;
+      }
+
+      .discipline-list h3 {
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+
+      .discipline-list ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 22px;
+        list-style: none;
+      }
+
+      .discipline-list li {
+        position: relative;
+        padding-left: 14px;
+        color: #49433b;
+      }
+
+      .discipline-list li::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+        position: absolute;
+        top: 0.62em;
+        left: 0;
+      }
+
+      .proof-strip {
+        background: #151311;
+        color: #f5f2ed;
+      }
+
+      .proof-strip .section-inner {
+        padding: 34px 0;
+      }
+
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .proof-item {
+        padding-right: 18px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .proof-item:last-child {
+        border-right: 0;
+      }
+
+      .proof-value {
+        display: block;
+        font-family: var(--serif);
+        font-size: clamp(34px, 3.2vw, 52px);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .proof-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.78;
+      }
+
+      .platform-block {
+        border: 1px solid #d6cfc2;
+        background: linear-gradient(180deg, #fcfbf8 0%, #f4f1eb 100%);
+      }
+
+      .platform-header {
+        padding: 22px;
+        border-bottom: 1px solid #d6cfc2;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #71695f;
+      }
+
+      .platform-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .pillar {
+        padding: 24px 22px 26px;
+        border-right: 1px solid #d6cfc2;
+      }
+
+      .pillar:last-child {
+        border-right: 0;
+      }
+
+      .pillar-step {
+        color: var(--accent);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      .pillar h3 {
+        font-size: 31px;
+        margin-bottom: 10px;
+      }
+
+      .pillar p {
+        color: #4b463f;
+      }
+
+      .analysis-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 16px;
+      }
+
+      .analysis-panel {
+        border: 1px solid #d8d1c5;
+        background: var(--surface);
+        padding: 24px;
+      }
+
+      .analysis-panel h3 {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+
+      .analysis-panel ul {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .analysis-panel li {
+        color: #4a443d;
+        padding-left: 16px;
+        position: relative;
+      }
+
+      .analysis-panel li::before {
+        content: "";
+        width: 8px;
+        height: 1px;
+        background: #7f776c;
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+      }
+
+      .map-section {
+        background: #f6f4ef;
+      }
+
+      .map-card {
+        border: 1px solid #d8d1c5;
+        background: #fdfcf9;
+        padding: 18px;
+      }
+
+      .map-card svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .city-label {
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        fill: #2e2a25;
+      }
+
+      .city-dot {
+        fill: var(--accent);
+      }
+
+      .long-horizon {
+        background: linear-gradient(180deg, #f4f1eb 0%, #f8f6f2 100%);
+      }
+
+      .long-horizon blockquote {
+        border-left: 2px solid var(--accent);
+        padding-left: 18px;
+        max-width: 78ch;
+      }
+
+      .long-horizon p {
+        font-size: 18px;
+        color: #3f3a33;
+      }
+
+      .committee-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 12px;
       }
-      .person {
-        background: var(--panel);
-        border: 1px solid #ddd7cd;
+
+      .member {
+        border: 1px solid #d8d1c6;
+        background: var(--surface);
         padding: 18px;
       }
-      .person h3 {
-        font-size: 24px;
+
+      .member h3 {
+        font-size: 26px;
       }
-      .role {
-        display: block;
-        margin: 5px 0 10px;
+
+      .member .title {
+        margin-top: 4px;
         font-size: 10px;
-        letter-spacing: 0.11em;
+        letter-spacing: 0.13em;
         text-transform: uppercase;
-        color: #726b61;
+        color: #736b62;
       }
-      .person p {
-        color: #514b42;
+
+      .member p {
+        margin-top: 12px;
+        color: #4b453d;
       }
 
       .capital {
-        background: #efebe4;
+        background: #efebe3;
       }
-      .capital-cta {
-        margin-top: 20px;
+
+      .capital p {
+        max-width: 90ch;
+        color: #38342f;
+        font-size: 18px;
       }
 
       .notice {
@@ -407,10 +536,12 @@
         border-top: 1px solid var(--rule);
         padding: 34px var(--pad) 40px;
       }
+
       .sv-footer__inner {
         max-width: var(--max);
         margin: 0 auto;
       }
+
       .sv-footer__main {
         display: flex;
         align-items: center;
@@ -419,21 +550,25 @@
         padding-bottom: 20px;
         border-bottom: 1px solid var(--rule);
       }
+
       .sv-footer__brand {
         font-family: var(--serif);
         font-size: 28px;
       }
+
       .sv-footer__contact {
         display: flex;
         gap: 12px;
         align-items: center;
       }
+
       .sv-footer__contact-label {
         font-size: 10px;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--muted);
       }
+
       .sv-footer__contact a {
         font-size: 12px;
         letter-spacing: 0.08em;
@@ -441,50 +576,64 @@
         border: 1px solid rgba(0, 0, 0, 0.16);
         padding: 10px 14px;
       }
+
       .sv-footer__bottom {
         padding-top: 14px;
         display: grid;
         gap: 8px;
       }
+
       .sv-footer__bottom,
       .sv-footer__bottom a {
         color: #6f6a63;
         font-size: 11px;
       }
 
-      @media (max-width: 1024px) {
+      @media (max-width: 1080px) {
         :root {
           --pad: 28px;
         }
-        .hero-layout,
-        .split-head,
-        .geo-grid {
+
+        .hero-grid,
+        .section-head,
+        .analysis-layout {
           grid-template-columns: 1fr;
         }
-        .hero-metrics {
+
+        .proof-grid,
+        .platform-grid,
+        .committee-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        .pillars-grid {
+
+        .pillar {
+          border-right: 0;
+          border-bottom: 1px solid #d6cfc2;
+        }
+
+        .pillar:nth-last-child(-n + 2) {
+          border-bottom: 0;
+        }
+
+        .discipline-list ul {
           grid-template-columns: 1fr;
-        }
-        .people-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .track-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
+
       @media (max-width: 767px) {
         :root {
           --pad: 20px;
         }
+
         #nav {
           padding: 10px var(--pad);
           height: auto;
           min-height: 72px;
           flex-wrap: wrap;
           row-gap: 10px;
+          background: #f9f7f3;
         }
+
         .nav__menu-btn {
           display: inline-flex;
           border: 1px solid rgba(25, 20, 16, 0.22);
@@ -495,9 +644,11 @@
           letter-spacing: 0.12em;
           text-transform: uppercase;
         }
+
         .nav__zh {
           display: none;
         }
+
         .nav__links {
           display: none;
           width: 100%;
@@ -507,32 +658,50 @@
           border-top: 1px solid var(--rule);
           padding-top: 12px;
         }
+
         #nav.menu-open .nav__links {
           display: flex;
         }
+
         .nav__mobile-lang {
           display: block;
         }
-        section {
-          padding: 46px 0;
+
+        .section-inner {
+          padding: 56px 0;
         }
-        .lead {
-          font-size: 20px;
+
+        .hero .section-inner {
+          padding: 68px 0 58px;
         }
-        .split-head p {
-          font-size: 18px;
+
+        .hero-subhead {
+          font-size: 17px;
         }
-        .model-grid,
-        .hero-metrics,
-        .people-grid {
+
+        .proof-grid,
+        .platform-grid,
+        .committee-grid,
+        .control-grid {
           grid-template-columns: 1fr;
         }
-        .track-grid {
-          grid-template-columns: 1fr;
+
+        .proof-item,
+        .pillar {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+          padding-right: 0;
         }
+
+        .proof-item:last-child,
+        .pillar:last-child {
+          border-bottom: 0;
+        }
+
         .sv-footer {
           padding: 28px var(--pad) 34px;
         }
+
         .sv-footer__main {
           flex-direction: column;
           align-items: flex-start;
@@ -566,151 +735,228 @@
 
     <main>
       <section class="hero">
-        <div class="wrap">
-          <div class="eyebrow">China Private Credit · Established 2004</div>
-          <div class="hero-layout">
+        <div class="wrap section-inner">
+          <p class="eyebrow">China Private Credit · Established 2004</p>
+          <div class="hero-grid">
             <div>
               <h1>The Firm</h1>
-              <p class="lead">ShoreVest is a specialist China private credit platform built for downside protection, legal clarity, and active execution.</p>
-              <p class="hero-summary">We focus on asset-based lending, restructurings, and debt resolution in situations where enforceability and collateral control are clear. The same senior professionals oversee sourcing, underwriting, servicing, and recovery to maintain full-cycle accountability.</p>
+              <p class="hero-subhead">
+                ShoreVest is a specialist private credit platform focused on asset-backed investments in China. Since 2004, the firm has built its approach around enforceable collateral,
+                conservative entry levels, and active control through sourcing, underwriting, servicing, and recovery.
+              </p>
             </div>
-            <aside class="hero-aside" aria-label="Investment focus">
-              <h3>What defines us</h3>
-              <p>Relationship-led sourcing with banks, AMCs, and legal counterparties.</p>
-              <p>Conservative underwriting built around enforceable claims.</p>
-              <p>In-house management and resolution from entry through exit.</p>
+            <aside class="hero-panel" aria-label="Firm positioning">
+              <p>China-focused. Legal-first. Collateral-driven.</p>
+              <p>Built for downside protection before upside pursuit.</p>
+              <p>Structured for institutional capital across market cycles.</p>
             </aside>
           </div>
-          <div class="hero-metrics" aria-label="At a glance stats">
-            <article class="metric-card"><b>20+</b><span>Years in market</span></article>
-            <article class="metric-card"><b>US$2B+</b><span>Capital deployed</span></article>
-            <article class="metric-card"><b>50+</b><span>Transactions completed</span></article>
-            <article class="metric-card"><b>30–60%</b><span>Typical entry LTV</span></article>
-          </div>
         </div>
       </section>
 
       <section>
-        <div class="wrap">
-          <div class="split-head">
-            <h2>Our investment model.</h2>
-            <p>A repeatable process designed to preserve downside and maximize control in complex credit situations.</p>
+        <div class="wrap section-inner">
+          <div class="section-head">
+            <h2>Built for control in complex credit</h2>
+            <p>ShoreVest invests where legal position, collateral coverage, and execution access can be established at entry.</p>
           </div>
-          <div class="model-grid">
-            <article class="model-card"><h3>Source with access</h3><p>Long-standing networks create differentiated opportunities before broad processes form.</p></article>
-            <article class="model-card"><h3>Structure for recovery</h3><p>Every transaction is built around legal enforceability, collateral coverage, and practical resolution pathways.</p></article>
-            <article class="model-card"><h3>Manage actively</h3><p>Post-close intervention begins early, with integrated servicing and restructuring capabilities.</p></article>
-            <article class="model-card"><h3>Own outcomes</h3><p>The original decision-makers remain responsible through monitoring and exit execution.</p></article>
+          <div class="control-grid">
+            <article class="card">
+              <h3>Asset-based lending</h3>
+              <p>Senior secured financing against identifiable hard-asset collateral with documented enforcement pathways.</p>
+            </article>
+            <article class="card">
+              <h3>Asset restructurings</h3>
+              <p>Recapitalization and restructuring mandates where control rights and collateral priority can be contractually preserved.</p>
+            </article>
+            <article class="card">
+              <h3>Debt resolutions</h3>
+              <p>Distressed and non-performing credit situations requiring coordinated legal process, servicing control, and recovery execution.</p>
+            </article>
+            <article class="card">
+              <h3>Common discipline</h3>
+              <p>Transactions are selected and structured to protect principal under stress conditions, not base-case assumptions.</p>
+            </article>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap geo-grid">
-          <article class="panel">
-            <div class="eyebrow">Onshore footprint</div>
-            <h2>Where we operate.</h2>
-            <p>Headquartered in Guangzhou with a Shanghai office, ShoreVest runs an integrated onshore platform spanning origination, legal structuring, servicing, and resolution.</p>
-            <ul class="process" aria-label="Integrated process">
-              <li>Source</li>
-              <li>Underwrite</li>
-              <li>Structure</li>
-              <li>Service</li>
-              <li>Resolve</li>
+          <div class="discipline-list" aria-label="Common underwriting discipline">
+            <h3>Underwriting discipline</h3>
+            <ul>
+              <li>First-lien or directly enforceable claims</li>
+              <li>Hard-asset collateral as the primary protection</li>
+              <li>Typical 30–60% LTV or CTV at entry</li>
+              <li>Downside protection before upside pursuit</li>
             </ul>
-            <div class="map">
-              <img src="assets/images/map.png" alt="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Firm metrics">
+        <div class="wrap section-inner">
+          <div class="proof-grid">
+            <div class="proof-item"><span class="proof-value">2004</span><span class="proof-label">Strategy inception</span></div>
+            <div class="proof-item"><span class="proof-value">&gt;$2bn</span><span class="proof-label">AUM across six vintages</span></div>
+            <div class="proof-item"><span class="proof-value">&gt;50</span><span class="proof-label">Transactions completed</span></div>
+            <div class="proof-item"><span class="proof-value">30–60%</span><span class="proof-label">Typical entry LTV / CTV</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap section-inner">
+          <div class="section-head">
+            <h2>An integrated onshore platform</h2>
+            <p>The same operating platform carries transactions from initial screen through legal resolution, preserving accountability through the full life of each position.</p>
+          </div>
+          <div class="platform-block" aria-label="Integrated platform architecture">
+            <div class="platform-header">Integrated platform sequence</div>
+            <div class="platform-grid">
+              <article class="pillar">
+                <span class="pillar-step">01</span>
+                <h3>Origination</h3>
+                <p>Direct sourcing through banks, AMCs, legal channels, and long-standing counterparties in principal credit markets.</p>
+              </article>
+              <article class="pillar">
+                <span class="pillar-step">02</span>
+                <h3>Underwriting</h3>
+                <p>Collateral-led credit assessment, legal claim verification, recovery path analysis, and conservative structuring at entry.</p>
+              </article>
+              <article class="pillar">
+                <span class="pillar-step">03</span>
+                <h3>Servicing and control</h3>
+                <p>Continuous onshore monitoring, covenant and process management, and active intervention when conditions diverge from plan.</p>
+              </article>
+              <article class="pillar">
+                <span class="pillar-step">04</span>
+                <h3>Resolution</h3>
+                <p>Execution of negotiated workouts, legal enforcement, or asset realization with a focus on recoverability and timing discipline.</p>
+              </article>
             </div>
-          </article>
-          <article class="panel quote">
-            <div class="eyebrow">Founding principle</div>
-            <p>“Build a durable institution, not a cyclical trade.”</p>
-            <p>Our symbol, the coastal redwood, reflects long-horizon discipline through changing market cycles.</p>
-          </article>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap">
-          <div class="split-head">
-            <h2>Why counterparties work with us.</h2>
-            <p>Our mandate is to provide reliable certainty in situations where time, control, and execution quality matter most.</p>
-          </div>
-          <div class="pillars-grid">
-            <article class="pillar">
-              <b>Execution certainty</b>
-              <h3>Fast, underwritten decisions.</h3>
-              <p>Senior team members evaluate legal pathways and collateral coverage early, so counterparties receive actionable feedback quickly.</p>
-            </article>
-            <article class="pillar">
-              <b>Process discipline</b>
-              <h3>Institutional governance.</h3>
-              <p>Credit memos, downside cases, and portfolio monitoring are run through consistent controls developed across multiple market cycles.</p>
-            </article>
-            <article class="pillar">
-              <b>Resolution capability</b>
-              <h3>Built to handle complexity.</h3>
-              <p>When circumstances change, we can step into restructurings and recovery processes with in-house legal and servicing coordination.</p>
-            </article>
           </div>
         </div>
       </section>
 
       <section>
-        <div class="wrap">
-          <div class="split-head">
-            <h2>Investment committee.</h2>
-            <p>Investment judgment, legal structuring, and portfolio oversight are integrated in one decision forum.</p>
+        <div class="wrap section-inner">
+          <div class="section-head">
+            <h2>Why the platform is built this way</h2>
+            <p>In China private credit, outcomes are determined by enforceable onshore rights and local execution quality, not document form alone.</p>
           </div>
-          <div class="people-grid">
-            <article class="person"><h3>Benjamin Fanger</h3><span class="role">Managing Partner</span><p>Co-founded Shoreline Capital in 2004 and helped shape ShoreVest's legal-first underwriting framework across six fund vintages.</p></article>
-            <article class="person"><h3>Ada Bi</h3><span class="role">Partner, CFO</span><p>Leads fund operations, controls, LP reporting, and regulatory compliance across the platform.</p></article>
-            <article class="person"><h3>Mecy Mei</h3><span class="role">Partner</span><p>Leads underwriting and asset management with extensive experience in PRC legal structuring and enforcement.</p></article>
-            <article class="person"><h3>Hui Zheng</h3><span class="role">Partner</span><p>Leads origination, structuring, and recovery execution across asset-backed opportunities.</p></article>
+          <div class="analysis-layout">
+            <article class="analysis-panel">
+              <h3>Execution realities</h3>
+              <ul>
+                <li>Offshore documents alone do not determine practical control in stressed situations.</li>
+                <li>Onshore enforceability and local legal process govern timing and recoveries.</li>
+                <li>Collateral liquidity must be tested against real disposal pathways, not paper valuation.</li>
+              </ul>
+            </article>
+            <article class="analysis-panel">
+              <h3>Portfolio posture</h3>
+              <ul>
+                <li>Avoidance of unsecured offshore exposure where claim enforcement is structurally weak.</li>
+                <li>Avoidance of development-backed lending where completion and refinancing risk dominate outcomes.</li>
+                <li>Preference for situations where collateral, legal rights, and process control are aligned from day one.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-section">
+        <div class="wrap section-inner">
+          <div class="section-head">
+            <h2>Local presence, national reach</h2>
+            <p>ShoreVest is headquartered in Guangzhou with a Shanghai office and broader coverage across China’s principal credit markets, including Hong Kong connectivity.</p>
+          </div>
+          <div class="map-card">
+            <svg viewBox="0 0 960 560" role="img" aria-label="Stylized regional map with ShoreVest locations in Shanghai, Guangzhou, and Hong Kong">
+              <defs>
+                <linearGradient id="sea" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#f5f1ea" />
+                  <stop offset="100%" stop-color="#efe8de" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="960" height="560" fill="url(#sea)" />
+              <path d="M228 78 L330 98 L426 86 L536 120 L630 152 L710 214 L684 262 L742 314 L694 356 L622 344 L560 388 L480 398 L390 356 L318 332 L296 286 L238 238 L208 186 Z" fill="#f8f5ef" stroke="#cdc5b9" stroke-width="2" />
+              <path d="M742 314 L794 336 L826 374 L804 422 L756 438 L712 410 L694 356 Z" fill="#f8f5ef" stroke="#cdc5b9" stroke-width="2" />
+              <line x1="562" y1="178" x2="560" y2="200" stroke="#b8b0a4" stroke-width="1" />
+              <circle class="city-dot" cx="560" cy="200" r="7" />
+              <text class="city-label" x="574" y="204">Shanghai</text>
+              <line x1="488" y1="320" x2="502" y2="344" stroke="#b8b0a4" stroke-width="1" />
+              <circle class="city-dot" cx="488" cy="320" r="7" />
+              <text class="city-label" x="506" y="348">Guangzhou</text>
+              <line x1="520" y1="336" x2="538" y2="362" stroke="#b8b0a4" stroke-width="1" />
+              <circle class="city-dot" cx="520" cy="336" r="6" />
+              <text class="city-label" x="544" y="366">Hong Kong</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="long-horizon">
+        <div class="wrap section-inner">
+          <div class="section-head">
+            <h2>A long-horizon institution</h2>
+            <p>ShoreVest is built to compound judgment over decades, with governance and process designed for continuity across credit cycles.</p>
+          </div>
+          <blockquote>
+            <p>
+              The coastal redwood is a reminder of operating posture: durable root systems, measured growth, and structural resilience under changing conditions. The objective is a hundred-year
+              institution defined by discipline, not cycle timing.
+            </p>
+          </blockquote>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap section-inner">
+          <div class="section-head">
+            <h2>Investment committee</h2>
+            <p>The investment committee sets portfolio risk posture, approves transaction structure, and oversees resolution strategy.</p>
+          </div>
+          <div class="committee-grid">
+            <article class="member">
+              <h3>Benjamin Fanger</h3>
+              <div class="title">Managing Partner</div>
+              <p>Chairs investment approvals and portfolio risk decisions.</p>
+            </article>
+            <article class="member">
+              <h3>Ada Bi</h3>
+              <div class="title">Partner, Chief Financial Officer</div>
+              <p>Oversees fund controls, financial governance, and institutional reporting.</p>
+            </article>
+            <article class="member">
+              <h3>Mecy Mei</h3>
+              <div class="title">Partner</div>
+              <p>Leads underwriting standards and asset management execution.</p>
+            </article>
+            <article class="member">
+              <h3>Hui Zheng</h3>
+              <div class="title">Partner</div>
+              <p>Leads origination and resolution execution across onshore markets.</p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="capital">
-        <div class="wrap">
-          <div class="split-head">
-            <h2>Capital base.</h2>
-            <p>ShoreVest's investor base has included sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
-          </div>
-          <a href="investor-access.html" class="btn capital-cta">Investor Access</a>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap">
-          <div class="split-head">
-            <h2>Track record by situation.</h2>
-            <p>Our focus remains selective: opportunities where collateral quality, legal rights, and alignment support principal-first outcomes.</p>
-          </div>
-          <div class="track-grid">
-            <article class="track-item">
-              <h3>Corporate credit</h3>
-              <p>Senior secured and structured financings for businesses with identifiable cash flow and asset support.</p>
-            </article>
-            <article class="track-item">
-              <h3>Special situations</h3>
-              <p>Capital solutions for stressed issuers where restructuring pathways can be clearly defined at entry.</p>
-            </article>
-            <article class="track-item">
-              <h3>Real asset-backed</h3>
-              <p>Transactions anchored by hard collateral with conservative entry levels and active post-close oversight.</p>
-            </article>
-            <article class="track-item">
-              <h3>Claims resolution</h3>
-              <p>Distressed debt and NPL opportunities where legal enforceability and workout execution are central to value creation.</p>
-            </article>
+        <div class="wrap section-inner">
+          <div class="section-head" style="margin-bottom: 0">
+            <h2>Capital base</h2>
+            <p>
+              ShoreVest’s investor base has included sovereign wealth funds, pensions, insurers, endowments, asset managers, and family offices across North America, Asia, the Middle East,
+              and Europe.
+            </p>
           </div>
         </div>
       </section>
 
       <section>
-        <div class="wrap">
-          <p class="notice">General information only. No offer to sell or solicitation to invest. Information may be subject to investor qualification, confidentiality, and jurisdiction-specific restrictions.</p>
+        <div class="wrap section-inner">
+          <p class="notice">
+            General information only. No offer to sell or solicitation to invest. Access to detailed investment information is subject to investor qualification, confidentiality, and
+            jurisdiction-specific restrictions.
+          </p>
         </div>
       </section>
     </main>
@@ -727,7 +973,11 @@
 
         <div class="sv-footer__bottom">
           <div>&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
-          <div>This website is provided strictly on an "as-is" and "as-available" basis solely for general informational and discussion purposes. It does not constitute, and must not be relied upon as, legal, tax, accounting, regulatory, investment, financial, or other professional advice; an offer to sell; a solicitation of an offer to buy; or a recommendation regarding any security, investment product, strategy, fund, or advisory service in any jurisdiction.</div>
+          <div>
+            This website is provided strictly on an "as-is" and "as-available" basis solely for general informational and discussion purposes. It does not constitute, and must not be relied
+            upon as, legal, tax, accounting, regulatory, investment, financial, or other professional advice; an offer to sell; a solicitation of an offer to buy; or a recommendation regarding
+            any security, investment product, strategy, fund, or advisory service in any jurisdiction.
+          </div>
           <div><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
         </div>
       </div>
