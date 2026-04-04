@@ -275,6 +275,51 @@
         color: #534d44;
       }
 
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .pillar {
+        background: linear-gradient(180deg, #fcfaf7 0%, #f4efe7 100%);
+        border: 1px solid #ddd7cd;
+        padding: 20px;
+      }
+      .pillar b {
+        display: inline-flex;
+        margin-bottom: 10px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #7a7369;
+      }
+      .pillar h3 {
+        font-size: 26px;
+        margin-bottom: 8px;
+      }
+      .pillar p {
+        color: #4e483f;
+      }
+
+      .track-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .track-item {
+        background: var(--panel);
+        border: 1px solid #ddd7cd;
+        padding: 18px;
+      }
+      .track-item h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+      .track-item p {
+        color: #554f46;
+        font-size: 15px;
+      }
+
       .geo-grid {
         display: grid;
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -419,7 +464,13 @@
         .hero-metrics {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+        .pillars-grid {
+          grid-template-columns: 1fr;
+        }
         .people-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .track-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
@@ -474,6 +525,9 @@
         .model-grid,
         .hero-metrics,
         .people-grid {
+          grid-template-columns: 1fr;
+        }
+        .track-grid {
           grid-template-columns: 1fr;
         }
         .sv-footer {
@@ -579,6 +633,32 @@
       <section>
         <div class="wrap">
           <div class="split-head">
+            <h2>Why counterparties work with us.</h2>
+            <p>Our mandate is to provide reliable certainty in situations where time, control, and execution quality matter most.</p>
+          </div>
+          <div class="pillars-grid">
+            <article class="pillar">
+              <b>Execution certainty</b>
+              <h3>Fast, underwritten decisions.</h3>
+              <p>Senior team members evaluate legal pathways and collateral coverage early, so counterparties receive actionable feedback quickly.</p>
+            </article>
+            <article class="pillar">
+              <b>Process discipline</b>
+              <h3>Institutional governance.</h3>
+              <p>Credit memos, downside cases, and portfolio monitoring are run through consistent controls developed across multiple market cycles.</p>
+            </article>
+            <article class="pillar">
+              <b>Resolution capability</b>
+              <h3>Built to handle complexity.</h3>
+              <p>When circumstances change, we can step into restructurings and recovery processes with in-house legal and servicing coordination.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="split-head">
             <h2>Investment committee.</h2>
             <p>Investment judgment, legal structuring, and portfolio oversight are integrated in one decision forum.</p>
           </div>
@@ -598,6 +678,33 @@
             <p>ShoreVest's investor base has included sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
           </div>
           <a href="investor-access.html" class="btn capital-cta">Investor Access</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="split-head">
+            <h2>Track record by situation.</h2>
+            <p>Our focus remains selective: opportunities where collateral quality, legal rights, and alignment support principal-first outcomes.</p>
+          </div>
+          <div class="track-grid">
+            <article class="track-item">
+              <h3>Corporate credit</h3>
+              <p>Senior secured and structured financings for businesses with identifiable cash flow and asset support.</p>
+            </article>
+            <article class="track-item">
+              <h3>Special situations</h3>
+              <p>Capital solutions for stressed issuers where restructuring pathways can be clearly defined at entry.</p>
+            </article>
+            <article class="track-item">
+              <h3>Real asset-backed</h3>
+              <p>Transactions anchored by hard collateral with conservative entry levels and active post-close oversight.</p>
+            </article>
+            <article class="track-item">
+              <h3>Claims resolution</h3>
+              <p>Distressed debt and NPL opportunities where legal enforceability and workout execution are central to value creation.</p>
+            </article>
+          </div>
         </div>
       </section>
 
