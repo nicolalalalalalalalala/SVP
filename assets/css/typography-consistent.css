@@ -1,10 +1,26 @@
 :root {
   --site-font-size: 15px;
   --site-line-height: 1.6;
+  --site-font-size-sm: 0.875rem;
+  --site-font-size-body: 1rem;
+  --site-font-size-lead: 1.0625rem;
+  --site-font-size-h1: clamp(2rem, 5vw, 3.6rem);
+  --site-font-size-h2: clamp(1.6rem, 3.8vw, 2.8rem);
+  --site-font-size-h3: clamp(1.2rem, 2.3vw, 1.8rem);
+  --site-font-size-display: clamp(2rem, 7vw, 4.75rem);
+  --site-font-size-body-responsive: clamp(0.95rem, 1.25vw, 1.05rem);
   --site-sans-en: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --site-sans-zh: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
   --site-serif-en: 'EB Garamond', Georgia, 'Times New Roman', serif;
   --site-serif-zh: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+  --site-color-accent: #b3213f;
+  --site-color-ink: #0c0c0a;
+  --site-color-ink-soft: #3f3b36;
+  --site-color-muted: #888680;
+  --site-color-bg: #ffffff;
+  --site-color-bg-soft: #f6f4f0;
+  --site-color-rule: rgba(0, 0, 0, 0.08);
+  --site-color-ink-strong: #171717;
 }
 
 html {
@@ -16,9 +32,14 @@ input,
 select,
 textarea,
 button {
-  font-size: 1rem;
+  font-size: var(--site-font-size-body);
   line-height: var(--site-line-height);
   font-family: var(--site-sans-en);
+}
+
+body {
+  color: var(--site-color-ink-soft);
+  background: var(--site-color-bg);
 }
 
 /* Keep words intact across the site (avoid splits like "ambi-tion"). */
@@ -47,6 +68,26 @@ h6,
 .serif,
 [class*='serif'] {
   font-family: var(--site-serif-en);
+  color: var(--site-color-ink);
+}
+
+a {
+  color: var(--site-color-accent);
+}
+
+small,
+.muted,
+[class*='muted'],
+.kicker,
+.eyebrow {
+  color: var(--site-color-muted);
+}
+
+hr,
+table,
+th,
+td {
+  border-color: var(--site-color-rule);
 }
 
 html:lang(zh) body,
@@ -106,21 +147,28 @@ body {
 
 p,
 li {
+  font-size: var(--site-font-size-body);
   max-width: 68ch;
 }
 
+small,
+.kicker,
+.eyebrow {
+  font-size: var(--site-font-size-sm);
+}
+
 h1 {
-  font-size: clamp(2rem, 5vw, 3.6rem) !important;
+  font-size: var(--site-font-size-h1) !important;
   line-height: 1.1;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 3.8vw, 2.8rem) !important;
+  font-size: var(--site-font-size-h2) !important;
   line-height: 1.15;
 }
 
 h3 {
-  font-size: clamp(1.2rem, 2.3vw, 1.8rem) !important;
+  font-size: var(--site-font-size-h3) !important;
   line-height: 1.22;
 }
 
@@ -132,7 +180,7 @@ h3 {
 .nb__n,
 .ac__img--glyph::after,
 .icard__glyph {
-  font-size: clamp(2rem, 7vw, 4.75rem) !important;
+  font-size: var(--site-font-size-display) !important;
   line-height: 1.06;
 }
 
@@ -141,6 +189,6 @@ h3 {
 .su__sub,
 .tm__bio,
 .ac__body {
-  font-size: clamp(0.95rem, 1.25vw, 1.05rem) !important;
+  font-size: var(--site-font-size-body-responsive) !important;
   line-height: 1.75;
 }
