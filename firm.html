@@ -929,10 +929,21 @@
 
       .validation-section .section-head {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 40px;
       }
       .validation-section .section-head > p:last-of-type {
         grid-column: 1 / -1;
-        margin-top: 2px !important;
+        margin-top: 6px;
+      }
+      .validation-section .section-head h2 {
+        margin-top: 4px;
+      }
+      .validation-section .section-head p {
+        max-width: 28ch;
+      }
+      .validation-section .section-head .validation-cta {
+        max-width: none;
       }
 
       .closing-panel {
@@ -1776,7 +1787,7 @@
             <p>
               ShoreVest's investor base has included sovereign wealth funds, pension funds, endowments, insurance companies, and family offices from North America, Asia, the Middle East, and Europe. Fund III is currently open for qualified institutional investors.
             </p>
-            <p style="margin-top:14px;">
+            <p class="validation-cta">
               <a href="investor-access.html" class="nav__lp">Investor Access <span aria-hidden="true">→</span></a>
             </p>
           </div>
