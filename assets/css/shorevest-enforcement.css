@@ -57,62 +57,33 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-*:not(svg):not(svg *) {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.heading,
-.title,
-[class*="heading"],
-[class*="title"] {
+:where(h1, h2, h3, h4, h5, h6, .heading, .title, [class*="heading"], [class*="title"]) {
   font-family: var(--sv-font-serif-en);
-  font-weight: var(--sv-weight-regular) !important;
+  font-weight: var(--sv-weight-regular);
   letter-spacing: 0.01em;
   color: var(--sv-color-ink);
   line-height: var(--sv-lh-heading);
   margin: 0 0 var(--sv-space-3);
 }
 
-h1,
-.h1,
-.display,
-[class*="hero-title"] {
+:where(h1, .h1, .display, [class*="hero-title"]) {
   font-size: var(--sv-fs-h1);
 }
 
-.display-lg,
-[class*="display"] {
+:where(.display-lg, [class*="display"]) {
   font-size: var(--sv-fs-display);
-  font-weight: var(--sv-weight-regular) !important;
+  font-weight: var(--sv-weight-regular);
 }
 
-h2,
-.h2 {
+:where(h2, .h2) {
   font-size: var(--sv-fs-h2);
 }
 
-h3,
-.h3,
-h4,
-h5,
-h6 {
+:where(h3, .h3, h4, h5, h6) {
   font-size: var(--sv-fs-h3);
 }
 
-p,
-li,
-dd,
-dt,
-blockquote,
-.body,
-.copy {
+:where(p, li, dd, dt, blockquote, .body, .copy) {
   font-size: var(--sv-fs-body);
   line-height: var(--sv-lh-body);
   font-weight: var(--sv-weight-regular);
@@ -120,23 +91,14 @@ blockquote,
   max-width: 66ch;
 }
 
-small,
-.meta,
-.muted,
-caption,
-figcaption,
-label,
-input::placeholder,
-textarea::placeholder {
+:where(small, .meta, .muted, caption, figcaption, label, input::placeholder, textarea::placeholder) {
   font-size: var(--sv-fs-meta);
   color: var(--sv-color-muted);
   line-height: var(--sv-lh-meta);
 }
 
-strong,
-b,
-th {
-  font-weight: var(--sv-weight-medium) !important;
+:where(strong, b, th) {
+  font-weight: var(--sv-weight-medium);
 }
 
 a {
@@ -150,11 +112,7 @@ a:focus-visible {
   color: var(--sv-color-accent);
 }
 
-nav,
-.nav,
-header nav,
-.menu,
-[class*="nav"] {
+:where(nav a, .nav a, header nav a, .menu a, [class*="nav"] a) {
   font-family: var(--sv-font-sans-en);
   font-size: var(--sv-fs-nav);
   letter-spacing: 0.06em;
@@ -162,39 +120,17 @@ header nav,
   text-transform: none;
 }
 
-button,
-.btn,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+:where(button, .btn, input[type="button"], input[type="submit"], input[type="reset"]) {
   font-family: var(--sv-font-sans-en);
   font-size: var(--sv-fs-nav);
   font-weight: var(--sv-weight-medium);
   letter-spacing: 0.04em;
   text-transform: none;
-  color: var(--sv-color-ink);
-  background: transparent;
-  border: 1px solid var(--sv-color-rule);
-  padding: 0.6rem 0.95rem;
 }
 
 section,
-article,
-main > div,
-.module,
-.card,
-.panel,
-.block {
+article {
   margin-block: var(--sv-space-6);
-}
-
-.card,
-.module,
-.panel,
-[class*="card"],
-[class*="module"] {
-  border: 1px solid var(--sv-color-rule);
-  background: var(--sv-color-bg);
 }
 
 table {
@@ -215,15 +151,12 @@ th {
   background: var(--sv-color-bg-soft);
 }
 
-input,
-select,
-textarea {
+:where(input, select, textarea) {
   font-family: var(--sv-font-sans-en);
   font-size: var(--sv-fs-body);
   color: var(--sv-color-ink);
   border: 1px solid var(--sv-color-rule);
   background: var(--sv-color-bg);
-  padding: 0.56rem 0.72rem;
 }
 
 hr {
@@ -258,44 +191,12 @@ hr {
   font-family: var(--sv-font-logo-en) !important;
 }
 
-[style*="#ff2d2d" i],
-[style*="#b2334d" i],
-[style*="#bb2e46" i],
-[style*="#8b1a2f" i] {
-  color: var(--sv-color-accent) !important;
-  border-color: var(--sv-color-accent) !important;
-}
-
-.u-ink { color: var(--sv-color-ink) !important; }
-.u-soft { color: var(--sv-color-soft-ink) !important; }
-.u-muted { color: var(--sv-color-muted) !important; }
-.u-accent { color: var(--sv-color-accent) !important; }
-.u-bg-soft { background: var(--sv-color-bg-soft) !important; }
-.u-serif { font-family: var(--sv-font-serif-en) !important; }
-.u-sans { font-family: var(--sv-font-sans-en) !important; }
-
 @media (max-width: 768px) {
-  :root {
-    --sv-fs-h1: clamp(1.55rem, 8vw, 2.25rem);
-    --sv-fs-h2: clamp(1.22rem, 5.8vw, 1.72rem);
-    --sv-fs-h3: clamp(1rem, 4.4vw, 1.22rem);
-    --sv-fs-display: clamp(1.55rem, 9vw, 2.5rem);
+  :where(h1, .h1, .display, [class*="hero-title"]) {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
   }
 
-  nav,
-  .nav,
-  [class*="nav"] {
-    letter-spacing: 0.04em;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  :where(h2, .h2) {
+    font-size: clamp(1.35rem, 5.5vw, 1.9rem);
   }
 }
