@@ -570,26 +570,27 @@
       }
       .track-record-grid {
         display: grid;
-        grid-template-columns: minmax(220px, 0.9fr) minmax(0, 2.1fr);
-        gap: 14px;
+        grid-template-columns: minmax(260px, 1fr) minmax(0, 2.2fr);
+        gap: 16px;
         align-items: stretch;
       }
       .track-record-anchor {
         display: grid;
-        align-content: end;
-        gap: 10px;
-        padding: 24px 22px;
-        background: linear-gradient(155deg, #f6f1ea 0%, #fbf9f4 100%);
-        border: 1px solid #e1dbd0;
+        align-content: center;
+        gap: 12px;
+        padding: 28px 24px;
+        background: linear-gradient(165deg, #f3ede3 0%, #fbf8f2 100%);
+        border: 1px solid #d9d1c3;
         border-radius: var(--radius);
         min-height: 100%;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
       }
       .track-record-anchor .label {
         font-size: 12px;
-        letter-spacing: 0.08em;
-        font-weight: 600;
+        letter-spacing: 0.12em;
+        font-weight: 700;
         text-transform: uppercase;
-        color: #7c776f;
+        color: #666057;
       }
       .track-record-anchor .metric {
         font-family: var(--serif);
@@ -609,23 +610,43 @@
       .track-record-rail {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
+        gap: 14px;
       }
       .track-record-step {
         position: relative;
-        padding: 22px 18px 18px;
-        min-height: 176px;
-        border: 1px solid #e1ddd3;
+        display: grid;
+        align-content: start;
+        gap: 6px;
+        padding: 24px 20px 20px;
+        min-height: 192px;
+        border: 1px solid #ddd7ca;
+        border-radius: calc(var(--radius) - 4px);
+        background: #fffdfa;
       }
       .track-record-step::before {
         content: "";
         position: absolute;
-        top: 12px;
-        left: 14px;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: #bb2e46;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        height: 3px;
+        border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) 0 0;
+        background: linear-gradient(90deg, #bb2e46 0%, rgba(187, 46, 70, 0.35) 100%);
+      }
+      .track-record-step:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(30, 22, 14, 0.07);
+        border-color: rgba(187, 46, 70, 0.28);
+      }
+      .track-record-step h3 {
+        margin-top: 4px;
+      }
+      .track-record-step .metric {
+        color: #211d18;
+      }
+      .track-record-step p {
+        margin: 0;
       }
       .track-record-section .track-record-step h3 {
         font-family: var(--sans);
@@ -634,13 +655,13 @@
         letter-spacing: 0.01em;
         line-height: 1.25;
         text-transform: none;
-        margin: 12px 0 10px;
+        margin: 10px 0 8px;
         color: #3f3b35;
       }
       .track-record-section .track-record-step .metric {
         font-size: clamp(36px, 3.2vw, 44px);
         line-height: 1.05;
-        margin-bottom: 10px;
+        margin-bottom: 4px;
       }
       .track-record-section .track-record-step p {
         font-size: 14px;
@@ -649,7 +670,18 @@
       }
       .track-record-step.team-continuity {
         grid-column: span 3;
-        min-height: 140px;
+        min-height: 152px;
+      }
+      .track-record-step.team-continuity .metric {
+        font-size: clamp(40px, 4vw, 52px);
+      }
+      @media (max-width: 1320px) {
+        .track-record-rail {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .track-record-step.team-continuity {
+          grid-column: span 2;
+        }
       }
       @media (max-width: 1120px) {
         .proof-grid {
@@ -662,16 +694,14 @@
         .track-record-grid {
           grid-template-columns: 1fr;
         }
-        .track-record-rail {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .track-record-step.team-continuity {
-          grid-column: span 2;
-        }
       }
       @media (max-width: 760px) {
+        .track-record-anchor {
+          padding: 22px 20px;
+        }
         .track-record-rail {
           grid-template-columns: 1fr;
+          gap: 12px;
         }
         .track-record-step,
         .track-record-step.team-continuity {
@@ -1855,7 +1885,7 @@
                   <div class="metric">~20 Years</div>
                   <p>
                     Four voting investment committee members have worked together
-                    for decades.
+                    for roughly two decades.
                   </p>
                 </article>
               </div>
