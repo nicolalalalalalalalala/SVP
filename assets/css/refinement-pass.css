@@ -207,7 +207,12 @@ footer small,
   line-height: 1.58 !important;
   font-size: 12px !important;
   color: rgba(31, 28, 24, 0.74) !important;
-  max-width: 120ch;
+  max-width: none;
+  width: 100%;
+}
+
+.sv-footer__bottom > * {
+  width: 100%;
 }
 
 /* Breakpoint tightening without flattening components */
