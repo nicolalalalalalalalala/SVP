@@ -46,6 +46,13 @@
   border-radius: 0 !important;
 }
 
+/* Keep directional CTA controls circular. */
+.cta__ring,
+.btn--circle,
+.arrow-btn {
+  border-radius: 50% !important;
+}
+
 html {
   scrollbar-gutter: stable;
   text-rendering: optimizeLegibility;
