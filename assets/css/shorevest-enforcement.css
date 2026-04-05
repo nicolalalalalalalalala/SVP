@@ -130,7 +130,7 @@ a:focus-visible {
 
 section,
 article {
-  margin-block: var(--sv-space-6);
+  margin-block: clamp(1.2rem, 2.4vw, 1.9rem);
 }
 
 table {
