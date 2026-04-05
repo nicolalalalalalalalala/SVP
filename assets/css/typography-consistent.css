@@ -157,6 +157,11 @@ small,
   font-size: var(--site-font-size-sm);
 }
 
+/* Keep eyebrow labels aligned with homepage kicker sizing sitewide. */
+.eyebrow {
+  font-size: 10px !important;
+}
+
 h1 {
   font-size: var(--site-font-size-h1) !important;
   line-height: 1.1;
