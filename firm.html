@@ -531,6 +531,11 @@
           box-shadow 0.35s ease,
           border-color 0.35s ease;
       }
+      .proof-card.is-active {
+        border-color: rgba(187, 46, 70, 0.5);
+        box-shadow: 0 16px 24px rgba(22, 18, 14, 0.1);
+        background: #fff6f8;
+      }
       .proof-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 14px 24px rgba(22, 18, 14, 0.08);
@@ -636,6 +641,11 @@
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(30, 22, 14, 0.07);
         border-color: rgba(187, 46, 70, 0.28);
+      }
+      .track-record-step.is-active {
+        border-color: rgba(187, 46, 70, 0.5);
+        box-shadow: 0 14px 24px rgba(30, 22, 14, 0.1);
+        background: #fff7f8;
       }
       .track-record-step h3 {
         margin-top: 4px;
@@ -1043,6 +1053,11 @@
       .platform-notes .note p {
         line-height: 1.55;
         color: #4e4a43;
+      }
+      .platform-notes .note.is-active {
+        border-color: rgba(187, 46, 70, 0.48);
+        box-shadow: 0 14px 22px rgba(22, 18, 14, 0.09);
+        background: #fff7f8;
       }
       .note p:last-child {
         margin-bottom: 0;
@@ -2182,6 +2197,41 @@
           toggleCard();
         });
       });
+
+      const setupSelectableGroup = (selector) => {
+        document.querySelectorAll(selector).forEach((group) => {
+          const items = group.querySelectorAll(".proof-card, .track-record-step, .note");
+          if (!items.length) return;
+
+          const activateItem = (item) => {
+            items.forEach((candidate) => {
+              candidate.classList.remove("is-active");
+              candidate.setAttribute("aria-pressed", "false");
+            });
+            item.classList.add("is-active");
+            item.setAttribute("aria-pressed", "true");
+          };
+
+          items.forEach((item, index) => {
+            if (item.classList.contains("note--fineprint")) return;
+            item.setAttribute("role", "button");
+            item.setAttribute("tabindex", "0");
+            item.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+            if (index === 0) item.classList.add("is-active");
+
+            item.addEventListener("click", () => activateItem(item));
+            item.addEventListener("keydown", (event) => {
+              if (event.key !== "Enter" && event.key !== " ") return;
+              event.preventDefault();
+              activateItem(item);
+            });
+          });
+        });
+      };
+
+      setupSelectableGroup(".proof-grid");
+      setupSelectableGroup(".track-record-rail");
+      setupSelectableGroup(".platform-notes");
     </script>
 
     <script>
