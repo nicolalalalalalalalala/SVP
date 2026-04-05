@@ -22,6 +22,30 @@
   --shadow-xs: 0 4px 12px rgba(12, 12, 10, 0.05);
 }
 
+/* Global square-corner pass for boxes and controls */
+:where(
+  div,
+  section,
+  article,
+  aside,
+  nav,
+  header,
+  footer,
+  main,
+  button,
+  input,
+  textarea,
+  select,
+  fieldset,
+  details,
+  summary,
+  [class*="card"],
+  [class*="panel"],
+  [class*="box"]
+) {
+  border-radius: 0 !important;
+}
+
 html {
   scrollbar-gutter: stable;
   text-rendering: optimizeLegibility;
