@@ -519,12 +519,12 @@
 </style>
   <style>
 .sv-footer {
-  background: var(--off);
+  background: #f6f4f0;
   border-top: 1px solid var(--rule);
-  padding: 34px var(--pad) 40px;
+  padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
 }
 .sv-footer__inner {
-  width: 100%;
+  max-width: var(--max, 1320px);
   margin: 0 auto;
 }
 .sv-footer__main {
@@ -551,7 +551,7 @@
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--mist);
+  color: #8f887f;
 }
 .sv-footer__contact a {
   font-size: 12px;
@@ -561,17 +561,13 @@
   color: var(--ink);
   border: 1px solid rgba(0, 0, 0, 0.16);
   padding: 10px 14px;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 .sv-footer__contact a:hover {
   background: var(--red);
   border-color: var(--red);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(179, 33, 63, 0.24);
 }
 .sv-footer__bottom {
   display: grid;
@@ -588,13 +584,14 @@
 }
 .sv-footer__legal-links a {
   color: var(--ink);
+  text-decoration: none;
 }
 .sv-footer__legal-links a:hover {
   color: var(--red);
 }
 @media (max-width: 768px) {
   .sv-footer {
-    padding: 26px var(--pad) 34px;
+    padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
   }
   .sv-footer__main {
     flex-direction: column;
@@ -604,6 +601,8 @@
     flex-wrap: wrap;
   }
 }
+
+
 </style>
 
 
