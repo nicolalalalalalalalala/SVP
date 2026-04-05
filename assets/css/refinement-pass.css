@@ -97,6 +97,12 @@ section + section {
   margin-top: clamp(14px, 2.2vw, 28px);
 }
 
+/* Keep the China Debt Dynamics block flush with adjacent dark sections. */
+#strategy + #cdd,
+#cdd + .city-band {
+  margin-top: 0;
+}
+
 /* Cards and modules */
 .card,
 .icard,
