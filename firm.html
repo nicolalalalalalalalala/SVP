@@ -609,7 +609,7 @@
         background: linear-gradient(90deg, #bb2e46 0%, rgba(187, 46, 70, 0.35) 100%);
       }
       .track-record-anchor .label,
-      .track-record-section .track-record-step h3 {
+      .track-record-step h3 {
         margin-top: 4px;
         font-size: clamp(13px, 1.15vw, 14px);
         letter-spacing: 0.06em;
@@ -618,7 +618,8 @@
         text-transform: uppercase;
         color: #3f3b35;
       }
-      .track-record-anchor .metric {
+      .track-record-anchor .metric,
+      .track-record-step .metric {
         font-family: var(--serif);
         font-size: clamp(24px, 2vw, 29px);
         font-weight: 500;
@@ -627,7 +628,8 @@
         margin-bottom: 4px;
         color: #211d18;
       }
-      .track-record-anchor .note {
+      .track-record-anchor .note,
+      .track-record-step p {
         font-family: var(--serif);
         background: transparent;
         border: 0;
@@ -691,20 +693,6 @@
       .track-record-section .track-record-step h3 {
         line-height: 1.25;
         margin: 10px 0 8px;
-      }
-      .track-record-section .track-record-step .metric {
-        font-family: var(--serif);
-        font-size: clamp(24px, 2vw, 29px);
-        font-weight: 500;
-        letter-spacing: -0.01em;
-        line-height: 1.05;
-        margin-bottom: 4px;
-      }
-      .track-record-section .track-record-step p {
-        font-family: var(--serif);
-        font-size: 12px;
-        line-height: 1.45;
-        color: #4a463f;
       }
       .track-record-step.team-continuity {
         grid-column: span 3;
