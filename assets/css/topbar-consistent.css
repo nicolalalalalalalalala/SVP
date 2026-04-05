@@ -478,7 +478,12 @@ html {
 
   .sv-footer__copyright,
   .sv-footer__legal {
-    font-size: 9px;
+    font-size: 8px;
+  }
+
+  .sv-footer__legal {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   .sv-footer__legal-links {
