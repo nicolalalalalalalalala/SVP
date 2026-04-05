@@ -398,9 +398,11 @@
       .press-row a {
         display: flex;
         flex-direction: column;
-        gap: 1px;
+        gap: 0;
         align-items: flex-start;
-        padding: 0.72rem 0.85rem;
+        justify-content: center;
+        min-height: 88px;
+        padding: 0.56rem 0.75rem;
         text-decoration: none;
         transition: background-color 0.2s ease;
       }
@@ -409,9 +411,9 @@
       }
       .press-publication {
         display: block;
-        margin-bottom: 0.16rem;
+        margin-bottom: 0.1rem;
         font-family: "Cormorant Garamond", var(--serif);
-        font-size: 0.64rem;
+        font-size: 0.58rem;
         letter-spacing: 0.14em;
         color: #8b1a2f;
         font-variant: small-caps;
@@ -419,17 +421,21 @@
       .press-headline {
         display: block;
         font-family: "Cormorant Garamond", var(--serif);
-        font-size: 1.01rem;
-        line-height: 1.32;
+        font-size: 0.9rem;
+        line-height: 1.24;
         font-weight: 400;
         color: #0c0c0a;
         transition: color 0.2s ease;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
       }
       .press-date {
         display: block;
-        margin-top: 0.12rem;
+        margin-top: 0.08rem;
         font-family: "Cormorant Garamond", var(--serif);
-        font-size: 0.72rem;
+        font-size: 0.66rem;
         letter-spacing: 0.07em;
         color: #888;
         white-space: nowrap;
