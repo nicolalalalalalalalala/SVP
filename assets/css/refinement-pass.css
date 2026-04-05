@@ -1,0 +1,239 @@
+:root {
+  --sv-refine-max: 1280px;
+  --sv-refine-pad: clamp(28px, 5.2vw, 92px);
+  --sv-refine-copy: 66ch;
+}
+
+/* Global editorial rhythm */
+.wrap {
+  max-width: min(var(--sv-refine-max), 100%);
+  padding-left: var(--sv-refine-pad);
+  padding-right: var(--sv-refine-pad);
+}
+
+section {
+  scroll-margin-top: 86px;
+}
+
+p,
+li {
+  line-height: 1.72;
+  color: color-mix(in srgb, currentColor 92%, #000 8%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+h1 {
+  line-height: 1.05;
+}
+
+h2 {
+  line-height: 1.14;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  letter-spacing: 0.18em;
+}
+
+.eyebrow::after {
+  flex-basis: 48px;
+}
+
+.hero__overlay h1.hero__hed,
+.pagehero__hed,
+.hero h1,
+#hero h1 {
+  font-size: clamp(44px, 6.3vw, 92px) !important;
+  max-width: 16ch;
+  margin-bottom: clamp(28px, 4.5vw, 52px);
+}
+
+#hero,
+.hero,
+.pagehero {
+  padding-top: clamp(72px, 9vw, 120px);
+  padding-bottom: clamp(68px, 8vw, 116px);
+}
+
+/* Navigation polish */
+#nav,
+.sv-topbar {
+  border-bottom-color: rgba(20, 18, 14, 0.12) !important;
+  backdrop-filter: saturate(120%) blur(8px);
+}
+
+.nav__links a,
+.sv-topbar__links a {
+  letter-spacing: 0.13em;
+  opacity: 0.58;
+}
+
+.nav__links a:hover,
+.sv-topbar__links a:hover {
+  opacity: 0.95;
+}
+
+/* Section spacing and copy width */
+section .wrap > p,
+section .wrap > .lede,
+.about__dek,
+.strat__dek,
+.team__dek,
+.ins__dek,
+.fs__intro,
+.market-context-content p,
+.strategy-intro-copy p {
+  max-width: var(--sv-refine-copy);
+}
+
+section + section {
+  margin-top: clamp(26px, 3.4vw, 48px);
+}
+
+/* Cards and modules */
+.card,
+.icard,
+.issue-card,
+.team-card,
+.press-card,
+.strategy-block,
+.process-step,
+.quote-band,
+.num-band,
+.stats-band,
+.stat-card {
+  border-radius: 0 !important;
+  border-color: rgba(16, 14, 11, 0.14) !important;
+  box-shadow: none !important;
+}
+
+.strategy-block,
+.icard,
+.issue-card,
+.press-card {
+  padding-top: clamp(24px, 2.8vw, 34px) !important;
+  padding-bottom: clamp(24px, 2.8vw, 34px) !important;
+}
+
+/* Stats should feel integrated */
+.fs__stat,
+.stat,
+.stat-item,
+.metric,
+.number-card,
+.returns-card {
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(25, 22, 18, 0.2) !important;
+  padding-top: 16px !important;
+}
+
+.fs__stat-n,
+.stat-value,
+.metric__value,
+.number {
+  font-family: var(--serif, 'EB Garamond', Georgia, serif);
+  font-weight: 500 !important;
+  letter-spacing: -0.01em;
+}
+
+.fs__stat-l,
+.stat-label,
+.metric__label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px !important;
+  opacity: 0.72;
+}
+
+/* Process + map sophistication */
+.process-flow,
+.process-grid,
+.platform-diagram,
+.map-wrap,
+.market-map {
+  border-top: 1px solid rgba(20, 17, 13, 0.12);
+  border-bottom: 1px solid rgba(20, 17, 13, 0.12);
+  padding-top: clamp(18px, 2.8vw, 30px);
+  padding-bottom: clamp(18px, 2.8vw, 30px);
+}
+
+.map-wrap img,
+.market-map img,
+img[src*="map"] {
+  filter: grayscale(14%) contrast(1.02) saturate(0.85);
+}
+
+.map-marker,
+.city-marker,
+.map-dot {
+  transform: translate(-50%, -50%) scale(0.9);
+  box-shadow: 0 0 0 4px rgba(179, 33, 63, 0.09);
+}
+
+/* Button polish */
+.cta,
+button,
+.btn,
+.nav__lp,
+.sv-topbar__btn {
+  letter-spacing: 0.13em;
+}
+
+.cta__ring,
+.btn--circle,
+.arrow-btn {
+  width: 42px;
+  height: 42px;
+}
+
+/* Footer copy legibility */
+footer,
+.sv-footer {
+  border-top: 1px solid rgba(20, 16, 13, 0.12);
+}
+
+.sv-footer__legal,
+footer small,
+.footnote,
+.data-note {
+  line-height: 1.58 !important;
+  font-size: 12px !important;
+  color: rgba(31, 28, 24, 0.74) !important;
+  max-width: 120ch;
+}
+
+/* Breakpoint tightening without flattening components */
+@media (max-width: 1024px) {
+  .wrap {
+    padding-left: clamp(22px, 4vw, 40px);
+    padding-right: clamp(22px, 4vw, 40px);
+  }
+
+  .hero__overlay h1.hero__hed,
+  .pagehero__hed,
+  .hero h1,
+  #hero h1 {
+    font-size: clamp(40px, 7.4vw, 64px) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+  }
+
+  .cta,
+  .btn,
+  .nav__lp {
+    font-size: 10.5px;
+  }
+}
