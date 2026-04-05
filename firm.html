@@ -1441,14 +1441,6 @@
         .intel-copy {
           width: 100%;
         }
-        #nav {
-          height: auto;
-          min-height: 72px;
-          align-items: center;
-          flex-wrap: wrap;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
         :root {
           --nav-pad: 18px;
         }
@@ -1516,15 +1508,6 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
         .nav__right {
           display: inline-flex;
           align-items: center;
@@ -1556,10 +1539,6 @@
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
         .nav__right {
           gap: 8px;
         }
