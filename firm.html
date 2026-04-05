@@ -653,6 +653,11 @@
         border-radius: calc(var(--radius) - 4px);
         background: #fffdfa;
       }
+      .track-record-anchor,
+      .track-record-step,
+      .track-record-step.team-continuity {
+        min-height: 192px;
+      }
       .track-record-step::before {
         content: "";
         position: absolute;
@@ -703,7 +708,6 @@
       }
       .track-record-step.team-continuity {
         grid-column: span 3;
-        min-height: 152px;
       }
       @media (max-width: 1320px) {
         .track-record-rail {
@@ -736,7 +740,6 @@
         .track-record-step,
         .track-record-step.team-continuity {
           grid-column: auto;
-          min-height: 0;
         }
       }
 
