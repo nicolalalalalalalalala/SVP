@@ -661,6 +661,12 @@
       .market-card.market-card--minimized p {
         display: none;
       }
+      .market-card.market-card--minimized.is-expanded p {
+        display: block;
+      }
+      .market-card.market-card--minimized {
+        cursor: pointer;
+      }
       .market-card:hover {
         transform: translateY(-4px);
         border-color: rgba(187, 46, 70, 0.35);
@@ -1793,7 +1799,7 @@
             </p>
           </div>
           <div class="market-grid">
-            <article class="market-card market-card--minimized">
+            <article class="market-card market-card--minimized" role="button" tabindex="0" aria-expanded="false">
               <div class="market-card-head">
                 <span class="market-index">01</span>
                 <span class="market-title">Documentation and legal structuring reward specialist underwriting</span>
@@ -1802,7 +1808,7 @@
                 In China, lien ranking, enforceability, and documentary precision are core value drivers. This market-specific dynamic rewards managers who integrate legal structuring into investment underwriting, which is how ShoreVest&apos;s platform was built to execute.
               </p>
             </article>
-            <article class="market-card market-card--minimized">
+            <article class="market-card market-card--minimized" role="button" tabindex="0" aria-expanded="false">
               <div class="market-card-head">
                 <span class="market-index">02</span>
                 <span class="market-title">Enforcement outcomes reward on-the-ground execution</span>
@@ -1811,7 +1817,7 @@
                 PRC court process, creditor coordination, and negotiated resolutions require on-the-ground execution across the full life of an investment. ShoreVest&apos;s integrated approach is designed for this complex operating environment rather than a delegated servicing model.
               </p>
             </article>
-            <article class="market-card market-card--minimized">
+            <article class="market-card market-card--minimized" role="button" tabindex="0" aria-expanded="false">
               <div class="market-card-head">
                 <span class="market-index">03</span>
                 <span class="market-title">Relationship-led origination rewards local expertise</span>
@@ -1820,7 +1826,7 @@
                 In this market, differentiated opportunities are typically relationship-led and reach established local managers first. ShoreVest&apos;s origination model is built around long-duration local coverage in a complex operating environment where access is earned over time.
               </p>
             </article>
-            <article class="market-card market-card--minimized">
+            <article class="market-card market-card--minimized" role="button" tabindex="0" aria-expanded="false">
               <div class="market-card-head">
                 <span class="market-index">04</span>
                 <span class="market-title">Situational borrower dynamics reward cycle-tested judgment</span>
@@ -1829,7 +1835,7 @@
                 Borrower and sponsor behavior changes by circumstance and cycle, making pattern recognition essential to execution quality. ShoreVest&apos;s approach is designed around market-specific dynamics that reward local expertise developed through repeated in-market decision making.
               </p>
             </article>
-            <article class="market-card market-card--minimized">
+            <article class="market-card market-card--minimized" role="button" tabindex="0" aria-expanded="false">
               <div class="market-card-head">
                 <span class="market-index">05</span>
                 <span class="market-title">Active servicing rewards early intervention capability</span>
@@ -1838,7 +1844,7 @@
                 Post-close value realization depends on active monitoring and timely intervention, not passive surveillance. ShoreVest&apos;s in-house servicing and asset management framework was built for an evolving regulatory landscape that requires on-the-ground execution.
               </p>
             </article>
-            <article class="market-card market-card--minimized">
+            <article class="market-card market-card--minimized" role="button" tabindex="0" aria-expanded="false">
               <div class="market-card-head">
                 <span class="market-index">06</span>
                 <span class="market-title">Local execution infrastructure distinguishes realizable value</span>
@@ -2033,6 +2039,20 @@
             event.preventDefault();
             activateCard(card);
           });
+        });
+      });
+
+      document.querySelectorAll(".market-card--minimized").forEach((card) => {
+        const toggleCard = () => {
+          const isExpanded = card.classList.toggle("is-expanded");
+          card.setAttribute("aria-expanded", String(isExpanded));
+        };
+
+        card.addEventListener("click", () => toggleCard());
+        card.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          toggleCard();
         });
       });
     </script>
