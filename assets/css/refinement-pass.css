@@ -94,7 +94,7 @@ section .wrap > .lede,
 }
 
 section + section {
-  margin-top: clamp(26px, 3.4vw, 48px);
+  margin-top: clamp(14px, 2.2vw, 28px);
 }
 
 /* Cards and modules */
