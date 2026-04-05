@@ -767,6 +767,31 @@
       .note p:last-child {
         margin-bottom: 0;
       }
+      .note--fineprint {
+        padding: 10px 12px;
+        gap: 0;
+        border-color: transparent;
+        background: transparent;
+        color: #8a847a;
+      }
+      .note--fineprint:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: transparent;
+      }
+      .note--fineprint h3 {
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        color: #9a9388;
+      }
+      .note--fineprint p {
+        font-size: 11px;
+        line-height: 1.35;
+        color: #9a9388;
+        margin: 0;
+      }
       .accountability-note {
         grid-column: 1 / -1;
         border-left: 4px solid rgba(208, 165, 95, 0.78);
@@ -1732,7 +1757,7 @@
 
       <section class="validation-section">
         <div class="wrap">
-          <div class="note">
+          <div class="note note--fineprint" aria-label="Important Notice">
             <h3>Important Notice</h3>
             <p>
               General information only. Nothing on this website constitutes an
