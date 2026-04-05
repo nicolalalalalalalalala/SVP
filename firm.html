@@ -545,26 +545,106 @@
         font-size: 12px;
         max-width: 760px;
       }
-      .track-record-section .proof-card {
-        padding: 14px;
+      .track-record-grid {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.7fr) minmax(0, 2.3fr);
+        gap: 14px;
+        align-items: stretch;
       }
-      .track-record-section .proof-card h3 {
+      .track-record-anchor {
+        display: grid;
+        align-content: center;
+        gap: 8px;
+        padding: 18px 16px;
+        background: linear-gradient(155deg, #f4f0ea 0%, #f9f7f2 100%);
+        border: 1px solid #e5e2dc;
+        border-radius: var(--radius);
+      }
+      .track-record-anchor .label {
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #7c776f;
+      }
+      .track-record-anchor .metric {
+        font-family: var(--serif);
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 0.95;
+        color: #1f1b17;
+      }
+      .track-record-anchor .note {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        font-size: 10px;
+        line-height: 1.45;
+        color: #4d473f;
+      }
+      .track-record-rail {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        position: relative;
+      }
+      .track-record-rail::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 8px;
+        right: 8px;
+        border-top: 1px solid #d7d2c8;
+        z-index: 0;
+      }
+      .track-record-step {
+        position: relative;
+        z-index: 1;
+        padding: 14px 12px;
+        min-height: 130px;
+      }
+      .track-record-step::before {
+        content: "";
+        position: absolute;
+        top: 11px;
+        left: 14px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #bb2e46;
+        box-shadow: 0 0 0 3px #f4f0ea;
+      }
+      .track-record-section .track-record-step h3 {
         font-family: "Inter", "Segoe UI", Arial, sans-serif;
         font-size: clamp(10px, 1.15vw, 12px);
         letter-spacing: 0.12em;
-        margin-bottom: 6px;
+        margin: 14px 0 6px;
       }
-      .track-record-section .proof-card .metric {
+      .track-record-section .track-record-step .metric {
         font-size: clamp(18px, 3.2vw, 21px);
         margin-bottom: 4px;
       }
-      .track-record-section .proof-card p {
+      .track-record-section .track-record-step p {
         font-size: 9px;
         line-height: 1.3;
+      }
+      .track-record-step.team-continuity {
+        grid-column: span 2;
       }
       @media (max-width: 1120px) {
         .proof-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .track-record-grid {
+          grid-template-columns: 1fr;
+        }
+        .track-record-rail {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .track-record-rail::before {
+          display: none;
+        }
+        .track-record-step::before {
+          top: 8px;
         }
       }
 
@@ -1651,44 +1731,48 @@
                 Six fund vintages. More than two decades in market. The figures below reflect the platform's deployment history, cycle experience, and underwriting discipline.
               </p>
             </div>
-            <div class="proof-grid">
-              <article class="proof-card">
-                <h3>Capital Deployed</h3>
+            <div class="track-record-grid">
+              <article class="track-record-anchor">
+                <span class="label">Capital Deployed</span>
                 <div class="metric">US$2B+</div>
-                <p>Managed across six fund vintages by the senior team.</p>
-              </article>
-              <article class="proof-card">
-                <h3>Operating History</h3>
-                <div class="metric">Since 2004</div>
-                <p>
-                  Operating in market across multiple credit cycles and workout
-                  periods.
+                <p class="note">
+                  Managed across six fund vintages by the senior team.
                 </p>
               </article>
-              <article class="proof-card">
-                <h3>Transactions Completed</h3>
-                <div class="metric">50+</div>
-                <p>
-                  Asset-backed private credit investments across NPLs and
-                  restructurings.
-                </p>
-              </article>
-              <article class="proof-card">
-                <h3>Core Risk Discipline</h3>
-                <div class="metric">30–60%</div>
-                <p>
-                  Typical loan-to-value entry points with direct enforceable
-                  claims.
-                </p>
-              </article>
-              <article class="proof-card">
-                <h3 class="team-continuity-label">Team Continuity</h3>
-                <div class="metric">~20 Years</div>
-                <p>
-                  Four voting investment committee members have worked together
-                  for decades.
-                </p>
-              </article>
+              <div class="track-record-rail">
+                <article class="proof-card track-record-step">
+                  <h3>Operating History</h3>
+                  <div class="metric">Since 2004</div>
+                  <p>
+                    Operating in market across multiple credit cycles and
+                    workout periods.
+                  </p>
+                </article>
+                <article class="proof-card track-record-step">
+                  <h3>Transactions Completed</h3>
+                  <div class="metric">50+</div>
+                  <p>
+                    Asset-backed private credit investments across NPLs and
+                    restructurings.
+                  </p>
+                </article>
+                <article class="proof-card track-record-step">
+                  <h3>Core Risk Discipline</h3>
+                  <div class="metric">30–60%</div>
+                  <p>
+                    Typical loan-to-value entry points with direct enforceable
+                    claims.
+                  </p>
+                </article>
+                <article class="proof-card track-record-step team-continuity">
+                  <h3 class="team-continuity-label">Team Continuity</h3>
+                  <div class="metric">~20 Years</div>
+                  <p>
+                    Four voting investment committee members have worked together
+                    for decades.
+                  </p>
+                </article>
+              </div>
             </div>
           </div>
         </div>
