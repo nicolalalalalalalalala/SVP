@@ -588,30 +588,42 @@
         align-items: stretch;
       }
       .track-record-anchor {
+        position: relative;
         display: grid;
-        align-content: center;
-        gap: 12px;
-        padding: 28px 24px;
-        background: linear-gradient(165deg, #f3ede3 0%, #fbf8f2 100%);
-        border: 1px solid #d9d1c3;
-        border-radius: var(--radius);
+        align-content: start;
+        gap: 6px;
+        padding: 24px 20px 20px;
+        background: #fffdfa;
+        border: 1px solid #ddd7ca;
+        border-radius: calc(var(--radius) - 4px);
         min-height: 100%;
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+      }
+      .track-record-anchor::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) 0 0;
+        background: linear-gradient(90deg, #bb2e46 0%, rgba(187, 46, 70, 0.35) 100%);
       }
       .track-record-anchor .label {
-        font-size: 11px;
-        letter-spacing: 0.08em;
-        font-weight: 600;
+        margin-top: 4px;
+        font-size: clamp(13px, 1.15vw, 14px);
+        letter-spacing: 0.005em;
+        font-weight: 500;
         text-transform: uppercase;
-        color: #666057;
+        color: #3f3b35;
       }
       .track-record-anchor .metric {
         font-family: var(--serif);
-        font-size: clamp(28px, 3.3vw, 38px);
+        font-size: clamp(24px, 2vw, 29px);
         font-weight: 500;
         letter-spacing: -0.01em;
-        line-height: 0.98;
-        color: #1f1b17;
+        line-height: 1.05;
+        margin-bottom: 4px;
+        color: #211d18;
       }
       .track-record-anchor .note {
         font-family: var(--serif);
@@ -620,8 +632,8 @@
         border-radius: 0;
         padding: 0;
         font-size: 12px;
-        line-height: 1.5;
-        color: #4d473f;
+        line-height: 1.45;
+        color: #4a463f;
       }
       .track-record-rail {
         display: grid;
@@ -2227,7 +2239,6 @@
       };
 
       setupSelectableGroup(".proof-grid");
-      setupSelectableGroup(".track-record-rail");
       setupSelectableGroup(".platform-notes");
     </script>
 
