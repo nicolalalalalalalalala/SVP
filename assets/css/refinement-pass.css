@@ -200,6 +200,10 @@ footer,
   border-top: 1px solid rgba(20, 16, 13, 0.12);
 }
 
+.sv-footer__inner {
+  max-width: min(calc(var(--max) + 260px), 100%);
+}
+
 .sv-footer__legal,
 footer small,
 .footnote,
