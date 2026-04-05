@@ -459,14 +459,13 @@
       }
       .founding-principles-panel {
         display: grid;
-        grid-template-columns: minmax(0, 1.35fr) minmax(220px, 1fr);
         gap: 18px;
-        align-items: center;
+        align-items: start;
       }
       .founding-principles-copy .lead {
         font-size: 26px;
         max-width: 920px;
-        margin-bottom: 12px;
+        margin: 8px 0 0;
       }
       .founding-principles-label {
         font-size: 10px;
@@ -476,14 +475,13 @@
       }
       .founding-tree-image {
         width: 100%;
-        max-width: 380px;
-        height: 100%;
-        max-height: 480px;
+        max-width: 100%;
+        height: auto;
+        max-height: 340px;
         object-fit: cover;
         border-radius: 6px;
         filter: grayscale(100%);
         transition: filter 0.35s ease;
-        justify-self: end;
       }
       .founding-tree-image:hover,
       .founding-tree-image:focus-visible {
@@ -502,8 +500,8 @@
         margin: 0 auto;
       }
       .overview-grid .founding-tree-image {
-        max-width: 280px;
-        max-height: 320px;
+        max-width: 100%;
+        max-height: 340px;
       }
 
       .proof-grid {
@@ -1382,11 +1380,11 @@
         .founding-principles-copy .lead {
           font-size: 22px;
           max-width: 100%;
+          margin-top: 6px;
         }
         .founding-tree-image {
           max-width: 100%;
           max-height: 340px;
-          justify-self: stretch;
         }
         .intel-stage:not(:last-child)::after {
           content: "↓";
@@ -1820,20 +1818,20 @@
             <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
           </div>
           <div class="framed-panel founding-principles-panel">
-            <div class="founding-principles-copy">
-              <p class="lead">
-                "The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition: building ShoreVest as a firm that outlasts cycles."
-              </p>
-              <p class="founding-principles-label">
-                FOUNDING PRINCIPLES
-              </p>
-            </div>
             <img
               class="founding-tree-image"
               src="assets/images/firm_tree.jpg"
               alt="Coastal redwood tree used as ShoreVest's founding symbol"
               loading="lazy"
             />
+            <div class="founding-principles-copy">
+              <p class="founding-principles-label">
+                FOUNDING PRINCIPLES
+              </p>
+              <p class="lead">
+                "The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition: building ShoreVest as a firm that outlasts cycles."
+              </p>
+            </div>
           </div>
         </div>
       </section>
