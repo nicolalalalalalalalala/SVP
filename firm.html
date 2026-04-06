@@ -26,8 +26,8 @@
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
         --pad: 64px;
-        --section-copy-size: 14px;
-        --section-label-size: 11px;
+        --section-copy-size: 20px;
+        --section-label-size: 10px;
       }
 
       * {
@@ -248,8 +248,8 @@
         margin-bottom: 14px;
       }
       .lead {
-        font-family: var(--serif);
-        font-size: 25px;
+        font-family: var(--sans);
+        font-size: 17px;
         line-height: 1.35;
         max-width: 690px;
         color: #393631;
@@ -379,13 +379,13 @@
       }
       .section-head h2 {
         font-family: var(--serif);
-        font-size: clamp(36px, 4.2vw, 52px);
+        font-size: 32px;
         font-weight: 400;
         line-height: 1.08;
       }
       .section-head p {
-        font-family: var(--serif);
-        font-size: 24px;
+        font-family: var(--sans);
+        font-size: 20px;
         color: #45423c;
         line-height: 1.38;
       }
@@ -1090,11 +1090,13 @@
       .section-head.committee-intro h2 {
         max-width: none;
         font-size: 32px;
+        font-family: var(--serif);
       }
       .section-head.committee-intro p {
         width: 100%;
         max-width: none;
         font-size: 20px;
+        font-family: var(--sans);
       }
       .note {
         padding: 20px;
@@ -1131,9 +1133,10 @@
         color: #6e685f;
       }
       .platform-notes .note p {
-        font-size: 15px;
+        font-size: 20px;
         line-height: 1.55;
         color: #4e4a43;
+        font-family: var(--sans);
       }
       .platform-notes .note.is-active {
         border-color: rgba(187, 46, 70, 0.48);
@@ -1173,7 +1176,7 @@
         border-color: transparent;
       }
       .note--fineprint h3 {
-        font-size: 7px;
+        font-size: 5px;
         font-weight: 300;
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -1183,7 +1186,7 @@
       .note--fineprint p {
         width: 100%;
         max-width: none;
-        font-size: 10px;
+        font-size: 5px;
         line-height: 1.35;
         color: #9a9388;
         margin: 0;
@@ -1192,30 +1195,33 @@
         background: var(--surface);
         border: 1px solid #ddd9d1;
         border-radius: var(--radius);
-        padding: 20px;
+        padding: 16px;
       }
       .platform-diagram .eyebrow {
-        font-size: var(--section-label-size);
+        font-size: 10px;
       }
       .platform-layout > .platform-diagram {
-        margin-top: 8px;
+        margin-top: 0;
       }
       .platform-diagram > p {
-        font-size: var(--section-label-size);
-        margin-bottom: 14px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        font-family: var(--sans);
       }
       .protocol-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
+        gap: 10px;
       }
       .protocol-card {
-        min-height: 246px;
+        min-height: 200px;
+        padding: 14px;
       }
       .protocol-card h3 {
         color: #5e594f;
+        font-family: var(--serif);
         font-weight: 400;
-        font-size: var(--section-label-size);
+        font-size: 25px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-bottom: 8px;
@@ -1224,6 +1230,7 @@
         font-size: 15px;
         line-height: 1.55;
         color: #4e4a43;
+        font-family: var(--sans);
       }
 
       .dark-band {
