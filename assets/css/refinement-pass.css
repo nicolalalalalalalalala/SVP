@@ -222,6 +222,22 @@ footer small,
   width: 100%;
 }
 
+.sv-footer__brand {
+  font-size: 18px !important;
+}
+
+.sv-footer__contact-label,
+.sv-footer__contact a {
+  font-size: 12px !important;
+}
+
+.sv-footer__copyright,
+.sv-footer__legal,
+.sv-footer__legal-links,
+.sv-footer__legal-links a {
+  font-size: 11px !important;
+}
+
 .sv-footer__bottom > * {
   width: 100%;
 }
