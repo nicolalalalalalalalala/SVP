@@ -231,7 +231,10 @@ footer small,
   font-size: 12px !important;
 }
 
-.sv-footer__copyright,
+.sv-footer__copyright {
+  font-size: 12px !important;
+}
+
 .sv-footer__legal,
 .sv-footer__legal-links,
 .sv-footer__legal-links a {
