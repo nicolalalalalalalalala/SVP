@@ -532,53 +532,6 @@
         margin: 0;
         filter: contrast(1.08) saturate(1.12);
       }
-      .operations-map__marker {
-        position: absolute;
-        width: 14px;
-        height: 14px;
-        display: block;
-        border: 2px solid #fff;
-        border-radius: 999px !important;
-        background: var(--red);
-        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-      }
-      .operations-map__marker::after {
-        content: attr(data-city);
-        position: absolute;
-        left: 50%;
-        top: -10px;
-        transform: translate(-50%, -100%);
-        background: #1f1f1f;
-        color: #fff;
-        font-size: 11px;
-        letter-spacing: 0.02em;
-        line-height: 1;
-        padding: 7px 9px;
-        border-radius: 4px;
-        white-space: nowrap;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-      }
-      .operations-map__marker:hover::after,
-      .operations-map__marker:focus-visible::after {
-        opacity: 1;
-        transform: translate(-50%, calc(-100% - 4px));
-      }
-      .operations-map__marker--guangzhou {
-        left: 65.8%;
-        top: 72.9%;
-      }
-      .operations-map__marker--shanghai {
-        left: 79%;
-        top: 58.4%;
-      }
-      .operations-map__marker--hong-kong {
-        left: 67.3%;
-        top: 75.8%;
-      }
       .founding-principles-panel {
         display: grid;
         gap: 18px;
@@ -2004,27 +1957,9 @@
                 Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China — sourcing, diligence, structuring, servicing, and resolution run through an integrated onshore process. Local presence is not a differentiator. It is a prerequisite.
               </p>
             </div>
-            <div class="operations-map" aria-label="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong">
+            <div class="operations-map" aria-label="Map of ShoreVest office footprint in China">
               <div class="operations-map__frame">
                 <img src="assets/images/chinahigh.svg" alt="ShoreVest locations in China" loading="lazy" />
-                <span
-                  class="operations-map__marker operations-map__marker--guangzhou"
-                  data-city="Guangzhou"
-                  role="img"
-                  aria-label="Guangzhou office"
-                ></span>
-                <span
-                  class="operations-map__marker operations-map__marker--shanghai"
-                  data-city="Shanghai"
-                  role="img"
-                  aria-label="Shanghai office"
-                ></span>
-                <span
-                  class="operations-map__marker operations-map__marker--hong-kong"
-                  data-city="Hong Kong"
-                  role="img"
-                  aria-label="Hong Kong office"
-                ></span>
               </div>
             </div>
             <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
