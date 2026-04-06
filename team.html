@@ -180,12 +180,26 @@
         min-height: 420px;
         padding: 148px 0 76px;
         border-bottom: 1px solid var(--rule);
-        background: var(--cream);
+        background:
+          radial-gradient(circle at 85% -20%, rgba(179, 33, 63, 0.2), transparent 42%),
+          linear-gradient(180deg, #f8f4f2 0%, #f7edef 48%, #f4e6ea 100%);
         display: flex;
         align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .pagehero::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 120px;
+        background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.72) 100%);
+        pointer-events: none;
       }
       .pagehero .wrap {
         width: 100%;
+        position: relative;
+        z-index: 1;
       }
       h1 {
         font-family: var(--serif);
@@ -203,6 +217,37 @@
         color: var(--mist);
         font-family: var(--serif);
         margin-top: 18px;
+      }
+      .team-highlights {
+        padding: 0 0 24px;
+        background: linear-gradient(180deg, #f4e6ea 0%, #faf7f3 100%);
+        border-bottom: 1px solid var(--rule);
+      }
+      .team-highlights__grid {
+        margin-top: -24px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .team-highlights__card {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(48, 40, 34, 0.12);
+        padding: 18px 18px 16px;
+        backdrop-filter: blur(1.5px);
+      }
+      .team-highlights__title {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--red);
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      .team-highlights__text {
+        font-family: var(--serif);
+        font-size: 19px;
+        line-height: 1.42;
+        color: var(--ink-soft);
       }
 
       .founder-note {
@@ -269,6 +314,14 @@
         align-items: flex-start;
         gap: 6px;
         margin-bottom: 16px;
+        position: relative;
+      }
+      .group__head::before {
+        content: "";
+        width: 44px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--red), transparent);
+        margin-bottom: 8px;
       }
       .group h2 {
         font-family: var(--serif);
@@ -299,6 +352,21 @@
         display: flex;
         flex-direction: column;
         gap: 9px;
+        padding: 8px;
+        border: 1px solid transparent;
+        transition:
+          border-color 0.25s ease,
+          box-shadow 0.25s ease,
+          transform 0.25s ease,
+          background 0.25s ease;
+      }
+      .card:hover,
+      .card:focus-within,
+      .card.is-active {
+        border-color: rgba(179, 33, 63, 0.24);
+        background: linear-gradient(180deg, rgba(248, 240, 243, 0.7), rgba(255, 255, 255, 0.95));
+        box-shadow: 0 16px 36px rgba(49, 39, 34, 0.09);
+        transform: translateY(-2px);
       }
       .photo {
         width: 100%;
@@ -440,6 +508,9 @@
         :root {
           --pad: 40px;
         }
+        .team-highlights__grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
         .grid {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
@@ -504,6 +575,21 @@
         .pagehero p {
           font-size: 16px;
           line-height: 1.65;
+        }
+        .team-highlights {
+          padding-bottom: 20px;
+        }
+        .team-highlights__grid {
+          margin-top: -12px;
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .team-highlights__card {
+          padding: 14px 14px 13px;
+        }
+        .team-highlights__text {
+          font-size: 17px;
+          line-height: 1.38;
         }
         .founder-note {
           padding: 32px 0;
@@ -900,6 +986,30 @@
           resolution, and investor coverage — built over two decades of
           operating through every phase of China’s credit cycle.
         </p>
+      </div>
+    </section>
+    <section class="team-highlights" aria-label="Team strengths">
+      <div class="wrap">
+        <div class="team-highlights__grid">
+          <article class="team-highlights__card">
+            <h2 class="team-highlights__title">Cycle-Tested Platform</h2>
+            <p class="team-highlights__text">
+              Built across multiple credit cycles with integrated underwriting and workout execution.
+            </p>
+          </article>
+          <article class="team-highlights__card">
+            <h2 class="team-highlights__title">Local + Legal Edge</h2>
+            <p class="team-highlights__text">
+              Joint investment and legal structuring capability to preserve creditor rights and drive recoveries.
+            </p>
+          </article>
+          <article class="team-highlights__card">
+            <h2 class="team-highlights__title">Institutional Delivery</h2>
+            <p class="team-highlights__text">
+              Investor coverage, governance discipline, and portfolio management built for global allocators.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
