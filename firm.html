@@ -741,12 +741,15 @@
       .track-record-panel {
         background: #fff;
         border-radius: calc(var(--radius) - 2px);
-        padding: 18px 18px 20px;
+        padding: 28px 30px 32px;
         border: 1px solid rgba(187, 46, 70, 0.22);
         min-height: 100%;
+        display: grid;
+        align-content: start;
+        gap: 14px;
       }
       .track-record-panel__eyebrow {
-        margin: 0 0 8px;
+        margin: 0;
         font-family: var(--sans);
         font-size: 10px;
         letter-spacing: 0.16em;
@@ -754,28 +757,29 @@
         color: #8f8578;
       }
       .track-record-panel__label {
-        margin: 0 0 6px;
+        margin: 0;
         font-size: 25px;
-        line-height: 1.2;
+        line-height: 1.25;
         font-family: var(--serif);
         font-weight: 400;
         color: #2c271f;
       }
       .track-record-panel__metric {
-        margin: 0 0 10px;
-        font-size: 20px;
+        margin: 0;
+        font-size: 24px;
         font-family: var(--serif);
         font-weight: 500;
-        line-height: 1;
+        line-height: 1.1;
         letter-spacing: -0.01em;
         color: #1f1a15;
       }
       .track-record-panel__desc {
         margin: 0;
         font-size: 15px;
-        line-height: 1.55;
+        line-height: 1.65;
         font-family: var(--sans);
         color: #433f38;
+        max-width: 34ch;
       }
       @media (max-width: 1240px) {
         .track-record-interactive {
@@ -800,6 +804,10 @@
         .track-record-trigger__value {
           grid-column: 2;
           font-size: 20px;
+        }
+        .track-record-panel {
+          padding: 22px 20px 24px;
+          gap: 12px;
         }
       }
 
