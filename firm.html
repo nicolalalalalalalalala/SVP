@@ -1372,6 +1372,9 @@
       .validation-section .section-head {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       }
+      .validation-section .section-head.capital-base-head {
+        grid-template-columns: 1fr;
+      }
       .validation-section .section-head > p:last-of-type {
         grid-column: 1 / -1;
         margin-top: 2px !important;
@@ -2259,7 +2262,7 @@
 
       <section class="validation-section">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head capital-base-head">
             <div class="capital-base-lockup" aria-label="Capital base">
               <div class="eyebrow">CAPITAL BASE</div>
               <p>
