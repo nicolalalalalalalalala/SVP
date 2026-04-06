@@ -403,7 +403,7 @@ html {
 .sv-footer__legal,
 .sv-footer__legal-links,
 .sv-footer__legal-links a {
-  font-size: 9px;
+  font-size: 11px;
 }
 
 @media (max-width: 768px) {
@@ -457,12 +457,12 @@ html {
   }
 
   .sv-footer__contact-label {
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.14em;
   }
 
   .sv-footer__brand {
-    font-size: 9px;
+    font-size: 11px;
     line-height: 1.08;
   }
 
@@ -482,7 +482,7 @@ html {
 
   .sv-footer__copyright,
   .sv-footer__legal {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .sv-footer__legal {
