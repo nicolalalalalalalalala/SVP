@@ -407,12 +407,15 @@ html {
 
 .sv-footer__brand,
 .sv-footer__contact-label,
-.sv-footer__contact a,
+.sv-footer__contact a {
+  font-size: 11px;
+}
+
 .sv-footer__copyright,
 .sv-footer__legal,
 .sv-footer__legal-links,
 .sv-footer__legal-links a {
-  font-size: 11px;
+  font-size: 3px;
 }
 
 @media (max-width: 768px) {
@@ -490,8 +493,10 @@ html {
   }
 
   .sv-footer__copyright,
-  .sv-footer__legal {
-    font-size: 10px;
+  .sv-footer__legal,
+  .sv-footer__legal-links,
+  .sv-footer__legal-links a {
+    font-size: 3px;
   }
 
   .sv-footer__legal {
@@ -510,7 +515,7 @@ html {
 
   .sv-footer__legal-links a {
     position: relative;
-    font-size: 9px;
+    font-size: 3px;
     line-height: 1.4;
     white-space: nowrap;
     padding-right: 12px;
