@@ -97,6 +97,14 @@ section + section {
   margin-top: clamp(14px, 2.2vw, 28px);
 }
 
+/* Prevent a stray gap before footers when the final content block is a section/article. */
+main > section:last-child,
+main > article:last-child,
+body > section:last-child,
+body > article:last-child {
+  margin-bottom: 0;
+}
+
 /* Keep the China Debt Dynamics block flush with adjacent dark sections. */
 #strategy + #cdd,
 #cdd + .city-band {
