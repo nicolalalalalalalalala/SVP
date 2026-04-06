@@ -1230,10 +1230,13 @@
       .accountability-note h3 {
         color: #5e594f;
         font-weight: 400;
+        font-size: var(--section-label-size);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
       }
       .accountability-note p {
         font-family: var(--serif);
-        font-size: 13px;
+        font-size: var(--section-label-size);
         line-height: 1.45;
       }
       .platform-diagram {
@@ -1241,6 +1244,9 @@
         border: 1px solid #ddd9d1;
         border-radius: var(--radius);
         padding: 20px;
+      }
+      .platform-diagram .eyebrow {
+        font-size: var(--section-label-size);
       }
       .platform-layout > .platform-diagram {
         margin-top: 8px;
@@ -1281,15 +1287,18 @@
         margin-top: 16px;
       }
       .small-detail h4 {
-        font-size: 10px;
+        font-size: var(--section-label-size);
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: #706b63;
         margin-bottom: 6px;
       }
       .small-detail p {
-        font-size: 13px;
+        font-size: var(--section-label-size);
         color: #393632;
+      }
+      .platform-diagram > p {
+        font-size: var(--section-label-size);
       }
 
       .dark-band {
