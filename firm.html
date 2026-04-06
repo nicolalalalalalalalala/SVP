@@ -655,114 +655,138 @@
       }
       .track-record-section .framed-panel {
         display: grid;
-        gap: 26px;
+        gap: 28px;
       }
       .track-record-section .section-head {
         display: grid;
         gap: 10px;
         margin-bottom: 0;
-        max-width: 92ch;
+        max-width: 94ch;
       }
       .track-record-section .section-head h2 {
-        font-family: var(--serif);
-        font-size: 34px;
-        letter-spacing: -0.01em;
+        font-family: var(--sans);
+        font-size: 38px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
         margin-bottom: 0;
       }
       .track-record-section .section-head p {
-        font-family: var(--serif);
         margin: 0;
-        font-size: 19px;
-        line-height: 1.5;
-      }
-      .track-record-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
-        gap: 14px;
-        align-items: stretch;
-      }
-      .track-record-card {
-        position: relative;
-        border: 1px solid #ded7ca;
-        border-radius: calc(var(--radius) - 4px);
-        background: linear-gradient(180deg, #fffefb 0%, #fffaf7 100%);
-        padding: 22px 20px;
-        min-height: 170px;
-        transition:
-          transform 0.3s ease,
-          border-color 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-      .track-record-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(187, 46, 70, 0.32);
-        box-shadow: 0 12px 22px rgba(30, 22, 14, 0.08);
-      }
-      .track-record-card h3 {
-        margin: 0 0 8px;
-        font-size: 12px;
-        letter-spacing: 0.16em;
-        font-weight: 700;
-        font-family: var(--serif);
-        text-transform: uppercase;
-        color: #5f574c;
-      }
-      .track-record-card .metric {
+        font-size: 18px;
+        line-height: 1.62;
         font-family: var(--sans);
-        font-size: 42px;
+        color: #3f3a33;
+      }
+      .track-record-interactive {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: 30px;
+        align-items: start;
+      }
+      .track-record-nav {
+        display: grid;
+        gap: 8px;
+      }
+      .track-record-trigger {
+        border: 0;
+        border-bottom: 1px solid rgba(31, 27, 22, 0.14);
+        background: transparent;
+        text-align: left;
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr) auto;
+        gap: 16px;
+        padding: 16px 0;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+      }
+      .track-record-trigger:hover,
+      .track-record-trigger:focus-visible {
+        border-color: rgba(187, 46, 70, 0.45);
+        outline: none;
+      }
+      .track-record-trigger__index {
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #8f8578;
+        padding-top: 3px;
+      }
+      .track-record-trigger__label {
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: #2d2822;
+      }
+      .track-record-trigger__value {
+        font-family: var(--sans);
+        font-size: 28px;
         font-weight: 600;
-        letter-spacing: -0.01em;
-        line-height: 1;
-        color: #1f1b16;
-      }
-      .track-record-card p {
-        font-family: var(--serif);
-        margin: 10px 0 0;
-        font-size: 15px;
-        line-height: 1.58;
-        color: #4a463f;
-      }
-      .track-record-card--spotlight {
-        background:
-          linear-gradient(150deg, rgba(187, 46, 70, 0.13) 0%, rgba(187, 46, 70, 0.03) 48%, rgba(255, 255, 255, 0) 100%),
-          linear-gradient(180deg, #fffefb 0%, #fffaf7 100%);
-        border-color: rgba(158, 35, 57, 0.42);
-        padding: 26px 24px;
-        display: grid;
-        align-content: start;
-      }
-      .track-record-card--spotlight .metric {
-        font-size: 56px;
-      }
-      .track-record-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-      .track-record-card--team .metric {
         letter-spacing: -0.02em;
+        color: #1e1914;
+      }
+      .track-record-trigger.is-active .track-record-trigger__label,
+      .track-record-trigger.is-active .track-record-trigger__value,
+      .track-record-trigger.is-active .track-record-trigger__index {
+        color: #8e1a2f;
+      }
+      .track-record-panel {
+        background: linear-gradient(160deg, #fffaf4 0%, #fff 48%, #fff7fa 100%);
+        border-radius: calc(var(--radius) - 2px);
+        padding: 24px 24px 26px;
+        border: 1px solid rgba(187, 46, 70, 0.22);
+        min-height: 100%;
+      }
+      .track-record-panel__eyebrow {
+        margin: 0 0 8px;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #8f8578;
+      }
+      .track-record-panel__label {
+        margin: 0 0 6px;
+        font-size: 24px;
+        line-height: 1.2;
+        font-family: var(--sans);
+        font-weight: 500;
+        color: #2c271f;
+      }
+      .track-record-panel__metric {
+        margin: 0 0 10px;
+        font-size: clamp(42px, 6vw, 58px);
+        font-family: var(--sans);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #1f1a15;
+      }
+      .track-record-panel__desc {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.6;
+        color: #433f38;
       }
       @media (max-width: 1240px) {
-        .track-record-layout {
+        .track-record-interactive {
           grid-template-columns: 1fr;
+          gap: 22px;
         }
       }
       @media (max-width: 760px) {
+        .track-record-section .section-head h2 {
+          font-size: 34px;
+        }
         .track-record-section .section-head p {
-          font-size: 18px;
+          font-size: 17px;
         }
-        .track-record-grid {
-          grid-template-columns: 1fr;
+        .track-record-trigger {
+          grid-template-columns: 24px minmax(0, 1fr);
+          gap: 12px;
         }
-        .track-record-card,
-        .track-record-card--spotlight {
-          min-height: auto;
-        }
-        .track-record-card .metric {
-          font-size: 36px;
-        }
-        .track-record-card--spotlight .metric {
-          font-size: 44px;
+        .track-record-trigger__value {
+          grid-column: 2;
+          font-size: 24px;
         }
       }
 
@@ -1959,44 +1983,42 @@
                 Six fund vintages. More than two decades in market. The figures below reflect the platform's deployment history, cycle experience, and underwriting discipline.
               </p>
             </div>
-            <div class="track-record-layout" aria-label="Track record overview with five key metrics">
-              <article class="track-record-card track-record-card--spotlight">
-                <h3>CAPITAL DEPLOYED</h3>
-                <div class="metric">US$2B+</div>
-                <p>
+            <div class="track-record-interactive" aria-label="Track record overview with selectable metrics">
+              <div class="track-record-nav" role="tablist" aria-label="Track record metrics">
+                <button class="track-record-trigger is-active" type="button" role="tab" aria-selected="true" data-label="Capital Deployed" data-value="US$2B+" data-description="Managed across six fund vintages by the senior team.">
+                  <span class="track-record-trigger__index">01</span>
+                  <span class="track-record-trigger__label">Capital Deployed</span>
+                  <span class="track-record-trigger__value">US$2B+</span>
+                </button>
+                <button class="track-record-trigger" type="button" role="tab" aria-selected="false" data-label="Operating History" data-value="Since 2004" data-description="Operating in market across multiple credit cycles and workout periods.">
+                  <span class="track-record-trigger__index">02</span>
+                  <span class="track-record-trigger__label">Operating History</span>
+                  <span class="track-record-trigger__value">Since 2004</span>
+                </button>
+                <button class="track-record-trigger" type="button" role="tab" aria-selected="false" data-label="Transactions Completed" data-value="50+" data-description="Asset-backed private credit investments across NPLs and restructurings.">
+                  <span class="track-record-trigger__index">03</span>
+                  <span class="track-record-trigger__label">Transactions Completed</span>
+                  <span class="track-record-trigger__value">50+</span>
+                </button>
+                <button class="track-record-trigger" type="button" role="tab" aria-selected="false" data-label="Core Risk Discipline" data-value="30–60%" data-description="Typical loan-to-value entry points with direct enforceable claims.">
+                  <span class="track-record-trigger__index">04</span>
+                  <span class="track-record-trigger__label">Core Risk Discipline</span>
+                  <span class="track-record-trigger__value">30–60%</span>
+                </button>
+                <button class="track-record-trigger" type="button" role="tab" aria-selected="false" data-label="Team Continuity" data-value="~20 Years" data-description="Four voting investment committee members have worked together for roughly two decades.">
+                  <span class="track-record-trigger__index">05</span>
+                  <span class="track-record-trigger__label">Team Continuity</span>
+                  <span class="track-record-trigger__value">~20 Years</span>
+                </button>
+              </div>
+              <aside class="track-record-panel" aria-live="polite">
+                <p class="track-record-panel__eyebrow">Selected Metric</p>
+                <h3 class="track-record-panel__label">Capital Deployed</h3>
+                <p class="track-record-panel__metric">US$2B+</p>
+                <p class="track-record-panel__desc">
                   Managed across six fund vintages by the senior team.
                 </p>
-              </article>
-              <div class="track-record-grid">
-                <article class="track-record-card">
-                  <h3>OPERATING HISTORY</h3>
-                  <div class="metric">Since 2004</div>
-                  <p>
-                    Operating in market across multiple credit cycles and workout periods.
-                  </p>
-                </article>
-                <article class="track-record-card">
-                  <h3>TRANSACTIONS COMPLETED</h3>
-                  <div class="metric">50+</div>
-                  <p>
-                    Asset-backed private credit investments across NPLs and restructurings.
-                  </p>
-                </article>
-                <article class="track-record-card">
-                  <h3>CORE RISK DISCIPLINE</h3>
-                  <div class="metric">30–60%</div>
-                  <p>
-                    Typical loan-to-value entry points with direct enforceable claims.
-                  </p>
-                </article>
-                <article class="track-record-card track-record-card--team">
-                  <h3>TEAM CONTINUITY</h3>
-                  <div class="metric">~20 Years</div>
-                  <p>
-                    Four voting investment committee members have worked together for roughly two decades.
-                  </p>
-                </article>
-              </div>
+              </aside>
             </div>
           </div>
         </div>
@@ -2289,6 +2311,30 @@
           if (event.key !== "Enter" && event.key !== " ") return;
           event.preventDefault();
           toggleCard();
+        });
+      });
+
+      document.querySelectorAll(".track-record-interactive").forEach((section) => {
+        const triggers = section.querySelectorAll(".track-record-trigger");
+        const panelLabel = section.querySelector(".track-record-panel__label");
+        const panelMetric = section.querySelector(".track-record-panel__metric");
+        const panelDesc = section.querySelector(".track-record-panel__desc");
+        if (!triggers.length || !panelLabel || !panelMetric || !panelDesc) return;
+
+        const activateTrigger = (trigger) => {
+          triggers.forEach((item) => {
+            item.classList.remove("is-active");
+            item.setAttribute("aria-selected", "false");
+          });
+          trigger.classList.add("is-active");
+          trigger.setAttribute("aria-selected", "true");
+          panelLabel.textContent = trigger.dataset.label || "";
+          panelMetric.textContent = trigger.dataset.value || "";
+          panelDesc.textContent = trigger.dataset.description || "";
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => activateTrigger(trigger));
         });
       });
 
