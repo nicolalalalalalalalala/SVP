@@ -122,6 +122,12 @@ html[lang^='zh'] h6 {
   font-family: var(--site-serif-zh);
 }
 
+/* Global button typography requirement. */
+:where(button, .btn, input[type='button'], input[type='submit'], input[type='reset']) {
+  font-family: var(--site-sans-en) !important;
+  font-size: 10px !important;
+}
+
 
 /* Sitewide horizontal gutters (keeps margins consistent across templates). */
 :root {
