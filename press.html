@@ -396,12 +396,12 @@
         border-bottom: 1px solid rgba(12, 12, 10, 0.12);
       }
       .press-row a {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
         gap: 0;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: 64px;
+        align-items: start;
+        justify-content: start;
+        min-height: 108px;
         padding: 0.44rem 0.72rem;
         text-decoration: none;
         transition: background-color 0.2s ease;
@@ -633,7 +633,7 @@
         }
         .press-row a {
           gap: 3px;
-          min-height: 84px;
+          min-height: 108px;
           padding: 0.9rem 1rem;
         }
         .press-publication {
