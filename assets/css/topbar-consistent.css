@@ -53,6 +53,14 @@
   border-radius: 50% !important;
 }
 
+/* Preserve circular status/map dots from the global square-corner pass. */
+.cdd__dot,
+.map-dot,
+.map-marker,
+.city-marker {
+  border-radius: 50% !important;
+}
+
 html {
   scrollbar-gutter: stable;
   text-rendering: optimizeLegibility;
