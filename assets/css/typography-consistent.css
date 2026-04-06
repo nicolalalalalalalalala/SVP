@@ -37,6 +37,10 @@ button {
   font-family: var(--site-sans-en);
 }
 
+label {
+  font-size: 10px !important;
+}
+
 body {
   color: var(--site-color-ink-soft);
   background: var(--site-color-bg);
