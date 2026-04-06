@@ -655,175 +655,139 @@
       }
       .track-record-section .section-head {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(360px, 760px);
-        gap: 20px;
-        align-items: end;
-        margin-bottom: 20px;
+        gap: 10px;
+        margin-bottom: 22px;
       }
       .track-record-section .section-head h2 {
         font-family: var(--serif);
-        font-size: 32px;
+        font-size: 34px;
         letter-spacing: -0.01em;
         margin-bottom: 0;
-        white-space: nowrap;
       }
       .track-record-section .section-head p {
         font-family: var(--serif);
         margin: 0;
-        font-size: 20px;
+        font-size: 19px;
         line-height: 1.5;
-        max-width: 72ch;
-        justify-self: end;
+        max-width: 78ch;
       }
-      .track-record-grid {
+      .track-record-infographic {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 12px;
         align-items: stretch;
       }
-      .track-record-anchor {
+      .track-record-card {
         position: relative;
         display: grid;
         align-content: start;
-        gap: 6px;
-        padding: 24px 20px 20px;
-        background: #fffdfa;
-        border: 1px solid #ddd7ca;
+        grid-template-columns: auto 1fr;
+        column-gap: 12px;
+        row-gap: 8px;
+        padding: 22px 20px 20px;
+        border: 1px solid #ded7ca;
         border-radius: calc(var(--radius) - 4px);
-        min-height: 100%;
+        background: linear-gradient(180deg, #fffefb 0%, #fffaf7 100%);
+        min-height: 205px;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
       }
-      .track-record-anchor::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) 0 0;
-        background: linear-gradient(90deg, #bb2e46 0%, rgba(187, 46, 70, 0.35) 100%);
+      .track-record-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(187, 46, 70, 0.3);
+        box-shadow: 0 12px 22px rgba(30, 22, 14, 0.08);
       }
-      .track-record-anchor .label,
-      .track-record-step h3 {
-        margin-top: 4px;
-        font-size: 20px;
-        letter-spacing: 0.1em;
-        font-weight: 600;
+      .track-record-card::before {
+        content: attr(data-index);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        font-family: var(--sans);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #fff;
+        background: #9e2339;
+        border-radius: 999px;
+        grid-row: 1 / span 2;
+      }
+      .track-record-card h3 {
+        margin: 3px 0 0;
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        font-weight: 700;
         font-family: var(--serif);
         text-transform: uppercase;
-        color: #3f3b35;
+        color: #5f574c;
       }
-      .track-record-anchor .metric,
-      .track-record-step .metric {
+      .track-record-card .metric {
         font-family: var(--sans);
-        font-size: 25px;
+        font-size: 36px;
         font-weight: 600;
         letter-spacing: -0.01em;
-        line-height: 1.1;
-        margin-bottom: 6px;
-        color: #211d18;
+        line-height: 1;
+        grid-column: 2;
+        color: #1f1b16;
       }
-      .track-record-anchor .note,
-      .track-record-step p {
+      .track-record-card p {
         font-family: var(--serif);
-        background: transparent;
-        border: 0;
-        border-radius: 0;
-        padding: 0;
+        grid-column: 1 / -1;
+        margin: 2px 0 0;
         font-size: 15px;
-        line-height: 1.55;
+        line-height: 1.58;
         color: #4a463f;
       }
-      .track-record-rail {
-        display: contents;
+      .track-record-card--capital {
+        grid-column: span 6;
+        background:
+          linear-gradient(145deg, rgba(187, 46, 70, 0.08), rgba(187, 46, 70, 0)),
+          linear-gradient(180deg, #fffefb 0%, #fffaf7 100%);
       }
-      .track-record-step {
-        position: relative;
-        display: grid;
-        align-content: start;
-        gap: 6px;
-        padding: 24px 20px 20px;
-        min-height: 192px;
-        border: 1px solid #ddd7ca;
-        border-radius: calc(var(--radius) - 4px);
-        background: #fffdfa;
+      .track-record-card--capital .metric {
+        font-size: 44px;
       }
-      .track-record-anchor,
-      .track-record-step,
-      .track-record-step.team-continuity {
-        min-height: 192px;
+      .track-record-card--half {
+        grid-column: span 3;
       }
-      .track-record-step::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: auto;
-        height: 3px;
-        border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) 0 0;
-        background: linear-gradient(90deg, #bb2e46 0%, rgba(187, 46, 70, 0.35) 100%);
-      }
-      .track-record-step:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(30, 22, 14, 0.07);
-        border-color: rgba(187, 46, 70, 0.28);
-      }
-      .track-record-step.is-active {
-        border-color: rgba(187, 46, 70, 0.5);
-        box-shadow: 0 14px 24px rgba(30, 22, 14, 0.1);
-        background: #fff7f8;
-      }
-      .track-record-step h3 {
-        margin-top: 4px;
-      }
-      .track-record-step .metric {
-        color: #211d18;
-      }
-      .track-record-step p {
-        margin: 0;
-      }
-      .track-record-section .track-record-step h3 {
-        font-size: 20px;
-        line-height: 1.35;
-        margin: 4px 0 0;
-      }
-      .track-record-step.team-continuity {
-        grid-column: auto;
+      .track-record-card--team .metric {
+        letter-spacing: -0.02em;
       }
       @media (max-width: 1320px) {
-        .track-record-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+        .track-record-card--capital {
+          grid-column: span 12;
         }
-        .track-record-step.team-continuity {
-          grid-column: auto;
+        .track-record-card--half {
+          grid-column: span 6;
         }
       }
       @media (max-width: 1120px) {
         .proof-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        .track-record-section .section-head {
-          grid-template-columns: 1fr;
-          gap: 8px;
-        }
-        .track-record-section .section-head p {
-          justify-self: start;
-        }
-        .track-record-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+        .track-record-card .metric {
+          font-size: 32px;
         }
       }
       @media (max-width: 760px) {
-        .track-record-anchor {
-          padding: 22px 20px;
+        .track-record-section .section-head p {
+          font-size: 18px;
         }
-        .track-record-grid {
+        .track-record-infographic {
           grid-template-columns: 1fr;
-          gap: 12px;
         }
-        .track-record-step,
-        .track-record-step.team-continuity {
+        .track-record-card,
+        .track-record-card--capital,
+        .track-record-card--half {
           grid-column: 1;
+          min-height: auto;
+        }
+        .track-record-card .metric,
+        .track-record-card--capital .metric {
+          font-size: 34px;
         }
       }
 
@@ -2015,48 +1979,46 @@
                 Six fund vintages. More than two decades in market. The figures below reflect the platform's deployment history, cycle experience, and underwriting discipline.
               </p>
             </div>
-            <div class="track-record-grid">
-              <article class="track-record-anchor">
-                <span class="label">CAPITAL DEPLOYED</span>
+            <div class="track-record-infographic" aria-label="Track record infographic with five key metrics">
+              <article class="track-record-card track-record-card--capital" data-index="01">
+                <h3>CAPITAL DEPLOYED</h3>
                 <div class="metric">US$2B+</div>
-                <p class="note">
+                <p>
                   Managed across six fund vintages by the senior team.
                 </p>
               </article>
-              <div class="track-record-rail">
-                <article class="proof-card track-record-step">
-                  <h3>OPERATING HISTORY</h3>
-                  <div class="metric">Since 2004</div>
-                  <p>
-                    Operating in market across multiple credit cycles and
-                    workout periods.
-                  </p>
-                </article>
-                <article class="proof-card track-record-step">
-                  <h3>TRANSACTIONS COMPLETED</h3>
-                  <div class="metric">50+</div>
-                  <p>
-                    Asset-backed private credit investments across NPLs and
-                    restructurings.
-                  </p>
-                </article>
-                <article class="proof-card track-record-step">
-                  <h3>CORE RISK DISCIPLINE</h3>
-                  <div class="metric">30–60%</div>
-                  <p>
-                    Typical loan-to-value entry points with direct enforceable
-                    claims.
-                  </p>
-                </article>
-                <article class="proof-card track-record-step team-continuity">
-                  <h3 class="team-continuity-label">TEAM CONTINUITY</h3>
-                  <div class="metric">~20 Years</div>
-                  <p>
-                    Four voting investment committee members have worked together
-                    for roughly two decades.
-                  </p>
-                </article>
-              </div>
+              <article class="track-record-card track-record-card--half" data-index="02">
+                <h3>OPERATING HISTORY</h3>
+                <div class="metric">Since 2004</div>
+                <p>
+                  Operating in market across multiple credit cycles and workout
+                  periods.
+                </p>
+              </article>
+              <article class="track-record-card track-record-card--half" data-index="03">
+                <h3>TRANSACTIONS COMPLETED</h3>
+                <div class="metric">50+</div>
+                <p>
+                  Asset-backed private credit investments across NPLs and
+                  restructurings.
+                </p>
+              </article>
+              <article class="track-record-card track-record-card--half" data-index="04">
+                <h3>CORE RISK DISCIPLINE</h3>
+                <div class="metric">30–60%</div>
+                <p>
+                  Typical loan-to-value entry points with direct enforceable
+                  claims.
+                </p>
+              </article>
+              <article class="track-record-card track-record-card--half track-record-card--team" data-index="05">
+                <h3>TEAM CONTINUITY</h3>
+                <div class="metric">~20 Years</div>
+                <p>
+                  Four voting investment committee members have worked together
+                  for roughly two decades.
+                </p>
+              </article>
             </div>
           </div>
         </div>
