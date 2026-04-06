@@ -673,8 +673,8 @@
       }
       .track-record-grid {
         display: grid;
-        grid-template-columns: minmax(260px, 1fr) minmax(0, 2.2fr);
-        gap: 16px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
         align-items: stretch;
       }
       .track-record-anchor {
@@ -730,9 +730,7 @@
         color: #4a463f;
       }
       .track-record-rail {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
+        display: contents;
       }
       .track-record-step {
         position: relative;
@@ -786,14 +784,14 @@
         margin: 8px 0 10px;
       }
       .track-record-step.team-continuity {
-        grid-column: span 3;
+        grid-column: 1 / -1;
       }
       @media (max-width: 1320px) {
-        .track-record-rail {
+        .track-record-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .track-record-step.team-continuity {
-          grid-column: span 2;
+          grid-column: 1 / -1;
         }
       }
       @media (max-width: 1120px) {
@@ -808,20 +806,20 @@
           justify-self: start;
         }
         .track-record-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
       @media (max-width: 760px) {
         .track-record-anchor {
           padding: 22px 20px;
         }
-        .track-record-rail {
+        .track-record-grid {
           grid-template-columns: 1fr;
           gap: 12px;
         }
         .track-record-step,
         .track-record-step.team-continuity {
-          grid-column: auto;
+          grid-column: 1;
         }
       }
 
