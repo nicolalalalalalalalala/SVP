@@ -664,17 +664,17 @@
         max-width: 94ch;
       }
       .track-record-section .section-head h2 {
-        font-family: var(--sans);
-        font-size: 38px;
-        font-weight: 600;
-        letter-spacing: -0.02em;
+        font-family: var(--serif);
+        font-size: clamp(36px, 4.2vw, 52px);
+        font-weight: 500;
+        letter-spacing: -0.01em;
         margin-bottom: 0;
       }
       .track-record-section .section-head p {
         margin: 0;
-        font-size: 18px;
-        line-height: 1.62;
-        font-family: var(--sans);
+        font-size: 24px;
+        line-height: 1.5;
+        font-family: var(--serif);
         color: #3f3a33;
       }
       .track-record-interactive {
@@ -713,15 +713,16 @@
         padding-top: 3px;
       }
       .track-record-trigger__label {
-        font-size: 17px;
-        font-weight: 500;
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 400;
         letter-spacing: 0.01em;
         color: #2d2822;
       }
       .track-record-trigger__value {
-        font-family: var(--sans);
-        font-size: 28px;
-        font-weight: 600;
+        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-size: 34px;
+        font-weight: 500;
         letter-spacing: -0.02em;
         color: #1e1914;
       }
@@ -746,25 +747,26 @@
       }
       .track-record-panel__label {
         margin: 0 0 6px;
-        font-size: 24px;
+        font-size: 28px;
         line-height: 1.2;
-        font-family: var(--sans);
-        font-weight: 500;
+        font-family: var(--serif);
+        font-weight: 400;
         color: #2c271f;
       }
       .track-record-panel__metric {
         margin: 0 0 10px;
         font-size: clamp(42px, 6vw, 58px);
-        font-family: var(--sans);
-        font-weight: 600;
+        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-weight: 500;
         line-height: 1;
         letter-spacing: -0.03em;
         color: #1f1a15;
       }
       .track-record-panel__desc {
         margin: 0;
-        font-size: 17px;
-        line-height: 1.6;
+        font-size: 20px;
+        line-height: 1.55;
+        font-family: var(--serif);
         color: #433f38;
       }
       @media (max-width: 1240px) {
@@ -778,7 +780,7 @@
           font-size: 34px;
         }
         .track-record-section .section-head p {
-          font-size: 17px;
+          font-size: 18px;
         }
         .track-record-trigger {
           grid-template-columns: 24px minmax(0, 1fr);
@@ -786,7 +788,7 @@
         }
         .track-record-trigger__value {
           grid-column: 2;
-          font-size: 24px;
+          font-size: 30px;
         }
       }
 
