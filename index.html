@@ -1341,10 +1341,20 @@ h2.su__hed {
 </style>
 <style>
 .sv-footer {
+  position: relative;
   background: #f6f4f0;
   border-top: 1px solid var(--rule);
   margin-top: 0;
   padding: 18px var(--pad, var(--site-page-margin, 64px)) 40px;
+}
+.sv-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -32px;
+  height: 32px;
+  background: #f6f4f0;
 }
 .sv-footer__inner {
   max-width: var(--max, 1320px);
