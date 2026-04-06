@@ -531,6 +531,52 @@
         margin: 0;
         filter: contrast(1.08) saturate(1.12);
       }
+      .operations-map__marker {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background: var(--red);
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+        transform: translate(-50%, -50%);
+        cursor: default;
+      }
+      .operations-map__marker::after {
+        content: attr(data-city);
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        transform: translate(-50%, -100%);
+        background: #1f1f1f;
+        color: #fff;
+        font-size: 11px;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        padding: 7px 9px;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      .operations-map__marker:hover::after,
+      .operations-map__marker:focus-visible::after {
+        opacity: 1;
+        transform: translate(-50%, calc(-100% - 4px));
+      }
+      .operations-map__marker--guangzhou {
+        left: 57.5%;
+        top: 57%;
+      }
+      .operations-map__marker--shanghai {
+        left: 61%;
+        top: 43%;
+      }
+      .operations-map__marker--hong-kong {
+        left: 59%;
+        top: 60%;
+      }
       .founding-principles-panel {
         display: grid;
         gap: 18px;
@@ -1922,6 +1968,27 @@
             <div class="operations-map" aria-label="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong">
               <div class="operations-map__frame">
                 <img src="assets/images/chinahigh.svg" alt="ShoreVest locations in China" loading="lazy" />
+                <button
+                  type="button"
+                  class="operations-map__marker operations-map__marker--guangzhou"
+                  data-city="Guangzhou"
+                  aria-label="Guangzhou office"
+                  title="Guangzhou"
+                ></button>
+                <button
+                  type="button"
+                  class="operations-map__marker operations-map__marker--shanghai"
+                  data-city="Shanghai"
+                  aria-label="Shanghai office"
+                  title="Shanghai"
+                ></button>
+                <button
+                  type="button"
+                  class="operations-map__marker operations-map__marker--hong-kong"
+                  data-city="Hong Kong"
+                  aria-label="Hong Kong office"
+                  title="Hong Kong"
+                ></button>
               </div>
             </div>
             <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
