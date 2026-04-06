@@ -130,10 +130,6 @@
         border-bottom: 1px solid var(--rule);
         background: #fff;
       }
-      #nav.scrolled {
-        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
-      }
-
       .nav__logo {
   display:inline-flex;
   align-items:center;
@@ -153,10 +149,12 @@
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
+        color: var(--ink);
         opacity: 0.45;
+        transition: opacity 0.2s;
       }
-      .nav__links a.active,
-      .nav__links a:hover {
+      .nav__links a:hover,
+      .nav__links a.active {
         opacity: 1;
       }
       .nav__right {
@@ -182,7 +180,7 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--ink);
-        border: 1px solid rgba(48, 40, 34, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.15);
         padding: 8px 20px;
         transition:
           background 0.2s,
