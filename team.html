@@ -28,6 +28,8 @@
         --rule: rgba(48, 40, 34, 0.12);
         --mist: #7a7268;
         --mist-light: #9a948b;
+        --card-radius: 14px;
+        --soft-shadow: 0 12px 30px rgba(49, 39, 34, 0.08);
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
@@ -224,16 +226,18 @@
         border-bottom: 1px solid var(--rule);
       }
       .team-highlights__grid {
-        margin-top: -24px;
+        margin-top: -36px;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
+        gap: 18px;
       }
       .team-highlights__card {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.96);
         border: 1px solid rgba(48, 40, 34, 0.12);
-        padding: 18px 18px 16px;
-        backdrop-filter: blur(1.5px);
+        border-radius: var(--card-radius);
+        padding: 22px 22px 20px;
+        box-shadow: 0 10px 24px rgba(49, 39, 34, 0.05);
+        backdrop-filter: blur(2px);
       }
       .team-highlights__title {
         font-size: 10px;
@@ -245,8 +249,8 @@
       }
       .team-highlights__text {
         font-family: var(--serif);
-        font-size: 19px;
-        line-height: 1.42;
+        font-size: 20px;
+        line-height: 1.5;
         color: var(--ink-soft);
       }
 
@@ -336,24 +340,24 @@
         line-height: 1.58;
         letter-spacing: 0.01em;
         color: var(--mist);
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        max-width: 820px;
+        white-space: normal;
         padding-top: 2px;
       }
 
       .grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
+        gap: 26px;
       }
       .card {
         display: flex;
         flex-direction: column;
-        gap: 9px;
-        padding: 8px;
-        border: 1px solid transparent;
+        gap: 11px;
+        padding: 10px;
+        border: 1px solid rgba(48, 40, 34, 0.1);
+        border-radius: var(--card-radius);
+        background: #fff;
         transition:
           border-color 0.25s ease,
           box-shadow 0.25s ease,
@@ -363,15 +367,16 @@
       .card:hover,
       .card:focus-within,
       .card.is-active {
-        border-color: rgba(179, 33, 63, 0.24);
-        background: linear-gradient(180deg, rgba(248, 240, 243, 0.7), rgba(255, 255, 255, 0.95));
-        box-shadow: 0 16px 36px rgba(49, 39, 34, 0.09);
-        transform: translateY(-2px);
+        border-color: rgba(179, 33, 63, 0.38);
+        background: linear-gradient(180deg, rgba(248, 240, 243, 0.8), rgba(255, 255, 255, 0.98));
+        box-shadow: var(--soft-shadow);
+        transform: translateY(-3px);
       }
       .photo {
         width: 100%;
         aspect-ratio: 4/5;
         border: 1px solid var(--rule);
+        border-radius: 10px;
         background: var(--sand);
         overflow: hidden;
         cursor: pointer;
@@ -414,7 +419,7 @@
       }
       .name {
         font-family: var(--serif);
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.2;
         letter-spacing: 0.01em;
         color: var(--ink);
@@ -422,15 +427,15 @@
       }
       .title {
         font-family: var(--sans);
-        font-size: 10px;
+        font-size: 11px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--red);
         line-height: 1.35;
       }
       .card-bio {
-        font-size: 12px;
-        line-height: 1.65;
+        font-size: 13px;
+        line-height: 1.7;
         color: var(--ink-soft);
       }
 
@@ -444,9 +449,10 @@
         display: none;
         margin-top: 12px;
         background: var(--cream);
-        border-top: 1px solid rgba(48, 40, 34, 0.18);
-        border-bottom: 1px solid rgba(48, 40, 34, 0.12);
+        border: 1px solid rgba(48, 40, 34, 0.14);
+        border-radius: var(--card-radius);
         padding: 42px 48px 46px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
       }
       .row-bio-panel.is-open {
         display: block;
@@ -513,6 +519,7 @@
         }
         .grid {
           grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 20px;
         }
         .group__head {
           gap: 6px;
@@ -585,10 +592,10 @@
           gap: 10px;
         }
         .team-highlights__card {
-          padding: 14px 14px 13px;
+          padding: 16px 16px 14px;
         }
         .team-highlights__text {
-          font-size: 17px;
+          font-size: 18px;
           line-height: 1.38;
         }
         .founder-note {
@@ -653,7 +660,8 @@
           gap: 14px;
         }
         .card {
-          gap: 8px;
+          gap: 9px;
+          padding: 10px;
         }
         .photo {
           max-height: none;
