@@ -654,13 +654,17 @@
       }
       .track-record-section .framed-panel {
         display: grid;
-        gap: 28px;
+        gap: 20px;
+        padding: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
       }
       .track-record-section .section-head {
         display: grid;
         gap: 10px;
+        margin-top: -10px;
         margin-bottom: 0;
-        max-width: 94ch;
+        max-width: none;
       }
       .track-record-section .section-head h2 {
         font-family: var(--serif);
@@ -671,15 +675,16 @@
       }
       .track-record-section .section-head p {
         margin: 0;
-        font-size: 17px;
+        font-size: 20px;
         line-height: 1.5;
         font-family: var(--sans);
         color: #3f3a33;
+        max-width: none;
       }
       .track-record-interactive {
         display: grid;
         grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-        gap: 30px;
+        gap: 22px;
         align-items: start;
       }
       .track-record-nav {
@@ -692,7 +697,7 @@
         background: transparent;
         text-align: left;
         display: grid;
-        grid-template-columns: 32px minmax(0, 1fr) auto;
+        grid-template-columns: 44px minmax(0, 1fr) auto;
         gap: 16px;
         padding: 16px 0;
         cursor: pointer;
@@ -705,11 +710,11 @@
       }
       .track-record-trigger__index {
         font-family: var(--sans);
-        font-size: 5px;
-        letter-spacing: 0.14em;
+        font-size: 20px;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
         color: #8f8578;
-        padding-top: 3px;
+        padding-top: 2px;
       }
       .track-record-trigger__label {
         font-family: var(--serif);
@@ -720,7 +725,7 @@
       }
       .track-record-trigger__value {
         font-family: var(--serif);
-        font-size: 32px;
+        font-size: 20px;
         font-weight: 500;
         letter-spacing: -0.02em;
         color: #1e1914;
@@ -731,9 +736,9 @@
         color: #8e1a2f;
       }
       .track-record-panel {
-        background: linear-gradient(160deg, #fffaf4 0%, #fff 48%, #fff7fa 100%);
+        background: #fff;
         border-radius: calc(var(--radius) - 2px);
-        padding: 24px 24px 26px;
+        padding: 18px 18px 20px;
         border: 1px solid rgba(187, 46, 70, 0.22);
         min-height: 100%;
       }
@@ -755,11 +760,11 @@
       }
       .track-record-panel__metric {
         margin: 0 0 10px;
-        font-size: 32px;
+        font-size: 20px;
         font-family: var(--serif);
         font-weight: 500;
         line-height: 1;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.01em;
         color: #1f1a15;
       }
       .track-record-panel__desc {
@@ -780,15 +785,15 @@
           font-size: 52px;
         }
         .track-record-section .section-head p {
-          font-size: 17px;
+          font-size: 20px;
         }
         .track-record-trigger {
-          grid-template-columns: 24px minmax(0, 1fr);
+          grid-template-columns: 34px minmax(0, 1fr);
           gap: 12px;
         }
         .track-record-trigger__value {
           grid-column: 2;
-          font-size: 32px;
+          font-size: 20px;
         }
       }
 
