@@ -398,13 +398,12 @@
         border-bottom: 1px solid rgba(12, 12, 10, 0.12);
       }
       .press-row a {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        gap: 0;
-        align-items: start;
-        justify-content: start;
-        min-height: 108px;
-        padding: 0.44rem 0.72rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0.62rem 0.72rem;
         text-decoration: none;
         transition: background-color 0.2s ease;
       }
@@ -435,7 +434,7 @@
       }
       .press-date {
         display: block;
-        margin-top: 0.08rem;
+        margin-top: 0;
         font-family: "Cormorant Garamond", var(--serif);
         font-size: 15px;
         letter-spacing: 0.07em;
