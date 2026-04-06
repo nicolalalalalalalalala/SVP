@@ -585,9 +585,32 @@
         align-items: start;
       }
       .founding-principles-copy .lead {
-        font-size: 26px;
+        position: relative;
+        font-size: 17px;
+        font-style: italic;
+        line-height: 1.6;
         max-width: 920px;
         margin: 8px 0 0;
+        padding: 8px 0 8px 24px;
+        border-left: 2px solid rgba(179, 33, 63, 0.4);
+        color: #2f2b25;
+      }
+      .founding-principles-copy .lead::before,
+      .founding-principles-copy .lead::after {
+        position: absolute;
+        font-family: var(--serif);
+        font-size: 34px;
+        line-height: 1;
+        color: rgba(179, 33, 63, 0.55);
+      }
+      .founding-principles-copy .lead::before {
+        content: "\201C";
+        left: 0;
+        top: -6px;
+      }
+      .founding-principles-copy .lead::after {
+        content: "\201D";
+        margin-left: 6px;
       }
       .founding-principles-label {
         font-size: 10px;
@@ -1546,7 +1569,7 @@
           gap: 18px;
         }
         .founding-principles-copy .lead {
-          font-size: 22px;
+          font-size: 17px;
           max-width: 100%;
           margin-top: 6px;
         }
@@ -2018,7 +2041,7 @@
                 FOUNDING PRINCIPLES
               </p>
               <p class="lead">
-                "The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition: building ShoreVest as a firm that outlasts cycles."
+                The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition: building ShoreVest as a firm that outlasts cycles.
               </p>
             </div>
           </div>
