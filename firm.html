@@ -26,6 +26,8 @@
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
         --pad: 64px;
+        --section-copy-size: 14px;
+        --section-label-size: 11px;
       }
 
       * {
@@ -264,6 +266,7 @@
       }
       .hero-thesis p {
         margin: 0;
+        font-size: 15px;
         line-height: 1.65;
       }
 
@@ -396,7 +399,7 @@
       }
       .pillar-card h3 {
         font-family: var(--serif);
-        font-size: 13px;
+        font-size: var(--section-copy-size);
         font-weight: 400;
         letter-spacing: 0.01em;
         text-transform: none;
@@ -423,7 +426,7 @@
       }
       .pillar-detail h3 {
         font-family: var(--serif);
-        font-size: 12px;
+        font-size: var(--section-copy-size);
         font-weight: 400;
         letter-spacing: 0.01em;
         text-transform: none;
@@ -434,7 +437,7 @@
         display: block;
         width: 100%;
         max-width: none;
-        font-size: 12px;
+        font-size: var(--section-copy-size);
         line-height: 1.5;
         color: #393632;
       }
@@ -446,6 +449,7 @@
         color: #6b665d;
       }
       .operations-map {
+        position: relative;
         margin-top: 20px;
         border: 1px solid #e5e2dc;
         border-radius: 8px;
@@ -453,10 +457,8 @@
         background: #fbf9f5;
         overflow: hidden;
       }
-      .operations-map__graphic {
+      .operations-map__frame {
         position: relative;
-        width: min(540px, 100%);
-        margin: 0 auto;
       }
       .operations-map img {
         width: 100%;
@@ -466,62 +468,72 @@
         margin: 0;
         filter: contrast(1.08) saturate(1.12);
       }
-      .office-dot {
+      .operations-marker {
+        --marker-size: 14px;
+        --marker-color: #b3213f;
+        --marker-ring: rgba(179, 33, 63, 0.35);
         position: absolute;
-        top: var(--dot-y);
-        left: var(--dot-x);
-        width: 12px;
-        height: 12px;
-        border: 2px solid #ffffff;
-        border-radius: 50%;
-        background: #b42318;
-        box-shadow: 0 0 0 0 rgba(180, 35, 24, 0.5);
+        top: var(--marker-top);
+        left: var(--marker-left);
         transform: translate(-50%, -50%);
-        animation: office-dot-flash 1.4s ease-in-out infinite;
+        width: var(--marker-size);
+        height: var(--marker-size);
+        border: none;
+        border-radius: 50%;
+        background: var(--marker-color);
         cursor: pointer;
+        z-index: 2;
       }
-      .office-dot--shanghai {
-        animation-delay: 0.2s;
-      }
-      .office-dot--hong-kong {
-        animation-delay: 0.4s;
-      }
-      .office-dot::after {
-        content: attr(data-location);
+      .operations-marker::before,
+      .operations-marker::after {
+        content: "";
         position: absolute;
-        left: 50%;
-        bottom: calc(100% + 10px);
-        transform: translateX(-50%);
-        background: rgba(35, 31, 28, 0.92);
-        color: #fff;
-        border-radius: 4px;
-        padding: 4px 8px;
-        font-size: 10px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        white-space: nowrap;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.18s ease;
+        inset: 0;
+        border-radius: 50%;
       }
-      .office-dot:hover::after,
-      .office-dot:focus::after,
-      .office-dot:focus-visible::after {
-        opacity: 1;
+      .operations-marker::before {
+        background: var(--marker-color);
+        box-shadow: 0 0 0 2px #fff;
       }
-      .office-dot:focus-visible {
-        outline: 2px solid #231f1c;
+      .operations-marker::after {
+        border: 1px solid var(--marker-ring);
+        animation: map-marker-pulse 1.7s ease-out infinite;
+      }
+      .operations-marker:focus-visible {
+        outline: 2px solid #1d1c1a;
         outline-offset: 2px;
       }
-      @keyframes office-dot-flash {
-        0%,
-        100% {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 1;
+      .operations-marker[data-city="guangzhou"] {
+        --marker-top: 63%;
+        --marker-left: 57.2%;
+      }
+      .operations-marker[data-city="shanghai"] {
+        --marker-top: 53%;
+        --marker-left: 64.2%;
+      }
+      .operations-marker[data-city="hong-kong"] {
+        --marker-top: 66.5%;
+        --marker-left: 58.8%;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @keyframes map-marker-pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.85;
         }
-        50% {
-          transform: translate(-50%, -50%) scale(1.3);
-          opacity: 0.4;
+        100% {
+          transform: scale(2.9);
+          opacity: 0;
         }
       }
       .founding-principles-panel {
@@ -605,7 +617,7 @@
         border-color: rgba(187, 46, 70, 0.35);
       }
       .proof-card h3 {
-        font-size: 9px;
+        font-size: var(--section-label-size);
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #7d7a73;
@@ -692,7 +704,7 @@
         border: 0;
         border-radius: 0;
         padding: 0;
-        font-size: 12px;
+        font-size: var(--section-copy-size);
         line-height: 1.45;
         color: #4a463f;
       }
@@ -835,7 +847,7 @@
       }
       .market-card .market-title {
         display: block;
-        font-size: 13px;
+        font-size: var(--section-copy-size);
         font-weight: 600;
         line-height: 1.4;
         letter-spacing: 0.01em;
@@ -851,7 +863,7 @@
       .market-preview {
         display: block;
         color: #706960;
-        font-size: 12px;
+        font-size: 13px;
         padding-left: 36px;
         margin-top: 2px;
       }
@@ -894,7 +906,7 @@
         display: none;
       }
       .intel-graphic > h3 {
-        font-size: 10px;
+        font-size: var(--section-label-size);
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #68635b;
@@ -905,7 +917,7 @@
         align-items: center;
         gap: 8px;
         margin-bottom: 12px;
-        font-size: 10px;
+        font-size: var(--section-label-size);
         letter-spacing: 0.13em;
         text-transform: uppercase;
         color: #736f67;
@@ -949,7 +961,7 @@
         z-index: 2;
       }
       .intel-stage h3 {
-        font-size: 9px;
+        font-size: var(--section-label-size);
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: #66625b;
@@ -980,7 +992,7 @@
         color: #28241f;
       }
       .capability .weight {
-        font-size: 9px;
+        font-size: 10px;
         letter-spacing: 0.13em;
         text-transform: uppercase;
         color: #78746d;
@@ -1038,7 +1050,7 @@
         vertical-align: top;
       }
       .benchmark-table th {
-        font-size: 9px;
+        font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 0.13em;
         color: #6f6b64;
@@ -1115,7 +1127,7 @@
       }
       .platform-notes .note .role {
         margin-bottom: 9px;
-        font-size: 10px;
+        font-size: var(--section-label-size);
         letter-spacing: 0.09em;
         text-transform: uppercase;
         color: #6e685f;
@@ -1143,7 +1155,8 @@
         margin-top: 14px;
       }
       .note--fineprint {
-        padding: 10px 12px;
+        width: 100%;
+        padding: 0;
         gap: 0;
         border-color: transparent;
         background: transparent;
@@ -1155,14 +1168,16 @@
         border-color: transparent;
       }
       .note--fineprint h3 {
-        font-size: 8px;
-        font-weight: 400;
+        font-size: 7px;
+        font-weight: 300;
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        margin-bottom: 4px;
+        margin-bottom: 2px;
         color: #9a9388;
       }
       .note--fineprint p {
+        width: 100%;
+        max-width: none;
         font-size: 11px;
         line-height: 1.35;
         color: #9a9388;
@@ -1200,7 +1215,7 @@
         margin-top: 14px;
       }
       .small-box {
-        font-size: 10px;
+        font-size: var(--section-label-size);
         letter-spacing: 0.1em;
         text-transform: uppercase;
         padding: 9px;
@@ -1232,7 +1247,7 @@
         min-height: 86px;
       }
       .small-detail h4 {
-        font-size: 9px;
+        font-size: 10px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: #706b63;
@@ -1292,7 +1307,7 @@
         min-height: 142px;
       }
       .step h3 {
-        font-size: 10px;
+        font-size: var(--section-label-size);
         text-transform: uppercase;
         letter-spacing: 0.12em;
         margin-bottom: 8px;
@@ -1881,11 +1896,17 @@
               </p>
             </div>
             <div class="operations-map" aria-label="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong">
-              <div class="operations-map__graphic">
+              <div class="operations-map__frame">
                 <img src="assets/images/chinahigh.svg" alt="ShoreVest locations in China" loading="lazy" />
-                <button type="button" class="office-dot office-dot--guangzhou" style="--dot-x: 45%; --dot-y: 81%;" data-location="Guangzhou" aria-label="Guangzhou location marker"></button>
-                <button type="button" class="office-dot office-dot--shanghai" style="--dot-x: 71%; --dot-y: 57%;" data-location="Shanghai" aria-label="Shanghai location marker"></button>
-                <button type="button" class="office-dot office-dot--hong-kong" style="--dot-x: 49%; --dot-y: 85%;" data-location="Hong Kong" aria-label="Hong Kong location marker"></button>
+                <button type="button" class="operations-marker" data-city="guangzhou" aria-label="Guangzhou office">
+                  <span class="sr-only">Guangzhou office</span>
+                </button>
+                <button type="button" class="operations-marker" data-city="shanghai" aria-label="Shanghai office">
+                  <span class="sr-only">Shanghai office</span>
+                </button>
+                <button type="button" class="operations-marker" data-city="hong-kong" aria-label="Hong Kong office">
+                  <span class="sr-only">Hong Kong office</span>
+                </button>
               </div>
             </div>
             <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
