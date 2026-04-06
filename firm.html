@@ -453,15 +453,76 @@
         background: #fbf9f5;
         overflow: hidden;
       }
+      .operations-map__graphic {
+        position: relative;
+        width: min(540px, 100%);
+        margin: 0 auto;
+      }
       .operations-map img {
-        width: 106%;
+        width: 100%;
         max-width: none;
         height: auto;
         display: block;
-        margin-left: -3%;
-        transform: scale(1.01);
-        transform-origin: center 45%;
+        margin: 0;
         filter: contrast(1.08) saturate(1.12);
+      }
+      .office-dot {
+        position: absolute;
+        top: var(--dot-y);
+        left: var(--dot-x);
+        width: 12px;
+        height: 12px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        background: #b42318;
+        box-shadow: 0 0 0 0 rgba(180, 35, 24, 0.5);
+        transform: translate(-50%, -50%);
+        animation: office-dot-flash 1.4s ease-in-out infinite;
+        cursor: pointer;
+      }
+      .office-dot--shanghai {
+        animation-delay: 0.2s;
+      }
+      .office-dot--hong-kong {
+        animation-delay: 0.4s;
+      }
+      .office-dot::after {
+        content: attr(data-location);
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% + 10px);
+        transform: translateX(-50%);
+        background: rgba(35, 31, 28, 0.92);
+        color: #fff;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 10px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease;
+      }
+      .office-dot:hover::after,
+      .office-dot:focus::after,
+      .office-dot:focus-visible::after {
+        opacity: 1;
+      }
+      .office-dot:focus-visible {
+        outline: 2px solid #231f1c;
+        outline-offset: 2px;
+      }
+      @keyframes office-dot-flash {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.3);
+          opacity: 0.4;
+        }
       }
       .founding-principles-panel {
         display: grid;
@@ -500,10 +561,6 @@
       }
       .overview-grid .framed-panel {
         height: 100%;
-      }
-      .overview-grid .operations-map img {
-        max-width: 540px;
-        margin: 0 auto;
       }
       .overview-grid .founding-tree-image {
         max-width: 100%;
@@ -1824,7 +1881,12 @@
               </p>
             </div>
             <div class="operations-map" aria-label="Map showing ShoreVest office locations in Guangzhou, Shanghai, and Hong Kong">
-              <img src="assets/images/chinahigh.svg" alt="ShoreVest locations in China" loading="lazy" />
+              <div class="operations-map__graphic">
+                <img src="assets/images/chinahigh.svg" alt="ShoreVest locations in China" loading="lazy" />
+                <button type="button" class="office-dot office-dot--guangzhou" style="--dot-x: 45%; --dot-y: 81%;" data-location="Guangzhou" aria-label="Guangzhou location marker"></button>
+                <button type="button" class="office-dot office-dot--shanghai" style="--dot-x: 71%; --dot-y: 57%;" data-location="Shanghai" aria-label="Shanghai location marker"></button>
+                <button type="button" class="office-dot office-dot--hong-kong" style="--dot-x: 49%; --dot-y: 85%;" data-location="Hong Kong" aria-label="Hong Kong location marker"></button>
+              </div>
             </div>
             <p class="location-line">Guangzhou · Shanghai · Hong Kong</p>
           </div>
