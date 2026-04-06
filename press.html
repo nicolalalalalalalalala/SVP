@@ -244,6 +244,7 @@
         color: #fff;
       }
       .press-note {
+        width: min(100%, 300px);
         max-width: 300px;
         justify-self: end;
         margin-right: 0;
@@ -262,7 +263,8 @@
       .press-note p {
         font-size: 12px;
         line-height: 1.6;
-        max-width: 31ch;
+        max-width: 100%;
+        overflow-wrap: anywhere;
         color: rgba(255, 255, 255, 0.96);
       }
 
