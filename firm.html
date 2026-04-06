@@ -1179,9 +1179,12 @@
       .capital-base-lockup {
         width: 100%;
         grid-column: 1 / -1;
+        margin-left: auto;
+        padding-left: clamp(24px, 6vw, 88px);
       }
-      .capital-base-lockup p {
+      .validation-section .capital-base-lockup p {
         max-width: none;
+        width: 100%;
       }
       .capital-base-link {
         margin-top: 14px;
@@ -1502,6 +1505,9 @@
         .section-head .operations-copy {
           font-size: 15px;
           line-height: 1.45;
+        }
+        .capital-base-lockup {
+          padding-left: 0;
         }
         .market-card {
           padding: 16px;
