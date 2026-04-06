@@ -615,7 +615,6 @@
       .proof-card,
       .market-card,
       .note,
-      .small-box,
       .intel-copy,
       .closing-panel {
         background: var(--surface);
@@ -1186,30 +1185,6 @@
         color: #9a9388;
         margin: 0;
       }
-      .platform-diagram .small-detail,
-      .platform-diagram .accountability-note {
-        margin-top: 14px;
-        padding: 20px;
-        border: 1px solid #ddd9d1;
-        background: var(--surface);
-        min-height: 132px;
-      }
-      .accountability-note {
-        border-left: 1px solid #ddd9d1;
-        background: var(--surface);
-      }
-      .accountability-note h3 {
-        color: #5e594f;
-        font-weight: 400;
-        font-size: var(--section-label-size);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-      .accountability-note p {
-        font-family: var(--serif);
-        font-size: var(--section-label-size);
-        line-height: 1.45;
-      }
       .platform-diagram {
         background: var(--surface);
         border: 1px solid #ddd9d1;
@@ -1222,54 +1197,30 @@
       .platform-layout > .platform-diagram {
         margin-top: 8px;
       }
-      .small-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 10px;
-        margin-top: 14px;
+      .platform-diagram > p {
+        font-size: var(--section-label-size);
+        margin-bottom: 14px;
       }
-      .small-box {
+      .protocol-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .protocol-card {
+        min-height: 246px;
+      }
+      .protocol-card h3 {
+        color: #5e594f;
+        font-weight: 400;
         font-size: var(--section-label-size);
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        padding: 9px;
-        text-align: center;
-        border: 1px solid #d9d3ca;
-        background: var(--surface);
-        cursor: pointer;
-        transition:
-          border-color 0.2s,
-          color 0.2s,
-          transform 0.2s;
+        margin-bottom: 8px;
       }
-      .small-box:hover,
-      .small-box:focus-visible {
-        border-color: var(--red);
-        color: var(--red);
-        transform: translateY(-1px);
-        outline: none;
-      }
-      .small-box.is-active {
-        border-color: var(--red);
-        color: var(--red);
-        background: #fdf8f9;
-      }
-      .small-detail {
-        margin-top: 16px;
-      }
-      .small-detail h4 {
-        font-size: var(--section-label-size);
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: #706b63;
-        margin-bottom: 6px;
-      }
-      .small-detail p {
-        font-size: var(--section-label-size);
-        color: #393632;
-      }
-      .platform-diagram > p {
-        font-size: var(--section-label-size);
+      .protocol-card p {
+        font-size: 15px;
+        line-height: 1.55;
+        color: #4e4a43;
       }
 
       .dark-band {
@@ -1523,9 +1474,7 @@
           top: auto;
           bottom: -11px;
         }
-        .small-grid {
-          grid-template-columns: 1fr;
-        }
+        .protocol-grid,
         .platform-notes {
           grid-template-columns: 1fr;
         }
@@ -2150,62 +2099,24 @@
               <p>
                 One investment team runs one continuous process from origination to exit: Underwrite → Approve → Execute → Monitor + Realize.
               </p>
-              <div class="small-grid" role="tablist" aria-label="Decision protocol stages">
-                <button
-                  class="small-box is-active"
-                  role="tab"
-                  aria-selected="true"
-                  data-detail-title="Originating + Underwriting"
-                  data-detail-copy="The partners who source each opportunity also run legal and asset-level diligence, set downside protections, and define the underwriting case."
-                >
-                  Underwrite
-                </button>
-                <button
-                  class="small-box"
-                  role="tab"
-                  aria-selected="false"
-                  data-detail-title="Approval + Structuring"
-                  data-detail-copy="Approval, structuring, and documentation are completed in one integrated forum so legal, investment, and operating terms are aligned before commitment."
-                >
-                  Approve
-                </button>
-                <button
-                  class="small-box"
-                  role="tab"
-                  aria-selected="false"
-                  data-detail-title="Capital Deployment + Execution"
-                  data-detail-copy="After approval, execution stays with the same decision-makers to preserve speed, control, and fidelity to the original underwriting thesis."
-                >
-                  Execute
-                </button>
-                <button
-                  class="small-box"
-                  role="tab"
-                  aria-selected="false"
-                  data-detail-title="Monitoring + Realization"
-                  data-detail-copy="Post-close monitoring, workout management, and realization remain with the original decision-makers, preserving accountability from entry through exit."
-                >
-                  Monitoring + Realization
-                </button>
+              <div class="protocol-grid" aria-label="Decision protocol stages">
+                <article class="note protocol-card">
+                  <h3>Originating + Underwriting</h3>
+                  <p>The same partners source, diligence, and structure each opportunity with downside protection built in before approval.</p>
+                </article>
+                <article class="note protocol-card">
+                  <h3>Approval + Structuring</h3>
+                  <p>Investment, legal, and asset-level terms are approved in one forum so documentation and risk controls stay aligned.</p>
+                </article>
+                <article class="note protocol-card">
+                  <h3>Execution Continuity</h3>
+                  <p>The team that approves capital deployment remains responsible through closing and workout execution with no handoff.</p>
+                </article>
+                <article class="note protocol-card">
+                  <h3>Monitoring + Realization</h3>
+                  <p>Post-close monitoring and realization stay with the original decision-makers to keep underwriting assumptions tied to outcomes.</p>
+                </article>
               </div>
-              <div class="small-detail" aria-live="polite">
-                <h4>Originating + Underwriting</h4>
-                <p>
-                  The partners who source each opportunity also run legal and asset-level diligence, set downside protections, and define the underwriting case.
-                </p>
-              </div>
-              <article class="note accountability-note">
-                <h3>Execution Continuity</h3>
-                <p>
-                  The investment team that approves each transaction stays accountable through post-close monitoring and realization, keeping underwriting assumptions and workout decisions aligned.
-                </p>
-              </article>
-              <article class="note accountability-note">
-                <h3>One Team, Full-Cycle Accountability</h3>
-                <p>
-                  The same senior partners remain responsible from underwriting through exit, with no handoff between decision-makers and portfolio managers.
-                </p>
-              </article>
             </div>
           </div>
         </div>
@@ -2243,26 +2154,6 @@
           menuBtn.setAttribute("aria-expanded", String(isOpen));
         });
       }
-
-      document.querySelectorAll(".platform-diagram").forEach((diagram) => {
-        const tabs = diagram.querySelectorAll(".small-box");
-        const detailTitle = diagram.querySelector(".small-detail h4");
-        const detailCopy = diagram.querySelector(".small-detail p");
-        if (!tabs.length || !detailTitle || !detailCopy) return;
-
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => {
-            tabs.forEach((el) => {
-              el.classList.remove("is-active");
-              el.setAttribute("aria-selected", "false");
-            });
-            tab.classList.add("is-active");
-            tab.setAttribute("aria-selected", "true");
-            detailTitle.textContent = tab.dataset.detailTitle || "";
-            detailCopy.textContent = tab.dataset.detailCopy || "";
-          });
-        });
-      });
 
       document.querySelectorAll(".pillar-grid").forEach((grid) => {
         const cards = grid.querySelectorAll(".pillar-card");
