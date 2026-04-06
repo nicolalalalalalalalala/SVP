@@ -2172,8 +2172,7 @@
 
       @media (max-width: 767px) {
         .pagehero__media {
-          width: min(130%, 620px);
-          margin-right: clamp(-140px, -34vw, -64px);
+          display: none;
         }
       }
 
@@ -2447,7 +2446,19 @@
           <h1>Our Strategy</h1>
         </div>
         <figure class="pagehero__media" aria-hidden="true">
-          <img src="assets/images/leaf_hero.png" alt="" />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcset="assets/images/leaf_hero.png"
+            />
+            <img
+              src="assets/favicon.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+            />
+          </picture>
         </figure>
       </div>
     </section>
