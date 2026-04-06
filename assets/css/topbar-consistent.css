@@ -396,6 +396,21 @@ html {
 }
 
 /* Footer contact CTA consistency (desktop + mobile) */
+.sv-footer {
+  position: relative;
+}
+
+.sv-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -32px;
+  height: 32px;
+  background: #f6f4f0;
+  pointer-events: none;
+}
+
 .sv-footer__contact {
   max-width: 100%;
 }
