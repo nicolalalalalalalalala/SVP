@@ -74,7 +74,7 @@ html {
 }
 
 #nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -85,11 +85,14 @@ html {
   justify-content: space-between;
   padding: 0 var(--topbar-pad);
   padding-left: var(--topbar-pad-left);
-  background: var(--surface-elevated);
-  border-bottom: 1px solid var(--surface-border);
-  box-shadow: var(--shadow-xs);
-  backdrop-filter: saturate(130%) blur(10px);
-  -webkit-backdrop-filter: saturate(130%) blur(10px);
+  background: #fff;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+}
+
+
+#nav.scrolled {
+  border-bottom-color: var(--surface-border);
 }
 
 #nav .nav__logo {
@@ -147,13 +150,27 @@ html {
   padding: 0;
 }
 
+
+#nav .nav__links li {
+  display: inline-flex;
+  align-items: center;
+}
+
+#nav .nav__links li + li::before {
+  content: "|";
+  margin-right: var(--nav-link-gap);
+  color: rgba(12, 12, 10, 0.35);
+  font-size: 13px;
+  line-height: 1;
+}
+
 #nav .nav__links a {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  font-size: 10.5px;
+  font-size: 13px;
   line-height: 1;
-  letter-spacing: .16em;
+  letter-spacing: 2px;
   text-transform: uppercase;
   white-space: nowrap;
   position: relative;
@@ -200,6 +217,10 @@ html {
 #nav .nav__zh {
   font-size: 14px;
   line-height: 1;
+}
+
+#nav .nav__menu-btn {
+  display: none;
 }
 
 #nav .nav__lp {
@@ -375,7 +396,13 @@ html {
   }
 
   #nav .nav__menu-btn {
+    display: inline-flex;
     min-width: 78px;
+  }
+
+  #nav .nav__links li + li::before {
+    content: none;
+    margin-right: 0;
   }
 
   #nav .nav__links {
