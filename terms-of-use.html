@@ -221,19 +221,21 @@
       <img src="assets/images/logo-master.png?v=1" alt="" class="nav__logo-mark" />
       <span class="nav__logo-lockup">
         <span class="nav__logo-en">ShoreVest</span>
-        <span class="nav__logo-cn">新岸资本</span>
+        <span class="nav__logo-cn">新岸資本</span>
       </span>
     </a>
-    <ul class="nav__links">
-      <li><a href="firm.html">Firm</a></li>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="firm.html">The Firm</a></li>
       <li><a href="strategy.html">Strategy</a></li>
       <li><a href="insights.html">Insights</a></li>
-      <li><a href="team.html">Team</a></li>
       <li><a href="press.html">Press</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li class="nav__mobile-lang"><a href="index_cn.html">中文</a></li>
     </ul>
     <div class="nav__right">
       <a href="index_cn.html" class="nav__zh">中文</a>
       <a href="investor-access.html" class="nav__lp">Investor Access</a>
+      <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     </div>
   </nav>
   <h1>Terms of Use</h1>
@@ -382,5 +384,26 @@
     </div>
   </div>
 </footer>
+<script>
+  const nav = document.getElementById('nav');
+  const menuBtn = document.querySelector('.nav__menu-btn');
+
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? 'Close' : 'Menu';
+    });
+
+    document.querySelectorAll('.nav__links a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = 'Menu';
+      });
+    });
+  }
+</script>
+
 </body>
 </html>
