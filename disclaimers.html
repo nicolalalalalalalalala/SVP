@@ -106,7 +106,7 @@
       margin: 0 auto;
     }
     .disclaimer-wrap {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
     }
     h1 {
@@ -119,36 +119,44 @@
       color: var(--ink);
     }
     .intro {
-      margin: 14px 0 34px;
-      font-size: 13px;
+      margin: 12px 0 24px;
+      font-size: 12px;
       line-height: 1.55;
       color: rgba(12, 12, 10, 0.74);
     }
+    .disclaimer-wrap > p:not(.intro):not(.disclaimer-note) {
+      margin: 0 0 16px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
     section {
       border-top: 1px solid var(--rule);
-      padding-top: 22px;
-      margin-top: 22px;
+      padding-top: 18px;
+      margin-top: 18px;
     }
     h2 {
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       font-family: var(--serif);
-      font-size: 26px;
-      line-height: 1.12;
+      font-size: 24px;
+      line-height: 1.14;
       font-weight: 400;
       letter-spacing: 0.01em;
       color: var(--ink);
     }
     p {
       margin: 0;
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.6;
       color: rgba(12, 12, 10, 0.86);
+    }
+    section p + p {
+      margin-top: 10px;
     }
     .disclaimer-note {
       margin-top: 30px;
       border-top: 1px solid var(--rule);
       padding-top: 18px;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.55;
       color: rgba(12, 12, 10, 0.76);
     }
