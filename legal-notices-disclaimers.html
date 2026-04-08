@@ -329,7 +329,18 @@
   }
   .sv-footer__bottom { gap: 10px !important; }
   .sv-footer__copyright { font-size: 11px !important; line-height: 1.5 !important; }
-  .sv-footer__legal-links a { font-size: 11px !important; line-height: 1.55 !important; }
+  .sv-footer__legal-links {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 6px !important;
+    padding-bottom: 0 !important;
+  }
+  .sv-footer__legal-links a {
+    display: block;
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+  }
+  .sv-footer__legal-links a + a::before { content: none !important; margin: 0 !important; }
 }
 </style>
 
