@@ -675,6 +675,13 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     align-items: center !important;
     justify-content: space-between !important;
     gap: 10px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  footer.sv-footer .sv-footer__brand {
+    font-size: 12px !important;
+    letter-spacing: 0.005em !important;
+    white-space: nowrap !important;
   }
 
   footer.sv-footer .sv-footer__contact {
@@ -686,13 +693,20 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     gap: 10px !important;
   }
 
+  footer.sv-footer .sv-footer__contact-label {
+    font-size: 9px !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+  }
+
   footer.sv-footer .sv-footer__contact a {
     width: auto !important;
     max-width: 100% !important;
     white-space: nowrap !important;
     text-align: right !important;
     padding: 8px 10px !important;
-    letter-spacing: 0.08em;
+    font-size: 10px !important;
+    letter-spacing: 0.06em !important;
   }
 
   footer.sv-footer .sv-footer__bottom {
