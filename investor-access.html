@@ -199,9 +199,25 @@
         border: 1px solid var(--rule);
         background: #fff;
       }
+      .investor-gate--step-1 {
+        background: #fff;
+      }
+      .investor-gate--step-2 {
+        margin-top: 28px;
+        background: #fbfaf8;
+      }
       .investor-gate h1 {
         margin-bottom: 18px;
         font-size: clamp(42px, 5.1vw, 68px);
+      }
+      .investor-stage-label {
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #7a736a;
       }
       .investor-gate__prompt {
         display: block;
@@ -267,16 +283,16 @@
       }
 
       .card {
-        margin-top: 34px;
-        padding: 34px;
+        margin-top: 20px;
+        padding: 28px;
         border: 1px solid var(--rule);
         background: #fff;
       }
       .card p {
-        font-size: 16px;
-        line-height: 1.95;
+        font-size: 15px;
+        line-height: 1.85;
         color: #262521;
-        margin-bottom: 14px;
+        margin-bottom: 10px;
       }
       .actions {
         display: flex;
@@ -284,34 +300,68 @@
         flex-wrap: wrap;
         margin-top: 18px;
       }
-      .resource-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 22px;
-      }
       .resource-card {
         border: 1px solid var(--rule);
-        background: #faf8f5;
-        padding: 16px;
+        background: #fff;
+        padding: 18px;
       }
       .resource-card__title {
         display: block;
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #716b63;
-        margin-bottom: 6px;
+        font-size: 16px;
+        letter-spacing: 0;
+        text-transform: none;
+        color: #1f1d19;
+        margin-bottom: 8px;
+        font-family: var(--serif);
       }
       .resource-card p {
         margin: 0;
         font-size: 14px;
-        line-height: 1.75;
+        line-height: 1.7;
+        color: #3b3731;
       }
       .helper {
         margin-top: 12px;
         font-size: 12px;
         color: #655f57;
+      }
+      .access-options {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .resource-card__link {
+        margin-top: 14px;
+        display: inline-flex;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        border-bottom: 1px solid rgba(12, 12, 10, 0.35);
+      }
+      .resource-card__link:hover {
+        color: var(--red);
+        border-bottom-color: var(--red);
+      }
+      .contact-block {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid var(--rule);
+      }
+      .contact-block__label {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #756f66;
+        margin-bottom: 6px;
+      }
+      .contact-block a {
+        font-size: 16px;
+        font-weight: 500;
       }
       .btn {
         display: inline-flex;
@@ -417,7 +467,7 @@
         .card {
           padding: 24px;
         }
-        .resource-grid {
+        .access-options {
           grid-template-columns: 1fr;
         }
       }
@@ -873,41 +923,33 @@
     <main>
       <div class="wrap">
         <section class="panel investor-shell" id="investor-shell">
-          <div class="investor-gate" id="investor-gate">
-            <h1>Investor Access · Step 1 of 2</h1>
+          <div class="investor-gate investor-gate--step-1" id="investor-gate">
+            <span class="investor-stage-label">Step 1 of 2 · Eligibility</span>
+            <h1>Investor Access</h1>
             <p class="investor-gate__prompt">
-              The materials accessible through this section are intended solely
-              for institutional investors and qualified purchasers as defined
-              under applicable securities laws, including accredited investors
-              under Regulation D of the Securities Act of 1933. They are not
-              intended for distribution to retail investors or to persons in
-              jurisdictions where such distribution would be unlawful. By
-              proceeding, you represent that you meet the applicable eligibility
-              criteria and accept full responsibility for compliance with the
-              laws and regulations of your jurisdiction.
+              Access to ShoreVest investor materials is restricted to qualified
+              institutional and eligible investors.
             </p>
             <ul class="investor-gate__list">
-              <li>You are evaluating ShoreVest in a professional capacity.</li>
-              <li>
-                You are an institutional investor, qualified purchaser, or
-                accredited investor (as applicable in your jurisdiction).
-              </li>
-              <li>
-                You understand this area does not constitute an offer or
-                solicitation.
-              </li>
+              <li>Institutional investors</li>
+              <li>Professional investors</li>
+              <li>Qualified purchasers or equivalent classifications</li>
             </ul>
+            <p class="helper">
+              By proceeding, you confirm that you meet the applicable
+              eligibility requirements in your jurisdiction and that you are
+              permitted to access such materials.
+            </p>
             <div class="investor-gate__attest">
               <input type="checkbox" id="attestation-checkbox" />
               <label for="attestation-checkbox">
-                I have read and understood the investor eligibility notice above,
-                and I agree to the <a href="investor-access-portal-terms.html">Investor Access / Portal Terms</a>.
+                I confirm that I am an eligible investor and agree to the
+                <a href="investor-access-portal-terms.html">Investor Access / Portal Terms</a>.
               </label>
             </div>
             <div class="investor-gate__actions">
               <button class="btn btn--dark" type="button" id="attestation-proceed" disabled>
-                I confirm I am an institutional investor or qualified purchaser
-                and am accessing this page for informational purposes only.
+                Confirm and continue
               </button>
               <button class="btn" type="button" id="attestation-exit">
                 I do not meet these criteria.
@@ -916,65 +958,33 @@
           </div>
 
           <div class="investor-content" id="investor-content" hidden>
-            <p class="eyebrow">ShoreVest Partners</p>
-            <h1>Investor Access · Step 2 of 2</h1>
-            <p class="lead">
-              You have completed the eligibility attestation. Proceed below to request
-              portal credentials or investor materials through Investor Relations.
-            </p>
-
-            <div class="card">
+            <div class="investor-gate investor-gate--step-2">
+              <span class="investor-stage-label">Step 2 of 2 · Access</span>
+              <h1>Request access</h1>
               <p>
-                Existing investors may request access to ShoreVest reporting
-                materials and fund documentation through the firm's investor
-                communications channel.
+                Once eligibility is confirmed, investor materials and reporting
+                are made available through ShoreVest's investor access channels.
               </p>
               <p>
-                Access requests remain subject to jurisdiction-specific eligibility checks and the <a href="investor-access-portal-terms.html">Investor Access / Portal Terms</a>.
+                Please select the appropriate request below.
               </p>
-              <p>
-                Materials available through Investor Relations include quarterly
-                reports, audited financial statements, fund documentation, DDQ
-                responses, and LP presentation materials.
-              </p>
-              <p>
-                For portal credentials or document requests, please contact
-                Investor Relations at
-                <a href="mailto:partners@shorevest.com"
-                  ><strong>partners@shorevest.com</strong></a
-                >.
-              </p>
-              <p class="helper">
-                Privacy notice - information submitted by email or through investor-access requests is used to
-                verify eligibility, administer access, and meet legal and compliance obligations. Please avoid
-                sending sensitive personal data unless specifically requested.
-              </p>
-              <div class="resource-grid">
+              <div class="access-options">
                 <div class="resource-card">
-                  <span class="resource-card__title">Reporting</span>
-                  <p>Quarterly reports, annual audited statements, and updates.</p>
+                  <span class="resource-card__title">Request investor materials</span>
+                  <p>For initial information, fund overviews or due diligence materials.</p>
+                  <a class="resource-card__link" href="mailto:partners@shorevest.com?subject=Request%20Investor%20Materials">Contact investor relations</a>
                 </div>
                 <div class="resource-card">
-                  <span class="resource-card__title">Operational</span>
-                  <p>Capital call notices, distribution notices, and account support.</p>
-                </div>
-                <div class="resource-card">
-                  <span class="resource-card__title">Due Diligence</span>
-                  <p>DDQ responses, track record summaries, and strategy materials.</p>
-                </div>
-                <div class="resource-card">
-                  <span class="resource-card__title">Policies</span>
-                  <p>Governance and compliance documents available upon request.</p>
+                  <span class="resource-card__title">Request portal credentials</span>
+                  <p>For existing investors or those granted access to the ShoreVest investor portal.</p>
+                  <a class="resource-card__link" href="mailto:partners@shorevest.com?subject=Request%20Portal%20Credentials">Request login access</a>
                 </div>
               </div>
-              <p class="helper">
-                Returning visitor? Your attestation is remembered for this browser session.
-              </p>
+              <div class="contact-block">
+                <span class="contact-block__label">Investor Relations</span>
+                <a href="mailto:partners@shorevest.com"><strong>partners@shorevest.com</strong></a>
+              </div>
               <div class="actions">
-                <a class="btn btn--dark" href="mailto:partners@shorevest.com"
-                  >Contact Investor Relations</a
-                >
-                <a class="btn" href="index.html#contact">Back to Main Site</a>
                 <button class="btn" type="button" id="reset-access">Reset Access</button>
               </div>
             </div>
