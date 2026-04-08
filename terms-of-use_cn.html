@@ -242,6 +242,36 @@
   }
   .sv-footer__legal-links a + a::before { content: none !important; margin: 0 !important; }
 }
+@media (max-width: 640px) {
+  .sv-footer__main {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .sv-footer__brand {
+    white-space: normal !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+  .sv-footer__contact {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  .sv-footer__contact-label {
+    width: 100% !important;
+  }
+  .sv-footer__contact a {
+    width: 100% !important;
+    min-height: 52px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+}
+
 </style>
 
 </head>
