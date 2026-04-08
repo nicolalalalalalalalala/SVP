@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShoreVest Logo Download</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --ink: #161616;
+      --muted: #666;
+      --red: #b3213f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #0b0b0b;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #fff;
+      gap: 20px;
+    }
+
+    .card {
+      width: min(92vw, 760px);
+      aspect-ratio: 3 / 4;
+      background: var(--bg);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-2%);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .logo-mark {
+      width: clamp(120px, 17vw, 180px);
+      height: auto;
+      margin-bottom: clamp(18px, 2.2vw, 28px);
+    }
+
+    .logo-en {
+      font-family: 'EB Garamond', Georgia, serif;
+      color: var(--ink);
+      font-size: clamp(62px, 8.4vw, 90px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+
+    .logo-cn {
+      font-family: 'Noto Serif SC', serif;
+      color: var(--muted);
+      font-size: clamp(34px, 4.3vw, 48px);
+      letter-spacing: 0.42em;
+      line-height: 1;
+      margin-top: clamp(20px, 2.5vw, 28px);
+      margin-right: -0.42em;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button,
+    a {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font: 500 14px/1 'Inter', system-ui, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button {
+      background: var(--red);
+      color: #fff;
+    }
+
+    a {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="capture-target">
+    <div class="logo-wrap">
+      <img class="logo-mark" src="assets/favicon.svg" alt="ShoreVest mark" />
+      <h1 class="logo-en">ShoreVest</h1>
+      <div class="logo-cn">新岸資本</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="download-png" type="button">Download PNG</button>
+    <a href="assets/favicon.svg" download="shorevest-mark.svg">Download Website Mark (SVG)</a>
+  </div>
+
+  <script>
+    const downloadBtn = document.getElementById('download-png');
+    const target = document.getElementById('capture-target');
+
+    function waitForFonts() {
+      return document.fonts ? document.fonts.ready : Promise.resolve();
+    }
+
+    async function downloadPng() {
+      await waitForFonts();
+
+      const width = 1536;
+      const height = 2048;
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#f6f4f0';
+      ctx.fillRect(0, 0, width, height);
+
+      const img = new Image();
+      img.src = 'assets/favicon.svg';
+
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+
+      const markSize = 360;
+      const centerX = width / 2;
+      const topY = 620;
+      ctx.drawImage(img, centerX - markSize / 2, topY, markSize, markSize);
+
+      ctx.fillStyle = '#161616';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.font = "500 176px 'EB Garamond', Georgia, serif";
+      ctx.fillText('ShoreVest', centerX, topY + markSize + 60);
+
+      ctx.fillStyle = '#666666';
+      ctx.font = "500 82px 'Noto Serif SC', serif";
+      const cn = '新 岸 資 本';
+      ctx.fillText(cn, centerX, topY + markSize + 300);
+
+      const url = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'shorevest-brand-card.png';
+      link.click();
+    }
+
+    downloadBtn.addEventListener('click', downloadPng);
+  </script>
+</body>
+</html>
