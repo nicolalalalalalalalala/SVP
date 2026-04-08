@@ -587,6 +587,12 @@ footer.sv-footer.sv-footer--full-bleed {
   padding: 24px var(--site-page-margin, 32px) 28px !important;
 }
 
+footer.sv-footer.sv-footer--full-bleed {
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
 footer.sv-footer .sv-footer__inner {
   width: 100% !important;
   max-width: none !important;
