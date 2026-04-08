@@ -103,18 +103,18 @@
     main {
       padding: 132px var(--pad) 86px;
       width: 100%;
-      max-width: none;
-      margin: 0;
+      max-width: 1320px;
+      margin: 0 auto;
     }
     .disclaimer-wrap {
       width: 100%;
-      max-width: none;
+      max-width: 980px;
       margin: 0;
     }
-    h1 {
+    .disclaimer-wrap h1 {
       margin: 0;
       font-family: var(--serif);
-      font-size: 30px;
+      font-size: clamp(2.1rem, 3.4vw, 3.2rem) !important;
       line-height: 1.04;
       font-weight: 400;
       letter-spacing: 0.01em;
@@ -122,7 +122,7 @@
     }
     .intro {
       margin: 14px 0 34px;
-      font-size: 11px;
+      font-size: 16px !important;
       line-height: 1.5;
       color: rgba(12, 12, 10, 0.74);
     }
@@ -131,20 +131,24 @@
       padding-top: 22px;
       margin-top: 22px;
     }
-    h2 {
-      margin: 0 0 10px;
+    .disclaimer-wrap h2 {
+      margin: 0 0 12px;
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: clamp(1.8rem, 2.4vw, 2.4rem) !important;
       line-height: 1.12;
       font-weight: 400;
       letter-spacing: 0.01em;
       color: var(--ink);
     }
-    p {
+    .disclaimer-wrap p {
       margin: 0;
-      font-size: 11px;
-      line-height: 1.5;
+      max-width: 82ch;
+      font-size: 16px !important;
+      line-height: 1.48;
       color: rgba(12, 12, 10, 0.86);
+    }
+    .disclaimer-wrap section p + p {
+      margin-top: 12px;
     }
     .disclaimer-note {
       margin-top: 30px;
@@ -255,8 +259,9 @@
         --pad: 18px;
       }
       main { padding-top: 116px; }
-      h1 { font-size: 26px; }
-      h2 { font-size: 18px; }
+      .disclaimer-wrap h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
+      .disclaimer-wrap h2 { font-size: clamp(1.45rem, 6.2vw, 2.2rem) !important; }
+      .disclaimer-wrap p { font-size: 16px !important; }
     }
   </style>
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
