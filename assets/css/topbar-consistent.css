@@ -655,8 +655,9 @@ footer.sv-footer .sv-footer__legal-links {
 }
 
 footer.sv-footer .sv-footer__legal-links a + a::before {
-  content: " | ";
+  content: "|";
   color: #6f6a63;
+  margin: 0 10px;
 }
 
 @media (max-width: 900px) {

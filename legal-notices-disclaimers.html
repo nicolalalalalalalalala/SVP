@@ -4,39 +4,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShoreVest | Legal Notices &amp; Disclaimers</title>
-  <link rel="icon" href="assets/favicon.svg?v=5" type="image/svg+xml" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=5" />
+  <link rel="shortcut icon" href="assets/favicon.svg?v=5" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/topbar-consistent.css" />
+  <link rel="stylesheet" href="assets/css/typography-consistent.css" />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
 <style>
-    :root{--red:#b3213f;--ink:#0c0c0a;--ink-soft:#3f3b36;--paper:#fff;--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
-    *{box-sizing:border-box}
-    body{font-family:var(--sans);max-width:880px;margin:0 auto;padding:120px 24px 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--paper)}
-    h1,h2{color:var(--ink);font-family:var(--serif);font-weight:400;letter-spacing:.01em}
-    h1{font-size:38px;line-height:1.08;margin-bottom:8px}
-    h2{font-size:24px;line-height:1.16;margin:30px 0 10px}
-    p,li{font-size:12px}
-    a{color:var(--red)}
-    ul{margin-top:4px;padding-left:20px}
-    .section{margin-bottom:22px}
-    .muted{color:#5b554f}
+    :root {
+      --red: #b3213f;
+      --ink: #0c0c0a;
+      --white: #ffffff;
+      --off: #f6f4f0;
+      --rule: rgba(12, 12, 10, 0.12);
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --max: 1200px;
+      --pad: 64px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--white);
+    }
+    a { color: inherit; text-decoration: none; }
 
-    #nav{height:72px}
-    .nav__logo img{display:block}
-    .nav__links{list-style:none;margin:0;padding:0}
-    .nav__links a{color:var(--ink);opacity:.45}
-    .nav__links a:hover,.nav__links a.active{opacity:1}
-    .nav__zh{font-size:13px;color:var(--ink);opacity:.35}
-    .nav__zh:hover{opacity:.75}
-.nav__mobile-lang{display:none}
-    .nav__lp{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:9px 24px;font-size:11.5px;line-height:1;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border:1px solid rgba(23,23,23,.2);background:#fff;color:var(--ink)}
-    .nav__lp:hover,.nav__lp:focus-visible{border-color:var(--red);color:#fff;background:var(--red)}
-    .nav__menu-btn{display:none;border:1px solid rgba(23,23,23,.2);background:#fff;color:var(--ink);padding:0 12px;min-height:36px;letter-spacing:.11em;text-transform:uppercase;font-size:10px;cursor:pointer}
-    @media (max-width:760px){.nav__menu-btn{display:inline-flex;align-items:center;justify-content:center}.nav__zh{display:none}.nav__mobile-lang{display:list-item}}
-    .sv-footer--full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
+    #nav {
+      height: 72px;
+    }
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 100%;
+    }
+    .nav__logo img { display: block; }
+    .nav__logo-mark {
+      width: 31px;
+      height: 31px;
+      flex: 0 0 31px;
+    }
+    .nav__logo-lockup {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1;
+      row-gap: 1px;
+      min-height: 31px;
+      padding-left: 4px;
+    }
+    .nav__logo-en {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.035em;
+      color: #171717;
+      line-height: 1;
+    }
+    .nav__logo-cn {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: rgba(33, 33, 30, 0.66);
+      line-height: 1;
+    }
+    .nav__links a {
+      color: var(--ink);
+      opacity: 0.45;
+    }
+    .nav__links a:hover,
+    .nav__links a.active {
+      opacity: 1;
+    }
+    .nav__zh {
+      font-size: 13px;
+      color: var(--ink);
+      opacity: 0.35;
+    }
+    .nav__zh:hover { opacity: 0.75; }
+    .nav__lp { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 9px 24px; font-size: 11.5px; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; border: 1px solid rgba(23, 23, 23, 0.2); background: #fff; color: var(--ink); }
+    .nav__lp:hover,
+    .nav__lp:focus-visible { border-color: var(--red); color: #fff; background: var(--red); }
+    .nav__menu-btn { display: none; border: 1px solid rgba(23, 23, 23, 0.2); background: #fff; color: var(--ink); padding: 0 12px; min-height: 36px; letter-spacing: 0.11em; text-transform: uppercase; font-size: 10px; cursor: pointer; }
+    @media (max-width: 760px) {
+      .nav__menu-btn { display: inline-flex; align-items: center; justify-content: center; }
+    }
+    .sv-footer--full-bleed {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      width: 100vw;
+    }
 
+    main {
+      padding: 132px var(--pad) 86px;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .disclaimer-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1.04;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+    }
+    .intro {
+      margin: 14px 0 34px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(12, 12, 10, 0.74);
+    }
+    section {
+      border-top: 1px solid var(--rule);
+      padding-top: 22px;
+      margin-top: 22px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.12;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+    }
+    p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(12, 12, 10, 0.86);
+    }
+    .disclaimer-note {
+      margin-top: 30px;
+      border-top: 1px solid var(--rule);
+      padding-top: 18px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(12, 12, 10, 0.76);
+    }
     .sv-footer {
   background: #f6f4f0;
   border-top: 1px solid var(--rule);
@@ -101,7 +216,7 @@
   line-height: 1.7;
 }
 .sv-footer__legal {
-  font-size: 9px;
+  font-size: 7px;
   color: #6f6a63;
   line-height: 1.7;
 }
@@ -128,31 +243,21 @@
   }
 }
 
+    
+    
+
+    @media (max-width: 980px) {
+      main,
+      .sv-footer,
+      #nav {
+        --pad: 18px;
+      }
+      main { padding-top: 116px; }
+      h1 { font-size: 30px; }
+      h2 { font-size: 20px; }
+    }
   </style>
-  <link rel="stylesheet" href="assets/css/topbar-consistent.css">
-  <link rel="stylesheet" href="assets/css/typography-consistent.css">
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
-  <style>
-    body.legal-page {
-      font-size: 12px;
-      line-height: 1.55;
-      letter-spacing: normal;
-    }
-    body.legal-page p,
-    body.legal-page li {
-      font-size: 12px !important;
-      max-width: none;
-      line-height: 1.55;
-    }
-    body.legal-page h1 {
-      font-size: 30px !important;
-      line-height: 1.1;
-    }
-    body.legal-page h2 {
-      font-size: 18px !important;
-      line-height: 1.2;
-    }
-  </style>
 
 <style id="sv-footer-homepage-sync">
 .sv-footer {
@@ -201,7 +306,7 @@
   flex-wrap: wrap;
   row-gap: 8px;
 }
-.sv-footer__legal-links a + a::before { content: " | "; color: #6f6a63; }
+.sv-footer__legal-links a + a::before { content: "|"; color: #6f6a63; margin: 0 10px; }
 @media (max-width: 900px) {
   .sv-footer { padding: 10px var(--pad, var(--site-page-margin, 18px)) 36px !important; }
   .sv-footer__main { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; }
@@ -229,7 +334,7 @@
 </style>
 
 </head>
-<body class="legal-page">
+<body>
   <nav id="nav" aria-label="Primary">
     <a class="nav__logo" href="index.html" aria-label="ShoreVest home">
       <img src="assets/images/logo-master.png?v=1" alt="" class="nav__logo-mark" />
@@ -252,142 +357,46 @@
     </div>
   </nav>
 
-  <h1>Legal Notices &amp; Disclaimers</h1>
-  <p class="muted"><strong>Effective date:</strong> April 8, 2026.</p>
-  <p>Please read these Legal Notices and Disclaimers carefully before using this website. By accessing, browsing, or otherwise using this website, you acknowledge that you have read, understood, and accepted these notices, together with any applicable Terms of Use and Privacy Policy. If you do not accept them, you should not use this website.</p>
+  <main>
+    <div class="disclaimer-wrap">
+      <h1>Legal Notices &amp; Disclaimers</h1>
+      <p class="intro"><strong>Effective date:</strong> 8 April 2026</p>
+      <p>Please read these Legal Notices &amp; Disclaimers carefully before using this website. By accessing, browsing or otherwise using this website, you acknowledge that you have read, understood and accepted these Legal Notices &amp; Disclaimers, together with any applicable Terms of Use, Privacy Policy, Cookie Notice and any supplemental disclosures appearing on specific pages of this website. If you do not accept them, you should not access or use this website.</p>
 
-  <section class="section">
-    <h2>General information only</h2>
-    <p>This website is provided solely for general informational purposes regarding ShoreVest, its business, its team, its investment approach, market commentary, and related matters. The content is summary in nature, may be incomplete, and is not intended to provide the full basis for evaluating ShoreVest, any ShoreVest-managed vehicle, or any investment opportunity. Certain ShoreVest materials state expressly that information made available about a ShoreVest fund may be preliminary, incomplete, subject to change, and not sufficient on its own to evaluate an investment.</p>
-  </section>
+      <section><h2>1. Scope and purpose of this website</h2><p>This website is provided by ShoreVest Partners, Ltd. and relevant affiliates within the ShoreVest group structure, as applicable, for general informational purposes only. The content on this website is intended to provide a high-level overview of ShoreVest, its business, its strategy, its market commentary, its team and related matters. It is summary in nature, may be incomplete, may change without notice, and is not intended to provide the full basis for evaluating ShoreVest, any ShoreVest-managed vehicle, or any investment opportunity.</p><p>This website is not intended for retail investors. Certain sections of this website, including any investor access areas, data room links, downloads, password-protected materials or related communications, may be directed only to persons who satisfy applicable legal, regulatory or contractual eligibility standards.</p></section>
+      <section><h2>2. No offer, no solicitation, no placement activity</h2><p>Nothing on this website constitutes, or shall be construed as, an offer to sell, a solicitation of an offer to buy, an invitation to subscribe for, a recommendation to invest in, or an endorsement of, any security, partnership interest, fund interest, investment product, advisory mandate or other financial service in any jurisdiction.</p><p>Any offer or solicitation by ShoreVest, if made at all, will be made only by means of definitive confidential offering documents, subscription materials and related legal documentation, and only to persons who are legally eligible to receive them and in jurisdictions where such offer or solicitation may lawfully be made. No information on this website is intended to form the basis of any investment decision or contract.</p><p>No person should treat the publication of any content on this website as evidence that any ShoreVest vehicle is available for investment in their jurisdiction, or that they are eligible to receive any offering materials.</p></section>
+      <section><h2>3. Informational content only</h2><p>The materials on this website are provided solely for informational purposes. They may include descriptions of ShoreVest’s business, investment approach, legal structuring approach, sourcing model, historical experience, market views, selected transaction examples, pipeline commentary, portfolio themes, geographic observations, team biographies, media references, charts, graphics, case studies and third-party sourced information.</p><p>Such materials are intended only to assist a general understanding of ShoreVest’s areas of activity. They are not intended to be complete, and they do not contain all material information relevant to any investment decision, legal analysis, tax analysis, accounting treatment, regulatory conclusion or valuation judgment.</p></section>
+      <section><h2>4. No investment, legal, tax, accounting or other advice</h2><p>Nothing on this website constitutes investment, legal, tax, accounting, regulatory, financial, valuation, structuring or other professional advice. The content does not take into account any person’s particular investment objectives, financial condition, legal position, tax status, regulatory classification, liquidity needs, risk tolerance or other specific circumstances.</p><p>Any person considering an investment, transaction or other action involving ShoreVest or any ShoreVest-related material should consult their own independent legal, tax, accounting, regulatory, financial and other professional advisers. ShoreVest does not, through this website, undertake to advise any person as to the suitability of any investment, strategy, structure or course of action.</p></section>
+      <section><h2>5. No reliance</h2><p>Although ShoreVest seeks to present information in good faith, no representation or warranty, express or implied, is made as to the fairness, correctness, accuracy, completeness, reasonableness or timeliness of any content on this website. Information may be based on estimates, assumptions, judgments, market practice, internal analysis, third-party sources or preliminary views, and may be subject to updating, revision, supplementation or withdrawal without notice.</p><p>No person should rely on this website as the sole or primary basis for any investment decision, legal conclusion, valuation assessment, diligence judgment or other action. To the fullest extent permitted by applicable law, ShoreVest and its affiliates disclaim liability arising from or in connection with any use of, or reliance upon, this website or any content made available through it.</p></section>
+      <section><h2>6. Forward-looking statements</h2><p>This website may contain statements regarding expected market developments, investment opportunities, business plans, strategic priorities, portfolio characteristics, pipeline activity, legal or regulatory conditions, economic views, expected outcomes, targeted returns, anticipated exit routes or other future matters.</p><p>Such statements are inherently uncertain. They are based on assumptions, judgments, estimates, expectations and beliefs available at the relevant time and involve known and unknown risks, uncertainties and other factors, many of which are beyond ShoreVest’s control. Actual events or results may differ materially, including adversely, from those expressed or implied in any forward-looking statement.</p><p>ShoreVest undertakes no obligation to update forward-looking statements merely because subsequent circumstances, assumptions or views change, except to the extent required by applicable law.</p></section>
+      <section><h2>7. Past performance and target returns</h2><p>Past performance is not a guarantee or reliable indicator of future results. There can be no assurance that any ShoreVest strategy, fund or investment will achieve its objectives, preserve capital, generate targeted returns, make distributions, realise projected values or avoid losses.</p><p>Any historical performance information may include realised and unrealised investments, may be unaudited in whole or in part, may reflect assumptions and estimates, and may not reflect future market conditions, transaction costs, taxes, currency effects, financing costs, delays in monetisation, repatriation timing or other relevant variables. Any target, projected, expected or illustrative return metrics are aspirational only and are not promises or guarantees of future performance.</p></section>
+      <section><h2>8. Unrealised valuations and hypothetical outcomes</h2><p>Where this website refers to unrealised investments, indicative valuations, expected realisable values, collateral values, estimated recovery values, targeted returns, scenario outcomes or other non-realised metrics, such information is inherently judgmental and subject to change over time.</p><p>Actual realised outcomes may differ materially from any indicative, modelled, provisional or hypothetical figures shown on this website. Differences may arise from changes in market conditions, borrower performance, legal outcomes, enforcement timing, costs, tax leakage, foreign exchange, asset liquidity, refinancing conditions, purchaser demand and other factors.</p></section>
+      <section><h2>9. Illustrative transactions, case studies and examples</h2><p>Any investment examples, case studies, sample transactions, charts, pipeline references, asset types, collateral descriptions, legal structures, borrower situations, exit routes or sourcing examples shown on this website are illustrative only. They may not be representative of all investments made or to be made by ShoreVest or by any ShoreVest-managed vehicle.</p><p>Inclusion of any example does not imply that similar transactions will be available in future, that similar outcomes will be achieved, or that such example is representative of the performance, risk profile or investment characteristics of any future vehicle or portfolio.</p></section>
+      <section><h2>10. Third-party information and external sources</h2><p>This website may contain or refer to market data, statistics, benchmarks, charts, legal developments, macroeconomic observations, industry commentary or other information obtained from or derived from third-party sources.</p><p>While ShoreVest may believe such sources to be reliable for the purpose used, ShoreVest has not necessarily independently verified all such information and makes no representation or warranty as to its accuracy, completeness or suitability. Any views expressed with reference to third-party information are ShoreVest’s own unless otherwise expressly stated.</p></section>
+      <section><h2>11. Confidentiality and restricted materials</h2><p>Certain materials referred to on this website may be confidential, proprietary and restricted. Access to selected materials may be limited to persons approved by ShoreVest in its sole discretion and may be subject to confidentiality, eligibility, data protection, investor verification, password access, click-through acceptance or other conditions.</p><p>No person may reproduce, distribute, publish, disclose, transmit, upload, modify, frame or otherwise use restricted materials except as expressly permitted by ShoreVest in writing or as required by law.</p></section>
+      <section><h2>12. Jurisdictional restrictions</h2><p>This website is not directed at, and is not intended for distribution to or use by, any person or entity in any jurisdiction or country where such distribution, publication, availability or use would be contrary to applicable law or regulation, or would subject ShoreVest or any of its affiliates to any registration, licensing, filing, approval or other requirement in that jurisdiction.</p><p>Persons who access this website do so on their own initiative and are responsible for compliance with all applicable local laws, rules and regulations. ShoreVest reserves the right, without notice and in its sole discretion, to limit or deny access to this website or any part of it by reference to jurisdiction, regulatory status, investor classification or any other factor ShoreVest considers relevant.</p></section>
+      <section><h2>13. Investor eligibility</h2><p>Access to certain information, materials or investment-related content may be restricted to persons who satisfy applicable legal, regulatory or contractual eligibility standards, including where relevant professional investor, accredited investor, qualified purchaser, institutional investor or comparable classifications under applicable law.</p><p>ShoreVest may request evidence of eligibility before granting access to certain materials. ShoreVest reserves the right to reject, withhold or withdraw access to any person at any time and without explanation.</p></section>
+      <section><h2>14. United States notice</h2><p>Any interests in any ShoreVest fund referred to on this website have not been and are not expected to be registered under the United States Securities Act of 1933, as amended, or the securities laws of any U.S. state or other jurisdiction, and any such interests may be offered only in transactions exempt from registration.</p><p>Any such interests would also be subject to restrictions on transferability and resale. Investors may be required to bear the financial risk of an investment for an indefinite period. No U.S. federal or state securities commission or regulatory authority has recommended or approved any such interests, passed upon the merits of any offering, or confirmed the accuracy or adequacy of any related materials. Any representation to the contrary is unlawful.</p></section>
+      <section><h2>15. People’s Republic of China notice</h2><p>No invitation to offer or sale of any ShoreVest fund interest may be made to the public in the People’s Republic of China, excluding for these purposes Hong Kong, Macau and Taiwan, or by means that would be deemed public under PRC law.</p><p>Offering-related information has not been submitted to or approved by the China Securities Regulatory Commission or other relevant PRC governmental authorities. PRC-resident investors are responsible for obtaining any approvals, filings, consents or registrations required of them, including any applicable foreign exchange approvals.</p></section>
+      <section><h2>16. Hong Kong notice</h2><p>No ShoreVest fund referred to on this website has been authorised by the Securities and Futures Commission of Hong Kong. Nothing on this website is intended to constitute an offer to the Hong Kong public.</p><p>Any ShoreVest interests may be offered in Hong Kong only in circumstances permitted by law, including to professional investors within the meaning of the Securities and Futures Ordinance and related rules, and any related materials may not be issued, possessed for issue or directed at the public in Hong Kong except as permitted under applicable law.</p></section>
+      <section><h2>17. Singapore notice</h2><p>Any reference on this website to a ShoreVest fund does not constitute a prospectus for purposes of the Securities and Futures Act 2001 of Singapore. Any offer in Singapore would be made only in reliance on applicable exemptions and only to categories of persons permitted by Singapore law, and not to the retail public.</p></section>
+      <section><h2>18. Cayman Islands notice</h2><p>No offer or invitation to subscribe for interests may be made to the public in the Cayman Islands. Any relevant ShoreVest fund organised in the Cayman Islands may be registered as a private fund with the Cayman Islands Monetary Authority under the Private Funds Act, as applicable.</p><p>Any such registration does not constitute any guarantee or assurance by CIMA as to performance or creditworthiness, nor does it amount to approval of the fund, its strategy, its service providers or its materials. CIMA is not liable for losses, defaults or the correctness of opinions or statements expressed in offering materials.</p></section>
+      <section><h2>19. Regulatory status of ShoreVest entities</h2><p>References on this website to registration, supervision, licensing, exemption, compliance or regulatory status must be read carefully and only in relation to the specific ShoreVest entity, activity and jurisdiction concerned.</p><p>Based on ShoreVest’s current due diligence and offering materials, ShoreVest Capital Partners, Ltd. is supervised by the British Virgin Islands Financial Services Commission and the U.S. Securities and Exchange Commission, and ShoreVest Partners, Ltd., as manager to ShoreVest Credit Solutions III, L.P., is supervised by the U.S. Securities and Exchange Commission. Any such references do not imply that any regulator has approved this website, any ShoreVest fund, any ShoreVest investment opportunity, or the accuracy or adequacy of any website content. Regulatory status may differ across entities, products, activities and jurisdictions.</p></section>
+      <section><h2>20. No regulatory approval</h2><p>No securities regulator, governmental authority or supervisory body has passed upon or endorsed the merits of any ShoreVest fund, any investment described on this website, or the adequacy of the information on this website. Any reference to registration, supervision, filing or compliance status should not be read as an endorsement, recommendation or approval.</p></section>
+      <section><h2>21. Risk factors</h2><p>An investment in private credit, distressed debt, special situations, debt resolutions, asset restructurings, non-performing loans or related strategies involves significant risk. Risks may include, among others, illiquidity, leverage, borrower default, enforcement risk, valuation uncertainty, counterparty risk, legal and regulatory change, concentration risk, asset-level deterioration, tax leakage, repatriation timing, jurisdictional complexity, servicing risk, foreign exchange risk and risk of loss of principal.</p><p>Prospective investors should review the applicable offering documents in full, including all risk factors, before making any investment decision.</p></section>
+      <section><h2>22. Official documents prevail</h2><p>Where an investment opportunity is made available, the governing offering documents, subscription materials, constitutional documents and related legal agreements shall prevail in the event of any inconsistency with this website. This website is qualified in its entirety by reference to those documents.</p><p>Nothing on this website modifies, supplements or overrides any binding fund document, subscription agreement, confidentiality agreement or other contractual documentation between ShoreVest and any investor, prospective investor or counterparty.</p></section>
+      <section><h2>23. Website availability, functionality and security</h2><p>ShoreVest does not guarantee that this website will be continuously available, uninterrupted, secure, error-free or free from viruses or other harmful components. Access may be suspended, restricted, withdrawn or terminated at any time without notice.</p><p>Users must not misuse this website, attempt to gain unauthorised access, interfere with its operation, or use it in any unlawful manner.</p></section>
+      <section><h2>24. Intellectual property</h2><p>Unless otherwise stated, all content on this website, including text, graphics, charts, downloads, design elements, logos, trade names, page layout, compilation, branding and related materials, is owned by ShoreVest or used under licence and is protected by applicable intellectual property and other laws.</p><p>No right, title or licence is granted except for limited personal, non-commercial viewing for lawful informational purposes. Any copying, reproduction, republication, modification, transmission, distribution, framing or other use without ShoreVest’s prior written consent is prohibited except as required by law.</p></section>
+      <section><h2>25. Linked websites</h2><p>This website may contain links to external websites or third-party resources for convenience only. ShoreVest does not control and is not responsible for the content, accuracy, security, availability or privacy practices of any third-party website. Inclusion of a link does not imply endorsement.</p></section>
+      <section><h2>26. Changes to these notices</h2><p>ShoreVest may amend, revise, supplement or update these Legal Notices &amp; Disclaimers at any time without prior notice. The latest version will be posted on this website with the effective date shown above. Continued use of the website after any update constitutes acceptance of the revised version.</p></section>
+      <section><h2>27. Reservation of rights</h2><p>ShoreVest reserves all rights in relation to this website and its content, including the right to restrict, suspend, terminate or condition access to all or any part of the website, any download, any investor-access area or any referenced material, at any time and without notice.</p></section>
+      <section><h2>28. Contact</h2><p>Questions regarding these Legal Notices &amp; Disclaimers may be directed to <a href="mailto:partners@shorevest.com">partners@shorevest.com</a>.</p></section>
 
-  <section class="section">
-    <h2>No offer or solicitation</h2>
-    <p>Nothing on this website constitutes, or should be construed as, an offer to sell, a solicitation of an offer to buy, an invitation to subscribe for, a recommendation to invest in, or an endorsement of, any security, partnership interest, fund interest, investment product, or advisory service in any jurisdiction.</p>
-    <p>Any such offer or solicitation, if made at all, will be made only by means of definitive confidential offering and subscription documents, and only to persons who are legally eligible to receive them and in jurisdictions where such offer or solicitation may lawfully be made. ShoreVest fund documents expressly provide that interests are offered only through formal offering materials and only in compliance with applicable securities laws and jurisdiction-specific restrictions.</p>
-  </section>
+      <p class="disclaimer-note">&copy; ShoreVest Partners, Ltd. All rights reserved.</p>
+    </div>
+  </main>
 
-  <section class="section">
-    <h2>No advice</h2>
-    <p>The content of this website does not constitute investment, legal, tax, accounting, regulatory, financial, valuation, or other professional advice. It does not take into account any particular recipient's investment objectives, financial position, risk tolerance, legal status, tax position, or specific circumstances. Any person considering an investment or any related action should consult their own independent professional advisers.</p>
-  </section>
-
-  <section class="section">
-    <h2>No reliance</h2>
-    <p>While ShoreVest seeks to present information in good faith, the content on this website may contain summaries, market views, projections, assumptions, statistics, or information obtained from third-party sources. ShoreVest fund materials state that information may be based on current expectations, estimates, opinions, and beliefs, may not be complete, may be subject to amendment or updating, and should not be relied upon as a promise, representation, or guarantee. No representation or warranty, express or implied, is given as to the fairness, correctness, accuracy, completeness, or timeliness of the website content. To the fullest extent permitted by law, ShoreVest and its affiliates disclaim liability arising from use of, or reliance on, this website or its contents.</p>
-  </section>
-
-  <section class="section">
-    <h2>Forward-looking statements</h2>
-    <p>This website may contain statements regarding expected market developments, investment opportunities, pipeline activity, portfolio characteristics, business plans, strategic priorities, legal and regulatory conditions, or other future matters. Such statements are inherently uncertain and are based on assumptions, judgments, and information available at the relevant time. Actual events or results may differ materially, potentially adversely, from those expressed or implied. ShoreVest does not undertake any obligation to update forward-looking statements merely because circumstances or views change, except to the extent required by applicable law.</p>
-  </section>
-
-  <section class="section">
-    <h2>Past performance</h2>
-    <p>Past performance is not a guarantee or reliable indicator of future results. There can be no assurance that any ShoreVest strategy, fund, or investment will achieve its objectives, generate targeted returns, preserve capital, make distributions, or avoid losses. Historical performance information may reflect realised and unrealised investments, may be unaudited in part, may depend on assumptions and estimates, and may not reflect future market conditions, transaction costs, tax, foreign exchange, liquidity constraints, or other factors.</p>
-  </section>
-
-  <section class="section">
-    <h2>Illustrative and summary content</h2>
-    <p>Any case studies, examples of transactions, descriptions of sourcing channels, portfolio characteristics, legal structures, collateral arrangements, enforcement processes, target returns, expected durations, geographic focus, industry focus, or pipeline opportunities shown on this website are illustrative only. They may not be representative of all investments made or to be made by ShoreVest or any ShoreVest fund. Inclusion of a transaction, sector, or investment example should not be understood as a prediction of future activity or results.</p>
-  </section>
-
-  <section class="section">
-    <h2>Confidentiality and availability of materials</h2>
-    <p>Certain materials referred to on this website may be confidential, may be made available only to selected persons, and may be subject to additional confidentiality, eligibility, access, and use restrictions. ShoreVest confidential offering materials are proprietary, provided on a confidential basis, and may not be reproduced, disclosed, or used for any purpose other than evaluating the relevant private placement.</p>
-  </section>
-
-  <section class="section">
-    <h2>Jurisdictional restrictions</h2>
-    <p>This website is not directed at, or intended for distribution to or use by, any person or entity in any jurisdiction or country where such distribution, publication, availability, or use would be contrary to applicable law or regulation or would subject ShoreVest or any ShoreVest affiliate to any registration, licensing, filing, or other requirement in that jurisdiction. Persons who access this website do so on their own initiative and are responsible for compliance with applicable local laws and regulations.</p>
-    <p>Without limitation, ShoreVest fund materials include specific offering restrictions and legends for the United States, the People's Republic of China, Hong Kong, Singapore, and the Cayman Islands. These include restrictions on public marketing, resale, transferability, investor eligibility, and regulatory status, and provide that offers may be made only pursuant to available exemptions and in accordance with applicable local law.</p>
-  </section>
-
-  <section class="section">
-    <h2>Investor eligibility</h2>
-    <p>Access to certain information, data room materials, or investment-related materials may be restricted to persons who satisfy applicable legal, regulatory, or contractual eligibility requirements, including where relevant professional investor, institutional investor, accredited investor, qualified purchaser, or comparable standards under applicable law. ShoreVest reserves the right to deny or limit access to any person, jurisdiction, or category of user at any time without notice.</p>
-  </section>
-
-  <section class="section">
-    <h2>United States notice</h2>
-    <p>Any interests in a ShoreVest fund referred to on this website have not been and are not expected to be registered under the U.S. Securities Act of 1933, as amended, or the securities laws of any U.S. state or other jurisdiction. Any such interests would be offered only in transactions exempt from registration and subject to restrictions on transfer and resale. ShoreVest fund materials also state that the relevant fund is not registered under the U.S. Investment Company Act of 1940, as amended, and that investors will not receive the protections of that statute.</p>
-  </section>
-
-  <section class="section">
-    <h2>People's Republic of China notice</h2>
-    <p>No invitation to offer or sale of any ShoreVest fund interest may be made to the public in the People's Republic of China, excluding for these purposes Hong Kong, Macau, and Taiwan, or by means that would be deemed public under PRC law. ShoreVest fund materials also state that offering-related information has not been submitted to or approved by the China Securities Regulatory Commission or other relevant PRC governmental authorities, and that PRC-resident investors are responsible for obtaining any approvals required of them, including foreign exchange approvals where applicable.</p>
-  </section>
-
-  <section class="section">
-    <h2>Hong Kong notice</h2>
-    <p>No ShoreVest fund referred to on this website has been authorised by the Securities and Futures Commission of Hong Kong, and no content on this website is intended to constitute an offer to the Hong Kong public. ShoreVest fund materials provide that interests may be offered in Hong Kong only in circumstances permitted by law, including to professional investors within the meaning of the Securities and Futures Ordinance and related rules, and that offering materials may not be issued or possessed for issue where directed at the public except as permitted by Hong Kong law.</p>
-  </section>
-
-  <section class="section">
-    <h2>Singapore notice</h2>
-    <p>Any reference on this website to a ShoreVest fund is not a prospectus for purposes of the Securities and Futures Act 2001 of Singapore. ShoreVest fund materials provide that any offer in Singapore would be made only in reliance on available exemptions and only to categories of persons permitted by applicable Singapore law, and not to the retail public.</p>
-  </section>
-
-  <section class="section">
-    <h2>Cayman Islands notice</h2>
-    <p>ShoreVest fund materials state that no offer or invitation to subscribe for interests may be made to the public in the Cayman Islands and that the relevant fund will be registered as a private fund with the Cayman Islands Monetary Authority under the Private Funds Act. Those materials also state expressly that registration with CIMA does not constitute any guarantee or assurance as to performance or creditworthiness and that CIMA is not liable for losses, defaults, or the correctness of opinions or statements used in offering materials.</p>
-  </section>
-
-  <section class="section">
-    <h2>Regulatory status of ShoreVest entities</h2>
-    <p>ShoreVest materials indicate that ShoreVest Capital Partners, Ltd. is supervised by the British Virgin Islands Financial Services Commission and the U.S. Securities and Exchange Commission, with the BVI certificate number and SEC/CRD identifiers stated in ShoreVest due diligence materials. They also indicate that ShoreVest Partners, Ltd., as manager to ShoreVest Credit Solutions III, L.P., is supervised by the U.S. Securities and Exchange Commission.</p>
-    <p>Any reference on this website to regulation, registration, supervision, licensing, exemption, or compliance should be read carefully and only in relation to the specific ShoreVest entity, activity, and jurisdiction concerned. Such references do not imply approval of any fund, investment opportunity, website content, or performance by any regulator. Regulatory status may differ between entities, products, services, and jurisdictions.</p>
-    <p><strong>Critical note for counsel confirmation:</strong> confirm the exact public-facing wording of this section to ensure no statement overstates what is regulated, registered, or supervised.</p>
-  </section>
-
-  <section class="section">
-    <h2>No regulatory approval</h2>
-    <p>No securities regulator, governmental authority, or supervisory body has passed upon or endorsed the merits of any ShoreVest fund, any investment described on this website, or the adequacy of the information on this website. To the extent ShoreVest materials refer to registration, supervision, or filing status, such references should not be read as approval, endorsement, or recommendation.</p>
-  </section>
-
-  <section class="section">
-    <h2>Third-party information</h2>
-    <p>This website may include or refer to market data, benchmarks, legal developments, economic observations, statistics, charts, reports, or statements derived from third-party sources. Although ShoreVest may believe such sources to be reliable, it has not necessarily independently verified all such information and gives no assurance as to its accuracy or completeness.</p>
-  </section>
-
-  <section class="section">
-    <h2>Website content may change</h2>
-    <p>The content of this website may be changed, updated, replaced, or removed at any time without notice. ShoreVest is under no obligation to update historical information, views, legal notices, market commentary, or archived materials, except to the extent required by applicable law. The fact that material appears on this website at any particular time does not mean that it remains accurate, complete, or current after that time.</p>
-  </section>
-
-  <section class="section">
-    <h2>Risk factors</h2>
-    <p>An investment in private credit, distressed debt, special situations, asset restructurings, non-performing loans, or related strategies involves significant risk. Risks may include, among others, illiquidity, leverage, borrower default, enforcement risk, valuation uncertainty, legal and regulatory change, counterparty risk, servicing risk, concentration risk, foreign exchange risk, tax leakage, repatriation timing, jurisdictional complexity, and loss of principal. Prospective investors should review the relevant offering documents in full before making any investment decision.</p>
-  </section>
-
-  <section class="section">
-    <h2>No assurance of website access</h2>
-    <p>ShoreVest does not guarantee uninterrupted availability of this website, or that the website will be free from delay, error, omission, interruption, defect, virus, or other harmful component. Availability may be limited, suspended, or terminated without notice.</p>
-  </section>
-
-  <section class="section">
-    <h2>Intellectual property</h2>
-    <p>Unless otherwise stated, all content on this website, including text, design, layout, graphics, charts, logos, branding, downloadable materials, and underlying compilation, is owned by ShoreVest or used under licence and is protected by applicable intellectual property laws. No right or licence is granted except for limited personal, non-commercial viewing for lawful informational purposes. No reproduction, republication, distribution, modification, framing, transmission, or other use is permitted without ShoreVest prior written consent, except as required by law or expressly permitted in writing.</p>
-  </section>
-
-  <section class="section">
-    <h2>Reservation of rights</h2>
-    <p>ShoreVest reserves the right, in its sole discretion and without notice, to restrict, suspend, or terminate access to this website or any part of it, and to impose or modify conditions on access to any materials, downloads, or investor-related content.</p>
-  </section>
-
-  <section class="section">
-    <h2>Governing materials prevail</h2>
-    <p>Where an investment opportunity is made available, the governing offering documents, limited partnership agreement, subscription materials, side letters, and other definitive legal documents will control in the event of any inconsistency with this website.</p>
-  </section>
-
-  <section class="section">
-    <h2>Contact</h2>
-    <p>Questions concerning these Legal Notices and Disclaimers may be directed to <a href="mailto:partners@shorevest.com">partners@shorevest.com</a> or <a href="mailto:shorevestfunds@shorevest.com">shorevestfunds@shorevest.com</a>, subject to applicable confidentiality and access restrictions.</p>
-    <p><strong>Last reviewed:</strong> April 2026.</p>
-    <p><a href="index.html">Back to homepage</a></p>
-  </section>
-
-<footer class="sv-footer sv-footer--full-bleed">
+  <footer class="sv-footer sv-footer--full-bleed">
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
       <div class="sv-footer__brand">ShoreVest Partners</div>
@@ -402,8 +411,8 @@
     <div class="sv-footer__bottom">
       <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
       <details class="sv-footer__legal-toggle">
-        <summary>Legal notice</summary>
-        <div class="sv-footer__legal"><strong>LEGAL NOTICE</strong> This website is for informational purposes only and does not constitute an offer, solicitation, recommendation, or advice. Access may be restricted by law and investor eligibility requirements. Past performance is not indicative of future results. Please review the Legal Notices &amp; Disclaimers, Terms of Use, Privacy Policy, and Cookie Notice.</div>
+        <summary>LEGAL NOTICE</summary>
+        <div class="sv-footer__legal">This website uses cookies and similar technologies for operational, analytical, and security purposes. Certain cookies may be required for the Site to function. By using this website, you acknowledge the use of cookies as described in this Cookie Notice. Please also review our Privacy Policy, Terms of Use, and Legal Notices &amp; Disclaimers.</div>
       </details>
       <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
     </div>
