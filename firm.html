@@ -1422,6 +1422,10 @@
         }
         .lead,
         .section-head p {
+          font-size: 17px;
+        }
+        .lead--intro,
+        .lead--boxed {
           font-size: 16px;
           line-height: 1.5;
         }
@@ -1466,13 +1470,8 @@
           line-height: 1.45;
         }
         .section-head .operations-copy {
-          font-size: 16px;
-          line-height: 1.5;
-        }
-        .intelligence-spotlight,
-        .validation-section .capital-base-lockup .capital-base-copy {
-          font-size: 16px;
-          line-height: 1.5;
+          font-size: 17px;
+          line-height: 1.45;
         }
         .capital-base-lockup {
           padding-left: 0;
@@ -1509,7 +1508,8 @@
           gap: 18px;
         }
         .founding-principles-copy .lead {
-          font-size: 16px;
+          font-size: 20px;
+          line-height: 1.5;
           max-width: 100%;
           margin-top: 6px;
         }
@@ -1634,17 +1634,24 @@
 
       @media (max-width: 520px) {
         .nav__right {
-          gap: 8px;
+          gap: 6px;
         }
         .nav__zh {
           display: none;
         }
         .nav__lp,
         .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
+          min-height: 38px;
+          padding: 0 10px;
+        }
+        .nav__lp,
+        .nav__menu-btn {
+          letter-spacing: 0.1em;
         }
         .nav__lp {
+          font-size: 8px;
+        }
+        .nav__menu-btn {
           font-size: 9px;
         }
       }
