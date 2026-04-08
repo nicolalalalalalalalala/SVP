@@ -253,6 +253,12 @@ footer small,
   width: 100%;
 }
 
+
+/* Legal notice copy needs interior breathing room inside toggle panel */
+footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
+  padding: 4px 18px 14px !important;
+}
+
 /* Breakpoint tightening without flattening components */
 @media (max-width: 1024px) {
   .wrap {
