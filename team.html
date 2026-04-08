@@ -258,6 +258,14 @@
       .team-groups {
         background: var(--white);
       }
+      .team-groups__intro {
+        font-family: var(--serif);
+        font-size: 21px;
+        line-height: 1.62;
+        color: var(--ink-soft);
+        max-width: 980px;
+        margin-bottom: 22px;
+      }
       .group {
         padding: 32px 0 40px;
         border-bottom: 1px solid var(--rule);
@@ -286,10 +294,8 @@
         line-height: 1.58;
         letter-spacing: 0.01em;
         color: var(--mist);
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        max-width: 860px;
+        white-space: normal;
         padding-top: 2px;
       }
 
@@ -302,6 +308,12 @@
         display: flex;
         flex-direction: column;
         gap: 9px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      .card:hover,
+      .card:focus-within {
+        transform: translateY(-2px);
       }
       .photo {
         width: 100%;
@@ -369,6 +381,14 @@
         color: var(--ink-soft);
         margin-top: -2px;
       }
+      .card-cue {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--mist);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
       .card-snippet {
         display: none;
       }
@@ -381,6 +401,24 @@
       .card.is-active .photo {
         border-color: rgba(179, 33, 63, 0.52);
         box-shadow: 0 10px 24px rgba(49, 39, 34, 0.13);
+      }
+      .group--leadership {
+        padding: 44px 0 56px;
+      }
+      .group--leadership .grid {
+        gap: 26px;
+      }
+      .group--leadership .photo {
+        aspect-ratio: 3.8/5;
+      }
+      .group--leadership .name {
+        font-size: 17px;
+      }
+      .group--leadership .card-descriptor {
+        font-size: 12px;
+      }
+      .group--advisory .card-descriptor {
+        color: var(--mist);
       }
 
       .row-bio-panel {
@@ -573,6 +611,11 @@
         }
         .group {
           padding: 24px 0 32px;
+        }
+        .team-groups__intro {
+          font-size: 18px;
+          line-height: 1.5;
+          margin-bottom: 14px;
         }
         .grid {
           grid-template-columns: 1fr;
@@ -1078,13 +1121,14 @@
 
     <main class="team-groups">
       <div class="wrap">
-        <section class="group" aria-labelledby="leadership-investment">
+        <p class="team-groups__intro">
+          The team combines onshore credit execution, legal structuring, and institutional capital experience built over multiple credit cycles in China.
+        </p>
+        <section class="group group--leadership" aria-labelledby="leadership-investment">
           <div class="group__head">
             <h2 id="leadership-investment">Leadership and Investment</h2>
             <p class="group__summary">
-              The leadership and investment team drives portfolio construction,
-              underwriting discipline, and investment decision-making across
-              ShoreVest’s core private credit strategy.
+              The investment team is responsible for sourcing, underwriting and executing transactions, and for overall portfolio construction and risk management.
             </p>
           </div>
           <div class="grid">
@@ -1099,7 +1143,7 @@
               </div>
               <div class="name">Benjamin Fanger</div>
               <div class="title">Managing Partner & Founder</div>
-              <p class="card-descriptor">Founded Shoreline (2004) and ShoreVest (2016); leads IC underwriting discipline.</p>
+              <p class="card-descriptor">Leads investment committee decisions, underwriting discipline, and portfolio-level risk across the platform.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1112,7 +1156,7 @@
               </div>
               <div class="name">Mecy Mei</div>
               <div class="title">Partner</div>
-              <p class="card-descriptor">Co-leads asset solutions and execution across sourcing, structuring, and recoveries.</p>
+              <p class="card-descriptor">Co-leads sourcing, structuring, servicing, and recovery execution across complex credit transactions.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1125,7 +1169,7 @@
               </div>
               <div class="name">Hui Zheng</div>
               <div class="title">Partner</div>
-              <p class="card-descriptor">Co-leads legal-led structuring and onshore enforcement strategy.</p>
+              <p class="card-descriptor">Leads legal-led deal structuring and enforcement strategy across onshore credit resolutions.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1138,7 +1182,7 @@
               </div>
               <div class="name">Ada Bi</div>
               <div class="title">Partner & CFO</div>
-              <p class="card-descriptor">Oversees fund operations, controls, LP reporting, and platform finance governance.</p>
+              <p class="card-descriptor">Directs fund finance, controls, and LP reporting to protect institutional operating integrity.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1151,6 +1195,7 @@
               </div>
               <div class="name">Shanjuan Jiang</div>
               <div class="title">Partner</div>
+              <p class="card-descriptor">Leads investor strategy and cross-border capital engagement between North America and China execution.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1163,7 +1208,7 @@
               </div>
               <div class="name">Lillian Xu</div>
               <div class="title">General Counsel</div>
-              <p class="card-descriptor">Leads legal diligence, structuring, and regulatory risk management.</p>
+              <p class="card-descriptor">Leads legal structuring, documentation, and regulatory risk control across PRC credit investments.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1176,7 +1221,7 @@
               </div>
               <div class="name">James Li</div>
               <div class="title">Director of Capital Solutions</div>
-              <p class="card-descriptor">Supports capital structuring and special situations execution.</p>
+              <p class="card-descriptor">Focuses on restructuring execution and capital solutions across complex special situations.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1189,7 +1234,7 @@
               </div>
               <div class="name">Daoping Yang</div>
               <div class="title">Managing Director, ShoreVest Asset Solutions</div>
-              <p class="card-descriptor">Leads Eastern China sourcing and servicing at ShoreVest Asset Solutions.</p>
+              <p class="card-descriptor">Leads Eastern China sourcing and servicing to accelerate recoveries and enforcement outcomes.</p>
             </article>
           </div>
         </section>
@@ -1198,8 +1243,7 @@
           <div class="group__head">
             <h2 id="client-solutions">Client Solutions</h2>
             <p class="group__summary">
-              Covers investor relationships, fundraising dialogue, and client
-              coverage across ShoreVest's private credit platform.
+              Responsible for investor engagement, capital formation and institutional relationships.
             </p>
           </div>
           <div class="grid">
@@ -1214,7 +1258,7 @@
               </div>
               <div class="name">John Jones</div>
               <div class="title">Director of Client Solutions (ex-Asia)</div>
-              <p class="card-descriptor">Leads investor coverage across the Americas, Middle East, and Europe.</p>
+              <p class="card-descriptor">Leads investor engagement and capital formation across the Americas, Europe, and Middle East.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1227,18 +1271,16 @@
               </div>
               <div class="name">Kelvin Chan</div>
               <div class="title">Director of Client Solutions (Asia)</div>
-              <p class="card-descriptor">Leads investor coverage across Asia from Hong Kong.</p>
+              <p class="card-descriptor">Leads institutional relationships and fundraising across Asia from the Hong Kong platform.</p>
             </article>
           </div>
         </section>
 
-        <section class="group" aria-labelledby="advisory-partners">
+        <section class="group group--advisory" aria-labelledby="advisory-partners">
           <div class="group__head">
             <h2 id="advisory-partners">Advisory Partners</h2>
             <p class="group__summary">
-              Provides policy, regulatory, and market context to support
-              underwriting judgment, risk calibration, and strategic
-              perspective.
+              Senior advisers providing market insight, strategic guidance and institutional perspective.
             </p>
           </div>
           <div class="grid">
@@ -1253,7 +1295,7 @@
               </div>
               <div class="name">Michael Chang</div>
               <div class="title">Senior Advisory Partner</div>
-              <p class="card-descriptor">Advises on institutional operations, governance, and organizational strategy.</p>
+              <p class="card-descriptor">Advises on operating model, governance controls, and institutional platform development.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1266,7 +1308,7 @@
               </div>
               <div class="name">Philip Young</div>
               <div class="title">Senior Advisory Partner</div>
-              <p class="card-descriptor">Advises on insurance capital and institutional asset allocation in Asia.</p>
+              <p class="card-descriptor">Advises on insurance capital deployment and institutional asset-allocation strategy in Asia.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1279,7 +1321,7 @@
               </div>
               <div class="name">Dinny McMahon</div>
               <div class="title">Senior Advisory Partner</div>
-              <p class="card-descriptor">Advises on China macro-financial conditions and banking-system risk dynamics.</p>
+              <p class="card-descriptor">Advises on China macro-financial trends and banking-system risk conditions for underwriting context.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1292,7 +1334,7 @@
               </div>
               <div class="name">Steve Poon</div>
               <div class="title">Senior Advisory Partner</div>
-              <p class="card-descriptor">Advises on Asian private credit execution and platform development.</p>
+              <p class="card-descriptor">Advises on Asian private credit execution, portfolio management, and platform scaling strategy.</p>
             </article>
           </div>
         </section>
@@ -1480,6 +1522,15 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
           card.appendChild(snippet);
         });
       }
+      function appendViewProfileCue() {
+        document.querySelectorAll(".card").forEach((card) => {
+          if (card.querySelector(".card-cue")) return;
+          const cue = document.createElement("div");
+          cue.className = "card-cue";
+          cue.textContent = "View profile";
+          card.appendChild(cue);
+        });
+      }
 
       function hydrateCardTitles() {
         document.querySelectorAll(".card").forEach((card) => {
@@ -1500,6 +1551,7 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
 
       hydrateCardTitles();
       appendCardSnippets();
+      appendViewProfileCue();
 
       const menuBtn = document.querySelector(".nav__menu-btn");
       const nav = document.getElementById("nav");
@@ -1549,13 +1601,12 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
       }
 
       document.querySelectorAll(".card").forEach((card) => {
-        const photo = card.querySelector(".photo");
         const name =
           card.querySelector(".name")?.textContent?.trim() || "Team Member";
 
-        photo.setAttribute("tabindex", "0");
-        photo.setAttribute("role", "button");
-        photo.setAttribute("aria-label", `Show biography for ${name}`);
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", `Show biography for ${name}`);
 
         function openBio() {
           const isSame = activeCard === card;
@@ -1580,8 +1631,8 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
           activeCard = card;
         }
 
-        photo.addEventListener("click", openBio);
-        photo.addEventListener("keydown", (event) => {
+        card.addEventListener("click", openBio);
+        card.addEventListener("keydown", (event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
             openBio();
