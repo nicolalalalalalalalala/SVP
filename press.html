@@ -952,20 +952,19 @@
 
 <style id="sv-footer-homepage-sync">
 .sv-footer {
-  position: relative !important;
-  background: #f6f4f0 !important;
-  border-top: 1px solid var(--rule) !important;
   margin-top: 0 !important;
-  padding: 18px var(--pad, var(--site-page-margin, 64px)) 40px !important;
+  padding-top: 14px !important;
+  padding-bottom: 30px !important;
+  position: relative;
 }
 .sv-footer::before {
   content: "";
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  top: -32px;
-  height: 32px;
-  background: #f6f4f0;
+  height: 1px;
+  background: #7b746c;
 }
 .sv-footer__bottom { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; padding-top: 16px !important; }
 .sv-footer__legal-toggle { border: 1px solid rgba(0, 0, 0, 0.14); background: rgba(255, 255, 255, 0.35); }
@@ -975,14 +974,14 @@
 .sv-footer__legal-toggle[open] > summary::after { content: " −"; }
 .sv-footer__legal-toggle .sv-footer__legal { margin: 0; padding: 0 12px 12px; }
 .sv-footer__legal-links { padding-bottom: 8px !important; }
-@media (max-width: 768px) {
+.sv-footer__legal-links a + a::before { content: " | "; color: #6f6a63; }
+@media (max-width: 900px) {
   .sv-footer { padding: 8px var(--pad, var(--site-page-margin, 18px)) 34px !important; }
   .sv-footer__main { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
   .sv-footer__contact { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
   .sv-footer__contact a { width: 100%; text-align: center; }
-  .sv-footer__legal-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .sv-footer__legal-links { display: flex; flex-wrap: wrap; gap: 0; align-items: flex-start; }
   .sv-footer__legal-links a { font-size: 10px; }
-  .sv-footer__legal-separator { display: none; }
 }
 </style>
 
