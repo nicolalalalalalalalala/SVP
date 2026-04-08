@@ -374,6 +374,10 @@ html {
     row-gap: 0;
   }
 
+  #nav .nav__zh {
+    display: none;
+  }
+
   #nav .nav__right {
     gap: 10px;
   }
