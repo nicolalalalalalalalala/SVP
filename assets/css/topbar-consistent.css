@@ -683,7 +683,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 
   footer.sv-footer .sv-footer__brand {
     flex: 1 1 auto !important;
-    font-size: 22px !important;
+    font-size: 18px !important;
     line-height: 1.22 !important;
     letter-spacing: 0.01em !important;
     white-space: nowrap !important;
@@ -699,7 +699,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   }
 
   footer.sv-footer .sv-footer__contact-label {
-    font-size: 13px !important;
+    font-size: 11px !important;
     letter-spacing: 0.13em !important;
     white-space: nowrap !important;
     color: #625c55 !important;
@@ -710,9 +710,9 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     max-width: 100% !important;
     white-space: nowrap !important;
     text-align: right !important;
-    min-height: 56px;
-    padding: 0 18px !important;
-    font-size: 14px !important;
+    min-height: 44px;
+    padding: 0 14px !important;
+    font-size: 12px !important;
     letter-spacing: 0.08em !important;
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
     background: rgba(255, 255, 255, 0.44) !important;
