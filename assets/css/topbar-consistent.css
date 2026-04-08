@@ -412,14 +412,7 @@ html {
 }
 
 .sv-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -32px;
-  height: 32px;
-  background: #f6f4f0;
-  pointer-events: none;
+  display: none;
 }
 
 .sv-footer__contact {
@@ -584,7 +577,7 @@ footer.sv-footer.sv-footer--full-bleed {
   box-sizing: border-box;
   width: 100% !important;
   margin: 0 !important;
-  padding: 24px var(--site-page-margin, 32px) 28px !important;
+  padding: 12px var(--site-page-margin, 32px) 24px !important;
 }
 
 footer.sv-footer.sv-footer--full-bleed {
