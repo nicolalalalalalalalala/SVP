@@ -1328,17 +1328,19 @@
       }
       .pgsec {
         padding: 72px 0 104px;
-        background: #fff;
+        background: linear-gradient(180deg, #fff 0%, #faf8f5 100%);
       }
       .strategy-tools {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 16px;
         align-items: center;
-        margin-bottom: 32px;
+        margin-bottom: 36px;
         padding: 16px 20px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 10px 24px rgba(30, 25, 17, 0.05);
       }
       .strategy-tools p {
         font-size: 11px;
@@ -1366,10 +1368,11 @@
         font-size: 10px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        padding: 9px 13px;
+        padding: 10px 14px;
         min-height: 38px;
         cursor: pointer;
-        transition: all 0.2s;
+        border-radius: 999px;
+        transition: all 0.2s ease;
       }
       .jump-nav button:hover,
       .jump-nav button:focus-visible,
@@ -1381,15 +1384,21 @@
       }
       .strategy-stack {
         display: grid;
-        gap: 46px;
+        gap: 28px;
       }
       .strategy-block {
         background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.09);
         padding: 38px 40px;
+        border-radius: 14px;
         scroll-margin-top: 96px;
         position: relative;
         overflow: hidden;
+        box-shadow: 0 16px 36px rgba(38, 31, 21, 0.06);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
       }
       .strategy-block::after {
         content: "";
@@ -1397,8 +1406,13 @@
         left: 0;
         top: 0;
         height: 100%;
-        width: 2px;
+        width: 4px;
         background: rgba(179, 33, 63, 0.65);
+      }
+      .strategy-block:hover {
+        transform: translateY(-2px);
+        border-color: rgba(179, 33, 63, 0.24);
+        box-shadow: 0 20px 42px rgba(38, 31, 21, 0.1);
       }
       .strategy-block h2 {
         font-family: var(--serif);
@@ -1600,6 +1614,7 @@
         border: 1px solid rgba(179, 33, 63, 0.15);
         background: #fff;
         padding: 16px;
+        border-radius: 10px;
       }
       .risk-card h4 {
         font-size: 10px;
@@ -1911,6 +1926,7 @@
         justify-content: space-between;
         border: 1px solid rgba(179, 33, 63, 0.18);
         padding: 12px 14px;
+        border-radius: 10px;
       }
       #cta-next {
         text-align: left;
@@ -1975,6 +1991,7 @@
         .strategy-tools {
           grid-template-columns: 1fr;
           gap: 10px;
+          position: static;
         }
         .jump-nav {
           justify-content: flex-start;
@@ -2109,6 +2126,8 @@
         .strategy-tools {
           margin-bottom: 22px;
           padding: 14px;
+          border-radius: 12px;
+          box-shadow: 0 8px 20px rgba(38, 31, 21, 0.05);
         }
         .strategy-tools p {
           font-size: 10px;
@@ -2130,7 +2149,9 @@
           gap: 22px;
         }
         .strategy-block {
-          padding: 24px 20px;
+          padding: 22px 18px;
+          border-radius: 12px;
+          box-shadow: 0 10px 24px rgba(38, 31, 21, 0.05);
         }
         .strategy-block h2 {
           font-size: clamp(28px, 8.2vw, 38px);
@@ -2147,6 +2168,16 @@
           line-height: 1.65;
           hyphens: none;
           overflow-wrap: normal;
+        }
+        .strategy-list {
+          padding-left: 18px;
+        }
+        .strategy-list li {
+          font-size: 16px;
+          line-height: 1.65;
+        }
+        .risk-card {
+          padding: 14px;
         }
         .funnel-step {
           align-items: flex-start;
