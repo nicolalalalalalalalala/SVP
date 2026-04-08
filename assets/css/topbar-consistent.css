@@ -670,20 +670,22 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 @media (max-width: 900px) {
   footer.sv-footer,
   footer.sv-footer.sv-footer--full-bleed {
-    padding: 14px var(--site-page-margin, 18px) 26px !important;
+    padding: 18px var(--site-page-margin, 18px) 40px !important;
   }
 
   footer.sv-footer .sv-footer__main {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 10px !important;
+    gap: 14px !important;
     flex-wrap: nowrap !important;
   }
 
   footer.sv-footer .sv-footer__brand {
-    font-size: 12px !important;
-    letter-spacing: 0.005em !important;
+    flex: 1 1 auto !important;
+    font-size: 22px !important;
+    line-height: 1.22 !important;
+    letter-spacing: 0.01em !important;
     white-space: nowrap !important;
   }
 
@@ -693,13 +695,14 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     align-items: center !important;
     justify-content: flex-end !important;
     flex-wrap: nowrap !important;
-    gap: 10px !important;
+    gap: 12px !important;
   }
 
   footer.sv-footer .sv-footer__contact-label {
-    font-size: 9px !important;
-    letter-spacing: 0.08em !important;
+    font-size: 13px !important;
+    letter-spacing: 0.13em !important;
     white-space: nowrap !important;
+    color: #625c55 !important;
   }
 
   footer.sv-footer .sv-footer__contact a {
@@ -707,25 +710,29 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     max-width: 100% !important;
     white-space: nowrap !important;
     text-align: right !important;
-    padding: 8px 10px !important;
-    font-size: 10px !important;
-    letter-spacing: 0.06em !important;
+    min-height: 56px;
+    padding: 0 18px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.08em !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    background: rgba(255, 255, 255, 0.44) !important;
   }
 
   footer.sv-footer .sv-footer__bottom {
-    gap: 12px !important;
-    padding-top: 14px !important;
+    gap: 16px !important;
+    padding-top: 16px !important;
   }
 
   footer.sv-footer .sv-footer__copyright {
-    font-size: 11px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #66615a !important;
   }
 
   footer.sv-footer .sv-footer__legal-toggle > summary {
-    padding: 12px 14px;
-    font-size: 11px;
-    letter-spacing: 0.09em;
+    padding: 16px 18px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
   }
 
   footer.sv-footer .sv-footer__legal {
@@ -736,12 +743,13 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   footer.sv-footer .sv-footer__legal-links {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 12px !important;
+    padding-top: 2px !important;
   }
 
   footer.sv-footer .sv-footer__legal-links a {
-    font-size: 11px;
-    line-height: 1.35;
+    font-size: 12px;
+    line-height: 1.45;
     letter-spacing: 0.01em;
   }
 
