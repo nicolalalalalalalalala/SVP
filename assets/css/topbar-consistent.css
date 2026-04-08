@@ -757,3 +757,30 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     content: "";
   }
 }
+
+@media (max-width: 700px) {
+  footer.sv-footer .sv-footer__main {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  footer.sv-footer .sv-footer__brand {
+    white-space: normal !important;
+  }
+
+  footer.sv-footer .sv-footer__contact {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-content: stretch !important;
+    gap: 10px !important;
+  }
+
+  footer.sv-footer .sv-footer__contact a {
+    width: 100% !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+}
