@@ -22,7 +22,7 @@
       --rule: rgba(12, 12, 10, 0.12);
       --serif: 'EB Garamond', Georgia, serif;
       --sans: 'Inter', system-ui, sans-serif;
-      --max: 1200px;
+      --max: 100%;
       --pad: 64px;
     }
     * { box-sizing: border-box; }
@@ -102,17 +102,19 @@
 
     main {
       padding: 132px var(--pad) 86px;
-      max-width: var(--max);
-      margin: 0 auto;
+      width: 100%;
+      max-width: none;
+      margin: 0;
     }
     .disclaimer-wrap {
-      max-width: 880px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: none;
+      margin: 0;
     }
     h1 {
       margin: 0;
       font-family: var(--serif);
-      font-size: 42px;
+      font-size: 30px;
       line-height: 1.04;
       font-weight: 400;
       letter-spacing: 0.01em;
@@ -120,14 +122,14 @@
     }
     .intro {
       margin: 12px 0 24px;
-      font-size: 12px;
-      line-height: 1.55;
+      font-size: 11px;
+      line-height: 1.5;
       color: rgba(12, 12, 10, 0.74);
     }
     .disclaimer-wrap > p:not(.intro):not(.disclaimer-note) {
       margin: 0 0 16px;
-      font-size: 12px;
-      line-height: 1.6;
+      font-size: 11px;
+      line-height: 1.5;
     }
     section {
       border-top: 1px solid var(--rule);
@@ -137,7 +139,7 @@
     h2 {
       margin: 0 0 8px;
       font-family: var(--serif);
-      font-size: 24px;
+      font-size: 20px;
       line-height: 1.14;
       font-weight: 400;
       letter-spacing: 0.01em;
@@ -145,8 +147,8 @@
     }
     p {
       margin: 0;
-      font-size: 12px;
-      line-height: 1.6;
+      font-size: 11px;
+      line-height: 1.5;
       color: rgba(12, 12, 10, 0.86);
     }
     section p + p {
@@ -156,8 +158,8 @@
       margin-top: 30px;
       border-top: 1px solid var(--rule);
       padding-top: 18px;
-      font-size: 12px;
-      line-height: 1.55;
+      font-size: 11px;
+      line-height: 1.5;
       color: rgba(12, 12, 10, 0.76);
     }
     .sv-footer {
