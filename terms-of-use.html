@@ -96,9 +96,10 @@
   line-height: 1.7;
 }
 .sv-footer__legal {
-  font-size: 7px;
+  font-size: 11px;
   color: #6f6a63;
-  line-height: 1.7;
+  line-height: 1.75;
+  max-width: 980px;
 }
 .sv-footer__legal-links {
   padding-bottom: 8px;
@@ -146,6 +147,26 @@
     body.legal-page h2 {
       font-size: 26px !important;
       line-height: 1.12;
+    }
+
+    .legal-contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .legal-contact-actions a {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      text-decoration: none;
+      color: var(--red);
+      transition: all 0.2s ease;
+    }
+    .legal-contact-actions a:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
     }
   </style>
 </head>
@@ -286,12 +307,15 @@
 
   <section class="section">
     <h2>Contact</h2>
-    <p><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></p>
-    <p><a href="index.html">Back to homepage</a></p>
+    <p>If you have questions regarding these Terms, please contact our team.</p>
+    <div class="legal-contact-actions">
+      <a href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+      <a href="index.html">Back to homepage</a>
+    </div>
   </section>
 
 
-  <footer class="sv-footer">
+  <footer class="sv-footer sv-footer--full-bleed">
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
       <div class="sv-footer__brand">ShoreVest Partners</div>

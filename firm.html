@@ -789,10 +789,10 @@
       }
       @media (max-width: 760px) {
         .track-record-section .section-head h2 {
-          font-size: 52px;
+          font-size: 36px;
         }
         .track-record-section .section-head p {
-          font-size: 15px;
+          font-size: 13px;
         }
         .track-record-section .section-head .track-record-intro {
           font-size: 10px;
@@ -803,11 +803,23 @@
         }
         .track-record-trigger__value {
           grid-column: 2;
-          font-size: 20px;
+          font-size: 16px;
+        }
+        .track-record-trigger__label {
+          font-size: 18px;
         }
         .track-record-panel {
           padding: 22px 20px 24px;
           gap: 12px;
+        }
+        .track-record-panel__label {
+          font-size: 19px;
+        }
+        .track-record-panel__metric {
+          font-size: 20px;
+        }
+        .track-record-panel__desc {
+          font-size: 14px;
         }
       }
 
@@ -1410,7 +1422,12 @@
         }
         .lead,
         .section-head p {
-          font-size: 19px;
+          font-size: 17px;
+        }
+        .lead--intro,
+        .lead--boxed {
+          font-size: 16px;
+          line-height: 1.5;
         }
         .section-head p {
           max-width: 100%;
@@ -1453,7 +1470,7 @@
           line-height: 1.45;
         }
         .section-head .operations-copy {
-          font-size: 20px;
+          font-size: 17px;
           line-height: 1.45;
         }
         .capital-base-lockup {
@@ -1491,7 +1508,8 @@
           gap: 18px;
         }
         .founding-principles-copy .lead {
-          font-size: 25px;
+          font-size: 20px;
+          line-height: 1.5;
           max-width: 100%;
           margin-top: 6px;
         }
@@ -1616,17 +1634,24 @@
 
       @media (max-width: 520px) {
         .nav__right {
-          gap: 8px;
+          gap: 6px;
         }
         .nav__zh {
           display: none;
         }
         .nav__lp,
         .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
+          min-height: 38px;
+          padding: 0 10px;
+        }
+        .nav__lp,
+        .nav__menu-btn {
+          letter-spacing: 0.1em;
         }
         .nav__lp {
+          font-size: 8px;
+        }
+        .nav__menu-btn {
           font-size: 9px;
         }
       }

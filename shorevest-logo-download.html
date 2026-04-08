@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShoreVest Brand Card Download</title>
+  <title>ShoreVest Logo Download</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
     :root {
       --bg: #f6f4f0;
       --ink: #161616;
-      --muted: rgba(33, 33, 30, 0.66);
+      --muted: #666;
       --red: #b3213f;
     }
 
@@ -49,7 +49,7 @@
     }
 
     .logo-mark {
-      width: clamp(132px, 18vw, 192px);
+      width: clamp(120px, 17vw, 180px);
       height: auto;
       margin-bottom: clamp(18px, 2.2vw, 28px);
     }
@@ -57,10 +57,10 @@
     .logo-en {
       font-family: 'EB Garamond', Georgia, serif;
       color: var(--ink);
-      font-size: clamp(62px, 8.4vw, 92px);
+      font-size: clamp(62px, 8.4vw, 90px);
       font-weight: 500;
       line-height: 1;
-      letter-spacing: 0.035em;
+      letter-spacing: 0.02em;
       margin: 0;
     }
 
@@ -68,10 +68,10 @@
       font-family: 'Noto Serif SC', serif;
       color: var(--muted);
       font-size: clamp(34px, 4.3vw, 48px);
-      letter-spacing: 0.28em;
+      letter-spacing: 0.42em;
       line-height: 1;
       margin-top: clamp(20px, 2.5vw, 28px);
-      margin-right: -0.28em;
+      margin-right: -0.42em;
     }
 
     .actions {
@@ -107,7 +107,7 @@
 <body>
   <div class="card" id="capture-target">
     <div class="logo-wrap">
-      <img class="logo-mark" src="assets/images/logo-master.png?v=1" alt="ShoreVest mark" />
+      <img class="logo-mark" src="assets/favicon.svg" alt="ShoreVest mark" />
       <h1 class="logo-en">ShoreVest</h1>
       <div class="logo-cn">新岸資本</div>
     </div>
@@ -115,11 +115,13 @@
 
   <div class="actions">
     <button id="download-png" type="button">Download PNG</button>
-    <a href="assets/images/logo-master.png?v=1" download="shorevest-mark.png">Download Website Mark (PNG)</a>
+    <a href="assets/favicon.svg" download="shorevest-mark.svg">Download Website Mark (SVG)</a>
   </div>
 
   <script>
     const downloadBtn = document.getElementById('download-png');
+    const target = document.getElementById('capture-target');
+
     function waitForFonts() {
       return document.fonts ? document.fonts.ready : Promise.resolve();
     }
@@ -138,16 +140,16 @@
       ctx.fillRect(0, 0, width, height);
 
       const img = new Image();
-      img.src = 'assets/images/logo-master.png?v=1';
+      img.src = 'assets/favicon.svg';
 
       await new Promise((resolve, reject) => {
         img.onload = resolve;
         img.onerror = reject;
       });
 
-      const markSize = 390;
+      const markSize = 360;
       const centerX = width / 2;
-      const topY = 560;
+      const topY = 620;
       ctx.drawImage(img, centerX - markSize / 2, topY, markSize, markSize);
 
       ctx.fillStyle = '#161616';
@@ -156,15 +158,10 @@
       ctx.font = "500 176px 'EB Garamond', Georgia, serif";
       ctx.fillText('ShoreVest', centerX, topY + markSize + 60);
 
-      ctx.fillStyle = 'rgba(33, 33, 30, 0.66)';
+      ctx.fillStyle = '#666666';
       ctx.font = "500 82px 'Noto Serif SC', serif";
-      const cnChars = ['新', '岸', '資', '本'];
-      const spacing = 116;
-      const cnStartX = centerX - ((cnChars.length - 1) * spacing) / 2;
-      const cnY = topY + markSize + 300;
-      cnChars.forEach((char, index) => {
-        ctx.fillText(char, cnStartX + index * spacing, cnY);
-      });
+      const cn = '新 岸 資 本';
+      ctx.fillText(cn, centerX, topY + markSize + 300);
 
       const url = canvas.toDataURL('image/png');
       const link = document.createElement('a');
