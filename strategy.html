@@ -1150,7 +1150,7 @@
         align-items: end;
       }
       .pagehero h1 {
-        font-size: 78px;
+        font-size: clamp(44px, 7.2vw, 78px);
         max-width: 700px;
         letter-spacing: -0.025em;
         line-height: 1.02;
@@ -1359,7 +1359,8 @@
         font-size: 10px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        padding: 8px 12px;
+        padding: 9px 13px;
+        min-height: 38px;
         cursor: pointer;
         transition: all 0.2s;
       }
@@ -1402,7 +1403,7 @@
         max-width: 640px;
       }
       .strategy-block h2.single-line-heading {
-        white-space: nowrap;
+        white-space: normal;
       }
       .strategy-block p {
         color: #66615a;
@@ -1412,7 +1413,7 @@
         max-width: 767px;
       }
       .strategy-block p.single-line-copy {
-        white-space: nowrap;
+        white-space: normal;
       }
       .strategy-viz {
         margin: 24px 0 6px;
@@ -1962,6 +1963,12 @@
           grid-template-columns: 1fr;
           gap: 28px;
         }
+        .pagehero h1 {
+          max-width: 100%;
+        }
+        .pagehero p {
+          max-width: 100%;
+        }
         .pagehero__media {
           justify-self: end;
           width: min(115%, 620px);
@@ -1990,6 +1997,9 @@
         }
         .strategy-block h2 {
           font-size: 34px;
+        }
+        .strategy-block p {
+          max-width: 100%;
         }
         .viz-kpi,
         .process-flow,
@@ -2073,7 +2083,28 @@
         }
         .market-context-content p,
         .strategy-intro-lead p {
-          font-size: 18px;
+          font-size: 17px;
+          line-height: 1.75;
+        }
+        .strategy-tools {
+          margin-bottom: 22px;
+          padding: 14px;
+        }
+        .strategy-tools p {
+          font-size: 10px;
+          letter-spacing: 0.12em;
+        }
+        .jump-nav {
+          gap: 7px;
+        }
+        .jump-nav button {
+          flex: 1 1 calc(50% - 7px);
+          min-width: 0;
+          text-align: center;
+          font-size: 9px;
+          letter-spacing: 0.1em;
+          padding: 8px 10px;
+          min-height: 36px;
         }
         .strategy-stack {
           gap: 22px;
@@ -2089,7 +2120,7 @@
           overflow-wrap: normal;
         }
         .strategy-block h2.single-line-heading {
-          white-space: nowrap;
+          white-space: normal;
         }
         .strategy-block p {
           font-size: 16px;
