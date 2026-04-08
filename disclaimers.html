@@ -270,11 +270,12 @@
 .sv-footer__legal-toggle[open] > summary::after { content: " −"; }
 .sv-footer__legal-toggle .sv-footer__legal { margin: 0; padding: 0 12px 12px; }
 .sv-footer__legal-links { padding-bottom: 8px !important; }
+.sv-footer__legal-links a + a::before { content: " | "; color: #6f6a63; }
 @media (max-width: 768px) {
   .sv-footer { padding: 8px var(--pad, var(--site-page-margin, 18px)) 34px !important; }
   .sv-footer__main { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
   .sv-footer__contact { width: 100%; flex-wrap: nowrap; justify-content: space-between; gap: 10px; }
-  .sv-footer__legal-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .sv-footer__legal-links { display: flex; flex-wrap: wrap; gap: 0; align-items: flex-start; }
   .sv-footer__legal-links a { font-size: 10px; }
 }
 </style>
@@ -364,7 +365,7 @@
         <summary>Legal notice</summary>
         <div class="sv-footer__legal">This website is provided strictly on an "as-is" and "as-available" basis solely for general informational and discussion purposes. It does not constitute, and must not be relied upon as, legal, tax, accounting, regulatory, investment, financial, or other professional advice; an offer to sell; a solicitation of an offer to buy; or a recommendation regarding any security, investment product, strategy, fund, or advisory service in any jurisdiction. Any offer or solicitation may be made only through definitive offering documents, only in jurisdictions where permitted by applicable law, and only to investors who satisfy all eligibility and suitability requirements. Certain statements on this website may be forward-looking and are based on assumptions, expectations, and estimates that are inherently subject to material change, market volatility, and uncertainty. Actual outcomes may differ, potentially materially. Past performance is not indicative of future results, and no representation or warranty, express or implied, is made as to the accuracy, completeness, timeliness, merchantability, fitness for a particular purpose, non-infringement, or continued availability of any content. To the fullest extent permitted by law, ShoreVest Partners, Ltd. disclaims liability for any direct, indirect, incidental, consequential, special, exemplary, or punitive loss or damage arising from use of, or reliance on, this website. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors must review all fund documentation in full and consult their own independent legal, tax, accounting, regulatory, and financial advisers before making any decision.</div>
       </details>
-      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
     </div>
   </div>
 </footer>
