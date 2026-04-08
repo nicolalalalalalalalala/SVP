@@ -154,6 +154,7 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 12px;
+      margin-bottom: 20px;
     }
     .legal-contact-actions a {
       display: inline-block;
@@ -175,17 +176,8 @@
   position: relative !important;
   background: #f6f4f0 !important;
   border-top: 1px solid var(--rule) !important;
-  margin-top: 0 !important;
+  margin-top: 28px !important;
   padding: 18px var(--pad, var(--site-page-margin, 64px)) 40px !important;
-}
-.sv-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -32px;
-  height: 32px;
-  background: #f6f4f0;
 }
 .sv-footer__bottom { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; padding-top: 16px !important; }
 .sv-footer__legal-toggle { border: 1px solid rgba(0, 0, 0, 0.14); background: rgba(255, 255, 255, 0.35); }
@@ -351,7 +343,7 @@
   </section>
 
 
-  <footer class="sv-footer">
+  <footer class="sv-footer sv-footer--full-bleed">
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
       <div class="sv-footer__brand">ShoreVest Partners</div>
