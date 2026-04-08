@@ -758,6 +758,22 @@
         }
       }
 
+      /* Ensure hero copy never collapses into a narrow column on mobile/tablet. */
+      @media (max-width: 1024px) {
+        .press-hero__inner {
+          grid-template-columns: minmax(0, 1fr) !important;
+        }
+        .press-hero__copy {
+          max-width: 100%;
+        }
+        .press-note {
+          grid-column: 1;
+          justify-self: start;
+          max-width: none;
+          width: 100%;
+        }
+      }
+
       /* Global eyebrow stabilization */
       .eyebrow {
         display: inline-flex;
