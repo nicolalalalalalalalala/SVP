@@ -363,6 +363,11 @@
         color: var(--red);
         line-height: 1.35;
       }
+      .card-snippet {
+        font-size: 11px;
+        line-height: 1.55;
+        color: var(--ink-soft);
+      }
       .card-bio {
         font-size: 12px;
         line-height: 1.65;
@@ -1377,6 +1382,21 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
         return sectionTitle || "ShoreVest Team";
       }
 
+
+      function appendCardSnippets() {
+        document.querySelectorAll(".card").forEach((card) => {
+          if (card.querySelector(".card-snippet")) return;
+          const name = card.querySelector(".name")?.textContent?.trim();
+          const bio = name ? profileData[name]?.bio : null;
+          if (!bio) return;
+          const firstSentence = bio.replace(/\s+/g, " ").split(/(?<=[.!?])\s/)[0];
+          const snippet = document.createElement("p");
+          snippet.className = "card-snippet";
+          snippet.textContent = firstSentence;
+          card.appendChild(snippet);
+        });
+      }
+
       function hydrateCardTitles() {
         document.querySelectorAll(".card").forEach((card) => {
           if (card.querySelector(".title")) return;
@@ -1395,6 +1415,7 @@ He holds an MBA from Renmin University of China and has studied at the Georgia I
       }
 
       hydrateCardTitles();
+      appendCardSnippets();
 
       const menuBtn = document.querySelector(".nav__menu-btn");
       const nav = document.getElementById("nav");
