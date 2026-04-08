@@ -577,7 +577,7 @@
           align-items: center;
           flex-wrap: nowrap;
           padding: 10px var(--pad);
-          overflow: hidden;
+          overflow: visible;
         }
         .nav__logo {
           min-width: 0;
@@ -598,9 +598,13 @@
         }
         .nav__lp,
         .nav__menu-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           padding: 8px 10px;
           font-size: 9px;
           letter-spacing: 0.1em;
+          line-height: 1;
           white-space: nowrap;
         }
         .nav__zh {
