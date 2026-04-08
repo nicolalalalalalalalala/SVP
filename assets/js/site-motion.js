@@ -77,8 +77,9 @@
     button.setAttribute('aria-label', 'Back to top');
     button.textContent = '↑';
 
+    let footerInView = false;
     const toggleVisibility = () => {
-      const shouldShow = window.scrollY > 320;
+      const shouldShow = window.scrollY > 320 && !footerInView;
       button.classList.toggle('is-visible', shouldShow);
     };
 
@@ -89,6 +90,16 @@
     document.body.appendChild(button);
     toggleVisibility();
     window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+    const footer = document.querySelector('.sv-footer');
+    if (!footer || !('IntersectionObserver' in window)) return;
+
+    const footerObserver = new IntersectionObserver((entries) => {
+      footerInView = entries.some((entry) => entry.isIntersecting);
+      toggleVisibility();
+    }, { threshold: 0.05 });
+
+    footerObserver.observe(footer);
   };
 
   const init = () => {
