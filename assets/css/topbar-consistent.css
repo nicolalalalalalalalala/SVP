@@ -672,17 +672,18 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 
   footer.sv-footer .sv-footer__main {
     flex-direction: row !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     justify-content: space-between !important;
     gap: 10px !important;
   }
 
   footer.sv-footer .sv-footer__contact {
     width: auto !important;
-    flex-direction: column !important;
-    align-items: flex-end !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
     flex-wrap: nowrap !important;
-    gap: 6px !important;
+    gap: 10px !important;
   }
 
   footer.sv-footer .sv-footer__contact a {
@@ -690,7 +691,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     max-width: 100% !important;
     white-space: nowrap !important;
     text-align: right !important;
-    padding: 9px 12px !important;
+    padding: 8px 10px !important;
     letter-spacing: 0.08em;
   }
 
