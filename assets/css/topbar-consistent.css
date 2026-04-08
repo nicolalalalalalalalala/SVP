@@ -10,8 +10,8 @@
   --nav-logo-cn-line-height: 1;
   --nav-logo-lockup-gap: 5px;
   --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap) + 8px);
-  --control-radius-pill: 0;
-  --control-radius-soft: 0;
+  --control-radius-pill: 10px;
+  --control-radius-soft: 10px;
   --control-brand: #b3213f;
   --control-ink: #0c0c0a;
   --control-ink-strong: #171717;
@@ -51,6 +51,11 @@
 .btn--circle,
 .arrow-btn {
   border-radius: 50% !important;
+}
+
+/* Global button corner standard */
+:where(button, .btn, .util-btn, .research-sub__submit, .jump-nav button, .viz-btn, input[type="button"], input[type="submit"], input[type="reset"]) {
+  border-radius: 10px !important;
 }
 
 /* Preserve circular status/map dots from the global square-corner pass. */
