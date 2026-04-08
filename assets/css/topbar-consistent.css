@@ -20,6 +20,7 @@
   --surface-border: rgba(12, 12, 10, 0.09);
   --shadow-soft: 0 16px 40px rgba(12, 12, 10, 0.08);
   --shadow-xs: 0 4px 12px rgba(12, 12, 10, 0.05);
+  --control-transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, letter-spacing 0.2s ease;
 }
 
 /* Global square-corner pass for boxes and controls */
@@ -54,8 +55,9 @@
 }
 
 /* Global button corner standard */
-:where(button, .btn, .util-btn, .research-sub__submit, .jump-nav button, .viz-btn, input[type="button"], input[type="submit"], input[type="reset"]) {
+:where(button, .btn, .util-btn, .research-sub__submit, .jump-nav button, .viz-btn, .track-record-trigger, input[type="button"], input[type="submit"], input[type="reset"]) {
   border-radius: 0 !important;
+  transition: var(--control-transition);
 }
 
 /* Preserve circular status/map dots from the global square-corner pass. */
@@ -227,9 +229,10 @@ html {
 .util-btn,
 .research-sub__submit,
 .jump-nav button,
-.viz-btn {
+.viz-btn,
+.track-record-trigger {
   border-radius: var(--control-radius-pill);
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, letter-spacing 0.2s ease;
+  transition: var(--control-transition);
 }
 
 #nav .nav__lp,
@@ -237,7 +240,8 @@ html {
 .btn,
 .util-btn,
 .jump-nav button,
-.viz-btn {
+.viz-btn,
+.track-record-trigger {
   border-color: rgba(23, 23, 23, 0.2);
   background: var(--control-paper);
   color: var(--control-ink);
@@ -249,12 +253,14 @@ html {
 .util-btn:hover,
 .jump-nav button:hover,
 .viz-btn:hover,
+.track-record-trigger:hover,
 #nav .nav__lp:focus-visible,
 #nav .nav__menu-btn:focus-visible,
 .btn:focus-visible,
 .util-btn:focus-visible,
 .jump-nav button:focus-visible,
-.viz-btn:focus-visible {
+.viz-btn:focus-visible,
+.track-record-trigger:focus-visible {
   border-color: var(--control-brand);
   color: var(--control-paper);
   background: var(--control-brand);
