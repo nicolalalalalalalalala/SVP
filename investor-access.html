@@ -211,6 +211,30 @@
         line-height: 1.8;
         color: #2d2924;
       }
+      .investor-gate__list {
+        margin: 20px 0 0 18px;
+        color: #2d2924;
+      }
+      .investor-gate__list li {
+        margin-bottom: 8px;
+      }
+      .investor-gate__attest {
+        margin-top: 22px;
+        padding: 14px 16px;
+        border: 1px solid var(--rule);
+        background: #fbfaf8;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .investor-gate__attest input {
+        margin-top: 4px;
+      }
+      .investor-gate__attest label {
+        font-size: 13px;
+        line-height: 1.7;
+        color: #2d2924;
+      }
       .investor-gate__actions {
         margin-top: 24px;
         display: flex;
@@ -260,6 +284,35 @@
         flex-wrap: wrap;
         margin-top: 18px;
       }
+      .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .resource-card {
+        border: 1px solid var(--rule);
+        background: #faf8f5;
+        padding: 16px;
+      }
+      .resource-card__title {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #716b63;
+        margin-bottom: 6px;
+      }
+      .resource-card p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.75;
+      }
+      .helper {
+        margin-top: 12px;
+        font-size: 12px;
+        color: #655f57;
+      }
       .btn {
         display: inline-flex;
         align-items: center;
@@ -288,6 +341,14 @@
         color: #fff;
         background: var(--red);
         box-shadow: 0 8px 20px rgba(179, 33, 63, 0.24);
+      }
+      .btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        background: #1c1b19;
+        border-color: #1c1b19;
+        color: #fff;
+        box-shadow: none;
       }
 
       @media (max-width: 767px) {
@@ -355,6 +416,9 @@
         }
         .card {
           padding: 24px;
+        }
+        .resource-grid {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -710,8 +774,26 @@
               criteria and accept full responsibility for compliance with the
               laws and regulations of your jurisdiction.
             </p>
+            <ul class="investor-gate__list">
+              <li>You are evaluating ShoreVest in a professional capacity.</li>
+              <li>
+                You are an institutional investor, qualified purchaser, or
+                accredited investor (as applicable in your jurisdiction).
+              </li>
+              <li>
+                You understand this area does not constitute an offer or
+                solicitation.
+              </li>
+            </ul>
+            <div class="investor-gate__attest">
+              <input type="checkbox" id="attestation-checkbox" />
+              <label for="attestation-checkbox">
+                I have read and understood the investor eligibility notice above
+                and confirm that I am permitted to access this information.
+              </label>
+            </div>
             <div class="investor-gate__actions">
-              <button class="btn btn--dark" type="button" id="attestation-proceed">
+              <button class="btn btn--dark" type="button" id="attestation-proceed" disabled>
                 I confirm I am an institutional investor or qualified purchaser
                 and am accessing this page for informational purposes only.
               </button>
@@ -752,11 +834,33 @@
                   ><strong>partners@shorevest.com</strong></a
                 >.
               </p>
+              <div class="resource-grid">
+                <div class="resource-card">
+                  <span class="resource-card__title">Reporting</span>
+                  <p>Quarterly reports, annual audited statements, and updates.</p>
+                </div>
+                <div class="resource-card">
+                  <span class="resource-card__title">Operational</span>
+                  <p>Capital call notices, distribution notices, and account support.</p>
+                </div>
+                <div class="resource-card">
+                  <span class="resource-card__title">Due Diligence</span>
+                  <p>DDQ responses, track record summaries, and strategy materials.</p>
+                </div>
+                <div class="resource-card">
+                  <span class="resource-card__title">Policies</span>
+                  <p>Governance and compliance documents available upon request.</p>
+                </div>
+              </div>
+              <p class="helper">
+                Returning visitor? Your attestation is remembered for this browser session.
+              </p>
               <div class="actions">
                 <a class="btn btn--dark" href="mailto:partners@shorevest.com"
                   >Contact Investor Relations</a
                 >
                 <a class="btn" href="index.html#contact">Back to Main Site</a>
+                <button class="btn" type="button" id="reset-access">Reset Access</button>
               </div>
             </div>
           </div>
@@ -768,6 +872,10 @@
               visit our main site or contact
               <a href="mailto:partners@shorevest.com">partners@shorevest.com</a>.
             </p>
+            <div class="actions">
+              <a class="btn btn--dark" href="index.html">Visit Main Site</a>
+              <button class="btn" type="button" id="back-to-gate">Return to Eligibility Notice</button>
+            </div>
           </div>
         </section>
       </div>
@@ -794,24 +902,48 @@
 
       const proceedButton = document.getElementById("attestation-proceed");
       const exitButton = document.getElementById("attestation-exit");
+      const attestationCheckbox = document.getElementById("attestation-checkbox");
       const gate = document.getElementById("investor-gate");
       const investorContent = document.getElementById("investor-content");
       const declineContent = document.getElementById("investor-decline");
       const investorShell = document.getElementById("investor-shell");
+      const resetAccessButton = document.getElementById("reset-access");
+      const backToGateButton = document.getElementById("back-to-gate");
+      const ACCESS_KEY = "shorevest-investor-access";
 
-      if (proceedButton && gate && investorContent && investorShell) {
+      const showGate = () => {
+        if (!gate || !investorShell) return;
+        gate.hidden = false;
+        if (investorContent) investorContent.hidden = true;
+        if (declineContent) declineContent.hidden = true;
+        investorShell.classList.remove("investor-shell--open");
+      };
+
+      const showQualifiedContent = () => {
+        if (!gate || !investorContent || !investorShell) return;
+        gate.hidden = true;
+        investorContent.hidden = false;
+        if (declineContent) declineContent.hidden = true;
+        investorShell.classList.add("investor-shell--open");
+      };
+
+      if (attestationCheckbox && proceedButton) {
+        attestationCheckbox.addEventListener("change", () => {
+          proceedButton.disabled = !attestationCheckbox.checked;
+        });
+      }
+
+      if (proceedButton && gate && investorContent && investorShell && attestationCheckbox) {
         proceedButton.addEventListener("click", () => {
-          gate.hidden = true;
-          investorContent.hidden = false;
-          if (declineContent) {
-            declineContent.hidden = true;
-          }
-          investorShell.classList.add("investor-shell--open");
+          if (!attestationCheckbox.checked) return;
+          sessionStorage.setItem(ACCESS_KEY, "granted");
+          showQualifiedContent();
         });
       }
 
       if (exitButton && gate && investorShell && declineContent) {
         exitButton.addEventListener("click", () => {
+          sessionStorage.removeItem(ACCESS_KEY);
           gate.hidden = true;
           declineContent.hidden = false;
           if (investorContent) {
@@ -819,6 +951,35 @@
           }
           investorShell.classList.add("investor-shell--open");
         });
+      }
+
+      if (resetAccessButton) {
+        resetAccessButton.addEventListener("click", () => {
+          sessionStorage.removeItem(ACCESS_KEY);
+          if (attestationCheckbox) {
+            attestationCheckbox.checked = false;
+          }
+          if (proceedButton) {
+            proceedButton.disabled = true;
+          }
+          showGate();
+        });
+      }
+
+      if (backToGateButton) {
+        backToGateButton.addEventListener("click", () => {
+          showGate();
+        });
+      }
+
+      if (sessionStorage.getItem(ACCESS_KEY) === "granted") {
+        if (attestationCheckbox) {
+          attestationCheckbox.checked = true;
+        }
+        if (proceedButton) {
+          proceedButton.disabled = false;
+        }
+        showQualifiedContent();
       }
     </script>
 
