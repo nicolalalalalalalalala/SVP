@@ -650,8 +650,11 @@ footer.sv-footer .sv-footer__legal-toggle[open] > summary::after {
 }
 
 footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0 12px 12px;
+  padding: 0 0 12px;
 }
 
 footer.sv-footer .sv-footer__legal-links {
