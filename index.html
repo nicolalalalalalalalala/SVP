@@ -207,11 +207,13 @@ h2 em { font-style:italic; }
   align-items:flex-end;
   overflow:hidden;
 }
-.hero__sliver::before {
-  content:'';
+.hero__image {
   position:absolute;
   inset:0;
-  background:url('assets/images/image-7.png') var(--hero-image-position) / cover no-repeat;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:var(--hero-image-position);
   filter:grayscale(100%) brightness(0.60);
   z-index:0;
 }
@@ -1681,6 +1683,14 @@ h2.su__hed {
 </nav>
 
 <div class="hero__sliver">
+  <img
+    class="hero__image"
+    src="assets/images/image-7.png"
+    alt=""
+    loading="eager"
+    decoding="sync"
+    fetchpriority="high"
+    aria-hidden="true">
   <div class="hero__overlay">
     <p class="hero__kicker go">CHINA PRIVATE CREDIT · ESTABLISHED 2004</p>
     <h1 class="hero__hed go">Private credit<br>in <em>China.</em></h1>
