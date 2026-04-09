@@ -1400,17 +1400,17 @@
       }
       .strategy-stack {
         display: grid;
-        gap: 28px;
+        gap: 34px;
       }
       .strategy-block {
         background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.09);
-        padding: 38px 40px;
+        padding: 42px 44px;
         border-radius: 14px;
         scroll-margin-top: 96px;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 16px 36px rgba(38, 31, 21, 0.06);
+        box-shadow: 0 12px 28px rgba(38, 31, 21, 0.04);
         transition:
           transform 0.25s ease,
           box-shadow 0.25s ease,
@@ -1435,7 +1435,7 @@
         font-size: clamp(38px, 4.4vw, 52px);
         font-weight: 400;
         line-height: 1.12;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         letter-spacing: -0.01em;
         max-width: 640px;
       }
@@ -1444,10 +1444,131 @@
       }
       .strategy-block p {
         color: #66615a;
-        line-height: 1.8;
+        line-height: 1.88;
         font-size: 17px;
         font-family: var(--serif);
         max-width: 767px;
+      }
+      .strategy-block p + p {
+        margin-top: 10px;
+      }
+      #opening-frame {
+        padding-bottom: 50px;
+      }
+      #opening-frame p {
+        max-width: 72ch;
+      }
+      #what-we-invest .strategy-details {
+        gap: 16px;
+        margin-top: 20px;
+      }
+      #what-we-invest .strategy-detail:nth-child(1) {
+        background: #fff;
+      }
+      #what-we-invest .strategy-detail:nth-child(2) {
+        background: #fcfaf7;
+      }
+      #what-we-invest .strategy-detail:nth-child(3) {
+        background: #f8f5f1;
+      }
+      #what-we-invest .strategy-detail h3 {
+        font-size: clamp(24px, 2.3vw, 30px);
+        margin-bottom: 12px;
+        color: #2f2a24;
+      }
+      #what-we-invest .strategy-detail p {
+        line-height: 1.72;
+      }
+      #why-china {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      #why-china p {
+        max-width: 70ch;
+        line-height: 1.95;
+      }
+      #what-we-avoid .risk-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 20px;
+      }
+      #what-we-avoid .risk-card {
+        border: none;
+        background: transparent;
+        padding: 0;
+      }
+      #what-we-avoid .risk-card h4 {
+        display: none;
+      }
+      #what-we-avoid .risk-card ul {
+        gap: 14px;
+      }
+      #what-we-avoid .risk-card li {
+        font-size: 16px;
+        line-height: 1.75;
+        border-left: none;
+        border-bottom: 1px solid rgba(179, 33, 63, 0.14);
+        padding: 0 0 12px 0;
+        color: #6f6962;
+      }
+      #what-we-avoid .risk-card li:last-child {
+        border-bottom: none;
+      }
+      #what-we-avoid .risk-card li::before {
+        content: "•";
+        color: #9f9488;
+        margin-right: 8px;
+      }
+      #return-generation .strategy-list {
+        margin-top: 14px;
+        padding-left: 0;
+        gap: 0;
+      }
+      #return-generation .strategy-list li {
+        list-style: none;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(179, 33, 63, 0.14);
+      }
+      #return-generation .strategy-list li:last-child {
+        border-bottom: none;
+      }
+      #downside-control {
+        background: #f9f6f2;
+        border-color: rgba(179, 33, 63, 0.2);
+        padding-top: 54px;
+      }
+      #downside-control h2 {
+        font-weight: 500;
+      }
+      #downside-control .risk-grid {
+        margin-top: 20px;
+        gap: 16px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+      #downside-control .risk-card {
+        padding: 18px;
+      }
+      #downside-control .risk-card ul {
+        gap: 10px;
+      }
+      .market-context-basis {
+        margin-top: 24px;
+        margin-bottom: 10px;
+        font-size: 19px;
+        line-height: 1.82;
+        color: #3c372f;
+      }
+      #current-environment {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      #strategy-summary {
+        margin-top: 4px;
+        padding-top: 48px;
+      }
+      #strategy-summary p {
+        color: #4a443d;
+        font-size: 19px;
       }
       .strategy-block p.single-line-copy {
         white-space: normal;
@@ -2001,7 +2122,7 @@
         color: #6b7280;
       }
       .strategy-stack .strategy-block:nth-child(even) {
-        background: #f6f4f0;
+        background: #fdfcf9;
       }
 
       @media (min-width: 1200px) {
@@ -2016,14 +2137,14 @@
           padding: 18px 24px;
         }
         .strategy-stack {
-          gap: 32px;
+          gap: 38px;
         }
         .strategy-block {
           display: grid;
           grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
           column-gap: 44px;
           row-gap: 12px;
-          padding: 44px 48px;
+          padding: 48px 52px;
           align-items: start;
         }
         .strategy-block > .eyebrow,
@@ -2048,7 +2169,7 @@
           font-size: 18px;
         }
         .strategy-block p + p {
-          margin-top: 6px;
+          margin-top: 10px;
         }
         .strategy-list {
           margin-top: 4px;
@@ -2083,7 +2204,7 @@
           max-width: 540px;
         }
         .strategy-stack {
-          gap: 28px;
+          gap: 30px;
         }
         .strategy-intro-content {
           grid-template-columns: 1fr;
@@ -2094,7 +2215,7 @@
           max-width: 420px;
         }
         .strategy-block {
-          padding: 24px;
+          padding: 28px 24px;
         }
         .market-context-content {
           max-width: 100%;
@@ -2114,6 +2235,9 @@
         .risk-grid,
         .data-grid {
           grid-template-columns: 1fr;
+        }
+        #downside-control .risk-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .flow-step {
           padding-left: 44px;
@@ -2223,10 +2347,10 @@
           overflow-wrap: anywhere;
         }
         .strategy-stack {
-          gap: 22px;
+          gap: 24px;
         }
         .strategy-block {
-          padding: 22px 18px;
+          padding: 24px 18px;
           border-radius: 12px;
           box-shadow: 0 10px 24px rgba(38, 31, 21, 0.05);
         }
@@ -2252,6 +2376,12 @@
         .strategy-list li {
           font-size: 16px;
           line-height: 1.65;
+        }
+        #downside-control .risk-grid {
+          grid-template-columns: 1fr;
+        }
+        #what-we-avoid .risk-card li {
+          font-size: 15px;
         }
         .risk-card {
           padding: 14px;
@@ -2809,43 +2939,33 @@
             <div class="eyebrow eyebrow--red">Opening frame</div>
             <h2 class="single-line-heading">A recoverability-driven private credit strategy.</h2>
             <p>
-              ShoreVest focuses on asset-backed private credit in China, with an emphasis on enforceability,
-              collateral coverage and defined recovery pathways.
-            </p>
-            <p>
-              The strategy is designed for situations in which outcomes are determined primarily by capital structure,
-              legal positioning and control, rather than by market direction alone.
+              ShoreVest focuses on asset-backed private credit in China, emphasizing enforceability, collateral coverage and defined recovery pathways.
+              The strategy targets situations where outcomes are driven by legal position and control rather than market direction alone.
             </p>
           </section>
 
           <section class="strategy-block" id="what-we-invest">
             <h2>What we invest in</h2>
             <p>
-              ShoreVest invests across three principal segments, each defined by clear underwriting conditions at entry.
+              ShoreVest invests across three segments, each selected only when underwriting conditions are explicit at entry.
             </p>
             <div class="strategy-details" aria-label="Sub-strategy detail">
               <article class="strategy-detail">
                 <h3>Asset-based lending</h3>
                 <p>
-                  Senior secured financings against identifiable collateral where borrowers need flexible capital not
-                  available through traditional channels. ShoreVest invests only where seniority, collateral visibility
-                  and a defined enforcement pathway are established at entry.
+                  Senior secured financings against identifiable collateral where borrowers need flexible capital unavailable through traditional channels. ShoreVest invests only when seniority, collateral visibility and an enforcement pathway are established at entry.
                 </p>
               </article>
               <article class="strategy-detail">
                 <h3>Asset restructurings</h3>
                 <p>
-                  Situations where viable assets sit within impaired or over-levered capital structures. ShoreVest
-                  invests where structure can be reset to improve creditor position and where a credible route to
-                  resolution control is available from the outset.
+                  Situations where viable assets sit in impaired or over-levered capital structures. ShoreVest invests where structure can be reset to improve creditor position and where a credible route to resolution control exists from the outset.
                 </p>
               </article>
               <article class="strategy-detail">
                 <h3>Debt resolutions</h3>
                 <p>
-                  Acquisition and resolution of distressed or non-performing assets. ShoreVest invests where entry is
-                  below recoverable value and legal or consensual recovery processes can be executed with defined
-                  jurisdictional pathways.
+                  Acquisition and resolution of distressed or non-performing assets. ShoreVest invests where entry is below recoverable value and legal or consensual recovery can be executed through defined jurisdictional pathways.
                 </p>
               </article>
             </div>
@@ -2854,7 +2974,7 @@
           <section class="strategy-block" id="why-china">
             <h2 class="single-line-heading">Why this opportunity exists</h2>
             <p>
-              China’s credit markets are large, locally driven and structurally uneven in how capital is allocated and enforced.
+              China’s credit markets are large, locally driven and uneven in how capital is allocated and enforced.
             </p>
             <p>
               Credit outcomes are shaped by legal enforceability, creditor positioning, asset-level control and local execution.
@@ -2871,16 +2991,10 @@
             </p>
             <div class="risk-grid">
               <div class="risk-card">
-                <h4>ShoreVest generally avoids</h4>
                 <ul>
                   <li>Unsecured exposure or structures with weak collateral perfection.</li>
                   <li>Structurally subordinated positions without enforceable senior recourse.</li>
                   <li>Speculative development risk without contracted cash-flow support.</li>
-                </ul>
-              </div>
-              <div class="risk-card">
-                <h4>And excludes situations with</h4>
-                <ul>
                   <li>Repayment dependent primarily on refinancing or market recovery rather than enforceable value.</li>
                   <li>Assets without a credible and time-bounded path to realization.</li>
                   <li>Legal structures where creditor remedies or jurisdiction are unclear.</li>
@@ -2913,18 +3027,33 @@
             </p>
             <div class="risk-grid">
               <div class="risk-card">
-                <h4>This is implemented through</h4>
+                <h4>Collateral</h4>
                 <ul>
-                  <li><strong>Collateral:</strong> exposure supported by identifiable assets with an assessed recovery basis.</li>
-                  <li><strong>Legal priority:</strong> positions structured for enforceable seniority in relevant jurisdictions.</li>
-                  <li><strong>Control:</strong> investments selected where ShoreVest can influence outcome through structure or process.</li>
+                  <li>Exposure supported by identifiable assets with an assessed recovery basis.</li>
                 </ul>
               </div>
               <div class="risk-card">
-                <h4>Execution discipline</h4>
+                <h4>Legal priority</h4>
                 <ul>
-                  <li><strong>Entry discipline:</strong> capital deployed at levels with a margin relative to recoverable value.</li>
-                  <li><strong>Execution:</strong> recovery pathways assessed at underwriting and actively managed through resolution.</li>
+                  <li>Positions structured for enforceable seniority in relevant jurisdictions.</li>
+                </ul>
+              </div>
+              <div class="risk-card">
+                <h4>Control</h4>
+                <ul>
+                  <li>Investments selected where ShoreVest can influence outcome through structure or process.</li>
+                </ul>
+              </div>
+              <div class="risk-card">
+                <h4>Entry discipline</h4>
+                <ul>
+                  <li>Capital deployed only where entry carries a margin relative to recoverable value.</li>
+                </ul>
+              </div>
+              <div class="risk-card">
+                <h4>Execution</h4>
+                <ul>
+                  <li>Recovery pathways assessed at underwriting and actively managed through resolution.</li>
                 </ul>
               </div>
             </div>
@@ -2943,8 +3072,7 @@
               Current market conditions include refinancing pressure, asset disposals and creditor repositioning across multiple sectors.
             </p>
             <p>
-              The firm believes these conditions can support deployment in structured lending, transitional capital and
-              resolution-driven credit, subject to selective underwriting and clear recovery pathways.
+              These conditions can support selective deployment in structured lending, transitional capital and resolution-driven credit.
             </p>
           </section>
 
