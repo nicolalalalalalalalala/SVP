@@ -1332,8 +1332,8 @@
       }
       .strategy-tools {
         display: grid;
-        grid-template-columns: minmax(240px, 0.32fr) minmax(0, 1fr);
-        gap: 16px;
+        grid-template-columns: minmax(190px, 0.24fr) minmax(0, 1fr);
+        gap: 12px;
         align-items: start;
         margin-bottom: 36px;
         padding: 16px 20px;
@@ -1363,22 +1363,30 @@
       }
       .jump-nav {
         display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
+        gap: 6px;
+        flex-wrap: nowrap;
         justify-content: flex-end;
+        align-items: center;
       }
       .jump-nav button {
         border: 1px solid rgba(179, 33, 63, 0.2);
         background: #fff;
         color: #5c564f;
-        font-size: 10px;
-        letter-spacing: 0.12em;
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        line-height: 1;
+        white-space: nowrap;
         text-transform: uppercase;
-        padding: 10px 14px;
-        min-height: 38px;
+        padding: 9px 11px;
+        min-height: 34px;
         cursor: pointer;
         border-radius: 999px;
-        transition: all 0.2s ease;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease;
+        transform: translateZ(0);
       }
       .jump-nav button:hover,
       .jump-nav button:focus-visible,
@@ -1386,6 +1394,7 @@
         border-color: var(--red);
         background: var(--red);
         color: #fff;
+        box-shadow: 0 0 0 1px rgba(179, 33, 63, 0.2);
         outline: none;
       }
       .strategy-stack {
@@ -2198,6 +2207,7 @@
         }
         .jump-nav {
           gap: 7px;
+          flex-wrap: wrap;
         }
         .jump-nav button {
           flex: 1 1 calc(50% - 7px);
