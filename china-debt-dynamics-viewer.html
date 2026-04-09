@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>China Debt Dynamics Viewer</title>
+  <style>
+    body{margin:0;background:#f6f4f1;color:#1a1a18;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:900px;margin:0 auto;padding:32px 20px 56px}
+    .card{background:#fff;border:1px solid #e3ded6;box-shadow:0 8px 24px rgba(0,0,0,.05);padding:28px}
+    h1{font-family:"EB Garamond",Georgia,serif;font-size:40px;line-height:1.02;margin:.2em 0 .3em}
+    h2{font-family:"EB Garamond",Georgia,serif;font-size:30px;line-height:1.06;margin:1.2em 0 .45em}
+    p,li{font-size:17px;line-height:1.72;color:#24221e}
+    .meta{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#7a746c;margin-bottom:16px}
+    a.back{display:inline-block;margin-bottom:16px;color:#7a2040;text-decoration:none;font-weight:600}
+    a.back:hover{text-decoration:underline}
+    .err{color:#8b1e3f;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="insights.html">← Back to Insights</a>
+    <div class="card">
+      <div id="meta" class="meta">China Debt Dynamics</div>
+      <article id="content"></article>
+    </div>
+  </div>
+  <script>
+    const contentEl = document.getElementById('content');
+    const metaEl = document.getElementById('meta');
+
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get('file');
+    if (!file) {
+      contentEl.innerHTML = '<p class="err">No article file was provided.</p>';
+      throw new Error('Missing file');
+    }
+
+    const safePrefix = 'assets/china-debt-dynamics/';
+    if (!file.startsWith(safePrefix)) {
+      contentEl.innerHTML = '<p class="err">Invalid article path.</p>';
+      throw new Error('Invalid file path');
+    }
+
+    const flushParagraph = (buf) => {
+      if (!buf.length) return null;
+      const p = document.createElement('p');
+      p.textContent = buf.join(' ').replace(/\*\*/g, '').trim();
+      buf.length = 0;
+      return p;
+    };
+
+    const flushList = (items) => {
+      if (!items.length) return null;
+      const ul = document.createElement('ul');
+      items.forEach((txt) => {
+        const li = document.createElement('li');
+        li.textContent = txt.replace(/^[-*]\s+/, '').replace(/\*\*/g, '').trim();
+        ul.appendChild(li);
+      });
+      items.length = 0;
+      return ul;
+    };
+
+    fetch(file)
+      .then((res) => {
+        if (!res.ok) throw new Error('Unable to load article.');
+        return res.text();
+      })
+      .then((md) => {
+        const lines = md.split(/\r?\n/);
+        const pBuf = [];
+        const listBuf = [];
+
+        for (const raw of lines) {
+          const line = raw.trim();
+
+          if (!line) {
+            const maybeP = flushParagraph(pBuf);
+            if (maybeP) contentEl.appendChild(maybeP);
+            const maybeList = flushList(listBuf);
+            if (maybeList) contentEl.appendChild(maybeList);
+            continue;
+          }
+
+          if (line.startsWith('# ')) {
+            const maybeP = flushParagraph(pBuf);
+            if (maybeP) contentEl.appendChild(maybeP);
+            const maybeList = flushList(listBuf);
+            if (maybeList) contentEl.appendChild(maybeList);
+            const h1 = document.createElement('h1');
+            h1.textContent = line.slice(2).trim();
+            document.title = `${h1.textContent} | China Debt Dynamics`;
+            contentEl.appendChild(h1);
+            continue;
+          }
+
+          if (line.startsWith('## ')) {
+            const maybeP = flushParagraph(pBuf);
+            if (maybeP) contentEl.appendChild(maybeP);
+            const maybeList = flushList(listBuf);
+            if (maybeList) contentEl.appendChild(maybeList);
+            const h2 = document.createElement('h2');
+            h2.textContent = line.slice(3).replace(/\*\*/g, '').trim();
+            contentEl.appendChild(h2);
+            continue;
+          }
+
+          if (/^[-*]\s+/.test(line)) {
+            const maybeP = flushParagraph(pBuf);
+            if (maybeP) contentEl.appendChild(maybeP);
+            listBuf.push(line);
+            continue;
+          }
+
+          if (line.startsWith('**Series:**') || line.startsWith('**Volume / Issue:**') || line.startsWith('**Date:**')) {
+            metaEl.textContent = `${metaEl.textContent} · ${line.replace(/\*\*/g, '').trim()}`;
+            continue;
+          }
+
+          pBuf.push(line);
+        }
+
+        const maybeP = flushParagraph(pBuf);
+        if (maybeP) contentEl.appendChild(maybeP);
+        const maybeList = flushList(listBuf);
+        if (maybeList) contentEl.appendChild(maybeList);
+      })
+      .catch((err) => {
+        contentEl.innerHTML = `<p class="err">${err.message}</p>`;
+      });
+  </script>
+</body>
+</html>
