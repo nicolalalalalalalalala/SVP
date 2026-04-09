@@ -2978,6 +2978,93 @@
   }
 }
 </style>
+<style id="strategy-visual-refinement-v3">
+.pgsec {
+  background:
+    radial-gradient(1000px 520px at 8% 10%, rgba(179, 33, 63, 0.05), transparent 56%),
+    linear-gradient(180deg, #fdfcf9 0%, #f5f1eb 100%);
+}
+.strategy-stack {
+  max-width: 1120px;
+  gap: 28px;
+}
+.strategy-block {
+  border: 1px solid rgba(31, 25, 18, 0.1);
+  border-radius: 14px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 16px 34px rgba(19, 15, 10, 0.08);
+  padding: clamp(30px, 4vw, 50px);
+}
+.strategy-block::before {
+  opacity: 0.75;
+}
+.strategy-block h2 {
+  max-width: 18ch;
+  margin-bottom: 18px;
+}
+.strategy-block p {
+  max-width: 72ch;
+  font-size: clamp(17px, 1.8vw, 18px);
+  line-height: 1.82;
+}
+.strategy-details,
+.process-flow,
+.visual-learning-grid,
+.downside-list,
+.risk-grid {
+  margin-top: 24px !important;
+}
+.strategy-detail,
+.kpi,
+.flow-step,
+.visual-card,
+.risk-card,
+.downside-item {
+  border-radius: 12px;
+}
+.kpi,
+.flow-step,
+.visual-card {
+  box-shadow: 0 6px 18px rgba(23, 17, 12, 0.06);
+}
+.decision-node,
+.stack-chart {
+  border-radius: 10px;
+}
+.decision-node {
+  min-height: 156px;
+}
+#strategy-summary {
+  border-radius: 14px;
+  background: linear-gradient(148deg, #1a1713 0%, #2b2219 100%);
+}
+#strategy-summary p {
+  font-size: clamp(18px, 2.4vw, 21px);
+}
+#current-fund .next-links {
+  margin-top: 28px;
+}
+#current-fund .cta {
+  min-height: 52px;
+}
+@media (max-width: 900px) {
+  .strategy-stack {
+    gap: 20px;
+  }
+  .strategy-block {
+    border-radius: 12px;
+    padding: 26px 20px;
+  }
+  .strategy-block h2 {
+    max-width: none;
+  }
+  .flow-step::after,
+  .decision-node::after {
+    display: none;
+  }
+}
+</style>
 
 </head>
   <body>
