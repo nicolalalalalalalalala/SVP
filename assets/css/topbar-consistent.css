@@ -633,11 +633,51 @@ footer.sv-footer .sv-footer__bottom {
   width: 100% !important;
 }
 
+footer.sv-footer .sv-footer__main {
+  justify-content: space-between !important;
+}
+
+footer.sv-footer .sv-footer__brand {
+  font-family: var(--serif, "EB Garamond", Georgia, serif) !important;
+  color: #2d2924 !important;
+}
+
+footer.sv-footer .sv-footer__contact {
+  justify-content: flex-end !important;
+  text-align: right !important;
+}
+
+footer.sv-footer .sv-footer__contact-label {
+  font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
+  color: #6a645d !important;
+}
+
+footer.sv-footer .sv-footer__contact a {
+  font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
+  color: #171410 !important;
+}
+
 footer.sv-footer .sv-footer__bottom {
   display: grid !important;
   grid-template-columns: 1fr !important;
   gap: 10px !important;
   padding-top: 16px !important;
+  justify-items: end !important;
+  text-align: right !important;
+}
+
+footer.sv-footer .sv-footer__copyright,
+footer.sv-footer .sv-footer__legal,
+footer.sv-footer .sv-footer__legal-links,
+footer.sv-footer .sv-footer__legal-links a,
+footer.sv-footer .sv-footer__legal-toggle > summary {
+  font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
+}
+
+footer.sv-footer .sv-footer__copyright,
+footer.sv-footer .sv-footer__legal,
+footer.sv-footer .sv-footer__legal-links {
+  color: #6f6a63 !important;
 }
 
 footer.sv-footer .sv-footer__legal-toggle {
@@ -678,6 +718,9 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
 
 footer.sv-footer .sv-footer__legal-links {
   padding-bottom: 8px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
 }
 
 footer.sv-footer .sv-footer__legal-links a + a::before {
@@ -746,6 +789,8 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   footer.sv-footer .sv-footer__bottom {
     gap: 16px !important;
     padding-top: 16px !important;
+    justify-items: stretch !important;
+    text-align: left !important;
   }
 
   footer.sv-footer .sv-footer__copyright {
@@ -770,6 +815,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
     padding-top: 2px !important;
+    justify-content: initial !important;
   }
 
   footer.sv-footer .sv-footer__legal-links a {
