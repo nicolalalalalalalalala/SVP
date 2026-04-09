@@ -1334,6 +1334,9 @@
         display: grid;
         gap: 28px;
       }
+      .strategy-stack > * {
+        min-width: 0;
+      }
       .strategy-block {
         background: transparent;
         border: none;
@@ -1365,6 +1368,8 @@
         font-size: 18px;
         font-family: var(--serif);
         max-width: 760px;
+        overflow-wrap: anywhere;
+        text-wrap: pretty;
       }
       .strategy-block p + p {
         margin-top: 14px;
@@ -1532,7 +1537,7 @@
       }
       .viz-kpi {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 14px;
       }
       .kpi {
@@ -1547,23 +1552,26 @@
       }
       .kpi strong {
         display: block;
-        font-size: 30px;
+        font-size: clamp(26px, 2.6vw, 30px);
         font-family: var(--serif);
         font-weight: 400;
         color: var(--ink);
         line-height: 1.1;
+        overflow-wrap: anywhere;
       }
       .kpi span {
         font-size: 10px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--mist);
+        overflow-wrap: anywhere;
       }
       .kpi p {
         margin-top: 10px;
         font-size: 12px;
         line-height: 1.55;
         color: #6d675f;
+        overflow-wrap: anywhere;
       }
       .kpi:hover,
       .kpi:focus-visible,
@@ -1617,7 +1625,7 @@
       }
       .process-flow {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 12px;
         margin-top: 16px;
         counter-reset: step;
@@ -1676,12 +1684,13 @@
         font-size: 14px;
         color: #66625c;
         font-family: var(--serif);
+        overflow-wrap: anywhere;
       }
       .visual-learning-grid {
         margin-top: 16px;
         display: grid;
         gap: 14px;
-        grid-template-columns: 1.35fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       }
       .visual-card {
         border: 1px solid rgba(179, 33, 63, 0.16);
@@ -1704,7 +1713,7 @@
       }
       .decision-map {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
         gap: 10px;
       }
       .decision-node {
@@ -1740,6 +1749,7 @@
         text-transform: uppercase;
         color: var(--red);
         margin-bottom: 8px;
+        overflow-wrap: anywhere;
       }
       .decision-node ul {
         margin: 0;
@@ -1751,6 +1761,7 @@
         font-size: 12px;
         line-height: 1.45;
         color: #5f5952;
+        overflow-wrap: anywhere;
       }
       .stack-chart {
         border: 1px solid rgba(0, 0, 0, 0.09);
@@ -1776,11 +1787,13 @@
         letter-spacing: 0.11em;
         text-transform: uppercase;
         color: #2d2924;
+        overflow-wrap: anywhere;
       }
       .stack-segment span {
         font-family: var(--serif);
         font-size: 15px;
         color: #5f5951;
+        overflow-wrap: anywhere;
       }
       .stack-segment--shorevest {
         background: rgba(179, 33, 63, 0.08);
@@ -1950,7 +1963,7 @@
       .strategy-details {
         margin-top: 16px;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 12px;
       }
       .strategy-detail {
@@ -1973,6 +1986,7 @@
         font-size: 15px;
         line-height: 1.65;
         color: #5e5952;
+        overflow-wrap: anywhere;
       }
 
       .data-grid {
@@ -2063,7 +2077,7 @@
       }
       .city-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 12px;
         margin-top: 14px;
       }
@@ -2100,6 +2114,7 @@
         font-family: var(--serif);
         font-size: 14px;
         line-height: 1.5;
+        overflow-wrap: anywhere;
       }
       .city:hover,
       .city:focus-visible,
@@ -2225,6 +2240,30 @@
         }
         .strategy-list {
           margin-top: 4px;
+        }
+      }
+      @media (min-width: 981px) and (max-width: 1199px) {
+        .strategy-stack {
+          gap: 34px;
+        }
+        .strategy-block {
+          display: grid;
+          grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+          column-gap: 36px;
+          row-gap: 10px;
+          align-items: start;
+        }
+        .strategy-block > h2 {
+          grid-column: 1;
+          margin: 0;
+          font-size: clamp(30px, 3vw, 40px);
+          max-width: 100%;
+        }
+        .strategy-block > p,
+        .strategy-block > ul,
+        .strategy-block > div {
+          grid-column: 2;
+          max-width: none;
         }
       }
       @media (max-width: 980px) {
