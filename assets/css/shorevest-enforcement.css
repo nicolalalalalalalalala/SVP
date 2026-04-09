@@ -191,6 +191,14 @@ hr {
   font-family: var(--sv-font-logo-en) !important;
 }
 
+.nav__logo-en {
+  color: var(--sv-color-accent) !important;
+}
+
+.nav__logo-cn {
+  color: color-mix(in srgb, var(--sv-color-accent) 78%, #ffffff 22%) !important;
+}
+
 @media (max-width: 768px) {
   :where(h1, .h1, .display, [class*="hero-title"]) {
     font-size: clamp(1.7rem, 7vw, 2.4rem);
