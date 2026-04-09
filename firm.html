@@ -2531,6 +2531,87 @@
   }
 </style>
 
+
+<style id="firm-page-inspiration-apply-v1">
+.firm-jumpbar {
+  position: sticky;
+  top: 72px;
+  z-index: 120;
+  background: #f7f4f1;
+  border-top: 1px solid rgba(41, 30, 22, 0.08);
+  border-bottom: 1px solid rgba(41, 30, 22, 0.08);
+}
+.firm-jumpbar__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 12px var(--pad);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.firm-jumpbar a {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(41, 30, 22, 0.18);
+  background: #fff;
+  color: #3b342e;
+  padding: 8px 12px;
+}
+.firm-jumpbar a:hover {
+  color: var(--red);
+  border-color: rgba(165, 35, 61, 0.45);
+}
+.firm-summary-band {
+  margin-top: 26px;
+  border: 1px solid rgba(41, 30, 22, 0.1);
+  background: #fff;
+  padding: clamp(20px, 2.2vw, 30px);
+}
+.firm-summary-band h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.firm-summary-band p {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: #534d45;
+  line-height: 1.7;
+  max-width: 64ch;
+}
+.firm-summary-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.firm-summary-card {
+  border: 1px solid rgba(165, 35, 61, 0.16);
+  background: #fbf8f6;
+  padding: 14px;
+}
+.firm-summary-card b {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a746c;
+}
+.firm-summary-card span {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+}
+@media (max-width: 980px) {
+  .firm-jumpbar { top: 64px; }
+  .firm-jumpbar__inner { padding-left: 18px; padding-right: 18px; }
+  .firm-summary-grid { grid-template-columns: 1fr; }
+}
+</style>
+
 </head>
   <body>
     <nav id="nav">
@@ -2643,8 +2724,40 @@
         </div>
       </section>
 
-      <section>
+
+      <nav class="firm-jumpbar" aria-label="Firm section links">
+        <div class="firm-jumpbar__inner">
+          <a href="#firm-overview">Overview</a>
+          <a href="#operating-model">Operating model</a>
+          <a href="#track-record">Track record</a>
+          <a href="#committee">Investment committee</a>
+          <a href="#platform-validation">Validation</a>
+        </div>
+      </nav>
+
+      <section id="firm-overview">
         <div class="wrap">
+          <div class="firm-summary-band">
+            <div class="eyebrow">Firm architecture</div>
+            <h2>Institutional process with local execution depth</h2>
+            <p>
+              Borrowing inspiration from top global alternative managers, the firm page now leads with a clear architecture: mandate, operating edge, and control discipline.
+            </p>
+            <div class="firm-summary-grid" aria-label="Firm architecture summary">
+              <article class="firm-summary-card">
+                <b>Mandate</b>
+                <span>China-focused private credit</span>
+              </article>
+              <article class="firm-summary-card">
+                <b>Execution model</b>
+                <span>Origination to resolution on one platform</span>
+              </article>
+              <article class="firm-summary-card">
+                <b>Risk philosophy</b>
+                <span>Legal enforceability before yield targeting</span>
+              </article>
+            </div>
+          </div>
           <div class="visual-learners-panel" aria-label="Visual summary of ShoreVest's model">
             <div class="eyebrow">Visual summary</div>
             <div class="visual-learners-head">
@@ -2693,7 +2806,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="operating-model">
         <div class="wrap">
           <div class="section-head platform-operates">
             <h2>Operating model</h2>
@@ -2794,7 +2907,7 @@
         </div>
       </section>
 
-      <section class="track-record-section">
+      <section class="track-record-section" id="track-record">
         <div class="wrap">
           <div class="framed-panel">
             <div class="section-head">
@@ -2860,7 +2973,7 @@
         </div>
       </section>
 
-      <section class="committee-section">
+      <section class="committee-section" id="committee">
         <div class="wrap">
           <div class="section-head committee-intro">
             <h2>Investment committee</h2>
@@ -2923,7 +3036,7 @@
         </div>
       </section>
 
-      <section class="validation-section">
+      <section class="validation-section" id="platform-validation">
         <div class="wrap wrap--full">
           <div class="section-head capital-base-head">
             <div class="capital-base-lockup" aria-label="Capital base">
