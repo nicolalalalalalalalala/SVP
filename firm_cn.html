@@ -1475,6 +1475,85 @@
 
 </style>
 
+<style id="sv-firm-palette-refresh">
+  :root {
+    --bg: #f6f4f0;
+    --panel: #ffffff;
+    --ink: #0c0c0a;
+    --muted: #888680;
+    --rule: rgba(12, 12, 10, 0.14);
+    --red: #b3213f;
+    --dark: #3f3b36;
+    --stone: #ddd9d2;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 88% -8%, rgba(179, 33, 63, 0.1) 0%, transparent 42%),
+      radial-gradient(circle at 10% 10%, rgba(63, 59, 54, 0.09) 0%, transparent 37%),
+      var(--bg);
+    color: var(--ink);
+  }
+
+  section:nth-child(even) {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(246, 244, 240, 0.7));
+  }
+
+  .hero-main,
+  .market-context-content,
+  .platform-note,
+  .proof-card,
+  .track-record-step,
+  .value-card,
+  .note {
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.94), rgba(246, 244, 240, 0.92)) !important;
+    border-color: rgba(63, 59, 54, 0.24) !important;
+  }
+
+  .timeline-item.is-active,
+  .proof-card.is-active,
+  .track-record-step.is-active,
+  .note.is-active {
+    border-color: rgba(179, 33, 63, 0.5) !important;
+    box-shadow: 0 12px 26px rgba(12, 12, 10, 0.08) !important;
+  }
+
+  .eyebrow,
+  .timeline-meta,
+  .timeline-year {
+    color: var(--muted) !important;
+  }
+
+  .timeline-item::before,
+  .bar,
+  .kpi-pill,
+  .cta__ring:hover {
+    background: var(--red) !important;
+  }
+
+  .nav__lp,
+  .pill,
+  .tag,
+  .chip {
+    border-color: rgba(63, 59, 54, 0.26) !important;
+    background: rgba(246, 244, 240, 0.88) !important;
+  }
+
+  .hero h1 em,
+  h2 em,
+  .quote-mark {
+    color: var(--red) !important;
+  }
+
+  .sv-footer {
+    background: linear-gradient(180deg, #f6f4f0 0%, #ddd9d2 100%) !important;
+  }
+
+  .sv-footer::before {
+    background: rgba(63, 59, 54, 0.5) !important;
+  }
+</style>
+
 </head>
   <body>
     <nav id="nav">
