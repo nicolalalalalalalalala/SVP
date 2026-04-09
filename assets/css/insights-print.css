@@ -82,6 +82,10 @@
     display: none;
   }
 
+  body.print-preview .print-publication .sv-footer {
+    display: none !important;
+  }
+
   body.print-preview .print-body h2 {
     margin: 6mm 0 2.2mm;
     font-size: 24px;
@@ -224,6 +228,10 @@
   .print-publication__callout,
   .print-publication__folio {
     display: none;
+  }
+
+  .print-publication .sv-footer {
+    display: none !important;
   }
 
   .print-body h2 {
