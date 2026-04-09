@@ -109,8 +109,7 @@ h4,
 .icard__title,
 .cdd-subscribe__title,
 .cdd-subscribe__card-title,
-.issue-title,
-.nav__logo-en {
+.issue-title {
   font-family: var(--serif) !important;
   font-weight: 500 !important;
   font-style: normal !important;
@@ -158,6 +157,7 @@ li,
 }
 
 .nav__logo-en {
+  font-family: var(--sans) !important;
   letter-spacing: var(--shorevest-lockup-tracking) !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;

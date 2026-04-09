@@ -125,7 +125,7 @@ html {
 }
 
 #nav .nav__logo-en {
-  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-family: var(--site-sans-en, 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
   font-size: var(--nav-logo-en-size);
   font-weight: 400;
   letter-spacing: .018em;
