@@ -292,7 +292,7 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
   footer.sv-footer,
   footer.sv-footer.sv-footer--full-bleed,
   .sv-footer {
-    padding: 34px var(--site-page-margin, 18px) calc(34px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 18px var(--site-page-margin, 18px) calc(24px + env(safe-area-inset-bottom, 0px)) !important;
     background: #e8e7e5 !important;
   }
 
@@ -304,14 +304,14 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 14px !important;
+    gap: 12px !important;
   }
 
   footer.sv-footer .sv-footer__brand {
-    font-size: clamp(42px, 9vw, 56px) !important;
-    line-height: 1.05 !important;
+    font-size: 18px !important;
+    line-height: 1.22 !important;
     letter-spacing: 0.01em !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 0 !important;
   }
 
   footer.sv-footer .sv-footer__contact {
@@ -330,27 +330,32 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
 
   footer.sv-footer .sv-footer__contact a {
     width: 100% !important;
-    min-height: 64px !important;
+    min-height: 44px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    padding: 0 26px !important;
+    justify-content: center !important;
+    padding: 0 14px !important;
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
-    background: rgba(255, 255, 255, 0.25) !important;
+    background: rgba(255, 255, 255, 0.44) !important;
     color: #161515 !important;
-    font-size: clamp(14px, 4.5vw, 20px) !important;
-    letter-spacing: 0.09em !important;
+    font-size: 12px !important;
+    letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
   footer.sv-footer .sv-footer__bottom {
-    gap: 18px !important;
+    gap: 16px !important;
     padding-top: 16px !important;
   }
 
   footer.sv-footer .sv-footer__copyright {
-    font-size: clamp(12px, 4vw, 18px) !important;
-    color: #5b5650 !important;
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    color: #66615a !important;
   }
 
   footer.sv-footer .sv-footer__legal-toggle {
@@ -359,13 +364,13 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
   }
 
   footer.sv-footer .sv-footer__legal-toggle > summary {
-    min-height: 64px !important;
+    min-height: 44px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0 26px !important;
+    padding: 0 14px !important;
     font-size: 12px !important;
-    letter-spacing: 0.14em !important;
+    letter-spacing: 0.12em !important;
     text-transform: uppercase !important;
   }
 
@@ -377,9 +382,9 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
   }
 
   footer.sv-footer .sv-footer__legal-links a {
-    font-size: clamp(14px, 4.2vw, 32px) !important;
-    line-height: 1.35 !important;
-    letter-spacing: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0.01em !important;
     text-transform: none !important;
     color: #1e1d1b !important;
   }
