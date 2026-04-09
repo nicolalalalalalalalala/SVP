@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "DIN 2014";
+  src: local("DIN 2014 Light Italic"), local("DIN2014-LightItalic");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN 2014";
+  src: local("DIN 2014"), local("DIN2014-Regular");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN 2014";
+  src: local("DIN 2014 Bold"), local("DIN2014-Bold");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --red: #C93B2A;
+  --ink: #0F2206;
+  --ink2: #2E4A18;
+  --white: #FAF6EE;
+  --off: #FAF6EE;
+  --rule: #D8CEB0;
+  --mist: #2E4A18;
+  --serif: "DIN 2014";
+  --sans: "DIN 2014";
+}
+
+body,
+#nav,
+#about,
+#insights,
+.sv-footer {
+  background: #F2ECD8;
+  color: #0F2206;
+  font-family: "DIN 2014";
+}
+
+#strategy,
+#team,
+.stat,
+.cdd-subscribe__card,
+.cdd-subscribe__cards {
+  background: #FAF6EE;
+}
+
+.hero__divline,
+.about__intro,
+.strat__grid,
+.strat__actions,
+.ins__hd,
+.sv-footer,
+.sv-footer__main,
+.founder-split,
+.founder-split * {
+  border-color: #D8CEB0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.hero__hed,
+.about__hed,
+.strat__hed,
+.sg__title,
+.tm__name,
+.icard__title,
+.cdd-subscribe__title,
+.cdd-subscribe__card-title,
+.nav__logo-en {
+  font-family: "DIN 2014" !important;
+  font-weight: 700;
+}
+
+.hero__overlay h1.hero__hed,
+h1.hero__hed em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.nav__links a,
+.eyebrow,
+.hero__kicker,
+.sg__n,
+.tm__role,
+.icard__cat,
+.cta,
+.nav__lp,
+.nav__menu-btn,
+.ulink,
+.icard__link,
+.nb__l,
+.stat__l {
+  font-family: "DIN 2014" !important;
+  letter-spacing: 0.08em;
+}
+
+.nav__logo-en {
+  letter-spacing: 0.05em !important;
+}
+
+.nav__logo-lockup {
+  position: relative;
+  padding-left: 10px;
+  margin-left: 3px;
+}
+
+.nav__logo-lockup::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 1px;
+  background: #C93B2A;
+}
+
+.nav__logo-cn,
+:lang(zh),
+[lang='zh'],
+[lang='zh-CN'],
+[lang='zh-Hans'] {
+  font-family: "Noto Serif SC" !important;
+}
+
+.nav__logo-cn {
+  color: #C93B2A !important;
+}
+
+a:hover,
+.cta--red,
+.ac__link:hover,
+.ulink:hover,
+.icard:hover .icard__title,
+.sg__n,
+.tm__role,
+.it__label,
+.eyebrow--red {
+  color: #C93B2A;
+}
+
+.hero__kicker::before,
+.live-dot {
+  background-color: #C93B2A;
+}
+
+.cta--dark:hover .cta__ring,
+.cta--light:hover .cta__ring,
+.cta--red:hover .cta__ring,
+.ulink:hover .ulink__ring,
+.icard:hover .icard__ring,
+.su__submit:hover .su__submit-ring,
+.su__submit:focus-visible .su__submit-ring,
+.nav__lp:hover {
+  background: #C93B2A !important;
+  border-color: #C93B2A !important;
+}
+
+.su__status[data-state='error'] {
+  color: #E8998F;
+}
+
+.hero__overlay .hero__kicker,
+.hero__overlay h1.hero__hed,
+.num-band,
+.quote-band,
+#cdd,
+#signup,
+.city-band {
+  background-color: #1E4040;
+}
+
+.hero__overlay .hero__kicker,
+.hero__overlay h1.hero__hed,
+.num-band *,
+.quote-band *,
+#cdd *,
+#signup *,
+.city-band * {
+  color: #FAF6EE;
+}
+
+.cdd__dot,
+.hero__overlay h1.hero__hed em,
+.issue-label,
+.cdd-hero__card [style*='Latest Issue'] {
+  background: #C93B2A !important;
+}
+
+.city-band__overlay {
+  background: linear-gradient(to bottom, rgba(30, 64, 64, 0.45) 0%, rgba(30, 64, 64, 0.1) 45%, rgba(30, 64, 64, 0.1) 55%, rgba(30, 64, 64, 0.8) 100%);
+}
+
+.su__small,
+.stats__note,
+.icard__date,
+.cdd-subscribe__text,
+.ac__body,
+.sg__body,
+.tm__bio,
+.strat__intro,
+.hero__copy,
+.about__body p {
+  color: #2E4A18;
+}
+
+.stat--zero .stat__n,
+.nav__logo-cn,
+.hero__kicker::before,
+.cdd__dot,
+.it__label {
+  color: #C93B2A;
+}
