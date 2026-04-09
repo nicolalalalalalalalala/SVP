@@ -12,20 +12,20 @@
     />
     <style>
       :root {
-        --bg: #f5f4f1;
-        --panel: #f8f6f2;
+        --bg: #fcfcfd;
+        --panel: #ffffff;
         --surface: #ffffff;
-        --surface-strong: #f2efe9;
+        --surface-strong: #fbf8f9;
         --ink: #161514;
         --muted: #6a665e;
-        --rule: rgba(41, 30, 22, 0.11);
-        --red: #7f2f3f;
+        --rule: rgba(165, 35, 61, 0.16);
+        --red: #a5233d;
         --dark: #10100f;
         --radius: 10px;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
-        --max: 1200px;
-        --pad: 64px;
+        --max: 1320px;
+        --pad: 72px;
         --section-copy-size: 20px;
         --section-label-size: 10px;
       }
@@ -37,7 +37,8 @@
       }
       body {
         font-family: var(--sans);
-        background: var(--bg);
+        background:
+          linear-gradient(180deg, #ffffff 0%, #fdfbfc 55%, #fcfcfd 100%);
         color: var(--ink);
         line-height: 1.55;
         font-size: 14px;
@@ -180,7 +181,7 @@
         padding-top: 72px;
       }
       section {
-        padding: 52px 0;
+        padding: 68px 0;
         border-top: 1px solid rgba(41, 30, 22, 0.08);
       }
       section:first-child {
@@ -224,16 +225,16 @@
       }
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
-        gap: 24px;
-        margin-bottom: 24px;
+        grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr);
+        gap: 30px;
+        margin-bottom: 28px;
       }
       .hero-main {
         background: #fff;
-        border: 1px solid rgba(14, 12, 10, 0.09);
+        border: 1px solid rgba(165, 35, 61, 0.14);
         border-radius: calc(var(--radius) + 2px);
-        padding: 36px 36px 32px;
-        box-shadow: 0 12px 28px rgba(27, 18, 12, 0.06);
+        padding: 42px 42px 36px;
+        box-shadow: 0 12px 30px rgba(165, 35, 61, 0.08);
       }
       h1 {
         font-family: var(--serif);
@@ -256,8 +257,9 @@
         max-width: none;
       }
       .lead--boxed {
-        background: #f7f5f0;
-        border: 1px solid rgba(12, 12, 10, 0.14);
+        background: #fffdfd;
+        border: 1px solid rgba(165, 35, 61, 0.16);
+        border-left: 3px solid rgba(165, 35, 61, 0.35);
         border-radius: var(--radius);
         padding: 16px 18px;
       }
@@ -306,11 +308,12 @@
         line-height: 1.6;
       }
       .hero-aside {
-        background: #f3f0ea;
-        border: 1px solid rgba(18, 16, 13, 0.1);
+        background: #fff;
+        border: 1px solid rgba(165, 35, 61, 0.14);
+        border-top: 4px solid rgba(165, 35, 61, 0.5);
         border-radius: var(--radius);
         color: #2f2a24;
-        padding: 24px;
+        padding: 28px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -334,9 +337,9 @@
         gap: 10px;
       }
       .hero-signal {
-        border: 1px solid rgba(31, 28, 25, 0.14);
+        border: 1px solid rgba(165, 35, 61, 0.18);
         padding: 10px 12px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.96);
         border-radius: 8px;
       }
       .hero-signal__kicker {
@@ -363,8 +366,8 @@
         border-top: 1px solid rgba(12, 12, 10, 0.12);
       }
       .hero-stat {
-        background: rgba(255, 255, 255, 0.94);
-        border: 1px solid rgba(12, 12, 10, 0.1);
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid rgba(165, 35, 61, 0.16);
         border-radius: var(--radius);
         padding: 1.15rem 1.2rem 1.1rem;
       }
@@ -497,11 +500,11 @@
 
       .framed-panel {
         background: var(--panel);
-        border: 1px solid rgba(42, 36, 30, 0.12);
-        border-left: 4px solid rgba(118, 83, 72, 0.42);
+        border: 1px solid rgba(165, 35, 61, 0.14);
+        border-left: 4px solid rgba(165, 35, 61, 0.42);
         border-radius: var(--radius);
-        padding: 32px;
-        box-shadow: 0 16px 30px rgba(21, 16, 11, 0.05);
+        padding: 36px;
+        box-shadow: 0 16px 30px rgba(165, 35, 61, 0.06);
       }
       .section-head {
         display: grid;
@@ -608,7 +611,7 @@
       }
       .pillar-card {
         background: var(--surface);
-        border: 1px solid #e8e2d9;
+        border: 1px solid rgba(165, 35, 61, 0.12);
         border-radius: var(--radius);
         padding: 34px;
         cursor: pointer;
@@ -789,7 +792,7 @@
       .intel-copy,
       .closing-panel {
         background: var(--surface);
-        border: 1px solid #e8e2d9;
+        border: 1px solid rgba(165, 35, 61, 0.12);
         border-radius: var(--radius);
       }
       .proof-card {
