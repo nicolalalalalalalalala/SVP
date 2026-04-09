@@ -129,7 +129,7 @@ html {
   font-size: var(--nav-logo-en-size);
   font-weight: 400;
   letter-spacing: .018em;
-  color: #8A1F12;
+  color: #000000;
   display:inline-block;
   line-height: var(--nav-logo-en-line-height);
 }
@@ -140,7 +140,7 @@ html {
   font-size: var(--nav-logo-cn-size);
   font-weight:300;
   letter-spacing:.58em;
-  color: #8A1F12;
+  color: #000000;
   opacity:1;
   line-height: var(--nav-logo-cn-line-height);
 }
