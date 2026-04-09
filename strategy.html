@@ -3077,8 +3077,7 @@
 </style>
 <style id="strategy-professional-polish-v1">
 .pagehero {
-  background:
-    linear-gradient(180deg, #f7f5f1 0%, #ffffff 76%);
+  background: #f7f5f1;
   border-bottom: 1px solid rgba(22, 18, 13, 0.1);
 }
 .pagehero h1 {
@@ -3088,7 +3087,7 @@
   color: #5d564d;
 }
 .pgsec {
-  background: linear-gradient(180deg, #fcfbf8 0%, #f3eee7 100%);
+  background: #f5f1eb;
   padding: 72px 0 96px;
 }
 .strategy-stack {
@@ -3127,11 +3126,24 @@
   color: #615a52;
 }
 .strategy-viz {
-  background: #fcfaf6;
+  background: #f9f5ef;
   border: 1px solid rgba(31, 25, 18, 0.09);
   border-radius: 0;
   box-shadow: none;
   padding: 18px;
+}
+.strategy-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+#what-we-invest .strategy-detail {
+  background: #fff;
+  border: 1px solid rgba(31, 25, 18, 0.11);
+  padding: 18px 16px;
+}
+#what-we-invest .strategy-detail:nth-child(3) {
+  grid-column: 1 / -1;
 }
 .kpi,
 .funnel-step,
@@ -3151,6 +3163,7 @@
   box-shadow: none;
 }
 #strategy-summary {
+  background: #1f1a15;
   border-radius: 0;
   box-shadow: 0 14px 28px rgba(8, 6, 4, 0.22);
 }
@@ -3166,6 +3179,12 @@
   }
   .strategy-block h2 {
     max-width: none;
+  }
+  .strategy-details {
+    grid-template-columns: 1fr;
+  }
+  #what-we-invest .strategy-detail:nth-child(3) {
+    grid-column: auto;
   }
 }
 </style>
