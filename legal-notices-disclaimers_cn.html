@@ -17,11 +17,13 @@
     :root {
       --red: #b3213f;
       --ink: #0c0c0a;
-      --ink-soft: #3f3b36;
-      --paper: #ffffff;
+      --white: #ffffff;
+      --off: #f6f4f0;
       --rule: rgba(12, 12, 10, 0.12);
       --serif: 'EB Garamond', Georgia, serif;
-      --sans: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --max: 100%;
+      --pad: 64px;
     }
 
     * { box-sizing: border-box; }
@@ -29,16 +31,15 @@
     body {
       margin: 0;
       font-family: var(--sans);
-      color: var(--ink-soft);
-      background: var(--paper);
-      line-height: 1.58;
-      font-size: 13px;
+      color: var(--ink);
+      background: var(--white);
     }
 
     main {
-      max-width: 960px;
+      padding: 120px var(--pad) 40px;
+      width: 100%;
+      max-width: 1320px;
       margin: 0 auto;
-      padding: 120px 24px 40px;
     }
 
     .disclaimer-wrap h1,
@@ -51,31 +52,43 @@
     }
 
     .disclaimer-wrap h1 {
-      font-size: 42px;
-      line-height: 1.02;
-      margin-bottom: 14px;
-    }
-
-    .disclaimer-wrap h2 {
-      font-size: 24px;
-      line-height: 1.16;
+      margin: 0 0 8px;
+      font-size: 38px !important;
+      line-height: 1.08;
       margin-bottom: 8px;
     }
 
-    .disclaimer-wrap p { margin: 0 0 12px; }
-
-    .intro {
-      color: #5d5851;
-      margin-bottom: 24px;
+    .disclaimer-wrap h2 {
+      margin: 30px 0 10px;
+      font-size: 24px !important;
+      line-height: 1.16;
+      margin-bottom: 10px;
     }
 
-    section { margin-bottom: 20px; }
+    .disclaimer-wrap p {
+      margin: 0;
+      max-width: none;
+      font-size: 12px !important;
+      line-height: 1.55;
+      color: #3f3b36;
+    }
+
+    .intro {
+      margin: 0 0 12px;
+      font-size: 12px !important;
+      line-height: 1.55;
+      color: #5b554f;
+    }
+
+    section { border-top: 0; padding-top: 0; margin-top: 0; }
 
     .disclaimer-note {
-      margin-top: 28px;
-      color: #6f6a63;
-      font-size: 10px;
-      line-height: 1.65;
+      margin-top: 30px;
+      border-top: 0;
+      padding-top: 0;
+      font-size: 12px;
+      line-height: 1.55;
+      color: #5b554f;
     }
 
     a {
@@ -196,16 +209,6 @@
   }
 }
 
-.disclaimer-wrap h1 { font-size: 34px; }
-      .disclaimer-wrap h2 { font-size: 22px; }
-      .sv-footer {
-        padding: 26px var(--site-page-margin, 18px) 34px;
-      }
-      .sv-footer__main {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
   </style>
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
 
@@ -362,7 +365,7 @@
 </style>
 
 </head>
-<body>
+<body class="legal-page">
   <nav id="nav" aria-label="Primary">
     <a class="nav__logo" href="index_cn.html" aria-label="ShoreVest 首页">
       <img src="assets/images/logo-master.png?v=1" alt="" class="nav__logo-mark" />
