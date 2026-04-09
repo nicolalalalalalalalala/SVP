@@ -4,7 +4,7 @@
   --topbar-pad-left: var(--site-page-margin, 64px);
   --nav-link-gap: 36px;
   --nav-right-gap: 30px;
-  --nav-logo-en-size: 24px;
+  --nav-logo-en-size: 21px;
   --nav-logo-en-line-height: 0.78;
   --nav-logo-cn-size: 10px;
   --nav-logo-cn-line-height: 1;
@@ -345,7 +345,7 @@ html {
     --topbar-height: 68px;
     --topbar-pad: var(--site-page-margin, 18px);
     --topbar-pad-left: var(--site-page-margin, 18px);
-    --nav-logo-en-size: 22px;
+    --nav-logo-en-size: 20px;
     --nav-logo-cn-size: 10px;
     --nav-logo-lockup-gap: 5px;
   }
