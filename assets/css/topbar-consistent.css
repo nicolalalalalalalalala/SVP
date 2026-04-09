@@ -76,8 +76,8 @@ html {
 }
 
 ::selection {
-  color: #fff;
-  background: rgba(179, 33, 63, 0.9);
+  color: #ffffff;
+  background: rgba(43, 94, 170, 0.85);
 }
 
 #nav {
