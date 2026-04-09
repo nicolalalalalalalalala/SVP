@@ -283,7 +283,7 @@ html {
   border-color: var(--control-brand);
   color: var(--control-paper);
   background: var(--control-brand);
-  box-shadow: 0 8px 20px rgba(179, 33, 63, 0.24);
+  box-shadow: none;
   transform: translateY(-1px);
   letter-spacing: 0.16em;
 }
