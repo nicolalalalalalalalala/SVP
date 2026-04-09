@@ -183,8 +183,8 @@ li,
   left: 0;
   top: 2px;
   bottom: 2px;
-  width: 1px;
-  background: var(--cinnabar);
+  width: 3px;
+  background: #000000;
 }
 
 .nav__logo-cn {

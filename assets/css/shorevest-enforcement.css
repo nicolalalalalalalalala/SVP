@@ -209,7 +209,8 @@ hr {
 }
 
 #nav .nav__logo-lockup::before {
-  background: var(--sv-color-accent) !important;
+  width: 3px !important;
+  background: #000000 !important;
 }
 
 #nav .nav__links a,
