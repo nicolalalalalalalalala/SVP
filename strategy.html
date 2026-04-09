@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
 <style>
       :root {
-        --red: #8f3143;
-        --ink: #161512;
+        --red: #b3213f;
+        --ink: #0c0c0a;
         --ink2: #141410;
         --white: #ffffff;
-        --off: #f7f5f1;
-        --rule: rgba(0, 0, 0, 0.07);
-        --mist: #746f67;
+        --off: #f6f4f0;
+        --rule: rgba(0, 0, 0, 0.08);
+        --mist: #888680;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
@@ -1136,8 +1136,8 @@
         min-height: 460px;
         padding: 156px var(--pad) 94px;
         background:
-          radial-gradient(circle at 82% 26%, rgba(143, 49, 67, 0.06), transparent 30%),
-          linear-gradient(180deg, #faf9f7 0%, #ffffff 72%);
+          radial-gradient(circle at 82% 26%, rgba(179, 33, 63, 0.08), transparent 32%),
+          linear-gradient(180deg, #f9f8f6 0%, #ffffff 72%);
         border-bottom: 1px solid var(--rule);
         display: flex;
         align-items: center;
@@ -1150,7 +1150,7 @@
         align-items: end;
       }
       .pagehero h1 {
-        font-size: clamp(44px, 7.2vw, 78px);
+        font-size: 78px;
         max-width: 700px;
         letter-spacing: -0.025em;
         line-height: 1.02;
@@ -1182,15 +1182,15 @@
         justify-self: end;
         width: min(100%, 760px);
         margin-right: clamp(-220px, -15vw, -110px);
-        opacity: 0.74;
+        opacity: 0.85;
       }
       .pagehero__media img {
         display: block;
         width: 100%;
         height: auto;
         object-fit: cover;
-        filter: grayscale(1) contrast(1.02);
-        transform: scale(1.18);
+        filter: grayscale(1) contrast(1.06);
+        transform: scale(1.22);
         transform-origin: right center;
       }
       .market-context-section {
@@ -1202,8 +1202,8 @@
         max-width: 1180px;
         margin: 0 auto;
         background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        box-shadow: none;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 18px 40px rgba(36, 31, 22, 0.06);
         padding: clamp(24px, 4vw, 44px);
       }
       .market-context-content h2 {
@@ -1247,8 +1247,8 @@
       .strategy-intro-lead p {
         max-width: 100%;
         margin: 0;
-        font-size: 20px;
-        line-height: 1.75;
+        font-size: 21px;
+        line-height: 1.8;
         color: #4f4a43;
         font-family: var(--serif);
       }
@@ -1286,16 +1286,16 @@
         letter-spacing: 0.1em;
       }
       .hero-panel {
-        background: #f6f3ee;
-        color: var(--ink);
+        background: #11110f;
+        color: #fff;
         padding: 20px 22px;
-        border: 1px solid rgba(21, 18, 15, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
       .hero-panel h3 {
         font-size: 10px;
         letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: rgba(21, 18, 15, 0.5);
+        color: rgba(255, 255, 255, 0.58);
         margin-bottom: 16px;
       }
       .hero-panel ul {
@@ -1308,17 +1308,17 @@
         grid-template-columns: 1fr;
         gap: 6px;
         padding-bottom: 10px;
-        border-bottom: 1px solid rgba(21, 18, 15, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 11px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: rgba(21, 18, 15, 0.72);
+        color: rgba(255, 255, 255, 0.72);
       }
       .hero-panel li strong {
         font-family: var(--serif);
         font-size: clamp(17px, 1.9vw, 22px);
         line-height: 1.25;
-        color: var(--ink);
+        color: #fff;
         font-weight: 400;
         letter-spacing: 0;
         text-transform: none;
@@ -1327,238 +1327,98 @@
         overflow-wrap: anywhere;
       }
       .pgsec {
-        padding: 88px 0 120px;
-        background:
-          radial-gradient(1200px 600px at 8% 8%, rgba(143, 49, 67, 0.04), transparent 56%),
-          linear-gradient(180deg, #ffffff 0%, #f7f4ef 100%);
+        padding: 72px 0 104px;
+        background: #fff;
+      }
+      .strategy-tools {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 32px;
+        padding: 16px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: #fff;
+      }
+      .strategy-tools p {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #7e786f;
+      }
+      .jump-nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .jump-nav button {
+        border: 1px solid rgba(179, 33, 63, 0.2);
+        background: #fff;
+        color: #5c564f;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .jump-nav button:hover,
+      .jump-nav button:focus-visible,
+      .jump-nav button.is-active {
+        border-color: var(--red);
+        background: var(--red);
+        color: #fff;
+        outline: none;
       }
       .strategy-stack {
         display: grid;
-        gap: 34px;
-        counter-reset: strategy-block;
-        max-width: 1120px;
-        margin: 0 auto;
-      }
-      .strategy-stack > * {
-        min-width: 0;
+        gap: 46px;
       }
       .strategy-block {
-        background: #fcfbf9;
-        border: 1px solid rgba(52, 43, 32, 0.07);
-        padding: 54px clamp(24px, 4vw, 56px);
-        border-radius: 0;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 38px 40px;
         scroll-margin-top: 96px;
         position: relative;
         overflow: hidden;
-        box-shadow: none;
-      }
-      .strategy-block::before {
-        counter-increment: strategy-block;
-        content: "0" counter(strategy-block);
-        position: absolute;
-        top: 20px;
-        right: 24px;
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        font-weight: 500;
-        color: rgba(34, 30, 25, 0.32);
       }
       .strategy-block::after {
         content: "";
         position: absolute;
-        inset: 0;
-        border-top: 1px solid rgba(143, 49, 67, 0.22);
-        pointer-events: none;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: rgba(179, 33, 63, 0.65);
       }
       .strategy-block h2 {
         font-family: var(--serif);
-        font-size: clamp(34px, 4.2vw, 48px);
+        font-size: clamp(38px, 4.4vw, 52px);
         font-weight: 400;
         line-height: 1.12;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         letter-spacing: -0.01em;
-        max-width: 16ch;
+        max-width: 640px;
       }
       .strategy-block h2.single-line-heading {
-        white-space: normal;
+        white-space: nowrap;
       }
       .strategy-block p {
-        color: #595248;
+        color: #66615a;
         line-height: 1.8;
-        font-size: 19px;
-        font-family: var(--serif);
-        max-width: 66ch;
-        overflow-wrap: anywhere;
-        text-wrap: pretty;
-      }
-      .strategy-block p + p {
-        margin-top: 14px;
-      }
-      #what-we-invest .strategy-details {
-        gap: 24px;
-        margin-top: 30px;
-      }
-      #what-we-invest .strategy-detail:nth-child(1) {
-        background: linear-gradient(160deg, #ffffff, #fdfaf6);
-      }
-      #what-we-invest .strategy-detail:nth-child(2) {
-        background: linear-gradient(160deg, #fdfaf6, #f8f4ee);
-      }
-      #what-we-invest .strategy-detail:nth-child(3) {
-        background: linear-gradient(160deg, #f8f4ed, #f4efe7);
-      }
-      #what-we-invest .strategy-detail h3 {
-        font-size: clamp(26px, 2.6vw, 33px);
-        margin-bottom: 10px;
-        color: #2f2a24;
-      }
-      #what-we-invest .strategy-detail p {
-        line-height: 1.62;
-      }
-      #what-we-invest .strategy-detail {
-        border: 1px solid rgba(43, 36, 28, 0.08);
-        box-shadow: 0 10px 24px rgba(17, 13, 8, 0.05);
-      }
-      #why-china {
-        padding-top: 62px;
-        padding-bottom: 62px;
-      }
-      #why-china .feature-paragraph {
-        max-width: 64ch;
-        line-height: 1.95;
-        margin-top: 18px;
-        padding-left: 20px;
-        border-left: 1px solid rgba(143, 49, 67, 0.28);
-      }
-      #what-we-avoid .risk-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-        margin-top: 24px;
-      }
-      #what-we-avoid .risk-card {
-        border: none;
-        background: transparent;
-        padding: 0;
-      }
-      #what-we-avoid .risk-card h4 {
-        display: none;
-      }
-      #what-we-avoid .risk-card ul {
-        gap: 16px;
-      }
-      #what-we-avoid .risk-card li {
-        font-size: 16px;
-        line-height: 1.5;
-        border-left: none;
-        border-bottom: 1px solid rgba(143, 49, 67, 0.12);
-        padding: 0 0 14px 0;
-        color: #7d766e;
-      }
-      #what-we-avoid .risk-card li:last-child {
-        border-bottom: none;
-      }
-      #what-we-avoid .risk-card li::before {
-        content: "•";
-        color: #9f9488;
-        margin-right: 8px;
-      }
-      #return-generation .strategy-list {
-        margin-top: 20px;
-        padding-left: 0;
-        gap: 0;
-      }
-      #return-generation .strategy-list li {
-        list-style: none;
-        padding: 20px 0;
-        border-bottom: 1px solid rgba(143, 49, 67, 0.14);
-      }
-      #return-generation .strategy-list li:last-child {
-        border-bottom: none;
-      }
-      #downside-control {
-        padding-top: 58px;
-      }
-      #downside-control .downside-list {
-        margin-top: 24px;
-        display: grid;
-        gap: 18px;
-        max-width: 760px;
-      }
-      #downside-control .downside-item {
-        padding-bottom: 16px;
-        border-bottom: 1px solid rgba(143, 49, 67, 0.11);
-      }
-      #downside-control .downside-item:last-child {
-        border-bottom: none;
-      }
-      #downside-control .downside-item h3 {
-        font-family: var(--serif);
-        font-size: 26px;
-        line-height: 1.2;
-        font-weight: 400;
-        color: #28231d;
-        margin-bottom: 4px;
-      }
-      #downside-control .downside-item p {
         font-size: 17px;
-        line-height: 1.7;
-        color: #69635b;
-      }
-      .market-context-basis {
-        margin-top: 34px;
-        margin-bottom: 16px;
-        font-size: 20px;
-        line-height: 1.78;
-        color: #3c372f;
-        max-width: 60ch;
-      }
-      #current-environment {
-        padding-top: 46px;
-        padding-bottom: 36px;
-      }
-      #strategy-summary {
-        margin-top: 8px;
-        padding-top: 34px;
-        padding-bottom: 34px;
-        background: #f2eee8;
-        border-color: rgba(21, 18, 15, 0.1);
-        box-shadow: none;
-      }
-      #strategy-summary::before {
-        color: rgba(21, 18, 15, 0.35);
-      }
-      #strategy-summary h2 {
-        color: var(--ink);
-      }
-      #strategy-summary p {
-        color: #605a52;
-        font-size: 20px;
-        max-width: 52ch;
+        font-family: var(--serif);
+        max-width: 767px;
       }
       .strategy-block p.single-line-copy {
-        white-space: normal;
-      }
-      .strategy-list {
-        margin: 10px 0 12px;
-        padding-left: 20px;
-        max-width: 860px;
-        display: grid;
-        gap: 6px;
-      }
-      .strategy-list li {
-        color: #66615a;
-        line-height: 1.75;
-        font-size: 17px;
-        font-family: var(--serif);
+        white-space: nowrap;
       }
       .strategy-viz {
-        margin: 28px 0 10px;
-        padding: 26px;
-        border: 1px solid rgba(29, 24, 17, 0.09);
-        background: #faf8f4;
-      }
-      .strategy-viz--at-a-glance {
-        margin-top: 18px;
+        margin: 24px 0 6px;
+        padding: 22px;
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        background: #fcfbf9;
       }
       .viz-title {
         font-size: 10px;
@@ -1570,11 +1430,11 @@
       }
       .viz-kpi {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 14px;
       }
       .kpi {
-        border: 1px solid rgba(143, 49, 67, 0.12);
+        border: 1px solid rgba(179, 33, 63, 0.16);
         padding: 16px;
         background: #fff;
         cursor: pointer;
@@ -1585,33 +1445,22 @@
       }
       .kpi strong {
         display: block;
-        font-size: clamp(26px, 2.6vw, 30px);
+        font-size: 30px;
         font-family: var(--serif);
         font-weight: 400;
         color: var(--ink);
         line-height: 1.1;
-        overflow-wrap: anywhere;
       }
       .kpi span {
         font-size: 10px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--mist);
-        overflow-wrap: anywhere;
-      }
-      .kpi p {
-        margin-top: 10px;
-        font-size: 12px;
-        line-height: 1.55;
-        color: #6d675f;
-        overflow-wrap: anywhere;
       }
       .kpi:hover,
       .kpi:focus-visible,
       .kpi.is-active {
-        border-color: rgba(143, 49, 67, 0.28);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 18px rgba(33, 24, 17, 0.06);
+        border-color: rgba(179, 33, 63, 0.45);
         outline: none;
       }
       .viz-detail,
@@ -1660,7 +1509,7 @@
       }
       .process-flow {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         gap: 12px;
         margin-top: 16px;
         counter-reset: step;
@@ -1719,130 +1568,6 @@
         font-size: 14px;
         color: #66625c;
         font-family: var(--serif);
-        overflow-wrap: anywhere;
-      }
-      .visual-learning-grid {
-        margin-top: 16px;
-        display: grid;
-        gap: 14px;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
-      .visual-card {
-        border: 1px solid rgba(179, 33, 63, 0.16);
-        background: #fff;
-        padding: 16px;
-      }
-      .visual-card h3 {
-        font-family: var(--serif);
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 1.2;
-        color: #231f1a;
-        margin-bottom: 8px;
-      }
-      .visual-card p {
-        font-size: 13px;
-        line-height: 1.6;
-        color: #6a645d;
-        margin-bottom: 12px;
-      }
-      .decision-map {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-        gap: 10px;
-      }
-      .decision-node {
-        border: 1px solid rgba(0, 0, 0, 0.09);
-        background: #fcfbf9;
-        padding: 12px;
-        min-height: 138px;
-        position: relative;
-      }
-      .decision-node::after {
-        content: "→";
-        position: absolute;
-        right: -13px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: var(--ink2);
-        color: #fff;
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .decision-node:last-child::after {
-        display: none;
-      }
-      .decision-node b {
-        display: block;
-        font-size: 10px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--red);
-        margin-bottom: 8px;
-        overflow-wrap: anywhere;
-      }
-      .decision-node ul {
-        margin: 0;
-        padding-left: 14px;
-        display: grid;
-        gap: 6px;
-      }
-      .decision-node li {
-        font-size: 12px;
-        line-height: 1.45;
-        color: #5f5952;
-        overflow-wrap: anywhere;
-      }
-      .stack-chart {
-        border: 1px solid rgba(0, 0, 0, 0.09);
-        background: #fcfbf9;
-        padding: 10px;
-      }
-      .stack-segment {
-        min-height: 52px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 10px 12px;
-        margin-bottom: 8px;
-        font-size: 11px;
-      }
-      .stack-segment:last-child {
-        margin-bottom: 0;
-      }
-      .stack-segment strong {
-        font-size: 11px;
-        letter-spacing: 0.11em;
-        text-transform: uppercase;
-        color: #2d2924;
-        overflow-wrap: anywhere;
-      }
-      .stack-segment span {
-        font-family: var(--serif);
-        font-size: 15px;
-        color: #5f5951;
-        overflow-wrap: anywhere;
-      }
-      .stack-segment--shorevest {
-        background: rgba(179, 33, 63, 0.08);
-        border-color: rgba(179, 33, 63, 0.4);
-      }
-      .stack-segment--shorevest strong,
-      .stack-segment--shorevest span {
-        color: #4f1f2a;
-      }
-      .visual-note {
-        margin-top: 10px;
-        font-size: 12px;
-        line-height: 1.55;
-        color: #716b63;
       }
       .risk-grid {
         display: grid;
@@ -1854,7 +1579,6 @@
         border: 1px solid rgba(179, 33, 63, 0.15);
         background: #fff;
         padding: 16px;
-        border-radius: 10px;
       }
       .risk-card h4 {
         font-size: 10px;
@@ -1998,16 +1722,13 @@
       .strategy-details {
         margin-top: 16px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
-        align-items: stretch;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
       }
       .strategy-detail {
         border: 1px solid rgba(179, 33, 63, 0.14);
         background: #fff;
         padding: 14px;
-        display: flex;
-        flex-direction: column;
       }
       .strategy-detail h3 {
         font-family: var(--serif);
@@ -2024,8 +1745,6 @@
         font-size: 15px;
         line-height: 1.65;
         color: #5e5952;
-        overflow-wrap: anywhere;
-        flex: 1;
       }
 
       .data-grid {
@@ -2116,7 +1835,7 @@
       }
       .city-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 12px;
         margin-top: 14px;
       }
@@ -2153,7 +1872,6 @@
         font-family: var(--serif);
         font-size: 14px;
         line-height: 1.5;
-        overflow-wrap: anywhere;
       }
       .city:hover,
       .city:focus-visible,
@@ -2165,54 +1883,13 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
         gap: 14px;
-        margin-top: 30px;
+        margin-top: 18px;
       }
       .next-links .cta {
         width: 100%;
         justify-content: space-between;
         border: 1px solid rgba(179, 33, 63, 0.18);
-        padding: 15px 16px;
-        border-radius: 10px;
-        font-size: 11px;
-      }
-
-      /* Improve readability by adding more breathing room in boxed modules. */
-      .kpi,
-      .funnel-step,
-      .flow-step,
-      .visual-card,
-      .decision-node,
-      .stack-chart,
-      .risk-card,
-      .alloc-row,
-      .strategy-detail,
-      .data-card,
-      .city,
-      .expand__trigger {
-        padding: clamp(14px, 1.9vw, 20px);
-      }
-
-      .flow-step {
-        padding-left: clamp(44px, 4vw, 54px);
-      }
-
-      .flow-step::before {
-        top: clamp(12px, 1.8vw, 16px);
-        left: clamp(12px, 1.8vw, 16px);
-      }
-
-      .decision-node,
-      .strategy-detail,
-      .city {
-        line-height: 1.6;
-      }
-
-      #current-fund {
-        padding-top: 56px;
-      }
-      #current-fund .cta__ring {
-        width: 50px;
-        height: 50px;
+        padding: 12px 14px;
       }
       #cta-next {
         text-align: left;
@@ -2270,97 +1947,32 @@
         line-height: 1.65;
         color: #6b7280;
       }
-      @media (min-width: 1200px) {
-        .pgsec .wrap {
-          max-width: 1280px;
-        }
-        .strategy-stack {
-          gap: 38px;
-        }
-        .strategy-block {
-          display: grid;
-          grid-template-columns: minmax(250px, 1fr) minmax(0, 1.05fr);
-          column-gap: 44px;
-          row-gap: 12px;
-          padding: 58px clamp(28px, 3vw, 46px);
-          align-items: start;
-        }
-        .strategy-block > .eyebrow,
-        .strategy-block > h2 {
-          grid-column: 1;
-          margin: 0;
-        }
-        .strategy-block > p,
-        .strategy-block > ul,
-        .strategy-block > div {
-          grid-column: 2;
-          max-width: none;
-        }
-        .strategy-block h2 {
-          font-size: clamp(34px, 3.1vw, 44px);
-          line-height: 1.14;
-          margin: 0;
-          max-width: 100%;
-        }
-        .strategy-block p,
-        .strategy-list li {
-          font-size: 18px;
-        }
-        .strategy-block p + p {
-          margin-top: 10px;
-        }
-        .strategy-list {
-          margin-top: 4px;
-        }
-      }
-      @media (min-width: 981px) and (max-width: 1199px) {
-        .strategy-stack {
-          gap: 34px;
-        }
-        .strategy-block {
-          display: grid;
-          grid-template-columns: minmax(230px, 0.95fr) minmax(0, 1.05fr);
-          column-gap: 36px;
-          row-gap: 10px;
-          align-items: start;
-          padding-left: clamp(22px, 3vw, 38px);
-          padding-right: clamp(22px, 3vw, 38px);
-        }
-        .strategy-block > h2 {
-          grid-column: 1;
-          margin: 0;
-          font-size: clamp(30px, 3vw, 40px);
-          max-width: 100%;
-        }
-        .strategy-block > p,
-        .strategy-block > ul,
-        .strategy-block > div {
-          grid-column: 2;
-          max-width: none;
-        }
+      .strategy-stack .strategy-block:nth-child(even) {
+        background: #f6f4f0;
       }
       @media (max-width: 980px) {
+        .strategy-tools {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .jump-nav {
+          justify-content: flex-start;
+        }
         .pagehero .wrap {
           grid-template-columns: 1fr;
           gap: 28px;
-        }
-        .pagehero h1 {
-          max-width: 100%;
-        }
-        .pagehero p {
-          max-width: 100%;
         }
         .pagehero__media {
           justify-self: end;
           width: min(115%, 620px);
           max-width: 620px;
-          margin-right: clamp(-132px, -14vw, -40px);
+          margin-right: clamp(-96px, -10vw, -24px);
         }
         .hero-panel {
           max-width: 540px;
         }
         .strategy-stack {
-          gap: 30px;
+          gap: 28px;
         }
         .strategy-intro-content {
           grid-template-columns: 1fr;
@@ -2371,7 +1983,7 @@
           max-width: 420px;
         }
         .strategy-block {
-          padding: 36px 0;
+          padding: 24px;
         }
         .market-context-content {
           max-width: 100%;
@@ -2379,12 +1991,8 @@
         .strategy-block h2 {
           font-size: 34px;
         }
-        .strategy-block p {
-          max-width: 100%;
-        }
         .viz-kpi,
         .process-flow,
-        .visual-learning-grid,
         .city-grid,
         .alloc-grid,
         .strategy-details,
@@ -2398,16 +2006,6 @@
         }
         .flow-step::after {
           display: none;
-        }
-        .decision-map {
-          grid-template-columns: 1fr;
-        }
-        .decision-node::after {
-          content: "↓";
-          right: 50%;
-          top: auto;
-          bottom: -14px;
-          transform: translateX(50%);
         }
       }
       @media (max-width: 767px) {
@@ -2475,14 +2073,13 @@
         }
         .market-context-content p,
         .strategy-intro-lead p {
-          font-size: 17px;
-          line-height: 1.75;
+          font-size: 18px;
         }
         .strategy-stack {
-          gap: 24px;
+          gap: 22px;
         }
         .strategy-block {
-          padding: 30px 0;
+          padding: 24px 20px;
         }
         .strategy-block h2 {
           font-size: clamp(28px, 8.2vw, 38px);
@@ -2492,26 +2089,13 @@
           overflow-wrap: normal;
         }
         .strategy-block h2.single-line-heading {
-          white-space: normal;
+          white-space: nowrap;
         }
         .strategy-block p {
           font-size: 16px;
           line-height: 1.65;
           hyphens: none;
           overflow-wrap: normal;
-        }
-        .strategy-list {
-          padding-left: 18px;
-        }
-        .strategy-list li {
-          font-size: 16px;
-          line-height: 1.65;
-        }
-        #what-we-avoid .risk-card li {
-          font-size: 15px;
-        }
-        .risk-card {
-          padding: 14px;
         }
         .funnel-step {
           align-items: flex-start;
@@ -2840,471 +2424,36 @@
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
 
 <style id="sv-footer-homepage-sync">
-.nav__links a.active {
-  opacity: 1;
-  color: var(--red);
-}
-.pagehero {
-  min-height: 420px;
-  padding: 144px var(--pad) 72px;
-}
-.pagehero .wrap {
-  gap: clamp(28px, 4vw, 44px);
-}
-.pagehero__media {
-  margin-right: clamp(-240px, -16vw, -120px);
-  opacity: 0.78;
-}
-.pagehero__media img {
-  transform: scale(1.16);
-  transform-origin: right center;
-  object-position: right center;
-}
-.pgsec {
-  padding: 64px 0 90px;
-  background: #faf9f6;
-}
-.strategy-stack {
-  max-width: 1140px;
-  margin: 0 auto;
-  gap: 24px;
-}
-.strategy-block {
-  background: #fff;
-  border: 1px solid rgba(25, 21, 16, 0.08);
-  box-shadow: 0 8px 24px rgba(21, 16, 10, 0.05);
-  padding: clamp(28px, 4vw, 46px);
-}
-.strategy-block::before {
-  top: 16px;
-  right: 16px;
-}
-.strategy-block h2 {
-  font-size: clamp(30px, 4vw, 42px);
-  margin-bottom: 14px;
-}
-.strategy-block p {
-  font-size: clamp(17px, 2.2vw, 19px);
-  line-height: 1.72;
-}
-.strategy-detail,
-.visual-card,
-.risk-card,
-.data-card,
-.city,
-.kpi,
-.funnel-step,
-.flow-step {
-  border-radius: 6px;
-}
-.strategy-viz {
-  margin-top: 20px;
-  padding: 20px;
-}
-.process-flow {
-  margin-top: 14px;
-}
-#strategy-summary {
-  padding-top: clamp(28px, 4vw, 38px);
-  padding-bottom: clamp(28px, 4vw, 38px);
-}
 .sv-footer {
-  margin-top: 0;
-  padding-top: 24px;
+  position: relative !important;
+  background: #f6f4f0 !important;
+  border-top: 1px solid var(--rule) !important;
+  margin-top: 0 !important;
+  padding: 18px var(--pad, var(--site-page-margin, 64px)) 40px !important;
 }
 .sv-footer::before {
-  display: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -32px;
+  height: 32px;
+  background: #f6f4f0;
 }
-.sv-footer__legal-toggle {
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  background: rgba(255, 255, 255, 0.42);
-}
-.sv-footer__legal-toggle > summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 12px 14px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #4a443d;
-}
-.sv-footer__legal-toggle > summary::-webkit-details-marker {
-  display: none;
-}
-.sv-footer__legal-toggle > summary::after {
-  content: " +";
-}
-.sv-footer__legal-toggle[open] > summary::after {
-  content: " −";
-}
-.sv-footer__legal-toggle .sv-footer__legal {
-  margin: 0;
-  padding: 10px 14px 14px;
-}
-.sv-footer__legal-links {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 8px;
-}
-.sv-footer__legal-links a + a::before {
-  content: "|";
-  color: #6f6a63;
-  margin: 0 10px;
-}
-@media (max-width: 900px) {
-  .pagehero {
-    min-height: auto;
-    padding-bottom: 56px;
-  }
-  .strategy-stack {
-    gap: 18px;
-  }
-  .strategy-block {
-    padding: 24px 20px;
-  }
-}
-@media (max-width: 767px) {
-  .strategy-block {
-    scroll-margin-top: 152px;
-  }
-}
-@media (max-width: 640px) {
-  .sv-footer__main {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .sv-footer__contact {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-  .sv-footer__contact a {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .sv-footer__legal-links {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .sv-footer__legal-links a + a::before {
-    content: none;
-    margin: 0;
-  }
-}
-</style>
-<style id="strategy-visual-refinement-v3">
-.pgsec {
-  background:
-    radial-gradient(1000px 520px at 8% 10%, rgba(179, 33, 63, 0.05), transparent 56%),
-    linear-gradient(180deg, #fdfcf9 0%, #f5f1eb 100%);
-}
-.strategy-stack {
-  max-width: 1120px;
-  gap: 28px;
-}
-.strategy-block {
-  border: 1px solid rgba(31, 25, 18, 0.1);
-  border-radius: 14px;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 16px 34px rgba(19, 15, 10, 0.08);
-  padding: clamp(30px, 4vw, 50px);
-}
-.strategy-block::before {
-  opacity: 0.75;
-}
-.strategy-block h2 {
-  max-width: 18ch;
-  margin-bottom: 18px;
-}
-.strategy-block p {
-  max-width: 72ch;
-  font-size: clamp(17px, 1.8vw, 18px);
-  line-height: 1.82;
-}
-.strategy-details,
-.process-flow,
-.visual-learning-grid,
-.downside-list,
-.risk-grid {
-  margin-top: 24px !important;
-}
-.strategy-detail,
-.kpi,
-.flow-step,
-.visual-card,
-.risk-card,
-.downside-item {
-  border-radius: 12px;
-}
-.kpi,
-.flow-step,
-.visual-card {
-  box-shadow: 0 6px 18px rgba(23, 17, 12, 0.06);
-}
-.decision-node,
-.stack-chart {
-  border-radius: 10px;
-}
-.decision-node {
-  min-height: 156px;
-}
-#strategy-summary {
-  border-radius: 14px;
-  background: linear-gradient(148deg, #1a1713 0%, #2b2219 100%);
-}
-#strategy-summary p {
-  font-size: clamp(18px, 2.4vw, 21px);
-}
-#current-fund .next-links {
-  margin-top: 28px;
-}
-#current-fund .cta {
-  min-height: 52px;
-}
-@media (max-width: 900px) {
-  .strategy-stack {
-    gap: 20px;
-  }
-  .strategy-block {
-    border-radius: 12px;
-    padding: 26px 20px;
-  }
-  .strategy-block h2 {
-    max-width: none;
-  }
-  .flow-step::after,
-  .decision-node::after {
-    display: none;
-  }
-}
-</style>
-<style id="strategy-professional-polish-v1">
-.pagehero {
-  background: #f7f5f1;
-  border-bottom: 0;
-}
-.pagehero + .pgsec {
-  margin-top: 0 !important;
-}
-.pgsec {
-  margin-top: 0;
-  border-top: 0;
-}
-.pagehero h1 {
-  letter-spacing: -0.02em;
-}
-.pagehero__lede {
-  color: #5d564d;
-}
-.pgsec {
-  background: #f5f1eb;
-  padding: 72px 0 96px;
-}
-.strategy-stack {
-  max-width: 1100px;
-  gap: 22px;
-}
-.strategy-block {
-  background: #fff;
-  border: 1px solid rgba(31, 25, 18, 0.09);
-  border-radius: 0;
-  box-shadow: 0 10px 26px rgba(19, 15, 10, 0.05);
-  padding: clamp(28px, 3.5vw, 44px);
-}
-.strategy-block::before {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  color: rgba(42, 34, 26, 0.45);
-}
-.strategy-block::after {
-  border-top: 1px solid rgba(179, 33, 63, 0.24);
-}
-.strategy-block h2 {
-  font-size: clamp(30px, 3.6vw, 40px);
-  line-height: 1.14;
-  max-width: 19ch;
-  margin-bottom: 12px;
-}
-.strategy-block p {
-  font-size: clamp(17px, 1.6vw, 18px);
-  line-height: 1.78;
-  color: #544e46;
-}
-.strategy-list li {
-  font-size: 16.5px;
-  line-height: 1.72;
-  color: #615a52;
-}
-.strategy-viz {
-  background: #f9f5ef;
-  border: 1px solid rgba(31, 25, 18, 0.09);
-  border-radius: 0;
-  box-shadow: none;
-  padding: 18px;
-}
-.strategy-details {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-#what-we-invest .strategy-detail {
-  background: #fff;
-  border: 1px solid rgba(31, 25, 18, 0.11);
-  padding: 18px 16px;
-}
-#what-we-invest .strategy-detail:nth-child(3) {
-  grid-column: 1 / -1;
-}
-.kpi,
-.funnel-step,
-.flow-step,
-.strategy-detail,
-.visual-card,
-.risk-card,
-.downside-item,
-.decision-node,
-.stack-chart {
-  border-radius: 0;
-}
-.kpi,
-.funnel-step,
-.flow-step,
-.visual-card {
-  box-shadow: none;
-}
-#strategy-summary {
-  background: #1f1a15;
-  border-radius: 0;
-  box-shadow: 0 14px 28px rgba(8, 6, 4, 0.22);
-}
-@media (max-width: 900px) {
-  .pgsec {
-    padding: 54px 0 70px;
-  }
-  .strategy-stack {
-    gap: 16px;
-  }
-  .strategy-block {
-    padding: 24px 18px;
-  }
-  .strategy-block h2 {
-    max-width: none;
-  }
-  .strategy-details {
-    grid-template-columns: 1fr;
-  }
-  #what-we-invest .strategy-detail:nth-child(3) {
-    grid-column: auto;
-  }
-}
-</style>
-
-
-<style id="strategy-artifact-cleanup-v1">
-/* Remove unintended seams/artifacts in stacked strategy sections */
-.pgsec .strategy-stack > section,
-.pgsec .strategy-stack > article {
-  margin-top: 0 !important;
-}
-
-/* Prevent thin rendering seams from decorative overlays */
-.pgsec .strategy-block::after {
-  display: none;
-}
-
-/* Keep card surfaces consistent so stray white blocks do not appear */
-.pgsec .strategy-viz,
-.pgsec .kpi,
-.pgsec .funnel-step,
-.pgsec .flow-step,
-.pgsec .visual-card,
-.pgsec .risk-card,
-.pgsec .decision-node,
-.pgsec .stack-chart,
-.pgsec .stack-segment {
-  background: #f9f5ef;
-}
-</style>
-
-
-<style id="strategy-page-inspiration-apply-v1">
-.strategy-jumpbar {
-  background: #f7f3ed;
-  border-top: 1px solid rgba(31, 25, 18, 0.08);
-  border-bottom: 1px solid rgba(31, 25, 18, 0.08);
-  position: sticky;
-  top: 72px;
-  z-index: 120;
-}
-.strategy-jumpbar__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px var(--pad);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.strategy-jumpbar a {
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #4a443b;
-  border: 1px solid rgba(31, 25, 18, 0.16);
-  padding: 8px 12px;
-  background: #fff;
-}
-.strategy-jumpbar a:hover {
-  border-color: rgba(179, 33, 63, 0.42);
-  color: var(--red);
-}
-.strategy-snapshot {
-  border: 1px solid rgba(31, 25, 18, 0.1);
-  background: #fff;
-  padding: clamp(20px, 2.2vw, 28px);
-  margin-bottom: 26px;
-}
-.strategy-snapshot h2 {
-  font-size: clamp(28px, 3.2vw, 38px);
-  margin-bottom: 14px;
-}
-.strategy-snapshot p {
-  font-family: var(--serif);
-  font-size: 18px;
-  color: #4f4a43;
-  line-height: 1.7;
-  max-width: 60ch;
-}
-.strategy-snapshot-grid {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-.strategy-snapshot-card {
-  border: 1px solid rgba(179, 33, 63, 0.16);
-  background: #fcfaf7;
-  padding: 14px;
-}
-.strategy-snapshot-card b {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #756d63;
-}
-.strategy-snapshot-card span {
-  font-family: var(--serif);
-  font-size: 22px;
-  line-height: 1.2;
-  color: #2f2a24;
-}
-@media (max-width: 980px) {
-  .strategy-jumpbar { top: 64px; }
-  .strategy-jumpbar__inner { padding-left: 18px; padding-right: 18px; }
-  .strategy-snapshot-grid { grid-template-columns: 1fr; }
+.sv-footer__bottom { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; padding-top: 16px !important; }
+.sv-footer__legal-toggle { border: 1px solid rgba(0, 0, 0, 0.14); background: rgba(255, 255, 255, 0.35); }
+.sv-footer__legal-toggle > summary { list-style: none; cursor: pointer; padding: 10px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4a443d; }
+.sv-footer__legal-toggle > summary::-webkit-details-marker { display: none; }
+.sv-footer__legal-toggle > summary::after { content: " +"; }
+.sv-footer__legal-toggle[open] > summary::after { content: " −"; }
+.sv-footer__legal-toggle .sv-footer__legal { margin: 0; padding: 0 12px 12px; }
+.sv-footer__legal-links { padding-bottom: 8px !important; }
+@media (max-width: 768px) {
+  .sv-footer { padding: 8px var(--pad, var(--site-page-margin, 18px)) 34px !important; }
+  .sv-footer__main { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+  .sv-footer__contact { width: 100%; flex-wrap: nowrap; justify-content: space-between; gap: 10px; }
+  .sv-footer__legal-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .sv-footer__legal-links a { font-size: 10px; }
 }
 </style>
 
@@ -3344,9 +2493,9 @@
       <div class="wrap">
         <div>
           <div class="eyebrow">Strategy</div>
-          <h1>Strategy</h1>
+          <h1>Our Strategy</h1>
           <p class="pagehero__lede">
-            Asset-backed private credit in China, structured around enforceability, collateral coverage, and defined recovery pathways.
+            We focus on asset-backed private credit in China, sourcing resilient collateral, structuring downside protection, and managing each investment through disciplined, on-the-ground execution.
           </p>
         </div>
         <figure class="pagehero__media" aria-hidden="true">
@@ -3367,277 +2516,411 @@
       </div>
     </section>
 
+          <section class="market-context" aria-labelledby="market-context-heading">
+            <div class="wrap">
+              <div class="market-context-content">
+                <div class="eyebrow eyebrow--red">Market Context</div>
+                <h2 id="market-context-heading">
+                  The perception gap and what it creates.
+                </h2>
+                <p>
+                  China is the world's second-largest credit market. Persistent underexposure to it is not a neutral
+                  position. It is a portfolio choice that carries its own risk. For institutional investors whose
+                  mandates require genuine diversification across global credit markets, the relevant question is not
+                  whether to have China exposure, but what form that exposure should take.
+                </p>
+                <p>
+                  The years in which China has been most widely described as difficult or uncertain have historically
+                  coincided with the most attractive vintage conditions for properly structured private credit.
+                  Complexity that deters less specialized allocators tends to compress competition, preserve pricing,
+                  and widen the margin between entry basis and recoverable value.
+                </p>
+                <p>
+                  Not all China exposure is equivalent. The conditions that have caused losses for offshore equity
+                  holders or unsecured offshore creditors, including regulatory shifts, developer distress, and onshore
+                  enforcement dynamics, are structurally distinct from the conditions facing a first-lien secured
+                  onshore creditor with direct PRC enforcement rights. Structure determines outcome.
+                </p>
+                <p>
+                  ShoreVest has operated continuously across China's credit markets since 2004. The firm has navigated
+                  multiple regulatory cycles, two NPL waves, and the property correction, and has not recorded a
+                  principal loss at the deal level across that period. The narrative around China risk has rarely
+                  matched the on-the-ground experience of a disciplined, structure-first approach.
+                </p>
+                <p class="market-context-disclaimer">
+                  Past performance is not indicative of future results. All investments involve risk including possible
+                  loss of principal.
+                </p>
+              </div>
+            </div>
+          </section>
 
-    <nav class="strategy-jumpbar" aria-label="Strategy section links">
-      <div class="strategy-jumpbar__inner">
-        <a href="#what-we-invest">What we invest in</a>
-        <a href="#why-china">Why this opportunity exists</a>
-        <a href="#return-generation">Return framework</a>
-        <a href="#downside-control">Downside control</a>
-        <a href="#current-fund">Investor qualification</a>
+    <section class="strategy-intro-section">
+      <div class="wrap">
+        <div class="strategy-intro-content">
+          <div class="strategy-intro-lead">
+            <p>
+              Three sub-strategies. One underwriting standard. Capital is deployed
+              across asset-based lending, asset restructuring, and debt
+              resolutions — each anchored by hard collateral, enforceable legal
+              positioning, and a defined path to recovery. Allocation shifts by
+              cycle.
+            </p>
+          </div>
+          <div class="strategy-intro-actions">
+            <p>Explore platform context</p>
+            <a href="firm.html" class="cta cta--dark strategy-intro-link"
+              ><span class="strategy-intro-link__title">The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a
+            >
+          </div>
+        </div>
       </div>
-    </nav>
+    </section>
 
     <section class="pgsec">
       <div class="wrap">
+        <div class="strategy-tools" aria-label="Strategy interactions">
+          <p>Interactive navigation</p>
+          <div class="jump-nav" data-jump-nav>
+            <button type="button" data-target="sub-strategies">
+              Allocation
+            </button>
+            <button type="button" data-target="legal-environment">Legal</button>
+            <button type="button" data-target="risk-management">Risk</button>
+            <button type="button" data-target="current-fund">
+              Fund Snapshot
+            </button>
+          </div>
+        </div>
         <div class="strategy-stack">
-          <section class="strategy-snapshot" id="strategy-framework">
-            <div class="eyebrow">Framework</div>
-            <h2>Built like a platform, not a single trade expression</h2>
+
+          <section class="strategy-block" id="sourcing">
+            <h2 class="single-line-heading">Origination Discipline and Pipeline Quality</h2>
             <p>
-              Inspired by how leading firms present strategy architecture, this page is structured around clear modules: opportunity set, return engine, and downside safeguards.
+              Long-term relationships with banks, AMCs, law firms, and servicers
+              support repeat deal flow, better structuring access, and higher
+              certainty of close.
             </p>
-            <div class="strategy-snapshot-grid" aria-label="Strategy architecture summary">
-              <article class="strategy-snapshot-card">
-                <b>Opportunity set</b>
-                <span>Asset-backed lending, restructurings, debt resolutions</span>
-              </article>
-              <article class="strategy-snapshot-card">
-                <b>Return engine</b>
-                <span>Yield + discount + structure + resolution execution</span>
-              </article>
-              <article class="strategy-snapshot-card">
-                <b>Risk anchor</b>
-                <span>Collateral quality and enforceable legal priority</span>
-              </article>
+            <div class="funnel-grid" aria-label="Pipeline funnel">
+              <button
+                class="funnel-step is-active"
+                data-detail="Wide sourcing universe allows selective deployment."
+              >
+                <b>Broad Universe</b><small>Sourced opportunities</small>
+              </button>
+              <button
+                class="funnel-step"
+                data-detail="Rapid triage screens enforceability and collateral quality."
+              >
+                <b>Selective Screen</b><small>Preliminary diligence</small>
+              </button>
+              <button
+                class="funnel-step"
+                data-detail="Deep legal + collateral underwriting before IC."
+              >
+                <b>High Conviction</b><small>Full due diligence</small>
+              </button>
+              <button
+                class="funnel-step"
+                data-detail="Only highest-conviction deals reach committee."
+              >
+                <b>Disciplined IC</b><small>Investment committee</small>
+              </button>
+            </div>
+            <div class="funnel-detail" data-funnel-detail>
+              Wide sourcing universe allows selective deployment.
             </div>
           </section>
 
-          <section class="strategy-block" id="what-we-invest">
-            <h2>What we invest in</h2>
-            <p>
-              ShoreVest invests across three segments, each selected only when underwriting conditions are explicit at entry.
-            </p>
-            <div class="strategy-details" aria-label="Sub-strategy detail">
-              <article class="strategy-detail">
-                <h3>Asset-based lending</h3>
-                <p>
-                  Senior secured financings against identifiable collateral when flexible capital is needed and seniority, collateral visibility, and enforceability are explicit at entry.
-                </p>
-              </article>
-              <article class="strategy-detail">
-                <h3>Asset restructurings</h3>
-                <p>
-                  Situations with viable assets inside impaired capital structures, where terms can be reset to improve creditor position and a clear route to resolution control exists.
-                </p>
-              </article>
-              <article class="strategy-detail">
-                <h3>Debt resolutions</h3>
-                <p>
-                  Acquisition and resolution of distressed or non-performing assets where entry is below recoverable value and legal or consensual recovery can be executed through defined pathways.
-                </p>
-              </article>
-            </div>
-          </section>
-
-          <section class="strategy-block" id="strategy-at-a-glance">
-            <h2>Strategy at a glance</h2>
-            <p>
-              This section summarizes the strategy as a clear sequence: where we invest, how we underwrite risk, and how we protect downside before and after deployment.
-            </p>
-            <div class="strategy-viz strategy-viz--at-a-glance" role="group" aria-label="Visual strategy summary">
-              <p class="viz-title">Three building blocks</p>
-              <div class="viz-kpi">
-                <article class="kpi">
-                  <strong>3</strong>
-                  <span>Investment Segments</span>
-                  <p>Asset-based lending, restructurings, and debt resolutions.</p>
-                </article>
-                <article class="kpi">
-                  <strong>4</strong>
-                  <span>Return Levers</span>
-                  <p>Contractual yield, entry discount, structural positioning, and resolution control.</p>
-                </article>
-                <article class="kpi">
-                  <strong>5</strong>
-                  <span>Downside Controls</span>
-                  <p>Collateral, legal priority, control, entry discipline, and execution.</p>
-                </article>
+          <section class="strategy-block" id="sub-strategies">
+            <h2>Sub-Strategy Allocation Across Cycles</h2>
+            <p class="single-line-copy">Capital allocation flexes by cycle. Use the scenario toggles to view how portfolio balance shifts as market conditions change.</p>
+            <div class="strategy-viz">
+              <div
+                class="viz-controls"
+                role="tablist"
+                aria-label="Allocation scenarios"
+              >
+                <button
+                  class="viz-btn is-active"
+                  data-scenario="base"
+                  aria-pressed="true"
+                >
+                  Base
+                </button>
+                <button
+                  class="viz-btn"
+                  data-scenario="defensive"
+                  aria-pressed="false"
+                >
+                  Defensive
+                </button>
+                <button
+                  class="viz-btn"
+                  data-scenario="offensive"
+                  aria-pressed="false"
+                >
+                  Offensive
+                </button>
               </div>
-              <div class="process-flow" aria-label="How a deal moves through the strategy">
-                <article class="flow-step">
-                  <b>Step 1</b>
-                  <small>Screen for enforceable collateral and senior creditor position.</small>
-                </article>
-                <article class="flow-step">
-                  <b>Step 2</b>
-                  <small>Underwrite to recoverable value with legal and structural protections.</small>
-                </article>
-                <article class="flow-step">
-                  <b>Step 3</b>
-                  <small>Deploy only when entry includes a margin to estimated recovery.</small>
-                </article>
-                <article class="flow-step">
-                  <b>Step 4</b>
-                  <small>Actively manage workout and resolution to realize cash outcomes.</small>
-                </article>
-              </div>
-              <div class="visual-learning-grid" aria-label="Visual framework for decision and positioning">
-                <article class="visual-card">
-                  <h3>Decision map: from deal to outcome</h3>
-                  <p>Read left to right. Capital is deployed only when each stage is satisfied and the recovery path remains actionable.</p>
-                  <div class="decision-map">
-                    <div class="decision-node">
-                      <b>Opportunity</b>
-                      <ul>
-                        <li>Asset-backed credit need</li>
-                        <li>Limited refinancing options</li>
-                        <li>Clear debtor and asset visibility</li>
-                      </ul>
-                    </div>
-                    <div class="decision-node">
-                      <b>Filters</b>
-                      <ul>
-                        <li>Enforceable collateral package</li>
-                        <li>Senior legal positioning</li>
-                        <li>Entry discount to recovery value</li>
-                      </ul>
-                    </div>
-                    <div class="decision-node">
-                      <b>Expected path</b>
-                      <ul>
-                        <li>Contractual cash yield</li>
-                        <li>Controlled restructuring/workout</li>
-                        <li>Resolution with principal protection focus</li>
-                      </ul>
+              <div class="alloc-grid">
+                <div class="alloc-bars">
+                  <div
+                    class="alloc-row"
+                    data-base="32"
+                    data-defensive="40"
+                    data-offensive="24"
+                  >
+                    <span class="alloc-label"><span>Asset-Based Lending</span><span>32%</span></span>
+                    <div class="alloc-track">
+                      <span style="width: 32%"></span>
                     </div>
                   </div>
-                </article>
-                <article class="visual-card">
-                  <h3>Capital stack orientation</h3>
-                  <p>Where ShoreVest targets exposure in a stressed capital structure.</p>
-                  <div class="stack-chart" role="img" aria-label="Capital stack showing ShoreVest focus in senior secured and resolution positions">
-                    <div class="stack-segment">
-                      <strong>Equity</strong>
-                      <span>Highest residual risk</span>
-                    </div>
-                    <div class="stack-segment">
-                      <strong>Junior debt</strong>
-                      <span>Subordinated recovery</span>
-                    </div>
-                    <div class="stack-segment stack-segment--shorevest">
-                      <strong>Senior secured / control debt</strong>
-                      <span>Primary ShoreVest focus</span>
-                    </div>
-                    <div class="stack-segment stack-segment--shorevest">
-                      <strong>Resolution claims with enforceable path</strong>
-                      <span>Selective ShoreVest focus</span>
+                  <div
+                    class="alloc-row"
+                    data-base="53"
+                    data-defensive="46"
+                    data-offensive="61"
+                  >
+                    <span class="alloc-label"><span>Asset Restructuring</span><span>53%</span></span>
+                    <div class="alloc-track">
+                      <span style="width: 53%"></span>
                     </div>
                   </div>
-                  <p class="visual-note">Goal: stay where legal priority, collateral and execution control can materially improve recovery outcomes.</p>
+                  <div
+                    class="alloc-row"
+                    data-base="15"
+                    data-defensive="14"
+                    data-offensive="15"
+                  >
+                    <span class="alloc-label"><span>Debt Resolutions</span><span>15%</span></span>
+                    <div class="alloc-track">
+                      <span style="width: 15%"></span>
+                    </div>
+                  </div>
+                  <div class="alloc-note">
+                    Illustrative portfolio mix for strategy communication only.
+                  </div>
+                </div>
+                <div class="ring-card">
+                  <div class="ring"></div>
+                  <div class="ring-label">
+                    <span data-ring-value>68%</span>Target collateral
+                    coverage
+                  </div>
+                </div>
+              </div>
+              <div class="strategy-details" aria-label="Sub-strategy detail">
+                <article class="strategy-detail">
+                  <h3>First-Lien Asset-Based Lending</h3>
+                  <p>
+                    Transactions are typically structured at 30–60% entry LTV
+                    against hard collateral, with first-lien priority under PRC
+                    law to improve control rights and recovery sequencing.
+                  </p>
+                </article>
+                <article class="strategy-detail">
+                  <h3>Asset Restructuring &amp; Workouts</h3>
+                  <p>
+                    The team runs creditor coordination and balance-sheet
+                    redesign programs, informed by two-decade pattern
+                    recognition across China’s restructuring cycles.
+                  </p>
+                </article>
+                <article class="strategy-detail">
+                  <h3>Debt Resolutions &amp; Recoveries</h3>
+                  <p>
+                    ShoreVest Asset Solutions operates as the in-house
+                    resolution vehicle, with sourcing, diligence, legal
+                    enforcement, and disposition managed internally.
+                  </p>
                 </article>
               </div>
             </div>
           </section>
 
-          <section class="strategy-block" id="why-china">
-            <h2 class="single-line-heading">Why this opportunity exists</h2>
-            <p class="feature-paragraph">
-              China’s credit markets are large, locally driven and uneven in how capital is allocated and enforced.
-              Credit outcomes are shaped by legal enforceability, creditor positioning, asset-level control and local execution.
-              In many situations, the gap between offshore claims and onshore assets materially affects recovery outcomes.
+          <section class="strategy-block" id="legal-environment">
+            <h2 class="single-line-heading">Enforceability and Recovery Architecture</h2>
+            <p>
+              PRC enforcement channels are more institutionalized than many
+              offshore allocators underwrite for, with improving court cadence,
+              transparent auction rails, and clearer creditor pathways when
+              claims are structured correctly.
             </p>
+            <div class="city-grid">
+              <button
+                class="city is-active"
+                data-detail="Tier-1 courts are processing secured claims with tighter procedural discipline and stronger timeline visibility."
+              >
+                <b>Court Throughput</b
+                ><small>Faster progression on secured collateral cases.</small>
+              </button>
+              <button
+                class="city"
+                data-detail="Digitized auction platforms are expanding buyer participation, price discovery, and execution certainty."
+              >
+                <b>Auction Liquidity</b
+                ><small>Deeper discovery and monetization pathways.</small>
+              </button>
+              <button
+                class="city"
+                data-detail="Negotiated settlements, secondary transfers, and court-directed outcomes provide multiple realization routes."
+              >
+                <b>Exit Optionality</b
+                ><small>Negotiated, secondary, and court-led exits.</small>
+              </button>
+            </div>
+            <div class="city-detail" data-city-detail>
+              Tier-1 courts are processing secured claims with tighter
+              procedural discipline and stronger timeline visibility.
+            </div>
           </section>
 
-          <section class="strategy-block" id="what-we-avoid">
-            <h2>What we avoid</h2>
+          <section class="strategy-block" id="risk-management">
+            <h2 class="single-line-heading">Risk Controls and Downside Governance</h2>
             <p>
-              The strategy is defined as much by exclusion as by inclusion.
+              Downside management is structural, not discretionary. Portfolio
+              construction is designed to protect principal first and monetize
+              upside through execution.
             </p>
             <div class="risk-grid">
               <div class="risk-card">
+                <h4>Underwriting Controls</h4>
                 <ul>
-                  <li>Unsecured exposure or weak collateral perfection.</li>
-                  <li>Structural subordination without enforceable senior recourse.</li>
-                  <li>Speculative development risk without contracted cash-flow support.</li>
-                  <li>Repayment reliant on refinancing or market recovery.</li>
-                  <li>Assets without a credible, time-bounded realization path.</li>
-                  <li>Legal structures with unclear remedies or jurisdiction.</li>
+                  <li>
+                    Conservative entry LTV/CTV bands with stress-tested recovery
+                    assumptions.
+                  </li>
+                  <li>
+                    Priority claims, enforceability review, and PRC-law
+                    documentation standards.
+                  </li>
+                  <li>
+                    No dependence on refinancing to complete value realization.
+                  </li>
+                </ul>
+              </div>
+              <div class="risk-card">
+                <h4>Portfolio Controls</h4>
+                <ul>
+                  <li>
+                    Diversification by borrower, collateral, vintage, and
+                    province.
+                  </li>
+                  <li>
+                    Continuous surveillance from origination through
+                    disposition.
+                  </li>
+                  <li>
+                    Multiple predefined exits reduce duration and execution
+                    risk.
+                  </li>
                 </ul>
               </div>
             </div>
-            <p>This discipline is central to downside protection.</p>
           </section>
 
-          <section class="strategy-block" id="return-generation">
-            <h2>How returns are generated</h2>
+          <section class="strategy-block" id="returns-profile">
+            <h2>Risk-Adjusted Return Profile</h2>
             <p>
-              Return is generated through four mechanisms:
+              The strategy targets approximately 10–15% net returns in USD terms
+              without fund-level leverage, with a focus on current cash yield,
+              principal protection, and shorter path-to-liquidity than many
+              private-market alternatives.
             </p>
-            <ul class="strategy-list">
-              <li><strong>Contractual yield:</strong> coupon income from secured positions with defined covenants and protections.</li>
-              <li><strong>Entry discount:</strong> acquisition below assessed recoverable value to embed a margin at entry.</li>
-              <li><strong>Structural positioning:</strong> legal and capital-structure seniority designed to improve recovery outcomes.</li>
-              <li><strong>Resolution control:</strong> active influence over timeline and execution of legal or consensual debt resolutions.</li>
-            </ul>
-            <p>
-              Return is not expected to be dependent on asset appreciation.
+            <p class="data-note" style="font-style: italic;">
+              Target returns are hypothetical estimates based on historical
+              portfolio performance and current market conditions. They are not
+              guaranteed and are subject to change. Actual returns may be
+              materially higher or lower. Past performance is not indicative of
+              future results. All investments involve risk including possible
+              loss of principal.
             </p>
-          </section>
-
-          <section class="strategy-block" id="downside-control">
-            <h2 class="single-line-heading">Downside control</h2>
-            <p>
-              Downside protection is the organizing principle of the strategy.
-            </p>
-            <div class="downside-list">
-              <article class="downside-item">
-                <h3>Collateral</h3>
-                <p>Exposure supported by identifiable assets with assessed recovery basis.</p>
-              </article>
-              <article class="downside-item">
-                <h3>Legal priority</h3>
-                <p>Positions structured for enforceable seniority in relevant jurisdictions.</p>
-              </article>
-              <article class="downside-item">
-                <h3>Control</h3>
-                <p>Investments selected where outcomes can be influenced through structure or process.</p>
-              </article>
-              <article class="downside-item">
-                <h3>Entry discipline</h3>
-                <p>Capital deployed only where entry carries margin to recoverable value.</p>
-              </article>
-              <article class="downside-item">
-                <h3>Execution</h3>
-                <p>Recovery pathways defined at underwriting and actively managed through resolution.</p>
-              </article>
+            <div class="strategy-callout" role="note" aria-label="Portfolio construction callout">
+              <p class="strategy-callout__label">PORTFOLIO CONSTRUCTION NOTE</p>
+              <p>
+                China onshore secured credit occupies a distinct place in the
+                portfolio construction toolkit. Returns are driven by
+                collateral recovery, legal enforcement mechanics, and
+                deal-level execution—not by global credit spreads, rate
+                movements, or public equity direction.
+              </p>
+              <p>
+                For global institutional portfolios that are long public credit
+                and equity, the strategy has historically demonstrated low
+                correlation to public market benchmarks, potentially offering
+                diversification benefits through return drivers that are
+                structurally distinct. Low correlation does not guarantee a
+                profit or protect against loss, and all investments are subject
+                to risk including possible loss of principal.
+              </p>
             </div>
-            <p class="market-context-basis">
-              Over a 20-year operating history since 2004, spanning more than 50 private credit transactions,
-              the core team reports no realised principal loss at the individual deal level.
-            </p>
-            <p class="market-context-disclaimer">
-              Past performance is not indicative of future results. All investments involve risk including possible loss of principal.
-            </p>
-          </section>
-
-          <section class="strategy-block" id="current-environment">
-            <h2>Deployment environment</h2>
-            <p>
-              Current market conditions include refinancing pressure, asset disposals and creditor repositioning across multiple sectors.
-            </p>
-            <p>
-              This can support selective deployment in structured lending, transitional capital and resolution-driven credit.
-            </p>
-          </section>
-
-          <section class="strategy-block" id="strategy-summary">
-            <h2>Summary</h2>
-            <p>
-              ShoreVest seeks consistent return through entry discipline, legal priority and active resolution execution.
-            </p>
+            <div class="expand">
+              <button
+                type="button"
+                class="expand__trigger"
+                aria-expanded="false"
+                aria-controls="returns-performance-note"
+              >
+                View full performance disclosure
+              </button>
+              <div class="expand__panel" id="returns-performance-note">
+                <p class="data-note">Performance data shown above is for informational purposes only and reflects selected realized and partially realized investments managed by the ShoreVest investment team across predecessor and current fund vehicles since 2004. Returns are presented on a net basis after deduction of management fees, carried interest, and fund expenses where applicable, and are calculated using standard industry conventions. Past performance is not indicative of future results. There can be no assurance that unrealized investments will be realized at the valuations shown, or that future investments will achieve comparable results. Target returns referenced elsewhere on this page are hypothetical, are not guaranteed, and are subject to change without notice. Individual investor results will vary based on timing of investment, fee arrangements, fund vintage, and other factors. This information does not constitute an offer to sell or a solicitation to invest. For complete performance information, prospective investors should request the firm's audited financial statements and review the relevant offering documents in full.</p>
+              </div>
+            </div>
+            <div class="expand">
+              <button
+                type="button"
+                class="expand__trigger"
+                aria-expanded="false"
+                aria-controls="returns-profile-extra"
+              >
+                What this means for LP portfolios
+              </button>
+              <div class="expand__panel" id="returns-profile-extra">
+                <p>
+                  The target profile is designed to emphasize cash-paying
+                  distributions and reduced mark-to-market sensitivity versus
+                  long-duration private market strategies, while still preserving
+                  upside through execution alpha at the deal level.
+                </p>
+              </div>
+            </div>
           </section>
 
           <section class="strategy-block" id="current-fund">
-            <h2>Investor qualification and access</h2>
+            <h2>Investor Qualification and Access</h2>
             <p>
-              Detailed track record and fund-structure materials are available to qualified investors through ShoreVest's investor access process.
+              Detailed track record and fund-structure materials are available to
+              qualified investors through ShoreVest's investor access process.
             </p>
             <p class="data-note">
-              Track record details and fund terms are shared only with qualified investors and authorized parties upon request.
+              Track record details and fund terms are shared only with qualified
+              investors and authorized parties upon request.
             </p>
             <div class="next-links">
-              <a href="investor-access.html" class="cta cta--dark"><span>Request Investor Access</span><span class="cta__ring">→</span></a>
+              <a href="investor-access.html" class="cta cta--dark"
+                ><span>Request Investor Access</span><span class="cta__ring">→</span></a
+              >
+            </div>
+          </section>
+
+          <section class="strategy-block" id="cta-next">
+            <h2>Related Sections</h2>
+            <p>
+              For governance details, platform design, and team composition,
+              continue to the related sections below.
+            </p>
+            <div class="next-links">
+              <a href="firm.html" class="cta cta--dark"
+                ><span>The Firm</span><span class="cta__ring">→</span></a
+              >
+              <a href="team.html" class="cta cta--dark"
+                ><span>Meet the Team</span><span class="cta__ring">→</span></a
+              >
+              <a href="insights.html" class="cta cta--dark"
+                ><span>Read Insights</span><span class="cta__ring">→</span></a
+              >
             </div>
           </section>
         </div>
@@ -3729,6 +3012,36 @@
         applyScenario("base");
       }
 
+      const jumpButtons = [...document.querySelectorAll("[data-jump-nav] button")];
+      const jumpSections = jumpButtons
+        .map((btn) => document.getElementById(btn.dataset.target))
+        .filter(Boolean);
+      const setJumpActive = (id) => {
+        jumpButtons.forEach((btn) =>
+          btn.classList.toggle("is-active", btn.dataset.target === id),
+        );
+      };
+      jumpButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = document.getElementById(btn.dataset.target);
+          if (!target) return;
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          setJumpActive(btn.dataset.target);
+        });
+      });
+      if (jumpSections.length) {
+        const jumpObserver = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible?.target?.id) setJumpActive(visible.target.id);
+          },
+          { rootMargin: "-30% 0px -55% 0px", threshold: [0.2, 0.45, 0.7] },
+        );
+        jumpSections.forEach((section) => jumpObserver.observe(section));
+      }
+
       const expandTriggers = [...document.querySelectorAll(".expand__trigger")];
       expandTriggers.forEach((trigger) => {
         const panelId = trigger.getAttribute("aria-controls");
@@ -3805,10 +3118,10 @@
     <div class="sv-footer__bottom">
       <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
       <details class="sv-footer__legal-toggle">
-        <summary>LEGAL NOTICE</summary>
-        <div class="sv-footer__legal">This website uses cookies and similar technologies for operational, analytical, and security purposes. Certain cookies may be required for the Site to function. By using this website, you acknowledge the use of cookies as described in this Cookie Notice. Please also review our Privacy Policy, Terms of Use, and Legal Notices &amp; Disclaimers.</div>
+        <summary>Legal notice</summary>
+        <div class="sv-footer__legal">This website is provided strictly on an "as-is" and "as-available" basis solely for general informational and discussion purposes. It does not constitute, and must not be relied upon as, legal, tax, accounting, regulatory, investment, financial, or other professional advice; an offer to sell; a solicitation of an offer to buy; or a recommendation regarding any security, investment product, strategy, fund, or advisory service in any jurisdiction. Any offer or solicitation may be made only through definitive offering documents, only in jurisdictions where permitted by applicable law, and only to investors who satisfy all eligibility and suitability requirements. Certain statements on this website may be forward-looking and are based on assumptions, expectations, and estimates that are inherently subject to material change, market volatility, and uncertainty. Actual outcomes may differ, potentially materially. Past performance is not indicative of future results, and no representation or warranty, express or implied, is made as to the accuracy, completeness, timeliness, merchantability, fitness for a particular purpose, non-infringement, or continued availability of any content. To the fullest extent permitted by law, ShoreVest Partners, Ltd. disclaims liability for any direct, indirect, incidental, consequential, special, exemplary, or punitive loss or damage arising from use of, or reliance on, this website. ShoreVest Partners, Ltd. is not registered as an investment adviser with any regulatory authority. Prospective investors must review all fund documentation in full and consult their own independent legal, tax, accounting, regulatory, and financial advisers before making any decision.</div>
       </details>
-      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-use.html">Terms of Use</a> | <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
     </div>
   </div>
 </footer>
