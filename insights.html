@@ -2241,19 +2241,41 @@
                   >Volume 5 | Issue 2 | Published April 2021 | Allocator
                   Edition</small
                 ><strong
-                  >Sustained Shadow Banking Contraction Creating Private Credit
-                  Opportunities.</strong
+                  >Comparative Analysis of Chinese Private Credit.</strong
                 >
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="insights.html?printPreview=1&action=download&doc=v5i2&filename=china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf"
+                    href="insights.html?printPreview=1&action=download&doc=v5i2&filename=20210412%20ShoreVest%20CDD%20-%20Comparative%20Analysis%20of%20Chinese%20Private%20Credit.pdf"
                     target="_blank"
                     rel="noopener"
                     >Download issue PDF</a
                   ><a
                     class="archive__pdf"
                     href="insights.html?printPreview=1&action=view&doc=v5i2"
+                    target="_blank"
+                    rel="noopener"
+                    >Open issue PDF</a
+                  >
+                </div>
+              </div>
+              <div class="archive__row">
+                <small
+                  >Volume 3 | Issue 5 | Published 16 October 2019 | Allocator
+                  Edition</small
+                ><strong
+                  >A look at the tools being deployed to help China’s banks dispose of their NPLs.</strong
+                >
+                <div class="archive__actions">
+                  <a
+                    class="archive__pdf archive__pdf--solid"
+                    href="insights.html?printPreview=1&action=download&doc=v3i5&filename=20191016%20ShoreVest-China-Debt-Dynamics-A-look-at-the-tools-being-deployed-to-help-Chinas-banks-dispose-of-their-NPLs.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Download issue PDF</a
+                  ><a
+                    class="archive__pdf"
+                    href="insights.html?printPreview=1&action=view&doc=v3i5"
                     target="_blank"
                     rel="noopener"
                     >Open issue PDF</a
@@ -2388,7 +2410,7 @@
         v10i1: {
           title: "Market Re-entry and Changing Credit Dynamics",
           meta: "Volume 10 | Issue 1 | Published 25 January 2026 | Allocator Edition",
-          pdf: "pdfs/46. China Debt Dynamics - The End of the 'China Is Uninvestable' Myth.pdf",
+          pdf: "pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf",
         },
         v9i4: {
           title:
@@ -2461,12 +2483,47 @@
           pdf: "pdfs/china-debt-dynamics-evergrande.pdf",
         },
         v5i2: {
-          title:
-            "Sustained Shadow Banking Contraction Creating Private Credit Opportunities.",
+          title: "Comparative Analysis of Chinese Private Credit.",
           meta: "Volume 5 | Issue 2 | Published April 2021 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf",
+          pdf: "pdfs/20210412 ShoreVest CDD - Comparative Analysis of Chinese Private Credit.pdf",
+        },
+        v3i5: {
+          title:
+            "A look at the tools being deployed to help China’s banks dispose of their NPLs.",
+          meta: "Volume 3 | Issue 5 | Published 16 October 2019 | Allocator Edition",
+          pdf: "pdfs/20191016 ShoreVest-China-Debt-Dynamics-A-look-at-the-tools-being-deployed-to-help-Chinas-banks-dispose-of-their-NPLs.pdf",
         },
       };
+
+      const rewriteArchiveIssueLinks = () => {
+        const archiveLinks = document.querySelectorAll(
+          '.archive__actions a[href*="printPreview=1"][href*="doc="]',
+        );
+        archiveLinks.forEach((link) => {
+          const parsedUrl = new URL(link.href, window.location.origin);
+          const docKey = parsedUrl.searchParams.get("doc");
+          const action = parsedUrl.searchParams.get("action");
+          const mappedIssue = docKey ? archiveIssueMap[docKey] : null;
+          if (!mappedIssue?.pdf) return;
+
+          link.href = mappedIssue.pdf;
+
+          if (action === "download") {
+            const requestedFilename = parsedUrl.searchParams.get("filename");
+            const mappedFilename = mappedIssue.pdf.split("/").pop();
+            const safeFilename =
+              requestedFilename && requestedFilename.toLowerCase().endsWith(".pdf")
+                ? requestedFilename
+                : mappedFilename;
+            if (safeFilename) {
+              link.setAttribute("download", safeFilename);
+            }
+          } else {
+            link.removeAttribute("download");
+          }
+        });
+      };
+      rewriteArchiveIssueLinks();
 
       const getPrintSourceArticle = () =>
         document.querySelector('[data-print-article="active"]') ||
