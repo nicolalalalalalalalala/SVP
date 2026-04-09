@@ -290,6 +290,9 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
   font-size:19px; line-height:1.86; color:var(--mist);
   font-family:var(--serif); margin-bottom:0;
 }
+.hero__copy + .hero__copy {
+  margin-top:18px;
+}
 .hero__divline { width:100%; height:1px; background:var(--rule); margin:36px 0; }
 
 /* ══ ABOUT */
@@ -505,6 +508,8 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 /* ══ HERO STATS (legacy layout restored) */
 #stats {
   padding:14px 0 0;
+  display:flex;
+  justify-content:flex-end;
 }
 .hero__stats {
   width:min(100%, 500px);
@@ -1683,28 +1688,8 @@ h2.su__hed {
 <!-- HERO STATS -->
 <section id="hero" class="wrap">
   <div class="hero__intro">
-    <p class="hero__copy">ShoreVest Partners, 新岸資本, is a specialist private credit manager focused exclusively on China&apos;s debt markets, with a disciplined approach to collateral-first underwriting and active debt resolutions. 20+ years | 50+ transactions | no realised principal loss at deal level. China onshore secured credit is structurally distinct from global liquid markets, with outcomes driven primarily by collateral coverage, enforceability under PRC law, and deal-by-deal execution, and the strategy is designed to maintain low correlation to public market benchmarks. The same senior team has applied the same underwriting and debt resolution discipline for twenty years, from strategy inception in 2004 through the current platform established in 2016. For institutional portfolios that are already long public credit or equity, this allocation is designed to add a distinct source of risk and return. For globally diversified institutional portfolios, underexposure to the world&apos;s second-largest credit market is a strategic allocation decision with measurable opportunity cost.</p>
-  </div>
-  <div class="hero__stats">
-    <div class="stats" aria-label="ShoreVest track record statistics">
-      <div class="stat">
-        <div class="stat__n" data-countup data-target="2" data-prefix="$" data-suffix="B+">$2B+</div>
-        <div class="stat__l">CAPITAL DEPLOYED</div>
-      </div>
-      <div class="stat">
-        <div class="stat__n" data-countup data-target="6">6</div>
-        <div class="stat__l">INSTITUTIONAL FUND VINTAGES</div>
-      </div>
-      <div class="stat">
-        <div class="stat__n" data-countup data-target="20" data-suffix="+">20+</div>
-        <div class="stat__l">YEARS OF ONSHORE CREDIT EXECUTION</div>
-      </div>
-      <div class="stat stat--zero">
-        <div class="stat__n">0</div>
-        <div class="stat__l">DEAL-LEVEL PRINCIPAL LOSSES</div>
-      </div>
-    </div>
-    <p class="stats__note">As of January 2026. Reflects realized ShoreVest team investments since 2004. Past performance is not indicative of future results.</p>
+    <p class="hero__copy">China&apos;s credit markets have never rewarded distance. ShoreVest is a specialist private credit platform focused on asset-backed lending, restructurings, and debt resolutions, built around local execution, legal enforceability, and disciplined downside protection.</p>
+    <p class="hero__copy">Since 2004, the firm has invested with a simple view: in China, outcomes are shaped not only by underwriting, but by structure, control, and the ability to operate where the assets, counterparties, and legal process actually are.</p>
   </div>
 </section>
 
@@ -1755,6 +1740,30 @@ h2.su__hed {
         <a href="firm.html#ownership" class="cta cta--dark" style="margin-top:8px;font-size:10px;"><span>FIND OUT MORE</span><div class="cta__ring">→</div></a>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="stats" class="wrap">
+  <div class="hero__stats">
+    <div class="stats" aria-label="ShoreVest track record statistics">
+      <div class="stat">
+        <div class="stat__n" data-countup data-target="2" data-prefix="$" data-suffix="B+">$2B+</div>
+        <div class="stat__l">CAPITAL DEPLOYED</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n" data-countup data-target="6">6</div>
+        <div class="stat__l">INSTITUTIONAL FUND VINTAGES</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n" data-countup data-target="20" data-suffix="+">20+</div>
+        <div class="stat__l">YEARS OF ONSHORE CREDIT EXECUTION</div>
+      </div>
+      <div class="stat stat--zero">
+        <div class="stat__n">0</div>
+        <div class="stat__l">DEAL-LEVEL PRINCIPAL LOSSES</div>
+      </div>
+    </div>
+    <p class="stats__note">As of January 2026. Reflects realized ShoreVest team investments since 2004. Past performance is not indicative of future results.</p>
   </div>
 </section>
 
