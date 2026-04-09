@@ -20,52 +20,94 @@
 }
 
 :root {
-  --red: #C93B2A;
-  --ink: #0F2206;
-  --ink2: #2E4A18;
-  --white: #FAF6EE;
-  --off: #FAF6EE;
-  --rule: #D8CEB0;
-  --mist: #2E4A18;
+  --paper-light: #FAF6EE;
+  --paper: #F2ECD8;
+  --paper-dark: #D8CEB0;
+  --cinnabar: #C93B2A;
+  --cinnabar-light: #E8998F;
+  --cinnabar-dark: #8A1F12;
+  --blue-green: #3D7070;
+  --blue-green-light: #7AAFAF;
+  --blue-green-dark: #1E4040;
+  --text-main: #171410;
+  --text-secondary: #4E463F;
+
+  --red: var(--cinnabar);
+  --white: var(--paper-light);
+  --off: var(--paper-light);
+  --rule: var(--paper-dark);
+  --ink: var(--text-main);
+  --ink2: var(--text-secondary);
+  --mist: var(--text-secondary);
+  --stone: var(--paper-light);
   --serif: "DIN 2014";
   --sans: "DIN 2014";
 }
 
+html,
+body,
+body * {
+  font-family: "DIN 2014" !important;
+}
+
+:lang(zh),
+[lang="zh"],
+[lang="zh-CN"],
+[lang="zh-Hans"],
+.nav__logo-cn,
+.nav__logo-cn * {
+  font-family: "Noto Serif SC" !important;
+}
+
 body,
 #nav,
+#hero,
 #about,
-#insights,
-.sv-footer {
-  background: #F2ECD8;
-  color: #0F2206;
-  font-family: "DIN 2014";
-}
-
 #strategy,
 #team,
-.stat,
-.cdd-subscribe__card,
-.cdd-subscribe__cards {
-  background: #FAF6EE;
+#insights,
+#signup,
+#cdd,
+.quote-band,
+.num-band,
+.city-band,
+.sv-footer {
+  background: var(--paper) !important;
+  color: var(--text-main) !important;
 }
 
-.hero__divline,
-.about__intro,
-.strat__grid,
-.strat__actions,
-.ins__hd,
-.sv-footer,
-.sv-footer__main,
-.founder-split,
-.founder-split * {
-  border-color: #D8CEB0 !important;
+#about,
+#strategy,
+#team,
+#insights,
+#signup,
+#cdd,
+.city-band {
+  border-color: var(--paper-dark) !important;
+}
+
+.stat,
+.issue-card,
+.icard,
+.cdd-hero__card,
+.cdd-subscribe__card,
+.cdd-subscribe__cards {
+  background: var(--paper-light) !important;
+  border-color: var(--paper-dark) !important;
+}
+
+.hero__hed,
+#hero h1,
+#hero h1 em {
+  font-family: "DIN 2014" !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
 }
 
 h1,
 h2,
 h3,
 h4,
-.hero__hed,
 .about__hed,
 .strat__hed,
 .sg__title,
@@ -73,18 +115,13 @@ h4,
 .icard__title,
 .cdd-subscribe__title,
 .cdd-subscribe__card-title,
+.issue-title,
 .nav__logo-en {
   font-family: "DIN 2014" !important;
-  font-weight: 700;
+  font-weight: 700 !important;
+  font-style: normal !important;
 }
 
-.hero__overlay h1.hero__hed,
-h1.hero__hed em {
-  font-style: italic;
-  font-weight: 300;
-}
-
-.nav__links a,
 .eyebrow,
 .hero__kicker,
 .sg__n,
@@ -96,9 +133,31 @@ h1.hero__hed em {
 .ulink,
 .icard__link,
 .nb__l,
-.stat__l {
+.stat__l,
+.nav__links a,
+.nav__zh,
+label,
+button,
+input,
+textarea {
   font-family: "DIN 2014" !important;
-  letter-spacing: 0.08em;
+  font-weight: 700 !important;
+}
+
+p,
+li,
+.ac__body,
+.sg__body,
+.tm__bio,
+.strat__intro,
+.hero__copy,
+.about__body p,
+.cdd__body,
+.su__sub,
+.icard__date {
+  font-family: "DIN 2014" !important;
+  font-weight: 400 !important;
+  color: var(--text-secondary) !important;
 }
 
 .nav__logo-en {
@@ -118,102 +177,120 @@ h1.hero__hed em {
   top: 2px;
   bottom: 2px;
   width: 1px;
-  background: #C93B2A;
-}
-
-.nav__logo-cn,
-:lang(zh),
-[lang='zh'],
-[lang='zh-CN'],
-[lang='zh-Hans'] {
-  font-family: "Noto Serif SC" !important;
+  background: var(--cinnabar);
 }
 
 .nav__logo-cn {
-  color: #C93B2A !important;
+  color: var(--cinnabar) !important;
 }
 
-a:hover,
+.eyebrow,
+.hero__divline,
+.ins__hd,
+.strat__grid,
+.strat__actions,
+.sv-footer,
+.founder-split,
+.founder-split * {
+  border-color: var(--paper-dark) !important;
+}
+
+.eyebrow--red,
+.hero__kicker,
+.nav__links a[aria-current="page"],
 .cta--red,
-.ac__link:hover,
-.ulink:hover,
-.icard:hover .icard__title,
-.sg__n,
-.tm__role,
-.it__label,
-.eyebrow--red {
-  color: #C93B2A;
+.it__label {
+  color: var(--cinnabar) !important;
 }
 
 .hero__kicker::before,
+.live-dot,
+.cdd__dot,
+.issue-label {
+  background: var(--cinnabar) !important;
+}
+
 .live-dot {
-  background-color: #C93B2A;
+  box-shadow: 0 0 0 rgba(201, 59, 42, 0.75) !important;
+}
+
+@keyframes liveBlink {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(201, 59, 42, 0.65);
+  }
+
+  50% {
+    opacity: 0.25;
+    box-shadow: 0 0 0 6px rgba(201, 59, 42, 0);
+  }
+}
+
+.cta__ring,
+.ulink__ring,
+.icard__ring,
+.su__submit-ring,
+.nav__lp,
+.nav__menu-btn {
+  border-color: color-mix(in srgb, var(--paper-dark) 78%, var(--text-main) 22%) !important;
+}
+
+.cta--dark,
+.nav__links a,
+.nav__lp,
+.nav__zh,
+.ulink,
+.icard__link {
+  color: var(--text-main) !important;
 }
 
 .cta--dark:hover .cta__ring,
 .cta--light:hover .cta__ring,
-.cta--red:hover .cta__ring,
 .ulink:hover .ulink__ring,
 .icard:hover .icard__ring,
 .su__submit:hover .su__submit-ring,
 .su__submit:focus-visible .su__submit-ring,
-.nav__lp:hover {
-  background: #C93B2A !important;
-  border-color: #C93B2A !important;
+.nav__lp:hover,
+.nav__menu-btn:hover {
+  background: var(--blue-green) !important;
+  border-color: var(--blue-green) !important;
+  color: var(--paper-light) !important;
 }
 
-.su__status[data-state='error'] {
-  color: #E8998F;
+.cta--red:hover .cta__ring {
+  background: var(--cinnabar) !important;
+  border-color: var(--cinnabar) !important;
+  color: var(--paper-light) !important;
 }
 
-.hero__overlay .hero__kicker,
-.hero__overlay h1.hero__hed,
-.num-band,
-.quote-band,
-#cdd,
-#signup,
-.city-band {
-  background-color: #1E4040;
+.su__status[data-state="error"] {
+  color: var(--cinnabar-light) !important;
 }
 
-.hero__overlay .hero__kicker,
-.hero__overlay h1.hero__hed,
-.num-band *,
-.quote-band *,
-#cdd *,
-#signup *,
-.city-band * {
-  color: #FAF6EE;
-}
-
-.cdd__dot,
-.hero__overlay h1.hero__hed em,
-.issue-label,
-.cdd-hero__card [style*='Latest Issue'] {
-  background: #C93B2A !important;
+.su__status[data-state="success"] {
+  color: var(--blue-green-dark) !important;
 }
 
 .city-band__overlay {
-  background: linear-gradient(to bottom, rgba(30, 64, 64, 0.45) 0%, rgba(30, 64, 64, 0.1) 45%, rgba(30, 64, 64, 0.1) 55%, rgba(30, 64, 64, 0.8) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 64, 64, 0.18) 0%,
+    rgba(30, 64, 64, 0.08) 52%,
+    rgba(30, 64, 64, 0.22) 100%
+  ) !important;
 }
 
-.su__small,
-.stats__note,
-.icard__date,
-.cdd-subscribe__text,
-.ac__body,
-.sg__body,
-.tm__bio,
-.strat__intro,
-.hero__copy,
-.about__body p {
-  color: #2E4A18;
+#hero .hero__overlay,
+#hero .hero__overlay * {
+  color: var(--paper-light) !important;
 }
 
-.stat--zero .stat__n,
-.nav__logo-cn,
-.hero__kicker::before,
-.cdd__dot,
-.it__label {
-  color: #C93B2A;
+#hero .hero__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(23, 20, 16, 0.52) 0%,
+    rgba(23, 20, 16, 0.12) 62%,
+    rgba(23, 20, 16, 0) 100%
+  ) !important;
 }
