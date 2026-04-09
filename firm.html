@@ -2230,6 +2230,157 @@
   }
 </style>
 
+<style id="sv-firm-visual-polish-v2">
+  :root {
+    --max: 1280px;
+    --radius: 18px;
+    --section-space: clamp(56px, 8vw, 96px);
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #181612;
+  }
+
+  main {
+    padding-top: 80px;
+  }
+
+  #nav {
+    height: 80px;
+    box-shadow: 0 8px 28px rgba(15, 13, 10, 0.06);
+    border-bottom-color: rgba(42, 34, 29, 0.08);
+  }
+
+  .wrap {
+    padding-inline: clamp(20px, 4vw, 64px);
+  }
+
+  section {
+    padding-block: var(--section-space);
+    border-top-color: rgba(41, 30, 22, 0.07);
+  }
+
+  .hero {
+    padding-top: clamp(48px, 7vw, 90px);
+    padding-bottom: clamp(48px, 6vw, 78px);
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    gap: clamp(16px, 2.5vw, 30px);
+  }
+
+  .hero-main,
+  .hero-aside,
+  .framed-panel,
+  .proof-card,
+  .pillar-card,
+  .market-card,
+  .track-record-panel,
+  .intel-graphic,
+  .closing-panel,
+  .note {
+    border-radius: var(--radius);
+    box-shadow: 0 12px 28px rgba(24, 18, 14, 0.06);
+  }
+
+  h1 {
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 0.98;
+    margin-bottom: 18px;
+  }
+
+  .lead {
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.55;
+    color: #3f3b34;
+  }
+
+  .section-head h2 {
+    font-size: clamp(34px, 4.4vw, 52px);
+    line-height: 1.04;
+  }
+
+  .section-head p,
+  .section-head .operations-copy {
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 1.55;
+    max-width: 46ch;
+  }
+
+  .visual-flow-step,
+  .market-card,
+  .proof-card,
+  .pillar-card,
+  .track-record-trigger,
+  .intel-stage {
+    transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+  }
+
+  .visual-flow-step:hover,
+  .market-card:hover,
+  .proof-card:hover,
+  .pillar-card:hover,
+  .intel-stage:hover {
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 1100px) {
+    .hero-grid,
+    .section-head,
+    .visual-learners-head {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-main,
+    .hero-aside,
+    .framed-panel {
+      padding: clamp(20px, 4vw, 30px);
+    }
+  }
+
+  @media (max-width: 820px) {
+    #nav {
+      height: 72px;
+    }
+
+    main {
+      padding-top: 72px;
+    }
+
+    .hero-split,
+    .overview-grid,
+    .proof-grid,
+    .market-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .track-record-section .section-head h2 {
+      font-size: clamp(34px, 8vw, 52px);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .hero-main,
+    .hero-aside,
+    .framed-panel,
+    .track-record-panel {
+      padding: 18px 16px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 11vw, 50px);
+    }
+
+    .section-head h2 {
+      font-size: clamp(29px, 9vw, 40px);
+    }
+  }
+</style>
+
 </head>
   <body>
     <nav id="nav">
