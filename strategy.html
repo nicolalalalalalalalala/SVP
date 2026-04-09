@@ -1336,6 +1336,8 @@
         display: grid;
         gap: 34px;
         counter-reset: strategy-block;
+        max-width: 1120px;
+        margin: 0 auto;
       }
       .strategy-stack > * {
         min-width: 0;
@@ -1375,7 +1377,7 @@
         line-height: 1.12;
         margin-bottom: 16px;
         letter-spacing: -0.01em;
-        max-width: 640px;
+        max-width: 16ch;
       }
       .strategy-block h2.single-line-heading {
         white-space: normal;
@@ -1385,7 +1387,7 @@
         line-height: 1.8;
         font-size: 19px;
         font-family: var(--serif);
-        max-width: 760px;
+        max-width: 66ch;
         overflow-wrap: anywhere;
         text-wrap: pretty;
       }
@@ -1997,12 +1999,15 @@
         margin-top: 16px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 12px;
+        gap: 16px;
+        align-items: stretch;
       }
       .strategy-detail {
         border: 1px solid rgba(179, 33, 63, 0.14);
         background: #fff;
         padding: 14px;
+        display: flex;
+        flex-direction: column;
       }
       .strategy-detail h3 {
         font-family: var(--serif);
@@ -2020,6 +2025,7 @@
         line-height: 1.65;
         color: #5e5952;
         overflow-wrap: anywhere;
+        flex: 1;
       }
 
       .data-grid {
@@ -2273,10 +2279,10 @@
         }
         .strategy-block {
           display: grid;
-          grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
+          grid-template-columns: minmax(250px, 1fr) minmax(0, 1.05fr);
           column-gap: 44px;
           row-gap: 12px;
-          padding: 58px 0;
+          padding: 58px clamp(28px, 3vw, 46px);
           align-items: start;
         }
         .strategy-block > .eyebrow,
@@ -2313,10 +2319,12 @@
         }
         .strategy-block {
           display: grid;
-          grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+          grid-template-columns: minmax(230px, 0.95fr) minmax(0, 1.05fr);
           column-gap: 36px;
           row-gap: 10px;
           align-items: start;
+          padding-left: clamp(22px, 3vw, 38px);
+          padding-right: clamp(22px, 3vw, 38px);
         }
         .strategy-block > h2 {
           grid-column: 1;
