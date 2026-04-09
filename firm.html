@@ -391,11 +391,11 @@
         color: #625d55;
       }
       .visual-learners-panel {
-        background: #f7f4ef;
-        border: 1px solid rgba(42, 36, 30, 0.12);
-        border-radius: calc(var(--radius) + 2px);
-        padding: 30px;
-        box-shadow: 0 10px 24px rgba(21, 16, 11, 0.05);
+        background: #f3f1ed;
+        border: 1px solid rgba(20, 20, 20, 0.16);
+        border-radius: 8px;
+        padding: 32px;
+        box-shadow: none;
       }
       .visual-learners-head {
         display: grid;
@@ -420,89 +420,79 @@
       .visual-signals {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-bottom: 16px;
+        gap: 10px;
+        margin-bottom: 18px;
       }
       .visual-signal-card {
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(80, 68, 57, 0.2);
-        border-radius: 10px;
-        padding: 14px 14px 13px;
+        background: #ffffff;
+        border: 1px solid rgba(20, 20, 20, 0.14);
+        border-radius: 4px;
+        padding: 12px 14px;
       }
       .visual-signal-card__label {
         display: block;
-        margin-bottom: 6px;
+        margin-bottom: 7px;
         font-size: 10px;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: #7b746a;
+        color: #5a5550;
       }
       .visual-signal-card__value {
         font-family: var(--serif);
-        font-size: 26px;
-        line-height: 1;
-        color: #312b24;
+        font-size: 24px;
+        line-height: 1.05;
+        color: #171512;
       }
       .visual-flow {
         list-style: none;
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
+        gap: 10px;
       }
       .visual-flow-step {
         position: relative;
         background: #fff;
-        border: 1px solid rgba(80, 68, 57, 0.2);
-        border-radius: 10px;
-        padding: 16px 14px 14px;
-        min-height: 168px;
+        border: 1px solid rgba(20, 20, 20, 0.16);
+        border-radius: 4px;
+        padding: 18px 14px 14px;
+        min-height: 170px;
       }
       .visual-flow-step::after {
-        content: "→";
+        content: "";
         position: absolute;
-        right: -10px;
+        right: -5px;
         top: 50%;
         transform: translateY(-50%);
-        width: 20px;
-        height: 20px;
-        border-radius: 999px;
-        display: grid;
-        place-items: center;
-        background: #f5f2ec;
-        border: 1px solid rgba(80, 68, 57, 0.2);
-        color: #5d544c;
-        font-size: 11px;
+        width: 1px;
+        height: calc(100% - 28px);
+        background: rgba(20, 20, 20, 0.2);
       }
       .visual-flow-step:last-child::after {
         display: none;
       }
       .visual-flow-step__icon {
-        display: inline-grid;
-        place-items: center;
-        width: 34px;
-        height: 34px;
-        border-radius: 999px;
-        font-size: 11px;
+        display: inline-block;
+        font-size: 10px;
         font-weight: 600;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: #5b534b;
-        border: 1px solid rgba(80, 68, 57, 0.3);
+        color: #4f4b46;
         margin-bottom: 10px;
-        background: #f6f3ee;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(20, 20, 20, 0.22);
       }
       .visual-flow-step h3 {
         font-family: var(--serif);
-        font-size: 22px;
-        font-weight: 400;
+        font-size: 21px;
+        font-weight: 500;
         line-height: 1.2;
-        margin-bottom: 5px;
-        color: #2f2a24;
+        margin-bottom: 6px;
+        color: #1e1b17;
       }
       .visual-flow-step p {
         font-size: 14px;
-        line-height: 1.5;
-        color: #49443d;
+        line-height: 1.52;
+        color: #403c36;
       }
 
       .framed-panel {
@@ -2325,7 +2315,7 @@
   .proof-card:hover,
   .pillar-card:hover,
   .intel-stage:hover {
-    transform: translateY(-3px);
+    transform: translateY(-1px);
   }
 
   @media (max-width: 1100px) {
@@ -2500,7 +2490,7 @@
             <div class="visual-learners-head">
               <h2>How the ShoreVest model works, at a glance</h2>
               <p>
-                For visual learners, this layout summarizes the platform in one scan: what ShoreVest targets, how risk is controlled, and how value is realized.
+                This framework presents the platform in one view: what ShoreVest targets, how risk is controlled, and how value is realized.
               </p>
             </div>
             <div class="visual-signals" aria-label="Core operating signals">
