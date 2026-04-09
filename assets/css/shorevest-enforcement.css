@@ -199,6 +199,26 @@ hr {
   color: color-mix(in srgb, var(--sv-color-accent) 78%, #ffffff 22%) !important;
 }
 
+#nav .nav__logo-en {
+  color: var(--sv-color-accent) !important;
+}
+
+#nav .nav__logo-cn {
+  color: var(--sv-color-accent) !important;
+  opacity: 0.9 !important;
+}
+
+#nav .nav__logo-lockup::before {
+  background: var(--sv-color-accent) !important;
+}
+
+#nav .nav__links a,
+#nav .nav__zh,
+#nav .nav__lp,
+#nav .nav__menu-btn {
+  color: var(--sv-color-ink) !important;
+}
+
 @media (max-width: 768px) {
   :where(h1, .h1, .display, [class*="hero-title"]) {
     font-size: clamp(1.7rem, 7vw, 2.4rem);
