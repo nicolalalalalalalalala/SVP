@@ -15,7 +15,7 @@
   --control-brand: #b3213f;
   --control-ink: #0c0c0a;
   --control-ink-strong: #171717;
-  --control-paper: #f6f4f0;
+  --control-paper: #ffffff;
   --surface-elevated: color-mix(in srgb, #ffffff 84%, #f6f4f0 16%);
   --surface-border: rgba(12, 12, 10, 0.12);
   --shadow-soft: 0 16px 40px rgba(12, 12, 10, 0.09);
@@ -207,6 +207,21 @@ html {
 #nav .nav__zh {
   font-size: 14px;
   line-height: 1;
+}
+
+
+#nav .nav__links,
+#nav .nav__right,
+#nav .nav__lp,
+#nav .nav__menu-btn {
+  position: relative;
+  z-index: 2;
+}
+
+#nav .nav__lp,
+#nav .nav__menu-btn {
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 #nav .nav__lp {
