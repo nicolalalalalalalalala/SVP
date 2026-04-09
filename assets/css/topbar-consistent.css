@@ -708,6 +708,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   footer.sv-footer .sv-footer__contact a {
     width: auto !important;
     max-width: 100% !important;
+    box-sizing: border-box !important;
     white-space: nowrap !important;
     text-align: right !important;
     min-height: 44px;
@@ -779,6 +780,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 
   footer.sv-footer .sv-footer__contact a {
     width: 100% !important;
+    box-sizing: border-box !important;
     text-align: center !important;
     white-space: normal !important;
     word-break: break-word !important;
