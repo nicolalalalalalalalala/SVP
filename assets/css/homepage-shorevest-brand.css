@@ -19,6 +19,7 @@
   font-style: normal;
 }
 
+
 :root {
   --paper-light: #FAF6EE;
   --paper: #F2ECD8;
@@ -142,6 +143,8 @@ input,
 textarea {
   font-family: "DIN 2014" !important;
   font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 p,
@@ -157,6 +160,7 @@ li,
 .icard__date {
   font-family: "DIN 2014" !important;
   font-weight: 400 !important;
+  font-style: normal !important;
   color: var(--text-secondary) !important;
 }
 
