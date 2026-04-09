@@ -394,6 +394,115 @@
         line-height: 1.45;
         color: #625d55;
       }
+      .visual-learners-panel {
+        background: linear-gradient(160deg, #f8f4ed 0%, #f3ece3 100%);
+        border: 1px solid rgba(42, 36, 30, 0.12);
+        border-radius: calc(var(--radius) + 4px);
+        padding: 30px;
+        box-shadow: 0 14px 26px rgba(21, 16, 11, 0.06);
+      }
+      .visual-learners-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 20px;
+      }
+      .visual-learners-head h2 {
+        font-family: var(--serif);
+        font-size: clamp(32px, 4vw, 44px);
+        font-weight: 400;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+      }
+      .visual-learners-head p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #4b463f;
+        max-width: 38ch;
+      }
+      .visual-signals {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .visual-signal-card {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(120, 102, 88, 0.2);
+        border-radius: 14px;
+        padding: 14px 14px 13px;
+      }
+      .visual-signal-card__label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #7b746a;
+      }
+      .visual-signal-card__value {
+        font-family: var(--serif);
+        font-size: 26px;
+        line-height: 1;
+        color: #312b24;
+      }
+      .visual-flow {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .visual-flow-step {
+        position: relative;
+        background: #fff;
+        border: 1px solid rgba(120, 102, 88, 0.2);
+        border-radius: 14px;
+        padding: 16px 14px 14px;
+        min-height: 168px;
+      }
+      .visual-flow-step::after {
+        content: "→";
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: #efe9e1;
+        border: 1px solid rgba(120, 102, 88, 0.2);
+        color: #6f4f44;
+        font-size: 11px;
+      }
+      .visual-flow-step:last-child::after {
+        display: none;
+      }
+      .visual-flow-step__icon {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        background: rgba(118, 83, 72, 0.12);
+      }
+      .visual-flow-step h3 {
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 5px;
+        color: #2f2a24;
+      }
+      .visual-flow-step p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #49443d;
+      }
 
       .framed-panel {
         background: var(--panel);
@@ -854,6 +963,30 @@
         }
       }
       @media (max-width: 760px) {
+        .visual-learners-panel {
+          padding: 22px 18px;
+        }
+        .visual-learners-head {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .visual-signals {
+          grid-template-columns: 1fr;
+        }
+        .visual-flow {
+          grid-template-columns: 1fr;
+        }
+        .visual-flow-step {
+          min-height: 0;
+        }
+        .visual-flow-step::after {
+          content: "↓";
+          left: 50%;
+          right: auto;
+          top: auto;
+          bottom: -11px;
+          transform: translateX(-50%);
+        }
         .track-record-section .section-head h2 {
           font-size: 36px;
         }
@@ -2123,6 +2256,56 @@
               <div class="hero-stat__label">Risk discipline</div>
             </div>
             <p class="track-record-basis">Basis note: US$2B+ capital deployed, 50+ transactions, and related track-record metrics refer to realized and partially realized team investments since 2004 across predecessor and current ShoreVest vehicles, as of January 2026.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="visual-learners-panel" aria-label="Visual summary of ShoreVest's model">
+            <div class="eyebrow">Visual summary</div>
+            <div class="visual-learners-head">
+              <h2>How the ShoreVest model works, at a glance</h2>
+              <p>
+                For visual learners, this layout summarizes the platform in one scan: what ShoreVest targets, how risk is controlled, and how value is realized.
+              </p>
+            </div>
+            <div class="visual-signals" aria-label="Core operating signals">
+              <article class="visual-signal-card">
+                <span class="visual-signal-card__label">Where we focus</span>
+                <span class="visual-signal-card__value">China credit</span>
+              </article>
+              <article class="visual-signal-card">
+                <span class="visual-signal-card__label">Entry discipline</span>
+                <span class="visual-signal-card__value">30–60% LTV</span>
+              </article>
+              <article class="visual-signal-card">
+                <span class="visual-signal-card__label">Execution model</span>
+                <span class="visual-signal-card__value">Originate → Resolve</span>
+              </article>
+            </div>
+            <ol class="visual-flow" aria-label="ShoreVest investment lifecycle">
+              <li class="visual-flow-step">
+                <span class="visual-flow-step__icon" aria-hidden="true">🔎</span>
+                <h3>Source</h3>
+                <p>Proprietary channels surface opportunities before broad auction processes.</p>
+              </li>
+              <li class="visual-flow-step">
+                <span class="visual-flow-step__icon" aria-hidden="true">⚖️</span>
+                <h3>Structure</h3>
+                <p>Downside-first underwriting emphasizes enforceable legal claims and collateral control.</p>
+              </li>
+              <li class="visual-flow-step">
+                <span class="visual-flow-step__icon" aria-hidden="true">🧭</span>
+                <h3>Monitor</h3>
+                <p>The same team tracks performance continuously and intervenes early when risk shifts.</p>
+              </li>
+              <li class="visual-flow-step">
+                <span class="visual-flow-step__icon" aria-hidden="true">🏁</span>
+                <h3>Realize</h3>
+                <p>Resolution, negotiation, and legal execution stay in-house to protect recoveries.</p>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
