@@ -1,7 +1,7 @@
 :root {
-  --paper-light: #FFFFFF;
-  --paper: #FFFFFF;
-  --paper-dark: #E5E7EB;
+  --paper-light: #FAF6EE;
+  --paper: #F2ECD8;
+  --paper-dark: #D8CEB0;
   --cinnabar: #C93B2A;
   --cinnabar-light: #E8998F;
   --cinnabar-dark: #8A1F12;
@@ -10,7 +10,7 @@
   --blue-green-dark: #1E4040;
   --ink-green-dark: #0F2206;
   --text-main: var(--ink-green-dark);
-  --text-secondary: #2B4537;
+  --text-secondary: #1E4040;
 
   --red: var(--cinnabar);
   --white: var(--paper-light);
@@ -61,8 +61,15 @@ body,
 .num-band,
 .city-band,
 .sv-footer {
-  background: var(--paper) !important;
+  background: var(--paper-light) !important;
   color: var(--text-main) !important;
+}
+
+#strategy,
+#insights,
+.quote-band,
+.num-band {
+  background: var(--paper) !important;
 }
 
 #about,
@@ -296,9 +303,9 @@ li,
 .city-band__overlay {
   background: linear-gradient(
     to bottom,
-    rgba(30, 64, 64, 0.18) 0%,
-    rgba(30, 64, 64, 0.08) 52%,
-    rgba(30, 64, 64, 0.22) 100%
+    rgba(30, 64, 64, 0.12) 0%,
+    rgba(30, 64, 64, 0.05) 52%,
+    rgba(30, 64, 64, 0.15) 100%
   ) !important;
 }
 
@@ -310,8 +317,19 @@ li,
 #hero .hero__overlay {
   background: linear-gradient(
     to top,
-    rgba(15, 34, 6, 0.52) 0%,
-    rgba(15, 34, 6, 0.12) 62%,
+    rgba(15, 34, 6, 0.34) 0%,
+    rgba(15, 34, 6, 0.08) 62%,
     rgba(15, 34, 6, 0) 100%
   ) !important;
+}
+
+.hero__sliver {
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(10, 5, 2, 0.06) 0%,
+      rgba(10, 5, 2, 0.18) 46%,
+      rgba(10, 5, 2, 0.32) 100%
+    ),
+    url("assets/images/homepage_hero2-2.jpg") !important;
 }
