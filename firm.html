@@ -12,16 +12,16 @@
     />
     <style>
       :root {
-        --bg: #f3f1ec;
-        --panel: #faf8f4;
+        --bg: #f5f4f1;
+        --panel: #f8f6f2;
         --surface: #ffffff;
-        --surface-strong: #f5f2ec;
-        --ink: #171512;
-        --muted: #706a60;
+        --surface-strong: #f2efe9;
+        --ink: #161514;
+        --muted: #6a665e;
         --rule: rgba(41, 30, 22, 0.11);
-        --red: #8c3b4a;
+        --red: #7f2f3f;
         --dark: #10100f;
-        --radius: 16px;
+        --radius: 10px;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
@@ -37,10 +37,7 @@
       }
       body {
         font-family: var(--sans);
-        background:
-          radial-gradient(circle at 85% -10%, rgba(140, 59, 74, 0.09) 0%, transparent 46%),
-          radial-gradient(circle at 8% 6%, rgba(127, 100, 78, 0.09) 0%, transparent 40%),
-          var(--bg);
+        background: var(--bg);
         color: var(--ink);
         line-height: 1.55;
         font-size: 14px;
@@ -232,11 +229,11 @@
         margin-bottom: 24px;
       }
       .hero-main {
-        background: linear-gradient(150deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 241, 0.9));
+        background: #fff;
         border: 1px solid rgba(14, 12, 10, 0.09);
-        border-radius: calc(var(--radius) + 6px);
+        border-radius: calc(var(--radius) + 2px);
         padding: 36px 36px 32px;
-        box-shadow: 0 22px 40px rgba(27, 18, 12, 0.08);
+        box-shadow: 0 12px 28px rgba(27, 18, 12, 0.06);
       }
       h1 {
         font-family: var(--serif);
@@ -259,7 +256,7 @@
         max-width: none;
       }
       .lead--boxed {
-        background: #f8f4ec;
+        background: #f7f5f0;
         border: 1px solid rgba(12, 12, 10, 0.14);
         border-radius: var(--radius);
         padding: 16px 18px;
@@ -309,9 +306,9 @@
         line-height: 1.6;
       }
       .hero-aside {
-        background: linear-gradient(160deg, #f4eee7, #ede6dd);
+        background: #f3f0ea;
         border: 1px solid rgba(18, 16, 13, 0.1);
-        border-radius: calc(var(--radius) + 2px);
+        border-radius: var(--radius);
         color: #2f2a24;
         padding: 24px;
         display: flex;
@@ -337,10 +334,10 @@
         gap: 10px;
       }
       .hero-signal {
-        border: 1px solid rgba(140, 59, 74, 0.26);
+        border: 1px solid rgba(31, 28, 25, 0.14);
         padding: 10px 12px;
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 8px;
       }
       .hero-signal__kicker {
         display: block;
@@ -352,7 +349,7 @@
       }
       .hero-signal__text {
         font-family: var(--serif);
-        font-size: 20px;
+        font-size: 19px;
         line-height: 1.2;
         color: #2f2922;
       }
@@ -366,11 +363,10 @@
         border-top: 1px solid rgba(12, 12, 10, 0.12);
       }
       .hero-stat {
-        background: rgba(255, 255, 255, 0.84);
+        background: rgba(255, 255, 255, 0.94);
         border: 1px solid rgba(12, 12, 10, 0.1);
         border-radius: var(--radius);
         padding: 1.15rem 1.2rem 1.1rem;
-        backdrop-filter: blur(2px);
       }
       .hero-stat__value {
         font-family: "Cormorant Garamond", var(--serif), serif;
@@ -395,11 +391,11 @@
         color: #625d55;
       }
       .visual-learners-panel {
-        background: linear-gradient(160deg, #f8f4ed 0%, #f3ece3 100%);
+        background: #f7f4ef;
         border: 1px solid rgba(42, 36, 30, 0.12);
-        border-radius: calc(var(--radius) + 4px);
+        border-radius: calc(var(--radius) + 2px);
         padding: 30px;
-        box-shadow: 0 14px 26px rgba(21, 16, 11, 0.06);
+        box-shadow: 0 10px 24px rgba(21, 16, 11, 0.05);
       }
       .visual-learners-head {
         display: grid;
@@ -428,9 +424,9 @@
         margin-bottom: 16px;
       }
       .visual-signal-card {
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid rgba(120, 102, 88, 0.2);
-        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(80, 68, 57, 0.2);
+        border-radius: 10px;
         padding: 14px 14px 13px;
       }
       .visual-signal-card__label {
@@ -456,8 +452,8 @@
       .visual-flow-step {
         position: relative;
         background: #fff;
-        border: 1px solid rgba(120, 102, 88, 0.2);
-        border-radius: 14px;
+        border: 1px solid rgba(80, 68, 57, 0.2);
+        border-radius: 10px;
         padding: 16px 14px 14px;
         min-height: 168px;
       }
@@ -472,9 +468,9 @@
         border-radius: 999px;
         display: grid;
         place-items: center;
-        background: #efe9e1;
-        border: 1px solid rgba(120, 102, 88, 0.2);
-        color: #6f4f44;
+        background: #f5f2ec;
+        border: 1px solid rgba(80, 68, 57, 0.2);
+        color: #5d544c;
         font-size: 11px;
       }
       .visual-flow-step:last-child::after {
@@ -485,10 +481,15 @@
         place-items: center;
         width: 34px;
         height: 34px;
-        border-radius: 10px;
-        font-size: 16px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #5b534b;
+        border: 1px solid rgba(80, 68, 57, 0.3);
         margin-bottom: 10px;
-        background: rgba(118, 83, 72, 0.12);
+        background: #f6f3ee;
       }
       .visual-flow-step h3 {
         font-family: var(--serif);
@@ -2518,22 +2519,22 @@
             </div>
             <ol class="visual-flow" aria-label="ShoreVest investment lifecycle">
               <li class="visual-flow-step">
-                <span class="visual-flow-step__icon" aria-hidden="true">🔎</span>
+                <span class="visual-flow-step__icon" aria-hidden="true">I</span>
                 <h3>Source</h3>
                 <p>Proprietary channels surface opportunities before broad auction processes.</p>
               </li>
               <li class="visual-flow-step">
-                <span class="visual-flow-step__icon" aria-hidden="true">⚖️</span>
+                <span class="visual-flow-step__icon" aria-hidden="true">II</span>
                 <h3>Structure</h3>
                 <p>Downside-first underwriting emphasizes enforceable legal claims and collateral control.</p>
               </li>
               <li class="visual-flow-step">
-                <span class="visual-flow-step__icon" aria-hidden="true">🧭</span>
+                <span class="visual-flow-step__icon" aria-hidden="true">III</span>
                 <h3>Monitor</h3>
                 <p>The same team tracks performance continuously and intervenes early when risk shifts.</p>
               </li>
               <li class="visual-flow-step">
-                <span class="visual-flow-step__icon" aria-hidden="true">🏁</span>
+                <span class="visual-flow-step__icon" aria-hidden="true">IV</span>
                 <h3>Realize</h3>
                 <p>Resolution, negotiation, and legal execution stay in-house to protect recoveries.</p>
               </li>
