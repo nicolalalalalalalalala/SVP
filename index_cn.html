@@ -1701,7 +1701,7 @@ h2.su__hed {
         <img class="nav__logo-mark" src="assets/images/logo-master.png?v=1" alt="ShoreVest logo">
         <span class="nav__logo-lockup">
           <span class="nav__logo-en">ShoreVest</span>
-          <span class="nav__logo-cn">新岸資本</span>
+          <span class="nav__logo-cn">新岸资本</span>
         </span>
       </a>
   <ul class="nav__links" id="nav-links">
@@ -1893,7 +1893,7 @@ h2.su__hed {
                 <a href="insights.html#issue-header" class="cta cta--light"><span>READ ISSUE</span><div class="cta__ring">→</div></a>
                 <a href="insights.html#subscribe" class="cta cta--light"><span>SUBSCRIBE</span><div class="cta__ring">→</div></a>
               </div>
-              <span class="cdd-hero__meta" style="font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.1em;text-transform:uppercase;">Vol. 10 · No. 1</span>
+              <span class="cdd-hero__meta" style="font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.1em;text-transform:uppercase;">第10卷 · 第1期</span>
             </div>
           </div>
         </div>
@@ -1995,14 +1995,14 @@ if (menuBtn && nav) {
   menuBtn.addEventListener('click', () => {
     const open = nav.classList.toggle('menu-open');
     menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.textContent = open ? 'Close' : 'Menu';
+    menuBtn.textContent = open ? '关闭' : '菜单';
   });
 
   document.querySelectorAll('.nav__links a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('menu-open');
       menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.textContent = 'Menu';
+      menuBtn.textContent = '菜单';
     });
   });
 }
