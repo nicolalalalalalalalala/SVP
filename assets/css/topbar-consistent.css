@@ -127,8 +127,9 @@ html {
 #nav .nav__logo-en {
   font-family: "DIN 2014", var(--site-sans-en, 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
   font-size: var(--nav-logo-en-size);
-  font-weight: 400;
-  letter-spacing: .018em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: #000000;
   display:inline-block;
   line-height: var(--nav-logo-en-line-height);
