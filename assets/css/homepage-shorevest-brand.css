@@ -103,6 +103,7 @@ body,
   font-family: "DIN 2014" !important;
   font-weight: 300 !important;
   font-style: italic !important;
+  letter-spacing: 0.01em !important;
 }
 
 h1,
@@ -144,7 +145,7 @@ textarea {
   font-family: "DIN 2014" !important;
   font-weight: 700 !important;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
 }
 
 p,
@@ -165,8 +166,8 @@ li,
 }
 
 .nav__logo-en {
-  letter-spacing: 0.05em !important;
-  color: var(--cinnabar) !important;
+  letter-spacing: 0.005em !important;
+  font-weight: 700 !important;
 }
 
 .nav__logo-lockup {
@@ -186,7 +187,22 @@ li,
 }
 
 .nav__logo-cn {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
   color: var(--cinnabar) !important;
+}
+
+.hero__copy,
+.about__body p,
+.strat__intro,
+.sg__body,
+.tm__bio,
+.cdd__body,
+.issue-thesis,
+.stats__note {
+  font-size: clamp(15px, 1.1vw, 19px) !important;
+  line-height: 1.72 !important;
 }
 
 .eyebrow,
