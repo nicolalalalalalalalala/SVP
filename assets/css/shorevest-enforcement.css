@@ -228,3 +228,85 @@ hr {
     font-size: clamp(1.35rem, 5.5vw, 1.9rem);
   }
 }
+
+/* Footer consistency: keep approved typefaces and prevent mobile overflow/squeeze. */
+:where(footer.sv-footer .sv-footer__brand) {
+  font-family: var(--sv-font-serif-en) !important;
+}
+
+:where(
+  footer.sv-footer .sv-footer__contact-label,
+  footer.sv-footer .sv-footer__contact a,
+  footer.sv-footer .sv-footer__copyright,
+  footer.sv-footer .sv-footer__legal,
+  footer.sv-footer .sv-footer__legal-links,
+  footer.sv-footer .sv-footer__legal-links a,
+  footer.sv-footer .sv-footer__legal-toggle > summary
+) {
+  font-family: var(--sv-font-sans-en) !important;
+}
+
+[lang|="zh"] :where(footer.sv-footer .sv-footer__brand),
+:lang(zh) :where(footer.sv-footer .sv-footer__brand) {
+  font-family: var(--sv-font-serif-zh) !important;
+}
+
+[lang|="zh"] :where(
+    footer.sv-footer .sv-footer__contact-label,
+    footer.sv-footer .sv-footer__contact a,
+    footer.sv-footer .sv-footer__copyright,
+    footer.sv-footer .sv-footer__legal,
+    footer.sv-footer .sv-footer__legal-links,
+    footer.sv-footer .sv-footer__legal-links a,
+    footer.sv-footer .sv-footer__legal-toggle > summary
+  ),
+:lang(zh) :where(
+    footer.sv-footer .sv-footer__contact-label,
+    footer.sv-footer .sv-footer__contact a,
+    footer.sv-footer .sv-footer__copyright,
+    footer.sv-footer .sv-footer__legal,
+    footer.sv-footer .sv-footer__legal-links,
+    footer.sv-footer .sv-footer__legal-links a,
+    footer.sv-footer .sv-footer__legal-toggle > summary
+  ) {
+  font-family: var(--sv-font-sans-zh) !important;
+}
+
+@media (max-width: 768px) {
+  :where(footer.sv-footer .sv-footer__main) {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  :where(footer.sv-footer .sv-footer__contact) {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  :where(footer.sv-footer .sv-footer__contact a) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 40px !important;
+    white-space: normal !important;
+    text-align: center !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
+  }
+
+  :where(footer.sv-footer .sv-footer__bottom) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  :where(footer.sv-footer .sv-footer__legal-links) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+}
