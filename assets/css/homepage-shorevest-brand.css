@@ -30,8 +30,9 @@
   --blue-green: #3D7070;
   --blue-green-light: #7AAFAF;
   --blue-green-dark: #1E4040;
-  --text-main: #171410;
-  --text-secondary: #4E463F;
+  --ink-green-dark: #0F2206;
+  --text-main: var(--ink-green-dark);
+  --text-secondary: #2B4537;
 
   --red: var(--cinnabar);
   --white: var(--paper-light);
@@ -310,8 +311,8 @@ li,
 #hero .hero__overlay {
   background: linear-gradient(
     to top,
-    rgba(23, 20, 16, 0.52) 0%,
-    rgba(23, 20, 16, 0.12) 62%,
-    rgba(23, 20, 16, 0) 100%
+    rgba(15, 34, 6, 0.52) 0%,
+    rgba(15, 34, 6, 0.12) 62%,
+    rgba(15, 34, 6, 0) 100%
   ) !important;
 }
