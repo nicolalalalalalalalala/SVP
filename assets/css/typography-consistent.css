@@ -235,3 +235,21 @@ h3 {
   font-size: var(--site-font-size-body-responsive) !important;
   line-height: 1.75;
 }
+
+/* Contrast safeguard: prevent white text from sitting on very light inline surfaces. */
+:where(
+  [style*="background:#fff"][style*="color:#fff"],
+  [style*="background: #fff"][style*="color: #fff"],
+  [style*="background:#ffffff"][style*="color:#fff"],
+  [style*="background: #ffffff"][style*="color: #fff"],
+  [style*="background:rgba(255,255,255,0.6"][style*="color:#fff"],
+  [style*="background:rgba(255,255,255,0.7"][style*="color:#fff"],
+  [style*="background:rgba(255,255,255,0.8"][style*="color:#fff"],
+  [style*="background:rgba(255,255,255,0.9"][style*="color:#fff"],
+  [style*="background: rgba(255, 255, 255, 0.6"][style*="color: #fff"],
+  [style*="background: rgba(255, 255, 255, 0.7"][style*="color: #fff"],
+  [style*="background: rgba(255, 255, 255, 0.8"][style*="color: #fff"],
+  [style*="background: rgba(255, 255, 255, 0.9"][style*="color: #fff"]
+) {
+  color: var(--site-color-ink-strong) !important;
+}
