@@ -50,6 +50,117 @@
     .sv-footer__legal-links a+a::before{content:" | ";color:#6f6a63}
     .sv-footer__legal-links a:hover{color:var(--red)}
   </style>
+<style id="sv-footer-homepage-sync">
+.sv-footer {
+  margin-top: 0 !important;
+  padding-top: 16px !important;
+  padding-bottom: 32px !important;
+  background: #f6f4f0;
+}
+.sv-footer::before {
+  background: #7b746c !important;
+}
+@media (min-width: 981px) {
+  .sv-footer {
+    padding-left: var(--pad, var(--site-page-margin, 64px)) !important;
+    padding-right: var(--pad, var(--site-page-margin, 64px)) !important;
+  }
+}
+.sv-footer__main { gap: 20px !important; }
+.sv-footer__contact { gap: 14px !important; }
+.sv-footer__contact-label {
+  font-size: 10px !important;
+  letter-spacing: 0.10em !important;
+}
+.sv-footer__contact a {
+  min-height: 54px !important;
+  padding: 0 22px !important;
+  font-size: 12px !important;
+  letter-spacing: 0.08em !important;
+  border: 1px solid rgba(0, 0, 0, 0.16) !important;
+}
+.sv-footer__bottom {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  padding-top: 16px !important;
+}
+.sv-footer__legal-toggle { border: 1px solid rgba(0, 0, 0, 0.16); background: rgba(255, 255, 255, 0.42); }
+.sv-footer__legal-toggle > summary { list-style: none; cursor: pointer; padding: 13px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.11em; text-transform: uppercase; color: #4a443d; }
+.sv-footer__legal-toggle > summary::-webkit-details-marker { display: none; }
+.sv-footer__legal-toggle > summary::after { content: " +"; }
+.sv-footer__legal-toggle[open] > summary::after { content: " −"; }
+.sv-footer__legal-toggle .sv-footer__legal { margin: 0; padding: 10px 16px 14px; box-sizing: border-box; }
+.sv-footer__legal-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  row-gap: 8px !important;
+  padding-bottom: 8px !important;
+}
+.sv-footer__legal-links a + a::before { content: "|"; color: #6f6a63; margin: 0 10px; }
+@media (max-width: 980px) {
+  .sv-footer { padding: 18px var(--pad, var(--site-page-margin, 18px)) calc(24px + env(safe-area-inset-bottom, 0px)) !important; }
+  .sv-footer__main {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    align-items: start !important;
+  }
+  .sv-footer__brand {
+    font-size: clamp(23px, 7.5vw, 29px) !important;
+    letter-spacing: 0.005em !important;
+    line-height: 1.08 !important;
+    color: #2d2924 !important;
+  }
+  .sv-footer__contact {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    justify-items: stretch !important;
+    align-items: stretch !important;
+  }
+  .sv-footer__contact-label {
+    font-size: 10px !important;
+    letter-spacing: 0.20em !important;
+    color: #6a645d !important;
+  }
+  .sv-footer__contact a {
+    width: 100% !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+    padding: 0 14px !important;
+    font-size: 11.4px !important;
+    letter-spacing: 0.10em !important;
+  }
+  .sv-footer__bottom { gap: 16px !important; padding-top: 16px !important; }
+  .sv-footer__copyright { font-size: 12px !important; line-height: 1.55 !important; color: #66615a !important; }
+  .sv-footer__legal-toggle > summary {
+    min-height: 46px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 14px !important;
+  }
+  .sv-footer__legal-links {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding-bottom: 0 !important;
+  }
+  .sv-footer__legal-links a {
+    width: 100% !important;
+    min-height: 46px !important;
+    border: 1px solid rgba(0,0,0,0.16) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    letter-spacing: 0.10em !important;
+    text-transform: uppercase !important;
+  }
+  .sv-footer__legal-links a + a::before { content: none !important; margin: 0 !important; }
+}
+</style>
 </head>
 <body class="legal-page">
   <nav id="nav" aria-label="Main">
@@ -75,7 +186,22 @@
 
   <div class="legal-contact-actions"><a href="investor-access_cn.html">返回投资者入口</a><a href="disclaimers_cn.html">查看法律声明与免责声明</a></div>
 
-  <footer class="sv-footer sv-footer--full-bleed" role="contentinfo" aria-label="网站页脚"><div class="sv-footer__inner"><div class="sv-footer__main"><div class="sv-footer__brand">ShoreVest Partners</div><div class="sv-footer__contact"><span class="sv-footer__contact-label">联系我们</span><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></div></div><div class="sv-footer__bottom"><details class="sv-footer__legal-toggle"><summary>法律声明</summary><div class="sv-footer__legal">仅供信息参考。本网站或投资者门户中的任何内容均不构成要约、招揽、推荐或投资建议。过往业绩并不预示未来表现。对投资相关材料的访问可能受法律法规及投资者资格要求限制。请查阅《法律声明与免责声明》《使用条款》《投资者访问 / 门户条款》《隐私政策》及《Cookie 通知》。</div></details><div class="sv-footer__legal-links"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="investor-access-portal-terms_cn.html">投资者访问 / 门户条款</a><a href="disclaimers_cn.html">法律声明与免责声明</a></div><div class="sv-footer__copyright">&copy; 2026 ShoreVest Partners. 保留所有权利。</div></div></div></footer>
+  <footer class="sv-footer sv-footer--full-bleed" role="contentinfo" aria-label="网站页脚">
+    <div class="sv-footer__inner">
+      <div class="sv-footer__main">
+        <div class="sv-footer__brand">ShoreVest Partners</div>
+        <div class="sv-footer__contact"><span class="sv-footer__contact-label">联系我们</span><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></div>
+      </div>
+      <div class="sv-footer__bottom">
+        <div class="sv-footer__copyright">&copy; 2026 ShoreVest Partners. 保留所有权利。</div>
+        <details class="sv-footer__legal-toggle">
+          <summary>法律声明</summary>
+          <div class="sv-footer__legal">仅供信息参考。本网站或投资者门户中的任何内容均不构成要约、招揽、推荐或投资建议。过往业绩并不预示未来表现。对投资相关材料的访问可能受法律法规及投资者资格要求限制。请查阅《法律声明与免责声明》《使用条款》《投资者访问 / 门户条款》《隐私政策》及《Cookie 通知》。</div>
+        </details>
+        <div class="sv-footer__legal-links"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="investor-access-portal-terms_cn.html">投资者访问 / 门户条款</a><a href="disclaimers_cn.html">法律声明与免责声明</a></div>
+      </div>
+    </div>
+  </footer>
   <script src="assets/js/site-motion.js" defer></script>
 </body>
 </html>
