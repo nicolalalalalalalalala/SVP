@@ -49,15 +49,22 @@
 html,
 body,
 body * {
-  font-family: "DIN 2014" !important;
+  font-family: "DIN 2014", "Noto Serif SC", serif !important;
+}
+
+:root {
+  --shorevest-lockup-tracking: 0.005em;
 }
 
 :lang(zh),
 [lang="zh"],
 [lang="zh-CN"],
 [lang="zh-Hans"],
+[lang="zh-Hant"],
 .nav__logo-cn,
-.nav__logo-cn * {
+.nav__logo-cn *,
+.type-sheet__cn,
+.type-sheet__line-value--cn {
   font-family: "Noto Serif SC" !important;
 }
 
@@ -108,7 +115,7 @@ body,
   font-family: "DIN 2014" !important;
   font-weight: 300 !important;
   font-style: italic !important;
-  letter-spacing: 0.01em !important;
+  letter-spacing: 0.008em !important;
 }
 
 h1,
@@ -171,14 +178,16 @@ li,
 }
 
 .nav__logo-en {
-  letter-spacing: 0.005em !important;
+  letter-spacing: var(--shorevest-lockup-tracking) !important;
   font-weight: 700 !important;
+  text-transform: uppercase !important;
 }
 
 .nav__logo-lockup {
   position: relative;
   padding-left: 10px;
   margin-left: 3px;
+  min-width: 100px;
 }
 
 .nav__logo-lockup::before {
@@ -192,10 +201,15 @@ li,
 }
 
 .nav__logo-cn {
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.1em !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
   color: var(--cinnabar) !important;
+}
+
+.nav__logo-en,
+.nav__logo-cn {
+  line-height: 1.1 !important;
 }
 
 .hero__copy,
