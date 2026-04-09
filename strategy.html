@@ -1677,6 +1677,125 @@
         color: #66625c;
         font-family: var(--serif);
       }
+      .visual-learning-grid {
+        margin-top: 16px;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1.35fr 1fr;
+      }
+      .visual-card {
+        border: 1px solid rgba(179, 33, 63, 0.16);
+        background: #fff;
+        padding: 16px;
+      }
+      .visual-card h3 {
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: #231f1a;
+        margin-bottom: 8px;
+      }
+      .visual-card p {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #6a645d;
+        margin-bottom: 12px;
+      }
+      .decision-map {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .decision-node {
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        background: #fcfbf9;
+        padding: 12px;
+        min-height: 138px;
+        position: relative;
+      }
+      .decision-node::after {
+        content: "→";
+        position: absolute;
+        right: -13px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--ink2);
+        color: #fff;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .decision-node:last-child::after {
+        display: none;
+      }
+      .decision-node b {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 8px;
+      }
+      .decision-node ul {
+        margin: 0;
+        padding-left: 14px;
+        display: grid;
+        gap: 6px;
+      }
+      .decision-node li {
+        font-size: 12px;
+        line-height: 1.45;
+        color: #5f5952;
+      }
+      .stack-chart {
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        background: #fcfbf9;
+        padding: 10px;
+      }
+      .stack-segment {
+        min-height: 52px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+        font-size: 11px;
+      }
+      .stack-segment:last-child {
+        margin-bottom: 0;
+      }
+      .stack-segment strong {
+        font-size: 11px;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: #2d2924;
+      }
+      .stack-segment span {
+        font-family: var(--serif);
+        font-size: 15px;
+        color: #5f5951;
+      }
+      .stack-segment--shorevest {
+        background: rgba(179, 33, 63, 0.08);
+        border-color: rgba(179, 33, 63, 0.4);
+      }
+      .stack-segment--shorevest strong,
+      .stack-segment--shorevest span {
+        color: #4f1f2a;
+      }
+      .visual-note {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.55;
+        color: #716b63;
+      }
       .risk-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2153,6 +2272,7 @@
         }
         .viz-kpi,
         .process-flow,
+        .visual-learning-grid,
         .city-grid,
         .alloc-grid,
         .strategy-details,
@@ -2166,6 +2286,16 @@
         }
         .flow-step::after {
           display: none;
+        }
+        .decision-map {
+          grid-template-columns: 1fr;
+        }
+        .decision-node::after {
+          content: "↓";
+          right: 50%;
+          top: auto;
+          bottom: -14px;
+          transform: translateX(50%);
         }
       }
       @media (max-width: 767px) {
@@ -2873,6 +3003,61 @@
                 <article class="flow-step">
                   <b>Step 4</b>
                   <small>Actively manage workout and resolution to realize cash outcomes.</small>
+                </article>
+              </div>
+              <div class="visual-learning-grid" aria-label="Visual framework for decision and positioning">
+                <article class="visual-card">
+                  <h3>Decision map: from deal to outcome</h3>
+                  <p>Read left to right. Every potential investment must pass all three boxes before capital is deployed.</p>
+                  <div class="decision-map">
+                    <div class="decision-node">
+                      <b>Opportunity</b>
+                      <ul>
+                        <li>Asset-backed credit need</li>
+                        <li>Limited refinancing options</li>
+                        <li>Clear debtor and asset visibility</li>
+                      </ul>
+                    </div>
+                    <div class="decision-node">
+                      <b>Filters</b>
+                      <ul>
+                        <li>Enforceable collateral package</li>
+                        <li>Senior legal positioning</li>
+                        <li>Entry discount to recovery value</li>
+                      </ul>
+                    </div>
+                    <div class="decision-node">
+                      <b>Expected path</b>
+                      <ul>
+                        <li>Contractual cash yield</li>
+                        <li>Controlled restructuring/workout</li>
+                        <li>Resolution with principal protection focus</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+                <article class="visual-card">
+                  <h3>Capital stack orientation</h3>
+                  <p>Visualizing where ShoreVest targets exposure in a stressed capital structure.</p>
+                  <div class="stack-chart" role="img" aria-label="Capital stack showing ShoreVest focus in senior secured and resolution positions">
+                    <div class="stack-segment">
+                      <strong>Equity</strong>
+                      <span>Highest residual risk</span>
+                    </div>
+                    <div class="stack-segment">
+                      <strong>Junior debt</strong>
+                      <span>Subordinated recovery</span>
+                    </div>
+                    <div class="stack-segment stack-segment--shorevest">
+                      <strong>Senior secured / control debt</strong>
+                      <span>Primary ShoreVest focus</span>
+                    </div>
+                    <div class="stack-segment stack-segment--shorevest">
+                      <strong>Resolution claims with enforceable path</strong>
+                      <span>Selective ShoreVest focus</span>
+                    </div>
+                  </div>
+                  <p class="visual-note">Goal: stay where legal priority, collateral and execution control can materially improve recovery outcomes.</p>
                 </article>
               </div>
             </div>
