@@ -1332,9 +1332,9 @@
       }
       .strategy-tools {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: minmax(240px, 0.32fr) minmax(0, 1fr);
         gap: 16px;
-        align-items: center;
+        align-items: start;
         margin-bottom: 36px;
         padding: 16px 20px;
         border: 1px solid rgba(0, 0, 0, 0.09);
@@ -1347,6 +1347,7 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: #7e786f;
+        margin: 0;
       }
       .strategy-tools__meta {
         display: grid;
@@ -1354,6 +1355,11 @@
       }
       .strategy-tools__meta .data-note {
         margin: 0;
+        font-size: 12px;
+        line-height: 1.55;
+        letter-spacing: 0.02em;
+        text-transform: none;
+        max-width: 40ch;
       }
       .jump-nav {
         display: flex;
@@ -2183,6 +2189,12 @@
         .strategy-tools p {
           font-size: 10px;
           letter-spacing: 0.12em;
+        }
+        .strategy-tools__meta .data-note {
+          font-size: 11px;
+          line-height: 1.5;
+          letter-spacing: 0.03em;
+          max-width: none;
         }
         .jump-nav {
           gap: 7px;
