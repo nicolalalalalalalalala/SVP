@@ -1327,28 +1327,46 @@
         overflow-wrap: anywhere;
       }
       .pgsec {
-        padding: 72px 0 104px;
-        background: linear-gradient(180deg, #fff 0%, #faf8f5 100%);
+        padding: 88px 0 120px;
+        background:
+          radial-gradient(1200px 600px at 8% 8%, rgba(179, 33, 63, 0.05), transparent 56%),
+          linear-gradient(180deg, #ffffff 0%, #f8f5f1 100%);
       }
       .strategy-stack {
         display: grid;
-        gap: 28px;
+        gap: 34px;
+        counter-reset: strategy-block;
       }
       .strategy-stack > * {
         min-width: 0;
       }
       .strategy-block {
-        background: transparent;
-        border: none;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 52px 0;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(250, 246, 241, 0.95));
+        border: 1px solid rgba(52, 43, 32, 0.08);
+        padding: 54px clamp(24px, 4vw, 56px);
         border-radius: 0;
         scroll-margin-top: 96px;
         position: relative;
-        overflow: visible;
+        overflow: hidden;
+        box-shadow: 0 18px 46px rgba(19, 15, 10, 0.06);
+      }
+      .strategy-block::before {
+        counter-increment: strategy-block;
+        content: "0" counter(strategy-block);
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        font-weight: 500;
+        color: rgba(34, 30, 25, 0.32);
       }
       .strategy-block::after {
-        content: none;
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-top: 2px solid rgba(179, 33, 63, 0.26);
+        pointer-events: none;
       }
       .strategy-block h2 {
         font-family: var(--serif);
@@ -1363,9 +1381,9 @@
         white-space: normal;
       }
       .strategy-block p {
-        color: #66615a;
+        color: #595248;
         line-height: 1.8;
-        font-size: 18px;
+        font-size: 19px;
         font-family: var(--serif);
         max-width: 760px;
         overflow-wrap: anywhere;
@@ -1376,16 +1394,16 @@
       }
       #what-we-invest .strategy-details {
         gap: 24px;
-        margin-top: 26px;
+        margin-top: 30px;
       }
       #what-we-invest .strategy-detail:nth-child(1) {
-        background: #fff;
+        background: linear-gradient(160deg, #ffffff, #fdfaf6);
       }
       #what-we-invest .strategy-detail:nth-child(2) {
-        background: #fcfaf7;
+        background: linear-gradient(160deg, #fdfaf6, #f8f4ee);
       }
       #what-we-invest .strategy-detail:nth-child(3) {
-        background: #f8f5f1;
+        background: linear-gradient(160deg, #f8f4ed, #f4efe7);
       }
       #what-we-invest .strategy-detail h3 {
         font-size: clamp(26px, 2.6vw, 33px);
@@ -1394,6 +1412,10 @@
       }
       #what-we-invest .strategy-detail p {
         line-height: 1.62;
+      }
+      #what-we-invest .strategy-detail {
+        border: 1px solid rgba(43, 36, 28, 0.08);
+        box-shadow: 0 10px 24px rgba(17, 13, 8, 0.05);
       }
       #why-china {
         padding-top: 62px;
@@ -1496,9 +1518,18 @@
         margin-top: 8px;
         padding-top: 34px;
         padding-bottom: 34px;
+        background: linear-gradient(150deg, #1a1713 0%, #2a221a 100%);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 24px 50px rgba(8, 6, 4, 0.35);
+      }
+      #strategy-summary::before {
+        color: rgba(255, 255, 255, 0.42);
+      }
+      #strategy-summary h2 {
+        color: #fff;
       }
       #strategy-summary p {
-        color: #4a443d;
+        color: rgba(255, 255, 255, 0.78);
         font-size: 20px;
         max-width: 52ch;
       }
@@ -1519,10 +1550,10 @@
         font-family: var(--serif);
       }
       .strategy-viz {
-        margin: 24px 0 6px;
-        padding: 22px;
-        border: 1px solid rgba(0, 0, 0, 0.09);
-        background: #fcfbf9;
+        margin: 28px 0 10px;
+        padding: 26px;
+        border: 1px solid rgba(29, 24, 17, 0.09);
+        background: linear-gradient(180deg, #fdfcf9, #f7f2ec);
       }
       .strategy-viz--at-a-glance {
         margin-top: 18px;
@@ -1577,6 +1608,8 @@
       .kpi:focus-visible,
       .kpi.is-active {
         border-color: rgba(179, 33, 63, 0.45);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(33, 24, 17, 0.1);
         outline: none;
       }
       .viz-detail,
