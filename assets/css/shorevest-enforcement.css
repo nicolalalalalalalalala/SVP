@@ -192,20 +192,20 @@ hr {
 }
 
 .nav__logo-en {
-  color: var(--sv-color-accent) !important;
+  color: #000000 !important;
 }
 
 .nav__logo-cn {
-  color: color-mix(in srgb, var(--sv-color-accent) 78%, #ffffff 22%) !important;
+  color: #000000 !important;
 }
 
 #nav .nav__logo-en {
-  color: var(--sv-color-accent) !important;
+  color: #000000 !important;
 }
 
 #nav .nav__logo-cn {
-  color: var(--sv-color-accent) !important;
-  opacity: 0.9 !important;
+  color: #000000 !important;
+  opacity: 1 !important;
 }
 
 #nav .nav__logo-lockup::before {
