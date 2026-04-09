@@ -670,7 +670,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 @media (max-width: 900px) {
   footer.sv-footer,
   footer.sv-footer.sv-footer--full-bleed {
-    padding: 18px var(--site-page-margin, 18px) 40px !important;
+    padding: 18px var(--site-page-margin, 18px) calc(24px + env(safe-area-inset-bottom, 0px)) !important;
   }
 
   footer.sv-footer .sv-footer__main {

@@ -2079,7 +2079,7 @@
 }
 .sv-footer__legal-links a + a::before { content: "|"; color: #6f6a63; margin: 0 10px; }
 @media (max-width: 900px) {
-  .sv-footer { padding: 18px var(--pad, var(--site-page-margin, 18px)) 40px !important; }
+  .sv-footer { padding: 18px var(--pad, var(--site-page-margin, 18px)) calc(24px + env(safe-area-inset-bottom, 0px)) !important; }
   .sv-footer__main {
     flex-direction: row !important;
     align-items: center !important;
