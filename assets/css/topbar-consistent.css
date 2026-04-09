@@ -12,14 +12,14 @@
   --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap) + 8px);
   --control-radius-pill: 0px;
   --control-radius-soft: 0px;
-  --control-brand: #b3213f;
-  --control-ink: #0c0c0a;
-  --control-ink-strong: #171717;
-  --control-paper: #ffffff;
-  --surface-elevated: color-mix(in srgb, #ffffff 84%, #f6f4f0 16%);
-  --surface-border: rgba(12, 12, 10, 0.12);
-  --shadow-soft: 0 16px 40px rgba(12, 12, 10, 0.09);
-  --shadow-xs: 0 4px 12px rgba(12, 12, 10, 0.07);
+  --control-brand: var(--cinnabar, #c93b2a);
+  --control-ink: var(--text-main, #0f2206);
+  --control-ink-strong: var(--text-main, #0f2206);
+  --control-paper: var(--paper-light, #faf6ee);
+  --surface-elevated: color-mix(in srgb, var(--paper, #f2ecd8) 88%, var(--paper-light, #faf6ee) 12%);
+  --surface-border: color-mix(in srgb, var(--paper-dark, #d8ceb0) 76%, transparent);
+  --shadow-soft: 0 16px 40px color-mix(in srgb, var(--text-main, #0f2206) 18%, transparent);
+  --shadow-xs: 0 4px 12px color-mix(in srgb, var(--text-main, #0f2206) 14%, transparent);
   --control-transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, letter-spacing 0.2s ease;
 }
 
@@ -164,6 +164,7 @@ html {
   text-transform: uppercase;
   white-space: nowrap;
   position: relative;
+  color: var(--text-main, #0f2206);
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -257,7 +258,7 @@ html {
 .jump-nav button,
 .viz-btn,
 .track-record-trigger {
-  border-color: rgba(23, 23, 23, 0.2);
+  border-color: color-mix(in srgb, var(--text-main, #0f2206) 24%, transparent);
   background: var(--control-paper);
   color: var(--control-ink);
 }
@@ -348,7 +349,7 @@ html {
   }
 
   #nav {
-    border-bottom-color: rgba(0, 0, 0, 0.08);
+    border-bottom-color: color-mix(in srgb, var(--paper-dark, #d8ceb0) 82%, transparent);
   }
 
   #nav .nav__links {
@@ -417,9 +418,9 @@ html {
     order: initial;
     margin: 0;
     padding: 14px var(--topbar-pad) 16px;
-    background: rgba(249, 248, 244, 0.98);
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    background: color-mix(in srgb, var(--paper-light, #faf6ee) 92%, transparent);
+    border-top: 1px solid color-mix(in srgb, var(--paper-dark, #d8ceb0) 82%, transparent);
+    box-shadow: 0 10px 26px color-mix(in srgb, var(--text-main, #0f2206) 14%, transparent);
     backdrop-filter: blur(8px);
   }
 
