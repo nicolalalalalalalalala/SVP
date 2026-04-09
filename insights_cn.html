@@ -2463,6 +2463,31 @@
         },
       };
 
+      const rewriteArchiveIssueLinks = () => {
+        const archiveLinks = document.querySelectorAll(
+          '.archive__actions a[href*="printPreview=1"][href*="doc="]',
+        );
+        archiveLinks.forEach((link) => {
+          const parsedUrl = new URL(link.href, window.location.origin);
+          const docKey = parsedUrl.searchParams.get("doc");
+          const action = parsedUrl.searchParams.get("action");
+          const mappedIssue = docKey ? archiveIssueMap[docKey] : null;
+          if (!mappedIssue?.pdf) return;
+
+          link.href = mappedIssue.pdf;
+
+          if (action === "download") {
+            const requestedFilename = parsedUrl.searchParams.get("filename");
+            if (requestedFilename) {
+              link.setAttribute("download", requestedFilename);
+            }
+          } else {
+            link.removeAttribute("download");
+          }
+        });
+      };
+      rewriteArchiveIssueLinks();
+
       const getPrintSourceArticle = () =>
         document.querySelector('[data-print-article="active"]') ||
         document.querySelector("[data-print-article]") ||
