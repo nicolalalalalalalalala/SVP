@@ -289,56 +289,56 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
 
 /* Unified mobile footer treatment to match current visual standard */
 @media (max-width: 700px) {
-  footer.sv-footer,
-  footer.sv-footer.sv-footer--full-bleed,
-  .sv-footer {
+  html body footer.sv-footer,
+  html body footer.sv-footer.sv-footer--full-bleed,
+  html body .sv-footer {
     padding: 18px var(--site-page-margin, 18px) calc(24px + env(safe-area-inset-bottom, 0px)) !important;
     background: #e8e7e5 !important;
   }
 
-  footer.sv-footer .sv-footer__inner {
+  html body footer.sv-footer .sv-footer__inner {
     max-width: none !important;
   }
 
-  footer.sv-footer .sv-footer__main {
+  html body footer.sv-footer .sv-footer__main {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 12px !important;
   }
 
-  footer.sv-footer .sv-footer__brand {
-    font-size: 18px !important;
-    line-height: 1.22 !important;
+  html body footer.sv-footer .sv-footer__brand {
+    font-size: 15px !important;
+    line-height: 1.2 !important;
     letter-spacing: 0.01em !important;
     margin-bottom: 0 !important;
   }
 
-  footer.sv-footer .sv-footer__contact {
+  html body footer.sv-footer .sv-footer__contact {
     width: 100% !important;
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 8px !important;
   }
 
-  footer.sv-footer .sv-footer__contact-label {
-    font-size: 11px !important;
-    letter-spacing: 0.14em !important;
+  html body footer.sv-footer .sv-footer__contact-label {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
     text-transform: uppercase !important;
     color: #4a443d !important;
   }
 
-  footer.sv-footer .sv-footer__contact a {
+  html body footer.sv-footer .sv-footer__contact a {
     width: 100% !important;
-    min-height: 44px !important;
+    min-height: 40px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 14px !important;
+    padding: 0 12px !important;
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
     background: rgba(255, 255, 255, 0.44) !important;
     color: #161515 !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
     box-sizing: border-box !important;
@@ -347,49 +347,55 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     word-break: break-word !important;
   }
 
-  footer.sv-footer .sv-footer__bottom {
-    gap: 16px !important;
-    padding-top: 16px !important;
+  html body footer.sv-footer .sv-footer__bottom {
+    gap: 14px !important;
+    padding-top: 14px !important;
   }
 
-  footer.sv-footer .sv-footer__copyright {
-    font-size: 12px !important;
-    line-height: 1.55 !important;
+  html body footer.sv-footer .sv-footer__copyright {
+    font-size: 10px !important;
+    line-height: 1.45 !important;
     color: #66615a !important;
   }
 
-  footer.sv-footer .sv-footer__legal-toggle {
+  html body footer.sv-footer .sv-footer__legal-toggle {
     border: 1px solid rgba(0, 0, 0, 0.18) !important;
     background: rgba(255, 255, 255, 0.24) !important;
   }
 
-  footer.sv-footer .sv-footer__legal-toggle > summary {
-    min-height: 44px !important;
+  html body footer.sv-footer .sv-footer__legal-toggle > summary {
+    min-height: 40px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0 14px !important;
-    font-size: 12px !important;
-    letter-spacing: 0.12em !important;
+    padding: 0 12px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
   }
 
-  footer.sv-footer .sv-footer__legal-links {
+  html body footer.sv-footer .sv-footer__legal,
+  html body footer.sv-footer .sv-footer__legal p {
+    font-size: 10px !important;
+    line-height: 1.45 !important;
+  }
+
+  html body footer.sv-footer .sv-footer__legal-links {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 14px !important;
+    gap: 10px !important;
     padding-top: 2px !important;
   }
 
-  footer.sv-footer .sv-footer__legal-links a {
-    font-size: 12px !important;
-    line-height: 1.45 !important;
+  html body footer.sv-footer .sv-footer__legal-links a {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
     letter-spacing: 0.01em !important;
     text-transform: none !important;
     color: #1e1d1b !important;
   }
 
-  footer.sv-footer .sv-footer__legal-links a + a::before {
+  html body footer.sv-footer .sv-footer__legal-links a + a::before {
     content: "" !important;
   }
 }
