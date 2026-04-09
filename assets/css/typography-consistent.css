@@ -124,6 +124,19 @@ html[lang^='zh'] h6 {
   font-family: var(--site-serif-zh);
 }
 
+/* On Chinese pages, render explicitly English text with English font stacks. */
+html:lang(zh) :lang(en),
+html[lang^='zh'] :lang(en) {
+  font-family: var(--site-sans-en);
+}
+
+html:lang(zh) :is(h1, h2, h3, h4, h5, h6, .serif, [class*='serif']):lang(en),
+html[lang^='zh'] :is(h1, h2, h3, h4, h5, h6, .serif, [class*='serif']):lang(en),
+html:lang(zh) :is(h1, h2, h3, h4, h5, h6, .serif, [class*='serif']) :lang(en),
+html[lang^='zh'] :is(h1, h2, h3, h4, h5, h6, .serif, [class*='serif']) :lang(en) {
+  font-family: var(--site-serif-en);
+}
+
 /* Global button typography requirement. */
 :where(button, .btn, input[type='button'], input[type='submit'], input[type='reset']) {
   font-family: var(--site-sans-en) !important;
