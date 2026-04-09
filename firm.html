@@ -992,15 +992,20 @@
           font-size: 10px;
         }
         .track-record-trigger {
-          grid-template-columns: 34px minmax(0, 1fr);
-          gap: 12px;
+          grid-template-columns: minmax(0, 1fr) auto;
+          gap: 10px;
+          align-items: baseline;
         }
         .track-record-trigger__value {
           grid-column: 2;
           font-size: 16px;
+          white-space: nowrap;
+          justify-self: end;
         }
         .track-record-trigger__label {
+          grid-column: 1;
           font-size: 18px;
+          min-width: 0;
         }
         .track-record-panel {
           padding: 22px 20px 24px;
