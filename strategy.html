@@ -2169,6 +2169,38 @@
         border-radius: 10px;
         font-size: 11px;
       }
+
+      /* Improve readability by adding more breathing room in boxed modules. */
+      .kpi,
+      .funnel-step,
+      .flow-step,
+      .visual-card,
+      .decision-node,
+      .stack-chart,
+      .risk-card,
+      .alloc-row,
+      .strategy-detail,
+      .data-card,
+      .city,
+      .expand__trigger {
+        padding: clamp(14px, 1.9vw, 20px);
+      }
+
+      .flow-step {
+        padding-left: clamp(44px, 4vw, 54px);
+      }
+
+      .flow-step::before {
+        top: clamp(12px, 1.8vw, 16px);
+        left: clamp(12px, 1.8vw, 16px);
+      }
+
+      .decision-node,
+      .strategy-detail,
+      .city {
+        line-height: 1.6;
+      }
+
       #current-fund {
         padding-top: 56px;
       }

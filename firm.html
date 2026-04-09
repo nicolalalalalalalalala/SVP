@@ -2321,6 +2321,31 @@
     transform: translateY(-1px);
   }
 
+  /* Slightly increase breathing room inside boxed content blocks. */
+  .hero-signal,
+  .hero-stat,
+  .visual-signal-card,
+  .visual-flow-step,
+  .pillar-card,
+  .track-record-trigger,
+  .track-record-panel,
+  .note,
+  .protocol-card,
+  .market-card {
+    padding: clamp(16px, 2.1vw, 24px);
+  }
+
+  .track-record-trigger {
+    padding: clamp(16px, 2.1vw, 22px) clamp(18px, 2.3vw, 26px);
+  }
+
+  .hero-stat,
+  .visual-signal-card,
+  .note,
+  .protocol-card {
+    line-height: 1.6;
+  }
+
   @media (max-width: 1100px) {
     .hero-grid,
     .section-head,
