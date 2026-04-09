@@ -2695,7 +2695,7 @@
             downloadLink.click();
             downloadLink.remove();
           } else {
-            window.location.replace(selectedIssue.pdf);
+            window.open(selectedIssue.pdf, "_blank", "noopener");
           }
           handledArchiveIssue = true;
         }
