@@ -510,23 +510,20 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 /* ══ HERO STATS (legacy layout restored) */
 #stats {
   padding:14px 0 0;
-  display:flex;
-  justify-content:flex-end;
 }
 .hero__stats {
-  width:min(100%, 500px);
-  justify-self:end;
+  width:100%;
   padding-top:2px;
 }
 .stats {
-  max-width:100%;
+  width:100%;
   display:grid;
   grid-template-columns:1fr;
   gap:14px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
   }
   .stat {
