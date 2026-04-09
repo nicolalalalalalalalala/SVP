@@ -192,19 +192,19 @@ hr {
 }
 
 .nav__logo-en {
-  color: #000000 !important;
+  color: var(--sv-color-accent) !important;
 }
 
 .nav__logo-cn {
-  color: #000000 !important;
+  color: var(--sv-color-soft-ink) !important;
 }
 
 #nav .nav__logo-en {
-  color: #000000 !important;
+  color: var(--sv-color-accent) !important;
 }
 
 #nav .nav__logo-cn {
-  color: #000000 !important;
+  color: var(--sv-color-soft-ink) !important;
   opacity: 1 !important;
 }
 
