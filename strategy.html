@@ -3189,6 +3189,33 @@
 }
 </style>
 
+
+<style id="strategy-artifact-cleanup-v1">
+/* Remove unintended seams/artifacts in stacked strategy sections */
+.pgsec .strategy-stack > section,
+.pgsec .strategy-stack > article {
+  margin-top: 0 !important;
+}
+
+/* Prevent thin rendering seams from decorative overlays */
+.pgsec .strategy-block::after {
+  display: none;
+}
+
+/* Keep card surfaces consistent so stray white blocks do not appear */
+.pgsec .strategy-viz,
+.pgsec .kpi,
+.pgsec .funnel-step,
+.pgsec .flow-step,
+.pgsec .visual-card,
+.pgsec .risk-card,
+.pgsec .decision-node,
+.pgsec .stack-chart,
+.pgsec .stack-segment {
+  background: #f9f5ef;
+}
+</style>
+
 </head>
   <body>
     <nav id="nav">
