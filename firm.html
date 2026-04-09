@@ -145,6 +145,9 @@
       .nav__mobile-lang {
         display: none;
       }
+      .nav__mobile-investor {
+        display: none;
+      }
       .nav__lp {
         font-family: var(--sans);
         font-size: 10px;
@@ -1764,8 +1767,11 @@
         .nav__mobile-lang {
           display: inline-flex;
         }
-        .nav__lp {
+        .nav__mobile-investor {
           display: inline-flex;
+        }
+        .nav__lp {
+          display: none;
         }
         .nav__links {
           display: none;
@@ -1834,6 +1840,9 @@
           flex: 0 0 auto;
           white-space: nowrap;
         }
+        .nav__lp {
+          display: none;
+        }
         .nav__zh {
           flex: 0 0 auto;
           white-space: nowrap;
@@ -1852,17 +1861,12 @@
         .nav__zh {
           display: none;
         }
-        .nav__lp,
         .nav__menu-btn {
           min-height: 38px;
           padding: 0 10px;
         }
-        .nav__lp,
         .nav__menu-btn {
           letter-spacing: 0.1em;
-        }
-        .nav__lp {
-          font-size: 8px;
         }
         .nav__menu-btn {
           font-size: 9px;
@@ -2347,6 +2351,12 @@
     padding: clamp(18px, 2.3vw, 28px);
   }
 
+  .hero-signal,
+  .hero-stat {
+    border-color: rgba(165, 35, 61, 0.12);
+    background: #fff;
+  }
+
   .hero-stats {
     margin-top: 10px;
     padding-top: 12px;
@@ -2449,6 +2459,41 @@
       font-size: clamp(29px, 9vw, 40px);
     }
   }
+
+  @media (max-width: 767px) {
+    .hero-signal {
+      padding: 12px 13px;
+      border-radius: 12px;
+    }
+
+    .hero-signal__text {
+      font-size: clamp(16px, 5vw, 26px);
+      line-height: 1.22;
+    }
+
+    .hero-stat {
+      padding: 14px 13px;
+      border-radius: 12px;
+    }
+
+    .hero-stat__value {
+      font-size: clamp(2.15rem, 8.2vw, 2.85rem);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-stat__label {
+      margin-top: 0.25rem;
+      font-size: 0.86rem;
+      letter-spacing: 0.12em;
+    }
+
+    .track-record-basis {
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: #57524b;
+    }
+  }
 </style>
 
 </head>
@@ -2468,6 +2513,7 @@
         <li><a href="insights.html">Insights</a></li>
         <li><a href="press.html">Press</a></li>
         <li><a href="team.html">Team</a></li>
+        <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
         <li class="nav__mobile-lang"><a href="firm_cn.html">中文</a></li>
       </ul>
       <div class="nav__right">
