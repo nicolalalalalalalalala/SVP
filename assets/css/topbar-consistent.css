@@ -662,8 +662,8 @@ footer.sv-footer .sv-footer__bottom {
   grid-template-columns: 1fr !important;
   gap: 10px !important;
   padding-top: 16px !important;
-  justify-items: end !important;
-  text-align: right !important;
+  justify-items: start !important;
+  text-align: left !important;
 }
 
 footer.sv-footer .sv-footer__copyright,
@@ -720,7 +720,7 @@ footer.sv-footer .sv-footer__legal-links {
   padding-bottom: 8px !important;
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: flex-end !important;
+  justify-content: flex-start !important;
 }
 
 footer.sv-footer .sv-footer__legal-links a + a::before {
