@@ -1626,35 +1626,68 @@ h2.su__hed {
   .sv-footer__legal-links a + a::before { content: none !important; margin: 0 !important; }
 }
 @media (max-width: 640px) {
+  .sv-footer {
+    padding: 34px var(--pad, var(--site-page-margin, 18px)) calc(34px + env(safe-area-inset-bottom, 0px)) !important;
+  }
   .sv-footer__main {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 14px !important;
+    gap: 16px !important;
+    padding-bottom: 22px !important;
   }
   .sv-footer__brand {
     white-space: normal !important;
-    font-size: 20px !important;
+    font-size: 24px !important;
+    line-height: 1.18 !important;
   }
   .sv-footer__contact {
     width: 100% !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 8px !important;
+    gap: 10px !important;
   }
   .sv-footer__contact-label {
-    font-size: 12px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.14em !important;
+    color: #4f4a44 !important;
   }
   .sv-footer__contact a {
     width: 100% !important;
     box-sizing: border-box !important;
-    min-height: 52px !important;
+    min-height: 58px !important;
     justify-content: flex-start !important;
     text-align: left !important;
     white-space: normal !important;
     overflow-wrap: anywhere !important;
     word-break: break-word !important;
     line-height: 1.3 !important;
-    padding: 12px 14px !important;
+    padding: 14px 18px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.1em !important;
+  }
+  .sv-footer__bottom {
+    gap: 18px !important;
+    padding-top: 20px !important;
+  }
+  .sv-footer__copyright {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+  .sv-footer__legal-toggle > summary {
+    width: 100% !important;
+    min-height: 54px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    font-size: 12px !important;
+    letter-spacing: 0.14em !important;
+    padding: 14px 16px !important;
+  }
+  .sv-footer__legal-links {
+    row-gap: 14px !important;
+  }
+  .sv-footer__legal-links a {
+    font-size: 13px !important;
   }
 }
 </style>
