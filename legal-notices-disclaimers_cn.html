@@ -209,6 +209,152 @@
   </style>
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
 
+<style id="sv-footer-homepage-sync">
+.sv-footer {
+  margin-top: 0 !important;
+  padding-top: 16px !important;
+  padding-bottom: 32px !important;
+  position: relative;
+}
+.sv-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #7b746c;
+}
+.sv-footer__main { gap: 20px !important; }
+.sv-footer__contact { gap: 14px !important; }
+.sv-footer__contact-label {
+  letter-spacing: 0.1em !important;
+  color: #6a645d !important;
+}
+.sv-footer__contact a {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px !important;
+}
+.sv-footer__bottom {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  padding-top: 16px !important;
+}
+.sv-footer__legal-toggle { border: 1px solid rgba(0, 0, 0, 0.16); background: rgba(255, 255, 255, 0.42); }
+.sv-footer__legal-toggle > summary { list-style: none; cursor: pointer; padding: 13px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.11em; text-transform: uppercase; color: #4a443d; }
+.sv-footer__legal-toggle > summary::-webkit-details-marker { display: none; }
+.sv-footer__legal-toggle > summary::after { content: " +"; }
+.sv-footer__legal-toggle[open] > summary::after { content: " −"; }
+.sv-footer__legal-toggle .sv-footer__legal { margin: 0; padding: 10px 16px 14px; box-sizing: border-box; }
+.sv-footer__legal-links {
+  padding-bottom: 8px !important;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+.sv-footer__legal-links a + a::before { content: "|"; color: #6f6a63; margin: 0 10px; }
+@media (max-width: 900px) {
+  .sv-footer { padding: 18px var(--pad, var(--site-page-margin, 18px)) calc(24px + env(safe-area-inset-bottom, 0px)) !important; }
+  .sv-footer__main {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+  }
+  .sv-footer__brand {
+    flex: 1 1 auto !important;
+    font-size: 22px !important;
+    line-height: 1.22 !important;
+    letter-spacing: 0.01em !important;
+    white-space: nowrap !important;
+  }
+  .sv-footer__contact {
+    width: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    min-width: 0 !important;
+  }
+  .sv-footer__contact-label {
+    width: auto !important;
+    font-size: 13px !important;
+    letter-spacing: 0.13em !important;
+    white-space: nowrap !important;
+    color: #625c55 !important;
+  }
+  .sv-footer__contact a {
+    width: auto !important;
+    text-align: center;
+    min-height: 56px;
+    min-width: 0 !important;
+    padding: 0 18px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    background: rgba(255, 255, 255, 0.44) !important;
+  }
+  .sv-footer__bottom { gap: 16px !important; padding-top: 16px !important; }
+  .sv-footer__copyright { font-size: 12px !important; line-height: 1.55 !important; color: #66615a !important; }
+  .sv-footer__legal-toggle > summary {
+    padding: 16px 18px !important;
+    font-size: 12px !important;
+    letter-spacing: 0.12em !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+  }
+  .sv-footer__legal-links {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 12px !important;
+    padding-top: 2px !important;
+    padding-bottom: 0 !important;
+  }
+  .sv-footer__legal-links a {
+    display: block;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    color: #1d1c1a !important;
+  }
+  .sv-footer__legal-links a + a::before { content: none !important; margin: 0 !important; }
+}
+@media (max-width: 640px) {
+  .sv-footer__main {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .sv-footer__brand {
+    white-space: normal !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+  .sv-footer__contact {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  .sv-footer__contact-label {
+    width: 100% !important;
+  }
+  .sv-footer__contact a {
+    width: 100% !important;
+    min-height: 52px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+}
+
+</style>
 
 </head>
 <body>
@@ -228,7 +374,7 @@
       <li><a href="press_cn.html">新闻</a></li>
     </ul>
     <div class="nav__right">
-      <a href="disclaimers.html" class="nav__zh">EN</a>
+      <a href="legal-notices-disclaimers.html" class="nav__zh">EN</a>
       <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
     </div>
   </nav>
@@ -282,16 +428,18 @@
     <div class="sv-footer__main">
       <div class="sv-footer__brand">ShoreVest Partners</div>
       <div class="sv-footer__contact">
-        <span class="sv-footer__contact-label">CONTACT</span>
-        <a href="mailto:partners@shorevest.com">PARTNERS@SHOREVEST.COM</a>
+        <span class="sv-footer__contact-label">联系我们</span>
+        <a href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+
+        
       </div>
     </div>
 
     <div class="sv-footer__bottom">
-      <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. All rights reserved.</div>
+      <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. 保留所有权利。</div>
       <details class="sv-footer__legal-toggle">
-        <summary>LEGAL NOTICE</summary>
-        <div class="sv-footer__legal">This website uses cookies and similar technologies for operational, analytical, and security purposes. Certain cookies may be required for the Site to function. By using this website, you acknowledge the use of cookies as described in this Cookie Notice. Please also review our Privacy Policy, Terms of Use, and Legal Notices &amp; Disclaimers.</div>
+        <summary>法律声明</summary>
+        <div class="sv-footer__legal">本网站使用 Cookie 及类似技术以支持运行、分析与安全功能。部分 Cookie 为网站正常运行所必需。继续使用本网站即表示您确认并同意按本《Cookie 通知》所述方式使用 Cookie；请同时查阅《隐私政策》《使用条款》及《法律声明与免责声明》。</div>
       </details>
       <div class="sv-footer__legal-links"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice_cn.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="legal-notices-disclaimers_cn.html">法律声明与免责声明</a></div>
     </div>
