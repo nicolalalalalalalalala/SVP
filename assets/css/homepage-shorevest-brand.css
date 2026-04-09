@@ -91,11 +91,15 @@ body,
 .stat,
 .issue-card,
 .icard,
-.cdd-hero__card,
 .cdd-subscribe__card,
 .cdd-subscribe__cards {
   background: var(--paper-light) !important;
   border-color: var(--paper-dark) !important;
+}
+
+#cdd .cdd-hero__card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .hero__hed,
