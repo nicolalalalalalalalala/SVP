@@ -1330,109 +1330,26 @@
         padding: 72px 0 104px;
         background: linear-gradient(180deg, #fff 0%, #faf8f5 100%);
       }
-      .strategy-tools {
-        display: grid;
-        grid-template-columns: minmax(240px, 0.34fr) minmax(0, 1fr);
-        gap: 14px;
-        align-items: start;
-        margin-bottom: 36px;
-        padding: 16px 20px;
-        border: 1px solid rgba(0, 0, 0, 0.09);
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(6px);
-        box-shadow: 0 10px 24px rgba(30, 25, 17, 0.05);
-      }
-      .strategy-tools p {
-        font-size: 11px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: #7e786f;
-        margin: 0;
-      }
-      .strategy-tools__meta {
-        display: grid;
-        gap: 6px;
-      }
-      .strategy-tools__meta .data-note {
-        margin: 0;
-        font-size: 12px;
-        line-height: 1.55;
-        letter-spacing: 0.02em;
-        text-transform: none;
-        max-width: 40ch;
-      }
-      .jump-nav {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
-      }
-      .jump-nav button {
-        flex: 0 1 auto;
-        border: 1px solid rgba(179, 33, 63, 0.2);
-        background: #fff;
-        color: #5c564f;
-        font-size: 9px;
-        letter-spacing: 0.1em;
-        line-height: 1;
-        white-space: nowrap;
-        text-transform: uppercase;
-        padding: 9px 11px;
-        min-height: 34px;
-        cursor: pointer;
-        border-radius: 999px;
-        transition:
-          background-color 0.2s ease,
-          border-color 0.2s ease,
-          color 0.2s ease,
-          box-shadow 0.2s ease;
-        transform: translateZ(0);
-      }
-      .jump-nav button:hover,
-      .jump-nav button:focus-visible,
-      .jump-nav button.is-active {
-        border-color: var(--red);
-        background: var(--red);
-        color: #fff;
-        box-shadow: 0 0 0 1px rgba(179, 33, 63, 0.2);
-        outline: none;
-      }
       .strategy-stack {
         display: grid;
-        gap: 34px;
+        gap: 28px;
       }
       .strategy-block {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.09);
-        padding: 42px 44px;
-        border-radius: 14px;
+        background: transparent;
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 52px 0;
+        border-radius: 0;
         scroll-margin-top: 96px;
         position: relative;
-        overflow: hidden;
-        box-shadow: 0 12px 28px rgba(38, 31, 21, 0.04);
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease,
-          border-color 0.25s ease;
+        overflow: visible;
       }
       .strategy-block::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 4px;
-        background: rgba(179, 33, 63, 0.65);
-      }
-      .strategy-block:hover {
-        transform: translateY(-2px);
-        border-color: rgba(179, 33, 63, 0.24);
-        box-shadow: 0 20px 42px rgba(38, 31, 21, 0.1);
+        content: none;
       }
       .strategy-block h2 {
         font-family: var(--serif);
-        font-size: clamp(38px, 4.4vw, 52px);
+        font-size: clamp(34px, 4.2vw, 48px);
         font-weight: 400;
         line-height: 1.12;
         margin-bottom: 16px;
@@ -1444,23 +1361,17 @@
       }
       .strategy-block p {
         color: #66615a;
-        line-height: 1.88;
-        font-size: 17px;
+        line-height: 1.8;
+        font-size: 18px;
         font-family: var(--serif);
-        max-width: 767px;
+        max-width: 760px;
       }
       .strategy-block p + p {
-        margin-top: 10px;
-      }
-      #opening-frame {
-        padding-bottom: 50px;
-      }
-      #opening-frame p {
-        max-width: 72ch;
+        margin-top: 14px;
       }
       #what-we-invest .strategy-details {
-        gap: 16px;
-        margin-top: 20px;
+        gap: 24px;
+        margin-top: 26px;
       }
       #what-we-invest .strategy-detail:nth-child(1) {
         background: #fff;
@@ -1472,25 +1383,28 @@
         background: #f8f5f1;
       }
       #what-we-invest .strategy-detail h3 {
-        font-size: clamp(24px, 2.3vw, 30px);
-        margin-bottom: 12px;
+        font-size: clamp(26px, 2.6vw, 33px);
+        margin-bottom: 10px;
         color: #2f2a24;
       }
       #what-we-invest .strategy-detail p {
-        line-height: 1.72;
+        line-height: 1.62;
       }
       #why-china {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 62px;
+        padding-bottom: 62px;
       }
-      #why-china p {
-        max-width: 70ch;
+      #why-china .feature-paragraph {
+        max-width: 64ch;
         line-height: 1.95;
+        margin-top: 18px;
+        padding-left: 20px;
+        border-left: 2px solid rgba(179, 33, 63, 0.42);
       }
       #what-we-avoid .risk-grid {
         grid-template-columns: 1fr;
         gap: 0;
-        margin-top: 20px;
+        margin-top: 24px;
       }
       #what-we-avoid .risk-card {
         border: none;
@@ -1501,15 +1415,15 @@
         display: none;
       }
       #what-we-avoid .risk-card ul {
-        gap: 14px;
+        gap: 16px;
       }
       #what-we-avoid .risk-card li {
         font-size: 16px;
-        line-height: 1.75;
+        line-height: 1.5;
         border-left: none;
-        border-bottom: 1px solid rgba(179, 33, 63, 0.14);
-        padding: 0 0 12px 0;
-        color: #6f6962;
+        border-bottom: 1px solid rgba(179, 33, 63, 0.12);
+        padding: 0 0 14px 0;
+        color: #7d766e;
       }
       #what-we-avoid .risk-card li:last-child {
         border-bottom: none;
@@ -1520,55 +1434,68 @@
         margin-right: 8px;
       }
       #return-generation .strategy-list {
-        margin-top: 14px;
+        margin-top: 20px;
         padding-left: 0;
         gap: 0;
       }
       #return-generation .strategy-list li {
         list-style: none;
-        padding: 16px 0;
+        padding: 20px 0;
         border-bottom: 1px solid rgba(179, 33, 63, 0.14);
       }
       #return-generation .strategy-list li:last-child {
         border-bottom: none;
       }
       #downside-control {
-        background: #f9f6f2;
-        border-color: rgba(179, 33, 63, 0.2);
-        padding-top: 54px;
+        padding-top: 58px;
       }
-      #downside-control h2 {
-        font-weight: 500;
+      #downside-control .downside-list {
+        margin-top: 24px;
+        display: grid;
+        gap: 18px;
+        max-width: 760px;
       }
-      #downside-control .risk-grid {
-        margin-top: 20px;
-        gap: 16px;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+      #downside-control .downside-item {
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(179, 33, 63, 0.12);
       }
-      #downside-control .risk-card {
-        padding: 18px;
+      #downside-control .downside-item:last-child {
+        border-bottom: none;
       }
-      #downside-control .risk-card ul {
-        gap: 10px;
+      #downside-control .downside-item h3 {
+        font-family: var(--serif);
+        font-size: 26px;
+        line-height: 1.2;
+        font-weight: 400;
+        color: #28231d;
+        margin-bottom: 4px;
+      }
+      #downside-control .downside-item p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #69635b;
       }
       .market-context-basis {
-        margin-top: 24px;
-        margin-bottom: 10px;
-        font-size: 19px;
-        line-height: 1.82;
+        margin-top: 34px;
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: 1.78;
         color: #3c372f;
+        max-width: 60ch;
       }
       #current-environment {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 46px;
+        padding-bottom: 36px;
       }
       #strategy-summary {
-        margin-top: 4px;
-        padding-top: 48px;
+        margin-top: 8px;
+        padding-top: 34px;
+        padding-bottom: 34px;
       }
       #strategy-summary p {
         color: #4a443d;
-        font-size: 19px;
+        font-size: 20px;
+        max-width: 52ch;
       }
       .strategy-block p.single-line-copy {
         white-space: normal;
@@ -2056,14 +1983,22 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
         gap: 14px;
-        margin-top: 18px;
+        margin-top: 30px;
       }
       .next-links .cta {
         width: 100%;
         justify-content: space-between;
         border: 1px solid rgba(179, 33, 63, 0.18);
-        padding: 12px 14px;
+        padding: 15px 16px;
         border-radius: 10px;
+        font-size: 11px;
+      }
+      #current-fund {
+        padding-top: 56px;
+      }
+      #current-fund .cta__ring {
+        width: 50px;
+        height: 50px;
       }
       #cta-next {
         text-align: left;
@@ -2121,20 +2056,9 @@
         line-height: 1.65;
         color: #6b7280;
       }
-      .strategy-stack .strategy-block:nth-child(even) {
-        background: #fdfcf9;
-      }
-
       @media (min-width: 1200px) {
         .pgsec .wrap {
           max-width: 1280px;
-        }
-        .strategy-tools {
-          position: sticky;
-          top: 88px;
-          z-index: 20;
-          margin-bottom: 30px;
-          padding: 18px 24px;
         }
         .strategy-stack {
           gap: 38px;
@@ -2144,7 +2068,7 @@
           grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
           column-gap: 44px;
           row-gap: 12px;
-          padding: 48px 52px;
+          padding: 58px 0;
           align-items: start;
         }
         .strategy-block > .eyebrow,
@@ -2176,14 +2100,6 @@
         }
       }
       @media (max-width: 980px) {
-        .strategy-tools {
-          grid-template-columns: 1fr;
-          gap: 10px;
-          position: static;
-        }
-        .jump-nav {
-          justify-content: flex-start;
-        }
         .pagehero .wrap {
           grid-template-columns: 1fr;
           gap: 28px;
@@ -2215,7 +2131,7 @@
           max-width: 420px;
         }
         .strategy-block {
-          padding: 28px 24px;
+          padding: 36px 0;
         }
         .market-context-content {
           max-width: 100%;
@@ -2235,9 +2151,6 @@
         .risk-grid,
         .data-grid {
           grid-template-columns: 1fr;
-        }
-        #downside-control .risk-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .flow-step {
           padding-left: 44px;
@@ -2314,45 +2227,11 @@
           font-size: 17px;
           line-height: 1.75;
         }
-        .strategy-tools {
-          margin-bottom: 22px;
-          padding: 14px;
-          border-radius: 12px;
-          box-shadow: 0 8px 20px rgba(38, 31, 21, 0.05);
-        }
-        .strategy-tools p {
-          font-size: 10px;
-          letter-spacing: 0.12em;
-        }
-        .strategy-tools__meta .data-note {
-          font-size: 11px;
-          line-height: 1.5;
-          letter-spacing: 0.03em;
-          max-width: none;
-        }
-        .jump-nav {
-          gap: 7px;
-          flex-wrap: wrap;
-        }
-        .jump-nav button {
-          flex: 1 1 calc(50% - 7px);
-          min-width: 0;
-          text-align: center;
-          font-size: 9px;
-          letter-spacing: 0.1em;
-          padding: 8px 10px;
-          min-height: 36px;
-          white-space: normal;
-          line-height: 1.25;
-          overflow-wrap: anywhere;
-        }
         .strategy-stack {
           gap: 24px;
         }
         .strategy-block {
-          padding: 24px 18px;
-          border-radius: 12px;
-          box-shadow: 0 10px 24px rgba(38, 31, 21, 0.05);
+          padding: 30px 0;
         }
         .strategy-block h2 {
           font-size: clamp(28px, 8.2vw, 38px);
@@ -2376,9 +2255,6 @@
         .strategy-list li {
           font-size: 16px;
           line-height: 1.65;
-        }
-        #downside-control .risk-grid {
-          grid-template-columns: 1fr;
         }
         #what-we-avoid .risk-card li {
           font-size: 15px;
@@ -2920,30 +2796,7 @@
 
     <section class="pgsec">
       <div class="wrap">
-        <div class="strategy-tools" aria-label="Strategy interactions">
-          <div class="strategy-tools__meta">
-            <p>Page navigation</p>
-            <p class="data-note">These navigation links are provided for reading flow and do not imply section priority.</p>
-          </div>
-          <div class="jump-nav" data-jump-nav>
-            <button type="button" data-target="what-we-invest">What we invest in</button>
-            <button type="button" data-target="why-china">Why this exists</button>
-            <button type="button" data-target="what-we-avoid">What we avoid</button>
-            <button type="button" data-target="return-generation">How returns are generated</button>
-            <button type="button" data-target="downside-control">Downside control</button>
-            <button type="button" data-target="current-environment">Deployment environment</button>
-          </div>
-        </div>
         <div class="strategy-stack">
-          <section class="strategy-block" id="opening-frame">
-            <div class="eyebrow eyebrow--red">Opening frame</div>
-            <h2 class="single-line-heading">A recoverability-driven private credit strategy.</h2>
-            <p>
-              ShoreVest focuses on asset-backed private credit in China, emphasizing enforceability, collateral coverage and defined recovery pathways.
-              The strategy targets situations where outcomes are driven by legal position and control rather than market direction alone.
-            </p>
-          </section>
-
           <section class="strategy-block" id="what-we-invest">
             <h2>What we invest in</h2>
             <p>
@@ -2953,19 +2806,19 @@
               <article class="strategy-detail">
                 <h3>Asset-based lending</h3>
                 <p>
-                  Senior secured financings against identifiable collateral where borrowers need flexible capital unavailable through traditional channels. ShoreVest invests only when seniority, collateral visibility and an enforcement pathway are established at entry.
+                  Senior secured financings against identifiable collateral when flexible capital is needed and seniority, collateral visibility, and enforceability are explicit at entry.
                 </p>
               </article>
               <article class="strategy-detail">
                 <h3>Asset restructurings</h3>
                 <p>
-                  Situations where viable assets sit in impaired or over-levered capital structures. ShoreVest invests where structure can be reset to improve creditor position and where a credible route to resolution control exists from the outset.
+                  Situations with viable assets inside impaired capital structures, where terms can be reset to improve creditor position and a clear route to resolution control exists.
                 </p>
               </article>
               <article class="strategy-detail">
                 <h3>Debt resolutions</h3>
                 <p>
-                  Acquisition and resolution of distressed or non-performing assets. ShoreVest invests where entry is below recoverable value and legal or consensual recovery can be executed through defined jurisdictional pathways.
+                  Acquisition and resolution of distressed or non-performing assets where entry is below recoverable value and legal or consensual recovery can be executed through defined pathways.
                 </p>
               </article>
             </div>
@@ -2973,13 +2826,9 @@
 
           <section class="strategy-block" id="why-china">
             <h2 class="single-line-heading">Why this opportunity exists</h2>
-            <p>
+            <p class="feature-paragraph">
               China’s credit markets are large, locally driven and uneven in how capital is allocated and enforced.
-            </p>
-            <p>
               Credit outcomes are shaped by legal enforceability, creditor positioning, asset-level control and local execution.
-            </p>
-            <p>
               In many situations, the gap between offshore claims and onshore assets materially affects recovery outcomes.
             </p>
           </section>
@@ -2992,12 +2841,12 @@
             <div class="risk-grid">
               <div class="risk-card">
                 <ul>
-                  <li>Unsecured exposure or structures with weak collateral perfection.</li>
-                  <li>Structurally subordinated positions without enforceable senior recourse.</li>
+                  <li>Unsecured exposure or weak collateral perfection.</li>
+                  <li>Structural subordination without enforceable senior recourse.</li>
                   <li>Speculative development risk without contracted cash-flow support.</li>
-                  <li>Repayment dependent primarily on refinancing or market recovery rather than enforceable value.</li>
-                  <li>Assets without a credible and time-bounded path to realization.</li>
-                  <li>Legal structures where creditor remedies or jurisdiction are unclear.</li>
+                  <li>Repayment reliant on refinancing or market recovery.</li>
+                  <li>Assets without a credible, time-bounded realization path.</li>
+                  <li>Legal structures with unclear remedies or jurisdiction.</li>
                 </ul>
               </div>
             </div>
@@ -3025,37 +2874,27 @@
             <p>
               Downside protection is the organizing principle of the strategy.
             </p>
-            <div class="risk-grid">
-              <div class="risk-card">
-                <h4>Collateral</h4>
-                <ul>
-                  <li>Exposure supported by identifiable assets with an assessed recovery basis.</li>
-                </ul>
-              </div>
-              <div class="risk-card">
-                <h4>Legal priority</h4>
-                <ul>
-                  <li>Positions structured for enforceable seniority in relevant jurisdictions.</li>
-                </ul>
-              </div>
-              <div class="risk-card">
-                <h4>Control</h4>
-                <ul>
-                  <li>Investments selected where ShoreVest can influence outcome through structure or process.</li>
-                </ul>
-              </div>
-              <div class="risk-card">
-                <h4>Entry discipline</h4>
-                <ul>
-                  <li>Capital deployed only where entry carries a margin relative to recoverable value.</li>
-                </ul>
-              </div>
-              <div class="risk-card">
-                <h4>Execution</h4>
-                <ul>
-                  <li>Recovery pathways assessed at underwriting and actively managed through resolution.</li>
-                </ul>
-              </div>
+            <div class="downside-list">
+              <article class="downside-item">
+                <h3>Collateral</h3>
+                <p>Exposure supported by identifiable assets with assessed recovery basis.</p>
+              </article>
+              <article class="downside-item">
+                <h3>Legal priority</h3>
+                <p>Positions structured for enforceable seniority in relevant jurisdictions.</p>
+              </article>
+              <article class="downside-item">
+                <h3>Control</h3>
+                <p>Investments selected where outcomes can be influenced through structure or process.</p>
+              </article>
+              <article class="downside-item">
+                <h3>Entry discipline</h3>
+                <p>Capital deployed only where entry carries margin to recoverable value.</p>
+              </article>
+              <article class="downside-item">
+                <h3>Execution</h3>
+                <p>Recovery pathways defined at underwriting and actively managed through resolution.</p>
+              </article>
             </div>
             <p class="market-context-basis">
               Over a 20-year operating history since 2004, spanning more than 50 private credit transactions,
@@ -3072,14 +2911,14 @@
               Current market conditions include refinancing pressure, asset disposals and creditor repositioning across multiple sectors.
             </p>
             <p>
-              These conditions can support selective deployment in structured lending, transitional capital and resolution-driven credit.
+              This can support selective deployment in structured lending, transitional capital and resolution-driven credit.
             </p>
           </section>
 
           <section class="strategy-block" id="strategy-summary">
             <h2>Summary</h2>
             <p>
-              The strategy is based on entering below recoverable value, structuring for control and executing through legal and operational processes.
+              ShoreVest seeks consistent return through entry discipline, legal priority and active resolution execution.
             </p>
           </section>
 
@@ -3182,36 +3021,6 @@
       );
       if (scenarioButtons.length) {
         applyScenario("base");
-      }
-
-      const jumpButtons = [...document.querySelectorAll("[data-jump-nav] button")];
-      const jumpSections = jumpButtons
-        .map((btn) => document.getElementById(btn.dataset.target))
-        .filter(Boolean);
-      const setJumpActive = (id) => {
-        jumpButtons.forEach((btn) =>
-          btn.classList.toggle("is-active", btn.dataset.target === id),
-        );
-      };
-      jumpButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const target = document.getElementById(btn.dataset.target);
-          if (!target) return;
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-          setJumpActive(btn.dataset.target);
-        });
-      });
-      if (jumpSections.length) {
-        const jumpObserver = new IntersectionObserver(
-          (entries) => {
-            const visible = entries
-              .filter((entry) => entry.isIntersecting)
-              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-            if (visible?.target?.id) setJumpActive(visible.target.id);
-          },
-          { rootMargin: "-30% 0px -55% 0px", threshold: [0.2, 0.45, 0.7] },
-        );
-        jumpSections.forEach((section) => jumpObserver.observe(section));
       }
 
       const expandTriggers = [...document.querySelectorAll(".expand__trigger")];
