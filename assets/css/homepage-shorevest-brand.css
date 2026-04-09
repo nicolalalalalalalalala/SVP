@@ -166,6 +166,7 @@ li,
 
 .nav__logo-en {
   letter-spacing: 0.05em !important;
+  color: var(--cinnabar) !important;
 }
 
 .nav__logo-lockup {
