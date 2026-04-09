@@ -689,49 +689,54 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   }
 
   footer.sv-footer .sv-footer__main {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 14px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
     flex-wrap: nowrap !important;
   }
 
   footer.sv-footer .sv-footer__brand {
-    flex: 1 1 auto !important;
+    flex: 0 0 auto !important;
     font-size: 18px !important;
-    line-height: 1.22 !important;
+    line-height: 1.25 !important;
     letter-spacing: 0.01em !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
+    max-width: 100% !important;
   }
 
   footer.sv-footer .sv-footer__contact {
-    width: auto !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
     flex-wrap: nowrap !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
 
   footer.sv-footer .sv-footer__contact-label {
-    font-size: 11px !important;
-    letter-spacing: 0.13em !important;
+    display: block !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.12em !important;
     white-space: nowrap !important;
-    color: #625c55 !important;
+    color: #24201d !important;
+    margin-bottom: 2px !important;
   }
 
   footer.sv-footer .sv-footer__contact a {
-    width: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     white-space: nowrap !important;
-    text-align: right !important;
-    min-height: 44px;
-    padding: 0 14px !important;
-    font-size: 12px !important;
+    text-align: center !important;
+    min-height: 52px;
+    padding: 0 18px !important;
+    font-size: 14px !important;
     letter-spacing: 0.08em !important;
+    line-height: 1.35 !important;
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
-    background: rgba(255, 255, 255, 0.44) !important;
+    background: rgba(255, 255, 255, 0.35) !important;
   }
 
   footer.sv-footer .sv-footer__bottom {
@@ -746,7 +751,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   }
 
   footer.sv-footer .sv-footer__legal-toggle > summary {
-    padding: 16px 18px;
+    padding: 18px 20px;
     font-size: 12px;
     letter-spacing: 0.12em;
   }
@@ -776,27 +781,10 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 
 @media (max-width: 700px) {
   footer.sv-footer .sv-footer__main {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 12px !important;
-  }
-
-  footer.sv-footer .sv-footer__brand {
-    white-space: normal !important;
-  }
-
-  footer.sv-footer .sv-footer__contact {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    justify-content: stretch !important;
-    gap: 10px !important;
+    gap: 14px !important;
   }
 
   footer.sv-footer .sv-footer__contact a {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    text-align: center !important;
     white-space: normal !important;
     word-break: break-word !important;
   }
