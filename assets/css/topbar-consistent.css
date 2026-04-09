@@ -129,7 +129,7 @@ html {
   font-size: var(--nav-logo-en-size);
   font-weight: 400;
   letter-spacing: .018em;
-  color: var(--site-color-ink-strong, #171717);
+  color: var(--control-brand);
   display:inline-block;
   line-height: var(--nav-logo-en-line-height);
 }
@@ -140,7 +140,7 @@ html {
   font-size: var(--nav-logo-cn-size);
   font-weight:300;
   letter-spacing:.58em;
-  color: var(--site-color-muted, rgba(33,33,30,.72));
+  color: var(--control-brand);
   opacity:1;
   line-height: var(--nav-logo-cn-line-height);
 }
@@ -164,7 +164,7 @@ html {
   text-transform: uppercase;
   white-space: nowrap;
   position: relative;
-  color: var(--text-main, #0f2206);
+  color: var(--control-brand);
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -208,6 +208,7 @@ html {
 #nav .nav__zh {
   font-size: 14px;
   line-height: 1;
+  color: var(--control-brand);
 }
 
 
