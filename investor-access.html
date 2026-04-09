@@ -147,6 +147,9 @@
         background: var(--off);
         min-height: 100vh;
       }
+      main + .sv-footer {
+        margin-top: 0 !important;
+      }
       .panel {
         max-width: 900px;
       }
@@ -748,13 +751,7 @@
   position: relative;
 }
 .sv-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #7b746c;
+  display: none !important;
 }
 .sv-footer__main { gap: 20px !important; }
 .sv-footer__contact { gap: 14px !important; }
