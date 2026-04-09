@@ -121,6 +121,7 @@ html {
   line-height:1;
   row-gap: var(--nav-logo-lockup-gap);
   padding-left:6px;
+  border-left: none !important;
   min-height:30px;
 }
 
