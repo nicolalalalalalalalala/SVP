@@ -268,7 +268,7 @@ h2 em { font-style:italic; }
   padding:var(--section-space-tight) var(--pad) var(--section-space-tight);
   max-width:var(--max); margin:0 auto;
   display:grid;
-  grid-template-columns:minmax(0, 6.4fr) minmax(0, 5.6fr);
+  grid-template-columns:minmax(0, 1fr);
   gap:clamp(44px, 4.4vw, 78px);
   align-items:start;
 }
@@ -288,7 +288,7 @@ h1.hero__hed {
 }
 h1.hero__hed em { color:var(--red); font-style:italic; }
 .hero__copy {
-  max-width:58ch;
+  max-width:none;
   font-size:19px; line-height:1.86; color:var(--mist);
   font-family:var(--serif); margin-bottom:0;
 }
@@ -1694,6 +1694,30 @@ h2.su__hed {
   </div>
 </section>
 
+<section id="stats" class="wrap">
+  <div class="hero__stats">
+    <div class="stats" aria-label="ShoreVest track record statistics">
+      <div class="stat">
+        <div class="stat__n" data-countup data-target="2" data-prefix="$" data-suffix="B+">$2B+</div>
+        <div class="stat__l">CAPITAL DEPLOYED</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n" data-countup data-target="6">6</div>
+        <div class="stat__l">INSTITUTIONAL FUND VINTAGES</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n" data-countup data-target="20" data-suffix="+">20+</div>
+        <div class="stat__l">YEARS OF ONSHORE CREDIT EXECUTION</div>
+      </div>
+      <div class="stat stat--zero">
+        <div class="stat__n">0</div>
+        <div class="stat__l">DEAL-LEVEL PRINCIPAL LOSSES</div>
+      </div>
+    </div>
+    <p class="stats__note">As of January 2026. Reflects realized ShoreVest team investments since 2004. Past performance is not indicative of future results.</p>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
@@ -1741,30 +1765,6 @@ h2.su__hed {
         <a href="firm.html#ownership" class="cta cta--dark" style="margin-top:8px;font-size:10px;"><span>FIND OUT MORE</span><div class="cta__ring">→</div></a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="stats" class="wrap">
-  <div class="hero__stats">
-    <div class="stats" aria-label="ShoreVest track record statistics">
-      <div class="stat">
-        <div class="stat__n" data-countup data-target="2" data-prefix="$" data-suffix="B+">$2B+</div>
-        <div class="stat__l">CAPITAL DEPLOYED</div>
-      </div>
-      <div class="stat">
-        <div class="stat__n" data-countup data-target="6">6</div>
-        <div class="stat__l">INSTITUTIONAL FUND VINTAGES</div>
-      </div>
-      <div class="stat">
-        <div class="stat__n" data-countup data-target="20" data-suffix="+">20+</div>
-        <div class="stat__l">YEARS OF ONSHORE CREDIT EXECUTION</div>
-      </div>
-      <div class="stat stat--zero">
-        <div class="stat__n">0</div>
-        <div class="stat__l">DEAL-LEVEL PRINCIPAL LOSSES</div>
-      </div>
-    </div>
-    <p class="stats__note">As of January 2026. Reflects realized ShoreVest team investments since 2004. Past performance is not indicative of future results.</p>
   </div>
 </section>
 
