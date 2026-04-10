@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
+    <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
     <link rel="stylesheet" href="assets/css/site-motion.css" />
     <link rel="stylesheet" href="assets/css/topbar-consistent.css" />
     <link rel="stylesheet" href="assets/css/typography-consistent.css" />
@@ -51,7 +52,7 @@
         max-width: 100%;
       }
       main {
-        padding-top: 62px;
+        padding-top: calc(var(--topbar-height, 72px) + 26px);
         background: var(--paper);
       }
       .wrap {
@@ -106,15 +107,37 @@
         color: var(--muted);
       }
 
+      .hero-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 20px;
+        align-items: end;
+        margin-bottom: 24px;
+      }
+      .hero-kicker {
+        font-size: 13px;
+        letter-spacing: 0.02em;
+        color: #4a4339;
+        max-width: 34ch;
+      }
       .hero-copy {
         max-width: 78ch;
         font-size: 16px;
       }
       .hero-band {
-        margin-top: 24px;
         border: 1px solid var(--rule);
         background: var(--paper-soft);
         padding: clamp(18px, 2.4vw, 28px);
+      }
+      .hero-band p + p {
+        margin-top: 10px;
+      }
+
+      .intro-frame {
+        border: 1px solid var(--rule);
+        background: var(--paper-soft);
+        padding: clamp(18px, 2.4vw, 28px);
+        margin-bottom: 22px;
       }
 
       .card-grid {
@@ -126,6 +149,7 @@
         border: 1px solid var(--rule);
         background: var(--paper-soft);
         padding: 22px;
+        min-height: 176px;
       }
       .card h3 {
         margin: 0 0 10px;
@@ -142,7 +166,7 @@
       .quote-panel {
         border: 1px solid var(--rule);
         background: var(--paper-soft);
-        padding: 18px;
+        padding: 20px;
       }
       .location-line {
         margin-top: 10px;
@@ -192,6 +216,11 @@
         line-height: 1.05;
         color: var(--blue-green);
       }
+      .metric-rule {
+        margin-top: 12px;
+        height: 1px;
+        background: var(--rule);
+      }
       .metric-copy {
         margin-top: 12px;
         font-size: 13px;
@@ -220,6 +249,7 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #6f665b;
+        margin-top: 2px;
       }
       .thesis-item h3 {
         margin: 0 0 6px;
@@ -231,7 +261,7 @@
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 12px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
       .member-card {
         border: 1px solid var(--rule);
@@ -248,7 +278,13 @@
       .execution-strip {
         border: 1px solid var(--rule);
         background: var(--paper-soft);
-        padding: 16px;
+        padding: 18px;
+      }
+      .execution-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+        gap: 16px;
+        margin-bottom: 14px;
       }
       .execution-flow {
         display: grid;
@@ -286,97 +322,6 @@
         text-transform: uppercase;
       }
 
-      .sv-footer {
-        background: #f6f4f0;
-        border-top: 1px solid var(--rule);
-        padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
-      }
-      .sv-footer::before {
-        content: "";
-      }
-      .sv-footer__inner {
-        max-width: var(--max, 1320px);
-        margin: 0 auto;
-      }
-      .sv-footer__main {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--rule);
-      }
-      .sv-footer__brand {
-        font-family: "DIN 2014", "Inter", sans-serif;
-        font-size: 17px;
-        letter-spacing: 0.11em;
-        text-transform: uppercase;
-        color: #2d2924;
-      }
-      .sv-footer__contact {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .sv-footer__contact-label {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: #8f887f;
-      }
-      .sv-footer__contact a {
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(0, 0, 0, 0.16);
-        padding: 10px 14px;
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
-      .sv-footer__contact a:hover {
-        background: var(--signal);
-        border-color: var(--signal);
-        color: #fff;
-      }
-      .sv-footer__bottom {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding-top: 16px;
-      }
-      .sv-footer__copyright,
-      .sv-footer__legal,
-      .sv-footer__legal-links {
-        font-size: 9px;
-        color: #6f6a63;
-        line-height: 1.7;
-      }
-      .sv-footer__legal-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-      }
-      .sv-footer__legal-links a {
-        color: var(--ink);
-      }
-      .sv-footer__legal-toggle {
-        border-top: 1px solid rgba(31, 24, 18, 0.12);
-        padding-top: 10px;
-      }
-      .sv-footer__legal-toggle > summary {
-        list-style: none;
-        cursor: pointer;
-        font-size: 9px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-      .sv-footer__legal-toggle > summary::-webkit-details-marker {
-        display: none;
-      }
-
       @media (max-width: 1080px) {
         .metrics-grid {
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -387,12 +332,14 @@
       }
       @media (max-width: 767px) {
         main {
-          padding-top: 84px;
+          padding-top: calc(var(--topbar-height, 76px) + 34px);
         }
         section {
           padding: 48px 0;
         }
         .card-grid,
+        .hero-intro,
+        .execution-head,
         .operations-grid,
         .metrics-grid,
         .thesis-list,
@@ -404,13 +351,6 @@
         .cta-panel .btn {
           width: 100%;
         }
-        .sv-footer {
-          padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
-        }
-        .sv-footer__main {
-          flex-direction: column;
-          align-items: flex-start;
-        }
       }
     </style>
   </head>
@@ -421,10 +361,16 @@
       <section class="hero">
         <div class="wrap">
           <p class="eyebrow">The Firm</p>
-          <h1>Built for complex recoveries in China private credit.</h1>
+          <div class="hero-intro">
+            <h1>ShoreVest Partners.</h1>
+            <p class="hero-kicker">Institutional private credit platform built for complex recoveries in China.</p>
+          </div>
           <div class="hero-band">
             <p class="hero-copy">
-              ShoreVest&rsquo;s strategy dates to 2004, with the current platform established in 2016 by the senior team behind predecessor vehicles across collateral-backed lending, asset restructuring, and NPL resolution. The firm focuses on enforceable structures, conservative entry basis, and integrated onshore execution from origination through exit.
+              ShoreVest&rsquo;s strategy dates to 2004, with the current platform established in 2016 by the senior team behind predecessor vehicles across collateral-backed lending, asset restructuring, and NPL resolution.
+            </p>
+            <p class="hero-copy">
+              We focus on enforceable structures, conservative entry basis, and integrated onshore execution from origination through exit.
             </p>
           </div>
         </div>
@@ -432,6 +378,14 @@
 
       <section>
         <div class="wrap">
+          <div class="section-head">
+            <h2>Institutional platform design.</h2>
+          </div>
+          <div class="intro-frame">
+            <p>
+              The platform is organized around one operating standard: source selectively, underwrite with legal precision, and control execution through realization.
+            </p>
+          </div>
           <div class="section-head">
             <h2>How the platform operates.</h2>
             <p>Four operating pillars govern origination, underwriting, and portfolio management in one integrated institutional process.</p>
@@ -485,26 +439,31 @@
             <article class="metric-card">
               <p class="metric-label">Capital deployed</p>
               <p class="metric-value">US$2B+</p>
+              <div class="metric-rule"></div>
               <p class="metric-copy">Managed across six fund vintages.</p>
             </article>
             <article class="metric-card">
               <p class="metric-label">Operating history</p>
               <p class="metric-value">Since 2004</p>
+              <div class="metric-rule"></div>
               <p class="metric-copy">Experience across multiple credit cycles.</p>
             </article>
             <article class="metric-card">
               <p class="metric-label">Transactions completed</p>
               <p class="metric-value">50+</p>
+              <div class="metric-rule"></div>
               <p class="metric-copy">Asset-backed investments and restructurings.</p>
             </article>
             <article class="metric-card">
               <p class="metric-label">Risk discipline</p>
               <p class="metric-value">30–60%</p>
+              <div class="metric-rule"></div>
               <p class="metric-copy">Typical LTV range with enforceable claims.</p>
             </article>
             <article class="metric-card">
               <p class="metric-label">Team continuity</p>
               <p class="metric-value">~20 years</p>
+              <div class="metric-rule"></div>
               <p class="metric-copy">Core IC members working together long-term.</p>
             </article>
           </div>
@@ -541,7 +500,10 @@
             <article class="member-card"><h3>Hui Zheng</h3><p class="member-role">Partner</p><p>Leads origination, structuring, and recovery execution across the China private credit portfolio.</p></article>
           </div>
           <div class="execution-strip">
-            <p class="eyebrow">Execution model</p>
+            <div class="execution-head">
+              <p class="eyebrow">Execution model</p>
+              <p>A single team owns underwriting assumptions through workout and exit; no delegated handoff between approval and realization.</p>
+            </div>
             <div class="execution-flow">
               <article class="execution-step"><h3>Originate</h3><p>Source and structure opportunities through proprietary local channels.</p></article>
               <article class="execution-step"><h3>Underwrite + approve</h3><p>Unify investment, legal, and downside controls within a single IC forum.</p></article>
