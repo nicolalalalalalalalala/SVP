@@ -256,6 +256,15 @@ html {
 
 #nav .nav__menu-btn {
   border-radius: 0;
+  min-height: 42px;
+  padding: 0 28px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  border: 1px solid color-mix(in srgb, #171717 26%, transparent);
+  background: color-mix(in srgb, #fff 94%, transparent);
+  color: #171717;
+  box-shadow: none;
+  text-transform: uppercase;
 }
 
 #nav .nav__lp,
@@ -271,14 +280,12 @@ html {
 }
 
 #nav .nav__lp:hover,
-#nav .nav__menu-btn:hover,
 .btn:hover,
 .util-btn:hover,
 .jump-nav button:hover,
 .viz-btn:hover,
 .track-record-trigger:hover,
 #nav .nav__lp:focus-visible,
-#nav .nav__menu-btn:focus-visible,
 .btn:focus-visible,
 .util-btn:focus-visible,
 .jump-nav button:focus-visible,
@@ -290,6 +297,15 @@ html {
   box-shadow: none;
   transform: translateY(-1px);
   letter-spacing: 0.16em;
+}
+
+#nav .nav__menu-btn:hover,
+#nav .nav__menu-btn:focus-visible {
+  border-color: color-mix(in srgb, #171717 44%, transparent);
+  background: color-mix(in srgb, #fff 98%, transparent);
+  color: #171717;
+  transform: none;
+  letter-spacing: 0.18em;
 }
 
 .research-sub__submit {
@@ -413,15 +429,15 @@ html {
   #nav .nav__lp,
   #nav .nav__menu-btn {
     min-width: 110px;
-    min-height: 56px;
-    padding: 0 14px;
+    min-height: 44px;
+    padding: 0 16px;
     border-radius: 0;
   }
 
   #nav .nav__menu-btn {
-    min-width: 112px;
-    font-size: 9px;
-    letter-spacing: 0.14em;
+    min-width: 126px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
   }
 
   #nav .nav__links {
@@ -472,7 +488,7 @@ html {
   #nav .nav__lp,
   #nav .nav__menu-btn {
     min-width: 0;
-    min-height: 52px;
+    min-height: 42px;
     padding: 0 8px;
     font-size: 8.5px;
     letter-spacing: 0.13em;
@@ -480,8 +496,10 @@ html {
   }
 
   #nav .nav__menu-btn {
-    min-width: 102px;
-    padding-inline: 12px;
+    min-width: 118px;
+    padding-inline: 14px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
   }
 }
 
