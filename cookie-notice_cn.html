@@ -23,17 +23,16 @@
     a{color:var(--red)}
     .muted{color:#5b554f}
 
-    #nav{height:72px}
-    .nav__logo img{display:block}
-    .nav__links{list-style:none;margin:0;padding:0}
-    .nav__links a{color:var(--ink);opacity:.45}
-    .nav__links a:hover,.nav__links a.active{opacity:1}
-    .nav__zh{font-size:13px;color:var(--ink);opacity:.35}
-    .nav__zh:hover{opacity:.75}
-.nav__mobile-lang{display:none}
-    .nav__lp{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:9px 24px;font-size:11.5px;line-height:1;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border:1px solid rgba(23,23,23,.2);background:#fff;color:var(--ink)}
-    .nav__lp:hover,.nav__lp:focus-visible{border-color:var(--red);color:#fff;background:var(--red)}
-    .nav__menu-btn{display:none;border:1px solid rgba(23,23,23,.2);background:#fff;color:var(--ink);padding:0 12px;min-height:36px;letter-spacing:.11em;text-transform:uppercase;font-size:10px;cursor:pointer}
+
+
+
+
+
+
+
+
+
+
     @media (max-width:760px){.nav__menu-btn{display:inline-flex;align-items:center;justify-content:center}.nav__zh{display:none}.nav__mobile-lang{display:list-item}}
     .sv-footer--full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
 
@@ -322,29 +321,11 @@
 
 </style>
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
 <body class="legal-page">
-  <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm.html">The Firm</a></li>
-    <li><a href="strategy.html">Strategy</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="press.html">Press</a></li>
-    <li><a href="team.html">Team</a></li>
-        <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
-  <li class="nav__mobile-lang"><a href="index_cn.html">中文</a></li></ul><div class="nav__right">
-    <a href="index_cn.html" class="nav__zh lang-toggle">中文</a>
-    <a href="investor-access.html" class="nav__lp">Investor Access</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-  </div>
-</nav>
+  <div id="site-header-mount"></div>
     <h1>Cookie 通知</h1>
   <p class="muted"><strong>生效日期：</strong>2026年4月8日</p>
 
@@ -388,26 +369,7 @@
     </div>
   </div>
 </footer>
-<script>
-  const nav = document.getElementById('nav');
-  const menuBtn = document.querySelector('.nav__menu-btn');
 
-  if (menuBtn && nav) {
-    menuBtn.addEventListener('click', () => {
-      const open = nav.classList.toggle('menu-open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.textContent = open ? 'Close' : 'Menu';
-    });
-
-    document.querySelectorAll('.nav__links a').forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('menu-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.textContent = 'Menu';
-      });
-    });
-  }
-</script>
 
 </body>
 </html>

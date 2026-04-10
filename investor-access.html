@@ -52,97 +52,19 @@
         padding: 0 var(--pad);
       }
 
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 62px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: #fff;
-      }
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  height:100%;
-}
-      .nav__logo img {
-        display: block;
-      }
-      .nav__links {
-        display: flex;
-        gap: 32px;
-        list-style: none;
-      }
-      .nav__links a {
-        font-size: 11.4px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        opacity: 0.45;
-        transition: opacity 0.2s;
-      }
-      .nav__links a:hover,
-      .nav__links a.active {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-size: 11.4px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(48, 40, 34, 0.15);
-        padding: 7px 16px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp {
-        background: var(--white);
-        color: var(--ink);
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: #fff;
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(0, 0, 0, 0.14);
-        background: #fff;
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       main {
         padding: 148px 0 110px;
@@ -410,49 +332,16 @@
         :root {
           --pad: 18px;
         }
-        #nav {
-          height: auto;
-          min-height: 62px;
-          align-items: center;
-          flex-wrap: wrap;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
-        .nav__logo img {
-          height: 48px;
-        }
-        .nav__menu-btn {
-          display: inline-flex;
-        }
-        .nav__right {
-          margin-left: auto;
-          gap: 10px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: inline-flex;
-        }
-        .nav__lp {
-          display: inline-flex;
-        }
-        .nav__links {
-          display: none;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 10px 0 12px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size: 10px;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
+
+
         main {
           padding: 108px 0 80px;
         }
@@ -479,85 +368,23 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 62px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
+
+
+
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 42px;
-          width: 100%;
-        }
-        .nav__right {
-          gap: 8px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
-        }
-        .nav__lp {
-          font-size: 9px;
-        }
+
+
+
+
+
+
+
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
@@ -603,46 +430,11 @@
   }
 }
       /* Homepage nav lockup parity */
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:8px;
-  border-left:none;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#171717;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC',serif;
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.28em;
-  color: rgba(33,33,30,.66);
-  opacity:1;
-  line-height:1;
-}
+
+
+
+
+
 
 
 </style>
@@ -748,29 +540,11 @@
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm.html">The Firm</a></li>
-    <li><a href="strategy.html">Strategy</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="press.html">Press</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
-  <li class="nav__mobile-lang"><a href="investor-access_cn.html">中文</a></li></ul><div class="nav__right">
-    <a href="investor-access_cn.html" class="nav__zh lang-toggle">中文</a>
-    <a href="investor-access.html" class="nav__lp">Investor Access</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
 
     <main>
       <div class="wrap">
@@ -858,107 +632,7 @@
       </div>
     </main>
 
-    <script>
-      const nav = document.getElementById("nav");
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      if (menuBtn && nav) {
-        menuBtn.addEventListener("click", () => {
-          const open = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(open));
-          menuBtn.textContent = open ? "Close" : "Menu";
-        });
-
-        document.querySelectorAll(".nav__links a").forEach((link) => {
-          link.addEventListener("click", () => {
-            nav.classList.remove("menu-open");
-            menuBtn.setAttribute("aria-expanded", "false");
-            menuBtn.textContent = "Menu";
-          });
-        });
-      }
-
-      const proceedButton = document.getElementById("attestation-proceed");
-      const exitButton = document.getElementById("attestation-exit");
-      const attestationCheckbox = document.getElementById("attestation-checkbox");
-      const gate = document.getElementById("investor-gate");
-      const investorContent = document.getElementById("investor-content");
-      const declineContent = document.getElementById("investor-decline");
-      const investorShell = document.getElementById("investor-shell");
-      const resetAccessButton = document.getElementById("reset-access");
-      const backToGateButton = document.getElementById("back-to-gate");
-      const ACCESS_KEY = "shorevest-investor-access";
-
-      const showGate = () => {
-        if (!gate || !investorShell) return;
-        gate.hidden = false;
-        if (investorContent) investorContent.hidden = true;
-        if (declineContent) declineContent.hidden = true;
-        investorShell.classList.remove("investor-shell--open");
-      };
-
-      const showQualifiedContent = () => {
-        if (!gate || !investorContent || !investorShell) return;
-        gate.hidden = true;
-        investorContent.hidden = false;
-        if (declineContent) declineContent.hidden = true;
-        investorShell.classList.add("investor-shell--open");
-      };
-
-      if (attestationCheckbox && proceedButton) {
-        attestationCheckbox.addEventListener("change", () => {
-          proceedButton.disabled = !attestationCheckbox.checked;
-        });
-      }
-
-      if (proceedButton && gate && investorContent && investorShell && attestationCheckbox) {
-        proceedButton.addEventListener("click", () => {
-          if (!attestationCheckbox.checked) return;
-          sessionStorage.setItem(ACCESS_KEY, "granted");
-          showQualifiedContent();
-        });
-      }
-
-      if (exitButton && gate && investorShell && declineContent) {
-        exitButton.addEventListener("click", () => {
-          sessionStorage.removeItem(ACCESS_KEY);
-          gate.hidden = true;
-          declineContent.hidden = false;
-          if (investorContent) {
-            investorContent.hidden = true;
-          }
-          investorShell.classList.add("investor-shell--open");
-        });
-      }
-
-      if (resetAccessButton) {
-        resetAccessButton.addEventListener("click", () => {
-          sessionStorage.removeItem(ACCESS_KEY);
-          if (attestationCheckbox) {
-            attestationCheckbox.checked = false;
-          }
-          if (proceedButton) {
-            proceedButton.disabled = true;
-          }
-          showGate();
-        });
-      }
-
-      if (backToGateButton) {
-        backToGateButton.addEventListener("click", () => {
-          showGate();
-        });
-      }
-
-      if (sessionStorage.getItem(ACCESS_KEY) === "granted") {
-        if (attestationCheckbox) {
-          attestationCheckbox.checked = true;
-        }
-        if (proceedButton) {
-          proceedButton.disabled = false;
-        }
-        showQualifiedContent();
-      }
-    </script>
+    
 
 <footer class="sv-footer">
   <div class="sv-footer__inner">

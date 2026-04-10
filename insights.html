@@ -119,97 +119,19 @@
         color: var(--white);
       }
 
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 62px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: #fff;
-      }
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo img {
-        display: block;
-      }
-      .nav__links {
-        display: flex;
-        gap: 36px;
-        list-style: none;
-      }
-      .nav__links a {
-        font-size: 11.4px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        opacity: 0.45;
-        transition: opacity 0.2s;
-      }
-      .nav__links a:hover,
-      .nav__links a.active {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        padding: 7px 16px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp {
-        background: var(--white);
-        color: var(--ink);
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: #fff;
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        background: #fff;
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       .research-hero {
         min-height: 420px;
@@ -878,10 +800,7 @@
         :root {
           --pad: 18px;
         }
-        #nav {
-          height: 66px;
-          padding: 0 var(--pad);
-        }
+
         .research-hero {
           min-height: auto;
           margin-top: 0;
@@ -958,83 +877,19 @@
           margin-top: 56px;
           padding: 52px 0;
         }
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__menu-btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          min-height: 44px;
-          padding: 0 16px;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: list-item;
-        }
-        .nav__mobile-lang a {
-          opacity: 1;
-        }
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-          text-align: center;
-        }
-        .nav__links {
-          display: none;
-          grid-column: 1 / -1;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 14px 0 4px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size: 10px;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         .research-hero {
           margin-top: 0;
@@ -1198,41 +1053,14 @@
           padding-left: var(--pad);
           padding-right: var(--pad);
         }
-        #nav {
-          padding: 10px var(--pad);
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 44px;
-          width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          gap: 8px;
-          width: auto;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          width: auto;
-        }
-        .nav__lp {
-          padding: 0 12px;
-          font-size: 9px;
-        }
-        .nav__menu-btn {
-          padding: 0 12px;
-        }
+
+
+
+
+
+
+
+
 
         .research-hero {
           margin-top: 0;
@@ -1294,85 +1122,23 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
+
+
+
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 42px;
-          width: 100%;
-        }
-        .nav__right {
-          gap: 8px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
-        }
-        .nav__lp {
-          font-size: 9px;
-        }
+
+
+
+
+
+
+
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
@@ -1429,45 +1195,11 @@
   }
 }
       /* Homepage nav lockup parity */
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:4px;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#171717;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC',serif;
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
-  opacity:1;
-  line-height:1;
-}
+
+
+
+
+
 
 
 </style>
@@ -1680,48 +1412,12 @@
     color: var(--text-light-primary) !important;
   }
 
-  .nav__logo-lockup {
-    padding-left: 9px !important;
-    margin-left: 4px !important;
-    border-left: 1px solid var(--cinnabar) !important;
-    row-gap: 2px !important;
-  }
 
-  .nav__logo-en {
-    font-family: "DIN 2014", sans-serif !important;
-    letter-spacing: 0.05em !important;
-    color: var(--text-light-primary) !important;
-  }
 
-  .nav__logo-cn, [lang="zh"], [lang="zh-CN"], [lang="zh-Hans"], :lang(zh) {
-    font-family: "Noto Serif SC", serif !important;
-    color: var(--text-light-primary) !important;
-    font-weight: 500 !important;
-  }
 
-  #nav {
-    background: var(--paper-light) !important;
-    border-bottom: 1px solid var(--rule-light) !important;
-  }
 
-  .nav__links a,
-  .nav__zh,
-  .nav__lp,
-  .nav__menu-btn {
-    color: var(--text-light-primary) !important;
-  }
 
-  .nav__lp,
-  .nav__menu-btn {
-    background: var(--paper-light) !important;
-    border-color: var(--rule-light) !important;
-  }
 
-  .nav__lp:hover {
-    background: var(--cinnabar) !important;
-    border-color: var(--cinnabar) !important;
-    color: var(--text-dark-primary) !important;
-  }
 
   .research-hero,
   .research-sub {
@@ -1840,13 +1536,7 @@
     color: var(--text-dark-primary) !important;
   }
 
-  .latest__issue, .finding, .archive, .archive__head, .archive__list, .archive__row, .sv-footer, .sidebar__card, .franchise-ribbon, .util-btn, .nav__lp, .nav__menu-btn {
-    background: var(--paper-light) !important;
-  }
 
-  .reading blockquote, .franchise-ribbon, .nav__logo-lockup, .issue-card__bar {
-    border-color: var(--cinnabar) !important;
-  }
 
   .issue-card__bar, .eyebrow--red, .finding small, .archive__pdf:hover, .archive__pdf--solid:hover, .research-sub__submit:hover {
     color: var(--cinnabar) !important;
@@ -1912,10 +1602,7 @@
   }
 
   @media (max-width: 767px) {
-    #nav {
-      border-bottom: 1px solid var(--rule-light) !important;
-      background: var(--paper-light) !important;
-    }
+
     .issue-live p,
     .research-hero__desc,
     .issue-card__s {
@@ -1927,127 +1614,33 @@
   <style>
     /* Mobile insights top bar styling to match ShoreVest reference */
     @media (max-width: 767px) {
-      #nav {
-        min-height: 88px;
-        padding: 18px 16px 12px;
-        grid-template-columns: minmax(0, 1fr) auto;
-        column-gap: 12px;
-        row-gap: 8px;
-        border-bottom: 1px solid #d8d1c2;
-        background: linear-gradient(to bottom, #e6e0d0 0 14px, #ffffff 14px 100%);
-      }
 
-      .nav__logo {
-        gap: 10px;
-      }
 
-      .nav__logo-mark {
-        width: 44px;
-        height: 44px;
-        flex: 0 0 44px;
-      }
 
-      .nav__logo-lockup {
-        min-height: 44px;
-        row-gap: 3px;
-        padding-left: 6px;
-      }
 
-      .nav__logo-en {
-        font-size: 13px;
-        letter-spacing: 0.34em;
-      }
 
-      .nav__logo-cn {
-        font-size: 16px;
-        letter-spacing: 0.08em;
-      }
 
-      .nav__right {
-        gap: 0;
-      }
 
-      .nav__zh,
-      .nav__lp {
-        display: none;
-      }
 
-      .nav__menu-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 58px;
-        min-width: 168px;
-        padding: 0 24px;
-        border: 1px solid #b9b1a2;
-        color: #1d1d1b;
-        background: #fff;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-      }
 
-      .nav__links {
-        margin-top: 2px;
-      }
+
     }
 
     @media (max-width: 520px) {
-      #nav {
-        min-height: 82px;
-        padding: 16px 12px 10px;
-      }
 
-      .nav__logo-mark {
-        width: 38px;
-        height: 38px;
-        flex: 0 0 38px;
-      }
 
-      .nav__logo-en {
-        font-size: 11px;
-        letter-spacing: 0.27em;
-      }
 
-      .nav__logo-cn {
-        font-size: 13px;
-      }
 
-      .nav__menu-btn {
-        min-height: 50px;
-        min-width: 142px;
-        padding: 0 18px;
-        font-size: 12px;
-        letter-spacing: 0.15em;
-      }
+
     }
   </style>
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm.html">The Firm</a></li>
-    <li><a href="strategy.html">Strategy</a></li>
-    <li><a href="insights.html" aria-current="page">Insights</a></li>
-    <li><a href="press.html">Press</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
-  <li class="nav__mobile-lang"><a href="insights_cn.html">中文</a></li></ul><div class="nav__right">
-    <a href="insights_cn.html" class="nav__zh lang-toggle">中文</a>
-    <a href="investor-access.html" class="nav__lp">Investor Access</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
 
     <section class="research-hero">
       <div class="wrap research-hero__grid">
@@ -2722,372 +2315,7 @@
       </div>
     </section>
 
-    <script>
-      window.addEventListener("scroll", () =>
-        document
-          .getElementById("nav")
-          .classList.toggle("scrolled", window.scrollY > 10),
-      );
-
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      const nav = document.getElementById("nav");
-      if (menuBtn && nav) {
-        menuBtn.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(isOpen));
-        });
-      }
-
-      const defaultPrintFilename = "shorevest-china-debt-dynamics-issue-46.pdf";
-
-      const archiveIssueMap = {
-        v10i1: {
-          title: "The End of China's Uninvestable Myth",
-          meta: "Volume 10 | Issue 1 | Published 25 January 2026 | Allocator Edition",
-          pdf: "pdfs/46. China Debt Dynamics - The End of the 'China Is Uninvestable' Myth.pdf",
-        },
-        v9i4: {
-          title:
-            "Beijing's Overcapacity Push Creates Private Credit Opportunities.",
-          meta: "Volume 9 | Issue 4 | Published Q4 2025 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-beijing-overcapacity-private-credit-opportunities.pdf",
-        },
-        v9i3: {
-          title: "Into the Shadows of US Private Credit.",
-          meta: "Volume 9 | Issue 3 | Published Q3 2025 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf",
-        },
-        v9i2: {
-          title: "China, An Uncorrelated Harbor in a Stormy World.",
-          meta: "Volume 9 | Issue 2 | Published Q2 2025 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf",
-        },
-        v9i1: {
-          title:
-            "Green finance: Sowing the seeds of China's next wave of NPLs.",
-          meta: "Volume 9 | Issue 1 | Published Q1 2025 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf",
-        },
-        v8i4: {
-          title: "United States of China.",
-          meta: "Volume 8 | Issue 4 | Published Q4 2024 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-united-states-of-china.pdf",
-        },
-        v8i3: {
-          title: "Private Credit in a Reset World Order.",
-          meta: "Volume 8 | Issue 3 | Published Q3 2024 | Allocator Edition",
-          pdf: "pdfs/40. China-Debt-Dynamics-Private-Credit-in-a-Reset-World-Order.pdf",
-        },
-        v8i2: {
-          title: "Quantifying China's NPL Market.",
-          meta: "Volume 8 | Issue 2 | Published Q2 2024 | Allocator Edition",
-          pdf: "pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf",
-        },
-        v8i1: {
-          title:
-            "Bailing Out the Banks: The Hidden Significance of Beijing Property Support Measures.",
-          meta: "Volume 8 | Issue 1 | Published Q1 2024 | Allocator Edition",
-          pdf: "pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf",
-        },
-        v7i4: {
-          title:
-            "China Refocuses on Financial Risk and Ramps Up NPL Disposals.",
-          meta: "Volume 7 | Issue 4 | Published Q4 2023 | Allocator Edition",
-          pdf: "pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf",
-        },
-        v7i1: {
-          title:
-            "Where's the Stimulus? Parsing Beijing's Lackluster Response to Growth.",
-          meta: "Volume 7 | Issue 1 | Published 2022 | Allocator Edition",
-          pdf: "pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf",
-        },
-        v6i3: {
-          title: "New Regulations Set to Accelerate NPL Disposals.",
-          meta: "Volume 6 | Issue 3 | Published 2022 | Allocator Edition",
-          pdf: "pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf",
-        },
-        v6i2: {
-          title: "China's Property Support Measures: Rescue, Not Reflation.",
-          meta: "Volume 6 | Issue 2 | Published 2022 | Allocator Edition",
-          pdf: "pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf",
-        },
-        v6i1: {
-          title: "Evergrande.",
-          meta: "Volume 6 | Issue 1 | Published September 2021 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-evergrande.pdf",
-        },
-        v5i2: {
-          title:
-            "Sustained Shadow Banking Contraction Creating Private Credit Opportunities.",
-          meta: "Volume 5 | Issue 2 | Published April 2021 | Allocator Edition",
-          pdf: "pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf",
-        },
-      };
-
-      const getPrintSourceArticle = () =>
-        document.querySelector('[data-print-article="active"]') ||
-        document.querySelector("[data-print-article]") ||
-        document.querySelector(".reading-grid .reading");
-
-      const getPrintFilename = () =>
-        getPrintSourceArticle()?.getAttribute("data-print-filename") ||
-        defaultPrintFilename;
-      const getPrintPdfUrl = () =>
-        getPrintSourceArticle()?.getAttribute("data-print-pdf") ||
-        archiveIssueMap.v10i1.pdf;
-
-      const buildPrintEdition = () => {
-        const title =
-          document.querySelector(".issue-live h1")?.textContent.trim() || "";
-        const standfirst =
-          document.querySelector(".issue-live p")?.textContent.trim() ||
-          document
-            .querySelector("#current-issue p:not(.lead)")
-            ?.textContent.trim() ||
-          "";
-        const issueInfo =
-          document
-            .querySelector(".issue-live__meta span:nth-child(1)")
-            ?.textContent.trim() || "";
-        const publishedInfo =
-          document
-            .querySelector(".issue-live__meta span:nth-child(2)")
-            ?.textContent.trim() || "";
-        const editionInfo =
-          document
-            .querySelector(".issue-live__meta span:nth-child(3)")
-            ?.textContent.trim() || "Allocator Edition";
-        const sourceArticle = getPrintSourceArticle();
-        const printMeta = document.getElementById("print-meta");
-        const printTitle = document.getElementById("print-title");
-        const printStandfirst = document.getElementById("print-standfirst");
-        const printCallout = document.getElementById("print-callout");
-        const printBody = document.getElementById("print-body");
-
-        if (
-          !sourceArticle ||
-          !printMeta ||
-          !printTitle ||
-          !printStandfirst ||
-          !printCallout ||
-          !printBody
-        ) {
-          return;
-        }
-
-        const metadataLine = [issueInfo, publishedInfo, editionInfo]
-          .filter(Boolean)
-          .join(" | ");
-        printMeta.textContent = metadataLine;
-        printTitle.textContent = title;
-        if (printTitle.textContent.trim() === "#") {
-          printTitle.remove();
-        }
-        printStandfirst.textContent = standfirst;
-        printBody.innerHTML = "";
-
-        const normalizedStandfirst = standfirst
-          .replace(/[“”]/g, '"')
-          .replace(/\s+/g, " ")
-          .trim()
-          .toLowerCase();
-        let skippedTitleHeading = false;
-        let skippedStandfirstParagraph = false;
-        let calloutText = "";
-
-        const normalizePrintNode = (node) => {
-          const clean = node.cloneNode(true);
-          const walker = document.createTreeWalker(
-            clean,
-            NodeFilter.SHOW_ELEMENT,
-          );
-          const elements = [clean];
-          while (walker.nextNode()) {
-            elements.push(walker.currentNode);
-          }
-          elements.forEach((element) => {
-            element.removeAttribute("class");
-            element.removeAttribute("style");
-            element.removeAttribute("id");
-          });
-          return clean;
-        };
-
-        const printableNodes = Array.from(
-          sourceArticle.querySelectorAll("h3, p, ul, ol, blockquote"),
-        );
-        printableNodes.forEach((node) => {
-          if (node.classList.contains("lead")) {
-            return;
-          }
-
-          const clone = normalizePrintNode(node);
-
-          if (clone.tagName === "H3") {
-            const headingText = clone.textContent.trim().replace(/\.$/, "");
-            const titleText = title.replace(/\.$/, "");
-            if (!skippedTitleHeading && headingText === titleText) {
-              skippedTitleHeading = true;
-              return;
-            }
-            const printHeading = document.createElement("h2");
-            printHeading.textContent = clone.textContent;
-            printBody.appendChild(printHeading);
-            return;
-          }
-
-          if (clone.tagName === "P") {
-            const paragraphText = clone.textContent
-              .replace(/[“”]/g, '"')
-              .replace(/\s+/g, " ")
-              .trim()
-              .toLowerCase();
-            if (
-              !skippedStandfirstParagraph &&
-              paragraphText === normalizedStandfirst
-            ) {
-              skippedStandfirstParagraph = true;
-              return;
-            }
-            if (
-              !calloutText &&
-              clone.textContent.includes(
-                "In reality, China was never uninvestable",
-              )
-            ) {
-              calloutText = clone.textContent.trim();
-              return;
-            }
-          }
-
-          printBody.appendChild(clone);
-        });
-
-        const openingParagraph = printBody.querySelector("p");
-        if (openingParagraph) {
-          openingParagraph.classList.add("print-body__opening");
-        }
-
-        printCallout.textContent =
-          calloutText ||
-          "In reality, China was never uninvestable. Strategy-specific dislocation created divergent outcomes, and private credit remained investable through the cycle.";
-      };
-
-      const triggerPrintExport = (mode = "print") => {
-        buildPrintEdition();
-
-        if (mode === "view") {
-          const previewUrl = `${window.location.pathname}?printPreview=1&action=view`;
-          window.open(previewUrl, "_blank", "noopener");
-          return;
-        }
-
-        if (mode === "download") {
-          const previewUrl = `${window.location.pathname}?printPreview=1&action=download&filename=${encodeURIComponent(getPrintFilename())}`;
-          window.open(previewUrl, "_blank", "noopener");
-          return;
-        }
-
-        const previewUrl = `${window.location.pathname}?printPreview=1&action=print`;
-        window.location.href = previewUrl;
-      };
-
-      const printExportControls = document.querySelectorAll(
-        "[data-print-export]",
-      );
-      printExportControls.forEach((control) => {
-        control.addEventListener("click", (event) => {
-          event.preventDefault();
-          const mode = control.getAttribute("data-print-export") || "print";
-          triggerPrintExport(mode);
-        });
-      });
-
-      buildPrintEdition();
-
-      const previewParams = new URLSearchParams(window.location.search);
-      const isPrintPreviewMode = previewParams.get("printPreview") === "1";
-      const previewAction = previewParams.get("action") || "view";
-      let suggestedFilename = "";
-      if (isPrintPreviewMode) {
-        document.body.classList.add("print-preview");
-      }
-
-      if (isPrintPreviewMode) {
-        const issueKey = previewParams.get("doc");
-        const selectedIssue = issueKey ? archiveIssueMap[issueKey] : null;
-        suggestedFilename =
-          previewParams.get("filename") ||
-          selectedIssue?.pdf?.split("/").pop() ||
-          "";
-        const printMeta = document.getElementById("print-meta");
-        const printTitle = document.getElementById("print-title");
-        const printStandfirst = document.getElementById("print-standfirst");
-        const printBody = document.getElementById("print-body");
-        let handledArchiveIssue = false;
-
-        if (
-          selectedIssue &&
-          (previewAction === "view" || previewAction === "download")
-        ) {
-          if (previewAction === "download") {
-            const downloadLink = document.createElement("a");
-            downloadLink.href = selectedIssue.pdf;
-            if (suggestedFilename) {
-              downloadLink.setAttribute("download", suggestedFilename);
-            }
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            downloadLink.remove();
-          } else {
-            window.location.replace(selectedIssue.pdf);
-          }
-          handledArchiveIssue = true;
-        }
-
-        if (
-          !handledArchiveIssue &&
-          selectedIssue &&
-          printMeta &&
-          printTitle &&
-          printStandfirst &&
-          printBody
-        ) {
-          printMeta.textContent = selectedIssue.meta;
-          printTitle.textContent = selectedIssue.title;
-          if (printTitle.textContent.trim() === "#") {
-            printTitle.remove();
-          }
-          printStandfirst.textContent =
-            "ShoreVest Insights · China Debt Dynamics";
-          printBody.innerHTML = `<iframe src="${selectedIssue.pdf}" title="${selectedIssue.title}" style="width:100%;min-height:70vh;border:1px solid rgba(0,0,0,.12);"></iframe>`;
-        }
-
-        if (!handledArchiveIssue && suggestedFilename) {
-          document.title = `${suggestedFilename} - ShoreVest`;
-        }
-      }
-
-      if (
-        isPrintPreviewMode &&
-        (previewAction === "print" ||
-          (previewAction === "download" && !previewParams.get("doc")))
-      ) {
-        if (previewAction === "download" && !previewParams.get("doc")) {
-          const downloadLink = document.createElement("a");
-          downloadLink.href = getPrintPdfUrl();
-          if (suggestedFilename) {
-            downloadLink.setAttribute("download", suggestedFilename);
-          }
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          downloadLink.remove();
-          window.setTimeout(() => window.close(), 120);
-        } else {
-          window.setTimeout(() => window.print(), 120);
-        }
-      }
-    </script>
+    
 
     <script>
       (() => {

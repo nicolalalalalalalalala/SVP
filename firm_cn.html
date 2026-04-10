@@ -47,133 +47,23 @@
         padding: 0 var(--pad);
       }
 
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: #ffffff;
-      }
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:4px;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#171717;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC',serif;
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
-  opacity:1;
-  line-height:1;
-}
-      .nav__links {
-        list-style: none;
-        display: flex;
-        gap: 36px;
-      }
-      .nav__links a {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        opacity: 0.45;
-        transition: opacity 0.2s;
-      }
-      .nav__links a.active,
-      .nav__links a:hover {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-family: var(--sans);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        padding: 8px 20px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp {
-        background: var(--white);
-        color: var(--ink);
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: #fff;
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        background: #fff;
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       main {
         padding-top: 72px;
@@ -1006,55 +896,19 @@
         .intel-copy {
           width: 100%;
         }
-        #nav {
-          height: auto;
-          min-height: 72px;
-          align-items: center;
-          flex-wrap: wrap;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
+
         :root {
           --nav-pad: 18px;
         }
-        .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-        .nav__menu-btn {
-          display: inline-flex;
-        }
-        .nav__right {
-          margin-left: auto;
-          gap: 10px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: inline-flex;
-        }
-        .nav__lp {
-          display: inline-flex;
-        }
-        .nav__links {
-          display: none;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 10px 0 12px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size:11.4px;
-          line-height: 1.5;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
+
         .btn {
           width: 100%;
         }
@@ -1062,86 +916,23 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
+
+
+
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-        .nav__right {
-          gap: 8px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
-        }
-        .nav__lp {
-          font-size: 9px;
-        }
+
+
+
+
+
+
+
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
@@ -1184,45 +975,11 @@
   }
 }
       /* Homepage nav lockup parity */
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:4px;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#171717;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC',serif;
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
-  opacity:1;
-  line-height:1;
-}
+
+
+
+
+
 
 
 </style>
@@ -1410,28 +1167,11 @@
   }
 </style>
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm_cn.html" aria-current="page">关于我们</a></li>
-    <li><a href="strategy_cn.html">投资策略</a></li>
-    <li><a href="insights_cn.html">市场洞见</a></li>
-    <li><a href="press_cn.html">新闻动态</a></li>
-    <li><a href="team_cn.html">团队成员</a></li>
-  <li class="nav__mobile-lang"><a href="firm.html">EN</a></li></ul><div class="nav__right">
-    <a href="firm.html" class="nav__zh">EN</a>
-    <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
 
     <main>
       <section class="hero">
@@ -1787,65 +1527,7 @@
 
     </main>
 
-    <script>
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      const nav = document.getElementById("nav");
-      const navLinks = document.getElementById("nav-links");
-      if (menuBtn && nav && navLinks) {
-        menuBtn.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(isOpen));
-        });
-      }
-
-      document.querySelectorAll(".platform-diagram").forEach((diagram) => {
-        const tabs = diagram.querySelectorAll(".small-box");
-        const detailTitle = diagram.querySelector(".small-detail h4");
-        const detailCopy = diagram.querySelector(".small-detail p");
-        if (!tabs.length || !detailTitle || !detailCopy) return;
-
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => {
-            tabs.forEach((el) => {
-              el.classList.remove("is-active");
-              el.setAttribute("aria-selected", "false");
-            });
-            tab.classList.add("is-active");
-            tab.setAttribute("aria-selected", "true");
-            detailTitle.textContent = tab.dataset.detailTitle || "";
-            detailCopy.textContent = tab.dataset.detailCopy || "";
-          });
-        });
-      });
-
-      document.querySelectorAll(".pillar-grid").forEach((grid) => {
-        const cards = grid.querySelectorAll(".pillar-card");
-        const detail = grid.nextElementSibling;
-        const detailTitle = detail?.querySelector("h3");
-        const detailCopy = detail?.querySelector("p");
-        if (!cards.length || !detailTitle || !detailCopy) return;
-
-        const activateCard = (card) => {
-          cards.forEach((item) => {
-            item.classList.remove("is-active");
-            item.setAttribute("aria-pressed", "false");
-          });
-          card.classList.add("is-active");
-          card.setAttribute("aria-pressed", "true");
-          detailTitle.textContent = card.dataset.pillarTitle || "";
-          detailCopy.textContent = card.dataset.pillarCopy || "";
-        };
-
-        cards.forEach((card) => {
-          card.addEventListener("click", () => activateCard(card));
-          card.addEventListener("keydown", (event) => {
-            if (event.key !== "Enter" && event.key !== " ") return;
-            event.preventDefault();
-            activateCard(card);
-          });
-        });
-      });
-    </script>
+    
 
     <script>
       (() => {

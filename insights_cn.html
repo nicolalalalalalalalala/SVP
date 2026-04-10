@@ -116,99 +116,20 @@
         color: var(--white);
       }
 
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: #fff;
-      }
-      #nav.scrolled {
-        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
-      }
 
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo img {
-        display: block;
-      }
-      .nav__links {
-        display: flex;
-        gap: 36px;
-        list-style: none;
-      }
-      .nav__links a {
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        opacity: 0.45;
-      }
-      .nav__links a.active,
-      .nav__links a:hover {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        padding: 8px 20px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp {
-        background: var(--white);
-        color: var(--ink);
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: #fff;
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        background: #fff;
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       .research-hero {
         min-height: 420px;
@@ -874,10 +795,7 @@
         :root {
           --pad: 18px;
         }
-        #nav {
-          height: 66px;
-          padding: 0 var(--pad);
-        }
+
         .research-hero {
           min-height: auto;
           margin-top: 0;
@@ -954,83 +872,19 @@
           margin-top: 56px;
           padding: 52px 0;
         }
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__menu-btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          min-height: 44px;
-          padding: 0 16px;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: list-item;
-        }
-        .nav__mobile-lang a {
-          opacity: 1;
-        }
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-          text-align: center;
-        }
-        .nav__links {
-          display: none;
-          grid-column: 1 / -1;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 14px 0 4px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size: 10px;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         .research-hero {
           margin-top: 0;
@@ -1194,41 +1048,14 @@
           padding-left: var(--pad);
           padding-right: var(--pad);
         }
-        #nav {
-          padding: 10px var(--pad);
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 44px;
-          width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          gap: 8px;
-          width: auto;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          width: auto;
-        }
-        .nav__lp {
-          padding: 0 12px;
-          font-size: 9px;
-        }
-        .nav__menu-btn {
-          padding: 0 12px;
-        }
+
+
+
+
+
+
+
+
 
         .research-hero {
           margin-top: 0;
@@ -1290,85 +1117,23 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
+
+
+
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 42px;
-          width: 100%;
-        }
-        .nav__right {
-          gap: 8px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
-        }
-        .nav__lp {
-          font-size: 9px;
-        }
+
+
+
+
+
+
+
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
@@ -1425,45 +1190,11 @@
   }
 }
       /* Homepage nav lockup parity */
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:4px;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#171717;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC',serif;
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
-  opacity:1;
-  line-height:1;
-}
+
+
+
+
+
 
 
 </style>
@@ -1569,28 +1300,11 @@
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm_cn.html">关于我们</a></li>
-    <li><a href="strategy_cn.html">投资策略</a></li>
-    <li><a href="insights_cn.html" aria-current="page">市场洞见</a></li>
-    <li><a href="press_cn.html">新闻动态</a></li>
-    <li><a href="team_cn.html">团队成员</a></li>
-  <li class="nav__mobile-lang"><a href="insights.html">EN</a></li></ul><div class="nav__right">
-    <a href="insights.html" class="nav__zh">EN</a>
-    <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
 
     <section class="research-hero">
       <div class="wrap research-hero__grid">
@@ -2220,403 +1934,7 @@
       </div>
     </section>
 
-    <script>
-      window.addEventListener("scroll", () =>
-        document
-          .getElementById("nav")
-          .classList.toggle("scrolled", window.scrollY > 10),
-      );
-
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      const nav = document.getElementById("nav");
-      if (menuBtn && nav) {
-        menuBtn.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(isOpen));
-        });
-      }
-
-      const defaultPrintFilename = "shorevest-china-debt-dynamics-issue-46.pdf";
-
-      const archiveIssueMap = {
-        v10i1: {
-          title: "市场回流与信用结构变化",
-          meta: "第10卷 | 第1期 | 发布于 2026年1月25日 | 资产配置人版",
-          pdf: "pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf",
-        },
-        v9i4: {
-          title:
-            "北京治理产能过剩的行动正在创造私募信贷机会。",
-          meta: "第9卷 | 第4期 | 发布于 2025年第四季度 | 资产配置人版",
-          pdf: "assets/china-debt-dynamics/2025-09-23-beijing-campaign-against-overcapacity-private-credit-opportunities.md",
-        },
-        v9i3: {
-          title: "深入美国私募信贷的阴影地带。",
-          meta: "第9卷 | 第3期 | 发布于 2025年第三季度 | 资产配置人版",
-          pdf: "pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf",
-        },
-        v9i2: {
-          title: "中国：动荡世界中的低相关性港湾。",
-          meta: "第9卷 | 第2期 | 发布于 2025年第二季度 | 资产配置人版",
-          pdf: "assets/china-debt-dynamics/2025-04-14-china-uncorrelated-harbor-in-a-stormy-world.md",
-        },
-        v9i1: {
-          title:
-            "绿色金融：播下中国下一轮不良贷款浪潮的种子。",
-          meta: "第9卷 | 第1期 | 发布于 2025年第一季度 | 资产配置人版",
-          pdf: "pdfs/china-debt-dynamics-green-finance-next-wave-npls.pdf",
-        },
-        v8i4: {
-          title: "中国的“合众国”时刻。",
-          meta: "第8卷 | 第4期 | 发布于 2024年第四季度 | 资产配置人版",
-          pdf: "pdfs/china-debt-dynamics-united-states-of-china.pdf",
-        },
-        v8i3: {
-          title: "重置中的世界秩序下的私募信贷。",
-          meta: "第8卷 | 第3期 | 发布于 2024年第三季度 | 资产配置人版",
-          pdf: "assets/china-debt-dynamics/2024-11-06-private-credit-in-a-reset-world-order.md",
-        },
-        v8i2: {
-          title: "量化中国不良贷款市场。",
-          meta: "第8卷 | 第2期 | 发布于 2024年第二季度 | 资产配置人版",
-          pdf: "pdfs/39. China-Debt-Dynamics-Quantifying-Chinas-NPL-market.pdf",
-        },
-        v8i1: {
-          title:
-            "纾困银行：北京房地产支持政策的隐含意义。",
-          meta: "第8卷 | 第1期 | 发布于 2024年第一季度 | 资产配置人版",
-          pdf: "pdfs/38. China-Debt-Dynamics-Bailing-out-the-banks-–-the-hidden-significance-of-Beijing-property-support-measures.pdf",
-        },
-        v7i4: {
-          title:
-            "中国重新聚焦金融风险并加速不良资产处置。",
-          meta: "第7卷 | 第4期 | 发布于 2023年第四季度 | 资产配置人版",
-          pdf: "pdfs/37. China-Debt-Dynamics-China-refocuses-on-financial-risk-–-and-ramps-up-NPL-disposals.pdf",
-        },
-        v7i1: {
-          title:
-            "刺激政策在哪里？解析北京对增长乏力的应对。",
-          meta: "第7卷 | 第1期 | 发布于 2022 | 资产配置人版",
-          pdf: "pdfs/34. China-Debt-Dynamics-Wheres-the-stimulus-–-Parsing-Beijings-lackluster-response-to-growth.pdf",
-        },
-        v6i3: {
-          title: "新规将加速不良资产处置。",
-          meta: "第6卷 | 第3期 | 发布于 2022 | 资产配置人版",
-          pdf: "pdfs/32. China-Debt-Dynamics-New-Regulations-Set-to-Accelerate-NPL-Disposals.pdf",
-        },
-        v6i2: {
-          title: "中国房地产支持措施：救助，而非再通胀。",
-          meta: "第6卷 | 第2期 | 发布于 2022 | 资产配置人版",
-          pdf: "pdfs/31. ShoreVest-China-Debt-Dynamics_Chinas-Property-Support-Measures_Rescue-not-Reflation.pdf",
-        },
-        v6i1: {
-          title: "恒大事件。",
-          meta: "第6卷 | 第1期 | 发布于 2021年9月 | 资产配置人版",
-          pdf: "pdfs/china-debt-dynamics-evergrande.pdf",
-        },
-        v5i2: {
-          title:
-            "中国私募信贷比较分析。",
-          meta: "第5卷 | 第2期 | 发布于 2021年4月 | 资产配置人版",
-          pdf: "assets/china-debt-dynamics/2021-04-12-comparative-analysis-of-chinese-private-credit.md",
-        },
-        v3i5: {
-          title:
-            "帮助中国银行处置不良贷款（NPL）的工具综述。",
-          meta: "第3卷 | 第5期 | 发布于 2019年10月16日 | 资产配置人版",
-          pdf: "assets/china-debt-dynamics/2019-10-16-tools-help-china-banks-dispose-npls.md",
-        },
-      };
-
-      const rewriteArchiveIssueLinks = () => {
-        const archiveLinks = document.querySelectorAll(
-          '.archive__actions a[href*="printPreview=1"][href*="doc="]',
-        );
-        archiveLinks.forEach((link) => {
-          const parsedUrl = new URL(link.href, window.location.origin);
-          const docKey = parsedUrl.searchParams.get("doc");
-          const action = parsedUrl.searchParams.get("action");
-          const mappedIssue = docKey ? archiveIssueMap[docKey] : null;
-          if (!mappedIssue?.pdf) return;
-
-          link.href = mappedIssue.pdf;
-
-          if (action === "download") {
-            const requestedFilename = parsedUrl.searchParams.get("filename");
-            if (requestedFilename) {
-              link.setAttribute("download", requestedFilename);
-            }
-          } else {
-            link.removeAttribute("download");
-          }
-        });
-      };
-      rewriteArchiveIssueLinks();
-
-      const getPrintSourceArticle = () =>
-        document.querySelector('[data-print-article="active"]') ||
-        document.querySelector("[data-print-article]") ||
-        document.querySelector(".reading-grid .reading");
-
-      const getPrintFilename = () =>
-        getPrintSourceArticle()?.getAttribute("data-print-filename") ||
-        defaultPrintFilename;
-      const getPrintPdfUrl = () =>
-        getPrintSourceArticle()?.getAttribute("data-print-pdf") ||
-        archiveIssueMap.v10i1.pdf;
-
-      const buildPrintEdition = () => {
-        const title =
-          document.querySelector(".issue-live h1")?.textContent.trim() || "";
-        const standfirst =
-          document.querySelector(".issue-live p")?.textContent.trim() ||
-          document
-            .querySelector("#current-issue p:not(.lead)")
-            ?.textContent.trim() ||
-          "";
-        const issueInfo =
-          document
-            .querySelector(".issue-live__meta span:nth-child(1)")
-            ?.textContent.trim() || "";
-        const publishedInfo =
-          document
-            .querySelector(".issue-live__meta span:nth-child(2)")
-            ?.textContent.trim() || "";
-        const editionInfo =
-          document
-            .querySelector(".issue-live__meta span:nth-child(3)")
-            ?.textContent.trim() || "资产配置人版";
-        const sourceArticle = getPrintSourceArticle();
-        const printMeta = document.getElementById("print-meta");
-        const printTitle = document.getElementById("print-title");
-        const printStandfirst = document.getElementById("print-standfirst");
-        const printCallout = document.getElementById("print-callout");
-        const printBody = document.getElementById("print-body");
-
-        if (
-          !sourceArticle ||
-          !printMeta ||
-          !printTitle ||
-          !printStandfirst ||
-          !printCallout ||
-          !printBody
-        ) {
-          return;
-        }
-
-        const metadataLine = [issueInfo, publishedInfo, editionInfo]
-          .filter(Boolean)
-          .join(" | ");
-        printMeta.textContent = metadataLine;
-        printTitle.textContent = title;
-        if (printTitle.textContent.trim() === "#") {
-          printTitle.remove();
-        }
-        printStandfirst.textContent = standfirst;
-        printBody.innerHTML = "";
-
-        const normalizedStandfirst = standfirst
-          .replace(/[“”]/g, '"')
-          .replace(/\s+/g, " ")
-          .trim()
-          .toLowerCase();
-        let skippedTitleHeading = false;
-        let skippedStandfirstParagraph = false;
-        let calloutText = "";
-
-        const normalizePrintNode = (node) => {
-          const clean = node.cloneNode(true);
-          const walker = document.createTreeWalker(
-            clean,
-            NodeFilter.SHOW_ELEMENT,
-          );
-          const elements = [clean];
-          while (walker.nextNode()) {
-            elements.push(walker.currentNode);
-          }
-          elements.forEach((element) => {
-            element.removeAttribute("class");
-            element.removeAttribute("style");
-            element.removeAttribute("id");
-          });
-          return clean;
-        };
-
-        const printableNodes = Array.from(
-          sourceArticle.querySelectorAll("h3, p, ul, ol, blockquote"),
-        );
-        printableNodes.forEach((node) => {
-          if (node.classList.contains("lead")) {
-            return;
-          }
-
-          const clone = normalizePrintNode(node);
-
-          if (clone.tagName === "H3") {
-            const headingText = clone.textContent.trim().replace(/\.$/, "");
-            const titleText = title.replace(/\.$/, "");
-            if (!skippedTitleHeading && headingText === titleText) {
-              skippedTitleHeading = true;
-              return;
-            }
-            const printHeading = document.createElement("h2");
-            printHeading.textContent = clone.textContent;
-            printBody.appendChild(printHeading);
-            return;
-          }
-
-          if (clone.tagName === "P") {
-            const paragraphText = clone.textContent
-              .replace(/[“”]/g, '"')
-              .replace(/\s+/g, " ")
-              .trim()
-              .toLowerCase();
-            if (
-              !skippedStandfirstParagraph &&
-              paragraphText === normalizedStandfirst
-            ) {
-              skippedStandfirstParagraph = true;
-              return;
-            }
-            if (
-              !calloutText &&
-              clone.textContent.includes(
-                "在部分领域，随着价格调整、资产情况更为清晰以及回收路径逐渐明确，资金开始有选择地回流。",
-              )
-            ) {
-              calloutText = clone.textContent.trim();
-              return;
-            }
-          }
-
-          printBody.appendChild(clone);
-        });
-
-        const openingParagraph = printBody.querySelector("p");
-        if (openingParagraph) {
-          openingParagraph.classList.add("print-body__opening");
-        }
-
-        printCallout.textContent =
-          calloutText ||
-          "当前中国信贷市场呈现分化特征。更重要的是在价格、结构与回收逻辑之间保持清晰判断。";
-      };
-
-      const triggerPrintExport = (mode = "print") => {
-        buildPrintEdition();
-
-        if (mode === "view") {
-          const previewUrl = `${window.location.pathname}?printPreview=1&action=view`;
-          window.open(previewUrl, "_blank", "noopener");
-          return;
-        }
-
-        if (mode === "download") {
-          const previewUrl = `${window.location.pathname}?printPreview=1&action=download&filename=${encodeURIComponent(getPrintFilename())}`;
-          window.open(previewUrl, "_blank", "noopener");
-          return;
-        }
-
-        const previewUrl = `${window.location.pathname}?printPreview=1&action=print`;
-        window.location.href = previewUrl;
-      };
-
-      const printExportControls = document.querySelectorAll(
-        "[data-print-export]",
-      );
-      printExportControls.forEach((control) => {
-        control.addEventListener("click", (event) => {
-          event.preventDefault();
-          const mode = control.getAttribute("data-print-export") || "print";
-          triggerPrintExport(mode);
-        });
-      });
-
-      buildPrintEdition();
-
-      const previewParams = new URLSearchParams(window.location.search);
-      const isPrintPreviewMode = previewParams.get("printPreview") === "1";
-      const previewAction = previewParams.get("action") || "view";
-      let suggestedFilename = "";
-      if (isPrintPreviewMode) {
-        document.body.classList.add("print-preview");
-      }
-
-      if (isPrintPreviewMode) {
-        const issueKey = previewParams.get("doc");
-        const selectedIssue = issueKey ? archiveIssueMap[issueKey] : null;
-        suggestedFilename =
-          previewParams.get("filename") ||
-          selectedIssue?.pdf?.split("/").pop() ||
-          "";
-        const printMeta = document.getElementById("print-meta");
-        const printTitle = document.getElementById("print-title");
-        const printStandfirst = document.getElementById("print-standfirst");
-        const printBody = document.getElementById("print-body");
-        let handledArchiveIssue = false;
-
-        if (
-          selectedIssue &&
-          (previewAction === "view" || previewAction === "download")
-        ) {
-          if (previewAction === "download") {
-            const downloadLink = document.createElement("a");
-            downloadLink.href = selectedIssue.pdf;
-            if (suggestedFilename) {
-              downloadLink.setAttribute("download", suggestedFilename);
-            }
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            downloadLink.remove();
-          } else {
-            window.open(selectedIssue.pdf, "_blank", "noopener");
-          }
-          handledArchiveIssue = true;
-        }
-
-        if (
-          !handledArchiveIssue &&
-          selectedIssue &&
-          printMeta &&
-          printTitle &&
-          printStandfirst &&
-          printBody
-        ) {
-          printMeta.textContent = selectedIssue.meta;
-          printTitle.textContent = selectedIssue.title;
-          if (printTitle.textContent.trim() === "#") {
-            printTitle.remove();
-          }
-          printStandfirst.textContent =
-            "ShoreVest 洞察 · 中国债务动态";
-          printBody.innerHTML = `<iframe src="${selectedIssue.pdf}" title="${selectedIssue.title}" style="width:100%;min-height:70vh;border:1px solid rgba(0,0,0,.12);"></iframe>`;
-        }
-
-        if (!handledArchiveIssue && suggestedFilename) {
-          document.title = `${suggestedFilename} - ShoreVest`;
-        }
-      }
-
-      if (
-        isPrintPreviewMode &&
-        (previewAction === "print" ||
-          (previewAction === "download" && !previewParams.get("doc")))
-      ) {
-        if (previewAction === "download" && !previewParams.get("doc")) {
-          const downloadLink = document.createElement("a");
-          downloadLink.href = getPrintPdfUrl();
-          if (suggestedFilename) {
-            downloadLink.setAttribute("download", suggestedFilename);
-          }
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          downloadLink.remove();
-          window.setTimeout(() => window.close(), 120);
-        } else {
-          window.setTimeout(() => window.print(), 120);
-        }
-      }
-    </script>
+    
 
     <script>
       (() => {

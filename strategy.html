@@ -194,102 +194,21 @@
       }
 
       /* ══ NAV */
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 62px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: #FAF6EE;
-      }
-      #nav.scrolled {
-        background: #FAF6EE;
-        border-bottom-color: var(--rule);
-        box-shadow: 0 1px 14px rgba(0, 0, 0, 0.045);
-      }
 
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo img {
-        display: block;
-      }
-      .nav__links {
-        display: flex;
-        gap: 32px;
-        list-style: none;
-      }
-      .nav__links a {
-        font-size: 11.4px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        opacity: 0.45;
-        transition: opacity 0.2s;
-      }
-      .nav__links a:hover {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-size: 11.4px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(48, 40, 34, 0.15);
-        padding: 7px 16px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp {
-        background: var(--white);
-        color: var(--ink);
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: var(--white);
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(0, 0, 0, 0.14);
-        background: #FAF6EE;
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       /* Performance: removed legacy inline base64 hero styles to reduce CSS/HTML parse cost on mobile scroll. */
 
@@ -2018,49 +1937,16 @@
           padding-top: 126px;
           padding-bottom: 54px;
         }
-        #nav {
-          height: auto;
-          min-height: 72px;
-          align-items: center;
-          flex-wrap: wrap;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
-        .nav__logo img {
-          height: 48px;
-        }
-        .nav__menu-btn {
-          display: inline-flex;
-        }
-        .nav__right {
-          margin-left: auto;
-          gap: 10px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: inline-flex;
-        }
-        .nav__lp {
-          display: inline-flex;
-        }
-        .nav__links {
-          display: none;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 10px 0 12px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size: 10px;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
+
+
         .pgsec {
           padding: 56px 0 48px;
         }
@@ -2134,53 +2020,13 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
+
+
+
       }
 
       @media (max-width: 767px) {
@@ -2190,47 +2036,16 @@
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 42px;
-          width: 100%;
-        }
-        .nav__logo-lockup {
-          row-gap: 0;
-        }
-        .nav__logo-en {
-          font-size: 18px;
-        }
-        .nav__logo-cn {
-          display: block;
-          font-size: 7px;
-          letter-spacing: 0.2em;
-          white-space: nowrap;
-        }
-        .nav__right {
-          gap: 8px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
-        }
-        .nav__lp {
-          font-size: 9px;
-        }
+
+
+
+
+
+
+
+
+
+
         .viz-controls {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2286,45 +2101,11 @@
   }
 }
       /* Homepage nav lockup parity */
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:4px;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014';
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#0F2206;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC';
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
-  opacity:1;
-  line-height:1;
-}
+
+
+
+
+
 
 
 </style>
@@ -2530,29 +2311,11 @@
   </style>
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm.html">The Firm</a></li>
-    <li><a href="strategy.html" aria-current="page">Strategy</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="press.html">Press</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
-  <li class="nav__mobile-lang"><a href="strategy_cn.html">中文</a></li></ul><div class="nav__right">
-    <a href="strategy_cn.html" class="nav__zh lang-toggle">中文</a>
-    <a href="investor-access.html" class="nav__lp">Investor Access</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
     <section class="pagehero">
       <div class="wrap">
         <div>
@@ -2992,132 +2755,7 @@
     </section>
 
 
-    <script>
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      const nav = document.getElementById("nav");
-      const navLinks = document.getElementById("nav-links");
-      if (menuBtn && nav && navLinks) {
-        menuBtn.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(isOpen));
-        });
-        navLinks.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            nav.classList.remove("menu-open");
-            menuBtn.setAttribute("aria-expanded", "false");
-          });
-        });
-      }
-
-      const activateDetail = (items, detailEl) => {
-        if (!items.length || !detailEl) return;
-        const setActive = (item) => {
-          items.forEach((el) => el.classList.toggle("is-active", el === item));
-          detailEl.textContent = item.dataset.detail || "";
-        };
-        items.forEach((item) => {
-          item.addEventListener("mouseenter", () => setActive(item));
-          item.addEventListener("focus", () => setActive(item));
-          item.addEventListener("click", () => setActive(item));
-        });
-      };
-
-      activateDetail(
-        [...document.querySelectorAll(".kpi[data-detail]")],
-        document.querySelector("[data-kpi-detail]"),
-      );
-      activateDetail(
-        [...document.querySelectorAll(".funnel-step[data-detail]")],
-        document.querySelector("[data-funnel-detail]"),
-      );
-      activateDetail(
-        [...document.querySelectorAll(".city[data-detail]")],
-        document.querySelector("[data-city-detail]"),
-      );
-
-      const scenarioMap = {
-        base: { ring: 68 },
-        defensive: { ring: 82 },
-        offensive: { ring: 68 },
-      };
-      const scenarioButtons = [
-        ...document.querySelectorAll(".viz-btn[data-scenario]"),
-      ];
-      const allocRows = [...document.querySelectorAll(".alloc-row[data-base]")];
-      const ring = document.querySelector(".ring");
-      const ringValue = document.querySelector("[data-ring-value]");
-      const applyScenario = (scenario) => {
-        scenarioButtons.forEach((btn) => {
-          const active = btn.dataset.scenario === scenario;
-          btn.classList.toggle("is-active", active);
-          btn.setAttribute("aria-pressed", String(active));
-        });
-        allocRows.forEach((row) => {
-          const value = row.dataset[scenario];
-          const valueLabel = row.querySelector(".alloc-label span:last-child, b span:last-child");
-          const track = row.querySelector(".alloc-track span");
-          if (value && valueLabel && track) {
-            valueLabel.textContent = `${value}%`;
-            track.style.width = `${value}%`;
-          }
-        });
-        const ringPct = scenarioMap[scenario]?.ring;
-        if (ring && ringValue && ringPct) {
-          ring.style.setProperty("--pct", `${ringPct}%`);
-          ringValue.textContent = `${ringPct}%`;
-        }
-      };
-      scenarioButtons.forEach((btn) =>
-        btn.addEventListener("click", () =>
-          applyScenario(btn.dataset.scenario),
-        ),
-      );
-      if (scenarioButtons.length) {
-        applyScenario("base");
-      }
-
-      const jumpButtons = [...document.querySelectorAll("[data-jump-nav] button")];
-      const jumpSections = jumpButtons
-        .map((btn) => document.getElementById(btn.dataset.target))
-        .filter(Boolean);
-      const setJumpActive = (id) => {
-        jumpButtons.forEach((btn) =>
-          btn.classList.toggle("is-active", btn.dataset.target === id),
-        );
-      };
-      jumpButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const target = document.getElementById(btn.dataset.target);
-          if (!target) return;
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-          setJumpActive(btn.dataset.target);
-        });
-      });
-      if (jumpSections.length) {
-        const jumpObserver = new IntersectionObserver(
-          (entries) => {
-            const visible = entries
-              .filter((entry) => entry.isIntersecting)
-              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-            if (visible?.target?.id) setJumpActive(visible.target.id);
-          },
-          { rootMargin: "-30% 0px -55% 0px", threshold: [0.2, 0.45, 0.7] },
-        );
-        jumpSections.forEach((section) => jumpObserver.observe(section));
-      }
-
-      const expandTriggers = [...document.querySelectorAll(".expand__trigger")];
-      expandTriggers.forEach((trigger) => {
-        const panelId = trigger.getAttribute("aria-controls");
-        const panel = panelId ? document.getElementById(panelId) : null;
-        if (!panel) return;
-        trigger.addEventListener("click", () => {
-          const isExpanded = trigger.getAttribute("aria-expanded") === "true";
-          trigger.setAttribute("aria-expanded", String(!isExpanded));
-          panel.style.maxHeight = isExpanded ? "0px" : `${panel.scrollHeight}px`;
-        });
-      });
-    </script>
+    
     <script>
       (() => {
         if (window.__svScrollAnimationsInit) return;
