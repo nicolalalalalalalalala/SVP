@@ -416,9 +416,9 @@ body.homepage .hero__overlay h1.hero__hed {
 }
 
 body.homepage .hero__overlay .cta--light {
-  border: 1px solid rgba(247, 241, 232, 0.42) !important;
-  background: rgba(12, 10, 8, 0.36) !important;
-  padding: 9px 9px 9px 16px !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
 }
 
 body.homepage .hero__overlay .cta--light .cta__ring {
@@ -428,8 +428,8 @@ body.homepage .hero__overlay .cta--light .cta__ring {
 
 body.homepage .hero__overlay .cta--light:hover,
 body.homepage .hero__overlay .cta--light:focus-visible {
-  border-color: var(--cinnabar) !important;
-  background: rgba(12, 10, 8, 0.66) !important;
+  border-color: transparent !important;
+  background: transparent !important;
 }
 
 body.homepage #hero {
