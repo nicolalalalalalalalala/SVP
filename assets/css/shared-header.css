@@ -66,7 +66,9 @@
   letter-spacing: .03em;
   text-transform: uppercase;
   color: #171717;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  text-align: left;
   line-height: 1;
 }
 
@@ -77,6 +79,9 @@
   letter-spacing: .28em;
   color: rgba(33, 33, 30, .66);
   opacity: 1;
+  display: block;
+  width: 100%;
+  text-align: left;
   line-height: 1;
 }
 
@@ -208,7 +213,9 @@
     letter-spacing: .05em;
     text-transform:uppercase;
     color:#171717;
-    display:inline-block;
+    display:block;
+    width:100%;
+    text-align:left;
     line-height:1;
   }
 
@@ -219,6 +226,9 @@
     letter-spacing:.34em;
     color: rgba(33,33,30,.5);
     opacity:1;
+    display:block;
+    width:100%;
+    text-align:left;
     line-height:1;
   }
 
