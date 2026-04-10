@@ -1727,6 +1727,105 @@
     color: var(--blue-green) !important;
   }
 </style>
+  <style>
+    /* Mobile insights top bar styling to match ShoreVest reference */
+    @media (max-width: 767px) {
+      #nav {
+        min-height: 88px;
+        padding: 18px 16px 12px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 12px;
+        row-gap: 8px;
+        border-bottom: 1px solid #d8d1c2;
+        background: linear-gradient(to bottom, #e6e0d0 0 14px, #ffffff 14px 100%);
+      }
+
+      .nav__logo {
+        gap: 10px;
+      }
+
+      .nav__logo-mark {
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+      }
+
+      .nav__logo-lockup {
+        min-height: 44px;
+        row-gap: 3px;
+        padding-left: 6px;
+      }
+
+      .nav__logo-en {
+        font-size: 13px;
+        letter-spacing: 0.34em;
+      }
+
+      .nav__logo-cn {
+        font-size: 16px;
+        letter-spacing: 0.08em;
+      }
+
+      .nav__right {
+        gap: 0;
+      }
+
+      .nav__zh,
+      .nav__lp {
+        display: none;
+      }
+
+      .nav__menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 58px;
+        min-width: 168px;
+        padding: 0 24px;
+        border: 1px solid #b9b1a2;
+        color: #1d1d1b;
+        background: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .nav__links {
+        margin-top: 2px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #nav {
+        min-height: 82px;
+        padding: 16px 12px 10px;
+      }
+
+      .nav__logo-mark {
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+      }
+
+      .nav__logo-en {
+        font-size: 11px;
+        letter-spacing: 0.27em;
+      }
+
+      .nav__logo-cn {
+        font-size: 13px;
+      }
+
+      .nav__menu-btn {
+        min-height: 50px;
+        min-width: 142px;
+        padding: 0 18px;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+      }
+    }
+  </style>
 
 
 </head>
