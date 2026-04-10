@@ -57,125 +57,21 @@
         width: 100%;
       }
 
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 62px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: #ffffff;
-      }
-      .nav__logo {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        height: 100%;
-      }
-      .nav__logo-mark {
-        width: 31px;
-        height: 31px;
-        flex: 0 0 31px;
-      }
-      .nav__logo-lockup {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        line-height: 1;
-        row-gap: 1px;
-        padding-left: 4px;
-        min-height: 31px;
-      }
-      .nav__logo-en {
-        font-family: "DIN 2014";
-        font-size: 18px;
-        font-weight:700;
-        letter-spacing: .05em;
-        text-transform:uppercase;
-        color: #171717;
-        display: inline-block;
-        line-height: 1;
-      }
-      .nav__logo-cn {
-        font-family: "Noto Serif SC";
-        margin-top: 0;
-        font-size: 9px;
-        letter-spacing: 0.34em;
-        color: rgba(33, 33, 30, 0.5);
-        opacity: 1;
-        line-height: 1;
-      }
-      .nav__links {
-        list-style: none;
-        display: flex;
-        gap: 36px;
-      }
-      .nav__links a {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        opacity: 0.45;
-        transition: opacity 0.2s;
-      }
-      .nav__links a.active,
-      .nav__links a:hover {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-family: var(--sans);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        background: #fff;
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        padding: 8px 20px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: #fff;
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        background: #fff;
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       main {
         padding-top: 62px;
@@ -1531,39 +1427,14 @@
         :root {
           --nav-pad: 18px;
         }
-        .nav__menu-btn {
-          display: inline-flex;
-        }
-        .nav__right {
-          margin-left: auto;
-          gap: 10px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: inline-flex;
-        }
-        .nav__lp {
-          display: inline-flex;
-        }
-        .nav__links {
-          display: none;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 10px 0 12px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size:11.4px;
-          line-height: 1.5;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
         /* Prevent narrow-screen text from protruding past the content column. */
         p,
         li,
@@ -1595,58 +1466,19 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
       }
 
       @media (max-width: 520px) {
-        .nav__right {
-          gap: 6px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 38px;
-          padding: 0 10px;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          letter-spacing: 0.1em;
-        }
-        .nav__lp {
-          font-size: 8px;
-        }
-        .nav__menu-btn {
-          font-size: 9px;
-        }
+
+
+
+
+
+
       }
 
 @media (max-width: 768px) {
@@ -1787,9 +1619,7 @@
     }
 
     /* English typography system */
-    body :not(.nav__logo-cn):not(.nav__logo-cn *) {
-      font-family: "DIN 2014" !important;
-    }
+
     h1 {
       font-family: "DIN 2014" !important;
       font-weight: 300 !important;
@@ -1827,50 +1657,13 @@
     }
 
     /* Chinese typography and lockup */
-    .nav__logo-lockup {
-      position: relative;
-      margin-left: 4px;
-      padding-left: 12px !important;
-    }
-    .nav__logo-lockup::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 2px;
-      bottom: 2px;
-      width: 1px;
-      background: var(--sv-cinnabar);
-    }
-    .nav__logo-en {
-      font-family: "DIN 2014" !important;
-      letter-spacing: 0.05em !important;
-      color: var(--sv-ink) !important;
-    }
-    .nav__logo-cn {
-      font-family: "Noto Serif SC" !important;
-      font-weight: 500 !important;
-      font-size: 10px !important;
-      letter-spacing: 0.08em !important;
-      color: var(--sv-ink) !important;
-    }
+
+
+
+
 
     /* Palette constraints */
-    #nav,
-    .hero-main,
-    .framed-panel,
-    .pillar-card,
-    .pillar-detail,
-    .proof-card,
-    .market-card,
-    .note,
-    .intel-copy,
-    .closing-panel,
-    .track-record-panel,
-    .operations-map,
-    .sv-footer {
-      background: var(--sv-paper-light) !important;
-      border-color: color-mix(in srgb, var(--sv-blue-green) 40%, transparent) !important;
-    }
+
     section,
     main,
     .track-record-section .framed-panel {
@@ -1881,85 +1674,23 @@
       background: var(--sv-ink) !important;
       color: var(--sv-paper-light) !important;
     }
-    .nav__lp,
-    .nav__menu-btn,
-    .sv-footer__contact a {
-      background: var(--sv-paper-light) !important;
-      border-color: color-mix(in srgb, var(--sv-blue-green) 40%, transparent) !important;
-      color: var(--sv-ink) !important;
-    }
+
     a.active,
-    .nav__links a.active,
-    .track-record-trigger.is-active .track-record-trigger__label,
-    .track-record-trigger.is-active .track-record-trigger__value,
-    .track-record-trigger.is-active .track-record-trigger__index {
-      color: var(--sv-cinnabar) !important;
-    }
-    .nav__lp:hover,
-    .sv-footer__contact a:hover {
-      background: var(--sv-cinnabar) !important;
-      border-color: var(--sv-cinnabar) !important;
-      color: var(--sv-paper-light) !important;
-    }
+
+
 
     /* Firm page mobile top bar: match reference layout */
     @media (max-width: 767px) {
-      #nav {
-        height: 86px !important;
-        padding: calc(env(safe-area-inset-top, 0px) + 10px) 18px 12px !important;
-        align-items: flex-end !important;
-        border-bottom: 1px solid rgba(16, 16, 15, 0.14) !important;
-        background: #ffffff !important;
-      }
-      #nav::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: calc(env(safe-area-inset-top, 0px) + 10px);
-        background: #e9e3d2;
-      }
-      .nav__logo {
-        gap: 10px !important;
-      }
-      .nav__logo-mark {
-        width: 46px !important;
-        height: 46px !important;
-        flex: 0 0 46px !important;
-      }
-      .nav__logo-lockup {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-      }
-      .nav__logo-lockup::before {
-        display: none !important;
-      }
-      .nav__logo-en {
-        font-size: 14px !important;
-        letter-spacing: 0.34em !important;
-      }
-      .nav__logo-cn {
-        margin-top: 2px !important;
-        font-size: 9px !important;
-        letter-spacing: 0.14em !important;
-        opacity: 0.9 !important;
-      }
-      .nav__zh,
-      .nav__lp {
-        display: none !important;
-      }
-      .nav__menu-btn {
-        display: inline-flex !important;
-        min-height: 50px !important;
-        min-width: 170px;
-        justify-content: center;
-        padding: 0 24px !important;
-        border: 1px solid rgba(16, 16, 15, 0.24) !important;
-        background: #f9f7f1 !important;
-        font-size: 14px !important;
-        letter-spacing: 0.18em !important;
-      }
+
+
+
+
+
+
+
+
+
+
       main {
         padding-top: 86px !important;
       }
@@ -1967,29 +1698,11 @@
   </style>
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm.html" aria-current="page">The Firm</a></li>
-    <li><a href="strategy.html">Strategy</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="press.html">Press</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
-  <li class="nav__mobile-lang"><a href="firm_cn.html">中文</a></li></ul><div class="nav__right">
-    <a href="firm_cn.html" class="nav__zh lang-toggle">中文</a>
-    <a href="investor-access.html" class="nav__lp">Investor Access</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
 
     <main>
       <section class="hero">
@@ -2384,125 +2097,7 @@
       
     </main>
 
-    <script>
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      const nav = document.getElementById("nav");
-      const navLinks = document.getElementById("nav-links");
-      if (menuBtn && nav && navLinks) {
-        menuBtn.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(isOpen));
-        });
-      }
-
-      document.querySelectorAll(".pillar-grid").forEach((grid) => {
-        const cards = grid.querySelectorAll(".pillar-card");
-        const detail = grid.nextElementSibling;
-        const detailTitle = detail?.querySelector("h3");
-        const detailCopy = detail?.querySelector("p");
-        if (!cards.length || !detailTitle || !detailCopy) return;
-
-        const activateCard = (card) => {
-          cards.forEach((item) => {
-            item.classList.remove("is-active");
-            item.setAttribute("aria-pressed", "false");
-          });
-          card.classList.add("is-active");
-          card.setAttribute("aria-pressed", "true");
-          detailTitle.textContent = card.dataset.pillarTitle || "";
-          detailCopy.textContent = card.dataset.pillarCopy || "";
-        };
-
-        cards.forEach((card) => {
-          card.addEventListener("click", () => activateCard(card));
-          card.addEventListener("keydown", (event) => {
-            if (event.key !== "Enter" && event.key !== " ") return;
-            event.preventDefault();
-            activateCard(card);
-          });
-        });
-      });
-
-      document.querySelectorAll(".market-card--minimized").forEach((card) => {
-        const indicator = card.querySelector(".market-toggle-indicator");
-        const setIndicator = (expanded) => {
-          if (!indicator) return;
-          indicator.textContent = expanded ? "LESS" : "MORE";
-        };
-
-        const toggleCard = () => {
-          const isExpanded = card.classList.toggle("is-expanded");
-          card.setAttribute("aria-expanded", String(isExpanded));
-          setIndicator(isExpanded);
-        };
-
-        setIndicator(card.classList.contains("is-expanded"));
-        card.addEventListener("click", () => toggleCard());
-        card.addEventListener("keydown", (event) => {
-          if (event.key !== "Enter" && event.key !== " ") return;
-          event.preventDefault();
-          toggleCard();
-        });
-      });
-
-      document.querySelectorAll(".track-record-interactive").forEach((section) => {
-        const triggers = section.querySelectorAll(".track-record-trigger");
-        const panelLabel = section.querySelector(".track-record-panel__label");
-        const panelMetric = section.querySelector(".track-record-panel__metric");
-        const panelDesc = section.querySelector(".track-record-panel__desc");
-        if (!triggers.length || !panelLabel || !panelMetric || !panelDesc) return;
-
-        const activateTrigger = (trigger) => {
-          triggers.forEach((item) => {
-            item.classList.remove("is-active");
-            item.setAttribute("aria-selected", "false");
-          });
-          trigger.classList.add("is-active");
-          trigger.setAttribute("aria-selected", "true");
-          panelLabel.textContent = trigger.dataset.label || "";
-          panelMetric.textContent = trigger.dataset.value || "";
-          panelDesc.textContent = trigger.dataset.description || "";
-        };
-
-        triggers.forEach((trigger) => {
-          trigger.addEventListener("click", () => activateTrigger(trigger));
-        });
-      });
-
-      const setupSelectableGroup = (selector) => {
-        document.querySelectorAll(selector).forEach((group) => {
-          const items = group.querySelectorAll(".proof-card, .track-record-step, .note");
-          if (!items.length) return;
-
-          const activateItem = (item) => {
-            items.forEach((candidate) => {
-              candidate.classList.remove("is-active");
-              candidate.setAttribute("aria-pressed", "false");
-            });
-            item.classList.add("is-active");
-            item.setAttribute("aria-pressed", "true");
-          };
-
-          items.forEach((item, index) => {
-            if (item.classList.contains("note--fineprint")) return;
-            item.setAttribute("role", "button");
-            item.setAttribute("tabindex", "0");
-            item.setAttribute("aria-pressed", index === 0 ? "true" : "false");
-            if (index === 0) item.classList.add("is-active");
-
-            item.addEventListener("click", () => activateItem(item));
-            item.addEventListener("keydown", (event) => {
-              if (event.key !== "Enter" && event.key !== " ") return;
-              event.preventDefault();
-              activateItem(item);
-            });
-          });
-        });
-      };
-
-      setupSelectableGroup(".proof-grid");
-      setupSelectableGroup(".platform-notes");
-    </script>
+    
 
     <script>
       (() => {

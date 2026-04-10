@@ -61,100 +61,19 @@
         padding: 0 var(--pad);
       }
 
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 62px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: var(--white);
-      }
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo img {
-        display: block;
-      }
-      .nav__links {
-        display: flex;
-        gap: 36px;
-        list-style: none;
-        margin-right: 24px;
-      }
-      .nav__links a {
-        font-size: 11.4px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        opacity: 0.45;
-        transition: opacity 0.2s;
-      }
-      .nav__links a.active,
-      .nav__links a:hover {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        flex-shrink: 0;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-        margin-left: 14px;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-size: 11.4px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        padding: 7px 16px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp {
-        background: var(--white);
-        color: var(--ink);
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: var(--white);
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(48, 40, 34, 0.2);
-        background: var(--white);
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       .eyebrow {
         font-size: 10px;
@@ -522,49 +441,16 @@
         :root {
           --pad: 18px;
         }
-        #nav {
-          height: auto;
-          min-height: 62px;
-          align-items: center;
-          flex-wrap: wrap;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
-        .nav__logo img {
-          height: 48px;
-        }
-        .nav__menu-btn {
-          display: inline-flex;
-        }
-        .nav__right {
-          margin-left: auto;
-          gap: 10px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: inline-flex;
-        }
-        .nav__lp {
-          display: inline-flex;
-        }
-        .nav__links {
-          display: none;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 10px 0 12px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size: 10px;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
+
+
         .pagehero {
           min-height: auto;
           padding-top: 140px;
@@ -667,85 +553,23 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 62px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
+
+
+
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 42px;
-          width: 100%;
-        }
-        .nav__right {
-          gap: 8px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
-        }
-        .nav__lp {
-          font-size: 9px;
-        }
+
+
+
+
+
+
+
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
@@ -791,45 +615,11 @@
   }
 }
       /* Homepage nav lockup parity */
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:8px;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#171717;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC',serif;
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.28em;
-  color: rgba(33,33,30,.66);
-  opacity:1;
-  line-height:1;
-}
+
+
+
+
+
 
 
 </style>
@@ -1051,29 +841,11 @@
   </style>
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm.html">The Firm</a></li>
-    <li><a href="strategy.html">Strategy</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="press.html">Press</a></li>
-    <li><a href="team.html" aria-current="page">Team</a></li>
-    <li class="nav__mobile-investor"><a href="investor-access.html">Investor Access</a></li>
-  <li class="nav__mobile-lang"><a href="team_cn.html">中文</a></li></ul><div class="nav__right">
-    <a href="team_cn.html" class="nav__zh lang-toggle">中文</a>
-    <a href="investor-access.html" class="nav__lp">Investor Access</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
 
     <section class="pagehero">
       <div class="wrap">
@@ -1292,295 +1064,7 @@
       </div>
     </main>
 
-    <script>
-      const profileData = {
-        "Benjamin Fanger": {
-          role: "Managing Partner; Founder",
-          education: "JD, MBA — University of Chicago",
-          bio: `Ben Fanger has spent more than two decades building what is now the most experienced institutional private credit platform in China. He founded ShoreVest Partners in 2016, bringing with him the core senior team from Shoreline Capital — the firm he co-founded in 2004 and which he grew into one of the first institutionally scaled private credit managers in the Chinese market. Across both platforms, he has overseen the deployment of more than US$2 billion in Chinese private credit on behalf of sovereign wealth funds, pension funds, insurance companies, endowments, and family offices worldwide.
-
-Fanger’s engagement with Chinese distressed debt predates the market itself. While at the law firm O’Melveny & Myers, he worked on Morgan Stanley’s 2001 acquisition of a large non-performing loan portfolio in China — the first successful large-scale foreign NPL purchase in the country’s history. He subsequently earned his JD and MBA from the University of Chicago, closing his first Chinese NPL deals while still a student. Before turning to investment management full-time, he co-founded and sold two companies to public companies.
-
-Over more than twenty years, Fanger has worked directly with Chinese banks, borrowers, courts, regulators, and government officials across thousands of distressed asset transactions. He has been fluent in spoken and written Mandarin for nearly thirty years. He is a licensed attorney in the State of California and sits on ShoreVest’s Investment Committee.`,
-        },
-        "Mecy Mei": {
-          role: "Partner",
-          education: "MA Economics — Nanjing University; CFA Charterholder",
-          bio: `Mecy Mei is a founding partner of ShoreVest and one of the most experienced practitioners in Chinese private credit investing. She served as a partner at Shoreline Capital for eight years before co-founding ShoreVest in 2016, giving her a continuous track record in this market stretching back to the period when institutional private credit in China was still being defined.
-
-At ShoreVest, Mei co-leads ShoreVest Asset Solutions — the firm’s proprietary debt servicing platform and a foundational competitive advantage in Chinese NPL investing. Her investment experience runs the full spectrum: sourcing, due diligence, deal structuring, acquisition and negotiation, post-investment monitoring, and exit. She has overseen the successful completion of numerous transactions across every phase of China’s credit cycle. Earlier in her career she worked at Morningstar as a fund analyst, building debt and equity portfolios for institutional clients in China.
-
-She was awarded the CFA designation in 2018. She holds a master’s degree in economics from Nanjing University and a bachelor’s degree in economics from Hefei University of Technology, and sits on ShoreVest’s Investment Committee.`,
-        },
-        "Hui Zheng": {
-          role: "Partner",
-          education:
-            "LLM Foreign-related Economic Law — Sun Yat-sen University School of Law",
-          bio: `Hui Zheng brings to ShoreVest a combination of legal expertise and investment experience that is unusual even within China’s specialist distressed credit market. She began her career as a practicing attorney at a Guangdong-based law firm, where she focused on the liquidation of non-performing loan assets — the precise legal terrain that ShoreVest navigates on every transaction. Her academic work in the field has been published, including the paper “Negative Impacts the New Bankruptcy Law has on the Liquidation of Non-performing Assets.”
-
-She joined the senior team at Shoreline Capital in 2008, served as a partner for eight years, and co-founded ShoreVest in 2016. At ShoreVest she co-leads ShoreVest Asset Solutions alongside Mecy Mei, and her investment mandate covers the complete credit lifecycle: sourcing, diligence, structuring, active management, and exit. Her legal formation provides a distinct analytical lens on counterparty risk, enforcement mechanics, and regulatory exposure across ShoreVest’s portfolio.
-
-She holds an LLM in economic law on foreign business from Sun Yat-sen University School of Law and a law degree from Nanchang University, and sits on ShoreVest’s Investment Committee.`,
-        },
-        "Ada Bi": {
-          role: "Partner; CFO",
-          education:
-            "BA International Trade — Guangdong University of Foreign Studies",
-          bio: `Ada Bi has served as ShoreVest’s Chief Financial Officer since the firm’s founding in 2016, and as CFO of its predecessor firm Shoreline Capital from 2008. Across nearly two decades at the same investment platform, she has built and led the financial infrastructure through which more than US$2 billion in Chinese private credit has been deployed, managed, and resolved.
-
-Her mandate spans the full operational lifecycle of ShoreVest’s funds: financial reporting, treasury, tax, cash management, and the financial controls of invested projects. Before joining Shoreline Capital, she led finance for AIG’s property and casualty operations in China, with responsibility for financial reporting, treasury, tax, and budgeting. She previously held roles at the Royal Bank of Canada and CITIC-Prudential Life Insurance Company.
-
-Bi holds the Fellow designation of the Association of Chartered Certified Accountants (FCCA) and is a member of CPA Canada, holding the legacy Certified General Accountant designation. She holds a bachelor’s degree in international trade from Guangdong University of Foreign Studies and sits on ShoreVest’s Investment Committee.`,
-        },
-        "Shanjuan Jiang": {
-          role: "Partner",
-          education:
-            "MBA Finance — University of California, Davis; PhD Mechanical Engineering — UCLA; BS Engineering Physics — Tsinghua University",
-          bio: `Shanjuan Jiang is a Partner at ShoreVest, where she focuses on investor strategy, institutional relationships, and the firm’s broader capital markets presence. She brings more than seventeen years of experience in alternative investments across Greater China, with a career that has spanned private equity portfolio management, cross-border fund strategy, and alternative investment advisory at major institutional platforms investing in China — including experience at CalPERS managing Greater China private equity exposure, Franklin Templeton China, and China International Capital Corporation (CICC).
-
-Her vantage point — having sat on both the allocator and manager sides of Greater China alternatives — gives her a distinctive perspective on what institutional investors require and what investment platforms must deliver. She has worked alongside institutions managing multi-billion-dollar exposure to China across private and public markets.
-
-Based in Los Gatos, California, Jiang serves as a critical bridge between ShoreVest’s China-based investment operations and institutional capital in North America.`,
-        },
-        "Lillian Xu": {
-          role: "General Counsel",
-          education:
-            "Bachelor of Law — Zhejiang University; LLM Chinese Commercial Law — The Chinese University of Hong Kong",
-          bio: `Lillian Xu serves as General Counsel of ShoreVest, overseeing all legal matters across the firm’s investment activities and fund operations. She brings more than fifteen years of specialist legal experience, with a practice focused on legal due diligence for alternative investments — the discipline most critical to a firm that acquires complex, multi-layered distressed credits in the Chinese market. Prior to ShoreVest, she trained and practiced at multiple red circle law firms in China, the tier of elite domestic practices whose deal experience and institutional relationships define the upper end of PRC legal work.`,
-        },
-        "James Li": {
-          role: "Director of Capital Solutions",
-          education:
-            "M.Eng. Financial Engineering — Cornell University; BA Applied Mathematics and Economics — UC San Diego",
-          bio: `James Li brings approximately twelve years of Wall Street investment banking experience to ShoreVest’s capital solutions function, with a career concentrated in restructuring and special situations at leading advisory firms including Perella Weinberg Partners and Citi. His background spans financial modeling, credit analysis, and transaction execution across complex restructuring mandates — capabilities that translate directly into the structuring and execution demands of ShoreVest’s Chinese private credit strategy.
-
-He holds a Master of Engineering in Financial Engineering from Cornell University.`,
-        },
-        "Daoping Yang": {
-          role: "Managing Director (SAS)",
-          education:
-            "MBA — Renmin University of China; marketing studies — Georgia Institute of Technology; BA — China Central Broadcasting and Television University",
-          bio: `Daoping Yang is a Managing Director at ShoreVest Asset Solutions (SAS), the firm’s captive debt servicing platform, where he leads Eastern China operations and oversees deal sourcing and servicing across the most commercially active credit markets in China. Since moving into alternative investments in 2015, he has focused on non-performing loans, real estate, and energy credit — the asset classes at the core of ShoreVest’s China strategy.
-
-Yang spent the preceding twenty years as a senior executive at Sinopec, one of the world’s largest energy companies, where he held responsibility across global and regional supply, pricing, and trading operations. The combination of executive standing earned across two decades in China’s SOE infrastructure, the sectoral networks that come with it, and a decade of on-the-ground alternative investment experience gives Yang an unusually effective platform for sourcing and resolving Chinese distressed assets.
-
-He holds an MBA from Renmin University of China and has studied at the Georgia Institute of Technology.`,
-        },
-        "John Jones": {
-          role: "Director of Client Solutions (ex-Asia)",
-          education: "BA Economics — USC; MBA — University of Chicago",
-          bio: `John Jones leads ShoreVest’s client engagement across the Americas, the Middle East, and Europe. He joined the firm in April 2021, bringing more than fifteen years of experience across public and private credit, capital markets, and alternative investment strategy.
-
-Jones spent five and a half years at PIMCO in Newport Beach, where he worked first as a Compliance Associate and then in Business Development within the Financial Institutions Group, which manages investments tailored to the needs of insurance companies and banks. He subsequently spent a year as an Analyst at WCM’s China Fund and two years as an Advisor at FMC Financial Group. Before joining ShoreVest, he served as a Founding Partner at Numeraire Partners — a systematic global macro fund — where he sourced and negotiated a $21 million GP seed investment and $125 million in LP commitments from family offices and pension funds, and led all aspects of firm formation including valuation modeling, fee agreements, marketing, and prime brokerage relationships. He then served as Principal at Collins Street Advisors, providing investment and advisory services to alternative investment firms.
-
-During his MBA at the University of Chicago, Jones worked as an associate at the Chicago Innovation Fund, a venture capital fund investing in early-stage companies associated with the University of Chicago, Argonne National Laboratory, and Fermilab. While pursuing his undergraduate degree, he spent two years on a Mandarin-language service mission.
-
-He holds an MBA from the University of Chicago Booth School of Business and a BA in Economics from the University of Southern California.`,
-        },
-        "Kelvin Chan": {
-          role: "Director of Client Solutions (Asia)",
-          education:
-            "Degrees in Accountancy and Mathematics — University of Waterloo; CFA, CA and CPA designations",
-          bio: `Kelvin Chan leads ShoreVest’s client engagement across Asia from Hong Kong, having joined the firm in December 2024. His career spans nearly two decades across private equity, venture capital, strategic investment, and financial advisory in Greater China and Southeast Asia.
-
-Chan began his career at Deloitte Consulting, where he spent four years across audit and strategy roles in the Technology, Media, and Telecommunications practice, before moving to National Bank Financial as an Associate Analyst covering Canada’s major banks, insurers, and exchanges. He then spent nearly five years at SGS Asset Management in Hong Kong as a private equity associate, participating across the full investment cycle from origination through exit.
-
-He joined Ping An Asset Management in Hong Kong in 2013, where he spent two and a half years developing Ping An Group’s overseas private equity platform — deploying insurance capital and HNWI funds into healthcare, energy, and natural resource investments — while also executing strategic acquisitions and divestitures for the group. He subsequently moved to Fosun Hani Securities as Executive Director of Strategic Development, where he led overseas investments across private equity, listed equities, and debt, sat on the investment committee, and managed a proprietary trading portfolio of approximately HKD 750 million.
-
-From 2018 to 2020, Chan served as Investment Director for International Investment at Ant Financial in Hong Kong, responsible for global investment initiatives outside China with a focus on payments, fintech, blockchain, and AI across Asia. He subsequently worked as an independent financial advisor supporting fundraising for technology startups, before joining 500 Global in Hong Kong as Associate Director of Strategic Development, covering deal analysis, investor relations, and exit strategy for the Southeast Asia Growth Fund.
-
-He joined ShoreVest in late 2024 to lead Asia client solutions.`,
-        },
-        "Michael Chang": {
-          role: "Senior Advisory Partner",
-          education: "MBA — MIT Sloan; BA — Stanford University",
-          bio: `Michael Chang is a Senior Advisory Partner at ShoreVest, advising on firm operations, institutional infrastructure, and organizational strategy. He joined ShoreVest in September 2017 and has contributed to building the firm’s operational foundations across human resources, information technology, finance, and compliance.
-
-Before ShoreVest, Chang was a Director at Stamos Capital Partners and Prima Capital, and earlier spent two years at Bridgewater Associates in account management and three years at Cambridge Associates as a Senior Consulting Associate. His experience spanning the world’s largest hedge fund and the leading endowment investment consultancy gives him a rigorous frame of reference for institutional-grade operations within a specialized alternative asset manager.
-
-He holds an MBA from MIT Sloan School of Management and a BA in Economics from Stanford University.`,
-        },
-        "Philip Young": {
-          role: "Senior Advisory Partner",
-          education:
-            "BS — National Taiwan University; MBA — University of Chicago; Diploma in International Investment — Stanford University",
-          bio: `Philip Young brings to ShoreVest more than three decades of institutional investment leadership in Asian insurance and asset management. His career has spanned Continental Illinois National Bank, Bank of America, Nomura Asset Management, and senior Chief Investment Officer roles at Aetna Life Insurance and MassMutual Japan — institutions that collectively represent the deepest lineage of Western institutional engagement with Asian capital markets.
-
-At Aetna Heiwa Life Insurance in Tokyo, Young served as Managing Director and CIO, overseeing the firm’s acquisition by MassMutual Life Insurance in spring 2001 and continuing as MD and CIO at MassMutual Japan thereafter. He subsequently served as CIO at two Chinese life insurance companies. His board experience is equally substantial: Independent Director at Haifutong Fund Management in Shanghai, OCBC Bank China, TransGlobe Life Insurance in Taiwan, and YingDaTaiHe Life Insurance in Beijing — a joint venture between China State Power Grid and MassMutual.
-
-Young is a Senior Advisor on Financial Services for Greater China at Oliver Wyman. He serves as Adjunct Associate Professor at HKU’s Institute for China Business and as adjunct faculty in finance at National Taiwan University, where he received Excellent Teaching honors in 2020 and 2022. He is the author of The Essence of Wealth Management and The Logic of Asset Allocation (both 2021).
-
-He holds an MBA from the University of Chicago Business School.`,
-        },
-        "Dinny McMahon": {
-          role: "Senior Advisory Partner",
-          education:
-            "International Relations (in Chinese) — Johns Hopkins SAIS, Nanjing campus",
-          bio: `Dinny McMahon is one of the most authoritative English-language voices on China’s financial system. As a Senior Advisory Partner, he works with ShoreVest’s investment committee on China’s macroeconomic environment, the state of its commercial banking system, non-performing loan volumes and trajectories, and the structural and regulatory factors that shape the firm’s deal sourcing and execution.
-
-McMahon spent a decade as a financial journalist in China — four years covering currency and foreign exchange markets for Dow Jones Newswires in Shanghai, followed by six years as Banking and Finance Correspondent for The Wall Street Journal in Beijing, where he tracked the accumulation of debt, the expansion of shadow banking, and the systemic fragilities building within China’s state-directed financial system. He left The Wall Street Journal in 2015 to take up a fellowship at the Woodrow Wilson International Center for Scholars under the Kissinger Institute on China and the United States, where he wrote China’s Great Wall of Debt: Shadow Banks, Ghost Cities, Massive Loans, and the End of the Chinese Miracle, published by Houghton Mifflin Harcourt in 2018. The Economist called it the closest any writer had come to covering the Chinese economy as Michael Lewis might. Reuters called it the best book on China’s economic fragility.
-
-He subsequently held a fellowship at MacroPolo, the Paulson Institute’s think tank, researching China’s financial system cleanup. He currently serves as Head of China Markets Research at Trivium China, contributes regularly to Foreign Affairs and The Wire China, and has testified before the U.S.-China Economic and Security Review Commission.
-
-McMahon is fluent in Mandarin, having studied the language in Beijing and Kunming before spending a year studying international relations in Chinese at the Hopkins-Nanjing Center, the Johns Hopkins SAIS campus in Nanjing. He holds a double degree in economics and Chinese from the University of New South Wales.`,
-        },
-      };
-
-      let activeCard = null;
-      let activePanel = null;
-
-      function getProfile(name) {
-        return (
-          profileData[name] || {
-            role: "ShoreVest Team",
-            education: "",
-            bio: `${name} is part of the ShoreVest team.`,
-          }
-        );
-      }
-
-      function getDisplayRole(card, name) {
-        const profile = profileData[name];
-        if (profile?.role) return profile.role;
-        const sectionTitle = card
-          .closest(".group")
-          ?.querySelector("h2")
-          ?.textContent?.trim();
-        return sectionTitle || "ShoreVest Team";
-      }
-
-
-      function appendCardSnippets() {
-        document.querySelectorAll(".card").forEach((card) => {
-          if (card.querySelector(".card-snippet")) return;
-          const name = card.querySelector(".name")?.textContent?.trim();
-          const bio = name ? profileData[name]?.bio : null;
-          if (!bio) return;
-          const firstSentence = bio.replace(/\s+/g, " ").split(/(?<=[.!?])\s/)[0];
-          const snippet = document.createElement("p");
-          snippet.className = "card-snippet";
-          snippet.textContent = firstSentence;
-          card.appendChild(snippet);
-        });
-      }
-      function appendViewProfileCue() {
-        document.querySelectorAll(".card").forEach((card) => {
-          if (card.querySelector(".card-cue")) return;
-          const cue = document.createElement("div");
-          cue.className = "card-cue";
-          cue.textContent = "View profile";
-          card.appendChild(cue);
-        });
-      }
-
-      function hydrateCardTitles() {
-        document.querySelectorAll(".card").forEach((card) => {
-          if (card.querySelector(".title")) return;
-          const name =
-            card.querySelector(".name")?.textContent?.trim() || "Team Member";
-          const title = document.createElement("div");
-          title.className = "title";
-          title.textContent = getDisplayRole(card, name);
-          const bio = card.querySelector(".card-bio");
-          if (bio) {
-            card.insertBefore(title, bio);
-            return;
-          }
-          card.appendChild(title);
-        });
-      }
-
-      hydrateCardTitles();
-      appendCardSnippets();
-      appendViewProfileCue();
-
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      const nav = document.getElementById("nav");
-      const navLinks = document.getElementById("nav-links");
-      if (menuBtn && nav && navLinks) {
-        menuBtn.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(isOpen));
-        });
-        navLinks.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            nav.classList.remove("menu-open");
-            menuBtn.setAttribute("aria-expanded", "false");
-          });
-        });
-      }
-
-      function ensurePanel() {
-        if (activePanel) return activePanel;
-        const panel = document.createElement("article");
-        panel.className = "row-bio-panel";
-        panel.innerHTML = `
-        <div class="row-bio-panel__eyebrow">Team Profile</div>
-        <h3 class="row-bio-panel__name"></h3>
-        <div class="row-bio-panel__meta">
-          <span class="row-bio-panel__role"></span>
-        </div>
-        <p class="row-bio-panel__text"></p>
-      `;
-        activePanel = panel;
-        return panel;
-      }
-
-      function rowCards(grid, targetCard) {
-        const cards = Array.from(grid.querySelectorAll(":scope > .card"));
-        const targetTop = targetCard.offsetTop;
-        return cards.filter((card) => Math.abs(card.offsetTop - targetTop) < 2);
-      }
-
-      function closeCurrent() {
-        if (activeCard) activeCard.classList.remove("is-active");
-        if (activePanel) {
-          activePanel.classList.remove("is-open");
-          activePanel.remove();
-        }
-        activeCard = null;
-      }
-
-      document.querySelectorAll(".card").forEach((card) => {
-        const name =
-          card.querySelector(".name")?.textContent?.trim() || "Team Member";
-
-        card.setAttribute("tabindex", "0");
-        card.setAttribute("role", "button");
-        card.setAttribute("aria-label", `Show biography for ${name}`);
-
-        function openBio() {
-          const isSame = activeCard === card;
-          closeCurrent();
-          if (isSame) return;
-
-          const profile = getProfile(name);
-          const panel = ensurePanel();
-          panel.querySelector(".row-bio-panel__name").textContent = name;
-          panel.querySelector(".row-bio-panel__role").textContent =
-            profile.role || getDisplayRole(card, name);
-          panel.querySelector(".row-bio-panel__text").textContent =
-            profile.bio?.trim() || "";
-
-          const grid = card.closest(".grid");
-          const cardsInRow = rowCards(grid, card);
-          const lastInRow = cardsInRow[cardsInRow.length - 1] || card;
-          lastInRow.insertAdjacentElement("afterend", panel);
-
-          panel.classList.add("is-open");
-          card.classList.add("is-active");
-          activeCard = card;
-        }
-
-        card.addEventListener("click", openBio);
-        card.addEventListener("keydown", (event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            openBio();
-          }
-        });
-      });
-    </script>
+    
 
     <script>
       (() => {

@@ -85,19 +85,12 @@
 
     a:hover { text-decoration: underline; }
 
-    #nav { height: 72px; }
-    .nav__logo img { display: block; }
-    .nav__links { list-style: none; margin: 0; padding: 0; }
-    .nav__links a { color: var(--ink); opacity: 0.45; }
-    .nav__links a:hover,
-    .nav__links a.active { opacity: 1; }
-    .nav__zh {
-      font-size: 13px;
-      color: var(--ink);
-      opacity: 0.35;
-      text-decoration: none;
-    }
-    .nav__zh:hover { opacity: 0.75; }
+
+
+
+
+
+
 
     .sv-footer--full-bleed {
       margin-left: calc(50% - 50vw);
@@ -210,28 +203,11 @@
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
 <body>
-  <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm_cn.html">关于我们</a></li>
-    <li><a href="strategy_cn.html">投资策略</a></li>
-    <li><a href="insights_cn.html">市场洞见</a></li>
-    <li><a href="press_cn.html">新闻动态</a></li>
-    <li><a href="team_cn.html">团队成员</a></li>
-  <li class="nav__mobile-lang"><a href="disclaimers.html">EN</a></li></ul><div class="nav__right">
-    <a href="disclaimers.html" class="nav__zh">EN</a>
-    <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
-  </div>
-</nav>
+  <div id="site-header-mount"></div>
 
   <main>
     <div class="disclaimer-wrap">

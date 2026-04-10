@@ -51,97 +51,19 @@
         padding: 0 var(--pad);
       }
 
-      #nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        border-bottom: 1px solid var(--rule);
-        background: #fff;
-      }
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo img {
-        display: block;
-      }
-      .nav__links {
-        display: flex;
-        gap: 36px;
-        list-style: none;
-      }
-      .nav__links a {
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        opacity: 0.45;
-        transition: opacity 0.2s;
-      }
-      .nav__links a:hover,
-      .nav__links a.active {
-        opacity: 1;
-      }
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-      }
-      .nav__zh {
-        font-size: 13px;
-        color: var(--ink);
-        opacity: 0.35;
-        transition: opacity 0.2s;
-      }
-      .nav__zh:hover {
-        opacity: 0.75;
-      }
-      .nav__mobile-lang {
-        display: none;
-      }
-      .nav__lp {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        padding: 8px 20px;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .nav__lp {
-        background: var(--white);
-        color: var(--ink);
-      }
-      .nav__lp:hover {
-        background: var(--red);
-        color: #fff;
-        border-color: var(--red);
-      }
-      .nav__menu-btn {
-        display: none;
-        border: 1px solid rgba(0, 0, 0, 0.14);
-        background: #fff;
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 8px 14px;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       main {
         padding: 0 0 110px;
@@ -439,46 +361,15 @@
         :root {
           --pad: 18px;
         }
-        #nav {
-          height: auto;
-          min-height: 72px;
-          align-items: center;
-          flex-wrap: wrap;
-          row-gap: 12px;
-          padding: 12px var(--pad);
-        }
-        .nav__logo img {
-          height: 48px;
-        }
-        .nav__menu-btn {
-          display: inline-flex;
-        }
-        .nav__right {
-          margin-left: auto;
-          gap: 10px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__mobile-lang {
-          display: inline-flex;
-        }
-        .nav__links {
-          display: none;
-          width: 100%;
-          order: 3;
-          flex-direction: column;
-          gap: 14px;
-          padding: 10px 0 12px;
-          border-top: 1px solid var(--rule);
-        }
-        #nav.menu-open .nav__links {
-          display: flex;
-        }
-        .nav__links a {
-          font-size: 10px;
-          white-space: nowrap;
-        }
+
+
+
+
+
+
+
+
+
         main {
           padding: 0 0 80px;
         }
@@ -502,85 +393,23 @@
 
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
-        #nav {
-          height: auto;
-          min-height: 72px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          column-gap: 12px;
-          row-gap: 12px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: 48px;
-          max-width: 100%;
-        }
-        .nav__right {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-left: auto;
-          min-width: 0;
-          flex-wrap: nowrap;
-        }
-        .nav__menu-btn,
-        .nav__lp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 44px;
-          padding: 0 16px;
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__zh {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
-        .nav__links {
-          grid-column: 1 / -1;
-          width: 100%;
-          padding: 14px 0 4px;
-        }
+
+
+
+
+
+
+
       }
 
       @media (max-width: 520px) {
-        #nav {
-          column-gap: 10px;
-          row-gap: 10px;
-        }
-        .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-        .nav__logo img {
-          height: auto;
-          max-height: 42px;
-          width: 100%;
-        }
-        .nav__right {
-          gap: 8px;
-        }
-        .nav__zh {
-          display: none;
-        }
-        .nav__lp,
-        .nav__menu-btn {
-          min-height: 40px;
-          padding: 0 12px;
-        }
-        .nav__lp {
-          font-size: 9px;
-        }
+
+
+
+
+
+
+
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
@@ -630,45 +459,11 @@
         }
       }
       /* Homepage nav lockup parity */
-      .nav__logo {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  height:100%;
-}
-      .nav__logo-mark {
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-}
-      .nav__logo-lockup {
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:center;
-  line-height:1;
-  row-gap:1px;
-  padding-left:4px;
-  min-height:31px;
-}
-      .nav__logo-en {
-  font-family:'DIN 2014', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight:700;
-  letter-spacing: .05em;
-  text-transform:uppercase;
-  color:#171717;
-  display:inline-block;
-  line-height:1;
-}
-      .nav__logo-cn {
-  font-family:'Noto Serif SC',serif;
-  margin-top:0;
-  font-size:9px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
-  opacity:1;
-  line-height:1;
-}
+
+
+
+
+
 
 
 </style>
@@ -774,28 +569,11 @@
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
 
 
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
+    <script src="assets/js/shared-header.js" defer></script>
 </head>
   <body>
-    <nav id="nav">
-  <a href="index.html" class="nav__logo">
-        <img class="nav__logo-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest logo">
-        <span class="nav__logo-lockup">
-          <span class="nav__logo-en">S H O R E V E S T</span>
-          <span class="nav__logo-cn">新岸資本</span>
-        </span>
-      </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="firm_cn.html">关于我们</a></li>
-    <li><a href="strategy_cn.html">投资策略</a></li>
-    <li><a href="insights_cn.html">市场洞见</a></li>
-    <li><a href="press_cn.html" aria-current="page">新闻动态</a></li>
-    <li><a href="team_cn.html">团队成员</a></li>
-  <li class="nav__mobile-lang"><a href="press.html">EN</a></li></ul><div class="nav__right">
-    <a href="press.html" class="nav__zh">EN</a>
-    <a href="investor-access_cn.html" class="nav__lp">投资者入口</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
-  </div>
-</nav>
+    <div id="site-header-mount"></div>
 
     <main>
       <section class="press-hero">
@@ -1561,136 +1339,7 @@
       </div>
     </main>
 
-    <script>
-      const nav = document.getElementById("nav");
-      const menuBtn = document.querySelector(".nav__menu-btn");
-      if (menuBtn && nav) {
-        menuBtn.addEventListener("click", () => {
-          const open = nav.classList.toggle("menu-open");
-          menuBtn.setAttribute("aria-expanded", String(open));
-          menuBtn.textContent = open ? "Close" : "Menu";
-        });
-        document.querySelectorAll(".nav__links a").forEach((link) => {
-          link.addEventListener("click", () => {
-            nav.classList.remove("menu-open");
-            menuBtn.setAttribute("aria-expanded", "false");
-            menuBtn.textContent = "Menu";
-          });
-        });
-      }
-
-      const archive = document.getElementById("press-archive");
-      const moreBtn = document.getElementById("press-more-btn");
-      const yearSelect = document.getElementById("press-year-select");
-      const publicationSelect = document.getElementById("press-publication-select");
-      if (archive && moreBtn && yearSelect && publicationSelect) {
-        const rows = Array.from(archive.querySelectorAll(".press-row")).filter(
-          (row) => {
-            const text = row.textContent || "";
-            return !/china\s+debt\s+dynamics|volume\s*\d+\s*\|\s*issue\s*\d+/i.test(
-              text,
-            );
-          },
-        );
-        const initialCount = 8;
-        const batchSize = 8;
-        let selectedYear = "All";
-        let selectedPublication = "All";
-        let shown = 0;
-
-        const getRowYear = (row) => {
-          const datetime =
-            row.querySelector(".press-date")?.getAttribute("datetime") || "";
-          return datetime.slice(0, 4) || "Unknown";
-        };
-        const getRowPublication = (row) => {
-          const publication =
-            row.querySelector(".press-publication")?.textContent || "";
-          const normalized = publication.replace(/\s+/g, " ").trim();
-          return normalized || "其他报道";
-        };
-
-        rows.forEach((row) => {
-          row.dataset.year = getRowYear(row);
-          row.dataset.publication = getRowPublication(row);
-        });
-
-        const years = Array.from(new Set(rows.map((row) => row.dataset.year)))
-          .filter((year) => year !== "Unknown")
-          .sort((a, b) => Number(b) - Number(a));
-        if (rows.some((row) => row.dataset.year === "Unknown")) {
-          years.push("Unknown");
-        }
-
-        const publications = Array.from(
-          new Set(rows.map((row) => row.dataset.publication)),
-        ).sort((a, b) => a.localeCompare(b));
-
-        const renderSelectOptions = (selectEl, options, allLabel, selectedValue) => {
-          selectEl.innerHTML = "";
-          const allOption = document.createElement("option");
-          allOption.value = "All";
-          allOption.textContent = allLabel;
-          selectEl.appendChild(allOption);
-
-          options.forEach((value) => {
-            const option = document.createElement("option");
-            option.value = value;
-            option.textContent = value;
-            selectEl.appendChild(option);
-          });
-
-          selectEl.value = selectedValue;
-        };
-
-        const getFilteredRows = () =>
-          rows.filter((row) => {
-            const yearMatches =
-              selectedYear === "All" || row.dataset.year === selectedYear;
-            const publicationMatches =
-              selectedPublication === "All" ||
-              row.dataset.publication === selectedPublication;
-            return yearMatches && publicationMatches;
-          });
-
-        const renderRows = () => {
-          const filteredRows = getFilteredRows();
-          rows.forEach((row) => {
-            row.style.display = "none";
-          });
-          filteredRows.forEach((row, idx) => {
-            row.style.display = idx < shown ? "" : "none";
-          });
-          moreBtn.style.display = shown >= filteredRows.length ? "none" : "";
-        };
-
-        shown = Math.min(initialCount, rows.length);
-        renderSelectOptions(yearSelect, years, "全部年份", selectedYear);
-        renderSelectOptions(
-          publicationSelect,
-          publications,
-          "全部媒体",
-          selectedPublication,
-        );
-        renderRows();
-
-        yearSelect.addEventListener("change", (event) => {
-          selectedYear = event.target.value;
-          shown = Math.min(initialCount, getFilteredRows().length);
-          renderRows();
-        });
-        publicationSelect.addEventListener("change", (event) => {
-          selectedPublication = event.target.value;
-          shown = Math.min(initialCount, getFilteredRows().length);
-          renderRows();
-        });
-
-        moreBtn.addEventListener("click", () => {
-          shown = Math.min(shown + batchSize, getFilteredRows().length);
-          renderRows();
-        });
-      }
-    </script>
+    
 
     <script>
       (() => {
