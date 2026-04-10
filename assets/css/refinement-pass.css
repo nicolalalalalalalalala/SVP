@@ -293,7 +293,7 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
   html body footer.sv-footer.sv-footer--full-bleed,
   html body .sv-footer {
     padding: 18px var(--site-page-margin, 18px) calc(24px + env(safe-area-inset-bottom, 0px)) !important;
-    background: #e8e7e5 !important;
+    background: var(--paper-light, #FAF6EE) !important;
   }
 
   html body footer.sv-footer .sv-footer__inner {
@@ -325,7 +325,7 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     font-size: 10px !important;
     letter-spacing: 0.12em !important;
     text-transform: uppercase !important;
-    color: #4a443d !important;
+    color: var(--blue-green-dark, #1E4040) !important;
   }
 
   html body footer.sv-footer .sv-footer__contact a {
@@ -335,9 +335,9 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     align-items: center !important;
     justify-content: center !important;
     padding: 0 12px !important;
-    border: 1px solid rgba(0, 0, 0, 0.2) !important;
-    background: rgba(255, 255, 255, 0.44) !important;
-    color: #161515 !important;
+    border: 1px solid var(--paper-dark, #D8CEB0) !important;
+    background: color-mix(in srgb, var(--paper-light, #FAF6EE) 85%, var(--paper, #F2ECD8) 15%) !important;
+    color: var(--ink-green-dark, #0F2206) !important;
     font-size: 11px !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
@@ -355,12 +355,12 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
   html body footer.sv-footer .sv-footer__copyright {
     font-size: 10px !important;
     line-height: 1.45 !important;
-    color: #66615a !important;
+    color: color-mix(in srgb, var(--ink-green-dark, #0F2206) 62%, var(--paper-light, #FAF6EE) 38%) !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-toggle {
-    border: 1px solid rgba(0, 0, 0, 0.18) !important;
-    background: rgba(255, 255, 255, 0.24) !important;
+    border: 1px solid var(--paper-dark, #D8CEB0) !important;
+    background: color-mix(in srgb, var(--paper-light, #FAF6EE) 78%, var(--paper, #F2ECD8) 22%) !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-toggle > summary {
@@ -392,7 +392,7 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     line-height: 1.35 !important;
     letter-spacing: 0.01em !important;
     text-transform: none !important;
-    color: #1e1d1b !important;
+    color: var(--ink-green-dark, #0F2206) !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-links a + a::before {

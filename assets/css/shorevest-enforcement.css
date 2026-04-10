@@ -237,7 +237,7 @@ footer.sv-footer .sv-footer__brand {
   letter-spacing: 0.06em !important;
   font-size: clamp(0.9rem, 0.78rem + 0.2vw, 1rem) !important;
   line-height: 1.35 !important;
-  color: #1e1a16 !important;
+  color: var(--ink-green-dark, #0F2206) !important;
 }
 
 footer.sv-footer .sv-footer__contact-label,
@@ -248,7 +248,7 @@ footer.sv-footer .sv-footer__legal-toggle > summary {
   letter-spacing: 0.14em !important;
   font-size: 0.66rem !important;
   line-height: 1.3 !important;
-  color: #49423b !important;
+  color: var(--blue-green-dark, #1E4040) !important;
 }
 
 footer.sv-footer .sv-footer__contact a {
@@ -257,14 +257,14 @@ footer.sv-footer .sv-footer__contact a {
   font-weight: 600 !important;
   letter-spacing: 0.04em !important;
   line-height: 1.4 !important;
-  color: #27221d !important;
+  color: var(--ink-green-dark, #0F2206) !important;
   text-transform: uppercase !important;
   transition: color 180ms ease, opacity 180ms ease, border-color 180ms ease !important;
 }
 
 footer.sv-footer .sv-footer__contact a:hover,
 footer.sv-footer .sv-footer__contact a:focus-visible {
-  color: #5f1528 !important;
+  color: var(--cinnabar-dark, #8A1F12) !important;
   opacity: 1 !important;
 }
 
@@ -275,7 +275,7 @@ footer.sv-footer .sv-footer__legal {
   font-weight: 400 !important;
   line-height: 1.55 !important;
   letter-spacing: 0.015em !important;
-  color: #6b645d !important;
+  color: color-mix(in srgb, var(--ink-green-dark, #0F2206) 62%, var(--paper-light, #FAF6EE) 38%) !important;
 }
 
 footer.sv-footer .sv-footer__legal-links,
@@ -285,7 +285,7 @@ footer.sv-footer .sv-footer__legal-links a {
   font-weight: 400 !important;
   letter-spacing: 0.01em !important;
   line-height: 1.45 !important;
-  color: #59524c !important;
+  color: color-mix(in srgb, var(--ink-green-dark, #0F2206) 70%, var(--paper-light, #FAF6EE) 30%) !important;
 }
 
 footer.sv-footer .sv-footer__legal-links {
@@ -302,7 +302,7 @@ footer.sv-footer .sv-footer__legal-links a {
 
 footer.sv-footer .sv-footer__legal-links a:hover,
 footer.sv-footer .sv-footer__legal-links a:focus-visible {
-  color: #2a2520 !important;
+  color: var(--blue-green-dark, #1E4040) !important;
 }
 
 footer.sv-footer .sv-footer__main {
@@ -320,17 +320,17 @@ footer.sv-footer .sv-footer__bottom {
 }
 
 footer.sv-footer .sv-footer__legal-toggle {
-  border-color: rgba(30, 26, 22, 0.16) !important;
-  background: rgba(255, 255, 255, 0.4) !important;
+  border-color: var(--paper-dark, #D8CEB0) !important;
+  background: color-mix(in srgb, var(--paper-light, #FAF6EE) 80%, var(--paper, #F2ECD8) 20%) !important;
 }
 
 footer.sv-footer .sv-footer__legal-toggle > summary {
   padding: 0.62rem 0.8rem !important;
-  color: #4e463f !important;
+  color: var(--blue-green-dark, #1E4040) !important;
 }
 
 footer.sv-footer .sv-footer__legal-links a + a::before {
-  color: #817a72 !important;
+  color: color-mix(in srgb, var(--ink-green-dark, #0F2206) 52%, var(--paper-light, #FAF6EE) 48%) !important;
   margin: 0 0.6rem !important;
 }
 
