@@ -256,10 +256,11 @@ button,
   color: var(--sv-brand-accent-ink) !important;
 }
 
-/* Footer copy legibility */
+/* Footer baseline to mirror homepage visual standard across the site */
 footer,
 .sv-footer {
-  border-top: 1px solid transparent;
+  background: color-mix(in srgb, var(--paper, #F2ECD8) 78%, var(--paper-light, #FAF6EE) 22%) !important;
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark, #D8CEB0) 84%, transparent) !important;
 }
 
 .sv-footer__inner {
@@ -278,22 +279,41 @@ footer small,
 }
 
 .sv-footer__brand {
-  font-size: 18px !important;
+  font-family: "DIN 2014", "Inter", sans-serif !important;
+  font-size: 14px !important;
+  letter-spacing: .11em !important;
 }
 
 .sv-footer__contact-label,
-.sv-footer__contact a {
-  font-size: 12px !important;
+.sv-footer__contact a,
+.sv-footer__copyright,
+.sv-footer__legal,
+.sv-footer__legal-links,
+.sv-footer__legal-links a,
+.sv-footer__legal-toggle > summary {
+  font-family: "DIN 2014", "Inter", sans-serif !important;
+  letter-spacing: .06em !important;
+}
+
+.sv-footer__main {
+  padding-bottom: 22px !important;
+}
+
+.sv-footer__contact-label,
+.sv-footer__legal-toggle > summary,
+.sv-footer__legal-links a {
+  font-size: 10px !important;
+  letter-spacing: .1em !important;
 }
 
 .sv-footer__copyright {
-  font-size: 12px !important;
+  font-size: 11px !important;
 }
 
-.sv-footer__legal,
-.sv-footer__legal-links,
-.sv-footer__legal-links a {
+.sv-footer__contact a,
+.sv-footer__legal {
   font-size: 11px !important;
+  line-height: 1.8 !important;
 }
 
 .sv-footer__bottom > * {
