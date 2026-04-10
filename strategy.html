@@ -22,7 +22,7 @@
         --off: #F2ECD8;
         --rule: rgba(31, 24, 18, 0.11);
         --mist: #3D7070;
-        --serif: "DIN 2014";
+        --serif: "Iowan Old Style", "Times New Roman", Georgia, serif;
         --sans: "DIN 2014";
         --max: 1200px;
         --pad: 64px;
@@ -1078,14 +1078,11 @@
       }
       .pagehero p {
         max-width: 700px;
-        font-size: 17px;
-        line-height: 1.8;
+        font-size: 16px;
+        line-height: 1.65;
         color: #0F2206;
-        font-family: var(--serif);
+        font-family: var(--sans);
         margin-top: 18px;
-      }
-      .pagehero__lede {
-        font-size: 17px;
       }
       .market-context {
         margin-top: 0;
@@ -1134,11 +1131,24 @@
       }
       .market-context-content p {
         max-width: 100%;
-        font-size: 20px;
-        line-height: 1.85;
+        font-size: 16px;
+        line-height: 1.68;
         color: #0F2206;
-        font-family: var(--serif);
+        font-family: var(--sans);
         margin-top: 16px;
+      }
+      .market-points {
+        margin-top: 18px;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      .market-points li {
+        font-family: var(--sans);
+        font-size: 14px;
+        line-height: 1.55;
+        padding-left: 12px;
+        border-left: 2px solid rgba(61, 112, 112, 0.4);
       }
       .market-context-content p:first-of-type {
         margin-top: 0;
@@ -1167,15 +1177,15 @@
       .strategy-intro-lead p {
         max-width: 100%;
         margin: 0;
-        font-size: 21px;
-        line-height: 1.8;
+        font-size: 16px;
+        line-height: 1.7;
         color: #0F2206;
-        font-family: var(--serif);
+        font-family: var(--sans);
       }
       .strategy-intro-actions {
-        border: 0;
-        background: transparent;
-        padding: 0;
+        border: 1px solid rgba(15, 34, 6, 0.14);
+        background: #FAF6EE;
+        padding: 18px;
         justify-self: end;
         width: min(100%, 280px);
         border-radius: 0;
@@ -1326,13 +1336,10 @@
       }
       .strategy-block p {
         color: #0F2206;
-        line-height: 1.8;
-        font-size: 17px;
-        font-family: var(--serif);
+        line-height: 1.65;
+        font-size: 15px;
+        font-family: var(--sans);
         max-width: 767px;
-      }
-      .strategy-block p.single-line-copy {
-        white-space: nowrap;
       }
       .strategy-viz {
         margin: 24px 0 6px;
@@ -1393,7 +1400,7 @@
       }
       .funnel-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 14px;
         margin-top: 14px;
       }
@@ -1405,10 +1412,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 12px;
-        cursor: pointer;
-        transition:
-          border-color 0.2s,
-          transform 0.2s;
+        cursor: default;
       }
       .funnel-step b {
         font-size: 11px;
@@ -1417,15 +1421,9 @@
         color: #0F2206;
       }
       .funnel-step small {
-        font-family: var(--serif);
-        font-size: 17px;
+        font-family: var(--sans);
+        font-size: 13px;
         color: #0F2206;
-      }
-      .funnel-step:hover,
-      .funnel-step:focus-visible,
-      .funnel-step.is-active {
-        border-color: rgba(179, 33, 63, 0.45);
-        outline: none;
       }
       .process-flow {
         display: grid;
@@ -1662,9 +1660,10 @@
       .strategy-detail p {
         max-width: none;
         margin: 0;
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 14px;
+        line-height: 1.55;
         color: #0F2206;
+        font-family: var(--sans);
       }
 
       .data-grid {
@@ -1764,10 +1763,6 @@
         background: #FAF6EE;
         padding: 14px;
         position: relative;
-        cursor: pointer;
-        transition:
-          border-color 0.2s,
-          transform 0.2s;
       }
       .city::after {
         content: "";
@@ -1789,15 +1784,15 @@
         display: block;
         margin-top: 6px;
         color: #0F2206;
-        font-family: var(--serif);
+        font-family: var(--sans);
         font-size: 14px;
         line-height: 1.5;
       }
-      .city:hover,
-      .city:focus-visible,
-      .city.is-active {
-        border-color: rgba(179, 33, 63, 0.45);
-        outline: none;
+      .disclosure-box {
+        margin-top: 14px;
+        padding: 12px 14px;
+        border: 1px solid rgba(15, 34, 6, 0.16);
+        background: rgba(242, 236, 216, 0.65);
       }
       .next-links {
         display: grid;
@@ -1960,7 +1955,7 @@
         }
         .market-context-content p,
         .strategy-intro-lead p {
-          font-size: 18px;
+          font-size: 16px;
         }
         .strategy-stack {
           gap: 22px;
@@ -1974,9 +1969,6 @@
           hyphens: none;
           word-break: normal;
           overflow-wrap: normal;
-        }
-        .strategy-block h2.single-line-heading {
-          white-space: nowrap;
         }
         .strategy-block p {
           font-size: 16px;
@@ -2207,108 +2199,6 @@
 
 <link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
-  <style id="strategy-brand-lock">
-    :root {
-      --red: #C93B2A !important;
-      --ink: #0F2206 !important;
-      --ink2: #0F2206 !important;
-      --white: #FAF6EE !important;
-      --off: #F2ECD8 !important;
-      --rule: #3D7070 !important;
-      --mist: #3D7070 !important;
-      --serif: "DIN 2014" !important;
-      --sans: "DIN 2014" !important;
-      --shorevest-lockup-tracking: 0.05em !important;
-    }
-
-    body,
-    #nav,
-    #hero,
-    #about,
-    #strategy,
-    #team,
-    #insights,
-    #signup,
-    .sv-footer {
-      background: #F2ECD8 !important;
-      color: #0F2206 !important;
-      font-family: "DIN 2014" !important;
-      font-weight: 400 !important;
-    }
-
-    .strategy-block,
-    .strategy-viz,
-    .strategy-callout,
-    .sv-footer__main {
-      background: #FAF6EE !important;
-      border-color: #3D7070 !important;
-    }
-
-    h1 {
-      font-family: "DIN 2014" !important;
-      font-weight: 300 !important;
-      font-style: italic !important;
-      color: #0F2206 !important;
-    }
-
-    h2,
-    h3,
-    .strategy-block h2,
-    .ac__title,
-    .sg__title,
-    .strategy-detail h3 {
-      font-family: "DIN 2014" !important;
-      font-weight: 700 !important;
-      font-style: normal !important;
-      color: #0F2206 !important;
-    }
-
-    .eyebrow,
-    .cta,
-    .nav__links a,
-    .strategy-callout__label,
-    .viz-btn,
-    .sv-footer__contact-label {
-      font-family: "DIN 2014" !important;
-      font-weight: 700 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.14em !important;
-      color: #0F2206 !important;
-    }
-
-    p, li, .ac__body, .sg__body, .strategy-block p, .strategy-detail p {
-      font-family: "DIN 2014" !important;
-      font-weight: 400 !important;
-      color: #0F2206 !important;
-    }
-
-    :lang(zh),
-    [lang="zh"],
-    [lang="zh-CN"],
-    .nav__logo-cn {
-      font-family: "Noto Serif SC" !important;
-      font-style: normal !important;
-    }
-
-    .nav__logo-en {
-      letter-spacing: var(--shorevest-lockup-tracking) !important;
-      color: #0F2206 !important;
-    }
-
-    .nav__logo-lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav__logo-lockup::before {
-      content: "";
-      width: 1px;
-      height: 20px;
-      background: #C93B2A !important;
-      display: inline-block !important;
-    }
-  </style>
 
 
     <link rel="stylesheet" href="assets/css/shared-header.css" />
@@ -2322,7 +2212,7 @@
           <div class="eyebrow">Strategy</div>
           <h1>Our Strategy</h1>
           <p class="pagehero__lede">
-            We focus on asset-backed private credit in China, sourcing resilient collateral, structuring downside protection, and managing each investment through disciplined, on-the-ground execution.
+            ShoreVest deploys asset-backed private credit into enforceable structures, conservative entry basis, and recovery-led exits in China's onshore market.
           </p>
         </div>
         <figure class="pagehero__media" aria-hidden="true">
@@ -2348,32 +2238,19 @@
               <div class="market-context-content">
                 <div class="eyebrow eyebrow--red">Market Context</div>
                 <h2 id="market-context-heading">
-                  The perception gap and what it creates.
+                  Market dislocation is a structural entry condition.
                 </h2>
                 <p>
-                  China is the world's second-largest credit market. Persistent underexposure to it is not a neutral
-                  position. It is a portfolio choice that carries its own risk. For institutional investors whose
-                  mandates require genuine diversification across global credit markets, the relevant question is not
-                  whether to have China exposure, but what form that exposure should take.
+                  China remains the world's second-largest credit market, yet many global portfolios remain materially under-allocated for non-fundamental reasons. That underexposure is itself an active risk decision.
                 </p>
                 <p>
-                  The years in which China has been most widely described as difficult or uncertain have historically
-                  coincided with the most attractive vintage conditions for properly structured private credit.
-                  Complexity that deters less specialized allocators tends to compress competition, preserve pricing,
-                  and widen the margin between entry basis and recoverable value.
+                  ShoreVest's strategy focuses on where spread and collateral coverage improve when complexity reduces competition. Structure, legal priority, and execution cadence determine outcomes more than macro narrative.
                 </p>
-                <p>
-                  Not all China exposure is equivalent. The conditions that have caused losses for offshore equity
-                  holders or unsecured offshore creditors, including regulatory shifts, developer distress, and onshore
-                  enforcement dynamics, are structurally distinct from the conditions facing a first-lien secured
-                  onshore creditor with direct PRC enforcement rights. Structure determines outcome.
-                </p>
-                <p>
-                  ShoreVest has operated continuously across China's credit markets since 2004. The firm has navigated
-                  multiple regulatory cycles, two NPL waves, and the property correction, and has not recorded a
-                  principal loss at the deal level across that period. The narrative around China risk has rarely
-                  matched the on-the-ground experience of a disciplined, structure-first approach.
-                </p>
+                <ul class="market-points">
+                  <li>First-lien secured onshore claims have materially different recovery dynamics from offshore unsecured exposure.</li>
+                  <li>Vintage windows with weaker sentiment have historically supported better pricing and stronger downside buffers.</li>
+                  <li>ShoreVest has operated continuously since 2004 across multiple NPL and policy cycles with structure-first underwriting.</li>
+                </ul>
                 <p class="market-context-disclaimer">
                   Past performance is not indicative of future results. All investments involve risk including possible
                   loss of principal.
@@ -2387,17 +2264,13 @@
         <div class="strategy-intro-content">
           <div class="strategy-intro-lead">
             <p>
-              Three sub-strategies. One underwriting standard. Capital is deployed
-              across asset-based lending, asset restructuring, and debt
-              resolutions — each anchored by hard collateral, enforceable legal
-              positioning, and a defined path to recovery. Allocation shifts by
-              cycle.
+              Three sub-strategies. One underwriting standard. Deployment flexes by cycle, but every deal is anchored to collateral control, enforceability, and defined recovery routes.
             </p>
           </div>
           <div class="strategy-intro-actions">
-            <p>Explore platform context</p>
+            <p>Platform overview</p>
             <a href="firm.html" class="cta cta--dark strategy-intro-link"
-              ><span class="strategy-intro-link__title">The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a
+              ><span class="strategy-intro-link__title">Review The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a
             >
           </div>
         </div>
@@ -2406,8 +2279,8 @@
 
     <section class="pgsec">
       <div class="wrap">
-        <div class="strategy-tools" aria-label="Strategy interactions">
-          <p>Interactive navigation</p>
+          <div class="strategy-tools" aria-label="Strategy navigation">
+          <p>Section navigation</p>
           <div class="jump-nav" data-jump-nav>
             <button type="button" data-target="sub-strategies">
               Allocation
@@ -2430,32 +2303,25 @@
             </p>
             <div class="funnel-grid" aria-label="Pipeline funnel">
               <button
-                class="funnel-step is-active"
-                data-detail="Wide sourcing universe allows selective deployment."
+                class="funnel-step"
               >
                 <b>Broad Universe</b><small>Sourced opportunities</small>
               </button>
               <button
                 class="funnel-step"
-                data-detail="Rapid triage screens enforceability and collateral quality."
               >
                 <b>Selective Screen</b><small>Preliminary diligence</small>
               </button>
               <button
                 class="funnel-step"
-                data-detail="Deep legal + collateral underwriting before IC."
               >
                 <b>High Conviction</b><small>Full due diligence</small>
               </button>
               <button
                 class="funnel-step"
-                data-detail="Only highest-conviction deals reach committee."
               >
                 <b>Disciplined IC</b><small>Investment committee</small>
               </button>
-            </div>
-            <div class="funnel-detail" data-funnel-detail>
-              Wide sourcing universe allows selective deployment.
             </div>
           </section>
 
@@ -2575,31 +2441,18 @@
               claims are structured correctly.
             </p>
             <div class="city-grid">
-              <button
-                class="city is-active"
-                data-detail="Tier-1 courts are processing secured claims with tighter procedural discipline and stronger timeline visibility."
-              >
+              <article class="city">
                 <b>Court Throughput</b
                 ><small>Faster progression on secured collateral cases.</small>
-              </button>
-              <button
-                class="city"
-                data-detail="Digitized auction platforms are expanding buyer participation, price discovery, and execution certainty."
-              >
+              </article>
+              <article class="city">
                 <b>Auction Liquidity</b
                 ><small>Deeper discovery and monetization pathways.</small>
-              </button>
-              <button
-                class="city"
-                data-detail="Negotiated settlements, secondary transfers, and court-directed outcomes provide multiple realization routes."
-              >
+              </article>
+              <article class="city">
                 <b>Exit Optionality</b
                 ><small>Negotiated, secondary, and court-led exits.</small>
-              </button>
-            </div>
-            <div class="city-detail" data-city-detail>
-              Tier-1 courts are processing secured claims with tighter
-              procedural discipline and stronger timeline visibility.
+              </article>
             </div>
           </section>
 
@@ -2655,7 +2508,8 @@
               principal protection, and shorter path-to-liquidity than many
               private-market alternatives.
             </p>
-            <p class="data-note" style="font-style: italic;">
+            <div class="disclosure-box">
+            <p class="data-note">
               Target returns are hypothetical estimates based on historical
               portfolio performance and current market conditions. They are not
               guaranteed and are subject to change. Actual returns may be
@@ -2663,6 +2517,7 @@
               future results. All investments involve risk including possible
               loss of principal.
             </p>
+            </div>
             <div class="strategy-callout" role="note" aria-label="Portfolio construction callout">
               <p class="strategy-callout__label">PORTFOLIO CONSTRUCTION NOTE</p>
               <p>
