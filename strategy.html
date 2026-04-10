@@ -1632,6 +1632,7 @@
         top: 0;
         bottom: 0;
         background: var(--red);
+        transition: width 0.35s ease;
       }
       .alloc-note {
         font-size: 12px;
@@ -2342,20 +2343,25 @@
             <span class="section-tag">Cycle Allocation</span>
             <h2>Sub-strategy allocation across cycles</h2>
             <p>Illustrative allocation ranges are adjusted by market regime while maintaining one shared underwriting framework.</p>
-            <div class="strategy-viz static-viz">
+            <div class="strategy-viz static-viz" data-cycle-allocation>
+              <div class="viz-controls" role="tablist" aria-label="Market regime allocation presets">
+                <button type="button" class="viz-btn is-active" role="tab" aria-selected="true" data-regime="dislocated">Dislocated</button>
+                <button type="button" class="viz-btn" role="tab" aria-selected="false" data-regime="normalizing">Normalizing</button>
+                <button type="button" class="viz-btn" role="tab" aria-selected="false" data-regime="tight">Tight Credit</button>
+              </div>
               <div class="alloc-grid">
                 <div class="alloc-bars">
-                  <div class="alloc-row"><span class="alloc-label"><span>Asset-Based Lending</span><span>24–40%</span></span><div class="alloc-track"><span style="width: 34%"></span></div></div>
-                  <div class="alloc-row"><span class="alloc-label"><span>Asset Restructuring</span><span>46–61%</span></span><div class="alloc-track"><span style="width: 54%"></span></div></div>
-                  <div class="alloc-row"><span class="alloc-label"><span>Debt Resolutions</span><span>14–15%</span></span><div class="alloc-track"><span style="width: 15%"></span></div></div>
+                  <div class="alloc-row"><span class="alloc-label"><span>Asset-Based Lending</span><span data-range="abl">24–40%</span></span><div class="alloc-track"><span data-fill="abl" style="width: 40%"></span></div></div>
+                  <div class="alloc-row"><span class="alloc-label"><span>Asset Restructuring</span><span data-range="restructuring">46–61%</span></span><div class="alloc-track"><span data-fill="restructuring" style="width: 46%"></span></div></div>
+                  <div class="alloc-row"><span class="alloc-label"><span>Debt Resolutions</span><span data-range="resolutions">14–15%</span></span><div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div></div>
                   <div class="alloc-note">Illustrative ranges shown for strategy communication only.</div>
                 </div>
-                <div class="ring-card"><div class="ring" style="--pct: 68%"></div><div class="ring-label"><span>68%</span>Target collateral coverage</div></div>
+                <div class="ring-card"><div class="ring" style="--pct: 68%" data-collateral-ring></div><div class="ring-label"><span data-ring-value>68%</span>Target collateral coverage</div></div>
               </div>
               <div class="strategy-details">
-                <article class="strategy-detail"><h3>First-lien asset-based lending</h3><p>Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
-                <article class="strategy-detail"><h3>Asset restructuring and workouts</h3><p>Creditor coordination programs built for negotiated control and timeline discipline.</p></article>
-                <article class="strategy-detail"><h3>Debt resolutions and recoveries</h3><p>In-house servicing and multi-channel exits through legal, secondary, and negotiated routes.</p></article>
+                <article class="strategy-detail"><h3>First-lien asset-based lending</h3><p data-detail="abl">Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
+                <article class="strategy-detail"><h3>Asset restructuring and workouts</h3><p data-detail="restructuring">Creditor coordination programs built for negotiated control and timeline discipline.</p></article>
+                <article class="strategy-detail"><h3>Debt resolutions and recoveries</h3><p data-detail="resolutions">In-house servicing and multi-channel exits through legal, secondary, and negotiated routes.</p></article>
               </div>
             </div>
           </section>
@@ -2422,6 +2428,85 @@
         </div>
       </div>
     </section>
+<script>
+      (() => {
+        const root = document.querySelector("[data-cycle-allocation]");
+        if (!root) return;
+
+        const regimeButtons = Array.from(root.querySelectorAll("[data-regime]"));
+        const fills = {
+          abl: root.querySelector('[data-fill="abl"]'),
+          restructuring: root.querySelector('[data-fill="restructuring"]'),
+          resolutions: root.querySelector('[data-fill="resolutions"]'),
+        };
+        const ranges = {
+          abl: root.querySelector('[data-range="abl"]'),
+          restructuring: root.querySelector('[data-range="restructuring"]'),
+          resolutions: root.querySelector('[data-range="resolutions"]'),
+        };
+        const details = {
+          abl: root.querySelector('[data-detail="abl"]'),
+          restructuring: root.querySelector('[data-detail="restructuring"]'),
+          resolutions: root.querySelector('[data-detail="resolutions"]'),
+        };
+        const ring = root.querySelector("[data-collateral-ring]");
+        const ringValue = root.querySelector("[data-ring-value]");
+
+        const regimes = {
+          dislocated: {
+            values: { abl: 40, restructuring: 46, resolutions: 14 },
+            ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
+            collateral: "68%",
+            detail: {
+              abl: "Senior secured claims entered at conservative basis with enforceable priority rights.",
+              restructuring: "Creditor coordination programs built for negotiated control and timeline discipline.",
+              resolutions: "In-house servicing and multi-channel exits through legal, secondary, and negotiated routes.",
+            },
+          },
+          normalizing: {
+            values: { abl: 34, restructuring: 52, resolutions: 14 },
+            ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
+            collateral: "66%",
+            detail: {
+              abl: "Selective first-lien origination remains anchored to claim priority and downside-tested collateral basis.",
+              restructuring: "Workouts expand when pricing resets support negotiated governance and enforceable process control.",
+              resolutions: "Resolution programs emphasize time-to-cash discipline through legal and negotiated exit pathways.",
+            },
+          },
+          tight: {
+            values: { abl: 24, restructuring: 61, resolutions: 15 },
+            ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
+            collateral: "64%",
+            detail: {
+              abl: "New ABL deployment narrows to high-conviction opportunities with clear legal priority and recovery visibility.",
+              restructuring: "Capital shifts to complex restructurings where active creditor coordination can improve control and outcomes.",
+              resolutions: "Resolution bandwidth is preserved for recoveries requiring legal sequencing, servicing, and secondary execution.",
+            },
+          },
+        };
+
+        const applyRegime = (key) => {
+          const regime = regimes[key];
+          if (!regime) return;
+          Object.keys(fills).forEach((name) => {
+            fills[name].style.width = `${regime.values[name]}%`;
+            ranges[name].textContent = regime.ranges[name];
+            details[name].textContent = regime.detail[name];
+          });
+          ring.style.setProperty("--pct", regime.collateral);
+          ringValue.textContent = regime.collateral;
+          regimeButtons.forEach((btn) => {
+            const active = btn.dataset.regime === key;
+            btn.classList.toggle("is-active", active);
+            btn.setAttribute("aria-selected", active ? "true" : "false");
+          });
+        };
+
+        regimeButtons.forEach((button) =>
+          button.addEventListener("click", () => applyRegime(button.dataset.regime)),
+        );
+      })();
+    </script>
 <script>
       (() => {
         if (window.__svScrollAnimationsInit) return;
