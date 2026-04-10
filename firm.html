@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/edited-photo-3.svg?v=6" />
     <link rel="shortcut icon" href="assets/images/edited-photo-3.svg?v=6" />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
@@ -23,8 +23,8 @@
         --red: #8f1f37;
         --dark: #10100f;
         --radius: 0;
-        --serif: "EB Garamond", Georgia, serif;
-        --sans: "Inter", system-ui, sans-serif;
+        --serif: "DIN 2014";
+        --sans: "DIN 2014";
         --max: 1200px;
         --pad: 64px;
         --section-copy-size: 20px;
@@ -92,7 +92,7 @@
         min-height: 31px;
       }
       .nav__logo-en {
-        font-family:'DIN 2014', 'Inter', sans-serif;
+        font-family: "DIN 2014";
         font-size: 18px;
         font-weight:700;
         letter-spacing: .05em;
@@ -102,7 +102,7 @@
         line-height: 1;
       }
       .nav__logo-cn {
-        font-family: "Noto Serif SC", serif;
+        font-family: "Noto Serif SC";
         margin-top: 0;
         font-size: 9px;
         letter-spacing: 0.34em;
@@ -340,7 +340,7 @@
         backdrop-filter: blur(2px);
       }
       .hero-stat__value {
-        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-family: var(--sans);
         font-size: clamp(1.35rem, 1.8vw, 1.65rem);
         font-weight: 400;
         color: #0c0c0a;
@@ -348,7 +348,7 @@
       }
       .hero-stat__label {
         margin-top: 0.2rem;
-        font-family: "Cormorant Garamond", var(--serif), serif;
+        font-family: var(--sans);
         font-size: 0.72rem;
         letter-spacing: 0.14em;
         text-transform: uppercase;
@@ -1770,6 +1770,122 @@
 <link rel="stylesheet" href="assets/css/site-motion.css">
 
 <link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css"><link rel="stylesheet" href="assets/css/refinement-pass.css"><link rel="stylesheet" href="assets/css/shorevest-enforcement.css">
+  <style>
+    :root {
+      --sv-paper-light: #faf6ee;
+      --sv-paper: #f2ecd8;
+      --sv-cinnabar: #c93b2a;
+      --sv-blue-green: #3d7070;
+      --sv-ink: #0f2206;
+    }
+
+    html,
+    body {
+      background: var(--sv-paper) !important;
+      color: var(--sv-ink) !important;
+      font-family: "DIN 2014" !important;
+    }
+
+    /* English typography system */
+    body :not(.nav__logo-cn):not(.nav__logo-cn *) {
+      font-family: "DIN 2014" !important;
+    }
+    h1 {
+      font-family: "DIN 2014" !important;
+      font-weight: 300 !important;
+      font-style: italic !important;
+      color: var(--sv-ink) !important;
+    }
+    h2,
+    h3,
+    h4 {
+      font-family: "DIN 2014" !important;
+      font-weight: 700 !important;
+      font-style: normal !important;
+      color: var(--sv-ink) !important;
+    }
+    p,
+    li {
+      font-family: "DIN 2014" !important;
+      font-weight: 400 !important;
+      color: var(--sv-ink) !important;
+    }
+    .eyebrow,
+    .track-record-panel__eyebrow,
+    .proof-card h3,
+    .founding-principles-label,
+    .location-line {
+      font-family: "DIN 2014" !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.16em !important;
+      color: var(--sv-cinnabar) !important;
+    }
+
+    /* Chinese typography and lockup */
+    .nav__logo-lockup {
+      position: relative;
+      margin-left: 4px;
+      padding-left: 12px !important;
+    }
+    .nav__logo-lockup::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      bottom: 2px;
+      width: 1px;
+      background: var(--sv-cinnabar);
+    }
+    .nav__logo-en {
+      font-family: "DIN 2014" !important;
+      letter-spacing: 0.05em !important;
+      color: var(--sv-ink) !important;
+    }
+    .nav__logo-cn {
+      font-family: "Noto Serif SC" !important;
+      font-weight: 500 !important;
+      font-size: 10px !important;
+      letter-spacing: 0.08em !important;
+      color: var(--sv-ink) !important;
+    }
+
+    /* Palette constraints */
+    #nav,
+    .hero-main,
+    .framed-panel,
+    .pillar-card,
+    .pillar-detail,
+    .proof-card,
+    .market-card,
+    .note,
+    .intel-copy,
+    .closing-panel,
+    .track-record-panel,
+    .operations-map,
+    .sv-footer {
+      background: var(--sv-paper-light) !important;
+      border-color: var(--sv-blue-green) !important;
+    }
+    section,
+    main,
+    .track-record-section .framed-panel {
+      background: var(--sv-paper) !important;
+    }
+    a.active,
+    .nav__links a.active,
+    .track-record-trigger.is-active .track-record-trigger__label,
+    .track-record-trigger.is-active .track-record-trigger__value,
+    .track-record-trigger.is-active .track-record-trigger__index {
+      color: var(--sv-cinnabar) !important;
+    }
+    .nav__lp:hover,
+    .sv-footer__contact a:hover {
+      background: var(--sv-cinnabar) !important;
+      border-color: var(--sv-cinnabar) !important;
+      color: var(--sv-paper-light) !important;
+    }
+  </style>
 
 
 </head>
