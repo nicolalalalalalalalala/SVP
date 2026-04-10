@@ -192,7 +192,7 @@ hr {
 }
 
 .nav__logo-en {
-  color: var(--sv-color-accent) !important;
+  color: var(--sv-color-ink) !important;
 }
 
 .nav__logo-cn {
@@ -200,7 +200,7 @@ hr {
 }
 
 #nav .nav__logo-en {
-  color: var(--sv-color-accent) !important;
+  color: var(--sv-color-ink) !important;
 }
 
 #nav .nav__logo-cn {
