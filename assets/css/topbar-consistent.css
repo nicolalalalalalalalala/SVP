@@ -985,3 +985,77 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
     font-size: 11px;
   }
 }
+
+/* Unified mobile top bar treatment: match ShoreVest reference across all pages. */
+@media (max-width: 760px) {
+  #nav,
+  body:not(.homepage) #nav {
+    min-height: 74px !important;
+    height: 74px !important;
+    padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)) !important;
+    background: #f7f3e9 !important;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.14) !important;
+    box-shadow: 0 1px 0 rgba(20, 20, 20, 0.08) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  #nav .nav__logo {
+    gap: 10px !important;
+  }
+
+  #nav .nav__logo-en {
+    font-size: 18px !important;
+    letter-spacing: 0.18em !important;
+    color: #111 !important;
+  }
+
+  #nav .nav__logo-cn {
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+    color: #111 !important;
+    opacity: 1 !important;
+  }
+
+  #nav .nav__zh,
+  #nav .nav__lp {
+    display: none !important;
+  }
+
+  #nav .nav__menu-btn,
+  body:not(.homepage) #nav .nav__menu-btn {
+    min-height: 42px !important;
+    height: 42px !important;
+    min-width: 168px !important;
+    padding: 0 22px !important;
+    border: 1px solid rgba(20, 20, 20, 0.32) !important;
+    background: #f8f5ed !important;
+    color: #171717 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.2em !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #nav,
+  body:not(.homepage) #nav {
+    height: 72px !important;
+    min-height: 72px !important;
+  }
+
+  #nav .nav__logo-en {
+    font-size: 16px !important;
+  }
+
+  #nav .nav__logo-cn {
+    font-size: 9px !important;
+  }
+
+  #nav .nav__menu-btn,
+  body:not(.homepage) #nav .nav__menu-btn {
+    min-width: 138px !important;
+    padding-inline: 16px !important;
+    letter-spacing: 0.18em !important;
+  }
+}
