@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/edited-photo-3.svg?v=6" />
     <link rel="shortcut icon" href="assets/images/edited-photo-3.svg?v=6" />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -18,7 +18,7 @@
         --red: #8f1f37;
         --ink: #171410;
         --ink2: #1d1915;
-        --white: #fff;
+        --white: #FAF6EE;
         --off: #f7f4ef;
         --rule: rgba(31, 24, 18, 0.11);
         --mist: #6e675f;
@@ -124,10 +124,10 @@
         max-width: 900px;
         padding: 38px;
         border: 1px solid var(--rule);
-        background: #fff;
+        background: #FAF6EE;
       }
       .investor-gate--step-1 {
-        background: #fff;
+        background: #FAF6EE;
       }
       .investor-gate--step-2 {
         margin-top: 28px;
@@ -213,7 +213,7 @@
         margin-top: 20px;
         padding: 28px;
         border: 1px solid var(--rule);
-        background: #fff;
+        background: #FAF6EE;
       }
       .card p {
         font-size: 15px;
@@ -229,7 +229,7 @@
       }
       .resource-card {
         border: 1px solid var(--rule);
-        background: #fff;
+        background: #FAF6EE;
         padding: 18px;
       }
       .resource-card__title {
@@ -309,13 +309,13 @@
       }
       .btn--dark {
         background: var(--ink2);
-        color: #fff;
+        color: #FAF6EE;
         border-color: var(--ink2);
       }
       .btn:hover,
       .btn:focus-visible {
         border-color: var(--red);
-        color: #fff;
+        color: #FAF6EE;
         background: var(--red);
         box-shadow: 0 8px 20px rgba(179, 33, 63, 0.24);
       }
@@ -324,7 +324,7 @@
         cursor: not-allowed;
         background: #2a2621;
         border-color: #2a2621;
-        color: #fff;
+        color: #FAF6EE;
         box-shadow: none;
       }
 
@@ -488,7 +488,7 @@
 .sv-footer__contact a:hover {
   background: var(--red);
   border-color: var(--red);
-  color: #fff;
+  color: #FAF6EE;
 }
 .sv-footer__bottom {
   display: grid;
@@ -538,6 +538,158 @@
 
 <link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
+
+<style id="investor-brand-system-enforcement">
+  :root {
+    --xuan-light: #FAF6EE;
+    --xuan: #F2ECD8;
+    --xuan-dark: #D8CEB0;
+    --ink-dark: #0F2206;
+    --ink: #2E4A18;
+    --qing: #3D7070;
+    --qing-light: #7AAFAF;
+    --qing-dark: #1E4040;
+    --cinnabar: #C93B2A;
+    --cinnabar-light: #E8998F;
+    --cinnabar-dark: #8A1F12;
+    --white: var(--xuan-light);
+    --off: var(--xuan);
+    --rule: var(--xuan-dark);
+    --ink: var(--ink-dark);
+    --ink2: var(--ink);
+    --red: var(--cinnabar);
+    --mist: var(--qing-dark);
+    --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+    --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  body,
+  main,
+  .investor-shell,
+  .investor-gate,
+  .card,
+  .resource-card,
+  .sv-footer {
+    background: var(--xuan-light) !important;
+    color: var(--ink-dark) !important;
+    font-family: var(--sans) !important;
+  }
+
+  .investor-gate--step-2,
+  .investor-gate__attest,
+  .resource-card,
+  .contact-block,
+  .sv-footer__main {
+    background: var(--xuan) !important;
+  }
+
+  .investor-gate,
+  .investor-gate__attest,
+  .card,
+  .resource-card,
+  .contact-block,
+  .sv-footer,
+  .sv-footer__main {
+    border-color: var(--xuan-dark) !important;
+  }
+
+  h1 {
+    font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+    font-size: clamp(32px, 4.2vw, 50px) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: var(--ink-dark) !important;
+    font-style: normal !important;
+  }
+
+  .investor-stage-label,
+  .contact-block__label,
+  .sv-footer__contact-label {
+    font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: var(--cinnabar) !important;
+  }
+
+  p,
+  li,
+  .investor-gate__prompt,
+  .investor-gate__attest label,
+  .resource-card p {
+    font-size: 10pt !important;
+    line-height: 1.65 !important;
+    color: var(--ink-dark) !important;
+  }
+
+  .helper,
+  .sv-footer__copyright,
+  .sv-footer__legal,
+  .sv-footer__legal-links {
+    font-size: 8pt !important;
+    color: var(--qing-dark) !important;
+  }
+
+  a,
+  .resource-card__link,
+  .contact-block a,
+  .sv-footer__legal-links a {
+    color: var(--qing) !important;
+  }
+
+  .btn {
+    border-color: var(--qing) !important;
+    color: var(--qing) !important;
+    background: var(--xuan-light) !important;
+    box-shadow: none !important;
+    font-weight: 700 !important;
+  }
+
+  .btn--dark {
+    background: var(--qing) !important;
+    border-color: var(--qing) !important;
+    color: var(--xuan-light) !important;
+  }
+
+  .btn:hover,
+  .btn:focus-visible,
+  .btn--dark:hover,
+  .btn--dark:focus-visible {
+    background: var(--qing-dark) !important;
+    border-color: var(--qing-dark) !important;
+    color: var(--xuan-light) !important;
+  }
+
+  .btn:disabled {
+    background: color-mix(in srgb, var(--qing) 55%, var(--xuan-dark)) !important;
+    border-color: color-mix(in srgb, var(--qing) 55%, var(--xuan-dark)) !important;
+    color: var(--xuan-light) !important;
+  }
+
+  .nav__logo-lockup::before {
+    background: var(--cinnabar) !important;
+  }
+
+  .nav__logo-en {
+    color: var(--ink-dark) !important;
+  }
+
+  .nav__logo-cn,
+  :lang(zh),
+  [lang="zh"],
+  [lang="zh-CN"],
+  [lang="zh-Hant"] {
+    font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
+  }
+
+  .nav__logo-cn {
+    color: var(--cinnabar) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.07em !important;
+  }
+</style>
 
 
     <link rel="stylesheet" href="assets/css/shared-header.css" />
