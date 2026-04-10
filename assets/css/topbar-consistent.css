@@ -986,7 +986,10 @@ footer.sv-footer .sv-footer__main {
 }
 
 footer.sv-footer .sv-footer__brand {
-  font-family: var(--serif, "EB Garamond", Georgia, serif) !important;
+  font-family: "DIN 2014", "Inter", sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
   color: #2d2924 !important;
 }
 
@@ -1095,7 +1098,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     flex: 0 0 auto !important;
     font-size: 18px !important;
     line-height: 1.25 !important;
-    letter-spacing: 0.01em !important;
+    letter-spacing: 0.03em !important;
     white-space: normal !important;
     max-width: 100% !important;
   }
