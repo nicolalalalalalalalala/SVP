@@ -409,8 +409,15 @@ body.homepage .hero__overlay {
 }
 
 body.homepage .hero__overlay h1.hero__hed {
-  color: #f7f1e8 !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.36) !important;
+  color: #1E4040 !important;
+}
+
+body.homepage .hero__overlay h1.hero__hed .hero__hed-main {
+  color: #1E4040 !important;
+}
+
+body.homepage .hero__overlay h1.hero__hed em {
+  color: #2E4A18 !important;
 }
 
 body.homepage .hero__overlay .cta--light {
