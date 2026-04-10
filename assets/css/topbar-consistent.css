@@ -203,7 +203,7 @@ html {
   display: flex;
   align-items: center;
   gap: var(--nav-right-gap);
-  margin-left: var(--nav-link-gap);
+  margin-left: calc(var(--nav-link-gap) + 10px);
   flex-shrink: 0;
 }
 
