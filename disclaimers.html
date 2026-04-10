@@ -20,8 +20,9 @@
       --white: #ffffff;
       --off: #f6f4f0;
       --rule: rgba(12, 12, 10, 0.12);
-      --serif: 'EB Garamond', Georgia, serif;
-      --sans: 'Inter', system-ui, sans-serif;
+      --serif: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      --sans: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      --sans-zh: "Noto Serif SC", "Songti SC", serif;
       --max: 100%;
       --pad: 64px;
     }
@@ -36,7 +37,8 @@
       max-width: none;
       margin: 0;
       padding: 0;
-      font-size: 12px;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 10pt;
       line-height: 1.55;
       letter-spacing: normal;
     }
@@ -78,16 +80,18 @@
     }
     .disclaimer-wrap h1 {
       margin: 0 0 8px;
-      font-family: var(--serif);
-      font-size: 38px !important;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 32px !important;
       line-height: 1.08;
-      font-weight: 400;
-      letter-spacing: 0.01em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       color: var(--ink);
     }
     .intro {
       margin: 0 0 12px;
-      font-size: 12px !important;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 10pt !important;
       line-height: 1.55;
       color: #5b554f;
     }
@@ -98,17 +102,20 @@
     }
     .disclaimer-wrap h2 {
       margin: 30px 0 10px;
-      font-family: var(--serif);
-      font-size: 24px !important;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 20px !important;
       line-height: 1.16;
-      font-weight: 400;
-      letter-spacing: 0.01em;
+      font-weight: 700;
+      letter-spacing: normal;
+      text-transform: none;
       color: var(--ink);
     }
     .disclaimer-wrap p {
       margin: 0;
       max-width: none;
-      font-size: 12px !important;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 10pt !important;
+      font-weight: 400;
       line-height: 1.55;
       color: #3f3b36;
     }
@@ -119,9 +126,28 @@
       margin-top: 30px;
       border-top: 0;
       padding-top: 0;
-      font-size: 12px;
-      line-height: 1.55;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 8pt;
+      line-height: 1.6;
       color: #5b554f;
+    }
+    .disclaimer-wrap h3,
+    .disclaimer-wrap .legal-label,
+    .disclaimer-wrap .sv-footer__contact-label,
+    .disclaimer-wrap .sv-footer__legal-toggle > summary {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 12px !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--red);
+    }
+    .disclaimer-wrap .rule-label {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
     .sv-footer {
   background: #f6f4f0;
@@ -141,10 +167,12 @@
   border-bottom: 1px solid var(--rule);
 }
 .sv-footer__brand {
-  font-family: var(--serif);
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
   font-size: 20px !important;
+  font-weight: 700;
   color: #2d2924;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 .sv-footer__contact {
   display: flex;
@@ -152,11 +180,12 @@
   gap: 12px;
 }
 .sv-footer__contact-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #8f887f;
+  color: var(--red);
 }
 .sv-footer__contact a {
   font-size: 12px;
@@ -182,14 +211,16 @@
 }
 .sv-footer__copyright,
 .sv-footer__legal-links {
-  font-size: 9px;
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 8pt;
   color: #6f6a63;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 .sv-footer__legal {
-  font-size: 9px;
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 8pt;
   color: #6f6a63;
-  line-height: 1.75;
+  line-height: 1.6;
   max-width: 980px;
 }
 .sv-footer__legal-links {
