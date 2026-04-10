@@ -697,10 +697,11 @@ blockquote.fs__q {
 :root {
   --cdd-bg: #1E4040;
   --cdd-surface: #0F2206;
-  --cdd-structure: #3D7070;
-  --cdd-soft: #7AAFAF;
+  --cdd-structure: #D8CEB0;
+  --cdd-soft: #E6DECF;
   --cdd-text: #FAF6EE;
   --cdd-muted: #D8CEB0;
+  --cdd-body: #E6DECF;
   --cdd-signal: #C93B2A;
   --cdd-signal-deep: #8A1F12;
 }
@@ -715,20 +716,22 @@ blockquote.fs__q {
 
 .cdd-editorial {
   display: grid;
-  gap: clamp(34px, 4vw, 56px);
+  gap: clamp(44px, 5vw, 72px);
 }
 
 .cdd-editorial__intro {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
   gap: clamp(28px, 4vw, 72px);
-  padding-bottom: clamp(26px, 3vw, 40px);
-  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 65%, transparent);
+  padding-bottom: clamp(34px, 3.8vw, 50px);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
 }
 
 .cdd-editorial__kicker {
-  color: color-mix(in srgb, var(--cdd-muted) 84%, var(--cdd-soft) 16%);
-  margin-bottom: 20px;
+  color: color-mix(in srgb, var(--cdd-muted) 74%, transparent);
+  margin-bottom: 18px;
+  font-size: 9px;
+  letter-spacing: .16em;
 }
 
 .cdd-editorial__kicker::after {
@@ -737,13 +740,14 @@ blockquote.fs__q {
 
 .cdd-editorial__title {
   font-size: clamp(42px, 6vw, 76px);
-  line-height: .96;
+  line-height: .92;
   color: var(--cdd-text);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--cdd-surface) 55%, transparent);
 }
 
 .cdd-editorial__title em {
-  color: var(--cdd-soft);
+  color: var(--cdd-text);
   font-style: italic;
 }
 
@@ -751,44 +755,44 @@ blockquote.fs__q {
   max-width: 48ch;
   font-family: var(--serif);
   font-size: clamp(17px, 2.1vw, 21px);
-  line-height: 1.74;
-  color: color-mix(in srgb, var(--cdd-muted) 92%, transparent);
+  line-height: 1.78;
+  color: var(--cdd-body);
 }
 
 .cdd-editorial__meta {
   align-self: end;
   display: grid;
-  gap: 14px;
+  gap: 18px;
 }
 
 .cdd-editorial__meta-item {
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 75%, transparent);
-  padding-top: 12px;
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 26%, transparent);
+  padding-top: 10px;
 }
 
 .cdd-editorial__meta-label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
-  letter-spacing: .18em;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--cdd-muted) 70%, transparent);
-  margin-bottom: 6px;
+  color: color-mix(in srgb, var(--cdd-muted) 58%, transparent);
+  margin-bottom: 4px;
 }
 
 .cdd-editorial__meta-value {
-  font-size: 13px;
-  letter-spacing: .04em;
-  color: var(--cdd-text);
+  font-size: 12px;
+  letter-spacing: .02em;
+  color: color-mix(in srgb, var(--cdd-body) 74%, transparent);
 }
 
 .cdd-feature {
-  background: color-mix(in srgb, var(--cdd-surface) 82%, var(--cdd-bg) 18%);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 64%, transparent);
+  background: var(--cdd-surface);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
 }
 
 .cdd-feature__top {
-  padding: 14px clamp(20px, 3vw, 34px);
-  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 56%, transparent);
+  padding: 14px clamp(24px, 3vw, 36px);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -796,78 +800,82 @@ blockquote.fs__q {
 }
 
 .cdd-feature__issue {
-  font-size: 10px;
-  letter-spacing: .18em;
+  font-size: 9px;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--cdd-signal);
+  color: color-mix(in srgb, var(--cdd-muted) 62%, transparent);
 }
 
 .cdd-feature__date {
-  font-size: 11px;
-  color: color-mix(in srgb, var(--cdd-muted) 80%, transparent);
+  font-size: 10px;
+  color: color-mix(in srgb, var(--cdd-muted) 56%, transparent);
 }
 
 .cdd-feature__body {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-  gap: clamp(24px, 3.2vw, 44px);
-  padding: clamp(28px, 4vw, 44px) clamp(20px, 3vw, 34px) clamp(30px, 4.2vw, 48px);
+  gap: clamp(28px, 3.6vw, 54px);
+  padding: clamp(34px, 4.8vw, 56px) clamp(24px, 3vw, 36px) clamp(38px, 5vw, 62px);
 }
 
 .cdd-feature__label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
-  letter-spacing: .16em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--cdd-muted) 84%, transparent);
-  margin-bottom: 14px;
+  color: color-mix(in srgb, var(--cdd-muted) 60%, transparent);
+  margin-bottom: 16px;
 }
 
 .cdd-feature__title {
   font-family: var(--serif);
-  font-size: clamp(30px, 4vw, 52px);
-  line-height: 1.05;
+  font-size: clamp(34px, 4.6vw, 60px);
+  line-height: 1.02;
   color: var(--cdd-text);
-  margin-bottom: 18px;
-  max-width: 16ch;
+  margin-bottom: 24px;
+  max-width: 15ch;
 }
 
 .cdd-feature__thesis {
   font-family: var(--serif);
-  font-size: 16px;
-  line-height: 1.8;
-  color: color-mix(in srgb, var(--cdd-muted) 88%, transparent);
+  font-size: 17px;
+  line-height: 1.86;
+  color: var(--cdd-body);
   max-width: 54ch;
 }
 
 .cdd-feature__panel {
   display: grid;
-  gap: 20px;
+  gap: 28px;
   align-content: start;
+  padding-left: clamp(14px, 1.8vw, 22px);
+  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
 }
 
 .cdd-feature__findings {
   display: grid;
-  gap: 10px;
+  gap: 14px;
 }
 
 .cdd-feature__finding {
-  font-size: 13px;
-  line-height: 1.68;
-  color: color-mix(in srgb, var(--cdd-muted) 90%, transparent);
-  border-left: 1px solid color-mix(in srgb, var(--cdd-signal) 60%, transparent);
-  padding-left: 10px;
+  font-size: 14px;
+  line-height: 1.74;
+  color: var(--cdd-body);
+  border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 38%, transparent);
+  padding-left: 12px;
 }
 
 .cdd-feature__quote {
   font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1.62;
+  font-size: 18px;
+  line-height: 1.72;
   color: var(--cdd-text);
   font-style: italic;
-  padding: 16px;
-  background: color-mix(in srgb, var(--cdd-bg) 72%, var(--cdd-surface) 28%);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 58%, transparent);
+  margin: 6px 0 0;
+  padding: 18px 18px 18px 20px;
+  background: color-mix(in srgb, var(--cdd-bg) 52%, var(--cdd-surface) 48%);
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 30%, transparent);
+  border-left: 2px solid color-mix(in srgb, var(--cdd-muted) 38%, transparent);
 }
 
 .cdd-feature__footer {
@@ -876,15 +884,15 @@ blockquote.fs__q {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px clamp(20px, 3vw, 34px) clamp(22px, 3vw, 30px);
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 56%, transparent);
+  padding: 20px clamp(24px, 3vw, 36px) clamp(26px, 3.4vw, 34px);
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
 }
 
 .cdd-feature__volume {
-  font-size: 11px;
-  letter-spacing: .12em;
+  font-size: 10px;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--cdd-muted) 78%, transparent);
+  color: color-mix(in srgb, var(--cdd-muted) 54%, transparent);
 }
 
 .cdd-cta-group {
@@ -897,9 +905,9 @@ blockquote.fs__q {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 62%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
   padding: 10px 12px 10px 16px;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -914,22 +922,22 @@ blockquote.fs__q {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 76%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
   transition: border-color .2s, background .2s;
 }
 
 .cdd-cta:hover,
 .cdd-cta:focus-visible {
   gap: 13px;
-  border-color: var(--cdd-soft);
-  background: color-mix(in srgb, var(--cdd-bg) 86%, var(--cdd-soft) 14%);
+  border-color: color-mix(in srgb, var(--cdd-muted) 45%, transparent);
+  background: color-mix(in srgb, var(--cdd-bg) 84%, var(--cdd-muted) 16%);
   color: var(--cdd-text);
 }
 
 .cdd-cta:hover .cdd-cta__ring,
 .cdd-cta:focus-visible .cdd-cta__ring {
-  border-color: var(--cdd-signal);
-  background: color-mix(in srgb, var(--cdd-signal) 18%, transparent);
+  border-color: color-mix(in srgb, var(--cdd-signal) 52%, var(--cdd-muted) 48%);
+  background: color-mix(in srgb, var(--cdd-signal) 12%, transparent);
 }
 
 .cdd-cta:focus-visible {
@@ -1427,6 +1435,15 @@ h2.su__hed {
   .cdd-feature__thesis {
     font-size: 15px;
     line-height: 1.74;
+  }
+  .cdd-feature__panel {
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 10px;
+    border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent);
+  }
+  .cdd-feature__quote {
+    margin-top: 2px;
   }
   .cdd-feature__footer {
     align-items: flex-start;
