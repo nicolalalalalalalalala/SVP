@@ -436,16 +436,22 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
 }
 h2.about__hed { font-size:32px; color:var(--ink); }
 #about .eyebrow,
-#about .about__hed,
 #about .about__body p,
 #about .about__cta .cta,
 #about .about__cta .cta span,
 #about .about__cta .cta__ring {
   font-family:'DIN 2014', 'Inter', sans-serif;
 }
+#about .eyebrow {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.16em;
+}
 #about .about__hed {
-  font-weight:500;
-  letter-spacing:0.01em;
+  font-family:var(--serif);
+  font-size:clamp(34px, 3.2vw, 44px);
+  font-weight:400;
+  letter-spacing:0;
 }
 .about__body {
   display:grid;
@@ -458,7 +464,7 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   margin:0;
 }
 .about__cta {
-  margin-top:6px;
+  margin-top:10px;
 }
 
 /* About pillars: image-top, label below, body — Blackstone style */
@@ -1939,24 +1945,24 @@ h2.su__hed {
   <div class="wrap">
     <div class="about__intro">
       <div>
-        <div class="eyebrow rev" style="font-size:10px;">About the Firm</div>
-        <h2 class="about__hed rev d1" style="font-size:32px;">How we work.</h2>
+        <div class="eyebrow rev">ABOUT THE FIRM</div>
+        <h2 class="about__hed rev d1">How we work.</h2>
       </div>
       <div class="about__body rev d2">
-        <p style="font-size:20px;">
+        <p>
           Our process starts with local sourcing pipelines and rigorous underwriting: collateral-first screening,
           legal-enforceability checks under PRC law, and downside cases built before capital is committed.
         </p>
-        <p style="font-size:20px;">
+        <p>
           The firm focuses exclusively on asset-backed private credit in China: completed, marketable, cash-flowing
           collateral with conservative entry points and multiple exit routes.
         </p>
-        <p style="font-size:20px;">
+        <p>
           Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China, with sourcing,
           diligence, structuring, servicing, and resolution managed through one integrated onshore process.
         </p>
         <div class="about__cta">
-          <a href="team.html" class="cta cta--dark"><span style="font-size:10px;">MEET THE LEADERSHIP TEAM</span><div class="cta__ring" style="font-size:10px;">→</div></a>
+          <a href="team.html" class="cta cta--dark"><span>MEET THE LEADERSHIP TEAM</span><div class="cta__ring">→</div></a>
         </div>
       </div>
     </div>
