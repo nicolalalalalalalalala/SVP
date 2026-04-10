@@ -12,14 +12,16 @@
     />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
+    <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
 <style>
       :root {
-        --red: #b3213f;
-        --ink: #0c0c0a;
+        --red: #8f1f37;
+        --ink: #171410;
+        --ink2: #1d1915;
         --white: #fff;
-        --off: #f6f4f0;
-        --rule: rgba(0, 0, 0, 0.08);
-        --mist: #888680;
+        --off: #f7f4ef;
+        --rule: rgba(31, 24, 18, 0.11);
+        --mist: #6e675f;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
@@ -56,7 +58,7 @@
         left: 0;
         right: 0;
         z-index: 200;
-        height: 72px;
+        height: 62px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -67,7 +69,7 @@
       .nav__logo {
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  gap:4px;
   height:100%;
 }
       .nav__logo img {
@@ -75,11 +77,11 @@
       }
       .nav__links {
         display: flex;
-        gap: 36px;
+        gap: 32px;
         list-style: none;
       }
       .nav__links a {
-        font-size: 11px;
+        font-size: 11.4px;
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
@@ -94,7 +96,7 @@
       .nav__right {
         display: flex;
         align-items: center;
-        gap: 22px;
+        gap: 14px;
       }
       .nav__zh {
         font-size: 13px;
@@ -109,13 +111,13 @@
         display: none;
       }
       .nav__lp {
-        font-size: 10px;
+        font-size: 11.4px;
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--ink);
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        padding: 8px 20px;
+        border: 1px solid rgba(48, 40, 34, 0.15);
+        padding: 7px 16px;
         transition:
           background 0.2s,
           color 0.2s,
@@ -182,7 +184,7 @@
         font-family: var(--serif);
         font-size: 29px;
         line-height: 1.45;
-        color: #3f3a34;
+        color: #4a433a;
         max-width: 840px;
       }
       .investor-shell {
@@ -207,7 +209,7 @@
       }
       .investor-gate--step-2 {
         margin-top: 28px;
-        background: #fbfaf8;
+        background: #f8f5f0;
       }
       .investor-gate h1 {
         margin-bottom: 18px;
@@ -220,7 +222,7 @@
         font-weight: 500;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: #7a736a;
+        color: #6e675f;
       }
       .investor-gate__prompt {
         display: block;
@@ -228,11 +230,11 @@
         max-width: none;
         font-size: 15px;
         line-height: 1.8;
-        color: #2d2924;
+        color: #2b2620;
       }
       .investor-gate__list {
         margin: 20px 0 0 18px;
-        color: #2d2924;
+        color: #2b2620;
       }
       .investor-gate__list li {
         margin-bottom: 8px;
@@ -241,7 +243,7 @@
         margin-top: 22px;
         padding: 14px 16px;
         border: 1px solid var(--rule);
-        background: #fbfaf8;
+        background: #f8f5f0;
         display: flex;
         gap: 10px;
         align-items: flex-start;
@@ -252,7 +254,7 @@
       .investor-gate__attest label {
         font-size: 13px;
         line-height: 1.7;
-        color: #2d2924;
+        color: #2b2620;
       }
       .investor-gate__actions {
         margin-top: 24px;
@@ -279,7 +281,7 @@
         font-family: var(--serif);
         font-size: 28px;
         line-height: 1.45;
-        color: #3f3a34;
+        color: #4a433a;
       }
       .investor-content[hidden] {
         display: none;
@@ -294,7 +296,7 @@
       .card p {
         font-size: 15px;
         line-height: 1.85;
-        color: #262521;
+        color: #2b2620;
         margin-bottom: 10px;
       }
       .actions {
@@ -321,12 +323,12 @@
         margin: 0;
         font-size: 14px;
         line-height: 1.7;
-        color: #3b3731;
+        color: #4a433a;
       }
       .helper {
         margin-top: 12px;
         font-size: 12px;
-        color: #655f57;
+        color: #6e675f;
       }
       .access-options {
         display: grid;
@@ -359,7 +361,7 @@
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #756f66;
+        color: #6e675f;
         margin-bottom: 6px;
       }
       .contact-block a {
@@ -384,9 +386,9 @@
           box-shadow 0.2s ease;
       }
       .btn--dark {
-        background: var(--ink);
+        background: var(--ink2);
         color: #fff;
-        border-color: var(--ink);
+        border-color: var(--ink2);
       }
       .btn:hover,
       .btn:focus-visible {
@@ -398,8 +400,8 @@
       .btn:disabled {
         opacity: 0.45;
         cursor: not-allowed;
-        background: #1c1b19;
-        border-color: #1c1b19;
+        background: #2a2621;
+        border-color: #2a2621;
         color: #fff;
         box-shadow: none;
       }
@@ -410,7 +412,7 @@
         }
         #nav {
           height: auto;
-          min-height: 72px;
+          min-height: 62px;
           align-items: center;
           flex-wrap: wrap;
           row-gap: 12px;
@@ -479,7 +481,7 @@
       @media (max-width: 767px) {
         #nav {
           height: auto;
-          min-height: 72px;
+          min-height: 62px;
           display: grid;
           grid-template-columns: minmax(0, 1fr) auto;
           align-items: center;
@@ -489,7 +491,7 @@
         .nav__logo {
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  gap:4px;
   height:100%;
 }
         .nav__logo img {
@@ -534,7 +536,7 @@
         .nav__logo {
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  gap:4px;
   height:100%;
 }
         .nav__logo img {
@@ -604,7 +606,7 @@
       .nav__logo {
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  gap:4px;
   height:100%;
 }
       .nav__logo-mark {
@@ -618,7 +620,8 @@
   justify-content:center;
   line-height:1;
   row-gap:1px;
-  padding-left:4px;
+  padding-left:8px;
+  border-left:none;
   min-height:31px;
 }
       .nav__logo-en {
@@ -635,8 +638,8 @@
   font-family:'Noto Serif SC',serif;
   margin-top:0;
   font-size:9px;
-  letter-spacing:.34em;
-  color: rgba(33,33,30,.5);
+  letter-spacing:.28em;
+  color: rgba(33,33,30,.66);
   opacity:1;
   line-height:1;
 }
@@ -645,7 +648,7 @@
 </style>
   <style>
 .sv-footer {
-  background: #f6f4f0;
+  background: #f7f4ef;
   border-top: 1px solid var(--rule);
   padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
 }
@@ -664,7 +667,7 @@
 .sv-footer__brand {
   font-family: var(--serif);
   font-size: 20px !important;
-  color: #2d2924;
+  color: #2b2620;
   letter-spacing: 0.01em;
 }
 .sv-footer__contact {
