@@ -58,31 +58,6 @@ section { position:relative; }
 }
 .eyebrow::after { content:''; flex:0 0 36px; height:1px; background:currentColor; }
 .eyebrow--red { color:var(--red); }
-.eyebrow--ghost { color:rgba(255,255,255,.38); }
-.eyebrow--ghost::after { background:rgba(255,255,255,.38); }
-.live-dot {
-  display:inline-block;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#ff2d2d;
-  margin-right:8px;
-  box-shadow:0 0 0 rgba(255, 45, 45, 0.85);
-  animation:liveBlink 2.4s ease-in-out infinite;
-  vertical-align:middle;
-}
-@keyframes liveBlink {
-  0%,
-  100% {
-    opacity:1;
-    box-shadow:0 0 0 0 rgba(255, 45, 45, 0.75);
-  }
-  50% {
-    opacity:0.25;
-    box-shadow:0 0 0 6px rgba(255, 45, 45, 0);
-  }
-}
-
 h1 { font-family:var(--serif); font-weight:400; line-height:1.04; }
 h2 { font-family:var(--serif); font-weight:400; line-height:1.08; }
 h2 em { font-style:italic; }
@@ -718,42 +693,252 @@ blockquote.fs__q {
   text-transform:uppercase; color:var(--mist); margin-top:8px;
 }
 
-/* ══ CDD */
-#cdd { background:var(--ink); padding:0; border-top:0; margin-top:-2px; }
-.cdd__wrap { display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:start; }
-h2.cdd__hed { font-size:clamp(36px,4.5vw,60px); color:var(--ink); margin-bottom:22px; }
-.cdd__body { font-size:17px; line-height:1.82; color:var(--mist); font-family:var(--serif); margin-bottom:36px; }
-.cdd__list { margin-bottom:40px; }
-.cdd__t {
-  display:flex; gap:16px; align-items:flex-start;
-  padding:15px 0; border-bottom:1px solid var(--rule);
-  font-size:13.5px; line-height:1.65; color:var(--mist);
+/* ══ CDD — DARK EDITORIAL FRANCHISE */
+:root {
+  --cdd-bg: #1E4040;
+  --cdd-surface: #0F2206;
+  --cdd-structure: #3D7070;
+  --cdd-soft: #7AAFAF;
+  --cdd-text: #FAF6EE;
+  --cdd-muted: #D8CEB0;
+  --cdd-signal: #C93B2A;
+  --cdd-signal-deep: #8A1F12;
 }
-.cdd__t:first-child { border-top:1px solid var(--rule); }
-.cdd__dot { width:5px; height:5px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:8px; }
-.cdd__t strong { color:var(--ink); font-weight:500; }
-.issue-card { border:1px solid var(--rule); }
-.issue-label {
-  font-size:9px; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
-  color:rgba(255,255,255,.45); background:var(--ink); padding:13px 28px;
+
+#cdd {
+  background: var(--cdd-bg);
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 60%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-surface) 80%, transparent);
+  padding: clamp(84px, 9vw, 128px) 0;
+  color: var(--cdd-text);
 }
-.issue-title {
-  font-family:var(--serif); font-size:clamp(18px,2vw,26px);
-  color:var(--ink); line-height:1.28; padding:32px 28px 14px;
+
+.cdd-editorial {
+  display: grid;
+  gap: clamp(34px, 4vw, 56px);
 }
-.issue-thesis { font-size:13.5px; line-height:1.72; color:var(--mist); padding:0 28px 28px; }
-.issue-takes { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--rule); }
-.issue-takes > div { padding:20px 24px; }
-.issue-takes > div:first-child { border-right:1px solid var(--rule); }
-.it__label { font-size:9px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
-.it__item { font-size:12.5px; line-height:1.65; color:var(--mist); border-left:2px solid rgba(179,33,63,.18); padding-left:12px; margin-bottom:10px; }
-.issue-footer {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:18px 28px; border-top:1px solid var(--rule);
+
+.cdd-editorial__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+  gap: clamp(28px, 4vw, 72px);
+  padding-bottom: clamp(26px, 3vw, 40px);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 65%, transparent);
 }
-.issue-date { font-size:11px; color:var(--mist); }
+
+.cdd-editorial__kicker {
+  color: color-mix(in srgb, var(--cdd-muted) 84%, var(--cdd-soft) 16%);
+  margin-bottom: 20px;
+}
+
+.cdd-editorial__kicker::after {
+  background: color-mix(in srgb, var(--cdd-muted) 72%, transparent);
+}
+
+.cdd-editorial__title {
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: .96;
+  color: var(--cdd-text);
+  margin-bottom: 20px;
+}
+
+.cdd-editorial__title em {
+  color: var(--cdd-soft);
+  font-style: italic;
+}
+
+.cdd-editorial__lede {
+  max-width: 48ch;
+  font-family: var(--serif);
+  font-size: clamp(17px, 2.1vw, 21px);
+  line-height: 1.74;
+  color: color-mix(in srgb, var(--cdd-muted) 92%, transparent);
+}
+
+.cdd-editorial__meta {
+  align-self: end;
+  display: grid;
+  gap: 14px;
+}
+
+.cdd-editorial__meta-item {
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 75%, transparent);
+  padding-top: 12px;
+}
+
+.cdd-editorial__meta-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--cdd-muted) 70%, transparent);
+  margin-bottom: 6px;
+}
+
+.cdd-editorial__meta-value {
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--cdd-text);
+}
+
+.cdd-feature {
+  background: color-mix(in srgb, var(--cdd-surface) 82%, var(--cdd-bg) 18%);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 64%, transparent);
+}
+
+.cdd-feature__top {
+  padding: 14px clamp(20px, 3vw, 34px);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 56%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cdd-feature__issue {
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cdd-signal);
+}
+
+.cdd-feature__date {
+  font-size: 11px;
+  color: color-mix(in srgb, var(--cdd-muted) 80%, transparent);
+}
+
+.cdd-feature__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(24px, 3.2vw, 44px);
+  padding: clamp(28px, 4vw, 44px) clamp(20px, 3vw, 34px) clamp(30px, 4.2vw, 48px);
+}
+
+.cdd-feature__label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--cdd-muted) 84%, transparent);
+  margin-bottom: 14px;
+}
+
+.cdd-feature__title {
+  font-family: var(--serif);
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.05;
+  color: var(--cdd-text);
+  margin-bottom: 18px;
+  max-width: 16ch;
+}
+
+.cdd-feature__thesis {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--cdd-muted) 88%, transparent);
+  max-width: 54ch;
+}
+
+.cdd-feature__panel {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
+.cdd-feature__findings {
+  display: grid;
+  gap: 10px;
+}
+
+.cdd-feature__finding {
+  font-size: 13px;
+  line-height: 1.68;
+  color: color-mix(in srgb, var(--cdd-muted) 90%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--cdd-signal) 60%, transparent);
+  padding-left: 10px;
+}
+
+.cdd-feature__quote {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--cdd-text);
+  font-style: italic;
+  padding: 16px;
+  background: color-mix(in srgb, var(--cdd-bg) 72%, var(--cdd-surface) 28%);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 58%, transparent);
+}
+
+.cdd-feature__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px clamp(20px, 3vw, 34px) clamp(22px, 3vw, 30px);
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 56%, transparent);
+}
+
+.cdd-feature__volume {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--cdd-muted) 78%, transparent);
+}
+
+.cdd-cta-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cdd-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 62%, transparent);
+  padding: 10px 12px 10px 16px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--cdd-text);
+  transition: border-color .2s, background .2s, color .2s, gap .2s;
+}
+
+.cdd-cta__ring {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 76%, transparent);
+  transition: border-color .2s, background .2s;
+}
+
+.cdd-cta:hover,
+.cdd-cta:focus-visible {
+  gap: 13px;
+  border-color: var(--cdd-soft);
+  background: color-mix(in srgb, var(--cdd-bg) 86%, var(--cdd-soft) 14%);
+  color: var(--cdd-text);
+}
+
+.cdd-cta:hover .cdd-cta__ring,
+.cdd-cta:focus-visible .cdd-cta__ring {
+  border-color: var(--cdd-signal);
+  background: color-mix(in srgb, var(--cdd-signal) 18%, transparent);
+}
+
+.cdd-cta:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--cdd-soft) 70%, #fff 30%);
+  outline-offset: 2px;
+}
 
 /* ══ TEAM */
+
 #team { background:var(--off); padding:var(--section-space) 0; }
 .team__hd {
   display:grid; grid-template-columns:5fr 7fr;
@@ -1029,7 +1214,7 @@ h2.su__hed {
   #hero,
   .about__intro,
   .strat__hd,
-  .cdd__wrap,
+  .cdd-editorial,
   .su__wrap,
   .city-band__inner { gap:48px; }
   .team__grid { grid-template-columns:repeat(3,1fr); }
@@ -1051,15 +1236,6 @@ h2.su__hed {
   }
   body { font-size:14px; }
 
-  #hero,
-  .hero__overlay,
-  .wrap,
-  #cdd > div:first-child > div {
-    width:100%;
-    max-width:none !important;
-    margin-left:0;
-    margin-right:0;
-  }
 
   .wrap {
     padding-left:var(--pad);
@@ -1151,7 +1327,7 @@ h2.su__hed {
   .strat__hd,
   .strat__grid,
   .founder-split,
-  .cdd__wrap,
+  .cdd-editorial,
   .team__hd,
   .team__grid,
   .city-band__inner,
@@ -1180,8 +1356,7 @@ h2.su__hed {
     padding-top:4px;
     padding-left:0;
   }
-  .about__body p,
-  .cdd__body {
+  .about__body p {
     font-size:19px;
     line-height:1.8;
   }
@@ -1238,56 +1413,29 @@ h2.su__hed {
     padding-bottom:90px;
   }
 
-  #cdd > div:first-child {
-    padding:56px 0 0 !important;
-  }
-  .cdd-hero__grid {
-    grid-template-columns:minmax(0,1fr) !important;
-    gap:34px !important;
-  }
-  .cdd-hero__copy,
-  .cdd-hero__panel,
-  .cdd-hero__card {
-    min-width:0;
-    max-width:100%;
-  }
-  .cdd-hero__panel {
-    width:100%;
-  }
-  .cdd-hero__card-grid {
-    grid-template-columns:minmax(0,1fr) !important;
-    gap:14px !important;
-  }
-  #cdd .issue-card {
-    border-color:rgba(255,255,255,.22);
-  }
-  #cdd .issue-title {
-    font-size:24px;
-    line-height:1.26;
-    padding:26px 22px 12px;
-  }
-  #cdd .issue-thesis {
-    padding:0 22px 22px;
-    font-size:14px;
-    line-height:1.74;
-  }
-  #cdd .issue-footer {
-    padding:14px 22px;
-  }
-  .cdd-hero__footer {
-    flex-direction:column;
-    align-items:flex-start !important;
-    padding-bottom:26px !important;
-  }
-  #cdd {
-    padding-bottom:20px;
-  }
-  .cdd-hero__meta {
-    white-space:nowrap;
-    align-self:flex-end;
-  }
 
-  #insights .icard__body {
+  
+  .cdd-editorial__intro,
+  .cdd-feature__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .cdd-feature__title {
+    font-size: clamp(28px, 8.6vw, 38px);
+    max-width: none;
+  }
+  .cdd-feature__thesis {
+    font-size: 15px;
+    line-height: 1.74;
+  }
+  .cdd-feature__footer {
+    align-items: flex-start;
+  }
+  .cdd-feature__volume {
+    width: 100%;
+    text-align: left;
+  }
+#insights .icard__body {
     padding:20px 16px 20px;
   }
 
@@ -1851,59 +1999,57 @@ h2.su__hed {
 </section>
 
 <!-- CDD -->
-<section id="cdd" style="background:#10192b;border-top:0;">
-  <!-- Publication masthead — full width, editorial -->
-  <div class="cdd-hero-shell" style="background:linear-gradient(180deg,#10192b 0%,#0b1423 100%);padding:80px 0;">
-    <div class="wrap cdd-hero-wrap">
-      <div class="cdd-hero__grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-        <div class="cdd-hero__copy">
-          <div class="eyebrow eyebrow--ghost rev" style="margin-bottom:28px;color:rgba(177,210,255,.66);">SHOREVEST INSIGHTS · EST. 2018</div>
-          <!-- Publication logotype -->
-          <div style="display:flex;align-items:flex-start;gap:24px;margin-bottom:32px;">
-            <img src="assets/images/edited-photo-3.svg?v=6" alt="ShoreVest emblem" width="56" height="56" style="flex-shrink:0;margin-top:2px;filter:brightness(0) invert(1);" />
-            <div>
-              <div style="font-family:var(--serif);font-size:clamp(42px,5vw,68px);font-weight:400;color:#f3f8ff;line-height:.95;letter-spacing:-.01em;" class="rev d1">China<br>Debt<br><em style="color:#76b7ff;">Dynamics.</em></div>
-            </div>
-          </div>
-          <div style="font-family:var(--serif);font-size:18px;line-height:1.72;color:rgba(219,234,255,.72);max-width:440px;" class="rev d2">Institutional analysis of China's private credit markets — built on local underwriting, legal process, and on-the-ground execution.</div>
+<section id="cdd">
+  <div class="wrap cdd-editorial">
+    <div class="cdd-editorial__intro">
+      <div>
+        <div class="eyebrow cdd-editorial__kicker rev">ShoreVest Research Franchise · Established 2018</div>
+        <h2 class="cdd-editorial__title rev d1">China Debt <em>Dynamics.</em></h2>
+        <p class="cdd-editorial__lede rev d2">An ongoing institutional research series focused on China's private credit cycle, policy architecture, legal enforceability, and allocator-relevant market structure.</p>
+      </div>
+      <div class="cdd-editorial__meta rev d2">
+        <div class="cdd-editorial__meta-item">
+          <div class="cdd-editorial__meta-label">Series cadence</div>
+          <div class="cdd-editorial__meta-value">Quarterly publication with interim updates</div>
         </div>
-        <div class="cdd-hero__panel rev d2">
-          <!-- Latest issue card — editorial weight -->
-          <div class="cdd-hero__card" style="border:1px solid rgba(152,197,255,.28);background:rgba(111,170,247,.08);">
-            <div style="padding:10px 24px;background:#1e4d89;display:flex;align-items:center;justify-content:space-between;">
-              <span style="font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92);">Latest Issue · January 2026</span>
-              <span style="font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);">25 January 2026</span>
-            </div>
-            <div style="padding:32px 28px 24px;">
-              <div style="font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:10px;display:flex;align-items:center;">
-                <span class="live-dot" aria-hidden="true"></span>Live Edition · Current Issue
-              </div>
-              <div style="font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:white;line-height:1.22;margin-bottom:16px;">The End of China's "Uninvestable" Myth</div>
-              <div style="font-size:14px;line-height:1.72;color:rgba(255,255,255,.72);margin-bottom:24px;font-family:var(--serif);">This issue examines how dislocation changed market mechanics and where private credit execution remains investable on a selective basis.</div>
-              <div class="cdd-hero__card-grid" style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                <div>
-                  <div style="font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:10px;">Findings</div>
-                  <div style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.78);border-left:2px solid rgba(255,255,255,.35);padding-left:10px;margin-bottom:8px;">Long-term policy shifts improved creditor protections</div>
-                  <div style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.78);border-left:2px solid rgba(255,255,255,.28);padding-left:10px;margin-bottom:8px;">Private credit remained investable through the reset</div>
-                  <div style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.78);border-left:2px solid rgba(255,255,255,.28);padding-left:10px;">Capital-market reform is changing the narrative</div>
-                </div>
-                <div>
-                  <div style="font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-bottom:10px;">For Allocators</div>
-                  <div style="font-size:13px;line-height:1.65;color:rgba(255,255,255,.82);font-family:var(--serif);font-style:italic;">"A market best understood through process, policy, and execution — not headlines."</div>
-                </div>
-              </div>
-            </div>
-            <div class="cdd-hero__footer" style="padding:16px 28px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;gap:16px;">
-              <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                <a href="insights.html#issue-header" class="cta cta--light"><span>READ ISSUE</span><div class="cta__ring">→</div></a>
-                <a href="insights.html#subscribe" class="cta cta--light"><span>SUBSCRIBE</span><div class="cta__ring">→</div></a>
-              </div>
-              <span class="cdd-hero__meta" style="font-size:11px;color:rgba(255,255,255,.72);letter-spacing:.1em;text-transform:uppercase;">Vol. 10 · No. 1</span>
-            </div>
-          </div>
+        <div class="cdd-editorial__meta-item">
+          <div class="cdd-editorial__meta-label">Coverage</div>
+          <div class="cdd-editorial__meta-value">Private credit, NPL workflow, policy transmission</div>
         </div>
       </div>
     </div>
+
+    <article class="cdd-feature rev d3" aria-label="Featured issue of China Debt Dynamics">
+      <div class="cdd-feature__top">
+        <div class="cdd-feature__issue">Issue 46</div>
+        <div class="cdd-feature__date">25 January 2026</div>
+      </div>
+      <div class="cdd-feature__body">
+        <div>
+          <div class="cdd-feature__label">Current issue</div>
+          <h3 class="cdd-feature__title">The End of China's “Uninvestable” Myth</h3>
+          <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
+        </div>
+        <aside class="cdd-feature__panel">
+          <div>
+            <div class="cdd-feature__label">Key findings</div>
+            <div class="cdd-feature__findings">
+              <p class="cdd-feature__finding">Policy direction continues to improve enforcement predictability for secured creditors.</p>
+              <p class="cdd-feature__finding">Selective private credit strategies remained executable through the recent market reset.</p>
+              <p class="cdd-feature__finding">Capital-market reforms are shifting allocator assumptions about China exposure.</p>
+            </div>
+          </div>
+          <blockquote class="cdd-feature__quote">“A market best understood through process, policy, and execution rather than headline volatility.”</blockquote>
+        </aside>
+      </div>
+      <div class="cdd-feature__footer">
+        <div class="cdd-cta-group">
+          <a href="insights.html#issue-header" class="cdd-cta"><span>Read issue</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
+          <a href="insights.html#subscribe" class="cdd-cta"><span>Subscribe</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
+        </div>
+        <div class="cdd-feature__volume">Volume 10 · Number 1</div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -2028,7 +2174,7 @@ if (menuBtn && nav) {
   `;
   document.head.appendChild(style);
 
-  const targets = document.querySelectorAll('section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm');
+  const targets = document.querySelectorAll('section, .wrap > div, .ac, .sg, .tm, .icard, .cdd-feature, .su__form, .foot__top, .foot__btm');
   targets.forEach((el, i) => {
     if (el.classList.contains('rev') || el.classList.contains('auto-rev')) return;
     if (el.closest('nav')) return;
