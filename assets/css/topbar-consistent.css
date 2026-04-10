@@ -1270,9 +1270,9 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
     min-height: 74px !important;
     height: 74px !important;
     padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)) !important;
-    background: #f7f3e9 !important;
-    border-bottom: 1px solid rgba(20, 20, 20, 0.14) !important;
-    box-shadow: 0 1px 0 rgba(20, 20, 20, 0.08) !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid rgba(31, 24, 18, 0.11) !important;
+    box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
