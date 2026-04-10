@@ -697,11 +697,12 @@ blockquote.fs__q {
 :root {
   --cdd-bg: #1E4040;
   --cdd-surface: #0F2206;
+  --cdd-secondary-surface: #163232;
   --cdd-structure: #D8CEB0;
-  --cdd-soft: #E6DECF;
+  --cdd-soft: #EAE3D7;
   --cdd-text: #FAF6EE;
   --cdd-muted: #D8CEB0;
-  --cdd-body: #E6DECF;
+  --cdd-body: #EAE3D7;
   --cdd-signal: #C93B2A;
   --cdd-signal-deep: #8A1F12;
 }
@@ -717,6 +718,9 @@ blockquote.fs__q {
 .cdd-editorial {
   display: grid;
   gap: clamp(44px, 5vw, 72px);
+  background: var(--cdd-surface);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
+  padding: clamp(28px, 4vw, 54px);
 }
 
 .cdd-editorial__intro {
@@ -724,7 +728,7 @@ blockquote.fs__q {
   grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
   gap: clamp(28px, 4vw, 72px);
   padding-bottom: clamp(34px, 3.8vw, 50px);
-  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
 }
 
 .cdd-editorial__kicker {
@@ -775,19 +779,19 @@ blockquote.fs__q {
   font-weight: 500;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--cdd-muted) 58%, transparent);
+  color: var(--cdd-muted);
   margin-bottom: 4px;
 }
 
 .cdd-editorial__meta-value {
   font-size: 12px;
   letter-spacing: .02em;
-  color: color-mix(in srgb, var(--cdd-body) 74%, transparent);
+  color: var(--cdd-body);
 }
 
 .cdd-feature {
   background: var(--cdd-surface);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 36%, transparent);
 }
 
 .cdd-feature__top {
@@ -803,12 +807,12 @@ blockquote.fs__q {
   font-size: 9px;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--cdd-muted) 62%, transparent);
+  color: var(--cdd-muted);
 }
 
 .cdd-feature__date {
   font-size: 10px;
-  color: color-mix(in srgb, var(--cdd-muted) 56%, transparent);
+  color: var(--cdd-muted);
 }
 
 .cdd-feature__body {
@@ -823,7 +827,7 @@ blockquote.fs__q {
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--cdd-muted) 60%, transparent);
+  color: var(--cdd-muted);
   margin-bottom: 16px;
 }
 
@@ -848,8 +852,9 @@ blockquote.fs__q {
   display: grid;
   gap: 28px;
   align-content: start;
-  padding-left: clamp(14px, 1.8vw, 22px);
-  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
+  padding: clamp(18px, 2vw, 24px);
+  background: var(--cdd-secondary-surface);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
 }
 
 .cdd-feature__findings {
@@ -861,7 +866,7 @@ blockquote.fs__q {
   font-size: 14px;
   line-height: 1.74;
   color: var(--cdd-body);
-  border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 38%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 60%, transparent);
   padding-left: 12px;
 }
 
@@ -873,9 +878,9 @@ blockquote.fs__q {
   font-style: italic;
   margin: 6px 0 0;
   padding: 18px 18px 18px 20px;
-  background: color-mix(in srgb, var(--cdd-bg) 52%, var(--cdd-surface) 48%);
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 30%, transparent);
-  border-left: 2px solid color-mix(in srgb, var(--cdd-muted) 38%, transparent);
+  background: #10270f;
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 40%, transparent);
+  border-left: 2px solid var(--cdd-signal);
 }
 
 .cdd-feature__footer {
@@ -892,7 +897,7 @@ blockquote.fs__q {
   font-size: 10px;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--cdd-muted) 54%, transparent);
+  color: var(--cdd-muted);
 }
 
 .cdd-cta-group {
@@ -905,7 +910,7 @@ blockquote.fs__q {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
   padding: 10px 12px 10px 16px;
   font-size: 9px;
   font-weight: 500;
@@ -922,22 +927,22 @@ blockquote.fs__q {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 48%, transparent);
   transition: border-color .2s, background .2s;
 }
 
 .cdd-cta:hover,
 .cdd-cta:focus-visible {
   gap: 13px;
-  border-color: color-mix(in srgb, var(--cdd-muted) 45%, transparent);
-  background: color-mix(in srgb, var(--cdd-bg) 84%, var(--cdd-muted) 16%);
+  border-color: var(--cdd-signal);
+  background: #132e13;
   color: var(--cdd-text);
 }
 
 .cdd-cta:hover .cdd-cta__ring,
 .cdd-cta:focus-visible .cdd-cta__ring {
-  border-color: color-mix(in srgb, var(--cdd-signal) 52%, var(--cdd-muted) 48%);
-  background: color-mix(in srgb, var(--cdd-signal) 12%, transparent);
+  border-color: var(--cdd-signal);
+  background: color-mix(in srgb, var(--cdd-signal) 18%, transparent);
 }
 
 .cdd-cta:focus-visible {
@@ -1437,10 +1442,7 @@ h2.su__hed {
     line-height: 1.74;
   }
   .cdd-feature__panel {
-    padding-left: 0;
-    border-left: 0;
-    padding-top: 10px;
-    border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent);
+    padding: 16px;
   }
   .cdd-feature__quote {
     margin-top: 2px;
