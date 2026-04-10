@@ -10,16 +10,17 @@
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/refinement-pass.css" />
     <style>
       :root {
-        --bg: #f2f1ef;
-        --panel: #f8f7f5;
-        --surface: #f7f5f2;
-        --surface-strong: #f3f1ed;
-        --ink: #1d1c1a;
-        --muted: #7b7870;
-        --rule: rgba(0, 0, 0, 0.1);
-        --red: #b3213f;
+        --bg: #ffffff;
+        --panel: #f8f4ec;
+        --surface: #f7f4ef;
+        --surface-strong: #f3efe8;
+        --ink: #171410;
+        --muted: #6e675f;
+        --rule: rgba(31, 24, 18, 0.11);
+        --red: #8f1f37;
         --dark: #10100f;
         --radius: 0;
         --serif: "EB Garamond", Georgia, serif;
@@ -37,13 +38,10 @@
       }
       body {
         font-family: var(--sans);
-        background:
-          radial-gradient(circle at 18% -10%, rgba(179, 33, 63, 0.08), transparent 42%),
-          radial-gradient(circle at 100% 0%, rgba(20, 20, 18, 0.06), transparent 34%),
-          var(--bg);
+        background: var(--bg);
         color: var(--ink);
         line-height: 1.55;
-        font-size: 14px;
+        font-size: 15px;
       }
       a {
         color: inherit;
@@ -65,7 +63,7 @@
         left: 0;
         right: 0;
         z-index: 200;
-        height: 72px;
+        height: 62px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -180,10 +178,10 @@
       }
 
       main {
-        padding-top: 72px;
+        padding-top: 62px;
       }
       section {
-        padding: 44px 0;
+        padding: 56px 0;
         border-top: 1px solid var(--rule);
       }
       section:first-child {
@@ -220,8 +218,8 @@
 
       .hero {
         min-height: 0;
-        padding-top: 52px;
-        padding-bottom: 52px;
+        padding-top: 64px;
+        padding-bottom: 64px;
         display: flex;
         align-items: center;
       }
@@ -232,12 +230,8 @@
         margin-bottom: 20px;
       }
       .hero-main {
-        background: linear-gradient(
-          155deg,
-          rgba(255, 255, 255, 0.75),
-          rgba(250, 247, 242, 0.9)
-        );
-        border: 1px solid rgba(14, 12, 10, 0.1);
+        background: var(--surface);
+        border: 1px solid var(--rule);
         padding: 28px 28px 24px;
       }
       h1 {
@@ -270,11 +264,7 @@
         font-size: 17px;
         line-height: 1.55;
         color: #2f2b25;
-        background: linear-gradient(
-          135deg,
-          rgba(139, 26, 47, 0.04),
-          rgba(248, 244, 236, 0.95)
-        );
+        background: #fbf8f3;
       }
       .hero-thesis {
         display: grid;
@@ -288,9 +278,9 @@
         line-height: 1.65;
       }
       .hero-aside {
-        background: linear-gradient(180deg, #161411 0%, #11100e 100%);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #f0ece4;
+        background: #191612;
+        border: 1px solid rgba(23, 20, 16, 0.18);
+        color: #f7f4ef;
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -315,9 +305,9 @@
         gap: 10px;
       }
       .hero-signal {
-        border: 1px solid rgba(179, 33, 63, 0.35);
+        border: 1px solid rgba(143, 31, 55, 0.4);
         padding: 10px 12px;
-        background: rgba(179, 33, 63, 0.08);
+        background: rgba(143, 31, 55, 0.12);
       }
       .hero-signal__kicker {
         display: block;
