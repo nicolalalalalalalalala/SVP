@@ -12,14 +12,15 @@
     />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
+    <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
 <style>
       :root {
-        --red: #b3213f;
-        --ink: #0c0c0a;
-        --white: #fff;
-        --off: #f6f4f0;
-        --rule: rgba(0, 0, 0, 0.08);
-        --mist: #888680;
+        --red: #c93b2a;
+        --ink: #0f2206;
+        --white: #faf6ee;
+        --off: #f2ecd8;
+        --rule: #d8ceb0;
+        --mist: #3d7070;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
@@ -63,7 +64,7 @@
         justify-content: space-between;
         padding: 0 var(--pad);
         border-bottom: 1px solid var(--rule);
-        background: #fff;
+        background: var(--white);
       }
       .nav__logo {
   display:inline-flex;
@@ -134,7 +135,7 @@
       .nav__menu-btn {
         display: none;
         border: 1px solid rgba(0, 0, 0, 0.14);
-        background: #fff;
+        background: var(--white);
         color: var(--ink);
         font-size: 10px;
         font-weight: 500;
@@ -178,7 +179,7 @@
         font-family: var(--serif);
         font-size: 23px;
         line-height: 1.5;
-        color: #3f3a34;
+        color: var(--ink2);
         max-width: 767px;
         margin-bottom: 0;
       }
@@ -274,15 +275,15 @@
         display: grid;
         gap: 0;
         max-width: var(--content);
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(12, 12, 10, 0.09);
+        background: rgba(250, 246, 238, 0.84);
+        border: 1px solid var(--rule);
       }
       .press-toolbar {
         max-width: var(--content);
         margin: 0 0 18px;
         padding: 14px 16px;
-        border: 1px solid rgba(12, 12, 10, 0.1);
-        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid var(--rule);
+        background: rgba(250, 246, 238, 0.88);
       }
       .press-toolbar__meta {
         display: flex;
@@ -296,13 +297,13 @@
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: rgba(12, 12, 10, 0.65);
+        color: color-mix(in srgb, var(--ink) 65%, transparent);
       }
       .press-toolbar__count {
         font-size: 11px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(12, 12, 10, 0.58);
+        color: color-mix(in srgb, var(--ink) 58%, transparent);
       }
       .press-filters {
         display: flex;
@@ -321,13 +322,13 @@
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: rgba(12, 12, 10, 0.68);
+        color: color-mix(in srgb, var(--ink) 68%, transparent);
       }
       .press-filter-select {
         width: 100%;
         min-height: 40px;
-        border: 1px solid rgba(0, 0, 0, 0.18);
-        background: #fff;
+        border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+        background: var(--white);
         color: var(--ink);
         padding: 9px 36px 9px 12px;
         font-size: 11px;
@@ -347,7 +348,7 @@
         background-repeat: no-repeat;
       }
       .press-filter-select:focus-visible {
-        outline: 2px solid rgba(179, 33, 63, 0.25);
+        outline: 2px solid color-mix(in srgb, var(--red) 28%, white);
         outline-offset: 1px;
       }
       @media (max-width: 760px) {
@@ -360,7 +361,7 @@
         font-family: var(--serif);
         font-size: 20px;
         line-height: 1.75;
-        color: #2f2a25;
+        color: var(--ink2);
         margin: 0;
       }
       .press-intro + .press-intro {
@@ -371,7 +372,7 @@
         font-size: 10px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: rgba(12, 12, 10, 0.62);
+        color: color-mix(in srgb, var(--ink) 62%, transparent);
       }
       .press-overview {
         max-width: var(--content);
@@ -387,8 +388,8 @@
       .press-overview__main {
         grid-area: main;
         padding: 20px 22px 22px;
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(12, 12, 10, 0.09);
+        background: rgba(250, 246, 238, 0.82);
+        border: 1px solid var(--rule);
       }
       .press-overview .contact {
         grid-area: contact;
@@ -401,7 +402,7 @@
       .press-row {
         display: block;
         padding: 0;
-        border-bottom: 1px solid rgba(12, 12, 10, 0.12);
+        border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
       }
       .press-row a {
         display: flex;
@@ -417,7 +418,7 @@
         padding-top: 1.8rem;
       }
       .press-row a:hover {
-        background: rgba(179, 33, 63, 0.035);
+        background: color-mix(in srgb, var(--red) 10%, transparent);
       }
       .press-publication {
         display: block;
@@ -425,7 +426,7 @@
         font-family: "Cormorant Garamond", var(--serif);
         font-size: 15px;
         letter-spacing: 0.14em;
-        color: #8b1a2f;
+        color: var(--red);
         font-variant: small-caps;
       }
       .press-headline {
@@ -447,25 +448,25 @@
         font-family: "Cormorant Garamond", var(--serif);
         font-size: 15px;
         letter-spacing: 0.07em;
-        color: #888;
+        color: color-mix(in srgb, var(--ink) 48%, transparent);
         white-space: nowrap;
       }
       .press-row a:hover .press-headline {
-        color: #8b1a2f;
+        color: var(--red);
       }
       .press-row a:visited .press-headline {
         color: #0c0c0a;
       }
       .press-row a:visited .press-publication {
-        color: #8b1a2f;
+        color: var(--red);
       }
       .press-row a:visited .press-date {
-        color: #888;
+        color: color-mix(in srgb, var(--ink) 48%, transparent);
       }
 
       .press-archive-note {
         font-size: 10px;
-        color: #44546b;
+        color: var(--mist);
         margin-bottom: 14px;
       }
 
@@ -480,8 +481,8 @@
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        border: 1px solid rgba(0, 0, 0, 0.18);
-        background: #fff;
+        border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+        background: var(--white);
         color: var(--ink);
         padding: 12px 24px;
         cursor: pointer;
@@ -501,10 +502,10 @@
         max-width: var(--content);
         padding: 18px 24px;
         border: 1px solid var(--rule);
-        background: #fff;
+        background: var(--white);
         font-size: 13px;
         line-height: 1.6;
-        color: #5b544c;
+        color: var(--ink2);
       }
       .contact span {
         display: block;
@@ -512,7 +513,7 @@
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: rgba(12, 12, 10, 0.65);
+        color: color-mix(in srgb, var(--ink) 65%, transparent);
         margin-bottom: 7px;
       }
       .contact a {
@@ -524,13 +525,13 @@
         grid-area: disclaimer;
         margin: 0;
         padding: 12px 14px;
-        border: 1px solid rgba(12, 12, 10, 0.1);
-        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid var(--rule);
+        background: rgba(250, 246, 238, 0.8);
         display: flex;
         flex-direction: column;
         font-size: 10px;
         line-height: 1.45;
-        color: #6b7280;
+        color: color-mix(in srgb, var(--ink2) 70%, white);
       }
       .press-disclaimer .press-overview__heading {
         font-size: 10px;
@@ -852,7 +853,7 @@
 </style>
   <style>
 .sv-footer {
-  background: #f6f4f0;
+  background: var(--white);
   border-top: 1px solid var(--rule);
   padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
 }
@@ -871,7 +872,7 @@
 .sv-footer__brand {
   font-family: var(--serif);
   font-size: 20px !important;
-  color: #2d2924;
+  color: var(--ink);
   letter-spacing: 0.01em;
 }
 .sv-footer__contact {
@@ -884,7 +885,7 @@
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #8f887f;
+  color: color-mix(in srgb, var(--ink) 44%, white);
 }
 .sv-footer__contact a {
   font-size: 12px;
@@ -892,7 +893,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
-  border: 1px solid rgba(0, 0, 0, 0.16);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
   padding: 10px 14px;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -912,7 +913,7 @@
 .sv-footer__legal,
 .sv-footer__legal-links {
   font-size: 9px;
-  color: #6f6a63;
+  color: color-mix(in srgb, var(--ink2) 62%, white);
   line-height: 1.7;
 }
 .sv-footer__legal-links {
