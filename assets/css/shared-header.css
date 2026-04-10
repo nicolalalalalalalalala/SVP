@@ -50,6 +50,7 @@
   white-space: nowrap;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   line-height: 1;
   row-gap: 1px;
   padding-left: 8px;
