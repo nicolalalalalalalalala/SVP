@@ -328,3 +328,63 @@ li,
     ),
     url("assets/images/homepage_hero2-2.jpg") !important;
 }
+
+/* China Debt Dynamics (homepage): enforce dark editorial contrast hierarchy */
+#cdd {
+  --cdd-bg: #1E4040;
+  --cdd-surface: #0F2206;
+  --cdd-secondary-surface: #0F2206;
+  --cdd-structure: #D8CEB0;
+  --cdd-text: #FAF6EE;
+  --cdd-body: #EAE3D7;
+  --cdd-muted: #D8CEB0;
+  --cdd-accent: #3D7070;
+  --cdd-signal: #C93B2A;
+  background: var(--cdd-bg) !important;
+  color: var(--cdd-text) !important;
+  border-top-color: color-mix(in srgb, var(--cdd-structure) 60%, transparent) !important;
+  border-bottom-color: color-mix(in srgb, var(--cdd-surface) 80%, transparent) !important;
+}
+
+#cdd .cdd-editorial__card,
+#cdd .cdd-feature,
+#cdd .cdd-feature__panel {
+  background: var(--cdd-surface) !important;
+  border-color: color-mix(in srgb, var(--cdd-structure) 34%, transparent) !important;
+}
+
+#cdd .cdd-editorial__title,
+#cdd .cdd-editorial__title em,
+#cdd .cdd-feature__title,
+#cdd .cdd-feature__quote,
+#cdd .cdd-cta {
+  color: var(--cdd-text) !important;
+}
+
+#cdd .cdd-editorial__lede,
+#cdd .cdd-feature__thesis,
+#cdd .cdd-feature__finding,
+#cdd .cdd-editorial__meta-value {
+  color: var(--cdd-body) !important;
+}
+
+#cdd .cdd-editorial__kicker,
+#cdd .cdd-feature__issue,
+#cdd .cdd-feature__date,
+#cdd .cdd-feature__label,
+#cdd .cdd-feature__volume,
+#cdd .cdd-editorial__meta-label {
+  color: var(--cdd-muted) !important;
+}
+
+#cdd .cdd-editorial__kicker::after {
+  background: color-mix(in srgb, var(--cdd-accent) 78%, transparent) !important;
+}
+
+#cdd .cdd-feature__finding {
+  border-left-color: color-mix(in srgb, var(--cdd-accent) 62%, transparent) !important;
+}
+
+#cdd .cdd-feature__quote {
+  border-left-color: var(--cdd-signal) !important;
+}
