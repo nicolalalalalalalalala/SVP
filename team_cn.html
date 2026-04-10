@@ -1,20 +1,21 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShoreVest | 团队</title>
+    <title>ShoreVest | 團隊</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/edited-photo-3.svg?v=6" />
     <link rel="shortcut icon" href="assets/images/edited-photo-3.svg?v=6" />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
 <style>
       :root {
-        --red: #b3213f;
+        --red: #C93B2A;
+        --cinnabar: #C93B2A;
         --ink: #1f1c19;
         --ink-deep: #171412;
         --ink-soft: #4f4a43;
@@ -28,8 +29,9 @@
         --rule: rgba(48, 40, 34, 0.12);
         --mist: #7a7268;
         --mist-light: #9a948b;
-        --serif: "EB Garamond", Georgia, serif;
-        --sans: "Inter", system-ui, sans-serif;
+        --serif: "Noto Serif SC", "Songti SC", "STSong", serif;
+        --sans: "Noto Serif SC", "Songti SC", "STSong", serif;
+        --sans-en: "DIN 2014", "Arial Narrow", Arial, sans-serif;
         --max: 1200px;
         --pad: 64px;
       }
@@ -47,9 +49,9 @@
       body {
         background: var(--white);
         color: var(--ink);
-        font-family: var(--sans);
-        font-size: 15px;
-        line-height: 1.6;
+        font-family: var(--serif);
+        font-size: 13px;
+        line-height: 1.65;
       }
       a {
         text-decoration: none;
@@ -80,11 +82,11 @@
 
 
       .eyebrow {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.2em;
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--mist);
+        color: var(--cinnabar);
         display: flex;
         align-items: center;
         gap: 14px;
@@ -114,14 +116,14 @@
         font-size: 78px;
         font-weight: 400;
         line-height: 1.04;
-        letter-spacing: -0.02em;
+        letter-spacing: 0em;
         margin-bottom: 22px;
         max-width: 700px;
       }
       .pagehero p {
         max-width: 700px;
-        font-size: 17px;
-        line-height: 1.8;
+        font-size: 13px;
+        line-height: 1.65;
         color: var(--mist);
         font-family: var(--serif);
         margin-top: 18px;
@@ -205,10 +207,10 @@
       }
       .group h2 {
         font-family: var(--serif);
-        font-weight: 400;
+        font-weight: 700;
         font-size: clamp(24px, 2.45vw, 34px);
         line-height: 1.06;
-        letter-spacing: -0.01em;
+        letter-spacing: 0.02em;
         white-space: nowrap;
       }
       .group__summary {
@@ -284,22 +286,25 @@
       .name {
         font-family: var(--serif);
         font-size: 16px;
+        font-weight: 700;
         line-height: 1.2;
-        letter-spacing: 0.01em;
+        letter-spacing: 0.02em;
         color: var(--ink);
         margin-bottom: 1px;
       }
+      /* H3 / label: Noto Serif SC Bold, all caps, Cinnabar */
       .title {
-        font-family: var(--sans);
-        font-size: 10px;
-        letter-spacing: 0.14em;
+        font-family: var(--serif);
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--red);
+        color: var(--cinnabar);
         line-height: 1.35;
       }
       .card-descriptor {
-        font-size: 11px;
-        line-height: 1.5;
+        font-size: 13px;
+        line-height: 1.65;
         color: var(--ink-soft);
         margin-top: -2px;
       }
@@ -321,7 +326,7 @@
       }
 
       .card.is-active .photo {
-        border-color: rgba(179, 33, 63, 0.52);
+        border-color: rgba(201, 59, 42, 0.52);
         box-shadow: 0 10px 24px rgba(49, 39, 34, 0.13);
       }
       .group--leadership {
@@ -360,7 +365,7 @@
         color: var(--ink-soft);
       }
       .group--advisory .title {
-        color: var(--red);
+        color: var(--cinnabar);
       }
 
       .row-bio-panel {
@@ -376,11 +381,11 @@
         display: block;
       }
       .row-bio-panel__eyebrow {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.2em;
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--mist-light);
+        color: var(--cinnabar);
         margin-bottom: 16px;
         display: flex;
         align-items: center;
@@ -398,9 +403,9 @@
         font-size: 40px;
         line-height: 1.04;
         margin-bottom: 11px;
-        letter-spacing: -0.012em;
+        letter-spacing: 0.02em;
         color: var(--ink);
-        font-weight: 400;
+        font-weight: 700;
       }
       .row-bio-panel__meta {
         display: grid;
@@ -408,7 +413,7 @@
         margin-bottom: 22px;
         padding-bottom: 14px;
         border-bottom: 1px solid rgba(48, 40, 34, 0.12);
-        font-size: 12px;
+        font-size: 11px;
         letter-spacing: 0.02em;
         text-transform: none;
         color: var(--mist);
@@ -420,8 +425,8 @@
       }
       .row-bio-panel__text {
         font-family: var(--serif);
-        font-size: 21px;
-        line-height: 1.78;
+        font-size: 13px;
+        line-height: 1.65;
         color: var(--ink-deep);
         max-width: 1020px;
         white-space: pre-line;
@@ -461,7 +466,7 @@
           padding-bottom: 46px;
         }
         .pagehero p {
-          font-size: 17px;
+          font-size: 13px;
           line-height: 1.65;
         }
         .founder-note {
@@ -509,8 +514,8 @@
           font-size: 11px;
         }
         .row-bio-panel__text {
-          font-size: 18px;
-          line-height: 1.68;
+          font-size: 13px;
+          line-height: 1.65;
         }
       }
 
@@ -550,8 +555,8 @@
           font-size: 28px;
         }
         .row-bio-panel__text {
-          font-size: 17px;
-          line-height: 1.62;
+          font-size: 13px;
+          line-height: 1.65;
         }
       }
 
@@ -731,16 +736,90 @@
 
     <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
+
+  <style id="team-cn-brand-overrides">
+    /* ── Bilingual nav lockup ── */
+    /* SHOREVEST: DIN 2014 Bold, uppercase, +5 tracking (0.05em) */
+    .nav__logo-en {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+    }
+    /* 新岸資本: Noto Serif SC Bold 700, Cinnabar, +7 tracking (0.07em) */
+    .nav__logo-cn {
+      font-family: "Noto Serif SC", "Songti SC", serif !important;
+      font-weight: 700 !important;
+      color: #C93B2A !important;
+      letter-spacing: 0.07em !important;
+      text-transform: none !important;
+    }
+    /* Cinnabar separator rule between SHOREVEST and 新岸資本 */
+    .nav__logo-lockup::before {
+      background: #C93B2A !important;
+    }
+
+    /* H1 brand heading in footer: DIN 2014 Bold, all caps, +5 tracking */
+    .sv-footer__brand {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      color: #1f1c19 !important;
+    }
+
+    /* H3 / label: Bold, uppercase, Cinnabar */
+    .eyebrow,
+    .title,
+    .row-bio-panel__eyebrow,
+    .sv-footer__contact-label {
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.12em !important;
+      color: #C93B2A !important;
+    }
+
+    /* Chinese body text: Noto Serif SC Regular 400 */
+    body,
+    p,
+    li,
+    .group__summary,
+    .card-descriptor,
+    .pagehero p,
+    .row-bio-panel__text,
+    .row-bio-panel__meta {
+      font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
+      font-weight: 400 !important;
+    }
+
+    /* Chinese H2-style headings (group labels, names): Noto Serif SC Bold */
+    h2,
+    .name,
+    .row-bio-panel__name,
+    .group h2 {
+      font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
+      font-weight: 700 !important;
+      text-transform: none !important;
+    }
+
+    /* H1 hero (display text): Noto Serif SC Regular, not italic for Chinese */
+    h1 {
+      font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
+      font-weight: 400 !important;
+      font-style: normal !important;
+      text-transform: none !important;
+    }
+  </style>
 </head>
   <body>
     <div id="site-header-mount"></div>
 
     <section class="pagehero">
       <div class="wrap">
-        <div class="eyebrow">团队</div>
-        <h1>投资与运营团队</h1>
+        <div class="eyebrow">團隊</div>
+        <h1>投資與營運團隊</h1>
         <p class="pagehero__fullwidth">
-          ShoreVest 的投资团队将项目来源、承做风控、法律架构与资产执行整合于同一平台。
+          ShoreVest 的投資團隊將項目來源、承做風控、法律架構與資產執行整合於同一平台。
         </p>
       </div>
     </section>
@@ -749,47 +828,47 @@
       <div class="wrap">
         <section class="group group--leadership" aria-labelledby="leadership-investment">
           <div class="group__head">
-            <h2 id="leadership-investment">领导层与投资团队</h2>
+            <h2 id="leadership-investment">領導層與投資團隊</h2>
             <p class="group__summary">
-              负责平台范围内的项目来源、承做、执行与投后管理。
+              負責平台範圍內的項目來源、承做、執行與投後管理。
             </p>
           </div>
           <div class="grid">
-            <article class="card"><div class="photo"><img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger" loading="eager" decoding="async" /></div><div class="name">方杰明</div><div class="title">管理合伙人兼创始人</div><p class="card-descriptor">负责中国私募信贷业务的投资策略、组合构建与平台整体方向。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/mecy_mei.jpg" alt="Mecy Mei" loading="eager" decoding="async" /></div><div class="name">梅翠</div><div class="title">合伙人</div><p class="card-descriptor">负责境内私募信贷投资的项目来源、承做尽调与交易执行。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/hui_zheng.jpg" alt="Hui Zheng" loading="eager" decoding="async" /></div><div class="name">郑慧</div><div class="title">合伙人</div><p class="card-descriptor">专注复杂信贷与重组项目的结构设计、谈判与执行。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/ada_bi.jpg" alt="Ada Bi" loading="eager" decoding="async" /></div><div class="name">毕凤笙</div><div class="title">合伙人兼首席财务官</div><p class="card-descriptor">统筹基金管理、财务运营与投资者报告体系。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/shanjuan_jiang.jpg" alt="Shanjuan Jiang" loading="eager" decoding="async" /></div><div class="name">江珊娟</div><div class="title">合伙人</div><p class="card-descriptor">在资本战略与机构协同方面提供支持与建议。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/lillian_xu.jpg" alt="Lillian Xu" loading="eager" decoding="async" /></div><div class="name">Lillian Xu</div><div class="title">总法律顾问</div><p class="card-descriptor">负责境内信贷投资的法律架构与执行保障。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/james_li.jpeg" alt="James Li" loading="eager" decoding="async" /></div><div class="name">李杰明</div><div class="title">资本解决方案总监</div><p class="card-descriptor">聚焦复杂信贷情形下的重组执行与资本解决方案。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/daoping_yang.jpg" alt="Daoping Yang" loading="eager" decoding="async" /></div><div class="name">杨道平</div><div class="title">常务董事（SAS）</div><p class="card-descriptor">负责已投项目的资产执行与回收流程管理。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger" loading="eager" decoding="async" /></div><div class="name">方傑明</div><div class="title">管理合夥人兼創始人</div><p class="card-descriptor">負責中國私募信貸業務的投資策略、組合構建與平台整體方向。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/mecy_mei.jpg" alt="Mecy Mei" loading="eager" decoding="async" /></div><div class="name">梅翠</div><div class="title">合夥人</div><p class="card-descriptor">負責境內私募信貸投資的項目來源、承做盡調與交易執行。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/hui_zheng.jpg" alt="Hui Zheng" loading="eager" decoding="async" /></div><div class="name">鄭慧</div><div class="title">合夥人</div><p class="card-descriptor">專注複雜信貸與重組項目的結構設計、談判與執行。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/ada_bi.jpg" alt="Ada Bi" loading="eager" decoding="async" /></div><div class="name">畢鳳笙</div><div class="title">合夥人兼首席財務官</div><p class="card-descriptor">統籌基金管理、財務營運與投資者報告體系。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/shanjuan_jiang.jpg" alt="Shanjuan Jiang" loading="eager" decoding="async" /></div><div class="name">江珊娟</div><div class="title">合夥人</div><p class="card-descriptor">在資本戰略與機構協同方面提供支持與建議。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/lillian_xu.jpg" alt="Lillian Xu" loading="eager" decoding="async" /></div><div class="name">Lillian Xu</div><div class="title">總法律顧問</div><p class="card-descriptor">負責境內信貸投資的法律架構與執行保障。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/james_li.jpeg" alt="James Li" loading="eager" decoding="async" /></div><div class="name">李傑明</div><div class="title">資本解決方案總監</div><p class="card-descriptor">聚焦複雜信貸情形下的重組執行與資本解決方案。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/daoping_yang.jpg" alt="Daoping Yang" loading="eager" decoding="async" /></div><div class="name">楊道平</div><div class="title">常務董事（SAS）</div><p class="card-descriptor">負責已投項目的資產執行與回收流程管理。</p></article>
           </div>
         </section>
 
         <section class="group group--client-solutions" aria-labelledby="client-solutions">
           <div class="group__head">
-            <h2 id="client-solutions">客户解决方案</h2>
+            <h2 id="client-solutions">客戶解決方案</h2>
             <p class="group__summary">
-              负责投资者沟通与资本发展。
+              負責投資者溝通與資本發展。
             </p>
           </div>
           <div class="grid">
-            <article class="card"><div class="photo"><img src="assets/images/john_jones.jpg" alt="John Jones" loading="eager" decoding="async" /></div><div class="name">John Jones</div><div class="title">客户解决方案总监（亚洲以外）</div><p class="card-descriptor">负责美洲、欧洲及中东地区的机构投资者覆盖。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/kelvin_chan.jpg" alt="Kelvin Chan" loading="eager" decoding="async" /></div><div class="name">陈金培</div><div class="title">客户解决方案总监（亚洲）</div><p class="card-descriptor">负责亚洲地区投资者沟通与渠道拓展。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/john_jones.jpg" alt="John Jones" loading="eager" decoding="async" /></div><div class="name">John Jones</div><div class="title">客戶解決方案總監（亞洲以外）</div><p class="card-descriptor">負責美洲、歐洲及中東地區的機構投資者覆蓋。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/kelvin_chan.jpg" alt="Kelvin Chan" loading="eager" decoding="async" /></div><div class="name">陳金培</div><div class="title">客戶解決方案總監（亞洲）</div><p class="card-descriptor">負責亞洲地區投資者溝通與渠道拓展。</p></article>
           </div>
         </section>
 
         <section class="group group--advisory" aria-labelledby="advisory-partners">
           <div class="group__head">
-            <h2 id="advisory-partners">顾问合伙人</h2>
+            <h2 id="advisory-partners">顧問合夥人</h2>
             <p class="group__summary">
-              提供战略、市场与执行层面的洞察。
+              提供戰略、市場與執行層面的洞察。
             </p>
           </div>
           <div class="grid">
-            <article class="card"><div class="photo"><img src="assets/images/mike_chang.jpg" alt="Michael Chang" loading="eager" decoding="async" /></div><div class="name">张健恩</div><div class="title">高级顾问合伙人</div><p class="card-descriptor">就战略、运营及跨境执行提供顾问支持。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/philip_young.jpg" alt="Philip Young" loading="eager" decoding="async" /></div><div class="name">杨斐立</div><div class="title">高级顾问合伙人</div><p class="card-descriptor">就资本发展与机构定位提供建议。</p></article>
-            <article class="card"><div class="photo"><img src="assets/images/dinny_mcmahon.jpg" alt="Dinny McMahon" loading="eager" decoding="async" /></div><div class="name">马德宁</div><div class="title">高级顾问合伙人</div><p class="card-descriptor">提供中国信贷市场的宏观与政策分析。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/mike_chang.jpg" alt="Michael Chang" loading="eager" decoding="async" /></div><div class="name">張健恩</div><div class="title">高級顧問合夥人</div><p class="card-descriptor">就戰略、營運及跨境執行提供顧問支持。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/philip_young.jpg" alt="Philip Young" loading="eager" decoding="async" /></div><div class="name">楊斐立</div><div class="title">高級顧問合夥人</div><p class="card-descriptor">就資本發展與機構定位提供建議。</p></article>
+            <article class="card"><div class="photo"><img src="assets/images/dinny_mcmahon.jpg" alt="Dinny McMahon" loading="eager" decoding="async" /></div><div class="name">馬德寧</div><div class="title">高級顧問合夥人</div><p class="card-descriptor">提供中國信貸市場的宏觀與政策分析。</p></article>
           </div>
         </section>
       </div>
@@ -857,12 +936,12 @@
     </div>
 
     <div class="sv-footer__bottom">
-      <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. 版权所有。</div>
+      <div class="sv-footer__copyright">&copy; ShoreVest Partners, Ltd. 版權所有。</div>
       <details class="sv-footer__legal-toggle">
-        <summary>法律声明</summary>
-        <div class="sv-footer__legal">本网站使用 Cookie 及类似技术以支持运营、分析和安全目的。某些 Cookie 可能是网站正常运行所必需。使用本网站即表示您确认我们将按照本 Cookie 通知使用 Cookie。另请查阅我们的隐私政策、使用条款以及法律声明与免责声明。</div>
+        <summary>法律聲明</summary>
+        <div class="sv-footer__legal">本網站使用 Cookie 及類似技術以支持營運、分析和安全目的。某些 Cookie 可能是網站正常運行所必需。使用本網站即表示您確認我們將按照本 Cookie 通知使用 Cookie。另請查閱我們的隱私政策、使用條款以及法律聲明與免責聲明。</div>
       </details>
-      <div class="sv-footer__legal-links"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice_cn.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="legal-notices-disclaimers_cn.html">法律声明与免责声明</a></div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy_cn.html">隱私政策</a><a href="cookie-notice_cn.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用條款</a><a href="legal-notices-disclaimers_cn.html">法律聲明與免責聲明</a></div>
     </div>
   </div>
 </footer>
