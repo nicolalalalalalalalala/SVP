@@ -2,8 +2,8 @@
   --topbar-height: 72px;
   --topbar-pad: var(--site-page-margin, 64px);
   --topbar-pad-left: var(--site-page-margin, 64px);
-  --nav-link-gap: 36px;
-  --nav-right-gap: 30px;
+  --nav-link-gap: 42px;
+  --nav-right-gap: 42px;
   --nav-logo-en-size: 19px;
   --nav-logo-en-line-height: 0.78;
   --nav-logo-cn-size: 10px;
@@ -203,7 +203,7 @@ html {
   display: flex;
   align-items: center;
   gap: var(--nav-right-gap);
-  margin-left: var(--nav-right-gap);
+  margin-left: var(--nav-link-gap);
   flex-shrink: 0;
 }
 
@@ -352,12 +352,12 @@ html {
   :root {
     --topbar-pad: var(--site-page-margin, 32px);
     --topbar-pad-left: var(--site-page-margin, 32px);
-    --nav-link-gap: 24px;
-    --nav-right-gap: 20px;
+    --nav-link-gap: 30px;
+    --nav-right-gap: 30px;
   }
 
   #nav .nav__links {
-    gap: 24px;
+    gap: var(--nav-link-gap);
   }
 }
 
