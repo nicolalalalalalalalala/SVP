@@ -994,6 +994,57 @@
 
     .sv-footer__contact a:hover, .nav__lp:hover { background: #C93B2A !important; border-color: #C93B2A !important; color: #FAF6EE !important; }
     .group--advisory .title, .group--advisory .card-descriptor, .group__summary { color: #3D7070 !important; }
+
+    /* Team page mobile top bar: match ShoreVest reference layout */
+    @media (max-width: 767px) {
+      #nav {
+        min-height: 88px;
+        padding: 16px 18px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 14px;
+        row-gap: 10px;
+        background: #fffdf9;
+      }
+      .nav__logo {
+        gap: 10px;
+      }
+      .nav__logo-mark {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+      }
+      .nav__logo-lockup {
+        gap: 3px;
+      }
+      .nav__logo-en {
+        font-size: 9px;
+        letter-spacing: 0.42em;
+      }
+      .nav__logo-cn {
+        font-size: 9px;
+        letter-spacing: 0.08em;
+      }
+      .nav__zh,
+      .nav__lp {
+        display: none !important;
+      }
+      .nav__menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        min-width: 164px;
+        padding: 0 26px;
+        border: 1px solid rgba(48, 40, 34, 0.3);
+        font-size: 10.5px;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+      }
+      .nav__links {
+        margin-top: 2px;
+        padding-top: 12px;
+      }
+    }
   </style>
 
 
