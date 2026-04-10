@@ -551,7 +551,7 @@ html {
     min-height: var(--topbar-height);
     height: var(--topbar-height);
     padding-inline: var(--topbar-pad);
-    background: #ffffff;
+    background: var(--paper-light, #FAF6EE);
     border-bottom: 1px solid rgba(23, 23, 23, 0.16);
     box-shadow: none;
     backdrop-filter: none;
@@ -634,7 +634,7 @@ html {
 #nav {
   height: 62px !important;
   padding: 0 var(--site-page-margin, 64px) !important;
-  background: var(--control-paper, #faf6ee) !important;
+  background: var(--paper-light, #FAF6EE) !important;
   border-bottom: 1px solid rgba(31, 24, 18, 0.11) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -1205,7 +1205,7 @@ body:not(.homepage) {
 }
 
 body:not(.homepage) #nav {
-  background: var(--control-paper, #faf6ee);
+  background: var(--paper-light, #FAF6EE);
   border-bottom: 1px solid rgba(20, 20, 20, 0.12);
   box-shadow: 0 1px 0 rgba(20, 20, 20, 0.06);
   backdrop-filter: none;
@@ -1270,9 +1270,9 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
     min-height: 74px !important;
     height: 74px !important;
     padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)) !important;
-    background: var(--control-paper, #faf6ee) !important;
-    border-bottom: 1px solid rgba(20, 20, 20, 0.14) !important;
-    box-shadow: 0 1px 0 rgba(20, 20, 20, 0.08) !important;
+    background: var(--paper-light, #FAF6EE) !important;
+    border-bottom: 1px solid rgba(31, 24, 18, 0.11) !important;
+    box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
@@ -1352,14 +1352,14 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
   justify-content: space-between !important;
   padding: 0 var(--site-page-margin, 64px) !important;
   border-bottom: 1px solid rgba(31, 24, 18, 0.11) !important;
-  background: var(--control-paper, #faf6ee) !important;
+  background: var(--paper-light, #FAF6EE) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
 #nav .nav__logo { display:inline-flex !important; align-items:center !important; gap:4px !important; height:100% !important; }
 #nav .nav__logo-mark { width:36px !important; height:36px !important; flex:0 0 36px !important; object-fit:cover !important; object-position:center !important; }
-#nav .nav__logo-lockup { display:inline-flex !important; flex-direction:column !important; justify-content:center !important; line-height:1 !important; row-gap:1px !important; padding-left:8px !important; border-left:none !important; min-height:31px !important; }
+#nav .nav__logo-lockup { display:inline-flex !important; flex-direction:column !important; justify-content:center !important; align-items:flex-start !important; line-height:1 !important; row-gap:1px !important; padding-left:8px !important; border-left:none !important; min-height:31px !important; }
 #nav .nav__logo-en { font-family:'DIN 2014', 'Inter', sans-serif !important; font-size:16px !important; font-weight:700 !important; letter-spacing:.03em !important; text-transform:uppercase !important; color:#171717 !important; line-height:1 !important; }
 #nav .nav__logo-cn { font-family:'Noto Serif SC',serif !important; margin-top:0 !important; font-size:10px !important; letter-spacing:.28em !important; color:rgba(33,33,30,.66) !important; opacity:1 !important; line-height:1 !important; }
 #nav .nav__links { display:flex !important; gap:40px !important; list-style:none !important; margin-left:auto !important; margin-right:28px !important; padding:0 !important; }
@@ -1400,4 +1400,20 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
   #nav .nav__links a { display:block !important; width:100% !important; padding:16px var(--site-page-margin, 24px) !important; opacity:1 !important; border-top:1px solid rgba(31,24,18,.08) !important; }
   #nav .nav__links li:first-child a { border-top:none !important; }
   #nav.menu-open .nav__links { display:flex !important; }
+  /* Match homepage on all pages: paper-light bg, 62px height */
+  body:not(.homepage) #nav {
+    height:62px !important;
+    min-height:62px !important;
+    background:var(--paper-light, #FAF6EE) !important;
+    border-bottom:1px solid rgba(31,24,18,0.11) !important;
+    box-shadow:none !important;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Keep 62px height on all pages at small breakpoint */
+  body:not(.homepage) #nav {
+    height:62px !important;
+    min-height:62px !important;
+  }
 }
