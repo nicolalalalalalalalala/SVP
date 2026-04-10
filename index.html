@@ -624,16 +624,17 @@ h2.strat__hed { font-size:32px; color:var(--ink); }
 .strat__intro { font-size:20px; line-height:1.86; color:var(--mist); font-family:var(--serif); max-width:60ch; }
 .strat__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--rule); }
 .sg {
-  padding:52px 0 52px; border-right:1px solid var(--rule);
-  padding-right:44px; padding-left:0; transition:background .25s, box-shadow .25s;
+  border-right:1px solid var(--rule);
+  transition:background .25s, box-shadow .25s;
 }
 .sg:hover {
   background:rgba(255,255,255,0.42);
   box-shadow:inset 0 0 0 1px rgba(0,0,0,0.02);
 }
-.sg:first-child { padding-left:0; }
-.sg:last-child { border-right:none; padding-right:0; padding-left:44px; }
-.sg:nth-child(2) { padding-left:44px; padding-right:44px; }
+.sg:last-child { border-right:none; }
+.sg__content {
+  padding:clamp(36px, 3vw, 48px);
+}
 .sg__n {
   font-size:10px; font-weight:500; letter-spacing:.22em;
   text-transform:uppercase; color:var(--red); margin-bottom:20px;
@@ -1429,9 +1430,8 @@ h2.su__hed {
 
 
   .sg,
-  .sg:nth-child(2),
-  .sg:last-child,
-  .nb { padding:24px 0 !important; border-right:none; }
+  .nb { border-right:none; }
+  .sg__content { padding:24px 0 !important; }
   .num-band { padding:52px 0; }
 
   #stats {
@@ -2071,19 +2071,25 @@ h2.su__hed {
     </div>
     <div class="strat__grid">
       <div class="sg rev" id="asset-based-lending">
-        <div class="sg__n">Strategy 01</div>
-        <div class="sg__title">First-Lien Asset-Based Lending</div>
-        <div class="sg__body">Senior-secured financing to performing borrowers when traditional bank lending is constrained. Every loan backed by hard assets — primarily real estate — with conservative LTVs and first-lien priority.</div>
+        <div class="sg__content">
+          <div class="sg__n">Strategy 01</div>
+          <div class="sg__title">First-Lien Asset-Based Lending</div>
+          <div class="sg__body">Senior-secured financing to performing borrowers when traditional bank lending is constrained. Every loan backed by hard assets — primarily real estate — with conservative LTVs and first-lien priority.</div>
+        </div>
       </div>
       <div class="sg rev d1" id="asset-restructuring">
-        <div class="sg__n">Strategy 02</div>
-        <div class="sg__title">Asset Restructuring & Workouts</div>
-        <div class="sg__body">The team runs creditor coordination and balance-sheet redesign programs, informed by two-decade pattern recognition across China's restructuring cycles.</div>
+        <div class="sg__content">
+          <div class="sg__n">Strategy 02</div>
+          <div class="sg__title">Asset Restructuring & Workouts</div>
+          <div class="sg__body">The team runs creditor coordination and balance-sheet redesign programs, informed by two-decade pattern recognition across China's restructuring cycles.</div>
+        </div>
       </div>
       <div class="sg rev d2" id="debt-resolutions">
-        <div class="sg__n">Strategy 03</div>
-        <div class="sg__title">Debt Resolutions & Recoveries</div>
-        <div class="sg__body">ShoreVest Asset Solutions operates as the in-house resolution vehicle, with sourcing, diligence, legal enforcement, and disposition managed internally.</div>
+        <div class="sg__content">
+          <div class="sg__n">Strategy 03</div>
+          <div class="sg__title">Debt Resolutions & Recoveries</div>
+          <div class="sg__body">ShoreVest Asset Solutions operates as the in-house resolution vehicle, with sourcing, diligence, legal enforcement, and disposition managed internally.</div>
+        </div>
       </div>
     </div>
     <div class="strat__actions rev d3">
