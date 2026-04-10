@@ -2205,34 +2205,65 @@
     <script src="assets/js/shared-header.js" defer></script>
 
   <style id="strategy-discipline-override">
-    :root{--serif:"Cormorant Garamond","EB Garamond",serif;--sans:"DIN 2014","Inter",sans-serif;--white:#FAF6EE;--rule:rgba(15,34,6,.16);--mist:#3D7070;}
-    body{background:#FAF6EE;font-family:var(--sans);} 
-    #nav{position:sticky;top:0;z-index:1200}
-    h1,h2,.strategy-intro-lead h2,.strategy-block h2{font-family:var(--serif)!important;font-weight:500!important;color:#0F2206;}
-    p,.market-context-content p,.strategy-block p,.strategy-detail p,.risk-card li,.data-note,.city small,.alloc-label,.cta,.eyebrow,.strategy-callout__label,.risk-card h4{font-family:var(--sans)!important;}
-    .pagehero{padding-top:150px;padding-bottom:78px;background:#FAF6EE;border-bottom:1px solid var(--rule)}
-    .pagehero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end}
-    .pagehero h1{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.06;max-width:14ch}
-    .pagehero__lede{font-size:1.03rem;line-height:1.65;max-width:62ch;color:#0F2206}
-    .hero-meta{margin-top:12px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
-    .market-context,.strategy-intro-section,.pgsec{background:#FAF6EE}
-    .market-context-content{box-shadow:none;border:1px solid var(--rule)}
-    .context-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;margin-top:12px}
-    .market-context-content p{font-size:1rem;line-height:1.6;margin-top:0}
-    .strategy-intro-section{padding:18px 0 52px}
-    .strategy-intro-content{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:end;border-top:1px solid var(--rule);padding-top:32px}
-    .strategy-intro-lead h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:10px}
-    .strategy-intro-lead p{font-size:1rem;line-height:1.6;color:#0F2206}
-    .strategy-intro-actions{justify-self:end;border:1px solid var(--rule);padding:16px 18px;background:rgba(255,255,255,.35);width:min(100%,290px)}
-    .strategy-stack{gap:24px}.strategy-block{padding:30px;border-color:var(--rule)}.strategy-block::after{display:none}
-    .strategy-block h2{font-size:clamp(1.7rem,2.9vw,2.4rem);margin-bottom:8px}.strategy-block p{font-size:.97rem;line-height:1.62}
-    .clean-flow{margin-top:16px}.flow-step{border-color:var(--rule)}.flow-step b,.city b{text-transform:none;font-size:.82rem;letter-spacing:.04em}
-    .flow-step small,.city small{font-size:.95rem;line-height:1.55}
-    .strategy-viz,.strategy-detail,.alloc-row,.risk-card,.strategy-callout,.city{border-color:var(--rule);background:#FAF6EE}
-    .viz-controls,.strategy-tools,.expand,.expand__trigger,.funnel-detail,.city-detail{display:none!important}
-    .strategy-details{margin-top:14px}.strategy-detail h3{font-size:1.2rem;font-family:var(--serif)!important}
-    .risk-card h4{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#0F2206}
-    @media (max-width:980px){.pagehero .wrap,.strategy-intro-content,.context-grid,.alloc-grid,.strategy-details,.risk-grid,.city-grid,.process-flow{grid-template-columns:1fr}.strategy-intro-actions{justify-self:start}}
+    :root{--serif:"Cormorant Garamond","EB Garamond",serif;--sans:"DIN 2014","Inter",sans-serif;--paper:#FAF6EE;--ink:#0F2206;--muted:#2D4A4A;--rule:rgba(15,34,6,.16);--accent:#C93B2A;}
+    body{background:var(--paper);font-family:var(--sans);color:var(--ink)}
+    h1,h2,h3{font-family:var(--serif)!important;font-weight:500!important;letter-spacing:.01em}
+    p,li,small,button,a,.eyebrow,.hero-meta,.data-note,.cta,.strategy-kpi strong,.strategy-kpi span,.risk-card h4,.legal-bucket__label,.section-tag{font-family:var(--sans)!important}
+    .pagehero,.market-context,.strategy-intro-section,.pgsec,.strategy-block{background:var(--paper)}
+    .pagehero{padding:148px 0 72px;border-bottom:1px solid var(--rule)}
+    .pagehero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:end}
+    .pagehero h1{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.04;max-width:14ch}
+    .pagehero__lede{margin-top:16px;font-size:1rem;line-height:1.62;max-width:58ch;color:var(--muted)}
+    .hero-meta{margin-top:16px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .hero-aside{border-left:1px solid var(--rule);padding-left:26px;display:grid;gap:16px}
+    .hero-kpis{display:grid;gap:10px}
+    .strategy-kpi{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--rule)}
+    .strategy-kpi strong{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+    .strategy-kpi span{font-size:.94rem;line-height:1.45;text-align:right;max-width:22ch}
+    .market-context{padding:56px 0 26px}
+    .market-context-content{border:1px solid var(--rule);padding:38px;box-shadow:none;display:grid;gap:16px}
+    .market-context-content h2{font-size:clamp(1.8rem,3vw,2.5rem);max-width:20ch}
+    .market-context-content p{font-size:.97rem;line-height:1.58;color:var(--muted)}
+    .context-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .context-pullout{border:1px solid var(--rule);padding:14px 16px;background:rgba(255,255,255,.35)}
+    .context-pullout b{display:block;margin-bottom:6px;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+    .context-pullout span{font-size:.92rem;line-height:1.5}
+    .strategy-intro-section{padding:8px 0 44px}
+    .strategy-intro-content{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:24px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:28px 0}
+    .strategy-intro-lead h2{font-size:clamp(1.7rem,2.8vw,2.4rem);margin-bottom:8px}
+    .strategy-intro-lead p{font-size:.98rem;line-height:1.58;color:var(--muted);max-width:62ch}
+    .strategy-intro-actions{padding:16px;border:1px solid var(--rule);background:rgba(255,255,255,.32);display:grid;gap:10px;align-content:center}
+    .strategy-intro-actions p{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .strategy-stack{display:grid;gap:18px}
+    .strategy-block{padding:30px;border:1px solid var(--rule)}
+    .strategy-block h2{font-size:clamp(1.55rem,2.6vw,2.1rem);margin-bottom:8px}
+    .strategy-block>p{font-size:.95rem;line-height:1.58;color:var(--muted);max-width:72ch}
+    .section-tag{display:inline-flex;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+    .clean-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}
+    .flow-step{border:1px solid var(--rule);padding:14px;background:rgba(255,255,255,.34)}
+    .flow-step b{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;color:var(--muted)}
+    .flow-step small{font-size:.92rem;line-height:1.5;color:var(--ink)}
+    .strategy-viz,.alloc-row,.risk-card,.strategy-callout,.city,.disclosure-box,.strategy-detail{border-color:var(--rule)!important;background:rgba(255,255,255,.26)}
+    .alloc-label{font-size:.87rem}
+    .strategy-details{margin-top:14px;display:grid;gap:10px}
+    .strategy-detail{padding:14px;border:1px solid var(--rule)}
+    .strategy-detail h3{font-size:1.1rem;margin-bottom:4px}
+    .city-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+    .city{padding:14px;border:1px solid var(--rule)}
+    .legal-bucket__label{display:block;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .risk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+    .risk-card{padding:14px;border:1px solid var(--rule)}
+    .risk-card h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;color:var(--muted)}
+    .risk-card li{font-size:.93rem;line-height:1.54;margin:6px 0 0 18px;color:var(--ink)}
+    .disclosure-box{border:1px solid var(--rule);padding:14px;margin-top:14px}
+    .strategy-callout{margin-top:14px;padding:16px;border:1px solid var(--rule);display:grid;gap:8px}
+    .strategy-callout__label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .next-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    .cta{font-size:.68rem;letter-spacing:.12em}
+    .cta__ring{width:38px;height:38px}
+    .market-context-disclaimer,.data-note{font-size:.78rem;line-height:1.45;color:#4C5D5D}
+    .strategy-tools,.viz-controls,.expand,.expand__trigger,.funnel-detail,.city-detail{display:none!important}
+    @media (max-width:980px){.pagehero .wrap,.strategy-intro-content,.context-grid,.clean-flow,.city-grid,.risk-grid,.alloc-grid{grid-template-columns:1fr}.hero-aside{border-left:0;border-top:1px solid var(--rule);padding:16px 0 0}.market-context-content{padding:26px}.strategy-block{padding:24px}}
   </style>
 
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
@@ -2249,6 +2280,13 @@
           </p>
           <p class="hero-meta">Operating track record since 2004 · Principal protection first · Execution led in China.</p>
         </div>
+        <aside class="hero-aside" aria-label="Strategy pillars">
+          <div class="hero-kpis">
+            <div class="strategy-kpi"><strong>Mandate</strong><span>Onshore secured private credit in China</span></div>
+            <div class="strategy-kpi"><strong>Priority</strong><span>Collateral control before yield optimization</span></div>
+            <div class="strategy-kpi"><strong>Execution</strong><span>In-house legal and servicing pathway management</span></div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -2265,11 +2303,11 @@
                 <p>
                   ShoreVest's strategy focuses on where spread and collateral coverage improve when complexity reduces competition. Structure, legal priority, and execution cadence determine outcomes more than macro narrative.
                 </p>
-                <ul class="market-points">
-                  <li>First-lien secured onshore claims have materially different recovery dynamics from offshore unsecured exposure.</li>
-                  <li>Vintage windows with weaker sentiment have historically supported better pricing and stronger downside buffers.</li>
-                  <li>ShoreVest has operated continuously since 2004 across multiple NPL and policy cycles with structure-first underwriting.</li>
-                </ul>
+                <div class="context-grid">
+                  <div class="context-pullout"><b>Structural spread</b><span>Complexity can reduce competition and widen spread for enforceable secured claims.</span></div>
+                  <div class="context-pullout"><b>Vintage effect</b><span>Periods of weaker sentiment have historically supported better entry basis and downside buffers.</span></div>
+                  <div class="context-pullout"><b>Operating record</b><span>ShoreVest has underwritten through multiple NPL and policy cycles since 2004.</span></div>
+                </div>
                 <p class="market-context-disclaimer">
                   Past performance is not indicative of future results. All investments involve risk including possible
                   loss of principal.
@@ -2282,133 +2320,73 @@
       <div class="wrap">
         <div class="strategy-intro-content">
           <div class="strategy-intro-lead">
-            <p>
-              Three sub-strategies. One underwriting standard. Deployment flexes by cycle, but every deal is anchored to collateral control, enforceability, and defined recovery routes.
-            </p>
+            <h2>Three sub-strategies. One underwriting standard.</h2>
+            <p>Deployment weights shift with cycle conditions. Underwriting does not: collateral priority, enforceability, and active recovery planning are required before capital is committed.</p>
           </div>
           <div class="strategy-intro-actions">
-            <p>Platform overview</p>
-            <a href="firm.html" class="cta cta--dark strategy-intro-link"
-              ><span class="strategy-intro-link__title">Review The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a
-            >
+            <p>Platform credentials</p>
+            <a href="firm.html" class="cta cta--dark strategy-intro-link"><span class="strategy-intro-link__title">Review The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a>
           </div>
-          <p class="market-context-disclaimer">Past performance is not indicative of future results. All investments involve risk, including possible loss of principal.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="strategy-intro-section">
-      <div class="wrap strategy-intro-content">
-        <div class="strategy-intro-lead">
-          <h2>Three sub-strategies. One underwriting standard.</h2>
-          <p>Capital rotates by cycle, but process does not: collateral-first selection, legal enforceability, and active asset-level execution from origination through realization.</p>
-        </div>
-        <div class="strategy-intro-actions">
-          <p>Platform overview</p>
-          <a href="firm.html" class="cta cta--dark strategy-intro-link"><span class="strategy-intro-link__title">View The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
     <section class="pgsec">
       <div class="wrap">
-          <div class="strategy-tools" aria-label="Strategy navigation">
-          <p>Section navigation</p>
-          <div class="jump-nav" data-jump-nav>
-            <button type="button" data-target="sub-strategies">
-              Allocation
-            </button>
-            <button type="button" data-target="legal-environment">Legal</button>
-            <button type="button" data-target="risk-management">Risk</button>
-            <button type="button" data-target="current-fund">
-              Fund Snapshot
-            </button>
-          </div>
-        </div>
         <div class="strategy-stack">
           <section class="strategy-block" id="sourcing">
-            <h2 class="single-line-heading">Origination Discipline and Pipeline Quality</h2>
-            <p>
-              Long-term relationships with banks, AMCs, law firms, and servicers
-              support repeat deal flow, better structuring access, and higher
-              certainty of close.
-            </p>
-            <div class="funnel-grid" aria-label="Pipeline funnel">
-              <button
-                class="funnel-step"
-              >
-                <b>Broad Universe</b><small>Sourced opportunities</small>
-              </button>
-              <button
-                class="funnel-step"
-              >
-                <b>Selective Screen</b><small>Preliminary diligence</small>
-              </button>
-              <button
-                class="funnel-step"
-              >
-                <b>High Conviction</b><small>Full due diligence</small>
-              </button>
-              <button
-                class="funnel-step"
-              >
-                <b>Disciplined IC</b><small>Investment committee</small>
-              </button>
+            <span class="section-tag">Process Architecture</span>
+            <h2>Origination discipline and pipeline quality</h2>
+            <p>Sourcing is relationship-led, screened quickly, and advanced only where legal control and recoverability can be evidenced through diligence.</p>
+            <div class="clean-flow" aria-label="Pipeline process">
+              <article class="flow-step"><b>Origination universe</b><small>Bank, AMC, legal, and servicing channels provide repeat primary access.</small></article>
+              <article class="flow-step"><b>Initial screen</b><small>Collateral quality, claim priority, and enforcement path are reviewed pre-IC.</small></article>
+              <article class="flow-step"><b>Deep diligence</b><small>Full legal and asset-level underwriting with downside case testing.</small></article>
+              <article class="flow-step"><b>Investment committee</b><small>Only structures with defined recovery routes are approved for deployment.</small></article>
             </div>
           </section>
 
           <section class="strategy-block" id="sub-strategies">
-            <h2>Sub-Strategy Allocation Across Cycles</h2>
-            <p>Illustrative allocation ranges by cycle condition.</p>
+            <span class="section-tag">Cycle Allocation</span>
+            <h2>Sub-strategy allocation across cycles</h2>
+            <p>Illustrative allocation ranges are adjusted by market regime while maintaining one shared underwriting framework.</p>
             <div class="strategy-viz static-viz">
               <div class="alloc-grid">
                 <div class="alloc-bars">
                   <div class="alloc-row"><span class="alloc-label"><span>Asset-Based Lending</span><span>24–40%</span></span><div class="alloc-track"><span style="width: 34%"></span></div></div>
                   <div class="alloc-row"><span class="alloc-label"><span>Asset Restructuring</span><span>46–61%</span></span><div class="alloc-track"><span style="width: 54%"></span></div></div>
                   <div class="alloc-row"><span class="alloc-label"><span>Debt Resolutions</span><span>14–15%</span></span><div class="alloc-track"><span style="width: 15%"></span></div></div>
-                  <div class="alloc-note">Ranges are illustrative and shown for strategy communication only.</div>
+                  <div class="alloc-note">Illustrative ranges shown for strategy communication only.</div>
                 </div>
                 <div class="ring-card"><div class="ring" style="--pct: 68%"></div><div class="ring-label"><span>68%</span>Target collateral coverage</div></div>
               </div>
               <div class="strategy-details">
-                <article class="strategy-detail"><h3>First-Lien Asset-Based Lending</h3><p>Senior-secured structures with conservative entry LTV and priority claims under PRC law.</p></article>
-                <article class="strategy-detail"><h3>Asset Restructuring &amp; Workouts</h3><p>Creditor coordination and restructuring programs built for balance-sheet repair and controlled exits.</p></article>
-                <article class="strategy-detail"><h3>Debt Resolutions &amp; Recoveries</h3><p>In-house servicing and realization through legal enforcement, secondary transfers, and negotiated outcomes.</p></article>
+                <article class="strategy-detail"><h3>First-lien asset-based lending</h3><p>Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
+                <article class="strategy-detail"><h3>Asset restructuring and workouts</h3><p>Creditor coordination programs built for negotiated control and timeline discipline.</p></article>
+                <article class="strategy-detail"><h3>Debt resolutions and recoveries</h3><p>In-house servicing and multi-channel exits through legal, secondary, and negotiated routes.</p></article>
               </div>
             </div>
           </section>
 
           <section class="strategy-block" id="legal-environment">
-            <h2 class="single-line-heading">Enforceability and Recovery Architecture</h2>
-            <p>
-              PRC enforcement channels are more institutionalized than many
-              offshore allocators underwrite for, with improving court cadence,
-              transparent auction rails, and clearer creditor pathways when
-              claims are structured correctly.
-            </p>
+            <span class="section-tag">Recovery Architecture</span>
+            <h2>Enforceability and recovery architecture</h2>
+            <p>Outcomes are driven by documentation quality and venue strategy. ShoreVest structures each position around practical recoverability instead of relying on macro re-rating.</p>
             <div class="city-grid">
-              <article class="city">
-                <b>Court Throughput</b
-                ><small>Faster progression on secured collateral cases.</small>
-              </article>
-              <article class="city">
-                <b>Auction Liquidity</b
-                ><small>Deeper discovery and monetization pathways.</small>
-              </article>
-              <article class="city">
-                <b>Exit Optionality</b
-                ><small>Negotiated, secondary, and court-led exits.</small>
-              </article>
+              <article class="city"><span class="legal-bucket__label">Court throughput</span><small>Secured collateral cases can progress on a defined cadence when claim packages are built correctly.</small></article>
+              <article class="city"><span class="legal-bucket__label">Auction liquidity</span><small>Public auction rails support discovery and monetization for a broad set of collateral types.</small></article>
+              <article class="city"><span class="legal-bucket__label">Exit optionality</span><small>Negotiated, secondary, and court-led pathways provide multiple realization routes.</small></article>
             </div>
           </section>
 
           <section class="strategy-block" id="risk-management">
-            <h2>Risk Controls and Return Profile</h2>
-            <p>Downside governance is embedded at underwriting and portfolio levels.</p>
+            <span class="section-tag">Risk Framework</span>
+            <h2>Risk controls and return profile</h2>
+            <p>Downside controls are embedded in both deal underwriting and portfolio construction.</p>
             <div class="risk-grid">
               <div class="risk-card">
                 <h4>Underwriting controls</h4>
-                <ul><li>Conservative LTV/CTV bands with stressed recovery assumptions.</li><li>Priority claims and enforceability review under PRC-law documentation.</li><li>No reliance on refinancing for value realization.</li></ul>
+                <ul><li>Conservative LTV/CTV bands with stressed recovery assumptions.</li><li>Priority claims and enforceability review under PRC-law documentation.</li><li>No reliance on refinancing to realize value.</li></ul>
               </div>
               <div class="risk-card">
                 <h4>Portfolio controls</h4>
@@ -2418,86 +2396,31 @@
           </section>
 
           <section class="strategy-block" id="returns-profile">
-            <h2>Risk-Adjusted Return Profile</h2>
-            <p>
-              The strategy targets approximately 10–15% net returns in USD terms
-              without fund-level leverage, with a focus on current cash yield,
-              principal protection, and shorter path-to-liquidity than many
-              private-market alternatives.
-            </p>
+            <span class="section-tag">Target Profile</span>
+            <h2>Risk-adjusted return profile</h2>
+            <p>The strategy targets approximately 10–15% net returns in USD terms without fund-level leverage, emphasizing current cash yield, principal protection, and shorter realization duration.</p>
             <div class="disclosure-box">
-            <p class="data-note">
-              Target returns are hypothetical estimates based on historical
-              portfolio performance and current market conditions. They are not
-              guaranteed and are subject to change. Actual returns may be
-              materially higher or lower. Past performance is not indicative of
-              future results. All investments involve risk including possible
-              loss of principal.
-            </p>
+              <p class="data-note">Target returns are hypothetical estimates, not guarantees, and are subject to change. Actual outcomes may differ materially. Past performance is not indicative of future results. All investments involve risk including possible loss of principal.</p>
             </div>
             <div class="strategy-callout" role="note" aria-label="Portfolio construction callout">
-              <p class="strategy-callout__label">PORTFOLIO CONSTRUCTION NOTE</p>
-              <p>
-                China onshore secured credit occupies a distinct place in the
-                portfolio construction toolkit. Returns are driven by
-                collateral recovery, legal enforcement mechanics, and
-                deal-level execution—not by global credit spreads, rate
-                movements, or public equity direction.
-              </p>
-              <p>
-                For global institutional portfolios that are long public credit
-                and equity, the strategy has historically demonstrated low
-                correlation to public market benchmarks, potentially offering
-                diversification benefits through return drivers that are
-                structurally distinct. Low correlation does not guarantee a
-                profit or protect against loss, and all investments are subject
-                to risk including possible loss of principal.
-              </p>
+              <p class="strategy-callout__label">Portfolio construction implication</p>
+              <p>China onshore secured credit is driven primarily by collateral recovery, legal process, and execution quality rather than public spread or equity beta factors.</p>
+              <p>For portfolios concentrated in public credit and equities, the strategy has historically shown lower correlation to broad benchmarks. Low correlation does not eliminate risk or protect against loss.</p>
             </div>
-            <div class="expand">
-              <button
-                type="button"
-                class="expand__trigger"
-                aria-expanded="false"
-                aria-controls="returns-performance-note"
-              >
-                View full performance disclosure
-              </button>
-              <div class="expand__panel" id="returns-performance-note">
-                <p class="data-note">Performance data shown above is for informational purposes only and reflects selected realized and partially realized investments managed by the ShoreVest investment team across predecessor and current fund vehicles since 2004. Returns are presented on a net basis after deduction of management fees, carried interest, and fund expenses where applicable, and are calculated using standard industry conventions. Past performance is not indicative of future results. There can be no assurance that unrealized investments will be realized at the valuations shown, or that future investments will achieve comparable results. Target returns referenced elsewhere on this page are hypothetical, are not guaranteed, and are subject to change without notice. Individual investor results will vary based on timing of investment, fee arrangements, fund vintage, and other factors. This information does not constitute an offer to sell or a solicitation to invest. For complete performance information, prospective investors should request the firm's audited financial statements and review the relevant offering documents in full.</p>
-              </div>
-            </div>
-            <div class="expand">
-              <button
-                type="button"
-                class="expand__trigger"
-                aria-expanded="false"
-                aria-controls="returns-profile-extra"
-              >
-                What this means for LP portfolios
-              </button>
-              <div class="expand__panel" id="returns-profile-extra">
-                <p>
-                  The target profile is designed to emphasize cash-paying
-                  distributions and reduced mark-to-market sensitivity versus
-                  long-duration private market strategies, while still preserving
-                  upside through execution alpha at the deal level.
-                </p>
-              </div>
-            </div>
-            <p class="data-note">Target returns are hypothetical estimates, not guarantees, and may differ materially from actual outcomes. Past performance is not indicative of future results.</p>
           </section>
 
           <section class="strategy-block" id="current-fund">
-            <h2>Portfolio Construction and Investor Access</h2>
-            <p>Detailed track record, fund structure, and operating documentation are provided through ShoreVest’s investor qualification process.</p>
+            <span class="section-tag">Investor Access</span>
+            <h2>Portfolio construction and investor qualification</h2>
+            <p>Detailed track record, fund structure, and supporting documentation are provided through ShoreVest’s qualification process for eligible investors.</p>
             <p class="data-note">Materials are shared only with qualified investors and authorized counterparties.</p>
             <div class="next-links"><a href="investor-access.html" class="cta cta--dark"><span>Request Investor Access</span><span class="cta__ring">→</span></a></div>
           </section>
 
           <section class="strategy-block" id="cta-next">
+            <span class="section-tag">Next Steps</span>
             <h2>Related sections</h2>
-            <p>Continue to platform governance, team depth, and market intelligence.</p>
+            <p>Continue to platform governance, team capability, and market intelligence.</p>
             <div class="next-links">
               <a href="firm.html" class="cta cta--dark"><span>The Firm</span><span class="cta__ring">→</span></a>
               <a href="team.html" class="cta cta--dark"><span>Meet the Team</span><span class="cta__ring">→</span></a>
