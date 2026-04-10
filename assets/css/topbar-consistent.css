@@ -280,12 +280,20 @@ html {
 }
 
 #nav .nav__lp:hover,
+#nav .nav__lp:focus-visible {
+  border-color: var(--site-color-accent, #b3213f);
+  color: var(--control-paper);
+  background: var(--site-color-accent, #b3213f);
+  box-shadow: none;
+  transform: translateY(-1px);
+  letter-spacing: 0.16em;
+}
+
 .btn:hover,
 .util-btn:hover,
 .jump-nav button:hover,
 .viz-btn:hover,
 .track-record-trigger:hover,
-#nav .nav__lp:focus-visible,
 .btn:focus-visible,
 .util-btn:focus-visible,
 .jump-nav button:focus-visible,
