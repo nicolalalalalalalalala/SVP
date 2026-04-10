@@ -20,10 +20,10 @@
   --ink2: var(--text-secondary);
   --mist: var(--text-secondary);
   --stone: var(--paper-light);
-  --serif: "EB Garamond", Georgia, "Times New Roman", serif;
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --sans-zh: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Hiragino Sans GB", "Heiti SC", sans-serif;
-  --serif-zh: "EB Garamond", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  --sans-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --serif-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
 }
 
 html,
@@ -99,8 +99,8 @@ body,
 .hero__hed,
 #hero h1,
 #hero h1 em {
-  font-family: var(--serif) !important;
-  font-weight: 400 !important;
+  font-family: var(--sans) !important;
+  font-weight: 300 !important;
   font-style: italic !important;
   letter-spacing: 0.008em !important;
 }
@@ -185,8 +185,8 @@ li,
 .nav__logo-cn {
   font-size: 11px !important;
   font-family: var(--serif-zh) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.06em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em !important;
   color: var(--cinnabar) !important;
 }
 

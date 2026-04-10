@@ -1,12 +1,16 @@
 :root {
-  --sv-type-sans: "DIN 2014", "Inter", "Helvetica Neue", Arial, sans-serif;
-  --sv-type-serif: "EB Garamond", Georgia, "Times New Roman", serif;
-  --sv-type-body-size: 16px;
+  --sv-type-sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  --sv-type-cn: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --sv-type-body-size: 10pt;
   --sv-type-body-line: 1.65;
-  --sv-type-label-size: 10px;
+  --sv-type-caption-size: 8pt;
+  --sv-type-label-size: 7.5pt;
   --sv-type-label-track: 0.16em;
-  --sv-type-cta-size: 11px;
-  --sv-type-meta-size: 11px;
+  --sv-type-h1-track: 0.005em;
+  --sv-type-h3-track: 0.12em;
+  --sv-type-cta-size: 10px;
+  --sv-type-meta-size: 8pt;
+  --sv-type-cinnabar: #c93b2a;
 }
 
 html body,
@@ -41,7 +45,7 @@ html body .sv-footer * {
   font-family: var(--sv-type-sans) !important;
 }
 
-/* Serif is restricted to major display/page section headings. */
+/* English headings use DIN 2014 per ShoreVest type system. */
 html body h1,
 html body h2,
 html body .hero__hed,
@@ -50,9 +54,35 @@ html body .section-head > h2,
 html body .strategy-block > h2,
 html body .quote,
 html body blockquote {
-  font-family: var(--sv-type-serif) !important;
-  font-weight: 500 !important;
+  font-family: var(--sv-type-sans) !important;
+  font-weight: 700 !important;
   font-style: normal;
+}
+
+/* Display / hero text: DIN 2014 Light Italic (24pt+ contexts). */
+html body .hero__hed,
+html body .pagehero h1,
+html body .display-title,
+html body .hero-title {
+  font-weight: 300 !important;
+  font-style: italic !important;
+}
+
+/* Heading 1: DIN 2014 Bold all caps with +5 tracking. */
+html body h1,
+html body .h1,
+html body .about__hed,
+html body .strat__hed {
+  text-transform: uppercase !important;
+  letter-spacing: var(--sv-type-h1-track) !important;
+  font-weight: 700 !important;
+}
+
+/* Heading 2: DIN 2014 Bold title case (no forced uppercase). */
+html body h2,
+html body .h2 {
+  text-transform: none !important;
+  font-weight: 700 !important;
 }
 
 /* Keep operational headings, labels and metadata in DIN. */
@@ -75,6 +105,22 @@ html body .city small {
   font-family: var(--sv-type-sans) !important;
 }
 
+/* Heading 3 / labels: DIN 2014 Bold uppercase in cinnabar. */
+html body h3,
+html body .h3,
+html body .eyebrow,
+html body .hero__kicker,
+html body .metric-label,
+html body .thesis-index,
+html body .location-line,
+html body .sv-footer__contact-label,
+html body .sv-footer__legal-toggle > summary {
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--sv-type-h3-track) !important;
+  color: var(--sv-type-cinnabar) !important;
+}
+
 html body p,
 html body li,
 html body .hero-copy,
@@ -93,6 +139,19 @@ html body .execution-step p {
   font-weight: 400 !important;
 }
 
+/* Caption and meta text sizing for English content. */
+html body figcaption,
+html body small,
+html body .caption,
+html body .meta,
+html body .issue-meta,
+html body .data-note,
+html body .sv-footer__copyright,
+html body .sv-footer__legal {
+  font-size: var(--sv-type-caption-size) !important;
+  font-weight: 400 !important;
+}
+
 html body .eyebrow,
 html body .hero__kicker,
 html body .hero-meta,
@@ -105,7 +164,7 @@ html body .sv-footer__legal-toggle > summary {
   font-size: var(--sv-type-label-size) !important;
   letter-spacing: var(--sv-type-label-track) !important;
   text-transform: uppercase !important;
-  font-weight: 500 !important;
+  font-weight: 700 !important;
 }
 
 html body .cta,
@@ -131,6 +190,50 @@ html body .nav__menu-btn {
 #nav .nav__lp,
 #nav .nav__menu-btn {
   font-family: var(--sv-type-sans) !important;
+}
+
+/* Chinese text system: Noto Serif SC only (Traditional forms expected in content). */
+html:lang(zh) body,
+html[lang^='zh'] body,
+html:lang(zh) p,
+html:lang(zh) li,
+html:lang(zh) span,
+html[lang^='zh'] p,
+html[lang^='zh'] li,
+html[lang^='zh'] span,
+html body :lang(zh),
+html body [lang^='zh'] {
+  font-family: var(--sv-type-cn) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+
+html:lang(zh) .nav__logo-cn,
+html[lang^='zh'] .nav__logo-cn,
+html body .cn-lockup,
+html body .type-sheet__cn,
+html body .type-sheet__line-value--cn {
+  font-family: var(--sv-type-cn) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em !important;
+  color: var(--sv-type-cinnabar) !important;
+}
+
+/* Bilingual lockup balance + cinnabar separator rule. */
+html body .nav__logo-lockup,
+html body .bilingual-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+html body .nav__logo-lockup::before,
+html body .bilingual-lockup::before {
+  content: "";
+  width: 1px;
+  align-self: stretch;
+  background: var(--sv-type-cinnabar);
+  opacity: 0.9;
 }
 
 #nav .nav__logo-en {
