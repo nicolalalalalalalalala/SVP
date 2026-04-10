@@ -1,0 +1,177 @@
+:root {
+  --sv-type-sans: "DIN 2014", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --sv-type-serif: "EB Garamond", Georgia, "Times New Roman", serif;
+  --sv-type-body-size: 16px;
+  --sv-type-body-line: 1.65;
+  --sv-type-label-size: 10px;
+  --sv-type-label-track: 0.16em;
+  --sv-type-cta-size: 11px;
+  --sv-type-meta-size: 11px;
+}
+
+html body,
+html body p,
+html body li,
+html body a,
+html body span,
+html body small,
+html body label,
+html body button,
+html body input,
+html body textarea,
+html body select,
+html body .hero__copy,
+html body .about__body p,
+html body .strat__intro,
+html body .sg__body,
+html body .tm__bio,
+html body .cdd__body,
+html body .ac__body,
+html body .metric-copy,
+html body .member-card p,
+html body .execution-step p,
+html body .strategy-detail p,
+html body .market-context-content p,
+html body .disclosure-box,
+html body .risk-card li,
+html body .strategy-callout p,
+html body .data-note,
+html body .sv-footer,
+html body .sv-footer * {
+  font-family: var(--sv-type-sans) !important;
+}
+
+/* Serif is restricted to major display/page section headings. */
+html body h1,
+html body h2,
+html body .hero__hed,
+html body .pagehero h1,
+html body .section-head > h2,
+html body .strategy-block > h2,
+html body .quote,
+html body blockquote {
+  font-family: var(--sv-type-serif) !important;
+  font-weight: 500 !important;
+  font-style: normal;
+}
+
+/* Keep operational headings, labels and metadata in DIN. */
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body .metric-value,
+html body .metric-label,
+html body .thesis-index,
+html body .member-role,
+html body .location-line,
+html body .hero-meta,
+html body .issue-meta,
+html body .strategy-detail h3,
+html body .risk-card h4,
+html body .strategy-callout__label,
+html body .alloc-label,
+html body .city small {
+  font-family: var(--sv-type-sans) !important;
+}
+
+html body p,
+html body li,
+html body .hero-copy,
+html body .pagehero__lede,
+html body .hero__copy,
+html body .about__body p,
+html body .strat__intro,
+html body .market-context-content p,
+html body .strategy-intro-lead p,
+html body .strategy-detail p,
+html body .metric-copy,
+html body .member-card p,
+html body .execution-step p {
+  font-size: var(--sv-type-body-size) !important;
+  line-height: var(--sv-type-body-line) !important;
+  font-weight: 400 !important;
+}
+
+html body .eyebrow,
+html body .hero__kicker,
+html body .hero-meta,
+html body .metric-label,
+html body .location-line,
+html body .thesis-index,
+html body .sv-footer__contact-label,
+html body .sv-footer__legal-toggle > summary {
+  font-family: var(--sv-type-sans) !important;
+  font-size: var(--sv-type-label-size) !important;
+  letter-spacing: var(--sv-type-label-track) !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+}
+
+html body .cta,
+html body .cdd-cta,
+html body .strategy-intro-link,
+html body .nav__lp,
+html body .nav__menu-btn {
+  font-family: var(--sv-type-sans) !important;
+  font-size: var(--sv-type-cta-size) !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+}
+
+/* Shared header strict DIN system. */
+#nav,
+#nav *,
+#nav .nav__logo-en,
+#nav .nav__logo-cn,
+#nav .nav__links a,
+#nav .nav__zh,
+#nav .lang-toggle,
+#nav .nav__lp,
+#nav .nav__menu-btn {
+  font-family: var(--sv-type-sans) !important;
+}
+
+#nav .nav__logo-en {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+#nav .nav__logo-cn {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+}
+
+/* Shared footer strict DIN system and visual hierarchy. */
+footer.sv-footer .sv-footer__brand {
+  font-family: var(--sv-type-sans) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+}
+
+footer.sv-footer .sv-footer__contact a,
+footer.sv-footer .sv-footer__legal-links a,
+footer.sv-footer .sv-footer__copyright,
+footer.sv-footer .sv-footer__legal {
+  font-family: var(--sv-type-sans) !important;
+}
+
+footer.sv-footer .sv-footer__contact a,
+footer.sv-footer .sv-footer__legal-links a {
+  font-size: var(--sv-type-meta-size) !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+footer.sv-footer .sv-footer__copyright,
+footer.sv-footer .sv-footer__legal {
+  font-size: 10px !important;
+  line-height: 1.55 !important;
+  opacity: 0.82;
+}
