@@ -1,0 +1,158 @@
+:root {
+  --svt-font-din: "DIN 2014", "Inter", "Arial Narrow", Arial, sans-serif;
+  --svt-font-serif: "EB Garamond", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --svt-fs-body: 1rem;
+  --svt-lh-body: 1.65;
+  --svt-fs-label: 0.66rem;
+  --svt-track-label: 0.14em;
+  --svt-fs-meta: 0.72rem;
+  --svt-lh-meta: 1.55;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+nav,
+footer,
+label,
+small,
+figcaption,
+caption {
+  font-family: var(--svt-font-din) !important;
+}
+
+/* Serif is intentionally restricted to major display headings / quote moments. */
+h1,
+h2,
+.hero__hed,
+.pagehero h1,
+.strategy-block h2,
+.strategy-intro-lead h2,
+.quote,
+.quote-moment {
+  font-family: var(--svt-font-serif) !important;
+}
+
+h3,
+h4,
+h5,
+h6,
+.card h3,
+.strategy-detail h3,
+.risk-card h4,
+.tm__name,
+.sg__title,
+.ac__title {
+  font-family: var(--svt-font-din) !important;
+}
+
+p,
+li,
+dd,
+dt,
+.hero__copy,
+.about__body p,
+.strat__intro,
+.sg__body,
+.tm__bio,
+.ac__body,
+.su__sub,
+.pagehero__lede,
+.market-context-content p,
+.strategy-block p,
+.strategy-detail p,
+.city small,
+.flow-step small,
+.risk-card li,
+.issue-thesis,
+.cdd__body {
+  font-family: var(--svt-font-din) !important;
+  font-size: var(--svt-fs-body) !important;
+  line-height: var(--svt-lh-body) !important;
+}
+
+/* Section labels / controls / CTA / metadata */
+.eyebrow,
+.hero__kicker,
+.section-label,
+.location-line,
+.hero-meta,
+.stat__l,
+.nb__l,
+.kicker,
+.cta,
+.cta span,
+.nav__links a,
+.nav__lp,
+.nav__menu-btn,
+.nav__zh,
+.lang-toggle,
+.flow-step b,
+.alloc-label,
+.strategy-callout__label,
+.risk-card h4,
+.sv-footer__contact-label,
+.sv-footer__legal-toggle > summary {
+  font-family: var(--svt-font-din) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--svt-track-label);
+  font-size: var(--svt-fs-label) !important;
+  line-height: 1.35 !important;
+}
+
+/* Metrics and interface labels stay in DIN. */
+.stat__n,
+.metric-value,
+.nb__n,
+.hs__n,
+[data-countup],
+.controls,
+.tabs,
+.toggle,
+button,
+.btn {
+  font-family: var(--svt-font-din) !important;
+  font-style: normal !important;
+}
+
+/* Shared header exact type system. */
+#nav,
+#nav *:not(h1):not(h2) {
+  font-family: var(--svt-font-din) !important;
+}
+
+.nav__logo-en {
+  font-family: var(--svt-font-din) !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+.nav__logo-cn {
+  font-family: var(--svt-font-din) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em !important;
+}
+
+/* Shared footer exact type system. */
+.sv-footer,
+.sv-footer * {
+  font-family: var(--svt-font-din) !important;
+  font-style: normal !important;
+}
+
+.sv-footer__brand {
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  font-weight: 700 !important;
+}
+
+.sv-footer__copyright,
+.sv-footer__legal,
+.sv-footer__legal-links,
+.sv-footer__legal-links a {
+  font-size: var(--svt-fs-meta) !important;
+  line-height: var(--svt-lh-meta) !important;
+  letter-spacing: 0.012em !important;
+}
