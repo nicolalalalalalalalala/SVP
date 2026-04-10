@@ -137,7 +137,8 @@
       max-width: 1320px;
       margin: 0 auto;
       padding: 120px 64px 40px;
-      font-size: 12px;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 10pt;
       line-height: 1.55;
       letter-spacing: normal;
     }
@@ -148,21 +149,55 @@
     }
     body.legal-page p,
     body.legal-page li {
-      font-size: 12px !important;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 10pt !important;
+      font-weight: 400;
       max-width: none;
       line-height: 1.55;
     }
     body.legal-page h1 {
-      font-size: 38px !important;
-      line-height: 1.04;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 32px !important;
+      font-weight: 700;
+      line-height: 1.08;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     body.legal-page h2 {
-      font-size: 24px !important;
-      line-height: 1.12;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 20px !important;
+      font-weight: 700;
+      line-height: 1.16;
+      text-transform: none;
     }
-    body.legal-page h3 {
-      font-size: 13px !important;
-      line-height: 1.4;
+    body.legal-page h3,
+    body.legal-page .legal-label,
+    body.legal-page .sv-footer__contact-label,
+    body.legal-page .sv-footer__legal-toggle > summary {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 12px !important;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--red);
+    }
+    body.legal-page .muted,
+    body.legal-page small,
+    body.legal-page .sv-footer__copyright,
+    body.legal-page .sv-footer__legal,
+    body.legal-page .sv-footer__legal-links {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 8pt !important;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    body.legal-page .rule-label {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
     .contact-us-spacing {
       margin: 0 0 72px;
