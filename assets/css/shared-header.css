@@ -84,8 +84,9 @@
   display: flex;
   gap: 40px;
   list-style: none;
-  margin-left: auto;
-  margin-right: 28px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav__links a {
@@ -255,6 +256,8 @@
 
   .nav__links {
     display: none;
+    position: static;
+    transform: none;
     grid-column: 1 / -1;
     width: 100%;
     order: 3;
