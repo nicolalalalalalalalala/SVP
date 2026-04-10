@@ -1624,30 +1624,36 @@
 
 <style>
   :root {
-    --paper-light: #FAF6EE;
-    --paper: #F2ECD8;
-    --cinnabar: #C93B2A;
-    --blue-green: #3D7070;
-    --ink-deep: #0F2206;
+    --paper-light: #faf6ee;
+    --paper: #f2ecd8;
+    --text-light-primary: #171717;
+    --text-light-secondary: #5f5a53;
+    --rule-light: #d8ceb0;
+    --ink-dark: #111512;
+    --ink-dark-elevated: #161b17;
+    --text-dark-primary: #f5f1e8;
+    --text-dark-secondary: #b9b2a6;
+    --rule-dark: #343830;
+    --cinnabar: #c93b2a;
     --red: var(--cinnabar);
-    --ink: var(--ink-deep);
-    --ink2: var(--blue-green);
+    --ink: var(--text-light-primary);
+    --ink2: var(--text-light-secondary);
     --white: var(--paper-light);
     --off: var(--paper);
-    --rule: color-mix(in srgb, var(--ink-deep) 16%, var(--paper) 84%);
-    --mist: var(--blue-green);
+    --rule: var(--rule-light);
+    --mist: var(--text-light-secondary);
     --serif: "DIN 2014", sans-serif;
     --sans: "DIN 2014", sans-serif;
   }
 
   html, body, button, input, textarea, select {
     font-family: "DIN 2014", sans-serif !important;
-    color: var(--ink-deep);
+    color: var(--text-light-primary);
   }
 
   body {
-    background: var(--paper) !important;
-    color: var(--ink-deep) !important;
+    background: var(--paper-light) !important;
+    color: var(--text-light-primary) !important;
   }
 
   h1, h2, h3, h4, h5, h6, .wordmark__title, .issue-card__t, .issue-header h2, .research-sub h3, .archive__row strong {
@@ -1671,7 +1677,7 @@
   p, li, .research-hero__desc, .issue-header__dek, .reading p, .reading li, .archive__disclaimer, .sv-footer__legal, .sv-footer__copyright {
     font-family: "DIN 2014", sans-serif !important;
     font-weight: 400 !important;
-    color: var(--ink-deep) !important;
+    color: var(--text-light-primary) !important;
   }
 
   .nav__logo-lockup {
@@ -1684,17 +1690,154 @@
   .nav__logo-en {
     font-family: "DIN 2014", sans-serif !important;
     letter-spacing: 0.05em !important;
-    color: var(--ink-deep) !important;
+    color: var(--text-light-primary) !important;
   }
 
   .nav__logo-cn, [lang="zh"], [lang="zh-CN"], [lang="zh-Hans"], :lang(zh) {
     font-family: "Noto Serif SC", serif !important;
-    color: var(--ink-deep) !important;
+    color: var(--text-light-primary) !important;
     font-weight: 500 !important;
   }
 
-  .research-hero, .research-sub {
-    background: var(--ink-deep) !important;
+  #nav {
+    background: var(--paper-light) !important;
+    border-bottom: 1px solid var(--rule-light) !important;
+  }
+
+  .nav__links a,
+  .nav__zh,
+  .nav__lp,
+  .nav__menu-btn {
+    color: var(--text-light-primary) !important;
+  }
+
+  .nav__lp,
+  .nav__menu-btn {
+    background: var(--paper-light) !important;
+    border-color: var(--rule-light) !important;
+  }
+
+  .nav__lp:hover {
+    background: var(--cinnabar) !important;
+    border-color: var(--cinnabar) !important;
+    color: var(--text-dark-primary) !important;
+  }
+
+  .research-hero,
+  .research-sub {
+    background: var(--ink-dark) !important;
+    border-color: var(--rule-dark) !important;
+  }
+
+  .research-hero {
+    background-image: none !important;
+  }
+
+  .eyebrow--ghost,
+  .issue-live__k,
+  .issue-live__meta,
+  .issue-card__k {
+    color: var(--text-dark-secondary) !important;
+  }
+
+  .eyebrow--ghost::after {
+    background: var(--rule-dark) !important;
+  }
+
+  .issue-live {
+    border-top-color: var(--rule-dark) !important;
+  }
+
+  .issue-live h1,
+  .issue-card__t {
+    color: var(--text-dark-primary) !important;
+  }
+
+  .issue-live h1 .text-accent,
+  .wordmark__title em {
+    color: var(--cinnabar) !important;
+  }
+
+  .issue-live p,
+  .research-hero__desc,
+  .issue-card__s {
+    color: var(--text-dark-secondary) !important;
+  }
+
+  .issue-card {
+    background: var(--ink-dark-elevated) !important;
+    border-color: var(--rule-dark) !important;
+  }
+
+  .issue-card__bar {
+    background: transparent !important;
+    color: var(--text-dark-secondary) !important;
+    border-bottom: 1px solid var(--rule-dark) !important;
+  }
+
+  .issue-card__meta {
+    border-top-color: var(--rule-dark) !important;
+    color: var(--text-dark-secondary) !important;
+  }
+
+  .live-dot {
+    background: var(--cinnabar) !important;
+    box-shadow: 0 0 0 rgba(201, 59, 42, 0.8) !important;
+  }
+
+  @keyframes liveBlink {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(201, 59, 42, 0.6);
+    }
+    50% {
+      opacity: 0.3;
+      box-shadow: 0 0 0 6px rgba(201, 59, 42, 0);
+    }
+  }
+
+  .cta--light {
+    color: var(--text-dark-primary) !important;
+  }
+
+  .cta--light .cta__ring {
+    border-color: var(--text-dark-secondary) !important;
+    background: transparent !important;
+  }
+
+  .cta--light:hover .cta__ring,
+  .cta--light:focus-visible .cta__ring {
+    background: var(--cinnabar) !important;
+    border-color: var(--cinnabar) !important;
+    color: var(--text-dark-primary) !important;
+  }
+
+  .research-sub p {
+    color: var(--text-dark-secondary) !important;
+  }
+
+  .research-sub__field input {
+    background: transparent !important;
+    border-color: var(--rule-dark) !important;
+    color: var(--text-dark-primary) !important;
+  }
+
+  .research-sub__field input::placeholder {
+    color: var(--text-dark-secondary) !important;
+  }
+
+  .research-sub__submit {
+    background: transparent !important;
+    border-color: var(--text-dark-secondary) !important;
+    color: var(--text-dark-primary) !important;
+  }
+
+  .research-sub__submit:hover,
+  .research-sub__submit:focus-visible {
+    background: var(--cinnabar) !important;
+    border-color: var(--cinnabar) !important;
+    color: var(--text-dark-primary) !important;
   }
 
   .latest__issue, .finding, .archive, .archive__head, .archive__list, .archive__row, .sv-footer, .sidebar__card, .franchise-ribbon, .util-btn, .nav__lp, .nav__menu-btn {
@@ -1714,17 +1857,71 @@
   }
 
   .archive__pdf, .archive__pdf--solid {
-    color: var(--ink-deep) !important;
-    border-color: color-mix(in srgb, var(--ink-deep) 24%, var(--paper) 76%) !important;
+    color: var(--text-light-primary) !important;
+    border-color: var(--rule-light) !important;
     background: var(--paper-light) !important;
   }
 
   .research-main, .issue-shell {
+    background: var(--paper-light) !important;
+  }
+
+  .research-main__intro, .finding p, .sidebar__card h4, .sidebar__card p, .archive__row small, .sv-footer__legal-links a, .issue-header__meta {
+    color: var(--text-light-secondary) !important;
+  }
+
+  .sv-footer {
+    background: var(--paper-light) !important;
+    border-top-color: var(--rule-light) !important;
+  }
+
+  .sv-footer__main {
+    border-bottom-color: var(--rule-light) !important;
+  }
+
+  .sv-footer__brand,
+  .sv-footer__contact a,
+  .sv-footer__legal-links a {
+    color: var(--text-light-primary) !important;
+  }
+
+  .sv-footer__contact-label,
+  .sv-footer__copyright,
+  .sv-footer__legal {
+    color: var(--text-light-secondary) !important;
+  }
+
+  .sv-footer__contact a {
+    border-color: var(--rule-light) !important;
+    background: transparent !important;
+  }
+
+  .sv-footer__contact a:hover {
+    background: var(--cinnabar) !important;
+    border-color: var(--cinnabar) !important;
+    color: var(--text-dark-primary) !important;
+  }
+
+  .sv-footer__legal-toggle {
+    border-color: var(--rule-light) !important;
     background: var(--paper) !important;
   }
 
-  .research-main__intro, .finding p, .sidebar__card h4, .sidebar__card p, .archive__row small, .sv-footer__legal-links a {
-    color: var(--blue-green) !important;
+  .sv-footer__legal-toggle > summary {
+    color: var(--text-light-primary) !important;
+  }
+
+  @media (max-width: 767px) {
+    #nav {
+      border-bottom: 1px solid var(--rule-light) !important;
+      background: var(--paper-light) !important;
+    }
+    .issue-live p,
+    .research-hero__desc,
+    .issue-card__s {
+      color: var(--text-dark-primary) !important;
+      opacity: 0.92;
+    }
   }
 </style>
   <style>
