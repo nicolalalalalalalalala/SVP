@@ -325,8 +325,7 @@ li,
       rgba(10, 5, 2, 0.06) 0%,
       rgba(10, 5, 2, 0.18) 46%,
       rgba(10, 5, 2, 0.32) 100%
-    ),
-    url("../../Untitled.png") !important;
+    ) !important;
 }
 
 /* China Debt Dynamics (homepage): enforce dark editorial contrast hierarchy */
@@ -402,8 +401,7 @@ body.homepage .hero__sliver {
       rgba(8, 6, 5, 0.22) 0%,
       rgba(8, 6, 5, 0.36) 48%,
       rgba(8, 6, 5, 0.58) 100%
-    ),
-    url("../../Untitled.png") !important;
+    ) !important;
 }
 
 body.homepage .hero__overlay {
