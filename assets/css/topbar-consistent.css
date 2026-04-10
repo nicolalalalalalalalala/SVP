@@ -436,8 +436,8 @@ html {
     --topbar-pad-left: max(10px, env(safe-area-inset-left));
     --nav-logo-en-size: 15px;
     --nav-logo-en-line-height: 0.86;
-    --nav-logo-cn-size: 0px;
-    --nav-logo-lockup-gap: 0px;
+    --nav-logo-cn-size: 8px;
+    --nav-logo-lockup-gap: 3px;
   }
 
   #nav {
@@ -448,10 +448,6 @@ html {
     gap: 8px;
     min-width: 0;
     margin-right: 0;
-  }
-
-  #nav .nav__logo-cn {
-    display: none;
   }
 
   #nav .nav__right {
