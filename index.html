@@ -921,6 +921,90 @@ blockquote.fs__q {
   outline-offset: 2px;
 }
 
+/* ── CDD live indicator */
+.cdd-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.cdd-live__dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #C93B2A;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: cdd-dot-blink 1.4s ease-in-out infinite;
+}
+
+.cdd-live__label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #C93B2A;
+  line-height: 1;
+}
+
+@keyframes cdd-dot-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201, 59, 42, 0.55); }
+  50%       { opacity: 0.25; box-shadow: 0 0 0 4px rgba(201, 59, 42, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cdd-live__dot { animation: none; opacity: 1; }
+}
+
+/* ── CDD white brand lockup (right column of intro) */
+.cdd-editorial__brand {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 2px;
+}
+
+.cdd-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.cdd-brand-mark {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+}
+
+.cdd-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-left: 9px;
+  border-left: 1px solid rgba(216, 206, 176, 0.30);
+  margin-left: 9px;
+}
+
+.cdd-brand-en {
+  font-family: 'DIN 2014', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: rgba(250, 246, 238, 0.95);
+  line-height: 1;
+}
+
+.cdd-brand-cn {
+  font-family: 'DIN 2014', 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: .28em;
+  color: rgba(216, 206, 176, 0.72);
+  line-height: 1;
+}
+
 /* ══ TEAM */
 
 #team { background:var(--off); padding:var(--section-space) 0; }
@@ -1945,9 +2029,18 @@ h2.su__hed {
     <div class="cdd-editorial__card">
       <div class="cdd-editorial__intro">
         <div>
-          <div class="eyebrow cdd-editorial__kicker rev">ShoreVest Research Franchise · Established 2018</div>
+          <div class="eyebrow cdd-editorial__kicker rev"><span class="cdd-live" aria-label="Live series"><span class="cdd-live__dot" aria-hidden="true"></span><span class="cdd-live__label">Live</span></span>ShoreVest Research Franchise · Established 2018</div>
           <h2 class="cdd-editorial__title rev d1">China Debt <em>Dynamics.</em></h2>
           <p class="cdd-editorial__lede rev d2">An ongoing institutional research series focused on China's private credit cycle, policy architecture, legal enforceability, and allocator-relevant market structure.</p>
+        </div>
+        <div class="cdd-editorial__brand rev d1">
+          <div class="cdd-brand-lockup">
+            <img class="cdd-brand-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest">
+            <div class="cdd-brand-text">
+              <span class="cdd-brand-en">S H O R E V E S T</span>
+              <span class="cdd-brand-cn">新岸資本</span>
+            </div>
+          </div>
         </div>
       </div>
 
