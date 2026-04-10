@@ -162,7 +162,7 @@
 }
 
 @media (max-width: 767px) {
-  #site-header-mount { min-height: 76px; }
+  #site-header-mount { min-height: 62px; }
 
   #nav {
     height: auto;
