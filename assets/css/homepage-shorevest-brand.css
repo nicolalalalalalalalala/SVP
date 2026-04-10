@@ -168,6 +168,7 @@ li,
   letter-spacing: var(--shorevest-lockup-tracking) !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
+  color: #000 !important;
 }
 
 .nav__logo-lockup {

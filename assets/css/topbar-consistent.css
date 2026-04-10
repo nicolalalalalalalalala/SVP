@@ -254,6 +254,10 @@ html {
   transition: var(--control-transition);
 }
 
+#nav .nav__menu-btn {
+  border-radius: 0;
+}
+
 #nav .nav__lp,
 #nav .nav__menu-btn,
 .btn,
@@ -375,10 +379,14 @@ html {
 
   #nav .nav__lp,
   #nav .nav__menu-btn {
-    min-height: 36px;
-    padding: 0 12px;
+    min-height: 42px;
+    padding: 0 18px;
     font-size: 10px;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.16em;
+    border-radius: 0;
+    border: 1px solid color-mix(in srgb, var(--text-main, #0f2206) 28%, transparent);
+    background: color-mix(in srgb, var(--paper-light, #faf6ee) 96%, transparent);
+    color: #000;
   }
 
   #nav .nav__lp {
@@ -388,9 +396,10 @@ html {
 
 @media (max-width: 760px) {
   #nav {
-    min-height: var(--topbar-height);
+    min-height: 74px;
     flex-wrap: nowrap;
     row-gap: 0;
+    box-shadow: 0 2px 14px color-mix(in srgb, #000 10%, transparent);
   }
 
   #nav .nav__zh {
@@ -403,13 +412,16 @@ html {
 
   #nav .nav__lp,
   #nav .nav__menu-btn {
-    min-width: 94px;
-    min-height: 36px;
-    padding: 0 9px;
+    min-width: 110px;
+    min-height: 56px;
+    padding: 0 14px;
+    border-radius: 0;
   }
 
   #nav .nav__menu-btn {
-    min-width: 78px;
+    min-width: 112px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
   }
 
   #nav .nav__links {
@@ -442,6 +454,7 @@ html {
 
   #nav {
     column-gap: 8px;
+    min-height: 72px;
   }
 
   #nav .nav__logo {
@@ -463,14 +476,16 @@ html {
   #nav .nav__lp,
   #nav .nav__menu-btn {
     min-width: 0;
-    min-height: 34px;
+    min-height: 52px;
     padding: 0 8px;
-    font-size: 9px;
-    letter-spacing: 0.08em;
+    font-size: 8.5px;
+    letter-spacing: 0.13em;
+    border-radius: 0;
   }
 
   #nav .nav__menu-btn {
-    padding-inline: 9px;
+    min-width: 102px;
+    padding-inline: 12px;
   }
 }
 
