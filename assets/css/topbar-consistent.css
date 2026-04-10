@@ -503,6 +503,97 @@ html {
   }
 }
 
+/* Homepage mobile top bar should keep the original single-row lockup/button layout. */
+@media (max-width: 767px) {
+  body.homepage {
+    --topbar-height: 86px;
+    --topbar-pad: 18px;
+    --topbar-pad-left: 18px;
+  }
+
+  body.homepage #nav {
+    min-height: var(--topbar-height);
+    height: var(--topbar-height);
+    padding-inline: var(--topbar-pad);
+    background: #ffffff;
+    border-bottom: 1px solid rgba(23, 23, 23, 0.16);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    flex-wrap: nowrap;
+    row-gap: 0;
+    column-gap: 16px;
+  }
+
+  body.homepage #nav .nav__logo {
+    gap: 10px;
+    margin-right: 0;
+    flex: 1 1 auto;
+  }
+
+  body.homepage #nav .nav__logo-mark {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
+  }
+
+  body.homepage #nav .nav__logo-en {
+    font-size: 18px;
+    letter-spacing: 0.22em;
+  }
+
+  body.homepage #nav .nav__logo-cn {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    color: rgba(33, 33, 30, 0.66);
+  }
+
+  body.homepage #nav .nav__right {
+    gap: 0;
+    margin-left: 0;
+  }
+
+  body.homepage #nav .nav__menu-btn {
+    min-width: 196px;
+    min-height: 56px;
+    padding-inline: 28px;
+    border: 1px solid rgba(23, 23, 23, 0.26);
+    background: #ffffff;
+    color: #171717;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 560px) {
+  body.homepage {
+    --topbar-height: 76px;
+    --topbar-pad: 16px;
+    --topbar-pad-left: 16px;
+  }
+
+  body.homepage #nav {
+    column-gap: 12px;
+  }
+
+  body.homepage #nav .nav__logo {
+    gap: 8px;
+  }
+
+  body.homepage #nav .nav__logo-en {
+    font-size: 16px;
+    letter-spacing: 0.2em;
+  }
+
+  body.homepage #nav .nav__menu-btn {
+    min-width: 160px;
+    min-height: 50px;
+    padding-inline: 22px;
+    font-size: 10.5px;
+  }
+}
+
 /* Footer contact CTA consistency (desktop + mobile) */
 .sv-footer {
   position: relative;
