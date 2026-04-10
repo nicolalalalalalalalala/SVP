@@ -1259,7 +1259,8 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
 
   #nav .nav__logo-en {
     font-size: 18px !important;
-    letter-spacing: 0.18em !important;
+    letter-spacing: 0.05em !important;
+    word-spacing: normal !important;
     color: #111 !important;
   }
 
@@ -1285,7 +1286,8 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
     background: #f8f5ed !important;
     color: #171717 !important;
     font-size: 10px !important;
-    letter-spacing: 0.2em !important;
+    letter-spacing: 0.14em !important;
+    word-spacing: normal !important;
     border-radius: 0 !important;
   }
 }
@@ -1309,6 +1311,6 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
   body:not(.homepage) #nav .nav__menu-btn {
     min-width: 138px !important;
     padding-inline: 16px !important;
-    letter-spacing: 0.18em !important;
+    letter-spacing: 0.14em !important;
   }
 }
