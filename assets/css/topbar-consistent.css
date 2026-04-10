@@ -3,6 +3,7 @@
   --topbar-pad: var(--site-page-margin, 64px);
   --topbar-pad-left: var(--site-page-margin, 64px);
   --nav-link-gap: 42px;
+  --nav-group-gap: 36px;
   --nav-right-gap: 42px;
   --nav-logo-en-size: 19px;
   --nav-logo-en-line-height: 0.78;
@@ -154,6 +155,8 @@ html {
   list-style: none;
   margin: 0;
   padding: 0;
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 #nav .nav__links a {
@@ -203,7 +206,7 @@ html {
   display: flex;
   align-items: center;
   gap: var(--nav-right-gap);
-  margin-left: calc(var(--nav-link-gap) + 10px);
+  margin-left: var(--nav-group-gap);
   flex-shrink: 0;
 }
 
@@ -361,6 +364,7 @@ html {
     --topbar-pad: var(--site-page-margin, 32px);
     --topbar-pad-left: var(--site-page-margin, 32px);
     --nav-link-gap: 30px;
+    --nav-group-gap: 32px;
     --nav-right-gap: 30px;
   }
 
@@ -371,7 +375,7 @@ html {
 
 /* Desktop: avoid duplicated Investor Access label (link list + right-side CTA). */
 @media (min-width: 981px) {
-  #nav .nav__links li:has(> a[href="investor-access.html"]) {
+  #nav .nav__mobile-investor {
     display: none;
   }
 }
@@ -690,7 +694,7 @@ html {
 
 #nav .nav__right {
   gap: 14px !important;
-  margin-left: 0 !important;
+  margin-left: clamp(32px, 2.8vw, 40px) !important;
 }
 
 #nav .nav__zh {
