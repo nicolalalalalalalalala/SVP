@@ -427,7 +427,7 @@ html {
 
 @media (max-width: 760px) {
   #nav {
-    min-height: 74px;
+    min-height: 68px;
     flex-wrap: nowrap;
     row-gap: 0;
     box-shadow: 0 2px 14px color-mix(in srgb, #000 10%, transparent);
@@ -443,16 +443,16 @@ html {
 
   #nav .nav__lp,
   #nav .nav__menu-btn {
-    min-width: 110px;
-    min-height: 44px;
-    padding: 0 16px;
+    min-width: 104px;
+    min-height: 40px;
+    padding: 0 14px;
     border-radius: 0;
   }
 
   #nav .nav__menu-btn {
-    min-width: 126px;
+    min-width: 112px;
     font-size: 10px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
   }
 
   #nav .nav__links {
@@ -475,17 +475,17 @@ html {
 
 @media (max-width: 560px) {
   :root {
-    --topbar-pad: max(10px, env(safe-area-inset-left));
-    --topbar-pad-left: max(10px, env(safe-area-inset-left));
-    --nav-logo-en-size: 15px;
+    --topbar-pad: max(14px, env(safe-area-inset-left));
+    --topbar-pad-left: max(14px, env(safe-area-inset-left));
+    --nav-logo-en-size: 16px;
     --nav-logo-en-line-height: 0.86;
-    --nav-logo-cn-size: 8px;
-    --nav-logo-lockup-gap: 3px;
+    --nav-logo-cn-size: 9px;
+    --nav-logo-lockup-gap: 4px;
   }
 
   #nav {
-    column-gap: 8px;
-    min-height: 72px;
+    column-gap: 10px;
+    min-height: 68px;
   }
 
   #nav .nav__logo {
@@ -503,25 +503,25 @@ html {
   #nav .nav__lp,
   #nav .nav__menu-btn {
     min-width: 0;
-    min-height: 42px;
-    padding: 0 8px;
-    font-size: 8.5px;
-    letter-spacing: 0.13em;
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
     border-radius: 0;
   }
 
   #nav .nav__menu-btn {
-    min-width: 118px;
-    padding-inline: 14px;
-    font-size: 10px;
-    letter-spacing: 0.16em;
+    min-width: 106px;
+    padding-inline: 12px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
   }
 }
 
 /* Homepage mobile top bar should keep the original single-row lockup/button layout. */
 @media (max-width: 767px) {
   body.homepage {
-    --topbar-height: 86px;
+    --topbar-height: 70px;
     --topbar-pad: 18px;
     --topbar-pad-left: 18px;
   }
@@ -569,21 +569,21 @@ html {
   }
 
   body.homepage #nav .nav__menu-btn {
-    min-width: 196px;
-    min-height: 56px;
-    padding-inline: 28px;
+    min-width: 126px;
+    min-height: 42px;
+    padding-inline: 16px;
     border: 1px solid rgba(23, 23, 23, 0.26);
     background: #ffffff;
     color: #171717;
-    font-size: 11px;
-    letter-spacing: 0.18em;
+    font-size: 10px;
+    letter-spacing: 0.16em;
     font-weight: 500;
   }
 }
 
 @media (max-width: 560px) {
   body.homepage {
-    --topbar-height: 76px;
+    --topbar-height: 68px;
     --topbar-pad: 16px;
     --topbar-pad-left: 16px;
   }
@@ -602,10 +602,10 @@ html {
   }
 
   body.homepage #nav .nav__menu-btn {
-    min-width: 160px;
-    min-height: 50px;
-    padding-inline: 22px;
-    font-size: 10.5px;
+    min-width: 112px;
+    min-height: 40px;
+    padding-inline: 12px;
+    font-size: 9px;
   }
 }
 
