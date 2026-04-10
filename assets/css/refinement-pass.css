@@ -2,6 +2,9 @@
   --sv-refine-max: 1280px;
   --sv-refine-pad: clamp(28px, 5.2vw, 92px);
   --sv-refine-copy: 66ch;
+  --sv-brand-accent: #8f1f37;
+  --sv-brand-accent-strong: #b3213f;
+  --sv-brand-accent-ink: #ffffff;
 }
 
 /* Global editorial rhythm */
@@ -207,6 +210,50 @@ button,
   width: 42px;
   height: 42px;
   border-radius: 50%;
+}
+
+/* Button color system: keep CTA circles/arrows in the same ShoreVest accent. */
+.cta__ring,
+.cdd-cta__ring,
+.research-sub__submit-arrow,
+.btn--circle,
+.arrow-btn {
+  border-color: var(--sv-brand-accent) !important;
+  color: var(--sv-brand-accent) !important;
+}
+
+.cta:hover .cta__ring,
+.cta:focus-visible .cta__ring,
+.cdd-cta:hover .cdd-cta__ring,
+.cdd-cta:focus-visible .cdd-cta__ring,
+.research-sub__submit:hover .research-sub__submit-arrow,
+.research-sub__submit:focus-visible .research-sub__submit-arrow {
+  background: var(--sv-brand-accent-strong) !important;
+  border-color: var(--sv-brand-accent-strong) !important;
+  color: var(--sv-brand-accent-ink) !important;
+}
+
+.btn,
+.util-btn,
+.research-sub__submit,
+.sv-topbar__btn,
+.nav__lp {
+  border-color: var(--sv-brand-accent) !important;
+}
+
+.btn:hover,
+.btn:focus-visible,
+.util-btn:hover,
+.util-btn:focus-visible,
+.research-sub__submit:hover,
+.research-sub__submit:focus-visible,
+.sv-topbar__btn:hover,
+.sv-topbar__btn:focus-visible,
+.nav__lp:hover,
+.nav__lp:focus-visible {
+  background: var(--sv-brand-accent-strong) !important;
+  border-color: var(--sv-brand-accent-strong) !important;
+  color: var(--sv-brand-accent-ink) !important;
 }
 
 /* Footer copy legibility */
