@@ -1076,6 +1076,77 @@
     letter-spacing: 0.14em !important;
   }
 
+  @media (max-width: 767px) {
+    #nav {
+      min-height: 88px !important;
+      padding: 12px var(--pad, 18px) !important;
+      grid-template-columns: minmax(0, 1fr) auto !important;
+      align-items: center !important;
+      row-gap: 0 !important;
+      background: #FAF6EE !important;
+      border-bottom: 1px solid rgba(15, 34, 6, 0.12) !important;
+      box-shadow: none !important;
+    }
+
+    .nav__logo {
+      gap: 10px !important;
+    }
+
+    .nav__logo-mark {
+      width: 44px !important;
+      height: 44px !important;
+      flex: 0 0 44px !important;
+    }
+
+    .nav__logo-lockup {
+      gap: 4px !important;
+    }
+
+    .nav__logo-en {
+      font-size: 11px !important;
+      letter-spacing: 0.4em !important;
+    }
+
+    .nav__logo-cn {
+      font-size: 18px !important;
+      letter-spacing: 0.08em !important;
+      line-height: 1 !important;
+    }
+
+    .nav__zh,
+    .nav__lp {
+      display: none !important;
+    }
+
+    .nav__right {
+      gap: 0 !important;
+    }
+
+    .nav__menu-btn {
+      min-width: 164px !important;
+      min-height: 56px !important;
+      padding: 0 28px !important;
+      border: 1px solid rgba(15, 34, 6, 0.24) !important;
+      background: #FAF6EE !important;
+      color: #171717 !important;
+      font-size: 13px !important;
+      letter-spacing: 0.14em !important;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .nav__menu-btn {
+      min-width: 142px !important;
+      min-height: 52px !important;
+      padding: 0 22px !important;
+      font-size: 12px !important;
+    }
+
+    .nav__logo-cn {
+      font-size: 16px !important;
+    }
+  }
+
   .eyebrow,
   .eyebrow::after,
   .press-overview,
