@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/insights-print.css" />
@@ -1619,6 +1619,112 @@
 
 <link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
+
+<style>
+  :root {
+    --paper-light: #FAF6EE;
+    --paper: #F2ECD8;
+    --cinnabar: #C93B2A;
+    --blue-green: #3D7070;
+    --ink-deep: #0F2206;
+    --red: var(--cinnabar);
+    --ink: var(--ink-deep);
+    --ink2: var(--blue-green);
+    --white: var(--paper-light);
+    --off: var(--paper);
+    --rule: color-mix(in srgb, var(--ink-deep) 16%, var(--paper) 84%);
+    --mist: var(--blue-green);
+    --serif: "DIN 2014", sans-serif;
+    --sans: "DIN 2014", sans-serif;
+  }
+
+  html, body, button, input, textarea, select {
+    font-family: "DIN 2014", sans-serif !important;
+    color: var(--ink-deep);
+  }
+
+  body {
+    background: var(--paper) !important;
+    color: var(--ink-deep) !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, .wordmark__title, .issue-card__t, .issue-header h2, .research-sub h3, .archive__row strong {
+    font-family: "DIN 2014", sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+  }
+
+  .issue-live h1, .hero-headline, .wordmark__title {
+    font-weight: 300 !important;
+    font-style: italic !important;
+  }
+
+  .eyebrow, .issue-card__bar, .issue-card__k, .issue-live__k, .issue-live__meta, .issue-header__meta, .archive__head, .sv-footer__contact-label, .research-sub__submit, .util-btn {
+    font-family: "DIN 2014", sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+  }
+
+  p, li, .research-hero__desc, .issue-header__dek, .reading p, .reading li, .archive__disclaimer, .sv-footer__legal, .sv-footer__copyright {
+    font-family: "DIN 2014", sans-serif !important;
+    font-weight: 400 !important;
+    color: var(--ink-deep) !important;
+  }
+
+  .nav__logo-lockup {
+    padding-left: 9px !important;
+    margin-left: 4px !important;
+    border-left: 1px solid var(--cinnabar) !important;
+    row-gap: 2px !important;
+  }
+
+  .nav__logo-en {
+    font-family: "DIN 2014", sans-serif !important;
+    letter-spacing: 0.05em !important;
+    color: var(--ink-deep) !important;
+  }
+
+  .nav__logo-cn, [lang="zh"], [lang="zh-CN"], [lang="zh-Hans"], :lang(zh) {
+    font-family: "Noto Serif SC", serif !important;
+    color: var(--ink-deep) !important;
+    font-weight: 500 !important;
+  }
+
+  .research-hero, .research-sub {
+    background: var(--ink-deep) !important;
+  }
+
+  .latest__issue, .finding, .archive, .archive__head, .archive__list, .archive__row, .sv-footer, .sidebar__card, .franchise-ribbon, .util-btn, .nav__lp, .nav__menu-btn {
+    background: var(--paper-light) !important;
+  }
+
+  .reading blockquote, .franchise-ribbon, .nav__logo-lockup, .issue-card__bar {
+    border-color: var(--cinnabar) !important;
+  }
+
+  .issue-card__bar, .eyebrow--red, .finding small, .archive__pdf:hover, .archive__pdf--solid:hover, .research-sub__submit:hover {
+    color: var(--cinnabar) !important;
+  }
+
+  .archive__pdf:hover, .archive__pdf--solid:hover, .research-sub__submit:hover {
+    border-color: var(--cinnabar) !important;
+  }
+
+  .archive__pdf, .archive__pdf--solid {
+    color: var(--ink-deep) !important;
+    border-color: color-mix(in srgb, var(--ink-deep) 24%, var(--paper) 76%) !important;
+    background: var(--paper-light) !important;
+  }
+
+  .research-main, .issue-shell {
+    background: var(--paper) !important;
+  }
+
+  .research-main__intro, .finding p, .sidebar__card h4, .sidebar__card p, .archive__row small, .sv-footer__legal-links a {
+    color: var(--blue-green) !important;
+  }
+</style>
 
 
 </head>
