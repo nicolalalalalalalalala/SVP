@@ -2203,32 +2203,52 @@
 
     <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
+
+  <style id="strategy-discipline-override">
+    :root{--serif:"Cormorant Garamond","EB Garamond",serif;--sans:"DIN 2014","Inter",sans-serif;--white:#FAF6EE;--rule:rgba(15,34,6,.16);--mist:#3D7070;}
+    body{background:#FAF6EE;font-family:var(--sans);} 
+    #nav{position:sticky;top:0;z-index:1200}
+    h1,h2,.strategy-intro-lead h2,.strategy-block h2{font-family:var(--serif)!important;font-weight:500!important;color:#0F2206;}
+    p,.market-context-content p,.strategy-block p,.strategy-detail p,.risk-card li,.data-note,.city small,.alloc-label,.cta,.eyebrow,.strategy-callout__label,.risk-card h4{font-family:var(--sans)!important;}
+    .pagehero{padding-top:150px;padding-bottom:78px;background:#FAF6EE;border-bottom:1px solid var(--rule)}
+    .pagehero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end}
+    .pagehero h1{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.06;max-width:14ch}
+    .pagehero__lede{font-size:1.03rem;line-height:1.65;max-width:62ch;color:#0F2206}
+    .hero-meta{margin-top:12px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+    .market-context,.strategy-intro-section,.pgsec{background:#FAF6EE}
+    .market-context-content{box-shadow:none;border:1px solid var(--rule)}
+    .context-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;margin-top:12px}
+    .market-context-content p{font-size:1rem;line-height:1.6;margin-top:0}
+    .strategy-intro-section{padding:18px 0 52px}
+    .strategy-intro-content{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:end;border-top:1px solid var(--rule);padding-top:32px}
+    .strategy-intro-lead h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:10px}
+    .strategy-intro-lead p{font-size:1rem;line-height:1.6;color:#0F2206}
+    .strategy-intro-actions{justify-self:end;border:1px solid var(--rule);padding:16px 18px;background:rgba(255,255,255,.35);width:min(100%,290px)}
+    .strategy-stack{gap:24px}.strategy-block{padding:30px;border-color:var(--rule)}.strategy-block::after{display:none}
+    .strategy-block h2{font-size:clamp(1.7rem,2.9vw,2.4rem);margin-bottom:8px}.strategy-block p{font-size:.97rem;line-height:1.62}
+    .clean-flow{margin-top:16px}.flow-step{border-color:var(--rule)}.flow-step b,.city b{text-transform:none;font-size:.82rem;letter-spacing:.04em}
+    .flow-step small,.city small{font-size:.95rem;line-height:1.55}
+    .strategy-viz,.strategy-detail,.alloc-row,.risk-card,.strategy-callout,.city{border-color:var(--rule);background:#FAF6EE}
+    .viz-controls,.strategy-tools,.expand,.expand__trigger,.funnel-detail,.city-detail{display:none!important}
+    .strategy-details{margin-top:14px}.strategy-detail h3{font-size:1.2rem;font-family:var(--serif)!important}
+    .risk-card h4{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#0F2206}
+    @media (max-width:980px){.pagehero .wrap,.strategy-intro-content,.context-grid,.alloc-grid,.strategy-details,.risk-grid,.city-grid,.process-flow{grid-template-columns:1fr}.strategy-intro-actions{justify-self:start}}
+  </style>
 </head>
   <body>
     <div id="site-header-mount"></div>
-    <section class="pagehero">
+    <section class="pagehero strategy-hero">
       <div class="wrap">
         <div>
           <div class="eyebrow">Strategy</div>
-          <h1>Our Strategy</h1>
+          <h1>China onshore secured credit, run with institutional discipline.</h1>
           <p class="pagehero__lede">
             ShoreVest deploys asset-backed private credit into enforceable structures, conservative entry basis, and recovery-led exits in China's onshore market.
           </p>
+          <p class="hero-meta">Operating track record since 2004 · Principal protection first · Execution led in China.</p>
         </div>
         <figure class="pagehero__media" aria-hidden="true">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="assets/images/leaf_hero.png"
-            />
-            <img
-              src="assets/images/edited-photo-3.svg"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              fetchpriority="low"
-            />
-          </picture>
+          <img src="assets/images/leaf_hero.png" alt="" loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -2273,6 +2293,20 @@
               ><span class="strategy-intro-link__title">Review The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a
             >
           </div>
+          <p class="market-context-disclaimer">Past performance is not indicative of future results. All investments involve risk, including possible loss of principal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="strategy-intro-section">
+      <div class="wrap strategy-intro-content">
+        <div class="strategy-intro-lead">
+          <h2>Three sub-strategies. One underwriting standard.</h2>
+          <p>Capital rotates by cycle, but process does not: collateral-first selection, legal enforceability, and active asset-level execution from origination through realization.</p>
+        </div>
+        <div class="strategy-intro-actions">
+          <p>Platform overview</p>
+          <a href="firm.html" class="cta cta--dark strategy-intro-link"><span class="strategy-intro-link__title">View The Firm</span><span class="cta__ring" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -2293,7 +2327,6 @@
           </div>
         </div>
         <div class="strategy-stack">
-
           <section class="strategy-block" id="sourcing">
             <h2 class="single-line-heading">Origination Discipline and Pipeline Quality</h2>
             <p>
@@ -2327,107 +2360,21 @@
 
           <section class="strategy-block" id="sub-strategies">
             <h2>Sub-Strategy Allocation Across Cycles</h2>
-            <p class="single-line-copy">Capital allocation flexes by cycle. Use the scenario toggles to view how portfolio balance shifts as market conditions change.</p>
-            <div class="strategy-viz">
-              <div
-                class="viz-controls"
-                role="tablist"
-                aria-label="Allocation scenarios"
-              >
-                <button
-                  class="viz-btn is-active"
-                  data-scenario="base"
-                  aria-pressed="true"
-                >
-                  Base
-                </button>
-                <button
-                  class="viz-btn"
-                  data-scenario="defensive"
-                  aria-pressed="false"
-                >
-                  Defensive
-                </button>
-                <button
-                  class="viz-btn"
-                  data-scenario="offensive"
-                  aria-pressed="false"
-                >
-                  Offensive
-                </button>
-              </div>
+            <p>Illustrative allocation ranges by cycle condition.</p>
+            <div class="strategy-viz static-viz">
               <div class="alloc-grid">
                 <div class="alloc-bars">
-                  <div
-                    class="alloc-row"
-                    data-base="32"
-                    data-defensive="40"
-                    data-offensive="24"
-                  >
-                    <span class="alloc-label"><span>Asset-Based Lending</span><span>32%</span></span>
-                    <div class="alloc-track">
-                      <span style="width: 32%"></span>
-                    </div>
-                  </div>
-                  <div
-                    class="alloc-row"
-                    data-base="53"
-                    data-defensive="46"
-                    data-offensive="61"
-                  >
-                    <span class="alloc-label"><span>Asset Restructuring</span><span>53%</span></span>
-                    <div class="alloc-track">
-                      <span style="width: 53%"></span>
-                    </div>
-                  </div>
-                  <div
-                    class="alloc-row"
-                    data-base="15"
-                    data-defensive="14"
-                    data-offensive="15"
-                  >
-                    <span class="alloc-label"><span>Debt Resolutions</span><span>15%</span></span>
-                    <div class="alloc-track">
-                      <span style="width: 15%"></span>
-                    </div>
-                  </div>
-                  <div class="alloc-note">
-                    Illustrative portfolio mix for strategy communication only.
-                  </div>
+                  <div class="alloc-row"><span class="alloc-label"><span>Asset-Based Lending</span><span>24–40%</span></span><div class="alloc-track"><span style="width: 34%"></span></div></div>
+                  <div class="alloc-row"><span class="alloc-label"><span>Asset Restructuring</span><span>46–61%</span></span><div class="alloc-track"><span style="width: 54%"></span></div></div>
+                  <div class="alloc-row"><span class="alloc-label"><span>Debt Resolutions</span><span>14–15%</span></span><div class="alloc-track"><span style="width: 15%"></span></div></div>
+                  <div class="alloc-note">Ranges are illustrative and shown for strategy communication only.</div>
                 </div>
-                <div class="ring-card">
-                  <div class="ring"></div>
-                  <div class="ring-label">
-                    <span data-ring-value>68%</span>Target collateral
-                    coverage
-                  </div>
-                </div>
+                <div class="ring-card"><div class="ring" style="--pct: 68%"></div><div class="ring-label"><span>68%</span>Target collateral coverage</div></div>
               </div>
-              <div class="strategy-details" aria-label="Sub-strategy detail">
-                <article class="strategy-detail">
-                  <h3>First-Lien Asset-Based Lending</h3>
-                  <p>
-                    Transactions are typically structured at 30–60% entry LTV
-                    against hard collateral, with first-lien priority under PRC
-                    law to improve control rights and recovery sequencing.
-                  </p>
-                </article>
-                <article class="strategy-detail">
-                  <h3>Asset Restructuring &amp; Workouts</h3>
-                  <p>
-                    The team runs creditor coordination and balance-sheet
-                    redesign programs, informed by two-decade pattern
-                    recognition across China’s restructuring cycles.
-                  </p>
-                </article>
-                <article class="strategy-detail">
-                  <h3>Debt Resolutions &amp; Recoveries</h3>
-                  <p>
-                    ShoreVest Asset Solutions operates as the in-house
-                    resolution vehicle, with sourcing, diligence, legal
-                    enforcement, and disposition managed internally.
-                  </p>
-                </article>
+              <div class="strategy-details">
+                <article class="strategy-detail"><h3>First-Lien Asset-Based Lending</h3><p>Senior-secured structures with conservative entry LTV and priority claims under PRC law.</p></article>
+                <article class="strategy-detail"><h3>Asset Restructuring &amp; Workouts</h3><p>Creditor coordination and restructuring programs built for balance-sheet repair and controlled exits.</p></article>
+                <article class="strategy-detail"><h3>Debt Resolutions &amp; Recoveries</h3><p>In-house servicing and realization through legal enforcement, secondary transfers, and negotiated outcomes.</p></article>
               </div>
             </div>
           </section>
@@ -2457,45 +2404,16 @@
           </section>
 
           <section class="strategy-block" id="risk-management">
-            <h2 class="single-line-heading">Risk Controls and Downside Governance</h2>
-            <p>
-              Downside management is structural, not discretionary. Portfolio
-              construction is designed to protect principal first and monetize
-              upside through execution.
-            </p>
+            <h2>Risk Controls and Return Profile</h2>
+            <p>Downside governance is embedded at underwriting and portfolio levels.</p>
             <div class="risk-grid">
               <div class="risk-card">
-                <h4>Underwriting Controls</h4>
-                <ul>
-                  <li>
-                    Conservative entry LTV/CTV bands with stress-tested recovery
-                    assumptions.
-                  </li>
-                  <li>
-                    Priority claims, enforceability review, and PRC-law
-                    documentation standards.
-                  </li>
-                  <li>
-                    No dependence on refinancing to complete value realization.
-                  </li>
-                </ul>
+                <h4>Underwriting controls</h4>
+                <ul><li>Conservative LTV/CTV bands with stressed recovery assumptions.</li><li>Priority claims and enforceability review under PRC-law documentation.</li><li>No reliance on refinancing for value realization.</li></ul>
               </div>
               <div class="risk-card">
-                <h4>Portfolio Controls</h4>
-                <ul>
-                  <li>
-                    Diversification by borrower, collateral, vintage, and
-                    province.
-                  </li>
-                  <li>
-                    Continuous surveillance from origination through
-                    disposition.
-                  </li>
-                  <li>
-                    Multiple predefined exits reduce duration and execution
-                    risk.
-                  </li>
-                </ul>
+                <h4>Portfolio controls</h4>
+                <ul><li>Diversification by borrower, collateral, province, and vintage.</li><li>Continuous surveillance from origination through disposition.</li><li>Predefined exit pathways to reduce duration and execution risk.</li></ul>
               </div>
             </div>
           </section>
@@ -2568,50 +2486,29 @@
                 </p>
               </div>
             </div>
+            <p class="data-note">Target returns are hypothetical estimates, not guarantees, and may differ materially from actual outcomes. Past performance is not indicative of future results.</p>
           </section>
 
           <section class="strategy-block" id="current-fund">
-            <h2>Investor Qualification and Access</h2>
-            <p>
-              Detailed track record and fund-structure materials are available to
-              qualified investors through ShoreVest's investor access process.
-            </p>
-            <p class="data-note">
-              Track record details and fund terms are shared only with qualified
-              investors and authorized parties upon request.
-            </p>
-            <div class="next-links">
-              <a href="investor-access.html" class="cta cta--dark"
-                ><span>Request Investor Access</span><span class="cta__ring">→</span></a
-              >
-            </div>
+            <h2>Portfolio Construction and Investor Access</h2>
+            <p>Detailed track record, fund structure, and operating documentation are provided through ShoreVest’s investor qualification process.</p>
+            <p class="data-note">Materials are shared only with qualified investors and authorized counterparties.</p>
+            <div class="next-links"><a href="investor-access.html" class="cta cta--dark"><span>Request Investor Access</span><span class="cta__ring">→</span></a></div>
           </section>
 
           <section class="strategy-block" id="cta-next">
-            <h2>Related Sections</h2>
-            <p>
-              For governance details, platform design, and team composition,
-              continue to the related sections below.
-            </p>
+            <h2>Related sections</h2>
+            <p>Continue to platform governance, team depth, and market intelligence.</p>
             <div class="next-links">
-              <a href="firm.html" class="cta cta--dark"
-                ><span>The Firm</span><span class="cta__ring">→</span></a
-              >
-              <a href="team.html" class="cta cta--dark"
-                ><span>Meet the Team</span><span class="cta__ring">→</span></a
-              >
-              <a href="insights.html" class="cta cta--dark"
-                ><span>Read Insights</span><span class="cta__ring">→</span></a
-              >
+              <a href="firm.html" class="cta cta--dark"><span>The Firm</span><span class="cta__ring">→</span></a>
+              <a href="team.html" class="cta cta--dark"><span>Meet the Team</span><span class="cta__ring">→</span></a>
+              <a href="insights.html" class="cta cta--dark"><span>Read Insights</span><span class="cta__ring">→</span></a>
             </div>
           </section>
         </div>
       </div>
     </section>
-
-
-    
-    <script>
+<script>
       (() => {
         if (window.__svScrollAnimationsInit) return;
         window.__svScrollAnimationsInit = true;
@@ -2663,7 +2560,7 @@
 <footer class="sv-footer">
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
-      <div class="sv-footer__brand">ShoreVest Partners</div>
+      <div class="sv-footer__brand">SHOREVEST PARTNERS</div>
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">CONTACT</span>
         <a href="mailto:partners@shorevest.com">PARTNERS@SHOREVEST.COM</a>
