@@ -731,11 +731,16 @@ blockquote.fs__q {
 }
 
 .cdd-editorial {
+  display: block;
+}
+
+.cdd-editorial__card {
   display: grid;
-  gap: clamp(44px, 5vw, 72px);
+  gap: clamp(48px, 5.2vw, 76px);
   background: var(--cdd-surface);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
-  padding: clamp(28px, 4vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 32%, transparent);
+  padding: clamp(34px, 4.8vw, 64px);
+  box-shadow: 0 22px 58px color-mix(in srgb, #08120a 50%, transparent);
 }
 
 .cdd-editorial__intro {
@@ -747,10 +752,10 @@ blockquote.fs__q {
 }
 
 .cdd-editorial__kicker {
-  color: color-mix(in srgb, var(--cdd-muted) 74%, transparent);
-  margin-bottom: 18px;
-  font-size: 9px;
-  letter-spacing: .16em;
+  color: var(--cdd-muted);
+  margin-bottom: 20px;
+  font-size: 10px;
+  letter-spacing: .1em;
 }
 
 .cdd-editorial__kicker::after {
@@ -758,11 +763,11 @@ blockquote.fs__q {
 }
 
 .cdd-editorial__title {
-  font-size: clamp(42px, 6vw, 76px);
-  line-height: .92;
+  font-size: clamp(48px, 6.6vw, 88px);
+  line-height: .9;
   color: var(--cdd-text);
-  margin-bottom: 24px;
-  text-shadow: 0 1px 0 color-mix(in srgb, var(--cdd-surface) 55%, transparent);
+  margin-bottom: 28px;
+  text-shadow: none;
 }
 
 .cdd-editorial__title em {
@@ -773,44 +778,46 @@ blockquote.fs__q {
 .cdd-editorial__lede {
   max-width: 48ch;
   font-family: var(--serif);
-  font-size: clamp(17px, 2.1vw, 21px);
-  line-height: 1.78;
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.8;
   color: var(--cdd-body);
 }
 
 .cdd-editorial__meta {
-  align-self: end;
   display: grid;
-  gap: 18px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  padding-top: 8px;
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 26%, transparent);
 }
 
 .cdd-editorial__meta-item {
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 26%, transparent);
-  padding-top: 10px;
+  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
+  padding-left: 12px;
 }
 
 .cdd-editorial__meta-label {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--cdd-muted);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .cdd-editorial__meta-value {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .02em;
   color: var(--cdd-body);
 }
 
 .cdd-feature {
   background: var(--cdd-surface);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 36%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
 }
 
 .cdd-feature__top {
-  padding: 14px clamp(24px, 3vw, 36px);
+  padding: 16px clamp(24px, 3vw, 36px);
   border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
   display: flex;
   align-items: center;
@@ -819,14 +826,14 @@ blockquote.fs__q {
 }
 
 .cdd-feature__issue {
-  font-size: 9px;
-  letter-spacing: .12em;
+  font-size: 10px;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--cdd-muted);
 }
 
 .cdd-feature__date {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--cdd-muted);
 }
 
@@ -834,31 +841,31 @@ blockquote.fs__q {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
   gap: clamp(28px, 3.6vw, 54px);
-  padding: clamp(34px, 4.8vw, 56px) clamp(24px, 3vw, 36px) clamp(38px, 5vw, 62px);
+  padding: clamp(38px, 5vw, 62px) clamp(24px, 3vw, 36px) clamp(42px, 5.4vw, 68px);
 }
 
 .cdd-feature__label {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: .12em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--cdd-muted);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .cdd-feature__title {
   font-family: var(--serif);
-  font-size: clamp(34px, 4.6vw, 60px);
-  line-height: 1.02;
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: 1;
   color: var(--cdd-text);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   max-width: 15ch;
 }
 
 .cdd-feature__thesis {
   font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1.86;
+  font-size: 18px;
+  line-height: 1.82;
   color: var(--cdd-body);
   max-width: 54ch;
 }
@@ -878,7 +885,7 @@ blockquote.fs__q {
 }
 
 .cdd-feature__finding {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.74;
   color: var(--cdd-body);
   border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 60%, transparent);
@@ -887,7 +894,7 @@ blockquote.fs__q {
 
 .cdd-feature__quote {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.72;
   color: var(--cdd-text);
   font-style: italic;
@@ -910,7 +917,7 @@ blockquote.fs__q {
 
 .cdd-feature__volume {
   font-size: 10px;
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--cdd-muted);
 }
@@ -1218,6 +1225,9 @@ h2.su__hed {
 @media (max-width: 1024px) {
   :root { --site-page-margin: clamp(20px, 4.8vw, 40px); }
   .hero__sliver { height:540px; }
+  .cdd-editorial__meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .cdd-subscribe__grid {
     grid-template-columns:minmax(0, 1fr);
     gap:32px;
@@ -1242,7 +1252,7 @@ h2.su__hed {
   #hero,
   .about__intro,
   .strat__hd,
-  .cdd-editorial,
+  .cdd-editorial__card,
   .su__wrap,
   .city-band__inner { gap:48px; }
   .team__grid { grid-template-columns:repeat(3,1fr); }
@@ -1355,7 +1365,7 @@ h2.su__hed {
   .strat__hd,
   .strat__grid,
   .founder-split,
-  .cdd-editorial,
+  .cdd-editorial__card,
   .team__hd,
   .team__grid,
   .city-band__inner,
@@ -1444,9 +1454,16 @@ h2.su__hed {
 
   
   .cdd-editorial__intro,
-  .cdd-feature__body {
+  .cdd-feature__body,
+  .cdd-editorial__meta {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
+  }
+  .cdd-editorial__meta-item {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
+    padding-top: 10px;
   }
   .cdd-feature__title {
     font-size: clamp(28px, 8.6vw, 38px);
@@ -2035,13 +2052,55 @@ h2.su__hed {
 <!-- CDD -->
 <section id="cdd">
   <div class="wrap cdd-editorial">
-    <div class="cdd-editorial__intro">
-      <div>
-        <div class="eyebrow cdd-editorial__kicker rev">ShoreVest Research Franchise · Established 2018</div>
-        <h2 class="cdd-editorial__title rev d1">China Debt <em>Dynamics.</em></h2>
-        <p class="cdd-editorial__lede rev d2">An ongoing institutional research series focused on China's private credit cycle, policy architecture, legal enforceability, and allocator-relevant market structure.</p>
+    <div class="cdd-editorial__card">
+      <div class="cdd-editorial__intro">
+        <div>
+          <div class="eyebrow cdd-editorial__kicker rev">ShoreVest Research Franchise · Established 2018</div>
+          <h2 class="cdd-editorial__title rev d1">China Debt <em>Dynamics.</em></h2>
+          <p class="cdd-editorial__lede rev d2">An ongoing institutional research series focused on China's private credit cycle, policy architecture, legal enforceability, and allocator-relevant market structure.</p>
+        </div>
       </div>
+
+      <article class="cdd-feature rev d3" aria-label="Featured issue of China Debt Dynamics">
+        <div class="cdd-feature__top">
+          <div class="cdd-feature__issue">Current issue · 46</div>
+          <div class="cdd-feature__date">25 January 2026</div>
+        </div>
+        <div class="cdd-feature__body">
+          <div>
+            <div class="cdd-feature__label">Current issue</div>
+            <h3 class="cdd-feature__title">The End of China's “Uninvestable” Myth</h3>
+            <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
+          </div>
+          <aside class="cdd-feature__panel">
+            <div>
+              <div class="cdd-feature__label">Key findings</div>
+              <div class="cdd-feature__findings">
+                <p class="cdd-feature__finding">Policy direction continues to improve enforcement predictability for secured creditors.</p>
+                <p class="cdd-feature__finding">Selective private credit strategies remained executable through the recent market reset.</p>
+                <p class="cdd-feature__finding">Capital-market reforms are shifting allocator assumptions about China exposure.</p>
+              </div>
+            </div>
+            <blockquote class="cdd-feature__quote">“A market best understood through process, policy, and execution rather than headline volatility.”</blockquote>
+          </aside>
+        </div>
+        <div class="cdd-feature__footer">
+          <div class="cdd-cta-group">
+            <a href="insights.html#issue-header" class="cdd-cta"><span>Read issue</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
+            <a href="insights.html#subscribe" class="cdd-cta"><span>Subscribe</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
       <div class="cdd-editorial__meta rev d2">
+        <div class="cdd-editorial__meta-item">
+          <div class="cdd-editorial__meta-label">Issue number</div>
+          <div class="cdd-editorial__meta-value">46</div>
+        </div>
+        <div class="cdd-editorial__meta-item">
+          <div class="cdd-editorial__meta-label">Published</div>
+          <div class="cdd-editorial__meta-value">25 January 2026</div>
+        </div>
         <div class="cdd-editorial__meta-item">
           <div class="cdd-editorial__meta-label">Series cadence</div>
           <div class="cdd-editorial__meta-value">Quarterly publication with interim updates</div>
@@ -2050,40 +2109,12 @@ h2.su__hed {
           <div class="cdd-editorial__meta-label">Coverage</div>
           <div class="cdd-editorial__meta-value">Private credit, NPL workflow, policy transmission</div>
         </div>
+        <div class="cdd-editorial__meta-item">
+          <div class="cdd-editorial__meta-label">Volume</div>
+          <div class="cdd-editorial__meta-value">10 · Number 1</div>
+        </div>
       </div>
     </div>
-
-    <article class="cdd-feature rev d3" aria-label="Featured issue of China Debt Dynamics">
-      <div class="cdd-feature__top">
-        <div class="cdd-feature__issue">Issue 46</div>
-        <div class="cdd-feature__date">25 January 2026</div>
-      </div>
-      <div class="cdd-feature__body">
-        <div>
-          <div class="cdd-feature__label">Current issue</div>
-          <h3 class="cdd-feature__title">The End of China's “Uninvestable” Myth</h3>
-          <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
-        </div>
-        <aside class="cdd-feature__panel">
-          <div>
-            <div class="cdd-feature__label">Key findings</div>
-            <div class="cdd-feature__findings">
-              <p class="cdd-feature__finding">Policy direction continues to improve enforcement predictability for secured creditors.</p>
-              <p class="cdd-feature__finding">Selective private credit strategies remained executable through the recent market reset.</p>
-              <p class="cdd-feature__finding">Capital-market reforms are shifting allocator assumptions about China exposure.</p>
-            </div>
-          </div>
-          <blockquote class="cdd-feature__quote">“A market best understood through process, policy, and execution rather than headline volatility.”</blockquote>
-        </aside>
-      </div>
-      <div class="cdd-feature__footer">
-        <div class="cdd-cta-group">
-          <a href="insights.html#issue-header" class="cdd-cta"><span>Read issue</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
-          <a href="insights.html#subscribe" class="cdd-cta"><span>Subscribe</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
-        </div>
-        <div class="cdd-feature__volume">Volume 10 · Number 1</div>
-      </div>
-    </article>
   </div>
 </section>
 
