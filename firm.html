@@ -1819,7 +1819,11 @@
       font-weight: 700 !important;
       text-transform: uppercase !important;
       letter-spacing: 0.16em !important;
-      color: var(--sv-cinnabar) !important;
+      color: var(--sv-ink) !important;
+    }
+    .eyebrow::after,
+    .track-record-panel__eyebrow::after {
+      background: var(--sv-cinnabar) !important;
     }
 
     /* Chinese typography and lockup */
@@ -1865,12 +1869,24 @@
     .operations-map,
     .sv-footer {
       background: var(--sv-paper-light) !important;
-      border-color: var(--sv-blue-green) !important;
+      border-color: color-mix(in srgb, var(--sv-blue-green) 40%, transparent) !important;
     }
     section,
     main,
     .track-record-section .framed-panel {
       background: var(--sv-paper) !important;
+    }
+    .hero-aside,
+    .foot {
+      background: var(--sv-ink) !important;
+      color: var(--sv-paper-light) !important;
+    }
+    .nav__lp,
+    .nav__menu-btn,
+    .sv-footer__contact a {
+      background: var(--sv-paper-light) !important;
+      border-color: color-mix(in srgb, var(--sv-blue-green) 40%, transparent) !important;
+      color: var(--sv-ink) !important;
     }
     a.active,
     .nav__links a.active,
