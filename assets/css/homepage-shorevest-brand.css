@@ -424,11 +424,13 @@ body.homepage .hero__overlay .cta--light {
   border: none !important;
   background: transparent !important;
   padding: 0 !important;
+  color: #1E4040 !important;
 }
 
 body.homepage .hero__overlay .cta--light .cta__ring {
-  border-color: rgba(247, 241, 232, 0.58) !important;
-  background: rgba(247, 241, 232, 0.08) !important;
+  color: #1E4040 !important;
+  border-color: rgba(30, 64, 64, 0.45) !important;
+  background: rgba(247, 241, 232, 0.22) !important;
 }
 
 body.homepage .hero__overlay .cta--light:hover,
