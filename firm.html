@@ -1901,6 +1901,69 @@
       border-color: var(--sv-cinnabar) !important;
       color: var(--sv-paper-light) !important;
     }
+
+    /* Firm page mobile top bar: match reference layout */
+    @media (max-width: 767px) {
+      #nav {
+        height: 86px !important;
+        padding: calc(env(safe-area-inset-top, 0px) + 10px) 18px 12px !important;
+        align-items: flex-end !important;
+        border-bottom: 1px solid rgba(16, 16, 15, 0.14) !important;
+        background: #ffffff !important;
+      }
+      #nav::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: calc(env(safe-area-inset-top, 0px) + 10px);
+        background: #e9e3d2;
+      }
+      .nav__logo {
+        gap: 10px !important;
+      }
+      .nav__logo-mark {
+        width: 46px !important;
+        height: 46px !important;
+        flex: 0 0 46px !important;
+      }
+      .nav__logo-lockup {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+      }
+      .nav__logo-lockup::before {
+        display: none !important;
+      }
+      .nav__logo-en {
+        font-size: 14px !important;
+        letter-spacing: 0.34em !important;
+      }
+      .nav__logo-cn {
+        margin-top: 2px !important;
+        font-size: 9px !important;
+        letter-spacing: 0.14em !important;
+        opacity: 0.9 !important;
+      }
+      .nav__zh,
+      .nav__lp {
+        display: none !important;
+      }
+      .nav__menu-btn {
+        display: inline-flex !important;
+        min-height: 50px !important;
+        min-width: 170px;
+        justify-content: center;
+        padding: 0 24px !important;
+        border: 1px solid rgba(16, 16, 15, 0.24) !important;
+        background: #f9f7f1 !important;
+        font-size: 14px !important;
+        letter-spacing: 0.18em !important;
+      }
+      main {
+        padding-top: 86px !important;
+      }
+    }
   </style>
 
 
