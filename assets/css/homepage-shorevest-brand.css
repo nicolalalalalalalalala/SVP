@@ -388,3 +388,194 @@ li,
 #cdd .cdd-feature__quote {
   border-left-color: var(--cdd-signal) !important;
 }
+
+/* === Homepage institutional refinement pass (April 2026) === */
+body.homepage {
+  background: var(--paper-light) !important;
+}
+
+body.homepage .hero__sliver {
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 72%, transparent) !important;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 6, 5, 0.22) 0%,
+      rgba(8, 6, 5, 0.36) 48%,
+      rgba(8, 6, 5, 0.58) 100%
+    ),
+    url("assets/images/homepage_hero2-2.jpg") !important;
+}
+
+body.homepage .hero__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(12, 10, 8, 0.58) 0%,
+    rgba(12, 10, 8, 0.24) 56%,
+    rgba(12, 10, 8, 0) 100%
+  ) !important;
+}
+
+body.homepage .hero__overlay h1.hero__hed {
+  color: #f7f1e8 !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.36) !important;
+}
+
+body.homepage .hero__overlay .cta--light {
+  border: 1px solid rgba(247, 241, 232, 0.42) !important;
+  background: rgba(12, 10, 8, 0.36) !important;
+  padding: 9px 9px 9px 16px !important;
+}
+
+body.homepage .hero__overlay .cta--light .cta__ring {
+  border-color: rgba(247, 241, 232, 0.58) !important;
+  background: rgba(247, 241, 232, 0.08) !important;
+}
+
+body.homepage .hero__overlay .cta--light:hover,
+body.homepage .hero__overlay .cta--light:focus-visible {
+  border-color: var(--cinnabar) !important;
+  background: rgba(12, 10, 8, 0.66) !important;
+}
+
+body.homepage #hero {
+  padding-top: clamp(76px, 8vw, 112px) !important;
+  position: relative;
+}
+
+body.homepage #hero::before {
+  content: "";
+  position: absolute;
+  left: var(--pad);
+  right: var(--pad);
+  top: clamp(42px, 5.6vw, 62px);
+  height: 1px;
+  background: color-mix(in srgb, var(--paper-dark) 82%, transparent);
+}
+
+body.homepage .hero__copy {
+  color: color-mix(in srgb, var(--text-main) 70%, #324d4d 30%) !important;
+}
+
+body.homepage #stats {
+  padding-bottom: clamp(34px, 4.5vw, 56px);
+}
+
+body.homepage .stats {
+  background: linear-gradient(180deg, rgba(250, 246, 238, 0.94), rgba(242, 236, 216, 0.8)) !important;
+  border-color: color-mix(in srgb, var(--paper-dark) 92%, transparent) !important;
+}
+
+body.homepage #strategy .sg {
+  padding-top: clamp(26px, 2.8vw, 38px);
+}
+
+body.homepage #strategy .sg:nth-child(2) {
+  background: color-mix(in srgb, var(--paper) 76%, var(--paper-light) 24%) !important;
+}
+
+body.homepage #strategy .sg:nth-child(3) {
+  background: color-mix(in srgb, var(--paper) 62%, var(--paper-light) 38%) !important;
+}
+
+/* China Debt Dynamics: readability-first dark editorial treatment */
+body.homepage #cdd {
+  --cdd-bg: #152321;
+  --cdd-surface: #111917;
+  --cdd-secondary-surface: #0e1614;
+  --cdd-structure: #5f736e;
+  --cdd-text: #f6f0e6;
+  --cdd-body: #ece3d6;
+  --cdd-muted: #c5b8a2;
+  --cdd-accent: #7ea4a0;
+  --cdd-signal: #c93b2a;
+  background: radial-gradient(120% 120% at 12% 8%, #1d2f2d 0%, #152321 54%, #0f1a18 100%) !important;
+  border-top: 1px solid rgba(197, 184, 162, 0.36) !important;
+  border-bottom: 1px solid rgba(95, 115, 110, 0.35) !important;
+}
+
+body.homepage #cdd .cdd-editorial__card,
+body.homepage #cdd .cdd-feature,
+body.homepage #cdd .cdd-feature__panel,
+body.homepage #cdd .cdd-feature__quote {
+  background: var(--cdd-surface) !important;
+}
+
+body.homepage #cdd .cdd-editorial__title,
+body.homepage #cdd .cdd-editorial__lede,
+body.homepage #cdd .cdd-feature__title,
+body.homepage #cdd .cdd-feature__thesis,
+body.homepage #cdd .cdd-feature__finding,
+body.homepage #cdd .cdd-feature__quote,
+body.homepage #cdd .cdd-cta,
+body.homepage #cdd .cdd-editorial__meta-value {
+  color: var(--cdd-text) !important;
+}
+
+body.homepage #cdd .cdd-editorial__kicker,
+body.homepage #cdd .cdd-feature__issue,
+body.homepage #cdd .cdd-feature__date,
+body.homepage #cdd .cdd-feature__label,
+body.homepage #cdd .cdd-editorial__meta-label {
+  color: var(--cdd-muted) !important;
+}
+
+body.homepage #cdd .cdd-feature__finding {
+  border-left-color: rgba(126, 164, 160, 0.55) !important;
+}
+
+body.homepage #cdd .cdd-feature__quote {
+  border-left-color: var(--cdd-signal) !important;
+  border-top-color: rgba(95, 115, 110, 0.34) !important;
+}
+
+body.homepage #cdd .cdd-cta,
+body.homepage #cdd .cdd-cta__ring {
+  border-color: rgba(95, 115, 110, 0.7) !important;
+}
+
+body.homepage #cdd .cdd-cta:hover,
+body.homepage #cdd .cdd-cta:focus-visible {
+  border-color: rgba(126, 164, 160, 0.95) !important;
+  background: rgba(22, 35, 33, 0.95) !important;
+}
+
+/* Footer: DIN-led institutional hierarchy */
+body.homepage .sv-footer {
+  background: color-mix(in srgb, var(--paper) 78%, var(--paper-light) 22%) !important;
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 84%, transparent) !important;
+}
+
+body.homepage .sv-footer__brand,
+body.homepage .sv-footer__contact-label,
+body.homepage .sv-footer__contact a,
+body.homepage .sv-footer__copyright,
+body.homepage .sv-footer__legal,
+body.homepage .sv-footer__legal-links,
+body.homepage .sv-footer__legal-links a,
+body.homepage .sv-footer__legal-toggle > summary {
+  font-family: "DIN 2014", "Inter", sans-serif !important;
+  letter-spacing: .06em !important;
+}
+
+body.homepage .sv-footer__brand {
+  font-size: 14px !important;
+  letter-spacing: .11em !important;
+}
+
+body.homepage .sv-footer__main {
+  padding-bottom: 22px !important;
+}
+
+body.homepage .sv-footer__contact-label,
+body.homepage .sv-footer__legal-toggle > summary,
+body.homepage .sv-footer__legal-links a {
+  font-size: 10px !important;
+  letter-spacing: .1em !important;
+}
+
+body.homepage .sv-footer__contact a,
+body.homepage .sv-footer__copyright,
+body.homepage .sv-footer__legal {
+  font-size: 11px !important;
+  line-height: 1.8 !important;
+}

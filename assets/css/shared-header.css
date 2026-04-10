@@ -1,10 +1,18 @@
+/* Structural mount keeps header above page content without overlap */
+#site-header-mount {
+  position: sticky;
+  top: 0;
+  z-index: 220;
+  min-height: 62px;
+}
+
 /* Canonical ShoreVest top bar: sourced from homepage implementation */
 #nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 200;
+  z-index: 221;
   height: 62px;
   display: flex;
   align-items: center;
@@ -39,6 +47,7 @@
 
 .nav__logo-lockup {
   display: inline-flex;
+  white-space: nowrap;
   flex-direction: column;
   justify-content: center;
   line-height: 1;
@@ -49,6 +58,7 @@
 }
 
 .nav__logo-en {
+  white-space: nowrap;
   font-family: 'DIN 2014', 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -152,6 +162,8 @@
 }
 
 @media (max-width: 767px) {
+  #site-header-mount { min-height: 76px; }
+
   #nav {
     height: auto;
     min-height: 76px;
@@ -232,7 +244,7 @@
     min-height: 38px;
     padding: 0 9px;
     flex: 0 0 auto;
-    white-space: normal;
+    white-space: nowrap;
     text-align: center;
     border-radius: 0;
     font-size: 8.6px;
