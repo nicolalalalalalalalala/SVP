@@ -408,6 +408,23 @@ html {
     flex: 0 0 auto;
   }
 
+  /*
+   * Mobile landscape can be wider than 767px, which previously hid primary links
+   * without exposing the menu trigger. Ensure touch devices always get a menu button.
+   */
+  @media (hover: none) and (pointer: coarse) {
+    #nav .nav__menu-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #nav .nav__lp,
+    #nav .nav__zh {
+      display: none;
+    }
+  }
+
   #nav .nav__lp,
   #nav .nav__menu-btn {
     min-height: 42px;
