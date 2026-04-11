@@ -1697,7 +1697,7 @@
         display: block;
         height: 100%;
         width: 0;
-        background: linear-gradient(90deg, #7C3A1E, #B3213F);
+        background: #8F1F37;
         transition: width .35s ease;
       }
       .alloc-insight {
@@ -2410,32 +2410,32 @@
             <div class="strategy-viz strategy-viz--simple">
               <div class="alloc-simple-head">
                 <p class="alloc-kicker">Scenario view</p>
-                <h3 data-alloc-scenario-title>Tight Spreads / Competitive</h3>
+                <h3 data-alloc-scenario-title>Stressed Dislocation / Wide Spreads</h3>
               </div>
               <div class="alloc-scenarios" role="tablist" aria-label="Capital rotation scenarios">
-                <button type="button" class="alloc-scenario is-active" role="tab" aria-selected="true" data-scenario="tight">Tight spreads</button>
+                <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="tight">Tight spreads</button>
                 <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="balanced">Balanced reset</button>
-                <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="stressed">Stressed dislocation</button>
+                <button type="button" class="alloc-scenario is-active" role="tab" aria-selected="true" data-scenario="stressed">Stressed dislocation</button>
               </div>
               <p class="alloc-total"><span>Total</span><strong>100%</strong></p>
-              <p class="alloc-insight" data-alloc-insight>Competition is high, so deployment emphasizes recovery-heavy structures with stronger downside buffers.</p>
+              <p class="alloc-insight" data-alloc-insight>When dislocation is elevated, capital rotates toward new origination with legal control while retaining resolution capacity.</p>
               <div class="alloc-board" aria-label="Sub-strategy allocation by market scenario">
                 <article class="alloc-card" data-sleeve="abl">
                   <p class="alloc-name">Asset-Based Lending</p>
-                  <p class="alloc-value" data-alloc-value>24%</p>
-                  <div class="alloc-bar" aria-hidden="true"><span style="width:24%"></span></div>
+                  <p class="alloc-value" data-alloc-value>40%</p>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width:40%"></span></div>
                   <p class="alloc-range" data-alloc-range>Range 24–40%</p>
                 </article>
                 <article class="alloc-card" data-sleeve="restructuring">
                   <p class="alloc-name">Asset Restructuring</p>
-                  <p class="alloc-value" data-alloc-value>61%</p>
-                  <div class="alloc-bar" aria-hidden="true"><span style="width:61%"></span></div>
+                  <p class="alloc-value" data-alloc-value>46%</p>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width:46%"></span></div>
                   <p class="alloc-range" data-alloc-range>Range 46–61%</p>
                 </article>
                 <article class="alloc-card" data-sleeve="resolutions">
                   <p class="alloc-name">Debt Resolutions</p>
-                  <p class="alloc-value" data-alloc-value>15%</p>
-                  <div class="alloc-bar" aria-hidden="true"><span style="width:15%"></span></div>
+                  <p class="alloc-value" data-alloc-value>14%</p>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width:14%"></span></div>
                   <p class="alloc-range" data-alloc-range>Range 14–15%</p>
                 </article>
               </div>
