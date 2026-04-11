@@ -206,8 +206,25 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .contact-us-spacing {
-      margin: 0 0 72px;
+    .legal-contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      margin-bottom: 36px;
+    }
+    .legal-contact-actions a {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      text-decoration: none;
+      color: var(--red);
+      transition: all 0.2s ease;
+    }
+    .legal-contact-actions a:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
     }
     main {
       width: 100%;
@@ -235,6 +252,15 @@
       flex-wrap: wrap;
       gap: 6px 14px;
       padding-bottom: 8px;
+    }
+    @media (max-width: 768px) {
+      .legal-contact-actions {
+        flex-direction: column;
+      }
+      .legal-contact-actions a {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 
@@ -442,7 +468,10 @@
   </p>
   <p>General enquiries: <a href="mailto:partners@shorevest.com">partners@shorevest.com</a></p>
 
-  <p class="contact-us-spacing"><a href="index.html">Back to homepage</a></p>
+  <div class="legal-contact-actions">
+    <a href="mailto:privacy@shorevest.com">privacy@shorevest.com</a>
+    <a href="index.html">Back to homepage</a>
+  </div>
 
     </div>
   </main>
