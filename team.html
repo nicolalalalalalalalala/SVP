@@ -355,6 +355,16 @@
       .group--client-solutions .grid {
         gap: 20px;
       }
+      .group--client-solutions .card--no-frame {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+      }
+      .group--client-solutions .card--no-frame:hover,
+      .group--client-solutions .card--no-frame:focus-within {
+        border-color: transparent;
+        box-shadow: none;
+      }
       .group--advisory {
         padding: 22px 0 28px;
       }
@@ -888,7 +898,7 @@
             </p>
           </div>
           <div class="grid">
-            <article class="card">
+            <article class="card card--no-frame">
               <div class="photo">
                 <img
                   src="assets/images/john_jones.jpg"
