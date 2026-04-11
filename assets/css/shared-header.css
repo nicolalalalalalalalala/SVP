@@ -100,6 +100,7 @@
 }
 
 .nav__links a {
+  font-family: 'DIN 2014', 'Inter', sans-serif;
   font-size: 11.4px;
   font-weight: 500;
   letter-spacing: .14em;
@@ -123,6 +124,7 @@
 }
 
 .nav__zh {
+  font-family: 'DIN 2014', 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: var(--ink, #171410);
@@ -145,6 +147,7 @@
 .nav__mobile-investor { display: none; }
 
 .nav__lp {
+  font-family: 'DIN 2014', 'Inter', sans-serif;
   font-size: 11.4px;
   font-weight: 500;
   letter-spacing: .14em;
@@ -163,6 +166,7 @@
 }
 
 .nav__menu-btn {
+  font-family: 'DIN 2014', 'Inter', sans-serif;
   display: none;
   border: 1px solid rgba(48,40,34,.2);
   background: #fff;
