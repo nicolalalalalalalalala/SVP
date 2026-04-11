@@ -236,6 +236,33 @@
       border-color: var(--red);
       color: #fff;
     }
+    main {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .privacy-wrap {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+    }
+    .privacy-wrap h1 {
+      margin: 0 0 8px;
+    }
+    .privacy-wrap p,
+    .privacy-wrap li {
+      max-width: none;
+    }
+    .sv-footer {
+      background: var(--off);
+    }
+    .sv-footer__legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      padding-bottom: 8px;
+    }
     @media (max-width: 768px) {
       .legal-contact-actions {
         flex-direction: column;
@@ -253,6 +280,8 @@
 </head>
 <body class="legal-page">
   <div id="site-header-mount"></div>
+  <main>
+    <div class="privacy-wrap">
   <h1>Terms of Use</h1>
   <p class="muted"><strong>Effective Date:</strong> 8 April 2026</p>
 
@@ -411,6 +440,8 @@
       <a href="index.html">Back to homepage</a>
     </div>
   </section>
+    </div>
+  </main>
 
 
   <footer class="sv-footer">
@@ -429,7 +460,7 @@
         <summary>LEGAL NOTICE</summary>
         <div class="sv-footer__legal">This website uses cookies and similar technologies for operational, analytical, and security purposes. Certain cookies may be required for the Site to function. By using this website, you acknowledge the use of cookies as described in this Cookie Notice. Please also review our Privacy Policy, Terms of Use, and Legal Notices &amp; Disclaimers.</div>
       </details>
-      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="legal-notices-disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
     </div>
   </div>
 </footer>
