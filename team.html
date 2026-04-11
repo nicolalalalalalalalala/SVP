@@ -334,38 +334,53 @@
         margin-top: -2px;
       }
       .team-profile__bio-toggle {
-        margin-top: 8px;
+        margin-top: 10px;
         width: fit-content;
         background: none;
         border: 0;
-        border-bottom: 1px solid color-mix(in srgb, var(--ink-soft) 45%, transparent);
-        padding: 0 0 2px;
-        font-size: 10px;
-        letter-spacing: 0.14em;
+        border-bottom: 1px solid color-mix(in srgb, var(--ink-soft) 35%, transparent);
+        padding: 0 0 3px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--ink-soft);
+        color: color-mix(in srgb, var(--ink-soft) 92%, black 8%);
         cursor: pointer;
+        transition: color 0.2s ease, border-color 0.2s ease;
       }
       .team-profile__bio-toggle::after {
-        content: " +";
+        content: " ↗";
+        font-size: 10px;
+        vertical-align: 1px;
+        opacity: 0.8;
       }
       .team-profile__bio-toggle[aria-expanded="true"]::after {
-        content: " −";
+        content: " —";
+        opacity: 0.65;
+      }
+      .team-profile__bio-toggle:hover {
+        color: var(--ink);
+        border-bottom-color: color-mix(in srgb, var(--ink-soft) 55%, transparent);
       }
       .team-profile__bio-toggle:focus-visible {
-        outline: 2px solid var(--qing);
-        outline-offset: 3px;
+        outline: 1px solid color-mix(in srgb, var(--qing) 78%, white 22%);
+        outline-offset: 4px;
       }
       .team-profile__bio {
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px solid color-mix(in srgb, var(--ink-soft) 24%, transparent);
+        margin-top: 12px;
+        padding: 12px 0 0 12px;
+        border-top: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
+        border-left: 1px solid color-mix(in srgb, var(--ink-soft) 16%, transparent);
+      }
+      .team-profile__bio[hidden] {
+        display: none;
       }
       .team-profile__bio p {
         font-family: var(--serif);
         font-size: 14px;
-        line-height: 1.62;
-        color: var(--ink-soft);
+        line-height: 1.72;
+        color: color-mix(in srgb, var(--ink-soft) 93%, black 7%);
+        max-width: 60ch;
+        text-wrap: pretty;
       }
       .group--leadership {
         margin-top: 10px;
@@ -716,11 +731,11 @@
 
               <div class="team-profile__role">Managing Partner & Founder</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-benjamin-fanger">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-benjamin-fanger">Read bio</button>
 
               <div class="team-profile__bio" id="bio-benjamin-fanger" hidden>
 
-                <p>Benjamin Fanger is ShoreVest’s Managing Partner and Founder. He leads the firm’s investment strategy, portfolio construction, and governance across the China private credit platform, with direct oversight of risk concentration, underwriting discipline, and realization outcomes.</p>
+                <p>Benjamin Fanger is ShoreVest’s Managing Partner and Founder. He leads the firm’s investment strategy, portfolio construction, and governance across the China private credit platform, with direct oversight of risk concentration, underwriting discipline, and realization outcomes at the portfolio level. Since the firm’s inception, he has directed the build-out of ShoreVest’s legal-first investment framework, aligning origination, documentation, and enforcement planning before capital is deployed. He works closely with investment, legal, and asset execution teams to convert complex dislocations into recoverable structures designed for capital preservation and long-term compounded returns.</p>
 
               </div>
 
@@ -747,11 +762,11 @@
 
               <div class="team-profile__role">Partner</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-mecy-mei">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-mecy-mei">Read bio</button>
 
               <div class="team-profile__bio" id="bio-mecy-mei" hidden>
 
-                <p>Mecy Mei is a Partner responsible for sourcing, underwriting, transaction structuring, and execution across onshore private credit opportunities. She leads deal work from initial screening through closing with a focus on enforceability and downside protection.</p>
+                <p>Mecy Mei is a Partner responsible for sourcing, underwriting, transaction structuring, and execution across onshore private credit opportunities. She leads deal work from initial screening through closing, coordinating diligence, legal architecture, and commercial negotiation to ensure each transaction is executable under local legal and operating realities. Her work extends through post-investment monitoring and active risk management, with a consistent focus on enforceability, downside protection, and disciplined risk-adjusted deployment across market cycles.</p>
 
               </div>
 
@@ -778,11 +793,11 @@
 
               <div class="team-profile__role">Partner</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-hui-zheng">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-hui-zheng">Read bio</button>
 
               <div class="team-profile__bio" id="bio-hui-zheng" hidden>
 
-                <p>Hui Zheng is a Partner focused on complex credit and restructuring situations. She leads structuring, negotiation, and execution where capital solutions require close coordination among creditors, sponsors, and counterparties.</p>
+                <p>Hui Zheng is a Partner focused on complex credit and restructuring situations. She leads structuring, negotiation, and execution for stressed and special-situations transactions where capital solutions require tight coordination among creditors, sponsors, and counterparties. She works closely with legal and asset teams to design practical workout pathways, navigate stakeholder complexity, and drive implementation through restructuring and realization. Her mandate is to protect creditor position while preserving optionality and maximizing recoveries in high-friction situations.</p>
 
               </div>
 
@@ -809,11 +824,11 @@
 
               <div class="team-profile__role">Partner & CFO</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-ada-bi">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-ada-bi">Read bio</button>
 
               <div class="team-profile__bio" id="bio-ada-bi" hidden>
 
-                <p>Ada Bi is Partner and CFO, overseeing fund management, financial operations, internal controls, and investor reporting across the ShoreVest platform. She helps maintain institutional-grade process discipline as portfolios scale.</p>
+                <p>Ada Bi is Partner and CFO, overseeing fund management, financial operations, internal controls, and investor reporting across the ShoreVest platform. She is responsible for the integrity of operating and financial processes across funds and managed vehicles, including governance workflows, control frameworks, and reporting cadence. Her role connects finance, operations, and investor communications to maintain consistency, transparency, and institutional-grade execution as portfolios scale and mature.</p>
 
               </div>
 
@@ -840,11 +855,11 @@
 
               <div class="team-profile__role">Partner</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-shanjuan-jiang">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-shanjuan-jiang">Read bio</button>
 
               <div class="team-profile__bio" id="bio-shanjuan-jiang" hidden>
 
-                <p>Shanjuan Jiang is a Partner supporting capital strategy and institutional engagement. She works across investor communications, relationship development, and strategic initiatives that connect ShoreVest’s investment capabilities with long-duration capital.</p>
+                <p>Shanjuan Jiang is a Partner supporting capital strategy and institutional engagement. She works across investor communications, relationship development, and strategic initiatives that connect ShoreVest’s investment capabilities with long-duration institutional capital. Her remit includes translating portfolio and platform developments into clear client-facing narratives, supporting fundraising coordination, and strengthening partnership quality across the firm’s capital base.</p>
 
               </div>
 
@@ -871,11 +886,11 @@
 
               <div class="team-profile__role">General Counsel</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-lillian-xu">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-lillian-xu">Read bio</button>
 
               <div class="team-profile__bio" id="bio-lillian-xu" hidden>
 
-                <p>Lillian Xu is General Counsel and leads legal structuring, documentation, and enforcement strategy across PRC credit investments. She advises on legal architecture to embed creditor protections before closing.</p>
+                <p>Lillian Xu is General Counsel and leads legal structuring, documentation, and enforcement strategy across PRC credit investments. She advises investment teams on transaction architecture from inception, ensuring legal protections and creditor-rights provisions are embedded in each deal before closing. Her work spans documentation strategy, intercreditor positioning, and enforcement pathway design through workout, with an emphasis on practical legal outcomes that support recovery and portfolio resilience.</p>
 
               </div>
 
@@ -902,11 +917,11 @@
 
               <div class="team-profile__role">Director of Capital Solutions</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-james-li">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-james-li">Read bio</button>
 
               <div class="team-profile__bio" id="bio-james-li" hidden>
 
-                <p>James Li is Director of Capital Solutions, focused on restructuring execution and bespoke capital solutions in complex credit situations. He works on creditor coordination, recapitalization design, and implementation to improve recoveries.</p>
+                <p>James Li is Director of Capital Solutions, focused on restructuring execution and bespoke capital solutions in complex credit situations. He works across creditor coordination, recapitalization design, and transaction implementation where standard approaches are insufficient for preserving value. By integrating restructuring analysis with execution planning, he helps move contested situations toward actionable agreements and improved recovery outcomes.</p>
 
               </div>
 
@@ -933,11 +948,11 @@
 
               <div class="team-profile__role">Managing Director, ShoreVest Asset Solutions</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-daoping-yang">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-daoping-yang">Read bio</button>
 
               <div class="team-profile__bio" id="bio-daoping-yang" hidden>
 
-                <p>Daoping Yang is Managing Director, ShoreVest Asset Solutions, overseeing asset-level execution and recovery processes across invested positions. He manages on-the-ground enforcement, restructuring implementation, and realization workflows.</p>
+                <p>Daoping Yang is Managing Director (SAS), overseeing asset-level execution and recovery processes across invested positions. He manages on-the-ground enforcement, restructuring implementation, and realization workflows, translating transaction-level rights into practical recovery actions. Working at the intersection of legal process and operational execution, he advances case progress, mitigates slippage, and supports timely portfolio outcomes.</p>
 
               </div>
 
@@ -975,11 +990,11 @@
 
               <div class="team-profile__role">Director of Client Solutions (ex-Asia)</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-john-jones">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-john-jones">Read bio</button>
 
               <div class="team-profile__bio" id="bio-john-jones" hidden>
 
-                <p>John Jones is Director of Client Solutions (ex-Asia), leading institutional investor coverage across the Americas, Europe, and the Middle East. He supports strategic communication, due diligence dialogue, and long-term partnership development.</p>
+                <p>John Jones is Director of Client Solutions (ex-Asia), leading institutional investor coverage across the Americas, Europe, and the Middle East. He is responsible for relationship development, strategic communication, and capital formation with global institutional clients evaluating China private credit exposure. His work includes aligning investor objectives with strategy design, supporting due diligence dialogue, and maintaining ongoing partnership engagement through market cycles.</p>
 
               </div>
 
@@ -1006,11 +1021,11 @@
 
               <div class="team-profile__role">Director of Client Solutions (Asia)</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-kelvin-chan">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-kelvin-chan">Read bio</button>
 
               <div class="team-profile__bio" id="bio-kelvin-chan" hidden>
 
-                <p>Kelvin Chan is Director of Client Solutions (Asia), leading investor engagement and distribution across Asian markets. He works with institutional allocators on strategy communication and ongoing relationship management.</p>
+                <p>Kelvin Chan is Director of Client Solutions (Asia), leading investor engagement and distribution across Asian markets. He works with institutional allocators on portfolio fit, strategy communication, and long-term relationship management across the region’s diverse client base. His responsibilities include guiding investors through strategy implementation, portfolio updates, and market context to support durable capital partnerships.</p>
 
               </div>
 
@@ -1048,11 +1063,11 @@
 
               <div class="team-profile__role">Senior Advisory Partner</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-michael-chang">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-michael-chang">Read bio</button>
 
               <div class="team-profile__bio" id="bio-michael-chang" hidden>
 
-                <p>Michael Chang is a Senior Advisory Partner providing guidance on strategy, operating priorities, and cross-border execution. He supports senior leadership on key initiatives affecting growth and platform effectiveness.</p>
+                <p>Michael Chang is a Senior Advisory Partner providing guidance on strategy, operating priorities, and cross-border execution. He supports senior leadership on platform development, implementation sequencing, and decision-making across key initiatives that affect growth and operating effectiveness. His advisory role helps integrate strategic intent with practical execution at both firm and portfolio levels.</p>
 
               </div>
 
@@ -1079,11 +1094,11 @@
 
               <div class="team-profile__role">Senior Advisory Partner</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-philip-young">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-philip-young">Read bio</button>
 
               <div class="team-profile__bio" id="bio-philip-young" hidden>
 
-                <p>Philip Young is a Senior Advisory Partner advising on capital development, institutional positioning, and external strategic engagement. He helps shape long-term partner strategy and market-facing communication.</p>
+                <p>Philip Young is a Senior Advisory Partner advising on capital development, institutional positioning, and external strategic engagement. He supports the firm’s long-term growth agenda by helping shape partner strategy, market-facing positioning, and institutional relationship depth. His work reinforces ShoreVest’s ability to scale with alignment across investors, counterparties, and broader strategic networks.</p>
 
               </div>
 
@@ -1110,11 +1125,11 @@
 
               <div class="team-profile__role">Senior Advisory Partner</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-dinny-mcmahon">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-dinny-mcmahon">Read bio</button>
 
               <div class="team-profile__bio" id="bio-dinny-mcmahon" hidden>
 
-                <p>Dinny McMahon is a Senior Advisory Partner providing macroeconomic and policy insight relevant to China credit markets. His input supports top-down risk interpretation, scenario planning, and thematic positioning.</p>
+                <p>Dinny McMahon is a Senior Advisory Partner providing macroeconomic and policy insight relevant to China credit markets. He supports the team’s market-context framework by translating policy direction and structural economic developments into usable investment perspective. His input helps sharpen top-down risk interpretation, scenario planning, and thematic positioning across the firm’s credit opportunity set.</p>
 
               </div>
 
@@ -1141,11 +1156,11 @@
 
               <div class="team-profile__role">Senior Advisory Partner</div>
 
-              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-steve-poon">View bio</button>
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-steve-poon">Read bio</button>
 
               <div class="team-profile__bio" id="bio-steve-poon" hidden>
 
-                <p>Steve Poon is a Senior Advisory Partner supporting strategic dialogue across market development, partner relationships, and execution priorities. He contributes advisory perspective that supports disciplined long-term platform growth.</p>
+                <p>Steve Poon is a Senior Advisory Partner supporting strategic dialogue across market development, partner relationships, and execution priorities. He advises leadership on external positioning, institutional connectivity, and commercial sequencing to help translate strategic intent into durable platform outcomes. His perspective supports disciplined long-term growth while preserving operational focus across advisory and execution priorities.</p>
 
               </div>
 
@@ -1166,8 +1181,12 @@
           const panel = profile.querySelector(".team-profile__bio");
           const controls = profile.querySelectorAll("[aria-controls]");
           panel.hidden = true;
+          profile.classList.remove("team-profile--open");
           controls.forEach((control) => {
             control.setAttribute("aria-expanded", "false");
+            if (control.classList.contains("team-profile__bio-toggle")) {
+              control.textContent = "Read bio";
+            }
           });
         };
 
@@ -1175,8 +1194,12 @@
           const panel = profile.querySelector(".team-profile__bio");
           const controls = profile.querySelectorAll("[aria-controls]");
           panel.hidden = false;
+          profile.classList.add("team-profile--open");
           controls.forEach((control) => {
             control.setAttribute("aria-expanded", "true");
+            if (control.classList.contains("team-profile__bio-toggle")) {
+              control.textContent = "Close bio";
+            }
           });
         };
 
