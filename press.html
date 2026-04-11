@@ -16,11 +16,17 @@
 <style>
       :root {
         --red: #c93b2a;
+        --red-light: #e8998f;
+        --red-dark: #8a1f12;
+        --qing: #3d7070;
+        --qing-light: #7aafaf;
+        --qing-dark: #1e4040;
         --ink: #0f2206;
+        --ink-soft: #2e4a18;
         --white: #faf6ee;
         --off: #f2ecd8;
         --rule: #d8ceb0;
-        --mist: #3d7070;
+        --mist: #1e4040;
         --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
         --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
         --cn: "Noto Serif SC", "Songti SC", "STSong", serif;
@@ -69,15 +75,15 @@
 
       main {
         padding: 0 0 110px;
-        background: var(--off);
+        background: var(--white);
         min-height: 100vh;
       }
       .eyebrow {
         font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.2em;
+        font-weight: 700;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.72);
+        color: var(--red);
         display: flex;
         align-items: center;
         gap: 14px;
@@ -162,7 +168,7 @@
         z-index: 1;
       }
       .press-hero .eyebrow {
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--red-light);
       }
       .press-hero h1,
       .press-hero .lead,
@@ -201,7 +207,7 @@
         display: grid;
         gap: 0;
         max-width: var(--content);
-        background: rgba(250, 246, 238, 0.84);
+        background: var(--white);
         border: 1px solid var(--rule);
       }
       .press-toolbar {
@@ -209,7 +215,7 @@
         margin: 0 0 18px;
         padding: 14px 16px;
         border: 1px solid var(--rule);
-        background: rgba(250, 246, 238, 0.88);
+        background: var(--off);
       }
       .press-toolbar__meta {
         display: flex;
@@ -265,8 +271,8 @@
         appearance: none;
         -webkit-appearance: none;
         background-image:
-          linear-gradient(45deg, transparent 50%, var(--red) 50%),
-          linear-gradient(135deg, var(--red) 50%, transparent 50%);
+          linear-gradient(45deg, transparent 50%, var(--qing) 50%),
+          linear-gradient(135deg, var(--qing) 50%, transparent 50%);
         background-position:
           calc(100% - 18px) calc(50% - 3px),
           calc(100% - 12px) calc(50% - 3px);
@@ -274,7 +280,7 @@
         background-repeat: no-repeat;
       }
       .press-filter-select:focus-visible {
-        outline: 2px solid color-mix(in srgb, var(--red) 28%, #FAF6EE);
+        outline: 2px solid color-mix(in srgb, var(--qing) 35%, #faf6ee);
         outline-offset: 1px;
       }
       @media (max-width: 760px) {
@@ -317,7 +323,7 @@
       .press-overview__main {
         grid-area: main;
         padding: 20px 22px 22px;
-        background: rgba(250, 246, 238, 0.82);
+        background: var(--off);
         border: 1px solid var(--rule);
       }
       .press-overview .contact {
@@ -347,7 +353,7 @@
         padding-top: 1.8rem;
       }
       .press-row a:hover {
-        background: color-mix(in srgb, var(--red) 10%, transparent);
+        background: color-mix(in srgb, var(--qing-light) 30%, var(--white));
       }
       .press-publication {
         display: block;
@@ -384,7 +390,7 @@
         white-space: nowrap;
       }
       .press-row a:hover .press-headline {
-        color: var(--red);
+        color: var(--qing-dark);
       }
       .press-row a:visited .press-headline {
         color: #0c0c0a;
@@ -419,7 +425,7 @@
         text-transform: uppercase;
         border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
         background: var(--white);
-        color: var(--ink);
+        color: var(--qing);
         padding: 12px 24px;
         cursor: pointer;
         transition:
@@ -428,9 +434,9 @@
           border-color 0.2s;
       }
       .press-more:hover {
-        background: var(--red);
+        background: var(--qing);
         color: #FAF6EE;
-        border-color: var(--red);
+        border-color: var(--qing);
       }
 
       .contact {
@@ -441,7 +447,7 @@
         background: var(--white);
         font-size: 10pt;
         line-height: 1.65;
-        color: var(--ink2);
+        color: var(--ink-soft);
       }
       .contact span {
         display: block;
@@ -454,7 +460,7 @@
         margin-bottom: 7px;
       }
       .contact a {
-        color: var(--red);
+        color: var(--qing);
         text-decoration: underline;
         text-underline-offset: 2px;
       }
@@ -463,12 +469,12 @@
         margin: 0;
         padding: 12px 14px;
         border: 1px solid var(--rule);
-        background: rgba(250, 246, 238, 0.8);
+        background: var(--white);
         display: flex;
         flex-direction: column;
         font-size: 10px;
         line-height: 1.45;
-        color: color-mix(in srgb, var(--ink2) 70%, #FAF6EE);
+        color: var(--qing-dark);
       }
       .press-disclaimer .press-overview__heading {
         font-size: 7.5pt;
@@ -712,8 +718,8 @@
   transition: all 0.2s ease;
 }
 .sv-footer__contact a:hover {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--qing);
+  border-color: var(--qing);
   color: #FAF6EE;
 }
 .sv-footer__bottom {
@@ -737,7 +743,7 @@
   text-decoration: none;
 }
 .sv-footer__legal-links a:hover {
-  color: var(--red);
+  color: var(--qing);
 }
 @media (max-width: 768px) {
   .sv-footer {
@@ -805,7 +811,6 @@
     font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
   }
 
-  #nav,
   .press-hero,
   .press-toolbar,
   .press-list,
@@ -922,11 +927,8 @@
     color: var(--qing-dark) !important;
   }
 
-  a,
   .contact a,
-  .sv-footer__legal-links a,
-  .nav__links a,
-  .nav__lp {
+  .sv-footer__legal-links a {
     color: var(--qing) !important;
   }
 
@@ -952,21 +954,6 @@
     background: var(--qing-dark) !important;
     border-color: var(--qing-dark) !important;
     color: var(--xuan-light) !important;
-  }
-
-  .nav__logo-lockup::before {
-    background: var(--cinnabar) !important;
-  }
-
-  .nav__logo-en {
-    color: var(--ink-dark) !important;
-  }
-
-  .nav__logo-cn {
-    font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
-    font-weight: 700 !important;
-    color: var(--cinnabar) !important;
-    letter-spacing: 0.07em !important;
   }
 
   @media (max-width: 767px) {
