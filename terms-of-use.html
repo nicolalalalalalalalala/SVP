@@ -265,6 +265,20 @@
     .privacy-wrap li {
       max-width: none;
     }
+    .privacy-wrap .section {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+    .privacy-wrap .section::before,
+    .privacy-wrap .section::after {
+      content: none !important;
+    }
+    .privacy-wrap .section + .section {
+      margin-top: 0;
+    }
     .sv-footer {
       background: var(--off);
     }
