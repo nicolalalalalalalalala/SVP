@@ -14,6 +14,28 @@ body.legal-page .legal-page__content {
   color: var(--ink-soft);
 }
 
+/* Keep legal pages visually flat: no card/panel or shaded container treatment. */
+body.legal-page .legal-page__main,
+body.legal-page .legal-page__content,
+body.legal-page .legal-page__content section,
+body.legal-page .legal-page__content :is([class*="panel"], [class*="card"], [class*="box"]) {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  border-radius: 0 !important;
+}
+
+body.legal-page .legal-page__main::before,
+body.legal-page .legal-page__main::after,
+body.legal-page .legal-page__content::before,
+body.legal-page .legal-page__content::after,
+body.legal-page .legal-page__content section::before,
+body.legal-page .legal-page__content section::after {
+  content: none !important;
+}
+
 body.legal-page .legal-page__content h1 {
   margin: 0 0 var(--sv-space-xs, 10px);
 }
