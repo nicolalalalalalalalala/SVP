@@ -73,7 +73,10 @@
   <div class="nav__right">
     <a href="${targetLocaleHref}" class="nav__zh lang-toggle">${langLabel}</a>
     <a href="${investorHref}" class="nav__lp">${investorLabel}</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">MENU</button>
+    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span class="nav__menu-btn-label">Menu</span>
+      <span class="nav__menu-btn-icon" aria-hidden="true"></span>
+    </button>
   </div>
 </nav>`;
 
@@ -81,15 +84,34 @@
   const menuBtn = nav.querySelector('.nav__menu-btn');
 
   if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-      const open = nav.classList.toggle('menu-open');
+    const menuBtnLabel = menuBtn.querySelector('.nav__menu-btn-label');
+
+    const setMenuState = (open) => {
+      nav.classList.toggle('menu-open', open);
       menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (menuBtnLabel) menuBtnLabel.textContent = open ? 'Close' : 'Menu';
+      document.body.classList.toggle('menu-open', open);
+    };
+
+    menuBtn.addEventListener('click', () => {
+      const open = !nav.classList.contains('menu-open');
+      setMenuState(open);
     });
 
     document.addEventListener('click', (event) => {
       if (!nav.contains(event.target)) {
-        nav.classList.remove('menu-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
+        setMenuState(false);
+      }
+    });
+
+    nav.querySelectorAll('.nav__links a').forEach((link) => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980 && nav.classList.contains('menu-open')) {
+        setMenuState(false);
       }
     });
   }
