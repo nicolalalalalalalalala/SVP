@@ -10,18 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
+    <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
 <style>
-    :root{--red:#3d7070;--ink:#171410;--ink-soft:#3f3933;--paper:#fff;--off:#f7f4ef;--rule:rgba(31,24,18,.11);--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+    :root{--red:var(--sv-color-accent,#3d7070);--ink:var(--sv-color-ink,#0c0c0a);--ink-soft:var(--sv-color-soft-ink,#3f3b36);--paper:var(--sv-color-bg,#fff);--off:var(--sv-color-bg-soft,#f6f4f0);--rule:var(--sv-color-rule,rgba(0,0,0,.08));--serif:var(--sv-font-serif-en,'EB Garamond',Georgia,serif);--sans:var(--sv-font-sans-en,'Inter',system-ui,sans-serif)}
     *{box-sizing:border-box}
     body{font-family:var(--sans);max-width:880px;margin:0 auto;padding:120px 24px 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--off)}
     h1,h2,h3{color:var(--ink)}
     h1{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:38px;line-height:1.08;margin-bottom:8px}
     h2{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:24px;line-height:1.16;margin:30px 0 10px}
-    h3{font-family:var(--sans);font-weight:500;font-size:14px;line-height:1.4;margin-top:18px;color:#29241f}
+    h3{font-family:var(--sans);font-weight:500;font-size:14px;line-height:1.4;margin-top:18px;color:#221f1b}
     p,li{font-size:12px}
     ul{padding-left:20px}
     a{color:var(--red)}
-    .muted{color:#696159}
+    .muted{color:#5b554f}
 
 
 
@@ -56,7 +57,7 @@
 .sv-footer__brand {
   font-family: var(--serif);
   font-size: 20px !important;
-  color: #25211d;
+  color: var(--ink);
   letter-spacing: 0.01em;
 }
 .sv-footer__contact {
@@ -69,7 +70,7 @@
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #7d766f;
+  color: var(--sv-color-muted, #888680);
 }
 .sv-footer__contact a {
   font-size: 12px;
@@ -96,12 +97,12 @@
 .sv-footer__copyright,
 .sv-footer__legal-links {
   font-size: 9px;
-  color: #5f5952;
+  color: var(--sv-color-muted, #888680);
   line-height: 1.7;
 }
 .sv-footer__legal {
   font-size: 9px;
-  color: #5f5952;
+  color: var(--sv-color-muted, #888680);
   line-height: 1.75;
   max-width: 980px;
 }
@@ -141,6 +142,8 @@
       font-size: 10pt;
       line-height: 1.55;
       letter-spacing: normal;
+      color: var(--ink-soft);
+      background: var(--off);
     }
     @media (max-width: 980px) {
       body.legal-page {
@@ -169,6 +172,7 @@
       font-weight: 700;
       line-height: 1.16;
       text-transform: none;
+      color: var(--ink);
     }
     body.legal-page h3,
     body.legal-page .legal-label,
