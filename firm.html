@@ -248,9 +248,17 @@
       }
       .metrics-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-areas:
+          "metric-1 metric-1 metric-2 metric-2 metric-3 metric-3"
+          ". metric-4 metric-4 metric-5 metric-5 .";
         gap: 12px;
       }
+      .metric-card:nth-child(1) { grid-area: metric-1; }
+      .metric-card:nth-child(2) { grid-area: metric-2; }
+      .metric-card:nth-child(3) { grid-area: metric-3; }
+      .metric-card:nth-child(4) { grid-area: metric-4; }
+      .metric-card:nth-child(5) { grid-area: metric-5; }
       .metric-card {
         border: 1px solid var(--rule);
         background: var(--xuan-light);
@@ -435,7 +443,10 @@
 
       @media (max-width: 1120px) {
         .metrics-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          grid-template-areas:
+            "metric-1 metric-1 metric-2 metric-2 metric-3 metric-3"
+            ". metric-4 metric-4 metric-5 metric-5 .";
         }
         .committee-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -470,7 +481,9 @@
         .committee-grid,
         .execution-flow {
           grid-template-columns: 1fr;
+          grid-template-areas: none;
         }
+        .metric-card:nth-child(n) { grid-area: auto; }
         .cta-panel .btn {
           width: 100%;
         }
