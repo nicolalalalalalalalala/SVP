@@ -32,6 +32,8 @@
         --rule: #d8cfbc;
         --mist: #2e4a18;
         --mist-light: #1e4040;
+        --cinnamon: #c93b2a;
+        --cinnamon-dark: #8a1f12;
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
         --max: 1200px;
@@ -336,13 +338,13 @@
       .team-profile__bio-toggle {
         margin-top: 10px;
         width: fit-content;
-        background: transparent;
-        border: 1px solid color-mix(in srgb, var(--ink-soft) 35%, transparent);
+        background: var(--cinnamon);
+        border: 1px solid var(--cinnamon);
         padding: 7px 10px;
         font-size: 11px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: color-mix(in srgb, var(--ink-soft) 92%, black 8%);
+        color: var(--white);
         cursor: pointer;
         transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
       }
@@ -357,9 +359,9 @@
         opacity: 0.65;
       }
       .team-profile__bio-toggle:hover {
-        color: var(--ink);
-        border-color: color-mix(in srgb, var(--ink-soft) 55%, transparent);
-        background-color: color-mix(in srgb, var(--sand) 55%, white 45%);
+        color: var(--white);
+        border-color: var(--cinnamon-dark);
+        background-color: var(--cinnamon-dark);
       }
       .team-profile__bio-toggle:focus-visible {
         outline: 1px solid color-mix(in srgb, var(--qing) 78%, white 22%);
