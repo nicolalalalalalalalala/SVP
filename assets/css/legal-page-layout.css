@@ -2,6 +2,7 @@ body.legal-page main {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
+  padding-top: clamp(26px, 4vw, 44px);
 }
 
 body.legal-page .legal-page__content {
@@ -15,8 +16,28 @@ body.legal-page .legal-page__content h1 {
   margin: 0 0 8px;
 }
 
+body.legal-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  --site-page-margin: clamp(22px, 4.8vw, 64px);
+  --ink-soft: #3f3b36;
+  --off: #f6f4f0;
+  padding: 0 var(--pad) 40px;
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.55;
+  letter-spacing: normal;
+  color: var(--ink-soft);
+  background: var(--off);
+}
+
 body.legal-page .legal-page__content p,
 body.legal-page .legal-page__content li {
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  line-height: 1.55;
   max-width: none;
 }
 
@@ -27,4 +48,76 @@ body.legal-page .legal-page__content ol {
 
 body.legal-page .legal-page__content section {
   margin-bottom: 28px;
+}
+
+body.legal-page .legal-page__content h1 {
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.08;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+body.legal-page .legal-page__content h2 {
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.16;
+  text-transform: none;
+  color: var(--ink);
+}
+
+body.legal-page .legal-page__content .muted,
+body.legal-page .legal-page__content small,
+body.legal-page .legal-page__content .effective-date {
+  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  font-size: 8pt;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+body.legal-page .legal-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 36px;
+}
+
+body.legal-page .legal-contact-actions a {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  color: var(--red);
+  transition: all 0.2s ease;
+}
+
+body.legal-page .legal-contact-actions a:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  body.legal-page {
+    --site-page-margin: clamp(16px, 5vw, 22px);
+    padding: 0 var(--pad) 34px;
+  }
+
+  body.legal-page main {
+    padding-top: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  body.legal-page .legal-contact-actions {
+    flex-direction: column;
+  }
+
+  body.legal-page .legal-contact-actions a {
+    width: 100%;
+    text-align: center;
+  }
 }
