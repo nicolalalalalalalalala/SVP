@@ -181,8 +181,8 @@
       }
 
       .team-groups {
-        padding: 56px 0 84px;
-        background: transparent;
+        padding: 64px 0 92px;
+        background: var(--white);
       }
       .team-groups__intro {
         font-family: var(--serif);
@@ -193,7 +193,7 @@
         margin-bottom: 22px;
       }
       .group {
-        padding: 28px 0 34px;
+        padding: 36px 0 44px;
         border-bottom: 1px solid var(--rule);
         scroll-margin-top: 96px;
       }
@@ -228,26 +228,27 @@
       .grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 18px;
+        gap: 22px;
       }
       .card {
         display: flex;
         flex-direction: column;
         gap: 0;
         height: 100%;
-        border: none;
-        background: transparent;
-        transition: none;
+        border: 1px solid color-mix(in srgb, var(--rule) 72%, white);
+        background: var(--white);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       }
       .card:hover,
       .card:focus-within {
-        border-color: transparent;
-        box-shadow: none;
+        transform: translateY(-2px);
+        border-color: color-mix(in srgb, var(--qing) 34%, var(--rule));
+        box-shadow: 0 12px 24px rgba(20, 25, 16, 0.08);
       }
       .photo {
         width: 100%;
         aspect-ratio: 4/5;
-        border-bottom: 1px solid var(--rule);
+        border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, white);
         background: #f1eee7;
         overflow: hidden;
         cursor: pointer;
@@ -291,29 +292,30 @@
       }
       .name {
         font-family: var(--sans);
-        font-size: 15px;
+        font-size: 17px;
+        font-weight: 600;
         line-height: 1.2;
         letter-spacing: 0.01em;
         color: var(--ink);
         margin-bottom: 0;
-        padding: 14px 14px 4px;
+        padding: 14px 16px 6px;
         min-height: 40px;
         display: flex;
         align-items: flex-end;
-        background: transparent;
+        background: var(--white);
       }
       .title {
         font-family: var(--sans);
-        font-size: 7.5pt;
-        letter-spacing: 0.13em;
+        font-size: 11px;
+        letter-spacing: 0.11em;
         text-transform: uppercase;
-        color: var(--red);
-        line-height: 1.35;
-        padding: 0 14px 12px;
-        min-height: 42px;
+        color: var(--qing-dark);
+        line-height: 1.5;
+        padding: 0 16px 14px;
+        min-height: 50px;
         display: flex;
         align-items: flex-start;
-        background: transparent;
+        background: var(--white);
       }
       .card-descriptor {
         font-size: 12px;
@@ -339,14 +341,14 @@
         box-shadow: none;
       }
       .group--leadership {
-        margin-top: 20px;
-        padding: 52px 0 56px;
+        margin-top: 10px;
+        padding: 48px 0 56px;
       }
       .group--leadership .grid {
         gap: 26px;
       }
       .group--client-solutions {
-        padding: 30px 0 36px;
+        padding: 36px 0 44px;
         background: transparent !important;
       }
       .group--client-solutions .group__head,
@@ -373,7 +375,7 @@
         background: transparent;
       }
       .group--advisory {
-        padding: 22px 0 28px;
+        padding: 36px 0 44px;
       }
       .group--advisory .grid {
         gap: 16px;
@@ -501,6 +503,14 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 16px;
         }
+        .card {
+          box-shadow: none;
+        }
+        .card:hover,
+        .card:focus-within {
+          transform: none;
+          box-shadow: none;
+        }
         .group h2 {
           font-size: clamp(20px, 4.4vw, 30px);
           white-space: normal;
@@ -538,10 +548,10 @@
 
       @media (max-width: 520px) {
         .team-groups {
-          padding-top: 42px;
+          padding-top: 44px;
         }
         .group {
-          padding: 24px 0 32px;
+          padding: 24px 0 34px;
         }
         .team-groups__intro {
           font-size: 18px;
@@ -553,17 +563,17 @@
           gap: 14px;
         }
         .card {
-          gap: 8px;
+          gap: 0;
         }
         .photo {
           max-height: none;
         }
         .name {
-          font-size: 17px;
+          font-size: 18px;
           min-height: auto;
         }
         .title {
-          font-size: 9px;
+          font-size: 10px;
           letter-spacing: 0.12em;
           min-height: auto;
         }
