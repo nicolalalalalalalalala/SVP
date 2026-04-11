@@ -50,7 +50,7 @@
     <path d="M747.5 613L754 609" stroke="#3D7070" stroke-opacity="0.42" stroke-width="0.9"/>
     <path d="M640.6 767.6L649 771" stroke="#2E4A18" stroke-opacity="0.32" stroke-width="0.9"/>
   </g>
-  <g id="shorevest-office-labels" font-family="Inter, Arial, sans-serif" font-size="6.8" font-weight="500" letter-spacing="0.09em" text-rendering="geometricPrecision">
+  <g id="shorevest-office-labels" font-family="'DIN 2014', 'Helvetica Neue', Arial, sans-serif" font-size="6.9" font-weight="700" letter-spacing="0.12em" text-rendering="geometricPrecision">
     <rect x="628" y="726" width="68" height="12" rx="2.4" fill="#F8F3E8" fill-opacity="0.94" stroke="#D8CEB0" stroke-width="0.5"/>
     <text x="632" y="734.4" fill="#2A4A48">GUANGZHOU</text>
 

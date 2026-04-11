@@ -4,49 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>China Debt Dynamics Viewer</title>
-  <style>
-    body{margin:0;background:#f6f4f1;color:#1a1a18;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .wrap{max-width:900px;margin:0 auto;padding:32px 20px 56px}
-    .card{background:#fff;border:1px solid #e3ded6;box-shadow:0 8px 24px rgba(0,0,0,.05);padding:28px}
-    .cdd-logo-wrap{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:#1e4040;
-      border-radius:10px;
-      padding:14px 18px;
-      margin:0 0 18px;
-    }
-    .cdd-logo{
-      width:min(320px,80%);
-      height:auto;
-      display:block;
-      filter:brightness(0) invert(1);
-    }
-    h1{font-family:"EB Garamond",Georgia,serif;font-size:40px;line-height:1.02;margin:.2em 0 .3em}
-    h2{font-family:"EB Garamond",Georgia,serif;font-size:30px;line-height:1.06;margin:1.2em 0 .45em}
-    p,li{font-size:17px;line-height:1.72;color:#24221e}
-    .meta{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#7a746c;margin-bottom:16px}
-    a.back{display:inline-block;margin-bottom:16px;color:#7a2040;text-decoration:none;font-weight:600}
-    a.back:hover{text-decoration:underline}
-    .err{color:#8b1e3f;font-weight:600}
-  </style>
+    <link rel="stylesheet" href="assets/css/article-typography-framework.css" />
     <link rel="stylesheet" href="assets/css/topbar-consistent.css" />
     <link rel="stylesheet" href="assets/css/typography-consistent.css" />
     <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
 <link rel="stylesheet" href="assets/css/shared-footer.css">
 </head>
-<body>
+<body class="article-page">
   <div id="site-header-mount"></div>
   <div class="wrap">
-    <a class="back" href="insights.html">← Back to Insights</a>
+    <a class="back action-button" href="insights.html">← Back to Insights</a>
     <div class="card">
       <div class="cdd-logo-wrap" aria-hidden="true">
         <img class="cdd-logo" src="assets/images/edited-photo-3.svg" alt="" />
       </div>
-      <div id="meta" class="meta">China Debt Dynamics</div>
-      <article id="content"></article>
+      <div id="meta" class="meta issue-meta-line">China Debt Dynamics</div>
+      <article id="content" class="article-body"></article>
     </div>
   </div>
   <script>
@@ -127,6 +101,17 @@
             const h2 = document.createElement('h2');
             h2.textContent = line.slice(3).replace(/\*\*/g, '').trim();
             contentEl.appendChild(h2);
+            continue;
+          }
+
+          if (line.startsWith('### ')) {
+            const maybeP = flushParagraph(pBuf);
+            if (maybeP) contentEl.appendChild(maybeP);
+            const maybeList = flushList(listBuf);
+            if (maybeList) contentEl.appendChild(maybeList);
+            const h3 = document.createElement('h3');
+            h3.textContent = line.slice(4).replace(/\*\*/g, '').trim();
+            contentEl.appendChild(h3);
             continue;
           }
 

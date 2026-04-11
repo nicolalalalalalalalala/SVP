@@ -10,196 +10,7 @@
     />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
-<style>
-      :root {
-        --red: #3d7070;
-        --ink: #0c0c0a;
-        --mist: #7d786f;
-        --off: #f6f4f0;
-        --serif: "EB Garamond", Georgia, serif;
-        --sans: "Inter", system-ui, sans-serif;
-        --max: 1200px;
-        --site-page-margin: clamp(22px, 4.8vw, 64px);
-        --pad: var(--site-page-margin);
-      }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background: var(--off);
-        color: var(--ink);
-        font-family: var(--sans);
-        font-size: 15px;
-        line-height: 1.7;
-      }
-
-      main {
-        max-width: var(--max);
-        margin: 140px auto 88px;
-        padding: 0 var(--pad);
-      }
-      .meta {
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        font-size: 10px;
-        font-weight: 500;
-        color: var(--mist);
-        margin-bottom: 22px;
-      }
-      h1 {
-        font-family: var(--serif);
-        font-size: clamp(46px, 5.6vw, 78px);
-        font-weight: 400;
-        line-height: 1.04;
-        margin: 0 0 20px;
-        letter-spacing: -0.01em;
-      }
-      p {
-        margin: 0;
-        font-family: var(--serif);
-        font-size: 17px;
-        line-height: 1.82;
-        color: #3f3a34;
-        max-width: 42ch;
-      }
-      .back {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 32px;
-        color: var(--red);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        text-decoration: none;
-      }
-      .back:hover {
-        opacity: 0.75;
-      }
-
-      @media (max-width: 767px) {
-        :root {
-          --site-page-margin: clamp(16px, 5vw, 22px);
-          --pad: var(--site-page-margin);
-        }
-
-        main {
-          margin: 132px auto 72px;
-        }
-        p {
-          font-size: 16px;
-          line-height: 1.75;
-        }
-      }
-
-      /* ══ MOBILE NAV REFINEMENT */
-      @media (max-width: 767px) {
-
-      }
-
-      @media (max-width: 520px) {
-
-      }
-      /* Homepage nav lockup parity */
-
-.sv-footer {
-  background: #f6f4f0;
-  border-top: 1px solid var(--rule);
-  padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
-}
-.sv-footer__inner {
-  max-width: var(--max, 1320px);
-  margin: 0 auto;
-}
-.sv-footer__main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--rule);
-}
-.sv-footer__brand {
-  font-family: var(--serif);
-  font-size: 20px !important;
-  color: #2d2924;
-  letter-spacing: 0.01em;
-}
-.sv-footer__contact {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.sv-footer__contact-label {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #8f887f;
-}
-.sv-footer__contact a {
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  padding: 10px 14px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-.sv-footer__contact a:hover {
-  background: var(--red);
-  border-color: var(--red);
-  color: #fff;
-}
-.sv-footer__bottom {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding-top: 16px;
-}
-.sv-footer__copyright,
-.sv-footer__legal-links {
-  font-size: 9px;
-  color: #6f6a63;
-  line-height: 1.7;
-}
-.sv-footer__legal {
-  font-size: 7px;
-  color: #6f6a63;
-  line-height: 1.7;
-}
-.sv-footer__legal-links {
-  padding-bottom: 8px;
-}
-.sv-footer__legal-links a {
-  color: var(--ink);
-  text-decoration: none;
-}
-.sv-footer__legal-links a:hover {
-  color: var(--red);
-}
-@media (max-width: 767px) {
-  .sv-footer {
-    padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
-  }
-  .sv-footer__main {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .sv-footer__contact {
-    flex-wrap: wrap;
-  }
-}
-
-</style>
+<link rel="stylesheet" href="assets/css/article-typography-framework.css" />
 
 <link rel="stylesheet" href="assets/css/site-motion.css">
 <link rel="stylesheet" href="assets/css/shared-header.css" />
@@ -210,17 +21,17 @@
   <body>
     <div id="site-header-mount"></div>
 
-    <main>
-      <div class="meta">Market Views · November 2025</div>
-      <h1>
+    <main class="article-page">
+      <div class="meta issue-meta-line"><span class="edition-label">Market Views · November 2025</span></div>
+      <h1 class="article-title">
         ShoreVest Partners — Why China Remains the World's Most Compelling Private Credit Market
       </h1>
-      <p>
+      <p class="article-dek">
         This perspective highlights structural and cyclical reasons China
         remains a differentiated private credit market for global allocators
         seeking yield with process-driven downside protection.
       </p>
-      <a class="back" href="insights.html">← Back to News &amp; Insights</a>
+      <a class="back action-button" href="insights.html">← Back to News &amp; Insights</a>
     </main>
 
 <footer class="sv-footer" data-shared-footer></footer>
