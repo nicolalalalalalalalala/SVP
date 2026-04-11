@@ -13,7 +13,7 @@
   --site-sans-zh: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
   --site-serif-en: 'DIN 2014', 'Helvetica Neue', Arial, sans-serif;
   --site-serif-zh: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
-  --site-color-accent: #b3213f;
+  --site-color-accent: #3d7070;
   --site-color-ink: #0c0c0a;
   --site-color-ink-soft: #3f3b36;
   --site-color-muted: #888680;
@@ -86,7 +86,7 @@ h1 {
 h3 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #c93b2a;
+  color: #3d7070;
 }
 
 a {
