@@ -1606,11 +1606,72 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
-        align-items: center;
+        align-items: start;
       }
       .alloc-bars {
         display: grid;
         gap: 10px;
+      }
+      .alloc-visuals {
+        display: grid;
+        gap: 12px;
+      }
+      .alloc-pie-card {
+        background: #FAF6EE;
+        border: 1px solid rgba(179, 33, 63, 0.14);
+        display: grid;
+        justify-items: center;
+        gap: 12px;
+        padding: 18px;
+      }
+      .alloc-pie {
+        width: 208px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background: conic-gradient(var(--pie-gradient, #B3213F 0deg 360deg));
+        position: relative;
+        box-shadow: inset 0 0 0 1px rgba(179, 33, 63, 0.14);
+        transition: background 0.35s ease;
+      }
+      .alloc-pie::after {
+        content: "";
+        position: absolute;
+        inset: 27%;
+        border-radius: 50%;
+        background: #FAF6EE;
+        box-shadow: inset 0 0 0 1px rgba(179, 33, 63, 0.14);
+      }
+      .alloc-pie-center {
+        position: absolute;
+        inset: 33%;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        pointer-events: none;
+      }
+      .alloc-pie-center strong {
+        display: block;
+        font-family: var(--serif);
+        font-size: 26px;
+        line-height: 1;
+        color: var(--ink);
+      }
+      .alloc-pie-center span {
+        display: block;
+        margin-top: 5px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(15, 34, 6, 0.85);
+      }
+      .alloc-pie-center small {
+        display: block;
+        margin-top: 6px;
+        font-size: 10px;
+        line-height: 1.35;
+        color: rgba(15, 34, 6, 0.72);
+        letter-spacing: 0.02em;
       }
       .alloc-row {
         background: #FAF6EE;
@@ -2380,7 +2441,18 @@
                   <div class="alloc-row" data-strategy="resolutions" role="button" tabindex="0" aria-label="Highlight Debt Resolutions details"><span class="alloc-label"><span>Debt Resolutions</span><span data-range="resolutions">14–15%</span></span><div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div></div>
                   <div class="alloc-note">Illustrative ranges shown for strategy communication only.</div>
                 </div>
-                <div class="ring-card"><div class="ring" style="--pct: 68%" data-collateral-ring aria-label="Illustrative collateral coverage level for selected regime"></div><div class="ring-label"><span data-ring-value>68%</span>Target collateral coverage<div class="ring-context" data-ring-context>Illustrative downside underwriting metric: expected recovery supported by enforceable collateral value.</div></div></div>
+                <div class="alloc-visuals">
+                  <div class="alloc-pie-card">
+                    <div class="alloc-pie" data-allocation-pie aria-label="Illustrative cycle allocation mix as an interactive pie chart">
+                      <div class="alloc-pie-center">
+                        <strong data-pie-value>40%</strong>
+                        <span data-pie-label>Asset-Based Lending</span>
+                        <small data-pie-range>Range: 24–40%</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ring-card"><div class="ring" style="--pct: 68%" data-collateral-ring aria-label="Illustrative collateral coverage level for selected regime"></div><div class="ring-label"><span data-ring-value>68%</span>Target collateral coverage<div class="ring-context" data-ring-context>Illustrative downside underwriting metric: expected recovery supported by enforceable collateral value.</div></div></div>
+                </div>
               </div>
               <div class="strategy-details">
                 <article class="strategy-detail is-active" data-detail-card="abl"><h3>First-lien asset-based lending</h3><p data-detail="abl">Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
@@ -2478,6 +2550,22 @@
         const ring = root.querySelector("[data-collateral-ring]");
         const ringValue = root.querySelector("[data-ring-value]");
         const ringContext = root.querySelector("[data-ring-context]");
+        const pie = root.querySelector("[data-allocation-pie]");
+        const pieValue = root.querySelector("[data-pie-value]");
+        const pieLabel = root.querySelector("[data-pie-label]");
+        const pieRange = root.querySelector("[data-pie-range]");
+        const strategyLabels = {
+          abl: "Asset-Based Lending",
+          restructuring: "Asset Restructuring",
+          resolutions: "Debt Resolutions",
+        };
+        const pieSegmentColors = {
+          abl: "#B3213F",
+          restructuring: "#D85B64",
+          resolutions: "#E9A2A0",
+        };
+        let activeRegime = "dislocated";
+        let activeStrategy = "abl";
 
         const regimes = {
           dislocated: {
@@ -2521,6 +2609,7 @@
         const applyRegime = (key) => {
           const regime = regimes[key];
           if (!regime) return;
+          activeRegime = key;
           Object.keys(fills).forEach((name) => {
             fills[name].style.width = `${regime.values[name]}%`;
             ranges[name].textContent = regime.ranges[name];
@@ -2534,15 +2623,36 @@
             btn.classList.toggle("is-active", active);
             btn.setAttribute("aria-selected", active ? "true" : "false");
           });
+          updatePie();
+        };
+
+        const updatePie = () => {
+          const regime = regimes[activeRegime];
+          if (!regime || !pie) return;
+          const order = ["abl", "restructuring", "resolutions"];
+          let start = 0;
+          const segments = order.map((name) => {
+            const value = regime.values[name];
+            const end = start + value * 3.6;
+            const segment = `${pieSegmentColors[name]} ${start}deg ${end}deg`;
+            start = end;
+            return segment;
+          });
+          pie.style.setProperty("--pie-gradient", segments.join(", "));
+          if (pieValue) pieValue.textContent = `${regime.values[activeStrategy]}%`;
+          if (pieLabel) pieLabel.textContent = strategyLabels[activeStrategy];
+          if (pieRange) pieRange.textContent = `Range: ${regime.ranges[activeStrategy]}`;
         };
 
         const highlightStrategy = (strategyKey) => {
+          activeStrategy = strategyKey;
           rows.forEach((row) => {
             row.classList.toggle("is-active", row.dataset.strategy === strategyKey);
           });
           detailCards.forEach((card) => {
             card.classList.toggle("is-active", card.dataset.detailCard === strategyKey);
           });
+          updatePie();
         };
 
         regimeButtons.forEach((button) =>
@@ -2564,12 +2674,14 @@
         );
         rows.forEach((row) => {
           row.addEventListener("click", () => highlightStrategy(row.dataset.strategy));
+          row.addEventListener("mouseenter", () => highlightStrategy(row.dataset.strategy));
           row.addEventListener("keydown", (event) => {
             if (event.key !== "Enter" && event.key !== " ") return;
             event.preventDefault();
             highlightStrategy(row.dataset.strategy);
           });
         });
+        updatePie();
       })();
     </script>
 <script>
