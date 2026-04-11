@@ -227,6 +227,14 @@
       color: inherit;
     }
 
+    body.legal-page .legal-page__content section,
+    body.legal-page .legal-page__content section::before,
+    body.legal-page .legal-page__content section::after,
+    body.legal-page .legal-page__content :is(h2, h3, p, ul, ol, li) {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
     .legal-contact-actions {
       display: flex;
       flex-wrap: wrap;
