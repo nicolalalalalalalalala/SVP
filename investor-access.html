@@ -812,5 +812,58 @@
 
 
 <script src="assets/js/site-motion.js" defer></script>
+<script>
+  (function () {
+    const shell = document.getElementById("investor-shell");
+    const gate = document.getElementById("investor-gate");
+    const content = document.getElementById("investor-content");
+    const decline = document.getElementById("investor-decline");
+    const checkbox = document.getElementById("attestation-checkbox");
+    const proceed = document.getElementById("attestation-proceed");
+    const exit = document.getElementById("attestation-exit");
+    const reset = document.getElementById("reset-access");
+    const back = document.getElementById("back-to-gate");
+
+    if (!shell || !gate || !content || !decline || !proceed || !exit) return;
+
+    const showGate = () => {
+      gate.hidden = false;
+      content.hidden = true;
+      decline.hidden = true;
+      shell.classList.remove("investor-shell--open");
+      if (checkbox) {
+        checkbox.checked = false;
+        proceed.disabled = true;
+      }
+    };
+
+    const showContent = () => {
+      gate.hidden = true;
+      content.hidden = false;
+      decline.hidden = true;
+      shell.classList.add("investor-shell--open");
+    };
+
+    const showDecline = () => {
+      gate.hidden = true;
+      content.hidden = true;
+      decline.hidden = false;
+      shell.classList.add("investor-shell--open");
+    };
+
+    if (checkbox) {
+      checkbox.addEventListener("change", () => {
+        proceed.disabled = !checkbox.checked;
+      });
+    } else {
+      proceed.disabled = false;
+    }
+
+    proceed.addEventListener("click", showContent);
+    exit.addEventListener("click", showDecline);
+    if (reset) reset.addEventListener("click", showGate);
+    if (back) back.addEventListener("click", showGate);
+  })();
+</script>
 </body>
 </html>
