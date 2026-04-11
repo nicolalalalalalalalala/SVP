@@ -237,7 +237,7 @@
         gap: 22px;
         align-items: start;
       }
-      .card {
+      .team-profile {
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -246,7 +246,7 @@
         background: transparent;
         transition: none;
       }
-      .photo {
+      .team-profile__photo {
         width: 100%;
         aspect-ratio: 4/5;
         border-bottom: none;
@@ -254,7 +254,7 @@
         overflow: hidden;
         margin-bottom: 10px;
       }
-      .photo img {
+      .team-profile__photo img {
         display: block;
         width: 100%;
         height: 100%;
@@ -262,31 +262,31 @@
         filter: grayscale(100%);
         transition: filter 0.3s ease;
       }
-      .photo img[alt="Steve Poon"] {
+      .team-profile__photo img[alt="Steve Poon"] {
         object-position: 50% 38%;
         transform: scale(1.12);
         transform-origin: center;
       }
-      .photo img[alt="Michael Chang"] {
+      .team-profile__photo img[alt="Michael Chang"] {
         object-position: 50% 52%;
         transform: scale(1.12);
         transform-origin: center;
       }
-      .photo img[alt="Lillian Xu"] {
+      .team-profile__photo img[alt="Lillian Xu"] {
         object-position: 50% 2%;
         transform: scale(1.12);
         transform-origin: center;
       }
-      .photo img[alt="Shanjuan Jiang"] {
+      .team-profile__photo img[alt="Shanjuan Jiang"] {
         transform: scale(1.08);
         transform-origin: center;
       }
-      .photo img[alt="Daoping Yang"] {
+      .team-profile__photo img[alt="Daoping Yang"] {
         object-position: 50% 24%;
         transform: scale(1.14);
         transform-origin: center;
       }
-      .name {
+      .team-profile__name {
         font-family: var(--sans);
         font-size: 17px;
         font-weight: 600;
@@ -297,7 +297,7 @@
         padding: 0;
         background: transparent;
       }
-      .title {
+      .team-profile__role {
         font-family: var(--sans);
         font-size: 11px;
         letter-spacing: 0.11em;
@@ -307,7 +307,7 @@
         padding: 0;
         background: transparent;
       }
-      .card-descriptor {
+      .team-profile__descriptor {
         font-size: 12px;
         line-height: 1.5;
         color: var(--ink-soft);
@@ -320,33 +320,6 @@
       .group--leadership .grid {
         gap: 26px;
       }
-      .group--client-solutions {
-        padding: 36px 0 44px;
-        background: transparent !important;
-      }
-      .group--client-solutions .group__head,
-      .group--client-solutions h2,
-      .group--client-solutions .group__summary,
-      .group--client-solutions .grid,
-      .group--client-solutions .card,
-      .group--client-solutions .photo,
-      .group--client-solutions .name,
-      .group--client-solutions .title {
-        background: transparent !important;
-      }
-      .group--client-solutions .grid {
-        gap: 20px;
-      }
-      .group--client-solutions .photo {
-        background: transparent;
-      }
-      .group--advisory {
-        padding: 36px 0 44px;
-      }
-      .group--advisory .grid {
-        gap: 16px;
-      }
-
       @media (max-width: 1100px) {
         :root {
           --pad: 40px;
@@ -398,7 +371,7 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 16px;
         }
-        .card {
+        .team-profile {
           box-shadow: none;
         }
         .group h2 {
@@ -431,22 +404,22 @@
           grid-template-columns: 1fr;
           gap: 14px;
         }
-        .card {
+        .team-profile {
           gap: 0;
           max-width: 420px;
           margin-inline: auto;
         }
-        .photo {
+        .team-profile__photo {
           max-height: none;
           aspect-ratio: 4 / 4.7;
         }
-        .name {
+        .team-profile__name {
           font-size: 16px;
           min-height: auto;
           padding: 0;
           margin-bottom: 4px;
         }
-        .title {
+        .team-profile__role {
           font-size: 9px;
           letter-spacing: 0.12em;
           min-height: auto;
@@ -666,8 +639,8 @@
             </p>
           </div>
           <div class="grid">
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/benjamin_fanger.jpg"
                   alt="Benjamin Fanger"
@@ -675,11 +648,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Benjamin Fanger</div>
-              <div class="title">Managing Partner & Founder</div>
+              <div class="team-profile__name">Benjamin Fanger</div>
+              <div class="team-profile__role">Managing Partner & Founder</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/mecy_mei.jpg"
                   alt="Mecy Mei"
@@ -687,11 +660,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Mecy Mei</div>
-              <div class="title">Partner</div>
+              <div class="team-profile__name">Mecy Mei</div>
+              <div class="team-profile__role">Partner</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/hui_zheng.jpg"
                   alt="Hui Zheng"
@@ -699,11 +672,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Hui Zheng</div>
-              <div class="title">Partner</div>
+              <div class="team-profile__name">Hui Zheng</div>
+              <div class="team-profile__role">Partner</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/ada_bi.jpg"
                   alt="Ada Bi"
@@ -711,11 +684,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Ada Bi</div>
-              <div class="title">Partner & CFO</div>
+              <div class="team-profile__name">Ada Bi</div>
+              <div class="team-profile__role">Partner & CFO</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/shanjuan_jiang.jpg"
                   alt="Shanjuan Jiang"
@@ -723,11 +696,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Shanjuan Jiang</div>
-              <div class="title">Partner</div>
+              <div class="team-profile__name">Shanjuan Jiang</div>
+              <div class="team-profile__role">Partner</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/lillian_xu.jpg"
                   alt="Lillian Xu"
@@ -735,11 +708,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Lillian Xu</div>
-              <div class="title">General Counsel</div>
+              <div class="team-profile__name">Lillian Xu</div>
+              <div class="team-profile__role">General Counsel</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/james_li.jpeg"
                   alt="James Li"
@@ -747,11 +720,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">James Li</div>
-              <div class="title">Director of Capital Solutions</div>
+              <div class="team-profile__name">James Li</div>
+              <div class="team-profile__role">Director of Capital Solutions</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/daoping_yang.jpg"
                   alt="Daoping Yang"
@@ -759,13 +732,13 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Daoping Yang</div>
-              <div class="title">Managing Director, ShoreVest Asset Solutions</div>
+              <div class="team-profile__name">Daoping Yang</div>
+              <div class="team-profile__role">Managing Director, ShoreVest Asset Solutions</div>
             </article>
           </div>
         </section>
 
-        <section class="group group--client-solutions" aria-labelledby="client-solutions">
+        <section class="group" aria-labelledby="client-solutions">
           <div class="group__head">
             <h2 id="client-solutions">Client Solutions</h2>
             <p class="group__summary">
@@ -773,8 +746,8 @@
             </p>
           </div>
           <div class="grid">
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/john_jones.jpg"
                   alt="John Jones"
@@ -782,11 +755,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">John Jones</div>
-              <div class="title">Director of Client Solutions (ex-Asia)</div>
+              <div class="team-profile__name">John Jones</div>
+              <div class="team-profile__role">Director of Client Solutions (ex-Asia)</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/kelvin_chan.jpg"
                   alt="Kelvin Chan"
@@ -794,13 +767,13 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Kelvin Chan</div>
-              <div class="title">Director of Client Solutions (Asia)</div>
+              <div class="team-profile__name">Kelvin Chan</div>
+              <div class="team-profile__role">Director of Client Solutions (Asia)</div>
             </article>
           </div>
         </section>
 
-        <section class="group group--advisory" aria-labelledby="advisory-partners">
+        <section class="group" aria-labelledby="advisory-partners">
           <div class="group__head">
             <h2 id="advisory-partners">Advisory Partners</h2>
             <p class="group__summary">
@@ -808,8 +781,8 @@
             </p>
           </div>
           <div class="grid">
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/mike_chang.jpg"
                   alt="Michael Chang"
@@ -817,11 +790,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Michael Chang</div>
-              <div class="title">Senior Advisory Partner</div>
+              <div class="team-profile__name">Michael Chang</div>
+              <div class="team-profile__role">Senior Advisory Partner</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/philip_young.jpg"
                   alt="Philip Young"
@@ -829,11 +802,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Philip Young</div>
-              <div class="title">Senior Advisory Partner</div>
+              <div class="team-profile__name">Philip Young</div>
+              <div class="team-profile__role">Senior Advisory Partner</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/dinny_mcmahon.jpg"
                   alt="Dinny McMahon"
@@ -841,11 +814,11 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Dinny McMahon</div>
-              <div class="title">Senior Advisory Partner</div>
+              <div class="team-profile__name">Dinny McMahon</div>
+              <div class="team-profile__role">Senior Advisory Partner</div>
             </article>
-            <article class="card">
-              <div class="photo">
+            <article class="team-profile">
+              <div class="team-profile__photo">
                 <img
                   src="assets/images/steve_poon.jpg"
                   alt="Steve Poon"
@@ -853,8 +826,8 @@
                   decoding="async"
                 />
               </div>
-              <div class="name">Steve Poon</div>
-              <div class="title">Senior Advisory Partner</div>
+              <div class="team-profile__name">Steve Poon</div>
+              <div class="team-profile__role">Senior Advisory Partner</div>
             </article>
           </div>
         </section>
