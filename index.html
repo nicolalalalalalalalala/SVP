@@ -2040,19 +2040,19 @@ h2.su__hed {
   <div class="hero__stats">
     <div class="stats" aria-label="ShoreVest track record statistics">
       <div class="stat">
-        <div class="stat__n" data-countup data-target="2" data-prefix="$" data-suffix="B+">$2B+</div>
+        <div class="stat__n" data-countup data-target="2" data-prefix="$" data-suffix="B+" data-delay="0">$2B+</div>
         <div class="stat__l">CAPITAL DEPLOYED</div>
       </div>
       <div class="stat">
-        <div class="stat__n" data-countup data-target="6">6</div>
+        <div class="stat__n" data-countup data-target="6" data-delay="120">6</div>
         <div class="stat__l">INSTITUTIONAL FUND VINTAGES</div>
       </div>
       <div class="stat">
-        <div class="stat__n" data-countup data-target="20" data-suffix="+">20+</div>
+        <div class="stat__n" data-countup data-target="20" data-suffix="+" data-delay="240">20+</div>
         <div class="stat__l">YEARS OF ONSHORE CREDIT EXECUTION</div>
       </div>
       <div class="stat stat--zero">
-        <div class="stat__n">0</div>
+        <div class="stat__n" data-countup data-target="0" data-delay="360">0</div>
         <div class="stat__l">DEAL-LEVEL PRINCIPAL LOSSES</div>
       </div>
     </div>
@@ -2318,6 +2318,7 @@ h2.su__hed {
     const target = Number(node.dataset.target || 0);
     const prefix = node.dataset.prefix || '';
     const suffix = node.dataset.suffix || '';
+    const delay = Number(node.dataset.delay || 0);
     if (!Number.isFinite(target)) return;
 
     if (reduceMotion) {
@@ -2336,7 +2337,7 @@ h2.su__hed {
       else node.textContent = `${prefix}${target}${suffix}`;
     };
 
-    requestAnimationFrame(tick);
+    window.setTimeout(() => requestAnimationFrame(tick), Math.max(delay, 0));
   };
 
   if (!('IntersectionObserver' in window) || reduceMotion) {
