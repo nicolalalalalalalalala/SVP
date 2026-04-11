@@ -46,15 +46,15 @@
         { href: 'team_cn.html', label: '团队' }
       ]
     : [
-        { href: 'firm.html', label: 'The Firm' },
-        { href: 'strategy.html', label: 'Strategy' },
-        { href: 'insights.html', label: 'Insights' },
-        { href: 'press.html', label: 'Press' },
-        { href: 'team.html', label: 'Team' }
+        { href: 'firm.html', label: 'THE FIRM' },
+        { href: 'strategy.html', label: 'STRATEGY' },
+        { href: 'insights.html', label: 'INSIGHTS' },
+        { href: 'press.html', label: 'PRESS' },
+        { href: 'team.html', label: 'TEAM' }
       ];
 
   const investorHref = isCnPath ? 'investor-access_cn.html' : 'investor-access.html';
-  const investorLabel = isCnPath ? '投资者入口' : 'Investor Access';
+  const investorLabel = isCnPath ? '投资者入口' : 'INVESTOR ACCESS';
   const wordmark = '新岸資本';
 
   mount.innerHTML = `<nav id="nav" class="${isCnPath ? 'nav--cn' : 'nav--en'}">
