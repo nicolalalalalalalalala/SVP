@@ -439,6 +439,13 @@ body.homepage .hero__overlay .cta--light:focus-visible {
   background: transparent !important;
 }
 
+body.homepage .hero__overlay .cta--light:hover .cta__ring,
+body.homepage .hero__overlay .cta--light:focus-visible .cta__ring {
+  background: #2E4A18 !important;
+  border-color: #2E4A18 !important;
+  color: var(--paper-light) !important;
+}
+
 body.homepage #hero {
   padding-top: clamp(76px, 8vw, 112px) !important;
   position: relative;
