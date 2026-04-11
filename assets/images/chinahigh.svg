@@ -39,25 +39,25 @@
     <circle id="office-guangzhou-halo" cx="614" cy="744" r="14" fill="#C93B2A" opacity="0.18"/>
     <circle id="office-guangzhou" cx="614" cy="744" r="7.2" fill="#C93B2A" stroke="#FAF6EE" stroke-width="2.2"/>
 
-    <circle id="office-shanghai-halo" cx="752" cy="613" r="10.5" fill="#B24A3E" opacity="0.14"/>
-    <circle id="office-shanghai" cx="752" cy="613" r="5.8" fill="#B24A3E" stroke="#FAF6EE" stroke-width="2"/>
+    <circle id="office-shanghai-halo" cx="742" cy="615" r="10.5" fill="#B24A3E" opacity="0.14"/>
+    <circle id="office-shanghai" cx="742" cy="615" r="5.8" fill="#B24A3E" stroke="#FAF6EE" stroke-width="2"/>
 
     <circle id="office-hongkong-halo" cx="637" cy="764" r="7.2" fill="#8F7760" opacity="0.12"/>
     <circle id="office-hongkong" cx="637" cy="764" r="4.1" fill="#8F7760" stroke="#FAF6EE" stroke-width="1.6"/>
   </g>
   <g id="shorevest-office-label-connectors" stroke-linecap="round" fill="none">
-    <path d="M621 739.5L631 733" stroke="#C93B2A" stroke-opacity="0.55" stroke-width="1.1"/>
-    <path d="M746.5 614L736 610" stroke="#B24A3E" stroke-opacity="0.48" stroke-width="1"/>
-    <path d="M640.5 767.5L651 772" stroke="#8F7760" stroke-opacity="0.4" stroke-width="0.9"/>
+    <path d="M621 738.5L628 734" stroke="#C93B2A" stroke-opacity="0.46" stroke-width="0.9"/>
+    <path d="M747.5 613L754 609" stroke="#B24A3E" stroke-opacity="0.42" stroke-width="0.9"/>
+    <path d="M640.6 767.6L649 771" stroke="#8F7760" stroke-opacity="0.32" stroke-width="0.9"/>
   </g>
-  <g id="shorevest-office-labels" font-family="Inter, Arial, sans-serif" font-size="7.2" font-weight="500" letter-spacing="0.11em" text-rendering="geometricPrecision">
-    <rect x="631" y="726" width="82" height="14" rx="3" fill="#FAF6EE" fill-opacity="0.95" stroke="#D8CEB0" stroke-width="0.6"/>
-    <text x="635" y="735.3" fill="#1E4040">GUANGZHOU</text>
+  <g id="shorevest-office-labels" font-family="Inter, Arial, sans-serif" font-size="6.8" font-weight="500" letter-spacing="0.09em" text-rendering="geometricPrecision">
+    <rect x="628" y="726" width="68" height="12" rx="2.4" fill="#F8F3E8" fill-opacity="0.94" stroke="#D8CEB0" stroke-width="0.5"/>
+    <text x="632" y="734.4" fill="#2A4A48">GUANGZHOU</text>
 
-    <rect x="674" y="601" width="72" height="14" rx="3" fill="#FAF6EE" fill-opacity="0.95" stroke="#D8CEB0" stroke-width="0.6"/>
-    <text x="678" y="610.3" fill="#365E5A">SHANGHAI</text>
+    <rect x="754" y="601" width="62" height="12" rx="2.4" fill="#F8F3E8" fill-opacity="0.94" stroke="#D8CEB0" stroke-width="0.5"/>
+    <text x="758" y="609.4" fill="#2A4A48">SHANGHAI</text>
 
-    <rect x="651" y="766" width="76" height="13" rx="3" fill="#FAF6EE" fill-opacity="0.92" stroke="#D8CEB0" stroke-width="0.6"/>
-    <text x="655" y="774.6" fill="#5A6D67">HONG KONG</text>
+    <rect x="649" y="771" width="67" height="12" rx="2.4" fill="#F8F3E8" fill-opacity="0.84" stroke="#D8CEB0" stroke-width="0.5"/>
+    <text x="653" y="779.4" fill="#4F645F">HONG KONG</text>
   </g>
 </svg>
