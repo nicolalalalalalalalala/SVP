@@ -396,65 +396,71 @@
       .team-row-bio {
         grid-column: 1 / -1;
         width: 100%;
-        margin-top: 8px;
-        padding: 22px 0 2px;
+        margin-top: 10px;
+        padding: 20px 0 6px;
         border-top: 1px solid color-mix(in srgb, var(--ink-soft) 20%, transparent);
       }
       .team-row-bio[hidden] {
         display: none;
       }
+      .team-row-bio__meta {
+        display: grid;
+        align-content: start;
+        gap: 4px;
+      }
       .team-row-bio__name {
         font-family: var(--sans);
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 600;
-        line-height: 1.25;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
         color: var(--ink);
       }
       .team-row-bio__role {
-        margin-top: 2px;
+        margin-top: 0;
         font-family: var(--sans);
         font-size: 10px;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.11em;
         text-transform: uppercase;
-        color: var(--qing-dark);
+        color: color-mix(in srgb, var(--qing-dark) 86%, white);
+        line-height: 1.45;
       }
       .team-row-bio__content {
-        margin-top: 12px;
+        margin-top: 10px;
         width: 100%;
-        max-width: min(104ch, 100%);
+        max-width: min(92ch, 100%);
       }
       .team-row-bio__content p {
         font-family: var(--serif);
-        font-size: 15px;
-        line-height: 1.78;
+        font-size: 16px;
+        line-height: 1.74;
         color: color-mix(in srgb, var(--ink-soft) 93%, black 7%);
         margin: 0;
+        text-wrap: pretty;
       }
       .team-row-bio__content p + p {
-        margin-top: 1em;
+        margin-top: 0.95em;
       }
       @media (min-width: 768px) {
         .team-row-bio {
           display: grid;
-          grid-template-columns: minmax(180px, 0.85fr) minmax(0, 2.15fr);
-          column-gap: clamp(18px, 3vw, 46px);
-          row-gap: 8px;
+          grid-template-columns: minmax(210px, 0.9fr) minmax(0, 2.35fr);
+          column-gap: clamp(24px, 3.4vw, 58px);
+          row-gap: 0;
           align-items: start;
         }
-        .team-row-bio__name {
+        .team-row-bio__meta {
           grid-column: 1;
           grid-row: 1;
-        }
-        .team-row-bio__role {
-          grid-column: 1;
-          grid-row: 2;
-          margin-top: 0;
+          padding-top: 1px;
         }
         .team-row-bio__content {
           grid-column: 2;
-          grid-row: 1 / span 2;
+          grid-row: 1;
           margin-top: 0;
-          max-width: min(112ch, 100%);
+          max-width: min(86ch, 100%);
+          padding-left: clamp(18px, 2vw, 26px);
+          border-left: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
         }
       }
       .group--leadership {
@@ -1357,7 +1363,7 @@
           expansion.hidden = true;
           expansion.id = `team-row-bio-${gridIndex + 1}`;
           expansion.innerHTML =
-            '<div class="team-row-bio__name"></div><div class="team-row-bio__role"></div><div class="team-row-bio__content"></div>';
+            '<div class="team-row-bio__meta"><div class="team-row-bio__name"></div><div class="team-row-bio__role"></div></div><div class="team-row-bio__content"></div>';
           grid.append(expansion);
 
           const closeAll = () => {
