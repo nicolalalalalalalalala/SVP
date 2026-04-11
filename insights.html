@@ -427,6 +427,10 @@
         margin-left: 0;
         margin-right: 0;
       }
+      .issue-editorial {
+        max-width: 1260px;
+        margin: 0 auto;
+      }
       .franchise-ribbon {
         display: flex;
         justify-content: space-between;
@@ -546,16 +550,24 @@
 
       .reading-grid {
         display: grid;
-        grid-template-columns: minmax(0, 2.45fr) minmax(220px, 0.95fr);
-        gap: clamp(48px, 4.8vw, 84px);
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+        gap: clamp(40px, 4vw, 64px);
         align-items: start;
       }
       .reading {
         font-family: var(--serif);
+        width: 100%;
+        max-width: 860px;
       }
       #current-issue {
         grid-column: auto;
         min-width: 0;
+      }
+      .reading > p,
+      .reading > h3,
+      .reading > blockquote,
+      .reading > ul {
+        max-width: 35ch;
       }
       .reading h3 {
         font-size: 31px;
@@ -596,6 +608,8 @@
       .sidebar {
         position: sticky;
         top: 96px;
+        width: min(100%, 320px);
+        justify-self: end;
       }
       .sidebar__card {
         border: 1px solid var(--rule);
@@ -798,8 +812,8 @@
 
       @media (max-width: 1320px) {
         .reading-grid {
-          grid-template-columns: minmax(0, 2.25fr) minmax(210px, 0.9fr);
-          gap: clamp(40px, 4.2vw, 64px);
+          grid-template-columns: minmax(0, 1fr) minmax(260px, 300px);
+          gap: clamp(36px, 3.6vw, 52px);
         }
       }
 
@@ -845,6 +859,19 @@
         .reading-grid {
           grid-template-columns: minmax(0, 1fr);
           gap: 32px;
+        }
+        .reading {
+          max-width: 100%;
+        }
+        .reading > p,
+        .reading > h3,
+        .reading > blockquote,
+        .reading > ul {
+          max-width: 100%;
+        }
+        .sidebar {
+          width: 100%;
+          justify-self: stretch;
         }
       }
 
@@ -1735,6 +1762,7 @@
         </div>
       </div>
 
+      <section class="issue-editorial">
       <div class="reading-grid">
         <article
           id="current-issue"
@@ -2249,6 +2277,7 @@
           </div>
         </aside>
       </div>
+      </section>
     </main>
 
 
