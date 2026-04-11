@@ -15,7 +15,7 @@
   <style>
     :root{--red:#3d7070;--ink:#0c0c0a;--ink-soft:#3f3b36;--paper:#fff;--rule:rgba(12,12,10,.12);--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
     *{box-sizing:border-box}
-    body{font-family:var(--sans);max-width:880px;margin:0 auto;padding:120px 24px 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--paper)}
+    body{font-family:var(--sans);max-width:980px;margin:0 auto;padding:120px clamp(20px,3.8vw,48px) 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--paper)}
     h1,h2{color:var(--ink);font-family:var(--serif);font-weight:400;letter-spacing:.01em}
     h1{font-size:38px;line-height:1.08;margin-bottom:8px}
     h2{font-size:24px;line-height:1.16;margin-bottom:10px}
@@ -40,7 +40,7 @@
     body.legal-page {
       max-width: 1320px;
       margin: 0 auto;
-      padding: 120px 64px 40px;
+      padding: 120px clamp(20px, 3.8vw, 48px) 40px;
       font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
       font-size: 12px;
       line-height: 1.55;

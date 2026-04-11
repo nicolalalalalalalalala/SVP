@@ -14,7 +14,7 @@
 <style>
     :root{--red:var(--sv-color-accent,#3d7070);--ink:var(--sv-color-ink,#0c0c0a);--ink-soft:var(--sv-color-soft-ink,#3f3b36);--paper:var(--sv-color-bg,#fff);--off:var(--sv-color-bg-soft,#f6f4f0);--rule:var(--sv-color-rule,rgba(0,0,0,.08));--serif:var(--sv-font-serif-en,'EB Garamond',Georgia,serif);--sans:var(--sv-font-sans-en,'Inter',system-ui,sans-serif)}
     *{box-sizing:border-box}
-    body{font-family:var(--sans);max-width:880px;margin:0 auto;padding:120px 24px 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--off)}
+    body{font-family:var(--sans);max-width:980px;margin:0 auto;padding:120px clamp(20px,3.8vw,48px) 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--off)}
     h1,h2,h3{color:var(--ink)}
     h1{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:38px;line-height:1.08;margin-bottom:8px}
     h2{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:24px;line-height:1.16;margin:30px 0 10px}
@@ -236,7 +236,7 @@
     }
     .privacy-wrap {
       width: 100%;
-      max-width: 880px;
+      max-width: 980px;
       margin: 0 auto;
       color: var(--ink-soft);
     }

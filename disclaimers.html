@@ -24,7 +24,7 @@
       --sans: "DIN 2014", "Arial Narrow", Arial, sans-serif;
       --sans-zh: "Noto Serif SC", "Songti SC", serif;
       --max: 100%;
-      --pad: 64px;
+      --pad: clamp(20px, 3.8vw, 48px);
     }
     * { box-sizing: border-box; }
     body {
@@ -74,7 +74,7 @@
     }
     .disclaimer-wrap {
       width: 100%;
-      max-width: none;
+      max-width: 980px;
       margin: 0 auto;
       color: #3f3b36;
     }
