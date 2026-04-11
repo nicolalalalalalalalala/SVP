@@ -382,3 +382,80 @@
   .nav__links a { font-size: 8.8px; }
   .nav__lp { font-size: 8.3px; }
 }
+
+/* Unified ShoreVest mobile header system: single shared pattern across all pages. */
+@media (max-width: 767px) {
+  #site-header-mount {
+    min-height: 62px !important;
+  }
+
+  #site-header-mount #nav {
+    min-height: 62px !important;
+    height: 62px !important;
+    padding: 0 var(--site-page-margin, 16px) !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    column-gap: 12px !important;
+    row-gap: 0 !important;
+    border-bottom: 1px solid var(--rule, rgba(31,24,18,.11)) !important;
+    background: var(--paper-light, #FAF6EE) !important;
+  }
+
+  #site-header-mount #nav .nav__logo {
+    gap: 6px !important;
+    min-width: 0 !important;
+  }
+
+  #site-header-mount #nav .nav__logo-mark {
+    width: 34px !important;
+    height: 34px !important;
+    flex: 0 0 34px !important;
+  }
+
+  #site-header-mount #nav .nav__logo-lockup {
+    min-height: 30px !important;
+    padding-left: 0 !important;
+    row-gap: 1px !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+  }
+
+  #site-header-mount #nav .nav__logo-en {
+    font-size: 13px !important;
+    letter-spacing: .05em !important;
+    line-height: 1 !important;
+  }
+
+  #site-header-mount #nav .nav__logo-cn {
+    font-size: 9px !important;
+    letter-spacing: .34em !important;
+    line-height: 1 !important;
+  }
+
+  #site-header-mount #nav .nav__right {
+    align-items: center !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+    min-height: 100% !important;
+  }
+
+  #site-header-mount #nav .nav__menu-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    padding: 0 11px !important;
+    border: 1px solid rgba(48,40,34,.2) !important;
+    border-radius: 0 !important;
+    background: var(--white, #fff) !important;
+    font-size: 9px !important;
+    letter-spacing: .1em !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  #site-header-mount #nav .nav__links {
+    padding: 12px 0 4px !important;
+  }
+}

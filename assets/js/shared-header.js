@@ -22,7 +22,7 @@
   <li class="nav__mobile-lang"><a href="index_cn.html">${HOMEPAGE_CN_LANGUAGE_LABEL}</a></li></ul><div class="nav__right">
     <a href="index_cn.html" class="nav__zh lang-toggle">${HOMEPAGE_CN_LANGUAGE_LABEL}</a>
     <a href="investor-access.html" class="nav__lp">Investor Access</a>
-    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">MENU</button>
   </div>
 </nav>`;
 
