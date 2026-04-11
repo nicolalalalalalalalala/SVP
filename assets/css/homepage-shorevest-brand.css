@@ -417,7 +417,7 @@ body.homepage .hero__overlay h1.hero__hed .hero__hed-main {
 }
 
 body.homepage .hero__overlay h1.hero__hed em {
-  color: #2E4A18 !important;
+  color: var(--cinnabar-dark) !important;
 }
 
 body.homepage .hero__overlay .cta--light {
