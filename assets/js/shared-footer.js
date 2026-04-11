@@ -2,15 +2,6 @@
   const path = window.location.pathname.split('/').pop() || 'index.html';
   const isCnPath = /_cn\.html$/i.test(path);
 
-  const ensureTypographySystem = () => {
-    if (document.getElementById('sv-shared-footer-fonts')) return;
-    const link = document.createElement('link');
-    link.id = 'sv-shared-footer-fonts';
-    link.rel = 'stylesheet';
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap';
-    document.head.appendChild(link);
-  };
-
   const footerTemplateEn = `
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
@@ -27,7 +18,7 @@
         <summary>LEGAL NOTICE</summary>
         <div class="sv-footer__legal">This website uses cookies and similar technologies for operational, analytical, and security purposes. Certain cookies may be required for the Site to function. By using this website, you acknowledge the use of cookies as described in this Cookie Notice. Please also review our Privacy Policy, Terms of Use, and Legal Notices &amp; Disclaimers.</div>
       </details>
-      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="legal-notices-disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
     </div>
   </div>`;
 
@@ -47,7 +38,7 @@
         <summary>法律声明</summary>
         <div class="sv-footer__legal">本网站使用 Cookie 及类似技术用于网站运行、分析和安全目的。为保障网站正常功能，某些 Cookie 可能为必需。继续使用本网站即表示您确认并同意本《Cookie 通知》所述内容；另请同时查阅《隐私政策》《使用条款》及《法律声明与免责声明》。</div>
       </details>
-      <div class="sv-footer__legal-links"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice_cn.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="disclaimers_cn.html">法律声明与免责声明</a></div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice_cn.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="legal-notices-disclaimers_cn.html">法律声明与免责声明</a></div>
     </div>
   </div>`;
 
