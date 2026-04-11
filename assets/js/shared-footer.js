@@ -2,6 +2,15 @@
   const path = window.location.pathname.split('/').pop() || 'index.html';
   const isCnPath = /_cn\.html$/i.test(path);
 
+  const ensureTypographySystem = () => {
+    if (document.getElementById('sv-shared-footer-fonts')) return;
+    const link = document.createElement('link');
+    link.id = 'sv-shared-footer-fonts';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap';
+    document.head.appendChild(link);
+  };
+
   const footerTemplateEn = `
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
