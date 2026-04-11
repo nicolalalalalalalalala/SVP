@@ -90,6 +90,22 @@
   text-rendering: geometricPrecision;
 }
 
+/* Lock logo lockup rendering so page-level typography overrides cannot alter it. */
+#site-header-mount #nav .nav__logo-lockup {
+  row-gap: 1px !important;
+  min-height: 31px !important;
+}
+
+#site-header-mount #nav .nav__logo-cn {
+  font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif !important;
+  color: rgba(33, 33, 30, .66) !important;
+  line-height: 1 !important;
+  margin-top: 0 !important;
+  transform: translateY(-1px) !important;
+  letter-spacing: .28em !important;
+  text-rendering: geometricPrecision;
+}
+
 .nav__links {
   display: flex;
   gap: 40px;
@@ -204,16 +220,6 @@
   font-size: 12px;
 }
 
-#nav.nav--cn .nav__logo-lockup {
-  row-gap: 2px;
-}
-
-#nav.nav--cn .nav__logo-cn {
-  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
-  letter-spacing: .16em;
-  font-weight: 500;
-  color: rgba(33, 33, 30, .72);
-}
 @media (max-width: 1240px) {
   #nav {
     column-gap: 16px;
@@ -466,6 +472,8 @@
     font-size: 9px !important;
     letter-spacing: .34em !important;
     line-height: 1 !important;
+    color: rgba(33,33,30,.66) !important;
+    transform: translateY(-1px) !important;
   }
 
   #site-header-mount #nav .nav__right {
