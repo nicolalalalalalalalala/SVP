@@ -2451,13 +2451,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="ring-card"><div class="ring" style="--pct: 68%" data-collateral-ring aria-label="Illustrative collateral coverage level for selected regime"></div><div class="ring-label"><span data-ring-value>68%</span>Target collateral coverage<div class="ring-context" data-ring-context>Illustrative downside underwriting metric: expected recovery supported by enforceable collateral value.</div></div></div>
                 </div>
-              </div>
-              <div class="strategy-details">
-                <article class="strategy-detail is-active" data-detail-card="abl"><h3>First-lien asset-based lending</h3><p data-detail="abl">Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
-                <article class="strategy-detail" data-detail-card="restructuring"><h3>Asset restructuring and workouts</h3><p data-detail="restructuring">Creditor coordination programs built for negotiated control and timeline discipline.</p></article>
-                <article class="strategy-detail" data-detail-card="resolutions"><h3>Debt resolutions and recoveries</h3><p data-detail="resolutions">In-house servicing and multi-channel exits through legal, secondary, and negotiated routes.</p></article>
               </div>
             </div>
           </section>
@@ -2613,10 +2607,10 @@
           Object.keys(fills).forEach((name) => {
             fills[name].style.width = `${regime.values[name]}%`;
             ranges[name].textContent = regime.ranges[name];
-            details[name].textContent = regime.detail[name];
+            if (details[name]) details[name].textContent = regime.detail[name];
           });
-          ring.style.setProperty("--pct", regime.collateral);
-          ringValue.textContent = regime.collateral;
+          if (ring) ring.style.setProperty("--pct", regime.collateral);
+          if (ringValue) ringValue.textContent = regime.collateral;
           if (ringContext) ringContext.textContent = regime.collateralContext;
           regimeButtons.forEach((btn) => {
             const active = btn.dataset.regime === key;
