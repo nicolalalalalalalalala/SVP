@@ -187,6 +187,21 @@
   padding: 8px 14px;
 }
 
+
+
+#nav.nav--cn .nav__links a,
+#nav.nav--cn .nav__lp,
+#nav.nav--cn .lang-toggle,
+#nav.nav--cn .nav__zh {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: .02em;
+  text-transform: none;
+}
+
+#nav.nav--cn .nav__links a,
+#nav.nav--cn .nav__lp {
+  font-size: 12px;
+}
 @media (max-width: 1240px) {
   #nav {
     column-gap: 16px;
