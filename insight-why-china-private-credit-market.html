@@ -13,14 +13,10 @@
 <link rel="stylesheet" href="assets/css/article-typography-framework.css" />
 
 <link rel="stylesheet" href="assets/css/site-motion.css">
-
-<link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
-  <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
-
-
-    <link rel="stylesheet" href="assets/css/shared-header.css" />
+<link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
 <link rel="stylesheet" href="assets/css/shared-footer.css">
+    <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 </head>
   <body>
     <div id="site-header-mount"></div>
@@ -37,7 +33,6 @@
       </p>
       <a class="back action-button" href="insights.html">← Back to News &amp; Insights</a>
     </main>
-
 
 <footer class="sv-footer" data-shared-footer></footer>
 
@@ -59,7 +54,7 @@
         document.head.appendChild(style);
 
         const targets = document.querySelectorAll(
-          "section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
+          "section, .wrap> div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
         );
         targets.forEach((el, i) => {
           if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
