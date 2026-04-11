@@ -109,10 +109,16 @@
         max-width: 840px;
       }
       .investor-shell {
-        min-height: calc(100vh - 258px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        min-height: 0;
+        display: block;
+      }
+      @media (min-width: 768px) {
+        .investor-shell:not(.investor-shell--open) {
+          min-height: calc(100vh - 258px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
       .investor-shell.investor-shell--open {
         min-height: 0;
