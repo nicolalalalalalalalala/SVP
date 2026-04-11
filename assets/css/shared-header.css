@@ -34,6 +34,7 @@
   align-items: center;
   gap: 4px;
   height: 100%;
+  text-decoration: none;
 }
 
 .nav__logo img { display: block; }
@@ -128,6 +129,7 @@
   color: var(--ink, #171410);
   opacity: .45;
   transition: opacity .2s;
+  text-decoration: none;
 }
 
 .nav__links a:hover,
@@ -205,6 +207,26 @@
 }
 
 
+
+
+.nav__logo,
+.nav__logo:hover,
+.nav__logo:focus,
+.nav__logo:active,
+.nav__links a,
+.nav__links a:hover,
+.nav__links a:focus,
+.nav__zh,
+.nav__zh:hover,
+.nav__zh:focus,
+.nav__lp,
+.nav__lp:hover,
+.nav__lp:focus,
+.lang-toggle,
+.lang-toggle:hover,
+.lang-toggle:focus {
+  text-decoration: none;
+}
 
 #nav.nav--cn .nav__links a,
 #nav.nav--cn .nav__lp,
