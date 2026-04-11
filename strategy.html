@@ -1569,6 +1569,14 @@
         margin-bottom: 4px;
         font-weight: 400;
       }
+      .ring-context {
+        margin-top: 8px;
+        font-size: 10px;
+        letter-spacing: 0.02em;
+        text-transform: none;
+        color: rgba(15, 34, 6, 0.78);
+        line-height: 1.45;
+      }
       .viz-controls {
         display: flex;
         gap: 8px;
@@ -2372,7 +2380,7 @@
                   <div class="alloc-row" data-strategy="resolutions" role="button" tabindex="0" aria-label="Highlight Debt Resolutions details"><span class="alloc-label"><span>Debt Resolutions</span><span data-range="resolutions">14–15%</span></span><div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div></div>
                   <div class="alloc-note">Illustrative ranges shown for strategy communication only.</div>
                 </div>
-                <div class="ring-card"><div class="ring" style="--pct: 68%" data-collateral-ring></div><div class="ring-label"><span data-ring-value>68%</span>Target collateral coverage</div></div>
+                <div class="ring-card"><div class="ring" style="--pct: 68%" data-collateral-ring aria-label="Illustrative collateral coverage level for selected regime"></div><div class="ring-label"><span data-ring-value>68%</span>Target collateral coverage<div class="ring-context" data-ring-context>Illustrative downside underwriting metric: expected recovery supported by enforceable collateral value.</div></div></div>
               </div>
               <div class="strategy-details">
                 <article class="strategy-detail is-active" data-detail-card="abl"><h3>First-lien asset-based lending</h3><p data-detail="abl">Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
@@ -2469,12 +2477,15 @@
         const rows = Array.from(root.querySelectorAll("[data-strategy]"));
         const ring = root.querySelector("[data-collateral-ring]");
         const ringValue = root.querySelector("[data-ring-value]");
+        const ringContext = root.querySelector("[data-ring-context]");
 
         const regimes = {
           dislocated: {
             values: { abl: 40, restructuring: 46, resolutions: 14 },
             ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
             collateral: "68%",
+            collateralContext:
+              "Higher dislocation can improve entry basis and collateral headroom in underwriting.",
             detail: {
               abl: "Senior secured claims entered at conservative basis with enforceable priority rights.",
               restructuring: "Creditor coordination programs built for negotiated control and timeline discipline.",
@@ -2485,6 +2496,8 @@
             values: { abl: 34, restructuring: 52, resolutions: 14 },
             ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
             collateral: "66%",
+            collateralContext:
+              "Coverage remains strong as pricing normalizes and focus stays on first-lien enforceability.",
             detail: {
               abl: "Selective first-lien origination remains anchored to claim priority and downside-tested collateral basis.",
               restructuring: "Workouts expand when pricing resets support negotiated governance and enforceable process control.",
@@ -2495,6 +2508,8 @@
             values: { abl: 24, restructuring: 61, resolutions: 15 },
             ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
             collateral: "64%",
+            collateralContext:
+              "In tighter markets, selectivity increases to preserve downside support and recovery visibility.",
             detail: {
               abl: "New ABL deployment narrows to high-conviction opportunities with clear legal priority and recovery visibility.",
               restructuring: "Capital shifts to complex restructurings where active creditor coordination can improve control and outcomes.",
@@ -2513,6 +2528,7 @@
           });
           ring.style.setProperty("--pct", regime.collateral);
           ringValue.textContent = regime.collateral;
+          if (ringContext) ringContext.textContent = regime.collateralContext;
           regimeButtons.forEach((btn) => {
             const active = btn.dataset.regime === key;
             btn.classList.toggle("is-active", active);
