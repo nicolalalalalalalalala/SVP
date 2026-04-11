@@ -599,6 +599,9 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   overflow-wrap:anywhere;
   max-width:24ch;
 }
+.stat__l span {
+  display:block;
+}
 .stat--zero .stat__n {
   color:#7e2237;
 }
@@ -1492,38 +1495,63 @@ h2.su__hed {
   .num-band { padding:52px 0; }
 
   #stats {
-    padding:14px var(--pad) 4px;
+    padding:18px var(--pad) 14px;
   }
   .stats {
     max-width:100%;
-    gap:12px;
+    grid-template-columns:1fr;
+    gap:8px;
   }
   .stat {
-    padding:22px 20px 20px;
-    border-radius:14px;
-    border:1px solid rgba(188, 174, 142, .24);
-    border-bottom-color:rgba(188, 174, 142, .34);
-    background:linear-gradient(180deg, rgba(251, 248, 239, .96) 0%, rgba(246, 240, 227, .74) 100%);
-    box-shadow:0 6px 18px rgba(19, 30, 20, .07);
+    padding:14px 14px 12px;
+    border-radius:8px;
+    border:1px solid rgba(30, 64, 64, .18);
+    border-left:2px solid rgba(30, 64, 64, .32);
+    border-top:1px solid rgba(30, 64, 64, .16);
+    background:linear-gradient(180deg, rgba(251, 248, 241, .94) 0%, rgba(245, 239, 227, .84) 100%);
+    box-shadow:none;
   }
   .stat__n {
-    font-size:clamp(34px,9vw,42px);
-    margin-bottom:12px;
+    font-size:clamp(30px, 7.1vw, 38px);
+    margin-bottom:7px;
+    line-height:.94;
   }
   .stat__l {
-    font-size:11.5px;
-    letter-spacing:.1em;
-    line-height:1.46;
+    font-size:9px;
+    letter-spacing:.12em;
+    line-height:1.38;
+    max-width:none;
+    text-wrap:pretty;
+    overflow-wrap:normal;
+    word-break:keep-all;
   }
   .stats__note {
-    margin-top:18px;
-    font-size:12px;
-    line-height:1.62;
-    padding:0 90px 0 2px;
+    margin-top:10px;
+    margin-bottom:0;
+    max-width:62ch;
+    font-size:9.5px;
+    letter-spacing:.01em;
+    line-height:1.42;
+    color:rgba(48, 45, 40, .42);
+    padding:0 1px;
+  }
+  @media (min-width: 520px) and (max-width: 900px) {
+    .stats {
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+    }
+    .stat {
+      min-height:122px;
+    }
+  }
+  @media (max-width: 420px) {
+    .stat {
+      padding:13px 12px 11px;
+    }
   }
 
   #about {
-    padding:34px 0 84px;
+    padding:52px 0 84px;
   }
   .about__intro {
     padding-bottom:52px;
