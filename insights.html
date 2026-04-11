@@ -423,10 +423,6 @@
       .issue-shell {
         padding: 42px 0 96px;
       }
-      .issue-layout {
-        max-width: 1220px;
-        margin: 0 auto;
-      }
       .issue-intro {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
@@ -831,10 +827,9 @@
         }
       }
 
-      @media (max-width: 1080px) {
+      @media (max-width: 1024px) {
         :root {
           --site-page-margin: clamp(20px, 4.8vw, 40px);
-          --pad: var(--site-page-margin);
         }
         .research-hero__grid,
         .findings-strip,
@@ -891,11 +886,6 @@
       }
 
       @media (max-width: 720px) {
-        :root {
-          --site-page-margin: clamp(16px, 5vw, 22px);
-          --pad: var(--site-page-margin);
-        }
-
         .research-hero {
           min-height: auto;
           margin-top: 0;
@@ -958,7 +948,6 @@
       @media (max-width: 767px) {
         :root {
           --site-page-margin: clamp(16px, 5vw, 22px);
-          --pad: var(--site-page-margin);
         }
         body {
           font-size: 14px;
@@ -1151,24 +1140,6 @@
       }
 
       @media (max-width: 520px) {
-        :root {
-          --site-page-margin: clamp(16px, 5vw, 22px);
-          --pad: var(--site-page-margin);
-        }
-        .wrap,
-        .issue-shell.wrap {
-          padding-left: var(--pad);
-          padding-right: var(--pad);
-        }
-
-
-
-
-
-
-
-
-
         .research-hero {
           margin-top: 0;
           padding: 128px 0 40px;
@@ -1686,7 +1657,6 @@
     </section>
 
     <main class="issue-shell wrap">
-      <div class="issue-layout">
       <div class="issue-intro">
         <div>
           <div class="issue-intro__title">
@@ -2235,7 +2205,6 @@
             </div>
           </div>
         </aside>
-      </div>
       </div>
     </main>
 
