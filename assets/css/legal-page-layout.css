@@ -1,0 +1,30 @@
+body.legal-page main {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+body.legal-page .legal-page__content {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  color: var(--ink-soft);
+}
+
+body.legal-page .legal-page__content h1 {
+  margin: 0 0 8px;
+}
+
+body.legal-page .legal-page__content p,
+body.legal-page .legal-page__content li {
+  max-width: none;
+}
+
+body.legal-page .legal-page__content ul,
+body.legal-page .legal-page__content ol {
+  padding-left: 20px;
+}
+
+body.legal-page .legal-page__content section {
+  margin-bottom: 28px;
+}
