@@ -64,6 +64,8 @@
     });
   };
 
+  ensureTypographySystem();
+
   const mountFooter = (node) => {
     node.className = `sv-footer ${isCnPath ? 'sv-footer--cn' : 'sv-footer--en'}`;
     node.innerHTML = isCnPath ? footerTemplateCn : footerTemplateEn;
