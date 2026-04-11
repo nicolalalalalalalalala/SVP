@@ -236,7 +236,6 @@
         display: flex;
         flex-direction: column;
         gap: 9px;
-        cursor: pointer;
         transition: transform 0.2s ease;
       }
       .card:hover,
@@ -310,6 +309,11 @@
         margin-top: -2px;
       }
       .card-cue {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
         font-size: 8pt;
         letter-spacing: 0.07em;
         text-transform: uppercase;
@@ -317,13 +321,14 @@
         text-decoration: underline;
         text-underline-offset: 2px;
       }
-      .card-snippet {
-        display: none;
-      }
       .card-bio {
+        display: none;
         font-size: 12px;
         line-height: 1.65;
         color: var(--ink-soft);
+      }
+      .card.is-active .card-bio {
+        display: block;
       }
 
       .card.is-active .photo {
@@ -745,18 +750,18 @@
       --blue-green: #3D7070;
       --ink-green-dark: #0F2206;
       --rule: color-mix(in srgb, #0F2206 14%, #F2ECD8 86%);
-      --serif: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      --sans: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      --serif: "EB Garamond", Georgia, serif;
+      --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
       --sans-zh: "Noto Serif SC", "Songti SC", serif;
       --serif-zh: "Noto Serif SC", "Songti SC", serif;
     }
 
     html, body { background: #F2ECD8 !important; color: #0F2206 !important; }
     body, p, li, .group__summary, .card-descriptor, .pagehero p, .row-bio-panel__text, .row-bio-panel__meta {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif !important;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
       font-weight: 400 !important;
-      font-size: 15.5px !important;
-      line-height: 1.68 !important;
+      font-size: 15px !important;
+      line-height: 1.65 !important;
       color: #0F2206 !important;
     }
 
@@ -764,16 +769,16 @@
     .photo, .row-bio-panel, .group, .sv-footer, .sv-footer__main { border-color: var(--rule) !important; box-shadow: none !important; }
 
     h1 {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif !important;
-      font-style: normal !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.04em !important;
+      font-family: "EB Garamond", Georgia, serif !important;
+      font-style: italic !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.01em !important;
       color: #0F2206 !important;
       text-transform: uppercase !important;
-      line-height: 1.08 !important;
+      line-height: 1.04 !important;
     }
     h2, .name, .row-bio-panel__name {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif !important;
+      font-family: "EB Garamond", Georgia, serif !important;
       font-weight: 700 !important;
       font-style: normal !important;
       color: #0F2206 !important;
@@ -792,10 +797,10 @@
       color: color-mix(in srgb, #0F2206 88%, #3D7070 12%) !important;
     }
     /* H1 brand heading: DIN 2014 Bold, all caps, +5 tracking */
-    .sv-footer__brand { font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif !important; font-weight: 700 !important; font-style: normal !important; color: #0F2206 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important; }
+    .sv-footer__brand { font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important; font-weight: 700 !important; font-style: normal !important; color: #0F2206 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important; }
 
     .eyebrow, .title, .card-cue, .row-bio-panel__eyebrow, .sv-footer__contact-label, .sv-footer__contact a {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif !important;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
       font-weight: 700 !important;
       letter-spacing: 0.12em !important;
       text-transform: uppercase !important;
@@ -854,7 +859,8 @@
               </div>
               <div class="name">Benjamin Fanger</div>
               <div class="title">Managing Partner; Founder</div>
-              <p class="card-descriptor">Drives investment strategy, portfolio construction and overall platform direction across China private credit.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Drives investment strategy, portfolio construction and overall platform direction across China private credit.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -867,7 +873,8 @@
               </div>
               <div class="name">Mecy Mei</div>
               <div class="title">Partner</div>
-              <p class="card-descriptor">Leads sourcing, underwriting and execution of private credit investments across onshore markets.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Leads sourcing, underwriting and execution of private credit investments across onshore markets.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -880,7 +887,8 @@
               </div>
               <div class="name">Hui Zheng</div>
               <div class="title">Partner</div>
-              <p class="card-descriptor">Focuses on structuring, negotiation and execution of complex credit and restructuring situations.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Focuses on structuring, negotiation and execution of complex credit and restructuring situations.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -893,7 +901,8 @@
               </div>
               <div class="name">Ada Bi</div>
               <div class="title">Partner; CFO</div>
-              <p class="card-descriptor">Oversees fund management, financial operations and investor reporting across the platform.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Oversees fund management, financial operations and investor reporting across the platform.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -906,7 +915,8 @@
               </div>
               <div class="name">Shanjuan Jiang</div>
               <div class="title">Partner</div>
-              <p class="card-descriptor">Advises on capital strategy and institutional engagement across the platform.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Advises on capital strategy and institutional engagement across the platform.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -919,7 +929,8 @@
               </div>
               <div class="name">Lillian Xu</div>
               <div class="title">General Counsel</div>
-              <p class="card-descriptor">Leads legal structuring and enforcement across PRC credit investments.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Leads legal structuring and enforcement across PRC credit investments.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -932,7 +943,8 @@
               </div>
               <div class="name">James Li</div>
               <div class="title">Director of Capital Solutions</div>
-              <p class="card-descriptor">Focuses on restructuring execution and capital solutions across complex credit situations.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Focuses on restructuring execution and capital solutions across complex credit situations.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -945,7 +957,8 @@
               </div>
               <div class="name">Daoping Yang</div>
               <div class="title">Managing Director (SAS)</div>
-              <p class="card-descriptor">Oversees asset-level execution and recovery processes across invested positions.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Oversees asset-level execution and recovery processes across invested positions.</p>
             </article>
           </div>
         </section>
@@ -969,7 +982,8 @@
               </div>
               <div class="name">John Jones</div>
               <div class="title">Director of Client Solutions (ex-Asia)</div>
-              <p class="card-descriptor">Leads institutional investor coverage across the Americas, Europe and the Middle East.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Leads institutional investor coverage across the Americas, Europe and the Middle East.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -982,7 +996,8 @@
               </div>
               <div class="name">Kelvin Chan</div>
               <div class="title">Director of Client Solutions (Asia)</div>
-              <p class="card-descriptor">Leads investor engagement and distribution across Asia.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Leads investor engagement and distribution across Asia.</p>
             </article>
           </div>
         </section>
@@ -1006,7 +1021,8 @@
               </div>
               <div class="name">Michael Chang</div>
               <div class="title">Senior Advisory Partner</div>
-              <p class="card-descriptor">Advises on strategy, operations and cross-border execution.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Advises on strategy, operations and cross-border execution.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1019,7 +1035,8 @@
               </div>
               <div class="name">Philip Young</div>
               <div class="title">Senior Advisory Partner</div>
-              <p class="card-descriptor">Advises on capital development and institutional positioning.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Advises on capital development and institutional positioning.</p>
             </article>
             <article class="card">
               <div class="photo">
@@ -1032,14 +1049,35 @@
               </div>
               <div class="name">Dinny McMahon</div>
               <div class="title">Senior Advisory Partner</div>
-              <p class="card-descriptor">Provides macroeconomic and policy insight on China credit markets.</p>
+              <button class="card-cue" type="button" aria-expanded="false">See bio</button>
+              <p class="card-bio">Provides macroeconomic and policy insight on China credit markets.</p>
             </article>
           </div>
         </section>
       </div>
     </main>
 
-    
+    <script>
+      (() => {
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          const photo = card.querySelector(".photo");
+          const toggle = card.querySelector(".card-cue");
+          const setState = (isActive) => {
+            card.classList.toggle("is-active", isActive);
+            if (toggle) {
+              toggle.setAttribute("aria-expanded", String(isActive));
+              toggle.textContent = isActive ? "Hide bio" : "See bio";
+            }
+          };
+
+          const flipState = () => setState(!card.classList.contains("is-active"));
+
+          photo?.addEventListener("click", flipState);
+          toggle?.addEventListener("click", flipState);
+        });
+      })();
+    </script>
 
     <script>
       (() => {
