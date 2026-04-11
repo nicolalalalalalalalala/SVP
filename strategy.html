@@ -1602,6 +1602,32 @@
         border-color: var(--red);
         color: #FAF6EE;
       }
+      .viz-scrubber {
+        margin: 0 0 14px;
+        border: 1px solid rgba(179, 33, 63, 0.14);
+        background: #FAF6EE;
+        padding: 10px 12px;
+      }
+      .viz-scrubber__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: rgba(15, 34, 6, 0.72);
+      }
+      .viz-scrubber__head b {
+        color: var(--ink);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+      }
+      .viz-slider {
+        width: 100%;
+        accent-color: var(--red);
+      }
       .alloc-grid {
         display: grid;
         grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
@@ -1667,6 +1693,15 @@
         background: #FAF6EE;
         border: 1px solid rgba(179, 33, 63, 0.14);
         padding: 14px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .alloc-card[role="button"] {
+        cursor: pointer;
+      }
+      .alloc-card.is-focus {
+        border-color: rgba(179, 33, 63, 0.42);
+        box-shadow: inset 0 0 0 1px rgba(179, 33, 63, 0.2);
+        transform: translateY(-1px);
       }
       .alloc-card[data-slice="abl"] { border-left: 4px solid var(--red); }
       .alloc-card[data-slice="restructuring"] { border-left: 4px solid #B86A7E; }
@@ -1697,6 +1732,23 @@
         color: rgba(15, 34, 6, 0.75);
         margin-bottom: 10px;
       }
+      .alloc-meter {
+        --fill: 0%;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(15, 34, 6, 0.12);
+        overflow: hidden;
+      }
+      .alloc-meter::before {
+        content: "";
+        display: block;
+        width: var(--fill);
+        height: 100%;
+        background: var(--red);
+        transition: width 0.35s ease;
+      }
+      .alloc-card[data-slice="restructuring"] .alloc-meter::before { background: #B86A7E; }
+      .alloc-card[data-slice="resolutions"] .alloc-meter::before { background: #0F2206; }
       .alloc-footnote { margin-top: 10px; font-size: 12px; line-height: 1.45; color: rgba(15,34,6,.78); }
 
       .data-grid {
@@ -2373,6 +2425,10 @@
                 <button type="button" class="viz-btn" role="tab" aria-selected="false" data-regime="normalizing">Base Case / Normalizing</button>
                 <button type="button" class="viz-btn" role="tab" aria-selected="false" data-regime="tight">Tight Spreads / Competitive</button>
               </div>
+              <div class="viz-scrubber">
+                <div class="viz-scrubber__head"><span>Interactive cycle scrubber</span><b data-regime-label>Stress / Dislocation</b></div>
+                <input class="viz-slider" type="range" min="0" max="2" step="1" value="0" aria-label="Scrub market regime from stress to tight spreads" data-regime-slider>
+              </div>
               <div class="alloc-grid">
                 <div class="alloc-pie">
                   <div class="alloc-donut" data-donut aria-label="Allocation split totals 100%: Asset-Based Lending 40%, Asset Restructuring 46%, Debt Resolutions 14%">
@@ -2383,14 +2439,17 @@
                   <article class="alloc-card" data-slice="abl">
                     <div class="alloc-head"><h3 class="alloc-name">Asset-Based Lending</h3><span class="alloc-value" data-value="abl">40%</span></div>
                     <p class="alloc-range">Range <span data-range="abl">24–40%</span></p>
+                    <div class="alloc-meter" data-meter="abl" aria-hidden="true"></div>
                   </article>
                   <article class="alloc-card" data-slice="restructuring">
                     <div class="alloc-head"><h3 class="alloc-name">Asset Restructuring</h3><span class="alloc-value" data-value="restructuring">46%</span></div>
                     <p class="alloc-range">Range <span data-range="restructuring">46–61%</span></p>
+                    <div class="alloc-meter" data-meter="restructuring" aria-hidden="true"></div>
                   </article>
                   <article class="alloc-card" data-slice="resolutions">
                     <div class="alloc-head"><h3 class="alloc-name">Debt Resolutions</h3><span class="alloc-value" data-value="resolutions">14%</span></div>
                     <p class="alloc-range">Range <span data-range="resolutions">14–15%</span></p>
+                    <div class="alloc-meter" data-meter="resolutions" aria-hidden="true"></div>
                   </article>
                 </div>
               </div>
@@ -2467,6 +2526,9 @@
 
         const regimeButtons = Array.from(root.querySelectorAll("[data-regime]"));
         const donut = root.querySelector("[data-donut]");
+        const regimeLabel = root.querySelector("[data-regime-label]");
+        const regimeSlider = root.querySelector("[data-regime-slider]");
+        const cards = Array.from(root.querySelectorAll(".alloc-card"));
         const values = {
           abl: root.querySelector('[data-value="abl"]'),
           restructuring: root.querySelector('[data-value="restructuring"]'),
@@ -2476,6 +2538,18 @@
           abl: root.querySelector('[data-range="abl"]'),
           restructuring: root.querySelector('[data-range="restructuring"]'),
           resolutions: root.querySelector('[data-range="resolutions"]'),
+        };
+        const meters = {
+          abl: root.querySelector('[data-meter="abl"]'),
+          restructuring: root.querySelector('[data-meter="restructuring"]'),
+          resolutions: root.querySelector('[data-meter="resolutions"]'),
+        };
+
+        const regimeOrder = ["dislocated", "normalizing", "tight"];
+        const regimeTitles = {
+          dislocated: "Stress / Dislocation",
+          normalizing: "Base Case / Normalizing",
+          tight: "Tight Spreads / Competitive",
         };
 
         const regimes = {
@@ -2508,12 +2582,15 @@
             const value = regime.values[name];
             if (values[name]) values[name].textContent = `${value}%`;
             if (ranges[name]) ranges[name].textContent = regime.ranges[name];
+            if (meters[name]) meters[name].style.setProperty("--fill", `${value}%`);
           });
           regimeButtons.forEach((btn) => {
             const active = btn.dataset.regime === key;
             btn.classList.toggle("is-active", active);
             btn.setAttribute("aria-selected", active ? "true" : "false");
           });
+          if (regimeLabel) regimeLabel.textContent = regimeTitles[key] || key;
+          if (regimeSlider) regimeSlider.value = String(Math.max(regimeOrder.indexOf(key), 0));
         };
 
         regimeButtons.forEach((button) =>
@@ -2533,6 +2610,21 @@
             applyRegime(regimeButtons[nextIndex].dataset.regime);
           }),
         );
+        if (regimeSlider) {
+          regimeSlider.addEventListener("input", () => {
+            const selected = regimeOrder[Number(regimeSlider.value)] || regimeOrder[0];
+            applyRegime(selected);
+          });
+        }
+        cards.forEach((card) => {
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+          const toggleFocus = (focus) => card.classList.toggle("is-focus", focus);
+          card.addEventListener("mouseenter", () => toggleFocus(true));
+          card.addEventListener("mouseleave", () => toggleFocus(false));
+          card.addEventListener("focus", () => toggleFocus(true));
+          card.addEventListener("blur", () => toggleFocus(false));
+        });
 
         applyRegime("dislocated");
       })();
