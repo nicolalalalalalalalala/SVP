@@ -572,28 +572,27 @@
         }
         .card {
           gap: 0;
+          max-width: 420px;
+          margin-inline: auto;
         }
         .photo {
           max-height: none;
+          aspect-ratio: 4 / 4.7;
         }
         .name {
-          font-size: 18px;
+          font-size: 16px;
           min-height: auto;
+          padding: 12px 14px 5px;
         }
         .title {
-          font-size: 10px;
+          font-size: 9px;
           letter-spacing: 0.12em;
           min-height: auto;
+          padding: 0 14px 12px;
         }
-        .row-bio-panel {
-          padding: 22px 16px 26px;
-        }
-        .row-bio-panel__name {
-          font-size: 28px;
-        }
-        .row-bio-panel__text {
-          font-size: 13px;
-          line-height: 1.65;
+        .row-bio-panel,
+        .row-bio-panel.is-open {
+          display: none !important;
         }
       }
 
