@@ -188,6 +188,8 @@
 }
 
 @media (max-width: 980px) {
+  #site-header-mount { min-height: 72px; }
+
   #nav {
     grid-template-columns: minmax(0,1fr) auto;
     height: auto;
@@ -224,7 +226,7 @@
 }
 
 @media (max-width: 767px) {
-  #site-header-mount { min-height: 62px; }
+  #site-header-mount { min-height: 76px; }
 
   #nav {
     height: auto;
