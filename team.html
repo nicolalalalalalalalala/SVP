@@ -328,7 +328,7 @@
         color: var(--ink-soft);
       }
       .card.is-active .card-bio {
-        display: block;
+        display: none;
       }
 
       .card.is-active .photo {
@@ -981,22 +981,88 @@
 
     <script>
       (() => {
-        const cards = document.querySelectorAll(".card");
-        cards.forEach((card) => {
-          const photo = card.querySelector(".photo");
-          const toggle = card.querySelector(".card-cue");
-          const setState = (isActive) => {
-            card.classList.toggle("is-active", isActive);
-            if (toggle) {
-              toggle.setAttribute("aria-expanded", String(isActive));
-              toggle.textContent = isActive ? "Hide bio" : "See bio";
-            }
+        const grids = document.querySelectorAll(".grid");
+
+        grids.forEach((grid) => {
+          const cards = Array.from(grid.querySelectorAll(":scope > .card"));
+          if (!cards.length) return;
+
+          const panel = document.createElement("div");
+          panel.className = "row-bio-panel";
+          panel.innerHTML = `
+            <div class="row-bio-panel__eyebrow">Team Biography</div>
+            <div class="row-bio-panel__name"></div>
+            <div class="row-bio-panel__meta">
+              <div class="row-bio-panel__role"></div>
+            </div>
+            <div class="row-bio-panel__text"></div>
+          `;
+          grid.appendChild(panel);
+
+          const panelName = panel.querySelector(".row-bio-panel__name");
+          const panelRole = panel.querySelector(".row-bio-panel__role");
+          const panelText = panel.querySelector(".row-bio-panel__text");
+
+          const closeAll = () => {
+            cards.forEach((card) => {
+              card.classList.remove("is-active");
+              const cardToggle = card.querySelector(".card-cue");
+              if (cardToggle) {
+                cardToggle.setAttribute("aria-expanded", "false");
+                cardToggle.textContent = "See bio";
+              }
+            });
+            panel.classList.remove("is-open");
           };
 
-          const flipState = () => setState(!card.classList.contains("is-active"));
+          const rowCardsFor = (targetCard) => {
+            const top = targetCard.offsetTop;
+            return cards.filter((card) => Math.abs(card.offsetTop - top) < 2);
+          };
 
-          photo?.addEventListener("click", flipState);
-          toggle?.addEventListener("click", flipState);
+          const openCard = (targetCard) => {
+            const isAlreadyOpen = targetCard.classList.contains("is-active") && panel.classList.contains("is-open");
+            if (isAlreadyOpen) {
+              closeAll();
+              return;
+            }
+
+            cards.forEach((card) => {
+              const isActive = card === targetCard;
+              card.classList.toggle("is-active", isActive);
+              const cardToggle = card.querySelector(".card-cue");
+              if (cardToggle) {
+                cardToggle.setAttribute("aria-expanded", String(isActive));
+                cardToggle.textContent = isActive ? "Hide bio" : "See bio";
+              }
+            });
+
+            panelName.textContent = targetCard.querySelector(".name")?.textContent?.trim() || "";
+            panelRole.textContent = targetCard.querySelector(".title")?.textContent?.trim() || "";
+            panelText.textContent = targetCard.querySelector(".card-bio")?.textContent?.trim() || "";
+
+            const rowCards = rowCardsFor(targetCard);
+            const lastInRow = rowCards[rowCards.length - 1] || targetCard;
+            lastInRow.insertAdjacentElement("afterend", panel);
+            panel.classList.add("is-open");
+          };
+
+          cards.forEach((card) => {
+            const photo = card.querySelector(".photo");
+            const toggle = card.querySelector(".card-cue");
+            const handleToggle = () => openCard(card);
+
+            photo?.addEventListener("click", handleToggle);
+            toggle?.addEventListener("click", handleToggle);
+          });
+
+          window.addEventListener("resize", () => {
+            const active = grid.querySelector(":scope > .card.is-active");
+            if (!active || !panel.classList.contains("is-open")) return;
+            const rowCards = rowCardsFor(active);
+            const lastInRow = rowCards[rowCards.length - 1] || active;
+            lastInRow.insertAdjacentElement("afterend", panel);
+          });
         });
       })();
     </script>
