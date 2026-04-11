@@ -1512,6 +1512,76 @@
     margin: 0 auto;
     padding: 0 var(--pad);
   }
+
+  /* Insights typography normalization to ShoreVest system */
+  body.insights-page,
+  body.insights-page p,
+  body.insights-page li,
+  body.insights-page a,
+  body.insights-page span,
+  body.insights-page small,
+  body.insights-page button,
+  body.insights-page input {
+    font-family: var(--sv-type-sans) !important;
+  }
+
+  /* Page heading + article/card title logic aligned to site heading system */
+  body.insights-page .wordmark__title,
+  body.insights-page .issue-live h1,
+  body.insights-page .issue-header h2,
+  body.insights-page .archive__row strong {
+    font-family: var(--sv-type-sans) !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.005em !important;
+  }
+
+  /* Intro/dek + excerpts + supporting text */
+  body.insights-page .research-hero__desc,
+  body.insights-page .issue-header__dek,
+  body.insights-page .reading p,
+  body.insights-page .reading li,
+  body.insights-page .reading blockquote,
+  body.insights-page .archive__disclaimer,
+  body.insights-page .sidebar__card p,
+  body.insights-page .research-sub p {
+    font-size: var(--sv-type-body-size) !important;
+    line-height: var(--sv-type-body-line) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Labels/meta/filter/action text use shared small-text styles consistently */
+  body.insights-page .eyebrow,
+  body.insights-page .issue-live__k,
+  body.insights-page .issue-live__meta,
+  body.insights-page .issue-header__meta,
+  body.insights-page .issue-intro__title,
+  body.insights-page .archive__head,
+  body.insights-page .sidebar__card h4,
+  body.insights-page .archive__pdf,
+  body.insights-page .util-btn,
+  body.insights-page .research-sub__submit,
+  body.insights-page .finding small {
+    font-family: var(--sv-type-sans) !important;
+    font-size: var(--sv-type-label-size) !important;
+    letter-spacing: var(--sv-type-label-track) !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+  }
+
+  body.insights-page .archive__row small,
+  body.insights-page .issue-card__k,
+  body.insights-page .issue-card__bar,
+  body.insights-page .issue-card__meta,
+  body.insights-page .issue-live__meta span {
+    font-family: var(--sv-type-sans) !important;
+    font-size: var(--sv-type-caption-size) !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: none !important;
+  }
 </style>
 </head>
   <body class="insights-page">

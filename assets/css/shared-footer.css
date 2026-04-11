@@ -201,3 +201,19 @@ html body footer.sv-footer .sv-footer__legal-links a:focus-visible {
     line-height: 1.72 !important;
   }
 }
+
+/* Chinese footer should preserve EN hierarchy with approved CN type system. */
+html:lang(zh) body footer.sv-footer .sv-footer__brand,
+html[lang^='zh'] body footer.sv-footer .sv-footer__brand {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: none !important;
+}
+
+html:lang(zh) body footer.sv-footer :is(.sv-footer__contact-label, .sv-footer__contact a, .sv-footer__copyright, .sv-footer__legal, .sv-footer__legal-links, .sv-footer__legal-links a),
+html[lang^='zh'] body footer.sv-footer :is(.sv-footer__contact-label, .sv-footer__contact a, .sv-footer__copyright, .sv-footer__legal, .sv-footer__legal-links, .sv-footer__legal-links a) {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif !important;
+  text-transform: none !important;
+}

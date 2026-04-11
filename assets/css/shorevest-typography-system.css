@@ -170,6 +170,8 @@ html body .sv-footer__legal-toggle > summary {
 html body .cta,
 html body .cdd-cta,
 html body .strategy-intro-link,
+html body .btn,
+html body .btn--investor-access,
 html body .nav__lp,
 html body .nav__menu-btn {
   font-family: var(--sv-type-sans) !important;
@@ -277,4 +279,82 @@ footer.sv-footer .sv-footer__legal {
   font-size: 10px !important;
   line-height: 1.55 !important;
   opacity: 0.82;
+}
+
+
+/* Homepage alignment to ShoreVest type system (shared tokens, no page-local drift). */
+html body .hero__hed,
+html body .hero__overlay h1.hero__hed {
+  font-family: var(--sv-type-sans) !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
+  letter-spacing: var(--sv-type-h1-track) !important;
+  line-height: 1.05 !important;
+  text-transform: none !important;
+}
+
+html body .hero__copy,
+html body .about__body p,
+html body .strat__intro,
+html body .cdd-feature__finding,
+html body .issue-thesis,
+html body .su__sub {
+  font-family: var(--sv-type-sans) !important;
+  font-size: var(--sv-type-body-size) !important;
+  line-height: var(--sv-type-body-line) !important;
+  font-weight: 400 !important;
+}
+
+html body .stat__n,
+html body .metric-value {
+  font-family: var(--sv-type-sans) !important;
+  font-size: clamp(32px, 4.2vw, 56px) !important;
+  line-height: 1.05 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
+}
+
+html body .stat__l,
+html body .nb__l,
+html body .cdd-feature__label,
+html body .cdd-editorial__meta-label,
+html body .divider-label,
+html body .rule-label {
+  font-family: var(--sv-type-sans) !important;
+  font-size: var(--sv-type-label-size) !important;
+  line-height: 1.35 !important;
+  letter-spacing: var(--sv-type-label-track) !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+html body .cdd-editorial__meta-value,
+html body .caption,
+html body .meta,
+html body .icard__date,
+html body .sv-footer__copyright,
+html body .sv-footer__legal,
+html body .sv-footer__legal-links {
+  font-family: var(--sv-type-sans) !important;
+  font-size: var(--sv-type-meta-size) !important;
+  line-height: 1.55 !important;
+  font-weight: 400 !important;
+}
+
+#nav .nav__links a,
+#nav .nav__zh,
+#nav .lang-toggle,
+#nav .nav__menu-btn,
+#nav .nav__lp {
+  font-size: var(--sv-type-label-size) !important;
+  letter-spacing: var(--sv-type-label-track) !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+footer.sv-footer .sv-footer__contact a,
+footer.sv-footer .sv-footer__contact-label,
+footer.sv-footer .sv-footer__brand {
+  font-family: var(--sv-type-sans) !important;
 }
