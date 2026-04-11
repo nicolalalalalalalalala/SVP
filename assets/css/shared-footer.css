@@ -103,17 +103,20 @@ html body footer.sv-footer .sv-footer__legal-toggle > summary {
 
 html body footer.sv-footer .sv-footer__legal {
   font-family: "Inter", system-ui, sans-serif !important;
-  font-size: 7px !important;
+  font-size: 12.5px !important;
   font-weight: 400 !important;
   letter-spacing: normal !important;
-  line-height: 1.65 !important;
+  line-height: 1.78 !important;
   text-transform: none !important;
-  color: color-mix(in srgb, var(--ink2) 88%, #faf6ee) !important;
-  max-width: 112ch !important;
+  color: color-mix(in srgb, #1e3211 82%, #faf6ee) !important;
+  max-width: 96ch !important;
+  text-wrap: pretty !important;
 }
 
 html body footer.sv-footer .sv-footer__legal a {
-  color: var(--ink) !important;
+  color: #244a2d !important;
+  font-size: 0.98em !important;
+  font-weight: 500 !important;
   text-decoration-thickness: 1px !important;
   text-underline-offset: 2px !important;
 }
@@ -179,8 +182,8 @@ html body footer.sv-footer .sv-footer__legal-links a:focus-visible {
   }
 
   html body footer.sv-footer .sv-footer__legal {
-    font-size: 13px !important;
-    line-height: 1.7 !important;
+    font-size: 12px !important;
+    line-height: 1.74 !important;
     max-width: none !important;
   }
 
@@ -194,7 +197,7 @@ html body footer.sv-footer .sv-footer__legal-links a:focus-visible {
 
 @media (min-width: 769px) and (max-width: 1024px) {
   html body footer.sv-footer .sv-footer__legal {
-    font-size: 12.5px !important;
-    line-height: 1.68 !important;
+    font-size: 12.25px !important;
+    line-height: 1.72 !important;
   }
 }
