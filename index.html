@@ -425,13 +425,26 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   aspect-ratio:4/3;
   background:linear-gradient(180deg, #223a35 0%, #1b2f2b 100%);
   border:1px solid rgba(250,246,238,.06);
-  display:flex;
-  align-items:center;
-  justify-content:center;
   position: relative;
   overflow: hidden;
   margin-bottom:24px;
   transition:background .25s ease, border-color .25s ease;
+}
+.ac__media {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:grayscale(.12) contrast(1.04) saturate(.92);
+  transform:scale(1.04);
+  transform-origin:center;
+}
+.ac__panel::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(12, 21, 20, .08) 0%, rgba(12, 21, 20, .42) 100%);
+  pointer-events:none;
 }
 .ac__panel::before {
   content:"";
@@ -444,18 +457,17 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   transform:translate3d(0, 0, 0) scale(1);
   pointer-events:none;
 }
-.ac__icon {
-  width:120px;
-  height:120px;
-  color:rgba(238, 233, 222, .9);
-  position: relative;
-  z-index: 1;
-}
-.ac__icon * {
-  vector-effect:non-scaling-stroke;
-}
 .ac.in .ac__panel::before {
   animation: sv-panel-glow 7.2s ease-in-out infinite alternate;
+}
+#ac-sourcing.in .ac__media {
+  animation: sv-image-pan-1 8.6s ease-in-out .15s infinite alternate;
+}
+#ac-underwriting.in .ac__media {
+  animation: sv-image-pan-2 8.9s ease-in-out .25s infinite alternate;
+}
+#ac-alignment.in .ac__media {
+  animation: sv-image-pan-3 9.2s ease-in-out .35s infinite alternate;
 }
 .ac:hover .ac__panel {
   background:linear-gradient(180deg, #27423c 0%, #203732 100%);
@@ -1750,6 +1762,18 @@ h2.su__hed {
   0%, 100% { transform:translateY(0); }
   50%      { transform:translateY(-3px); }
 }
+@keyframes sv-image-pan-1 {
+  0%   { transform:scale(1.04) translate3d(0, 0, 0); }
+  100% { transform:scale(1.1) translate3d(-1.2%, 1.4%, 0); }
+}
+@keyframes sv-image-pan-2 {
+  0%   { transform:scale(1.05) translate3d(0, 0, 0); }
+  100% { transform:scale(1.11) translate3d(1.3%, -1.5%, 0); }
+}
+@keyframes sv-image-pan-3 {
+  0%   { transform:scale(1.04) translate3d(0, 0, 0); }
+  100% { transform:scale(1.1) translate3d(.8%, 1.8%, 0); }
+}
 
 /* Card 1 – Proprietary Sourcing: circles draw in, then pulse */
 #ac-sourcing .ac__icon circle {
@@ -1880,30 +1904,11 @@ h2.su__hed {
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  #ac-sourcing .ac__icon circle,
-  #ac-underwriting .ac__icon .sv-chk,
-  #ac-underwriting .ac__icon .sv-ln,
-  #ac-underwriting .ac__icon .sv-card,
-  #ac-alignment .ac__icon .sv-hex,
-  #ac-alignment .ac__icon .sv-hex-inner {
-    stroke-dasharray: unset !important;
-    stroke-dashoffset: 0 !important;
-    animation: none !important;
-  }
   .ac.in .ac__panel::before,
-  #ac-sourcing.in .ac__icon,
-  #ac-underwriting.in .ac__icon,
-  #ac-alignment.in .ac__icon {
+  #ac-sourcing.in .ac__media,
+  #ac-underwriting.in .ac__media,
+  #ac-alignment.in .ac__media {
     animation: none !important;
-  }
-  #ac-sourcing .ac__icon path {
-    opacity: 1 !important;
-    transition: none !important;
-  }
-  #ac-alignment .ac__icon .sv-core {
-    opacity: 1 !important;
-    animation: none !important;
-    transform: none !important;
   }
 }
 /* ──────────────────────────────────────────────────────── */
@@ -2108,12 +2113,7 @@ m                        color: #3d7070;
     <div class="about__cols">
       <div class="ac rev" id="ac-sourcing">
         <div class="ac__panel" aria-hidden="true">
-          <svg class="ac__icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="38" cy="42" r="14" stroke="currentColor" stroke-width="2.25"/>
-            <circle cx="82" cy="42" r="14" stroke="currentColor" stroke-width="2.25"/>
-            <circle cx="60" cy="78" r="14" stroke="currentColor" stroke-width="2.25"/>
-            <path d="M49 52L55 63M71 63L77 52M45 78H24M96 78H75M60 64V42" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/>
-          </svg>
+          <img class="ac__media" src="assets/images/edited-photo.png" alt="" loading="lazy" decoding="async">
         </div>
         <div class="ac__title">Proprietary Sourcing</div>
         <div class="ac__body">Direct relationships with banks, AMCs, law firms, and servicers — built over two decades. Access to opportunities before competitive auction, with the ability to source bilaterally or select from larger portfolios.</div>
@@ -2121,12 +2121,7 @@ m                        color: #3d7070;
       </div>
       <div class="ac rev d1" id="ac-underwriting">
         <div class="ac__panel" aria-hidden="true">
-          <svg class="ac__icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect class="sv-card" x="24" y="22" width="72" height="76" rx="6" stroke="currentColor" stroke-width="2.25"/>
-            <path d="M60 22V14M45 14H75" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/>
-            <path class="sv-chk" d="M38 52L52 66L82 38" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
-            <path class="sv-ln" d="M38 78H82" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/>
-          </svg>
+          <img class="ac__media" src="assets/images/edited-photo.svg" alt="" loading="lazy" decoding="async">
         </div>
         <div class="ac__title">Disciplined Underwriting</div>
         <div class="ac__body">Every transaction is anchored to hard-asset collateral, conservative loan-to-value or cost-to-value thresholds (typically 30–60%), and first-lien or otherwise directly enforceable positioning. Downside is defined before upside.</div>
@@ -2134,11 +2129,7 @@ m                        color: #3d7070;
       </div>
       <div class="ac rev d2" id="ac-alignment">
         <div class="ac__panel" aria-hidden="true">
-          <svg class="ac__icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="sv-hex" d="M60 94L28 77V43L60 26L92 43V77L60 94Z" stroke="currentColor" stroke-width="2.25"/>
-            <path class="sv-hex-inner" d="M60 26V94M28 43L60 60L92 43" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle class="sv-core" cx="60" cy="60" r="5" fill="currentColor"/>
-          </svg>
+          <img class="ac__media" src="assets/images/edited-photo-3.svg" alt="" loading="lazy" decoding="async">
         </div>
         <div class="ac__title">Alignment of Interests</div>
         <div class="ac__body">The same team that approves investments remains accountable for monitoring and exit, with clear ownership of results throughout the investment lifecycle.</div>
