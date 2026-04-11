@@ -395,8 +395,9 @@
       }
       .team-row-bio {
         grid-column: 1 / -1;
+        width: 100%;
         margin-top: 8px;
-        padding: 18px 0 0;
+        padding: 22px 0 2px;
         border-top: 1px solid color-mix(in srgb, var(--ink-soft) 20%, transparent);
       }
       .team-row-bio[hidden] {
@@ -418,17 +419,43 @@
         color: var(--qing-dark);
       }
       .team-row-bio__content {
-        margin-top: 10px;
+        margin-top: 12px;
+        width: 100%;
+        max-width: min(104ch, 100%);
       }
       .team-row-bio__content p {
         font-family: var(--serif);
-        font-size: 14px;
-        line-height: 1.72;
+        font-size: 15px;
+        line-height: 1.78;
         color: color-mix(in srgb, var(--ink-soft) 93%, black 7%);
         margin: 0;
       }
       .team-row-bio__content p + p {
         margin-top: 1em;
+      }
+      @media (min-width: 768px) {
+        .team-row-bio {
+          display: grid;
+          grid-template-columns: minmax(180px, 0.85fr) minmax(0, 2.15fr);
+          column-gap: clamp(18px, 3vw, 46px);
+          row-gap: 8px;
+          align-items: start;
+        }
+        .team-row-bio__name {
+          grid-column: 1;
+          grid-row: 1;
+        }
+        .team-row-bio__role {
+          grid-column: 1;
+          grid-row: 2;
+          margin-top: 0;
+        }
+        .team-row-bio__content {
+          grid-column: 2;
+          grid-row: 1 / span 2;
+          margin-top: 0;
+          max-width: min(112ch, 100%);
+        }
       }
       .group--leadership {
         margin-top: 10px;
