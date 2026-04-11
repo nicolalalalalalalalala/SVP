@@ -470,3 +470,123 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     content: "" !important;
   }
 }
+
+/* ========================================================================== */
+/* ShoreVest global spacing system (site-wide source of truth)                */
+/* ========================================================================== */
+:root {
+  /* Page-edge baseline from homepage (authoritative). */
+  --site-page-margin: clamp(22px, 4.8vw, 64px);
+  --pad: var(--site-page-margin);
+
+  /* Shared spacing scale. */
+  --sv-space-2xs: clamp(6px, 0.5vw, 8px);
+  --sv-space-xs: clamp(10px, 0.9vw, 14px);
+  --sv-space-sm: clamp(14px, 1.2vw, 18px);
+  --sv-space-md: clamp(18px, 1.8vw, 28px);
+  --sv-space-lg: clamp(28px, 2.7vw, 42px);
+  --sv-space-xl: clamp(40px, 4.2vw, 64px);
+  --sv-space-2xl: clamp(56px, 5.4vw, 88px);
+  --sv-space-3xl: clamp(74px, 7.2vw, 118px);
+
+  /* Layout tokens. */
+  --sv-section-gap-lg: var(--sv-space-3xl);
+  --sv-section-gap-md: var(--sv-space-2xl);
+  --sv-section-gap-sm: var(--sv-space-xl);
+  --sv-component-pad-lg: var(--sv-space-xl);
+  --sv-component-pad-md: var(--sv-space-lg);
+  --sv-component-pad-sm: var(--sv-space-md);
+  --sv-card-gap: var(--sv-space-md);
+  --sv-grid-gap: var(--sv-space-lg);
+  --sv-form-gap: var(--sv-space-sm);
+  --sv-legal-paragraph-gap: var(--sv-space-md);
+  --sv-footer-legal-gap: var(--sv-space-sm);
+  --sv-article-sidebar-gap: clamp(26px, 3.2vw, 44px);
+  --sv-header-content-gap: clamp(26px, 3.1vw, 42px);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --site-page-margin: clamp(20px, 4.8vw, 40px);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-page-margin: clamp(16px, 5vw, 22px);
+    --sv-section-gap-lg: clamp(48px, 10vw, 70px);
+    --sv-section-gap-md: clamp(38px, 8.4vw, 56px);
+    --sv-section-gap-sm: clamp(28px, 7vw, 40px);
+    --sv-component-pad-lg: clamp(22px, 6vw, 30px);
+    --sv-component-pad-md: clamp(18px, 5vw, 24px);
+    --sv-component-pad-sm: clamp(14px, 4.3vw, 18px);
+  }
+}
+
+/* Page-edge and template alignment. */
+:where(.wrap, .container, .page-wrap, .page-shell, .content-wrap, .insights-wrap, .legal-page__content) {
+  padding-left: var(--site-page-margin) !important;
+  padding-right: var(--site-page-margin) !important;
+}
+
+#site-header-mount + main,
+#site-header-mount + .page-main,
+#site-header-mount + .content-main,
+#site-header-mount + section {
+  padding-top: var(--sv-header-content-gap);
+}
+
+/* Remove common nested-wrapper drift without touching utility wrappers. */
+:where(main, .page-main, .content-main) > :where(.wrap, .container, .page-wrap) > :where(.wrap, .container, .page-wrap) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Section rhythm. */
+:where(main, .page-main, .content-main) > :where(section, article) {
+  margin-block: 0;
+}
+
+:where(main, .page-main, .content-main) > :where(section, article) + :where(section, article) {
+  margin-top: var(--sv-section-gap-md) !important;
+}
+
+:where(section, article) :where(h1, h2, h3, h4) {
+  margin-bottom: var(--sv-space-sm);
+}
+
+:where(section, article) :where(p + p, ul + p, ol + p, p + ul, p + ol, ul + ul, ol + ol) {
+  margin-top: var(--sv-space-sm);
+}
+
+/* Shared card/panel spacing. */
+:where(.card, .icard, .issue-card, .team-card, .press-card, .strategy-block, .panel, .box, .meta-block, .utility-band, .sidebar-card, .legal-notice-box, [class*="card"], [class*="panel"]) {
+  padding: var(--sv-component-pad-md) !important;
+  gap: var(--sv-card-gap) !important;
+}
+
+:where(.grid, .cards, .card-grid, .profile-grid, .insights-grid, .team-grid, [class*="grid"]) {
+  gap: var(--sv-grid-gap) !important;
+}
+
+:where(form, .form, .newsletter-form, .search-form) {
+  gap: var(--sv-form-gap);
+}
+
+/* Article / CDD page structure. */
+:where(.article-layout, .article-page, .insight-article, .cdd-article, .article-shell, [class*="article-layout"]) {
+  row-gap: var(--sv-section-gap-sm) !important;
+}
+
+:where(.article-content, .article-main, .post-content) {
+  row-gap: var(--sv-space-md) !important;
+}
+
+:where(.article-sidebar, .sidebar, .cdd-sidebar) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+:where(.article-layout, .article-shell, [class*="article-layout"]) :where(.article-content, .article-main) {
+  margin-right: var(--sv-article-sidebar-gap);
+}

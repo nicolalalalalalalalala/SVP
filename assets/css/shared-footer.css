@@ -239,3 +239,47 @@ html[lang^='zh'] body footer.sv-footer :is(.sv-footer__contact-label, .sv-footer
   font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif !important;
   text-transform: none !important;
 }
+
+/* ========================================================================== */
+/* ShoreVest unified footer spacing overrides                                 */
+/* ========================================================================== */
+html body :where(main, .page-main, .content-main) + footer.sv-footer,
+html body :where(main, .page-main, .content-main) + .sv-footer {
+  margin-top: var(--sv-section-gap-md, clamp(56px, 5.4vw, 88px)) !important;
+}
+
+html body footer.sv-footer,
+html body .sv-footer {
+  padding:
+    var(--sv-component-pad-lg, clamp(40px, 4.2vw, 64px))
+    var(--site-page-margin, clamp(22px, 4.8vw, 64px))
+    var(--sv-section-gap-sm, clamp(40px, 4.2vw, 64px)) !important;
+}
+
+html body footer.sv-footer .sv-footer__main {
+  gap: var(--sv-space-md, clamp(18px, 1.8vw, 28px)) !important;
+  padding-bottom: var(--sv-space-md, clamp(18px, 1.8vw, 28px)) !important;
+}
+
+html body footer.sv-footer .sv-footer__bottom {
+  gap: var(--sv-footer-legal-gap, clamp(10px, 0.9vw, 14px)) !important;
+  padding-top: var(--sv-space-sm, clamp(14px, 1.2vw, 18px)) !important;
+}
+
+@media (max-width: 1024px) {
+  html body footer.sv-footer,
+  html body .sv-footer {
+    padding-left: var(--site-page-margin, clamp(20px, 4.8vw, 40px)) !important;
+    padding-right: var(--site-page-margin, clamp(20px, 4.8vw, 40px)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body footer.sv-footer,
+  html body .sv-footer {
+    padding:
+      var(--sv-component-pad-md, clamp(18px, 5vw, 24px))
+      var(--site-page-margin, clamp(16px, 5vw, 22px))
+      calc(var(--sv-component-pad-lg, clamp(22px, 6vw, 30px)) + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
