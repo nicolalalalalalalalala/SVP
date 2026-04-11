@@ -14,107 +14,11 @@
 <style>
     *{box-sizing:border-box}
     .muted{color:#5b554f}
-
-        .sv-footer--full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
-
-.sv-footer {
-  background: var(--white);
-  border-top: 1px solid var(--rule);
-  padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
-}
-.sv-footer__inner {
-  max-width: var(--max, 1320px);
-  margin: 0 auto;
-}
-.sv-footer__main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--rule);
-}
-.sv-footer__brand {
-  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: 15px !important;
-  font-weight: 700;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--ink);
-}
-.sv-footer__contact {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.sv-footer__contact-label {
-  font-family: var(--sans);
-  font-size: 7.5pt;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #3d7070;
-}
-.sv-footer__contact a {
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
-  padding: 10px 14px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-.sv-footer__contact a:hover {
-  background: var(--red);
-  border-color: var(--red);
-  color: #FAF6EE;
-}
-.sv-footer__bottom {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding-top: 16px;
-}
-.sv-footer__copyright,
-.sv-footer__legal-links {
-  font-size: 8pt;
-  color: color-mix(in srgb, var(--ink2) 62%, #FAF6EE);
-  line-height: 1.7;
-}
-.sv-footer__legal {
-  font-size: 7px;
-  color: #6f6a63;
-  line-height: 1.7;
-}
-.sv-footer__legal-links {
-  padding-bottom: 8px;
-}
-.sv-footer__legal-links a {
-  color: var(--ink);
-  text-decoration: none;
-}
-.sv-footer__legal-links a:hover {
-  color: var(--red);
-}
-@media (max-width: 767px) {
-  .sv-footer {
-    padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
-  }
-  .sv-footer__main {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .sv-footer__contact {
-    flex-wrap: wrap;
-  }
-}
-
   </style>
-<link rel="stylesheet" href="assets/css/legal-page-layout.css" />
+<link rel="stylesheet" href="assets/css/typography-consistent.css">
+  <link rel="stylesheet" href="assets/css/shorevest-typography-reset.css" />
+  <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
+  <link rel="stylesheet" href="assets/css/legal-page-layout.css" />
   <style>
     body.legal-page {
       width: 100%;
@@ -123,72 +27,24 @@
       --site-page-margin: clamp(22px, 4.8vw, 64px);
       --ink-soft: #3f3b36;
       --off: #f6f4f0;
-      padding: 120px var(--pad) 40px;
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      font-size: 10pt;
-      line-height: 1.55;
-      letter-spacing: normal;
+      padding: 0 var(--pad) 40px;
       color: var(--ink-soft);
       background: var(--off);
     }
     @media (max-width: 980px) {
       body.legal-page {
         --site-page-margin: clamp(16px, 5vw, 22px);
-        padding: 110px var(--pad) 34px;
+        padding: 0 var(--pad) 34px;
       }
     }
-    body.legal-page p,
-    body.legal-page li {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      font-size: 10pt !important;
-      font-weight: 400;
-      max-width: none;
-      line-height: 1.55;
+
+    body.legal-page main {
+      padding-top: clamp(26px, 4vw, 44px);
     }
-    body.legal-page h1 {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      font-size: 32px !important;
-      font-weight: 700;
-      line-height: 1.08;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    body.legal-page h2 {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      font-size: 20px !important;
-      font-weight: 700;
-      line-height: 1.16;
-      text-transform: none;
-      color: var(--ink);
-    }
-    body.legal-page h3,
-    body.legal-page .legal-label,
-    body.legal-page .sv-footer__contact-label,
-    body.legal-page .sv-footer__legal-toggle> summary {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      font-weight: 700;
-      font-size: 12px !important;
-      line-height: 1.35;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--red);
-    }
-    body.legal-page .muted,
-    body.legal-page small,
-    body.legal-page .sv-footer__copyright,
-    body.legal-page .sv-footer__legal,
-    body.legal-page .sv-footer__legal-links {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      font-size: 8pt !important;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-    body.legal-page .rule-label {
-      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-      font-size: 7.5pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    @media (max-width: 980px) {
+      body.legal-page main {
+        padding-top: 18px;
+      }
     }
     .legal-contact-actions {
       display: flex;
@@ -240,7 +96,7 @@
   <main>
     <div class="legal-page__content">
       <h1>Legal Notices &amp; Disclaimers</h1>
-      <p class="muted"><strong>Effective Date:</strong> 8 April 2026</p>
+      <p class="effective-date muted"><strong>Effective Date:</strong> 8 April 2026</p>
       <p>Please read these Legal Notices &amp; Disclaimers carefully before using this website. By accessing, browsing or otherwise using this website, you acknowledge that you have read, understood and accepted these Legal Notices &amp; Disclaimers, together with any applicable Terms of Use, Privacy Policy, Cookie Notice and any supplemental disclosures appearing on specific pages of this website. If you do not accept them, you should not access or use this website.</p>
 
       <section><h2>1. Scope and purpose of this website</h2><p>This website is provided by ShoreVest Partners, Ltd. and relevant affiliates within the ShoreVest group structure, as applicable, for general informational purposes only. The content on this website is intended to provide a high-level overview of ShoreVest, its business, its strategy, its market commentary, its team and related matters. It is summary in nature, may be incomplete, may change without notice, and is not intended to provide the full basis for evaluating ShoreVest, any ShoreVest-managed vehicle, or any investment opportunity.</p><p>This website is not intended for retail investors. Certain sections of this website, including any investor access areas, data room links, downloads, password-protected materials or related communications, may be directed only to persons who satisfy applicable legal, regulatory or contractual eligibility standards.</p></section>
