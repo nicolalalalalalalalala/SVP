@@ -1326,7 +1326,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 #nav .nav__mobile-investor,
 #nav .nav__menu-btn { display:none; }
 
-@media (max-width: 760px) {
+@media (max-width: 980px) {
   #nav .nav__logo-mark { width:34px !important; height:34px !important; flex-basis:34px !important; }
   #nav .nav__menu-btn { display:inline-flex !important; }
   #nav .nav__right { margin-left:auto !important; gap:8px !important; }
@@ -1471,7 +1471,7 @@ html body footer.sv-footer .sv-footer__legal-links a:hover {
 }
 
 /* Mobile menu regression fix: force full-width stacked overlay panel. */
-@media (max-width: 760px) {
+@media (max-width: 980px) {
   #site-header-mount #nav .nav__links {
     position: fixed !important;
     inset: 70px 0 0 0 !important;
