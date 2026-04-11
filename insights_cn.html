@@ -28,7 +28,8 @@
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
-        --pad: 64px;
+        --site-page-margin: clamp(22px, 4.8vw, 64px);
+        --pad: var(--site-page-margin);
       }
       *,
       *::before,
@@ -754,7 +755,8 @@
 
       @media (max-width: 1080px) {
         :root {
-          --pad: 40px;
+          --site-page-margin: clamp(20px, 4.8vw, 40px);
+          --pad: var(--site-page-margin);
         }
         .research-hero__grid,
         .reading-grid,
@@ -793,7 +795,8 @@
       }
       @media (max-width: 720px) {
         :root {
-          --pad: 18px;
+          --site-page-margin: clamp(16px, 5vw, 22px);
+          --pad: var(--site-page-margin);
         }
 
         .research-hero {
@@ -859,7 +862,8 @@
 
       @media (max-width: 767px) {
         :root {
-          --pad: 18px;
+          --site-page-margin: clamp(16px, 5vw, 22px);
+          --pad: var(--site-page-margin);
         }
         body {
           font-size: 14px;
@@ -1041,7 +1045,8 @@
 
       @media (max-width: 520px) {
         :root {
-          --pad: 18px;
+          --site-page-margin: clamp(16px, 5vw, 22px);
+          --pad: var(--site-page-margin);
         }
         .wrap,
         .issue-shell.wrap {
@@ -1168,7 +1173,7 @@
       }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   footer > div:first-child {
     flex-direction: column;
     align-items: flex-start;
@@ -1279,7 +1284,7 @@
 .sv-footer__legal-links a:hover {
   color: var(--red);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sv-footer {
     padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
   }

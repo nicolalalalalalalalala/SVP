@@ -37,7 +37,8 @@
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
         --max: 1200px;
-        --pad: 64px;
+        --site-page-margin: clamp(22px, 4.8vw, 64px);
+        --pad: var(--site-page-margin);
       }
 
       *,
@@ -438,7 +439,8 @@
       }
       @media (max-width: 1100px) {
         :root {
-          --pad: 40px;
+          --site-page-margin: clamp(20px, 4.8vw, 40px);
+          --pad: var(--site-page-margin);
         }
         .grid {
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -451,7 +453,8 @@
 
       @media (max-width: 767px) {
         :root {
-          --pad: 18px;
+          --site-page-margin: clamp(16px, 5vw, 22px);
+          --pad: var(--site-page-margin);
         }
 
 
@@ -585,7 +588,7 @@
       }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   footer > div:first-child {
     flex-direction: column;
     align-items: flex-start;
@@ -704,7 +707,7 @@
 .sv-footer__legal-links a:hover {
   color: var(--red);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sv-footer {
     padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
   }

@@ -19,7 +19,8 @@
         --serif: "EB Garamond", Georgia, serif;
         --sans: "Inter", system-ui, sans-serif;
         --max: 1200px;
-        --pad: 64px;
+        --site-page-margin: clamp(22px, 4.8vw, 64px);
+        --pad: var(--site-page-margin);
       }
       *,
       *::before,
@@ -94,7 +95,8 @@
 
       @media (max-width: 767px) {
         :root {
-          --pad: 18px;
+          --site-page-margin: clamp(16px, 5vw, 22px);
+          --pad: var(--site-page-margin);
         }
 
 
@@ -222,7 +224,7 @@
 .sv-footer__legal-links a:hover {
   color: var(--red);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sv-footer {
     padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
   }

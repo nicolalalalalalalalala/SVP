@@ -38,7 +38,7 @@
     main {
       max-width: 980px;
       margin: 0 auto;
-      padding: 120px clamp(20px, 3.8vw, 48px) 40px;
+      padding: 120px var(--pad) 40px;
     }
 
     .disclaimer-wrap h1,
@@ -178,7 +178,7 @@
 .sv-footer__legal-links a:hover {
   color: var(--red);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sv-footer {
     padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
   }
