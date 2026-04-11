@@ -253,13 +253,8 @@
         background: transparent;
         transition: none;
       }
-      .team-profile--open {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        column-gap: 22px;
-      }
-      .team-profile--open > :not(.team-profile__bio) {
-        grid-column: 1;
+      .team-profile--active .team-profile__photo-btn {
+        box-shadow: 0 0 0 1px color-mix(in srgb, var(--qing) 30%, transparent);
       }
       .team-profile__photo {
         width: 100%;
@@ -381,9 +376,6 @@
         width: 100%;
         border-top: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
       }
-      .team-profile--open .team-profile__bio {
-        grid-column: 1 / -1;
-      }
       .team-profile__bio[hidden] {
         display: none;
       }
@@ -400,6 +392,43 @@
       .team-profile__bio p + p {
         margin-top: 1em;
       }
+      .team-row-bio {
+        grid-column: 1 / -1;
+        margin-top: 8px;
+        padding: 18px 0 0;
+        border-top: 1px solid color-mix(in srgb, var(--ink-soft) 20%, transparent);
+      }
+      .team-row-bio[hidden] {
+        display: none;
+      }
+      .team-row-bio__name {
+        font-family: var(--sans);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.25;
+        color: var(--ink);
+      }
+      .team-row-bio__role {
+        margin-top: 2px;
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--qing-dark);
+      }
+      .team-row-bio__content {
+        margin-top: 10px;
+      }
+      .team-row-bio__content p {
+        font-family: var(--serif);
+        font-size: 14px;
+        line-height: 1.72;
+        color: color-mix(in srgb, var(--ink-soft) 93%, black 7%);
+        margin: 0;
+      }
+      .team-row-bio__content p + p {
+        margin-top: 1em;
+      }
       .group--leadership {
         margin-top: 10px;
         padding: 48px 0 56px;
@@ -413,10 +442,6 @@
         }
         .grid {
           grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-        .team-profile--open {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          column-gap: 22px;
         }
         .group__head {
           gap: 6px;
@@ -465,11 +490,6 @@
         .team-profile {
           box-shadow: none;
         }
-        .team-profile--open {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          column-gap: 16px;
-        }
         .group h2 {
           font-size: clamp(20px, 4.4vw, 30px);
           white-space: normal;
@@ -504,11 +524,6 @@
           gap: 0;
           max-width: 420px;
           margin-inline: auto;
-        }
-        .team-profile--open {
-          display: flex;
-          grid-template-columns: none;
-          column-gap: 0;
         }
         .team-profile__photo {
           max-height: none;
@@ -1294,43 +1309,96 @@
 
     <script>
       (() => {
-        const profiles = Array.from(document.querySelectorAll("[data-team-profile]"));
-        if (!profiles.length) return;
+        const grids = Array.from(document.querySelectorAll(".group .grid"));
+        if (!grids.length) return;
 
-        const closeProfile = (profile) => {
-          const panel = profile.querySelector(".team-profile__bio");
-          const controls = profile.querySelectorAll("[aria-controls]");
-          panel.hidden = true;
-          profile.classList.remove("team-profile--open");
-          controls.forEach((control) => {
-            control.setAttribute("aria-expanded", "false");
-            if (control.classList.contains("team-profile__bio-toggle")) {
-              control.textContent = "Read bio";
-            }
-          });
+        const getColumns = (grid) => {
+          const template = getComputedStyle(grid).gridTemplateColumns;
+          if (!template) return 1;
+          return Math.max(1, template.split(" ").filter(Boolean).length);
         };
 
-        const openProfile = (profile) => {
-          const panel = profile.querySelector(".team-profile__bio");
-          const controls = profile.querySelectorAll("[aria-controls]");
-          panel.hidden = false;
-          profile.classList.add("team-profile--open");
-          controls.forEach((control) => {
-            control.setAttribute("aria-expanded", "true");
-            if (control.classList.contains("team-profile__bio-toggle")) {
-              control.textContent = "Close bio";
-            }
-          });
-        };
+        grids.forEach((grid, gridIndex) => {
+          const profiles = Array.from(grid.querySelectorAll("[data-team-profile]"));
+          if (!profiles.length) return;
 
-        profiles.forEach((profile) => {
-          const controls = profile.querySelectorAll("[aria-controls]");
-          controls.forEach((control) => {
-            control.addEventListener("click", () => {
-              const expanded = control.getAttribute("aria-expanded") === "true";
-              profiles.forEach(closeProfile);
-              if (!expanded) openProfile(profile);
+          const expansion = document.createElement("div");
+          expansion.className = "team-row-bio";
+          expansion.hidden = true;
+          expansion.id = `team-row-bio-${gridIndex + 1}`;
+          expansion.innerHTML =
+            '<div class="team-row-bio__name"></div><div class="team-row-bio__role"></div><div class="team-row-bio__content"></div>';
+          grid.append(expansion);
+
+          const closeAll = () => {
+            profiles.forEach((profile) => {
+              profile.classList.remove("team-profile--active");
+              profile.querySelectorAll("[aria-controls]").forEach((control) => {
+                if (control.dataset.defaultControls) {
+                  control.setAttribute("aria-controls", control.dataset.defaultControls);
+                }
+                control.setAttribute("aria-expanded", "false");
+                if (control.classList.contains("team-profile__bio-toggle")) {
+                  control.textContent = "Read bio";
+                }
+              });
             });
+            expansion.hidden = true;
+          };
+
+          const positionExpansion = (profile) => {
+            const profileIndex = profiles.indexOf(profile);
+            const columns = getColumns(grid);
+            const rowStart = Math.floor(profileIndex / columns) * columns;
+            const rowEnd = Math.min(rowStart + columns - 1, profiles.length - 1);
+            profiles[rowEnd].after(expansion);
+          };
+
+          const openProfile = (profile) => {
+            const bio = profile.querySelector(".team-profile__bio");
+            if (!bio) return;
+
+            closeAll();
+            profile.classList.add("team-profile--active");
+            profile.querySelectorAll("[aria-controls]").forEach((control) => {
+              if (!control.dataset.defaultControls) {
+                control.dataset.defaultControls = control.getAttribute("aria-controls") || "";
+              }
+              control.setAttribute("aria-expanded", "true");
+              control.setAttribute("aria-controls", expansion.id);
+              if (control.classList.contains("team-profile__bio-toggle")) {
+                control.textContent = "Close bio";
+              }
+            });
+
+            expansion.querySelector(".team-row-bio__name").textContent =
+              profile.querySelector(".team-profile__name")?.textContent?.trim() || "";
+            expansion.querySelector(".team-row-bio__role").textContent =
+              profile.querySelector(".team-profile__role")?.textContent?.trim() || "";
+            expansion.querySelector(".team-row-bio__content").innerHTML = bio.innerHTML;
+            positionExpansion(profile);
+            expansion.hidden = false;
+          };
+
+          profiles.forEach((profile) => {
+            const controls = profile.querySelectorAll("[aria-controls]");
+            const onToggle = () => {
+              const isOpen = profile.classList.contains("team-profile--active");
+              if (isOpen) {
+                closeAll();
+                return;
+              }
+              openProfile(profile);
+            };
+            controls.forEach((control) => {
+              control.addEventListener("click", onToggle);
+            });
+          });
+
+          window.addEventListener("resize", () => {
+            const activeProfile = grid.querySelector(".team-profile--active");
+            if (!activeProfile || expansion.hidden) return;
+            positionExpansion(activeProfile);
           });
         });
       })();
