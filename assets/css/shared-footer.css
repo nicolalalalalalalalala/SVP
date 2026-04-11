@@ -1,0 +1,96 @@
+/* Canonical ShoreVest footer: homepage source of truth */
+.sv-footer {
+  background: var(--white) !important;
+  border-top: 1px solid var(--rule) !important;
+  padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px !important;
+}
+.sv-footer__inner {
+  max-width: var(--max, 1320px) !important;
+  margin: 0 auto !important;
+}
+.sv-footer__main {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  padding-bottom: 20px !important;
+  border-bottom: 1px solid var(--rule) !important;
+}
+.sv-footer__brand {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--ink) !important;
+}
+.sv-footer__contact {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+.sv-footer__contact-label {
+  font-family: var(--sans) !important;
+  font-size: 7.5pt !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #3d7070 !important;
+}
+.sv-footer__contact a {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--ink) !important;
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent) !important;
+  padding: 10px 14px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+.sv-footer__contact a:hover {
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+  color: #FAF6EE !important;
+}
+.sv-footer__bottom {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+  padding-top: 16px !important;
+}
+.sv-footer__copyright,
+.sv-footer__legal-links {
+  font-size: 8pt !important;
+  color: color-mix(in srgb, var(--ink2) 62%, #FAF6EE) !important;
+  line-height: 1.7 !important;
+}
+.sv-footer__legal {
+  font-size: 7px !important;
+  color: #6f6a63 !important;
+  line-height: 1.7 !important;
+}
+.sv-footer__legal-links {
+  padding-bottom: 8px !important;
+}
+.sv-footer__legal-links a {
+  color: var(--ink) !important;
+  text-decoration: none !important;
+}
+.sv-footer__legal-links a:hover {
+  color: var(--red) !important;
+}
+@media (max-width: 768px) {
+  .sv-footer {
+    padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px !important;
+  }
+  .sv-footer__main {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .sv-footer__contact {
+    flex-wrap: wrap !important;
+  }
+}
