@@ -1633,6 +1633,7 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        flex-wrap: wrap;
         gap: 10px;
         margin-bottom: 14px;
         border-bottom: 1px solid var(--xuan-dark);
@@ -1652,6 +1653,8 @@
         letter-spacing: 0.09em;
         text-transform: uppercase;
         color: var(--ink-dark);
+        flex: 1 1 240px;
+        text-align: left;
       }
       .alloc-total {
         display: inline-flex;
@@ -2465,6 +2468,22 @@
         line-height:1.08!important;
         max-width:100%!important;
         white-space:normal!important;
+      }
+      .alloc-simple-head{
+        align-items:flex-start;
+        gap:8px 12px;
+      }
+      .alloc-kicker{
+        flex:0 0 auto;
+      }
+      .alloc-simple-head h3{
+        flex:1 1 100%;
+        font-family:var(--sans)!important;
+        font-size:clamp(18px, 6.2vw, 24px)!important;
+        letter-spacing:0.08em!important;
+        line-height:1.18!important;
+        text-transform:uppercase!important;
+        color:#3B7777!important;
       }
     }
   </style>
