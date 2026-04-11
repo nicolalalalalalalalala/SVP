@@ -839,7 +839,7 @@ blockquote.fs__q {
 
 .cdd-feature__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr);
   gap: clamp(28px, 3.6vw, 54px);
   padding: clamp(38px, 5vw, 62px) clamp(24px, 3vw, 36px) clamp(42px, 5.4vw, 68px);
   align-items: start;
@@ -860,17 +860,17 @@ blockquote.fs__q {
 
 .cdd-feature__title {
   font-family: var(--serif);
-  font-size: clamp(38px, 5vw, 68px);
+  font-size: clamp(38px, 4.4vw, 60px);
   text-transform: none;
   letter-spacing: .01em;
-  line-height: 1;
+  line-height: 1.04;
   color: var(--cdd-text);
   margin-bottom: 28px;
-  max-width: min(15ch, 100%);
-  overflow-wrap: normal;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   word-break: normal;
   hyphens: none;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .cdd-feature__thesis {
@@ -1309,6 +1309,14 @@ h2.su__hed {
 @media (max-width: 1024px) {
   :root { --site-page-margin: clamp(20px, 4.8vw, 40px); }
   .hero__sliver { height:540px; }
+  .cdd-feature__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .cdd-feature__title {
+    font-size: clamp(34px, 5.6vw, 48px);
+    max-width: 100%;
+  }
   .cdd-editorial__meta {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
