@@ -520,14 +520,14 @@
         font-weight: 400;
         letter-spacing: -0.01em;
         margin-bottom: 14px;
-        max-width: 940px;
+        max-width: 1060px;
       }
       .issue-header__dek {
         font-family: var(--serif);
         font-size: 24px;
         line-height: 1.52;
         color: #4d4942;
-        max-width: 900px;
+        max-width: 980px;
         margin-bottom: 26px;
       }
       .findings-strip {
@@ -559,8 +559,8 @@
 
       .reading-grid {
         display: grid;
-        grid-template-columns: minmax(0, 82ch) minmax(240px, 300px);
-        gap: clamp(28px, 3vw, 40px);
+        grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.55fr);
+        gap: clamp(28px, 3.2vw, 44px);
         justify-content: space-between;
         align-items: start;
       }
@@ -577,7 +577,7 @@
       .reading > h3,
       .reading > blockquote,
       .reading > ul {
-        max-width: 78ch;
+        max-width: 86ch;
       }
       .reading h3 {
         font-size: 34px;
@@ -618,7 +618,7 @@
       .sidebar {
         position: sticky;
         top: 96px;
-        width: min(100%, 288px);
+        width: min(100%, 260px);
         justify-self: end;
       }
       .sidebar__card {
@@ -822,8 +822,8 @@
 
       @media (max-width: 1320px) {
         .reading-grid {
-          grid-template-columns: minmax(0, 1fr) minmax(230px, 280px);
-          gap: clamp(28px, 3vw, 40px);
+          grid-template-columns: minmax(0, 1.4fr) minmax(210px, 0.6fr);
+          gap: clamp(24px, 3vw, 36px);
         }
       }
 
