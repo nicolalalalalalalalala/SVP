@@ -427,7 +427,7 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 .ac__panel {
   aspect-ratio:4/3;
-  background:linear-gradient(180deg, color-mix(in srgb, var(--ac-accent-dark) 86%, #0b1010) 0%, color-mix(in srgb, var(--ac-accent-dark) 96%, #000) 100%);
+  background:color-mix(in srgb, var(--ac-accent-dark) 90%, #0f1414);
   border:1px solid color-mix(in srgb, var(--ac-accent-light) 22%, transparent);
   display:grid;
   place-items:center;
@@ -456,17 +456,15 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg, rgba(7, 10, 10, .08) 0%, rgba(7, 10, 10, .48) 100%);
+  background:rgba(7, 10, 10, .24);
   pointer-events:none;
 }
 .ac__panel::before {
   content:"";
   position:absolute;
   inset:-45%;
-  background:
-    radial-gradient(circle at 28% 24%, color-mix(in srgb, var(--ac-paper) 36%, transparent), transparent 42%),
-    radial-gradient(circle at 76% 72%, color-mix(in srgb, var(--ac-accent) 36%, transparent), transparent 48%);
-  opacity:.42;
+  background:radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ac-paper) 18%, transparent), transparent 60%);
+  opacity:.2;
   transform:translate3d(0, 0, 0) scale(1);
   pointer-events:none;
 }
@@ -483,11 +481,11 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   animation: sv-image-pan-3 9.2s ease-in-out .35s infinite alternate;
 }
 .ac:hover .ac__panel {
-  background:linear-gradient(180deg, color-mix(in srgb, var(--ac-accent-dark) 80%, #101717) 0%, color-mix(in srgb, var(--ac-accent-dark) 92%, #030505) 100%);
+  background:color-mix(in srgb, var(--ac-accent-dark) 86%, #101717);
   border-color:color-mix(in srgb, var(--ac-accent-light) 34%, transparent);
 }
 .ac:hover .ac__panel::before {
-  opacity:.66;
+  opacity:.32;
 }
 .ac__title { font-family:var(--serif); font-size:clamp(24px, 2.2vw, 28px); color:var(--ink); margin-bottom:12px; line-height:1.18; text-wrap:balance; min-height:2.3em; }
 .ac__body { font-size:15px; line-height:1.74; color:var(--mist); margin-bottom:18px; max-width:36ch; }
