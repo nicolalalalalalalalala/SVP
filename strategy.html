@@ -1154,6 +1154,36 @@
       .market-context-content p:first-of-type {
         margin-top: 0;
       }
+      .context-grid {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .context-pullout {
+        border: 1px solid rgba(15, 34, 6, 0.14);
+        padding: 14px 16px;
+        min-height: 100%;
+        display: grid;
+        gap: 8px;
+        align-content: start;
+        background: #FAF6EE;
+      }
+      .context-pullout b {
+        margin: 0;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #3D7070;
+        font-family: var(--sans);
+        font-weight: 500;
+      }
+      .context-pullout span {
+        font-family: var(--sans);
+        font-size: 14px;
+        line-height: 1.55;
+        color: #0F2206;
+      }
       .market-context-content .market-context-disclaimer {
         margin-top: 12px;
         font-size: 12px;
@@ -1987,6 +2017,10 @@
         }
         .market-context-content {
           max-width: 100%;
+        }
+        .context-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
         }
         .strategy-block h2 {
           font-size: 34px;
