@@ -122,10 +122,16 @@ html body footer.sv-footer .sv-footer__legal a {
 }
 
 html body footer.sv-footer .sv-footer__legal-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  column-gap: 16px !important;
+  row-gap: 4px !important;
   padding-bottom: 8px !important;
 }
 
 html body footer.sv-footer .sv-footer__legal-links a {
+  display: inline-flex !important;
   color: #0f2206 !important;
   text-decoration: none !important;
 }
