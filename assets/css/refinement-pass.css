@@ -435,10 +435,14 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0 12px !important;
+    padding: 0 14px 0 20px !important;
     font-size: 10px !important;
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
+  }
+
+  html body footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
+    padding: 6px 16px 14px 22px !important;
   }
 
   html body footer.sv-footer .sv-footer__legal,
