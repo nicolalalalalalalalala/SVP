@@ -22,11 +22,11 @@
         --ink-deep: #0f2206;
         --ink-soft: #2e4a18;
         --white: #fbf8f3;
-        --cream: #f9f5ee;
-        --off: #f4efe6;
+        --cream: #e6e1d5;
+        --off: #ded8cb;
         --stone: #efe7d7;
         --off-warm: #f8f3ea;
-        --sand: #ede3cf;
+        --sand: #d9d1bf;
         --hero-end: #f2e9d8;
         --rose-pale: #f9f4ea;
         --rule: #d8cfbc;
@@ -49,7 +49,7 @@
         scroll-padding-top: 96px;
       }
       body {
-        background: var(--white);
+        background: var(--cream);
         color: var(--ink);
         font-family: var(--sans);
         font-size: 15px;
@@ -106,7 +106,7 @@
         min-height: 420px;
         padding: 148px 0 76px;
         border-bottom: 1px solid var(--rule);
-        background: var(--white);
+        background: var(--cream);
         display: flex;
         align-items: center;
       }
@@ -184,7 +184,7 @@
         padding: 72px 0 90px;
       }
       .team-groups {
-        background: var(--white);
+        background: var(--cream);
       }
       .team-groups__intro {
         font-family: var(--serif);
@@ -235,7 +235,7 @@
       .card {
         display: flex;
         flex-direction: column;
-        gap: 9px;
+        gap: 0;
         transition: transform 0.2s ease;
       }
       .card:hover,
@@ -292,7 +292,9 @@
         line-height: 1.2;
         letter-spacing: 0.01em;
         color: var(--ink);
-        margin-bottom: 1px;
+        margin-bottom: 0;
+        padding: 12px 0 6px;
+        background: var(--sand);
       }
       .title {
         font-family: var(--sans);
@@ -301,6 +303,8 @@
         text-transform: uppercase;
         color: var(--red);
         line-height: 1.35;
+        padding: 0 0 14px;
+        background: var(--sand);
       }
       .card-descriptor {
         font-size: 12px;
@@ -310,16 +314,17 @@
       }
       .card-cue {
         border: 0;
-        background: transparent;
-        padding: 0;
+        background: var(--qing);
+        padding: 2px 0;
         text-align: left;
         cursor: pointer;
         font-size: 8pt;
         letter-spacing: 0.07em;
         text-transform: uppercase;
-        color: var(--qing);
+        color: var(--cream);
         text-decoration: underline;
         text-underline-offset: 2px;
+        width: 100%;
       }
       .card-bio {
         display: none;
