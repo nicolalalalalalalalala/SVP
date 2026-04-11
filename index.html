@@ -425,10 +425,19 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   aspect-ratio:4/3;
   background:linear-gradient(180deg, #223a35 0%, #1b2f2b 100%);
   border:1px solid rgba(250,246,238,.06);
+  display:grid;
+  place-items:center;
   position: relative;
   overflow: hidden;
   margin-bottom:24px;
   transition:background .25s ease, border-color .25s ease;
+}
+.ac__icon {
+  width:clamp(64px, 7vw, 88px);
+  height:clamp(64px, 7vw, 88px);
+  color:rgba(250,246,238,.92);
+  position:relative;
+  z-index:1;
 }
 .ac__media {
   width:100%;
@@ -1473,8 +1482,8 @@ h2.su__hed {
     margin-bottom:20px;
   }
   .ac__icon {
-    width:96px;
-    height:96px;
+    width:72px;
+    height:72px;
   }
   .ac__title {
     min-height:0;
