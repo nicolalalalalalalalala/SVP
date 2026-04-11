@@ -392,27 +392,6 @@
         }
       }
 
-      /* ══ MOBILE NAV REFINEMENT */
-      @media (max-width: 767px) {
-
-
-
-
-
-
-
-      }
-
-      @media (max-width: 520px) {
-
-
-
-
-
-
-
-      }
-
       /* ══ LEGAL DISCLAIMER FOOTER */
 @media (max-width: 900px) {
 }
@@ -600,9 +579,7 @@
   :lang(zh),
   [lang="zh"],
   [lang="zh-CN"],
-  [lang="zh-Hans"],
-  .nav__logo-cn,
-  .nav__logo-cn * {
+  [lang="zh-Hans"] {
     font-family: "Noto Serif SC" !important;
   }
 
@@ -615,10 +592,6 @@
     color: #0F2206 !important;
   }
 
-  #nav {
-    background: #FAF6EE !important;
-    color: #0F2206 !important;
-  }
 
   .press-hero,
   .press-list,
@@ -650,18 +623,6 @@
     font-style: normal !important;
   }
 
-  .eyebrow,
-  .press-toolbar__label,
-  .press-filter-label,
-  .press-publication,
-  .nav__links a,
-  .nav__lp,
-  .nav__menu-btn {
-    font-family: "DIN 2014" !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.12em !important;
-  }
 
   p,
   li,
@@ -677,100 +638,7 @@
     font-style: normal !important;
   }
 
-  .nav__logo-lockup {
-    padding-left: 8px !important;
-  }
 
-  .nav__logo-lockup::before {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 2px !important;
-    bottom: 2px !important;
-    width: 1px !important;
-    background: #3D7070 !important;
-  }
-
-  .nav__logo-en {
-    letter-spacing: 0.05em !important;
-    color: #0F2206 !important;
-  }
-
-  .nav__logo-cn {
-    color: #0F2206 !important;
-    letter-spacing: 0.14em !important;
-  }
-
-  @media (max-width: 767px) {
-    #nav {
-      min-height: 88px !important;
-      padding: 12px var(--pad, 18px) !important;
-      grid-template-columns: minmax(0, 1fr) auto !important;
-      align-items: center !important;
-      row-gap: 0 !important;
-      background: #FAF6EE !important;
-      border-bottom: 1px solid rgba(15, 34, 6, 0.12) !important;
-      box-shadow: none !important;
-    }
-
-    .nav__logo {
-      gap: 10px !important;
-    }
-
-    .nav__logo-mark {
-      width: 44px !important;
-      height: 44px !important;
-      flex: 0 0 44px !important;
-    }
-
-    .nav__logo-lockup {
-      gap: 4px !important;
-    }
-
-    .nav__logo-en {
-      font-size: 11px !important;
-      letter-spacing: 0.4em !important;
-    }
-
-    .nav__logo-cn {
-      font-size: 18px !important;
-      letter-spacing: 0.08em !important;
-      line-height: 1 !important;
-    }
-
-    .nav__zh,
-    .nav__lp {
-      display: none !important;
-    }
-
-    .nav__right {
-      gap: 0 !important;
-    }
-
-    .nav__menu-btn {
-      min-width: 164px !important;
-      min-height: 56px !important;
-      padding: 0 28px !important;
-      border: 1px solid rgba(15, 34, 6, 0.24) !important;
-      background: #FAF6EE !important;
-      color: #171717 !important;
-      font-size: 13px !important;
-      letter-spacing: 0.14em !important;
-    }
-  }
-
-  @media (max-width: 520px) {
-    .nav__menu-btn {
-      min-width: 142px !important;
-      min-height: 52px !important;
-      padding: 0 22px !important;
-      font-size: 12px !important;
-    }
-
-    .nav__logo-cn {
-      font-size: 16px !important;
-    }
-  }
 
   .eyebrow,
   .eyebrow::after,
@@ -784,20 +652,6 @@
     border-color: #3D7070 !important;
   }
 
-  .active,
-  .press-headline:hover,
-  .press-row a:hover .press-headline,
-  .press-more:hover,
-  .sv-footer__legal-links a:hover,
-  .nav__lp:hover {
-    color: #3D7070 !important;
-  }
-
-  .press-more:hover,
-  .nav__lp:hover {
-    background: #FAF6EE !important;
-    border-color: #3D7070 !important;
-  }
 </style>
 
 
