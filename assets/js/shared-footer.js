@@ -37,7 +37,7 @@
     force(brand, 'text-transform', 'uppercase');
 
     [contactLabel, contactLink, copyright, legalSummary, legalBody, ...legalLinks].forEach((node) => {
-      force(node, 'font-family', 'var(--sans)');
+      force(node, 'font-family', '"Inter", system-ui, sans-serif');
     });
   };
 
