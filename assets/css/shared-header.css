@@ -74,7 +74,7 @@
 }
 
 .nav__logo-cn {
-  font-family: 'DIN 2014', 'Inter', sans-serif;
+  font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
   margin-top: 0;
   font-size: 10px;
   letter-spacing: .28em;
@@ -275,7 +275,7 @@
   }
 
   .nav__logo-cn {
-    font-family:'DIN 2014', 'Inter', sans-serif;
+    font-family:'Noto Serif SC', 'Songti SC', 'STSong', serif;
     margin-top:0;
     font-size:9px;
     letter-spacing:.34em;
