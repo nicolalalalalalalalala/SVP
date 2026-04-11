@@ -209,6 +209,33 @@
     .contact-us-spacing {
       margin: 0 0 72px;
     }
+    main {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .privacy-wrap {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+    }
+    .privacy-wrap h1 {
+      margin: 0 0 8px;
+    }
+    .privacy-wrap p,
+    .privacy-wrap li {
+      max-width: none;
+    }
+    .sv-footer {
+      background: var(--off);
+    }
+    .sv-footer__legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      padding-bottom: 8px;
+    }
   </style>
 
 
@@ -217,6 +244,8 @@
 </head>
 <body class="legal-page">
   <div id="site-header-mount"></div>
+  <main>
+    <div class="privacy-wrap">
   <h1>Cookie Notice</h1>
   <p class="muted"><strong>Effective Date:</strong> 8 April 2026</p>
   <p>
@@ -224,7 +253,7 @@
   </p>
   <p>
     This Cookie Notice should be read together with our <a href="privacy-policy.html">Privacy Policy</a> and
-    <a href="disclaimers.html">Legal Notices &amp; Disclaimers</a>. In the event of any inconsistency, those documents prevail.
+    <a href="legal-notices-disclaimers.html">Legal Notices &amp; Disclaimers</a>. In the event of any inconsistency, those documents prevail.
   </p>
   <p>
     By continuing to use the Site, you acknowledge that cookies may be used in accordance with this Notice, subject to applicable consent requirements.
@@ -404,6 +433,8 @@
     <a href="mailto:privacy@shorevest.com">privacy@shorevest.com</a>.
   </p>
   <p class="contact-us-spacing"><a href="index.html">Back to homepage</a></p>
+    </div>
+  </main>
 
 
   <footer class="sv-footer sv-footer--full-bleed">
@@ -422,7 +453,7 @@
         <summary>LEGAL NOTICE</summary>
         <div class="sv-footer__legal">This website uses cookies and similar technologies for operational, analytical, and security purposes. Certain cookies may be required for the Site to function. By using this website, you acknowledge the use of cookies as described in this Cookie Notice. Please also review our Privacy Policy, Terms of Use, and Legal Notices &amp; Disclaimers.</div>
       </details>
-      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
+      <div class="sv-footer__legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="legal-notices-disclaimers.html">Legal Notices &amp; Disclaimers</a></div>
     </div>
   </div>
 </footer>
