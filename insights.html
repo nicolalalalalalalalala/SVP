@@ -420,51 +420,44 @@
       }
 
       .issue-shell {
-        padding: 48px 0 96px;
+        padding: 42px 0 96px;
       }
-      .issue-shell > * {
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      .issue-editorial {
-        max-width: 1260px;
+      .issue-layout {
+        max-width: 1220px;
         margin: 0 auto;
       }
-      .franchise-ribbon {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 16px 18px;
+      .issue-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 24px;
+        align-items: start;
+        padding: 16px 20px;
         border: 1px solid var(--rule);
         border-left: 3px solid var(--red);
-        margin-bottom: 28px;
         background: var(--off);
+        margin-bottom: 30px;
       }
-      .franchise-ribbon__info {
-        flex: 1 1 auto;
-        max-width: 620px;
-      }
-      .franchise-ribbon__title {
+      .issue-intro__title {
         font-size: 10px;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--red);
       }
-      .franchise-ribbon__sub {
+      .issue-intro__sub {
+        margin-top: 4px;
         font-family: var(--serif);
-        font-size: 18px;
+        font-size: 17px;
+        line-height: 1.4;
         color: var(--ink);
       }
       .utility__actions {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
         width: auto;
-        max-width: 340px;
+        max-width: 430px;
         flex: 0 0 auto;
       }
       .util-btn {
@@ -550,14 +543,14 @@
 
       .reading-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
-        gap: clamp(40px, 4vw, 64px);
+        grid-template-columns: minmax(0, 1.7fr) minmax(260px, 320px);
+        gap: clamp(32px, 3.6vw, 52px);
         align-items: start;
       }
       .reading {
         font-family: var(--serif);
         width: 100%;
-        max-width: 860px;
+        max-width: 100%;
       }
       #current-issue {
         grid-column: auto;
@@ -567,7 +560,7 @@
       .reading > h3,
       .reading > blockquote,
       .reading > ul {
-        max-width: 35ch;
+        max-width: 68ch;
       }
       .reading h3 {
         font-size: 31px;
@@ -885,13 +878,10 @@
           margin-top: 0;
           padding: 138px 0 44px;
         }
-        .franchise-ribbon {
-          display: block;
+        .issue-intro {
+          grid-template-columns: minmax(0, 1fr);
         }
-        .franchise-ribbon__info {
-          max-width: none;
-        }
-        .franchise-ribbon__sub {
+        .issue-intro__sub {
           margin-top: 6px;
           font-size: 17px;
         }
@@ -1618,47 +1608,14 @@
   <body class="insights-page">
     <div id="site-header-mount"></div>
 
-    <section class="research-hero">
-      <div class="wrap research-hero__grid">
-        <div>
-          <div class="eyebrow eyebrow--ghost">
-            ShoreVest Insights · China Credit Research Since 2018
-          </div>
-          <div class="wordmark">
-            <img class="wordmark__logo wordmark__logo--white" src="assets/images/logo-master.svg?v=2" alt="新庫廣本 logo" width="64" height="auto" />
-            <div class="wordmark__title">
-              China<br />Debt<br /><em>Dynamics.</em>
-            </div>
-          </div>
-          <p class="research-hero__desc">
-            China Debt Dynamics is ShoreVest's institutional research
-            publication, covering China's private credit markets. Analysis is
-            grounded in local underwriting practice, legal process, and
-            on-the-ground deal experience. Published since 2018.
-          </p>
-        </div>
-        <article class="issue-live">
-          <h1><span class="cdd-live" aria-label="Live issue"><span class="cdd-live__dot" aria-hidden="true"></span><span class="cdd-live__label">Live</span></span><span class="issue-live__headline">The End of China's Uninvestable Myth</span></h1>
-          <p>
-            This issue examines how policy and regulatory changes since 2021
-            have affected perceptions of investability in China, with a focus
-            on implications for private credit and public market participation.
-          </p>
-          <div class="issue-live__meta">
-            <span>Vol. 10 · No. 1</span><span>25 January 2026</span
-            ><span>Allocator Edition</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <main class="issue-shell wrap">
-      <div class="franchise-ribbon">
-        <div class="franchise-ribbon__info">
-          <div class="franchise-ribbon__title">
+      <div class="issue-layout">
+      <div class="issue-intro">
+        <div>
+          <div class="issue-intro__title">
             China Debt Dynamics · Institutional Publication
           </div>
-          <div class="franchise-ribbon__sub">
+          <div class="issue-intro__sub">
             Current issue and archive access in HTML and PDF formats.
           </div>
         </div>
@@ -1677,7 +1634,6 @@
         </div>
       </div>
 
-      <section class="issue-editorial">
       <div class="reading-grid">
         <article
           id="current-issue"
@@ -1686,9 +1642,20 @@
           data-print-filename="shorevest-china-debt-dynamics-issue-46.pdf"
           data-print-pdf="pdfs/46. China Debt Dynamics - The End of the 'China Is Uninvestable' Myth.pdf"
         >
-          <p>
-            Volume 10 | Issue 1<br />25 January 2026
-          </p>
+          <header class="issue-header" id="issue-header">
+            <div class="issue-header__meta">
+              <span>China Debt Dynamics</span>
+              <span>Vol. 10 | Issue 1</span>
+              <span>Published 25 January 2026</span>
+              <span>Allocator Edition</span>
+            </div>
+            <h2>The End of China's Uninvestable Myth</h2>
+            <p class="issue-header__dek">
+              This issue examines how policy and regulatory changes since 2021
+              have affected perceptions of investability in China, with a focus
+              on implications for private credit and public market participation.
+            </p>
+          </header>
 
           <p>
             Almost five years after China was widely condemned as being
@@ -2192,7 +2159,7 @@
           </div>
         </aside>
       </div>
-      </section>
+      </div>
     </main>
 
 
@@ -2297,7 +2264,7 @@
           if (
             el.closest(".reading-grid") ||
             el.classList.contains("issue-header") ||
-            el.classList.contains("franchise-ribbon")
+            el.classList.contains("issue-intro")
           ) {
             return;
           }
