@@ -2,8 +2,8 @@
   --sv-refine-max: 1280px;
   --sv-refine-pad: clamp(28px, 5.2vw, 92px);
   --sv-refine-copy: 66ch;
-  --sv-brand-accent: #8f1f37;
-  --sv-brand-accent-strong: #b3213f;
+  --sv-brand-accent: #3d7070;
+  --sv-brand-accent-strong: #3d7070;
   --sv-brand-accent-ink: #ffffff;
 }
 

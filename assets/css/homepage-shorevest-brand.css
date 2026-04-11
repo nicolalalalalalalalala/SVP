@@ -2,9 +2,9 @@
   --paper-light: #FAF6EE;
   --paper: #F2ECD8;
   --paper-dark: #D8CEB0;
-  --cinnabar: #C93B2A;
-  --cinnabar-light: #E8998F;
-  --cinnabar-dark: #8A1F12;
+  --cinnabar: #3D7070;
+  --cinnabar-light: #7AAFAF;
+  --cinnabar-dark: #1E4040;
   --blue-green: #3D7070;
   --blue-green-light: #7AAFAF;
   --blue-green-dark: #1E4040;
@@ -338,7 +338,7 @@ li,
   --cdd-body: #EAE3D7;
   --cdd-muted: #D8CEB0;
   --cdd-accent: #3D7070;
-  --cdd-signal: #C93B2A;
+  --cdd-signal: #3D7070;
   background: var(--cdd-bg) !important;
   color: var(--cdd-text) !important;
   border-top-color: color-mix(in srgb, var(--cdd-structure) 60%, transparent) !important;
@@ -489,7 +489,7 @@ body.homepage #cdd {
   --cdd-body: #ece3d6;
   --cdd-muted: #c5b8a2;
   --cdd-accent: #7ea4a0;
-  --cdd-signal: #c93b2a;
+  --cdd-signal: #3d7070;
   background: radial-gradient(120% 120% at 12% 8%, #1d2f2d 0%, #152321 54%, #0f1a18 100%) !important;
   border-top: 1px solid rgba(197, 184, 162, 0.36) !important;
   border-bottom: 1px solid rgba(95, 115, 110, 0.35) !important;

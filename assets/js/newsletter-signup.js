@@ -148,7 +148,7 @@
       .su__progress-track { width:100%; height:4px; background:rgba(255,255,255,.14); border-radius:999px; overflow:hidden; }
       .su__progress-fill { height:100%; width:0; background:var(--red); transition:width .25s ease; }
       .su__hint { margin-top:8px; font-size:12px; color:rgba(255,255,255,.45); }
-      .su__field.is-invalid { border-bottom-color: rgba(179,33,63,.9); }
+      .su__field.is-invalid { border-bottom-color: rgba(61,112,112,.9); }
       .su__field.is-valid { border-bottom-color: rgba(255,255,255,.32); }
     `;
     document.head.appendChild(style);

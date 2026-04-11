@@ -157,9 +157,9 @@
 }
 
 .nav__lp:hover {
-  background: var(--red, #8f1f37);
+  background: var(--red, #3d7070);
   color: #fff;
-  border-color: var(--red, #8f1f37);
+  border-color: var(--red, #3d7070);
 }
 
 .nav__menu-btn {

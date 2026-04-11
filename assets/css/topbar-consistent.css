@@ -13,7 +13,7 @@
   --nav-logo-diameter: calc((var(--nav-logo-en-size) * var(--nav-logo-en-line-height)) + (var(--nav-logo-cn-size) * var(--nav-logo-cn-line-height)) + var(--nav-logo-lockup-gap) + 8px);
   --control-radius-pill: 0px;
   --control-radius-soft: 0px;
-  --control-brand: var(--cinnabar, #c93b2a);
+  --control-brand: var(--cinnabar, #3d7070);
   --control-ink: var(--text-main, #0f2206);
   --control-ink-strong: var(--text-main, #0f2206);
   --control-paper: var(--paper-light, #faf6ee);
@@ -284,9 +284,9 @@ html {
 
 #nav .nav__lp:hover,
 #nav .nav__lp:focus-visible {
-  border-color: var(--site-color-accent, #b3213f);
+  border-color: var(--site-color-accent, #3d7070);
   color: var(--control-paper);
-  background: var(--site-color-accent, #b3213f);
+  background: var(--site-color-accent, #3d7070);
   box-shadow: none;
   transform: translateY(-1px);
   letter-spacing: 0.16em;
@@ -734,9 +734,9 @@ html {
 
 #nav .nav__lp:hover,
 #nav .nav__lp:focus-visible {
-  background: #8A1F12 !important;
+  background: #1E4040 !important;
   color: #ffffff !important;
-  border-color: #8A1F12 !important;
+  border-color: #1E4040 !important;
   letter-spacing: 0.14em !important;
 }
 
@@ -1384,7 +1384,7 @@ body:not(.homepage) #nav .nav__menu-btn:focus-visible {
 #nav .lang-toggle { display:inline-flex !important; align-items:center !important; font-family:'Inter','PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif !important; font-size:12px !important; font-weight:500 !important; line-height:1 !important; transform:translateY(.5px) !important; }
 #nav .nav__zh:hover { opacity:.75 !important; }
 #nav .nav__lp { font-size:11.4px !important; font-weight:500 !important; letter-spacing:.14em !important; text-transform:uppercase !important; color:#171410 !important; border:1px solid rgba(48,40,34,.15) !important; padding:7px 16px !important; background: var(--control-paper, #faf6ee) !important; transition:background .2s, color .2s, border-color .2s !important; }
-#nav .nav__lp:hover { background:#8f1f37 !important; color:#fff !important; border-color:#8f1f37 !important; }
+#nav .nav__lp:hover { background:#3d7070 !important; color:#fff !important; border-color:#3d7070 !important; }
 #nav .nav__mobile-lang,
 #nav .nav__mobile-investor,
 #nav .nav__menu-btn { display:none; }
@@ -1474,7 +1474,7 @@ html body footer.sv-footer .sv-footer__contact-label {
   font-weight: 700 !important;
   letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
-  color: #c93b2a !important;
+  color: #3d7070 !important;
 }
 html body footer.sv-footer .sv-footer__contact a {
   font-size: 12px !important;
@@ -1488,8 +1488,8 @@ html body footer.sv-footer .sv-footer__contact a {
   transition: all 0.2s ease !important;
 }
 html body footer.sv-footer .sv-footer__contact a:hover {
-  background: var(--red, #C93B2A) !important;
-  border-color: var(--red, #C93B2A) !important;
+  background: var(--red, #3D7070) !important;
+  border-color: var(--red, #3D7070) !important;
   color: #FAF6EE !important;
 }
 html body footer.sv-footer .sv-footer__bottom {
@@ -1517,7 +1517,7 @@ html body footer.sv-footer .sv-footer__legal-links a {
   text-decoration: none !important;
 }
 html body footer.sv-footer .sv-footer__legal-links a:hover {
-  color: var(--red, #C93B2A) !important;
+  color: var(--red, #3D7070) !important;
 }
 
 @media (max-width: 768px) {
