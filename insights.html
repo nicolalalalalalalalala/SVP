@@ -543,8 +543,9 @@
 
       .reading-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(260px, 320px);
-        gap: clamp(32px, 3.6vw, 52px);
+        grid-template-columns: minmax(0, 74ch) minmax(280px, 340px);
+        gap: clamp(28px, 3vw, 40px);
+        justify-content: space-between;
         align-items: start;
       }
       .reading {
@@ -560,30 +561,30 @@
       .reading > h3,
       .reading > blockquote,
       .reading > ul {
-        max-width: 68ch;
+        max-width: 72ch;
       }
       .reading h3 {
-        font-size: 31px;
+        font-size: 34px;
         line-height: 1.15;
         font-weight: 400;
         margin: 42px 0 14px;
       }
       .reading p {
-        font-size: 23px;
+        font-size: 25px;
         line-height: 1.57;
         color: #181714;
         margin-bottom: 16px;
         background: transparent;
       }
       .reading p.lead {
-        font-size: 25px;
+        font-size: 27px;
         color: #211f1b;
       }
       .reading blockquote {
         border-left: 2px solid var(--red);
         padding-left: 18px;
         margin: 28px 0;
-        font-size: 24px;
+        font-size: 25px;
         line-height: 1.5;
         color: #2b2721;
       }
@@ -592,7 +593,7 @@
         padding: 0;
       }
       .reading li {
-        font-size: 23px;
+        font-size: 25px;
         line-height: 1.57;
         color: #181714;
         margin: 0 0 8px;
@@ -805,8 +806,8 @@
 
       @media (max-width: 1320px) {
         .reading-grid {
-          grid-template-columns: minmax(0, 1fr) minmax(260px, 300px);
-          gap: clamp(36px, 3.6vw, 52px);
+          grid-template-columns: minmax(0, 1fr) minmax(260px, 310px);
+          gap: clamp(28px, 3vw, 40px);
         }
       }
 
