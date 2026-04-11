@@ -343,26 +343,40 @@
         color: rgba(250, 246, 238, 0.74);
         margin-bottom: 10px;
       }
-      .live-dot {
+      .cdd-live {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-right: 10px;
+        transform: translateY(-1px);
+      }
+      .cdd-live__dot {
         display: inline-block;
-        width: 8px;
-        height: 8px;
+        width: 7px;
+        height: 7px;
         border-radius: 50%;
-        background: #ff2d2d;
-        margin-right: 8px;
-        box-shadow: 0 0 0 rgba(255, 45, 45, 0.85);
-        animation: liveBlink 1.2s ease-in-out infinite;
+        background: #c93b2a;
+        box-shadow: 0 0 0 rgba(201, 59, 42, 0.55);
+        animation: liveBlink 1.1s ease-in-out infinite;
         vertical-align: middle;
+      }
+      .cdd-live__label {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #c93b2a;
+        line-height: 1;
       }
       @keyframes liveBlink {
         0%,
         100% {
           opacity: 1;
-          box-shadow: 0 0 0 0 rgba(255, 45, 45, 0.75);
+          box-shadow: 0 0 0 0 rgba(201, 59, 42, 0.55);
         }
         50% {
           opacity: 0.25;
-          box-shadow: 0 0 0 6px rgba(255, 45, 45, 0);
+          box-shadow: 0 0 0 4px rgba(201, 59, 42, 0);
         }
       }
       .issue-live h1 {
@@ -371,6 +385,9 @@
         line-height: 1.06;
         font-weight: 400;
         color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 6px;
         margin-bottom: 12px;
       }
       .issue-live p {
@@ -1440,20 +1457,24 @@
     color: var(--text-dark-secondary) !important;
   }
 
-  .live-dot {
-    background: #ff2d2d !important;
-    box-shadow: 0 0 0 rgba(255, 45, 45, 0.8) !important;
+  .cdd-live__dot {
+    background: #c93b2a !important;
+    box-shadow: 0 0 0 rgba(201, 59, 42, 0.55) !important;
+  }
+
+  .cdd-live__label {
+    color: #c93b2a !important;
   }
 
   @keyframes liveBlink {
     0%,
     100% {
       opacity: 1;
-      box-shadow: 0 0 0 0 rgba(255, 45, 45, 0.6);
+      box-shadow: 0 0 0 0 rgba(201, 59, 42, 0.55);
     }
     50% {
       opacity: 0.3;
-      box-shadow: 0 0 0 6px rgba(255, 45, 45, 0);
+      box-shadow: 0 0 0 4px rgba(201, 59, 42, 0);
     }
   }
 
@@ -1629,7 +1650,7 @@
           </p>
         </div>
         <article class="issue-live">
-          <h1><span class="live-dot" aria-hidden="true"></span>Live · The End of China's Uninvestable Myth</h1>
+          <h1><span class="cdd-live" aria-label="Live issue"><span class="cdd-live__dot" aria-hidden="true"></span><span class="cdd-live__label">Live</span></span>The End of China's Uninvestable Myth</h1>
           <p>
             This issue examines how policy and regulatory changes since 2021
             have affected perceptions of investability in China, with a focus
