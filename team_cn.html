@@ -68,20 +68,6 @@
         padding: 0 var(--pad);
       }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       .eyebrow {
         font-size: 7.5pt;
         font-weight: 700;
@@ -463,15 +449,6 @@
           --pad: var(--site-page-margin);
         }
 
-
-
-
-
-
-
-
-
-
         .pagehero {
           min-height: auto;
           padding-top: 140px;
@@ -592,21 +569,20 @@
         transform: translateY(0);
       }
 
-
 @media (max-width: 767px) {
-  footer > div:first-child {
+  footer> div:first-child {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
   }
-  footer > div:first-child > div:last-child {
+  footer> div:first-child> div:last-child {
     text-align: left;
   }
-  footer > div:last-child {
+  footer> div:last-child {
     flex-direction: column;
     gap: 0.75rem;
   }
-  footer > div:last-child > div:last-child {
+  footer> div:last-child> div:last-child {
     text-align: left;
     max-width: 100%;
   }
@@ -615,12 +591,6 @@
   }
 }
       /* Homepage nav lockup parity */
-
-
-
-
-
-
 
 </style>
   <style>
@@ -717,17 +687,10 @@
   }
 }
 
-
 </style>
 
-
 <link rel="stylesheet" href="assets/css/site-motion.css">
-
-<link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
-  <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
-
-
-    <link rel="stylesheet" href="assets/css/shared-header.css" />
+<link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
 
   <style id="team-cn-brand-overrides">
@@ -802,6 +765,7 @@
     }
   </style>
 <link rel="stylesheet" href="assets/css/shared-footer.css">
+    <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 </head>
   <body>
     <div id="site-header-mount"></div>
@@ -884,7 +848,7 @@
         document.head.appendChild(style);
 
         const targets = document.querySelectorAll(
-          "section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
+          "section, .wrap> div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
         );
         targets.forEach((el, i) => {
           if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
@@ -918,7 +882,6 @@
       })();
     </script>
 <footer class="sv-footer" data-shared-footer></footer>
-
 
 <script src="assets/js/site-motion.js" defer></script>
 <script src="assets/js/shared-footer.js" defer></script>

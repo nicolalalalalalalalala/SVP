@@ -196,21 +196,6 @@
 
       /* ══ NAV */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       /* Performance: removed legacy inline base64 hero styles to reduce CSS/HTML parse cost on mobile scroll. */
 
       /* ══ ABOUT */
@@ -611,10 +596,10 @@
         grid-template-columns: 1fr 1fr;
         border-top: 1px solid var(--rule);
       }
-      .issue-takes > div {
+      .issue-takes> div {
         padding: 20px 24px;
       }
-      .issue-takes > div:first-child {
+      .issue-takes> div:first-child {
         border-right: 1px solid var(--rule);
       }
       .it__label {
@@ -1723,7 +1708,7 @@
         height: 5px;
         background: color-mix(in srgb, var(--xuan-dark) 12%, transparent);
       }
-      .alloc-bar > span {
+      .alloc-bar> span {
         display: block;
         height: 100%;
         width: 0;
@@ -2037,15 +2022,6 @@
           padding-bottom: 54px;
         }
 
-
-
-
-
-
-
-
-
-
         .pgsec {
           padding: 0 0 48px;
         }
@@ -2110,12 +2086,6 @@
       /* ══ MOBILE NAV REFINEMENT */
       @media (max-width: 767px) {
 
-
-
-
-
-
-
       }
 
       @media (max-width: 767px) {
@@ -2125,15 +2095,6 @@
       }
 
       @media (max-width: 520px) {
-
-
-
-
-
-
-
-
-
 
         .viz-controls {
           display: grid;
@@ -2167,21 +2128,20 @@
         transform: translateY(0);
       }
 
-
 @media (max-width: 767px) {
-  footer > div:first-child {
+  footer> div:first-child {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
   }
-  footer > div:first-child > div:last-child {
+  footer> div:first-child> div:last-child {
     text-align: left;
   }
-  footer > div:last-child {
+  footer> div:last-child {
     flex-direction: column;
     gap: 0.75rem;
   }
-  footer > div:last-child > div:last-child {
+  footer> div:last-child> div:last-child {
     text-align: left;
     max-width: 100%;
   }
@@ -2190,12 +2150,6 @@
   }
 }
       /* Homepage nav lockup parity */
-
-
-
-
-
-
 
 </style>
   <style>
@@ -2290,17 +2244,10 @@
   }
 }
 
-
 </style>
 
-
 <link rel="stylesheet" href="assets/css/site-motion.css">
-
-<link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
-  <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
-
-
-    <link rel="stylesheet" href="assets/css/shared-header.css" />
+<link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
 
   <style id="strategy-discipline-override">
@@ -2606,19 +2553,19 @@
                 <article class="alloc-card" data-sleeve="abl">
                   <p class="alloc-name">Asset-Based Lending</p>
                   <p class="alloc-value" data-alloc-value>40%</p>
-                  <div class="alloc-bar" aria-hidden="true"><span style="width:40%"></span></div>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width: 40%;"></span></div>
                   <p class="alloc-range" data-alloc-range>Range 24–40%</p>
                 </article>
                 <article class="alloc-card" data-sleeve="restructuring">
                   <p class="alloc-name">Asset Restructuring</p>
                   <p class="alloc-value" data-alloc-value>46%</p>
-                  <div class="alloc-bar" aria-hidden="true"><span style="width:46%"></span></div>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width: 46%;"></span></div>
                   <p class="alloc-range" data-alloc-range>Range 46–61%</p>
                 </article>
                 <article class="alloc-card" data-sleeve="resolutions">
                   <p class="alloc-name">Debt Resolutions</p>
                   <p class="alloc-value" data-alloc-value>14%</p>
-                  <div class="alloc-bar" aria-hidden="true"><span style="width:14%"></span></div>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width: 14%;"></span></div>
                   <p class="alloc-range" data-alloc-range>Range 14–15%</p>
                 </article>
               </div>
@@ -2742,7 +2689,7 @@
             if (!card) return;
             const valueNode = card.querySelector("[data-alloc-value]");
             const rangeNode = card.querySelector("[data-alloc-range]");
-            const barNode = card.querySelector(".alloc-bar > span");
+            const barNode = card.querySelector(".alloc-bar> span");
             if (valueNode) valueNode.textContent = `${sleeve.value}%`;
             if (rangeNode) rangeNode.textContent = sleeve.range;
             if (barNode) barNode.style.width = `${sleeve.value}%`;
@@ -2776,7 +2723,7 @@
         document.head.appendChild(style);
 
         const targets = document.querySelectorAll(
-          "section, .wrap > div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
+          "section, .wrap> div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
         );
         targets.forEach((el, i) => {
           if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
@@ -2810,7 +2757,6 @@
       })();
     </script>
 <footer class="sv-footer" data-shared-footer></footer>
-
 
 <script src="assets/js/site-motion.js" defer></script>
 <script src="assets/js/shared-footer.js" defer></script>

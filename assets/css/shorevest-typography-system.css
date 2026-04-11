@@ -278,3 +278,86 @@ footer.sv-footer .sv-footer__legal {
   line-height: 1.55 !important;
   opacity: 0.82;
 }
+
+/* Shared vertical rhythm: headings, body copy, and metadata spacing. */
+html body h1,
+html body .h1,
+html body .hero__hed,
+html body .pagehero h1 {
+  margin-bottom: 0.42em !important;
+}
+
+html body h2,
+html body .h2,
+html body .section-head > h2,
+html body .strategy-block > h2 {
+  margin-bottom: 0.5em !important;
+}
+
+html body h3,
+html body .h3,
+html body .eyebrow,
+html body .hero__kicker {
+  margin-bottom: 0.65em !important;
+}
+
+html body p + p,
+html body li + li,
+html body .meta + p,
+html body .issue-meta + p,
+html body .hero-meta + p {
+  margin-top: 0.75em !important;
+}
+
+html body .meta,
+html body .hero-meta,
+html body .issue-meta,
+html body .data-note {
+  margin-bottom: 0.7em !important;
+}
+
+/* Normalize nav/button/footer casing and tracking across all templates. */
+#nav .nav__links a,
+#nav .nav__zh,
+#nav .lang-toggle,
+#nav .nav__lp,
+#nav .nav__menu-btn,
+html body button,
+html body .btn,
+html body input[type="button"],
+html body input[type="submit"],
+html body input[type="reset"],
+footer.sv-footer .sv-footer__contact a,
+footer.sv-footer .sv-footer__legal-links a {
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* Chinese templates: preserve Chinese serif stack except explicitly English labels. */
+html[lang^='zh'] body,
+html[lang^='zh'] body *:not(:lang(en)):not(.nav__logo-en) {
+  font-family: var(--sv-type-cn) !important;
+}
+
+html[lang^='zh'] :lang(en),
+html[lang^='zh'] .nav__logo-en,
+html[lang^='zh'] .nav__links a,
+html[lang^='zh'] .nav__lp,
+html[lang^='zh'] .nav__menu-btn,
+html[lang^='zh'] .cta,
+html[lang^='zh'] .cdd-cta {
+  font-family: var(--sv-type-sans) !important;
+}
+
+/* Logo lockup stability across breakpoints and content variants. */
+#nav .nav__logo-lockup,
+#nav .bilingual-lockup {
+  min-height: 24px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+#nav .nav__logo-lockup::before,
+#nav .bilingual-lockup::before {
+  flex: 0 0 1px;
+}
