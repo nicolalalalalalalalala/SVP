@@ -751,8 +751,8 @@
 }
 
 /* ==========================================================================
-   2026-04 mobile navigation stabilization
-   Single polished panel pattern (shared across all pages)
+   2026-04 mobile navigation reset
+   Simple premium overlay pattern (shared across all pages)
    ========================================================================== */
 @media (max-width: 980px) {
   #site-header-mount #nav {
@@ -760,17 +760,33 @@
   }
 
   #site-header-mount #nav .nav__right {
-    gap: 8px !important;
+    gap: 10px !important;
   }
 
   #site-header-mount #nav .nav__menu-btn {
-    min-width: 92px !important;
-    height: 40px !important;
-    min-height: 40px !important;
-    padding: 0 12px !important;
+    min-width: 88px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 10px !important;
+    gap: 8px !important;
+    border: 1px solid rgba(31, 24, 18, .18) !important;
+    background: transparent !important;
     font-size: 10px !important;
-    font-weight: 600 !important;
-    letter-spacing: .1em !important;
+    font-weight: 500 !important;
+    letter-spacing: .12em !important;
+    color: #171410 !important;
+  }
+
+  #site-header-mount #nav .nav__menu-btn-icon,
+  #site-header-mount #nav .nav__menu-btn-icon::before,
+  #site-header-mount #nav .nav__menu-btn-icon::after {
+    border-top-width: 1.4px !important;
+  }
+
+  #site-header-mount #nav.menu-open .nav__menu-btn {
+    background: transparent !important;
+    color: #171410 !important;
+    border-color: rgba(31, 24, 18, .18) !important;
   }
 
   #site-header-mount #nav .nav__menu-btn-label {
@@ -783,11 +799,11 @@
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
     margin: 0 !important;
-    padding: 20px var(--site-page-margin, clamp(16px, 5vw, 22px)) 24px !important;
+    padding: 28px var(--site-page-margin, clamp(18px, 5vw, 24px)) 36px !important;
     display: none !important;
     flex-direction: column !important;
     align-items: stretch !important;
@@ -795,8 +811,8 @@
     gap: 0 !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    border-top: 1px solid rgba(31, 24, 18, .12) !important;
-    background: #faf6ee !important;
+    border-top: 1px solid rgba(31, 24, 18, .11) !important;
+    background: rgba(250, 246, 238, .99) !important;
     backdrop-filter: none !important;
     -webkit-overflow-scrolling: touch;
     z-index: 230 !important;
@@ -811,22 +827,22 @@
     max-width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
-    border-bottom: 1px solid rgba(31, 24, 18, .08) !important;
+    border-bottom: 1px solid rgba(31, 24, 18, .07) !important;
   }
 
   #site-header-mount #nav .nav__links a {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 14px 0 !important;
+    padding: 16px 0 !important;
     margin: 0 !important;
-    font-size: clamp(14px, 4vw, 16px) !important;
-    line-height: 1.35 !important;
-    letter-spacing: .08em !important;
+    font-size: clamp(14px, 3.9vw, 16px) !important;
+    line-height: 1.4 !important;
+    letter-spacing: .11em !important;
     white-space: normal !important;
     word-break: normal !important;
-    overflow-wrap: break-word !important;
-    opacity: .88 !important;
+    overflow-wrap: anywhere !important;
+    opacity: .9 !important;
     text-align: left !important;
   }
 
