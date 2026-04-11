@@ -560,7 +560,6 @@ body.homepage .sv-footer {
 }
 
 body.homepage #about,
-body.homepage #stats,
 body.homepage #strategy {
   border-top: 1px solid var(--paper-dark) !important;
 }
