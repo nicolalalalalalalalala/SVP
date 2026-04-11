@@ -6,13 +6,6 @@
     <title>ShoreVest | Investor Access</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/edited-photo-3.svg?v=6" />
     <link rel="shortcut icon" href="assets/images/edited-photo-3.svg?v=6" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
     <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
 <style>
@@ -24,8 +17,8 @@
         --off: #f7f4ef;
         --rule: rgba(31, 24, 18, 0.11);
         --mist: #6e675f;
-        --serif: "EB Garamond", Georgia, serif;
-        --sans: "Inter", system-ui, sans-serif;
+        --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+        --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
         --max: 1200px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
         --pad: var(--site-page-margin);
@@ -176,10 +169,9 @@
       }
       .investor-gate__actions .btn {
         flex: 1 1 0;
-        text-transform: none;
         font-size: 11px;
         line-height: 1.5;
-        letter-spacing: 0.01em;
+        letter-spacing: 0.14em;
         padding: 14px 16px;
         min-height: 78px;
         text-align: left;
@@ -378,128 +370,9 @@
 </style>
 
 <link rel="stylesheet" href="assets/css/site-motion.css">
-<style id="investor-brand-system-enforcement">
-  :root {
-    --xuan-light: #FAF6EE;
-    --xuan: #F2ECD8;
-    --xuan-dark: #D8CEB0;
-    --ink-dark: #0F2206;
-    --ink: #2E4A18;
-    --qing: #3D7070;
-    --qing-light: #7AAFAF;
-    --qing-dark: #1E4040;
-    --cinnabar: #3D7070;
-    --cinnabar-light: #7AAFAF;
-    --cinnabar-dark: #1E4040;
-    --white: var(--xuan-light);
-    --off: var(--xuan);
-    --rule: var(--xuan-dark);
-    --ink: var(--ink-dark);
-    --ink2: var(--ink);
-    --red: var(--cinnabar);
-    --mist: var(--qing-dark);
-    --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-    --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  }
 
-  body,
-  main,
-  .investor-shell,
-  .investor-gate,
-  .card,
-  .resource-card {
-    background: var(--xuan-light) !important;
-    color: var(--ink-dark) !important;
-    font-family: var(--sans) !important;
-  }
-
-  .investor-gate--step-2,
-  .investor-gate__attest,
-  .resource-card,
-  .contact-block {
-    background: var(--xuan) !important;
-  }
-
-  .investor-gate,
-  .investor-gate__attest,
-  .card,
-  .resource-card,
-  .contact-block {
-    border-color: var(--xuan-dark) !important;
-  }
-
-  h1 {
-    font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-    font-size: clamp(32px, 4.2vw, 50px) !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-    color: var(--ink-dark) !important;
-    font-style: normal !important;
-  }
-
-  .investor-stage-label,
-  .contact-block__label {
-    font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-    font-size: 7.5pt !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.16em !important;
-    text-transform: uppercase !important;
-    color: var(--cinnabar) !important;
-  }
-
-  p,
-  li,
-  .investor-gate__prompt,
-  .investor-gate__attest label,
-  .resource-card p {
-    font-size: 10pt !important;
-    line-height: 1.65 !important;
-    color: var(--ink-dark) !important;
-  }
-
-  .helper {
-    font-size: 8pt !important;
-    color: var(--qing-dark) !important;
-  }
-
-  a,
-  .resource-card__link,
-  .contact-block a {
-    color: var(--qing) !important;
-  }
-
-  .btn {
-    border-color: var(--qing) !important;
-    color: var(--qing) !important;
-    background: var(--xuan-light) !important;
-    box-shadow: none !important;
-    font-weight: 700 !important;
-  }
-
-  .btn--dark {
-    background: var(--qing) !important;
-    border-color: var(--qing) !important;
-    color: var(--xuan-light) !important;
-  }
-
-  .btn:hover,
-  .btn:focus-visible,
-  .btn--dark:hover,
-  .btn--dark:focus-visible {
-    background: var(--qing-dark) !important;
-    border-color: var(--qing-dark) !important;
-    color: var(--xuan-light) !important;
-  }
-
-  .btn:disabled {
-    background: color-mix(in srgb, var(--qing) 55%, var(--xuan-dark)) !important;
-    border-color: color-mix(in srgb, var(--qing) 55%, var(--xuan-dark)) !important;
-    color: var(--xuan-light) !important;
-  }
-
-</style>
-
+<link rel="stylesheet" href="assets/css/topbar-consistent.css"><link rel="stylesheet" href="assets/css/typography-consistent.css">
+  <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
     <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
     <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />

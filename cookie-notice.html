@@ -12,16 +12,7 @@
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
     <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
 <style>
-    :root{--red:var(--sv-color-accent,#3d7070);--ink:var(--sv-color-ink,#0c0c0a);--ink-soft:var(--sv-color-soft-ink,#3f3b36);--paper:var(--sv-color-bg,#fff);--off:var(--sv-color-bg-soft,#f6f4f0);--rule:var(--sv-color-rule,rgba(0,0,0,.08));--serif:var(--sv-font-serif-en,'EB Garamond',Georgia,serif);--sans:var(--sv-font-sans-en,'Inter',system-ui,sans-serif)}
     *{box-sizing:border-box}
-    body{font-family:var(--sans);max-width:980px;margin:0 auto;padding:120px var(--pad) 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--off)}
-    h1,h2,h3{color:var(--ink)}
-    h1{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:38px;line-height:1.08;margin-bottom:8px}
-    h2{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:24px;line-height:1.16;margin:30px 0 10px}
-    h3{font-family:var(--sans);font-weight:500;font-size:14px;line-height:1.4;margin-top:18px;color:#221f1b}
-    p,li{font-size:12px}
-    ul{padding-left:20px}
-    a{color:var(--red)}
     .muted{color:#5b554f}
 
         .sv-footer--full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
@@ -129,6 +120,9 @@
       width: 100%;
       max-width: none;
       margin: 0;
+      --site-page-margin: clamp(22px, 4.8vw, 64px);
+      --ink-soft: #3f3b36;
+      --off: #f6f4f0;
       padding: 120px var(--pad) 40px;
       font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
       font-size: 10pt;
@@ -139,6 +133,7 @@
     }
     @media (max-width: 980px) {
       body.legal-page {
+        --site-page-margin: clamp(16px, 5vw, 22px);
         padding: 110px var(--pad) 34px;
       }
     }
@@ -195,9 +190,6 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .contact-us-spacing {
-      margin: 0 0 72px;
-    }
     .sv-footer {
       background: var(--off);
     }
@@ -210,7 +202,6 @@
   </style>
 <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
-    <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 <link rel="stylesheet" href="assets/css/shared-footer.css">
 </head>
 <body class="legal-page homepage">
@@ -403,7 +394,7 @@
     For questions regarding this Cookie Notice or ShoreVest’s use of cookies, please contact
     <a href="mailto:privacy@shorevest.com">privacy@shorevest.com</a>.
   </p>
-  <p class="contact-us-spacing"><a href="index.html">Back to homepage</a></p>
+  <p><a href="index.html">Back to homepage</a></p>
     </div>
   </main>
 
