@@ -235,12 +235,13 @@
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 22px;
+        align-items: start;
       }
       .card {
         display: flex;
         flex-direction: column;
         gap: 0;
-        height: 100%;
+        align-self: start;
         border: 1px solid color-mix(in srgb, var(--rule) 72%, white);
         background: var(--white);
         transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -305,9 +306,6 @@
         color: var(--ink);
         margin-bottom: 0;
         padding: 14px 16px 6px;
-        min-height: 40px;
-        display: flex;
-        align-items: flex-end;
         background: var(--white);
       }
       .title {
@@ -318,9 +316,6 @@
         color: var(--qing-dark);
         line-height: 1.5;
         padding: 0 16px 14px;
-        min-height: 50px;
-        display: flex;
-        align-items: flex-start;
         background: var(--white);
       }
       .card-descriptor {
