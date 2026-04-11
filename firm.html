@@ -248,8 +248,11 @@
       .metric-card {
         border: 1px solid var(--rule);
         background: var(--xuan-light);
-        padding: 20px;
-        min-height: 178px;
+        padding: clamp(20px, 2vw, 26px);
+        min-height: clamp(184px, 20vw, 216px);
+        display: grid;
+        grid-template-rows: auto auto 1px auto;
+        align-content: start;
       }
       .metric-label {
         font-size: 11px;
@@ -259,19 +262,20 @@
         font-weight: 500;
       }
       .metric-value {
-        margin-top: 24px;
-        font-size: clamp(25px, 2.6vw, 38px);
-        line-height: 1.05;
+        margin-top: clamp(16px, 1.8vw, 22px);
+        font-size: clamp(30px, 2.25vw, 34px);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
         color: var(--ink-green-dark);
         font-weight: 400;
+        white-space: nowrap;
       }
       .metric-rule {
-        margin-top: 12px;
-        height: 1px;
+        margin-top: clamp(14px, 1.4vw, 18px);
         background: var(--rule);
       }
       .metric-copy {
-        margin-top: 12px;
+        margin-top: clamp(12px, 1.2vw, 16px);
         font-size: 15px;
         line-height: 1.7;
       }
