@@ -4,27 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShoreVest | Legal Notices &amp; Disclaimers</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/edited-photo-3.svg?v=6" />
-  <link rel="shortcut icon" href="assets/images/edited-photo-3.svg?v=6" />
+  <link rel="icon" href="assets/images/edited-photo-3.svg?v=6" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
-  <link rel="stylesheet" href="assets/css/typography-consistent.css" />
-  <link rel="stylesheet" href="assets/css/topbar-consistent.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
+    <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
 <style>
     :root{--red:var(--sv-color-accent,#3d7070);--ink:var(--sv-color-ink,#0c0c0a);--ink-soft:var(--sv-color-soft-ink,#3f3b36);--paper:var(--sv-color-bg,#fff);--off:var(--sv-color-bg-soft,#f6f4f0);--rule:var(--sv-color-rule,rgba(0,0,0,.08));--serif:var(--sv-font-serif-en,'EB Garamond',Georgia,serif);--sans:var(--sv-font-sans-en,'Inter',system-ui,sans-serif)}
     *{box-sizing:border-box}
-    body{margin:0;font-family:var(--sans);color:var(--ink-soft);background:var(--off)}
-    body.legal-page{width:100%;max-width:none;margin:0;padding:120px var(--pad) 40px;font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-size:10pt;line-height:1.55;letter-spacing:normal;color:var(--ink-soft);background:var(--off)}
+    body{font-family:var(--sans);max-width:980px;margin:0 auto;padding:120px var(--pad) 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--off)}
+    h1,h2,h3{color:var(--ink)}
+    h1{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:38px;line-height:1.08;margin-bottom:8px}
+    h2{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:24px;line-height:1.16;margin:30px 0 10px}
+    h3{font-family:var(--sans);font-weight:500;font-size:14px;line-height:1.4;margin-top:18px;color:#221f1b}
+    p,li{font-size:12px}
+    ul{padding-left:20px}
     a{color:var(--red)}
-.intro{font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-size:10pt !important;line-height:1.55;color:var(--ink-soft)}
-    .intro{color:#5b554f}
-.legal-page__content section p + p{margin-top:12px}
-    .disclaimer-note{margin-top:30px;font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-size:8pt;line-height:1.6;color:var(--sv-color-muted,#888680)}
-    .legal-page__content .rule-label{font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-size:7.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sv-color-muted,#888680)}
+    .muted{color:#5b554f}
     .sv-footer{background:var(--off);border-top:1px solid var(--rule);padding:34px var(--pad,var(--site-page-margin,64px)) 40px}
     .sv-footer__inner{max-width:var(--max,1320px);margin:0 auto}
     .sv-footer__main{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
@@ -41,10 +39,95 @@
     .sv-footer__legal-links a:hover{color:var(--red)}
     @media (max-width:768px){.sv-footer{padding:26px var(--pad,var(--site-page-margin,18px)) 34px}.sv-footer__main{flex-direction:column;align-items:flex-start}.sv-footer__contact{flex-wrap:wrap}}
   </style>
+<link rel="stylesheet" href="assets/css/typography-consistent.css">
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
   <link rel="stylesheet" href="assets/css/legal-page-layout.css" />
+  <style>
+    body.legal-page {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      --site-page-margin: clamp(22px, 4.8vw, 64px);
+      padding: 120px var(--pad) 40px;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      letter-spacing: normal;
+      color: var(--ink-soft);
+      background: var(--off);
+    }
+    @media (max-width: 980px) {
+      body.legal-page {
+        --site-page-margin: clamp(16px, 5vw, 22px);
+        padding: 110px var(--pad) 34px;
+      }
+    }
+    body.legal-page p,
+    body.legal-page li {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 10pt !important;
+      font-weight: 400;
+      max-width: none;
+      line-height: 1.55;
+    }
+    body.legal-page h1 {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 32px !important;
+      font-weight: 700;
+      line-height: 1.08;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    body.legal-page h2 {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 20px !important;
+      font-weight: 700;
+      line-height: 1.16;
+      text-transform: none;
+      color: var(--ink);
+    }
+    body.legal-page h3,
+    body.legal-page .legal-label,
+    body.legal-page .sv-footer__contact-label,
+    body.legal-page .sv-footer__legal-toggle > summary {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 12px !important;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--red);
+    }
+    body.legal-page .muted,
+    body.legal-page small,
+    body.legal-page .sv-footer__copyright,
+    body.legal-page .sv-footer__legal,
+    body.legal-page .sv-footer__legal-links {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 8pt !important;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    body.legal-page .rule-label {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .sv-footer {
+      background: var(--off);
+    }
+    .sv-footer__legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      padding-bottom: 8px;
+    }
+  </style>
 
 
+    <link rel="stylesheet" href="assets/css/topbar-consistent.css" />
     <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
 <link rel="stylesheet" href="assets/css/shared-footer.css">
@@ -87,7 +170,7 @@
       <section><h2>27. Reservation of rights</h2><p>ShoreVest reserves all rights in relation to this website and its content, including the right to restrict, suspend, terminate or condition access to all or any part of the website, any download, any investor-access area or any referenced material, at any time and without notice.</p></section>
       <section><h2>28. Contact</h2><p>Questions regarding these Legal Notices &amp; Disclaimers may be directed to <a href="mailto:partners@shorevest.com">partners@shorevest.com</a>.</p></section>
 
-      <p class="disclaimer-note">&copy; ShoreVest Partners, Ltd. All rights reserved.</p>
+      <p class="muted">&copy; ShoreVest Partners, Ltd. All rights reserved.</p>
     </div>
   </main>
 
