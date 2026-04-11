@@ -88,29 +88,16 @@
     const menuBtnLabel = menuBtn.querySelector('.nav__menu-btn-label');
     const mobileMenuQuery = window.matchMedia('(max-width: 980px)');
 
-    const syncNavLinksVisibility = (open) => {
-      if (mobileMenuQuery.matches) {
-        navLinks.toggleAttribute('hidden', !open);
-        navLinks.setAttribute('aria-hidden', String(!open));
-        if (open) {
-          navLinks.style.display = 'flex';
-        } else {
-          navLinks.style.removeProperty('display');
-        }
-      } else {
-        navLinks.removeAttribute('hidden');
-        navLinks.setAttribute('aria-hidden', 'false');
-        navLinks.style.removeProperty('display');
-      }
-    };
-
     const setMenuState = (open) => {
       nav.classList.toggle('menu-open', open);
       menuBtn.setAttribute('aria-expanded', String(open));
       menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       if (menuBtnLabel) menuBtnLabel.textContent = open ? 'Close' : 'Menu';
-      document.body.classList.toggle('menu-open', open);
-      syncNavLinksVisibility(open);
+      if (mobileMenuQuery.matches) {
+        navLinks.setAttribute('aria-hidden', String(!open));
+      } else {
+        navLinks.setAttribute('aria-hidden', 'false');
+      }
     };
 
     menuBtn.addEventListener('click', () => {
@@ -132,10 +119,9 @@
       if (window.innerWidth > 980 && nav.classList.contains('menu-open')) {
         setMenuState(false);
       }
-      syncNavLinksVisibility(nav.classList.contains('menu-open'));
     });
 
-    syncNavLinksVisibility(false);
+    navLinks.setAttribute('aria-hidden', 'true');
   }
 
   const activeMap = {
