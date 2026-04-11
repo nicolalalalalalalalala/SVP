@@ -431,3 +431,156 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     margin: 0 !important;
   }
 }
+
+/* 2026 global system lock: disciplined palette + typography consistency */
+:root {
+  --sv-font-sans-en: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  --sv-font-serif-en: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  --sv-font-sans-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --sv-font-serif-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --sv-font-logo-en: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+
+  --sv-color-accent: #3D7070;
+  --sv-color-accent-soft: #7AAFAF;
+  --sv-color-accent-strong: #1E4040;
+  --sv-color-signal: #C93B2A;
+  --sv-color-signal-soft: #E8998F;
+  --sv-color-signal-strong: #8A1F12;
+  --sv-color-ink: #0F2206;
+  --sv-color-soft-ink: #2E4A18;
+  --sv-color-muted: #1E4040;
+  --sv-color-bg: #FAF6EE;
+  --sv-color-bg-soft: #F2ECD8;
+  --sv-color-rule: #D8CEB0;
+}
+
+html,
+body,
+main,
+.site,
+.page {
+  background: var(--sv-color-bg) !important;
+  color: var(--sv-color-ink) !important;
+  font-family: var(--sv-font-sans-en) !important;
+}
+
+:lang(zh),
+[lang|="zh"],
+:lang(zh) body,
+[lang|="zh"] body,
+:lang(zh) p,
+:lang(zh) li,
+:lang(zh) a,
+:lang(zh) span,
+:lang(zh) div {
+  font-family: var(--sv-font-serif-zh) !important;
+}
+
+:where(p, li, dd, dt, blockquote, .body, .copy) {
+  color: var(--sv-color-ink) !important;
+}
+
+:where(.meta, .muted, .eyebrow, .caption, .label, .kicker, time, .date) {
+  color: var(--sv-color-muted) !important;
+}
+
+section:nth-of-type(even),
+.card,
+.panel,
+.tile,
+article,
+tbody tr:nth-of-type(even) {
+  background: var(--sv-color-bg-soft);
+}
+
+hr,
+.rule,
+[class*="divider"],
+[class*="separator"],
+table th,
+table td {
+  border-color: var(--sv-color-rule) !important;
+}
+
+a,
+.nav a:hover,
+.nav a:focus-visible,
+#nav .nav__links a:hover,
+#nav .nav__zh:hover,
+#nav .nav__lp:hover {
+  color: var(--sv-color-accent) !important;
+}
+
+#nav,
+.site-header,
+header[role="banner"] {
+  background: var(--sv-color-bg) !important;
+}
+
+#nav .nav__links a,
+#nav .nav__zh,
+#nav .nav__lp,
+#nav .nav__menu-btn,
+#nav .nav__logo-en {
+  color: var(--sv-color-ink) !important;
+}
+
+#nav .nav__logo-cn {
+  color: var(--sv-color-signal) !important;
+  letter-spacing: 0.07em !important;
+}
+
+#nav .nav__links a[aria-current="page"],
+#nav .nav__links a.is-active,
+#nav .nav__links li.is-active > a {
+  text-decoration: underline;
+  text-decoration-color: var(--sv-color-signal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.45em;
+}
+
+button,
+.btn,
+.button,
+a.btn-primary,
+input[type="submit"] {
+  background: var(--sv-color-accent) !important;
+  border-color: var(--sv-color-accent) !important;
+  color: var(--sv-color-bg) !important;
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+a.btn-primary:hover,
+input[type="submit"]:hover {
+  background: var(--sv-color-accent-strong) !important;
+  border-color: var(--sv-color-accent-strong) !important;
+  color: var(--sv-color-bg) !important;
+}
+
+.btn-secondary,
+a.btn-secondary,
+.button-secondary {
+  background: var(--sv-color-bg) !important;
+  border-color: var(--sv-color-accent) !important;
+  color: var(--sv-color-accent) !important;
+}
+
+footer,
+footer.sv-footer {
+  background: var(--sv-color-ink) !important;
+  color: var(--sv-color-bg) !important;
+}
+
+footer a,
+footer .sv-footer__nav a,
+footer .sv-footer__legal-links a {
+  color: var(--sv-color-accent-soft) !important;
+}
+
+footer a:hover,
+footer .sv-footer__nav a:hover,
+footer .sv-footer__legal-links a:hover {
+  color: var(--sv-color-accent) !important;
+}
