@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
     <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
 <style>
-    :root{--red:#8f1f37;--ink:#171410;--ink-soft:#3f3b36;--paper:#fff;--off:#f7f4ef;--rule:rgba(31,24,18,.11);--serif:'EB Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+    :root{--red:var(--sv-color-accent,#b3213f);--ink:var(--sv-color-ink,#0c0c0a);--ink-soft:var(--sv-color-soft-ink,#3f3b36);--paper:var(--sv-color-bg,#fff);--off:var(--sv-color-bg-soft,#f6f4f0);--rule:var(--sv-color-rule,rgba(0,0,0,.08));--serif:var(--sv-font-serif-en,'EB Garamond',Georgia,serif);--sans:var(--sv-font-sans-en,'Inter',system-ui,sans-serif)}
     *{box-sizing:border-box}
     body{font-family:var(--sans);max-width:880px;margin:0 auto;padding:120px 24px 40px;line-height:1.55;color:var(--ink-soft);font-size:12px;background:var(--off)}
     h1,h2,h3{color:var(--ink)}
@@ -37,8 +37,8 @@
     @media (max-width:760px){.nav__menu-btn{display:inline-flex;align-items:center;justify-content:center}.nav__zh{display:none}.nav__mobile-lang{display:list-item}}
     .sv-footer--full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
 
-    .sv-footer {
-  background: #f6f4f0;
+.sv-footer {
+  background: var(--off);
   border-top: 1px solid var(--rule);
   padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
 }
@@ -57,7 +57,7 @@
 .sv-footer__brand {
   font-family: var(--serif);
   font-size: 20px !important;
-  color: #2d2924;
+  color: var(--ink);
   letter-spacing: 0.01em;
 }
 .sv-footer__contact {
@@ -70,7 +70,7 @@
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #8f887f;
+  color: var(--sv-color-muted, #888680);
 }
 .sv-footer__contact a {
   font-size: 12px;
@@ -97,12 +97,12 @@
 .sv-footer__copyright,
 .sv-footer__legal-links {
   font-size: 9px;
-  color: #6f6a63;
+  color: var(--sv-color-muted, #888680);
   line-height: 1.7;
 }
 .sv-footer__legal {
   font-size: 9px;
-  color: #6f6a63;
+  color: var(--sv-color-muted, #888680);
   line-height: 1.75;
   max-width: 980px;
 }
@@ -142,6 +142,7 @@
       font-size: 10pt;
       line-height: 1.55;
       letter-spacing: normal;
+      color: var(--ink-soft);
       background: var(--off);
     }
     @media (max-width: 980px) {
@@ -171,6 +172,7 @@
       font-weight: 700;
       line-height: 1.16;
       text-transform: none;
+      color: var(--ink);
     }
     body.legal-page h3,
     body.legal-page .legal-label,
