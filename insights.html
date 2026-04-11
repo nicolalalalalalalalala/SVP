@@ -551,6 +551,9 @@
         justify-content: space-between;
         align-items: start;
       }
+      #current-issue {
+        --issue-text-measure: min(100%, 102ch);
+      }
       .reading {
         font-family: var(--serif);
         width: 100%;
@@ -560,11 +563,13 @@
         grid-column: auto;
         min-width: 0;
       }
+      #current-issue .issue-header h2,
+      #current-issue .issue-header__dek,
       .reading> p,
       .reading> h3,
       .reading> blockquote,
       .reading> ul {
-        max-width: 86ch;
+        max-width: var(--issue-text-measure);
       }
       .reading h3 {
         font-size: 34px;
