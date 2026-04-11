@@ -2,15 +2,15 @@
   --paper-light: #FAF6EE;
   --paper: #F2ECD8;
   --paper-dark: #D8CEB0;
-  --cinnabar: #3D7070;
-  --cinnabar-light: #7AAFAF;
-  --cinnabar-dark: #1E4040;
+  --cinnabar: #C93B2A;
+  --cinnabar-light: #E8998F;
+  --cinnabar-dark: #8A1F12;
   --blue-green: #3D7070;
   --blue-green-light: #7AAFAF;
   --blue-green-dark: #1E4040;
   --ink-green-dark: #0F2206;
   --text-main: var(--ink-green-dark);
-  --text-secondary: #1E4040;
+  --text-secondary: #2E4A18;
 
   --red: var(--cinnabar);
   --white: var(--paper-light);
@@ -18,7 +18,7 @@
   --rule: var(--paper-dark);
   --ink: var(--text-main);
   --ink2: var(--text-secondary);
-  --mist: var(--text-secondary);
+  --mist: #1E4040;
   --stone: var(--paper-light);
   --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
@@ -92,8 +92,8 @@ body,
 }
 
 #cdd .cdd-hero__card {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(250, 246, 238, 0.03) !important;
+  border-color: rgba(250, 246, 238, 0.12) !important;
 }
 
 .hero__hed,
@@ -168,7 +168,7 @@ li,
   letter-spacing: var(--shorevest-lockup-tracking) !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  color: #000 !important;
+  color: var(--ink-green-dark) !important;
 }
 
 .nav__logo-lockup {
@@ -265,7 +265,7 @@ li,
 .nav__zh,
 .ulink,
 .icard__link {
-  color: var(--text-main) !important;
+  color: var(--blue-green-dark) !important;
 }
 
 .cta--dark:hover .cta__ring,
@@ -409,11 +409,11 @@ body.homepage .hero__overlay {
 }
 
 body.homepage .hero__overlay h1.hero__hed {
-  color: #1E4040 !important;
+  color: var(--text-main) !important;
 }
 
 body.homepage .hero__overlay h1.hero__hed .hero__hed-main {
-  color: #1E4040 !important;
+  color: var(--text-main) !important;
 }
 
 body.homepage .hero__overlay h1.hero__hed em {
@@ -424,13 +424,13 @@ body.homepage .hero__overlay .cta--light {
   border: none !important;
   background: transparent !important;
   padding: 0 !important;
-  color: #1E4040 !important;
+  color: var(--text-main) !important;
 }
 
 body.homepage .hero__overlay .cta--light .cta__ring {
-  color: #1E4040 !important;
-  border-color: rgba(30, 64, 64, 0.45) !important;
-  background: rgba(247, 241, 232, 0.22) !important;
+  color: var(--blue-green-dark) !important;
+  border-color: color-mix(in srgb, var(--blue-green-dark) 42%, var(--paper-dark) 58%) !important;
+  background: color-mix(in srgb, var(--paper-light) 84%, transparent) !important;
 }
 
 body.homepage .hero__overlay .cta--light:hover,
@@ -441,8 +441,8 @@ body.homepage .hero__overlay .cta--light:focus-visible {
 
 body.homepage .hero__overlay .cta--light:hover .cta__ring,
 body.homepage .hero__overlay .cta--light:focus-visible .cta__ring {
-  background: #2E4A18 !important;
-  border-color: #2E4A18 !important;
+  background: var(--blue-green-dark) !important;
+  border-color: var(--blue-green-dark) !important;
   color: var(--paper-light) !important;
 }
 
@@ -546,4 +546,71 @@ body.homepage #cdd .cdd-cta:hover,
 body.homepage #cdd .cdd-cta:focus-visible {
   border-color: rgba(126, 164, 160, 0.95) !important;
   background: rgba(22, 35, 33, 0.95) !important;
+}
+
+
+/* Strict institutional color-role enforcement (April 2026) */
+body.homepage,
+body.homepage #hero,
+body.homepage #stats,
+body.homepage #about,
+body.homepage #strategy,
+body.homepage .sv-footer {
+  background: var(--paper-light) !important;
+}
+
+body.homepage #about,
+body.homepage #stats,
+body.homepage #strategy {
+  border-top: 1px solid var(--paper-dark) !important;
+}
+
+body.homepage #about,
+body.homepage .stats,
+body.homepage #strategy .sg,
+body.homepage .ac__panel {
+  background: var(--paper) !important;
+}
+
+body.homepage p,
+body.homepage li,
+body.homepage .hero__copy,
+body.homepage .about__body p,
+body.homepage .strat__intro,
+body.homepage .sg__body,
+body.homepage .ac__body,
+body.homepage .stats__note {
+  color: var(--text-secondary) !important;
+}
+
+body.homepage .hero__hed,
+body.homepage .about__hed,
+body.homepage .strat__hed,
+body.homepage .sg__title,
+body.homepage .stat__n {
+  color: var(--text-main) !important;
+}
+
+body.homepage a,
+body.homepage .nav__links a,
+body.homepage .cta,
+body.homepage .ulink,
+body.homepage .icard__link {
+  color: var(--blue-green-dark) !important;
+}
+
+body.homepage .cta--dark .cta__ring,
+body.homepage .cta--light .cta__ring,
+body.homepage .nav__lp,
+body.homepage .nav__menu-btn {
+  border-color: color-mix(in srgb, var(--blue-green-dark) 28%, var(--paper-dark) 72%) !important;
+}
+
+body.homepage .cta--dark:hover .cta__ring,
+body.homepage .cta--light:hover .cta__ring,
+body.homepage .nav__lp:hover,
+body.homepage .nav__menu-btn:hover {
+  background: var(--blue-green) !important;
+  border-color: var(--blue-green) !important;
+  color: var(--paper-light) !important;
 }

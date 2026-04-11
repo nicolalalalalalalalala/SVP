@@ -18,14 +18,14 @@
 <style>
 
 :root {
-  --red:   #3d7070;
-  --ink:   #171410;
-  --ink2:  #1d1915;
-  --white: #ffffff;
-  --off:   #f7f4ef;
-  --rule:  rgba(31,24,18,0.11);
-  --mist:  #6e675f;
-  --stone: #f3efe8;
+  --red:   #3D7070;
+  --ink:   #0F2206;
+  --ink2:  #2E4A18;
+  --white: #FAF6EE;
+  --off:   #F2ECD8;
+  --rule:  #D8CEB0;
+  --mist:  #1E4040;
+  --stone: #F2ECD8;
   --serif: 'EB Garamond', Georgia, serif;
   --sans:  'Inter', system-ui, sans-serif;
   --max:   1200px;
@@ -80,7 +80,7 @@ h2 em { font-style:italic; }
 .cta--dark .cta__ring { border:1px solid rgba(0,0,0,.2); }
 .cta--dark:hover .cta__ring { background:var(--red); border-color:var(--red); color:var(--white); }
 .cta--light { color:var(--white); }
-.cta--light .cta__ring { border:1px solid rgba(255,255,255,.32); }
+.cta--light .cta__ring { border:1px solid rgba(250,246,238,.42); }
 .cta--light:hover .cta__ring { background:var(--red); border-color:var(--red); }
 .cta--red { color:var(--red); }
 .cta--red .cta__ring { border:1px solid rgba(61,112,112,.3); }
@@ -156,7 +156,7 @@ h2 em { font-style:italic; }
 }
 .hero__overlay .hero__kicker {
   justify-content:flex-start;
-  color:rgba(255,255,255,0.9);
+  color:rgba(250,246,238,0.9);
   letter-spacing:.18em;
   margin-bottom:24px;
 }
@@ -164,7 +164,7 @@ h2 em { font-style:italic; }
   background:var(--red);
 }
 .hero__overlay h1.hero__hed {
-  color:#f4efe8;
+  color:#FAF6EE;
   font-family:'DIN 2014', 'Inter', sans-serif;
   font-size:clamp(62px,8.2vw,116px);
   font-weight:300;
@@ -176,11 +176,11 @@ h2 em { font-style:italic; }
   text-shadow:0 1px 2px rgba(0, 0, 0, 0.14);
 }
 .hero__overlay h1.hero__hed em {
-  color:#E34234;
+  color:#C93B2A;
   font-style:inherit;
 }
 .hero__overlay .cta--light {
-  color:#fff;
+  color:#FAF6EE;
   letter-spacing:.12em;
   background:transparent;
   box-shadow:none;
@@ -188,7 +188,7 @@ h2 em { font-style:italic; }
 .hero__overlay .cta--light:hover {
   background:transparent;
   box-shadow:none;
-  color:#fff;
+  color:#FAF6EE;
 }
 
 /* ══ HERO */
@@ -424,7 +424,7 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 .ac__panel {
   aspect-ratio:4/3;
   background:linear-gradient(180deg, #223a35 0%, #1b2f2b 100%);
-  border:1px solid rgba(255,255,255,.06);
+  border:1px solid rgba(250,246,238,.06);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -441,7 +441,7 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 .ac:hover .ac__panel {
   background:linear-gradient(180deg, #27423c 0%, #203732 100%);
-  border-color:rgba(255,255,255,.12);
+  border-color:rgba(250,246,238,.12);
 }
 .ac__title { font-family:var(--serif); font-size:clamp(24px, 2.2vw, 28px); color:var(--ink); margin-bottom:12px; line-height:1.18; text-wrap:balance; min-height:2.3em; }
 .ac__body { font-size:15px; line-height:1.74; color:var(--mist); margin-bottom:18px; max-width:36ch; }
@@ -458,16 +458,16 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 .num-band { background:var(--ink); padding:var(--section-space-tight) 0; }
 .num-band__inner {
   display:grid; grid-template-columns:repeat(4,1fr);
-  border-left:1px solid rgba(255,255,255,.07);
+  border-left:1px solid rgba(250,246,238,.07);
 }
-.nb { padding:44px 44px; border-right:1px solid rgba(255,255,255,.07); }
+.nb { padding:44px 44px; border-right:1px solid rgba(250,246,238,.07); }
 .nb__n {
   font-family:var(--serif); font-size:clamp(44px,5vw,66px);
   font-weight:400; color:var(--white); line-height:1; margin-bottom:10px;
 }
 .nb__l {
   font-size:11.4px; font-weight:400; letter-spacing:.12em;
-  text-transform:uppercase; color:rgba(255,255,255,.3);
+  text-transform:uppercase; color:rgba(250,246,238,.3);
 }
 
 /* ══ HERO STATS (minimal animated layout) */
@@ -598,7 +598,7 @@ h2.strat__hed { font-size:32px; color:var(--ink); }
   transition:background .25s, box-shadow .25s;
 }
 .sg:hover {
-  background:rgba(255,255,255,0.42);
+  background:rgba(250,246,238,0.42);
   box-shadow:inset 0 0 0 1px rgba(0,0,0,0.02);
 }
 .sg:last-child { border-right:none; }
@@ -644,13 +644,13 @@ h2.strat__hed { font-size:32px; color:var(--ink); }
 }
 blockquote.qb {
   font-family:var(--serif); font-size:clamp(22px,3vw,36px);
-  font-style:italic; color:rgba(255,255,255,.75); line-height:1.5;
+  font-style:italic; color:rgba(250,246,238,.75); line-height:1.5;
   margin-bottom:24px;
 }
 .qb-mark { display:block; margin:0 auto 28px; opacity:.18; }
 .qb-attr {
   font-size:11.4px; font-weight:500; letter-spacing:.2em;
-  text-transform:uppercase; color:rgba(255,255,255,.26);
+  text-transform:uppercase; color:rgba(250,246,238,.26);
 }
 
 /* ══ FOUNDER SPLIT — editorial, Blackstone "Private Wealth" style */
@@ -955,7 +955,7 @@ blockquote.fs__q {
 }
 
 .cdd-cta:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--cdd-soft) 70%, #fff 30%);
+  outline: 2px solid color-mix(in srgb, var(--cdd-soft) 70%, var(--white) 30%);
   outline-offset: 2px;
 }
 
@@ -1106,7 +1106,7 @@ h2.ins__hed { font-size:clamp(34px,4.5vw,58px); color:var(--ink); }
 .icard:hover .icard__thumb img { transform:scale(1.05); filter:grayscale(0); }
 .icard__glyph {
   font-family:var(--serif); font-size:88px;
-  color:rgba(255,255,255,.055); user-select:none;
+  color:rgba(250,246,238,.055); user-select:none;
 }
 .icard__cat {
   font-size:9.5px; font-weight:500; letter-spacing:.18em;
@@ -1162,7 +1162,7 @@ h2.city-band__title {
 }
 .city-band__right { display:flex; flex-direction:column; align-items:flex-end; gap:22px; }
 .city-band__sub {
-  font-size:16px; line-height:1.78; color:rgba(255,255,255,.42);
+  font-size:16px; line-height:1.78; color:rgba(250,246,238,.42);
   max-width:380px; text-align:right; font-family:var(--serif); font-style:italic;
 }
 
@@ -1172,17 +1172,17 @@ h2.city-band__title {
 h2.su__hed {
   font-size:clamp(34px,4vw,56px); color:var(--white); line-height:1.08; margin-top:22px;
 }
-.su__sub { font-size:16px; line-height:1.78; color:rgba(255,255,255,.28); margin-top:16px; font-family:var(--serif); font-style:italic; }
+.su__sub { font-size:16px; line-height:1.78; color:rgba(250,246,238,.28); margin-top:16px; font-family:var(--serif); font-style:italic; }
 .su__form { display:flex; flex-direction:column; }
-.su__field { border-bottom:1px solid rgba(255,255,255,.09); padding:14px 0; }
+.su__field { border-bottom:1px solid rgba(250,246,238,.09); padding:14px 0; }
 .su__field input {
   width:100%; background:none; border:none; outline:none;
   font-family:var(--sans); font-size:14px; font-weight:300;
   color:var(--white); padding:4px 0;
 }
-.su__field input::placeholder { color:rgba(255,255,255,.2); }
+.su__field input::placeholder { color:rgba(250,246,238,.2); }
 .su__field input:focus { box-shadow:none; }
-.su__small { font-size:11px; color:rgba(255,255,255,.13); line-height:1.65; margin-top:22px; }
+.su__small { font-size:11px; color:rgba(250,246,238,.13); line-height:1.65; margin-top:22px; }
 .su__status { margin-top:18px; font-size:13px; line-height:1.7; }
 .su__status[data-state='success'] { color:#d9c6ab; }
 .su__status[data-state='error'] { color:#f08d82; }
@@ -1197,17 +1197,17 @@ h2.su__hed {
 .su__submit span { font-size:15px; font-weight:400; }
 .su__submit-ring {
   width:48px; height:48px; border-radius:50%;
-  border:1px solid rgba(255,255,255,.25);
+  border:1px solid rgba(250,246,238,.25);
   display:flex; align-items:center; justify-content:center;
   font-size:18px; transition:background .2s, border-color .2s;
 }
 .su__submit:hover .su__submit-ring,
 .su__submit:focus-visible .su__submit-ring { background:var(--red); border-color:var(--red); }
 
-/* ══ FOOTER — Blackstone style: tagline left, nav columns right */.foot__copy { font-size:11.5px; color:rgba(255,255,255,.18); }
+/* ══ FOOTER — Blackstone style: tagline left, nav columns right */.foot__copy { font-size:11.5px; color:rgba(250,246,238,.18); }
 .foot__address {
   font-size:11.4px;
-  color:rgba(255,255,255,.26);
+  color:rgba(250,246,238,.26);
   letter-spacing:.06em;
   text-transform:uppercase;
   text-align:center;
@@ -1216,9 +1216,9 @@ h2.su__hed {
   display:flex; gap:24px; flex-wrap:wrap; justify-content:flex-end;
 }
 .foot__legal a {
-  font-size:11.4px; color:rgba(255,255,255,.18); transition:color .2s;
+  font-size:11.4px; color:rgba(250,246,238,.18); transition:color .2s;
 }
-.foot__legal a:hover { color:rgba(255,255,255,.55); }
+.foot__legal a:hover { color:rgba(250,246,238,.55); }
 
 .cdd-subscribe {
   padding:var(--section-space-tight) var(--pad) calc(var(--section-space-tight) + 12px);
@@ -1372,7 +1372,7 @@ h2.su__hed {
   }
   .hero__overlay .hero__kicker {
     margin-bottom:24px;
-    color:rgba(255,255,255,.82);
+    color:rgba(250,246,238,.82);
     font-size:10px;
     letter-spacing:.16em;
   }

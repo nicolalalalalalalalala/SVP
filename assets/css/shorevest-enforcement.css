@@ -5,13 +5,13 @@
   --sv-font-serif-zh: "EB Garamond", "Times New Roman", "Noto Serif SC", "Songti SC", "STSong", serif;
   --sv-font-logo-en: "Cormorant Garamond", "EB Garamond", serif;
 
-  --sv-color-accent: #3d7070;
-  --sv-color-ink: #0c0c0a;
-  --sv-color-soft-ink: #3f3b36;
-  --sv-color-muted: #888680;
-  --sv-color-bg: #ffffff;
-  --sv-color-bg-soft: #f6f4f0;
-  --sv-color-rule: rgba(0, 0, 0, 0.08);
+  --sv-color-accent: #3D7070;
+  --sv-color-ink: #0F2206;
+  --sv-color-soft-ink: #2E4A18;
+  --sv-color-muted: #1E4040;
+  --sv-color-bg: #FAF6EE;
+  --sv-color-bg-soft: #F2ECD8;
+  --sv-color-rule: #D8CEB0;
 
   --sv-fs-root: 15px;
   --sv-fs-nav: 0.72rem;
@@ -52,7 +52,7 @@ body {
   font-size: var(--sv-fs-body);
   font-weight: var(--sv-weight-regular);
   line-height: var(--sv-lh-body);
-  color: var(--sv-color-soft-ink);
+  color: var(--sv-color-ink);
   background: var(--sv-color-bg);
   text-rendering: optimizeLegibility;
 }
