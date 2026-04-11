@@ -78,6 +78,7 @@
 .nav__logo-cn {
   font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
   margin-top: 0;
+  transform: translateY(-1px);
   font-size: 10px;
   letter-spacing: .28em;
   color: rgba(33, 33, 30, .66);
