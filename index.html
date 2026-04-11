@@ -428,20 +428,41 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   display:flex;
   align-items:center;
   justify-content:center;
+  position: relative;
+  overflow: hidden;
   margin-bottom:24px;
   transition:background .25s ease, border-color .25s ease;
+}
+.ac__panel::before {
+  content:"";
+  position:absolute;
+  inset:-45%;
+  background:
+    radial-gradient(circle at 35% 32%, rgba(250,246,238,.16), rgba(250,246,238,0) 42%),
+    radial-gradient(circle at 72% 68%, rgba(197,60,57,.18), rgba(197,60,57,0) 48%);
+  opacity:.34;
+  transform:translate3d(0, 0, 0) scale(1);
+  pointer-events:none;
 }
 .ac__icon {
   width:120px;
   height:120px;
   color:rgba(238, 233, 222, .9);
+  position: relative;
+  z-index: 1;
 }
 .ac__icon * {
   vector-effect:non-scaling-stroke;
 }
+.ac.in .ac__panel::before {
+  animation: sv-panel-glow 7.2s ease-in-out infinite alternate;
+}
 .ac:hover .ac__panel {
   background:linear-gradient(180deg, #27423c 0%, #203732 100%);
   border-color:rgba(250,246,238,.12);
+}
+.ac:hover .ac__panel::before {
+  opacity:.52;
 }
 .ac__title { font-family:var(--serif); font-size:clamp(24px, 2.2vw, 28px); color:var(--ink); margin-bottom:12px; line-height:1.18; text-wrap:balance; min-height:2.3em; }
 .ac__body { font-size:15px; line-height:1.74; color:var(--mist); margin-bottom:18px; max-width:36ch; }
@@ -1721,6 +1742,15 @@ h2.su__hed {
       /* Homepage nav lockup parity */
 
 /* ─── SVG ICON ANIMATIONS ─────────────────────────────── */
+@keyframes sv-panel-glow {
+  0%   { transform:translate3d(-3%, -2%, 0) scale(1); opacity:.28; }
+  50%  { transform:translate3d(3%, 2%, 0) scale(1.08); opacity:.46; }
+  100% { transform:translate3d(-2%, 3%, 0) scale(1.02); opacity:.34; }
+}
+@keyframes sv-icon-float {
+  0%, 100% { transform:translateY(0); }
+  50%      { transform:translateY(-3px); }
+}
 
 /* Card 1 – Proprietary Sourcing: circles draw in, then pulse */
 #ac-sourcing .ac__icon circle {
@@ -1748,6 +1778,9 @@ h2.su__hed {
   animation:
     sv-circle-draw 0.7s cubic-bezier(.22,1,.36,1) 0.55s both,
     sv-node-pulse  3.4s ease-in-out 2.15s infinite;
+}
+#ac-sourcing.in .ac__icon {
+  animation: sv-icon-float 4s ease-in-out 1s infinite;
 }
 #ac-sourcing.in .ac__icon path {
   opacity: 1;
@@ -1778,6 +1811,9 @@ h2.su__hed {
 #ac-underwriting.in .ac__icon .sv-ln {
   animation: sv-draw-ln  0.4s  cubic-bezier(.22,1,.36,1) 1.05s both;
 }
+#ac-underwriting.in .ac__icon {
+  animation: sv-icon-float 4.2s ease-in-out 1.25s infinite;
+}
 @keyframes sv-draw-chk {
   from { stroke-dashoffset: 70; }
   to   { stroke-dashoffset: 0; }
@@ -1802,6 +1838,9 @@ h2.su__hed {
 #ac-alignment.in .ac__icon .sv-hex-inner {
   animation: sv-draw-inner 0.8s cubic-bezier(.22,1,.36,1) 1.25s both;
 }
+#ac-alignment.in .ac__icon {
+  animation: sv-icon-float 4.5s ease-in-out 1.35s infinite;
+}
 @keyframes sv-draw-hex {
   from { stroke-dashoffset: 220; }
   to   { stroke-dashoffset: 0; }
@@ -1820,6 +1859,12 @@ h2.su__hed {
   #ac-alignment .ac__icon .sv-hex-inner {
     stroke-dasharray: unset !important;
     stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+  .ac.in .ac__panel::before,
+  #ac-sourcing.in .ac__icon,
+  #ac-underwriting.in .ac__icon,
+  #ac-alignment.in .ac__icon {
     animation: none !important;
   }
   #ac-sourcing .ac__icon path {
