@@ -120,15 +120,15 @@ h2 em { font-style:italic; }
   position:relative;
   width:100%;
   height:600px;
-  --hero-image-position:center 48%;
+  --hero-image-position:68% 48%;
   /* Keep the hero as a single composited background to avoid delayed paint on mobile. */
   background-color:#6c6864;
   background-image:
     linear-gradient(
       to bottom,
-      rgba(10,5,2,0.14) 0%,
-      rgba(10,5,2,0.34) 46%,
-      rgba(10,5,2,0.58) 100%
+      rgba(18,48,86,0.2) 0%,
+      rgba(14,38,74,0.38) 46%,
+      rgba(9,24,52,0.62) 100%
     );
   background-size:cover;
   background-position:var(--hero-image-position);
@@ -143,7 +143,7 @@ h2 em { font-style:italic; }
   height:100%;
   object-fit:cover;
   object-position:var(--hero-image-position);
-  filter:saturate(1.03) contrast(1.01) brightness(0.94);
+  filter:saturate(1.2) contrast(1.02) brightness(0.92);
   image-rendering:auto;
   z-index:0;
 }
@@ -805,10 +805,13 @@ blockquote.fs__q {
 .cdd-feature__title {
   font-family: var(--serif);
   font-size: clamp(38px, 5vw, 68px);
+  text-transform: none;
+  letter-spacing: .01em;
   line-height: 1;
   color: var(--cdd-text);
   margin-bottom: 28px;
   max-width: 15ch;
+  overflow-wrap: anywhere;
 }
 
 .cdd-feature__thesis {
@@ -1327,7 +1330,7 @@ h2.su__hed {
   .hero__sliver {
     height:min(90vh, 820px);
     min-height:680px;
-    --hero-image-position:76% 18%;
+    --hero-image-position:84% 18%;
   }
   .hero__overlay {
     padding:0 var(--pad) 72px;
@@ -1705,14 +1708,9 @@ h2.su__hed {
 </style>
 <style>
 .sv-footer {
-  position: relative;
-  background: #f6f4f0;
+  background: var(--white);
   border-top: 1px solid var(--rule);
-  margin-top: 0;
-  padding: 18px var(--pad, var(--site-page-margin, 64px)) 40px;
-}
-.sv-footer::before {
-  display: none !important;
+  padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
 }
 .sv-footer__inner {
   max-width: var(--max, 1320px);
@@ -1727,10 +1725,13 @@ h2.su__hed {
   border-bottom: 1px solid var(--rule);
 }
 .sv-footer__brand {
-  font-family: var(--serif);
-  font-size: 20px !important;
-  color: #2d2924;
-  letter-spacing: 0.01em;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px !important;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
 }
 .sv-footer__contact {
   display: flex;
@@ -1738,11 +1739,11 @@ h2.su__hed {
   gap: 12px;
 }
 .sv-footer__contact-label {
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 7.5pt;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #8f887f;
+m                        color: #c93b2a;
 }
 .sv-footer__contact a {
   font-size: 12px;
@@ -1750,7 +1751,7 @@ h2.su__hed {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
-  border: 1px solid rgba(0, 0, 0, 0.16);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
   padding: 10px 14px;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -1758,7 +1759,7 @@ h2.su__hed {
 .sv-footer__contact a:hover {
   background: var(--red);
   border-color: var(--red);
-  color: #fff;
+  color: #FAF6EE;
 }
 .sv-footer__bottom {
   display: grid;
@@ -1769,8 +1770,8 @@ h2.su__hed {
 .sv-footer__copyright,
 .sv-footer__legal,
 .sv-footer__legal-links {
-  font-size: 9px;
-  color: #6f6a63;
+  font-size: 8pt;
+  color: color-mix(in srgb, var(--ink2) 62%, #FAF6EE);
   line-height: 1.7;
 }
 .sv-footer__legal-links {
@@ -1783,65 +1784,16 @@ h2.su__hed {
 .sv-footer__legal-links a:hover {
   color: var(--red);
 }
-.sv-footer__legal-toggle {
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  background: rgba(255, 255, 255, 0.35);
-}
-.sv-footer__legal-toggle > summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 10px 12px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #4a443d;
-}
-.sv-footer__legal-toggle > summary::-webkit-details-marker {
-  display: none;
-}
-.sv-footer__legal-toggle > summary::after {
-  content: " +";
-}
-.sv-footer__legal-toggle[open] > summary::after {
-  content: " −";
-}
-.sv-footer__legal-toggle .sv-footer__legal {
-  margin: 0;
-  padding: 0 12px 12px;
-}
 @media (max-width: 768px) {
   .sv-footer {
-    padding: 8px var(--pad, var(--site-page-margin, 18px)) 34px;
+    padding: 26px var(--pad, var(--site-page-margin, 18px)) 34px;
   }
   .sv-footer__main {
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
   }
   .sv-footer__contact {
-    width: auto;
-    flex-direction: column;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-    gap: 6px;
-  }
-  .sv-footer__contact a {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    white-space: nowrap;
-    text-align: right;
-  }
-  .sv-footer__legal-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-  }
-  .sv-footer__legal-links a {
-    font-size: 10px;
+    flex-wrap: wrap;
   }
 }
 
