@@ -185,10 +185,12 @@
       .card {
         border: 1px solid var(--rule);
         background: var(--xuan);
-        padding: 24px;
+        padding: 20px 24px 22px;
         min-height: 192px;
         display: grid;
-        gap: 10px;
+        grid-template-rows: auto auto 1fr;
+        row-gap: 8px;
+        align-content: start;
       }
       .card-index {
         font-size: 11px;
@@ -196,9 +198,11 @@
         text-transform: uppercase;
         color: var(--cinnabar);
         font-weight: 500;
+        margin-bottom: 1px;
       }
       .card h3 {
         font-size: 30px;
+        line-height: 1.1;
       }
 
       .geography-section {
