@@ -2336,8 +2336,90 @@
     .hero-panel{background:var(--ink-dark)!important;color:var(--xuan-light)!important;border-color:color-mix(in srgb,var(--xuan-dark) 60%, transparent)}
     .hero-panel h3,.hero-panel li{color:color-mix(in srgb, var(--xuan-light) 72%, var(--qing-light) 28%)!important}
     .hero-panel li strong{color:var(--xuan-light)!important}
+    .strategy-hero{
+      padding-top:clamp(132px, 16vw, 196px)!important;
+      padding-bottom:clamp(64px, 8vw, 104px)!important;
+      min-height:auto!important;
+      background:linear-gradient(180deg, var(--xuan-light) 0%, color-mix(in srgb, var(--xuan-light) 80%, var(--xuan) 20%) 100%)!important;
+    }
+    .strategy-hero .wrap{
+      grid-template-columns:minmax(0, 1.3fr) minmax(340px, 0.7fr)!important;
+      gap:clamp(36px, 5vw, 72px)!important;
+      align-items:end!important;
+    }
+    .strategy-hero .eyebrow{
+      margin-bottom:clamp(18px, 3vw, 30px)!important;
+      font-size:12px!important;
+      letter-spacing:0.22em!important;
+      font-weight:600!important;
+    }
+    .strategy-hero h1{
+      max-width:18ch!important;
+      font-size:clamp(58px, 8.2vw, 112px)!important;
+      line-height:0.98!important;
+      letter-spacing:-0.02em!important;
+      text-transform:uppercase!important;
+      margin:0!important;
+    }
+    .strategy-hero .pagehero__lede{
+      max-width:64ch!important;
+      margin-top:clamp(20px, 3vw, 30px)!important;
+      font-size:clamp(20px, 2.1vw, 30px)!important;
+      line-height:1.42!important;
+      color:color-mix(in srgb, var(--ink-dark) 86%, var(--qing-dark) 14%)!important;
+    }
+    .strategy-hero .hero-meta{
+      max-width:70ch!important;
+      margin-top:18px!important;
+      font-size:12px!important;
+      letter-spacing:0.16em!important;
+      line-height:1.7!important;
+      text-transform:uppercase!important;
+      opacity:0.88;
+    }
+    .hero-aside{
+      border-left:1px solid var(--xuan-dark)!important;
+      padding-left:clamp(20px, 2.5vw, 34px)!important;
+      align-self:stretch!important;
+      display:flex;
+      align-items:flex-end;
+    }
+    .hero-kpis{
+      width:100%;
+      gap:0!important;
+      border-top:1px solid var(--xuan-dark)!important;
+      border-bottom:1px solid var(--xuan-dark)!important;
+      background:color-mix(in srgb, var(--xuan-light) 80%, white 20%)!important;
+    }
+    .strategy-kpi{
+      grid-template-columns:minmax(96px, 120px) 1fr!important;
+      gap:14px!important;
+      padding:14px 16px!important;
+      border-bottom:1px solid color-mix(in srgb, var(--xuan-dark) 80%, transparent)!important;
+      align-items:baseline!important;
+    }
+    .strategy-kpi:last-child{border-bottom:0!important}
+    .strategy-kpi strong{
+      font-size:11px!important;
+      letter-spacing:0.14em!important;
+      text-transform:uppercase!important;
+      color:var(--qing-dark)!important;
+    }
+    .strategy-kpi span{
+      text-align:left!important;
+      font-size:16px!important;
+      line-height:1.45!important;
+      color:var(--ink-dark)!important;
+    }
     .strategy-tools,.viz-controls,.expand,.expand__trigger,.funnel-detail,.city-detail{display:none!important}
-    @media (max-width:980px){.pagehero .wrap,.strategy-intro-content,.context-grid,.clean-flow,.city-grid,.risk-grid,.alloc-grid{grid-template-columns:1fr}.hero-aside{border-left:0;border-top:1px solid var(--xuan-dark);padding:16px 0 0}.market-context-content{padding:26px}.strategy-block{padding:24px}}
+    @media (max-width:980px){
+      .pagehero .wrap,.strategy-intro-content,.context-grid,.clean-flow,.city-grid,.risk-grid,.alloc-grid{grid-template-columns:1fr}
+      .strategy-hero h1{font-size:clamp(48px, 12vw, 78px)!important;max-width:14ch!important}
+      .strategy-hero .pagehero__lede{font-size:clamp(18px, 5.2vw, 26px)!important;max-width:56ch!important}
+      .hero-aside{border-left:0!important;border-top:1px solid var(--xuan-dark)!important;padding:20px 0 0!important}
+      .market-context-content{padding:26px}
+      .strategy-block{padding:24px}
+    }
   </style>
 
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
