@@ -75,8 +75,8 @@ html body footer.sv-footer .sv-footer__contact a:focus-visible {
 html body footer.sv-footer .sv-footer__bottom {
   display: grid !important;
   grid-template-columns: 1fr !important;
-  gap: 10px !important;
-  padding-top: 16px !important;
+  gap: 12px !important;
+  padding-top: 18px !important;
 }
 
 html body footer.sv-footer .sv-footer__copyright,
@@ -103,14 +103,13 @@ html body footer.sv-footer .sv-footer__legal-toggle > summary {
 
 html body footer.sv-footer .sv-footer__legal {
   font-family: "Inter", system-ui, sans-serif !important;
-  font-size: 12.5px !important;
+  font-size: 13px !important;
   font-weight: 400 !important;
   letter-spacing: normal !important;
-  line-height: 1.78 !important;
+  line-height: 1.82 !important;
   text-transform: none !important;
-  color: color-mix(in srgb, #1e3211 82%, #faf6ee) !important;
-  width: 100% !important;
-  max-width: none !important;
+  color: color-mix(in srgb, #1e3211 84%, #faf6ee) !important;
+  max-width: 88ch !important;
   text-wrap: pretty !important;
 }
 
@@ -126,15 +125,25 @@ html body footer.sv-footer .sv-footer__legal-links {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: center !important;
-  column-gap: 16px !important;
-  row-gap: 4px !important;
-  padding-bottom: 8px !important;
+  column-gap: 0 !important;
+  row-gap: 8px !important;
+  padding: 2px 0 8px !important;
 }
 
 html body footer.sv-footer .sv-footer__legal-links a {
   display: inline-flex !important;
+  align-items: center !important;
   color: #0f2206 !important;
   text-decoration: none !important;
+  line-height: 1.45 !important;
+}
+
+html body footer.sv-footer .sv-footer__legal-links a + a::before {
+  content: "•" !important;
+  display: inline-block !important;
+  margin: 0 12px !important;
+  color: color-mix(in srgb, #1e3211 44%, #faf6ee) !important;
+  pointer-events: none !important;
 }
 
 html body footer.sv-footer .sv-footer__legal-links a:hover,
@@ -189,16 +198,22 @@ html body footer.sv-footer .sv-footer__legal-links a:focus-visible {
   }
 
   html body footer.sv-footer .sv-footer__legal {
-    font-size: 12px !important;
-    line-height: 1.74 !important;
+    font-size: 12.5px !important;
+    line-height: 1.78 !important;
     max-width: none !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-links {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    row-gap: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
     padding-bottom: 0 !important;
+  }
+
+  html body footer.sv-footer .sv-footer__legal-links a + a::before {
+    content: none !important;
+    margin: 0 !important;
   }
 }
 
