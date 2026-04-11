@@ -336,16 +336,15 @@
       .team-profile__bio-toggle {
         margin-top: 10px;
         width: fit-content;
-        background: none;
-        border: 0;
-        border-bottom: 1px solid color-mix(in srgb, var(--ink-soft) 35%, transparent);
-        padding: 0 0 3px;
+        background: transparent;
+        border: 1px solid color-mix(in srgb, var(--ink-soft) 35%, transparent);
+        padding: 7px 10px;
         font-size: 11px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: color-mix(in srgb, var(--ink-soft) 92%, black 8%);
         cursor: pointer;
-        transition: color 0.2s ease, border-color 0.2s ease;
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
       }
       .team-profile__bio-toggle::after {
         content: " ↗";
@@ -359,7 +358,8 @@
       }
       .team-profile__bio-toggle:hover {
         color: var(--ink);
-        border-bottom-color: color-mix(in srgb, var(--ink-soft) 55%, transparent);
+        border-color: color-mix(in srgb, var(--ink-soft) 55%, transparent);
+        background-color: color-mix(in srgb, var(--sand) 55%, white 45%);
       }
       .team-profile__bio-toggle:focus-visible {
         outline: 1px solid color-mix(in srgb, var(--qing) 78%, white 22%);
@@ -367,9 +367,9 @@
       }
       .team-profile__bio {
         margin-top: 12px;
-        padding: 12px 0 0 12px;
+        padding: 12px 0 0;
+        width: 100%;
         border-top: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
-        border-left: 1px solid color-mix(in srgb, var(--ink-soft) 16%, transparent);
       }
       .team-profile__bio[hidden] {
         display: none;
@@ -379,7 +379,8 @@
         font-size: 14px;
         line-height: 1.72;
         color: color-mix(in srgb, var(--ink-soft) 93%, black 7%);
-        max-width: 60ch;
+        max-width: none;
+        width: 100%;
         text-wrap: pretty;
       }
       .group--leadership {
@@ -735,7 +736,13 @@
 
               <div class="team-profile__bio" id="bio-benjamin-fanger" hidden>
 
-                <p>Benjamin Fanger is ShoreVest’s Managing Partner and Founder. He leads the firm’s investment strategy, portfolio construction, and governance across the China private credit platform, with direct oversight of risk concentration, underwriting discipline, and realization outcomes at the portfolio level. Since the firm’s inception, he has directed the build-out of ShoreVest’s legal-first investment framework, aligning origination, documentation, and enforcement planning before capital is deployed. He works closely with investment, legal, and asset execution teams to convert complex dislocations into recoverable structures designed for capital preservation and long-term compounded returns.</p>
+                <p>Ben Fanger has spent more than two decades building what is now the most experienced institutional private credit platform in China. He founded ShoreVest Partners in 2016, bringing with him the core senior team from Shoreline Capital — the firm he co-founded in 2004 and which he grew into one of the first institutionally scaled private credit managers in the Chinese market. Across both platforms, he has overseen the deployment of more than US$2 billion in Chinese private credit on behalf of sovereign wealth funds, pension funds, insurance companies, endowments, and family offices worldwide.</p>
+
+                <p>Fanger's engagement with Chinese distressed debt predates the market itself. While at the law firm O'Melveny & Myers, he worked on Morgan Stanley's 2001 acquisition of a large non-performing loan portfolio in China — the first successful large-scale foreign NPL purchase in the country's history. He subsequently earned his JD and MBA from the University of Chicago, closing his first Chinese NPL deals while still a student. Before turning to investment management full-time, he co-founded and sold two companies to public companies.</p>
+
+                <p>Over more than twenty years, Fanger has worked directly with Chinese banks, borrowers, courts, regulators, and government officials across thousands of distressed asset transactions. He has been fluent in spoken and written Mandarin for nearly thirty years. He is a licensed attorney in the State of California and sits on ShoreVest's Investment Committee.</p>
+
+
 
               </div>
 
@@ -766,7 +773,13 @@
 
               <div class="team-profile__bio" id="bio-mecy-mei" hidden>
 
-                <p>Mecy Mei is a Partner responsible for sourcing, underwriting, transaction structuring, and execution across onshore private credit opportunities. She leads deal work from initial screening through closing, coordinating diligence, legal architecture, and commercial negotiation to ensure each transaction is executable under local legal and operating realities. Her work extends through post-investment monitoring and active risk management, with a consistent focus on enforceability, downside protection, and disciplined risk-adjusted deployment across market cycles.</p>
+                <p>Mecy Mei is a founding partner of ShoreVest and one of the most experienced practitioners in Chinese private credit investing. She served as a partner at Shoreline Capital for eight years before co-founding ShoreVest in 2016, giving her a continuous track record in this market stretching back to the period when institutional private credit in China was still being defined.</p>
+
+                <p>At ShoreVest, Mei co-leads ShoreVest Asset Solutions — the firm's proprietary debt servicing platform and a foundational competitive advantage in Chinese NPL investing. Her investment experience runs the full spectrum: sourcing, due diligence, deal structuring, acquisition and negotiation, post-investment monitoring, and exit. She has overseen the successful completion of numerous transactions across every phase of China's credit cycle. Earlier in her career she worked at Morningstar as a fund analyst, building debt and equity portfolios for institutional clients in China.</p>
+
+                <p>She was awarded the CFA designation in 2018. She holds a master's degree in economics from Nanjing University and a bachelor's degree in economics from Hefei University of Technology, and sits on ShoreVest's Investment Committee.</p>
+
+
 
               </div>
 
@@ -797,7 +810,13 @@
 
               <div class="team-profile__bio" id="bio-hui-zheng" hidden>
 
-                <p>Hui Zheng is a Partner focused on complex credit and restructuring situations. She leads structuring, negotiation, and execution for stressed and special-situations transactions where capital solutions require tight coordination among creditors, sponsors, and counterparties. She works closely with legal and asset teams to design practical workout pathways, navigate stakeholder complexity, and drive implementation through restructuring and realization. Her mandate is to protect creditor position while preserving optionality and maximizing recoveries in high-friction situations.</p>
+                <p>Hui Zheng brings to ShoreVest a combination of legal expertise and investment experience that is unusual even within China's specialist distressed credit market. She began her career as a practicing attorney at a Guangdong-based law firm, where she focused on the liquidation of non-performing loan assets — the precise legal terrain that ShoreVest navigates on every transaction. Her academic work in the field has been published, including the paper "Negative Impacts the New Bankruptcy Law has on the Liquidation of Non-performing Assets."</p>
+
+                <p>She joined the senior team at Shoreline Capital in 2008, served as a partner for eight years, and co-founded ShoreVest in 2016. At ShoreVest she co-leads ShoreVest Asset Solutions alongside Mecy Mei, and her investment mandate covers the complete credit lifecycle: sourcing, diligence, structuring, active management, and exit. Her legal formation provides a distinct analytical lens on counterparty risk, enforcement mechanics, and regulatory exposure across ShoreVest's portfolio.</p>
+
+                <p>She holds an LLM in economic law on foreign business from Sun Yat-sen University School of Law and a law degree from Nanchang University, and sits on ShoreVest's Investment Committee.</p>
+
+
 
               </div>
 
@@ -828,7 +847,13 @@
 
               <div class="team-profile__bio" id="bio-ada-bi" hidden>
 
-                <p>Ada Bi is Partner and CFO, overseeing fund management, financial operations, internal controls, and investor reporting across the ShoreVest platform. She is responsible for the integrity of operating and financial processes across funds and managed vehicles, including governance workflows, control frameworks, and reporting cadence. Her role connects finance, operations, and investor communications to maintain consistency, transparency, and institutional-grade execution as portfolios scale and mature.</p>
+                <p>Ada Bi has served as ShoreVest's Chief Financial Officer since the firm's founding in 2016, and as CFO of its predecessor firm Shoreline Capital from 2008. Across nearly two decades at the same investment platform, she has built and led the financial infrastructure through which more than US$2 billion in Chinese private credit has been deployed, managed, and resolved.</p>
+
+                <p>Her mandate spans the full operational lifecycle of ShoreVest's funds: financial reporting, treasury, tax, cash management, and the financial controls of invested projects. Before joining Shoreline Capital, she led finance for AIG's property and casualty operations in China, with responsibility for financial reporting, treasury, tax, and budgeting. She previously held roles at the Royal Bank of Canada and CITIC-Prudential Life Insurance Company.</p>
+
+                <p>Bi holds the Fellow designation of the Association of Chartered Certified Accountants (FCCA) and is a member of CPA Canada, holding the legacy Certified General Accountant designation. She holds a bachelor's degree in international trade from Guangdong University of Foreign Studies and sits on ShoreVest's Investment Committee.</p>
+
+
 
               </div>
 
@@ -859,7 +884,13 @@
 
               <div class="team-profile__bio" id="bio-shanjuan-jiang" hidden>
 
-                <p>Shanjuan Jiang is a Partner supporting capital strategy and institutional engagement. She works across investor communications, relationship development, and strategic initiatives that connect ShoreVest’s investment capabilities with long-duration institutional capital. Her remit includes translating portfolio and platform developments into clear client-facing narratives, supporting fundraising coordination, and strengthening partnership quality across the firm’s capital base.</p>
+                <p>Shanjuan Jiang is a Partner at ShoreVest, where she focuses on investor strategy, institutional relationships, and the firm's broader capital markets presence. She brings more than seventeen years of experience in alternative investments across Greater China, with a career that has spanned private equity portfolio management, cross-border fund strategy, and alternative investment advisory at major institutional platforms investing in China — including experience at CalPERS managing Greater China private equity exposure, Franklin Templeton China, and China International Capital Corporation (CICC).</p>
+
+                <p>Her vantage point — having sat on both the allocator and manager sides of Greater China alternatives — gives her a distinctive perspective on what institutional investors require and what investment platforms must deliver. She has worked alongside institutions managing multi-billion-dollar exposure to China across private and public markets.</p>
+
+                <p>Based in Los Gatos, California, Jiang serves as a critical bridge between ShoreVest's China-based investment operations and institutional capital in North America.</p>
+
+
 
               </div>
 
@@ -890,7 +921,9 @@
 
               <div class="team-profile__bio" id="bio-lillian-xu" hidden>
 
-                <p>Lillian Xu is General Counsel and leads legal structuring, documentation, and enforcement strategy across PRC credit investments. She advises investment teams on transaction architecture from inception, ensuring legal protections and creditor-rights provisions are embedded in each deal before closing. Her work spans documentation strategy, intercreditor positioning, and enforcement pathway design through workout, with an emphasis on practical legal outcomes that support recovery and portfolio resilience.</p>
+                <p>Lillian Xu serves as General Counsel of ShoreVest, overseeing all legal matters across the firm's investment activities and fund operations. She brings more than fifteen years of specialist legal experience, with a practice focused on legal due diligence for alternative investments — the discipline most critical to a firm that acquires complex, multi-layered distressed credits in the Chinese market. Prior to ShoreVest, she trained and practiced at multiple red circle law firms in China, the tier of elite domestic practices whose deal experience and institutional relationships define the upper end of PRC legal work.</p>
+
+
 
               </div>
 
@@ -921,7 +954,11 @@
 
               <div class="team-profile__bio" id="bio-james-li" hidden>
 
-                <p>James Li is Director of Capital Solutions, focused on restructuring execution and bespoke capital solutions in complex credit situations. He works across creditor coordination, recapitalization design, and transaction implementation where standard approaches are insufficient for preserving value. By integrating restructuring analysis with execution planning, he helps move contested situations toward actionable agreements and improved recovery outcomes.</p>
+                <p>James Li brings approximately twelve years of Wall Street investment banking experience to ShoreVest's capital solutions function, with a career concentrated in restructuring and special situations at leading advisory firms including Perella Weinberg Partners and Citi. His background spans financial modeling, credit analysis, and transaction execution across complex restructuring mandates — capabilities that translate directly into the structuring and execution demands of ShoreVest's Chinese private credit strategy.</p>
+
+                <p>He holds a Master of Engineering in Financial Engineering from Cornell University.</p>
+
+
 
               </div>
 
@@ -952,7 +989,13 @@
 
               <div class="team-profile__bio" id="bio-daoping-yang" hidden>
 
-                <p>Daoping Yang is Managing Director (SAS), overseeing asset-level execution and recovery processes across invested positions. He manages on-the-ground enforcement, restructuring implementation, and realization workflows, translating transaction-level rights into practical recovery actions. Working at the intersection of legal process and operational execution, he advances case progress, mitigates slippage, and supports timely portfolio outcomes.</p>
+                <p>Daoping Yang is a Managing Director at ShoreVest Asset Solutions, the firm's captive debt servicing platform, where he leads Eastern China operations and oversees deal sourcing and servicing across the most commercially active credit markets in China. Since moving into alternative investments in 2015, he has focused on non-performing loans, real estate, and energy credit — the asset classes at the core of ShoreVest's China strategy.</p>
+
+                <p>Yang spent the preceding twenty years as a senior executive at Sinopec, one of the world's largest energy companies, where he held responsibility across global and regional supply, pricing, and trading operations. The combination of executive standing earned across two decades in China's SOE infrastructure, the sectoral networks that come with it, and a decade of on-the-ground alternative investment experience gives Yang an unusually effective platform for sourcing and resolving Chinese distressed assets.</p>
+
+                <p>He holds an MBA from Renmin University of China and has studied at the Georgia Institute of Technology.</p>
+
+
 
               </div>
 
@@ -994,7 +1037,15 @@
 
               <div class="team-profile__bio" id="bio-john-jones" hidden>
 
-                <p>John Jones is Director of Client Solutions (ex-Asia), leading institutional investor coverage across the Americas, Europe, and the Middle East. He is responsible for relationship development, strategic communication, and capital formation with global institutional clients evaluating China private credit exposure. His work includes aligning investor objectives with strategy design, supporting due diligence dialogue, and maintaining ongoing partnership engagement through market cycles.</p>
+                <p>John Jones leads ShoreVest's client engagement across the Americas, the Middle East, and Europe. He joined the firm in April 2021, bringing more than fifteen years of experience across public and private credit, capital markets, and alternative investment strategy.</p>
+
+                <p>Jones spent five and a half years at PIMCO in Newport Beach, where he worked first as a Compliance Associate and then in Business Development within the Financial Institutions Group, which manages investments tailored to the needs of insurance companies and banks. He subsequently spent a year as an Analyst at WCM's China Fund and two years as an Advisor at FMC Financial Group. Before joining ShoreVest, he served as a Founding Partner at Numeraire Partners — a systematic global macro fund — where he sourced and negotiated a $21 million GP seed investment and $125 million in LP commitments from family offices and pension funds, and led all aspects of firm formation including valuation modeling, fee agreements, marketing, and prime brokerage relationships. He then served as Principal at Collins Street Advisors, providing investment and advisory services to alternative investment firms.</p>
+
+                <p>During his MBA at the University of Chicago, Jones worked as an associate at the Chicago Innovation Fund, a venture capital fund investing in early-stage companies associated with the University of Chicago, Argonne National Laboratory, and Fermilab. While pursuing his undergraduate degree, he spent two years on a Mandarin-language service mission.</p>
+
+                <p>He holds an MBA from the University of Chicago Booth School of Business and a BA in Economics from the University of Southern California.</p>
+
+
 
               </div>
 
@@ -1025,7 +1076,17 @@
 
               <div class="team-profile__bio" id="bio-kelvin-chan" hidden>
 
-                <p>Kelvin Chan is Director of Client Solutions (Asia), leading investor engagement and distribution across Asian markets. He works with institutional allocators on portfolio fit, strategy communication, and long-term relationship management across the region’s diverse client base. His responsibilities include guiding investors through strategy implementation, portfolio updates, and market context to support durable capital partnerships.</p>
+                <p>Kelvin Chan leads ShoreVest's client engagement across Asia from Hong Kong, having joined the firm in December 2024. His career spans nearly two decades across private equity, venture capital, strategic investment, and financial advisory in Greater China and Southeast Asia.</p>
+
+                <p>Chan began his career at Deloitte Consulting, where he spent four years across audit and strategy roles in the Technology, Media, and Telecommunications practice, before moving to National Bank Financial as an Associate Analyst covering Canada's major banks, insurers, and exchanges. He then spent nearly five years at SGS Asset Management in Hong Kong as a private equity associate, participating across the full investment cycle from origination through exit.</p>
+
+                <p>He joined Ping An Asset Management in Hong Kong in 2013, where he spent two and a half years developing Ping An Group's overseas private equity platform — deploying insurance capital and HNWI funds into healthcare, energy, and natural resource investments — while also executing strategic acquisitions and divestitures for the group. He subsequently moved to Fosun Hani Securities as Executive Director of Strategic Development, where he led overseas investments across private equity, listed equities, and debt, sat on the investment committee, and managed a proprietary trading portfolio of approximately HKD 750 million.</p>
+
+                <p>From 2018 to 2020, Chan served as Investment Director for International Investment at Ant Financial in Hong Kong, responsible for global investment initiatives outside China with a focus on payments, fintech, blockchain, and AI across Asia. He subsequently worked as an independent financial advisor supporting fundraising for technology startups, before joining 500 Global in Hong Kong as Associate Director of Strategic Development, covering deal analysis, investor relations, and exit strategy for the Southeast Asia Growth Fund.</p>
+
+                <p>He joined ShoreVest in late 2024 to lead Asia client solutions.</p>
+
+
 
               </div>
 
@@ -1067,7 +1128,13 @@
 
               <div class="team-profile__bio" id="bio-michael-chang" hidden>
 
-                <p>Michael Chang is a Senior Advisory Partner providing guidance on strategy, operating priorities, and cross-border execution. He supports senior leadership on platform development, implementation sequencing, and decision-making across key initiatives that affect growth and operating effectiveness. His advisory role helps integrate strategic intent with practical execution at both firm and portfolio levels.</p>
+                <p>Michael Chang is a Senior Advisory Partner at ShoreVest, advising on firm operations, institutional infrastructure, and organizational strategy. He joined ShoreVest in September 2017 and has contributed to building the firm's operational foundations across human resources, information technology, finance, and compliance.</p>
+
+                <p>Before ShoreVest, Chang was a Director at Stamos Capital Partners and Prima Capital, and earlier spent two years at Bridgewater Associates in account management and three years at Cambridge Associates as a Senior Consulting Associate. His experience spanning the world's largest hedge fund and the leading endowment investment consultancy gives him a rigorous frame of reference for institutional-grade operations within a specialized alternative asset manager.</p>
+
+                <p>He holds an MBA from MIT Sloan School of Management and a BA in Economics from Stanford University.</p>
+
+
 
               </div>
 
@@ -1098,7 +1165,15 @@
 
               <div class="team-profile__bio" id="bio-philip-young" hidden>
 
-                <p>Philip Young is a Senior Advisory Partner advising on capital development, institutional positioning, and external strategic engagement. He supports the firm’s long-term growth agenda by helping shape partner strategy, market-facing positioning, and institutional relationship depth. His work reinforces ShoreVest’s ability to scale with alignment across investors, counterparties, and broader strategic networks.</p>
+                <p>Philip Young brings to ShoreVest more than three decades of institutional investment leadership in Asian insurance and asset management. His career has spanned Continental Illinois National Bank, Bank of America, Nomura Asset Management, and senior Chief Investment Officer roles at Aetna Life Insurance and MassMutual Japan — institutions that collectively represent the deepest lineage of Western institutional engagement with Asian capital markets.</p>
+
+                <p>At Aetna Heiwa Life Insurance in Tokyo, Young served as Managing Director and CIO, overseeing the firm's acquisition by MassMutual Life Insurance in spring 2001 and continuing as MD and CIO at MassMutual Japan thereafter. He subsequently served as CIO at two Chinese life insurance companies. His board experience is equally substantial: Independent Director at Haifutong Fund Management in Shanghai, OCBC Bank China, TransGlobe Life Insurance in Taiwan, and YingDaTaiHe Life Insurance in Beijing — a joint venture between China State Power Grid and MassMutual.</p>
+
+                <p>Young is a Senior Advisor on Financial Services for Greater China at Oliver Wyman. He serves as Adjunct Associate Professor at HKU's Institute for China Business and as adjunct faculty in finance at National Taiwan University, where he received Excellent Teaching honors in 2020 and 2022. He is the author of <em>The Essence of Wealth Management</em> and <em>The Logic of Asset Allocation</em> (both 2021).</p>
+
+                <p>He holds an MBA from the University of Chicago Business School.</p>
+
+
 
               </div>
 
@@ -1129,7 +1204,15 @@
 
               <div class="team-profile__bio" id="bio-dinny-mcmahon" hidden>
 
-                <p>Dinny McMahon is a Senior Advisory Partner providing macroeconomic and policy insight relevant to China credit markets. He supports the team’s market-context framework by translating policy direction and structural economic developments into usable investment perspective. His input helps sharpen top-down risk interpretation, scenario planning, and thematic positioning across the firm’s credit opportunity set.</p>
+                <p>Dinny McMahon is one of the most authoritative English-language voices on China's financial system. As a Senior Advisory Partner, he works with ShoreVest's investment committee on China's macroeconomic environment, the state of its commercial banking system, non-performing loan volumes and trajectories, and the structural and regulatory factors that shape the firm's deal sourcing and execution.</p>
+
+                <p>McMahon spent a decade as a financial journalist in China — four years covering currency and foreign exchange markets for Dow Jones Newswires in Shanghai, followed by six years as Banking and Finance Correspondent for The Wall Street Journal in Beijing, where he tracked the accumulation of debt, the expansion of shadow banking, and the systemic fragilities building within China's state-directed financial system. He left The Wall Street Journal in 2015 to take up a fellowship at the Woodrow Wilson International Center for Scholars under the Kissinger Institute on China and the United States, where he wrote <em>China's Great Wall of Debt: Shadow Banks, Ghost Cities, Massive Loans, and the End of the Chinese Miracle</em>, published by Houghton Mifflin Harcourt in 2018. The Economist called it the closest any writer had come to covering the Chinese economy as Michael Lewis might. Reuters called it the best book on China's economic fragility.</p>
+
+                <p>He subsequently held a fellowship at MacroPolo, the Paulson Institute's think tank, researching China's financial system cleanup. He currently serves as Head of China Markets Research at Trivium China, contributes regularly to Foreign Affairs and The Wire China, and has testified before the U.S.-China Economic and Security Review Commission.</p>
+
+                <p>McMahon is fluent in Mandarin, having studied the language in Beijing and Kunming before spending a year studying international relations in Chinese at the Hopkins-Nanjing Center, the Johns Hopkins SAIS campus in Nanjing. He holds a double degree in economics and Chinese from the University of New South Wales.</p>
+
+
 
               </div>
 
@@ -1160,7 +1243,13 @@
 
               <div class="team-profile__bio" id="bio-steve-poon" hidden>
 
-                <p>Steve Poon is a Senior Advisory Partner supporting strategic dialogue across market development, partner relationships, and execution priorities. He advises leadership on external positioning, institutional connectivity, and commercial sequencing to help translate strategic intent into durable platform outcomes. His perspective supports disciplined long-term growth while preserving operational focus across advisory and execution priorities.</p>
+                <p>Steve Poon has spent more than twenty years building and leading credit investment platforms across Asia, accumulating a career that tracks the full arc of institutional private credit in the region. He moved from structured solutions at Standard Chartered Bank, to heading China special situations at Société Générale, to building and leading Ping An's institutional private credit investment team over approximately a decade, to serving as Managing Director of Asia Credit at The Carlyle Group in Hong Kong.</p>
+
+                <p>At Carlyle, Poon led the firm's Greater China-focused credit platform before departing in late 2022. His advisory contribution to ShoreVest draws on an unusually complete accumulation of experience — from origination and structuring through portfolio management and credit resolution — across every major phase of China's credit cycle. Earlier in his career he held roles at BNP Paribas Peregrine and Bank of America Merrill Lynch.</p>
+
+                <p>He holds an MBA from the University of Sheffield and is an Associate Member of the Institute of Chartered Accountants of England and Wales (ACA, ICAEW).</p>
+
+
 
               </div>
 
@@ -1170,7 +1259,7 @@
       </div>
     </main>
 
-    
+
 
     <script>
       (() => {
