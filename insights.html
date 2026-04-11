@@ -546,8 +546,8 @@
 
       .reading-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
-        gap: 40px;
+        grid-template-columns: minmax(0, 2.35fr) minmax(240px, 1fr);
+        gap: clamp(40px, 4.4vw, 72px);
         align-items: start;
       }
       .reading {
@@ -599,7 +599,7 @@
       }
       .sidebar__card {
         border: 1px solid var(--rule);
-        padding: 22px;
+        padding: 18px 18px 16px;
         background: var(--off);
         margin-bottom: 16px;
       }
@@ -795,12 +795,19 @@
         line-height: 1;
       }
 
+
+      @media (max-width: 1320px) {
+        .reading-grid {
+          grid-template-columns: minmax(0, 2.1fr) minmax(220px, 1fr);
+          gap: clamp(32px, 4vw, 56px);
+        }
+      }
+
       @media (max-width: 1080px) {
         :root {
           --pad: 40px;
         }
         .research-hero__grid,
-        .reading-grid,
         .findings-strip,
         .latest {
           grid-template-columns: 1fr;
@@ -834,6 +841,13 @@
           overflow: visible;
         }
       }
+      @media (max-width: 980px) {
+        .reading-grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 32px;
+        }
+      }
+
       @media (max-width: 720px) {
         :root {
           --pad: 18px;
