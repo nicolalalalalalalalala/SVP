@@ -646,8 +646,8 @@
 </style>
   <style>
 .sv-footer {
-  background: #FAF6EE;
-  border-top: 1px solid #D8CEB0;
+  background: var(--white);
+  border-top: 1px solid var(--rule);
   padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
 }
 .sv-footer__inner {
@@ -660,7 +660,7 @@
   justify-content: space-between;
   gap: 18px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #D8CEB0;
+  border-bottom: 1px solid var(--rule);
 }
 .sv-footer__brand {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
@@ -708,7 +708,7 @@
 .sv-footer__copyright,
 .sv-footer__legal-links {
   font-size: 8pt;
-  color: color-mix(in srgb, #2E4A18 62%, #FAF6EE);
+  color: color-mix(in srgb, var(--ink2) 62%, #FAF6EE);
   line-height: 1.7;
 }
 .sv-footer__legal {
