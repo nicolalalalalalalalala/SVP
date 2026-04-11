@@ -1603,11 +1603,64 @@
         color: #FAF6EE;
       }
       .alloc-grid {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
+        gap: 14px;
+        align-items: stretch;
+      }
+      .alloc-pie {
+        border: 1px solid rgba(179, 33, 63, 0.14);
+        background: #FAF6EE;
+        padding: 16px;
+        display: grid;
+        place-items: center;
+      }
+      .alloc-donut {
+        --end-abl: 40%;
+        --end-restructuring: 86%;
+        width: min(100%, 250px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: conic-gradient(
+          var(--red) 0 var(--end-abl),
+          #B86A7E var(--end-abl) var(--end-restructuring),
+          #0F2206 var(--end-restructuring) 100%
+        );
+        position: relative;
+      }
+      .alloc-donut::after {
+        content: "";
+        position: absolute;
+        inset: 20%;
+        border-radius: 50%;
+        background: #FAF6EE;
+        box-shadow: inset 0 0 0 1px rgba(179, 33, 63, 0.12);
+      }
+      .alloc-donut-center {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        z-index: 1;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(15, 34, 6, 0.72);
+      }
+      .alloc-donut-center strong {
         display: block;
+        font-family: var(--serif);
+        font-size: 30px;
+        letter-spacing: 0;
+        color: var(--ink);
+        line-height: 1;
+        text-transform: none;
+        margin-bottom: 4px;
       }
       .alloc-board {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 12px;
       }
       .alloc-card {
@@ -1615,6 +1668,9 @@
         border: 1px solid rgba(179, 33, 63, 0.14);
         padding: 14px;
       }
+      .alloc-card[data-slice="abl"] { border-left: 4px solid var(--red); }
+      .alloc-card[data-slice="restructuring"] { border-left: 4px solid #B86A7E; }
+      .alloc-card[data-slice="resolutions"] { border-left: 4px solid #0F2206; }
       .alloc-head {
         display: flex;
         justify-content: space-between;
@@ -1640,21 +1696,6 @@
         text-transform: uppercase;
         color: rgba(15, 34, 6, 0.75);
         margin-bottom: 10px;
-      }
-      .alloc-track {
-        height: 10px;
-        background: #F2ECD8;
-        position: relative;
-        overflow: hidden;
-        border-radius: 0;
-      }
-      .alloc-track span {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        background: var(--red);
-        transition: width 0.35s ease;
       }
       .alloc-footnote { margin-top: 10px; font-size: 12px; line-height: 1.45; color: rgba(15,34,6,.78); }
 
@@ -2222,7 +2263,7 @@
     .market-context,.pgsec{background:var(--xuan)!important}
     .market-context-content,.strategy-intro-actions,.strategy-block,.strategy-viz,.alloc-row,.risk-card,.strategy-callout,.city,.disclosure-box,.strategy-detail,.context-pullout{background:var(--xuan-light)!important;border-color:var(--xuan-dark)!important}
     .strategy-stack .strategy-block:nth-child(even){background:var(--xuan)!important}
-    .strategy-block::after,.city::after,.alloc-track span,.ring{background:var(--qing)!important}
+    .strategy-block::after,.city::after,.ring{background:var(--qing)!important}
     .section-tag,.viz-title,.strategy-callout__label,.risk-card h4,.legal-bucket__label{color:var(--cinnabar)!important}
     .market-points li,.risk-card li,.it__item{border-left-color:color-mix(in srgb, var(--xuan-dark) 65%, var(--qing) 35%)!important}
     .flow-step,.kpi,.funnel-step,.strategy-detail,.city,.next-links .cta,.expand__trigger,.jump-nav button,.viz-btn{border-color:var(--xuan-dark)!important;background:var(--xuan-light)!important;color:var(--ink-dark)!important}
@@ -2333,21 +2374,23 @@
                 <button type="button" class="viz-btn" role="tab" aria-selected="false" data-regime="tight">Tight Spreads / Competitive</button>
               </div>
               <div class="alloc-grid">
+                <div class="alloc-pie">
+                  <div class="alloc-donut" data-donut aria-label="Allocation split totals 100%: Asset-Based Lending 40%, Asset Restructuring 46%, Debt Resolutions 14%">
+                    <div class="alloc-donut-center"><span>Total</span><strong>100%</strong></div>
+                  </div>
+                </div>
                 <div class="alloc-board" aria-label="Sub-strategy allocation by market regime">
-                  <article class="alloc-card">
+                  <article class="alloc-card" data-slice="abl">
                     <div class="alloc-head"><h3 class="alloc-name">Asset-Based Lending</h3><span class="alloc-value" data-value="abl">40%</span></div>
                     <p class="alloc-range">Range <span data-range="abl">24–40%</span></p>
-                    <div class="alloc-track"><span data-fill="abl" style="width: 40%"></span></div>
                   </article>
-                  <article class="alloc-card">
+                  <article class="alloc-card" data-slice="restructuring">
                     <div class="alloc-head"><h3 class="alloc-name">Asset Restructuring</h3><span class="alloc-value" data-value="restructuring">46%</span></div>
                     <p class="alloc-range">Range <span data-range="restructuring">46–61%</span></p>
-                    <div class="alloc-track"><span data-fill="restructuring" style="width: 46%"></span></div>
                   </article>
-                  <article class="alloc-card">
+                  <article class="alloc-card" data-slice="resolutions">
                     <div class="alloc-head"><h3 class="alloc-name">Debt Resolutions</h3><span class="alloc-value" data-value="resolutions">14%</span></div>
                     <p class="alloc-range">Range <span data-range="resolutions">14–15%</span></p>
-                    <div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div>
                   </article>
                 </div>
               </div>
@@ -2423,11 +2466,7 @@
         if (!root) return;
 
         const regimeButtons = Array.from(root.querySelectorAll("[data-regime]"));
-        const fills = {
-          abl: root.querySelector('[data-fill="abl"]'),
-          restructuring: root.querySelector('[data-fill="restructuring"]'),
-          resolutions: root.querySelector('[data-fill="resolutions"]'),
-        };
+        const donut = root.querySelector("[data-donut]");
         const values = {
           abl: root.querySelector('[data-value="abl"]'),
           restructuring: root.querySelector('[data-value="restructuring"]'),
@@ -2457,9 +2496,16 @@
         const applyRegime = (key) => {
           const regime = regimes[key];
           if (!regime) return;
+          const total = regime.values.abl + regime.values.restructuring + regime.values.resolutions;
+          const ablEnd = regime.values.abl;
+          const restructuringEnd = regime.values.abl + regime.values.restructuring;
+          if (donut) {
+            donut.style.setProperty("--end-abl", `${ablEnd}%`);
+            donut.style.setProperty("--end-restructuring", `${restructuringEnd}%`);
+            donut.setAttribute("aria-label", `Allocation split totals ${total}%: Asset-Based Lending ${regime.values.abl}%, Asset Restructuring ${regime.values.restructuring}%, Debt Resolutions ${regime.values.resolutions}%`);
+          }
           Object.keys(regime.values).forEach((name) => {
             const value = regime.values[name];
-            if (fills[name]) fills[name].style.width = `${value}%`;
             if (values[name]) values[name].textContent = `${value}%`;
             if (ranges[name]) ranges[name].textContent = regime.ranges[name];
           });
