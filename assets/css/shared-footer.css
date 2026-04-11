@@ -82,12 +82,12 @@ html body footer.sv-footer .sv-footer__copyright,
 html body footer.sv-footer .sv-footer__legal-links,
 html body footer.sv-footer .sv-footer__legal-links a {
   font-family: var(--sans) !important;
-  font-size: 8pt !important;
+  font-size: 11px !important;
   font-weight: 400 !important;
   letter-spacing: normal !important;
-  line-height: 1.7 !important;
+  line-height: 1.6 !important;
   text-transform: none !important;
-  color: color-mix(in srgb, var(--ink2) 62%, #faf6ee) !important;
+  color: color-mix(in srgb, var(--ink2) 78%, #faf6ee) !important;
 }
 
 html body footer.sv-footer .sv-footer__legal-toggle > summary {
@@ -102,12 +102,19 @@ html body footer.sv-footer .sv-footer__legal-toggle > summary {
 
 html body footer.sv-footer .sv-footer__legal {
   font-family: var(--sans) !important;
-  font-size: 7px !important;
+  font-size: 12px !important;
   font-weight: 400 !important;
   letter-spacing: normal !important;
-  line-height: 1.7 !important;
+  line-height: 1.65 !important;
   text-transform: none !important;
-  color: #6f6a63 !important;
+  color: color-mix(in srgb, var(--ink2) 88%, #faf6ee) !important;
+  max-width: 112ch !important;
+}
+
+html body footer.sv-footer .sv-footer__legal a {
+  color: var(--ink) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 2px !important;
 }
 
 html body footer.sv-footer .sv-footer__legal-links {
@@ -170,10 +177,23 @@ html body footer.sv-footer .sv-footer__legal-links a:focus-visible {
     gap: 14px !important;
   }
 
+  html body footer.sv-footer .sv-footer__legal {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    max-width: none !important;
+  }
+
   html body footer.sv-footer .sv-footer__legal-links {
     display: grid !important;
     grid-template-columns: 1fr !important;
     row-gap: 6px !important;
     padding-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  html body footer.sv-footer .sv-footer__legal {
+    font-size: 12.5px !important;
+    line-height: 1.68 !important;
   }
 }
