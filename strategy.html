@@ -1658,6 +1658,27 @@
         display: grid;
         gap: 10px;
       }
+      .alloc-scenarios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0 14px;
+      }
+      .alloc-scenario {
+        border: 1px solid var(--xuan-dark);
+        background: #F2ECD8;
+        color: var(--ink-dark);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 8px 10px;
+        cursor: pointer;
+        transition: background .2s ease, color .2s ease;
+      }
+      .alloc-scenario.is-active {
+        background: var(--ink-dark);
+        color: var(--xuan-light);
+      }
       .alloc-card {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
@@ -1665,6 +1686,24 @@
         padding: 12px;
         border: 1px solid var(--xuan-dark);
         background: #F2ECD8;
+      }
+      .alloc-bar {
+        grid-column: 1 / -1;
+        height: 8px;
+        border: 1px solid rgba(15, 34, 6, 0.2);
+        background: rgba(15, 34, 6, 0.08);
+      }
+      .alloc-bar > span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #7C3A1E, #B3213F);
+        transition: width .35s ease;
+      }
+      .alloc-insight {
+        margin: 6px 0 4px;
+        font-size: 12px;
+        color: rgba(15, 34, 6, 0.82);
       }
       .alloc-name {
         margin: 0;
@@ -2371,24 +2410,33 @@
             <div class="strategy-viz strategy-viz--simple">
               <div class="alloc-simple-head">
                 <p class="alloc-kicker">Scenario view</p>
-                <h3>Tight Spreads / Competitive</h3>
+                <h3 data-alloc-scenario-title>Tight Spreads / Competitive</h3>
+              </div>
+              <div class="alloc-scenarios" role="tablist" aria-label="Capital rotation scenarios">
+                <button type="button" class="alloc-scenario is-active" role="tab" aria-selected="true" data-scenario="tight">Tight spreads</button>
+                <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="balanced">Balanced reset</button>
+                <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="stressed">Stressed dislocation</button>
               </div>
               <p class="alloc-total"><span>Total</span><strong>100%</strong></p>
-              <div class="alloc-board" aria-label="Sub-strategy allocation in tight spreads / competitive conditions">
-                <article class="alloc-card">
+              <p class="alloc-insight" data-alloc-insight>Competition is high, so deployment emphasizes recovery-heavy structures with stronger downside buffers.</p>
+              <div class="alloc-board" aria-label="Sub-strategy allocation by market scenario">
+                <article class="alloc-card" data-sleeve="abl">
                   <p class="alloc-name">Asset-Based Lending</p>
-                  <p class="alloc-value">24%</p>
-                  <p class="alloc-range">Range 24–40%</p>
+                  <p class="alloc-value" data-alloc-value>24%</p>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width:24%"></span></div>
+                  <p class="alloc-range" data-alloc-range>Range 24–40%</p>
                 </article>
-                <article class="alloc-card">
+                <article class="alloc-card" data-sleeve="restructuring">
                   <p class="alloc-name">Asset Restructuring</p>
-                  <p class="alloc-value">61%</p>
-                  <p class="alloc-range">Range 46–61%</p>
+                  <p class="alloc-value" data-alloc-value>61%</p>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width:61%"></span></div>
+                  <p class="alloc-range" data-alloc-range>Range 46–61%</p>
                 </article>
-                <article class="alloc-card">
+                <article class="alloc-card" data-sleeve="resolutions">
                   <p class="alloc-name">Debt Resolutions</p>
-                  <p class="alloc-value">15%</p>
-                  <p class="alloc-range">Range 14–15%</p>
+                  <p class="alloc-value" data-alloc-value>15%</p>
+                  <div class="alloc-bar" aria-hidden="true"><span style="width:15%"></span></div>
+                  <p class="alloc-range" data-alloc-range>Range 14–15%</p>
                 </article>
               </div>
               <p class="alloc-footnote">Values shown are illustrative portfolio construction ranges, not fixed targets.</p>
@@ -2457,6 +2505,78 @@
         </div>
       </div>
     </section>
+<script>
+      (() => {
+        const shell = document.querySelector(".strategy-viz--simple");
+        if (!shell) return;
+
+        const scenarioTitle = shell.querySelector("[data-alloc-scenario-title]");
+        const scenarioInsight = shell.querySelector("[data-alloc-insight]");
+        const scenarioButtons = shell.querySelectorAll(".alloc-scenario");
+
+        const scenarioMap = {
+          tight: {
+            title: "Tight Spreads / Competitive",
+            insight:
+              "Competition is high, so deployment emphasizes recovery-heavy structures with stronger downside buffers.",
+            sleeves: {
+              abl: { value: 24, range: "Range 24–40%" },
+              restructuring: { value: 61, range: "Range 46–61%" },
+              resolutions: { value: 15, range: "Range 14–15%" },
+            },
+          },
+          balanced: {
+            title: "Balanced Reset / Selective",
+            insight:
+              "As pricing normalizes, allocation balances direct secured lending and special situations to preserve liquidity and optionality.",
+            sleeves: {
+              abl: { value: 34, range: "Range 24–40%" },
+              restructuring: { value: 51, range: "Range 46–61%" },
+              resolutions: { value: 15, range: "Range 14–15%" },
+            },
+          },
+          stressed: {
+            title: "Stressed Dislocation / Wide Spreads",
+            insight:
+              "When dislocation is elevated, capital rotates toward new origination with legal control while retaining resolution capacity.",
+            sleeves: {
+              abl: { value: 40, range: "Range 24–40%" },
+              restructuring: { value: 46, range: "Range 46–61%" },
+              resolutions: { value: 14, range: "Range 14–15%" },
+            },
+          },
+        };
+
+        const updateScenario = (scenarioKey) => {
+          const data = scenarioMap[scenarioKey];
+          if (!data) return;
+
+          scenarioTitle.textContent = data.title;
+          scenarioInsight.textContent = data.insight;
+
+          Object.entries(data.sleeves).forEach(([key, sleeve]) => {
+            const card = shell.querySelector(`[data-sleeve="${key}"]`);
+            if (!card) return;
+            const valueNode = card.querySelector("[data-alloc-value]");
+            const rangeNode = card.querySelector("[data-alloc-range]");
+            const barNode = card.querySelector(".alloc-bar > span");
+            if (valueNode) valueNode.textContent = `${sleeve.value}%`;
+            if (rangeNode) rangeNode.textContent = sleeve.range;
+            if (barNode) barNode.style.width = `${sleeve.value}%`;
+          });
+
+          scenarioButtons.forEach((button) => {
+            const active = button.dataset.scenario === scenarioKey;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-selected", active ? "true" : "false");
+          });
+        };
+
+        scenarioButtons.forEach((button) => {
+          button.addEventListener("click", () => updateScenario(button.dataset.scenario));
+        });
+      })();
+    </script>
 <script>
       (() => {
         if (window.__svScrollAnimationsInit) return;
