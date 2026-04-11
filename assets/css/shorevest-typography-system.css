@@ -170,6 +170,8 @@ html body .sv-footer__legal-toggle > summary {
 html body .cta,
 html body .cdd-cta,
 html body .strategy-intro-link,
+html body .btn,
+html body .btn--investor-access,
 html body .nav__lp,
 html body .nav__menu-btn {
   font-family: var(--sv-type-sans) !important;
