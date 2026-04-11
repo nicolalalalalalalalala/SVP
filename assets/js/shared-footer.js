@@ -19,32 +19,22 @@
     </div>
   </div>`;
 
-  const setTypographyTokens = (footerNode) => {
-    const force = (node, property, value) => node?.style.setProperty(property, value, 'important');
-    const brand = footerNode.querySelector('.sv-footer__brand');
-    const contactLabel = footerNode.querySelector('.sv-footer__contact-label');
-    const contactLink = footerNode.querySelector('.sv-footer__contact a');
-    const copyright = footerNode.querySelector('.sv-footer__copyright');
-    const legalSummary = footerNode.querySelector('.sv-footer__legal-toggle > summary');
-    const legalBody = footerNode.querySelector('.sv-footer__legal');
-    const legalLinks = footerNode.querySelectorAll('.sv-footer__legal-links a');
 
-    force(brand, 'font-family', '"DIN 2014", "Helvetica Neue", Arial, sans-serif');
-    force(brand, 'font-size', '15px');
-    force(brand, 'font-weight', '700');
-    force(brand, 'letter-spacing', '0.05em');
-    force(brand, 'line-height', '1.2');
-    force(brand, 'text-transform', 'uppercase');
-
-    [contactLabel, contactLink, copyright, legalSummary, legalBody, ...legalLinks].forEach((node) => {
-      force(node, 'font-family', '"Inter", system-ui, sans-serif');
-    });
+  const ensureTypographySystem = () => {
+    const typographyHref = 'assets/css/shorevest-typography-reset.css';
+    if (!document.querySelector(`link[href="${typographyHref}"]`)) {
+      const typeLink = document.createElement('link');
+      typeLink.rel = 'stylesheet';
+      typeLink.href = typographyHref;
+      document.head.appendChild(typeLink);
+    }
   };
+
+  ensureTypographySystem();
 
   const mountFooter = (node) => {
     node.className = 'sv-footer';
     node.innerHTML = footerTemplate;
-    setTypographyTokens(node);
   };
 
   document.querySelectorAll('footer.sv-footer').forEach(mountFooter);

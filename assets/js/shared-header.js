@@ -1,8 +1,29 @@
 (() => {
   const mount = document.getElementById('site-header-mount');
   if (!mount) return;
-  const HOMEPAGE_CN_WORDMARK = '新岸資本';
+  const HOMEPAGE_CN_WORDMARK = '新岸资本';
   const HOMEPAGE_CN_LANGUAGE_LABEL = '中文';
+
+
+  const ensureTypographySystem = () => {
+    const typographyHref = 'assets/css/shorevest-typography-reset.css';
+    if (!document.querySelector(`link[href="${typographyHref}"]`)) {
+      const typeLink = document.createElement('link');
+      typeLink.rel = 'stylesheet';
+      typeLink.href = typographyHref;
+      document.head.appendChild(typeLink);
+    }
+
+    const notoHref = 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap';
+    if (!document.querySelector(`link[href="${notoHref}"]`)) {
+      const notoLink = document.createElement('link');
+      notoLink.rel = 'stylesheet';
+      notoLink.href = notoHref;
+      document.head.appendChild(notoLink);
+    }
+  };
+
+  ensureTypographySystem();
 
   mount.innerHTML = `<nav id="nav">
   <a href="index.html" class="nav__logo">
