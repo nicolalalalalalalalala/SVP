@@ -265,3 +265,82 @@ h3 {
 ) {
   color: var(--site-color-ink-strong) !important;
 }
+
+/* Chinese typography parity:
+   keep the same hierarchy/rhythm as EN while using approved CN type system. */
+html:lang(zh),
+html[lang^='zh'] {
+  --site-cn-display-size: var(--site-font-size-display);
+  --site-cn-h1-size: var(--site-font-size-h1);
+  --site-cn-h2-size: var(--site-font-size-h2);
+  --site-cn-label-size: 7.5pt;
+  --site-cn-body-size: var(--site-font-size-body);
+  --site-cn-caption-size: 8pt;
+}
+
+html:lang(zh) :is(h1, h2, h3, h4, h5, h6, .serif, [class*='serif']),
+html[lang^='zh'] :is(h1, h2, h3, h4, h5, h6, .serif, [class*='serif']) {
+  font-family: var(--site-serif-zh) !important;
+  font-style: normal !important;
+}
+
+html:lang(zh) :is(p, li, a, span, small, figcaption, label, .meta, .caption),
+html[lang^='zh'] :is(p, li, a, span, small, figcaption, label, .meta, .caption) {
+  font-family: var(--site-sans-zh) !important;
+}
+
+/* Keep Chinese headings from inheriting EN forced uppercase/small-caps patterns. */
+html:lang(zh) :is(h1, h2, h3, .eyebrow, .kicker, .hero__kicker, .label, .meta),
+html[lang^='zh'] :is(h1, h2, h3, .eyebrow, .kicker, .hero__kicker, .label, .meta) {
+  text-transform: none !important;
+  font-variant: normal !important;
+}
+
+/* Hierarchy mapping: display → page heading → section heading → label/meta → body → caption. */
+html:lang(zh) :is(.hero__hed, .hero__ttl, .hero-title, .display-title, .wordmark__title, .pagehero h1),
+html[lang^='zh'] :is(.hero__hed, .hero__ttl, .hero-title, .display-title, .wordmark__title, .pagehero h1) {
+  font-size: var(--site-cn-display-size) !important;
+  line-height: 1.06 !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
+}
+
+html:lang(zh) :is(h1, .h1, .about__hed, .strat__hed, .research-main h2),
+html[lang^='zh'] :is(h1, .h1, .about__hed, .strat__hed, .research-main h2) {
+  font-size: var(--site-cn-h1-size) !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
+}
+
+html:lang(zh) :is(h2, .h2, .section-title, .issue-card__t),
+html[lang^='zh'] :is(h2, .h2, .section-title, .issue-card__t) {
+  font-size: var(--site-cn-h2-size) !important;
+  line-height: 1.16 !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
+}
+
+html:lang(zh) :is(.eyebrow, .kicker, .hero__kicker, .label, .meta, .issue-card__k, .issue-card__bar),
+html[lang^='zh'] :is(.eyebrow, .kicker, .hero__kicker, .label, .meta, .issue-card__k, .issue-card__bar) {
+  font-size: var(--site-cn-label-size) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 500 !important;
+}
+
+html:lang(zh) :is(body, p, li, .hero__copy, .lead, .research-main__intro, .issue-card__s, .tm__bio, .ac__body),
+html[lang^='zh'] :is(body, p, li, .hero__copy, .lead, .research-main__intro, .issue-card__s, .tm__bio, .ac__body) {
+  font-size: var(--site-cn-body-size) !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.002em !important;
+  font-weight: 400 !important;
+}
+
+html:lang(zh) :is(small, figcaption, .caption, .data-note, .sv-footer__copyright, .sv-footer__legal-links),
+html[lang^='zh'] :is(small, figcaption, .caption, .data-note, .sv-footer__copyright, .sv-footer__legal-links) {
+  font-size: var(--site-cn-caption-size) !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 400 !important;
+}
