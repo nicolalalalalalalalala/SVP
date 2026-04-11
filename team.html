@@ -259,6 +259,17 @@
         overflow: hidden;
         margin-bottom: 10px;
       }
+      .team-profile__photo-btn {
+        border: 0;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+      .team-profile__photo-btn:focus-visible {
+        outline: 2px solid var(--qing);
+        outline-offset: 3px;
+      }
       .team-profile__photo img {
         display: block;
         width: 100%;
@@ -266,6 +277,10 @@
         object-fit: cover;
         filter: grayscale(100%);
         transition: filter 0.3s ease;
+      }
+      .team-profile__photo-btn:hover img,
+      .team-profile__photo-btn[aria-expanded="true"] img {
+        filter: grayscale(30%);
       }
       .team-profile__photo img[alt="Steve Poon"] {
         object-position: 50% 38%;
@@ -317,6 +332,40 @@
         line-height: 1.5;
         color: var(--ink-soft);
         margin-top: -2px;
+      }
+      .team-profile__bio-toggle {
+        margin-top: 8px;
+        width: fit-content;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--ink-soft) 45%, transparent);
+        padding: 0 0 2px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        cursor: pointer;
+      }
+      .team-profile__bio-toggle::after {
+        content: " +";
+      }
+      .team-profile__bio-toggle[aria-expanded="true"]::after {
+        content: " −";
+      }
+      .team-profile__bio-toggle:focus-visible {
+        outline: 2px solid var(--qing);
+        outline-offset: 3px;
+      }
+      .team-profile__bio {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid color-mix(in srgb, var(--ink-soft) 24%, transparent);
+      }
+      .team-profile__bio p {
+        font-family: var(--serif);
+        font-size: 14px;
+        line-height: 1.62;
+        color: var(--ink-soft);
       }
       .group--leadership {
         margin-top: 10px;
@@ -644,101 +693,253 @@
             </p>
           </div>
           <div class="grid">
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-benjamin-fanger">
+
                 <img
+
                   src="assets/images/benjamin_fanger.jpg"
+
                   alt="Benjamin Fanger"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Benjamin Fanger</div>
+
               <div class="team-profile__role">Managing Partner & Founder</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-benjamin-fanger">View bio</button>
+
+              <div class="team-profile__bio" id="bio-benjamin-fanger" hidden>
+
+                <p>Benjamin Fanger is ShoreVest’s Managing Partner and Founder. He leads the firm’s investment strategy, portfolio construction, and governance across the China private credit platform, with direct oversight of risk concentration, underwriting discipline, and realization outcomes.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-mecy-mei">
+
                 <img
+
                   src="assets/images/mecy_mei.jpg"
+
                   alt="Mecy Mei"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Mecy Mei</div>
+
               <div class="team-profile__role">Partner</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-mecy-mei">View bio</button>
+
+              <div class="team-profile__bio" id="bio-mecy-mei" hidden>
+
+                <p>Mecy Mei is a Partner responsible for sourcing, underwriting, transaction structuring, and execution across onshore private credit opportunities. She leads deal work from initial screening through closing with a focus on enforceability and downside protection.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-hui-zheng">
+
                 <img
+
                   src="assets/images/hui_zheng.jpg"
+
                   alt="Hui Zheng"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Hui Zheng</div>
+
               <div class="team-profile__role">Partner</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-hui-zheng">View bio</button>
+
+              <div class="team-profile__bio" id="bio-hui-zheng" hidden>
+
+                <p>Hui Zheng is a Partner focused on complex credit and restructuring situations. She leads structuring, negotiation, and execution where capital solutions require close coordination among creditors, sponsors, and counterparties.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-ada-bi">
+
                 <img
+
                   src="assets/images/ada_bi.jpg"
+
                   alt="Ada Bi"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Ada Bi</div>
+
               <div class="team-profile__role">Partner & CFO</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-ada-bi">View bio</button>
+
+              <div class="team-profile__bio" id="bio-ada-bi" hidden>
+
+                <p>Ada Bi is Partner and CFO, overseeing fund management, financial operations, internal controls, and investor reporting across the ShoreVest platform. She helps maintain institutional-grade process discipline as portfolios scale.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-shanjuan-jiang">
+
                 <img
+
                   src="assets/images/shanjuan_jiang.jpg"
+
                   alt="Shanjuan Jiang"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Shanjuan Jiang</div>
+
               <div class="team-profile__role">Partner</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-shanjuan-jiang">View bio</button>
+
+              <div class="team-profile__bio" id="bio-shanjuan-jiang" hidden>
+
+                <p>Shanjuan Jiang is a Partner supporting capital strategy and institutional engagement. She works across investor communications, relationship development, and strategic initiatives that connect ShoreVest’s investment capabilities with long-duration capital.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-lillian-xu">
+
                 <img
+
                   src="assets/images/lillian_xu.jpg"
+
                   alt="Lillian Xu"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Lillian Xu</div>
+
               <div class="team-profile__role">General Counsel</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-lillian-xu">View bio</button>
+
+              <div class="team-profile__bio" id="bio-lillian-xu" hidden>
+
+                <p>Lillian Xu is General Counsel and leads legal structuring, documentation, and enforcement strategy across PRC credit investments. She advises on legal architecture to embed creditor protections before closing.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-james-li">
+
                 <img
+
                   src="assets/images/james_li.jpeg"
+
                   alt="James Li"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">James Li</div>
+
               <div class="team-profile__role">Director of Capital Solutions</div>
-            </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
-                <img
-                  src="assets/images/daoping_yang.jpg"
-                  alt="Daoping Yang"
-                  loading="eager"
-                  decoding="async"
-                />
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-james-li">View bio</button>
+
+              <div class="team-profile__bio" id="bio-james-li" hidden>
+
+                <p>James Li is Director of Capital Solutions, focused on restructuring execution and bespoke capital solutions in complex credit situations. He works on creditor coordination, recapitalization design, and implementation to improve recoveries.</p>
+
               </div>
+
+            </article>
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-daoping-yang">
+
+                <img
+
+                  src="assets/images/daoping_yang.jpg"
+
+                  alt="Daoping Yang"
+
+                  loading="eager"
+
+                  decoding="async"
+
+                />
+
+              </button>
+
               <div class="team-profile__name">Daoping Yang</div>
+
               <div class="team-profile__role">Managing Director, ShoreVest Asset Solutions</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-daoping-yang">View bio</button>
+
+              <div class="team-profile__bio" id="bio-daoping-yang" hidden>
+
+                <p>Daoping Yang is Managing Director, ShoreVest Asset Solutions, overseeing asset-level execution and recovery processes across invested positions. He manages on-the-ground enforcement, restructuring implementation, and realization workflows.</p>
+
+              </div>
+
             </article>
           </div>
         </section>
@@ -751,29 +952,67 @@
             </p>
           </div>
           <div class="grid">
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-john-jones">
+
                 <img
+
                   src="assets/images/john_jones.jpg"
+
                   alt="John Jones"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">John Jones</div>
+
               <div class="team-profile__role">Director of Client Solutions (ex-Asia)</div>
-            </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
-                <img
-                  src="assets/images/kelvin_chan.jpg"
-                  alt="Kelvin Chan"
-                  loading="eager"
-                  decoding="async"
-                />
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-john-jones">View bio</button>
+
+              <div class="team-profile__bio" id="bio-john-jones" hidden>
+
+                <p>John Jones is Director of Client Solutions (ex-Asia), leading institutional investor coverage across the Americas, Europe, and the Middle East. He supports strategic communication, due diligence dialogue, and long-term partnership development.</p>
+
               </div>
+
+            </article>
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-kelvin-chan">
+
+                <img
+
+                  src="assets/images/kelvin_chan.jpg"
+
+                  alt="Kelvin Chan"
+
+                  loading="eager"
+
+                  decoding="async"
+
+                />
+
+              </button>
+
               <div class="team-profile__name">Kelvin Chan</div>
+
               <div class="team-profile__role">Director of Client Solutions (Asia)</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-kelvin-chan">View bio</button>
+
+              <div class="team-profile__bio" id="bio-kelvin-chan" hidden>
+
+                <p>Kelvin Chan is Director of Client Solutions (Asia), leading investor engagement and distribution across Asian markets. He works with institutional allocators on strategy communication and ongoing relationship management.</p>
+
+              </div>
+
             </article>
           </div>
         </section>
@@ -786,53 +1025,129 @@
             </p>
           </div>
           <div class="grid">
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-michael-chang">
+
                 <img
+
                   src="assets/images/mike_chang.jpg"
+
                   alt="Michael Chang"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Michael Chang</div>
+
               <div class="team-profile__role">Senior Advisory Partner</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-michael-chang">View bio</button>
+
+              <div class="team-profile__bio" id="bio-michael-chang" hidden>
+
+                <p>Michael Chang is a Senior Advisory Partner providing guidance on strategy, operating priorities, and cross-border execution. He supports senior leadership on key initiatives affecting growth and platform effectiveness.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-philip-young">
+
                 <img
+
                   src="assets/images/philip_young.jpg"
+
                   alt="Philip Young"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Philip Young</div>
+
               <div class="team-profile__role">Senior Advisory Partner</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-philip-young">View bio</button>
+
+              <div class="team-profile__bio" id="bio-philip-young" hidden>
+
+                <p>Philip Young is a Senior Advisory Partner advising on capital development, institutional positioning, and external strategic engagement. He helps shape long-term partner strategy and market-facing communication.</p>
+
+              </div>
+
             </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-dinny-mcmahon">
+
                 <img
+
                   src="assets/images/dinny_mcmahon.jpg"
+
                   alt="Dinny McMahon"
+
                   loading="eager"
+
                   decoding="async"
+
                 />
-              </div>
+
+              </button>
+
               <div class="team-profile__name">Dinny McMahon</div>
+
               <div class="team-profile__role">Senior Advisory Partner</div>
-            </article>
-            <article class="team-profile">
-              <div class="team-profile__photo">
-                <img
-                  src="assets/images/steve_poon.jpg"
-                  alt="Steve Poon"
-                  loading="eager"
-                  decoding="async"
-                />
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-dinny-mcmahon">View bio</button>
+
+              <div class="team-profile__bio" id="bio-dinny-mcmahon" hidden>
+
+                <p>Dinny McMahon is a Senior Advisory Partner providing macroeconomic and policy insight relevant to China credit markets. His input supports top-down risk interpretation, scenario planning, and thematic positioning.</p>
+
               </div>
+
+            </article>
+            <article class="team-profile" data-team-profile>
+
+              <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-steve-poon">
+
+                <img
+
+                  src="assets/images/steve_poon.jpg"
+
+                  alt="Steve Poon"
+
+                  loading="eager"
+
+                  decoding="async"
+
+                />
+
+              </button>
+
               <div class="team-profile__name">Steve Poon</div>
+
               <div class="team-profile__role">Senior Advisory Partner</div>
+
+              <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-steve-poon">View bio</button>
+
+              <div class="team-profile__bio" id="bio-steve-poon" hidden>
+
+                <p>Steve Poon is a Senior Advisory Partner supporting strategic dialogue across market development, partner relationships, and execution priorities. He contributes advisory perspective that supports disciplined long-term platform growth.</p>
+
+              </div>
+
             </article>
           </div>
         </section>
@@ -840,6 +1155,42 @@
     </main>
 
     
+
+    <script>
+      (() => {
+        const profiles = Array.from(document.querySelectorAll("[data-team-profile]"));
+        if (!profiles.length) return;
+
+        const closeProfile = (profile) => {
+          const panel = profile.querySelector(".team-profile__bio");
+          const controls = profile.querySelectorAll("[aria-controls]");
+          panel.hidden = true;
+          controls.forEach((control) => {
+            control.setAttribute("aria-expanded", "false");
+          });
+        };
+
+        const openProfile = (profile) => {
+          const panel = profile.querySelector(".team-profile__bio");
+          const controls = profile.querySelectorAll("[aria-controls]");
+          panel.hidden = false;
+          controls.forEach((control) => {
+            control.setAttribute("aria-expanded", "true");
+          });
+        };
+
+        profiles.forEach((profile) => {
+          const controls = profile.querySelectorAll("[aria-controls]");
+          controls.forEach((control) => {
+            control.addEventListener("click", () => {
+              const expanded = control.getAttribute("aria-expanded") === "true";
+              profiles.forEach(closeProfile);
+              if (!expanded) openProfile(profile);
+            });
+          });
+        });
+      })();
+    </script>
 
     <script>
       (() => {
