@@ -1621,118 +1621,132 @@
         line-height: 1.45;
       }
       .strategy-viz--simple {
-        border: 1px solid var(--xuan-dark);
-        background: var(--xuan-light);
-        padding: 18px;
+        border: 1px solid color-mix(in srgb, var(--xuan-dark) 85%, transparent);
+        background: color-mix(in srgb, var(--xuan-light) 92%, white 8%);
+        padding: 16px 16px 14px;
       }
       .alloc-simple-head {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 14px;
-        border-bottom: 1px solid var(--xuan-dark);
-        padding-bottom: 10px;
+        gap: 8px 14px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid color-mix(in srgb, var(--xuan-dark) 64%, transparent);
+        padding-bottom: 9px;
       }
       .alloc-kicker {
         margin: 0;
         font-size: 10px;
-        letter-spacing: 0.11em;
+        letter-spacing: 0.09em;
         text-transform: uppercase;
-        color: rgba(15, 34, 6, 0.72);
+        color: rgba(15, 34, 6, 0.66);
       }
       .alloc-simple-head h3 {
         margin: 0;
         font-family: var(--sans);
         font-size: 13px;
-        letter-spacing: 0.09em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--ink-dark);
         flex: 1 1 240px;
         text-align: left;
       }
-      .alloc-total {
-        display: inline-flex;
-        gap: 8px;
-        align-items: baseline;
-        margin-bottom: 12px;
-        font-size: 11px;
-        letter-spacing: 0.1em;
+      .alloc-head-total {
+        margin: 0;
+        font-size: 10px;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--qing-dark);
+        color: rgba(15, 34, 6, 0.62);
+        display: inline-flex;
+        align-items: baseline;
+        gap: 8px;
       }
-      .alloc-total strong {
+      .alloc-head-total strong {
         font-family: var(--serif);
-        font-size: 28px;
+        font-size: 18px;
         line-height: 1;
         letter-spacing: 0;
         text-transform: none;
         color: var(--ink-dark);
+        font-weight: 400;
+      }
+      .alloc-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin: 8px 0 10px;
+      }
+      .alloc-total {
+        margin: 0;
       }
       .alloc-board {
         display: grid;
-        gap: 10px;
+        gap: 2px;
+        border-top: 1px solid color-mix(in srgb, var(--xuan-dark) 45%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, var(--xuan-dark) 45%, transparent);
+        margin-top: 10px;
       }
       .alloc-scenarios {
         display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin: 8px 0 14px;
+        gap: 6px;
+        margin: 0;
       }
       .alloc-scenario {
-        border: 1px solid var(--xuan-dark);
-        background: #F2ECD8;
-        color: var(--ink-dark);
+        border: 1px solid color-mix(in srgb, var(--xuan-dark) 60%, transparent);
+        background: transparent;
+        color: color-mix(in srgb, var(--ink-dark) 78%, white 22%);
         font-size: 10px;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        padding: 8px 10px;
+        padding: 6px 10px;
+        line-height: 1.2;
         cursor: pointer;
-        transition: background .2s ease, color .2s ease;
+        transition: border-color .2s ease, color .2s ease, background .2s ease;
       }
       .alloc-scenario.is-active {
-        background: var(--ink-dark);
-        color: var(--xuan-light);
+        border-color: color-mix(in srgb, var(--red) 70%, var(--xuan-dark) 30%);
+        color: var(--ink-dark);
+        background: color-mix(in srgb, var(--xuan-light) 66%, white 34%);
       }
       .alloc-card {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
-        gap: 6px 10px;
-        padding: 12px;
-        border: 1px solid var(--xuan-dark);
-        background: #F2ECD8;
+        gap: 7px 14px;
+        padding: 11px 0;
+        border: 0;
+        background: transparent;
       }
       .alloc-bar {
         grid-column: 1 / -1;
-        height: 8px;
-        border: 1px solid rgba(15, 34, 6, 0.2);
-        background: rgba(15, 34, 6, 0.08);
+        height: 5px;
+        background: color-mix(in srgb, var(--xuan-dark) 12%, transparent);
       }
       .alloc-bar > span {
         display: block;
         height: 100%;
         width: 0;
-        background: #8F1F37;
+        background: color-mix(in srgb, var(--red) 90%, #6B1529 10%);
         transition: width .35s ease;
       }
       .alloc-insight {
-        margin: 6px 0 4px;
+        margin: 0 0 4px;
         font-size: 12px;
-        color: rgba(15, 34, 6, 0.82);
+        color: rgba(15, 34, 6, 0.78);
       }
       .alloc-name {
         margin: 0;
         font-family: var(--sans);
         font-size: 12px;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.075em;
         text-transform: uppercase;
         color: var(--ink-dark);
       }
       .alloc-value {
         margin: 0;
         font-family: var(--serif);
-        font-size: 24px;
+        font-size: 21px;
         line-height: 1;
         color: var(--ink-dark);
       }
@@ -1740,15 +1754,15 @@
         grid-column: 1 / -1;
         margin: 0;
         font-size: 10px;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.065em;
         text-transform: uppercase;
-        color: var(--qing-dark);
+        color: rgba(15, 34, 6, 0.62);
       }
       .alloc-footnote {
-        margin-top: 10px;
-        font-size: 12px;
+        margin-top: 8px;
+        font-size: 11px;
         line-height: 1.45;
-        color: rgba(15, 34, 6, 0.78);
+        color: rgba(15, 34, 6, 0.66);
       }
 
       .data-grid {
@@ -2420,7 +2434,7 @@
       .market-context-content{padding:26px}
       .strategy-block{padding:24px}
     }
-    @media (max-width:768px){
+      @media (max-width:768px){
       :root{--pad:18px!important}
       .strategy-hero{
         padding-top:108px!important;
@@ -2466,7 +2480,7 @@
       }
       .alloc-simple-head{
         align-items:flex-start;
-        gap:8px 12px;
+        gap:8px 10px;
       }
       .alloc-kicker{
         flex:0 0 auto;
@@ -2478,7 +2492,12 @@
         letter-spacing:0.08em!important;
         line-height:1.18!important;
         text-transform:uppercase!important;
-        color:#3B7777!important;
+        color:var(--ink-dark)!important;
+      }
+      .alloc-controls{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
       }
     }
   </style>
@@ -2572,13 +2591,15 @@
               <div class="alloc-simple-head">
                 <p class="alloc-kicker">Scenario view</p>
                 <h3 data-alloc-scenario-title>Stressed Dislocation / Wide Spreads</h3>
+                <p class="alloc-total alloc-head-total"><span>Total</span><strong>100%</strong></p>
               </div>
-              <div class="alloc-scenarios" role="tablist" aria-label="Capital rotation scenarios">
-                <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="tight">Tight spreads</button>
-                <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="balanced">Balanced reset</button>
-                <button type="button" class="alloc-scenario is-active" role="tab" aria-selected="true" data-scenario="stressed">Stressed dislocation</button>
+              <div class="alloc-controls">
+                <div class="alloc-scenarios" role="tablist" aria-label="Capital rotation scenarios">
+                  <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="tight">Tight spreads</button>
+                  <button type="button" class="alloc-scenario" role="tab" aria-selected="false" data-scenario="balanced">Balanced reset</button>
+                  <button type="button" class="alloc-scenario is-active" role="tab" aria-selected="true" data-scenario="stressed">Stressed dislocation</button>
+                </div>
               </div>
-              <p class="alloc-total"><span>Total</span><strong>100%</strong></p>
               <p class="alloc-insight" data-alloc-insight>When dislocation is elevated, capital rotates toward new origination with legal control while retaining resolution capacity.</p>
               <div class="alloc-board" aria-label="Sub-strategy allocation by market scenario">
                 <article class="alloc-card" data-sleeve="abl">
