@@ -560,7 +560,8 @@
         font-family: var(--serif);
       }
       #current-issue {
-        grid-column: 1 / -1;
+        grid-column: auto;
+        min-width: 0;
       }
       .reading h3 {
         font-size: 31px;
@@ -1045,6 +1046,9 @@
         .reading-grid {
           grid-template-columns: minmax(0, 1fr);
           gap: 32px;
+        }
+        #current-issue {
+          grid-column: 1 / -1;
         }
         .reading,
         .sidebar,
