@@ -541,13 +541,15 @@ html {
 
 /* Homepage mobile top bar should keep the original single-row lockup/button layout. */
 @media (max-width: 767px) {
-  body.homepage {
+  body.homepage,
+  body.insights-page {
     --topbar-height: 70px;
     --topbar-pad: 18px;
     --topbar-pad-left: 18px;
   }
 
-  body.homepage #nav {
+  body.homepage #nav,
+  body.insights-page #nav {
     min-height: var(--topbar-height);
     height: var(--topbar-height);
     padding-inline: var(--topbar-pad);
@@ -561,35 +563,41 @@ html {
     column-gap: 16px;
   }
 
-  body.homepage #nav .nav__logo {
+  body.homepage #nav .nav__logo,
+  body.insights-page #nav .nav__logo {
     gap: 10px;
     margin-right: 0;
     flex: 1 1 auto;
   }
 
-  body.homepage #nav .nav__logo-mark {
+  body.homepage #nav .nav__logo-mark,
+  body.insights-page #nav .nav__logo-mark {
     width: 31px;
     height: 31px;
     flex-basis: 31px;
   }
 
-  body.homepage #nav .nav__logo-en {
+  body.homepage #nav .nav__logo-en,
+  body.insights-page #nav .nav__logo-en {
     font-size: 18px;
     letter-spacing: 0.22em;
   }
 
-  body.homepage #nav .nav__logo-cn {
+  body.homepage #nav .nav__logo-cn,
+  body.insights-page #nav .nav__logo-cn {
     font-size: 9px;
     letter-spacing: 0.28em;
     color: rgba(33, 33, 30, 0.66);
   }
 
-  body.homepage #nav .nav__right {
+  body.homepage #nav .nav__right,
+  body.insights-page #nav .nav__right {
     gap: 0;
     margin-left: 0;
   }
 
-  body.homepage #nav .nav__menu-btn {
+  body.homepage #nav .nav__menu-btn,
+  body.insights-page #nav .nav__menu-btn {
     min-width: 126px;
     min-height: 42px;
     padding-inline: 16px;
@@ -603,26 +611,31 @@ html {
 }
 
 @media (max-width: 560px) {
-  body.homepage {
+  body.homepage,
+  body.insights-page {
     --topbar-height: 68px;
     --topbar-pad: 16px;
     --topbar-pad-left: 16px;
   }
 
-  body.homepage #nav {
+  body.homepage #nav,
+  body.insights-page #nav {
     column-gap: 12px;
   }
 
-  body.homepage #nav .nav__logo {
+  body.homepage #nav .nav__logo,
+  body.insights-page #nav .nav__logo {
     gap: 8px;
   }
 
-  body.homepage #nav .nav__logo-en {
+  body.homepage #nav .nav__logo-en,
+  body.insights-page #nav .nav__logo-en {
     font-size: 16px;
     letter-spacing: 0.2em;
   }
 
-  body.homepage #nav .nav__menu-btn {
+  body.homepage #nav .nav__menu-btn,
+  body.insights-page #nav .nav__menu-btn {
     min-width: 112px;
     min-height: 40px;
     padding-inline: 12px;
