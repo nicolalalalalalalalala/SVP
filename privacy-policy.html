@@ -209,6 +209,33 @@
     .contact-us-spacing {
       margin: 0 0 72px;
     }
+    main {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .privacy-wrap {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+    }
+    .privacy-wrap h1 {
+      margin: 0 0 8px;
+    }
+    .privacy-wrap p,
+    .privacy-wrap li {
+      max-width: none;
+    }
+    .sv-footer {
+      background: var(--off);
+    }
+    .sv-footer__legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      padding-bottom: 8px;
+    }
   </style>
 
 
@@ -217,7 +244,10 @@
 </head>
 <body class="legal-page">
   <div id="site-header-mount"></div>
-  <h1>Privacy Policy</h1>
+
+  <main>
+    <div class="privacy-wrap">
+      <h1>Privacy Policy</h1>
   <p class="muted"><strong>Effective Date:</strong> 8 April 2026</p>
 
   <p>ShoreVest Partners, Ltd., together with its affiliates, subsidiaries, associated undertakings, representative offices, related funds, general partners, management entities and other entities operating under or in connection with the ShoreVest name, as applicable in the relevant context, are referred to in this Privacy Policy collectively as “ShoreVest”, “we”, “us” or “our”.</p>
@@ -414,7 +444,8 @@
 
   <p class="contact-us-spacing"><a href="index.html">Back to homepage</a></p>
 
-
+    </div>
+  </main>
 
   <footer class="sv-footer">
   <div class="sv-footer__inner">
