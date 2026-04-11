@@ -41,6 +41,7 @@
       max-width: 1320px;
       margin: 0 auto;
       padding: 120px 64px 40px;
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
       font-size: 12px;
       line-height: 1.55;
       letter-spacing: normal;
@@ -50,12 +51,13 @@
     }
     body.legal-page p,
     body.legal-page li {
+      font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
       font-size: 12px !important;
       max-width: none;
       line-height: 1.55;
     }
-    body.legal-page h1 { font-size: 38px !important; line-height: 1.04; }
-    body.legal-page h2 { font-size: 24px !important; line-height: 1.12; }
+    body.legal-page h1 { font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif; font-size: 38px !important; line-height: 1.04; }
+    body.legal-page h2 { font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif; font-size: 24px !important; line-height: 1.12; }
 
     .legal-contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;margin-bottom:36px}
     .legal-contact-actions a{display:inline-block;padding:10px 14px;border:1px solid rgba(0,0,0,.18);text-decoration:none;color:var(--red);transition:all .2s ease}
@@ -76,7 +78,7 @@
     .sv-footer__contact a{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(0,0,0,.16);min-height:54px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;text-decoration:none;transition:all .2s ease}
     .sv-footer__contact a:hover{background:var(--red);border-color:var(--red);color:#fff}
     .sv-footer__bottom{display:grid;grid-template-columns:1fr;gap:12px;padding-top:16px}
-    .sv-footer__copyright,.sv-footer__legal-links,.sv-footer__legal{font-size:9px;color:#6f6a63;line-height:1.7}
+    .sv-footer__copyright,.sv-footer__legal-links,.sv-footer__legal{font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-size:9px;color:#6f6a63;line-height:1.7}
     .sv-footer__legal-toggle{border:1px solid rgba(0,0,0,.16);background:rgba(255,255,255,.42)}
     .sv-footer__legal-toggle>summary{list-style:none;cursor:pointer;padding:13px 16px;font-size:11px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:#4a443d}
     .sv-footer__legal-toggle>summary::-webkit-details-marker{display:none}
@@ -84,7 +86,7 @@
     .sv-footer__legal-toggle[open]>summary::after{content:" −"}
     .sv-footer__legal-toggle .sv-footer__legal{margin:0;padding:0 16px 14px}
     .sv-footer__legal-links{padding-bottom:8px !important;display:flex;flex-wrap:wrap;row-gap:8px}
-    .sv-footer__legal-links a{color:var(--ink);text-decoration:none}
+    .sv-footer__legal-links a{font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;color:var(--ink);text-decoration:none}
     .sv-footer__legal-links a+a::before{content:"|";color:#6f6a63;margin:0 10px}
     .sv-footer__legal-links a:hover{color:var(--red)}
     @media (max-width:900px){.sv-footer{padding:10px var(--pad,var(--site-page-margin,18px)) 36px !important}.sv-footer__main{flex-direction:column;align-items:stretch;gap:12px}.sv-footer__contact{width:100%;display:grid;grid-template-columns:1fr;gap:10px}.sv-footer__contact a{width:100%}.sv-footer__legal-links{display:grid;grid-template-columns:1fr;padding-bottom:0 !important}.sv-footer__legal-links a+a::before{content:none;margin:0}}
