@@ -1545,27 +1545,118 @@ h2.su__hed {
     align-items: center;
   }
 
-  
-  .cdd-editorial__intro,
-  .cdd-feature__body,
-  .cdd-editorial__meta {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
   #cdd {
-    padding: 58px 0;
+    padding: 54px 0;
   }
   .cdd-editorial__card {
-    gap: 28px;
-    padding: 22px 16px;
+    gap: 20px;
+    padding: 20px 14px;
+    border-color: color-mix(in srgb, var(--cdd-structure) 22%, transparent);
   }
   .cdd-editorial__intro {
-    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-bottom: 20px;
+  }
+  .cdd-editorial__intro > :first-child { order: 1; }
+  .cdd-editorial__brand {
+    order: 2;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0;
   }
   .cdd-editorial__kicker {
     font-size: 9px;
     letter-spacing: .07em;
-    line-height: 1.55;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .cdd-editorial__title {
+    font-size: clamp(34px, 12vw, 54px);
+    line-height: .94;
+    margin-bottom: 14px;
+  }
+  .cdd-editorial__lede {
+    max-width: 36ch;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .cdd-feature {
+    border-color: color-mix(in srgb, var(--cdd-structure) 20%, transparent);
+  }
+  .cdd-feature__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 11px 14px 12px;
+  }
+  .cdd-feature__body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 14px 18px;
+  }
+  .cdd-feature__label {
+    margin-bottom: 12px;
+  }
+  .cdd-feature__title {
+    font-size: clamp(28px, 8.9vw, 36px);
+    line-height: 1.08;
+    margin-bottom: 14px;
+    max-width: 18ch;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: manual;
+    text-wrap: balance;
+  }
+  .cdd-feature__thesis {
+    font-size: 14px;
+    line-height: 1.68;
+  }
+  .cdd-feature__panel {
+    padding: 0;
+    gap: 12px;
+    border: 0;
+    background: transparent;
+  }
+  .cdd-feature__finding {
+    font-size: 13px;
+    line-height: 1.58;
+    padding-left: 10px;
+  }
+  .cdd-feature__quote {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.62;
+    padding: 10px 0 0 12px;
+    background: transparent;
+    border-top: 0;
+    border-left-width: 1px;
+  }
+  .cdd-feature__footer {
+    align-items: flex-start;
+    padding: 14px;
+    gap: 12px;
+    border-top-color: color-mix(in srgb, var(--cdd-structure) 16%, transparent);
+  }
+  .cdd-cta-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .cdd-cta {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 8px;
+    letter-spacing: .11em;
+    padding: 8px 10px 8px 12px;
+  }
+  .cdd-editorial__meta {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding-top: 2px;
   }
   .cdd-editorial__meta-item {
     border-left: 0;
@@ -1573,61 +1664,16 @@ h2.su__hed {
     border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
     padding-top: 10px;
   }
-  .cdd-feature__title {
-    font-size: clamp(26px, 8vw, 34px);
-    line-height: 1.06;
-    margin-bottom: 18px;
-    max-width: none;
-  }
-  .cdd-feature__thesis {
-    font-size: 13px;
-    line-height: 1.58;
-  }
-  .cdd-feature__panel {
-    padding: 12px;
-    gap: 14px;
-  }
-  .cdd-feature__finding {
-    font-size: 14px;
-    line-height: 1.6;
-    padding-left: 10px;
-  }
-  .cdd-feature__quote {
-    margin-top: 0;
-    font-size: 15px;
+  .cdd-editorial__meta-value {
+    font-size: 12px;
     line-height: 1.5;
-    padding: 12px 10px 12px 12px;
-  }
-  .cdd-feature__footer {
-    align-items: flex-start;
-    padding: 14px;
-    gap: 12px;
-  }
-  .cdd-feature__top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 12px 14px;
-  }
-  .cdd-feature__body {
-    padding: 20px 12px 22px;
-    gap: 16px;
-  }
-  .cdd-cta-group {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .cdd-cta {
-    width: 100%;
-    justify-content: space-between;
-    font-size: 8.5px;
-    letter-spacing: .1em;
-    padding: 9px 10px 9px 12px;
   }
   .cdd-feature__volume {
     width: 100%;
     text-align: left;
+  }
+  .cdd-no-break {
+    white-space: nowrap;
   }
 #insights .icard__body {
     padding:20px 16px 20px;
@@ -2148,7 +2194,7 @@ h2.su__hed {
         <div class="cdd-feature__body">
           <div>
             <div class="cdd-feature__label">CURRENT ISSUE</div>
-            <h3 class="cdd-feature__title">THE END OF CHINA'S “UNINVESTABLE” MYTH</h3>
+            <h3 class="cdd-feature__title">THE END OF CHINA'S “<span class="cdd-no-break">UNINVESTABLE</span>” MYTH</h3>
             <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
           </div>
           <aside class="cdd-feature__panel">
