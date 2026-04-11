@@ -1608,6 +1608,18 @@
         background: #FAF6EE;
         border: 1px solid rgba(179, 33, 63, 0.14);
         padding: 10px 12px;
+        cursor: pointer;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .alloc-row:hover,
+      .alloc-row:focus-visible,
+      .alloc-row.is-active {
+        border-color: var(--red);
+        box-shadow: 0 0 0 2px rgba(179, 33, 63, 0.14);
+        transform: translateY(-1px);
+      }
+      .alloc-row:focus-visible {
+        outline: none;
       }
       .alloc-row .alloc-label {
         display: flex;
@@ -1649,6 +1661,11 @@
         border: 1px solid rgba(179, 33, 63, 0.14);
         background: #FAF6EE;
         padding: 14px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .strategy-detail.is-active {
+        border-color: var(--red);
+        box-shadow: 0 0 0 2px rgba(179, 33, 63, 0.14);
       }
       .strategy-detail h3 {
         font-family: var(--serif);
@@ -2350,17 +2367,17 @@
               </div>
               <div class="alloc-grid">
                 <div class="alloc-bars">
-                  <div class="alloc-row"><span class="alloc-label"><span>Asset-Based Lending</span><span data-range="abl">24–40%</span></span><div class="alloc-track"><span data-fill="abl" style="width: 40%"></span></div></div>
-                  <div class="alloc-row"><span class="alloc-label"><span>Asset Restructuring</span><span data-range="restructuring">46–61%</span></span><div class="alloc-track"><span data-fill="restructuring" style="width: 46%"></span></div></div>
-                  <div class="alloc-row"><span class="alloc-label"><span>Debt Resolutions</span><span data-range="resolutions">14–15%</span></span><div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div></div>
+                  <div class="alloc-row is-active" data-strategy="abl" role="button" tabindex="0" aria-label="Highlight Asset-Based Lending details"><span class="alloc-label"><span>Asset-Based Lending</span><span data-range="abl">24–40%</span></span><div class="alloc-track"><span data-fill="abl" style="width: 40%"></span></div></div>
+                  <div class="alloc-row" data-strategy="restructuring" role="button" tabindex="0" aria-label="Highlight Asset Restructuring details"><span class="alloc-label"><span>Asset Restructuring</span><span data-range="restructuring">46–61%</span></span><div class="alloc-track"><span data-fill="restructuring" style="width: 46%"></span></div></div>
+                  <div class="alloc-row" data-strategy="resolutions" role="button" tabindex="0" aria-label="Highlight Debt Resolutions details"><span class="alloc-label"><span>Debt Resolutions</span><span data-range="resolutions">14–15%</span></span><div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div></div>
                   <div class="alloc-note">Illustrative ranges shown for strategy communication only.</div>
                 </div>
                 <div class="ring-card"><div class="ring" style="--pct: 68%" data-collateral-ring></div><div class="ring-label"><span data-ring-value>68%</span>Target collateral coverage</div></div>
               </div>
               <div class="strategy-details">
-                <article class="strategy-detail"><h3>First-lien asset-based lending</h3><p data-detail="abl">Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
-                <article class="strategy-detail"><h3>Asset restructuring and workouts</h3><p data-detail="restructuring">Creditor coordination programs built for negotiated control and timeline discipline.</p></article>
-                <article class="strategy-detail"><h3>Debt resolutions and recoveries</h3><p data-detail="resolutions">In-house servicing and multi-channel exits through legal, secondary, and negotiated routes.</p></article>
+                <article class="strategy-detail is-active" data-detail-card="abl"><h3>First-lien asset-based lending</h3><p data-detail="abl">Senior secured claims entered at conservative basis with enforceable priority rights.</p></article>
+                <article class="strategy-detail" data-detail-card="restructuring"><h3>Asset restructuring and workouts</h3><p data-detail="restructuring">Creditor coordination programs built for negotiated control and timeline discipline.</p></article>
+                <article class="strategy-detail" data-detail-card="resolutions"><h3>Debt resolutions and recoveries</h3><p data-detail="resolutions">In-house servicing and multi-channel exits through legal, secondary, and negotiated routes.</p></article>
               </div>
             </div>
           </section>
@@ -2448,6 +2465,8 @@
           restructuring: root.querySelector('[data-detail="restructuring"]'),
           resolutions: root.querySelector('[data-detail="resolutions"]'),
         };
+        const detailCards = Array.from(root.querySelectorAll("[data-detail-card]"));
+        const rows = Array.from(root.querySelectorAll("[data-strategy]"));
         const ring = root.querySelector("[data-collateral-ring]");
         const ringValue = root.querySelector("[data-ring-value]");
 
@@ -2501,9 +2520,40 @@
           });
         };
 
+        const highlightStrategy = (strategyKey) => {
+          rows.forEach((row) => {
+            row.classList.toggle("is-active", row.dataset.strategy === strategyKey);
+          });
+          detailCards.forEach((card) => {
+            card.classList.toggle("is-active", card.dataset.detailCard === strategyKey);
+          });
+        };
+
         regimeButtons.forEach((button) =>
           button.addEventListener("click", () => applyRegime(button.dataset.regime)),
         );
+        regimeButtons.forEach((button) =>
+          button.addEventListener("keydown", (event) => {
+            if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+            event.preventDefault();
+            const currentIndex = regimeButtons.indexOf(button);
+            let nextIndex = currentIndex;
+            if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % regimeButtons.length;
+            if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + regimeButtons.length) % regimeButtons.length;
+            if (event.key === "Home") nextIndex = 0;
+            if (event.key === "End") nextIndex = regimeButtons.length - 1;
+            regimeButtons[nextIndex].focus();
+            applyRegime(regimeButtons[nextIndex].dataset.regime);
+          }),
+        );
+        rows.forEach((row) => {
+          row.addEventListener("click", () => highlightStrategy(row.dataset.strategy));
+          row.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            highlightStrategy(row.dataset.strategy);
+          });
+        });
       })();
     </script>
 <script>
