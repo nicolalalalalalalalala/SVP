@@ -136,8 +136,10 @@
       .research-hero {
         min-height: 420px;
         margin-top: 0;
-        background: radial-gradient(circle at 18% 16%, #3d6d2f 0%, #234e1d 42%, #0f2206 100%);
-        padding: 160px 0 56px;
+        background:
+          radial-gradient(circle at 18% 14%, rgba(87, 138, 63, 0.45) 0%, rgba(33, 79, 24, 0) 52%),
+          linear-gradient(120deg, #193712 0%, #16300f 38%, #0f2206 100%);
+        padding: 168px 0 72px;
         border-bottom: 1px solid rgba(250, 246, 238, 0.2);
         display: flex;
         align-items: end;
@@ -149,10 +151,10 @@
         align-items: start;
       }
       .wordmark {
-        margin: 24px 0 22px;
+        margin: 28px 0 24px;
         display: flex;
         align-items: flex-start;
-        gap: 20px;
+        gap: 18px;
       }
       .wordmark__logo {
         width: 64px;
@@ -164,10 +166,10 @@
       }
       .wordmark__title {
         font-family: var(--serif);
-        font-size: 78px;
-        line-height: 0.9;
+        font-size: clamp(62px, 7vw, 84px);
+        line-height: 0.88;
         color: #fff;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.024em;
       }
       .wordmark__title em {
         color: var(--red-soft);
@@ -177,8 +179,8 @@
         max-width: 490px;
         font-family: var(--serif);
         font-size: 17px;
-        line-height: 1.66;
-        color: rgba(250, 246, 238, 0.78);
+        line-height: 1.72;
+        color: rgba(250, 246, 238, 0.82);
       }
       .issue-card {
         border: 1px solid rgba(255, 255, 255, 0.12);
@@ -331,10 +333,12 @@
         color: rgba(250, 246, 238, 0.78);
       }
       .issue-live {
-        border-top: 1px solid rgba(250, 246, 238, 0.44);
-        padding-top: 18px;
+        border: 1px solid rgba(250, 246, 238, 0.26);
+        background: linear-gradient(150deg, rgba(250, 246, 238, 0.1) 0%, rgba(250, 246, 238, 0.03) 100%);
+        border-radius: 14px;
+        padding: 24px 24px 20px;
         align-self: end;
-        background: transparent;
+        box-shadow: 0 18px 52px rgba(8, 14, 6, 0.3);
       }
       .issue-live__k {
         font-size: 9px;
@@ -347,8 +351,8 @@
         display: inline-flex;
         align-items: center;
         gap: 5px;
-        margin-right: 10px;
         transform: translateY(-1px);
+        flex: 0 0 auto;
       }
       .cdd-live__dot {
         display: inline-block;
@@ -381,29 +385,38 @@
       }
       .issue-live h1 {
         font-family: var(--serif);
-        font-size: 42px;
-        line-height: 1.06;
+        font-size: clamp(34px, 4.7vw, 48px);
+        line-height: 1.08;
         font-weight: 400;
         color: #fff;
         display: flex;
-        align-items: center;
-        gap: 6px;
-        margin-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      .issue-live h1 .issue-live__headline {
+        display: block;
       }
       .issue-live p {
         font-size: 15px;
-        line-height: 1.72;
+        line-height: 1.76;
         color: rgba(250, 246, 238, 0.82);
-        margin-bottom: 14px;
+        margin-bottom: 18px;
       }
       .issue-live__meta {
         display: flex;
-        gap: 20px;
+        gap: 8px;
         flex-wrap: wrap;
-        font-size: 10px;
+        font-size: 9.5px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: rgba(250, 246, 238, 0.72);
+        color: rgba(250, 246, 238, 0.84);
+      }
+      .issue-live__meta span {
+        border: 1px solid rgba(250, 246, 238, 0.32);
+        border-radius: 999px;
+        padding: 6px 10px 5px;
       }
 
       .issue-shell {
@@ -833,10 +846,6 @@
           margin-top: 0;
           padding: 138px 0 44px;
         }
-        .issue-live h1 {
-          font-size: 46px;
-          line-height: 1.04;
-        }
         .franchise-ribbon {
           display: block;
         }
@@ -935,8 +944,9 @@
           gap: 16px;
           align-items: flex-start;
         }
-        .wordmark svg {
+        .wordmark__logo {
           width: 42px;
+          height: auto;
           flex: 0 0 auto;
         }
         .wordmark__title {
@@ -953,9 +963,16 @@
         .issue-live {
           max-width: 100%;
           min-width: 0;
+          padding: 18px 16px 14px;
+          border-radius: 12px;
         }
         .issue-live h1 {
           overflow-wrap: anywhere;
+          gap: 8px;
+          margin-bottom: 10px;
+        }
+        .issue-live p {
+          margin-bottom: 12px;
         }
         .issue-live__meta,
         .issue-header__meta {
@@ -964,6 +981,7 @@
         .issue-live__meta span,
         .issue-header__meta span {
           min-width: 0;
+          padding: 5px 8px 4px;
         }
         .issue-card__bar {
           padding: 10px 14px;
@@ -1656,7 +1674,7 @@
           </p>
         </div>
         <article class="issue-live">
-          <h1><span class="cdd-live" aria-label="Live issue"><span class="cdd-live__dot" aria-hidden="true"></span><span class="cdd-live__label">Live</span></span>The End of China's Uninvestable Myth</h1>
+          <h1><span class="cdd-live" aria-label="Live issue"><span class="cdd-live__dot" aria-hidden="true"></span><span class="cdd-live__label">Live</span></span><span class="issue-live__headline">The End of China's Uninvestable Myth</span></h1>
           <p>
             This issue examines how policy and regulatory changes since 2021
             have affected perceptions of investability in China, with a focus
