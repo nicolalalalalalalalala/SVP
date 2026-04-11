@@ -242,23 +242,24 @@
         flex-direction: column;
         gap: 0;
         align-self: start;
-        border: 1px solid color-mix(in srgb, var(--rule) 72%, white);
-        background: var(--white);
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        border: none;
+        background: transparent;
+        transition: none;
       }
       .card:hover,
       .card:focus-within {
-        transform: translateY(-2px);
-        border-color: color-mix(in srgb, var(--qing) 34%, var(--rule));
-        box-shadow: 0 12px 24px rgba(20, 25, 16, 0.08);
+        transform: none;
+        border-color: transparent;
+        box-shadow: none;
       }
       .photo {
         width: 100%;
         aspect-ratio: 4/5;
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, white);
+        border-bottom: none;
         background: #f1eee7;
         overflow: hidden;
         cursor: pointer;
+        margin-bottom: 10px;
       }
       .photo img {
         display: block;
@@ -304,9 +305,9 @@
         line-height: 1.2;
         letter-spacing: 0.01em;
         color: var(--ink);
-        margin-bottom: 0;
-        padding: 14px 16px 6px;
-        background: var(--white);
+        margin-bottom: 4px;
+        padding: 0;
+        background: transparent;
       }
       .title {
         font-family: var(--sans);
@@ -315,8 +316,8 @@
         text-transform: uppercase;
         color: var(--qing-dark);
         line-height: 1.5;
-        padding: 0 16px 14px;
-        background: var(--white);
+        padding: 0;
+        background: transparent;
       }
       .card-descriptor {
         font-size: 12px;
@@ -338,7 +339,7 @@
       }
 
       .card.is-active .photo {
-        border-color: var(--qing);
+        border-color: transparent;
         box-shadow: none;
       }
       .group--leadership {
@@ -364,15 +365,6 @@
       }
       .group--client-solutions .grid {
         gap: 20px;
-      }
-      .group--client-solutions .card {
-        border: none;
-        box-shadow: none;
-      }
-      .group--client-solutions .card:hover,
-      .group--client-solutions .card:focus-within {
-        border-color: transparent;
-        box-shadow: none;
       }
       .group--client-solutions .photo {
         background: transparent;
@@ -577,13 +569,14 @@
         .name {
           font-size: 16px;
           min-height: auto;
-          padding: 12px 14px 5px;
+          padding: 0;
+          margin-bottom: 4px;
         }
         .title {
           font-size: 9px;
           letter-spacing: 0.12em;
           min-height: auto;
-          padding: 0 14px 12px;
+          padding: 0;
         }
         .row-bio-panel,
         .row-bio-panel.is-open {
