@@ -234,14 +234,14 @@
         display: flex;
         flex-direction: column;
         gap: 0;
-        border: 1px solid color-mix(in srgb, var(--rule) 88%, white);
-        background: #fbfaf7;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        border: none;
+        background: transparent;
+        transition: none;
       }
       .card:hover,
       .card:focus-within {
-        border-color: color-mix(in srgb, var(--qing) 40%, var(--rule));
-        box-shadow: 0 8px 20px color-mix(in srgb, #0b1e10 8%, transparent);
+        border-color: transparent;
+        box-shadow: none;
       }
       .photo {
         width: 100%;
