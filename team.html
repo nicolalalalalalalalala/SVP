@@ -49,11 +49,11 @@
         scroll-padding-top: 96px;
       }
       body {
-        background: var(--cream);
+        background: #f7f5f1;
         color: var(--ink);
         font-family: var(--sans);
         font-size: 15px;
-        line-height: 1.6;
+        line-height: 1.65;
       }
       a {
         text-decoration: none;
@@ -103,10 +103,10 @@
       }
 
       .pagehero {
-        min-height: 420px;
-        padding: 148px 0 76px;
+        min-height: 340px;
+        padding: 140px 0 56px;
         border-bottom: 1px solid var(--rule);
-        background: var(--cream);
+        background: transparent;
         display: flex;
         align-items: center;
       }
@@ -115,22 +115,22 @@
       }
       h1 {
         font-family: var(--serif);
-        font-size: 78px;
+        font-size: clamp(42px, 6.2vw, 64px);
         font-weight: 300;
         font-style: italic;
-        line-height: 1.04;
+        line-height: 1.08;
         letter-spacing: 0.005em;
-        text-transform: uppercase;
-        margin-bottom: 22px;
-        max-width: 700px;
+        text-transform: none;
+        margin-bottom: 14px;
+        max-width: 680px;
       }
       .pagehero p {
-        max-width: 700px;
-        font-size: 13px;
-        line-height: 1.65;
+        max-width: 640px;
+        font-size: 14px;
+        line-height: 1.7;
         color: var(--ink-soft);
         font-family: var(--sans);
-        margin-top: 18px;
+        margin-top: 8px;
       }
       .pagehero p.pagehero__fullwidth {
         max-width: none;
@@ -181,10 +181,8 @@
       }
 
       .team-groups {
-        padding: 72px 0 90px;
-      }
-      .team-groups {
-        background: var(--cream);
+        padding: 56px 0 84px;
+        background: transparent;
       }
       .team-groups__intro {
         font-family: var(--serif);
@@ -195,7 +193,7 @@
         margin-bottom: 22px;
       }
       .group {
-        padding: 32px 0 40px;
+        padding: 28px 0 34px;
         border-bottom: 1px solid var(--rule);
         scroll-margin-top: 96px;
       }
@@ -211,18 +209,18 @@
       }
       .group h2 {
         font-family: var(--serif);
-        font-weight: 700;
-        font-size: clamp(24px, 2.45vw, 34px);
-        line-height: 1.06;
+        font-weight: 500;
+        font-size: clamp(24px, 2.2vw, 32px);
+        line-height: 1.1;
         letter-spacing: 0;
-        white-space: nowrap;
+        white-space: normal;
       }
       .group__summary {
-        font-size: 13px;
-        line-height: 1.58;
+        font-size: 12px;
+        line-height: 1.7;
         letter-spacing: 0.01em;
-        color: var(--mist);
-        max-width: 860px;
+        color: color-mix(in srgb, var(--ink-soft) 90%, white);
+        max-width: 760px;
         white-space: normal;
         padding-top: 2px;
       }
@@ -230,23 +228,26 @@
       .grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
+        gap: 18px;
       }
       .card {
         display: flex;
         flex-direction: column;
         gap: 0;
-        transition: transform 0.2s ease;
+        border: 1px solid color-mix(in srgb, var(--rule) 88%, white);
+        background: #fbfaf7;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
       }
       .card:hover,
       .card:focus-within {
-        transform: translateY(-2px);
+        border-color: color-mix(in srgb, var(--qing) 40%, var(--rule));
+        box-shadow: 0 8px 20px color-mix(in srgb, #0b1e10 8%, transparent);
       }
       .photo {
         width: 100%;
         aspect-ratio: 4/5;
-        border: 1px solid var(--rule);
-        background: var(--stone);
+        border-bottom: 1px solid var(--rule);
+        background: #f1eee7;
         overflow: hidden;
         cursor: pointer;
       }
@@ -288,23 +289,23 @@
       }
       .name {
         font-family: var(--sans);
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.2;
         letter-spacing: 0.01em;
         color: var(--ink);
         margin-bottom: 0;
-        padding: 12px 0 6px;
-        background: var(--sand);
+        padding: 14px 14px 4px;
+        background: transparent;
       }
       .title {
         font-family: var(--sans);
         font-size: 7.5pt;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.13em;
         text-transform: uppercase;
         color: var(--red);
         line-height: 1.35;
-        padding: 0 0 14px;
-        background: var(--sand);
+        padding: 0 14px 12px;
+        background: transparent;
       }
       .card-descriptor {
         font-size: 12px;
@@ -314,16 +315,15 @@
       }
       .card-cue {
         border: 0;
-        background: var(--qing);
-        padding: 2px 0;
+        background: transparent;
+        padding: 0 14px 14px;
         text-align: left;
         cursor: pointer;
         font-size: 8pt;
         letter-spacing: 0.07em;
         text-transform: uppercase;
-        color: var(--cream);
-        text-decoration: underline;
-        text-underline-offset: 2px;
+        color: var(--qing-dark);
+        text-decoration: none;
         width: 100%;
       }
       .card-bio {
@@ -338,7 +338,7 @@
 
       .card.is-active .photo {
         border-color: var(--qing);
-        box-shadow: 0 10px 24px color-mix(in srgb, var(--qing-dark) 18%, transparent);
+        box-shadow: none;
       }
       .group--leadership {
         margin-top: 20px;
@@ -383,10 +383,9 @@
         grid-column: 1 / -1;
         display: none;
         margin-top: 12px;
-        background: var(--off);
-        border-top: 1px solid var(--rule);
-        border-bottom: 1px solid var(--rule);
-        padding: 42px 48px 46px;
+        background: #fbfaf7;
+        border: 1px solid var(--rule);
+        padding: 34px 36px;
       }
       .row-bio-panel.is-open {
         display: block;
@@ -411,13 +410,13 @@
       }
       .row-bio-panel__name {
         font-family: var(--sans);
-        font-size: 40px;
+        font-size: clamp(28px, 4vw, 36px);
         line-height: 1.04;
         margin-bottom: 11px;
         letter-spacing: 0.005em;
         color: var(--ink);
-        font-weight: 700;
-        text-transform: uppercase;
+        font-weight: 600;
+        text-transform: none;
       }
       .row-bio-panel__meta {
         display: grid;
