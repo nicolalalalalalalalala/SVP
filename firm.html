@@ -239,22 +239,32 @@
         font-family: var(--sans);
       }
       .quote-panel {
-        display: grid;
-        gap: 14px;
-        align-content: start;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
       }
       .quote-panel img {
-        height: 230px;
         width: 100%;
+        height: 100%;
         object-fit: cover;
         filter: grayscale(100%);
+      }
+      .quote-panel-copy {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 20px 22px 22px;
+        background: linear-gradient(to top, rgba(12, 28, 29, 0.85), rgba(12, 28, 29, 0.05));
+      }
+      .quote-panel .eyebrow {
+        color: rgba(243, 242, 235, 0.88);
       }
       .quote {
         font-size: clamp(22px, 2.6vw, 33px);
         line-height: 1.38;
         font-style: italic;
-        color: var(--ink-green-dark);
+        color: var(--xuan-light);
         font-weight: 400;
+        margin: 0;
       }
 
       .metrics-shell {
@@ -472,6 +482,9 @@
           border-top: 1px solid var(--rule);
           padding: 20px 0 0;
         }
+        .quote-panel {
+          min-height: 460px;
+        }
       }
       @media (max-width: 767px) {
         section {
@@ -570,8 +583,10 @@
           </article>
           <aside class="quote-panel">
             <img src="assets/images/firm_tree.jpg" alt="Coastal redwood tree used as ShoreVest's founding symbol" loading="lazy" />
-            <p class="eyebrow">Founding principles</p>
-            <p class="quote">“The Coastal Redwood grows slowly but endures for centuries. It reflects our ambition to build a firm that outlasts cycles.”</p>
+            <div class="quote-panel-copy">
+              <p class="eyebrow">Founding principles</p>
+              <p class="quote">“The Coastal Redwood grows slowly but endures for centuries. It reflects our ambition to build a firm that outlasts cycles.”</p>
+            </div>
           </aside>
         </div>
       </section>
