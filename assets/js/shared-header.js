@@ -53,12 +53,14 @@
     'press.html': 'press.html',
     'press_cn.html': 'press.html',
     'team.html': 'team.html',
-    'team_cn.html': 'team.html'
+    'team_cn.html': 'team.html',
+    'investor-access.html': 'investor-access.html',
+    'investor-access_cn.html': 'investor-access.html'
   };
 
   const activeHref = activeMap[path];
   if (activeHref) {
-    const activeLink = nav.querySelector(`.nav__links a[href="${activeHref}"]`);
-    if (activeLink) activeLink.classList.add('active');
+    const activeLinks = nav.querySelectorAll(`a[href="${activeHref}"]`);
+    activeLinks.forEach((activeLink) => activeLink.classList.add('active'));
   }
 })();

@@ -57,6 +57,8 @@
   padding-left: 8px;
   border-left: none;
   min-height: 31px;
+  flex: 0 0 auto;
+  contain: layout;
 }
 
 .nav__logo-en {
@@ -84,6 +86,7 @@
   width: 100%;
   text-align: left;
   line-height: 1;
+  text-rendering: geometricPrecision;
 }
 
 .nav__links {
@@ -160,6 +163,12 @@
 }
 
 .nav__lp:hover {
+  background: var(--red, #3d7070);
+  color: #fff;
+  border-color: var(--red, #3d7070);
+}
+
+.nav__lp.active {
   background: var(--red, #3d7070);
   color: #fff;
   border-color: var(--red, #3d7070);
