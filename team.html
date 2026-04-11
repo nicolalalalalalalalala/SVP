@@ -447,8 +447,13 @@
         line-height: 1.65;
         color: var(--ink-deep);
         max-width: 1020px;
-        white-space: pre-line;
         text-wrap: pretty;
+      }
+      .row-bio-panel__text p {
+        margin: 0;
+      }
+      .row-bio-panel__text p + p {
+        margin-top: 0.95em;
       }
 
       @media (max-width: 1100px) {
@@ -1047,6 +1052,51 @@
           const panelRole = panel.querySelector(".row-bio-panel__role");
           const panelText = panel.querySelector(".row-bio-panel__text");
 
+          const formatBioParagraphs = (rawText = "") => {
+            const text = rawText.replace(/\s+/g, " ").trim();
+            if (!text) return [];
+
+            const sentences = text.match(/[^.!?]+[.!?]+["')\]]*|[^.!?]+$/g) || [text];
+            const cleaned = sentences.map((sentence) => sentence.trim()).filter(Boolean);
+            const paragraphs = [];
+            let chunk = [];
+            let chunkLength = 0;
+
+            cleaned.forEach((sentence) => {
+              chunk.push(sentence);
+              chunkLength += sentence.length;
+
+              if (chunk.length >= 2 || chunkLength >= 320) {
+                paragraphs.push(chunk.join(" "));
+                chunk = [];
+                chunkLength = 0;
+              }
+            });
+
+            if (chunk.length) {
+              paragraphs.push(chunk.join(" "));
+            }
+
+            return paragraphs;
+          };
+
+          const renderPanelBio = (card) => {
+            const rawBio = card.querySelector(".card-bio")?.textContent || "";
+            const paragraphs = formatBioParagraphs(rawBio);
+            panelText.innerHTML = "";
+
+            if (!paragraphs.length) {
+              panelText.textContent = rawBio.trim();
+              return;
+            }
+
+            paragraphs.forEach((paragraph) => {
+              const p = document.createElement("p");
+              p.textContent = paragraph;
+              panelText.appendChild(p);
+            });
+          };
+
           const closeAll = () => {
             cards.forEach((card) => {
               card.classList.remove("is-active");
@@ -1083,7 +1133,7 @@
 
             panelName.textContent = targetCard.querySelector(".name")?.textContent?.trim() || "";
             panelRole.textContent = targetCard.querySelector(".title")?.textContent?.trim() || "";
-            panelText.textContent = targetCard.querySelector(".card-bio")?.textContent?.trim() || "";
+            renderPanelBio(targetCard);
 
             const rowCards = rowCardsFor(targetCard);
             const lastInRow = rowCards[rowCards.length - 1] || targetCard;
