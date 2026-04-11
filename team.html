@@ -339,17 +339,21 @@
         margin-top: -2px;
       }
       .team-profile__bio-toggle {
+        --team-bio-cinnabar: var(--cinnabar, #c93b2a);
+        --team-bio-cinnabar-hover: color-mix(in srgb, var(--team-bio-cinnabar) 88%, black 12%);
+        --team-bio-cinnabar-active: color-mix(in srgb, var(--team-bio-cinnabar) 78%, black 22%);
+        --team-bio-focus-ring: color-mix(in srgb, var(--team-bio-cinnabar) 46%, white 54%);
         margin-top: 10px;
         width: fit-content;
-        background: var(--cinnamon);
-        border: 1px solid var(--cinnamon);
+        background: var(--team-bio-cinnabar);
+        border: 1px solid var(--team-bio-cinnabar);
         padding: 7px 10px;
         font-size: 11px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--white);
         cursor: pointer;
-        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
       }
       .team-profile__bio-toggle::after {
         content: "  ›";
@@ -363,12 +367,18 @@
       }
       .team-profile__bio-toggle:hover {
         color: var(--white);
-        border-color: var(--cinnamon-dark);
-        background-color: var(--cinnamon-dark);
+        border-color: var(--team-bio-cinnabar-hover);
+        background-color: var(--team-bio-cinnabar-hover);
+      }
+      .team-profile__bio-toggle:active,
+      .team-profile__bio-toggle[aria-expanded="true"] {
+        color: var(--white);
+        border-color: var(--team-bio-cinnabar-active);
+        background-color: var(--team-bio-cinnabar-active);
       }
       .team-profile__bio-toggle:focus-visible {
-        outline: 1px solid color-mix(in srgb, var(--qing) 78%, white 22%);
-        outline-offset: 4px;
+        outline: 2px solid var(--team-bio-focus-ring);
+        outline-offset: 3px;
       }
       .team-profile__bio {
         margin-top: 12px;
