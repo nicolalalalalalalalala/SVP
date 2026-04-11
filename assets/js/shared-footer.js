@@ -42,6 +42,17 @@
     </div>
   </div>`;
 
+  const ensureTypographySystem = () => {
+    const fontId = 'sv-footer-typography-fonts';
+    if (document.getElementById(fontId)) return;
+
+    const link = document.createElement('link');
+    link.id = fontId;
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap';
+    document.head.appendChild(link);
+  };
+
   const setTypographyTokens = (footerNode) => {
     const force = (node, property, value) => node?.style.setProperty(property, value, 'important');
     const brand = footerNode.querySelector('.sv-footer__brand');
@@ -72,5 +83,5 @@
     setTypographyTokens(node);
   };
 
-  document.querySelectorAll('footer.sv-footer').forEach(mountFooter);
+  document.querySelectorAll('footer.sv-footer, footer[data-shared-footer]').forEach(mountFooter);
 })();
