@@ -10,15 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/typography-consistent.css" />
+  <link rel="stylesheet" href="assets/css/topbar-consistent.css" />
 
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
 <style>
     :root{--red:var(--sv-color-accent,#3d7070);--ink:var(--sv-color-ink,#0c0c0a);--ink-soft:var(--sv-color-soft-ink,#3f3b36);--paper:var(--sv-color-bg,#fff);--off:var(--sv-color-bg-soft,#f6f4f0);--rule:var(--sv-color-rule,rgba(0,0,0,.08));--serif:var(--sv-font-serif-en,'EB Garamond',Georgia,serif);--sans:var(--sv-font-sans-en,'Inter',system-ui,sans-serif)}
     *{box-sizing:border-box}
     body{margin:0;font-family:var(--sans);color:var(--ink-soft);background:var(--off)}
-    body.legal-page{max-width:1320px;margin:0 auto;padding:120px 64px 40px;font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-size:10pt;line-height:1.55;letter-spacing:normal}
+    body.legal-page{margin:0;font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-size:10pt;line-height:1.55;letter-spacing:normal}
     a{color:var(--red)}
-    main{width:100%;max-width:1320px;margin:0 auto}
+    main{width:100%;max-width:1320px;margin:0 auto;padding:40px 64px}
     .disclaimer-wrap{width:100%;max-width:880px;margin:0 auto;color:var(--ink-soft)}
     .disclaimer-wrap h1{margin:0 0 8px;font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:.05em;font-size:32px;line-height:1.08;color:var(--ink);text-transform:uppercase}
     .disclaimer-wrap h2{margin:30px 0 10px;font-family:"DIN 2014","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:normal;font-size:20px;line-height:1.16;color:var(--ink)}
@@ -41,7 +42,7 @@
     .sv-footer__legal-links{padding-bottom:8px}
     .sv-footer__legal-links a{color:var(--ink);text-decoration:none}
     .sv-footer__legal-links a:hover{color:var(--red)}
-    @media (max-width:980px){body.legal-page{padding:110px 18px 34px}}
+    @media (max-width:980px){main{padding:34px 18px}}
     @media (max-width:768px){.sv-footer{padding:26px var(--pad,var(--site-page-margin,18px)) 34px}.sv-footer__main{flex-direction:column;align-items:flex-start}.sv-footer__contact{flex-wrap:wrap}}
   </style>
   <link rel="stylesheet" href="assets/css/shorevest-enforcement.css" />
