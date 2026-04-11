@@ -1,4 +1,4 @@
-body.legal-page main {
+body.legal-page .legal-page__main {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
@@ -68,6 +68,21 @@ body.legal-page .legal-page__content h2 {
   color: var(--ink);
 }
 
+
+body.legal-page .legal-page__content .muted {
+  color: #5b554f;
+}
+
+body.legal-page .sv-footer {
+  background: var(--off);
+}
+
+body.legal-page .sv-footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding-bottom: 8px;
+}
 body.legal-page .legal-page__content .muted,
 body.legal-page .legal-page__content small,
 body.legal-page .legal-page__content .effective-date {
@@ -106,7 +121,7 @@ body.legal-page .legal-contact-actions a:hover {
     padding: 0 var(--pad) 34px;
   }
 
-  body.legal-page main {
+  body.legal-page .legal-page__main {
     padding-top: 18px;
   }
 }
