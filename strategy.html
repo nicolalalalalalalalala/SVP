@@ -1657,21 +1657,9 @@
         line-height: 1;
         color: var(--ink);
       }
-      .alloc-pie-center span {
-        display: block;
-        margin-top: 5px;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: rgba(15, 34, 6, 0.85);
-      }
+      .alloc-pie-center span,
       .alloc-pie-center small {
-        display: block;
-        margin-top: 6px;
-        font-size: 10px;
-        line-height: 1.35;
-        color: rgba(15, 34, 6, 0.72);
-        letter-spacing: 0.02em;
+        display: none;
       }
       .alloc-row {
         background: #FAF6EE;
@@ -1691,14 +1679,7 @@
         outline: none;
       }
       .alloc-row .alloc-label {
-        display: flex;
-        justify-content: space-between;
-        font-size: 11px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #0F2206;
-        margin-bottom: 8px;
-        font-weight: 400;
+        display: none;
       }
       .alloc-track {
         height: 8px;
@@ -1714,11 +1695,6 @@
         bottom: 0;
         background: var(--red);
         transition: width 0.35s ease;
-      }
-      .alloc-note {
-        font-size: 12px;
-        color: #0F2206;
-        margin-top: 6px;
       }
       .strategy-details {
         margin-top: 16px;
@@ -2436,18 +2412,17 @@
               </div>
               <div class="alloc-grid">
                 <div class="alloc-bars">
-                  <div class="alloc-row is-active" data-strategy="abl" role="button" tabindex="0" aria-label="Highlight Asset-Based Lending details"><span class="alloc-label"><span>Asset-Based Lending</span><span data-range="abl">24–40%</span></span><div class="alloc-track"><span data-fill="abl" style="width: 40%"></span></div></div>
-                  <div class="alloc-row" data-strategy="restructuring" role="button" tabindex="0" aria-label="Highlight Asset Restructuring details"><span class="alloc-label"><span>Asset Restructuring</span><span data-range="restructuring">46–61%</span></span><div class="alloc-track"><span data-fill="restructuring" style="width: 46%"></span></div></div>
-                  <div class="alloc-row" data-strategy="resolutions" role="button" tabindex="0" aria-label="Highlight Debt Resolutions details"><span class="alloc-label"><span>Debt Resolutions</span><span data-range="resolutions">14–15%</span></span><div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div></div>
-                  <div class="alloc-note">Illustrative ranges shown for strategy communication only.</div>
+                  <div class="alloc-row is-active" data-strategy="abl" role="button" tabindex="0" aria-label="Highlight Asset-Based Lending details"><span class="alloc-label"><span aria-hidden="true"></span><span data-range="abl" aria-hidden="true"></span></span><div class="alloc-track"><span data-fill="abl" style="width: 40%"></span></div></div>
+                  <div class="alloc-row" data-strategy="restructuring" role="button" tabindex="0" aria-label="Highlight Asset Restructuring details"><span class="alloc-label"><span aria-hidden="true"></span><span data-range="restructuring" aria-hidden="true"></span></span><div class="alloc-track"><span data-fill="restructuring" style="width: 46%"></span></div></div>
+                  <div class="alloc-row" data-strategy="resolutions" role="button" tabindex="0" aria-label="Highlight Debt Resolutions details"><span class="alloc-label"><span aria-hidden="true"></span><span data-range="resolutions" aria-hidden="true"></span></span><div class="alloc-track"><span data-fill="resolutions" style="width: 14%"></span></div></div>
                 </div>
                 <div class="alloc-visuals">
                   <div class="alloc-pie-card">
                     <div class="alloc-pie" data-allocation-pie aria-label="Illustrative cycle allocation mix as an interactive pie chart">
                       <div class="alloc-pie-center">
                         <strong data-pie-value>40%</strong>
-                        <span data-pie-label>Asset-Based Lending</span>
-                        <small data-pie-range>Range: 24–40%</small>
+                        <span data-pie-label aria-hidden="true"></span>
+                        <small data-pie-range aria-hidden="true"></small>
                       </div>
                     </div>
                   </div>
