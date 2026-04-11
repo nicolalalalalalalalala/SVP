@@ -1577,179 +1577,94 @@
         color: rgba(15, 34, 6, 0.78);
         line-height: 1.45;
       }
-      .viz-controls {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0 0 14px;
+      .strategy-viz--simple {
+        border: 1px solid var(--xuan-dark);
+        background: var(--xuan-light);
+        padding: 18px;
       }
-      .viz-btn {
-        border: 1px solid rgba(179, 33, 63, 0.2);
-        background: #FAF6EE;
-        color: #0F2206;
-        padding: 6px 10px;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
-      .viz-btn.is-active,
-      .viz-btn:hover {
-        background: var(--red);
-        border-color: var(--red);
-        color: #FAF6EE;
-      }
-      .viz-scrubber {
-        margin: 0 0 14px;
-        border: 1px solid rgba(179, 33, 63, 0.14);
-        background: #FAF6EE;
-        padding: 10px 12px;
-      }
-      .viz-scrubber__head {
+      .alloc-simple-head {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 8px;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 14px;
+        border-bottom: 1px solid var(--xuan-dark);
+        padding-bottom: 10px;
+      }
+      .alloc-kicker {
+        margin: 0;
         font-size: 10px;
         letter-spacing: 0.11em;
         text-transform: uppercase;
         color: rgba(15, 34, 6, 0.72);
       }
-      .viz-scrubber__head b {
-        color: var(--ink);
-        font-weight: 600;
-        letter-spacing: 0.06em;
-      }
-      .viz-slider {
-        width: 100%;
-        accent-color: var(--red);
-      }
-      .alloc-grid {
-        display: grid;
-        grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
-        gap: 14px;
-        align-items: stretch;
-      }
-      .alloc-pie {
-        border: 1px solid rgba(179, 33, 63, 0.14);
-        background: #FAF6EE;
-        padding: 16px;
-        display: grid;
-        place-items: center;
-      }
-      .alloc-donut {
-        --end-abl: 40%;
-        --end-restructuring: 86%;
-        width: min(100%, 250px);
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: conic-gradient(
-          var(--red) 0 var(--end-abl),
-          #B86A7E var(--end-abl) var(--end-restructuring),
-          #0F2206 var(--end-restructuring) 100%
-        );
-        position: relative;
-      }
-      .alloc-donut::after {
-        content: "";
-        position: absolute;
-        inset: 20%;
-        border-radius: 50%;
-        background: #FAF6EE;
-        box-shadow: inset 0 0 0 1px rgba(179, 33, 63, 0.12);
-      }
-      .alloc-donut-center {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        text-align: center;
-        z-index: 1;
-        font-size: 10px;
-        letter-spacing: 0.12em;
+      .alloc-simple-head h3 {
+        margin: 0;
+        font-family: var(--sans);
+        font-size: 13px;
+        letter-spacing: 0.09em;
         text-transform: uppercase;
-        color: rgba(15, 34, 6, 0.72);
+        color: var(--ink-dark);
       }
-      .alloc-donut-center strong {
-        display: block;
+      .alloc-total {
+        display: inline-flex;
+        gap: 8px;
+        align-items: baseline;
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--qing-dark);
+      }
+      .alloc-total strong {
         font-family: var(--serif);
-        font-size: 30px;
-        letter-spacing: 0;
-        color: var(--ink);
+        font-size: 28px;
         line-height: 1;
+        letter-spacing: 0;
         text-transform: none;
-        margin-bottom: 4px;
+        color: var(--ink-dark);
       }
       .alloc-board {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
       }
       .alloc-card {
-        background: #FAF6EE;
-        border: 1px solid rgba(179, 33, 63, 0.14);
-        padding: 14px;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-      }
-      .alloc-card[role="button"] {
-        cursor: pointer;
-      }
-      .alloc-card.is-focus {
-        border-color: rgba(179, 33, 63, 0.42);
-        box-shadow: inset 0 0 0 1px rgba(179, 33, 63, 0.2);
-        transform: translateY(-1px);
-      }
-      .alloc-card[data-slice="abl"] { border-left: 4px solid var(--red); }
-      .alloc-card[data-slice="restructuring"] { border-left: 4px solid #B86A7E; }
-      .alloc-card[data-slice="resolutions"] { border-left: 4px solid #0F2206; }
-      .alloc-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 8px;
-        margin-bottom: 8px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 6px 10px;
+        padding: 12px;
+        border: 1px solid var(--xuan-dark);
+        background: #F2ECD8;
       }
       .alloc-name {
-        font-family: var(--serif);
-        font-size: 18px;
-        line-height: 1.2;
-        color: #0F2206;
+        margin: 0;
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-dark);
       }
       .alloc-value {
+        margin: 0;
         font-family: var(--serif);
-        font-size: 26px;
+        font-size: 24px;
         line-height: 1;
-        color: var(--red);
+        color: var(--ink-dark);
       }
       .alloc-range {
+        grid-column: 1 / -1;
+        margin: 0;
         font-size: 10px;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(15, 34, 6, 0.75);
-        margin-bottom: 10px;
+        color: var(--qing-dark);
       }
-      .alloc-meter {
-        --fill: 0%;
-        height: 8px;
-        border-radius: 999px;
-        background: rgba(15, 34, 6, 0.12);
-        overflow: hidden;
+      .alloc-footnote {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.45;
+        color: rgba(15, 34, 6, 0.78);
       }
-      .alloc-meter::before {
-        content: "";
-        display: block;
-        width: var(--fill);
-        height: 100%;
-        background: var(--red);
-        transition: width 0.35s ease;
-      }
-      .alloc-card[data-slice="restructuring"] .alloc-meter::before { background: #B86A7E; }
-      .alloc-card[data-slice="resolutions"] .alloc-meter::before { background: #0F2206; }
-      .alloc-footnote { margin-top: 10px; font-size: 12px; line-height: 1.45; color: rgba(15,34,6,.78); }
 
       .data-grid {
         display: grid;
@@ -2419,39 +2334,28 @@
             <span class="section-tag">Capital Rotation Framework</span>
             <h2>How capital rotates as conditions change</h2>
             <p>Allocation is calibrated to opportunity set, liquidity, and downside protection in each regime. Every sleeve is still screened through the same legal-control and recovery-first underwriting standard.</p>
-            <div class="strategy-viz static-viz" data-cycle-allocation>
-              <div class="viz-controls" role="tablist" aria-label="Market regime allocation presets">
-                <button type="button" class="viz-btn is-active" role="tab" aria-selected="true" data-regime="dislocated">Stress / Dislocation</button>
-                <button type="button" class="viz-btn" role="tab" aria-selected="false" data-regime="normalizing">Base Case / Normalizing</button>
-                <button type="button" class="viz-btn" role="tab" aria-selected="false" data-regime="tight">Tight Spreads / Competitive</button>
+            <div class="strategy-viz strategy-viz--simple">
+              <div class="alloc-simple-head">
+                <p class="alloc-kicker">Scenario view</p>
+                <h3>Tight Spreads / Competitive</h3>
               </div>
-              <div class="viz-scrubber">
-                <div class="viz-scrubber__head"><span>Interactive cycle scrubber</span><b data-regime-label>Stress / Dislocation</b></div>
-                <input class="viz-slider" type="range" min="0" max="2" step="1" value="0" aria-label="Scrub market regime from stress to tight spreads" data-regime-slider>
-              </div>
-              <div class="alloc-grid">
-                <div class="alloc-pie">
-                  <div class="alloc-donut" data-donut aria-label="Allocation split totals 100%: Asset-Based Lending 40%, Asset Restructuring 46%, Debt Resolutions 14%">
-                    <div class="alloc-donut-center"><span>Total</span><strong>100%</strong></div>
-                  </div>
-                </div>
-                <div class="alloc-board" aria-label="Sub-strategy allocation by market regime">
-                  <article class="alloc-card" data-slice="abl">
-                    <div class="alloc-head"><h3 class="alloc-name">Asset-Based Lending</h3><span class="alloc-value" data-value="abl">40%</span></div>
-                    <p class="alloc-range">Range <span data-range="abl">24–40%</span></p>
-                    <div class="alloc-meter" data-meter="abl" aria-hidden="true"></div>
-                  </article>
-                  <article class="alloc-card" data-slice="restructuring">
-                    <div class="alloc-head"><h3 class="alloc-name">Asset Restructuring</h3><span class="alloc-value" data-value="restructuring">46%</span></div>
-                    <p class="alloc-range">Range <span data-range="restructuring">46–61%</span></p>
-                    <div class="alloc-meter" data-meter="restructuring" aria-hidden="true"></div>
-                  </article>
-                  <article class="alloc-card" data-slice="resolutions">
-                    <div class="alloc-head"><h3 class="alloc-name">Debt Resolutions</h3><span class="alloc-value" data-value="resolutions">14%</span></div>
-                    <p class="alloc-range">Range <span data-range="resolutions">14–15%</span></p>
-                    <div class="alloc-meter" data-meter="resolutions" aria-hidden="true"></div>
-                  </article>
-                </div>
+              <p class="alloc-total"><span>Total</span><strong>100%</strong></p>
+              <div class="alloc-board" aria-label="Sub-strategy allocation in tight spreads / competitive conditions">
+                <article class="alloc-card">
+                  <p class="alloc-name">Asset-Based Lending</p>
+                  <p class="alloc-value">24%</p>
+                  <p class="alloc-range">Range 24–40%</p>
+                </article>
+                <article class="alloc-card">
+                  <p class="alloc-name">Asset Restructuring</p>
+                  <p class="alloc-value">61%</p>
+                  <p class="alloc-range">Range 46–61%</p>
+                </article>
+                <article class="alloc-card">
+                  <p class="alloc-name">Debt Resolutions</p>
+                  <p class="alloc-value">15%</p>
+                  <p class="alloc-range">Range 14–15%</p>
+                </article>
               </div>
               <p class="alloc-footnote">Values shown are illustrative portfolio construction ranges, not fixed targets.</p>
             </div>
@@ -2519,116 +2423,6 @@
         </div>
       </div>
     </section>
-<script>
-      (() => {
-        const root = document.querySelector("[data-cycle-allocation]");
-        if (!root) return;
-
-        const regimeButtons = Array.from(root.querySelectorAll("[data-regime]"));
-        const donut = root.querySelector("[data-donut]");
-        const regimeLabel = root.querySelector("[data-regime-label]");
-        const regimeSlider = root.querySelector("[data-regime-slider]");
-        const cards = Array.from(root.querySelectorAll(".alloc-card"));
-        const values = {
-          abl: root.querySelector('[data-value="abl"]'),
-          restructuring: root.querySelector('[data-value="restructuring"]'),
-          resolutions: root.querySelector('[data-value="resolutions"]'),
-        };
-        const ranges = {
-          abl: root.querySelector('[data-range="abl"]'),
-          restructuring: root.querySelector('[data-range="restructuring"]'),
-          resolutions: root.querySelector('[data-range="resolutions"]'),
-        };
-        const meters = {
-          abl: root.querySelector('[data-meter="abl"]'),
-          restructuring: root.querySelector('[data-meter="restructuring"]'),
-          resolutions: root.querySelector('[data-meter="resolutions"]'),
-        };
-
-        const regimeOrder = ["dislocated", "normalizing", "tight"];
-        const regimeTitles = {
-          dislocated: "Stress / Dislocation",
-          normalizing: "Base Case / Normalizing",
-          tight: "Tight Spreads / Competitive",
-        };
-
-        const regimes = {
-          dislocated: {
-            values: { abl: 40, restructuring: 46, resolutions: 14 },
-            ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
-          },
-          normalizing: {
-            values: { abl: 34, restructuring: 52, resolutions: 14 },
-            ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
-          },
-          tight: {
-            values: { abl: 24, restructuring: 61, resolutions: 15 },
-            ranges: { abl: "24–40%", restructuring: "46–61%", resolutions: "14–15%" },
-          },
-        };
-
-        const applyRegime = (key) => {
-          const regime = regimes[key];
-          if (!regime) return;
-          const total = regime.values.abl + regime.values.restructuring + regime.values.resolutions;
-          const ablEnd = regime.values.abl;
-          const restructuringEnd = regime.values.abl + regime.values.restructuring;
-          if (donut) {
-            donut.style.setProperty("--end-abl", `${ablEnd}%`);
-            donut.style.setProperty("--end-restructuring", `${restructuringEnd}%`);
-            donut.setAttribute("aria-label", `Allocation split totals ${total}%: Asset-Based Lending ${regime.values.abl}%, Asset Restructuring ${regime.values.restructuring}%, Debt Resolutions ${regime.values.resolutions}%`);
-          }
-          Object.keys(regime.values).forEach((name) => {
-            const value = regime.values[name];
-            if (values[name]) values[name].textContent = `${value}%`;
-            if (ranges[name]) ranges[name].textContent = regime.ranges[name];
-            if (meters[name]) meters[name].style.setProperty("--fill", `${value}%`);
-          });
-          regimeButtons.forEach((btn) => {
-            const active = btn.dataset.regime === key;
-            btn.classList.toggle("is-active", active);
-            btn.setAttribute("aria-selected", active ? "true" : "false");
-          });
-          if (regimeLabel) regimeLabel.textContent = regimeTitles[key] || key;
-          if (regimeSlider) regimeSlider.value = String(Math.max(regimeOrder.indexOf(key), 0));
-        };
-
-        regimeButtons.forEach((button) =>
-          button.addEventListener("click", () => applyRegime(button.dataset.regime)),
-        );
-        regimeButtons.forEach((button) =>
-          button.addEventListener("keydown", (event) => {
-            if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
-            event.preventDefault();
-            const currentIndex = regimeButtons.indexOf(button);
-            let nextIndex = currentIndex;
-            if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % regimeButtons.length;
-            if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + regimeButtons.length) % regimeButtons.length;
-            if (event.key === "Home") nextIndex = 0;
-            if (event.key === "End") nextIndex = regimeButtons.length - 1;
-            regimeButtons[nextIndex].focus();
-            applyRegime(regimeButtons[nextIndex].dataset.regime);
-          }),
-        );
-        if (regimeSlider) {
-          regimeSlider.addEventListener("input", () => {
-            const selected = regimeOrder[Number(regimeSlider.value)] || regimeOrder[0];
-            applyRegime(selected);
-          });
-        }
-        cards.forEach((card) => {
-          card.setAttribute("role", "button");
-          card.setAttribute("tabindex", "0");
-          const toggleFocus = (focus) => card.classList.toggle("is-focus", focus);
-          card.addEventListener("mouseenter", () => toggleFocus(true));
-          card.addEventListener("mouseleave", () => toggleFocus(false));
-          card.addEventListener("focus", () => toggleFocus(true));
-          card.addEventListener("blur", () => toggleFocus(false));
-        });
-
-        applyRegime("dislocated");
-      })();
-    </script>
 <script>
       (() => {
         if (window.__svScrollAnimationsInit) return;
