@@ -27,7 +27,8 @@
   --serif: 'EB Garamond', Georgia, serif;
   --sans:  'Inter', system-ui, sans-serif;
   --max:   1200px;
-  --pad:   64px;
+  --site-page-margin: clamp(22px, 4.8vw, 64px);
+  --pad:   var(--site-page-margin);
   --section-space: clamp(96px, 11vw, 148px);
   --section-space-tight: clamp(72px, 8vw, 108px);
   --content-gap: clamp(44px, 5.5vw, 82px);
@@ -767,7 +768,8 @@ h2.su__hed {
 
 
 @media (max-width: 1024px) {
-  :root { --pad: 40px; }
+  :root { --site-page-margin: clamp(20px, 4.8vw, 40px);
+          --pad: var(--site-page-margin); }
   .hero__sliver { height:540px; }
   .cdd-subscribe__grid {
     grid-template-columns:minmax(0, 1fr);
@@ -807,7 +809,8 @@ h2.su__hed {
 }
 
 @media (max-width: 767px) {
-  :root { --pad: 18px; --section-space: 92px; --section-space-tight: 76px; --content-gap: 44px; }
+  :root { --site-page-margin: clamp(16px, 5vw, 22px);
+          --pad: var(--site-page-margin); --section-space: 92px; --section-space-tight: 76px; --content-gap: 44px; }
   body { font-size:14px; }
 
   #hero,
@@ -1085,7 +1088,7 @@ h2.su__hed {
       }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   footer > div:first-child {
     flex-direction: column;
     align-items: flex-start;
@@ -1224,7 +1227,7 @@ h2.su__hed {
   margin: 0;
   padding: 0 12px 12px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sv-footer {
     padding: 8px var(--pad, var(--site-page-margin, 18px)) 34px;
   }
