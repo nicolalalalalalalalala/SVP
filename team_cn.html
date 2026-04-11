@@ -790,6 +790,9 @@
     .row-bio-panel__meta {
       font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
       font-weight: 400 !important;
+      font-size: 15.5px !important;
+      line-height: 1.74 !important;
+      color: color-mix(in srgb, #0F2206 90%, #3D7070 10%) !important;
     }
 
     /* Chinese H2-style headings (group labels, names): Noto Serif SC Bold */
@@ -800,14 +803,29 @@
       font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
       font-weight: 700 !important;
       text-transform: none !important;
+      line-height: 1.3 !important;
+    }
+    .name,
+    .row-bio-panel__name {
+      font-size: clamp(18px, 1.5vw, 22px) !important;
+      line-height: 1.3 !important;
+    }
+    .title,
+    .card-descriptor,
+    .row-bio-panel__meta {
+      font-size: 12px !important;
+      letter-spacing: 0.08em !important;
+      line-height: 1.6 !important;
     }
 
     /* H1 hero (display text): Noto Serif SC Regular, not italic for Chinese */
     h1 {
       font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
-      font-weight: 400 !important;
+      font-weight: 700 !important;
       font-style: normal !important;
       text-transform: none !important;
+      letter-spacing: 0.03em !important;
+      line-height: 1.14 !important;
     }
   </style>
 </head>
