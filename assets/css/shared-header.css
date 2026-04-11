@@ -685,3 +685,59 @@
     gap: 16px !important;
   }
 }
+
+/* ========================================================================== */
+/* ShoreVest unified header spacing overrides                                 */
+/* ========================================================================== */
+:root {
+  --sv-header-height-desktop: 62px;
+  --sv-header-height-mobile: 70px;
+  --sv-header-inline-gap: clamp(16px, 2vw, 28px);
+}
+
+#site-header-mount {
+  min-height: var(--sv-header-height-desktop) !important;
+}
+
+#site-header-mount #nav {
+  height: var(--sv-header-height-desktop) !important;
+  min-height: var(--sv-header-height-desktop) !important;
+  padding-left: var(--site-page-margin, clamp(22px, 4.8vw, 64px)) !important;
+  padding-right: var(--site-page-margin, clamp(22px, 4.8vw, 64px)) !important;
+  column-gap: var(--sv-header-inline-gap) !important;
+}
+
+#site-header-mount #nav .nav__links {
+  gap: clamp(20px, 2.6vw, 40px) !important;
+}
+
+#site-header-mount #nav .nav__right {
+  gap: clamp(12px, 1.6vw, 22px) !important;
+}
+
+@media (max-width: 1024px) {
+  #site-header-mount #nav {
+    padding-left: var(--site-page-margin, clamp(20px, 4.8vw, 40px)) !important;
+    padding-right: var(--site-page-margin, clamp(20px, 4.8vw, 40px)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #site-header-mount {
+    min-height: var(--sv-header-height-mobile) !important;
+  }
+
+  #site-header-mount #nav {
+    height: var(--sv-header-height-mobile) !important;
+    min-height: var(--sv-header-height-mobile) !important;
+    padding-left: var(--site-page-margin, clamp(16px, 5vw, 22px)) !important;
+    padding-right: var(--site-page-margin, clamp(16px, 5vw, 22px)) !important;
+    row-gap: 0 !important;
+  }
+
+  #site-header-mount #nav .nav__links {
+    top: var(--sv-header-height-mobile) !important;
+    padding: clamp(22px, 6vw, 34px) var(--site-page-margin, clamp(16px, 5vw, 22px)) clamp(24px, 6vw, 34px) !important;
+    gap: var(--sv-space-sm, 14px) !important;
+  }
+}
