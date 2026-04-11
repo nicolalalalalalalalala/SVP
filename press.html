@@ -1768,6 +1768,85 @@
 
     <script>
       (() => {
+        const archive = document.getElementById("press-archive");
+        const yearSelect = document.getElementById("press-year-select");
+        const publicationSelect = document.getElementById("press-publication-select");
+        const countLabel = document.getElementById("press-results-count");
+        const moreButton = document.getElementById("press-more-btn");
+
+        if (!archive || !yearSelect || !publicationSelect || !countLabel || !moreButton) {
+          return;
+        }
+
+        const PAGE_SIZE = 16;
+        const rows = Array.from(archive.querySelectorAll(".press-row"));
+        const rowMeta = rows.map((row) => {
+          const publication = row.querySelector(".press-publication")?.textContent?.trim() ?? "";
+          const datetime = row.querySelector(".press-date")?.getAttribute("datetime") ?? "";
+          const year = datetime ? String(new Date(datetime).getUTCFullYear()) : "";
+          return { row, publication, year };
+        });
+
+        const uniqueYears = Array.from(new Set(rowMeta.map((item) => item.year).filter(Boolean))).sort(
+          (a, b) => Number(b) - Number(a),
+        );
+        const uniquePublications = Array.from(
+          new Set(rowMeta.map((item) => item.publication).filter(Boolean)),
+        ).sort((a, b) => a.localeCompare(b));
+
+        uniqueYears.forEach((year) => {
+          yearSelect.insertAdjacentHTML("beforeend", `<option value="${year}">${year}</option>`);
+        });
+        uniquePublications.forEach((publication) => {
+          publicationSelect.insertAdjacentHTML(
+            "beforeend",
+            `<option value="${publication}">${publication}</option>`,
+          );
+        });
+
+        let visibleLimit = PAGE_SIZE;
+
+        const renderRows = () => {
+          const selectedYear = yearSelect.value;
+          const selectedPublication = publicationSelect.value;
+          const filtered = rowMeta.filter((item) => {
+            const yearMatch = selectedYear === "All" || item.year === selectedYear;
+            const publicationMatch =
+              selectedPublication === "All" || item.publication === selectedPublication;
+            return yearMatch && publicationMatch;
+          });
+
+          rowMeta.forEach((item) => {
+            item.row.style.display = "none";
+          });
+          filtered.slice(0, visibleLimit).forEach((item) => {
+            item.row.style.display = "";
+          });
+
+          const shownCount = Math.min(filtered.length, visibleLimit);
+          countLabel.textContent = `${shownCount} of ${filtered.length}`;
+          moreButton.hidden = shownCount >= filtered.length;
+          moreButton.disabled = shownCount >= filtered.length;
+        };
+
+        const refreshFromFilters = () => {
+          visibleLimit = PAGE_SIZE;
+          renderRows();
+        };
+
+        yearSelect.addEventListener("change", refreshFromFilters);
+        publicationSelect.addEventListener("change", refreshFromFilters);
+        moreButton.addEventListener("click", () => {
+          visibleLimit += PAGE_SIZE;
+          renderRows();
+        });
+
+        renderRows();
+      })();
+    </script>
+
+    <script>
+      (() => {
         if (window.__svScrollAnimationsInit) return;
         window.__svScrollAnimationsInit = true;
 
