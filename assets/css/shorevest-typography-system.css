@@ -305,13 +305,21 @@ html body .su__sub {
   font-weight: 400 !important;
 }
 
-html body .stat__n,
-html body .metric-value {
+html body .stat__n {
   font-family: var(--sv-type-sans) !important;
   font-size: clamp(32px, 4.2vw, 56px) !important;
   line-height: 1.05 !important;
   font-weight: 700 !important;
   letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
+}
+
+html body .metric-value {
+  font-family: var(--sv-type-sans) !important;
+  font-size: clamp(28px, 2.4vw, 40px) !important;
+  line-height: 1.08 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.005em !important;
   text-transform: uppercase !important;
 }
 
