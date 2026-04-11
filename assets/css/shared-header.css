@@ -193,14 +193,25 @@
 #nav.nav--cn .nav__lp,
 #nav.nav--cn .lang-toggle,
 #nav.nav--cn .nav__zh {
-  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  letter-spacing: .02em;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  letter-spacing: .08em;
   text-transform: none;
 }
 
 #nav.nav--cn .nav__links a,
 #nav.nav--cn .nav__lp {
   font-size: 12px;
+}
+
+#nav.nav--cn .nav__logo-lockup {
+  row-gap: 2px;
+}
+
+#nav.nav--cn .nav__logo-cn {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  letter-spacing: .16em;
+  font-weight: 500;
+  color: rgba(33, 33, 30, .72);
 }
 @media (max-width: 1240px) {
   #nav {
