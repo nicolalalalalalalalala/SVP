@@ -493,6 +493,11 @@ tbody tr:nth-of-type(even) {
   background: var(--sv-color-bg-soft);
 }
 
+/* Keep the long-form insights reader column on the page canvas (no tinted article block). */
+body.insights-page article.reading {
+  background: transparent !important;
+}
+
 hr,
 .rule,
 [class*="divider"],
