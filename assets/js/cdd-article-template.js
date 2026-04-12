@@ -59,17 +59,6 @@
     button.addEventListener('click', () => window.print());
   });
 
-  document.querySelectorAll('[data-print-action="download-pdf"]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const configuredRoute = button.dataset.printRoute;
-      const fallbackRoute = window.location.pathname.replace(/\.html$/i, '-print.html');
-      const printRoute = configuredRoute || fallbackRoute;
-
-      const printUrl = new URL(printRoute, window.location.href);
-      printUrl.searchParams.set('pdf', '1');
-      window.open(printUrl.toString(), '_blank', 'noopener');
-    });
-  });
 
   const shouldAutoPrint =
     document.body.dataset.autoPrint === 'true' ||
