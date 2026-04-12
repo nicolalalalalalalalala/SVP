@@ -228,11 +228,12 @@ main.cdd-page {
 .cdd-intro__lede .cdd-title {
   margin-top: 0;
   margin-bottom: 14px;
+  max-width: none;
 }
 
 .cdd-intro__lede .cdd-dek {
   margin-bottom: 0;
-  max-width: 54ch;
+  max-width: none;
 }
 
 .cdd-body p,
