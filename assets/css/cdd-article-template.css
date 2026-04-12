@@ -163,9 +163,9 @@ a { color: var(--qing-dark); }
   font-size: 8.5pt;
 }
 
-main.cdd-page.wrap {
+.cdd-page {
   max-width: 1440px;
-  width: calc(100% - 120px);
+  width: calc(100% - 128px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 0 72px;
@@ -339,7 +339,7 @@ main.cdd-page.wrap {
 }
 
 @media (max-width: 1024px) {
-  main.cdd-page.wrap {
+  .cdd-page {
     width: calc(100% - 80px);
   }
 }
@@ -440,7 +440,7 @@ main.cdd-page.wrap {
 }
 
 @media (max-width: 767px) {
-  main.cdd-page.wrap {
+  .cdd-page {
     width: calc(100% - 32px);
   }
 
