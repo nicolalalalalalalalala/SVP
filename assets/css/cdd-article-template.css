@@ -13,6 +13,15 @@
   --xuan-paper-dark: #E5E7EB;
   --max-width: 1200px;
   --article-width: 760px;
+  /* Shared header tokens so nav styling stays consistent with the rest of the site. */
+  --paper-light: #FAF6EE;
+  --paper: #F2ECD8;
+  --paper-dark: #D8CEB0;
+  --rule: rgba(31, 24, 18, 0.11);
+  --ink: #1E4A18;
+  --red: #3D7070;
+  --site-page-margin: clamp(22px, 4.8vw, 64px);
+  --pad: var(--site-page-margin);
 }
 
 * { box-sizing: border-box; }
