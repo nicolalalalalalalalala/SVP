@@ -1,7 +1,9 @@
 (async () => {
   document.body.dataset.cddReady = 'false';
 
-  const source = document.body.dataset.articleSource;
+  const query = new URLSearchParams(window.location.search);
+  const sourceFromQuery = query.get('source') || query.get('src');
+  const source = sourceFromQuery || document.body.dataset.articleSource || document.body.dataset.defaultArticleSource;
   if (!source) return;
 
   const response = await fetch(source);
@@ -16,6 +18,8 @@
   const disclaimer = document.querySelector('[data-cdd-disclaimer]');
   const contact = document.querySelector('[data-cdd-contact]');
   const copyright = document.querySelector('[data-cdd-copyright]');
+
+  if (!meta || !title || !dek || !body || !findings || !disclaimer || !contact || !copyright) return;
 
   meta.innerHTML = `<span>${data.series}</span><span>${data.volumeIssue}</span><span>Published ${data.published}</span><span>${data.edition}</span>`;
   title.textContent = data.title;
@@ -47,11 +51,16 @@
   });
 
   findings.innerHTML = '';
-  data.keyFindings.forEach((finding) => {
+  (data.keyFindings || []).forEach((finding) => {
     const li = document.createElement('li');
     li.textContent = finding;
     findings.appendChild(li);
   });
+
+  if (!data.keyFindings?.length) {
+    const sidecard = findings.closest('.cdd-sidecard');
+    if (sidecard) sidecard.hidden = true;
+  }
 
   disclaimer.textContent = data.disclaimer;
   contact.textContent = data.contact;
@@ -61,10 +70,9 @@
     button.addEventListener('click', () => window.print());
   });
 
-
   const shouldAutoPrint =
     document.body.dataset.autoPrint === 'true' ||
-    new URLSearchParams(window.location.search).get('pdf') === '1';
+    query.get('pdf') === '1';
 
   document.body.dataset.cddReady = 'true';
 

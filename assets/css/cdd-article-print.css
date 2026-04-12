@@ -180,6 +180,8 @@ body.cdd-print-layout .cdd-title {
 
   /* Balanced line distribution — avoids orphaned words */
   text-wrap: balance      !important;
+  hanging-punctuation: first allow-end !important;
+  text-wrap-style: pretty;
 
   /* Never hyphenate a headline */
   hyphens:      none      !important;
@@ -232,6 +234,17 @@ body.cdd-print-layout .cdd-sidecard { grid-area: sidebar; }
 
 /* --- BODY TEXT ------------------------------------------ */
 
+body.cdd-print-layout .cdd-sidecard[hidden] {
+  display: none !important;
+}
+
+body.cdd-print-layout .cdd-grid:has(.cdd-sidecard[hidden]) {
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-areas: "body" !important;
+}
+
+/* --- BODY TEXT ------------------------------------------ */
+
 body.cdd-print-layout .cdd-body p,
 body.cdd-print-layout .cdd-body li {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
@@ -242,15 +255,14 @@ body.cdd-print-layout .cdd-body li {
   max-width: none    !important;   /* column width is the measure */
   margin: 0 0 3.2mm  !important;
 
-  /* Typeset-quality composition:
-     justify + hyphens:auto eliminates stretched lines and
-     inconsistent word spacing */
-  text-align:   justify !important;
+  /* Keep publication-grade rhythm without browser print
+     word-stretch artifacts in narrow measures. */
+  text-align:   left !important;
+  text-wrap:    pretty !important;
   hyphens:      auto   !important;
   -webkit-hyphens: auto !important;
 
-  /* Prevent other text-wrap modes from interfering */
-  text-wrap:    initial  !important;
+  /* Prevent other wrap modes from interfering */
   word-spacing: normal   !important;
   letter-spacing: 0      !important;
   word-break:   normal   !important;
@@ -384,7 +396,7 @@ body.cdd-print-layout .cdd-disclaimer p {
   line-height:  1.58  !important;
   color: var(--pr-label) !important;
   margin: 0 0 1.5mm   !important;
-  text-align: justify !important;
+  text-align: left !important;
   hyphens: auto       !important;
   -webkit-hyphens: auto !important;
 }
@@ -499,6 +511,18 @@ body.cdd-print-layout .cdd-disclaimer p {
   body.cdd-print-layout .cdd-body h2 + p {
     break-before:      avoid !important;
     page-break-before: avoid !important;
+  }
+
+
+  body.cdd-print-layout .cdd-body p:first-of-type {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  body.cdd-print-layout .cdd-body ul + p,
+  body.cdd-print-layout .cdd-body p + ul {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
   }
 
   /* Body text: orphan/widow control */
