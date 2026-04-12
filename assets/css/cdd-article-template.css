@@ -313,9 +313,15 @@ main.cdd-page {
 
 .cdd-reading-grid {
   display: grid;
-  grid-template-columns: minmax(0, var(--cdd-main-column-max)) var(--cdd-sidecard-width);
-  gap: var(--cdd-column-gap);
+  grid-template-columns: minmax(0, 1fr) 320px;
+  column-gap: 56px;
+  row-gap: var(--cdd-column-gap);
   align-items: start;
+}
+
+.cdd-reading-grid .cdd-body p,
+.cdd-reading-grid .cdd-body li {
+  max-width: none;
 }
 
 .cdd-sidecard {
