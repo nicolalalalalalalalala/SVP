@@ -201,8 +201,12 @@
         margin-bottom: 1px;
       }
       .card h3 {
-        font-size: 30px;
-        line-height: 1.1;
+        font-size: clamp(24px, 2.2vw, 30px);
+        line-height: 1.12;
+        max-width: 18ch;
+      }
+      .card p:last-child {
+        max-width: 52ch;
       }
 
       .geography-section {
@@ -553,22 +557,22 @@
             <article class="card">
               <p class="card-index">Pillar 01</p>
               <h3>Proprietary sourcing</h3>
-              <p>Direct relationships across banks, AMCs, law firms, and servicers provide access to complex situations before broad auction processes.</p>
+              <p>Direct relationships with banks, AMCs, law firms, and servicers create access to complex situations before broad auction processes.</p>
             </article>
             <article class="card">
               <p class="card-index">Pillar 02</p>
               <h3>Disciplined underwriting</h3>
-              <p>Transactions are structured with hard-asset collateral, conservative entry points, and enforceable claims under PRC law.</p>
+              <p>Transactions are structured around hard-asset collateral, conservative entry points, and enforceable claims under PRC law.</p>
             </article>
             <article class="card">
               <p class="card-index">Pillar 03</p>
               <h3>Alignment of responsibility</h3>
-              <p>The same investment team remains accountable from approval through monitoring and realization, reducing handoff risk.</p>
+              <p>The same investment team stays accountable from approval through monitoring and realization, reducing handoff risk.</p>
             </article>
             <article class="card">
               <p class="card-index">Pillar 04</p>
               <h3>Active portfolio control</h3>
-              <p>Continuous monitoring and integrated workout execution support timing discipline and recovery outcomes through changing cycles.</p>
+              <p>Continuous monitoring and integrated workout execution support timing discipline and recovery outcomes across changing cycles.</p>
             </article>
           </div>
         </div>
