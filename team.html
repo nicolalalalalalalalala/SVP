@@ -331,12 +331,12 @@
         margin-top: -2px;
       }
       .team-profile__bio-toggle {
-        --team-bio-cinnabar: #c93b2a;
-        --team-bio-cinnabar-light: #e8998f;
-        --team-bio-cinnabar-dark: #8a1f12;
-        --team-bio-xuan-paper-light: #faf6ee;
-        --team-bio-xuan-paper: #f2ecd8;
-        --team-bio-xuan-paper-dark: #d8ceb0;
+        --team-bio-cinnabar: var(--qing);
+        --team-bio-cinnabar-light: var(--qing-light);
+        --team-bio-cinnabar-dark: var(--qing-dark);
+        --team-bio-xuan-paper-light: color-mix(in srgb, var(--white) 90%, var(--qing-light) 10%);
+        --team-bio-xuan-paper: color-mix(in srgb, var(--stone) 78%, var(--qing-light) 22%);
+        --team-bio-xuan-paper-dark: color-mix(in srgb, var(--sand) 70%, var(--qing) 30%);
         margin-top: 10px;
         width: fit-content;
         background: var(--team-bio-xuan-paper-light);
