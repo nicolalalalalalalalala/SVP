@@ -63,6 +63,25 @@ a { color: var(--qing-dark); }
   padding: 0 var(--pad);
 }
 
+.cdd-container {
+  max-width: 1320px;
+  width: calc(100% - 160px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .cdd-container {
+    width: calc(100% - 96px);
+  }
+}
+
+@media (max-width: 767px) {
+  .cdd-container {
+    width: calc(100% - 40px);
+  }
+}
+
 .cdd-topline {
   border-top: 1px solid var(--xuan-paper-dark);
   background: var(--xuan-paper);
@@ -145,7 +164,6 @@ a { color: var(--qing-dark); }
 }
 
 main.cdd-page {
-  max-width: var(--cdd-content-max);
   padding: 0 0 72px;
 }
 
