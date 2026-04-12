@@ -58,4 +58,18 @@
   document.querySelectorAll('[data-print-action="print"]').forEach((button) => {
     button.addEventListener('click', () => window.print());
   });
+
+  document.querySelectorAll('[data-print-action="download-pdf"]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const pdfPath = button.dataset.printPdf;
+      if (!pdfPath) return;
+
+      const link = document.createElement('a');
+      link.href = pdfPath;
+      if (button.dataset.printFilename) link.download = button.dataset.printFilename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    });
+  });
 })();
