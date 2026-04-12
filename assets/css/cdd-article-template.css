@@ -13,6 +13,9 @@
   --xuan-paper-dark: #D8D1C4;
   --max-width: 1200px;
   --article-width: 760px;
+  --cdd-sidecard-width: 272px;
+  --cdd-column-gap: clamp(30px, 3.4vw, 44px);
+  --cdd-body-measure: 78ch;
   /* Shared header tokens so nav styling stays consistent with the rest of the site. */
   --paper-light: #FAF6EE;
   --paper: #F2ECD8;
@@ -51,8 +54,10 @@ html, body {
 a { color: var(--qing-dark); }
 
 .wrap {
-  width: min(calc(100% - 48px), var(--max-width));
+  width: 100%;
+  max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 var(--pad);
 }
 
 .cdd-topline {
@@ -217,8 +222,8 @@ main.cdd-page {
 
 .cdd-intro__grid {
   display: grid;
-  grid-template-columns: 1fr 272px;
-  gap: 56px;
+  grid-template-columns: minmax(0, 1fr) var(--cdd-sidecard-width);
+  gap: var(--cdd-column-gap);
   align-items: start;
   padding-top: 32px;
   padding-bottom: 44px;
@@ -238,7 +243,7 @@ main.cdd-page {
 
 .cdd-body p,
 .cdd-body li {
-  max-width: 72ch;
+  max-width: var(--cdd-body-measure);
   font-size: 10pt;
   line-height: 1.74;
   margin: 0 0 18px;
@@ -262,6 +267,10 @@ main.cdd-page {
 .cdd-body ul {
   margin: 0 0 24px;
   padding-left: 22px;
+}
+
+.cdd-body {
+  max-width: calc(100% - var(--cdd-sidecard-width) - var(--cdd-column-gap));
 }
 
 .cdd-sidecard {
@@ -329,6 +338,10 @@ main.cdd-page {
     grid-template-columns: 1fr;
     gap: 28px;
     padding-bottom: 36px;
+  }
+
+  .cdd-body {
+    max-width: none;
   }
 }
 
