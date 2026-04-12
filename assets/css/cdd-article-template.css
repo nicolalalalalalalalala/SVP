@@ -11,7 +11,7 @@
   --xuan-paper-light: #FAF8F4;
   --xuan-paper: #F5F1E9;
   --xuan-paper-dark: #D8D1C4;
-  --max-width: 1200px;
+  --max-width: 1440px;
   --cdd-content-max: 1200px;
   --article-width: 760px;
   --cdd-main-column-max: 1.75fr;
@@ -163,7 +163,11 @@ a { color: var(--qing-dark); }
   font-size: 8.5pt;
 }
 
-main.cdd-page {
+main.cdd-page.wrap {
+  max-width: 1440px;
+  width: calc(100% - 120px);
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 0 72px;
 }
 
@@ -230,9 +234,9 @@ main.cdd-page {
 
 .cdd-intro__bar {
   display: grid;
-  grid-template-columns: minmax(0, var(--cdd-main-column-max)) var(--cdd-sidecard-width);
+  grid-template-columns: minmax(0, 820px) 300px;
   align-items: center;
-  column-gap: var(--cdd-column-gap);
+  column-gap: 72px;
   row-gap: 20px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--xuan-paper-dark);
@@ -243,7 +247,7 @@ main.cdd-page {
   padding-bottom: 0;
   min-width: 0;
   grid-column: 1;
-  max-width: var(--article-width);
+  max-width: 820px;
   width: 100%;
 }
 
@@ -254,15 +258,15 @@ main.cdd-page {
 
 .cdd-intro__grid {
   display: grid;
-  grid-template-columns: minmax(0, var(--cdd-main-column-max)) var(--cdd-sidecard-width);
-  column-gap: var(--cdd-column-gap);
+  grid-template-columns: minmax(0, 820px) 300px;
+  column-gap: 72px;
   padding-top: 32px;
   padding-bottom: 38px;
   border-bottom: 1px solid var(--xuan-paper-dark);
 }
 
 .cdd-intro__lede {
-  max-width: var(--article-width);
+  max-width: 900px;
   width: 100%;
   grid-column: 1;
 }
@@ -313,8 +317,8 @@ main.cdd-page {
 
 .cdd-reading-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  column-gap: 56px;
+  grid-template-columns: minmax(0, 820px) 300px;
+  column-gap: 72px;
   row-gap: var(--cdd-column-gap);
   align-items: start;
 }
@@ -327,11 +331,17 @@ main.cdd-page {
 .cdd-sidecard {
   border: 1px solid var(--xuan-paper-dark);
   background: #F9F6EF;
-  padding: 22px;
+  padding: 20px;
   position: static;
   top: auto;
   align-self: start;
   height: fit-content;
+}
+
+@media (max-width: 1024px) {
+  main.cdd-page.wrap {
+    width: calc(100% - 80px);
+  }
 }
 
 @media (min-width: 981px) {
@@ -429,7 +439,15 @@ main.cdd-page {
   }
 }
 
+@media (max-width: 767px) {
+  main.cdd-page.wrap {
+    width: calc(100% - 32px);
+  }
+
+}
+
 @media (max-width: 680px) {
+
   .cdd-topline__inner {
     align-items: flex-start;
     gap: 8px;
