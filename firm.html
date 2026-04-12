@@ -198,24 +198,27 @@
         align-content: start;
       }
       .card-icon {
-        width: min(100%, 188px);
-        height: 86px;
-        color: var(--cinnabar);
-        margin-bottom: 4px;
+        width: min(100%, 246px);
+        height: clamp(108px, 9.6vw, 132px);
+        color: color-mix(in srgb, var(--cinnabar) 86%, var(--ink) 14%);
+        margin-bottom: 0;
+        display: grid;
+        align-items: center;
       }
       .card-icon svg {
         width: 100%;
         height: 100%;
         display: block;
+        overflow: visible;
       }
       .card-icon-wrap {
         width: 100%;
-        min-height: 96px;
+        min-height: clamp(116px, 10vw, 140px);
         border-radius: 10px;
         display: grid;
-        align-items: start;
-        margin-bottom: 4px;
-        padding-bottom: 2px;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 0;
       }
       .card-index {
         font-size: 11px;
@@ -319,10 +322,14 @@
       }
       .pillar-card .card-icon [data-draw] {
         stroke-dasharray: var(--len, 100);
-        stroke-dashoffset: var(--len, 100);
+        stroke-dashoffset: calc(var(--len, 100) * 0.16);
+        opacity: 0.78;
       }
       .pillar-card.is-in .card-icon [data-draw] {
         animation: pillar-draw 0.9s cubic-bezier(.22, 1, .36, 1) var(--delay, 0s) both;
+      }
+      .pillar-card .card-icon [stroke] {
+        stroke-width: max(1.75px, 1.45px) !important;
       }
       .pillar-card.is-in .card-icon [data-fade] {
         animation: pillar-fade-in 0.7s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.4s) both;
