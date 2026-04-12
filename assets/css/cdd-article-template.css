@@ -25,6 +25,18 @@
   --pad: var(--site-page-margin);
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --site-page-margin: clamp(20px, 4.8vw, 40px);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-page-margin: clamp(16px, 5vw, 22px);
+  }
+}
+
 * { box-sizing: border-box; }
 
 html, body {

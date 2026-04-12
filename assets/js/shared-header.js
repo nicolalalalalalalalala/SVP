@@ -127,7 +127,13 @@
   const activeMap = {
     firm: ['firm.html', 'firm_cn.html'],
     strategy: ['strategy.html', 'strategy_cn.html'],
-    insights: ['insights.html', 'insights_cn.html'],
+    insights: [
+      'insights.html',
+      'insights_cn.html',
+      'china-debt-dynamics-v10i1.html',
+      'china-debt-dynamics-v10i1-print.html',
+      'china-debt-dynamics-viewer.html'
+    ],
     press: ['press.html', 'press_cn.html'],
     team: ['team.html', 'team_cn.html'],
     investor: ['investor-access.html', 'investor-access_cn.html']
