@@ -86,6 +86,8 @@ a { color: var(--qing-dark); }
   border-top: 1px solid var(--xuan-paper-dark);
   background: var(--xuan-paper);
   border-bottom: 1px solid var(--xuan-paper-dark);
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
 }
 
 .cdd-topline__inner {
@@ -545,6 +547,8 @@ a { color: var(--qing-dark); }
     border-top: 1.8px solid #1f2924;
     border-bottom: 1px solid #c8d0cb;
     background: #fff !important;
+    margin-inline: 0;
+    padding-inline: 0;
   }
 
   .cdd-topline__inner {
