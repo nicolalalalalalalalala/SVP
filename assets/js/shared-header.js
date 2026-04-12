@@ -53,8 +53,8 @@
         { href: 'team.html', label: 'TEAM' }
       ];
 
-  const investorHref = isCnPath ? 'investor-access_cn.html' : 'investor-access.html';
-  const investorLabel = isCnPath ? '投资者入口' : 'INVESTOR ACCESS';
+  const headerCtaHref = 'mailto:partners@shorevest.com';
+  const headerCtaLabel = isCnPath ? '联系我们' : 'CONTACT';
   const wordmark = '新岸資本';
 
   mount.innerHTML = `<nav id="nav" class="${isCnPath ? 'nav--cn' : 'nav--en'}">
@@ -67,12 +67,12 @@
   </a>
   <ul class="nav__links" id="nav-links">
     ${navItems.map((item) => `<li><a href="${item.href}">${item.label}</a></li>`).join('')}
-    <li class="nav__mobile-investor"><a href="${investorHref}">${investorLabel}</a></li>
+    <li class="nav__mobile-investor"><a href="${headerCtaHref}">${headerCtaLabel}</a></li>
     <li class="nav__mobile-lang"><a href="${targetLocaleHref}" class="lang-toggle">${langLabel}</a></li>
   </ul>
   <div class="nav__right">
     <a href="${targetLocaleHref}" class="nav__zh lang-toggle">${langLabel}</a>
-    <a href="${investorHref}" class="nav__lp">${investorLabel}</a>
+    <a href="${headerCtaHref}" class="nav__lp">${headerCtaLabel}</a>
     <button class="nav__menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
       <span class="nav__menu-btn-label">Menu</span>
       <span class="nav__menu-btn-icon" aria-hidden="true"></span>
