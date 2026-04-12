@@ -112,7 +112,10 @@ body.cdd-print-layout .cdd-meta {
   flex-wrap: wrap     !important;
   gap: 0              !important;
   text-align: left    !important;
-  text-justify: auto  !important;
+  word-break: normal  !important;
+  overflow-wrap: normal !important;
+  hyphens: none       !important;
+  -webkit-hyphens: none !important;
   white-space: normal !important;
 }
 
@@ -143,6 +146,7 @@ body.cdd-print-layout .cdd-print-hero {
   border-bottom: 0.5pt solid var(--pr-rule);
   /* Constrain first-page headline composition for cleaner breaks. */
   max-width: 138mm;
+  width: 100%;
 }
 
 /*
@@ -173,7 +177,7 @@ body.cdd-print-layout .cdd-title {
   font-weight:  300    !important;   /* MUST be !important to beat typography system */
   font-style:   normal !important;
   line-height:  1.06   !important;
-  letter-spacing: -0.01em !important;
+  letter-spacing: normal !important;
   color: var(--pr-ink)    !important;
   text-transform: none    !important;
 
@@ -184,6 +188,7 @@ body.cdd-print-layout .cdd-title {
   margin:    5mm 0 3.5mm  !important;
 
   /* Balanced line distribution — avoids orphaned words */
+  text-wrap: normal       !important;
   text-wrap: balance      !important;
   hanging-punctuation: first allow-end !important;
   text-wrap-style: pretty;
@@ -194,7 +199,6 @@ body.cdd-print-layout .cdd-title {
 
   /* Prevent any browser from stretching word-spacing */
   word-spacing:   normal  !important;
-  text-justify:   auto    !important;
   overflow-wrap:  normal  !important;
   word-break:     normal  !important;
   white-space:    normal  !important;
@@ -213,10 +217,9 @@ body.cdd-print-layout .cdd-dek {
   color: var(--pr-ink-soft) !important;
   margin: 0           !important;
   max-width: 100%     !important;
-  hyphens: auto       !important;
-  -webkit-hyphens: auto !important;
+  hyphens: none       !important;
+  -webkit-hyphens: none !important;
   word-spacing: normal !important;
-  text-justify: auto  !important;
   overflow-wrap: normal !important;
   word-break: normal !important;
   white-space: normal !important;
@@ -269,9 +272,9 @@ body.cdd-print-layout .cdd-body li {
   /* Keep publication-grade rhythm without browser print
      word-stretch artifacts in narrow measures. */
   text-align:   left !important;
-  text-wrap:    pretty !important;
-  hyphens:      auto   !important;
-  -webkit-hyphens: auto !important;
+  text-wrap:    normal !important;
+  hyphens:      none   !important;
+  -webkit-hyphens: none !important;
 
   /* Prevent other wrap modes from interfering */
   word-spacing: normal   !important;
@@ -360,10 +363,13 @@ body.cdd-print-layout .cdd-sidecard li {
 
   /* Left-align findings — do NOT justify narrow-column text */
   text-align:   left    !important;
-  hyphens:      auto    !important;
-  -webkit-hyphens: auto !important;
+  hyphens:      none    !important;
+  -webkit-hyphens: none !important;
   word-spacing: normal  !important;
   letter-spacing: 0     !important;
+  word-break: normal    !important;
+  overflow-wrap: normal !important;
+  white-space: normal   !important;
 }
 
 body.cdd-print-layout .cdd-sidecard li:last-child {
