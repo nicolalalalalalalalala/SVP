@@ -432,6 +432,12 @@
         border-color: var(--ink);
         color: #fff;
       }
+      .util-btn.is-disabled,
+      .util-btn[aria-disabled="true"] {
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
 
       .issue-header {
         padding: 34px 0 36px;
@@ -653,6 +659,12 @@
         background: #f0ece3;
         border-color: rgba(20, 20, 16, 0.28);
         color: #2b2721;
+      }
+      .archive__pdf.is-disabled,
+      .archive__pdf[aria-disabled="true"] {
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
       }
 
       .research-sub {
@@ -1298,9 +1310,13 @@
         <div class="utility__actions">
           <a
             class="util-btn util-btn--solid"
-            href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf"
-            download>下载本期 PDF</a>
-          <a class="util-btn" href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf">打开本期 PDF</a>
+            data-cdd-pdf-action
+            data-cdd-pdf-url="pdfs/china-debt-dynamics-v10i1-redesigned.pdf"
+            data-cdd-pdf-label-unavailable="PDF 即将发布">下载本期 PDF</a>
+          <a class="util-btn"
+            data-cdd-pdf-action
+            data-cdd-pdf-url="pdfs/china-debt-dynamics-v10i1-redesigned.pdf"
+            data-cdd-pdf-label-unavailable="PDF 即将发布">打开本期 PDF</a>
           <a class="util-btn" href="#archive">往期期刊</a>
           <a class="util-btn" href="#subscribe">订阅</a>
         </div>
@@ -1421,14 +1437,14 @@
                 <div class="archive__actions">
                   <a
                     class="archive__pdf archive__pdf--solid"
-                    href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf" download
-                    target="_blank"
-                    rel="noopener">下载 PDF</a>
+                    data-cdd-pdf-action
+                    data-cdd-pdf-url="pdfs/china-debt-dynamics-v10i1-redesigned.pdf"
+                    data-cdd-pdf-label-unavailable="PDF 即将发布">下载 PDF</a>
                   <a
                     class="archive__pdf"
-                    href="pdfs/46. China Debt Dynamics - The End of the China's Univestable Myth.pdf"
-                    target="_blank"
-                    rel="noopener">打开 PDF</a>
+                    data-cdd-pdf-action
+                    data-cdd-pdf-url="pdfs/china-debt-dynamics-v10i1-redesigned.pdf"
+                    data-cdd-pdf-label-unavailable="PDF 即将发布">打开 PDF</a>
                 </div>
               </div>
               <div class="archive__row">
@@ -1791,5 +1807,6 @@
 
 <script src="assets/js/site-motion.js" defer></script>
 <script src="assets/js/shared-footer.js" defer></script>
+<script src="assets/js/cdd-pdf-actions.js" defer></script>
 </body>
 </html>

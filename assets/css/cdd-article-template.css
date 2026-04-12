@@ -120,6 +120,14 @@ a { color: var(--qing-dark); }
   border-color: #232B26;
 }
 
+.cdd-btn.is-disabled,
+.cdd-btn[aria-disabled="true"],
+.cdd-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .cdd-print-note {
   margin: 8px 0 0;
   color: var(--qing-dark);
