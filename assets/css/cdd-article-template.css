@@ -93,6 +93,12 @@ a { color: var(--qing-dark); }
   color: var(--xuan-paper-light);
 }
 
+.cdd-print-note {
+  margin: 8px 0 0;
+  color: var(--qing-dark);
+  font-size: 8.5pt;
+}
+
 main.cdd-page {
   padding: 34px 0 56px;
 }
@@ -199,24 +205,123 @@ main.cdd-page {
   .cdd-sidecard { position: static; }
 }
 
+@page {
+  size: A4;
+  margin: 14mm 12mm 15mm;
+}
+
 @media print {
-  html, body { background: #fff !important; }
-  #site-header-mount, .cdd-actions, .cdd-print-hide { display: none !important; }
-  .wrap { width: 100%; max-width: none; padding: 0 10mm; }
+  html,
+  body {
+    background: #fff !important;
+    color: #10211a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #site-header-mount,
+  .cdd-actions,
+  .cdd-print-hide,
+  .cdd-print-note {
+    display: none !important;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
   .cdd-topline {
-    border-top-width: 2px;
+    border-top-width: 2.5px;
+    border-bottom: 1px solid #ccd3d3;
     background: #fff !important;
   }
-  .cdd-title { font-size: 24pt; }
-  .cdd-meta { font-size: 8pt; }
-  .cdd-grid { display: block; }
+
+  .cdd-topline__inner {
+    padding: 0 0 8mm;
+  }
+
+  main.cdd-page {
+    padding: 8mm 0 0;
+  }
+
+  .cdd-meta {
+    border-bottom: 1px solid #ccd3d3;
+    font-size: 8.5pt;
+    margin-bottom: 4mm;
+  }
+
+  .cdd-title {
+    font-size: 23pt;
+    line-height: 1.18;
+    margin: 0 0 4mm;
+    break-after: avoid-page;
+  }
+
+  .cdd-dek {
+    font-size: 11pt;
+    line-height: 1.55;
+    margin-bottom: 7mm;
+    break-after: avoid-page;
+  }
+
+  .cdd-grid {
+    display: block;
+  }
+
   .cdd-sidecard {
-    border: 1px solid var(--xuan-paper-dark);
-    background: #fff !important;
-    margin-bottom: 14px;
-    page-break-inside: avoid;
+    border: 1px solid #ccd3d3;
+    background: #f7faf9 !important;
+    margin: 0 0 6mm;
+    padding: 4mm;
+    position: static;
+    break-inside: avoid-page;
   }
-  .cdd-body h2 { page-break-after: avoid; }
-  .cdd-body p, .cdd-body li { font-size: 9.5pt; line-height: 1.6; }
-  .cdd-disclaimer { page-break-inside: avoid; }
+
+  .cdd-sidecard h3,
+  .cdd-disclaimer h4,
+  .cdd-body h2 {
+    break-after: avoid-page;
+  }
+
+  .cdd-body h2 {
+    margin: 7mm 0 3mm;
+    color: #8a1f12;
+    font-size: 11pt;
+    letter-spacing: 0.09em;
+  }
+
+  .cdd-body p,
+  .cdd-body li {
+    font-size: 10.2pt;
+    line-height: 1.6;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .cdd-body p,
+  .cdd-body ul,
+  .cdd-disclaimer p {
+    break-inside: avoid;
+  }
+
+  .cdd-disclaimer {
+    margin-top: 8mm;
+    border-top: 1px solid #ccd3d3;
+    padding-top: 4mm;
+    break-inside: avoid-page;
+  }
+
+  a,
+  a:visited {
+    color: #1e4040;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7.5pt;
+    word-break: break-all;
+  }
 }
