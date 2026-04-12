@@ -87,15 +87,6 @@ main.cdd-page {
   padding: 34px 0 56px;
 }
 
-.cdd-display {
-  margin: 0 0 10px;
-  font-size: clamp(24px, 3.6vw, 32px) !important;
-  line-height: 1.1;
-  font-weight: 300 !important;
-  font-style: italic !important;
-  color: var(--ink-green-dark);
-}
-
 .cdd-meta {
   font-size: 8pt;
   color: var(--qing-dark);
@@ -108,11 +99,10 @@ main.cdd-page {
 
 .cdd-title {
   margin: 16px 0 10px;
-  font-size: clamp(18px, 2.4vw, 24px);
+  font-size: clamp(28px, 4.2vw, 42px);
   line-height: 1.1;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.005em;
+  font-weight: 300;
+  font-style: italic;
   color: var(--ink-green-dark);
 }
 
@@ -124,8 +114,10 @@ main.cdd-page {
 }
 
 .cdd-grid {
-  display: block;
-  max-width: var(--article-width);
+  display: grid;
+  grid-template-columns: minmax(0, var(--article-width)) minmax(220px, 300px);
+  gap: 44px;
+  align-items: start;
 }
 
 .cdd-body p,
@@ -139,9 +131,9 @@ main.cdd-page {
   margin: 30px 0 14px;
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--ink-green-dark);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cinnabar);
 }
 
 .cdd-body ul {
@@ -149,14 +141,15 @@ main.cdd-page {
   padding-left: 22px;
 }
 
-.cdd-disclaimer {
-  margin-top: 40px;
-  border-top: 1px solid var(--xuan-paper-dark);
-  padding-top: 16px;
-  max-width: var(--article-width);
+.cdd-sidecard {
+  border: 1px solid var(--xuan-paper-dark);
+  background: var(--xuan-paper);
+  padding: 16px;
+  position: sticky;
+  top: 120px;
 }
 
-.cdd-disclaimer h4 {
+.cdd-sidecard h3 {
   margin: 0 0 10px;
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -164,10 +157,22 @@ main.cdd-page {
   color: var(--cinnabar);
 }
 
-.cdd-body h3,
-.cdd-label,
+.cdd-sidecard li {
+  font-size: 9pt;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.cdd-disclaimer {
+  margin-top: 40px;
+  border-top: 1px solid var(--xuan-paper-dark);
+  padding-top: 16px;
+}
+
 .cdd-disclaimer h4 {
-  letter-spacing: 0.12em;
+  margin: 0 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--cinnabar);
 }
@@ -180,7 +185,8 @@ main.cdd-page {
 }
 
 @media (max-width: 980px) {
-  .cdd-grid { max-width: 100%; }
+  .cdd-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cdd-sidecard { position: static; }
 }
 
 @media print {
@@ -191,6 +197,7 @@ main.cdd-page {
   .cdd-title { font-size: 24pt; }
   .cdd-meta { font-size: 8pt; }
   .cdd-grid { display: block; }
+  .cdd-sidecard { border: 1px solid var(--xuan-paper-dark); margin-bottom: 14px; page-break-inside: avoid; }
   .cdd-body h2 { page-break-after: avoid; }
   .cdd-body p, .cdd-body li { font-size: 9.5pt; line-height: 1.6; }
   .cdd-disclaimer { page-break-inside: avoid; }
