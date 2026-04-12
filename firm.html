@@ -330,30 +330,32 @@
       .metrics-shell {
         border: 1px solid var(--rule);
         background: var(--xuan);
-        padding: 16px;
+        padding: clamp(12px, 1.4vw, 18px);
       }
       .metrics-grid {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        grid-template-areas:
-          "metric-1 metric-1 metric-2 metric-2 metric-3 metric-3"
-          ". metric-4 metric-4 metric-5 metric-5 .";
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: 12px;
+        align-items: stretch;
+      }
+      .metrics-support-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
       }
-      .metric-card:nth-child(1) { grid-area: metric-1; }
-      .metric-card:nth-child(2) { grid-area: metric-2; }
-      .metric-card:nth-child(3) { grid-area: metric-3; }
-      .metric-card:nth-child(4) { grid-area: metric-4; }
-      .metric-card:nth-child(5) { grid-area: metric-5; }
       .metric-card {
         border: 1px solid var(--rule);
         background: var(--xuan-light);
-        padding: clamp(20px, 2vw, 26px);
-        min-height: clamp(184px, 20vw, 216px);
+        padding: clamp(16px, 1.6vw, 22px);
+        min-height: clamp(130px, 14vw, 158px);
         display: grid;
         grid-template-rows: auto minmax(0, auto) 1px auto;
         align-content: start;
         min-width: 0;
+      }
+      .metric-card--lead {
+        padding: clamp(22px, 2.3vw, 32px);
+        min-height: clamp(272px, 30vw, 332px);
       }
       .metric-label {
         font-size: 11px;
@@ -376,14 +378,22 @@
         text-wrap: balance;
         max-width: 100%;
       }
+      .metric-card--lead .metric-value {
+        margin-top: clamp(18px, 2vw, 26px);
+        font-size: clamp(42px, 4.4vw, 58px);
+        line-height: 1.03;
+      }
+      .metric-card--lead .metric-copy {
+        max-width: 34ch;
+      }
       .metric-rule {
         margin-top: clamp(14px, 1.4vw, 18px);
         background: var(--rule);
       }
       .metric-copy {
-        margin-top: clamp(12px, 1.2vw, 16px);
-        font-size: 15px;
-        line-height: 1.7;
+        margin-top: clamp(10px, 1vw, 14px);
+        font-size: 14px;
+        line-height: 1.58;
       }
 
       .thesis-list {
@@ -529,10 +539,10 @@
 
       @media (max-width: 1120px) {
         .metrics-grid {
-          grid-template-columns: repeat(6, minmax(0, 1fr));
-          grid-template-areas:
-            "metric-1 metric-1 metric-2 metric-2 metric-3 metric-3"
-            ". metric-4 metric-4 metric-5 metric-5 .";
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .metric-card--lead {
+          min-height: auto;
         }
         .committee-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -564,12 +574,11 @@
         }
         .card-grid,
         .metrics-grid,
+        .metrics-support-grid,
         .committee-grid,
         .execution-flow {
           grid-template-columns: 1fr;
-          grid-template-areas: none;
         }
-        .metric-card:nth-child(n) { grid-area: auto; }
         .cta-panel .btn {
           width: 100%;
         }
@@ -700,36 +709,38 @@
           </div>
           <div class="metrics-shell">
             <div class="metrics-grid">
-              <article class="metric-card">
+              <article class="metric-card metric-card--lead">
                 <p class="metric-label">Capital deployed</p>
                 <p class="metric-value">US$2B+</p>
                 <div class="metric-rule"></div>
                 <p class="metric-copy">Managed across six fund vintages.</p>
               </article>
-              <article class="metric-card">
-                <p class="metric-label">Operating history</p>
-                <p class="metric-value">Since 2004</p>
-                <div class="metric-rule"></div>
-                <p class="metric-copy">Experience across multiple credit cycles.</p>
-              </article>
-              <article class="metric-card">
-                <p class="metric-label">Transactions completed</p>
-                <p class="metric-value">50+</p>
-                <div class="metric-rule"></div>
-                <p class="metric-copy">Asset-backed investments and restructurings.</p>
-              </article>
-              <article class="metric-card">
-                <p class="metric-label">Risk discipline</p>
-                <p class="metric-value">30–60%</p>
-                <div class="metric-rule"></div>
-                <p class="metric-copy">Typical LTV range with enforceable claims.</p>
-              </article>
-              <article class="metric-card">
-                <p class="metric-label">Team continuity</p>
-                <p class="metric-value">~20 years</p>
-                <div class="metric-rule"></div>
-                <p class="metric-copy">Core IC members working together long-term.</p>
-              </article>
+              <div class="metrics-support-grid">
+                <article class="metric-card">
+                  <p class="metric-label">Operating history</p>
+                  <p class="metric-value">Since 2004</p>
+                  <div class="metric-rule"></div>
+                  <p class="metric-copy">Experience across multiple credit cycles.</p>
+                </article>
+                <article class="metric-card">
+                  <p class="metric-label">Transactions completed</p>
+                  <p class="metric-value">50+</p>
+                  <div class="metric-rule"></div>
+                  <p class="metric-copy">Asset-backed investments and restructurings.</p>
+                </article>
+                <article class="metric-card">
+                  <p class="metric-label">Risk discipline</p>
+                  <p class="metric-value">30–60%</p>
+                  <div class="metric-rule"></div>
+                  <p class="metric-copy">Typical LTV range with enforceable claims.</p>
+                </article>
+                <article class="metric-card">
+                  <p class="metric-label">Team continuity</p>
+                  <p class="metric-value">~20 years</p>
+                  <div class="metric-rule"></div>
+                  <p class="metric-copy">Core IC members working together long-term.</p>
+                </article>
+              </div>
             </div>
           </div>
         </div>
