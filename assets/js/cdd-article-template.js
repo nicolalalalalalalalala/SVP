@@ -61,15 +61,23 @@
 
   document.querySelectorAll('[data-print-action="download-pdf"]').forEach((button) => {
     button.addEventListener('click', () => {
-      const pdfPath = button.dataset.printPdf;
-      if (!pdfPath) return;
+      const configuredRoute = button.dataset.printRoute;
+      const fallbackRoute = window.location.pathname.replace(/\.html$/i, '-print.html');
+      const printRoute = configuredRoute || fallbackRoute;
 
-      const link = document.createElement('a');
-      link.href = pdfPath;
-      if (button.dataset.printFilename) link.download = button.dataset.printFilename;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+      const printUrl = new URL(printRoute, window.location.href);
+      printUrl.searchParams.set('pdf', '1');
+      window.open(printUrl.toString(), '_blank', 'noopener');
     });
   });
+
+  const shouldAutoPrint =
+    document.body.dataset.autoPrint === 'true' ||
+    new URLSearchParams(window.location.search).get('pdf') === '1';
+
+  if (shouldAutoPrint) {
+    requestAnimationFrame(() => {
+      setTimeout(() => window.print(), 120);
+    });
+  }
 })();
