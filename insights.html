@@ -660,15 +660,6 @@
         color: var(--mist);
         background: #fff;
       }
-      .archive__disclaimer {
-        margin: 0;
-        padding: 14px 20px;
-        font-size: 12px;
-        line-height: 1.6;
-        color: #7d786f;
-        background: #fff;
-        border-bottom: 1px solid var(--rule);
-      }
       .archive__row {
         padding: 16px 20px 18px;
         border-bottom: 1px solid rgba(20, 20, 16, 0.1);
@@ -1284,7 +1275,7 @@
   .sv-footer__contact a {
     font-family: "Inter", system-ui, sans-serif !important;
   }
-  p, li, .research-hero__desc, .issue-header__dek, .reading p, .reading li, .archive__disclaimer, .sv-footer__legal, .sv-footer__copyright {
+  p, li, .research-hero__desc, .issue-header__dek, .reading p, .reading li, .sv-footer__legal, .sv-footer__copyright {
     font-family: "DIN 2014", sans-serif !important;
     font-weight: 400 !important;
     color: var(--text-light-primary) !important;
@@ -1508,7 +1499,6 @@
   body.insights-page .reading p,
   body.insights-page .reading li,
   body.insights-page .reading blockquote,
-  body.insights-page .archive__disclaimer,
   body.insights-page .sidebar__card p,
   body.insights-page .research-sub p {
     font-size: var(--sv-type-body-size) !important;
@@ -1550,84 +1540,10 @@
   }
 
 
-  .cdd-simple-intro {
-    max-width: 760px;
-    margin-bottom: 40px;
-  }
-  .cdd-simple-intro h2 {
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.05;
-    margin-bottom: 12px;
-  }
-  .cdd-simple-intro p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #4d4942;
-    margin-bottom: 10px;
-  }
-  .cdd-tertiary-link {
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mist);
-  }
-  .cdd-tertiary-link:hover,
-  .cdd-tertiary-link:focus-visible {
-    color: var(--red);
-  }
-  .latest-feature {
-    margin-bottom: 42px;
-  }
-  .latest-feature__head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 14px;
-  }
-  .latest-feature__label {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--mist);
-  }
-  .latest-feature__card {
-    border: 1px solid var(--rule);
-    background: var(--off);
-    padding: 30px;
-  }
-  .latest-feature__meta {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--mist);
-    margin-bottom: 12px;
-  }
-  .latest-feature__card h3 {
-    font-size: clamp(32px, 4.5vw, 48px);
-    line-height: 1.08;
-    margin-bottom: 12px;
-  }
-  .latest-feature__card p {
-    font-size: 16px;
-    color: #4d4942;
-    line-height: 1.75;
-  }
-  .latest-feature__actions {
-    margin-top: 22px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
   .archive-panel {
     border: 1px solid var(--rule);
   }
   .archive-panel .archive__head {
-    border-bottom: 1px solid var(--rule);
-  }
-  .archive-panel .archive__disclaimer {
-    margin: 0;
-    padding: 16px 22px;
     border-bottom: 1px solid var(--rule);
   }
 </style>
@@ -1678,46 +1594,8 @@
     </section>
 
     <main class="issue-shell wrap">
-      <header class="cdd-simple-intro" aria-labelledby="cdd-page-title">
-        <h2 id="cdd-page-title">China Debt Dynamics</h2>
-        <p>
-          A quarterly ShoreVest research series on China's private credit cycle, policy direction,
-          and market structure for institutional allocators.
-        </p>
-        <a class="cdd-tertiary-link" href="#subscribe">Subscribe for updates</a>
-      </header>
-
-      <section class="latest-feature" aria-labelledby="latest-issue-heading">
-        <div class="latest-feature__head">
-          <div class="latest-feature__label">Latest issue</div>
-          <a class="cdd-tertiary-link" href="#archive">Browse archive</a>
-        </div>
-        <article class="latest-feature__card">
-          <p class="latest-feature__meta">Vol. 10 · Issue 1 · Published 25 January 2026</p>
-          <h3 id="latest-issue-heading">The End of China's Uninvestable Myth</h3>
-          <p>
-            This edition examines how post-2021 policy dislocation changed market mechanics and
-            where private credit remains investable when structure, enforcement, and underwriting
-            discipline are prioritized over sentiment.
-          </p>
-          <div class="latest-feature__actions">
-            <a class="util-btn util-btn--solid" href="china-debt-dynamics-v10i1.html">Read latest issue</a>
-            <a
-              class="util-btn"
-              href="pdfs/china-debt-dynamics-issue-46-end-of-chinas-uninvestable-myth.pdf"
-              download>Download PDF</a>
-          </div>
-        </article>
-      </section>
-
       <section class="archive-panel" id="archive" aria-labelledby="archive-heading">
         <div class="archive__head" id="archive-heading">Archive by Volume</div>
-        <p class="archive__disclaimer">
-          Issues are organized by volume and issue number (newest to oldest). China Debt
-          Dynamics represents the views and analysis of ShoreVest Partners and is provided for
-          informational purposes only. It does not constitute investment advice, a solicitation to
-          invest, or an offer to sell any security.
-        </p>
         <div class="archive__list">
           <div class="archive__row">
             <small>Vol. 10, Issue 1 · Published 25 January 2026</small>
