@@ -6,7 +6,7 @@
     <title>ShoreVest | Press</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/edited-photo-3.svg?v=6" />
     <link rel="shortcut icon" href="assets/images/edited-photo-3.svg?v=6" />
-    <link rel="preload" as="image" href="assets/images/press_hero.jpg" />
+    <link rel="preload" as="image" href="assets/images/press_hero.jpg?v=2" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -123,7 +123,7 @@
         pointer-events: none;
       }
       .press-hero::before {
-        background-image: url("assets/images/press_hero.jpg");
+        background-image: url("assets/images/press_hero.jpg?v=2");
         background-position: 58% 34%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -795,7 +795,6 @@
     font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
   }
 
-  .press-hero,
   .press-toolbar,
   .press-list,
   .press-row a,
@@ -829,14 +828,7 @@
     border-color: var(--xuan-dark) !important;
   }
 
-  .press-hero::before,
-  .press-hero::after {
-    content: none !important;
-    background: none !important;
-  }
-
   .press-hero {
-    min-height: auto !important;
     border-bottom: 1px solid var(--xuan-dark) !important;
   }
 
