@@ -63,8 +63,8 @@
         padding: 0 var(--pad);
       }
       .wrap--pillar-module {
-        max-width: min(1680px, calc(100vw - clamp(20px, 2.4vw, 40px)));
-        padding-inline: clamp(16px, 2.2vw, 38px);
+        max-width: var(--max);
+        padding: 0 var(--pad);
       }
       section {
         padding: clamp(72px, 8vw, 108px) 0;
@@ -629,10 +629,6 @@
         }
       }
       @media (max-width: 767px) {
-        .wrap--pillar-module {
-          max-width: 100%;
-          padding-inline: var(--pad);
-        }
         section {
           padding: 48px 0;
         }
