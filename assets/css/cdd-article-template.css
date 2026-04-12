@@ -28,24 +28,63 @@ html, body {
 a { color: var(--qing-dark); }
 
 .wrap {
-  width: min(calc(100% - 64px), var(--max-width));
+  width: min(calc(100% - 48px), var(--max-width));
   margin: 0 auto;
 }
 
-main.cdd-page {
-  padding: 52px 0 64px;
+.cdd-topline {
+  border-top: 4px solid var(--cinnabar);
+  background: var(--xuan-paper);
+  border-bottom: 1px solid var(--xuan-paper-dark);
 }
 
-.cdd-display {
-  margin: 0 0 10px;
-  font-size: clamp(24px, 3.6vw, 32px) !important;
-  line-height: 1.1;
-  font-weight: 300 !important;
-  font-style: italic !important;
-  color: var(--ink-green-dark);
-  max-width: var(--article-width);
-  margin-left: auto;
-  margin-right: auto;
+.cdd-topline__inner {
+  padding: 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.cdd-label {
+  font-size: 8pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cinnabar);
+  font-weight: 700;
+}
+
+.cdd-lockup {
+  font-family: "Noto Serif SC", serif;
+  font-size: 12px;
+  color: var(--cinnabar-dark);
+}
+
+.cdd-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cdd-btn {
+  text-decoration: none;
+  border: 1px solid var(--qing);
+  color: var(--qing-dark);
+  background: transparent;
+  padding: 8px 12px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cdd-btn--solid {
+  background: var(--qing);
+  color: var(--xuan-paper-light);
+}
+
+main.cdd-page {
+  padding: 34px 0 56px;
 }
 
 .cdd-meta {
@@ -56,22 +95,15 @@ main.cdd-page {
   gap: 12px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--xuan-paper-dark);
-  max-width: var(--article-width);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .cdd-title {
   margin: 16px 0 10px;
-  font-size: clamp(18px, 2.4vw, 24px);
+  font-size: clamp(28px, 4.2vw, 42px);
   line-height: 1.1;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.005em;
+  font-weight: 300;
+  font-style: italic;
   color: var(--ink-green-dark);
-  max-width: var(--article-width);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .cdd-dek {
@@ -79,15 +111,13 @@ main.cdd-page {
   max-width: var(--article-width);
   font-size: 10.5pt;
   line-height: 1.6;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .cdd-grid {
-  display: block;
-  max-width: var(--article-width);
-  margin-left: auto;
-  margin-right: auto;
+  display: grid;
+  grid-template-columns: minmax(0, var(--article-width)) minmax(220px, 300px);
+  gap: 44px;
+  align-items: start;
 }
 
 .cdd-body p,
@@ -101,9 +131,9 @@ main.cdd-page {
   margin: 30px 0 14px;
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--ink-green-dark);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cinnabar);
 }
 
 .cdd-body ul {
@@ -111,16 +141,15 @@ main.cdd-page {
   padding-left: 22px;
 }
 
-.cdd-disclaimer {
-  margin-top: 40px;
-  border-top: 1px solid var(--xuan-paper-dark);
-  padding-top: 16px;
-  max-width: var(--article-width);
-  margin-left: auto;
-  margin-right: auto;
+.cdd-sidecard {
+  border: 1px solid var(--xuan-paper-dark);
+  background: var(--xuan-paper);
+  padding: 16px;
+  position: sticky;
+  top: 120px;
 }
 
-.cdd-disclaimer h4 {
+.cdd-sidecard h3 {
   margin: 0 0 10px;
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -128,9 +157,22 @@ main.cdd-page {
   color: var(--cinnabar);
 }
 
-.cdd-body h3,
+.cdd-sidecard li {
+  font-size: 9pt;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.cdd-disclaimer {
+  margin-top: 40px;
+  border-top: 1px solid var(--xuan-paper-dark);
+  padding-top: 16px;
+}
+
 .cdd-disclaimer h4 {
-  letter-spacing: 0.12em;
+  margin: 0 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--cinnabar);
 }
@@ -143,17 +185,19 @@ main.cdd-page {
 }
 
 @media (max-width: 980px) {
-  .wrap { width: min(calc(100% - 40px), var(--max-width)); }
-  .cdd-grid { max-width: 100%; }
+  .cdd-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cdd-sidecard { position: static; }
 }
 
 @media print {
   body { background: var(--xuan-paper-light); }
-  #site-header-mount, .cdd-print-hide { display: none !important; }
+  #site-header-mount, .cdd-actions, .cdd-print-hide { display: none !important; }
   .wrap { width: 100%; max-width: none; padding: 0 10mm; }
+  .cdd-topline { border-top-width: 2px; }
   .cdd-title { font-size: 24pt; }
   .cdd-meta { font-size: 8pt; }
   .cdd-grid { display: block; }
+  .cdd-sidecard { border: 1px solid var(--xuan-paper-dark); margin-bottom: 14px; page-break-inside: avoid; }
   .cdd-body h2 { page-break-after: avoid; }
   .cdd-body p, .cdd-body li { font-size: 9.5pt; line-height: 1.6; }
   .cdd-disclaimer { page-break-inside: avoid; }
