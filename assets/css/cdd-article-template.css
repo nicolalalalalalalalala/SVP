@@ -332,11 +332,68 @@ main.cdd-page {
 }
 
 @media (max-width: 680px) {
+  .cdd-topline__inner {
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0;
+  }
+
+  .cdd-label,
+  .cdd-lockup {
+    line-height: 1.35;
+  }
+
+  .cdd-intro {
+    padding-top: 22px;
+    margin-bottom: 36px;
+  }
+
   .cdd-intro__bar {
     gap: 14px;
+    padding-bottom: 14px;
   }
+
+  .cdd-intro__bar .cdd-meta {
+    gap: 8px 0;
+  }
+
+  .cdd-meta span {
+    line-height: 1.5;
+  }
+
+  .cdd-intro__grid {
+    gap: 24px;
+    padding-top: 26px;
+    padding-bottom: 30px;
+  }
+
   .cdd-intro__bar .cdd-actions {
     width: 100%;
+    gap: 10px;
+  }
+
+  .cdd-btn {
+    padding: 10px 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .cdd-title {
+    margin-bottom: 12px;
+    max-width: 13ch;
+    line-height: 1.1;
+  }
+
+  .cdd-dek {
+    margin-bottom: 0;
+    line-height: 1.62;
+  }
+
+  .cdd-sidecard {
+    padding: 20px;
+  }
+
+  .cdd-sidecard li {
+    margin-bottom: 10px;
   }
 }
 
