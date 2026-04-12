@@ -774,23 +774,28 @@
         .cta-panel .btn {
           width: 100%;
         }
-        /* ── Mobile pillar card fixes ── */
+        /* ── Mobile pillar card layout reset ── */
         .platform-ops-section .pillar-card {
           min-height: 0;
+          row-gap: 10px;
         }
+        /* Collapse icon wrapper to natural icon height — no dead vertical space */
         .pillar-card .card-icon-wrap {
-          min-height: 72px;
+          min-height: 0;
+          height: auto;
           display: flex;
           align-items: center;
         }
+        /* Clearly visible icon at a proper mobile size */
         .pillar-card .card-icon {
-          width: 72px;
-          height: 72px;
+          width: 88px;
+          height: 88px;
           margin: 0;
         }
+        /* Label sits directly in normal flow; row-gap alone controls spacing */
         .pillar-card .card-index {
-          margin-top: 8px;
-          margin-bottom: 6px;
+          margin-top: 0;
+          margin-bottom: 0;
         }
       }
     </style>
