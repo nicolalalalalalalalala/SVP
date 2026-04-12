@@ -1,4 +1,6 @@
 (async () => {
+  document.body.dataset.cddReady = 'false';
+
   const source = document.body.dataset.articleSource;
   if (!source) return;
 
@@ -63,6 +65,8 @@
   const shouldAutoPrint =
     document.body.dataset.autoPrint === 'true' ||
     new URLSearchParams(window.location.search).get('pdf') === '1';
+
+  document.body.dataset.cddReady = 'true';
 
   if (shouldAutoPrint) {
     requestAnimationFrame(() => {
