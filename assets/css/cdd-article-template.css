@@ -225,6 +225,8 @@ main.cdd-page {
   padding-bottom: 0;
   min-width: 0;
   grid-column: 1;
+  max-width: var(--article-width);
+  width: 100%;
 }
 
 .cdd-intro__bar .cdd-actions {
@@ -242,7 +244,8 @@ main.cdd-page {
 }
 
 .cdd-intro__lede {
-  max-width: 100%;
+  max-width: var(--article-width);
+  width: 100%;
   grid-column: 1;
 }
 
