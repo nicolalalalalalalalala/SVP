@@ -238,85 +238,105 @@
       .pillar-card .card-icon {
         transform: translateY(0);
       }
-      @keyframes pillar-float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-3px);
-        }
-      }
       @keyframes pillar-draw {
         to {
           stroke-dashoffset: 0;
         }
       }
+      @keyframes pillar-fade-in {
+        0% {
+          opacity: 0;
+          transform: translateY(2px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
       @keyframes pillar-pulse {
         0%,
         100% {
-          opacity: 1;
+          opacity: 0.3;
         }
         50% {
-          opacity: 0.35;
+          opacity: 0.7;
         }
       }
-      @keyframes pillar-pop {
+      @keyframes pillar-flow {
+        to {
+          stroke-dashoffset: -24;
+        }
+      }
+      @keyframes pillar-lock {
         0% {
-          opacity: 0;
-          transform: scale(0.72);
+          transform: translate(-2px, 2px);
+          opacity: 0.3;
         }
         100% {
+          transform: translate(0, 0);
           opacity: 1;
-          transform: scale(1);
+        }
+      }
+      @keyframes pillar-steady-drift {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(2px);
+        }
+      }
+      @keyframes pillar-loop {
+        to {
+          stroke-dashoffset: -34;
+        }
+      }
+      @keyframes pillar-track {
+        0%,
+        100% {
+          transform: translateX(-1px);
+          opacity: 0.62;
+        }
+        50% {
+          transform: translateX(1px);
+          opacity: 1;
         }
       }
       .pillar-card .card-icon [data-draw] {
         stroke-dasharray: var(--len, 100);
         stroke-dashoffset: var(--len, 100);
       }
-      .pillar-card .card-icon [data-pop] {
-        opacity: 0;
-        transform-origin: center;
-      }
-      .pillar-card.is-in .card-icon {
-        animation: pillar-float 4s ease-in-out 1s infinite;
-      }
-      .pillar-card.is-in .card-icon-wrap {
-        animation: pillar-panel-glow 3.4s ease-in-out .2s infinite;
-      }
       .pillar-card.is-in .card-icon [data-draw] {
-        animation: pillar-draw 0.8s cubic-bezier(.22, 1, .36, 1) var(--delay, 0s) both;
+        animation: pillar-draw 0.9s cubic-bezier(.22, 1, .36, 1) var(--delay, 0s) both;
+      }
+      .pillar-card.is-in .card-icon [data-fade] {
+        animation: pillar-fade-in 0.7s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.4s) both;
       }
       .pillar-card.is-in .card-icon [data-pulse] {
-        animation:
-          pillar-draw 0.8s cubic-bezier(.22, 1, .36, 1) var(--delay, 0s) both,
-          pillar-pulse 3.2s ease-in-out calc(var(--delay, 0s) + .75s) infinite;
+        animation: pillar-pulse 4.8s ease-in-out var(--delay, 1s) infinite;
       }
-      .pillar-card.is-in .card-icon [data-pop] {
-        animation: pillar-pop 0.45s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.8s) both;
+      .pillar-card.is-in .card-icon [data-flow] {
+        stroke-dasharray: 3 7;
+        animation: pillar-flow 7.5s linear var(--delay, 1s) infinite;
       }
-      .pillar-card.is-in .card-icon [data-oscillate] {
-        animation: pillar-oscillate 2.4s ease-in-out calc(var(--delay, .4s) + .8s) infinite;
+      .pillar-card.is-in .card-icon [data-lock] {
+        transform-box: fill-box;
         transform-origin: center;
+        animation: pillar-lock 0.8s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.55s) both;
       }
-      @keyframes pillar-panel-glow {
-        0%,
-        100% {
-          box-shadow: 0 0 0 0 color-mix(in srgb, var(--cinnabar) 0%, transparent);
-        }
-        50% {
-          box-shadow: 0 10px 26px -14px color-mix(in srgb, var(--cinnabar) 58%, transparent);
-        }
+      .pillar-card.is-in .card-icon [data-drift] {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: pillar-steady-drift 6.5s ease-in-out var(--delay, 1.2s) infinite;
       }
-      @keyframes pillar-oscillate {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-2px);
-        }
+      .pillar-card.is-in .card-icon [data-loop] {
+        stroke-dasharray: 5 8;
+        animation: pillar-loop 8s linear var(--delay, 1s) infinite;
+      }
+      .pillar-card.is-in .card-icon [data-track] {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: pillar-track 4.4s ease-in-out var(--delay, 1.1s) infinite;
       }
       @media (prefers-reduced-motion: reduce) {
         .pillar-card .card-icon-wrap,
@@ -326,7 +346,7 @@
           transition: none !important;
         }
         .pillar-card .card-icon [data-draw],
-        .pillar-card .card-icon [data-pop] {
+        .pillar-card .card-icon [data-fade] {
           stroke-dashoffset: 0 !important;
           opacity: 1 !important;
           transform: none !important;
@@ -691,10 +711,13 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="38" cy="42" r="14" stroke="currentColor" stroke-width="2.25" data-pulse style="--len:90;--delay:.1s;"></circle>
-                  <circle cx="82" cy="42" r="14" stroke="currentColor" stroke-width="2.25" data-pulse style="--len:90;--delay:.3s;"></circle>
-                  <circle cx="60" cy="78" r="14" stroke="currentColor" stroke-width="2.25" data-pulse style="--len:90;--delay:.5s;"></circle>
-                  <path d="M49 52L55 63M71 63L77 52M45 78H24M96 78H75M60 64V42" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" data-draw data-oscillate style="--len:130;--delay:.58s;"></path>
+                  <path d="M18 24L56 56M18 60L56 60M18 96L56 64M56 56L90 56M56 60L90 60M56 64L90 64" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-draw style="--len:248;--delay:.1s;"></path>
+                  <path d="M18 24L56 56M18 60L56 60M18 96L56 64" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-flow style="--delay:1s;"></path>
+                  <circle cx="18" cy="24" r="3.2" fill="currentColor" data-pulse style="--delay:1.2s;"></circle>
+                  <circle cx="18" cy="60" r="3.2" fill="currentColor" data-pulse style="--delay:1.45s;"></circle>
+                  <circle cx="18" cy="96" r="3.2" fill="currentColor" data-pulse style="--delay:1.7s;"></circle>
+                  <circle cx="56" cy="60" r="4.2" fill="currentColor" data-fade style="--delay:.72s;"></circle>
+                  <rect x="90" y="48" width="12" height="24" rx="5" stroke="currentColor" stroke-width="1.8" data-draw style="--len:68;--delay:.5s;"></rect>
                 </svg>
               </div>
               </div>
@@ -706,10 +729,11 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="24" y="22" width="72" height="76" rx="6" stroke="currentColor" stroke-width="2.25" data-draw style="--len:296;--delay:.15s;"></rect>
-                  <path d="M60 22V14M45 14H75" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" data-draw style="--len:42;--delay:.35s;"></path>
-                  <path d="M38 52L52 66L82 38" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-draw data-oscillate style="--len:70;--delay:.55s;"></path>
-                  <path d="M38 78H82" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" data-draw style="--len:45;--delay:.85s;"></path>
+                  <rect x="20" y="20" width="80" height="80" rx="8" stroke="currentColor" stroke-width="1.9" data-draw style="--len:320;--delay:.14s;"></rect>
+                  <rect x="30" y="30" width="60" height="60" rx="5" stroke="currentColor" stroke-width="1.6" data-draw data-lock style="--len:240;--delay:.45s;"></rect>
+                  <path d="M44 30V90M60 30V90M76 30V90M30 44H90M30 60H90M30 76H90" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" data-draw data-lock style="--len:360;--delay:.62s;"></path>
+                  <path d="M32 60H88" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" data-flow style="--delay:1.2s;"></path>
+                  <circle cx="60" cy="60" r="4" fill="currentColor" data-fade style="--delay:1.05s;"></circle>
                 </svg>
               </div>
               </div>
@@ -721,9 +745,11 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M60 94L28 77V43L60 26L92 43V77L60 94Z" stroke="currentColor" stroke-width="2.25" data-draw style="--len:220;--delay:.2s;"></path>
-                  <path d="M60 26V94M28 43L60 60L92 43" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:160;--delay:.9s;"></path>
-                  <circle cx="60" cy="60" r="5" fill="currentColor" data-pop data-oscillate style="--delay:1.45s;"></circle>
+                  <path d="M24 60C24 39 39 24 60 24C81 24 96 39 96 60C96 81 81 96 60 96C39 96 24 81 24 60Z" stroke="currentColor" stroke-width="1.9" data-draw style="--len:226;--delay:.18s;"></path>
+                  <path d="M24 60C24 39 39 24 60 24C81 24 96 39 96 60C96 81 81 96 60 96C39 96 24 81 24 60Z" stroke="currentColor" stroke-width="1.9" data-loop style="--delay:1.2s;"></path>
+                  <path d="M34 60C34 44.5 44.5 34 60 34C75.5 34 86 44.5 86 60C86 75.5 75.5 86 60 86C44.5 86 34 75.5 34 60Z" stroke="currentColor" stroke-width="1.5" data-draw style="--len:165;--delay:.55s;"></path>
+                  <path d="M60 34V86M34 60H86" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" data-draw data-drift style="--len:104;--delay:.88s;"></path>
+                  <circle cx="60" cy="60" r="4.2" fill="currentColor" data-pulse style="--delay:1.35s;"></circle>
                 </svg>
               </div>
               </div>
@@ -735,11 +761,12 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="18" y="20" width="84" height="80" rx="8" stroke="currentColor" stroke-width="2.25" data-draw style="--len:340;--delay:.15s;"></rect>
-                  <path d="M32 76L49 58L62 66L87 41" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:95;--delay:.6s;"></path>
-                  <circle cx="49" cy="58" r="4.25" fill="currentColor" data-pop data-oscillate style="--delay:1s;"></circle>
-                  <circle cx="62" cy="66" r="4.25" fill="currentColor" data-pop data-oscillate style="--delay:1.12s;"></circle>
-                  <circle cx="87" cy="41" r="4.25" fill="currentColor" data-pop data-oscillate style="--delay:1.24s;"></circle>
+                  <rect x="20" y="22" width="80" height="76" rx="8" stroke="currentColor" stroke-width="1.9" data-draw style="--len:314;--delay:.12s;"></rect>
+                  <path d="M30 78H90M30 60H90M30 42H90" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" data-draw style="--len:180;--delay:.52s;"></path>
+                  <path d="M34 72C45 68 51 52 63 54C74 56 79 44 88 40" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:90;--delay:.84s;"></path>
+                  <path d="M34 72C45 68 51 52 63 54C74 56 79 44 88 40" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" data-flow style="--delay:1.5s;"></path>
+                  <rect x="42" y="35" width="4" height="50" rx="2" fill="currentColor" data-track style="--delay:1.2s;"></rect>
+                  <circle cx="63" cy="54" r="3.8" fill="currentColor" data-pulse style="--delay:1.65s;"></circle>
                 </svg>
               </div>
               </div>
