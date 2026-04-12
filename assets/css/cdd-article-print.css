@@ -111,6 +111,9 @@ body.cdd-print-layout .cdd-meta {
   display: flex       !important;
   flex-wrap: wrap     !important;
   gap: 0              !important;
+  text-align: left    !important;
+  text-justify: auto  !important;
+  white-space: normal !important;
 }
 
 body.cdd-print-layout .cdd-meta span {
@@ -138,6 +141,8 @@ body.cdd-print-layout .cdd-print-hero {
   margin: 6mm 0 0;
   padding-bottom: 5.5mm;
   border-bottom: 0.5pt solid var(--pr-rule);
+  /* Constrain first-page headline composition for cleaner breaks. */
+  max-width: 138mm;
 }
 
 /*
@@ -153,7 +158,7 @@ body.cdd-print-layout .cdd-print-hero {
         !important, so the title was being rendered bold.
 
   Fixes:
-    • max-width: 100% — let the full column width control line length
+    • max-width: 138mm — fixed headline measure for controlled line breaks
     • font-weight: 300 !important with higher specificity (0-2-1) overrides
       the typography system's 0-0-3 !important declaration
     • text-wrap: balance — the browser balances line lengths so no single
@@ -172,9 +177,9 @@ body.cdd-print-layout .cdd-title {
   color: var(--pr-ink)    !important;
   text-transform: none    !important;
 
-  /* The key fix: remove the ch-based max-width entirely */
-  max-width: 100%         !important;
-  width:     auto         !important;
+  /* Controlled headline measure for elegant, publication-style wraps. */
+  max-width: 138mm        !important;
+  width:     100%         !important;
 
   margin:    5mm 0 3.5mm  !important;
 
@@ -187,8 +192,10 @@ body.cdd-print-layout .cdd-title {
 
   /* Prevent any browser from stretching word-spacing */
   word-spacing:   normal  !important;
+  text-justify:   auto    !important;
   overflow-wrap:  normal  !important;
   word-break:     normal  !important;
+  white-space:    normal  !important;
   text-align:     left    !important;
 }
 
@@ -207,6 +214,10 @@ body.cdd-print-layout .cdd-dek {
   hyphens: auto       !important;
   -webkit-hyphens: auto !important;
   word-spacing: normal !important;
+  text-justify: auto  !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  white-space: normal !important;
   text-align: left    !important;
 }
 
@@ -242,19 +253,19 @@ body.cdd-print-layout .cdd-body li {
   max-width: none    !important;   /* column width is the measure */
   margin: 0 0 3.2mm  !important;
 
-  /* Typeset-quality composition:
-     justify + hyphens:auto eliminates stretched lines and
-     inconsistent word spacing */
-  text-align:   justify !important;
-  hyphens:      auto   !important;
-  -webkit-hyphens: auto !important;
+  /* Body copy must remain stable in browser print engines. */
+  text-align:   left     !important;
+  text-justify: auto     !important;
+  hyphens:      manual   !important;
+  -webkit-hyphens: manual !important;
 
   /* Prevent other text-wrap modes from interfering */
-  text-wrap:    initial  !important;
+  text-wrap:    pretty   !important;
   word-spacing: normal   !important;
   letter-spacing: 0      !important;
   word-break:   normal   !important;
-  overflow-wrap: break-word !important;
+  overflow-wrap: normal  !important;
+  white-space: normal    !important;
   text-indent:  0        !important;
 }
 
@@ -384,9 +395,13 @@ body.cdd-print-layout .cdd-disclaimer p {
   line-height:  1.58  !important;
   color: var(--pr-label) !important;
   margin: 0 0 1.5mm   !important;
-  text-align: justify !important;
-  hyphens: auto       !important;
-  -webkit-hyphens: auto !important;
+  text-align: left      !important;
+  text-justify: auto    !important;
+  hyphens: manual       !important;
+  -webkit-hyphens: manual !important;
+  word-break: normal    !important;
+  overflow-wrap: normal !important;
+  white-space: normal   !important;
 }
 
 
@@ -442,6 +457,7 @@ body.cdd-print-layout .cdd-disclaimer p {
   body.cdd-print-layout .cdd-title {
     font-size: 28pt !important;
     margin: 4mm 0 3mm !important;
+    max-width: 138mm !important;
   }
 
   /* ---- Page-break logic ---- */
