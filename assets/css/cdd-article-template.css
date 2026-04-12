@@ -190,14 +190,22 @@ main.cdd-page {
 }
 
 @media print {
-  body { background: var(--xuan-paper-light); }
+  html, body { background: #fff !important; }
   #site-header-mount, .cdd-actions, .cdd-print-hide { display: none !important; }
   .wrap { width: 100%; max-width: none; padding: 0 10mm; }
-  .cdd-topline { border-top-width: 2px; }
+  .cdd-topline {
+    border-top-width: 2px;
+    background: #fff !important;
+  }
   .cdd-title { font-size: 24pt; }
   .cdd-meta { font-size: 8pt; }
   .cdd-grid { display: block; }
-  .cdd-sidecard { border: 1px solid var(--xuan-paper-dark); margin-bottom: 14px; page-break-inside: avoid; }
+  .cdd-sidecard {
+    border: 1px solid var(--xuan-paper-dark);
+    background: #fff !important;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
   .cdd-body h2 { page-break-after: avoid; }
   .cdd-body p, .cdd-body li { font-size: 9.5pt; line-height: 1.6; }
   .cdd-disclaimer { page-break-inside: avoid; }
