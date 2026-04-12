@@ -330,6 +330,38 @@
         color: var(--ink-soft);
         margin-top: -2px;
       }
+      .team-profile__linkedin {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 8px;
+        font-family: var(--team-type-heading);
+        font-size: var(--team-role-size);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--qing-dark);
+        text-decoration: none;
+        border-bottom: 1px solid color-mix(in srgb, var(--qing-dark) 35%, transparent);
+        padding-bottom: 1px;
+        line-height: 1.4;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      .team-profile__linkedin:hover,
+      .team-profile__linkedin:focus {
+        color: var(--qing);
+        border-color: var(--qing);
+      }
+      .team-profile__linkedin:focus-visible {
+        outline: 2px solid var(--qing-light);
+        outline-offset: 3px;
+        border-color: transparent;
+      }
+      .team-row-bio__links {
+        margin-top: 12px;
+      }
+      .team-row-bio__links .team-profile__linkedin {
+        margin-top: 0;
+      }
       .team-profile__bio-toggle {
         --team-bio-cinnabar: var(--qing);
         --team-bio-cinnabar-light: var(--qing-light);
@@ -681,6 +713,11 @@
               <div class="team-profile__role">Managing Partner & Founder</div>
 
               <button class="team-profile__bio-toggle" type="button" aria-expanded="false" aria-controls="bio-benjamin-fanger">Read bio</button>
+
+              <a class="team-profile__linkedin"
+                 href="https://www.linkedin.com/in/benjamin-fanger-540b1?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios"
+                 target="_blank"
+                 rel="noopener noreferrer">LinkedIn</a>
 
               <div class="team-profile__bio" id="bio-benjamin-fanger" hidden>
 
@@ -1199,7 +1236,7 @@
           expansion.hidden = true;
           expansion.id = `team-row-bio-${gridIndex + 1}`;
           expansion.innerHTML =
-            '<div class="team-row-bio__meta"><div class="team-row-bio__name"></div><div class="team-row-bio__role"></div></div><div class="team-row-bio__content"></div>';
+            '<div class="team-row-bio__meta"><div class="team-row-bio__name"></div><div class="team-row-bio__role"></div><div class="team-row-bio__links"></div></div><div class="team-row-bio__content"></div>';
           grid.append(expansion);
 
           const closeAll = () => {
@@ -1247,6 +1284,9 @@
               profile.querySelector(".team-profile__name")?.textContent?.trim() || "";
             expansion.querySelector(".team-row-bio__role").textContent =
               profile.querySelector(".team-profile__role")?.textContent?.trim() || "";
+            const linkedinEl = profile.querySelector(".team-profile__linkedin");
+            expansion.querySelector(".team-row-bio__links").innerHTML =
+              linkedinEl ? linkedinEl.outerHTML : "";
             expansion.querySelector(".team-row-bio__content").innerHTML = bio.innerHTML;
             positionExpansion(profile);
             expansion.hidden = false;
