@@ -107,6 +107,7 @@
         margin-top: 48px;
       }
       .press-hero {
+        --press-hero-image: url("assets/images/press_hero.jpg");
         position: relative;
         overflow: hidden;
         width: 100%;
@@ -122,8 +123,7 @@
         pointer-events: none;
       }
       .press-hero::before {
-        background: url("assets/images/press_hero.jpg") 58% 34% / cover
-          no-repeat;
+        background: var(--press-hero-image) 58% 34% / cover no-repeat;
         filter: saturate(92%) contrast(96%) brightness(0.84);
       }
       .press-hero::after {
