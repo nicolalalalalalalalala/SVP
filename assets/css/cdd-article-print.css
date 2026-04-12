@@ -1,213 +1,536 @@
+/* ============================================================
+   ShoreVest China Debt Dynamics — Print Layout v2
+   Dedicated stylesheet for china-debt-dynamics-v10i1-print.html
+
+   Three-layer structure:
+     1. Design tokens (scoped to body.cdd-print-layout)
+     2. Screen preview — simulates A4 page on screen
+     3. @media print — rules for actual print/PDF output
+
+   Specificity strategy:
+   Most rules use body.cdd-print-layout as a parent scope, which
+   gives 0-2-x specificity and beats the generic 0-0-x rules in
+   shorevest-typography-system.css. Where the typography system
+   uses !important we match with our own !important on the more
+   specific selector.
+   ============================================================ */
+
+
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
 body.cdd-print-layout {
-  --print-ink: #19231f;
-  --print-muted: #4d5a53;
-  --print-rule: #c4ccc6;
-  --print-paper: #fff;
-  --print-accent: #6e5540;
+  --pr-ink:        #111916;   /* Primary text — near-black ink-green */
+  --pr-ink-soft:   #2c3932;   /* Body paragraphs */
+  --pr-label:      #5c6860;   /* Labels, metadata, muted text */
+  --pr-rule:       #bdc7c0;   /* Hairlines and borders */
+  --pr-accent:     #6e5540;   /* Section headings — warm brown */
+  --pr-tint:       #f3f0e7;   /* Sidecard background */
+  --pr-page:       #ffffff;
 }
 
-body.cdd-print-layout .cdd-print-shell {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 28px 0 40px;
+
+/* ============================================================
+   2. SCREEN PREVIEW — A4 page simulation
+   ============================================================ */
+
+body.cdd-print-layout {
+  background: #d9d5cc;
+  margin: 0;
+  padding: 0;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
 }
+
+/* The main element doubles as the A4 page on screen */
+body.cdd-print-layout .cdd-print-shell {
+  background: var(--pr-page);
+  /* A4 = 210mm. At 96 dpi this is ~794px. The padding mirrors
+     the print @page margins (20/18/22mm). */
+  width: 210mm;
+  max-width: calc(100vw - 32px);
+  margin: 32px auto 56px;
+  padding: 20mm 18mm 22mm;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    0 6px 32px rgba(0, 0, 0, 0.10);
+  min-height: 277mm; /* A4 minus top margin */
+}
+
+/* Neutralise the .wrap max-width=1200px on this element */
+body.cdd-print-layout.cdd-print-shell,
+body.cdd-print-layout .cdd-print-shell.wrap {
+  max-width: calc(100vw - 32px);
+}
+
+/* Top action bar (screen only) */
+body.cdd-print-layout .cdd-topline {
+  background: #faf8f4;
+  border-top: none;
+  border-bottom: 1px solid #d4cfc6;
+}
+
+body.cdd-print-layout .cdd-topline__inner {
+  padding: 14px 0;
+}
+
+
+/* --- MASTHEAD ------------------------------------------- */
 
 body.cdd-print-layout .cdd-print-masthead {
-  border-top: 2px solid var(--print-ink);
-  border-bottom: 1px solid var(--print-rule);
-  padding: 0 0 16px;
-  margin-bottom: 22px;
+  border-top: 2pt solid var(--pr-ink);
+  border-bottom: 0.5pt solid var(--pr-rule);
+  padding: 4.5mm 0 3mm;
+  margin-bottom: 0;
 }
 
+/* "ShoreVest Insights Publication" label */
 body.cdd-print-layout .cdd-print-label {
-  margin: 14px 0 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 8pt;
-  color: var(--print-muted);
-  font-weight: 600;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:   6.5pt  !important;
+  font-weight: 700    !important;
+  line-height: 1.4    !important;
+  letter-spacing: 0.20em !important;
+  text-transform: uppercase !important;
+  color: var(--pr-label) !important;
+  margin: 0 0 2.5mm   !important;
+  padding: 0          !important;
 }
 
+/* Series · Vol/Issue · Date · Edition */
 body.cdd-print-layout .cdd-meta {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  letter-spacing: 0.1em;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:   7pt    !important;
+  font-weight: 400    !important;
+  line-height: 1.5    !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+  color: var(--pr-label) !important;
+  border:  none       !important;
+  padding: 0          !important;
+  margin:  0          !important;
+  display: flex       !important;
+  flex-wrap: wrap     !important;
+  gap: 0              !important;
 }
+
+body.cdd-print-layout .cdd-meta span {
+  font-size: 7pt !important;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.5;
+}
+
+body.cdd-print-layout .cdd-meta span + span::before {
+  content: "·";
+  display: inline-block;
+  margin: 0 7px;
+  color: var(--pr-rule);
+  font-size: 9pt;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+
+/* --- HERO: Title + Dek ---------------------------------- */
 
 body.cdd-print-layout .cdd-print-hero {
-  margin: 0 0 20px;
-  border-bottom: 1px solid var(--print-rule);
-  padding: 0 0 16px;
+  margin: 6mm 0 0;
+  padding-bottom: 5.5mm;
+  border-bottom: 0.5pt solid var(--pr-rule);
 }
 
+/*
+  TITLE — the main fix.
+
+  Root causes of the broken title:
+    (a) max-width: 18ch forced ugly 4-line wrapping because the opening
+        quote character counts as a full ch unit and the constraint was
+        far too narrow for this title.
+    (b) shorevest-typography-system.css applies
+        `html body h1 { font-weight: 700 !important }` (specificity 0-0-3)
+        and the old print CSS only set `font-weight: 300` without
+        !important, so the title was being rendered bold.
+
+  Fixes:
+    • max-width: 100% — let the full column width control line length
+    • font-weight: 300 !important with higher specificity (0-2-1) overrides
+      the typography system's 0-0-3 !important declaration
+    • text-wrap: balance — the browser balances line lengths so no single
+      word is left stranded
+    • hyphens: none — headlines must never be auto-hyphenated
+    • word-spacing / overflow-wrap / word-break explicitly reset so no
+      browser default causes stretching or unwanted breaks
+*/
 body.cdd-print-layout .cdd-title {
-  margin: 0;
-  max-width: 19ch;
-  font-size: 30pt;
-  line-height: 1.08;
-  letter-spacing: 0;
-  font-weight: 300;
-  text-wrap: initial;
-  text-align: left;
-  word-spacing: normal;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  hyphens: manual;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:    30pt   !important;
+  font-weight:  300    !important;   /* MUST be !important to beat typography system */
+  font-style:   normal !important;
+  line-height:  1.06   !important;
+  letter-spacing: -0.01em !important;
+  color: var(--pr-ink)    !important;
+  text-transform: none    !important;
+
+  /* The key fix: remove the ch-based max-width entirely */
+  max-width: 100%         !important;
+  width:     auto         !important;
+
+  margin:    5mm 0 3.5mm  !important;
+
+  /* Balanced line distribution — avoids orphaned words */
+  text-wrap: balance      !important;
+
+  /* Never hyphenate a headline */
+  hyphens:      none      !important;
+  -webkit-hyphens: none   !important;
+
+  /* Prevent any browser from stretching word-spacing */
+  word-spacing:   normal  !important;
+  overflow-wrap:  normal  !important;
+  word-break:     normal  !important;
+  text-align:     left    !important;
 }
 
+/* DEK / standfirst */
 body.cdd-print-layout .cdd-dek {
-  margin: 10px 0 0;
-  max-width: 66ch;
-  font-size: 11pt;
-  line-height: 1.55;
-  color: #334039;
-  text-wrap: initial;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:    11pt  !important;
+  font-weight:  400   !important;
+  font-style:   normal !important;
+  line-height:  1.54  !important;
+  letter-spacing: 0   !important;
+  text-transform: none !important;
+  color: var(--pr-ink-soft) !important;
+  margin: 0           !important;
+  max-width: 100%     !important;
+  hyphens: auto       !important;
+  -webkit-hyphens: auto !important;
+  word-spacing: normal !important;
+  text-align: left    !important;
 }
+
+
+/* --- CONTENT GRID --------------------------------------- */
 
 body.cdd-print-layout .cdd-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 74mm;
-  gap: 8mm;
-  align-items: start;
+  display: grid   !important;
+  /* Main body column | Key Findings sidebar */
+  /* 58mm sidebar + 7mm gap leaves ~109mm for body on A4
+     (174mm content width). At 10pt that is ~59 chars/line —
+     ideal typographic measure. */
+  grid-template-columns: minmax(0, 1fr) 58mm !important;
+  grid-template-areas: "body sidebar"        !important;
+  gap: 7mm        !important;
+  align-items: start !important;
+  margin-top: 5.5mm  !important;
 }
+
+body.cdd-print-layout .cdd-body    { grid-area: body;    }
+body.cdd-print-layout .cdd-sidecard { grid-area: sidebar; }
+
+
+/* --- BODY TEXT ------------------------------------------ */
 
 body.cdd-print-layout .cdd-body p,
 body.cdd-print-layout .cdd-body li {
-  max-width: 75ch;
-  font-size: 10.2pt;
-  line-height: 1.65;
-  letter-spacing: 0;
-  text-align: left;
-  text-justify: auto;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: auto;
-  text-wrap: initial;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:   10pt  !important;
+  font-weight: 400   !important;
+  line-height: 1.64  !important;
+  color: var(--pr-ink-soft) !important;
+  max-width: none    !important;   /* column width is the measure */
+  margin: 0 0 3.2mm  !important;
+
+  /* Typeset-quality composition:
+     justify + hyphens:auto eliminates stretched lines and
+     inconsistent word spacing */
+  text-align:   justify !important;
+  hyphens:      auto   !important;
+  -webkit-hyphens: auto !important;
+
+  /* Prevent other text-wrap modes from interfering */
+  text-wrap:    initial  !important;
+  word-spacing: normal   !important;
+  letter-spacing: 0      !important;
+  word-break:   normal   !important;
+  overflow-wrap: break-word !important;
+  text-indent:  0        !important;
 }
 
+/* Section headings in body */
 body.cdd-print-layout .cdd-body h2 {
-  color: var(--print-accent);
-  border-top-color: var(--print-rule);
-  margin-top: 8mm;
-  margin-bottom: 3mm;
-  padding-top: 2.4mm;
-  letter-spacing: 0.09em;
-  font-size: 9.8pt;
-  line-height: 1.3;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:    7.5pt   !important;
+  font-weight:  700     !important;
+  line-height:  1.4     !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--pr-accent)   !important;
+  border-top:    0.5pt solid var(--pr-rule) !important;
+  border-bottom: none  !important;
+  padding-top:   2.5mm !important;
+  padding-bottom: 0    !important;
+  margin:  8mm 0 3mm   !important;
+  hyphens: none        !important;
 }
+
+/* Bulleted lists in body */
+body.cdd-print-layout .cdd-body ul {
+  margin:  0 0 3.8mm !important;
+  padding-left: 5mm  !important;
+}
+
+body.cdd-print-layout .cdd-body li {
+  margin-bottom: 2.2mm !important;
+  padding-left: 0      !important;
+}
+
+
+/* --- SIDECARD / KEY FINDINGS ---------------------------- */
 
 body.cdd-print-layout .cdd-sidecard {
-  margin-top: 1.5mm;
-  border-color: var(--print-rule);
-  background: #f6f2ea;
-  padding: 4.5mm;
+  background: var(--pr-tint)    !important;
+  /* Top rule weight matches the masthead opening rule */
+  border-top:   2pt solid var(--pr-ink)  !important;
+  border-right:  0.5pt solid var(--pr-rule) !important;
+  border-bottom: 0.5pt solid var(--pr-rule) !important;
+  border-left:   0.5pt solid var(--pr-rule) !important;
+  padding:  4mm 4.5mm 4.5mm     !important;
+  position: static               !important;
+  top:      auto                 !important;
+  margin-top: 0                  !important;
 }
 
+/* "Key Findings" label */
 body.cdd-print-layout .cdd-sidecard h3 {
-  margin-bottom: 2.2mm;
-  color: var(--print-muted);
-  font-size: 9pt;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:    6.5pt  !important;
+  font-weight:  700    !important;
+  line-height:  1.4    !important;
+  letter-spacing: 0.20em !important;
+  text-transform: uppercase !important;
+  /* Override typography system's teal color on h3 */
+  color: var(--pr-label) !important;
+  margin: 0 0 3mm      !important;
+  padding-bottom: 2mm  !important;
+  border-bottom: 0.5pt solid var(--pr-rule) !important;
 }
 
-body.cdd-print-layout .cdd-sidecard li {
-  font-size: 9.2pt;
-  line-height: 1.5;
-  margin-bottom: 2.6mm;
-  padding-left: 12px;
-  text-wrap: initial;
+body.cdd-print-layout .cdd-sidecard ul {
+  margin:  0 !important;
+  padding: 0 !important;
+  list-style: none !important;
 }
+
+/* Key finding bullets */
+body.cdd-print-layout .cdd-sidecard li {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:    8.5pt   !important;
+  font-weight:  400     !important;
+  line-height:  1.52    !important;
+  color: var(--pr-ink-soft) !important;
+  margin-bottom: 3mm    !important;
+  padding-left:  8px    !important;
+  position: relative    !important;
+
+  /* Left-align findings — do NOT justify narrow-column text */
+  text-align:   left    !important;
+  hyphens:      auto    !important;
+  -webkit-hyphens: auto !important;
+  word-spacing: normal  !important;
+  letter-spacing: 0     !important;
+}
+
+body.cdd-print-layout .cdd-sidecard li:last-child {
+  margin-bottom: 0 !important;
+}
+
+body.cdd-print-layout .cdd-sidecard li::before {
+  content: ""         !important;
+  position: absolute  !important;
+  top:   0.70em       !important;
+  left:  0            !important;
+  width: 4px          !important;
+  height: 1px         !important;
+  background: var(--pr-accent) !important;
+}
+
+
+/* --- DISCLAIMER FOOTER ---------------------------------- */
 
 body.cdd-print-layout .cdd-disclaimer {
-  margin-top: 10mm;
-  border-top-color: var(--print-rule);
-  padding-top: 4mm;
+  margin-top: 8mm               !important;
+  border-top: 0.5pt solid var(--pr-rule) !important;
+  border-bottom: none           !important;
+  padding-top: 4mm              !important;
 }
 
+body.cdd-print-layout .cdd-disclaimer h4 {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:    6.5pt   !important;
+  font-weight:  700     !important;
+  line-height:  1.4     !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--pr-label)    !important;
+  margin: 0 0 2.5mm         !important;
+}
+
+body.cdd-print-layout .cdd-disclaimer p {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size:    7pt   !important;
+  font-weight:  400   !important;
+  line-height:  1.58  !important;
+  color: var(--pr-label) !important;
+  margin: 0 0 1.5mm   !important;
+  text-align: justify !important;
+  hyphens: auto       !important;
+  -webkit-hyphens: auto !important;
+}
+
+
+/* ============================================================
+   3. PRINT MEDIA RULES
+   Only rules that differ from the screen preview belong here.
+   Everything already set above applies to both screen and print.
+   ============================================================ */
 @media print {
+
   @page {
     size: A4;
-    margin: 16mm 15mm 17mm;
+    /* 20mm top / 18mm sides / 22mm bottom
+       Matches the screen preview padding above. */
+    margin: 20mm 18mm 22mm;
+  }
+
+  html, body {
+    margin:  0 !important;
+    padding: 0 !important;
   }
 
   body.cdd-print-layout {
-    background: var(--print-paper);
-    color: var(--print-ink);
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    background: var(--pr-page)   !important;
+    color:      var(--pr-ink)    !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust:         exact !important;
   }
 
-  body.cdd-print-layout .wrap,
-  body.cdd-print-layout .cdd-print-shell {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-  }
-
+  /* ---- Remove screen-only chrome ---- */
   body.cdd-print-layout .cdd-topline,
+  body.cdd-print-layout .cdd-print-hide,
   body.cdd-print-layout .cdd-actions,
-  body.cdd-print-layout .cdd-print-note,
-  body.cdd-print-layout .cdd-print-hide {
+  body.cdd-print-layout .cdd-print-note {
     display: none !important;
   }
 
-  body.cdd-print-layout .cdd-print-masthead {
-    break-inside: avoid-page;
-    page-break-inside: avoid;
+  /* ---- Remove A4 page simulation shell ---- */
+  body.cdd-print-layout .wrap,
+  body.cdd-print-layout .cdd-print-shell {
+    width:      100%  !important;
+    max-width:  none  !important;
+    margin:     0     !important;
+    padding:    0     !important;
+    box-shadow: none  !important;
+    min-height: 0     !important;
+    background: transparent !important;
   }
 
-  body.cdd-print-layout .cdd-print-hero {
-    break-after: avoid-page;
-    page-break-after: avoid;
-  }
-
+  /* ---- Print-specific title size ---- */
+  /* Use 28pt in print (vs 30pt preview) — slightly smaller on
+     physical A4 but the proportions are correct. */
   body.cdd-print-layout .cdd-title {
-    font-size: 25pt;
-    line-height: 1.08;
-    max-width: 18ch;
-    break-inside: avoid;
-    page-break-inside: avoid;
+    font-size: 28pt !important;
+    margin: 4mm 0 3mm !important;
   }
 
+  /* ---- Page-break logic ---- */
+
+  /* Masthead: never break the header block */
+  body.cdd-print-layout .cdd-print-masthead {
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Hero (title + dek): keep together; don't end a page on the
+     dek before the content grid begins */
+  body.cdd-print-layout .cdd-print-hero {
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
+    break-after:       avoid !important;
+    page-break-after:  avoid !important;
+  }
+
+  /* Title: never fragment across pages */
+  body.cdd-print-layout .cdd-title {
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
+    break-after:       avoid !important;
+    page-break-after:  avoid !important;
+  }
+
+  /* Dek: never fragment */
   body.cdd-print-layout .cdd-dek {
-    max-width: 62ch;
-    margin-top: 3.2mm;
-    margin-bottom: 0;
-    break-inside: avoid;
-    page-break-inside: avoid;
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
   }
 
+  /* Grid: keep column structure in print */
   body.cdd-print-layout .cdd-grid {
-    grid-template-columns: minmax(0, 1fr) 66mm;
-    gap: 6mm;
+    margin-top: 4.5mm !important;
   }
 
+  /* Sidecard: keep the entire key findings block together */
   body.cdd-print-layout .cdd-sidecard,
-  body.cdd-print-layout .cdd-sidecard ul,
-  body.cdd-print-layout .cdd-disclaimer {
-    break-inside: avoid;
-    page-break-inside: avoid;
+  body.cdd-print-layout .cdd-sidecard ul {
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
   }
 
-  body.cdd-print-layout .cdd-body h2,
+  /* Section headings: never orphaned at the bottom of a page */
+  body.cdd-print-layout .cdd-body h2 {
+    break-after:       avoid !important;
+    page-break-after:  avoid !important;
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Keep each heading glued to the first following paragraph */
   body.cdd-print-layout .cdd-body h2 + p {
-    break-after: avoid-page;
-    page-break-after: avoid;
-    break-inside: avoid;
-    page-break-inside: avoid;
+    break-before:      avoid !important;
+    page-break-before: avoid !important;
   }
 
+  /* Body text: orphan/widow control */
   body.cdd-print-layout .cdd-body p,
   body.cdd-print-layout .cdd-body li {
-    max-width: none;
-    margin-bottom: 3.2mm;
-    orphans: 4;
-    widows: 4;
+    orphans: 3 !important;
+    widows:  3 !important;
+    margin-bottom: 3mm !important;
   }
 
+  /* Lists: prefer to stay together */
   body.cdd-print-layout .cdd-body ul {
-    break-inside: avoid-page;
-    page-break-inside: avoid;
+    break-inside:      avoid-page !important;
+    page-break-inside: avoid      !important;
+  }
+
+  body.cdd-print-layout .cdd-body li {
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Disclaimer: keep together on one page */
+  body.cdd-print-layout .cdd-disclaimer {
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Suppress the URL-printing rule added by cdd-article-template.css
+     (that rule is correct for the web view but wrong for this layout) */
+  a[href^="http"]::after,
+  a[href^="https"]::after,
+  a[href]::after {
+    content: none !important;
   }
 }
