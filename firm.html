@@ -198,10 +198,10 @@
         align-content: start;
       }
       .card-icon {
-        width: 62px;
-        height: 62px;
+        width: min(100%, 188px);
+        height: 86px;
         color: var(--cinnabar);
-        margin-bottom: 6px;
+        margin-bottom: 4px;
       }
       .card-icon svg {
         width: 100%;
@@ -209,16 +209,13 @@
         display: block;
       }
       .card-icon-wrap {
-        width: 84px;
-        height: 84px;
-        border: 1px solid color-mix(in srgb, var(--cinnabar) 28%, transparent);
-        background:
-          radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--cinnabar) 12%, transparent), transparent 62%),
-          linear-gradient(140deg, color-mix(in srgb, var(--xuan-light) 88%, var(--paper) 12%), var(--xuan));
-        border-radius: 14px;
+        width: 100%;
+        min-height: 96px;
+        border-radius: 10px;
         display: grid;
-        place-items: center;
+        align-items: start;
         margin-bottom: 4px;
+        padding-bottom: 2px;
       }
       .card-index {
         font-size: 11px;
@@ -260,50 +257,64 @@
       @keyframes pillar-pulse {
         0%,
         100% {
-          opacity: 0.3;
+          opacity: 0.24;
         }
         50% {
-          opacity: 0.7;
+          opacity: 0.72;
         }
       }
-      @keyframes pillar-flow {
+      @keyframes pillar-stream {
         to {
-          stroke-dashoffset: -24;
+          stroke-dashoffset: -30;
         }
       }
       @keyframes pillar-lock {
         0% {
-          transform: translate(-2px, 2px);
-          opacity: 0.3;
+          transform: translate(-2px, 2px) scale(0.99);
+          opacity: 0.36;
         }
         100% {
           transform: translate(0, 0);
           opacity: 1;
         }
       }
-      @keyframes pillar-steady-drift {
-        0%,
-        100% {
-          transform: translateX(0);
-        }
-        50% {
-          transform: translateX(2px);
-        }
-      }
-      @keyframes pillar-loop {
-        to {
-          stroke-dashoffset: -34;
-        }
-      }
-      @keyframes pillar-track {
+      @keyframes pillar-monitor-shift {
         0%,
         100% {
           transform: translateX(-1px);
-          opacity: 0.62;
         }
         50% {
           transform: translateX(1px);
+        }
+      }
+      @keyframes pillar-loop-run {
+        to {
+          stroke-dashoffset: -48;
+        }
+      }
+      @keyframes pillar-marker-drift {
+        0%,
+        100% {
+          transform: translateY(-1px);
+          opacity: 0.5;
+        }
+        50% {
+          transform: translateY(1px);
           opacity: 1;
+        }
+      }
+      @keyframes pillar-sweep {
+        0% {
+          transform: translateX(-4px);
+          opacity: 0;
+        }
+        25%,
+        70% {
+          opacity: 0.42;
+        }
+        100% {
+          transform: translateX(8px);
+          opacity: 0;
         }
       }
       .pillar-card .card-icon [data-draw] {
@@ -319,28 +330,33 @@
       .pillar-card.is-in .card-icon [data-pulse] {
         animation: pillar-pulse 4.8s ease-in-out var(--delay, 1s) infinite;
       }
-      .pillar-card.is-in .card-icon [data-flow] {
-        stroke-dasharray: 3 7;
-        animation: pillar-flow 7.5s linear var(--delay, 1s) infinite;
+      .pillar-card.is-in .card-icon [data-stream] {
+        stroke-dasharray: 3 8;
+        animation: pillar-stream 9.5s linear var(--delay, 1s) infinite;
       }
       .pillar-card.is-in .card-icon [data-lock] {
         transform-box: fill-box;
         transform-origin: center;
-        animation: pillar-lock 0.8s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.55s) both;
+        animation: pillar-lock 0.95s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.55s) both;
       }
-      .pillar-card.is-in .card-icon [data-drift] {
+      .pillar-card.is-in .card-icon [data-monitor] {
         transform-box: fill-box;
         transform-origin: center;
-        animation: pillar-steady-drift 6.5s ease-in-out var(--delay, 1.2s) infinite;
+        animation: pillar-monitor-shift 7.8s ease-in-out var(--delay, 1.2s) infinite;
       }
-      .pillar-card.is-in .card-icon [data-loop] {
+      .pillar-card.is-in .card-icon [data-loop-run] {
         stroke-dasharray: 5 8;
-        animation: pillar-loop 8s linear var(--delay, 1s) infinite;
+        animation: pillar-loop-run 11s linear var(--delay, 1s) infinite;
       }
-      .pillar-card.is-in .card-icon [data-track] {
+      .pillar-card.is-in .card-icon [data-marker] {
         transform-box: fill-box;
         transform-origin: center;
-        animation: pillar-track 4.4s ease-in-out var(--delay, 1.1s) infinite;
+        animation: pillar-marker-drift 6.4s ease-in-out var(--delay, 1.1s) infinite;
+      }
+      .pillar-card.is-in .card-icon [data-sweep] {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: pillar-sweep 8.8s ease-in-out var(--delay, 1.3s) infinite;
       }
       @media (prefers-reduced-motion: reduce) {
         .pillar-card .card-icon-wrap,
@@ -714,14 +730,16 @@
             <article class="card pillar-card" id="pillar-sourcing">
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 24L56 56M18 60L56 60M18 96L56 64M56 56L90 56M56 60L90 60M56 64L90 64" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-draw style="--len:248;--delay:.1s;"></path>
-                  <path d="M18 24L56 56M18 60L56 60M18 96L56 64" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-flow style="--delay:1s;"></path>
-                  <circle cx="18" cy="24" r="3.2" fill="currentColor" data-pulse style="--delay:1.2s;"></circle>
-                  <circle cx="18" cy="60" r="3.2" fill="currentColor" data-pulse style="--delay:1.45s;"></circle>
-                  <circle cx="18" cy="96" r="3.2" fill="currentColor" data-pulse style="--delay:1.7s;"></circle>
-                  <circle cx="56" cy="60" r="4.2" fill="currentColor" data-fade style="--delay:.72s;"></circle>
-                  <rect x="90" y="48" width="12" height="24" rx="5" stroke="currentColor" stroke-width="1.8" data-draw style="--len:68;--delay:.5s;"></rect>
+                <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 14L70 43M18 43H70M18 72L70 43M70 43H108M108 43L136 43M136 43H168" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:320;--delay:.1s;"></path>
+                  <path d="M18 14L70 43M18 43H70M18 72L70 43M70 43H108" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" data-stream style="--delay:1.1s;"></path>
+                  <circle cx="18" cy="14" r="2.5" fill="currentColor" data-pulse style="--delay:1.35s;"></circle>
+                  <circle cx="18" cy="43" r="2.5" fill="currentColor" data-pulse style="--delay:1.8s;"></circle>
+                  <circle cx="18" cy="72" r="2.5" fill="currentColor" data-pulse style="--delay:2.25s;"></circle>
+                  <circle cx="70" cy="43" r="3.3" fill="currentColor" data-fade style="--delay:.8s;"></circle>
+                  <circle cx="108" cy="43" r="2.9" fill="currentColor" data-fade style="--delay:1.05s;"></circle>
+                  <path d="M136 28V58" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" data-draw style="--len:30;--delay:.7s;"></path>
+                  <rect x="154" y="33" width="14" height="20" rx="5" stroke="currentColor" stroke-width="1.35" data-draw style="--len:68;--delay:.9s;"></rect>
                 </svg>
               </div>
               </div>
@@ -732,12 +750,13 @@
             <article class="card pillar-card" id="pillar-underwriting">
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="20" y="20" width="80" height="80" rx="8" stroke="currentColor" stroke-width="1.9" data-draw style="--len:320;--delay:.14s;"></rect>
-                  <rect x="30" y="30" width="60" height="60" rx="5" stroke="currentColor" stroke-width="1.6" data-draw data-lock style="--len:240;--delay:.45s;"></rect>
-                  <path d="M44 30V90M60 30V90M76 30V90M30 44H90M30 60H90M30 76H90" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" data-draw data-lock style="--len:360;--delay:.62s;"></path>
-                  <path d="M32 60H88" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" data-flow style="--delay:1.2s;"></path>
-                  <circle cx="60" cy="60" r="4" fill="currentColor" data-fade style="--delay:1.05s;"></circle>
+                <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="40" y="19" width="108" height="48" rx="10" stroke="currentColor" stroke-width="1.35" data-draw style="--len:312;--delay:.18s;"></rect>
+                  <rect x="58" y="28" width="72" height="30" rx="5" stroke="currentColor" stroke-width="1.25" data-draw data-lock style="--len:206;--delay:.5s;"></rect>
+                  <rect x="82" y="35" width="24" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.4" data-fade style="--delay:1s;"></rect>
+                  <path d="M30 25H18V13M158 25H170V13M30 61H18V73M158 61H170V73" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" data-draw data-lock style="--len:144;--delay:.8s;"></path>
+                  <path d="M52 43H136" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-stream style="--delay:1.3s;"></path>
+                  <path d="M70 19V67M94 19V67M118 19V67" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" opacity=".58" data-draw style="--len:146;--delay:.68s;"></path>
                 </svg>
               </div>
               </div>
@@ -748,12 +767,14 @@
             <article class="card pillar-card" id="pillar-alignment">
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 60C24 39 39 24 60 24C81 24 96 39 96 60C96 81 81 96 60 96C39 96 24 81 24 60Z" stroke="currentColor" stroke-width="1.9" data-draw style="--len:226;--delay:.18s;"></path>
-                  <path d="M24 60C24 39 39 24 60 24C81 24 96 39 96 60C96 81 81 96 60 96C39 96 24 81 24 60Z" stroke="currentColor" stroke-width="1.9" data-loop style="--delay:1.2s;"></path>
-                  <path d="M34 60C34 44.5 44.5 34 60 34C75.5 34 86 44.5 86 60C86 75.5 75.5 86 60 86C44.5 86 34 75.5 34 60Z" stroke="currentColor" stroke-width="1.5" data-draw style="--len:165;--delay:.55s;"></path>
-                  <path d="M60 34V86M34 60H86" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" data-draw data-drift style="--len:104;--delay:.88s;"></path>
-                  <circle cx="60" cy="60" r="4.2" fill="currentColor" data-pulse style="--delay:1.35s;"></circle>
+                <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 43C20 28 30 18 45 18H143C158 18 168 28 168 43C168 58 158 68 143 68H45C30 68 20 58 20 43Z" stroke="currentColor" stroke-width="1.35" data-draw style="--len:314;--delay:.2s;"></path>
+                  <path d="M20 43C20 28 30 18 45 18H143C158 18 168 28 168 43C168 58 158 68 143 68H45C30 68 20 58 20 43Z" stroke="currentColor" stroke-width="1.35" data-loop-run style="--delay:1.2s;"></path>
+                  <path d="M45 18V68M82 18V68M118 18V68M143 18V68" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" opacity=".62" data-draw style="--len:200;--delay:.65s;"></path>
+                  <circle cx="45" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1s;"></circle>
+                  <circle cx="82" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1.15s;"></circle>
+                  <circle cx="118" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1.3s;"></circle>
+                  <circle cx="143" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1.45s;"></circle>
                 </svg>
               </div>
               </div>
@@ -764,13 +785,15 @@
             <article class="card pillar-card" id="pillar-portfolio-control">
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="20" y="22" width="80" height="76" rx="8" stroke="currentColor" stroke-width="1.9" data-draw style="--len:314;--delay:.12s;"></rect>
-                  <path d="M30 78H90M30 60H90M30 42H90" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" data-draw style="--len:180;--delay:.52s;"></path>
-                  <path d="M34 72C45 68 51 52 63 54C74 56 79 44 88 40" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:90;--delay:.84s;"></path>
-                  <path d="M34 72C45 68 51 52 63 54C74 56 79 44 88 40" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" data-flow style="--delay:1.5s;"></path>
-                  <rect x="42" y="35" width="4" height="50" rx="2" fill="currentColor" data-track style="--delay:1.2s;"></rect>
-                  <circle cx="63" cy="54" r="3.8" fill="currentColor" data-pulse style="--delay:1.65s;"></circle>
+                <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" y="16" width="148" height="54" rx="9" stroke="currentColor" stroke-width="1.35" data-draw style="--len:406;--delay:.14s;"></rect>
+                  <path d="M32 30H156M32 43H156M32 56H156" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" data-draw style="--len:372;--delay:.52s;"></path>
+                  <path d="M56 22V64M94 22V64M132 22V64" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" opacity=".58" data-draw data-monitor style="--len:126;--delay:.8s;"></path>
+                  <path d="M38 43H150" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" data-stream style="--delay:1.3s;"></path>
+                  <circle cx="56" cy="43" r="2.8" fill="currentColor" data-marker style="--delay:1.55s;"></circle>
+                  <circle cx="94" cy="43" r="2.8" fill="currentColor" data-marker style="--delay:1.95s;"></circle>
+                  <circle cx="132" cy="43" r="2.8" fill="currentColor" data-marker style="--delay:2.35s;"></circle>
+                  <rect x="26" y="25" width="18" height="36" rx="6" fill="currentColor" opacity=".12" data-sweep style="--delay:1.2s;"></rect>
                 </svg>
               </div>
               </div>
