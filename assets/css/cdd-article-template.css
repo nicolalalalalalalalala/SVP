@@ -61,11 +61,11 @@ a { color: var(--qing-dark); }
 }
 
 .cdd-topline__inner {
-  padding: 18px 0;
+  padding: 24px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 14px;
+  gap: 20px;
 }
 
 .cdd-label {
@@ -84,7 +84,9 @@ a { color: var(--qing-dark); }
 
 .cdd-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .cdd-btn {
@@ -92,7 +94,7 @@ a { color: var(--qing-dark); }
   border: 1px solid var(--qing);
   color: var(--qing-dark);
   background: transparent;
-  padding: 8px 12px;
+  padding: 10px 14px;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -112,7 +114,7 @@ a { color: var(--qing-dark); }
 }
 
 main.cdd-page {
-  padding: 34px 0 56px;
+  padding: 46px 0 72px;
 }
 
 .cdd-meta {
@@ -120,13 +122,13 @@ main.cdd-page {
   color: var(--qing-dark);
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  padding-bottom: 14px;
+  gap: 16px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--xuan-paper-dark);
 }
 
 .cdd-title {
-  margin: 16px 0 10px;
+  margin: 22px 0 14px;
   font-size: clamp(28px, 4.2vw, 42px);
   line-height: 1.1;
   font-weight: 300;
@@ -135,7 +137,7 @@ main.cdd-page {
 }
 
 .cdd-dek {
-  margin: 0 0 24px;
+  margin: 0 0 34px;
   max-width: var(--article-width);
   font-size: 10.5pt;
   line-height: 1.6;
@@ -144,19 +146,19 @@ main.cdd-page {
 .cdd-grid {
   display: grid;
   grid-template-columns: minmax(0, var(--article-width)) minmax(220px, 300px);
-  gap: 44px;
+  gap: 56px;
   align-items: start;
 }
 
 .cdd-body p,
 .cdd-body li {
   font-size: 10pt;
-  line-height: 1.72;
-  margin: 0 0 16px;
+  line-height: 1.82;
+  margin: 0 0 20px;
 }
 
 .cdd-body h2 {
-  margin: 30px 0 14px;
+  margin: 40px 0 16px;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -165,20 +167,20 @@ main.cdd-page {
 }
 
 .cdd-body ul {
-  margin: 0 0 18px;
+  margin: 0 0 24px;
   padding-left: 22px;
 }
 
 .cdd-sidecard {
   border: 1px solid var(--xuan-paper-dark);
   background: var(--xuan-paper);
-  padding: 16px;
+  padding: 20px;
   position: sticky;
   top: 120px;
 }
 
 .cdd-sidecard h3 {
-  margin: 0 0 10px;
+  margin: 0 0 14px;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -188,13 +190,13 @@ main.cdd-page {
 .cdd-sidecard li {
   font-size: 9pt;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .cdd-disclaimer {
-  margin-top: 40px;
+  margin-top: 56px;
   border-top: 1px solid var(--xuan-paper-dark);
-  padding-top: 16px;
+  padding-top: 22px;
 }
 
 .cdd-disclaimer h4 {
