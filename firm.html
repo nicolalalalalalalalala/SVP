@@ -260,63 +260,63 @@
       @keyframes pillar-pulse {
         0%,
         100% {
-          opacity: 0.24;
+          opacity: 0.22;
         }
         50% {
-          opacity: 0.72;
+          opacity: 0.58;
         }
       }
       @keyframes pillar-stream {
         to {
-          stroke-dashoffset: -30;
+          stroke-dashoffset: -36;
         }
       }
-      @keyframes pillar-lock {
+      @keyframes pillar-breathe {
         0% {
-          transform: translate(-2px, 2px) scale(0.99);
-          opacity: 0.36;
+          transform: scale(0.985);
+          opacity: 0.45;
         }
         100% {
-          transform: translate(0, 0);
+          transform: scale(1);
           opacity: 1;
         }
       }
-      @keyframes pillar-monitor-shift {
+      @keyframes pillar-drift {
         0%,
         100% {
-          transform: translateX(-1px);
+          transform: translate(-0.8px, 0.5px);
         }
         50% {
-          transform: translateX(1px);
+          transform: translate(1px, -0.4px);
         }
       }
       @keyframes pillar-loop-run {
         to {
-          stroke-dashoffset: -48;
+          stroke-dashoffset: -34;
         }
       }
       @keyframes pillar-marker-drift {
         0%,
         100% {
-          transform: translateY(-1px);
-          opacity: 0.5;
+          transform: translateY(-0.8px);
+          opacity: 0.45;
         }
         50% {
-          transform: translateY(1px);
-          opacity: 1;
+          transform: translateY(0.8px);
+          opacity: 0.82;
         }
       }
       @keyframes pillar-sweep {
         0% {
-          transform: translateX(-4px);
+          transform: translateX(-3px);
           opacity: 0;
         }
         25%,
         70% {
-          opacity: 0.42;
+          opacity: 0.28;
         }
         100% {
-          transform: translateX(8px);
+          transform: translateX(5px);
           opacity: 0;
         }
       }
@@ -329,7 +329,9 @@
         animation: pillar-draw 0.9s cubic-bezier(.22, 1, .36, 1) var(--delay, 0s) both;
       }
       .pillar-card .card-icon [stroke] {
-        stroke-width: max(1.75px, 1.45px) !important;
+        stroke-width: 1.18px !important;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
       .pillar-card.is-in .card-icon [data-fade] {
         animation: pillar-fade-in 0.7s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.4s) both;
@@ -338,22 +340,22 @@
         animation: pillar-pulse 4.8s ease-in-out var(--delay, 1s) infinite;
       }
       .pillar-card.is-in .card-icon [data-stream] {
-        stroke-dasharray: 3 8;
-        animation: pillar-stream 9.5s linear var(--delay, 1s) infinite;
+        stroke-dasharray: 2.2 10;
+        animation: pillar-stream 12s linear var(--delay, 1s) infinite;
       }
-      .pillar-card.is-in .card-icon [data-lock] {
+      .pillar-card.is-in .card-icon [data-breathe] {
         transform-box: fill-box;
         transform-origin: center;
-        animation: pillar-lock 0.95s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.55s) both;
+        animation: pillar-breathe 1.3s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.55s) both;
       }
-      .pillar-card.is-in .card-icon [data-monitor] {
+      .pillar-card.is-in .card-icon [data-drift] {
         transform-box: fill-box;
         transform-origin: center;
-        animation: pillar-monitor-shift 7.8s ease-in-out var(--delay, 1.2s) infinite;
+        animation: pillar-drift 9.4s ease-in-out var(--delay, 1.2s) infinite;
       }
       .pillar-card.is-in .card-icon [data-loop-run] {
-        stroke-dasharray: 5 8;
-        animation: pillar-loop-run 11s linear var(--delay, 1s) infinite;
+        stroke-dasharray: 4 10;
+        animation: pillar-loop-run 13.5s linear var(--delay, 1s) infinite;
       }
       .pillar-card.is-in .card-icon [data-marker] {
         transform-box: fill-box;
@@ -738,15 +740,14 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 14L70 43M18 43H70M18 72L70 43M70 43H108M108 43L136 43M136 43H168" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:320;--delay:.1s;"></path>
-                  <path d="M18 14L70 43M18 43H70M18 72L70 43M70 43H108" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" data-stream style="--delay:1.1s;"></path>
-                  <circle cx="18" cy="14" r="2.5" fill="currentColor" data-pulse style="--delay:1.35s;"></circle>
-                  <circle cx="18" cy="43" r="2.5" fill="currentColor" data-pulse style="--delay:1.8s;"></circle>
-                  <circle cx="18" cy="72" r="2.5" fill="currentColor" data-pulse style="--delay:2.25s;"></circle>
-                  <circle cx="70" cy="43" r="3.3" fill="currentColor" data-fade style="--delay:.8s;"></circle>
-                  <circle cx="108" cy="43" r="2.9" fill="currentColor" data-fade style="--delay:1.05s;"></circle>
-                  <path d="M136 28V58" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" data-draw style="--len:30;--delay:.7s;"></path>
-                  <rect x="154" y="33" width="14" height="20" rx="5" stroke="currentColor" stroke-width="1.35" data-draw style="--len:68;--delay:.9s;"></rect>
+                  <path d="M20 18C34 20 42 27 54 36C64 44 72 48 86 43C98 38 106 32 121 33C136 34 145 41 168 43" stroke="currentColor" data-draw style="--len:300;--delay:.12s;opacity:.88;"></path>
+                  <path d="M20 68C34 66 42 59 54 50C64 42 72 38 86 43C98 48 106 54 121 53C136 52 145 46 168 43" stroke="currentColor" data-draw style="--len:300;--delay:.32s;opacity:.62;"></path>
+                  <path d="M20 43C42 43 58 43 86 43C114 43 136 43 168 43" stroke="currentColor" data-stream style="--delay:1.22s;opacity:.5;"></path>
+                  <circle cx="20" cy="18" r="2.1" fill="currentColor" data-pulse style="--delay:1.3s;"></circle>
+                  <circle cx="20" cy="43" r="2.1" fill="currentColor" data-pulse style="--delay:1.7s;"></circle>
+                  <circle cx="20" cy="68" r="2.1" fill="currentColor" data-pulse style="--delay:2.1s;"></circle>
+                  <circle cx="86" cy="43" r="2.6" fill="currentColor" data-fade style="--delay:.78s;"></circle>
+                  <circle cx="168" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1.02s;"></circle>
                 </svg>
               </div>
               </div>
@@ -758,12 +759,13 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="40" y="19" width="108" height="48" rx="10" stroke="currentColor" stroke-width="1.35" data-draw style="--len:312;--delay:.18s;"></rect>
-                  <rect x="58" y="28" width="72" height="30" rx="5" stroke="currentColor" stroke-width="1.25" data-draw data-lock style="--len:206;--delay:.5s;"></rect>
-                  <rect x="82" y="35" width="24" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.4" data-fade style="--delay:1s;"></rect>
-                  <path d="M30 25H18V13M158 25H170V13M30 61H18V73M158 61H170V73" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" data-draw data-lock style="--len:144;--delay:.8s;"></path>
-                  <path d="M52 43H136" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-stream style="--delay:1.3s;"></path>
-                  <path d="M70 19V67M94 19V67M118 19V67" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" opacity=".58" data-draw style="--len:146;--delay:.68s;"></path>
+                  <path d="M36 43C36 29 47 18 61 18H127C141 18 152 29 152 43C152 57 141 68 127 68H61C47 68 36 57 36 43Z" stroke="currentColor" data-draw style="--len:280;--delay:.15s;opacity:.85;"></path>
+                  <path d="M50 43C50 36 56 30 63 30H125C132 30 138 36 138 43C138 50 132 56 125 56H63C56 56 50 50 50 43Z" stroke="currentColor" data-draw data-breathe style="--len:220;--delay:.46s;opacity:.64;"></path>
+                  <path d="M62 43H126" stroke="currentColor" data-stream style="--delay:1.25s;opacity:.52;"></path>
+                  <circle cx="63" cy="43" r="2.1" fill="currentColor" data-fade style="--delay:.95s;"></circle>
+                  <circle cx="94" cy="43" r="2.1" fill="currentColor" data-fade style="--delay:1.15s;"></circle>
+                  <circle cx="125" cy="43" r="2.1" fill="currentColor" data-fade style="--delay:1.35s;"></circle>
+                  <path d="M46 25C41 24 35 26 32 31M142 25C147 24 153 26 156 31M46 61C41 62 35 60 32 55M142 61C147 62 153 60 156 55" stroke="currentColor" data-draw data-breathe style="--len:120;--delay:.76s;opacity:.46;"></path>
                 </svg>
               </div>
               </div>
@@ -775,13 +777,13 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 43C20 28 30 18 45 18H143C158 18 168 28 168 43C168 58 158 68 143 68H45C30 68 20 58 20 43Z" stroke="currentColor" stroke-width="1.35" data-draw style="--len:314;--delay:.2s;"></path>
-                  <path d="M20 43C20 28 30 18 45 18H143C158 18 168 28 168 43C168 58 158 68 143 68H45C30 68 20 58 20 43Z" stroke="currentColor" stroke-width="1.35" data-loop-run style="--delay:1.2s;"></path>
-                  <path d="M45 18V68M82 18V68M118 18V68M143 18V68" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" opacity=".62" data-draw style="--len:200;--delay:.65s;"></path>
-                  <circle cx="45" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1s;"></circle>
-                  <circle cx="82" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1.15s;"></circle>
-                  <circle cx="118" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1.3s;"></circle>
-                  <circle cx="143" cy="43" r="2.4" fill="currentColor" data-fade style="--delay:1.45s;"></circle>
+                  <path d="M24 43C24 27 36 17 52 17H136C152 17 164 27 164 43C164 59 152 69 136 69H52C36 69 24 59 24 43Z" stroke="currentColor" data-draw style="--len:296;--delay:.2s;opacity:.84;"></path>
+                  <path d="M32 43C32 31 40 25 50 25H138C148 25 156 31 156 43C156 55 148 61 138 61H50C40 61 32 55 32 43Z" stroke="currentColor" data-loop-run style="--delay:1.18s;opacity:.5;"></path>
+                  <path d="M52 43C66 43 74 35 84 29C94 23 104 23 114 29C124 35 132 43 136 43" stroke="currentColor" data-draw style="--len:140;--delay:.7s;opacity:.55;"></path>
+                  <path d="M52 43C66 43 74 51 84 57C94 63 104 63 114 57C124 51 132 43 136 43" stroke="currentColor" data-draw style="--len:140;--delay:.9s;opacity:.55;"></path>
+                  <circle cx="52" cy="43" r="2.1" fill="currentColor" data-fade style="--delay:1s;"></circle>
+                  <circle cx="94" cy="43" r="2.3" fill="currentColor" data-fade style="--delay:1.22s;"></circle>
+                  <circle cx="136" cy="43" r="2.1" fill="currentColor" data-fade style="--delay:1.44s;"></circle>
                 </svg>
               </div>
               </div>
@@ -793,14 +795,15 @@
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="20" y="16" width="148" height="54" rx="9" stroke="currentColor" stroke-width="1.35" data-draw style="--len:406;--delay:.14s;"></rect>
-                  <path d="M32 30H156M32 43H156M32 56H156" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" data-draw style="--len:372;--delay:.52s;"></path>
-                  <path d="M56 22V64M94 22V64M132 22V64" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" opacity=".58" data-draw data-monitor style="--len:126;--delay:.8s;"></path>
-                  <path d="M38 43H150" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" data-stream style="--delay:1.3s;"></path>
-                  <circle cx="56" cy="43" r="2.8" fill="currentColor" data-marker style="--delay:1.55s;"></circle>
-                  <circle cx="94" cy="43" r="2.8" fill="currentColor" data-marker style="--delay:1.95s;"></circle>
-                  <circle cx="132" cy="43" r="2.8" fill="currentColor" data-marker style="--delay:2.35s;"></circle>
-                  <rect x="26" y="25" width="18" height="36" rx="6" fill="currentColor" opacity=".12" data-sweep style="--delay:1.2s;"></rect>
+                  <path d="M20 50C40 44 56 30 73 30C90 30 103 45 119 45C136 45 148 37 168 36" stroke="currentColor" data-draw style="--len:220;--delay:.14s;opacity:.82;"></path>
+                  <path d="M20 58C39 52 56 39 73 39C91 39 102 53 119 53C136 53 149 46 168 45" stroke="currentColor" data-draw data-drift style="--len:220;--delay:.4s;opacity:.58;"></path>
+                  <path d="M20 42C42 36 57 23 73 23C91 23 104 37 119 37C137 37 149 30 168 29" stroke="currentColor" data-draw data-drift style="--len:220;--delay:.66s;opacity:.45;"></path>
+                  <path d="M26 63C54 63 83 63 112 63C133 63 149 62 162 60" stroke="currentColor" data-stream style="--delay:1.28s;opacity:.42;"></path>
+                  <circle cx="73" cy="30" r="2.2" fill="currentColor" data-marker style="--delay:1.5s;"></circle>
+                  <circle cx="119" cy="45" r="2.2" fill="currentColor" data-marker style="--delay:1.9s;"></circle>
+                  <circle cx="152" cy="36" r="2.2" fill="currentColor" data-marker style="--delay:2.3s;"></circle>
+                  <ellipse cx="96" cy="52" rx="58" ry="15" stroke="currentColor" data-draw style="--len:260;--delay:.94s;opacity:.24;"></ellipse>
+                  <ellipse cx="96" cy="52" rx="40" ry="9" fill="currentColor" opacity=".06" data-sweep style="--delay:1.3s;"></ellipse>
                 </svg>
               </div>
               </div>
