@@ -193,15 +193,27 @@
         align-content: start;
       }
       .card-icon {
-        width: 58px;
-        height: 58px;
+        width: 62px;
+        height: 62px;
         color: var(--cinnabar);
-        margin-bottom: 4px;
+        margin-bottom: 6px;
       }
       .card-icon svg {
         width: 100%;
         height: 100%;
         display: block;
+      }
+      .card-icon-wrap {
+        width: 84px;
+        height: 84px;
+        border: 1px solid color-mix(in srgb, var(--cinnabar) 28%, transparent);
+        background:
+          radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--cinnabar) 12%, transparent), transparent 62%),
+          linear-gradient(140deg, color-mix(in srgb, var(--xuan-light) 88%, var(--paper) 12%), var(--xuan));
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 4px;
       }
       .card-index {
         font-size: 11px;
@@ -218,6 +230,9 @@
       }
       .card p:last-child {
         max-width: 52ch;
+      }
+      .pillar-card .card-icon-wrap {
+        transform: translateY(0);
       }
       .pillar-card .card-icon {
         transform: translateY(0);
@@ -266,6 +281,9 @@
       .pillar-card.is-in .card-icon {
         animation: pillar-float 4s ease-in-out 1s infinite;
       }
+      .pillar-card.is-in .card-icon-wrap {
+        animation: pillar-panel-glow 3.4s ease-in-out .2s infinite;
+      }
       .pillar-card.is-in .card-icon [data-draw] {
         animation: pillar-draw 0.8s cubic-bezier(.22, 1, .36, 1) var(--delay, 0s) both;
       }
@@ -277,7 +295,30 @@
       .pillar-card.is-in .card-icon [data-pop] {
         animation: pillar-pop 0.45s cubic-bezier(.22, 1, .36, 1) var(--delay, 0.8s) both;
       }
+      .pillar-card.is-in .card-icon [data-oscillate] {
+        animation: pillar-oscillate 2.4s ease-in-out calc(var(--delay, .4s) + .8s) infinite;
+        transform-origin: center;
+      }
+      @keyframes pillar-panel-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 color-mix(in srgb, var(--cinnabar) 0%, transparent);
+        }
+        50% {
+          box-shadow: 0 10px 26px -14px color-mix(in srgb, var(--cinnabar) 58%, transparent);
+        }
+      }
+      @keyframes pillar-oscillate {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-2px);
+        }
+      }
       @media (prefers-reduced-motion: reduce) {
+        .pillar-card .card-icon-wrap,
         .pillar-card .card-icon,
         .pillar-card .card-icon * {
           animation: none !important;
@@ -645,53 +686,61 @@
             <p>Four operating pillars govern origination, underwriting, and portfolio management in one integrated institutional process.</p>
           </div>
           <div class="card-grid">
-            <article class="card pillar-card">
+            <article class="card pillar-card" id="pillar-sourcing">
+              <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="38" cy="42" r="14" stroke="currentColor" stroke-width="2.25" data-pulse style="--len:90;--delay:.1s;"></circle>
                   <circle cx="82" cy="42" r="14" stroke="currentColor" stroke-width="2.25" data-pulse style="--len:90;--delay:.3s;"></circle>
                   <circle cx="60" cy="78" r="14" stroke="currentColor" stroke-width="2.25" data-pulse style="--len:90;--delay:.5s;"></circle>
-                  <path d="M49 52L55 63M71 63L77 52M45 78H24M96 78H75M60 64V42" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" data-draw style="--len:130;--delay:.58s;"></path>
+                  <path d="M49 52L55 63M71 63L77 52M45 78H24M96 78H75M60 64V42" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" data-draw data-oscillate style="--len:130;--delay:.58s;"></path>
                 </svg>
+              </div>
               </div>
               <p class="card-index">PILLAR 01</p>
               <h3>Proprietary sourcing</h3>
               <p>Direct relationships with banks, AMCs, law firms, and servicers create access to complex situations before broad auction processes.</p>
             </article>
-            <article class="card pillar-card">
+            <article class="card pillar-card" id="pillar-underwriting">
+              <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="24" y="22" width="72" height="76" rx="6" stroke="currentColor" stroke-width="2.25" data-draw style="--len:296;--delay:.15s;"></rect>
                   <path d="M60 22V14M45 14H75" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" data-draw style="--len:42;--delay:.35s;"></path>
-                  <path d="M38 52L52 66L82 38" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:70;--delay:.55s;"></path>
+                  <path d="M38 52L52 66L82 38" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-draw data-oscillate style="--len:70;--delay:.55s;"></path>
                   <path d="M38 78H82" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" data-draw style="--len:45;--delay:.85s;"></path>
                 </svg>
+              </div>
               </div>
               <p class="card-index">PILLAR 02</p>
               <h3>Disciplined underwriting</h3>
               <p>Transactions are structured around hard-asset collateral, conservative entry points, and enforceable claims under PRC law.</p>
             </article>
-            <article class="card pillar-card">
+            <article class="card pillar-card" id="pillar-alignment">
+              <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M60 94L28 77V43L60 26L92 43V77L60 94Z" stroke="currentColor" stroke-width="2.25" data-draw style="--len:220;--delay:.2s;"></path>
                   <path d="M60 26V94M28 43L60 60L92 43" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:160;--delay:.9s;"></path>
-                  <circle cx="60" cy="60" r="5" fill="currentColor" data-pop style="--delay:1.45s;"></circle>
+                  <circle cx="60" cy="60" r="5" fill="currentColor" data-pop data-oscillate style="--delay:1.45s;"></circle>
                 </svg>
+              </div>
               </div>
               <p class="card-index">PILLAR 03</p>
               <h3>Alignment of responsibility</h3>
               <p>The same investment team stays accountable from approval through monitoring and realization, reducing handoff risk.</p>
             </article>
-            <article class="card pillar-card">
+            <article class="card pillar-card" id="pillar-portfolio-control">
+              <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="18" y="20" width="84" height="80" rx="8" stroke="currentColor" stroke-width="2.25" data-draw style="--len:340;--delay:.15s;"></rect>
                   <path d="M32 76L49 58L62 66L87 41" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-draw style="--len:95;--delay:.6s;"></path>
-                  <circle cx="49" cy="58" r="4.25" fill="currentColor" data-pop style="--delay:1s;"></circle>
-                  <circle cx="62" cy="66" r="4.25" fill="currentColor" data-pop style="--delay:1.12s;"></circle>
-                  <circle cx="87" cy="41" r="4.25" fill="currentColor" data-pop style="--delay:1.24s;"></circle>
+                  <circle cx="49" cy="58" r="4.25" fill="currentColor" data-pop data-oscillate style="--delay:1s;"></circle>
+                  <circle cx="62" cy="66" r="4.25" fill="currentColor" data-pop data-oscillate style="--delay:1.12s;"></circle>
+                  <circle cx="87" cy="41" r="4.25" fill="currentColor" data-pop data-oscillate style="--delay:1.24s;"></circle>
                 </svg>
+              </div>
               </div>
               <p class="card-index">PILLAR 04</p>
               <h3>Active portfolio control</h3>
