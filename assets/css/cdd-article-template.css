@@ -59,14 +59,14 @@ a { color: var(--qing-dark); }
   font-size: 8pt;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cinnabar);
+  color: var(--qing-dark);
   font-weight: 700;
 }
 
 .cdd-lockup {
   font-family: "Noto Serif SC", serif;
   font-size: 12px;
-  color: var(--cinnabar-dark);
+  color: var(--qing-dark);
 }
 
 .cdd-actions {
