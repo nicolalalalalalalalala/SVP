@@ -62,6 +62,10 @@
         margin: 0 auto;
         padding: 0 var(--pad);
       }
+      .wrap--pillar-module {
+        max-width: min(1680px, calc(100vw - clamp(20px, 2.4vw, 40px)));
+        padding-inline: clamp(16px, 2.2vw, 38px);
+      }
       section {
         padding: clamp(72px, 8vw, 108px) 0;
         border-top: 1px solid var(--rule);
@@ -174,13 +178,13 @@
         grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
         gap: 18px;
         align-items: end;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
 
       .card-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(16px, 1.8vw, 24px) !important;
+        gap: clamp(20px, 2vw, 30px) !important;
       }
       .card {
         border: 1px solid var(--rule);
@@ -230,7 +234,7 @@
         max-width: 18ch;
       }
       .card p:last-child {
-        max-width: 52ch;
+        max-width: none;
       }
       .pillar-card .card-icon-wrap {
         transform: translateY(0);
@@ -625,6 +629,10 @@
         }
       }
       @media (max-width: 767px) {
+        .wrap--pillar-module {
+          max-width: 100%;
+          padding-inline: var(--pad);
+        }
         section {
           padding: 48px 0;
         }
@@ -691,7 +699,7 @@
       </section>
 
       <section class="platform-ops-section">
-        <div class="wrap">
+        <div class="wrap wrap--pillar-module">
           <div class="section-head">
             <h2>Institutional platform design.</h2>
           </div>
