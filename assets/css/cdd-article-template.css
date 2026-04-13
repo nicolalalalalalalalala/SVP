@@ -539,8 +539,8 @@ a { color: var(--qing-dark); }
 
 @page {
   size: A4;
-  /* 20mm top / 18mm sides / 22mm bottom  →  174mm printable width */
-  margin: 20mm 18mm 22mm;
+  /* 20mm top / 14mm sides / 22mm bottom  →  182mm printable width */
+  margin: 20mm 14mm 22mm;
 }
 
 @media print {
@@ -597,7 +597,11 @@ a { color: var(--qing-dark); }
     margin-bottom: 5mm;
   }
 
+  /* Collapse the 1fr+248px screen grid — actions are hidden in print,
+     so the 248px column becomes dead space on the right.  Block layout
+     lets the meta row fill the full printable width naturally. */
   .cdd-intro__bar {
+    display: block !important;
     padding-bottom: 3mm;
     border-bottom-color: #c8d0cb;
   }
@@ -638,7 +642,7 @@ a { color: var(--qing-dark); }
      • word-break: keep-all  — "China's" must never split at '.
   ── */
   .cdd-title {
-    max-width: 150mm !important;
+    max-width: 163mm !important;
     font-size: 24pt !important;
     line-height: 1.08 !important;
     margin: 0 0 3.5mm !important;
@@ -664,7 +668,7 @@ a { color: var(--qing-dark); }
     font-size: 10.5pt !important;
     line-height: 1.5 !important;
     margin-bottom: 6mm !important;
-    max-width: 145mm !important;
+    max-width: 159mm !important;
 
     text-align:   left   !important;
     text-justify: none   !important;
@@ -675,12 +679,12 @@ a { color: var(--qing-dark); }
   }
 
   /* ── Reading grid: 2-column print layout ──
-     174mm printable width − 58mm sidebar − 7mm gap = 109mm body.
-     This matches the dedicated print page layout exactly.
+     182mm printable width − 63mm sidebar − 7mm gap = 112mm body.
+     Side margins reduced to 14mm to make fuller use of the A4 page.
   ── */
   .cdd-reading-grid {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 58mm !important;
+    grid-template-columns: minmax(0, 1fr) 63mm !important;
     gap: 7mm !important;
     align-items: start !important;
   }
