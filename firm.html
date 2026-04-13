@@ -777,24 +777,25 @@
         /* ── Mobile pillar card layout reset ── */
         .platform-ops-section .pillar-card {
           min-height: 0;
+          grid-template-rows: auto auto auto auto;
           row-gap: 10px;
+          padding-top: 16px !important;
         }
         /* Collapse icon wrapper to natural icon height — no dead vertical space */
         .pillar-card .card-icon-wrap {
-          min-height: 0;
+          min-height: 0 !important;
           height: auto;
-          display: flex;
-          align-items: center;
+          display: block;
         }
         /* Clearly visible icon at a proper mobile size */
         .pillar-card .card-icon {
-          width: 88px;
-          height: 88px;
+          width: 68px;
+          height: 68px;
           margin: 0;
         }
-        /* Label sits directly in normal flow; row-gap alone controls spacing */
+        /* Negative margin compensates for SVG internal whitespace below visual content */
         .pillar-card .card-index {
-          margin-top: 0;
+          margin-top: -10px;
           margin-bottom: 0;
         }
       }
