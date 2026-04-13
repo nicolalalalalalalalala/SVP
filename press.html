@@ -66,6 +66,11 @@
         background: var(--white);
         min-height: 100vh;
       }
+      /* refinement-pass.css adds padding-top via #site-header-mount + main
+         (higher specificity). Zero it out so the hero sits flush. */
+      #site-header-mount + main {
+        padding-top: 0;
+      }
       .eyebrow {
         font-size: 10px;
         font-weight: 700;
