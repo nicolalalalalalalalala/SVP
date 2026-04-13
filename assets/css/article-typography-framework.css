@@ -6,8 +6,9 @@
   --article-muted: #7d786f;
   --article-accent: #3d7070;
   --article-rule: rgba(23, 21, 18, 0.14);
-  --article-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --article-serif: "EB Garamond", Georgia, serif;
+  /* ShoreVest type system: DIN 2014 for all English text */
+  --article-sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  --article-serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   --article-max: 1200px;
   --article-copy-max: 68ch;
 }
@@ -152,12 +153,8 @@ a[role="button"]:hover {
   color: #fff;
 }
 
-.sv-footer,
-.sv-header,
-[data-shared-header],
-[data-shared-footer] {
-  font-family: var(--article-sans);
-}
+/* Footer and header fonts are controlled by the shared component CSS;
+   do not override them here. */
 
 .cdd-logo-wrap {
   display: flex;

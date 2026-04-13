@@ -156,7 +156,7 @@ body > article:last-child {
 .stat-value,
 .metric__value,
 .number {
-  font-family: var(--serif, 'EB Garamond', Georgia, serif);
+  font-family: var(--serif, "DIN 2014", "Helvetica Neue", Arial, sans-serif);
   font-weight: 500 !important;
   letter-spacing: -0.01em;
 }
@@ -279,9 +279,9 @@ footer small,
 }
 
 .sv-footer__brand {
-  font-family: "DIN 2014", "Inter", sans-serif !important;
-  font-size: 14px !important;
-  letter-spacing: .11em !important;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 15px !important;
+  letter-spacing: 0.28em !important;
 }
 
 .sv-footer__contact-label,
@@ -291,8 +291,7 @@ footer small,
 .sv-footer__legal-links,
 .sv-footer__legal-links a,
 .sv-footer__legal-toggle > summary {
-  font-family: "DIN 2014", "Inter", sans-serif !important;
-  letter-spacing: .06em !important;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
 }
 
 .sv-footer__main {
