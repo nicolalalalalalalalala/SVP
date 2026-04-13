@@ -681,19 +681,34 @@ a { color: var(--qing-dark); }
   }
 
   /* ── Reading grid: single-column print layout ──
-     Key Findings is reordered above the body via order: -1,
-     giving the body the full 174mm printable width.
+     Key Findings is placed above the body via CSS Grid named areas.
+     Named areas are more reliable than flexbox order in print renderers.
+     Layout: [sidebar] top, [body] below, both at full printable width.
   ── */
   .cdd-reading-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    align-items: stretch !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    grid-template-areas:
+      "sidebar"
+      "body" !important;
+    row-gap: 0 !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Body occupies the full printable width below Key Findings */
+  .cdd-body {
+    grid-area: body !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
   }
 
   /* ── Key Findings: horizontal band above body ── */
   .cdd-sidecard {
-    order: -1 !important;
+    grid-area: sidebar !important;
     width: 100% !important;
     border-top: 2pt solid #1f2924 !important;
     border-right: none !important;
