@@ -539,8 +539,8 @@ a { color: var(--qing-dark); }
 
 @page {
   size: A4;
-  /* 20mm top / 14mm sides / 22mm bottom  →  182mm printable width */
-  margin: 20mm 14mm 22mm;
+  /* 20mm top / 18mm sides / 22mm bottom  →  174mm printable width */
+  margin: 20mm 18mm 22mm;
 }
 
 @media print {
@@ -579,7 +579,7 @@ a { color: var(--qing-dark); }
     border-top: 1.8pt solid #1f2924;
     border-bottom: 0.5pt solid #c8d0cb;
     background: #fff !important;
-    width: auto !important;
+    width: 100% !important;
     margin-left: 0 !important;
     transform: none !important;
   }
@@ -636,28 +636,30 @@ a { color: var(--qing-dark); }
      Root-cause fix for "China    s" artefact:
      • max-width in mm (not ch — ch units break when DIN 2014 falls
        back to Arial, radically changing the measured column width).
-     • text-wrap: normal  — never balance in print; balance causes
-       Chromium to break at Unicode apostrophes and stretch spacing.
+     • text-wrap: normal  — never balance/pretty in print; these
+       algorithms cause Chromium to break at Unicode curly apostrophes
+       (U+2019) and stretch word-spacing to fill the resulting gap.
      • text-align: left + text-justify: none  — explicit no-justify.
-     • word-break: keep-all  — "China's" must never split at '.
+     • word-break: normal  — no forced breaks at punctuation.
+     • word-spacing: normal — explicit no-expansion guard.
   ── */
   .cdd-title {
-    max-width: 163mm !important;
-    font-size: 24pt !important;
+    max-width: 145mm !important;
+    font-size: 26pt !important;
     line-height: 1.08 !important;
     margin: 0 0 3.5mm !important;
-    letter-spacing: normal !important;
+    letter-spacing: 0 !important;
 
     text-align:   left   !important;
     text-justify: none   !important;
     text-wrap:    normal !important;
 
-    word-break:    keep-all !important;
-    overflow-wrap: normal   !important;
-    hyphens:       none     !important;
-    -webkit-hyphens: none   !important;
-    word-spacing:  normal   !important;
-    white-space:   normal   !important;
+    word-break:    normal !important;
+    overflow-wrap: normal !important;
+    hyphens:       none   !important;
+    -webkit-hyphens: none !important;
+    word-spacing:  normal !important;
+    white-space:   normal !important;
 
     break-after:  avoid-page !important;
     break-inside: avoid-page !important;
@@ -679,12 +681,12 @@ a { color: var(--qing-dark); }
   }
 
   /* ── Reading grid: 2-column print layout ──
-     182mm printable width − 63mm sidebar − 7mm gap = 112mm body.
-     Side margins reduced to 14mm to make fuller use of the A4 page.
+     174mm printable width (210mm − 36mm margins) − 58mm sidebar
+     − 7mm gap = 109mm body column.
   ── */
   .cdd-reading-grid {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 63mm !important;
+    grid-template-columns: minmax(0, 1fr) 58mm !important;
     gap: 7mm !important;
     align-items: start !important;
   }
@@ -799,10 +801,12 @@ a { color: var(--qing-dark); }
     margin: 0 0 3mm !important;
     text-align: left !important;
     text-justify: none !important;
+    text-wrap: normal !important;
     hyphens: none !important;
     -webkit-hyphens: none !important;
     word-break: normal !important;
     overflow-wrap: normal !important;
+    word-spacing: normal !important;
   }
 
   /* Cleanly separate contact + copyright from the main disclaimer body */
@@ -812,6 +816,20 @@ a { color: var(--qing-dark); }
     border-top: 0.4pt solid #bdc7c0 !important;
   }
 
+  /* ── Sidecard Key Findings in print ── */
+  .cdd-sidecard li {
+    font-size: 8.5pt !important;
+    line-height: 1.52 !important;
+    text-align: left !important;
+    text-justify: none !important;
+    text-wrap: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    word-spacing: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
   /* ── Links: no URL printing ── */
   a,
   a:visited {
@@ -819,9 +837,11 @@ a { color: var(--qing-dark); }
     text-decoration: none;
   }
 
+  a::after,
+  a[href]::after,
   a[href^="http"]::after,
-  a[href^="https"]::after,
-  a[href]::after {
+  a[href^="https"]::after {
     content: none !important;
+    display: none !important;
   }
 }
