@@ -1,18 +1,33 @@
 /* ============================================================
-   ShoreVest China Debt Dynamics — Print Layout v2
-   Dedicated stylesheet for china-debt-dynamics-v10i1-print.html
+   ShoreVest China Debt Dynamics — Print Layout v3
+   Dedicated stylesheet for china-debt-dynamics-print.html
 
-   Three-layer structure:
+   Complete rebuild. Architecture:
      1. Design tokens (scoped to body.cdd-print-layout)
-     2. Screen preview — simulates A4 page on screen
-     3. @media print — rules for actual print/PDF output
+     2. Screen preview  — simulates A4 on screen
+     3. @media print    — PDF / print-only overrides
 
    Specificity strategy:
-   Most rules use body.cdd-print-layout as a parent scope, which
-   gives 0-2-x specificity and beats the generic 0-0-x rules in
-   shorevest-typography-system.css. Where the typography system
-   uses !important we match with our own !important on the more
-   specific selector.
+   All rules use body.cdd-print-layout as parent scope (0-2-x),
+   beating generic 0-0-x rules in shorevest-typography-system.css.
+   Where the typography system uses !important we match with our own
+   !important on the more specific selector.
+
+   Root-cause fixes in this version:
+   ─ Removed text-wrap: balance from all print contexts.
+     Chromium's print engine mishandles balance with Unicode
+     curly apostrophes (U+2019), producing "China    s" style
+     stretched word-spacing artefacts.  Use text-wrap: pretty
+     on screen, text-wrap: normal in @media print.
+   ─ Added text-justify: none everywhere — explicit guard
+     against print-engine automatic justification.
+   ─ word-break: keep-all on title — prevents apostrophe
+     breaking ("China's" must never split at the apostrophe).
+   ─ Disclaimer font raised from 7pt → 8.5pt (was anaemic).
+   ─ hyphens: none on disclaimer (was auto — looked terrible
+     in dense legal paragraphs).
+   ─ All layout widths in mm, not ch — ch units depend on
+     the loaded font and change if DIN 2014 does not load.
    ============================================================ */
 
 
@@ -20,18 +35,18 @@
    1. DESIGN TOKENS
    ============================================================ */
 body.cdd-print-layout {
-  --pr-ink:        #111916;   /* Primary text — near-black ink-green */
-  --pr-ink-soft:   #2c3932;   /* Body paragraphs */
-  --pr-label:      #5c6860;   /* Labels, metadata, muted text */
-  --pr-rule:       #bdc7c0;   /* Hairlines and borders */
-  --pr-accent:     #6e5540;   /* Section headings — warm brown */
-  --pr-tint:       #f3f0e7;   /* Sidecard background */
+  --pr-ink:        #111916;
+  --pr-ink-soft:   #2c3932;
+  --pr-label:      #5c6860;
+  --pr-rule:       #bdc7c0;
+  --pr-accent:     #6e5540;
+  --pr-tint:       #f3f0e7;
   --pr-page:       #ffffff;
 }
 
 
 /* ============================================================
-   2. SCREEN PREVIEW — A4 page simulation
+   2. SCREEN PREVIEW  (simulates the A4 page on screen)
    ============================================================ */
 
 body.cdd-print-layout {
@@ -41,28 +56,26 @@ body.cdd-print-layout {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
 }
 
-/* The main element doubles as the A4 page on screen */
+/* The <main> element is the A4 page shell on screen */
 body.cdd-print-layout .cdd-print-shell {
   background: var(--pr-page);
-  /* A4 = 210mm. At 96 dpi this is ~794px. The padding mirrors
-     the print @page margins (20/18/22mm). */
   width: 210mm;
   max-width: calc(100vw - 32px);
   margin: 32px auto 56px;
+  /* Match the @page margins: 20mm top / 18mm sides / 22mm bottom */
   padding: 20mm 18mm 22mm;
   box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.12),
     0 6px 32px rgba(0, 0, 0, 0.10);
-  min-height: 277mm; /* A4 minus top margin */
+  min-height: 257mm;
 }
 
-/* Neutralise the .wrap max-width=1200px on this element */
-body.cdd-print-layout.cdd-print-shell,
+/* Neutralise .wrap max-width when it is also the shell element */
 body.cdd-print-layout .cdd-print-shell.wrap {
   max-width: calc(100vw - 32px);
 }
 
-/* Top action bar (screen only) */
+/* Screen-only topbar */
 body.cdd-print-layout .cdd-topline {
   background: #faf8f4;
   border-top: none;
@@ -74,7 +87,7 @@ body.cdd-print-layout .cdd-topline__inner {
 }
 
 
-/* --- MASTHEAD ------------------------------------------- */
+/* ── MASTHEAD ──────────────────────────────────────────────── */
 
 body.cdd-print-layout .cdd-print-masthead {
   border-top: 2pt solid var(--pr-ink);
@@ -83,7 +96,6 @@ body.cdd-print-layout .cdd-print-masthead {
   margin-bottom: 0;
 }
 
-/* "ShoreVest Insights Publication" label */
 body.cdd-print-layout .cdd-print-label {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
   font-size:   6.5pt  !important;
@@ -96,7 +108,6 @@ body.cdd-print-layout .cdd-print-label {
   padding: 0          !important;
 }
 
-/* Series · Vol/Issue · Date · Edition */
 body.cdd-print-layout .cdd-meta {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
   font-size:   7pt    !important;
@@ -112,6 +123,7 @@ body.cdd-print-layout .cdd-meta {
   flex-wrap: wrap     !important;
   gap: 0              !important;
   text-align: left    !important;
+  text-justify: none  !important;
   word-break: normal  !important;
   overflow-wrap: normal !important;
   hyphens: none       !important;
@@ -138,71 +150,77 @@ body.cdd-print-layout .cdd-meta span + span::before {
 }
 
 
-/* --- HERO: Title + Dek ---------------------------------- */
+/* ── HERO: Title + Dek ─────────────────────────────────────── */
 
 body.cdd-print-layout .cdd-print-hero {
   margin: 6mm 0 0;
   padding-bottom: 5.5mm;
   border-bottom: 0.5pt solid var(--pr-rule);
-  /* Constrain first-page headline composition for cleaner breaks. */
-  max-width: 138mm;
+  /* Constrain to ~80% of A4 content width (174mm).
+     Fixed mm units — immune to font-fallback ch changes. */
+  max-width: 145mm;
   width: 100%;
 }
 
 /*
-  TITLE — the main fix.
+  TITLE
+  ─────
+  The key fix: remove text-wrap: balance entirely.
 
-  Root causes of the broken title:
-    (a) max-width: 18ch forced ugly 4-line wrapping because the opening
-        quote character counts as a full ch unit and the constraint was
-        far too narrow for this title.
-    (b) shorevest-typography-system.css applies
-        `html body h1 { font-weight: 700 !important }` (specificity 0-0-3)
-        and the old print CSS only set `font-weight: 300` without
-        !important, so the title was being rendered bold.
+  Root cause of "China    s" artefact:
+    Chromium's print engine mis-applies text-wrap: balance when
+    the content contains Unicode curly apostrophes (U+2019).
+    The engine breaks "China's" at the apostrophe, places
+    "China'" on one truncated line, stretches the word spacing
+    to fill the measure (producing "China    "), then starts the
+    next line with orphaned "s Uninvestable…".
 
-  Fixes:
-    • max-width: 138mm — fixed headline measure for controlled line breaks
-    • font-weight: 300 !important with higher specificity (0-2-1) overrides
-      the typography system's 0-0-3 !important declaration
-    • text-wrap: balance — the browser balances line lengths so no single
-      word is left stranded
-    • hyphens: none — headlines must never be auto-hyphenated
-    • word-spacing / overflow-wrap / word-break explicitly reset so no
-      browser default causes stretching or unwanted breaks
+  Fixes applied here:
+    • text-wrap: pretty (screen) — avoids last-word orphans
+      without triggering the balance stretch bug.
+    • text-justify: none — explicit guard against any print
+      engine applying automatic justification.
+    • word-break: keep-all — treats apostrophes and hyphens
+      as non-breaking, so "China's" always stays whole.
+    • max-width: 145mm — physical mm unit; reliable regardless
+      of which font loads.
+    • text-align: left — left-flush, never centred or justified.
+    • letter-spacing: normal — no tracking on the title.
+    • All !important to beat the typography system's h1 rules
+      (html body h1 { font-weight:700; text-transform:uppercase }).
 */
 body.cdd-print-layout .cdd-title {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
   font-size:    30pt   !important;
-  font-weight:  300    !important;   /* MUST be !important to beat typography system */
+  font-weight:  300    !important;
   font-style:   normal !important;
-  line-height:  1.06   !important;
+  line-height:  1.08   !important;
   letter-spacing: normal !important;
   color: var(--pr-ink)    !important;
   text-transform: none    !important;
 
-  /* Controlled headline measure for elegant, publication-style wraps. */
-  max-width: 138mm        !important;
+  /* Physical width constraint for controlled line breaks */
+  max-width: 145mm        !important;
   width:     100%         !important;
 
   margin:    5mm 0 3.5mm  !important;
 
-  /* Balanced line distribution — avoids orphaned words */
-  text-wrap: normal       !important;
-  text-wrap: balance      !important;
-  hanging-punctuation: first allow-end !important;
-  text-wrap-style: pretty;
+  /* Left-aligned. No justification. No stretching. */
+  text-align:   left      !important;
+  text-justify: none      !important;
 
-  /* Never hyphenate a headline */
+  /* pretty: avoids orphaned last words without stretch artefacts */
+  text-wrap: pretty       !important;
+
+  /* Never auto-hyphenate a headline */
   hyphens:      none      !important;
   -webkit-hyphens: none   !important;
 
-  /* Prevent any browser from stretching word-spacing */
-  word-spacing:   normal  !important;
-  overflow-wrap:  normal  !important;
-  word-break:     normal  !important;
-  white-space:    normal  !important;
-  text-align:     left    !important;
+  /* Keep "China's" whole — do not break at apostrophe */
+  word-break:     keep-all !important;
+  overflow-wrap:  normal   !important;
+  white-space:    normal   !important;
+  word-spacing:   normal   !important;
 }
 
 /* DEK / standfirst */
@@ -217,24 +235,29 @@ body.cdd-print-layout .cdd-dek {
   color: var(--pr-ink-soft) !important;
   margin: 0           !important;
   max-width: 100%     !important;
-  hyphens: none       !important;
+
+  text-align:   left  !important;
+  text-justify: none  !important;
+  text-wrap:    pretty !important;
+
+  hyphens:      none  !important;
   -webkit-hyphens: none !important;
   word-spacing: normal !important;
   overflow-wrap: normal !important;
-  word-break: normal !important;
-  white-space: normal !important;
-  text-align: left    !important;
+  word-break:   normal !important;
+  white-space:  normal !important;
 }
 
 
-/* --- CONTENT GRID --------------------------------------- */
+/* ── CONTENT GRID ─────────────────────────────────────────── */
 
+/*
+  A4 content width = 210mm - 36mm margins = 174mm.
+  Body column: 174mm - 58mm sidebar - 7mm gap = 109mm.
+  At 10pt DIN 2014 that is ~58 chars/line — ideal typographic measure.
+*/
 body.cdd-print-layout .cdd-grid {
   display: grid   !important;
-  /* Main body column | Key Findings sidebar */
-  /* 58mm sidebar + 7mm gap leaves ~109mm for body on A4
-     (174mm content width). At 10pt that is ~59 chars/line —
-     ideal typographic measure. */
   grid-template-columns: minmax(0, 1fr) 58mm !important;
   grid-template-areas: "body sidebar"        !important;
   gap: 7mm        !important;
@@ -245,9 +268,6 @@ body.cdd-print-layout .cdd-grid {
 body.cdd-print-layout .cdd-body    { grid-area: body;    }
 body.cdd-print-layout .cdd-sidecard { grid-area: sidebar; }
 
-
-/* --- BODY TEXT ------------------------------------------ */
-
 body.cdd-print-layout .cdd-sidecard[hidden] {
   display: none !important;
 }
@@ -257,7 +277,8 @@ body.cdd-print-layout .cdd-grid:has(.cdd-sidecard[hidden]) {
   grid-template-areas: "body" !important;
 }
 
-/* --- BODY TEXT ------------------------------------------ */
+
+/* ── BODY TEXT ────────────────────────────────────────────── */
 
 body.cdd-print-layout .cdd-body p,
 body.cdd-print-layout .cdd-body li {
@@ -266,31 +287,30 @@ body.cdd-print-layout .cdd-body li {
   font-weight: 400   !important;
   line-height: 1.64  !important;
   color: var(--pr-ink-soft) !important;
-  max-width: none    !important;   /* column width is the measure */
+  max-width: none    !important;
   margin: 0 0 3.2mm  !important;
 
-  /* Keep publication-grade rhythm without browser print
-     word-stretch artifacts in narrow measures. */
+  /* Left-aligned publication typography — no justification */
   text-align:   left !important;
-  text-wrap:    normal !important;
-  hyphens:      none   !important;
-  -webkit-hyphens: none !important;
+  text-justify: none !important;
+  text-wrap:    pretty !important;
 
-  /* Prevent other wrap modes from interfering */
-  word-spacing: normal   !important;
-  letter-spacing: 0      !important;
-  word-break:   normal   !important;
-  overflow-wrap: normal  !important;
-  white-space: normal    !important;
-  text-indent:  0        !important;
+  hyphens:      none !important;
+  -webkit-hyphens: none !important;
+  word-spacing: normal  !important;
+  letter-spacing: 0     !important;
+  word-break:   normal  !important;
+  overflow-wrap: normal !important;
+  white-space:  normal  !important;
+  text-indent:  0       !important;
 }
 
-/* Section headings in body */
+/* Section headings */
 body.cdd-print-layout .cdd-body h2 {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-  font-size:    7.5pt   !important;
-  font-weight:  700     !important;
-  line-height:  1.4     !important;
+  font-size:    7.5pt  !important;
+  font-weight:  700    !important;
+  line-height:  1.4    !important;
   letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
   color: var(--pr-accent)   !important;
@@ -299,10 +319,15 @@ body.cdd-print-layout .cdd-body h2 {
   padding-top:   2.5mm !important;
   padding-bottom: 0    !important;
   margin:  8mm 0 3mm   !important;
-  hyphens: none        !important;
+
+  hyphens:  none       !important;
+  -webkit-hyphens: none !important;
+  text-align: left     !important;
+  text-justify: none   !important;
+  word-break: keep-all !important;
 }
 
-/* Bulleted lists in body */
+/* Bulleted lists */
 body.cdd-print-layout .cdd-body ul {
   margin:  0 0 3.8mm !important;
   padding-left: 5mm  !important;
@@ -314,11 +339,10 @@ body.cdd-print-layout .cdd-body li {
 }
 
 
-/* --- SIDECARD / KEY FINDINGS ---------------------------- */
+/* ── SIDECARD / KEY FINDINGS ─────────────────────────────── */
 
 body.cdd-print-layout .cdd-sidecard {
   background: var(--pr-tint)    !important;
-  /* Top rule weight matches the masthead opening rule */
   border-top:   2pt solid var(--pr-ink)  !important;
   border-right:  0.5pt solid var(--pr-rule) !important;
   border-bottom: 0.5pt solid var(--pr-rule) !important;
@@ -329,7 +353,6 @@ body.cdd-print-layout .cdd-sidecard {
   margin-top: 0                  !important;
 }
 
-/* "Key Findings" label */
 body.cdd-print-layout .cdd-sidecard h3 {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
   font-size:    6.5pt  !important;
@@ -337,7 +360,6 @@ body.cdd-print-layout .cdd-sidecard h3 {
   line-height:  1.4    !important;
   letter-spacing: 0.20em !important;
   text-transform: uppercase !important;
-  /* Override typography system's teal color on h3 */
   color: var(--pr-label) !important;
   margin: 0 0 3mm      !important;
   padding-bottom: 2mm  !important;
@@ -350,7 +372,6 @@ body.cdd-print-layout .cdd-sidecard ul {
   list-style: none !important;
 }
 
-/* Key finding bullets */
 body.cdd-print-layout .cdd-sidecard li {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
   font-size:    8.5pt   !important;
@@ -358,18 +379,19 @@ body.cdd-print-layout .cdd-sidecard li {
   line-height:  1.52    !important;
   color: var(--pr-ink-soft) !important;
   margin-bottom: 3mm    !important;
-  padding-left:  8px    !important;
+  padding-left:  10px   !important;
   position: relative    !important;
 
-  /* Left-align findings — do NOT justify narrow-column text */
   text-align:   left    !important;
+  text-justify: none    !important;
+  text-wrap:    pretty  !important;
   hyphens:      none    !important;
   -webkit-hyphens: none !important;
   word-spacing: normal  !important;
   letter-spacing: 0     !important;
-  word-break: normal    !important;
+  word-break:   normal  !important;
   overflow-wrap: normal !important;
-  white-space: normal   !important;
+  white-space:  normal  !important;
 }
 
 body.cdd-print-layout .cdd-sidecard li:last-child {
@@ -387,50 +409,61 @@ body.cdd-print-layout .cdd-sidecard li::before {
 }
 
 
-/* --- DISCLAIMER FOOTER ---------------------------------- */
+/* ── DISCLAIMER / END MATTER ─────────────────────────────── */
 
+/*
+  Raised from 7pt → 8.5pt. Legal text at 7pt is too small
+  to read comfortably in a printed publication. 8.5pt is
+  appropriately secondary without being anaemic.
+  hyphens changed from auto → none (auto produced ugly mid-word
+  breaks in dense legal paragraphs).
+*/
 body.cdd-print-layout .cdd-disclaimer {
-  margin-top: 8mm               !important;
+  margin-top: 9mm               !important;
+  padding-top: 5mm              !important;
   border-top: 0.5pt solid var(--pr-rule) !important;
   border-bottom: none           !important;
-  padding-top: 4mm              !important;
 }
 
 body.cdd-print-layout .cdd-disclaimer h4 {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-  font-size:    6.5pt   !important;
+  font-size:    7pt     !important;
   font-weight:  700     !important;
   line-height:  1.4     !important;
   letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
   color: var(--pr-label)    !important;
-  margin: 0 0 2.5mm         !important;
+  margin: 0 0 3mm           !important;
 }
 
 body.cdd-print-layout .cdd-disclaimer p {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-  font-size:    7pt   !important;
+  font-size:    8.5pt !important;
   font-weight:  400   !important;
-  line-height:  1.58  !important;
-  color: var(--pr-label) !important;
-  margin: 0 0 1.5mm   !important;
-  text-align: left !important;
-  hyphens: auto       !important;
-  -webkit-hyphens: auto !important;
+  line-height:  1.60  !important;
+  color: #4a5450      !important;
+  margin: 0 0 2mm     !important;
+
+  text-align:   left  !important;
+  text-justify: none  !important;
+  hyphens:      none  !important;
+  -webkit-hyphens: none !important;
+  word-spacing: normal !important;
+  word-break:   normal !important;
+  overflow-wrap: normal !important;
 }
 
 
 /* ============================================================
    3. PRINT MEDIA RULES
-   Only rules that differ from the screen preview belong here.
-   Everything already set above applies to both screen and print.
+   Only rules that differ from or extend the screen preview.
+   Everything set in section 2 already applies to both.
    ============================================================ */
 @media print {
 
   @page {
     size: A4;
-    /* 20mm top / 18mm sides / 22mm bottom
-       Matches the screen preview padding above. */
+    /* 20mm top / 18mm sides / 22mm bottom */
     margin: 20mm 18mm 22mm;
   }
 
@@ -446,7 +479,7 @@ body.cdd-print-layout .cdd-disclaimer p {
     print-color-adjust:         exact !important;
   }
 
-  /* ---- Remove screen-only chrome ---- */
+  /* ── Remove screen-only chrome ── */
   body.cdd-print-layout .cdd-topline,
   body.cdd-print-layout .cdd-print-hide,
   body.cdd-print-layout .cdd-actions,
@@ -454,7 +487,7 @@ body.cdd-print-layout .cdd-disclaimer p {
     display: none !important;
   }
 
-  /* ---- Remove A4 page simulation shell ---- */
+  /* ── Remove A4 shell styling ── */
   body.cdd-print-layout .wrap,
   body.cdd-print-layout .cdd-print-shell {
     width:      100%  !important;
@@ -466,25 +499,69 @@ body.cdd-print-layout .cdd-disclaimer p {
     background: transparent !important;
   }
 
-  /* ---- Print-specific title size ---- */
-  /* Use 28pt in print (vs 30pt preview) — slightly smaller on
-     physical A4 but the proportions are correct. */
+  /* ── Title: enforce no-balance, no-justify in print ── */
+  /*
+    In @media print, explicitly set text-wrap: normal.
+    text-wrap: pretty is a screen optimisation; in print
+    the browser should flow text naturally with text-align: left.
+    This is the definitive fix for the "China    s" artefact.
+  */
   body.cdd-print-layout .cdd-title {
-    font-size: 28pt !important;
-    margin: 4mm 0 3mm !important;
-    max-width: 138mm !important;
+    font-size:    26pt    !important;
+    margin:       4mm 0 3mm !important;
+    max-width:    145mm   !important;
+    text-wrap:    normal  !important;   /* NO balance, NO pretty in print */
+    text-justify: none    !important;
+    text-align:   left    !important;
+    word-break:   keep-all !important;
+    word-spacing: normal  !important;
   }
 
-  /* ---- Page-break logic ---- */
+  /* ── Dek: enforce normal flow in print ── */
+  body.cdd-print-layout .cdd-dek {
+    font-size:    10.5pt  !important;
+    text-wrap:    normal  !important;
+    text-justify: none    !important;
+  }
 
-  /* Masthead: never break the header block */
+  /* ── Body text: enforce normal flow in print ── */
+  body.cdd-print-layout .cdd-body p,
+  body.cdd-print-layout .cdd-body li {
+    text-wrap:    normal  !important;
+    text-justify: none    !important;
+    orphans: 3 !important;
+    widows:  3 !important;
+    margin-bottom: 3mm !important;
+  }
+
+  /* ── Grid: tighten margin for print ── */
+  body.cdd-print-layout .cdd-grid {
+    margin-top: 4.5mm !important;
+  }
+
+  /* ── Suppress URL-printing rule from cdd-article-template.css ── */
+  a[href^="http"]::after,
+  a[href^="https"]::after,
+  a[href]::after {
+    content: none !important;
+  }
+
+
+  /* ══ PAGE-BREAK CONTROL ════════════════════════════════════
+
+    Principle: headings never strand at the bottom of a page.
+    Key finding block stays together. Legal/disclaimer section
+    is kept together. Paragraphs respect orphan/widow rules above.
+  ═══════════════════════════════════════════════════════════ */
+
+  /* Masthead block: never fragment */
   body.cdd-print-layout .cdd-print-masthead {
     break-inside:      avoid !important;
     page-break-inside: avoid !important;
   }
 
-  /* Hero (title + dek): keep together; don't end a page on the
-     dek before the content grid begins */
+  /* Hero (title + dek): keep title and dek together; the
+     content grid should start on the same page if at all possible */
   body.cdd-print-layout .cdd-print-hero {
     break-inside:      avoid !important;
     page-break-inside: avoid !important;
@@ -492,7 +569,7 @@ body.cdd-print-layout .cdd-disclaimer p {
     page-break-after:  avoid !important;
   }
 
-  /* Title: never fragment across pages */
+  /* Title: never fragment, never be the last thing on a page */
   body.cdd-print-layout .cdd-title {
     break-inside:      avoid !important;
     page-break-inside: avoid !important;
@@ -506,19 +583,8 @@ body.cdd-print-layout .cdd-disclaimer p {
     page-break-inside: avoid !important;
   }
 
-  /* Grid: keep column structure in print */
-  body.cdd-print-layout .cdd-grid {
-    margin-top: 4.5mm !important;
-  }
-
-  /* Sidecard: keep the entire key findings block together */
-  body.cdd-print-layout .cdd-sidecard,
-  body.cdd-print-layout .cdd-sidecard ul {
-    break-inside:      avoid !important;
-    page-break-inside: avoid !important;
-  }
-
-  /* Section headings: never orphaned at the bottom of a page */
+  /* Section headings: never orphaned at a page bottom;
+     always arrive with at least one following paragraph */
   body.cdd-print-layout .cdd-body h2 {
     break-after:       avoid !important;
     page-break-after:  avoid !important;
@@ -526,33 +592,26 @@ body.cdd-print-layout .cdd-disclaimer p {
     page-break-inside: avoid !important;
   }
 
-  /* Keep each heading glued to the first following paragraph */
+  /* Glue first paragraph after a heading to the heading */
   body.cdd-print-layout .cdd-body h2 + p {
     break-before:      avoid !important;
     page-break-before: avoid !important;
   }
 
-
+  /* Prevent the very first paragraph from being stranded */
   body.cdd-print-layout .cdd-body p:first-of-type {
-    break-before: avoid !important;
+    break-before:      avoid !important;
     page-break-before: avoid !important;
   }
 
+  /* Prefer to keep list + following paragraph together */
   body.cdd-print-layout .cdd-body ul + p,
   body.cdd-print-layout .cdd-body p + ul {
-    break-inside: avoid-page !important;
-    page-break-inside: avoid !important;
+    break-inside:      avoid-page !important;
+    page-break-inside: avoid      !important;
   }
 
-  /* Body text: orphan/widow control */
-  body.cdd-print-layout .cdd-body p,
-  body.cdd-print-layout .cdd-body li {
-    orphans: 3 !important;
-    widows:  3 !important;
-    margin-bottom: 3mm !important;
-  }
-
-  /* Lists: prefer to stay together */
+  /* Bullet lists: prefer to stay on one page */
   body.cdd-print-layout .cdd-body ul {
     break-inside:      avoid-page !important;
     page-break-inside: avoid      !important;
@@ -563,17 +622,18 @@ body.cdd-print-layout .cdd-disclaimer p {
     page-break-inside: avoid !important;
   }
 
-  /* Disclaimer: keep together on one page */
+  /* Key Findings sidecard: keep together */
+  body.cdd-print-layout .cdd-sidecard,
+  body.cdd-print-layout .cdd-sidecard ul {
+    break-inside:      avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Disclaimer section: keep together on one page.
+     Force a new page if it can't fit below the last body paragraph. */
   body.cdd-print-layout .cdd-disclaimer {
     break-inside:      avoid !important;
     page-break-inside: avoid !important;
   }
 
-  /* Suppress the URL-printing rule added by cdd-article-template.css
-     (that rule is correct for the web view but wrong for this layout) */
-  a[href^="http"]::after,
-  a[href^="https"]::after,
-  a[href]::after {
-    content: none !important;
-  }
 }
