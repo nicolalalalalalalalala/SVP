@@ -739,7 +739,7 @@ blockquote.fs__q {
 
 .cdd-editorial__card {
   display: grid;
-  gap: clamp(48px, 5.2vw, 76px);
+  gap: clamp(32px, 3.6vw, 50px);
   background: var(--cdd-surface);
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 32%, transparent);
   padding: clamp(34px, 4.8vw, 64px);
@@ -790,13 +790,13 @@ blockquote.fs__q {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
-  padding-top: 8px;
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 26%, transparent);
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 32%, transparent);
 }
 
 .cdd-editorial__meta-item {
-  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
-  padding-left: 12px;
+  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
+  padding-left: 14px;
 }
 
 .cdd-editorial__meta-label {
@@ -805,11 +805,11 @@ blockquote.fs__q {
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--cdd-muted);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .cdd-editorial__meta-value {
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: .02em;
   color: var(--cdd-body);
 }
@@ -842,14 +842,24 @@ blockquote.fs__q {
 
 .cdd-feature__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.24fr) minmax(280px, .76fr);
-  gap: clamp(24px, 3vw, 46px);
-  padding: clamp(36px, 4.4vw, 58px) clamp(24px, 3vw, 36px) clamp(40px, 4.8vw, 62px);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: clamp(20px, 2.4vw, 34px);
+  padding: clamp(30px, 3.4vw, 46px) clamp(24px, 3vw, 36px) clamp(30px, 3.4vw, 46px);
+  align-items: stretch;
 }
 
 .cdd-feature__body > * {
   min-width: 0;
+}
+
+.cdd-feature__body > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.cdd-feature__body > div:first-child .cdd-cta-group {
+  margin-top: auto;
+  padding-top: 22px;
 }
 
 .cdd-feature__label {
@@ -868,8 +878,8 @@ blockquote.fs__q {
   letter-spacing: .005em;
   line-height: 1.08;
   color: var(--cdd-text);
-  margin-bottom: 22px;
-  width: min(100%, 21ch);
+  margin-bottom: 18px;
+  width: 100%;
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
@@ -884,7 +894,7 @@ blockquote.fs__q {
 .cdd-feature__title--compact {
   font-size: clamp(28px, 2.9vw, 40px);
   line-height: 1.14;
-  width: min(100%, 23ch);
+  width: 100%;
 }
 
 .cdd-feature__thesis {
@@ -892,13 +902,13 @@ blockquote.fs__q {
   font-size: 18px;
   line-height: 1.76;
   color: var(--cdd-body);
-  max-width: 50ch;
 }
 
 .cdd-feature__panel {
-  display: grid;
-  gap: 28px;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
   padding: clamp(18px, 2vw, 24px);
   background: var(--cdd-secondary-surface);
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
@@ -1329,7 +1339,11 @@ h2.su__hed {
   }
   .cdd-feature__title {
     font-size: clamp(34px, 5.6vw, 48px);
-    width: min(100%, 24ch);
+    width: 100%;
+  }
+  .cdd-feature__body > div:first-child .cdd-cta-group {
+    margin-top: 22px;
+    padding-top: 0;
   }
   .cdd-editorial__meta {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1633,6 +1647,7 @@ h2.su__hed {
   .cdd-feature__body {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 16px;
     padding: 18px 14px 20px;
   }
@@ -1651,7 +1666,11 @@ h2.su__hed {
   }
   .cdd-feature__title--compact {
     font-size: clamp(20px, 6.2vw, 28px);
-    width: min(100%, 24ch);
+    width: 100%;
+  }
+  .cdd-feature__body > div:first-child .cdd-cta-group {
+    margin-top: 14px;
+    padding-top: 0;
   }
   .cdd-feature__thesis {
     font-size: 14px;
@@ -1735,12 +1754,12 @@ h2.su__hed {
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   .cdd-feature__body {
-    grid-template-columns: minmax(0, 1.2fr) minmax(250px, .8fr);
-    gap: clamp(20px, 2.6vw, 34px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: clamp(18px, 2.2vw, 28px);
   }
   .cdd-feature__title--compact {
     font-size: clamp(24px, 2.6vw, 32px);
-    width: min(100%, 22ch);
+    width: 100%;
   }
 }
 
@@ -2245,29 +2264,27 @@ h2.su__hed {
           <div class="cdd-feature__issue">CURRENT ISSUE · 46</div>
           <div class="cdd-feature__date">25 January 2026</div>
         </div>
-        <div class="cdd-feature__body">
+        <div class=”cdd-feature__body”>
           <div>
-            <div class="cdd-feature__label">CURRENT ISSUE</div>
-            <h3 class="cdd-feature__title cdd-feature__title--compact">THE END OF CHINA'S <span class="cdd-feature__title-quoted">“UNINVESTABLE MYTH”</span></h3>
-            <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
+            <div class=”cdd-feature__label”>CURRENT ISSUE</div>
+            <h3 class=”cdd-feature__title cdd-feature__title--compact”>THE END OF CHINA'S <span class=”cdd-feature__title-quoted”>”UNINVESTABLE MYTH”</span></h3>
+            <p class=”cdd-feature__thesis”>This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
+            <div class=”cdd-cta-group”>
+              <a href=”insights.html#issue-header” class=”cdd-cta”><span>READ ISSUE</span><span class=”cdd-cta__ring” aria-hidden=”true”>→</span></a>
+              <a href=”insights.html#subscribe” class=”cdd-cta”><span>SUBSCRIBE</span><span class=”cdd-cta__ring” aria-hidden=”true”>→</span></a>
+            </div>
           </div>
-          <aside class="cdd-feature__panel">
+          <aside class=”cdd-feature__panel”>
             <div>
-              <div class="cdd-feature__label">KEY FINDINGS</div>
-              <div class="cdd-feature__findings">
-                <p class="cdd-feature__finding">Policy direction continues to improve enforcement predictability for secured creditors.</p>
-                <p class="cdd-feature__finding">Selective private credit strategies remained executable through the recent market reset.</p>
-                <p class="cdd-feature__finding">Capital-market reforms are shifting allocator assumptions about China exposure.</p>
+              <div class=”cdd-feature__label”>KEY FINDINGS</div>
+              <div class=”cdd-feature__findings”>
+                <p class=”cdd-feature__finding”>Policy direction continues to improve enforcement predictability for secured creditors.</p>
+                <p class=”cdd-feature__finding”>Selective private credit strategies remained executable through the recent market reset.</p>
+                <p class=”cdd-feature__finding”>Capital-market reforms are shifting allocator assumptions about China exposure.</p>
               </div>
             </div>
-            <blockquote class="cdd-feature__quote">“A market best understood through process, policy, and execution rather than headline volatility.”</blockquote>
+            <blockquote class=”cdd-feature__quote”>”A market best understood through process, policy, and execution rather than headline volatility.”</blockquote>
           </aside>
-        </div>
-        <div class="cdd-feature__footer">
-          <div class="cdd-cta-group">
-            <a href="insights.html#issue-header" class="cdd-cta"><span>READ ISSUE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
-            <a href="insights.html#subscribe" class="cdd-cta"><span>SUBSCRIBE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
-          </div>
         </div>
       </article>
 
