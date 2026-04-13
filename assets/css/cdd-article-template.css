@@ -777,31 +777,39 @@ a { color: var(--qing-dark); }
 
   /* ── Disclaimer / Legal section ── */
   .cdd-disclaimer {
-    margin-top: 9mm !important;
-    border-top: 0.5pt solid #c8d0cb !important;
-    padding-top: 5mm !important;
+    margin-top: 14mm !important;
+    border-top: 0.8pt solid #8a9690 !important;
+    padding-top: 6mm !important;
     break-inside: avoid-page !important;
   }
 
   .cdd-disclaimer h4 {
-    font-size: 6.5pt !important;
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
     letter-spacing: 0.18em !important;
     text-transform: uppercase !important;
-    color: #5c6860 !important;
-    margin: 0 0 3mm !important;
+    color: #4a5450 !important;
+    margin: 0 0 4mm !important;
   }
 
   .cdd-disclaimer p {
-    font-size: 8.5pt !important;
-    line-height: 1.58 !important;
-    color: #4a5450 !important;
-    margin: 0 0 2mm !important;
+    font-size: 9pt !important;
+    line-height: 1.66 !important;
+    color: #3d4742 !important;
+    margin: 0 0 3mm !important;
     text-align: left !important;
     text-justify: none !important;
     hyphens: none !important;
     -webkit-hyphens: none !important;
     word-break: normal !important;
     overflow-wrap: normal !important;
+  }
+
+  /* Cleanly separate contact + copyright from the main disclaimer body */
+  .cdd-disclaimer p:nth-of-type(2) {
+    margin-top: 3mm !important;
+    padding-top: 2.5mm !important;
+    border-top: 0.4pt solid #bdc7c0 !important;
   }
 
   /* ── Links: no URL printing ── */
