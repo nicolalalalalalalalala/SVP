@@ -680,33 +680,50 @@ a { color: var(--qing-dark); }
     break-after: avoid-page !important;
   }
 
-  /* ── Reading grid: 2-column print layout ──
-     174mm printable width (210mm − 36mm margins) − 58mm sidebar
-     − 7mm gap = 109mm body column.
+  /* ── Reading grid: single-column print layout ──
+     Key Findings is reordered above the body via order: -1,
+     giving the body the full 174mm printable width.
   ── */
   .cdd-reading-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 58mm !important;
-    gap: 7mm !important;
-    align-items: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    align-items: stretch !important;
   }
 
-  /* ── Sidecard / Key Findings ── */
+  /* ── Key Findings: horizontal band above body ── */
   .cdd-sidecard {
-    border: 0.5pt solid #c8d0cb !important;
+    order: -1 !important;
+    width: 100% !important;
     border-top: 2pt solid #1f2924 !important;
+    border-right: none !important;
+    border-bottom: 0.5pt solid #c8d0cb !important;
+    border-left: none !important;
     background: #f6f3ec !important;
     position: static !important;
     top: auto !important;
     max-height: none !important;
     overflow: visible !important;
-    margin: 0 !important;
-    padding: 4mm 4.2mm !important;
+    margin: 0 0 7mm !important;
+    padding: 3.8mm 0 4.5mm !important;
     break-inside: avoid-page !important;
+    break-after: avoid-page !important;
   }
 
   .cdd-sidecard h3 {
+    margin: 0 0 2.5mm !important;
     break-after: avoid-page !important;
+  }
+
+  /* Findings items in a 3-column horizontal grid */
+  .cdd-sidecard ul {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    column-gap: 7mm !important;
+    row-gap: 1.5mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
   }
 
   /* ── Section headings ── */
@@ -816,10 +833,12 @@ a { color: var(--qing-dark); }
     border-top: 0.4pt solid #bdc7c0 !important;
   }
 
-  /* ── Sidecard Key Findings in print ── */
+  /* ── Key Findings items in horizontal band ── */
   .cdd-sidecard li {
     font-size: 8.5pt !important;
     line-height: 1.52 !important;
+    margin-bottom: 0 !important;
+    padding-left: 10px !important;
     text-align: left !important;
     text-justify: none !important;
     text-wrap: normal !important;
@@ -828,6 +847,7 @@ a { color: var(--qing-dark); }
     word-spacing: normal !important;
     word-break: normal !important;
     overflow-wrap: normal !important;
+    break-inside: avoid-page !important;
   }
 
   /* ── Links: no URL printing ── */
