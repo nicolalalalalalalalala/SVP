@@ -539,7 +539,8 @@ a { color: var(--qing-dark); }
 
 @page {
   size: A4;
-  margin: 16mm 16mm 18mm;
+  /* 20mm top / 18mm sides / 22mm bottom  →  174mm printable width */
+  margin: 20mm 18mm 22mm;
 }
 
 @media print {
@@ -558,32 +559,39 @@ a { color: var(--qing-dark); }
     display: none !important;
   }
 
+  /* ── Reset width constraints that crush print layout ── */
   .wrap {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-  }
-
-  .cdd-topline {
-    border-top: 1.8px solid #1f2924;
-    border-bottom: 1px solid #c8d0cb;
-    background: #fff !important;
-    width: auto;
-    margin-left: 0;
-    transform: none;
-  }
-
-  .cdd-topline__inner {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0 0 6mm;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
   }
 
   main.cdd-page {
-    padding: 6mm 0 0;
+    /* Remove the calc(100% - 128px) screen width hack */
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 6mm 0 0 !important;
   }
 
+  /* ── Topline / publication strip ── */
+  .cdd-topline {
+    border-top: 1.8pt solid #1f2924;
+    border-bottom: 0.5pt solid #c8d0cb;
+    background: #fff !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    transform: none !important;
+  }
+
+  .cdd-topline__inner {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 0 5mm !important;
+  }
+
+  /* ── Article intro module ── */
   .cdd-intro {
     padding-top: 0;
     margin-bottom: 5mm;
@@ -599,17 +607,20 @@ a { color: var(--qing-dark); }
   }
 
   .cdd-intro__grid {
-    display: block;
+    display: block !important;
     padding-top: 4mm;
     padding-bottom: 0;
     border-bottom: none;
   }
 
+  /* ── Meta row ── */
   .cdd-meta {
-    border-bottom: 1px solid #c8d0cb;
-    font-size: 7.8pt;
+    border-bottom: 0.5pt solid #c8d0cb;
+    font-size: 7pt;
     margin-bottom: 5mm;
     padding-bottom: 3.4mm;
+    text-align: left !important;
+    text-justify: none !important;
   }
 
   .cdd-meta span + span::before {
@@ -617,107 +628,188 @@ a { color: var(--qing-dark); }
     background: #b7c0bb;
   }
 
+  /* ── TITLE ──
+     Root-cause fix for "China    s" artefact:
+     • max-width in mm (not ch — ch units break when DIN 2014 falls
+       back to Arial, radically changing the measured column width).
+     • text-wrap: normal  — never balance in print; balance causes
+       Chromium to break at Unicode apostrophes and stretch spacing.
+     • text-align: left + text-justify: none  — explicit no-justify.
+     • word-break: keep-all  — "China's" must never split at '.
+  ── */
   .cdd-title {
-    max-width: 17.5ch;
-    font-size: 22pt;
-    line-height: 1.1;
-    margin: 0 0 3.6mm;
-    letter-spacing: 0.003em !important;
-    break-after: avoid-page;
-    break-inside: avoid-page;
-    text-wrap: balance;
-    word-break: normal;
-    overflow-wrap: normal;
-    hyphens: none;
+    max-width: 150mm !important;
+    font-size: 24pt !important;
+    line-height: 1.08 !important;
+    margin: 0 0 3.5mm !important;
+    letter-spacing: normal !important;
+
+    text-align:   left   !important;
+    text-justify: none   !important;
+    text-wrap:    normal !important;
+
+    word-break:    keep-all !important;
+    overflow-wrap: normal   !important;
+    hyphens:       none     !important;
+    -webkit-hyphens: none   !important;
+    word-spacing:  normal   !important;
+    white-space:   normal   !important;
+
+    break-after:  avoid-page !important;
+    break-inside: avoid-page !important;
   }
 
+  /* ── Dek / standfirst ── */
   .cdd-dek {
-    font-size: 10.6pt;
-    line-height: 1.5;
-    margin-bottom: 6.4mm;
-    break-after: avoid-page;
-    max-width: 68ch;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+    margin-bottom: 6mm !important;
+    max-width: 145mm !important;
+
+    text-align:   left   !important;
+    text-justify: none   !important;
+    text-wrap:    normal !important;
+    hyphens: none !important;
+
+    break-after: avoid-page !important;
   }
 
+  /* ── Reading grid: 2-column print layout ──
+     174mm printable width − 58mm sidebar − 7mm gap = 109mm body.
+     This matches the dedicated print page layout exactly.
+  ── */
+  .cdd-reading-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 58mm !important;
+    gap: 7mm !important;
+    align-items: start !important;
+  }
 
+  /* ── Sidecard / Key Findings ── */
   .cdd-sidecard {
-    border: 1px solid #c8d0cb;
+    border: 0.5pt solid #c8d0cb !important;
+    border-top: 2pt solid #1f2924 !important;
     background: #f6f3ec !important;
-    margin: 0 0 5.8mm;
-    padding: 4mm 4.2mm;
-    position: static;
-    break-inside: avoid-page;
+    position: static !important;
+    top: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 4mm 4.2mm !important;
+    break-inside: avoid-page !important;
   }
 
-  .cdd-sidecard h3,
-  .cdd-disclaimer h4,
+  .cdd-sidecard h3 {
+    break-after: avoid-page !important;
+  }
+
+  /* ── Section headings ── */
   .cdd-body h2 {
-    break-after: avoid-page;
-  }
+    margin: 8mm 0 3mm !important;
+    padding-top: 2.2mm !important;
+    border-top: 0.5pt solid #c8d0cb !important;
+    color: #4f5a53 !important;
+    font-size: 7.5pt !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
 
-  .cdd-body h2 {
-    margin: 8mm 0 3.2mm;
-    padding-top: 2.2mm;
-    border-top: 0.5pt solid #c8d0cb;
-    color: #4f5a53;
-    font-size: 10.4pt;
-    letter-spacing: 0.1em;
-    break-after: avoid-page;
-    break-inside: avoid-page;
-  }
+    text-align:   left !important;
+    text-justify: none !important;
+    hyphens: none !important;
+    word-break: keep-all !important;
 
-  .cdd-body p,
-  .cdd-body li {
-    max-width: 68ch;
-    font-size: 10pt;
-    line-height: 1.56;
-    margin-bottom: 3.2mm;
-    orphans: 3;
-    widows: 3;
-    text-wrap: pretty;
-    hyphens: none;
-    word-break: normal;
-    overflow-wrap: normal;
-  }
-
-  .cdd-body ul {
-    margin: 0 0 4.2mm;
-    padding-left: 5.4mm;
-    break-inside: avoid-page;
-  }
-
-  .cdd-body li {
-    break-inside: avoid-page;
-  }
-
-  .cdd-body p + p {
-    text-indent: 0;
+    break-after:  avoid-page !important;
+    break-inside: avoid-page !important;
   }
 
   .cdd-body > h2:first-of-type {
-    margin-top: 1mm;
+    margin-top: 1mm !important;
   }
 
+  /* Keep first paragraph glued to its heading */
   .cdd-body > h2 + p {
-    break-before: avoid-page;
+    break-before: avoid-page !important;
   }
 
+  /* ── Body paragraphs and list items ── */
+  .cdd-body p,
+  .cdd-body li {
+    max-width: none !important;
+    font-size: 10pt !important;
+    line-height: 1.56 !important;
+    margin-bottom: 3.2mm !important;
+
+    text-align:   left   !important;
+    text-justify: none   !important;
+    text-wrap:    normal !important;
+
+    orphans: 3 !important;
+    widows:  3 !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    word-break:   normal !important;
+    overflow-wrap: normal !important;
+    word-spacing: normal !important;
+    letter-spacing: 0 !important;
+  }
+
+  .cdd-body p + p {
+    text-indent: 0 !important;
+  }
+
+  .cdd-body ul {
+    margin: 0 0 4.2mm !important;
+    padding-left: 5.4mm !important;
+    break-inside: avoid-page !important;
+  }
+
+  .cdd-body li {
+    break-inside: avoid-page !important;
+  }
+
+  .cdd-disclaimer h4 {
+    break-after: avoid-page !important;
+  }
+
+  /* ── Disclaimer / Legal section ── */
   .cdd-disclaimer {
-    margin-top: 9mm;
-    border-top: 1px solid #c8d0cb;
-    padding-top: 4mm;
-    break-inside: avoid-page;
+    margin-top: 9mm !important;
+    border-top: 0.5pt solid #c8d0cb !important;
+    padding-top: 5mm !important;
+    break-inside: avoid-page !important;
   }
 
+  .cdd-disclaimer h4 {
+    font-size: 6.5pt !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: #5c6860 !important;
+    margin: 0 0 3mm !important;
+  }
+
+  .cdd-disclaimer p {
+    font-size: 8.5pt !important;
+    line-height: 1.58 !important;
+    color: #4a5450 !important;
+    margin: 0 0 2mm !important;
+    text-align: left !important;
+    text-justify: none !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  /* ── Links: no URL printing ── */
   a,
   a:visited {
     color: #1e4040;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
-  a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 7.5pt;
-    word-break: break-all;
+  a[href^="http"]::after,
+  a[href^="https"]::after,
+  a[href]::after {
+    content: none !important;
   }
 }
