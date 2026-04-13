@@ -1554,6 +1554,17 @@
   .archive-panel .archive__head {
     border-bottom: 1px solid var(--rule);
   }
+
+  /* China Debt Dynamics hero — restore title colour against dark background.
+     shorevest-typography-system.css sets html body h1 { color: #0F2206 !important }
+     which makes "China Debt" nearly invisible on the dark hero gradient.
+     These rules use higher specificity + !important to override it. */
+  .research-hero .wordmark__title {
+    color: #7aafaf !important; /* blue-green-light — readable on dark green, brand-correct */
+  }
+  .research-hero .wordmark__title em {
+    color: #faf6ee !important; /* paper-light off-white — highest contrast, anchors "Dynamics." */
+  }
 </style>
 </head>
   <body class="insights-page">
