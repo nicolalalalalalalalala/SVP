@@ -2,10 +2,17 @@
   const path = window.location.pathname.split('/').pop() || 'index.html';
   const isCnPath = /_cn\.html$/i.test(path);
 
+  /* The brand line uses class="sv-footer__brand footer-brand-lockup" so that
+     both the legacy selector and the canonical role class apply the
+     spaced all-caps Brand Lockup treatment defined in:
+       shared-footer.css  →  .footer-brand-lockup / .sv-footer__brand
+       shorevest-typography-system.css  →  .footer-brand-lockup
+     Text content is normal mixed-case; CSS handles uppercase + tracking. */
+
   const footerTemplateEn = `
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
-      <div class="sv-footer__brand">ShoreVest Partners</div>
+      <div class="sv-footer__brand footer-brand-lockup">ShoreVest Partners</div>
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">CONTACT</span>
         <a href="mailto:partners@shorevest.com">PARTNERS@SHOREVEST.COM</a>
@@ -25,7 +32,7 @@
   const footerTemplateCn = `
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
-      <div class="sv-footer__brand">ShoreVest Partners</div>
+      <div class="sv-footer__brand footer-brand-lockup">ShoreVest Partners</div>
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">联系我们</span>
         <a href="mailto:partners@shorevest.com">PARTNERS@SHOREVEST.COM</a>
@@ -42,45 +49,31 @@
     </div>
   </div>`;
 
-  const ensureTypographySystem = () => {
-    const fontId = 'sv-footer-typography-fonts';
-    if (document.getElementById(fontId)) return;
-
+  /* Ensure Noto Serif SC is loaded for Chinese footer content.
+     DIN 2014 is a commercial font served via CSS font-face on the host;
+     no Google Fonts URL is needed for it. */
+  const ensureChineseFonts = () => {
+    if (document.getElementById('sv-footer-cn-fonts')) return;
     const link = document.createElement('link');
-    link.id = fontId;
+    link.id = 'sv-footer-cn-fonts';
     link.rel = 'stylesheet';
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap';
     document.head.appendChild(link);
   };
-
-  const setTypographyTokens = (footerNode) => {
-    const force = (node, property, value) => node?.style.setProperty(property, value, 'important');
-    const brand = footerNode.querySelector('.sv-footer__brand');
-    const contactLabel = footerNode.querySelector('.sv-footer__contact-label');
-    const contactLink = footerNode.querySelector('.sv-footer__contact a');
-    const copyright = footerNode.querySelector('.sv-footer__copyright');
-    const legalSummary = footerNode.querySelector('.sv-footer__legal-toggle > summary');
-    const legalBody = footerNode.querySelector('.sv-footer__legal');
-    const legalLinks = footerNode.querySelectorAll('.sv-footer__legal-links a');
-
-    force(brand, 'font-family', '"DIN 2014", "Helvetica Neue", Arial, sans-serif');
-    force(brand, 'font-size', '15px');
-    force(brand, 'font-weight', '700');
-    force(brand, 'letter-spacing', '0.05em');
-    force(brand, 'line-height', '1.2');
-    force(brand, 'text-transform', 'uppercase');
-
-    [contactLabel, contactLink, copyright, legalSummary, legalBody, ...legalLinks].forEach((node) => {
-      force(node, 'font-family', isCnPath ? '"Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif' : '"Inter", system-ui, sans-serif');
-    });
-  };
-
-  ensureTypographySystem();
 
   const mountFooter = (node) => {
     node.className = `sv-footer ${isCnPath ? 'sv-footer--cn' : 'sv-footer--en'}`;
     node.innerHTML = isCnPath ? footerTemplateCn : footerTemplateEn;
-    setTypographyTokens(node);
+
+    /* CSS handles all font-family, letter-spacing, and colour via:
+         shared-footer.css  (highest specificity footer rules)
+         shorevest-typography-system.css  (canonical role system)
+       No inline style overrides are applied here so that the CSS
+       system remains the authoritative source of truth. */
+
+    if (isCnPath) {
+      ensureChineseFonts();
+    }
   };
 
   document.querySelectorAll('footer.sv-footer, footer[data-shared-footer]').forEach(mountFooter);
