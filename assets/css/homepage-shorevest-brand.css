@@ -613,3 +613,103 @@ body.homepage .nav__menu-btn:hover {
   border-color: var(--blue-green) !important;
   color: var(--paper-light) !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CDD FLAGSHIP PANEL — DEFINITIVE CONTRAST FIX (April 2026)
+   Two-layer defence so neither the typography system (loaded last) nor any
+   other global rule can produce dark-on-dark text inside the dark CDD panel.
+
+   Layer 1 — CSS variable redirect
+   The typography system uses `color: var(--sv-ink-soft) !important` etc.
+   By re-declaring those variables on #cdd with higher specificity, every
+   descendant that resolves var(--sv-ink-soft) gets a light value instead
+   of the global dark green.
+
+   Layer 2 — Explicit !important locks with maximum selector specificity
+   Covers every visible text element so no generic rule can override them.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* LAYER 1: Redirect global colour tokens to dark-panel equivalents */
+html body.homepage #cdd {
+  /* ShoreVest typography-system ink variables */
+  --sv-ink:              #f6f0e6;
+  --sv-ink-soft:         #ece3d6;
+  --sv-ink-muted:        #c5b8a2;
+  --sv-color-ink:        #f6f0e6;
+  --sv-color-soft-ink:   #ece3d6;
+  --sv-color-muted:      #c5b8a2;
+  --sv-color-accent:     #7ea4a0;
+
+  /* Site/page-level ink variables */
+  --site-color-ink:       #f6f0e6;
+  --site-color-ink-soft:  #ece3d6;
+  --site-color-ink-strong:#f6f0e6;
+  --site-color-muted:     #c5b8a2;
+
+  /* Homepage palette variables */
+  --text-main:      #f6f0e6;
+  --text-secondary: #ece3d6;
+  --ink:            #f6f0e6;
+  --ink2:           #ece3d6;
+  --mist:           #c5b8a2;
+
+  /* Prevent dark teal link colour bleeding into CTAs */
+  --blue-green-dark: #7ea4a0;
+}
+
+/* LAYER 2: Explicit colour locks — heading-level text */
+html body.homepage #cdd .cdd-editorial__title,
+html body.homepage #cdd .cdd-editorial__title em,
+html body.homepage #cdd .cdd-feature__title,
+html body.homepage #cdd .cdd-feature__title .cdd-feature__title-quoted {
+  color: #f6f0e6 !important;
+}
+
+/* LAYER 2: Explicit colour locks — body/paragraph text */
+html body.homepage #cdd .cdd-editorial__lede,
+html body.homepage #cdd .cdd-feature__thesis,
+html body.homepage #cdd .cdd-feature__finding,
+html body.homepage #cdd .cdd-editorial__meta-value {
+  color: #ece3d6 !important;
+}
+
+/* LAYER 2: Explicit colour locks — labels, metadata, secondary text */
+html body.homepage #cdd .cdd-editorial__kicker,
+html body.homepage #cdd .cdd-feature__issue,
+html body.homepage #cdd .cdd-feature__date,
+html body.homepage #cdd .cdd-feature__label,
+html body.homepage #cdd .cdd-feature__volume,
+html body.homepage #cdd .cdd-editorial__meta-label {
+  color: #c5b8a2 !important;
+}
+
+/* LAYER 2: Explicit colour locks — quote */
+html body.homepage #cdd .cdd-feature__quote {
+  color: #f6f0e6 !important;
+}
+
+/* LAYER 2: Explicit colour locks — CTA text and ring */
+html body.homepage #cdd .cdd-cta {
+  color: #f6f0e6 !important;
+}
+
+html body.homepage #cdd .cdd-cta__ring {
+  color: #7ea4a0 !important;
+  border-color: rgba(95, 115, 110, 0.65) !important;
+}
+
+/* LAYER 2: Ensure dark backgrounds are never overridden by page-level rules */
+html body.homepage #cdd .cdd-editorial__card,
+html body.homepage #cdd .cdd-feature {
+  background: #111917 !important;
+  color: #f6f0e6 !important;
+}
+
+html body.homepage #cdd .cdd-feature__panel {
+  background: #0e1614 !important;
+}
+
+html body.homepage #cdd .cdd-feature__quote {
+  background: #111917 !important;
+}
