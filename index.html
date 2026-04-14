@@ -855,6 +855,7 @@ blockquote.fs__q {
 .cdd-feature__body > div:first-child {
   display: flex;
   flex-direction: column;
+  padding-left: clamp(12px, 1.5vw, 20px);
 }
 
 .cdd-feature__body > div:first-child .cdd-cta-group {
@@ -1676,6 +1677,9 @@ h2.su__hed {
   .cdd-feature__title--compact {
     font-size: clamp(20px, 6.2vw, 28px);
     width: 100%;
+  }
+  .cdd-feature__body > div:first-child {
+    padding-left: 0;
   }
   .cdd-feature__body > div:first-child .cdd-cta-group {
     margin-top: 14px;
