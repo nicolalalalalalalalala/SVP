@@ -724,3 +724,76 @@ html body.homepage #cdd .cdd-feature__panel {
 html body.homepage #cdd .cdd-feature__quote {
   background: #111917 !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CDD NOTICE + SUBSCRIPTION — Homepage section
+   Sits directly after the #cdd dark editorial panel. Returns to the light
+   paper palette. Two-column editorial layout: notice (subordinate, left)
+   anchored by a hairline rule / subscription invitation (primary, right).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.homepage #cdd-notice {
+  padding: clamp(52px, 6.5vw, 86px) 0;
+  background: var(--paper) !important;
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 78%, transparent) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 52%, transparent) !important;
+}
+
+body.homepage .cdd-notice__inner {
+  display: grid;
+  grid-template-columns: 5fr 8fr;
+  gap: 0 clamp(44px, 6vw, 88px);
+  align-items: start;
+}
+
+body.homepage .cdd-notice__left {
+  padding-right: clamp(28px, 3.5vw, 52px);
+  border-right: 1px solid color-mix(in srgb, var(--paper-dark) 80%, transparent);
+}
+
+body.homepage .cdd-notice__label {
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.17em !important;
+  text-transform: uppercase !important;
+  color: var(--mist) !important;
+  margin: 0 0 14px 0 !important;
+}
+
+body.homepage .cdd-notice__legal {
+  font-size: 0.79rem !important;
+  line-height: 1.74 !important;
+  color: color-mix(in srgb, var(--text-secondary) 65%, transparent) !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+body.homepage .cdd-notice__hed {
+  font-size: clamp(1.08rem, 1.75vw, 1.4rem) !important;
+  line-height: 1.22 !important;
+  color: var(--text-main) !important;
+  margin: 0 0 clamp(10px, 1.2vw, 16px) 0 !important;
+}
+
+body.homepage .cdd-notice__copy {
+  font-size: clamp(0.86rem, 0.98vw, 0.93rem) !important;
+  line-height: 1.7 !important;
+  color: var(--text-secondary) !important;
+  font-weight: 400 !important;
+  margin: 0 0 clamp(20px, 2.8vw, 32px) 0 !important;
+}
+
+@media (max-width: 768px) {
+  body.homepage .cdd-notice__inner {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 6vw, 44px) 0;
+  }
+
+  body.homepage .cdd-notice__left {
+    padding-right: 0;
+    padding-bottom: clamp(24px, 5vw, 36px);
+    border-right: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 80%, transparent);
+  }
+}
