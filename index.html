@@ -2075,6 +2075,109 @@ h2.su__hed {
 
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 <link rel="stylesheet" href="assets/css/shared-footer.css">
+
+<!-- CDD PANEL CONTRAST REPAIR
+     Loaded last so it wins over every external stylesheet's !important
+     declarations. Uses body.homepage #cdd + class selectors (0,1,2,1)
+     which beats html body h3 / html body p (0,0,0,3) from the typography
+     system, plus this block is after every <link> so source-order wins
+     any equal-specificity tie. Hard hex values — no CSS variable risk.
+-->
+<style id="cdd-contrast-repair">
+
+/* ── Base: set a light inherited colour on the CDD container so any
+       element we miss below gets a readable starting point            */
+body.homepage #cdd {
+  color: #f6f0e6 !important;
+}
+
+/* ── Franchise title (h2) ──────────────────────────────────────── */
+body.homepage #cdd .cdd-editorial__title,
+body.homepage #cdd .cdd-editorial__title em {
+  color: #f6f0e6 !important;
+}
+
+/* ── Franchise lede / description ──────────────────────────────── */
+body.homepage #cdd .cdd-editorial__lede {
+  color: #ece3d6 !important;
+}
+
+/* ── Series kicker / eyebrow ───────────────────────────────────── */
+body.homepage #cdd .cdd-editorial__kicker,
+body.homepage #cdd .cdd-editorial__kicker * {
+  color: #c5b8a2 !important;
+}
+
+/* ── Metadata bar: "CURRENT ISSUE · 46" and date ──────────────── */
+body.homepage #cdd .cdd-feature__issue,
+body.homepage #cdd .cdd-feature__date {
+  color: #c5b8a2 !important;
+}
+
+/* ── CURRENT ISSUE / KEY FINDINGS labels ───────────────────────── */
+body.homepage #cdd .cdd-feature__label {
+  color: #c5b8a2 !important;
+}
+
+/* ── Issue title (h3) ──────────────────────────────────────────── */
+body.homepage #cdd .cdd-feature__title,
+body.homepage #cdd .cdd-feature__title * {
+  color: #f6f0e6 !important;
+}
+
+/* ── Summary / thesis paragraph ────────────────────────────────── */
+body.homepage #cdd .cdd-feature__thesis {
+  color: #ece3d6 !important;
+}
+
+/* ── Key findings bullets ───────────────────────────────────────── */
+body.homepage #cdd .cdd-feature__finding {
+  color: #ece3d6 !important;
+}
+
+/* ── Editorial quote ────────────────────────────────────────────── */
+body.homepage #cdd .cdd-feature__quote {
+  color: #f6f0e6 !important;
+}
+
+/* ── CTA text (a.cdd-cta and its children) ──────────────────────── */
+body.homepage #cdd .cdd-cta {
+  color: #f6f0e6 !important;
+}
+
+body.homepage #cdd .cdd-cta span {
+  color: inherit !important;
+}
+
+/* ── CTA ring: arrow needs its own colour fix (refinement-pass.css
+       forces #3d7070 via .cdd-cta__ring { color: … !important })   */
+body.homepage #cdd .cdd-cta__ring {
+  color: #f6f0e6 !important;
+  border-color: rgba(246, 240, 230, 0.32) !important;
+}
+
+body.homepage #cdd .cdd-cta:hover .cdd-cta__ring,
+body.homepage #cdd .cdd-cta:focus-visible .cdd-cta__ring {
+  border-color: rgba(126, 164, 160, 0.9) !important;
+  background: rgba(61, 112, 112, 0.22) !important;
+  color: #f6f0e6 !important;
+}
+
+/* ── Metadata strip labels & values ────────────────────────────── */
+body.homepage #cdd .cdd-editorial__meta-label {
+  color: #c5b8a2 !important;
+}
+
+body.homepage #cdd .cdd-editorial__meta-value {
+  color: #ece3d6 !important;
+}
+
+/* ── Volume / footer sub-label ─────────────────────────────────── */
+body.homepage #cdd .cdd-feature__volume {
+  color: #c5b8a2 !important;
+}
+
+</style>
 </head>
 <body id="top" class="homepage">
 
