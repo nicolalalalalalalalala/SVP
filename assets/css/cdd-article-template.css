@@ -539,8 +539,8 @@ a { color: var(--qing-dark); }
 
 @page {
   size: A4;
-  /* 20mm top / 18mm sides / 22mm bottom  →  174mm printable width */
-  margin: 20mm 18mm 22mm;
+  /* 16mm top / 10mm sides / 18mm bottom  →  190mm printable width */
+  margin: 16mm 10mm 18mm;
 }
 
 @media print {
@@ -550,6 +550,12 @@ a { color: var(--qing-dark); }
     color: #10211a;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    /* Ensure the root and body fill the full page content area */
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
   #site-header-mount,
@@ -566,12 +572,15 @@ a { color: var(--qing-dark); }
     padding: 0 !important;
   }
 
-  main.cdd-page {
-    /* Remove the calc(100% - 128px) screen width hack */
+  main.cdd-page,
+  .cdd-page {
+    /* Override both calc(100% - Npx) responsive-breakpoint widths
+       and the 960px max-width from the base screen rule */
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
     padding: 6mm 0 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* ── Topline / publication strip ── */
@@ -687,7 +696,7 @@ a { color: var(--qing-dark); }
   ── */
   .cdd-reading-grid {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 100% !important;
     grid-template-rows: auto auto !important;
     grid-template-areas:
       "sidebar"
@@ -696,6 +705,9 @@ a { color: var(--qing-dark); }
     column-gap: 0 !important;
     width: 100% !important;
     max-width: none !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   /* Body occupies the full printable width below Key Findings */
@@ -704,6 +716,9 @@ a { color: var(--qing-dark); }
     width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   /* ── Key Findings: horizontal band above body ── */
