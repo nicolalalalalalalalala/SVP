@@ -795,22 +795,26 @@
           row-gap: 10px;
           padding-top: 16px !important;
         }
-        /* Collapse icon wrapper to natural icon height — no dead vertical space */
+        /* Full-width flex wrapper centres the icon horizontally */
         .pillar-card .card-icon-wrap {
           min-height: 0 !important;
           height: auto;
-          display: block;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 4px;
         }
-        /* Clearly visible icon at a proper mobile size */
+        /* Larger icon — noticeably bigger, still elegant */
         .pillar-card .card-icon {
-          width: 96px;
-          height: 96px;
+          width: 120px;
+          height: 120px;
           margin: 0;
         }
-        /* Reset desktop negative margin — let row-gap provide clean separation */
+        /* Left-align pillar label with the title / body text column below */
         .pillar-card .card-index {
           margin-top: 0;
           margin-bottom: 0;
+          text-align: left;
         }
       }
     </style>
