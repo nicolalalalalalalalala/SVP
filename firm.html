@@ -788,33 +788,40 @@
         .cta-panel .btn {
           width: 100%;
         }
-        /* ── Mobile pillar card layout reset ── */
+        /* ── Mobile pillar card — hard reset ── */
+        /* Kill all inherited vertical spacing; rebuild with per-element margins */
         .platform-ops-section .pillar-card {
           min-height: 0;
           grid-template-rows: auto auto auto auto;
-          row-gap: 10px;
-          padding-top: 16px !important;
+          row-gap: 0;
+          padding: 20px 22px 22px !important;
+          align-content: start;
         }
-        /* Full-width flex wrapper centres the icon horizontally */
+        /* Icon wrapper: centered, height driven by the icon only */
         .pillar-card .card-icon-wrap {
           min-height: 0 !important;
           height: auto;
           display: flex;
           justify-content: center;
           align-items: center;
-          padding-bottom: 4px;
+          padding: 0;
+          margin-bottom: 14px;
         }
-        /* Larger icon — noticeably bigger, still elegant */
+        /* Icon: compact but still clearly readable */
         .pillar-card .card-icon {
-          width: 120px;
-          height: 120px;
+          width: 80px;
+          height: 80px;
           margin: 0;
         }
-        /* Left-align pillar label with the title / body text column below */
+        /* Pillar label: tight beneath icon, tight above title */
         .pillar-card .card-index {
           margin-top: 0;
-          margin-bottom: 0;
+          margin-bottom: 8px;
           text-align: left;
+        }
+        /* Title: close to label, small gap before body */
+        .pillar-card h3 {
+          margin-bottom: 10px;
         }
       }
     </style>
