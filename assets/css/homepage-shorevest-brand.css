@@ -498,6 +498,9 @@ body.homepage #cdd {
   --cdd-accent: #7ea4a0;
   --cdd-signal: #3d7070;
   background: radial-gradient(120% 120% at 12% 8%, #1d2f2d 0%, #152321 54%, #0f1a18 100%) !important;
+  /* Set base colour directly — prevents typography-system's global
+     element-type rules from landing a dark colour via inheritance    */
+  color: #f6f0e6 !important;
   border-top: 1px solid rgba(197, 184, 162, 0.36) !important;
   border-bottom: 1px solid rgba(95, 115, 110, 0.35) !important;
 }
@@ -537,9 +540,17 @@ body.homepage #cdd .cdd-feature__quote {
   border-top-color: rgba(95, 115, 110, 0.34) !important;
 }
 
-body.homepage #cdd .cdd-cta,
-body.homepage #cdd .cdd-cta__ring {
+body.homepage #cdd .cdd-cta {
   border-color: rgba(95, 115, 110, 0.7) !important;
+  color: #f6f0e6 !important;
+}
+
+/* Ring needs its own colour declaration — refinement-pass.css sets
+   .cdd-cta__ring { color: var(--sv-brand-accent) } which would land
+   the dark #3d7070 teal on the arrow character without this fix.     */
+body.homepage #cdd .cdd-cta__ring {
+  border-color: rgba(246, 240, 230, 0.32) !important;
+  color: #f6f0e6 !important;
 }
 
 body.homepage #cdd .cdd-cta:hover,
