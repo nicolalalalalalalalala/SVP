@@ -288,8 +288,12 @@
         transform-origin: center;
       }
       .team-profile__photo img[alt="Lillian Xu"] {
-        object-position: 50% 0%;
-        transform: translateY(20%);
+        object-position: 50% 8%;
+      }
+      @media (max-width: 767px) {
+        .team-profile__photo img[alt="Lillian Xu"] {
+          object-position: 50% 5%;
+        }
       }
       .team-profile__photo img[alt="Shanjuan Jiang"] {
         transform: scale(1.08);
