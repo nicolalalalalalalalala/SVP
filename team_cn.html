@@ -269,8 +269,12 @@
         transform-origin: center;
       }
       .photo img[alt="Lillian Xu"] {
-        object-position: 50% 0%;
-        transform: translateY(20%);
+        object-position: 50% 8%;
+      }
+      @media (max-width: 767px) {
+        .photo img[alt="Lillian Xu"] {
+          object-position: 50% 5%;
+        }
       }
       .photo img[alt="Shanjuan Jiang"] {
         transform: scale(1.08);
