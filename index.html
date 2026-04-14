@@ -844,7 +844,7 @@ blockquote.fs__q {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
   gap: clamp(20px, 2.4vw, 34px);
-  padding: clamp(30px, 3.4vw, 46px) clamp(24px, 3vw, 36px) clamp(30px, 3.4vw, 46px);
+  padding: clamp(38px, 4.4vw, 56px) clamp(24px, 3vw, 36px) clamp(30px, 3.4vw, 46px);
   align-items: stretch;
 }
 
@@ -859,16 +859,17 @@ blockquote.fs__q {
 
 .cdd-feature__body > div:first-child .cdd-cta-group {
   margin-top: auto;
-  padding-top: 22px;
+  padding-top: 30px;
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
 }
 
 .cdd-feature__label {
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--cdd-muted);
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .cdd-feature__title {
@@ -893,14 +894,17 @@ blockquote.fs__q {
 
 .cdd-feature__title--compact {
   font-size: clamp(28px, 2.9vw, 40px);
-  line-height: 1.14;
+  line-height: 1.08;
+  letter-spacing: -.005em;
+  margin-bottom: 26px;
   width: 100%;
 }
 
 .cdd-feature__thesis {
   font-family: var(--serif);
   font-size: 18px;
-  line-height: 1.76;
+  line-height: 1.84;
+  max-width: 44ch;
   color: var(--cdd-body);
 }
 
@@ -908,33 +912,38 @@ blockquote.fs__q {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
-  padding: clamp(18px, 2vw, 24px);
+  gap: clamp(28px, 3vw, 44px);
+  padding: clamp(22px, 2.4vw, 28px);
   background: var(--cdd-secondary-surface);
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
 }
 
+.cdd-feature__panel .cdd-feature__label {
+  letter-spacing: .12em;
+  margin-bottom: 20px;
+}
+
 .cdd-feature__findings {
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 
 .cdd-feature__finding {
   font-size: 15px;
-  line-height: 1.74;
+  line-height: 1.82;
   color: var(--cdd-body);
   border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 60%, transparent);
-  padding-left: 12px;
+  padding-left: 14px;
 }
 
 .cdd-feature__quote {
   font-family: var(--serif);
-  font-size: 19px;
-  line-height: 1.72;
+  font-size: 18px;
+  line-height: 1.78;
   color: var(--cdd-text);
   font-style: italic;
-  margin: 6px 0 0;
-  padding: 18px 18px 18px 20px;
+  margin: 0;
+  padding: 22px 20px 22px 22px;
   background: #10270f;
   border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 40%, transparent);
   border-left: 2px solid var(--cdd-signal);
