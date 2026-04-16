@@ -2618,8 +2618,7 @@ body.homepage #brand-typography {
 }
 body.homepage #signup,
 body.homepage .quote-band,
-body.homepage .num-band,
-body.homepage .sv-footer {
+body.homepage .num-band {
   background:var(--ink-green-dark);
 }
 body.homepage :is(.stat__n,.nb__n,.fs__stat-n,.cdd-editorial__title,.cdd-feature__title,.tm__name,.icard__title,.sg__title,.about__hed,.strat__hed,.team__hed,.ins__hed,.su__hed) {
@@ -2637,6 +2636,104 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
   font-size:11px;
   letter-spacing:.04em;
   color:color-mix(in srgb, var(--xuan-dark) 65%, var(--xuan-light));
+}
+
+/* Homepage footer refinement: restrained institutional close */
+body.homepage footer.sv-footer {
+  background: var(--xuan) !important;
+  border-top: 1px solid var(--xuan-dark) !important;
+  padding-top: clamp(34px, 3.2vw, 46px) !important;
+  padding-bottom: clamp(34px, 3.4vw, 48px) !important;
+}
+body.homepage footer.sv-footer .sv-footer__main {
+  align-items: flex-end !important;
+  gap: clamp(20px, 2.1vw, 34px) !important;
+  padding-bottom: clamp(16px, 1.5vw, 22px) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--xuan-dark) 82%, var(--xuan-light)) !important;
+}
+body.homepage footer.sv-footer .sv-footer__brand {
+  font-size: clamp(14px, 1.05vw, 16px) !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.16 !important;
+  color: var(--ink-green-dark) !important;
+}
+body.homepage footer.sv-footer .sv-footer__contact {
+  gap: 10px !important;
+}
+body.homepage footer.sv-footer .sv-footer__contact-label {
+  font-size: 0.64rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+  color: var(--blue-green-dark) !important;
+}
+body.homepage footer.sv-footer .sv-footer__contact a {
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.07em !important;
+  color: color-mix(in srgb, var(--ink-green-dark) 88%, var(--blue-green-dark)) !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+body.homepage footer.sv-footer .sv-footer__contact a:hover,
+body.homepage footer.sv-footer .sv-footer__contact a:focus-visible {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--blue-green) !important;
+}
+body.homepage footer.sv-footer .sv-footer__bottom {
+  gap: clamp(8px, 0.8vw, 12px) !important;
+  padding-top: clamp(12px, 1vw, 16px) !important;
+}
+body.homepage footer.sv-footer .sv-footer__copyright {
+  font-size: 0.62rem !important;
+  letter-spacing: 0.03em !important;
+  color: color-mix(in srgb, var(--ink-green-dark) 58%, var(--xuan-dark)) !important;
+}
+body.homepage footer.sv-footer .sv-footer__legal-toggle > summary {
+  font-size: 0.60rem !important;
+  letter-spacing: 0.15em !important;
+  color: color-mix(in srgb, var(--ink-green-dark) 74%, var(--blue-green-dark)) !important;
+}
+body.homepage footer.sv-footer .sv-footer__legal {
+  font-size: 0.60rem !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.02em !important;
+  color: color-mix(in srgb, var(--ink-green-dark) 52%, var(--xuan-dark)) !important;
+}
+body.homepage footer.sv-footer .sv-footer__legal-links {
+  gap: 0 !important;
+  padding: 0 !important;
+}
+body.homepage footer.sv-footer .sv-footer__legal-links a {
+  font-size: 0.60rem !important;
+  letter-spacing: 0.03em !important;
+  color: color-mix(in srgb, var(--ink-green-dark) 62%, var(--blue-green-dark)) !important;
+}
+body.homepage footer.sv-footer .sv-footer__legal-links a:hover,
+body.homepage footer.sv-footer .sv-footer__legal-links a:focus-visible {
+  color: var(--blue-green) !important;
+}
+body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
+  margin: 0 10px !important;
+  color: color-mix(in srgb, var(--xuan-dark) 82%, var(--xuan-light)) !important;
+}
+@media (max-width: 768px) {
+  body.homepage footer.sv-footer .sv-footer__main {
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  body.homepage footer.sv-footer .sv-footer__contact {
+    gap: 6px !important;
+  }
+  body.homepage footer.sv-footer .sv-footer__contact a {
+    justify-content: flex-start !important;
+    min-height: unset !important;
+    width: auto !important;
+  }
+  body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
+    content: none !important;
+  }
 }
 @media (max-width: 1024px) {
   body.homepage section {
