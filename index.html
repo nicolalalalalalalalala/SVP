@@ -97,16 +97,9 @@ h2 em { font-style:italic; }
   position:relative;
   width:100%;
   height:600px;
-  --hero-image-position:100% 62%;
+  --hero-image-position:74% 44%;
   /* Keep the hero as a single composited background to avoid delayed paint on mobile. */
   background-color:#6c6864;
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(18,48,86,0.2) 0%,
-      rgba(14,38,74,0.38) 46%,
-      rgba(9,24,52,0.62) 100%
-    );
   background-size:cover;
   background-position:var(--hero-image-position);
   display:flex;
@@ -120,7 +113,7 @@ h2 em { font-style:italic; }
   height:100%;
   object-fit:cover;
   object-position:var(--hero-image-position);
-  filter:saturate(1.2) contrast(1.02) brightness(0.92);
+  filter:saturate(1.04) contrast(1.01) brightness(1.03);
   image-rendering:auto;
   z-index:0;
 }
@@ -131,50 +124,78 @@ h2 em { font-style:italic; }
   margin:0 auto;
   padding:0 var(--pad) 64px;
 }
+.hero__overlay .hero__content {
+  max-width:640px;
+  padding:30px 34px 24px;
+  border-left:1px solid rgba(23, 47, 71, 0.28);
+  background:
+    linear-gradient(
+      100deg,
+      rgba(250,246,238,0.78) 0%,
+      rgba(250,246,238,0.64) 64%,
+      rgba(250,246,238,0.18) 100%
+    );
+  backdrop-filter:saturate(1.04) blur(1.5px);
+}
 .hero__overlay .hero__kicker {
   justify-content:flex-start;
-  color:rgba(250,246,238,0.9);
+  color:rgba(29,49,70,0.78);
   letter-spacing:.18em;
-  margin-bottom:24px;
+  margin-bottom:20px;
+  font-weight:500;
 }
 .hero__overlay .hero__kicker::before {
-  background:var(--red);
+  background:rgba(29,49,70,0.5);
 }
 .hero__overlay h1.hero__hed {
-  color:#FAF6EE;
+  color:#20344a;
   font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size:clamp(62px,8.2vw,116px);
+  font-size:clamp(60px,8vw,108px);
   font-weight:300;
-  font-style:italic;
-  line-height:1.05;
+  font-style:normal;
+  line-height:1.02;
   letter-spacing:-.02em;
-  margin-bottom:40px;
-  max-width:520px;
-  text-shadow:0 1px 2px rgba(0, 0, 0, 0.14);
+  margin-bottom:24px;
+  max-width:7.2ch;
+  text-shadow:none;
+}
+.hero__overlay h1.hero__hed .hero__hed-main {
+  display:block;
+  font-style:italic;
+  font-weight:300;
 }
 .hero__overlay h1.hero__hed em {
-  color:#C93B2A;
-  font-style:inherit;
+  color:var(--red);
+  font-style:normal;
+  font-weight:500;
 }
 .hero__overlay .cta--light {
-  color:#FAF6EE;
+  color:#20344a;
   letter-spacing:.12em;
   background:transparent;
   box-shadow:none;
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid rgba(29,49,70,0.2);
+  width:fit-content;
 }
 .hero__overlay .cta--light:hover {
   background:transparent;
   box-shadow:none;
-  color:#FAF6EE;
+  color:#20344a;
+}
+.hero__overlay .cta--light .cta__ring {
+  border-color:rgba(29,49,70,0.34);
+  color:#20344a;
 }
 
 
 .hero__support {
-  max-width: 560px;
-  margin: -20px 0 30px;
-  color: rgba(250, 246, 238, 0.9);
-  font-size: clamp(15px, 1.5vw, 18px);
-  line-height: 1.6;
+  max-width: 54ch;
+  margin: 0;
+  color: rgba(27,44,62,0.9);
+  font-size: clamp(16px, 1.42vw, 18px);
+  line-height: 1.56;
 }
 .about__intro--principles {
   margin-top: clamp(56px, 7vw, 90px);
@@ -1478,22 +1499,25 @@ h2.su__hed {
   .hero__sliver {
     height:min(90vh, 820px);
     min-height:680px;
-    --hero-image-position:100% 30%;
+    --hero-image-position:70% 36%;
   }
   .hero__overlay {
     padding:0 var(--pad) 72px;
   }
+  .hero__overlay .hero__content {
+    padding:30px 30px 24px;
+  }
   .hero__overlay .hero__kicker {
-    margin-bottom:24px;
-    color:rgba(250,246,238,.82);
+    margin-bottom:20px;
+    color:rgba(29,49,70,0.76);
     font-size:10px;
     letter-spacing:.16em;
   }
   .hero__overlay h1.hero__hed {
-    font-size:clamp(68px,16vw,108px);
+    font-size:clamp(62px,16vw,102px);
     line-height:1.02;
-    margin-bottom:42px;
-    max-width:8.4ch;
+    margin-bottom:24px;
+    max-width:7.2ch;
     text-wrap:balance;
   }
   .hero__overlay .cta {
@@ -2444,10 +2468,12 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
     fetchpriority="high"
     aria-hidden="true">
   <div class="hero__overlay">
-    <p class="hero__kicker go">ESTABLISHED 2004</p>
-    <h1 class="hero__hed go"><span class="hero__hed-main">Private credit<br>in </span><em>CHINA.</em></h1>
-    <p class="hero__support go">Rooted in two worlds - onshore in China, disciplined for institutional capital.</p>
-    <a href="firm.html" class="cta cta--light go"><span>EXPLORE SHOREVEST</span><div class="cta__ring">→</div></a>
+    <div class="hero__content">
+      <p class="hero__kicker go">ESTABLISHED 2004</p>
+      <h1 class="hero__hed go"><span class="hero__hed-main">Private credit in</span><em>CHINA.</em></h1>
+      <p class="hero__support go">Rooted in two worlds - onshore in China, disciplined for institutional capital.</p>
+      <a href="firm.html" class="cta cta--light go"><span>EXPLORE SHOREVEST</span><div class="cta__ring">→</div></a>
+    </div>
   </div>
 </div>
 
