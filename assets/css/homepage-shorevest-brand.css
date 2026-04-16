@@ -91,6 +91,10 @@ body,
   border-color: var(--paper-dark) !important;
 }
 
+body.homepage #stats .stat {
+  background: transparent !important;
+}
+
 #cdd .cdd-hero__card {
   background: rgba(250, 246, 238, 0.03) !important;
   border-color: rgba(250, 246, 238, 0.12) !important;
