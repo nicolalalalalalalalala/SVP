@@ -686,6 +686,38 @@
   }
 }
 
+/* Header normalization layer: keep all page top bars identical to the homepage baseline. */
+#site-header-mount #nav .nav__links a {
+  opacity: 1 !important;
+}
+
+#site-header-mount #nav .nav__lp {
+  min-height: auto !important;
+  padding: 7px 16px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgba(48, 40, 34, 0.15) !important;
+  font-size: 11.4px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  color: var(--ink, #171410) !important;
+  background: var(--white, #fff) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+#site-header-mount #nav .nav__lp:hover,
+#site-header-mount #nav .nav__lp:focus-visible,
+#site-header-mount #nav .nav__lp.active {
+  background: var(--red, #3d7070) !important;
+  border-color: var(--red, #3d7070) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
 @media (max-width: 520px) {
   #site-header-mount {
     min-height: 70px !important;
