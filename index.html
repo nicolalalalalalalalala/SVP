@@ -1493,6 +1493,9 @@ body.homepage .home-hero__inner {
 }
 body.homepage .home-hero__text { width: min(590px, 100%); }
 body.homepage .home-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 0 0 18px;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
@@ -1501,6 +1504,12 @@ body.homepage .home-hero__eyebrow {
   line-height: 1.2;
   color: #F2ECD8;
   opacity: 0.92;
+}
+body.homepage .home-hero__eyebrow::before {
+  content: "";
+  width: 52px;
+  height: 1px;
+  background: currentColor;
 }
 body.homepage .home-hero__headline {
   margin: 0;
