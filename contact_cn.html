@@ -16,67 +16,6 @@
   <script src="assets/js/shared-header.js" defer></script>
   <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
   <link rel="stylesheet" href="assets/css/shared-footer.css" />
-  <style>
-    .contact-form {
-      margin-top: 1.8rem;
-      display: grid;
-      gap: 1rem;
-      max-width: 680px;
-    }
-
-    .contact-form__row {
-      display: grid;
-      gap: 0.45rem;
-    }
-
-    .contact-form label {
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(22, 20, 16, 0.75);
-      font-weight: 500;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      border: 1px solid rgba(22, 20, 16, 0.2);
-      background: #faf6ee;
-      color: #171410;
-      padding: 0.8rem 0.9rem;
-      font: inherit;
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: 1px solid #3d7070;
-      outline-offset: 1px;
-      border-color: #3d7070;
-    }
-
-    .contact-form__submit {
-      justify-self: start;
-      border: 1px solid rgba(48, 40, 34, 0.15);
-      padding: 0.55rem 1.1rem;
-      background: #faf6ee;
-      color: #171410;
-      font: inherit;
-      font-size: 11.4px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
-    }
-
-    .contact-form__submit:hover,
-    .contact-form__submit:focus-visible {
-      background: #3d7070;
-      border-color: #3d7070;
-      color: #faf6ee;
-    }
-  </style>
 </head>
 <body class="legal-page homepage">
   <div id="site-header-mount"></div>
@@ -85,37 +24,10 @@
     <article class="legal-page__content">
       <h1>联系我们</h1>
       <p>如有一般咨询，请通过以下方式联系 ShoreVest Partners。</p>
-      <p>电子邮箱：partners@shorevest.com</p>
 
       <section class="section">
-        <h2>提交咨询</h2>
-        <form class="contact-form" action="https://formsubmit.co/partners@shorevest.com" method="POST">
-          <input type="hidden" name="_subject" value="ShoreVest 网站咨询" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://shorevest.com/contact_cn.html" />
-
-          <div class="contact-form__row">
-            <label for="contact-name">姓名</label>
-            <input id="contact-name" name="name" type="text" required />
-          </div>
-
-          <div class="contact-form__row">
-            <label for="contact-email">邮箱</label>
-            <input id="contact-email" name="email" type="email" required />
-          </div>
-
-          <div class="contact-form__row">
-            <label for="contact-company">公司（可选）</label>
-            <input id="contact-company" name="company" type="text" />
-          </div>
-
-          <div class="contact-form__row">
-            <label for="contact-message">留言</label>
-            <textarea id="contact-message" name="message" rows="6" required></textarea>
-          </div>
-
-          <button class="contact-form__submit" type="submit">提交</button>
-        </form>
+        <h2>电子邮箱</h2>
+        <p><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></p>
       </section>
     </article>
   </main>

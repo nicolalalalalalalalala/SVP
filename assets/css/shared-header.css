@@ -658,7 +658,7 @@
     padding: 34px clamp(20px, 7vw, 42px) 34px !important;
     border-top: 1px solid rgba(31, 24, 18, .11);
     background:
-      linear-gradient(180deg, rgba(250, 246, 238, .97) 0%, rgba(250, 246, 238, .985) 35%, rgba(248, 243, 234, .99) 100%),
+      linear-gradient(180deg, rgba(242, 236, 216, .97) 0%, rgba(242, 236, 216, .985) 35%, rgba(239, 232, 210, .99) 100%),
       radial-gradient(circle at 90% -8%, rgba(61, 112, 112, .08), transparent 45%);
     backdrop-filter: blur(4px);
     overflow-y: auto;
