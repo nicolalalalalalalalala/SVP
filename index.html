@@ -1514,11 +1514,17 @@ body.homepage .home-hero__headline {
   color: #FAF6EE;
   text-wrap: balance;
 }
-body.homepage .home-hero__headline strong {
+body.homepage .home-hero__headline-primary,
+body.homepage .home-hero__headline-emphasis {
   font-style: inherit;
-  font-weight: 300;
-  letter-spacing: .005em;
+  font-weight: inherit;
+  letter-spacing: inherit;
   text-transform: uppercase;
+}
+body.homepage .home-hero__headline-primary {
+  color: #FAF6EE;
+}
+body.homepage .home-hero__headline-emphasis {
   color: var(--cinnabar);
 }
 body.homepage .home-hero__support {
@@ -2317,7 +2323,7 @@ body.homepage #cdd .cdd-editorial__meta {
   <div class="home-hero__inner">
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
-      <h1 class="home-hero__headline">Private credit<br>in <strong>CHINA.</strong></h1>
+      <h1 class="home-hero__headline"><span class="home-hero__headline-primary">PRIVATE CREDIT</span><br><span class="home-hero__headline-emphasis">IN CHINA.</span></h1>
       <p class="home-hero__support">Rooted in two worlds - onshore in China, disciplined for institutional capital.</p>
       <a href="firm.html" class="home-hero__cta"><span>EXPLORE SHOREVEST</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
     </div>
