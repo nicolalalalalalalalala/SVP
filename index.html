@@ -49,7 +49,7 @@ body { background:var(--off); color:var(--ink); font-family:var(--sans); font-si
 a { text-decoration:none; color:inherit; }
 img { display:block; max-width:100%; }
 .wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
-h1, h2, h3, h4, p, li, a { overflow-wrap:anywhere; }
+h1, h2, h3, h4, p, li, a { overflow-wrap:normal; word-break:normal; hyphens:none; }
 section { position:relative; }
 :where(#about, #strategy, #team, #insights, #signup, .num-band, .quote-band) .wrap {
   max-width: calc(var(--max) + 24px);
@@ -1420,12 +1420,12 @@ h2.su__hed {
 /* ══ RESPONSIVE */
 
 
-/* Homepage hero: structural reset and minimal institutional treatment */
+/* Homepage rebuild: controlled hierarchy and typography */
 body.homepage .home-hero {
   position: relative;
-  min-height: 600px;
+  min-height: clamp(520px, 74vh, 660px);
   display: flex;
-  align-items: stretch;
+  align-items: center;
   background: #0F2206;
   overflow: hidden;
 }
@@ -1435,128 +1435,163 @@ body.homepage .home-hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 66% 46%;
+  object-position: 64% 44%;
 }
 body.homepage .home-hero__inner {
   position: relative;
   z-index: 1;
-  width: min(1200px, 100%);
+  width: min(1240px, 100%);
   margin: 0 auto;
   padding: 0 var(--site-page-margin);
-  display: flex;
-  align-items: center;
 }
-body.homepage .home-hero__text {
-  width: min(700px, 100%);
-}
+body.homepage .home-hero__text { width: min(620px, 100%); }
 body.homepage .home-hero__eyebrow {
-  margin: 0 0 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  font-family: "DIN 2014";
+  margin: 0 0 14px;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
   font-weight: 700;
+  letter-spacing: .16em;
   line-height: 1.2;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: #E8998F;
-}
-body.homepage .home-hero__eyebrow::after {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: #C93B2A;
 }
 body.homepage .home-hero__headline {
   margin: 0;
-  max-width: 15.5ch;
-  font-family: "DIN 2014";
-  font-size: clamp(38px, 4.25vw, 52px);
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(36px, 4.6vw, 56px);
   font-weight: 300;
-  line-height: 1.08;
-  letter-spacing: 0;
-  color: #FAF6EE;
-  text-transform: none;
-  white-space: nowrap;
-}
-body.homepage .home-hero__headline em {
   font-style: italic;
-  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: .002em;
+  text-transform: none;
+  color: #FAF6EE;
 }
 body.homepage .home-hero__headline strong {
   font-style: normal;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: .03em;
   color: #F2ECD8;
 }
 body.homepage .home-hero__support {
-  margin: 18px 0 0;
-  max-width: 39ch;
-  font-family: "DIN 2014";
+  margin: 16px 0 0;
+  max-width: 42ch;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.008em;
-  color: rgba(242, 236, 216, 0.88);
+  line-height: 1.56;
+  color: rgba(242, 236, 216, .88);
 }
 body.homepage .home-hero__cta {
   margin-top: 24px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: "DIN 2014";
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #FAF6EE;
-  border-bottom: 1px solid rgba(201, 59, 42, 0.5);
-  padding-bottom: 5px;
-}
-body.homepage .home-hero__cta-arrow {
-  font-size: 11px;
-  line-height: 1;
-  color: #E8998F;
-}
-body.homepage .home-hero__cta:hover,
-body.homepage .home-hero__cta:focus-visible {
+  letter-spacing: .16em;
   color: #FAF6EE;
 }
-@media (max-width: 1024px) {
-  body.homepage .home-hero {
-    min-height: 540px;
-  }
-  body.homepage .home-hero__image {
-    object-position: 62% 44%;
+body.homepage .home-hero__cta-arrow { color: #E8998F; }
+
+body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
+  text-wrap: balance;
+}
+body.homepage .about__hed,
+body.homepage .about__subhed,
+body.homepage .strat__hed {
+  text-transform: none !important;
+  letter-spacing: .01em !important;
+}
+body.homepage .cta {
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+body.homepage .cta__ring {
+  width: auto;
+  height: auto;
+  border: 0 !important;
+  border-radius: 0;
+  font-size: 12px;
+}
+body.homepage .ac__title,
+body.homepage .sg__title {
+  font-size: clamp(24px, 2.15vw, 31px);
+}
+body.homepage #stats .stats__eyebrow,
+body.homepage #about .eyebrow,
+body.homepage #principles .eyebrow,
+body.homepage #strategy .eyebrow,
+body.homepage #cdd .eyebrow {
+  color: #C93B2A !important;
+}
+body.homepage #principles {
+  padding-top: clamp(36px, 4.5vw, 60px);
+}
+body.homepage .principles__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: clamp(28px, 3vw, 52px);
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(38px, 4.2vw, 54px);
+}
+body.homepage .principles__text p {
+  max-width: 66ch;
+  font-size: 17px;
+  line-height: 1.7;
+}
+body.homepage .about__cols {
+  margin-top: clamp(26px, 3.3vw, 40px) !important;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(22px, 2.3vw, 30px);
+  border-top: 0;
+}
+body.homepage .ac {
+  border: 1px solid color-mix(in srgb, var(--rule) 88%, transparent);
+  padding: 26px 22px;
+  min-width: 0;
+}
+body.homepage .ac + .ac { border-left: 1px solid color-mix(in srgb, var(--rule) 88%, transparent); }
+body.homepage #cdd .cdd-editorial__card {
+  border: 1px solid color-mix(in srgb, var(--xuan-dark) 30%, transparent);
+  background: #132924;
+  padding: clamp(28px, 3.2vw, 44px);
+}
+body.homepage #cdd .cdd-editorial__intro {
+  border-bottom: 1px solid color-mix(in srgb, var(--xuan-dark) 26%, transparent);
+  padding-bottom: 24px;
+  margin-bottom: 20px;
+}
+body.homepage #cdd .cdd-feature {
+  background: transparent;
+  border: 0;
+}
+body.homepage #cdd .cdd-feature__top,
+body.homepage #cdd .cdd-feature__body,
+body.homepage #cdd .cdd-feature__footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+body.homepage #cdd .cdd-feature__body {
+  grid-template-columns: minmax(0, 1fr);
+}
+body.homepage #cdd .cdd-feature__panel,
+body.homepage #cdd .cdd-editorial__meta {
+  display: none;
+}
+@media (max-width: 900px) {
+  body.homepage .principles__intro,
+  body.homepage .about__cols {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (max-width: 767px) {
-  body.homepage .home-hero {
-    min-height: 500px;
-  }
-  body.homepage .home-hero__image {
-    object-position: 58% 42%;
-  }
-  body.homepage .home-hero__inner {
-    align-items: flex-end;
-    padding-bottom: clamp(38px, 10vw, 60px);
-  }
   body.homepage .home-hero__headline {
-    max-width: 100%;
-    font-size: clamp(31px, 8.5vw, 38px);
-    line-height: 1.1;
-    white-space: normal;
-  }
-  body.homepage .home-hero__support {
-    margin-top: 14px;
-    font-size: 14px;
-    line-height: 1.52;
-    max-width: 34ch;
-  }
-  body.homepage .home-hero__cta {
-    margin-top: 20px;
+    font-size: clamp(31px, 8vw, 42px);
+    line-height: 1.12;
   }
 }
 
@@ -2188,403 +2223,6 @@ body.homepage .home-hero__cta:focus-visible {
      system, plus this block is after every <link> so source-order wins
      any equal-specificity tie. Hard hex values — no CSS variable risk.
 -->
-<style id="cdd-contrast-repair">
-
-/* ── Base: set a light inherited colour on the CDD container so any
-       element we miss below gets a readable starting point            */
-body.homepage #cdd {
-  color: #f6f0e6 !important;
-}
-
-/* ── Franchise title (h2) ──────────────────────────────────────── */
-body.homepage #cdd .cdd-editorial__title,
-body.homepage #cdd .cdd-editorial__title em {
-  color: #f6f0e6 !important;
-}
-
-/* ── Franchise lede / description ──────────────────────────────── */
-body.homepage #cdd .cdd-editorial__lede {
-  color: #ece3d6 !important;
-}
-
-/* ── Series kicker / eyebrow ───────────────────────────────────── */
-body.homepage #cdd .cdd-editorial__kicker,
-body.homepage #cdd .cdd-editorial__kicker * {
-  color: #c5b8a2 !important;
-}
-
-/* ── Metadata bar: "CURRENT ISSUE · 46" and date ──────────────── */
-body.homepage #cdd .cdd-feature__issue,
-body.homepage #cdd .cdd-feature__date {
-  color: #c5b8a2 !important;
-}
-
-/* ── CURRENT ISSUE / KEY FINDINGS labels ───────────────────────── */
-body.homepage #cdd .cdd-feature__label {
-  color: #c5b8a2 !important;
-}
-
-/* ── Issue title (h3) ──────────────────────────────────────────── */
-body.homepage #cdd .cdd-feature__title,
-body.homepage #cdd .cdd-feature__title * {
-  color: #f6f0e6 !important;
-}
-
-/* ── Summary / thesis paragraph ────────────────────────────────── */
-body.homepage #cdd .cdd-feature__thesis {
-  color: #ece3d6 !important;
-}
-
-/* ── Key findings bullets ───────────────────────────────────────── */
-body.homepage #cdd .cdd-feature__finding {
-  color: #ece3d6 !important;
-}
-
-/* ── Editorial quote ────────────────────────────────────────────── */
-body.homepage #cdd .cdd-feature__quote {
-  color: #f6f0e6 !important;
-}
-
-/* ── CTA text (a.cdd-cta and its children) ──────────────────────── */
-body.homepage #cdd .cdd-cta {
-  color: #f6f0e6 !important;
-}
-
-body.homepage #cdd .cdd-cta span {
-  color: inherit !important;
-}
-
-/* ── CTA ring: arrow needs its own colour fix (refinement-pass.css
-       forces #3d7070 via .cdd-cta__ring { color: … !important })   */
-body.homepage #cdd .cdd-cta__ring {
-  color: #f6f0e6 !important;
-  border-color: rgba(246, 240, 230, 0.32) !important;
-}
-
-body.homepage #cdd .cdd-cta:hover .cdd-cta__ring,
-body.homepage #cdd .cdd-cta:focus-visible .cdd-cta__ring {
-  border-color: rgba(126, 164, 160, 0.9) !important;
-  background: rgba(61, 112, 112, 0.22) !important;
-  color: #f6f0e6 !important;
-}
-
-/* ── Metadata strip labels & values ────────────────────────────── */
-body.homepage #cdd .cdd-editorial__meta-label {
-  color: #c5b8a2 !important;
-}
-
-body.homepage #cdd .cdd-editorial__meta-value {
-  color: #ece3d6 !important;
-}
-
-body.homepage #cdd .cdd-editorial__meta-item:first-child .cdd-editorial__meta-value {
-  font-size: clamp(34px, 4vw, 42px) !important;
-  line-height: 1 !important;
-  letter-spacing: -0.01em !important;
-}
-
-/* ── Volume / footer sub-label ─────────────────────────────────── */
-body.homepage #cdd .cdd-feature__volume {
-  color: #c5b8a2 !important;
-}
-
-</style>
-
-<style id="homepage-institutional-normalization">
-:root {
-  --cinnabar-light:#E8998F;
-  --cinnabar:#C93B2A;
-  --cinnabar-dark:#8A1F12;
-  --blue-green-light:#7AAFAF;
-  --blue-green:#3D7070;
-  --blue-green-dark:#1E4040;
-  --ink-green-light:#4A7A40;
-  --ink-green:#2E4A18;
-  --ink-green-dark:#0F2206;
-  --xuan-light:#FAF6EE;
-  --xuan:#F2ECD8;
-  --xuan-dark:#D8CEB0;
-  --font-en:"DIN 2014";
-  --font-cn:"Noto Serif SC";
-  --red:var(--cinnabar);
-  --ink:var(--ink-green-dark);
-  --ink2:var(--ink-green);
-  --white:var(--xuan-light);
-  --off:var(--xuan);
-  --rule:var(--xuan-dark);
-  --mist:var(--blue-green-dark);
-  --sans:var(--font-en);
-  --serif:var(--font-en);
-  --section-space:clamp(88px, 9vw, 128px);
-  --section-space-tight:clamp(68px, 7vw, 96px);
-  --content-gap:clamp(40px, 4vw, 64px);
-}
-html, body {
-  background:var(--xuan);
-}
-body,
-body.homepage,
-body.homepage :is(h1,h2,h3,h4,p,a,li,button,input,label,small,span,div) {
-  font-family:var(--font-en);
-}
-:lang(zh),
-:lang(zh-Hant),
-[lang="zh"],
-[lang="zh-Hant"] {
-  font-family:var(--font-cn) !important;
-}
-body.homepage {
-  color:var(--ink-green-dark);
-}
-body.homepage h1,
-body.homepage h2 {
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  line-height:1.12;
-}
-body.homepage h2:not(.hero__hed):not(.cdd-editorial__title):not(.cdd-subscribe__title):not(.ins__hed):not(.team__hed):not(.su__hed):not(.about__hed):not(.strat__hed) {
-  font-size:clamp(28px, 3.4vw, 44px);
-}
-body.homepage h3,
-body.homepage .type-sheet__section-label,
-body.homepage .sg__n,
-body.homepage .tm__role,
-body.homepage .icard__cat,
-body.homepage .cdd-feature__label,
-body.homepage .cdd-editorial__meta-label,
-body.homepage .stats__eyebrow,
-body.homepage .eyebrow,
-body.homepage .hero__kicker {
-  color:var(--cinnabar) !important;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.16em;
-}
-body.homepage .eyebrow::after,
-body.homepage .hero__kicker::before,
-body.homepage .stats__eyebrow::after {
-  background:var(--cinnabar);
-}
-body.homepage :is(p,.about__body p,.team__intro,.strat__intro,.cdd-feature__thesis,.cdd-subscribe__text,.tm__bio,.icard__date,.stats__note) {
-  color:color-mix(in srgb, var(--ink-green-dark) 74%, var(--blue-green-dark));
-  line-height:1.72;
-}
-body.homepage section {
-  padding-top:var(--section-space);
-  padding-bottom:var(--section-space);
-}
-body.homepage #stats,
-body.homepage #cdd,
-body.homepage #signup,
-body.homepage .city-band,
-body.homepage :is(.about__intro,.strat__hd,.team__hd,.ins__hd,.cdd-editorial__intro,.cdd-editorial__meta,.cdd-feature__top,.cdd-feature__footer,.hero__divline,.type-sheet__hd,.type-sheet__line,.type-sheet__rules,.strat__actions) {
-  border-color:var(--xuan-dark) !important;
-}
-body.homepage :is(.stats,.stat,.type-sheet,.strat__grid,.sg,.team__grid,.ins__hd,.cdd-editorial__card,.cdd-feature,.cdd-subscribe__cards,.cdd-subscribe__card,.su__field,.sv-footer,.sv-footer__bottom) {
-  box-shadow:none !important;
-}
-body.homepage :is(.city-band__overlay) {
-  content:none !important;
-}
-body.homepage :is(.ac,.sg,.tm,.icard,.cdd-editorial__card,.cdd-feature,.cdd-cta,.su__submit,.ulink,.cta,.icard__link) {
-  border-radius:0 !important;
-}
-body.homepage :is(.cdd-live__dot) {
-  animation:none !important;
-}
-body.homepage .cdd-live__dot {
-  background:var(--cinnabar);
-}
-body.homepage #cdd {
-  background:var(--blue-green-dark);
-}
-body.homepage #cdd .cdd-editorial__card,
-body.homepage #cdd .cdd-feature {
-  background:var(--ink-green-dark);
-  border:1px solid color-mix(in srgb, var(--xuan-dark) 28%, transparent);
-}
-body.homepage #about,
-body.homepage #strategy,
-body.homepage #team,
-body.homepage #insights,
-body.homepage .cdd-subscribe,
-body.homepage #brand-typography {
-  background:var(--xuan);
-}
-body.homepage #signup,
-body.homepage .quote-band,
-body.homepage .num-band {
-  background:var(--ink-green-dark);
-}
-body.homepage :is(.stat__n,.nb__n,.fs__stat-n,.cdd-editorial__title,.cdd-feature__title,.tm__name,.icard__title,.sg__title,.about__hed,.strat__hed,.team__hed,.ins__hed,.su__hed) {
-  letter-spacing:.02em;
-}
-body.homepage .cdd-brand-en,
-body.homepage .sv-footer__wordmark-en {
-  letter-spacing:.05em;
-}
-body.homepage .cdd-brand-cn,
-body.homepage .sv-footer__wordmark-cn {
-  font-family:var(--font-cn) !important;
-}
-body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-editorial__meta-value,.icard__date,.sv-footer__copyright,.sv-footer__legal,.sv-footer__legal-links) {
-  font-size:11px;
-  letter-spacing:.04em;
-  color:color-mix(in srgb, var(--xuan-dark) 65%, var(--xuan-light));
-}
-body.homepage .stat--zero .stat__n {
-  color: var(--cinnabar) !important;
-}
-body.homepage :is(.eyebrow,.hero__kicker,.stats__eyebrow,.ac__meta,.sg__n,.cdd-feature__label,.cdd-editorial__meta-label,.cdd-feature__issue) {
-  font-size: 10px !important;
-  letter-spacing: .16em !important;
-  line-height: 1.35 !important;
-}
-body.homepage .about__intro,
-body.homepage .about__statement {
-  row-gap: clamp(30px, 3.7vw, 46px) !important;
-}
-body.homepage .about__cols {
-  margin-top: clamp(20px, 2.4vw, 30px) !important;
-}
-body.homepage .ac {
-  padding-top: clamp(30px, 3vw, 42px) !important;
-  padding-bottom: clamp(34px, 3.4vw, 48px) !important;
-}
-body.homepage .strat__hd {
-  margin-bottom: clamp(68px, 7vw, 106px) !important;
-}
-body.homepage .strat__actions {
-  margin-top: 42px !important;
-}
-body.homepage :is(.about__cta .cta,.strat__actions .cta,.cdd-cta) {
-  letter-spacing: .14em !important;
-}
-body.homepage #cdd .cdd-editorial__card {
-  box-shadow: none !important;
-}
-body.homepage #cdd .cdd-feature__body {
-  padding: clamp(34px, 3.8vw, 50px) 0 clamp(24px, 2.6vw, 34px) !important;
-}
-body.homepage #cdd .cdd-cta {
-  border-color: color-mix(in srgb, var(--xuan-dark) 52%, transparent) !important;
-  padding: 11px 14px 11px 18px !important;
-}
-body.homepage #cdd .cdd-cta:hover,
-body.homepage #cdd .cdd-cta:focus-visible {
-  background: color-mix(in srgb, var(--blue-green) 84%, black 16%) !important;
-  border-color: color-mix(in srgb, var(--blue-green) 84%, black 16%) !important;
-}
-
-/* Homepage footer refinement: restrained institutional close */
-body.homepage footer.sv-footer {
-  background: var(--xuan) !important;
-  border-top: 1px solid var(--xuan-dark) !important;
-  padding-top: clamp(34px, 3.2vw, 46px) !important;
-  padding-bottom: clamp(34px, 3.4vw, 48px) !important;
-}
-body.homepage footer.sv-footer .sv-footer__main {
-  align-items: flex-end !important;
-  gap: clamp(20px, 2.1vw, 34px) !important;
-  padding-bottom: clamp(16px, 1.5vw, 22px) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--xuan-dark) 82%, var(--xuan-light)) !important;
-}
-body.homepage footer.sv-footer .sv-footer__brand {
-  font-size: clamp(14px, 1.05vw, 16px) !important;
-  font-weight: 650 !important;
-  letter-spacing: 0.16em !important;
-  line-height: 1.16 !important;
-  color: var(--ink-green-dark) !important;
-}
-body.homepage footer.sv-footer .sv-footer__contact {
-  gap: 10px !important;
-}
-body.homepage footer.sv-footer .sv-footer__contact-label {
-  font-size: 0.64rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.16em !important;
-  color: var(--blue-green-dark) !important;
-}
-body.homepage footer.sv-footer .sv-footer__contact a {
-  font-size: 0.72rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.07em !important;
-  color: color-mix(in srgb, var(--ink-green-dark) 88%, var(--blue-green-dark)) !important;
-  border: 0 !important;
-  padding: 0 !important;
-}
-body.homepage footer.sv-footer .sv-footer__contact a:hover,
-body.homepage footer.sv-footer .sv-footer__contact a:focus-visible {
-  background: transparent !important;
-  border-color: transparent !important;
-  color: var(--blue-green) !important;
-}
-body.homepage footer.sv-footer .sv-footer__bottom {
-  gap: clamp(8px, 0.8vw, 12px) !important;
-  padding-top: clamp(12px, 1vw, 16px) !important;
-}
-body.homepage footer.sv-footer .sv-footer__copyright {
-  font-size: 0.62rem !important;
-  letter-spacing: 0.03em !important;
-  color: color-mix(in srgb, var(--ink-green-dark) 58%, var(--xuan-dark)) !important;
-}
-body.homepage footer.sv-footer .sv-footer__legal-toggle > summary {
-  font-size: 0.60rem !important;
-  letter-spacing: 0.15em !important;
-  color: color-mix(in srgb, var(--ink-green-dark) 74%, var(--blue-green-dark)) !important;
-}
-body.homepage footer.sv-footer .sv-footer__legal {
-  font-size: 0.60rem !important;
-  line-height: 1.7 !important;
-  letter-spacing: 0.02em !important;
-  color: color-mix(in srgb, var(--ink-green-dark) 52%, var(--xuan-dark)) !important;
-}
-body.homepage footer.sv-footer .sv-footer__legal-links {
-  gap: 0 !important;
-  padding: 0 !important;
-}
-body.homepage footer.sv-footer .sv-footer__legal-links a {
-  font-size: 0.60rem !important;
-  letter-spacing: 0.03em !important;
-  color: color-mix(in srgb, var(--ink-green-dark) 62%, var(--blue-green-dark)) !important;
-}
-body.homepage footer.sv-footer .sv-footer__legal-links a:hover,
-body.homepage footer.sv-footer .sv-footer__legal-links a:focus-visible {
-  color: var(--blue-green) !important;
-}
-body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
-  margin: 0 10px !important;
-  color: color-mix(in srgb, var(--xuan-dark) 82%, var(--xuan-light)) !important;
-}
-@media (max-width: 768px) {
-  body.homepage footer.sv-footer .sv-footer__main {
-    align-items: flex-start !important;
-    gap: 12px !important;
-  }
-  body.homepage footer.sv-footer .sv-footer__contact {
-    gap: 6px !important;
-  }
-  body.homepage footer.sv-footer .sv-footer__contact a {
-    justify-content: flex-start !important;
-    min-height: unset !important;
-    width: auto !important;
-  }
-  body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
-    content: none !important;
-  }
-}
-@media (max-width: 1024px) {
-  body.homepage section {
-    padding-top:clamp(64px, 8vw, 84px);
-    padding-bottom:clamp(64px, 8vw, 84px);
-  }
-  body.homepage .wrap {
-    padding-left:var(--site-page-margin);
-    padding-right:var(--site-page-margin);
-  }
-}
-</style>
 
 </head>
 <body id="top" class="homepage">
@@ -2644,30 +2282,23 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
     <div class="about__intro about__intro--overview">
       <div>
         <div class="eyebrow eyebrow--red rev">ABOUT THE FIRM</div>
-        <h2 class="about__hed rev d1">A firm rooted in two worlds.</h2>
+        <h2 class="about__hed rev d1">Institutional private credit platform in China.</h2>
       </div>
       <div class="about__body rev d2">
         <p>
           ShoreVest is a specialist private credit platform focused on asset-backed opportunities in China. Since 2004, the firm has invested across lending, restructurings, and debt resolutions, with a long-standing team based onshore and a platform designed for institutional capital.
         </p>
-        <div class="about__cta">
-          <a href="team.html" class="cta cta--dark"><span>MEET THE LEADERSHIP TEAM</span><div class="cta__ring">→</div></a>
-        </div>
       </div>
     </div>
-    <div class="about__statement rev">
-      <h2 class="about__anchor d1">ROOTED IN TWO WORLDS.</h2>
-      <div class="about__statement-body d2">
-        <p>
-          This defines ShoreVest’s operating position: onshore execution in China with governance, reporting, and portfolio discipline aligned to institutional investors.
-        </p>
-        <p class="about__statement-note">Operating model, not a slogan.</p>
-      </div>
-    </div>
-    <div class="about__intro about__intro--principles">
+  </div>
+</section>
+
+<section id="principles">
+  <div class="wrap">
+    <div class="principles__intro">
       <div>
         <div class="eyebrow rev">HOW WE WORK</div>
-        <h3 class="about__subhed rev d1">Vision &amp; Principles</h3>
+        <h2 class="about__subhed rev d1">Vision &amp; Principles</h2>
       </div>
       <div class="about__body rev d2">
         <p>
@@ -2676,24 +2307,24 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
         <p>
           The firm’s approach is grounded in trust: with the networks that originate opportunities, and with the investors who commit capital to the platform.
         </p>
-        <p class="about__supporting-line">Onshore in execution. Institutional in discipline.</p>
+        
       </div>
     </div>
     <!-- Three institutional principle modules -->
     <div class="about__cols">
       <div class="ac rev" id="ac-sourcing">
         <div class="ac__meta">01</div>
-        <h3 class="ac__title">PROPRIETARY SOURCING</h3>
+        <h3 class="ac__title">Proprietary Sourcing</h3>
         <p class="ac__body">Originate opportunities through longstanding onshore networks and local execution channels not broadly intermediated in market processes.</p>
       </div>
       <div class="ac rev d1" id="ac-underwriting">
         <div class="ac__meta">02</div>
-        <h3 class="ac__title">DISCIPLINED ANALYSIS</h3>
+        <h3 class="ac__title">Disciplined Analysis</h3>
         <p class="ac__body">Underwrite to protected downside, enforceable collateral and practical work-out pathways before capital is committed.</p>
       </div>
       <div class="ac rev d2" id="ac-alignment">
         <div class="ac__meta">03</div>
-        <h3 class="ac__title">ALIGNMENT OF INTERESTS</h3>
+        <h3 class="ac__title">Alignment of Interests</h3>
         <p class="ac__body">Maintain structural and governance alignment with investors through the full investment lifecycle, from origination to exit.</p>
       </div>
     </div>
@@ -2714,21 +2345,21 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
       <div class="sg rev" id="asset-based-lending">
         <div class="sg__content">
           <div class="sg__n">01</div>
-          <div class="sg__title">ASSET-BASED LENDING</div>
+          <div class="sg__title">Asset-Based Lending</div>
           <div class="sg__body">First-lien asset-backed financing to performing companies.</div>
         </div>
       </div>
       <div class="sg rev d1" id="asset-restructuring">
         <div class="sg__content">
           <div class="sg__n">02</div>
-          <div class="sg__title">ASSET RESTRUCTURING</div>
+          <div class="sg__title">Asset Restructuring</div>
           <div class="sg__body">Credit clean-up opportunities involving good assets and challenged balance sheets.</div>
         </div>
       </div>
       <div class="sg rev d2" id="debt-resolutions">
         <div class="sg__content">
           <div class="sg__n">03</div>
-          <div class="sg__title">DEBT RESOLUTIONS</div>
+          <div class="sg__title">Debt Resolutions</div>
           <div class="sg__body">Helping financial institutions seeking to divest distressed debt, such as non-performing loans.</div>
         </div>
       </div>
@@ -2775,42 +2406,8 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
               <a href="insights.html#subscribe" class="cdd-cta"><span>SUBSCRIBE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
             </div>
           </div>
-          <aside class="cdd-feature__panel">
-            <div>
-              <div class="cdd-feature__label">KEY FINDINGS</div>
-              <div class="cdd-feature__findings">
-                <p class="cdd-feature__finding">Policy direction continues to improve enforcement predictability for secured creditors.</p>
-                <p class="cdd-feature__finding">Selective private credit strategies remained executable through the recent market reset.</p>
-                <p class="cdd-feature__finding">Capital-market reforms are shifting allocator assumptions about China exposure.</p>
-              </div>
-            </div>
-            <blockquote class="cdd-feature__quote">Research focus: policy transmission, enforcement pathways, and execution practicality.</blockquote>
-          </aside>
         </div>
       </article>
-
-      <div class="cdd-editorial__meta rev d2">
-        <div class="cdd-editorial__meta-item">
-          <div class="cdd-editorial__meta-label">ISSUE NUMBER</div>
-          <div class="cdd-editorial__meta-value">46</div>
-        </div>
-        <div class="cdd-editorial__meta-item">
-          <div class="cdd-editorial__meta-label">PUBLISHED</div>
-          <div class="cdd-editorial__meta-value">25 January 2026</div>
-        </div>
-        <div class="cdd-editorial__meta-item">
-          <div class="cdd-editorial__meta-label">SERIES CADENCE</div>
-          <div class="cdd-editorial__meta-value">Quarterly publication with interim updates</div>
-        </div>
-        <div class="cdd-editorial__meta-item">
-          <div class="cdd-editorial__meta-label">COVERAGE</div>
-          <div class="cdd-editorial__meta-value">Private credit, NPL workflow, policy transmission</div>
-        </div>
-        <div class="cdd-editorial__meta-item">
-          <div class="cdd-editorial__meta-label">VOLUME</div>
-          <div class="cdd-editorial__meta-value">10 · Number 1</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
