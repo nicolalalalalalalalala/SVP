@@ -7,83 +7,83 @@
       year: '2004',
       title: 'The strategy begins',
       body:
-        'The investment strategy began in 2004 with a focused approach to onshore, asset-backed credit in China. Early work centered on legal enforceability, collateral quality, and downside protection in a market with uneven data and evolving creditor behavior. This period established a discipline of combining local sourcing with conservative structuring rather than relying on broad market direction.',
-      archiveLabel: 'Foundational underwriting memos',
+        'The underlying strategy began in 2004 with a focused approach to onshore, asset-backed private credit in China. Early execution centered on legal enforceability, collateral quality, and downside control in a still-forming market environment.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
     {
       year: '2005',
       title: 'First institutional NPL cycle',
       body:
-        'As institutional non-performing loan activity expanded, the team moved from opportunistic transactions to a repeatable underwriting framework. Execution required coordination across counterparties, legal advisers, and local courts, with attention to process risk at each stage. Lessons from this cycle clarified that entry price alone was insufficient without operational control through resolution.',
-      archiveLabel: 'Early NPL workout case files',
+        'As institutional NPL activity developed, execution moved from isolated opportunities toward a repeatable underwriting and resolution process. Practical lessons came from court pathways, counterparty coordination, and recovery discipline.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
     {
       year: '2008',
       title: 'Investing through the global financial crisis',
       body:
-        'During the 2008 crisis, the strategy was tested under stressed liquidity and shifting risk assumptions. Portfolio decisions prioritized capital preservation, enforceability of claims, and selective deployment into structures with clear collateral coverage. The period reinforced an operating principle that cycle pressure can create opportunity only when legal execution and servicing capacity remain intact.',
-      archiveLabel: 'Crisis risk committee excerpts',
+        'During the 2008 dislocation, deployment emphasized claim enforceability, collateral coverage, and selective risk. The cycle reinforced a process-first approach rather than dependence on broad market direction.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
     {
       year: '2011–2015',
       title: 'Refining the playbook',
       body:
-        'From 2011 through 2015, the approach was refined through multiple transaction outcomes and varied borrower situations. Underwriting standards were tightened around covenant quality, collateral pathways, and recovery planning from day one. This was a consolidation phase: fewer assumptions, tighter controls, and clearer role definition across sourcing, legal work, and portfolio management.',
-      archiveLabel: 'Resolution workflow documentation',
+        'From 2011 to 2015, the team refined legal structuring, covenant design, and recovery planning standards across multiple outcomes. This period consolidated a tighter operating model across sourcing, underwriting, and servicing.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
     {
       year: '2016',
       title: 'ShoreVest is established',
       body:
-        'In 2016, ShoreVest was established as a formal firm. This marked an institutional step-change in governance, reporting, and platform structure, while building on strategy experience that began in 2004. The distinction matters: the investment discipline was cycle-tested before formation, and the firm structure was then designed to scale that discipline for long-duration institutional capital.',
-      archiveLabel: 'Founding governance records',
+        'ShoreVest was established as a formal firm in 2016. The firm structure built on strategy experience dating to 2004, with governance and reporting systems formalized for institutional continuity.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
     {
       year: '2017–2018',
       title: 'A new market window opens',
       body:
-        'Regulatory and financing conditions in 2017–2018 created a new set of private credit opportunities in onshore markets. Execution required selective origination and careful structuring as policy direction and borrower access shifted. The team applied established underwriting controls to a changing opportunity set, emphasizing recoverability and process certainty over transaction volume.',
-      archiveLabel: 'Origination and structuring ledger',
+        'Regulatory and financing shifts in 2017–2018 created a new set of onshore opportunities. Execution remained selective, with an emphasis on structure, enforceability, and process certainty.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
     {
       year: '2018–2024',
       title: 'Proof through execution',
       body:
-        'Across 2018–2024, results were shaped by disciplined deployment, active servicing, and consistent workout execution through volatile conditions. This period tested whether process design held under policy change and uneven macro sentiment. The record reflects practical learning over multiple situations rather than a single market call: structure rigor, local execution, and continuous portfolio oversight.',
-      archiveLabel: 'Multi-cycle performance archive',
+        'Across 2018–2024, outcomes were driven by disciplined deployment, active servicing, and repeatable workout execution through uneven market conditions. The record reflects process consistency across multiple cycles.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
     {
       year: '2025 onward',
       title: 'Building the hundred-year firm',
       body:
-        'From 2025 onward, the priority is institutional continuity: maintaining underwriting discipline while strengthening platform durability across cycles. The focus remains on governance quality, team succession, and execution standards that can be repeated over decades. The objective is not expansion for its own sake, but preserving a specialist onshore credit capability that remains reliable under changing market conditions.',
-      archiveLabel: 'Long-duration continuity blueprint',
+        'From 2025 onward, priorities are platform durability, governance quality, and long-horizon team continuity. The objective is to preserve a specialist onshore credit capability through changing legal and regulatory contexts.',
+      archiveLabel: 'ARCHIVAL MATERIAL',
     },
   ];
 
   const introText =
-    'This history reflects the development of a specialist onshore credit platform in China across changing market cycles. It captures how investment discipline evolved through regulatory change, credit dislocation, and practical execution constraints. Strategy experience begins in 2004, while ShoreVest as a formal firm begins in 2016. The sequence emphasizes process learning, risk control, and continuity of onshore implementation over time.';
+    'This history tracks the development of a specialist onshore credit platform in China through shifting market cycles, legal frameworks, and regulatory conditions. The strategy history begins in 2004; ShoreVest as a formal firm begins in 2016.';
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const railList = section.querySelector('[data-timeline-rail-list]');
+  const trackList = section.querySelector('[data-timeline-track-list]');
   const panelStack = section.querySelector('[data-timeline-panel-stack]');
   const cardStack = section.querySelector('[data-timeline-mobile-stack]');
   const introNode = section.querySelector('[data-history-intro]');
   const scrollArea = section.querySelector('[data-history-scroll-area]');
-  const stage = section.querySelector('.history-timeline__stage');
+  const track = section.querySelector('.history-track');
 
-  if (!railList || !panelStack || !cardStack || !introNode || !scrollArea || !stage) return;
+  if (!trackList || !panelStack || !cardStack || !introNode || !scrollArea || !track) return;
 
   introNode.textContent = introText;
 
-  const railButtons = [];
-  const railItems = [];
+  const markerButtons = [];
+  const markerItems = [];
   const panelItems = [];
 
   const createImagePanel = (milestone) => {
     const wrap = document.createElement('aside');
     wrap.className = 'history-image-panel';
-    wrap.setAttribute('aria-label', `Archival material for ${milestone.year}.`);
+    wrap.setAttribute('aria-label', `Archival material for ${milestone.year}`);
 
     const media = document.createElement('span');
     media.className = 'history-image-panel__media';
@@ -101,21 +101,20 @@
   };
 
   milestones.forEach((milestone, index) => {
-    const railItem = document.createElement('li');
-    railItem.className = 'history-rail__item';
+    const markerItem = document.createElement('li');
+    markerItem.className = 'history-marker';
 
-    const marker = document.createElement('span');
-    marker.className = 'history-rail__marker';
-    marker.setAttribute('aria-hidden', 'true');
+    const markerDot = document.createElement('span');
+    markerDot.className = 'history-marker__dot';
+    markerDot.setAttribute('aria-hidden', 'true');
 
-    const railButton = document.createElement('button');
-    railButton.type = 'button';
-    railButton.className = 'history-rail__year';
-    railButton.textContent = milestone.year;
-    railButton.setAttribute('data-year-index', String(index));
-    railButton.setAttribute('aria-controls', `history-panel-${index}`);
-    railButton.setAttribute('aria-label', `Go to ${milestone.year}`);
-    railButton.addEventListener('click', () => {
+    const markerButton = document.createElement('button');
+    markerButton.type = 'button';
+    markerButton.className = 'history-marker__button';
+    markerButton.textContent = milestone.year;
+    markerButton.setAttribute('aria-controls', `history-panel-${index}`);
+    markerButton.setAttribute('aria-label', `Go to ${milestone.year}`);
+    markerButton.addEventListener('click', () => {
       if (window.innerWidth < 980) return;
       const viewport = window.innerHeight || 1;
       const targetProgress = milestones.length === 1 ? 0 : index / (milestones.length - 1);
@@ -125,15 +124,15 @@
       window.scrollTo({ top: targetScroll, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
 
-    railItem.append(marker, railButton);
-    railList.appendChild(railItem);
-    railButtons.push(railButton);
-    railItems.push(railItem);
+    markerItem.append(markerDot, markerButton);
+    trackList.appendChild(markerItem);
+
+    markerButtons.push(markerButton);
+    markerItems.push(markerItem);
 
     const panel = document.createElement('article');
     panel.className = 'history-panel__item';
     panel.id = `history-panel-${index}`;
-    panel.setAttribute('aria-hidden', 'true');
 
     const content = document.createElement('div');
     content.className = 'history-panel__content';
@@ -166,68 +165,58 @@
     cardStack.appendChild(card);
   });
 
-  const connector = document.createElement('span');
-  connector.className = 'history-stage__connector';
-  connector.setAttribute('aria-hidden', 'true');
-  stage.appendChild(connector);
+  function updateConnector(index, floatIndex) {
+    const marker = markerItems[index];
+    if (!marker) return;
+    const trackRect = track.getBoundingClientRect();
+    const markerRect = marker.getBoundingClientRect();
+    const x = markerRect.left + markerRect.width / 2 - trackRect.left;
+    const strength = Math.max(0.2, 1 - Math.abs(index - floatIndex));
 
-  const state = {
-    activeIndex: 0,
-  };
+    section.style.setProperty('--sv-history-connector-x', `${x.toFixed(1)}px`);
+    section.style.setProperty('--sv-history-connector-strength', strength.toFixed(3));
+  }
 
   function updateStage(index, progress, floatIndex) {
-    state.activeIndex = index;
-    state.progress = progress;
     section.style.setProperty('--sv-history-progress', String(progress));
 
-    railItems.forEach((item, itemIndex) => {
-      const delta = Math.abs(itemIndex - floatIndex);
+    markerItems.forEach((item, markerIndex) => {
+      const delta = Math.abs(markerIndex - floatIndex);
       const emphasis = Math.max(0, 1 - delta);
-      item.style.setProperty('--sv-node-emphasis', emphasis.toFixed(3));
+      const isPassed = markerIndex <= floatIndex;
+      const isActive = markerIndex === index;
 
-      const isPassed = itemIndex <= floatIndex;
-      const isActive = itemIndex === index;
+      item.style.setProperty('--sv-node-emphasis', emphasis.toFixed(3));
       item.classList.toggle('is-passed', isPassed);
       item.classList.toggle('is-active', isActive);
     });
 
-    railButtons.forEach((button, buttonIndex) => {
-      const isActive = buttonIndex === index;
+    markerButtons.forEach((button, markerIndex) => {
+      const isActive = markerIndex === index;
       button.classList.toggle('is-active', isActive);
       button.setAttribute('aria-current', isActive ? 'true' : 'false');
       button.tabIndex = isActive ? 0 : -1;
     });
 
     panelItems.forEach((panel, panelIndex) => {
-      const distance = panelIndex - floatIndex;
-      const absDistance = Math.abs(distance);
-      const focus = Math.max(0, 1 - absDistance);
-      const isPrimary = panelIndex === index;
+      const isActive = panelIndex === index;
+      const direction = panelIndex < index ? -1 : 1;
 
-      panel.classList.toggle('is-active', isPrimary);
-      panel.setAttribute('aria-hidden', focus > 0.45 ? 'false' : 'true');
+      panel.classList.toggle('is-active', isActive);
+      panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
 
       if (!reduceMotion) {
-        const translate = Math.max(-16, Math.min(16, distance * 26));
-        const opacity = Math.max(0, 1 - absDistance * 1.18);
-        panel.style.transform = `translateY(${translate}px)`;
-        panel.style.opacity = opacity.toFixed(3);
+        panel.style.opacity = isActive ? '1' : '0';
+        panel.style.transform = isActive ? 'translateY(0px)' : `translateY(${direction * 10}px)`;
       }
     });
 
-    const activeItem = railItems[index];
-    if (activeItem) {
-      const listRect = railList.getBoundingClientRect();
-      const itemRect = activeItem.getBoundingClientRect();
-      const markerCenter = itemRect.top + itemRect.height / 2 - listRect.top;
-      const segmentStrength = Math.max(0.2, 1 - Math.abs(index - floatIndex));
-      section.style.setProperty('--sv-history-connector-y', `${markerCenter.toFixed(1)}px`);
-      section.style.setProperty('--sv-history-connector-strength', segmentStrength.toFixed(3));
-    }
+    updateConnector(index, floatIndex);
   }
 
   function desktopTick() {
     if (window.innerWidth < 980) return;
+
     const viewport = window.innerHeight || 1;
     const rect = scrollArea.getBoundingClientRect();
     const totalScrollable = Math.max(scrollArea.offsetHeight - viewport, 1);
@@ -236,6 +225,7 @@
 
     const floatIndex = progress * (milestones.length - 1);
     const nextIndex = Math.min(milestones.length - 1, Math.max(0, Math.round(floatIndex)));
+
     updateStage(nextIndex, progress, floatIndex);
   }
 
@@ -244,8 +234,9 @@
       scrollArea.style.removeProperty('--history-scroll-height');
       return;
     }
+
     const viewport = window.innerHeight || 1;
-    const multiplier = reduceMotion ? 0.72 : 1.05;
+    const multiplier = reduceMotion ? 0.74 : 1.08;
     const totalHeight = Math.max(Math.round(viewport * (1 + (milestones.length - 1) * multiplier)), viewport * 3);
     scrollArea.style.setProperty('--history-scroll-height', `${totalHeight}px`);
   }
@@ -271,7 +262,7 @@
 
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const cards = cardStack.querySelectorAll('.history-card');
-    const cardObserver = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -281,7 +272,7 @@
       },
       { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
     );
-    cards.forEach((card) => cardObserver.observe(card));
+    cards.forEach((card) => observer.observe(card));
   } else {
     cardStack.querySelectorAll('.history-card').forEach((card) => card.classList.add('is-in'));
   }
