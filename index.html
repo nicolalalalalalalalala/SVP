@@ -168,6 +168,20 @@ h2 em { font-style:italic; }
   color:#FAF6EE;
 }
 
+
+.hero__support {
+  max-width: 560px;
+  margin: -20px 0 30px;
+  color: rgba(250, 246, 238, 0.9);
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.6;
+}
+.about__intro--principles {
+  margin-top: clamp(56px, 7vw, 90px);
+}
+.about__supporting-line {
+  color: var(--ink2);
+}
 /* ══ HERO */
 #hero {
   padding:var(--section-space-tight) var(--pad) var(--section-space-tight);
@@ -2231,23 +2245,17 @@ body.homepage #cdd .cdd-feature__volume {
   <div class="hero__overlay">
     <p class="hero__kicker go">ESTABLISHED 2004</p>
     <h1 class="hero__hed go"><span class="hero__hed-main">Private credit<br>in </span><em>CHINA.</em></h1>
+    <p class="hero__support go">Rooted in two worlds - onshore in China, disciplined for institutional capital.</p>
     <a href="firm.html" class="cta cta--light go"><span>EXPLORE SHOREVEST</span><div class="cta__ring">→</div></a>
   </div>
 </div>
 
 <!-- HERO STATS -->
-<section id="hero" class="wrap">
-  <div class="hero__intro">
-    <p class="hero__copy">China&apos;s credit markets have never rewarded distance. ShoreVest is a specialist private credit platform focused on asset-backed lending, restructurings, and debt resolutions, built around local execution, legal enforceability, and disciplined downside protection.</p>
-    <p class="hero__copy">Since 2004, the firm has invested with a simple view: in China, outcomes are shaped not only by underwriting, but by structure, control, and the ability to operate where the assets, counterparties, and legal process actually are.</p>
-  </div>
-</section>
-
 <section id="stats" class="wrap">
   <div class="hero__stats">
     <div class="stats" aria-label="ShoreVest track record statistics">
       <div class="stat">
-        <div class="stat__n" data-countup data-target="2" data-prefix="$" data-suffix="B+" data-delay="0">$2B+</div>
+        <div class="stat__n" data-countup data-target="2" data-prefix="US$" data-suffix="B+" data-delay="0">US$2B+</div>
         <div class="stat__l"><span>CAPITAL</span><span>DEPLOYED</span></div>
       </div>
       <div class="stat">
@@ -2256,14 +2264,14 @@ body.homepage #cdd .cdd-feature__volume {
       </div>
       <div class="stat">
         <div class="stat__n" data-countup data-target="20" data-suffix="+" data-delay="240">20+</div>
-        <div class="stat__l"><span>YEARS OF ONSHORE</span><span>CREDIT EXECUTION</span></div>
+        <div class="stat__l"><span>YEARS ONSHORE</span><span>CREDIT EXECUTION</span></div>
       </div>
       <div class="stat stat--zero">
         <div class="stat__n" data-countup data-target="0" data-delay="360">0</div>
         <div class="stat__l"><span>DEAL-LEVEL</span><span>PRINCIPAL LOSSES</span></div>
       </div>
     </div>
-    <p class="stats__note">As of January 2026 · Reflects realized ShoreVest team investments since 2004 · Past performance is not indicative of future results.</p>
+    <p class="stats__note">As of January 2026. Reflects realized ShoreVest team investments since 2004. Past performance is not indicative of future results.</p>
   </div>
 </section>
 
@@ -2273,24 +2281,33 @@ body.homepage #cdd .cdd-feature__volume {
     <div class="about__intro">
       <div>
         <div class="eyebrow rev">ABOUT THE FIRM</div>
-        <h2 class="about__hed rev d1">HOW WE WORK.</h2>
+        <h2 class="about__hed rev d1">A firm rooted<br>in two worlds.</h2>
       </div>
       <div class="about__body rev d2">
         <p>
-          Our process starts with local sourcing pipelines and rigorous underwriting: collateral-first screening,
-          legal-enforceability checks under PRC law, and downside cases built before capital is committed.
+          ShoreVest is a specialist private credit platform focused on asset-backed opportunities in China. Since 2004, the firm has invested across lending, restructurings, and debt resolutions, with a long-standing team based onshore and a platform designed for institutional capital.
         </p>
         <p>
-          The firm focuses exclusively on asset-backed private credit in China: completed, marketable, cash-flowing
-          collateral with conservative entry points and multiple exit routes.
-        </p>
-        <p>
-          Headquarters in Guangzhou. Satellite office in Shanghai. The investment team is based in China, with sourcing,
-          diligence, structuring, servicing, and resolution managed through one integrated onshore process.
+          The ShoreVest team has managed more than US$2 billion across six fund vintages on behalf of institutional investors globally. Through its China-focused credit platform, the firm pursues credit opportunities where structure, discipline, and local execution shape outcomes.
         </p>
         <div class="about__cta">
           <a href="team.html" class="cta cta--dark"><span>MEET THE LEADERSHIP TEAM</span><div class="cta__ring">→</div></a>
         </div>
+      </div>
+    </div>
+    <div class="about__intro about__intro--principles">
+      <div>
+        <div class="eyebrow rev">HOW WE WORK</div>
+        <h2 class="about__hed rev d1">Vision &amp;<br>Principles.</h2>
+      </div>
+      <div class="about__body rev d2">
+        <p>
+          ShoreVest’s vision is to deliver consistent returns across cycles in China’s credit markets through a long-term platform with the local capability to source, analyze, and execute with discipline.
+        </p>
+        <p>
+          The firm’s approach is grounded in trust: with the networks that originate opportunities, and with the investors who commit capital to the platform.
+        </p>
+        <p class="about__supporting-line">Onshore in execution. Institutional in discipline.</p>
       </div>
     </div>
     <!-- Blackstone-style: image top, heading, body, link below -->
@@ -2304,8 +2321,8 @@ body.homepage #cdd .cdd-feature__volume {
             <path d="M49 52L55 63M71 63L77 52M45 78H24M96 78H75M60 64V42" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="ac__title">Proprietary Sourcing</div>
-        <div class="ac__body">Direct relationships with banks, AMCs, law firms, and servicers — built over two decades. Access to opportunities before competitive auction, with the ability to source bilaterally or select from larger portfolios.</div>
+        <div class="ac__title">PROPRIETARY SOURCING</div>
+        <div class="ac__body">Source proprietary opportunities, information, and exit channels not broadly available to the market.</div>
 
       </div>
       <div class="ac rev d1" id="ac-underwriting">
@@ -2317,8 +2334,8 @@ body.homepage #cdd .cdd-feature__volume {
             <path class="sv-ln" d="M38 78H82" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="ac__title">Disciplined Underwriting</div>
-        <div class="ac__body">Every transaction is anchored to hard-asset collateral, conservative loan-to-value or cost-to-value thresholds (typically 30–60%), and first-lien or otherwise directly enforceable positioning. Downside is defined before upside.</div>
+        <div class="ac__title">DISCIPLINED ANALYSIS</div>
+        <div class="ac__body">Apply disciplined analysis with a focus on downside protection and enforceable positioning.</div>
 
       </div>
       <div class="ac rev d2" id="ac-alignment">
@@ -2329,9 +2346,9 @@ body.homepage #cdd .cdd-feature__volume {
             <circle class="sv-core" cx="60" cy="60" r="5" fill="currentColor"/>
           </svg>
         </div>
-        <div class="ac__title">Alignment of Interests</div>
-        <div class="ac__body">The same team that approves investments remains accountable for monitoring and exit, with clear ownership of results throughout the investment lifecycle.</div>
-        <a href="firm.html#ownership" class="cta cta--dark"><span>FIND OUT MORE</span><div class="cta__ring">→</div></a>
+        <div class="ac__title">ALIGNMENT OF INTERESTS</div>
+        <div class="ac__body">Maintain alignment of interests throughout the investment lifecycle.</div>
+        <a href="team.html" class="cta cta--dark"><span>MEET OUR TEAM</span><div class="cta__ring">→</div></a>
       </div>
     </div>
   </div>
@@ -2342,31 +2359,32 @@ body.homepage #cdd .cdd-feature__volume {
   <div class="wrap">
     <div class="strat__hd">
       <div>
-        <div class="eyebrow rev">WHAT WE DO</div>
-        <h2 class="strat__hed rev d1">THREE STRATEGIES.<br><em>ONE DISCIPLINE.</em></h2>
+        <div class="eyebrow rev">STRATEGY</div>
+        <h2 class="strat__hed rev d1">Investment<br>Strategy.</h2>
       </div>
-      <p class="strat__intro rev d2">Each strategy is underpinned by asset-backed collateral, conservative entry points, and senior or directly enforceable positioning. Allocation shifts based on relative opportunity.</p>
+      <p class="strat__intro rev d2">ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China. Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
+      <p class="strat__intro rev d2">As the second-largest credit market in the world, China continues to present substantial opportunities for specialist private credit strategies.</p>
     </div>
     <div class="strat__grid">
       <div class="sg rev" id="asset-based-lending">
         <div class="sg__content">
-          <div class="sg__n">Strategy 01</div>
-          <div class="sg__title">First-Lien Asset-Based Lending</div>
-          <div class="sg__body">Senior-secured financing to performing borrowers when traditional bank lending is constrained. Every loan backed by hard assets — primarily real estate — with conservative LTVs and first-lien priority.</div>
+          <div class="sg__n">01</div>
+          <div class="sg__title">ASSET-BASED LENDING</div>
+          <div class="sg__body">First-lien asset-backed financing to performing companies.</div>
         </div>
       </div>
       <div class="sg rev d1" id="asset-restructuring">
         <div class="sg__content">
-          <div class="sg__n">Strategy 02</div>
-          <div class="sg__title">Asset Restructuring & Workouts</div>
-          <div class="sg__body">The team runs creditor coordination and balance-sheet redesign programs, informed by two-decade pattern recognition across China's restructuring cycles.</div>
+          <div class="sg__n">02</div>
+          <div class="sg__title">ASSET RESTRUCTURING</div>
+          <div class="sg__body">Credit clean-up opportunities involving good assets and challenged balance sheets.</div>
         </div>
       </div>
       <div class="sg rev d2" id="debt-resolutions">
         <div class="sg__content">
-          <div class="sg__n">Strategy 03</div>
-          <div class="sg__title">Debt Resolutions & Recoveries</div>
-          <div class="sg__body">ShoreVest Asset Solutions operates as the in-house resolution vehicle, with sourcing, diligence, legal enforcement, and disposition managed internally.</div>
+          <div class="sg__n">03</div>
+          <div class="sg__title">DEBT RESOLUTIONS</div>
+          <div class="sg__body">Helping financial institutions seeking to divest distressed debt, such as non-performing loans.</div>
         </div>
       </div>
     </div>
@@ -2382,9 +2400,9 @@ body.homepage #cdd .cdd-feature__volume {
     <div class="cdd-editorial__card">
       <div class="cdd-editorial__intro">
         <div>
-          <div class="eyebrow cdd-editorial__kicker rev"><span class="cdd-live" aria-label="LIVE series"><span class="cdd-live__dot" aria-hidden="true"></span><span class="cdd-live__label">LIVE</span></span>ShoreVest Research Franchise · Established 2018</div>
-          <h2 class="cdd-editorial__title rev d1">China Debt <em>Dynamics.</em></h2>
-          <p class="cdd-editorial__lede rev d2">An ongoing institutional research series focused on China's private credit cycle, policy architecture, legal enforceability, and allocator-relevant market structure.</p>
+          <div class="eyebrow cdd-editorial__kicker rev">INSIGHTS</div>
+          <h2 class="cdd-editorial__title rev d1">China Debt Dynamics.</h2>
+          <p class="cdd-editorial__lede rev d2">An institutional research series focused on China’s private credit markets, policy developments, and legal and structural themes relevant to investors.</p>
         </div>
         <div class="cdd-editorial__brand rev d1">
           <div class="cdd-brand-lockup">
