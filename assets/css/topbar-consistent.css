@@ -1500,3 +1500,9 @@ html body footer.sv-footer .sv-footer__legal-links a:hover {
     width: 100% !important;
   }
 }
+
+/* Ensure the Chinese ShoreVest wordmark stays cinnabar across all pages. */
+#nav .nav__logo-cn,
+#site-header-mount #nav .nav__logo-cn {
+  color: #C93B2A !important;
+}
