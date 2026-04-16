@@ -8,56 +8,56 @@
       title: 'The strategy begins',
       body:
         'The investment strategy began in 2004 with a focused approach to onshore, asset-backed credit in China. Early work centered on legal enforceability, collateral quality, and downside protection in a market with uneven data and evolving creditor behavior. This period established a discipline of combining local sourcing with conservative structuring rather than relying on broad market direction.',
-      imageSlot: null,
+      archiveLabel: 'Foundational underwriting memos',
     },
     {
       year: '2005',
       title: 'First institutional NPL cycle',
       body:
         'As institutional non-performing loan activity expanded, the team moved from opportunistic transactions to a repeatable underwriting framework. Execution required coordination across counterparties, legal advisers, and local courts, with attention to process risk at each stage. Lessons from this cycle clarified that entry price alone was insufficient without operational control through resolution.',
-      imageSlot: null,
+      archiveLabel: 'Early NPL workout case files',
     },
     {
       year: '2008',
       title: 'Investing through the global financial crisis',
       body:
         'During the 2008 crisis, the strategy was tested under stressed liquidity and shifting risk assumptions. Portfolio decisions prioritized capital preservation, enforceability of claims, and selective deployment into structures with clear collateral coverage. The period reinforced an operating principle that cycle pressure can create opportunity only when legal execution and servicing capacity remain intact.',
-      imageSlot: null,
+      archiveLabel: 'Crisis risk committee excerpts',
     },
     {
       year: '2011–2015',
       title: 'Refining the playbook',
       body:
         'From 2011 through 2015, the approach was refined through multiple transaction outcomes and varied borrower situations. Underwriting standards were tightened around covenant quality, collateral pathways, and recovery planning from day one. This was a consolidation phase: fewer assumptions, tighter controls, and clearer role definition across sourcing, legal work, and portfolio management.',
-      imageSlot: null,
+      archiveLabel: 'Resolution workflow documentation',
     },
     {
       year: '2016',
       title: 'ShoreVest is established',
       body:
         'In 2016, ShoreVest was established as a formal firm. This marked an institutional step-change in governance, reporting, and platform structure, while building on strategy experience that began in 2004. The distinction matters: the investment discipline was cycle-tested before formation, and the firm structure was then designed to scale that discipline for long-duration institutional capital.',
-      imageSlot: null,
+      archiveLabel: 'Founding governance records',
     },
     {
       year: '2017–2018',
       title: 'A new market window opens',
       body:
         'Regulatory and financing conditions in 2017–2018 created a new set of private credit opportunities in onshore markets. Execution required selective origination and careful structuring as policy direction and borrower access shifted. The team applied established underwriting controls to a changing opportunity set, emphasizing recoverability and process certainty over transaction volume.',
-      imageSlot: null,
+      archiveLabel: 'Origination and structuring ledger',
     },
     {
       year: '2018–2024',
       title: 'Proof through execution',
       body:
         'Across 2018–2024, results were shaped by disciplined deployment, active servicing, and consistent workout execution through volatile conditions. This period tested whether process design held under policy change and uneven macro sentiment. The record reflects practical learning over multiple situations rather than a single market call: structure rigor, local execution, and continuous portfolio oversight.',
-      imageSlot: null,
+      archiveLabel: 'Multi-cycle performance archive',
     },
     {
       year: '2025 onward',
       title: 'Building the hundred-year firm',
       body:
         'From 2025 onward, the priority is institutional continuity: maintaining underwriting discipline while strengthening platform durability across cycles. The focus remains on governance quality, team succession, and execution standards that can be repeated over decades. The objective is not expansion for its own sake, but preserving a specialist onshore credit capability that remains reliable under changing market conditions.',
-      imageSlot: null,
+      archiveLabel: 'Long-duration continuity blueprint',
     },
   ];
 
@@ -70,29 +70,44 @@
   const cardStack = section.querySelector('[data-timeline-mobile-stack]');
   const introNode = section.querySelector('[data-history-intro]');
   const scrollArea = section.querySelector('[data-history-scroll-area]');
+  const stage = section.querySelector('.history-timeline__stage');
 
-  if (!railList || !panelStack || !cardStack || !introNode || !scrollArea) return;
+  if (!railList || !panelStack || !cardStack || !introNode || !scrollArea || !stage) return;
 
   introNode.textContent = introText;
 
   const railButtons = [];
+  const railItems = [];
   const panelItems = [];
 
-  const createImagePanel = () => {
+  const createImagePanel = (milestone) => {
     const wrap = document.createElement('aside');
     wrap.className = 'history-image-panel';
-    wrap.setAttribute('aria-label', 'Archival material placeholder.');
+    wrap.setAttribute('aria-label', `Archival material for ${milestone.year}.`);
+
+    const media = document.createElement('span');
+    media.className = 'history-image-panel__media';
+
+    const year = document.createElement('span');
+    year.className = 'history-image-panel__year';
+    year.textContent = milestone.year;
 
     const label = document.createElement('span');
     label.className = 'history-image-panel__label';
-    label.textContent = 'archival material';
+    label.textContent = milestone.archiveLabel;
 
-    wrap.appendChild(label);
+    wrap.append(media, year, label);
     return wrap;
   };
 
   milestones.forEach((milestone, index) => {
     const railItem = document.createElement('li');
+    railItem.className = 'history-rail__item';
+
+    const marker = document.createElement('span');
+    marker.className = 'history-rail__marker';
+    marker.setAttribute('aria-hidden', 'true');
+
     const railButton = document.createElement('button');
     railButton.type = 'button';
     railButton.className = 'history-rail__year';
@@ -104,14 +119,16 @@
       if (window.innerWidth < 980) return;
       const viewport = window.innerHeight || 1;
       const targetProgress = milestones.length === 1 ? 0 : index / (milestones.length - 1);
-      const sectionTop = scrollArea.offsetTop;
+      const sectionTop = window.scrollY + scrollArea.getBoundingClientRect().top;
       const totalRange = Math.max(scrollArea.offsetHeight - viewport, 1);
       const targetScroll = sectionTop + targetProgress * totalRange;
       window.scrollTo({ top: targetScroll, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
-    railItem.appendChild(railButton);
+
+    railItem.append(marker, railButton);
     railList.appendChild(railItem);
     railButtons.push(railButton);
+    railItems.push(railItem);
 
     const panel = document.createElement('article');
     panel.className = 'history-panel__item';
@@ -134,7 +151,7 @@
     body.textContent = milestone.body;
 
     content.append(year, title, body);
-    panel.append(content, createImagePanel());
+    panel.append(content, createImagePanel(milestone));
     panelStack.appendChild(panel);
     panelItems.push(panel);
 
@@ -145,18 +162,35 @@
       <h3 class="history-card__title">${milestone.title}</h3>
       <p class="history-card__body">${milestone.body}</p>
     `;
-    card.appendChild(createImagePanel());
+    card.appendChild(createImagePanel(milestone));
     cardStack.appendChild(card);
   });
 
+  const connector = document.createElement('span');
+  connector.className = 'history-stage__connector';
+  connector.setAttribute('aria-hidden', 'true');
+  stage.appendChild(connector);
+
   const state = {
     activeIndex: 0,
-    latestProgress: 0,
+    progress: 0,
   };
 
-  function updateStage(index, progress) {
+  function updateStage(index, progress, floatIndex) {
     state.activeIndex = index;
+    state.progress = progress;
     section.style.setProperty('--sv-history-progress', String(progress));
+
+    railItems.forEach((item, itemIndex) => {
+      const delta = Math.abs(itemIndex - floatIndex);
+      const emphasis = Math.max(0, 1 - delta);
+      item.style.setProperty('--sv-node-emphasis', emphasis.toFixed(3));
+
+      const isPassed = itemIndex <= floatIndex;
+      const isActive = itemIndex === index;
+      item.classList.toggle('is-passed', isPassed);
+      item.classList.toggle('is-active', isActive);
+    });
 
     railButtons.forEach((button, buttonIndex) => {
       const isActive = buttonIndex === index;
@@ -166,13 +200,33 @@
     });
 
     panelItems.forEach((panel, panelIndex) => {
-      const isActive = panelIndex === index;
-      panel.classList.toggle('is-active', isActive);
-      panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+      const distance = panelIndex - floatIndex;
+      const absDistance = Math.abs(distance);
+      const focus = Math.max(0, 1 - absDistance);
+      const isPrimary = panelIndex === index;
+
+      panel.classList.toggle('is-active', isPrimary);
+      panel.setAttribute('aria-hidden', focus > 0.45 ? 'false' : 'true');
+
       if (!reduceMotion) {
-        panel.style.transform = isActive ? 'translateY(0px)' : panelIndex < index ? 'translateY(-10px)' : 'translateY(10px)';
+        const translate = Math.max(-16, Math.min(16, distance * 26));
+        const opacity = Math.max(0, 1 - absDistance * 1.18);
+        panel.style.transform = `translateY(${translate}px)`;
+        panel.style.opacity = opacity.toFixed(3);
       }
     });
+
+    const activeItem = railItems[index];
+    if (activeItem) {
+      const stageRect = stage.getBoundingClientRect();
+      const itemRect = activeItem.getBoundingClientRect();
+      const markerCenterY = itemRect.top + itemRect.height / 2 - stageRect.top;
+      const markerRightX = itemRect.right - stageRect.left;
+      const segmentStrength = Math.max(0.18, 1 - Math.abs(index - floatIndex));
+      section.style.setProperty('--sv-history-connector-y', `${markerCenterY.toFixed(1)}px`);
+      section.style.setProperty('--sv-history-connector-x', `${markerRightX.toFixed(1)}px`);
+      section.style.setProperty('--sv-history-connector-strength', segmentStrength.toFixed(3));
+    }
   }
 
   function desktopTick() {
@@ -182,15 +236,12 @@
     const totalScrollable = Math.max(scrollArea.offsetHeight - viewport, 1);
     const traveled = Math.min(Math.max(-rect.top, 0), totalScrollable);
     const progress = traveled / totalScrollable;
-    state.latestProgress = progress;
+
+    section.style.setProperty('--sv-history-progress', progress.toFixed(4));
 
     const floatIndex = progress * (milestones.length - 1);
-    const nextIndex = Math.round(floatIndex);
-    if (nextIndex !== state.activeIndex) {
-      updateStage(nextIndex, progress);
-      return;
-    }
-    section.style.setProperty('--sv-history-progress', String(progress));
+    const nextIndex = Math.min(milestones.length - 1, Math.max(0, Math.round(floatIndex)));
+    updateStage(nextIndex, progress, floatIndex);
   }
 
   function resizeTimelineHeight() {
@@ -199,8 +250,8 @@
       return;
     }
     const viewport = window.innerHeight || 1;
-    const multiplier = reduceMotion ? 0.55 : 0.72;
-    const totalHeight = Math.max(Math.round(viewport * (1 + (milestones.length - 1) * multiplier)), viewport * 2);
+    const multiplier = reduceMotion ? 0.72 : 1.05;
+    const totalHeight = Math.max(Math.round(viewport * (1 + (milestones.length - 1) * multiplier)), viewport * 3);
     scrollArea.style.setProperty('--history-scroll-height', `${totalHeight}px`);
   }
 
@@ -213,7 +264,7 @@
     });
   };
 
-  updateStage(0, 0);
+  updateStage(0, 0, 0);
   resizeTimelineHeight();
   desktopTick();
 
