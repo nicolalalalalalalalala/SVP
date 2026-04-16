@@ -71,11 +71,9 @@
   const introNode = section.querySelector('[data-history-intro]');
   const scrollArea = section.querySelector('[data-history-scroll-area]');
 
-  if (!railList || !panelStack || !introNode || !scrollArea) return;
+  if (!railList || !panelStack || !cardStack || !introNode || !scrollArea) return;
 
-  section.classList.add('is-enhanced');
-
-  if (!introNode.textContent.trim()) introNode.textContent = introText;
+  introNode.textContent = introText;
 
   const railButtons = [];
   const panelItems = [];
@@ -93,75 +91,16 @@
     return wrap;
   };
 
-  if (!railList.children.length || !panelStack.children.length) {
-    milestones.forEach((milestone, index) => {
-      const railItem = document.createElement('li');
-      const railButton = document.createElement('button');
-      railButton.type = 'button';
-      railButton.className = 'history-rail__year';
-      railButton.textContent = milestone.year;
-      railButton.setAttribute('data-year-index', String(index));
-      railButton.setAttribute('aria-controls', `history-panel-${index}`);
-      railButton.setAttribute('aria-label', `Go to ${milestone.year}`);
-      railItem.appendChild(railButton);
-      railList.appendChild(railItem);
-
-      const panel = document.createElement('article');
-      panel.className = 'history-panel__item';
-      panel.id = `history-panel-${index}`;
-      panel.setAttribute('aria-hidden', 'true');
-
-      const content = document.createElement('div');
-      content.className = 'history-panel__content';
-
-      const year = document.createElement('p');
-      year.className = 'history-panel__year';
-      year.textContent = milestone.year;
-
-      const title = document.createElement('h3');
-      title.className = 'history-panel__title';
-      title.textContent = milestone.title;
-
-      const body = document.createElement('p');
-      body.className = 'history-panel__body';
-      body.textContent = milestone.body;
-
-      content.append(year, title, body);
-      panel.append(content, createImagePanel());
-      panelStack.appendChild(panel);
-
-      if (cardStack) {
-        const card = document.createElement('article');
-        card.className = 'history-card';
-        card.innerHTML = `
-          <p class="history-card__year">${milestone.year}</p>
-          <h3 class="history-card__title">${milestone.title}</h3>
-          <p class="history-card__body">${milestone.body}</p>
-        `;
-        card.appendChild(createImagePanel());
-        cardStack.appendChild(card);
-      }
-    });
-  }
-
-
-  if (cardStack && !cardStack.children.length) {
-    milestones.forEach((milestone) => {
-      const card = document.createElement('article');
-      card.className = 'history-card';
-      card.innerHTML = `
-        <p class="history-card__year">${milestone.year}</p>
-        <h3 class="history-card__title">${milestone.title}</h3>
-        <p class="history-card__body">${milestone.body}</p>
-      `;
-      card.appendChild(createImagePanel());
-      cardStack.appendChild(card);
-    });
-  }
-
-  railList.querySelectorAll('.history-rail__year').forEach((button, index) => {
-    railButtons.push(button);
-    button.addEventListener('click', () => {
+  milestones.forEach((milestone, index) => {
+    const railItem = document.createElement('li');
+    const railButton = document.createElement('button');
+    railButton.type = 'button';
+    railButton.className = 'history-rail__year';
+    railButton.textContent = milestone.year;
+    railButton.setAttribute('data-year-index', String(index));
+    railButton.setAttribute('aria-controls', `history-panel-${index}`);
+    railButton.setAttribute('aria-label', `Go to ${milestone.year}`);
+    railButton.addEventListener('click', () => {
       if (window.innerWidth < 980) return;
       const viewport = window.innerHeight || 1;
       const targetProgress = milestones.length === 1 ? 0 : index / (milestones.length - 1);
@@ -170,10 +109,44 @@
       const targetScroll = sectionTop + targetProgress * totalRange;
       window.scrollTo({ top: targetScroll, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
-  });
+    railItem.appendChild(railButton);
+    railList.appendChild(railItem);
+    railButtons.push(railButton);
 
-  panelStack.querySelectorAll('.history-panel__item').forEach((panel) => {
+    const panel = document.createElement('article');
+    panel.className = 'history-panel__item';
+    panel.id = `history-panel-${index}`;
+    panel.setAttribute('aria-hidden', 'true');
+
+    const content = document.createElement('div');
+    content.className = 'history-panel__content';
+
+    const year = document.createElement('p');
+    year.className = 'history-panel__year';
+    year.textContent = milestone.year;
+
+    const title = document.createElement('h3');
+    title.className = 'history-panel__title';
+    title.textContent = milestone.title;
+
+    const body = document.createElement('p');
+    body.className = 'history-panel__body';
+    body.textContent = milestone.body;
+
+    content.append(year, title, body);
+    panel.append(content, createImagePanel());
+    panelStack.appendChild(panel);
     panelItems.push(panel);
+
+    const card = document.createElement('article');
+    card.className = 'history-card';
+    card.innerHTML = `
+      <p class="history-card__year">${milestone.year}</p>
+      <h3 class="history-card__title">${milestone.title}</h3>
+      <p class="history-card__body">${milestone.body}</p>
+    `;
+    card.appendChild(createImagePanel());
+    cardStack.appendChild(card);
   });
 
   const state = {
@@ -196,6 +169,9 @@
       const isActive = panelIndex === index;
       panel.classList.toggle('is-active', isActive);
       panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+      if (!reduceMotion) {
+        panel.style.transform = isActive ? 'translateY(0px)' : panelIndex < index ? 'translateY(-10px)' : 'translateY(10px)';
+      }
     });
   }
 
@@ -246,8 +222,6 @@
     desktopTick();
   });
   window.addEventListener('scroll', onScroll, { passive: true });
-
-  if (!cardStack) return;
 
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const cards = cardStack.querySelectorAll('.history-card');
