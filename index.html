@@ -2367,6 +2367,24 @@ body.homepage .hero__overlay h1.hero__hed {
   text-transform:none;
   text-shadow:none;
 }
+body.homepage .hero__overlay .hero__content {
+  padding: clamp(34px, 4.2vw, 46px) clamp(30px, 3.4vw, 42px) clamp(26px, 3vw, 34px) !important;
+  border-left: 1px solid color-mix(in srgb, var(--ink-green-dark) 24%, transparent) !important;
+  background: linear-gradient(102deg, rgba(250,246,238,.92) 0%, rgba(250,246,238,.84) 68%, rgba(250,246,238,.46) 100%) !important;
+  box-shadow: 0 10px 32px color-mix(in srgb, var(--ink-green-dark) 14%, transparent) !important;
+}
+body.homepage .hero__overlay .hero__kicker,
+body.homepage .hero__support,
+body.homepage .hero__overlay .cta--light {
+  color: var(--ink-green-dark) !important;
+}
+body.homepage .hero__overlay .cta--light {
+  border-top: 1px solid color-mix(in srgb, var(--ink-green-dark) 22%, transparent) !important;
+}
+body.homepage .hero__overlay .cta--light .cta__ring {
+  border-color: color-mix(in srgb, var(--ink-green-dark) 34%, transparent) !important;
+  color: var(--ink-green-dark) !important;
+}
 body.homepage .hero__hed-main {
   letter-spacing:.05em;
 }
@@ -2440,6 +2458,49 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
   font-size:11px;
   letter-spacing:.04em;
   color:color-mix(in srgb, var(--xuan-dark) 65%, var(--xuan-light));
+}
+body.homepage .stat--zero .stat__n {
+  color: var(--cinnabar) !important;
+}
+body.homepage :is(.eyebrow,.hero__kicker,.stats__eyebrow,.ac__meta,.sg__n,.cdd-feature__label,.cdd-editorial__meta-label,.cdd-feature__issue) {
+  font-size: 10px !important;
+  letter-spacing: .16em !important;
+  line-height: 1.35 !important;
+}
+body.homepage .about__intro,
+body.homepage .about__statement {
+  row-gap: clamp(30px, 3.7vw, 46px) !important;
+}
+body.homepage .about__cols {
+  margin-top: clamp(20px, 2.4vw, 30px) !important;
+}
+body.homepage .ac {
+  padding-top: clamp(30px, 3vw, 42px) !important;
+  padding-bottom: clamp(34px, 3.4vw, 48px) !important;
+}
+body.homepage .strat__hd {
+  margin-bottom: clamp(68px, 7vw, 106px) !important;
+}
+body.homepage .strat__actions {
+  margin-top: 42px !important;
+}
+body.homepage :is(.about__cta .cta,.strat__actions .cta,.hero__overlay .cta,.cdd-cta) {
+  letter-spacing: .14em !important;
+}
+body.homepage #cdd .cdd-editorial__card {
+  box-shadow: none !important;
+}
+body.homepage #cdd .cdd-feature__body {
+  padding: clamp(34px, 3.8vw, 50px) 0 clamp(24px, 2.6vw, 34px) !important;
+}
+body.homepage #cdd .cdd-cta {
+  border-color: color-mix(in srgb, var(--xuan-dark) 52%, transparent) !important;
+  padding: 11px 14px 11px 18px !important;
+}
+body.homepage #cdd .cdd-cta:hover,
+body.homepage #cdd .cdd-cta:focus-visible {
+  background: color-mix(in srgb, var(--blue-green) 84%, black 16%) !important;
+  border-color: color-mix(in srgb, var(--blue-green) 84%, black 16%) !important;
 }
 
 /* Homepage footer refinement: restrained institutional close */
@@ -2571,7 +2632,7 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
     <div class="hero__content">
       <p class="hero__kicker go">ESTABLISHED 2004</p>
       <h1 class="hero__hed go"><span class="hero__hed-main">Private credit in</span><em>CHINA.</em></h1>
-      <p class="hero__support go">Rooted in two worlds - onshore in China, disciplined for institutional capital.</p>
+      <p class="hero__support go">Rooted in two worlds—onshore in China, disciplined for institutional capital.</p>
       <a href="firm.html" class="cta cta--light go"><span>EXPLORE SHOREVEST</span><div class="cta__ring">→</div></a>
     </div>
   </div>
@@ -2610,7 +2671,7 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
     <div class="about__intro about__intro--overview">
       <div>
         <div class="eyebrow eyebrow--red rev">ABOUT THE FIRM</div>
-        <h2 class="about__hed rev d1">A firm rooted<br>in two worlds.</h2>
+        <h2 class="about__hed rev d1">A firm rooted in two worlds.</h2>
       </div>
       <div class="about__body rev d2">
         <p>
@@ -2734,7 +2795,7 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
         <div class="cdd-feature__body">
           <div class="cdd-feature__main">
             <div class="cdd-feature__label">CURRENT ISSUE</div>
-            <h3 class="cdd-feature__title cdd-feature__title--compact">THE END OF CHINA'S <span class="cdd-feature__title-quoted">”UNINVESTABLE MYTH”</span></h3>
+            <h3 class="cdd-feature__title cdd-feature__title--compact">THE END OF CHINA'S <span class="cdd-feature__title-quoted">“UNINVESTABLE MYTH”</span></h3>
             <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
             <div class="cdd-cta-group">
               <a href="insights.html#issue-header" class="cdd-cta"><span>READ ISSUE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
