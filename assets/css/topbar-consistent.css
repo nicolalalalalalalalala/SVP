@@ -16,8 +16,8 @@
   --control-brand: var(--cinnabar, #3d7070);
   --control-ink: var(--text-main, #0f2206);
   --control-ink-strong: var(--text-main, #0f2206);
-  --control-paper: var(--paper-light, #faf6ee);
-  --surface-elevated: color-mix(in srgb, var(--paper, #f2ecd8) 88%, var(--paper-light, #faf6ee) 12%);
+  --control-paper: var(--paper, #f2ecd8);
+  --surface-elevated: color-mix(in srgb, var(--paper, #f2ecd8) 94%, var(--paper-light, #faf6ee) 6%);
   --surface-border: color-mix(in srgb, var(--paper-dark, #d8ceb0) 76%, transparent);
   --shadow-soft: 0 16px 40px color-mix(in srgb, var(--text-main, #0f2206) 18%, transparent);
   --shadow-xs: 0 4px 12px color-mix(in srgb, var(--text-main, #0f2206) 14%, transparent);
@@ -437,7 +437,7 @@ html {
     letter-spacing: 0.16em;
     border-radius: 0;
     border: 1px solid color-mix(in srgb, var(--text-main, #0f2206) 28%, transparent);
-    background: color-mix(in srgb, var(--paper-light, #faf6ee) 96%, transparent);
+    background: color-mix(in srgb, var(--paper, #f2ecd8) 96%, transparent);
     color: #000;
   }
 
@@ -485,7 +485,7 @@ html {
     order: initial;
     margin: 0;
     padding: 14px var(--topbar-pad) 16px;
-    background: color-mix(in srgb, var(--paper-light, #faf6ee) 92%, transparent);
+    background: color-mix(in srgb, var(--paper, #f2ecd8) 92%, transparent);
     border-top: 1px solid color-mix(in srgb, var(--paper-dark, #d8ceb0) 82%, transparent);
     box-shadow: 0 10px 26px color-mix(in srgb, var(--text-main, #0f2206) 14%, transparent);
     backdrop-filter: blur(8px);
@@ -553,7 +553,7 @@ html {
     min-height: var(--topbar-height);
     height: var(--topbar-height);
     padding-inline: var(--topbar-pad);
-    background: var(--paper-light, #FAF6EE);
+    background: var(--paper, #F2ECD8);
     border-bottom: 1px solid rgba(23, 23, 23, 0.16);
     box-shadow: none;
     backdrop-filter: none;
@@ -647,7 +647,7 @@ html {
 #nav {
   height: 62px !important;
   padding: 0 var(--site-page-margin, 64px) !important;
-  background: var(--paper-light, #FAF6EE) !important;
+  background: var(--paper, #F2ECD8) !important;
   border-bottom: 1px solid rgba(31, 24, 18, 0.11) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -726,7 +726,7 @@ html {
   padding: 7px 18px !important;
   font-size: 11.4px !important;
   letter-spacing: 0.14em !important;
-  background: var(--control-paper, #faf6ee) !important;
+  background: var(--control-paper, #f2ecd8) !important;
   color: #171410 !important;
   border: 1px solid rgba(48, 40, 34, 0.15) !important;
   transform: none !important;
@@ -1212,7 +1212,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     min-height: 74px !important;
     height: 74px !important;
     padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)) !important;
-    background: var(--paper-light, #FAF6EE) !important;
+    background: var(--paper, #F2ECD8) !important;
     border-bottom: 1px solid rgba(31, 24, 18, 0.11) !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
@@ -1249,7 +1249,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     min-width: 168px !important;
     padding: 0 22px !important;
     border: 1px solid rgba(20, 20, 20, 0.32) !important;
-    background: var(--control-paper, #faf6ee) !important;
+    background: var(--control-paper, #f2ecd8) !important;
     color: #171717 !important;
     font-size: 10px !important;
     letter-spacing: 0.14em !important;
@@ -1294,7 +1294,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   justify-content: space-between !important;
   padding: 0 var(--site-page-margin, 64px) !important;
   border-bottom: 1px solid rgba(31, 24, 18, 0.11) !important;
-  background: var(--paper-light, #FAF6EE) !important;
+  background: var(--paper, #F2ECD8) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -1312,7 +1312,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 #nav .nav__zh { font-family: var(--site-sans-en, 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif) !important; font-size:12px !important; font-weight:500 !important; color:#171410 !important; opacity:.35 !important; transition:opacity .2s !important; }
 #nav .lang-toggle { display:inline-flex !important; align-items:center !important; font-family:'Inter','PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif !important; font-size:12px !important; font-weight:500 !important; line-height:1 !important; transform:translateY(.5px) !important; }
 #nav .nav__zh:hover { opacity:.75 !important; }
-#nav .nav__lp { font-family: var(--site-sans-en, 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif) !important; font-size:11.4px !important; font-weight:500 !important; letter-spacing:.14em !important; text-transform:uppercase !important; color:#171410 !important; border:1px solid rgba(48,40,34,.15) !important; padding:7px 16px !important; background: var(--control-paper, #faf6ee) !important; transition:background .2s, color .2s, border-color .2s !important; }
+#nav .nav__lp { font-family: var(--site-sans-en, 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif) !important; font-size:11.4px !important; font-weight:500 !important; letter-spacing:.14em !important; text-transform:uppercase !important; color:#171410 !important; border:1px solid rgba(48,40,34,.15) !important; padding:7px 16px !important; background: var(--control-paper, #f2ecd8) !important; transition:background .2s, color .2s, border-color .2s !important; }
 #nav .nav__lp:hover,
 #nav .nav__lp:focus-visible,
 #nav .nav__lp:hover:visited,
@@ -1342,7 +1342,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
     display:none !important;
     flex-direction:column !important;
     gap:0 !important;
-    background: var(--control-paper, #faf6ee) !important;
+    background: var(--control-paper, #f2ecd8) !important;
     border-top:1px solid rgba(31, 24, 18, 0.11) !important;
     border-bottom:1px solid rgba(31, 24, 18, 0.11) !important;
     margin:0 !important;
@@ -1354,7 +1354,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   body:not(.homepage) #nav {
     height:62px !important;
     min-height:62px !important;
-    background:var(--paper-light, #FAF6EE) !important;
+    background:var(--paper, #F2ECD8) !important;
     border-bottom:1px solid rgba(31,24,18,0.11) !important;
     box-shadow:none !important;
   }
@@ -1370,7 +1370,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
 
 /* === Canonical homepage footer: single source of truth across all pages === */
 html body footer.sv-footer {
-  background: var(--white, #FAF6EE) !important;
+  background: var(--paper, #F2ECD8) !important;
   border-top: 1px solid var(--rule, rgba(31, 24, 18, 0.11)) !important;
   padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px !important;
   margin-top: 0 !important;

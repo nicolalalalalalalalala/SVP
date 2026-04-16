@@ -259,7 +259,7 @@ button,
 /* Footer baseline to mirror homepage visual standard across the site */
 footer,
 .sv-footer {
-  background: color-mix(in srgb, var(--paper, #F2ECD8) 78%, var(--paper-light, #FAF6EE) 22%) !important;
+  background: var(--paper, #F2ECD8) !important;
   border-top: 1px solid color-mix(in srgb, var(--paper-dark, #D8CEB0) 84%, transparent) !important;
 }
 
@@ -359,7 +359,7 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
   html body footer.sv-footer.sv-footer--full-bleed,
   html body .sv-footer {
     padding: 18px var(--site-page-margin, 18px) calc(24px + env(safe-area-inset-bottom, 0px)) !important;
-    background: var(--paper-light, #FAF6EE) !important;
+    background: var(--paper, #F2ECD8) !important;
   }
 
   html body footer.sv-footer .sv-footer__inner {
@@ -402,7 +402,7 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     justify-content: center !important;
     padding: 0 12px !important;
     border: 1px solid var(--paper-dark, #D8CEB0) !important;
-    background: color-mix(in srgb, var(--paper-light, #FAF6EE) 85%, var(--paper, #F2ECD8) 15%) !important;
+    background: var(--paper, #F2ECD8) !important;
     color: var(--ink-green-dark, #0F2206) !important;
     font-size: 11px !important;
     letter-spacing: 0.08em !important;
@@ -426,7 +426,7 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
 
   html body footer.sv-footer .sv-footer__legal-toggle {
     border: 1px solid var(--paper-dark, #D8CEB0) !important;
-    background: color-mix(in srgb, var(--paper-light, #FAF6EE) 78%, var(--paper, #F2ECD8) 22%) !important;
+    background: var(--paper, #F2ECD8) !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-toggle > summary {
