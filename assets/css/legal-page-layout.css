@@ -187,3 +187,71 @@ body.legal-page .legal-contact-actions a:hover {
     text-align: center;
   }
 }
+
+body.legal-page .contact-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+body.legal-page .contact-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+body.legal-page .contact-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #4e4842;
+}
+
+body.legal-page .contact-form input,
+body.legal-page .contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(45, 41, 36, 0.25);
+  background: #fff;
+  border-radius: 0;
+  padding: 10px 12px;
+  font: 400 10pt/1.45 "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  color: #2f2a25;
+}
+
+body.legal-page .contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+body.legal-page .contact-form button {
+  justify-self: start;
+  border: 1px solid rgba(45, 41, 36, 0.32);
+  background: transparent;
+  color: var(--red);
+  padding: 10px 18px;
+  font: 600 9pt/1.2 "DIN 2014", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+body.legal-page .contact-form button:hover,
+body.legal-page .contact-form button:focus-visible {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  body.legal-page .contact-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.legal-page .contact-form button {
+    width: 100%;
+  }
+}
