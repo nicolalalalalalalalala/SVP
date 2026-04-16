@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/css/refinement-pass.css" />
     <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
     <link rel="stylesheet" href="assets/css/site-motion.css" />
-<link rel="stylesheet" href="assets/css/shared-header.css" />
+    <link rel="stylesheet" href="assets/css/firm-history-timeline.css" />
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
     <style>
       :root {
@@ -994,6 +995,32 @@
         </div>
       </section>
 
+      <section class="history-timeline" data-history-timeline>
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">History</p>
+            <h2>20+ years of onshore credit execution in China</h2>
+            <p class="history-timeline__intro" data-history-intro></p>
+          </div>
+
+          <div class="history-timeline__scroll-area" data-history-scroll-area>
+            <div class="history-timeline__stage">
+              <aside class="history-rail" aria-label="Timeline years">
+                <span class="history-rail__spine" aria-hidden="true"></span>
+                <span class="history-rail__progress" aria-hidden="true"></span>
+                <ol class="history-rail__list" data-timeline-rail-list></ol>
+              </aside>
+
+              <div class="history-panel" aria-live="polite">
+                <div class="history-panel__stack" data-timeline-panel-stack></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-timeline__cards" data-timeline-mobile-stack></div>
+        </div>
+      </section>
+
       <section>
         <div class="wrap">
           <div class="section-head">
@@ -1056,6 +1083,7 @@
     <footer class="sv-footer" data-shared-footer></footer>
 
     <script src="assets/js/site-motion.js" defer></script>
+    <script src="assets/js/firm-history-timeline.js" defer></script>
     <script>
       (function () {
         const cards = document.querySelectorAll('.pillar-card');
