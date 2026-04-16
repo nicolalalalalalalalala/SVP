@@ -204,6 +204,42 @@ h2 em { font-style:italic; }
 .about__supporting-line {
   color: var(--ink2);
 }
+.about__statement {
+  display:grid;
+  grid-template-columns:5fr 7fr;
+  gap:var(--content-gap);
+  align-items:start;
+  padding:clamp(18px, 3vw, 28px) 0 clamp(64px, 8vw, 104px);
+  border-bottom:1px solid var(--rule);
+  margin-bottom:clamp(56px, 7vw, 94px);
+}
+.about__anchor {
+  margin:0;
+  max-width:12ch;
+  font-family:var(--serif);
+  font-size:clamp(36px, 4vw, 56px);
+  line-height:1.06;
+  letter-spacing:.01em;
+  color:var(--ink);
+}
+.about__statement-body {
+  max-width:62ch;
+}
+.about__statement-body p {
+  margin:0;
+  font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size:18px;
+  line-height:1.78;
+  color:var(--mist);
+}
+.about__statement-note {
+  margin-top:12px !important;
+  font-size:11px !important;
+  line-height:1.5 !important;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:rgba(32, 52, 74, 0.78) !important;
+}
 /* ══ HERO */
 #hero {
   padding:var(--section-space-tight) var(--pad) var(--section-space-tight);
@@ -228,16 +264,16 @@ h2 em { font-style:italic; }
   display:flex;
   align-items:center;
   gap:12px;
-  margin-bottom:18px;
+  margin-bottom:14px;
   font-size:10px;
-  font-weight:500;
+  font-weight:600;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--mist);
+  color:var(--cinnabar);
 }
 .stats__eyebrow::after {
   content:"";
-  width:36px;
+  width:44px;
   height:1px;
   background:currentColor;
 }
@@ -410,6 +446,14 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
   gap:var(--content-gap); align-items:start;
   padding-bottom:clamp(54px, 6.5vw, 86px); border-bottom:1px solid var(--rule); margin-bottom:clamp(54px, 6.5vw, 86px);
 }
+.about__intro--overview {
+  margin-bottom:0;
+  border-bottom:0;
+  padding-bottom:0;
+}
+.about__intro--principles {
+  margin-top:0;
+}
 h2.about__hed { font-size:32px; color:var(--ink); }
 #about .eyebrow,
 #about .about__body p,
@@ -428,6 +472,14 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   font-size:clamp(34px, 3.2vw, 44px);
   font-weight:400;
   letter-spacing:0;
+}
+.about__subhed {
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(24px, 2.4vw, 31px);
+  line-height:1.2;
+  color:var(--ink);
+  font-weight:400;
 }
 .about__body {
   display:grid;
@@ -606,13 +658,21 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 
 /* ══ HERO STATS (minimal animated layout) */
 #stats {
-  padding:18px 0 0;
+  padding:22px 0 0;
 }
 .hero__stats {
   width:100%;
   max-width:none;
-  padding-top:4px;
-  padding-inline:clamp(20px, 3.6vw, 64px);
+  padding-top:8px;
+  padding-inline:clamp(20px, 4.4vw, 84px);
+}
+.stats__transition {
+  max-width:74ch;
+  margin:0 0 clamp(24px, 2.8vw, 34px);
+  font-size:15px;
+  line-height:1.7;
+  letter-spacing:.01em;
+  color:color-mix(in srgb, var(--ink) 62%, var(--mist));
 }
 .stats {
   width:100%;
@@ -634,7 +694,7 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 .stat {
   position:relative;
-  padding:20px 10px 18px 0;
+  padding:24px 18px 22px 0;
   border-bottom:1px solid rgba(21, 24, 20, .1);
   opacity:0;
   transform:translateY(14px);
@@ -642,8 +702,8 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 @media (min-width: 1100px) {
   .stat {
-    min-height:148px;
-    padding:24px 22px 20px 0;
+    min-height:156px;
+    padding:30px 28px 24px 0;
     border-right:1px solid rgba(21, 24, 20, .11);
   }
   .stat:last-child {
@@ -655,23 +715,23 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 .stat:nth-child(4) { animation-delay:.26s; }
 .stat__n {
   font-family:var(--serif);
-  font-size:clamp(34px,3.4vw,46px);
+  font-size:clamp(38px,3.7vw,52px);
   font-variant-numeric: tabular-nums;
   line-height:1;
   letter-spacing:-0.015em;
   color:var(--ink);
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 .stat__l {
-  font-size:10.5px;
-  font-weight:500;
-  letter-spacing:.14em;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.13em;
   text-transform:uppercase;
-  color:rgba(30, 31, 28, .7);
-  line-height:1.5;
+  color:rgba(30, 31, 28, .66);
+  line-height:1.45;
   text-wrap:balance;
   overflow-wrap:anywhere;
-  max-width:24ch;
+  max-width:20ch;
 }
 .stat__l span {
   display:block;
@@ -680,9 +740,9 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   color:#7e2237;
 }
 .stats__note {
-  margin-top:18px;
+  margin-top:20px;
   width:100%;
-  max-width:72ch;
+  max-width:78ch;
   color:rgba(48, 45, 40, .68);
   font-size:11.5px;
   line-height:1.55;
@@ -1579,6 +1639,7 @@ h2.su__hed {
 
   #hero,
   .about__intro,
+  .about__statement,
   .about__cols,
   .num-band__inner,
   .strat__hd,
@@ -1642,30 +1703,36 @@ h2.su__hed {
   .num-band { padding:52px 0; }
 
   #stats {
-    padding:18px var(--pad) 14px;
+    padding:16px var(--pad) 12px;
+  }
+  .stats__transition {
+    margin-bottom:18px;
+    font-size:13.5px;
+    line-height:1.58;
+    max-width:100%;
   }
   .stats {
     max-width:100%;
     grid-template-columns:1fr;
-    gap:10px;
+    gap:0;
   }
   .stat {
-    padding:15px 14px 13px;
-    border-radius:3px;
-    border:1px solid rgba(30, 64, 64, .24);
-    border-top-color:rgba(30, 64, 64, .34);
-    background:linear-gradient(180deg, rgba(250, 246, 238, .96) 0%, rgba(244, 238, 224, .94) 100%);
-    box-shadow:inset 0 1px 0 rgba(255, 255, 255, .34);
+    padding:16px 8px 14px 0;
+    border-radius:0;
+    border:0;
+    border-bottom:1px solid rgba(30, 64, 64, .24);
+    background:transparent;
+    box-shadow:none;
   }
   .stat__n {
-    font-size:clamp(30px, 7.1vw, 38px);
-    margin-bottom:7px;
+    font-size:clamp(30px, 8vw, 40px);
+    margin-bottom:8px;
     line-height:.94;
   }
   .stat__l {
     font-size:9px;
-    letter-spacing:.12em;
-    line-height:1.38;
+    letter-spacing:.11em;
+    line-height:1.42;
     max-width:none;
     text-wrap:pretty;
     overflow-wrap:normal;
@@ -1684,10 +1751,16 @@ h2.su__hed {
   @media (min-width: 520px) and (max-width: 900px) {
     .stats {
       grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:12px;
+      gap:0;
+      border-bottom:0;
     }
     .stat {
       min-height:122px;
+      padding:18px 12px 16px 0;
+      border-right:1px solid rgba(30, 64, 64, .18);
+    }
+    .stat:nth-child(2n) {
+      border-right:0;
     }
   }
   @media (max-width: 420px) {
@@ -1698,11 +1771,30 @@ h2.su__hed {
   }
 
   #about {
-    padding:52px 0 84px;
+    padding:64px 0 84px;
   }
   .about__intro {
     padding-bottom:52px;
     margin-bottom:52px;
+  }
+  .about__intro--overview {
+    padding-bottom:0;
+    margin-bottom:0;
+  }
+  .about__statement {
+    padding:8px 0 56px;
+    margin-bottom:56px;
+  }
+  .about__anchor {
+    max-width:none;
+    font-size:clamp(34px, 9.5vw, 54px);
+  }
+  .about__statement-body p {
+    font-size:17px;
+    line-height:1.72;
+  }
+  .about__subhed {
+    font-size:clamp(23px, 6.8vw, 30px);
   }
 
   .team__grid { gap:20px; }
@@ -2524,6 +2616,7 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
 <section id="stats" class="wrap">
   <div class="hero__stats">
     <div class="stats__eyebrow">Institutional proof points</div>
+    <p class="stats__transition">A two-decade onshore platform built for institutional capital, with realized execution across cycles.</p>
     <div class="stats" aria-label="ShoreVest track record statistics">
       <div class="stat">
         <div class="stat__n" data-countup data-target="2" data-prefix="US$" data-suffix="B+" data-delay="0">US$2B+</div>
@@ -2549,9 +2642,9 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <div class="about__intro">
+    <div class="about__intro about__intro--overview">
       <div>
-        <div class="eyebrow rev">ABOUT THE FIRM</div>
+        <div class="eyebrow eyebrow--red rev">ABOUT THE FIRM</div>
         <h2 class="about__hed rev d1">A firm rooted<br>in two worlds.</h2>
       </div>
       <div class="about__body rev d2">
@@ -2563,10 +2656,19 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
         </div>
       </div>
     </div>
+    <div class="about__statement rev">
+      <h2 class="about__anchor d1">ROOTED IN TWO WORLDS.</h2>
+      <div class="about__statement-body d2">
+        <p>
+          This defines ShoreVest’s operating position: onshore execution in China with governance, reporting, and portfolio discipline aligned to institutional investors.
+        </p>
+        <p class="about__statement-note">Operating model, not a slogan.</p>
+      </div>
+    </div>
     <div class="about__intro about__intro--principles">
       <div>
-        <h2 class="about__work-title rev">How We Work</h2>
-        <p class="about__work-subtitle rev d1">Vision &amp; Principles</p>
+        <div class="eyebrow rev">HOW WE WORK</div>
+        <h3 class="about__subhed rev d1">Vision &amp; Principles</h3>
       </div>
       <div class="about__body rev d2">
         <p>
