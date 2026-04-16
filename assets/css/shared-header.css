@@ -1,3 +1,10 @@
+/* Global page-edge consistency: remove browser default body margins on all pages that load shared chrome. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Structural mount keeps header above page content without overlap */
 #site-header-mount {
   position: sticky;
