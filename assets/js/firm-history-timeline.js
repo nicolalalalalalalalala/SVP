@@ -119,7 +119,7 @@
       if (window.innerWidth < 980) return;
       const viewport = window.innerHeight || 1;
       const targetProgress = milestones.length === 1 ? 0 : index / (milestones.length - 1);
-      const sectionTop = scrollArea.offsetTop;
+      const sectionTop = window.scrollY + scrollArea.getBoundingClientRect().top;
       const totalRange = Math.max(scrollArea.offsetHeight - viewport, 1);
       const targetScroll = sectionTop + targetProgress * totalRange;
       window.scrollTo({ top: targetScroll, behavior: reduceMotion ? 'auto' : 'smooth' });
@@ -177,6 +177,7 @@
 
   function updateStage(index, progress, floatIndex) {
     state.activeIndex = index;
+    state.progress = progress;
     section.style.setProperty('--sv-history-progress', String(progress));
 
     railItems.forEach((item, itemIndex) => {
