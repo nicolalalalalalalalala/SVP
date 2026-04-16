@@ -82,7 +82,6 @@ body,
   border-color: var(--paper-dark) !important;
 }
 
-.stat,
 .issue-card,
 .icard,
 .cdd-subscribe__card,
@@ -93,6 +92,17 @@ body,
 
 body.homepage #stats .stat {
   background: transparent !important;
+  border-color: color-mix(in srgb, var(--paper-dark) 68%, transparent) !important;
+  padding-top: clamp(16px, 1.8vw, 22px);
+  padding-bottom: clamp(14px, 1.6vw, 18px);
+}
+
+body.homepage #stats .stat__n {
+  color: color-mix(in srgb, var(--text-main) 90%, #000 10%) !important;
+}
+
+body.homepage #stats .stat__l {
+  color: color-mix(in srgb, var(--text-main) 64%, transparent) !important;
 }
 
 #cdd .cdd-hero__card {
