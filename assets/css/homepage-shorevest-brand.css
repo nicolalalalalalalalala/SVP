@@ -719,11 +719,11 @@ html body.homepage #cdd .cdd-feature__quote {
    Scope: homepage only, desktop/tablet top navigation
    ========================================================================== */
 @media (min-width: 981px) {
-  body.homepage #site-header-mount {
+  :is(body.homepage, body.press-page) #site-header-mount {
     background: var(--paper) !important;
   }
 
-  body.homepage #site-header-mount #nav {
+  :is(body.homepage, body.press-page) #site-header-mount #nav {
     grid-template-columns: minmax(252px, auto) minmax(460px, 1fr) minmax(252px, auto) !important;
     column-gap: clamp(18px, 1.8vw, 28px) !important;
     padding-inline: clamp(24px, 3.2vw, 46px) !important;
@@ -732,29 +732,29 @@ html body.homepage #cdd .cdd-feature__quote {
     box-shadow: none !important;
   }
 
-  body.homepage #site-header-mount #nav.scrolled {
+  :is(body.homepage, body.press-page) #site-header-mount #nav.scrolled {
     box-shadow: none !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__logo {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__logo {
     gap: 5px !important;
     min-width: 252px;
   }
 
-  body.homepage #site-header-mount #nav .nav__logo-lockup {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__logo-lockup {
     padding-left: 9px !important;
     margin-left: 2px !important;
     row-gap: 1px !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__logo-en {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__logo-en {
     letter-spacing: 0.048em !important;
     font-size: 15px !important;
     font-weight: 700 !important;
     color: color-mix(in srgb, var(--ink-green-dark) 92%, #000 8%) !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__logo-cn {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__logo-cn {
     font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
     font-size: 9.6px !important;
     font-weight: 600 !important;
@@ -763,14 +763,14 @@ html body.homepage #cdd .cdd-feature__quote {
     transform: translateY(-0.5px) !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__links {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__links {
     justify-content: center !important;
     gap: clamp(24px, 2vw, 34px) !important;
     padding-inline: clamp(8px, 1.2vw, 20px) !important;
     margin: 0 auto !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__links a {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__links a {
     font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
     font-size: 10.6px !important;
     font-weight: 500 !important;
@@ -780,12 +780,12 @@ html body.homepage #cdd .cdd-feature__quote {
     opacity: 1 !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__links a:hover,
-  body.homepage #site-header-mount #nav .nav__links a.active {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__links a:hover,
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__links a.active {
     color: color-mix(in srgb, var(--ink-green-dark) 92%, var(--blue-green-dark) 8%) !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__right {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__right {
     min-width: 252px;
     justify-self: end !important;
     justify-content: flex-end !important;
@@ -793,7 +793,7 @@ html body.homepage #cdd .cdd-feature__quote {
     gap: clamp(12px, 1.4vw, 18px) !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__zh {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__zh {
     display: inline-flex !important;
     align-items: center;
     font-size: 10.9px !important;
@@ -802,18 +802,18 @@ html body.homepage #cdd .cdd-feature__quote {
     color: color-mix(in srgb, var(--ink-green-dark) 60%, var(--paper-dark) 40%) !important;
   }
 
-  body.homepage #site-header-mount #nav.nav--en .nav__zh {
+  :is(body.homepage, body.press-page) #site-header-mount #nav.nav--en .nav__zh {
     font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
     letter-spacing: 0.03em !important;
   }
 
-  body.homepage #site-header-mount #nav.nav--cn .nav__zh {
+  :is(body.homepage, body.press-page) #site-header-mount #nav.nav--cn .nav__zh {
     font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
     letter-spacing: 0.14em !important;
     text-transform: uppercase;
   }
 
-  body.homepage #site-header-mount #nav .nav__zh::before {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__zh::before {
     content: "";
     width: 18px;
     height: 1px;
@@ -822,7 +822,7 @@ html body.homepage #cdd .cdd-feature__quote {
     opacity: 0.55;
   }
 
-  body.homepage #site-header-mount #nav .nav__lp {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__lp {
     font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
     font-size: 10.4px !important;
     font-weight: 500 !important;
@@ -836,8 +836,8 @@ html body.homepage #cdd .cdd-feature__quote {
     line-height: 1 !important;
   }
 
-  body.homepage #site-header-mount #nav .nav__lp:hover,
-  body.homepage #site-header-mount #nav .nav__lp:focus-visible {
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__lp:hover,
+  :is(body.homepage, body.press-page) #site-header-mount #nav .nav__lp:focus-visible {
     background: color-mix(in srgb, var(--paper) 92%, var(--paper-dark) 8%) !important;
     border-color: color-mix(in srgb, var(--ink-green-dark) 28%, var(--paper-dark) 72%) !important;
     color: var(--ink-green-dark) !important;
