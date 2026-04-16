@@ -517,9 +517,9 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 .stats__transition {
   max-width:70ch;
-  margin:0 0 clamp(22px, 2.6vw, 30px);
-  font-size:14px;
-  line-height:1.62;
+  margin:0 0 clamp(24px, 2.8vw, 34px);
+  font-size:13px;
+  line-height:1.66;
   letter-spacing:.01em;
   color:color-mix(in srgb, var(--ink) 58%, var(--mist));
 }
@@ -528,8 +528,7 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   display:grid;
   grid-template-columns:1fr;
   gap:0;
-  border-top:1px solid rgba(21, 24, 20, .14);
-  border-bottom:1px solid rgba(21, 24, 20, .12);
+  border:0;
   background:transparent;
 }
 @media (min-width: 600px) {
@@ -544,14 +543,16 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 .stat {
   position:relative;
-  padding:22px 18px 20px 0;
-  border-bottom:1px solid rgba(21, 24, 20, .09);
+  padding:20px 16px 18px 0;
+  border-bottom:1px solid rgba(21, 24, 20, .11);
+  background:transparent !important;
 }
 @media (min-width: 1100px) {
   .stat {
-    min-height:142px;
-    padding:26px 32px 20px 0;
-    border-right:1px solid rgba(21, 24, 20, .1);
+    min-height:122px;
+    padding:14px 28px 12px 0;
+    border-bottom:0;
+    border-right:1px solid rgba(21, 24, 20, .12);
   }
   .stat:last-child {
     border-right:none;
@@ -559,21 +560,21 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 .stat__n {
   font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size:clamp(30px,2.9vw,40px);
+  font-size:clamp(26px,2.3vw,34px);
   font-weight:500;
   font-variant-numeric: tabular-nums;
-  line-height:1;
+  line-height:1.02;
   letter-spacing:-0.005em;
   color:var(--ink);
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
 .stat__l {
-  font-size:9px;
+  font-size:8px;
   font-weight:500;
-  letter-spacing:.11em;
+  letter-spacing:.095em;
   text-transform:uppercase;
-  color:rgba(30, 31, 28, .62);
-  line-height:1.38;
+  color:rgba(30, 31, 28, .56);
+  line-height:1.34;
   text-wrap:balance;
   overflow-wrap:anywhere;
   max-width:22ch;
@@ -585,12 +586,12 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   color:color-mix(in srgb, var(--ink) 86%, var(--cinnabar));
 }
 .stats__note {
-  margin-top:14px;
+  margin-top:16px;
   width:100%;
   max-width:80ch;
-  color:rgba(48, 45, 40, .58);
-  font-size:10px;
-  line-height:1.48;
+  color:rgba(48, 45, 40, .5);
+  font-size:9px;
+  line-height:1.44;
   letter-spacing:.01em;
   overflow-wrap:anywhere;
   text-wrap:pretty;
@@ -1775,9 +1776,9 @@ body.homepage #cdd .cdd-editorial__meta {
     padding:14px var(--pad) 10px;
   }
   .stats__transition {
-    margin-bottom:16px;
-    font-size:13px;
-    line-height:1.56;
+    margin-bottom:18px;
+    font-size:12px;
+    line-height:1.58;
     max-width:100%;
   }
   .stats {
@@ -1786,22 +1787,22 @@ body.homepage #cdd .cdd-editorial__meta {
     gap:0;
   }
   .stat {
-    padding:14px 10px 12px 0;
+    padding:14px 8px 12px 0;
     border-radius:0;
     border:0;
-    border-bottom:1px solid rgba(30, 64, 64, .18);
+    border-bottom:1px solid rgba(21, 24, 20, .13);
     background:transparent;
     box-shadow:none;
   }
   .stat__n {
-    font-size:clamp(26px, 7.2vw, 34px);
+    font-size:clamp(24px, 7vw, 30px);
     margin-bottom:7px;
-    line-height:.94;
+    line-height:.98;
   }
   .stat__l {
-    font-size:8.5px;
-    letter-spacing:.1em;
-    line-height:1.36;
+    font-size:7.75px;
+    letter-spacing:.09em;
+    line-height:1.34;
     max-width:none;
     text-wrap:pretty;
     overflow-wrap:normal;
@@ -1811,10 +1812,10 @@ body.homepage #cdd .cdd-editorial__meta {
     margin-top:9px;
     margin-bottom:0;
     max-width:62ch;
-    font-size:9px;
+    font-size:8px;
     letter-spacing:.01em;
     line-height:1.4;
-    color:rgba(48, 45, 40, .42);
+    color:rgba(48, 45, 40, .44);
     padding:0 1px;
   }
   @media (min-width: 520px) and (max-width: 900px) {
@@ -1824,9 +1825,9 @@ body.homepage #cdd .cdd-editorial__meta {
       border-bottom:0;
     }
     .stat {
-      min-height:110px;
-      padding:16px 12px 14px 0;
-      border-right:1px solid rgba(30, 64, 64, .14);
+      min-height:100px;
+      padding:14px 10px 12px 0;
+      border-right:1px solid rgba(21, 24, 20, .11);
     }
     .stat:nth-child(2n) {
       border-right:0;
@@ -1835,7 +1836,7 @@ body.homepage #cdd .cdd-editorial__meta {
   @media (max-width: 420px) {
     .stat {
       padding:13px 10px 11px 0;
-      border-radius:2px;
+      border-radius:0;
     }
   }
 
@@ -2258,7 +2259,7 @@ body.homepage #cdd .cdd-editorial__meta {
 <!-- HERO STATS -->
 <section id="stats" class="wrap">
   <div class="hero__stats">
-    <div class="stats__eyebrow">Institutional proof points</div>
+    <div class="stats__eyebrow">INSTITUTIONAL PROOF POINTS</div>
     <p class="stats__transition">A two-decade onshore platform built for institutional capital, with realized execution across cycles.</p>
     <div class="stats" aria-label="ShoreVest track record statistics">
       <div class="stat">
