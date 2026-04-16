@@ -948,19 +948,24 @@ blockquote.fs__q {
 
 .cdd-editorial__card {
   display: grid;
-  gap: clamp(34px, 3.7vw, 52px);
-  background: var(--cdd-surface);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
-  padding: clamp(38px, 4.8vw, 66px);
-  box-shadow: 0 22px 58px color-mix(in srgb, #08120a 50%, transparent);
+  gap: clamp(30px, 3.2vw, 44px);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--cdd-surface) 92%, #1a2f2c 8%) 0%,
+      var(--cdd-surface) 100%
+    );
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 14%, transparent);
+  padding: clamp(36px, 4.2vw, 58px);
+  box-shadow: 0 18px 44px color-mix(in srgb, #08120a 32%, transparent);
 }
 
 .cdd-editorial__intro {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
   gap: clamp(28px, 4vw, 72px);
-  padding-bottom: clamp(34px, 3.8vw, 50px);
-  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
+  padding-bottom: clamp(30px, 3.3vw, 42px);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
 }
 
 .cdd-editorial__kicker {
@@ -988,12 +993,12 @@ blockquote.fs__q {
 }
 
 .cdd-editorial__lede {
-  max-width: 48ch;
+  max-width: 54ch;
   font-family: var(--serif);
-  font-size: clamp(18px, 2.2vw, 24px);
-  line-height: 1.8;
+  font-size: clamp(18px, 1.95vw, 23px);
+  line-height: 1.74;
   color: var(--cdd-body);
-  margin-bottom: 8px;
+  margin-bottom: 2px;
 }
 
 .cdd-editorial__meta {
@@ -1036,13 +1041,13 @@ blockquote.fs__q {
 }
 
 .cdd-feature {
-  background: var(--cdd-surface);
+  background: transparent;
   border: 0;
 }
 
 .cdd-feature__top {
-  padding: 16px clamp(24px, 3vw, 36px);
-  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
+  padding: 12px 0 16px;
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1063,9 +1068,9 @@ blockquote.fs__q {
 
 .cdd-feature__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.75fr) minmax(0, .9fr);
-  gap: clamp(34px, 4vw, 56px);
-  padding: clamp(40px, 4.2vw, 60px) clamp(26px, 3vw, 44px) clamp(34px, 3.4vw, 50px);
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, .85fr);
+  gap: clamp(30px, 3.4vw, 48px);
+  padding: clamp(30px, 3.4vw, 44px) 0 clamp(18px, 2.2vw, 28px);
   align-items: stretch;
 }
 
@@ -1076,11 +1081,12 @@ blockquote.fs__q {
 .cdd-feature__main {
   display: flex;
   flex-direction: column;
-  padding-left: 0;
+  padding-left: clamp(16px, 2vw, 28px);
+  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 18%, transparent);
 }
 
 .cdd-feature__main .cdd-cta-group {
-  margin-top: 20px;
+  margin-top: clamp(24px, 2.4vw, 30px);
   padding-top: 0;
   border-top: 0;
 }
@@ -1115,19 +1121,19 @@ blockquote.fs__q {
 }
 
 .cdd-feature__title--compact {
-  font-size: clamp(30px, 2.7vw, 46px);
-  line-height: 1.12;
+  font-size: clamp(33px, 2.95vw, 47px);
+  line-height: 1.1;
   letter-spacing: -.005em;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   width: 100%;
-  max-width: 20ch;
+  max-width: 23ch;
 }
 
 .cdd-feature__thesis {
   font-family: var(--serif);
-  font-size: clamp(17px, 1.15vw, 19px);
-  line-height: 1.76;
-  max-width: 58ch;
+  font-size: clamp(17px, 1.1vw, 18.5px);
+  line-height: 1.82;
+  max-width: 62ch;
   color: var(--cdd-body);
 }
 
@@ -1135,10 +1141,11 @@ blockquote.fs__q {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: clamp(22px, 2.4vw, 30px);
-  padding: clamp(8px, 1.5vw, 14px) 0 0;
+  gap: clamp(18px, 2vw, 24px);
+  padding: clamp(2px, 0.4vw, 6px) 0 0 clamp(12px, 1.1vw, 16px);
   background: transparent;
   border: 0;
+  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 16%, transparent);
 }
 
 .cdd-feature__panel .cdd-feature__label {
@@ -1148,27 +1155,27 @@ blockquote.fs__q {
 
 .cdd-feature__findings {
   display: grid;
-  gap: 16px;
+  gap: 13px;
 }
 
 .cdd-feature__finding {
   font-size: 14px;
-  line-height: 1.76;
+  line-height: 1.68;
   color: var(--cdd-body);
-  border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 44%, transparent);
-  padding-left: 14px;
+  border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 38%, transparent);
+  padding-left: 12px;
 }
 
 .cdd-feature__quote {
   font-family: var(--serif);
   font-size: 14px;
-  line-height: 1.78;
+  line-height: 1.72;
   color: var(--cdd-text);
   font-style: normal;
   margin: 0;
-  padding: 16px 0 0 14px;
+  padding: 12px 0 0 12px;
   background: transparent;
-  border-top: 0;
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 14%, transparent);
   border-left: 1px solid color-mix(in srgb, var(--cdd-signal) 78%, transparent);
 }
 
@@ -1191,8 +1198,9 @@ blockquote.fs__q {
 
 .cdd-cta-group {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .cdd-cta {
@@ -1200,7 +1208,7 @@ blockquote.fs__q {
   align-items: center;
   gap: 10px;
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
-  padding: 10px 12px 10px 16px;
+  padding: 10px 13px 10px 18px;
   font-size: 9px;
   font-weight: 500;
   letter-spacing: .14em;
@@ -1959,6 +1967,7 @@ h2.su__hed {
   }
   .cdd-feature__body > div:first-child {
     padding-left: 6px;
+    border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent);
   }
   .cdd-feature__main .cdd-cta-group {
     margin-top: 14px;
@@ -1969,9 +1978,10 @@ h2.su__hed {
     line-height: 1.66;
   }
   .cdd-feature__panel {
-    padding: 0;
+    padding: 0 0 0 6px;
     gap: 12px;
     border: 0;
+    border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 18%, transparent);
     background: transparent;
   }
   .cdd-feature__finding {
@@ -1997,7 +2007,7 @@ h2.su__hed {
   .cdd-cta-group {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
   .cdd-cta {
@@ -2006,6 +2016,11 @@ h2.su__hed {
     font-size: 8px;
     letter-spacing: .11em;
     padding: 8px 10px 8px 12px;
+  }
+  @media (max-width: 460px) {
+    .cdd-cta-group {
+      grid-template-columns: 1fr;
+    }
   }
   .cdd-editorial__meta {
     grid-template-columns: minmax(0, 1fr);
