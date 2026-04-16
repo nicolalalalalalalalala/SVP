@@ -199,6 +199,7 @@ h2 em { font-style:italic; }
 }
 .about__intro--principles {
   margin-top: clamp(56px, 7vw, 90px);
+  padding-top: clamp(10px, 1.5vw, 20px);
 }
 .about__supporting-line {
   color: var(--ink2);
@@ -489,6 +490,48 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   font-size:20px; line-height:1.82; color:var(--mist);
   font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
   margin:0;
+}
+.about__intro--principles > div:first-child {
+  display:grid;
+  gap:clamp(14px, 1.8vw, 22px);
+  align-content:start;
+}
+.about__work-title {
+  margin:0;
+  color:var(--ink);
+  font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size:clamp(24px, 2.4vw, 32px);
+  font-weight:500;
+  letter-spacing:.08em;
+  line-height:1.08;
+  text-transform:uppercase;
+}
+.about__work-subtitle {
+  margin:0;
+  color:var(--mist);
+  font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.22em;
+  line-height:1.55;
+  text-transform:uppercase;
+}
+.about__intro--principles .about__body {
+  max-width:62ch;
+  gap:18px;
+}
+.about__intro--principles .about__body p {
+  max-width:60ch;
+}
+.about__intro--principles .about__supporting-line {
+  margin-top:8px;
+  padding-top:16px;
+  max-width:46ch;
+  border-top:1px solid var(--rule);
+  font-size:16px;
+  letter-spacing:.08em;
+  line-height:1.6;
+  text-transform:uppercase;
 }
 .about__cta {
   margin-top:10px;
