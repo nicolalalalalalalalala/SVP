@@ -21,7 +21,8 @@
   --surface-border: color-mix(in srgb, var(--paper-dark, #d8ceb0) 76%, transparent);
   --shadow-soft: 0 16px 40px color-mix(in srgb, var(--text-main, #0f2206) 18%, transparent);
   --shadow-xs: 0 4px 12px color-mix(in srgb, var(--text-main, #0f2206) 14%, transparent);
-  --control-transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, letter-spacing 0.2s ease;
+  --control-ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --control-transition: border-color 0.28s var(--control-ease-smooth), background-color 0.28s var(--control-ease-smooth), color 0.24s var(--control-ease-smooth), box-shadow 0.3s var(--control-ease-smooth), transform 0.3s var(--control-ease-smooth), letter-spacing 0.24s var(--control-ease-smooth);
 }
 
 /* Global square-corner pass for boxes and controls */
@@ -59,6 +60,9 @@
 :where(button, .btn, .util-btn, .research-sub__submit, .jump-nav button, .viz-btn, .track-record-trigger, input[type="button"], input[type="submit"], input[type="reset"]) {
   border-radius: 0 !important;
   transition: var(--control-transition);
+  will-change: transform, box-shadow, background-color, border-color;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* Preserve circular status/map dots from the global square-corner pass. */
