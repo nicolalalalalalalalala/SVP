@@ -694,6 +694,15 @@ body {
 }
 
 /* Header normalization layer: keep all page top bars identical to the homepage baseline. */
+#site-header-mount {
+  --sv-header-paper-light: #FAF6EE;
+  --sv-header-paper: #F2ECD8;
+  --sv-header-paper-dark: #D8CEB0;
+  --sv-header-ink: #0F2206;
+  --sv-header-blue-green-dark: #1E4040;
+  --sv-header-cinnabar: #C93B2A;
+}
+
 #site-header-mount #nav .nav__links a {
   opacity: 1 !important;
 }
@@ -1014,15 +1023,15 @@ body {
    ========================================================================== */
 @media (min-width: 981px) {
   #site-header-mount {
-    background: var(--paper) !important;
+    background: var(--sv-header-paper) !important;
   }
 
   #site-header-mount #nav {
     grid-template-columns: minmax(252px, auto) minmax(460px, 1fr) minmax(252px, auto) !important;
     column-gap: clamp(18px, 1.8vw, 28px) !important;
     padding-inline: clamp(24px, 3.2vw, 46px) !important;
-    border-bottom: 0.8px solid color-mix(in srgb, var(--paper-dark) 80%, var(--ink-green-dark) 20%) !important;
-    background: color-mix(in srgb, var(--paper) 94%, var(--paper-light) 6%) !important;
+    border-bottom: 0.8px solid color-mix(in srgb, var(--sv-header-paper-dark) 80%, var(--sv-header-ink) 20%) !important;
+    background: color-mix(in srgb, var(--sv-header-paper) 94%, var(--sv-header-paper-light) 6%) !important;
     box-shadow: none !important;
   }
 
@@ -1045,14 +1054,14 @@ body {
     letter-spacing: 0.048em !important;
     font-size: 15px !important;
     font-weight: 700 !important;
-    color: color-mix(in srgb, var(--ink-green-dark) 92%, #000 8%) !important;
+    color: color-mix(in srgb, var(--sv-header-ink) 92%, #000 8%) !important;
   }
 
   #site-header-mount #nav .nav__logo-cn {
     font-size: 9.6px !important;
     font-weight: 600 !important;
     letter-spacing: 0.16em !important;
-    color: color-mix(in srgb, var(--cinnabar) 78%, var(--paper-dark) 22%) !important;
+    color: color-mix(in srgb, var(--sv-header-cinnabar) 78%, var(--sv-header-paper-dark) 22%) !important;
     transform: translateY(-0.5px) !important;
   }
 
@@ -1068,13 +1077,13 @@ body {
     font-weight: 500 !important;
     letter-spacing: 0.145em !important;
     text-transform: uppercase !important;
-    color: color-mix(in srgb, var(--ink-green-dark) 74%, var(--paper-dark) 26%) !important;
+    color: color-mix(in srgb, var(--sv-header-ink) 74%, var(--sv-header-paper-dark) 26%) !important;
     opacity: 1 !important;
   }
 
   #site-header-mount #nav .nav__links a:hover,
   #site-header-mount #nav .nav__links a.active {
-    color: color-mix(in srgb, var(--ink-green-dark) 92%, var(--blue-green-dark) 8%) !important;
+    color: color-mix(in srgb, var(--sv-header-ink) 92%, var(--sv-header-blue-green-dark) 8%) !important;
   }
 
   #site-header-mount #nav .nav__right {
@@ -1091,7 +1100,7 @@ body {
     font-size: 10.9px !important;
     letter-spacing: 0.07em !important;
     opacity: 1 !important;
-    color: color-mix(in srgb, var(--ink-green-dark) 60%, var(--paper-dark) 40%) !important;
+    color: color-mix(in srgb, var(--sv-header-ink) 60%, var(--sv-header-paper-dark) 40%) !important;
   }
 
   #site-header-mount #nav.nav--en .nav__zh {
@@ -1110,7 +1119,7 @@ body {
     width: 18px;
     height: 1px;
     margin-right: 10px;
-    background: color-mix(in srgb, var(--cinnabar) 50%, var(--paper-dark) 50%);
+    background: color-mix(in srgb, var(--sv-header-cinnabar) 50%, var(--sv-header-paper-dark) 50%);
     opacity: 0.55;
   }
 
@@ -1119,10 +1128,10 @@ body {
     font-weight: 500 !important;
     letter-spacing: 0.15em !important;
     text-transform: uppercase !important;
-    color: color-mix(in srgb, var(--ink-green-dark) 82%, var(--paper-dark) 18%) !important;
+    color: color-mix(in srgb, var(--sv-header-ink) 82%, var(--sv-header-paper-dark) 18%) !important;
     padding: 6px 12px !important;
-    border: 0.8px solid color-mix(in srgb, var(--ink-green-dark) 16%, var(--paper-dark) 84%) !important;
-    background: color-mix(in srgb, var(--paper) 97%, var(--paper-light) 3%) !important;
+    border: 0.8px solid color-mix(in srgb, var(--sv-header-ink) 16%, var(--sv-header-paper-dark) 84%) !important;
+    background: color-mix(in srgb, var(--sv-header-paper) 97%, var(--sv-header-paper-light) 3%) !important;
     border-radius: 0 !important;
     line-height: 1 !important;
   }
@@ -1130,8 +1139,8 @@ body {
   #site-header-mount #nav .nav__lp:hover,
   #site-header-mount #nav .nav__lp:focus-visible,
   #site-header-mount #nav .nav__lp.active {
-    background: color-mix(in srgb, var(--paper) 92%, var(--paper-dark) 8%) !important;
-    border-color: color-mix(in srgb, var(--ink-green-dark) 28%, var(--paper-dark) 72%) !important;
-    color: var(--ink-green-dark) !important;
+    background: color-mix(in srgb, var(--sv-header-paper) 92%, var(--sv-header-paper-dark) 8%) !important;
+    border-color: color-mix(in srgb, var(--sv-header-ink) 28%, var(--sv-header-paper-dark) 72%) !important;
+    color: var(--sv-header-ink) !important;
   }
 }
