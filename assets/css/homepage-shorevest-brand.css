@@ -61,7 +61,7 @@ body,
 .num-band,
 .city-band,
 .sv-footer {
-  background: var(--paper-light) !important;
+  background: var(--paper) !important;
   color: var(--text-main) !important;
 }
 
@@ -390,7 +390,7 @@ li,
 
 /* === Homepage institutional refinement pass (April 2026) === */
 body.homepage {
-  background: var(--paper-light) !important;
+  background: var(--paper) !important;
 }
 
 body.homepage .hero__sliver {
@@ -567,7 +567,7 @@ body.homepage #stats,
 body.homepage #about,
 body.homepage #strategy,
 body.homepage .sv-footer {
-  background: var(--paper-light) !important;
+  background: var(--paper) !important;
 }
 
 body.homepage #about,
