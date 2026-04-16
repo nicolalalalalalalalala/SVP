@@ -574,6 +574,83 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
   }
 }
 
+/* ========================================================================== */
+/* Mobile hardening pass (site-wide)                                          */
+/* ========================================================================== */
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  :where(img, picture, video, canvas, svg, iframe) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :where(iframe) {
+    width: 100%;
+  }
+
+  :where(table) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  :where(th, td) {
+    white-space: nowrap;
+  }
+
+  :where(pre, code, kbd, samp) {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  :where(h1, h2, h3, h4, p, li, a) {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  /* Collapse common two-column desktop structures into one column on phones. */
+  :where(
+    .about__statement,
+    .type-sheet__hd,
+    .article-layout,
+    .article-shell,
+    .insight-layout,
+    .insight-shell,
+    .team-grid,
+    .insights-grid,
+    .press-grid,
+    .strategy-grid,
+    [class*="two-col"],
+    [class*="split-layout"],
+    [class*="content-grid"]
+  ) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  :where(
+    .hero__cta,
+    .cta-group,
+    .btn-group,
+    .form-row,
+    [class*="actions"],
+    [class*="button-row"]
+  ) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  :where(.btn, .nav__lp, .research-sub__submit, .sv-topbar__btn) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Page-edge and template alignment. */
 :where(.wrap, .container, .page-wrap, .page-shell, .content-wrap, .insights-wrap, .legal-page__content) {
   padding-left: var(--site-page-margin) !important;
