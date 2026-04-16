@@ -167,17 +167,17 @@ h2 em { font-style:italic; }
 .stats__eyebrow {
   display:flex;
   align-items:center;
-  gap:12px;
-  margin-bottom:14px;
+  gap:10px;
+  margin-bottom:10px;
   font-size:10px;
-  font-weight:600;
-  letter-spacing:.18em;
+  font-weight:500;
+  letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--cinnabar);
 }
 .stats__eyebrow::after {
   content:"";
-  width:44px;
+  width:52px;
   height:1px;
   background:currentColor;
 }
@@ -507,21 +507,21 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 
 /* ══ HERO STATS (minimal animated layout) */
 #stats {
-  padding:22px 0 0;
+  padding:26px 0 0;
 }
 .hero__stats {
   width:100%;
   max-width:none;
-  padding-top:8px;
-  padding-inline:clamp(20px, 4.4vw, 84px);
+  padding-top:6px;
+  padding-inline:clamp(20px, 4vw, 78px);
 }
 .stats__transition {
-  max-width:74ch;
-  margin:0 0 clamp(24px, 2.8vw, 34px);
-  font-size:15px;
-  line-height:1.7;
+  max-width:70ch;
+  margin:0 0 clamp(22px, 2.6vw, 30px);
+  font-size:14px;
+  line-height:1.62;
   letter-spacing:.01em;
-  color:color-mix(in srgb, var(--ink) 62%, var(--mist));
+  color:color-mix(in srgb, var(--ink) 58%, var(--mist));
 }
 .stats {
   width:100%;
@@ -529,7 +529,8 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   grid-template-columns:1fr;
   gap:0;
   border-top:1px solid rgba(21, 24, 20, .14);
-  border-bottom:1px solid rgba(21, 24, 20, .14);
+  border-bottom:1px solid rgba(21, 24, 20, .12);
+  background:transparent;
 }
 @media (min-width: 600px) {
   .stats {
@@ -543,73 +544,56 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 .stat {
   position:relative;
-  padding:24px 18px 22px 0;
-  border-bottom:1px solid rgba(21, 24, 20, .1);
-  opacity:0;
-  transform:translateY(14px);
-  animation:statReveal .7s cubic-bezier(.22,1,.36,1) forwards;
+  padding:22px 18px 20px 0;
+  border-bottom:1px solid rgba(21, 24, 20, .09);
 }
 @media (min-width: 1100px) {
   .stat {
-    min-height:156px;
-    padding:30px 28px 24px 0;
-    border-right:1px solid rgba(21, 24, 20, .11);
+    min-height:142px;
+    padding:26px 32px 20px 0;
+    border-right:1px solid rgba(21, 24, 20, .1);
   }
   .stat:last-child {
     border-right:none;
   }
 }
-.stat:nth-child(2) { animation-delay:.1s; }
-.stat:nth-child(3) { animation-delay:.18s; }
-.stat:nth-child(4) { animation-delay:.26s; }
 .stat__n {
-  font-family:var(--serif);
-  font-size:clamp(38px,3.7vw,52px);
+  font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size:clamp(30px,2.9vw,40px);
+  font-weight:500;
   font-variant-numeric: tabular-nums;
   line-height:1;
-  letter-spacing:-0.015em;
+  letter-spacing:-0.005em;
   color:var(--ink);
-  margin-bottom:12px;
+  margin-bottom:8px;
 }
 .stat__l {
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:.13em;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:.11em;
   text-transform:uppercase;
-  color:rgba(30, 31, 28, .66);
-  line-height:1.45;
+  color:rgba(30, 31, 28, .62);
+  line-height:1.38;
   text-wrap:balance;
   overflow-wrap:anywhere;
-  max-width:20ch;
+  max-width:22ch;
 }
 .stat__l span {
   display:block;
 }
 .stat--zero .stat__n {
-  color:#7e2237;
+  color:color-mix(in srgb, var(--ink) 86%, var(--cinnabar));
 }
 .stats__note {
-  margin-top:20px;
+  margin-top:14px;
   width:100%;
-  max-width:78ch;
-  color:rgba(48, 45, 40, .68);
-  font-size:11.5px;
-  line-height:1.55;
+  max-width:80ch;
+  color:rgba(48, 45, 40, .58);
+  font-size:10px;
+  line-height:1.48;
+  letter-spacing:.01em;
   overflow-wrap:anywhere;
   text-wrap:pretty;
-}
-@keyframes statReveal {
-  to {
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .stat {
-    animation:none;
-    opacity:1;
-    transform:none;
-  }
 }
 
 /* ══ STRATEGY */
@@ -1766,12 +1750,12 @@ body.homepage #cdd .cdd-editorial__meta {
   .num-band { padding:52px 0; }
 
   #stats {
-    padding:16px var(--pad) 12px;
+    padding:14px var(--pad) 10px;
   }
   .stats__transition {
-    margin-bottom:18px;
-    font-size:13.5px;
-    line-height:1.58;
+    margin-bottom:16px;
+    font-size:13px;
+    line-height:1.56;
     max-width:100%;
   }
   .stats {
@@ -1780,34 +1764,34 @@ body.homepage #cdd .cdd-editorial__meta {
     gap:0;
   }
   .stat {
-    padding:16px 8px 14px 0;
+    padding:14px 10px 12px 0;
     border-radius:0;
     border:0;
-    border-bottom:1px solid rgba(30, 64, 64, .24);
+    border-bottom:1px solid rgba(30, 64, 64, .18);
     background:transparent;
     box-shadow:none;
   }
   .stat__n {
-    font-size:clamp(30px, 8vw, 40px);
-    margin-bottom:8px;
+    font-size:clamp(26px, 7.2vw, 34px);
+    margin-bottom:7px;
     line-height:.94;
   }
   .stat__l {
-    font-size:9px;
-    letter-spacing:.11em;
-    line-height:1.42;
+    font-size:8.5px;
+    letter-spacing:.1em;
+    line-height:1.36;
     max-width:none;
     text-wrap:pretty;
     overflow-wrap:normal;
     word-break:keep-all;
   }
   .stats__note {
-    margin-top:10px;
+    margin-top:9px;
     margin-bottom:0;
     max-width:62ch;
-    font-size:9.5px;
+    font-size:9px;
     letter-spacing:.01em;
-    line-height:1.42;
+    line-height:1.4;
     color:rgba(48, 45, 40, .42);
     padding:0 1px;
   }
@@ -1818,9 +1802,9 @@ body.homepage #cdd .cdd-editorial__meta {
       border-bottom:0;
     }
     .stat {
-      min-height:122px;
-      padding:18px 12px 16px 0;
-      border-right:1px solid rgba(30, 64, 64, .18);
+      min-height:110px;
+      padding:16px 12px 14px 0;
+      border-right:1px solid rgba(30, 64, 64, .14);
     }
     .stat:nth-child(2n) {
       border-right:0;
@@ -1828,7 +1812,7 @@ body.homepage #cdd .cdd-editorial__meta {
   }
   @media (max-width: 420px) {
     .stat {
-      padding:14px 12px 12px;
+      padding:13px 10px 11px 0;
       border-radius:2px;
     }
   }
@@ -2256,19 +2240,19 @@ body.homepage #cdd .cdd-editorial__meta {
     <p class="stats__transition">A two-decade onshore platform built for institutional capital, with realized execution across cycles.</p>
     <div class="stats" aria-label="ShoreVest track record statistics">
       <div class="stat">
-        <div class="stat__n" data-countup data-target="2" data-prefix="US$" data-suffix="B+" data-delay="0">US$2B+</div>
+        <div class="stat__n">US$2B+</div>
         <div class="stat__l"><span>CAPITAL</span><span>DEPLOYED</span></div>
       </div>
       <div class="stat">
-        <div class="stat__n" data-countup data-target="6" data-delay="120">6</div>
+        <div class="stat__n">6</div>
         <div class="stat__l"><span>INSTITUTIONAL FUND</span><span>VINTAGES</span></div>
       </div>
       <div class="stat">
-        <div class="stat__n" data-countup data-target="20" data-suffix="+" data-delay="240">20+</div>
+        <div class="stat__n">20+</div>
         <div class="stat__l"><span>YEARS ONSHORE</span><span>CREDIT EXECUTION</span></div>
       </div>
       <div class="stat stat--zero">
-        <div class="stat__n" data-countup data-target="0" data-delay="360">0</div>
+        <div class="stat__n">0</div>
         <div class="stat__l"><span>DEAL-LEVEL</span><span>PRINCIPAL LOSSES</span></div>
       </div>
     </div>

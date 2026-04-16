@@ -470,7 +470,7 @@ body.homepage #stats {
 }
 
 body.homepage .stats {
-  background: linear-gradient(180deg, rgba(250, 246, 238, 0.94), rgba(242, 236, 216, 0.8)) !important;
+  background: transparent !important;
   border-color: color-mix(in srgb, var(--paper-dark) 92%, transparent) !important;
 }
 
