@@ -36,7 +36,7 @@
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; overflow-x:hidden; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
-body { background:var(--white); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; overflow-x:hidden; }
+body { background:var(--off); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
 img { display:block; max-width:100%; }
 .wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
@@ -97,7 +97,7 @@ h2 em { font-style:italic; }
   position:relative;
   width:100%;
   height:600px;
-  --hero-image-position:100% 72%;
+  --hero-image-position:100% 62%;
   /* Keep the hero as a single composited background to avoid delayed paint on mobile. */
   background-color:#6c6864;
   background-image:
@@ -210,11 +210,11 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
 .hero__divline { width:100%; height:1px; background:var(--rule); margin:36px 0; }
 
 /* ══ ABOUT */
-#about { background:var(--white); padding:clamp(64px, 8vw, 108px) 0 var(--section-space); }
+#about { background:var(--off); padding:clamp(64px, 8vw, 108px) 0 var(--section-space); }
 
 /* ══ BRAND TYPOGRAPHY SHEET */
 #brand-typography {
-  background:var(--white);
+  background:var(--off);
   padding:0 0 clamp(52px, 6vw, 84px);
 }
 .type-sheet {
@@ -733,16 +733,20 @@ blockquote.fs__q {
   color: var(--cdd-text);
 }
 
+.wrap.cdd-editorial {
+  max-width: min(1480px, calc(100vw - (var(--pad) * 2)));
+}
+
 .cdd-editorial {
   display: block;
 }
 
 .cdd-editorial__card {
   display: grid;
-  gap: clamp(32px, 3.6vw, 50px);
+  gap: clamp(34px, 3.7vw, 52px);
   background: var(--cdd-surface);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 32%, transparent);
-  padding: clamp(34px, 4.8vw, 64px);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
+  padding: clamp(38px, 4.8vw, 66px);
   box-shadow: 0 22px 58px color-mix(in srgb, #08120a 50%, transparent);
 }
 
@@ -788,15 +792,26 @@ blockquote.fs__q {
 
 .cdd-editorial__meta {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 14px;
-  padding-top: 18px;
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 32%, transparent);
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 18px;
+  padding-top: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
 }
 
 .cdd-editorial__meta-item {
-  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent);
-  padding-left: 14px;
+  border-left: 0;
+  padding-left: 0;
+  position: relative;
+}
+
+.cdd-editorial__meta-item + .cdd-editorial__meta-item::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 3px;
+  bottom: 3px;
+  width: 1px;
+  background: color-mix(in srgb, var(--cdd-structure) 18%, transparent);
 }
 
 .cdd-editorial__meta-label {
@@ -816,7 +831,7 @@ blockquote.fs__q {
 
 .cdd-feature {
   background: var(--cdd-surface);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
+  border: 0;
 }
 
 .cdd-feature__top {
@@ -842,9 +857,9 @@ blockquote.fs__q {
 
 .cdd-feature__body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-  gap: clamp(20px, 2.4vw, 34px);
-  padding: clamp(38px, 4.4vw, 56px) clamp(24px, 3vw, 36px) clamp(30px, 3.4vw, 46px);
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: clamp(28px, 3vw, 52px);
+  padding: clamp(40px, 4.2vw, 60px) clamp(26px, 3vw, 44px) clamp(34px, 3.4vw, 50px);
   align-items: stretch;
 }
 
@@ -852,16 +867,16 @@ blockquote.fs__q {
   min-width: 0;
 }
 
-.cdd-feature__body > div:first-child {
+.cdd-feature__main {
   display: flex;
   flex-direction: column;
-  padding-left: clamp(36px, 3.8vw, 52px);
+  padding-left: 0;
 }
 
-.cdd-feature__body > div:first-child .cdd-cta-group {
-  margin-top: auto;
-  padding-top: 30px;
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 20%, transparent);
+.cdd-feature__main .cdd-cta-group {
+  margin-top: 20px;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .cdd-feature__label {
@@ -894,60 +909,61 @@ blockquote.fs__q {
 }
 
 .cdd-feature__title--compact {
-  font-size: clamp(28px, 2.9vw, 40px);
-  line-height: 1.08;
+  font-size: clamp(30px, 2.7vw, 46px);
+  line-height: 1.12;
   letter-spacing: -.005em;
-  margin-bottom: 26px;
+  margin-bottom: 18px;
   width: 100%;
+  max-width: 20ch;
 }
 
 .cdd-feature__thesis {
   font-family: var(--serif);
-  font-size: 18px;
-  line-height: 1.84;
-  max-width: 44ch;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.76;
+  max-width: 58ch;
   color: var(--cdd-body);
 }
 
 .cdd-feature__panel {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(28px, 3vw, 44px);
-  padding: clamp(22px, 2.4vw, 28px);
-  background: var(--cdd-secondary-surface);
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 34%, transparent);
+  justify-content: flex-start;
+  gap: clamp(22px, 2.4vw, 30px);
+  padding: clamp(8px, 1.5vw, 14px) 0 0;
+  background: transparent;
+  border: 0;
 }
 
 .cdd-feature__panel .cdd-feature__label {
   letter-spacing: .12em;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .cdd-feature__findings {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .cdd-feature__finding {
-  font-size: 15px;
-  line-height: 1.82;
+  font-size: 14px;
+  line-height: 1.72;
   color: var(--cdd-body);
-  border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 60%, transparent);
-  padding-left: 14px;
+  border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 44%, transparent);
+  padding-left: 12px;
 }
 
 .cdd-feature__quote {
   font-family: var(--serif);
-  font-size: 18px;
-  line-height: 1.78;
+  font-size: 16px;
+  line-height: 1.72;
   color: var(--cdd-text);
   font-style: italic;
   margin: 0;
-  padding: 22px 20px 22px 22px;
-  background: #10270f;
-  border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 40%, transparent);
-  border-left: 2px solid var(--cdd-signal);
+  padding: 14px 0 0 12px;
+  background: transparent;
+  border-top: 0;
+  border-left: 1px solid color-mix(in srgb, var(--cdd-signal) 78%, transparent);
 }
 
 .cdd-feature__footer {
@@ -1131,7 +1147,7 @@ h2.team__hed { font-size:clamp(36px,4.5vw,60px); color:var(--ink); }
 }
 
 /* ══ INSIGHTS — Blackstone editorial: no box, image on top, category below, serif title */
-#insights { background:var(--white); padding:var(--section-space) 0; border-top:1px solid var(--rule); }
+#insights { background:var(--off); padding:var(--section-space) 0; border-top:1px solid var(--rule); }
 .ins__hd {
   display:flex; align-items:baseline; justify-content:space-between;
   margin-bottom:56px; border-bottom:1px solid var(--rule); padding-bottom:24px;
@@ -1343,6 +1359,9 @@ h2.su__hed {
 @media (max-width: 1024px) {
   :root { --site-page-margin: clamp(20px, 4.8vw, 40px); }
   .hero__sliver { height:540px; }
+  .wrap.cdd-editorial {
+    max-width: 100%;
+  }
   .cdd-feature__body {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
@@ -1422,7 +1441,7 @@ h2.su__hed {
   .hero__sliver {
     height:min(90vh, 820px);
     min-height:680px;
-    --hero-image-position:100% 40%;
+    --hero-image-position:100% 30%;
   }
   .hero__overlay {
     padding:0 var(--pad) 72px;
@@ -1681,7 +1700,7 @@ h2.su__hed {
   .cdd-feature__body > div:first-child {
     padding-left: 6px;
   }
-  .cdd-feature__body > div:first-child .cdd-cta-group {
+  .cdd-feature__main .cdd-cta-group {
     margin-top: 14px;
     padding-top: 0;
   }
@@ -1766,12 +1785,15 @@ h2.su__hed {
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
+  .wrap.cdd-editorial {
+    max-width: min(1340px, calc(100vw - (var(--pad) * 2)));
+  }
   .cdd-feature__body {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-    gap: clamp(18px, 2.2vw, 28px);
+    grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr);
+    gap: clamp(24px, 2.4vw, 34px);
   }
   .cdd-feature__title--compact {
-    font-size: clamp(24px, 2.6vw, 32px);
+    font-size: clamp(28px, 2.8vw, 38px);
     width: 100%;
   }
 }
@@ -1983,7 +2005,7 @@ h2.su__hed {
 </style>
 <style>
 .sv-footer {
-  background: var(--white);
+  background: var(--off);
   border-top: 1px solid var(--rule);
   padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
 }
@@ -2380,26 +2402,26 @@ body.homepage #cdd .cdd-feature__volume {
           <div class="cdd-feature__issue">CURRENT ISSUE · 46</div>
           <div class="cdd-feature__date">25 January 2026</div>
         </div>
-        <div class=”cdd-feature__body”>
-          <div>
-            <div class=”cdd-feature__label”>CURRENT ISSUE</div>
-            <h3 class=”cdd-feature__title cdd-feature__title--compact”>THE END OF CHINA'S <span class=”cdd-feature__title-quoted”>”UNINVESTABLE MYTH”</span></h3>
-            <p class=”cdd-feature__thesis”>This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
-            <div class=”cdd-cta-group”>
-              <a href=”insights.html#issue-header” class=”cdd-cta”><span>READ ISSUE</span><span class=”cdd-cta__ring” aria-hidden=”true”>→</span></a>
-              <a href=”insights.html#subscribe” class=”cdd-cta”><span>SUBSCRIBE</span><span class=”cdd-cta__ring” aria-hidden=”true”>→</span></a>
+        <div class="cdd-feature__body">
+          <div class="cdd-feature__main">
+            <div class="cdd-feature__label">CURRENT ISSUE</div>
+            <h3 class="cdd-feature__title cdd-feature__title--compact">THE END OF CHINA'S <span class="cdd-feature__title-quoted">”UNINVESTABLE MYTH”</span></h3>
+            <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
+            <div class="cdd-cta-group">
+              <a href="insights.html#issue-header" class="cdd-cta"><span>READ ISSUE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
+              <a href="insights.html#subscribe" class="cdd-cta"><span>SUBSCRIBE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
             </div>
           </div>
-          <aside class=”cdd-feature__panel”>
+          <aside class="cdd-feature__panel">
             <div>
-              <div class=”cdd-feature__label”>KEY FINDINGS</div>
-              <div class=”cdd-feature__findings”>
-                <p class=”cdd-feature__finding”>Policy direction continues to improve enforcement predictability for secured creditors.</p>
-                <p class=”cdd-feature__finding”>Selective private credit strategies remained executable through the recent market reset.</p>
-                <p class=”cdd-feature__finding”>Capital-market reforms are shifting allocator assumptions about China exposure.</p>
+              <div class="cdd-feature__label">KEY FINDINGS</div>
+              <div class="cdd-feature__findings">
+                <p class="cdd-feature__finding">Policy direction continues to improve enforcement predictability for secured creditors.</p>
+                <p class="cdd-feature__finding">Selective private credit strategies remained executable through the recent market reset.</p>
+                <p class="cdd-feature__finding">Capital-market reforms are shifting allocator assumptions about China exposure.</p>
               </div>
             </div>
-            <blockquote class=”cdd-feature__quote”>”A market best understood through process, policy, and execution rather than headline volatility.”</blockquote>
+            <blockquote class="cdd-feature__quote">”A market best understood through process, policy, and execution rather than headline volatility.”</blockquote>
           </aside>
         </div>
       </article>

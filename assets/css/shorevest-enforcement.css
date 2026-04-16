@@ -9,7 +9,7 @@
   --sv-color-ink: #0F2206;
   --sv-color-soft-ink: #2E4A18;
   --sv-color-muted: #1E4040;
-  --sv-color-bg: #FAF6EE;
+  --sv-color-bg: #F2ECD8;
   --sv-color-bg-soft: #F2ECD8;
   --sv-color-rule: #D8CEB0;
 
@@ -449,7 +449,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   --sv-color-ink: #0F2206;
   --sv-color-soft-ink: #2E4A18;
   --sv-color-muted: #1E4040;
-  --sv-color-bg: #FAF6EE;
+  --sv-color-bg: #F2ECD8;
   --sv-color-bg-soft: #F2ECD8;
   --sv-color-rule: #D8CEB0;
 }
