@@ -1007,3 +1007,131 @@ body {
     touch-action: auto !important;
   }
 }
+
+/* ==========================================================================
+   Homepage-equivalent desktop header lock
+   Ensures every page uses the same top bar color, spacing, and typography.
+   ========================================================================== */
+@media (min-width: 981px) {
+  #site-header-mount {
+    background: var(--paper) !important;
+  }
+
+  #site-header-mount #nav {
+    grid-template-columns: minmax(252px, auto) minmax(460px, 1fr) minmax(252px, auto) !important;
+    column-gap: clamp(18px, 1.8vw, 28px) !important;
+    padding-inline: clamp(24px, 3.2vw, 46px) !important;
+    border-bottom: 0.8px solid color-mix(in srgb, var(--paper-dark) 80%, var(--ink-green-dark) 20%) !important;
+    background: color-mix(in srgb, var(--paper) 94%, var(--paper-light) 6%) !important;
+    box-shadow: none !important;
+  }
+
+  #site-header-mount #nav.scrolled {
+    box-shadow: none !important;
+  }
+
+  #site-header-mount #nav .nav__logo {
+    gap: 5px !important;
+    min-width: 252px;
+  }
+
+  #site-header-mount #nav .nav__logo-lockup {
+    padding-left: 9px !important;
+    margin-left: 2px !important;
+    row-gap: 1px !important;
+  }
+
+  #site-header-mount #nav .nav__logo-en {
+    letter-spacing: 0.048em !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: color-mix(in srgb, var(--ink-green-dark) 92%, #000 8%) !important;
+  }
+
+  #site-header-mount #nav .nav__logo-cn {
+    font-size: 9.6px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.16em !important;
+    color: color-mix(in srgb, var(--cinnabar) 78%, var(--paper-dark) 22%) !important;
+    transform: translateY(-0.5px) !important;
+  }
+
+  #site-header-mount #nav .nav__links {
+    justify-content: center !important;
+    gap: clamp(24px, 2vw, 34px) !important;
+    padding-inline: clamp(8px, 1.2vw, 20px) !important;
+    margin: 0 auto !important;
+  }
+
+  #site-header-mount #nav .nav__links a {
+    font-size: 10.6px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.145em !important;
+    text-transform: uppercase !important;
+    color: color-mix(in srgb, var(--ink-green-dark) 74%, var(--paper-dark) 26%) !important;
+    opacity: 1 !important;
+  }
+
+  #site-header-mount #nav .nav__links a:hover,
+  #site-header-mount #nav .nav__links a.active {
+    color: color-mix(in srgb, var(--ink-green-dark) 92%, var(--blue-green-dark) 8%) !important;
+  }
+
+  #site-header-mount #nav .nav__right {
+    min-width: 252px;
+    justify-self: end !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: clamp(12px, 1.4vw, 18px) !important;
+  }
+
+  #site-header-mount #nav .nav__zh {
+    display: inline-flex !important;
+    align-items: center;
+    font-size: 10.9px !important;
+    letter-spacing: 0.07em !important;
+    opacity: 1 !important;
+    color: color-mix(in srgb, var(--ink-green-dark) 60%, var(--paper-dark) 40%) !important;
+  }
+
+  #site-header-mount #nav.nav--en .nav__zh {
+    font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  #site-header-mount #nav.nav--cn .nav__zh {
+    font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase;
+  }
+
+  #site-header-mount #nav .nav__zh::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    margin-right: 10px;
+    background: color-mix(in srgb, var(--cinnabar) 50%, var(--paper-dark) 50%);
+    opacity: 0.55;
+  }
+
+  #site-header-mount #nav .nav__lp {
+    font-size: 10.4px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: color-mix(in srgb, var(--ink-green-dark) 82%, var(--paper-dark) 18%) !important;
+    padding: 6px 12px !important;
+    border: 0.8px solid color-mix(in srgb, var(--ink-green-dark) 16%, var(--paper-dark) 84%) !important;
+    background: color-mix(in srgb, var(--paper) 97%, var(--paper-light) 3%) !important;
+    border-radius: 0 !important;
+    line-height: 1 !important;
+  }
+
+  #site-header-mount #nav .nav__lp:hover,
+  #site-header-mount #nav .nav__lp:focus-visible,
+  #site-header-mount #nav .nav__lp.active {
+    background: color-mix(in srgb, var(--paper) 92%, var(--paper-dark) 8%) !important;
+    border-color: color-mix(in srgb, var(--ink-green-dark) 28%, var(--paper-dark) 72%) !important;
+    color: var(--ink-green-dark) !important;
+  }
+}
