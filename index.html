@@ -1496,13 +1496,13 @@ body.homepage .home-hero__eyebrow {
   align-items: center;
   gap: 10px;
   margin: 0 0 18px;
-  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-family: "DIN 2014";
   font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .18em;
+  font-weight: 450;
+  letter-spacing: .2em;
   line-height: 1.2;
   color: #F2ECD8;
-  opacity: 0.92;
+  opacity: 0.96;
 }
 body.homepage .home-hero__eyebrow::before {
   content: "";
@@ -1512,12 +1512,12 @@ body.homepage .home-hero__eyebrow::before {
 }
 body.homepage .home-hero__headline {
   margin: 0;
-  font-family: "DIN 2014", "DIN2014", "FF DIN", "DIN Next";
+  font-family: "DIN 2014";
   font-size: clamp(39px, 4.85vw, 60px);
-  font-weight: 300;
+  font-weight: 420;
   font-style: normal;
-  line-height: 1.08;
-  letter-spacing: .005em;
+  line-height: 1.06;
+  letter-spacing: .012em;
   text-transform: none;
   color: #FAF6EE;
   text-wrap: balance;
@@ -1533,8 +1533,9 @@ body.homepage .home-hero__headline-primary {
   color: #FAF6EE;
 }
 body.homepage .home-hero__headline-emphasis {
-  font-style: italic;
-  color: var(--cinnabar);
+  font-style: normal;
+  color: #E8998F;
+  text-shadow: 0 1px 0 rgba(15, 34, 6, 0.24);
 }
 body.homepage .home-hero__support {
   margin: 21px 0 0;
@@ -1550,12 +1551,12 @@ body.homepage .home-hero__cta {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-family: "DIN 2014";
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .14em;
+  font-weight: 460;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: #FAF6EE;
+  color: #F2ECD8;
   transition: gap .2s;
 }
 body.homepage .home-hero__cta:hover,
@@ -1568,9 +1569,10 @@ body.homepage .home-hero__cta-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid color-mix(in srgb, #FAF6EE 86%, transparent);
+  border: 1px solid color-mix(in srgb, #F2ECD8 76%, #1E4040);
   border-radius: 50%;
   color: #F2ECD8;
+  background: color-mix(in srgb, #1E4040 16%, transparent);
   font-size: 17px;
   line-height: 1;
   transition: background .2s, border-color .2s, color .2s;
@@ -1578,9 +1580,9 @@ body.homepage .home-hero__cta-arrow {
 }
 body.homepage .home-hero__cta:hover .home-hero__cta-arrow,
 body.homepage .home-hero__cta:focus-visible .home-hero__cta-arrow {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--white);
+  background: #C93B2A;
+  border-color: #C93B2A;
+  color: #FAF6EE;
 }
 
 body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
