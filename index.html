@@ -764,19 +764,45 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 
 /* ══ STRATEGY */
-#strategy { background:var(--off); padding:var(--section-space) 0; margin-bottom:0; }
+#strategy { background:var(--off); padding:clamp(118px, 11vw, 164px) 0; margin-bottom:0; }
 .strat__hd {
-  display:grid; grid-template-columns:5fr 7fr;
-  gap:clamp(48px,5vw,86px); align-items:end; margin-bottom:clamp(46px, 5.4vw, 76px);
+  display:grid;
+  grid-template-columns:minmax(280px, 4.2fr) minmax(0, 7.8fr);
+  gap:clamp(58px, 6.5vw, 112px);
+  align-items:start;
+  margin-bottom:clamp(58px, 6.5vw, 96px);
 }
-h2.strat__hed { font-size:32px; color:var(--ink); }
-.strat__intro { font-size:20px; line-height:1.86; color:var(--mist); font-family:var(--serif); max-width:60ch; }
+h2.strat__hed {
+  margin-top:clamp(18px, 1.8vw, 24px);
+  margin-bottom:0;
+  font-size:clamp(38px, 3.6vw, 52px);
+  line-height:1.1;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  text-wrap:balance;
+}
+.strat__intro {
+  margin:0;
+  padding-top:clamp(8px, 1vw, 14px);
+  font-size:clamp(19px, 1.65vw, 22px);
+  line-height:1.85;
+  color:var(--mist);
+  font-family:var(--serif);
+  max-width:64ch;
+}
 .strat__intro + .strat__intro {
   margin-top:14px;
 }
-.strat__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--rule); }
+.strat__grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0, 1fr));
+  gap:0;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
 .sg {
   border-right:1px solid var(--rule);
+  min-height:100%;
   transition:background .25s, box-shadow .25s;
 }
 .sg:hover {
@@ -785,20 +811,39 @@ h2.strat__hed { font-size:32px; color:var(--ink); }
 }
 .sg:last-child { border-right:none; }
 .sg__content {
-  padding:clamp(36px, 3vw, 48px);
+  padding:clamp(36px, 3.2vw, 52px) clamp(24px, 2.3vw, 34px) clamp(40px, 3.5vw, 56px);
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  min-height:100%;
 }
 .sg__n {
-  font-size:10px; font-weight:500; letter-spacing:.22em;
-  text-transform:uppercase; color:var(--red); margin-bottom:20px;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.2em;
+  line-height:1.2;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:26px;
 }
 .sg__title {
-  font-family:var(--serif); font-size:25px; color:var(--ink);
-  line-height:1.18; margin-bottom:16px;
+  min-height:2.7em;
+  font-family:var(--serif);
+  font-size:clamp(25px, 2vw, 29px);
+  color:var(--ink);
+  line-height:1.16;
+  margin-bottom:20px;
+  text-wrap:balance;
 }
-.sg__body { font-size:13.5px; line-height:1.78; color:var(--mist); }
+.sg__body {
+  margin-top:auto;
+  font-size:14px;
+  line-height:1.76;
+  color:var(--mist);
+}
 .strat__actions {
-  margin-top:28px;
-  padding-top:24px;
+  margin-top:34px;
+  padding-top:28px;
   border-top:1px solid var(--rule);
 }
 .strat__actions .cta {
@@ -1695,11 +1740,30 @@ h2.su__hed {
   .strat__intro {
     font-size:20px;
     line-height:1.84;
+    padding-top:0;
+  }
+  .strat__hd {
+    gap:34px;
+    margin-bottom:36px;
+  }
+  h2.strat__hed {
+    font-size:clamp(34px, 11vw, 46px);
+    margin-top:14px;
   }
 
   .sg,
   .nb { border-right:none; }
-  .sg__content { padding:24px 0 !important; }
+  .sg__content {
+    padding:28px 0 !important;
+  }
+  .sg__title {
+    min-height:0;
+    margin-bottom:12px;
+    text-wrap:pretty;
+  }
+  .strat__grid {
+    border-bottom:0;
+  }
   .num-band { padding:52px 0; }
 
   #stats {
@@ -2728,9 +2792,9 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
 <section id="strategy">
   <div class="wrap">
     <div class="strat__hd">
-      <div>
-        <div class="eyebrow rev">STRATEGY</div>
-        <h2 class="strat__hed rev d1">Investment<br>Strategy.</h2>
+      <div class="strat__lead">
+        <div class="eyebrow eyebrow--red rev">STRATEGY</div>
+        <h2 class="strat__hed rev d1">Investment Strategy.</h2>
       </div>
       <p class="strat__intro rev d2">ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China. Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
     </div>
