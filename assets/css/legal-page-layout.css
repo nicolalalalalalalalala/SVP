@@ -262,29 +262,52 @@ body.contact-page .legal-page__main {
 }
 
 body.contact-page .contact-page__content {
-  max-width: 980px;
+  max-width: 1040px;
 }
 
 body.contact-page .contact-page__header {
   margin-bottom: clamp(24px, 3vw, 38px);
+  padding-bottom: clamp(16px, 2.1vw, 24px);
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 72%, transparent);
+}
+
+body.contact-page .contact-page__header h1 {
+  color: var(--text-main);
+  margin-bottom: 8px;
 }
 
 body.contact-page .contact-page__header p {
-  max-width: 70ch;
-  color: #4f4943;
+  max-width: 68ch;
+  color: color-mix(in srgb, var(--text-secondary) 86%, var(--text-main));
+}
+
+body.contact-page .contact-page__layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.95fr) minmax(0, 1.5fr);
+  align-items: start;
+  gap: clamp(18px, 2.5vw, 28px);
 }
 
 body.contact-page .contact-page__primary-contact,
 body.contact-page .contact-page__form-section {
-  border: 1px solid rgba(26, 38, 31, 0.13);
-  background: color-mix(in srgb, #ffffff 64%, #f2ecd8);
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 78%, transparent);
+  background: color-mix(in srgb, var(--paper-light) 80%, #ffffff);
   padding: clamp(18px, 2.6vw, 30px);
-  margin-bottom: clamp(20px, 2.7vw, 30px);
+  margin-bottom: 0;
 }
 
 body.contact-page .contact-page__primary-contact {
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  position: sticky;
+  top: calc(var(--topbar-height, 72px) + 28px);
+}
+
+body.contact-page .contact-page__primary-contact h2,
+body.contact-page .contact-page__form-section h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--text-main);
 }
 
 body.contact-page .contact-page__email {
@@ -294,20 +317,21 @@ body.contact-page .contact-page__email {
 body.contact-page .contact-page__email a {
   display: inline-flex;
   align-items: center;
-  padding: 10px 14px;
-  border: 1px solid rgba(28, 35, 31, 0.2);
+  padding: 11px 16px;
+  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 58%, transparent);
   text-transform: uppercase;
-  font-size: 9.4pt;
+  font-size: 9.2pt;
   letter-spacing: 0.08em;
   text-decoration: none;
-  color: #214646;
-  background: #fff;
+  color: var(--blue-green-dark);
+  background: color-mix(in srgb, var(--paper-light) 75%, #fff);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 body.contact-page .contact-page__email a:hover,
 body.contact-page .contact-page__email a:focus-visible {
-  background: #3d7070;
-  border-color: #3d7070;
+  background: var(--blue-green);
+  border-color: var(--blue-green);
   color: #fff;
 }
 
@@ -315,25 +339,57 @@ body.contact-page .contact-form {
   gap: 18px;
 }
 
+body.contact-page .contact-form__grid {
+  gap: 16px;
+}
+
 body.contact-page .contact-form label {
   font-size: 8.5pt;
   letter-spacing: 0.11em;
+  color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-main));
 }
 
 body.contact-page .contact-form input,
 body.contact-page .contact-form textarea {
-  border-color: rgba(40, 34, 29, 0.22);
+  border-color: color-mix(in srgb, var(--paper-dark) 82%, var(--text-main));
+  background: color-mix(in srgb, #fff 74%, var(--paper-light));
   padding: 11px 12px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+body.contact-page .contact-form input:hover,
+body.contact-page .contact-form textarea:hover {
+  border-color: color-mix(in srgb, var(--blue-green) 58%, var(--paper-dark));
 }
 
 body.contact-page .contact-form input:focus-visible,
 body.contact-page .contact-form textarea:focus-visible {
   outline: none;
-  border-color: #3d7070;
-  box-shadow: 0 0 0 3px rgba(61, 112, 112, 0.14);
+  border-color: var(--blue-green);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue-green) 26%, transparent);
+  background: #fff;
 }
 
 body.contact-page .contact-form button {
-  min-width: 150px;
+  min-width: 170px;
+  background: var(--blue-green);
+  border-color: var(--blue-green);
+  color: #fff;
+}
+
+body.contact-page .contact-form button:hover,
+body.contact-page .contact-form button:focus-visible {
+  background: var(--blue-green-dark);
+  border-color: var(--blue-green-dark);
+  color: #fff;
+}
+
+@media (max-width: 920px) {
+  body.contact-page .contact-page__layout {
+    grid-template-columns: 1fr;
+  }
+
+  body.contact-page .contact-page__primary-contact {
+    position: static;
+  }
 }
