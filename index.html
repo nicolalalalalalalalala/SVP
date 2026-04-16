@@ -1507,7 +1507,7 @@ body.homepage .home-hero__headline {
   font-family: "DIN 2014", "DIN2014", "FF DIN", "DIN Next";
   font-size: clamp(39px, 4.85vw, 60px);
   font-weight: 300;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.08;
   letter-spacing: .005em;
   text-transform: none;
@@ -1516,7 +1516,7 @@ body.homepage .home-hero__headline {
 }
 body.homepage .home-hero__headline-primary,
 body.homepage .home-hero__headline-emphasis {
-  font-style: inherit;
+  font-style: normal;
   font-weight: inherit;
   letter-spacing: inherit;
   text-transform: uppercase;
@@ -1525,6 +1525,7 @@ body.homepage .home-hero__headline-primary {
   color: #FAF6EE;
 }
 body.homepage .home-hero__headline-emphasis {
+  font-style: italic;
   color: var(--cinnabar);
 }
 body.homepage .home-hero__support {
@@ -2323,7 +2324,10 @@ body.homepage #cdd .cdd-editorial__meta {
   <div class="home-hero__inner">
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
-      <h1 class="home-hero__headline">Private credit<br>in <strong>CHINA.</strong></h1>
+      <h1 class="home-hero__headline">
+        <span class="home-hero__headline-primary">PRIVATE CREDIT</span><br>
+        <span class="home-hero__headline-emphasis">IN CHINA.</span>
+      </h1>
       <a href="firm.html" class="home-hero__cta"><span>EXPLORE SHOREVEST</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
