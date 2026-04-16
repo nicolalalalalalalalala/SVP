@@ -258,47 +258,55 @@ body.legal-page .contact-form button:focus-visible {
 
 /* Contact page refinement */
 body.contact-page .legal-page__main {
-  padding-top: clamp(34px, 4.2vw, 56px);
+  padding-top: clamp(42px, 5vw, 72px);
 }
 
 body.contact-page .contact-page__content {
-  max-width: 1040px;
+  max-width: 1080px;
 }
 
 body.contact-page .contact-page__header {
-  margin-bottom: clamp(24px, 3vw, 38px);
-  padding-bottom: clamp(16px, 2.1vw, 24px);
-  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 72%, transparent);
+  margin-bottom: clamp(30px, 3.8vw, 46px);
+  padding-bottom: clamp(18px, 2.2vw, 28px);
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 64%, transparent);
 }
 
 body.contact-page .contact-page__header h1 {
-  color: var(--text-main);
-  margin-bottom: 8px;
+  color: color-mix(in srgb, var(--text-main) 90%, #000 10%);
+  margin-bottom: 12px;
+  letter-spacing: 0.045em;
 }
 
 body.contact-page .contact-page__header p {
-  max-width: 68ch;
-  color: color-mix(in srgb, var(--text-secondary) 86%, var(--text-main));
+  max-width: 62ch;
+  color: color-mix(in srgb, var(--text-secondary) 78%, var(--text-main));
+  line-height: 1.72;
 }
 
 body.contact-page .contact-page__layout {
   display: grid;
-  grid-template-columns: minmax(240px, 0.95fr) minmax(0, 1.5fr);
+  grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.55fr);
   align-items: start;
-  gap: clamp(18px, 2.5vw, 28px);
+  gap: clamp(20px, 2.8vw, 34px);
 }
 
 body.contact-page .contact-page__primary-contact,
 body.contact-page .contact-page__form-section {
-  border: 1px solid color-mix(in srgb, var(--paper-dark) 78%, transparent);
-  background: color-mix(in srgb, var(--paper-light) 80%, #ffffff);
-  padding: clamp(18px, 2.6vw, 30px);
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 58%, transparent);
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--paper-light) 86%, #ffffff) 0%,
+    color-mix(in srgb, var(--paper) 72%, #ffffff) 100%
+  );
+  border-radius: 14px;
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--blue-green-dark) 8%, transparent);
+  padding: clamp(22px, 2.9vw, 34px);
   margin-bottom: 0;
 }
 
 body.contact-page .contact-page__primary-contact {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   position: sticky;
   top: calc(var(--topbar-height, 72px) + 28px);
 }
@@ -306,8 +314,9 @@ body.contact-page .contact-page__primary-contact {
 body.contact-page .contact-page__primary-contact h2,
 body.contact-page .contact-page__form-section h2 {
   margin-top: 0;
-  margin-bottom: 8px;
-  color: var(--text-main);
+  margin-bottom: 10px;
+  color: color-mix(in srgb, var(--text-main) 92%, #000 8%);
+  letter-spacing: 0.03em;
 }
 
 body.contact-page .contact-page__email {
@@ -317,64 +326,77 @@ body.contact-page .contact-page__email {
 body.contact-page .contact-page__email a {
   display: inline-flex;
   align-items: center;
-  padding: 11px 16px;
-  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 58%, transparent);
+  justify-content: center;
+  width: fit-content;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 42%, transparent);
+  border-radius: 999px;
   text-transform: uppercase;
-  font-size: 9.2pt;
-  letter-spacing: 0.08em;
+  font-size: 8.8pt;
+  letter-spacing: 0.11em;
   text-decoration: none;
-  color: var(--blue-green-dark);
-  background: color-mix(in srgb, var(--paper-light) 75%, #fff);
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  color: color-mix(in srgb, var(--blue-green-dark) 84%, #000 16%);
+  background: color-mix(in srgb, #fff 84%, var(--paper-light));
+  transition: background-color 0.24s ease, color 0.24s ease, border-color 0.24s ease, transform 0.24s ease;
 }
 
 body.contact-page .contact-page__email a:hover,
 body.contact-page .contact-page__email a:focus-visible {
-  background: var(--blue-green);
-  border-color: var(--blue-green);
+  background: color-mix(in srgb, var(--blue-green) 92%, #fff 8%);
+  border-color: color-mix(in srgb, var(--blue-green-dark) 78%, transparent);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 body.contact-page .contact-form {
-  gap: 18px;
+  gap: 20px;
 }
 
 body.contact-page .contact-form__grid {
-  gap: 16px;
+  gap: 17px;
 }
 
 body.contact-page .contact-form label {
-  font-size: 8.5pt;
-  letter-spacing: 0.11em;
-  color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-main));
+  font-size: 8.2pt;
+  letter-spacing: 0.13em;
+  color: color-mix(in srgb, var(--text-secondary) 72%, var(--text-main));
 }
 
 body.contact-page .contact-form input,
 body.contact-page .contact-form textarea {
-  border-color: color-mix(in srgb, var(--paper-dark) 82%, var(--text-main));
-  background: color-mix(in srgb, #fff 74%, var(--paper-light));
-  padding: 11px 12px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border-width: 1px;
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--paper-dark) 72%, var(--text-main));
+  border-radius: 8px;
+  background: color-mix(in srgb, #fff 82%, var(--paper-light));
+  min-height: 44px;
+  padding: 11px 13px;
+  transition: border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
 }
 
 body.contact-page .contact-form input:hover,
 body.contact-page .contact-form textarea:hover {
-  border-color: color-mix(in srgb, var(--blue-green) 58%, var(--paper-dark));
+  border-color: color-mix(in srgb, var(--blue-green) 44%, var(--paper-dark));
 }
 
 body.contact-page .contact-form input:focus-visible,
 body.contact-page .contact-form textarea:focus-visible {
   outline: none;
-  border-color: var(--blue-green);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue-green) 26%, transparent);
+  border-color: color-mix(in srgb, var(--blue-green) 72%, var(--blue-green-dark));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue-green) 18%, transparent);
   background: #fff;
 }
 
 body.contact-page .contact-form button {
-  min-width: 170px;
-  background: var(--blue-green);
-  border-color: var(--blue-green);
+  min-width: 176px;
+  min-height: 46px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--blue-green) 88%, var(--blue-green-dark));
+  border-color: color-mix(in srgb, var(--blue-green-dark) 76%, transparent);
   color: #fff;
+  letter-spacing: 0.13em;
+  transition: background-color 0.24s ease, border-color 0.24s ease, transform 0.24s ease;
 }
 
 body.contact-page .contact-form button:hover,
@@ -382,6 +404,7 @@ body.contact-page .contact-form button:focus-visible {
   background: var(--blue-green-dark);
   border-color: var(--blue-green-dark);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 920px) {
