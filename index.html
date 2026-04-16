@@ -2256,6 +2256,178 @@ body.homepage #cdd .cdd-feature__volume {
 }
 
 </style>
+
+<style id="homepage-institutional-normalization">
+:root {
+  --cinnabar-light:#E8998F;
+  --cinnabar:#C93B2A;
+  --cinnabar-dark:#8A1F12;
+  --blue-green-light:#7AAFAF;
+  --blue-green:#3D7070;
+  --blue-green-dark:#1E4040;
+  --ink-green-light:#4A7A40;
+  --ink-green:#2E4A18;
+  --ink-green-dark:#0F2206;
+  --xuan-light:#FAF6EE;
+  --xuan:#F2ECD8;
+  --xuan-dark:#D8CEB0;
+  --font-en:"DIN 2014";
+  --font-cn:"Noto Serif SC";
+  --red:var(--cinnabar);
+  --ink:var(--ink-green-dark);
+  --ink2:var(--ink-green);
+  --white:var(--xuan-light);
+  --off:var(--xuan);
+  --rule:var(--xuan-dark);
+  --mist:var(--blue-green-dark);
+  --sans:var(--font-en);
+  --serif:var(--font-en);
+  --section-space:clamp(88px, 9vw, 128px);
+  --section-space-tight:clamp(68px, 7vw, 96px);
+  --content-gap:clamp(40px, 4vw, 64px);
+}
+html, body {
+  background:var(--xuan);
+}
+body,
+body.homepage,
+body.homepage :is(h1,h2,h3,h4,p,a,li,button,input,label,small,span,div) {
+  font-family:var(--font-en);
+}
+:lang(zh),
+:lang(zh-Hant),
+[lang="zh"],
+[lang="zh-Hant"] {
+  font-family:var(--font-cn) !important;
+}
+body.homepage {
+  color:var(--ink-green-dark);
+}
+body.homepage h1,
+body.homepage h2 {
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  line-height:1.12;
+}
+body.homepage h2:not(.hero__hed):not(.cdd-editorial__title):not(.cdd-subscribe__title):not(.ins__hed):not(.team__hed):not(.su__hed):not(.about__hed):not(.strat__hed) {
+  font-size:clamp(28px, 3.4vw, 44px);
+}
+body.homepage h3,
+body.homepage .type-sheet__section-label,
+body.homepage .sg__n,
+body.homepage .tm__role,
+body.homepage .icard__cat,
+body.homepage .cdd-feature__label,
+body.homepage .cdd-editorial__meta-label,
+body.homepage .stats__eyebrow,
+body.homepage .eyebrow,
+body.homepage .hero__kicker {
+  color:var(--cinnabar) !important;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+}
+body.homepage .eyebrow::after,
+body.homepage .hero__kicker::before,
+body.homepage .stats__eyebrow::after {
+  background:var(--cinnabar);
+}
+body.homepage .hero__overlay h1.hero__hed {
+  font-weight:300;
+  font-style:italic;
+  letter-spacing:.01em;
+  text-transform:none;
+  text-shadow:none;
+}
+body.homepage .hero__hed-main {
+  letter-spacing:.05em;
+}
+body.homepage :is(p,.about__body p,.team__intro,.strat__intro,.cdd-feature__thesis,.cdd-subscribe__text,.tm__bio,.icard__date,.stats__note) {
+  color:color-mix(in srgb, var(--ink-green-dark) 74%, var(--blue-green-dark));
+  line-height:1.72;
+}
+body.homepage section {
+  padding-top:var(--section-space);
+  padding-bottom:var(--section-space);
+}
+body.homepage #stats,
+body.homepage #cdd,
+body.homepage #signup,
+body.homepage .city-band,
+body.homepage .hero__sliver {
+  padding-top:var(--section-space-tight);
+  padding-bottom:var(--section-space-tight);
+}
+body.homepage :is(.about__intro,.strat__hd,.team__hd,.ins__hd,.cdd-editorial__intro,.cdd-editorial__meta,.cdd-feature__top,.cdd-feature__footer,.hero__divline,.type-sheet__hd,.type-sheet__line,.type-sheet__rules,.strat__actions) {
+  border-color:var(--xuan-dark) !important;
+}
+body.homepage :is(.stats,.stat,.type-sheet,.strat__grid,.sg,.team__grid,.ins__hd,.cdd-editorial__card,.cdd-feature,.cdd-subscribe__cards,.cdd-subscribe__card,.su__field,.sv-footer,.sv-footer__bottom) {
+  box-shadow:none !important;
+}
+body.homepage :is(.ac__panel::before,.ac__panel::after,.city-band__overlay) {
+  content:none !important;
+}
+body.homepage :is(.ac,.ac__panel,.sg,.tm,.icard,.cdd-editorial__card,.cdd-feature,.cdd-cta,.su__submit,.ulink,.cta,.icard__link) {
+  border-radius:0 !important;
+}
+body.homepage :is(.ac.in .ac__panel::before,#ac-sourcing.in .ac__media,#ac-underwriting.in .ac__media,#ac-alignment.in .ac__media,.cdd-live__dot) {
+  animation:none !important;
+}
+body.homepage .cdd-live__dot {
+  background:var(--cinnabar);
+}
+body.homepage #cdd {
+  background:var(--blue-green-dark);
+}
+body.homepage #cdd .cdd-editorial__card,
+body.homepage #cdd .cdd-feature {
+  background:var(--ink-green-dark);
+  border:1px solid color-mix(in srgb, var(--xuan-dark) 28%, transparent);
+}
+body.homepage #about,
+body.homepage #strategy,
+body.homepage #team,
+body.homepage #insights,
+body.homepage .cdd-subscribe,
+body.homepage #brand-typography {
+  background:var(--xuan);
+}
+body.homepage #signup,
+body.homepage .quote-band,
+body.homepage .num-band,
+body.homepage .sv-footer {
+  background:var(--ink-green-dark);
+}
+body.homepage :is(.stat__n,.nb__n,.fs__stat-n,.cdd-editorial__title,.cdd-feature__title,.tm__name,.icard__title,.sg__title,.about__hed,.strat__hed,.team__hed,.ins__hed,.su__hed) {
+  letter-spacing:.02em;
+}
+body.homepage .cdd-brand-en,
+body.homepage .sv-footer__wordmark-en {
+  letter-spacing:.05em;
+}
+body.homepage .cdd-brand-cn,
+body.homepage .sv-footer__wordmark-cn {
+  font-family:var(--font-cn) !important;
+}
+body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-editorial__meta-value,.icard__date,.sv-footer__copyright,.sv-footer__legal,.sv-footer__legal-links) {
+  font-size:11px;
+  letter-spacing:.04em;
+  color:color-mix(in srgb, var(--xuan-dark) 65%, var(--xuan-light));
+}
+@media (max-width: 1024px) {
+  body.homepage section {
+    padding-top:clamp(64px, 8vw, 84px);
+    padding-bottom:clamp(64px, 8vw, 84px);
+  }
+  body.homepage .hero__overlay,
+  body.homepage .wrap {
+    padding-left:var(--site-page-margin);
+    padding-right:var(--site-page-margin);
+  }
+}
+</style>
+
 </head>
 <body id="top" class="homepage">
 
