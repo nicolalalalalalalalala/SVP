@@ -1471,7 +1471,7 @@ body.homepage .home-hero__headline strong {
   font-style: normal;
   font-weight: 600;
   letter-spacing: .02em;
-  color: #F2ECD8;
+  color: var(--cinnabar);
 }
 body.homepage .home-hero__support {
   margin: 21px 0 0;
@@ -1486,7 +1486,7 @@ body.homepage .home-hero__cta {
   margin-top: 31px;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
   font-weight: 600;
@@ -1494,8 +1494,16 @@ body.homepage .home-hero__cta {
   color: #FAF6EE;
 }
 body.homepage .home-hero__cta-arrow {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, #FAF6EE 86%, transparent);
+  border-radius: 999px;
   color: #F2ECD8;
   font-size: 11px;
+  line-height: 1;
   transform: translateY(-0.5px);
 }
 
