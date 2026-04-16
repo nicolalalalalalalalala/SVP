@@ -71,7 +71,7 @@
   const introNode = section.querySelector('[data-history-intro]');
   const scrollArea = section.querySelector('[data-history-scroll-area]');
 
-  if (!railList || !panelStack || !introNode || !scrollArea) return;
+  if (!railList || !panelStack || !cardStack || !introNode || !scrollArea) return;
 
   introNode.textContent = introText;
 
@@ -146,7 +146,7 @@
       <p class="history-card__body">${milestone.body}</p>
     `;
     card.appendChild(createImagePanel());
-    if (cardStack) cardStack.appendChild(card);
+    cardStack.appendChild(card);
   });
 
   const state = {
@@ -169,6 +169,9 @@
       const isActive = panelIndex === index;
       panel.classList.toggle('is-active', isActive);
       panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+      if (!reduceMotion) {
+        panel.style.transform = isActive ? 'translateY(0px)' : panelIndex < index ? 'translateY(-10px)' : 'translateY(10px)';
+      }
     });
   }
 
@@ -219,8 +222,6 @@
     desktopTick();
   });
   window.addEventListener('scroll', onScroll, { passive: true });
-
-  if (!cardStack) return;
 
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const cards = cardStack.querySelectorAll('.history-card');
