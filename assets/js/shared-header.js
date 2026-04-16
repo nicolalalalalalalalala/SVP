@@ -19,6 +19,7 @@
     'disclaimers.html': 'disclaimers_cn.html',
     'investor-access.html': 'investor-access_cn.html',
     'investor-access-portal-terms.html': 'investor-access-portal-terms_cn.html',
+    'contact.html': 'contact_cn.html',
     'index_cn.html': 'index.html',
     'firm_cn.html': 'firm.html',
     'strategy_cn.html': 'strategy.html',
@@ -31,7 +32,8 @@
     'legal-notices-disclaimers_cn.html': 'legal-notices-disclaimers.html',
     'disclaimers_cn.html': 'disclaimers.html',
     'investor-access_cn.html': 'investor-access.html',
-    'investor-access-portal-terms_cn.html': 'investor-access-portal-terms.html'
+    'investor-access-portal-terms_cn.html': 'investor-access-portal-terms.html',
+    'contact_cn.html': 'contact.html'
   };
 
   const targetLocaleHref = localeMap[path] || (isCnPath ? 'index.html' : 'index_cn.html');
@@ -53,7 +55,7 @@
         { href: 'team.html', label: 'TEAM' }
       ];
 
-  const headerCtaHref = 'mailto:partners@shorevest.com';
+  const headerCtaHref = isCnPath ? 'contact_cn.html' : 'contact.html';
   const headerCtaLabel = isCnPath ? '联系我们' : 'CONTACT';
   const wordmark = '新岸資本';
 
@@ -138,6 +140,10 @@
     team: ['team.html', 'team_cn.html'],
     investor: ['investor-access.html', 'investor-access_cn.html']
   };
+
+  if (['contact.html', 'contact_cn.html'].includes(path)) {
+    nav.querySelectorAll(`a[href="${headerCtaHref}"]`).forEach((contactLink) => contactLink.classList.add('active'));
+  }
 
   Object.values(activeMap).forEach((hrefs) => {
     if (hrefs.includes(path)) {
