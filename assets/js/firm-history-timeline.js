@@ -173,7 +173,6 @@
 
   const state = {
     activeIndex: 0,
-    progress: 0,
   };
 
   function updateStage(index, progress, floatIndex) {
@@ -218,13 +217,11 @@
 
     const activeItem = railItems[index];
     if (activeItem) {
-      const stageRect = stage.getBoundingClientRect();
+      const listRect = railList.getBoundingClientRect();
       const itemRect = activeItem.getBoundingClientRect();
-      const markerCenterY = itemRect.top + itemRect.height / 2 - stageRect.top;
-      const markerRightX = itemRect.right - stageRect.left;
-      const segmentStrength = Math.max(0.18, 1 - Math.abs(index - floatIndex));
-      section.style.setProperty('--sv-history-connector-y', `${markerCenterY.toFixed(1)}px`);
-      section.style.setProperty('--sv-history-connector-x', `${markerRightX.toFixed(1)}px`);
+      const markerCenter = itemRect.top + itemRect.height / 2 - listRect.top;
+      const segmentStrength = Math.max(0.2, 1 - Math.abs(index - floatIndex));
+      section.style.setProperty('--sv-history-connector-y', `${markerCenter.toFixed(1)}px`);
       section.style.setProperty('--sv-history-connector-strength', segmentStrength.toFixed(3));
     }
   }
@@ -236,8 +233,6 @@
     const totalScrollable = Math.max(scrollArea.offsetHeight - viewport, 1);
     const traveled = Math.min(Math.max(-rect.top, 0), totalScrollable);
     const progress = traveled / totalScrollable;
-
-    section.style.setProperty('--sv-history-progress', progress.toFixed(4));
 
     const floatIndex = progress * (milestones.length - 1);
     const nextIndex = Math.min(milestones.length - 1, Math.max(0, Math.round(floatIndex)));

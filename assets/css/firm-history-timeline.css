@@ -6,7 +6,6 @@
   --sv-history-soft-text: var(--sv-ink-soft, var(--ink-green));
   --sv-history-rule: var(--sv-rule, var(--rule));
   --sv-history-progress: 0;
-  --sv-history-connector-x: 32%;
   --sv-history-connector-y: 20px;
   --sv-history-connector-strength: 0;
 }
@@ -32,9 +31,9 @@
 
 .history-stage__connector {
   position: absolute;
-  left: var(--sv-history-connector-x);
+  left: calc(32% + clamp(8px, 1.4vw, 16px));
   top: var(--sv-history-connector-y);
-  width: clamp(72px, 16vw, 190px);
+  width: clamp(80px, 18vw, 220px);
   height: 1px;
   background: var(--sv-history-active);
   opacity: calc(0.2 + var(--sv-history-connector-strength) * 0.55);
