@@ -1413,68 +1413,90 @@ body.homepage .home-hero {
   background: #0F2206;
   overflow: hidden;
 }
+body.homepage .home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      102deg,
+      rgba(8, 14, 12, 0.74) 0%,
+      rgba(8, 14, 12, 0.52) 34%,
+      rgba(8, 14, 12, 0.14) 56%,
+      rgba(8, 14, 12, 0) 72%
+    );
+}
 body.homepage .home-hero__image {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 64% 44%;
+  object-position: 66% 43%;
 }
 body.homepage .home-hero__inner {
   position: relative;
   z-index: 1;
   width: min(1240px, 100%);
   margin: 0 auto;
-  padding: 0 var(--site-page-margin);
+  padding: clamp(28px, 4.2vh, 42px) var(--site-page-margin) 0;
 }
-body.homepage .home-hero__text { width: min(620px, 100%); }
+body.homepage .home-hero__text { width: min(590px, 100%); }
 body.homepage .home-hero__eyebrow {
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .16em;
+  font-weight: 500;
+  letter-spacing: .18em;
   line-height: 1.2;
-  color: #E8998F;
+  color: #F2ECD8;
+  opacity: 0.92;
 }
 body.homepage .home-hero__headline {
   margin: 0;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(36px, 4.6vw, 56px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.08;
-  letter-spacing: .002em;
-  text-transform: none;
+  font-size: clamp(39px, 4.85vw, 60px);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.04;
+  letter-spacing: .015em;
+  text-transform: uppercase;
   color: #FAF6EE;
+  text-wrap: balance;
 }
 body.homepage .home-hero__headline strong {
   font-style: normal;
-  font-weight: 500;
-  letter-spacing: .03em;
+  font-weight: 600;
+  letter-spacing: .02em;
   color: #F2ECD8;
 }
 body.homepage .home-hero__support {
-  margin: 16px 0 0;
-  max-width: 42ch;
+  margin: 21px 0 0;
+  max-width: 40ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.56;
-  color: rgba(242, 236, 216, .88);
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: .005em;
+  color: rgba(242, 236, 216, .94);
 }
 body.homepage .home-hero__cta {
-  margin-top: 24px;
+  margin-top: 31px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .16em;
+  font-weight: 600;
+  letter-spacing: .17em;
   color: #FAF6EE;
 }
-body.homepage .home-hero__cta-arrow { color: #E8998F; }
+body.homepage .home-hero__cta-arrow {
+  color: #F2ECD8;
+  font-size: 11px;
+  transform: translateY(-0.5px);
+}
 
 body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
   overflow-wrap: normal;
@@ -2226,7 +2248,7 @@ body.homepage #cdd .cdd-editorial__meta {
   <div class="home-hero__inner">
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
-      <h1 class="home-hero__headline"><em>Private credit in</em> <strong>CHINA.</strong></h1>
+      <h1 class="home-hero__headline">PRIVATE CREDIT IN <strong>CHINA.</strong></h1>
       <p class="home-hero__support">Rooted in two worlds - onshore in China, disciplined for institutional capital.</p>
       <a href="firm.html" class="home-hero__cta"><span>EXPLORE SHOREVEST</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
     </div>
