@@ -141,6 +141,10 @@
     investor: ['investor-access.html', 'investor-access_cn.html']
   };
 
+  if (['contact.html', 'contact_cn.html'].includes(path)) {
+    nav.querySelectorAll(`a[href="${headerCtaHref}"]`).forEach((contactLink) => contactLink.classList.add('active'));
+  }
+
   Object.values(activeMap).forEach((hrefs) => {
     if (hrefs.includes(path)) {
       hrefs.forEach((href) => {
