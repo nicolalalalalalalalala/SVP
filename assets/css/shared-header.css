@@ -195,13 +195,13 @@ body {
 
 .nav__lp:hover {
   background: var(--red, #3d7070);
-  color: #fff;
+  color: var(--paper, #F2ECD8);
   border-color: var(--red, #3d7070);
 }
 
 .nav__lp.active {
   background: var(--red, #3d7070);
-  color: #fff;
+  color: var(--paper, #F2ECD8);
   border-color: var(--red, #3d7070);
 }
 
@@ -734,7 +734,7 @@ body {
 #site-header-mount #nav .nav__lp.active {
   background: var(--red, #3d7070) !important;
   border-color: var(--red, #3d7070) !important;
-  color: #fff !important;
+  color: var(--paper, #F2ECD8) !important;
   box-shadow: none !important;
   transform: none !important;
 }
@@ -1148,4 +1148,29 @@ body {
     border-color: color-mix(in srgb, var(--sv-header-ink) 28%, var(--sv-header-paper-dark) 72%) !important;
     color: var(--sv-header-ink) !important;
   }
+}
+
+/* Brand guardrail: avoid pure black/white font colors from inline styles. */
+:where(
+  [style*="color:#000"],
+  [style*="color: #000"],
+  [style*="color:#000000"],
+  [style*="color: #000000"],
+  [style*="color:black"],
+  [style*="color: black"]
+) {
+  color: var(--ink, #0F2206) !important;
+  -webkit-text-fill-color: var(--ink, #0F2206) !important;
+}
+
+:where(
+  [style*="color:#fff"],
+  [style*="color: #fff"],
+  [style*="color:#ffffff"],
+  [style*="color: #ffffff"],
+  [style*="color:white"],
+  [style*="color: white"]
+) {
+  color: var(--paper, #F2ECD8) !important;
+  -webkit-text-fill-color: var(--paper, #F2ECD8) !important;
 }
