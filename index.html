@@ -800,24 +800,24 @@ blockquote.fs__q {
 
 /* ══ CDD — DARK EDITORIAL FRANCHISE */
 :root {
-  --cdd-bg: #1E4040;
-  --cdd-surface: #0F2206;
-  --cdd-secondary-surface: #0F2206;
+  --cdd-bg: #F2ECD8;
+  --cdd-surface: #F2ECD8;
+  --cdd-secondary-surface: #EFE6CF;
   --cdd-structure: #D8CEB0;
-  --cdd-soft: #EAE3D7;
-  --cdd-text: #FAF6EE;
-  --cdd-muted: #D8CEB0;
-  --cdd-body: #EAE3D7;
-  --cdd-signal: #3D7070;
-  --cdd-signal-deep: #1E4040;
+  --cdd-soft: #E9DFC7;
+  --cdd-text: #2E4A18;
+  --cdd-muted: #6C7758;
+  --cdd-body: #2E4A18;
+  --cdd-signal: #C93B2A;
+  --cdd-signal-deep: #9E2F22;
 }
 
 #cdd {
   background: var(--cdd-bg);
   border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 60%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--cdd-surface) 80%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 80%, transparent);
   padding: clamp(84px, 9vw, 128px) 0;
-  color: var(--cdd-text);
+  color: var(--cdd-signal-deep);
 }
 
 .wrap.cdd-editorial {
@@ -831,15 +831,10 @@ blockquote.fs__q {
 .cdd-editorial__card {
   display: grid;
   gap: clamp(22px, 2.6vw, 34px);
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--cdd-surface) 92%, #1a2f2c 8%) 0%,
-      var(--cdd-surface) 100%
-    );
+  background: linear-gradient(180deg, var(--cdd-surface) 0%, var(--cdd-secondary-surface) 100%);
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 14%, transparent);
   padding: clamp(28px, 3.4vw, 44px);
-  box-shadow: 0 18px 44px color-mix(in srgb, #08120a 32%, transparent);
+  box-shadow: 0 14px 30px color-mix(in srgb, #8a7a56 18%, transparent);
 }
 
 .cdd-editorial__intro {
@@ -851,7 +846,7 @@ blockquote.fs__q {
 }
 
 .cdd-editorial__kicker {
-  color: var(--cdd-muted);
+  color: var(--cdd-signal);
   margin-bottom: 20px;
   font-size: 10px;
   letter-spacing: .1em;
@@ -879,7 +874,7 @@ blockquote.fs__q {
   font-family: var(--serif);
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.62;
-  color: var(--cdd-body);
+  color: var(--cdd-text);
   margin-bottom: 2px;
 }
 
@@ -912,14 +907,14 @@ blockquote.fs__q {
   font-weight: 500;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--cdd-muted);
+  color: var(--cdd-signal);
   margin-bottom: 8px;
 }
 
 .cdd-editorial__meta-value {
   font-size: 14px;
   letter-spacing: .02em;
-  color: var(--cdd-body);
+  color: var(--cdd-signal-deep);
 }
 
 .cdd-feature {
@@ -940,12 +935,12 @@ blockquote.fs__q {
   font-size: 10px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--cdd-muted);
+  color: var(--cdd-signal);
 }
 
 .cdd-feature__date {
   font-size: 11px;
-  color: var(--cdd-muted);
+  color: color-mix(in srgb, var(--cdd-muted) 84%, var(--cdd-text) 16%);
 }
 
 .cdd-feature__body {
@@ -978,7 +973,7 @@ blockquote.fs__q {
   font-weight: 500;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--cdd-muted);
+  color: var(--cdd-signal);
   margin-bottom: 12px;
 }
 
@@ -1016,7 +1011,7 @@ blockquote.fs__q {
   font-size: clamp(14px, 1vw, 16px);
   line-height: 1.66;
   max-width: 62ch;
-  color: var(--cdd-body);
+  color: var(--cdd-signal-deep);
 }
 
 .cdd-feature__panel {
@@ -1043,7 +1038,7 @@ blockquote.fs__q {
 .cdd-feature__finding {
   font-size: 14px;
   line-height: 1.68;
-  color: var(--cdd-body);
+  color: var(--cdd-text);
   border-left: 1px solid color-mix(in srgb, var(--cdd-muted) 38%, transparent);
   padding-left: 12px;
 }
@@ -1075,7 +1070,7 @@ blockquote.fs__q {
   font-size: 10px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--cdd-muted);
+  color: var(--cdd-signal);
 }
 
 .cdd-cta-group {
@@ -1089,7 +1084,7 @@ blockquote.fs__q {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 70%, transparent);
   padding: 9px 12px 9px 14px;
   font-size: 9px;
   font-weight: 500;
@@ -1114,8 +1109,8 @@ blockquote.fs__q {
 .cdd-cta:focus-visible {
   gap: 13px;
   border-color: var(--cdd-signal);
-  background: #132e13;
-  color: var(--cdd-text);
+  background: color-mix(in srgb, var(--cdd-signal) 11%, transparent);
+  color: var(--cdd-signal-deep);
 }
 
 .cdd-cta:hover .cdd-cta__ring,
@@ -1183,8 +1178,8 @@ blockquote.fs__q {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  filter: brightness(0) invert(1);
-  opacity: 0.88;
+  filter: none;
+  opacity: 0.92;
 }
 
 .cdd-brand-text {
@@ -1192,7 +1187,7 @@ blockquote.fs__q {
   flex-direction: column;
   gap: 2px;
   padding-left: 8px;
-  border-left: 1px solid rgba(216, 206, 176, 0.30);
+  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 72%, transparent);
   margin-left: 8px;
 }
 
@@ -1201,7 +1196,7 @@ blockquote.fs__q {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .05em;
-  color: rgba(250, 246, 238, 0.95);
+  color: var(--cdd-text);
   line-height: 1;
 }
 
@@ -1209,7 +1204,7 @@ blockquote.fs__q {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 8px;
   letter-spacing: .28em;
-  color: rgba(216, 206, 176, 0.72);
+  color: color-mix(in srgb, var(--cdd-muted) 88%, var(--cdd-text) 12%);
   line-height: 1;
 }
 
@@ -1638,12 +1633,12 @@ body.homepage .ac {
 }
 body.homepage .ac + .ac { border-left: 1px solid color-mix(in srgb, var(--rule) 88%, transparent); }
 body.homepage #cdd .cdd-editorial__card {
-  border: 1px solid color-mix(in srgb, var(--xuan-dark) 30%, transparent);
-  background: #132924;
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 76%, transparent);
+  background: linear-gradient(180deg, var(--cdd-surface) 0%, var(--cdd-secondary-surface) 100%);
   padding: clamp(28px, 3.2vw, 44px);
 }
 body.homepage #cdd .cdd-editorial__intro {
-  border-bottom: 1px solid color-mix(in srgb, var(--xuan-dark) 26%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 46%, transparent);
   padding-bottom: 24px;
   margin-bottom: 20px;
 }
@@ -2456,7 +2451,7 @@ body.homepage #cdd .cdd-editorial__meta {
         <div>
           <div class="eyebrow cdd-editorial__kicker rev">INSIGHTS</div>
           <h2 class="cdd-editorial__title rev d1">China Debt Dynamics.</h2>
-          <p class="cdd-editorial__lede rev d2">An institutional research series focused on China’s private credit markets, policy developments, and legal and structural themes relevant to investors.</p>
+          <p class="cdd-editorial__lede rev d2">An institutional research series on China’s private credit markets, policy direction, and the legal, structural, and enforcement issues that shape investor outcomes.</p>
         </div>
         <div class="cdd-editorial__brand rev d1">
           <div class="cdd-brand-lockup">
@@ -2476,9 +2471,9 @@ body.homepage #cdd .cdd-editorial__meta {
         </div>
         <div class="cdd-feature__body">
           <div class="cdd-feature__main">
-            <div class="cdd-feature__label">Featured Report</div>
-            <h3 class="cdd-feature__title cdd-feature__title--compact">THE END OF CHINA'S <span class="cdd-feature__title-quoted">“UNINVESTABLE MYTH”</span></h3>
-            <p class="cdd-feature__thesis">This edition examines how dislocation altered market mechanics and where private credit remains investable when underwriting discipline, enforcement pathways, and structure are prioritized over sentiment.</p>
+            <div class="cdd-feature__label">FEATURED REPORT</div>
+            <h3 class="cdd-feature__title cdd-feature__title--compact">THE END OF CHINA’S <span class="cdd-feature__title-quoted">“UNINVESTABLE MYTH”</span></h3>
+            <p class="cdd-feature__thesis">This edition examines how recent market dislocation has reshaped underwriting conditions and where private credit in China remains investable when discipline, enforceability, and structure take precedence over sentiment.</p>
             <div class="cdd-cta-group">
               <a href="insights.html#issue-header" class="cdd-cta"><span>READ ISSUE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
               <a href="insights.html#subscribe" class="cdd-cta"><span>SUBSCRIBE</span><span class="cdd-cta__ring" aria-hidden="true">→</span></a>
