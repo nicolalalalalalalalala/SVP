@@ -1514,11 +1514,17 @@ body.homepage .home-hero__headline {
   color: #FAF6EE;
   text-wrap: balance;
 }
-body.homepage .home-hero__headline strong {
+body.homepage .home-hero__headline-primary,
+body.homepage .home-hero__headline-emphasis {
   font-style: inherit;
-  font-weight: 300;
-  letter-spacing: .005em;
+  font-weight: inherit;
+  letter-spacing: inherit;
   text-transform: uppercase;
+}
+body.homepage .home-hero__headline-primary {
+  color: #FAF6EE;
+}
+body.homepage .home-hero__headline-emphasis {
   color: var(--cinnabar);
 }
 body.homepage .home-hero__support {
