@@ -97,7 +97,7 @@ h2 em { font-style:italic; }
   position:relative;
   width:100%;
   height:600px;
-  --hero-image-position:74% 44%;
+  --hero-image-position:62% 42%;
   /* Keep the hero as a single composited background to avoid delayed paint on mobile. */
   background-color:#6c6864;
   background-size:cover;
@@ -122,80 +122,73 @@ h2 em { font-style:italic; }
   width:100%;
   max-width:var(--max);
   margin:0 auto;
-  padding:0 var(--pad) 64px;
+  padding:0 var(--pad);
+  min-height:100%;
+  display:flex;
+  align-items:center;
 }
 .hero__overlay .hero__content {
-  max-width:640px;
-  padding:30px 34px 24px;
-  border-left:1px solid rgba(23, 47, 71, 0.28);
-  background:
-    linear-gradient(
-      100deg,
-      rgba(250,246,238,0.78) 0%,
-      rgba(250,246,238,0.64) 64%,
-      rgba(250,246,238,0.18) 100%
-    );
-  backdrop-filter:saturate(1.04) blur(1.5px);
+  max-width:630px;
 }
 .hero__overlay .hero__kicker {
   justify-content:flex-start;
-  color:rgba(29,49,70,0.78);
-  letter-spacing:.18em;
-  margin-bottom:20px;
+  color:var(--paper-light);
+  letter-spacing:.16em;
+  margin-bottom:16px;
   font-weight:500;
 }
 .hero__overlay .hero__kicker::before {
-  background:rgba(29,49,70,0.5);
+  background:color-mix(in srgb, var(--paper-light) 70%, transparent);
 }
 .hero__overlay h1.hero__hed {
-  color:#20344a;
+  color:var(--paper-light);
   font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size:clamp(60px,8vw,108px);
+  font-size:clamp(44px,5.6vw,72px);
   font-weight:300;
-  font-style:normal;
-  line-height:1.02;
-  letter-spacing:-.02em;
-  margin-bottom:24px;
-  max-width:7.2ch;
-  text-shadow:none;
+  font-style:italic;
+  line-height:1.08;
+  letter-spacing:0;
+  margin-bottom:18px;
+  max-width:12ch;
 }
 .hero__overlay h1.hero__hed .hero__hed-main {
-  display:block;
   font-style:italic;
   font-weight:300;
 }
 .hero__overlay h1.hero__hed em {
-  color:var(--red);
-  font-style:normal;
+  color:var(--cinnabar);
+  font-style:italic;
   font-weight:500;
 }
 .hero__overlay .cta--light {
-  color:#20344a;
-  letter-spacing:.12em;
-  background:transparent;
-  box-shadow:none;
-  margin-top:18px;
-  padding-top:14px;
-  border-top:1px solid rgba(29,49,70,0.2);
+  color:var(--paper-light);
+  letter-spacing:.14em;
+  margin-top:20px;
+  padding-top:0;
+  border-top:0;
   width:fit-content;
 }
 .hero__overlay .cta--light:hover {
   background:transparent;
   box-shadow:none;
-  color:#20344a;
+  color:var(--paper-light);
 }
 .hero__overlay .cta--light .cta__ring {
-  border-color:rgba(29,49,70,0.34);
-  color:#20344a;
+  width:auto;
+  height:auto;
+  border:0;
+  border-radius:0;
+  color:var(--paper-light);
+  font-size:15px;
 }
 
 
 .hero__support {
-  max-width: 54ch;
+  max-width: 48ch;
   margin: 0;
-  color: rgba(27,44,62,0.9);
-  font-size: clamp(16px, 1.42vw, 18px);
-  line-height: 1.56;
+  color: color-mix(in srgb, var(--paper-light) 90%, #d8ceb0);
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.62;
 }
 .about__intro--principles {
   margin-top: clamp(56px, 7vw, 90px);
@@ -1600,29 +1593,26 @@ h2.su__hed {
   .hero__sliver {
     height:min(90vh, 820px);
     min-height:680px;
-    --hero-image-position:70% 36%;
+    --hero-image-position:68% 34%;
   }
   .hero__overlay {
-    padding:0 var(--pad) 72px;
-  }
-  .hero__overlay .hero__content {
-    padding:30px 30px 24px;
+    align-items:flex-end;
+    padding:0 var(--pad) 68px;
   }
   .hero__overlay .hero__kicker {
-    margin-bottom:20px;
-    color:rgba(29,49,70,0.76);
+    margin-bottom:14px;
+    color:var(--paper-light);
     font-size:10px;
-    letter-spacing:.16em;
+    letter-spacing:.15em;
   }
   .hero__overlay h1.hero__hed {
-    font-size:clamp(62px,16vw,102px);
-    line-height:1.02;
-    margin-bottom:24px;
-    max-width:7.2ch;
-    text-wrap:balance;
+    font-size:clamp(38px,12vw,56px);
+    line-height:1.1;
+    margin-bottom:16px;
+    max-width:11ch;
   }
   .hero__overlay .cta {
-    gap:13px;
+    gap:8px;
     font-size:11px;
     letter-spacing:.13em;
   }
@@ -1631,8 +1621,8 @@ h2.su__hed {
     box-shadow:none;
   }
   .hero__overlay .cta__ring {
-    width:46px;
-    height:46px;
+    width:auto;
+    height:auto;
   }
 
   #hero,
@@ -2368,25 +2358,25 @@ body.homepage .hero__overlay h1.hero__hed {
   text-shadow:none;
 }
 body.homepage .hero__overlay .hero__content {
-  padding: clamp(34px, 4.2vw, 46px) clamp(30px, 3.4vw, 42px) clamp(26px, 3vw, 34px) !important;
-  border-left: 1px solid color-mix(in srgb, var(--ink-green-dark) 24%, transparent) !important;
-  background: linear-gradient(102deg, rgba(250,246,238,.92) 0%, rgba(250,246,238,.84) 68%, rgba(250,246,238,.46) 100%) !important;
-  box-shadow: 0 10px 32px color-mix(in srgb, var(--ink-green-dark) 14%, transparent) !important;
+  padding: 0 !important;
+  border-left: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 body.homepage .hero__overlay .hero__kicker,
 body.homepage .hero__support,
 body.homepage .hero__overlay .cta--light {
-  color: var(--ink-green-dark) !important;
+  color: var(--paper-light) !important;
 }
 body.homepage .hero__overlay .cta--light {
-  border-top: 1px solid color-mix(in srgb, var(--ink-green-dark) 22%, transparent) !important;
+  border-top: 0 !important;
 }
 body.homepage .hero__overlay .cta--light .cta__ring {
-  border-color: color-mix(in srgb, var(--ink-green-dark) 34%, transparent) !important;
-  color: var(--ink-green-dark) !important;
+  border-color: transparent !important;
+  color: var(--paper-light) !important;
 }
 body.homepage .hero__hed-main {
-  letter-spacing:.05em;
+  letter-spacing:.01em;
 }
 body.homepage :is(p,.about__body p,.team__intro,.strat__intro,.cdd-feature__thesis,.cdd-subscribe__text,.tm__bio,.icard__date,.stats__note) {
   color:color-mix(in srgb, var(--ink-green-dark) 74%, var(--blue-green-dark));
@@ -2631,9 +2621,9 @@ body.homepage footer.sv-footer .sv-footer__legal-links a + a::before {
   <div class="hero__overlay">
     <div class="hero__content">
       <p class="hero__kicker go">ESTABLISHED 2004</p>
-      <h1 class="hero__hed go"><span class="hero__hed-main">Private credit in</span><em>CHINA.</em></h1>
-      <p class="hero__support go">Rooted in two worlds—onshore in China, disciplined for institutional capital.</p>
-      <a href="firm.html" class="cta cta--light go"><span>EXPLORE SHOREVEST</span><div class="cta__ring">→</div></a>
+      <h1 class="hero__hed go"><span class="hero__hed-main">Private credit in </span><em>CHINA.</em></h1>
+      <p class="hero__support go">Rooted in two worlds - onshore in China, disciplined for institutional capital.</p>
+      <a href="firm.html" class="cta cta--light go"><span>EXPLORE SHOREVEST</span><div class="cta__ring" aria-hidden="true">→</div></a>
     </div>
   </div>
 </div>
