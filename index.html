@@ -203,6 +203,42 @@ h2 em { font-style:italic; }
 .about__supporting-line {
   color: var(--ink2);
 }
+.about__statement {
+  display:grid;
+  grid-template-columns:5fr 7fr;
+  gap:var(--content-gap);
+  align-items:start;
+  padding:clamp(18px, 3vw, 28px) 0 clamp(64px, 8vw, 104px);
+  border-bottom:1px solid var(--rule);
+  margin-bottom:clamp(56px, 7vw, 94px);
+}
+.about__anchor {
+  margin:0;
+  max-width:12ch;
+  font-family:var(--serif);
+  font-size:clamp(36px, 4vw, 56px);
+  line-height:1.06;
+  letter-spacing:.01em;
+  color:var(--ink);
+}
+.about__statement-body {
+  max-width:62ch;
+}
+.about__statement-body p {
+  margin:0;
+  font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size:18px;
+  line-height:1.78;
+  color:var(--mist);
+}
+.about__statement-note {
+  margin-top:12px !important;
+  font-size:11px !important;
+  line-height:1.5 !important;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:rgba(32, 52, 74, 0.78) !important;
+}
 /* ══ HERO */
 #hero {
   padding:var(--section-space-tight) var(--pad) var(--section-space-tight);
@@ -409,6 +445,14 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
   gap:var(--content-gap); align-items:start;
   padding-bottom:clamp(54px, 6.5vw, 86px); border-bottom:1px solid var(--rule); margin-bottom:clamp(54px, 6.5vw, 86px);
 }
+.about__intro--overview {
+  margin-bottom:0;
+  border-bottom:0;
+  padding-bottom:0;
+}
+.about__intro--principles {
+  margin-top:0;
+}
 h2.about__hed { font-size:32px; color:var(--ink); }
 #about .eyebrow,
 #about .about__body p,
@@ -427,6 +471,14 @@ h2.about__hed { font-size:32px; color:var(--ink); }
   font-size:clamp(34px, 3.2vw, 44px);
   font-weight:400;
   letter-spacing:0;
+}
+.about__subhed {
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(24px, 2.4vw, 31px);
+  line-height:1.2;
+  color:var(--ink);
+  font-weight:400;
 }
 .about__body {
   display:grid;
@@ -1544,6 +1596,7 @@ h2.su__hed {
 
   #hero,
   .about__intro,
+  .about__statement,
   .about__cols,
   .num-band__inner,
   .strat__hd,
@@ -1680,6 +1733,25 @@ h2.su__hed {
   .about__intro {
     padding-bottom:52px;
     margin-bottom:52px;
+  }
+  .about__intro--overview {
+    padding-bottom:0;
+    margin-bottom:0;
+  }
+  .about__statement {
+    padding:8px 0 56px;
+    margin-bottom:56px;
+  }
+  .about__anchor {
+    max-width:none;
+    font-size:clamp(34px, 9.5vw, 54px);
+  }
+  .about__statement-body p {
+    font-size:17px;
+    line-height:1.72;
+  }
+  .about__subhed {
+    font-size:clamp(23px, 6.8vw, 30px);
   }
 
   .team__grid { gap:20px; }
@@ -2527,7 +2599,7 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <div class="about__intro">
+    <div class="about__intro about__intro--overview">
       <div>
         <div class="eyebrow eyebrow--red rev">ABOUT THE FIRM</div>
         <h2 class="about__hed rev d1">A firm rooted<br>in two worlds.</h2>
@@ -2541,10 +2613,19 @@ body.homepage :is(.stats__note,.cdd-feature__date,.cdd-feature__issue,.cdd-edito
         </div>
       </div>
     </div>
+    <div class="about__statement rev">
+      <h2 class="about__anchor d1">ROOTED IN TWO WORLDS.</h2>
+      <div class="about__statement-body d2">
+        <p>
+          This defines ShoreVest’s operating position: onshore execution in China with governance, reporting, and portfolio discipline aligned to institutional investors.
+        </p>
+        <p class="about__statement-note">Operating model, not a slogan.</p>
+      </div>
+    </div>
     <div class="about__intro about__intro--principles">
       <div>
         <div class="eyebrow rev">HOW WE WORK</div>
-        <h2 class="about__hed rev d1">Vision &amp;<br>Principles.</h2>
+        <h3 class="about__subhed rev d1">Vision &amp; Principles</h3>
       </div>
       <div class="about__body rev d2">
         <p>
