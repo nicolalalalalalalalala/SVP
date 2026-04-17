@@ -35,3 +35,5 @@
 | `pdfs/china-debt-dynamics-shadow-banking-contraction-pc-opportunities.pdf` | 148514 | 148514 | error: <urlopen error Tunnel connection failed: 403 Forbidden> |
 | `pdfs/china-debt-dynamics-uncorrelated-harbor-stormy-world.pdf` | 202967 | 202967 | error: <urlopen error Tunnel connection failed: 403 Forbidden> |
 | `pdfs/china-debt-dynamics-united-states-of-china.pdf` | 221066 | 221066 | error: <urlopen error Tunnel connection failed: 403 Forbidden> |
+
+- 2026-04-17: Updated article/archive links to point directly to `pdfs/20250624 White Paper - Into The Shadows of US Private Credit.pdf` (URL-encoded in HTML) to avoid relying on alias-file behavior.
