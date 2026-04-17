@@ -518,9 +518,108 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     color: var(--ink-green-dark, #0F2206) !important;
   }
 
-  html body footer.sv-footer .sv-footer__legal-links a + a::before {
+html body footer.sv-footer .sv-footer__legal-links a + a::before {
     content: "" !important;
   }
+}
+
+/* ========================================================================== */
+/* Strategy benchmark harmonization (site-wide discipline, non-templated)     */
+/* ========================================================================== */
+
+/* Typography system enforcement */
+html body,
+html body button,
+html body input,
+html body select,
+html body textarea {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+html body :lang(zh),
+html body :lang(zh-Hant),
+html body [lang^="zh"] {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
+}
+
+/* Unified vertical rhythm derived from Strategy page cadence */
+body.homepage main > section,
+body.press-page main > section,
+body.insights-page > section,
+body.insights-page > main > section,
+body.contact-page main .section,
+body.homepage main > section.group {
+  padding-top: clamp(64px, 7.2vw, 104px) !important;
+  padding-bottom: clamp(64px, 7.2vw, 104px) !important;
+}
+
+/* Heading and label rhythm */
+body.homepage h1,
+body.press-page h1,
+body.insights-page h1 {
+  font-size: clamp(46px, 6.2vw, 84px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.012em !important;
+}
+
+body.homepage h2,
+body.press-page h2,
+body.insights-page h2,
+body.contact-page h2 {
+  font-size: clamp(32px, 4.1vw, 58px) !important;
+  line-height: 1.08 !important;
+}
+
+body.homepage .eyebrow,
+body.press-page .eyebrow,
+body.insights-page .eyebrow,
+body.contact-page .eyebrow {
+  font-size: 11px !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 500 !important;
+  margin-bottom: clamp(16px, 2vw, 24px) !important;
+}
+
+/* Panel/card proportions and subtle framing */
+body.homepage .type-sheet,
+body.homepage .about__statement,
+body.homepage .cdd-feature,
+body.press-page .press-toolbar,
+body.press-page .press-list,
+body.press-page .press-row,
+body.insights-page .archive-panel,
+body.insights-page .issue-card,
+body.insights-page .research-sub,
+body.contact-page .section {
+  border-color: rgba(20, 18, 14, 0.14) !important;
+}
+
+body.press-page .press-toolbar,
+body.press-page .press-row,
+body.insights-page .archive-panel,
+body.contact-page .section {
+  padding: clamp(20px, 2.3vw, 30px) !important;
+}
+
+/* Container discipline and dead-zone reduction */
+body.homepage :is(.hero__intro, .about__statement-body, .about__body, .cdd-feature__content),
+body.press-page :is(.press-hero__copy, .press-grid),
+body.insights-page :is(.research-main__intro, .archive-panel__copy),
+body.contact-page :is(.contact-page__header, .contact-page__layout) {
+  max-width: 72ch;
+}
+
+/* Preserve editorial darkness, but align with shared system polish */
+body.insights-page .research-hero,
+body.insights-page .research-sub,
+body.insights-page .research-main {
+  border-top: 1px solid rgba(250, 246, 238, 0.14);
+  border-bottom: 1px solid rgba(250, 246, 238, 0.12);
+}
+
+body.insights-page .issue-card__bar,
+body.insights-page .issue-card__meta {
+  border-color: rgba(250, 246, 238, 0.14) !important;
 }
 
 /* ========================================================================== */
