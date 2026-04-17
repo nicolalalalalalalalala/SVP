@@ -101,7 +101,7 @@ body.legal-page .legal-page__content section {
 
 body.legal-page .legal-page__content h1 {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 26px;
+  font-size: clamp(20px, 2.2vw, 23px) !important;
   font-weight: 700;
   line-height: 1.08;
   text-transform: uppercase;
@@ -110,7 +110,7 @@ body.legal-page .legal-page__content h1 {
 
 body.legal-page .legal-page__content h2 {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 17px;
+  font-size: clamp(14px, 1.4vw, 16px) !important;
   font-weight: 700;
   line-height: 1.16;
   text-transform: none;
