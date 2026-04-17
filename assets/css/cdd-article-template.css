@@ -325,9 +325,18 @@ a { color: var(--qing-dark); }
 .cdd-reading-grid {
   display: grid;
   grid-template-columns: 1fr 248px;
+  grid-template-areas: "body sidecard";
   column-gap: 48px;
   row-gap: var(--cdd-column-gap);
   align-items: start;
+}
+
+.cdd-reading-grid .cdd-body {
+  grid-area: body;
+}
+
+.cdd-reading-grid .cdd-sidecard {
+  grid-area: sidecard;
 }
 
 .cdd-reading-grid .cdd-body p,
@@ -441,6 +450,9 @@ a { color: var(--qing-dark); }
 
   .cdd-reading-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "body"
+      "sidecard";
     gap: 26px;
   }
 
@@ -690,19 +702,12 @@ a { color: var(--qing-dark); }
   }
 
   /* ── Reading grid: single-column print layout ──
-     Key Findings is placed above the body via CSS Grid named areas.
-     Named areas are more reliable than flexbox order in print renderers.
-     Layout: [sidebar] top, [body] below, both at full printable width.
+     Force vertical flow and explicitly place Key Findings first.
   ── */
   .cdd-reading-grid {
-    display: grid !important;
-    grid-template-columns: 100% !important;
-    grid-template-rows: auto auto !important;
-    grid-template-areas:
-      "sidebar"
-      "body" !important;
-    row-gap: 0 !important;
-    column-gap: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
     width: 100% !important;
     max-width: none !important;
     box-sizing: border-box !important;
@@ -712,7 +717,7 @@ a { color: var(--qing-dark); }
 
   /* Body occupies the full printable width below Key Findings */
   .cdd-body {
-    grid-area: body !important;
+    order: 2 !important;
     width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
@@ -723,7 +728,7 @@ a { color: var(--qing-dark); }
 
   /* ── Key Findings: horizontal band above body ── */
   .cdd-sidecard {
-    grid-area: sidebar !important;
+    order: 1 !important;
     width: 100% !important;
     border-top: 2pt solid #1f2924 !important;
     border-right: none !important;
