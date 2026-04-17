@@ -922,29 +922,46 @@ blockquote.fs__q {
 }
 
 .cdd-feature {
-  background: transparent;
-  border: 0;
+  background: #203626;
+  border: 1px solid color-mix(in srgb, #f2ecd8 18%, transparent);
+  padding: clamp(22px, 2.4vw, 30px);
+  box-shadow: 0 18px 38px color-mix(in srgb, #0f1b14 28%, transparent);
 }
 
 .cdd-feature__top {
-  padding: 10px 0 12px;
-  border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent);
+  padding: 0 0 14px;
+  border-bottom: 1px solid color-mix(in srgb, #f2ecd8 20%, transparent);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .cdd-feature__issue {
-  font-size: 10px;
-  letter-spacing: .08em;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--cdd-signal);
+  color: rgba(250, 246, 238, 0.92);
+  border: 1px solid rgba(250, 246, 238, 0.28);
+  padding: 7px 10px 6px;
+}
+
+.cdd-feature__meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 7px;
 }
 
 .cdd-feature__date {
-  font-size: 11px;
-  color: color-mix(in srgb, var(--cdd-muted) 84%, var(--cdd-text) 16%);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.78);
+  border: 1px solid rgba(250, 246, 238, 0.24);
+  padding: 7px 10px 6px;
 }
 
 .cdd-feature__body {
@@ -962,8 +979,8 @@ blockquote.fs__q {
 .cdd-feature__main {
   display: flex;
   flex-direction: column;
-  padding-left: clamp(12px, 1.2vw, 16px);
-  border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 18%, transparent);
+  padding-left: 0;
+  border-left: 0;
 }
 
 .cdd-feature__main .cdd-cta-group {
@@ -977,7 +994,7 @@ blockquote.fs__q {
   font-weight: 500;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--cdd-signal);
+  color: #c93b2a;
   margin-bottom: 12px;
 }
 
@@ -987,7 +1004,7 @@ blockquote.fs__q {
   text-transform: none;
   letter-spacing: .005em;
   line-height: 1.08;
-  color: var(--cdd-text);
+  color: #faf6ee;
   margin-bottom: 12px;
   width: 100%;
   overflow-wrap: normal;
@@ -1015,7 +1032,7 @@ blockquote.fs__q {
   font-size: clamp(14px, 1vw, 16px);
   line-height: 1.66;
   max-width: 62ch;
-  color: var(--cdd-signal-deep);
+  color: rgba(250, 246, 238, 0.82);
 }
 
 .cdd-feature__panel {
@@ -1088,13 +1105,13 @@ blockquote.fs__q {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 70%, transparent);
+  border: 1px solid rgba(250, 246, 238, 0.3);
   padding: 9px 12px 9px 14px;
   font-size: 9px;
   font-weight: 500;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--cdd-text);
+  color: #faf6ee;
   transition: border-color .2s, background .2s, color .2s, gap .2s;
 }
 
@@ -1105,22 +1122,22 @@ blockquote.fs__q {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 48%, transparent);
+  border: 1px solid rgba(250, 246, 238, 0.35);
   transition: border-color .2s, background .2s;
 }
 
 .cdd-cta:hover,
 .cdd-cta:focus-visible {
   gap: 13px;
-  border-color: var(--cdd-signal);
-  background: color-mix(in srgb, var(--cdd-signal) 11%, transparent);
-  color: var(--cdd-signal-deep);
+  border-color: #c93b2a;
+  background: color-mix(in srgb, #c93b2a 18%, transparent);
+  color: #faf6ee;
 }
 
 .cdd-cta:hover .cdd-cta__ring,
 .cdd-cta:focus-visible .cdd-cta__ring {
-  border-color: var(--cdd-signal);
-  background: color-mix(in srgb, var(--cdd-signal) 18%, transparent);
+  border-color: #c93b2a;
+  background: color-mix(in srgb, #c93b2a 26%, transparent);
 }
 
 .cdd-cta:focus-visible {
@@ -1665,8 +1682,8 @@ body.homepage #cdd .cdd-editorial__intro {
   margin-bottom: 20px;
 }
 body.homepage #cdd .cdd-feature {
-  background: transparent;
-  border: 0;
+  background: #203626;
+  border: 1px solid color-mix(in srgb, #f2ecd8 18%, transparent);
 }
 body.homepage #cdd .cdd-feature__top,
 body.homepage #cdd .cdd-feature__body,
@@ -2504,8 +2521,14 @@ body.homepage #cdd .cdd-editorial__meta {
 
       <article class="cdd-feature rev d3" aria-label="Featured issue of China Debt Dynamics">
         <div class="cdd-feature__top">
-          <div class="cdd-feature__issue">CURRENT ISSUE · 46</div>
-          <div class="cdd-feature__date">25 January 2026</div>
+          <span class="cdd-live" aria-hidden="true">
+            <span class="cdd-live__dot"></span>
+            <span class="cdd-live__label">Live</span>
+          </span>
+          <div class="cdd-feature__meta">
+            <div class="cdd-feature__issue">CURRENT ISSUE · 46</div>
+            <div class="cdd-feature__date">25 January 2026</div>
+          </div>
         </div>
         <div class="cdd-feature__body">
           <div class="cdd-feature__main">
