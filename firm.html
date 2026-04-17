@@ -682,24 +682,29 @@
       }
 
       .execution-strip {
-        border-top: 1px solid color-mix(in srgb, var(--ink-green-dark) 18%, var(--rule));
-        background: linear-gradient(180deg, rgba(20, 47, 42, 0.96) 0%, rgba(15, 38, 34, 0.98) 100%);
-        color: rgba(248, 244, 234, 0.97);
-        padding: clamp(16px, 1.8vw, 22px) clamp(16px, 1.9vw, 24px);
+        border: 1px solid color-mix(in srgb, var(--qing) 24%, var(--rule));
+        background: linear-gradient(
+          150deg,
+          color-mix(in srgb, var(--xuan-light) 88%, #ffffff) 0%,
+          color-mix(in srgb, var(--xuan-light) 72%, #d9ece6) 52%,
+          color-mix(in srgb, var(--xuan-light) 78%, #f9f4e9) 100%
+        );
+        color: color-mix(in srgb, var(--ink-green-dark) 92%, black);
+        padding: clamp(16px, 1.8vw, 24px);
       }
       .execution-head {
         display: grid;
         grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
         gap: 16px;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
       .execution-head p {
         margin: 0;
-        color: rgba(247, 243, 234, 0.95) !important;
+        color: color-mix(in srgb, var(--ink-green-dark) 92%, black) !important;
         line-height: 1.48;
       }
       .execution-head .eyebrow {
-        color: color-mix(in srgb, var(--cinnabar) 74%, #ffd4cd) !important;
+        color: color-mix(in srgb, var(--qing-dark) 78%, #00382f) !important;
       }
       .execution-flow {
         display: grid;
@@ -707,21 +712,22 @@
         gap: 14px;
       }
       .execution-step {
-        border-top: 1px solid rgba(247, 243, 234, 0.44);
-        border-bottom: 1px solid rgba(247, 243, 234, 0.2);
-        padding: 11px 10px 12px;
-        background: rgba(247, 243, 234, 0.04);
+        border: 1px solid color-mix(in srgb, var(--qing) 24%, #7fb3a8);
+        border-left: 3px solid color-mix(in srgb, var(--qing-dark) 72%, #06473d);
+        padding: 12px 12px 13px;
+        background: color-mix(in srgb, #ffffff 88%, #e9f5f1);
+        box-shadow: 0 6px 16px rgba(5, 39, 32, 0.08);
         position: relative;
       }
       .execution-step h3 {
-        margin: 0 0 5px;
+        margin: 0 0 6px;
         font-size: 18px;
         line-height: 1.22;
-        color: #f8f4ea !important;
+        color: color-mix(in srgb, var(--ink-green-dark) 94%, black) !important;
       }
       .execution-step p {
         margin: 0;
-        color: rgba(246, 242, 234, 0.9) !important;
+        color: color-mix(in srgb, var(--ink-green-dark) 86%, #0a1f1b) !important;
         font-size: 14px;
         line-height: 1.45;
       }
@@ -729,21 +735,24 @@
         content: attr(data-step);
         display: inline-grid;
         place-items: center;
-        width: 21px;
-        height: 21px;
-        margin-bottom: 8px;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 9px;
         border-radius: 999px;
-        border: 1px solid rgba(247, 243, 234, 0.58);
+        border: 1px solid color-mix(in srgb, var(--qing-dark) 42%, #0a2f28);
+        background: color-mix(in srgb, var(--xuan-light) 68%, #ffffff);
         font-size: 9px;
         letter-spacing: 0.08em;
-        color: rgba(247, 243, 234, 0.9);
+        color: color-mix(in srgb, var(--qing-dark) 84%, #002f27);
+        font-weight: 600;
       }
       .execution-step:not(:last-child)::after {
         content: "→";
         position: absolute;
         right: -11px;
         top: 14px;
-        color: rgba(247, 243, 234, 0.46);
+        color: color-mix(in srgb, var(--qing-dark) 45%, #2f6a5f);
+        font-weight: 600;
       }
 
       .cta-panel {
