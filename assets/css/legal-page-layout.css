@@ -259,6 +259,17 @@ body.legal-page .contact-form button:focus-visible {
 /* Contact page refinement */
 body.contact-page .legal-page__main {
   padding-top: clamp(42px, 5vw, 72px);
+  position: relative;
+}
+
+body.contact-page .legal-page__main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 70% at 0% 0%, color-mix(in srgb, var(--paper-light) 78%, transparent), transparent 56%),
+    radial-gradient(90% 55% at 100% 20%, color-mix(in srgb, var(--paper-light) 68%, transparent), transparent 58%);
 }
 
 body.contact-page .contact-page__content {
@@ -267,8 +278,11 @@ body.contact-page .contact-page__content {
 
 body.contact-page .contact-page__header {
   margin-bottom: clamp(30px, 3.8vw, 46px);
-  padding-bottom: clamp(18px, 2.2vw, 28px);
-  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 64%, transparent);
+  padding: clamp(20px, 2.3vw, 28px) clamp(20px, 2.4vw, 32px);
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 66%, #c8d0d6 34%);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--paper-light) 86%, #f9faf8 14%);
+  box-shadow: 0 7px 18px color-mix(in srgb, #0f1f29 5%, transparent);
 }
 
 body.contact-page .contact-page__header h1 {
@@ -293,9 +307,9 @@ body.contact-page .contact-page__layout {
 body.contact-page .contact-page__primary-contact,
 body.contact-page .contact-page__form-section {
   border: 1px solid color-mix(in srgb, var(--paper-dark) 74%, #c7ced4 26%);
-  background: color-mix(in srgb, #fff 95%, var(--paper-light));
+  background: color-mix(in srgb, var(--paper-light) 84%, #fafaf8 16%);
   border-radius: 10px;
-  box-shadow: 0 8px 18px color-mix(in srgb, #16242b 6%, transparent);
+  box-shadow: 0 10px 22px color-mix(in srgb, #16242b 8%, transparent);
   padding: clamp(22px, 2.6vw, 32px);
   margin-bottom: 0;
 }
@@ -317,6 +331,13 @@ body.contact-page .contact-page__form-section h2 {
 
 body.contact-page .contact-page__email {
   margin: 0;
+}
+
+body.contact-page .contact-page__primary-contact .muted {
+  margin: 2px 0 0;
+  font-size: 8.5pt;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--text-secondary) 76%, var(--text-main));
 }
 
 body.contact-page .contact-page__email a {
@@ -364,7 +385,7 @@ body.contact-page .contact-form textarea {
   border-style: solid;
   border-color: color-mix(in srgb, var(--paper-dark) 70%, #b2bcc4 30%);
   border-radius: 6px;
-  background: #fff;
+  background: color-mix(in srgb, #fff 65%, var(--paper-light) 35%);
   min-height: 44px;
   padding: 11px 13px;
   transition: border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
@@ -373,7 +394,7 @@ body.contact-page .contact-form textarea {
 body.contact-page .contact-form input:hover,
 body.contact-page .contact-form textarea:hover {
   border-color: color-mix(in srgb, var(--blue-green-dark) 52%, #8ea0aa 48%);
-  background: #fff;
+  background: color-mix(in srgb, #fff 76%, var(--paper-light) 24%);
 }
 
 body.contact-page .contact-form input:focus-visible,
