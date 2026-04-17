@@ -194,6 +194,16 @@ body.cdd-print-layout .cdd-print-note {
   color:       var(--pr-label);
 }
 
+/* Optional reader-status controls must never sit over content. */
+body.cdd-print-layout .cdd-reader-pill,
+body.cdd-print-layout .cdd-reader-status,
+body.cdd-print-layout [data-reader-status],
+body.cdd-print-layout [data-reader-available] {
+  position: static !important;
+  inset: auto !important;
+  z-index: auto !important;
+}
+
 
 /* ── MASTHEAD ──────────────────────────────────────────────── */
 
@@ -598,6 +608,156 @@ body.cdd-print-layout .cdd-disclaimer p + p {
   padding-top: 2mm                             !important;
   margin-top:  1.5mm                           !important;
   border-top:  0.4pt solid var(--pr-rule)      !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   3b. MOBILE READER LAYOUT (screen only)
+   Switch from A4-sheet simulation to a true phone reading view.
+───────────────────────────────────────────────────────────── */
+
+@media screen and (max-width: 900px) {
+  body.cdd-print-layout .cdd-topline__inner {
+    width: calc(100% - 28px);
+    padding: 10px 0;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  body.cdd-print-layout .cdd-lockup {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  body.cdd-print-layout .cdd-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  body.cdd-print-layout .cdd-btn {
+    padding: 9px 13px;
+    font-size: 9px;
+  }
+
+  body.cdd-print-layout .cdd-print-note {
+    margin-top: 2px;
+    font-size: 11px;
+    line-height: 1.4;
+    opacity: 0.82;
+  }
+
+  body.cdd-print-layout .cdd-print-shell,
+  body.cdd-print-layout .cdd-print-shell.wrap {
+    width: calc(100vw - 16px);
+    max-width: none;
+    margin: 10px auto 28px;
+    min-height: 0;
+    padding: 18px 14px 22px;
+    box-shadow:
+      0 1px 4px rgba(0, 0, 0, 0.08),
+      0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  body.cdd-print-layout .cdd-print-masthead {
+    padding: 0 0 10px;
+  }
+
+  body.cdd-print-layout .cdd-meta {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+    gap: 4px 0 !important;
+  }
+
+  body.cdd-print-layout .cdd-meta span {
+    font-size: 10px !important;
+    white-space: normal;
+  }
+
+  body.cdd-print-layout .cdd-print-hero {
+    max-width: none;
+    margin-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  body.cdd-print-layout .cdd-title {
+    max-width: none !important;
+    font-size: clamp(31px, 8.8vw, 40px) !important;
+    line-height: 1.08 !important;
+    margin: 0 0 12px !important;
+  }
+
+  body.cdd-print-layout .cdd-dek {
+    font-size: clamp(16px, 4.1vw, 18px) !important;
+    line-height: 1.5 !important;
+  }
+
+  body.cdd-print-layout .cdd-findings-row {
+    margin-top: 16px !important;
+  }
+
+  body.cdd-print-layout .cdd-grid {
+    margin-top: 16px !important;
+  }
+
+  body.cdd-print-layout .cdd-sidecard {
+    padding: 14px 0 16px !important;
+  }
+
+  body.cdd-print-layout .cdd-sidecard h3 {
+    font-size: 10px !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 8px !important;
+  }
+
+  body.cdd-print-layout .cdd-sidecard ul {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  body.cdd-print-layout .cdd-sidecard li {
+    font-size: 15px !important;
+    line-height: 1.56 !important;
+    padding-left: 12px !important;
+  }
+
+  body.cdd-print-layout .cdd-body p,
+  body.cdd-print-layout .cdd-body li {
+    font-size: clamp(16px, 4.2vw, 18px) !important;
+    line-height: 1.66 !important;
+    margin-bottom: 16px !important;
+  }
+
+  body.cdd-print-layout .cdd-body h2 {
+    font-size: 11px !important;
+    margin: 30px 0 14px !important;
+    padding-top: 12px !important;
+    letter-spacing: 0.13em !important;
+  }
+
+  body.cdd-print-layout .cdd-disclaimer {
+    margin-top: 26px !important;
+    padding-top: 14px !important;
+  }
+
+  body.cdd-print-layout .cdd-disclaimer p {
+    font-size: 13px !important;
+    line-height: 1.58 !important;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  body.cdd-print-layout .cdd-topline__inner {
+    width: calc(100% - 20px);
+    gap: 8px;
+  }
+
+  body.cdd-print-layout .cdd-print-shell,
+  body.cdd-print-layout .cdd-print-shell.wrap {
+    width: calc(100vw - 8px);
+    margin-top: 8px;
+    margin-bottom: 18px;
+    padding: 16px 12px 20px;
+  }
 }
 
 
