@@ -545,8 +545,11 @@ body {
     --sv-header-height-mobile: 74px;
   }
 
+  /* Mobile top bar baseline: match Firm page styling across all routes. */
   #site-header-mount {
     min-height: 74px !important;
+    --sv-topbar-xuan-paper: #FAF6EE !important;
+    --sv-topbar-xuan-paper-dark: #D8CEB0 !important;
   }
 
   #site-header-mount #nav {
@@ -575,6 +578,7 @@ body {
   #site-header-mount #nav .nav__logo-cn {
     font-size: 9px !important;
     letter-spacing: .3em !important;
+    color: #C93B2A !important;
   }
 
   #site-header-mount #nav .nav__right {
