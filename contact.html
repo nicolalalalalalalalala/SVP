@@ -23,19 +23,25 @@
   <main class="legal-page__main">
     <article class="legal-page__content contact-page__content">
       <header class="contact-page__header">
+        <p class="contact-page__kicker">ShoreVest Partners</p>
         <h1>Contact</h1>
-        <p>For general enquiries, investor introductions, or strategic partnership discussions, please contact ShoreVest Partners using the details below.</p>
+        <p>For strategic dialogue, investor introductions, and institutional partnership enquiries, please contact our team using the details below.</p>
       </header>
 
       <div class="contact-page__layout">
-        <section class="section contact-page__primary-contact">
-          <h2>Email</h2>
+        <section class="section contact-page__primary-contact" aria-label="Direct contact details">
+          <h2>Direct Contact</h2>
           <p class="contact-page__email"><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></p>
-          <p class="muted">We typically respond within 1–2 business days.</p>
+          <p class="muted">We typically respond within one to two business days.</p>
+
+          <div class="contact-page__divider" aria-hidden="true"></div>
+
+          <p class="contact-page__supporting-copy">Please share your mandate, preferred timeline, and relevant context so we can route your enquiry efficiently.</p>
         </section>
 
-        <section class="section contact-page__form-section">
-          <h2>Send us your details</h2>
+        <section class="section contact-page__form-section" aria-label="Contact form">
+          <h2>Share Your Details</h2>
+          <p class="contact-page__form-intro">All submissions are handled with discretion and reviewed by the ShoreVest team.</p>
           <form class="contact-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain">
             <div class="contact-form__grid">
               <label>
@@ -59,7 +65,7 @@
               Message
               <textarea name="message" rows="5" required></textarea>
             </label>
-            <button type="submit">Send Inquiry</button>
+            <button type="submit">Send Enquiry</button>
           </form>
         </section>
       </div>
