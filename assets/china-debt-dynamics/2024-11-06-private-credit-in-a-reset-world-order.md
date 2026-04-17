@@ -5,6 +5,12 @@
 **Volume / Issue:** Volume 8 | Issue 5
 **Date:** 6 November 2024
 
+## Key Findings
+
+- Post-election volatility in US rates, regulation, and fiscal expectations raises uncertainty for direct lending, asset-based finance, and CRE private credit.
+- China private credit remains less correlated to Western market dislocations, with broader sourcing and less lender crowding across regional markets.
+- ShoreVest sees stronger downside protection in first-lien, low-LTV, asset-backed structures tied to China’s domestic policy priorities.
+
 Overnight in the US, the world order was reset once again! A regime change in the world’s largest economy is no small event, but an epochal shift. Many global leaders are quaking in their boots, regarding what this means for world peace and geopolitics, and whether Europe, antagonized by any tariffs and a threat of a reduced NATO protection, spins into China’s orbit. For global economists and investors, they wonder about the outlook for the Fed’s independence and rate-setting, debt and fiscal deficits, growth and inflation, tariffs and trade, dollar vs. other currencies and commodities, among a host of other things like climate change.
 
 For us at ShoreVest, for 20 years our China private credit strategy has largely remained uncorrelated with Western market disruptions. But we do question the forward-looking prospects for private credit in the West, especially in the US.
