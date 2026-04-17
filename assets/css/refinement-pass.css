@@ -1,14 +1,20 @@
 :root {
-  --page-max-width: 1320px;
-  --page-gutter-desktop: 56px;
-  --page-gutter-tablet: 36px;
-  --page-gutter-mobile: 22px;
-  --section-padding-y-desktop: 104px;
-  --section-padding-y-tablet: 80px;
+  --site-max-width: 1440px;
+  --site-gutter-desktop: 64px;
+  --site-gutter-tablet: 40px;
+  --site-gutter-mobile: 22px;
+  --content-max-width-wide: 1440px;
+  --content-max-width-standard: 1320px;
+  --content-max-width-narrow: 960px;
+  --section-padding-y-desktop: 110px;
+  --section-padding-y-tablet: 84px;
   --section-padding-y-mobile: 64px;
-  --content-max-width-narrow: 860px;
-  --content-max-width-standard: 1200px;
-  --content-max-width-wide: 1320px;
+
+  /* Backward-compatible aliases used by existing page-level CSS. */
+  --page-max-width: var(--content-max-width-standard);
+  --page-gutter-desktop: var(--site-gutter-desktop);
+  --page-gutter-tablet: var(--site-gutter-tablet);
+  --page-gutter-mobile: var(--site-gutter-mobile);
   --site-page-gutter: var(--page-gutter-desktop);
   --site-section-padding-y: var(--section-padding-y-desktop);
   --sv-refine-max: var(--content-max-width-wide);
@@ -24,6 +30,7 @@ html:root {
   --site-page-margin: var(--site-page-gutter) !important;
   --pad: var(--site-page-gutter) !important;
   --max: var(--content-max-width-standard) !important;
+  --content: var(--content-max-width-standard) !important;
 }
 
 @media (max-width: 1024px) {
@@ -46,7 +53,7 @@ html:root {
 .page-container,
 .content-container {
   width: 100%;
-  max-width: calc(var(--page-max-width) + (var(--site-page-gutter) * 2)) !important;
+  max-width: calc(var(--content-max-width-standard) + (var(--site-page-gutter) * 2)) !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: var(--site-page-gutter) !important;
@@ -139,11 +146,21 @@ h2 {
 .press-overview__inner,
 .research-main .wrap,
 .legal-page__main {
-  max-width: calc(var(--page-max-width) + (var(--site-page-gutter) * 2)) !important;
+  max-width: calc(var(--content-max-width-standard) + (var(--site-page-gutter) * 2)) !important;
   padding-left: var(--site-page-gutter) !important;
   padding-right: var(--site-page-gutter) !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Normalize one-off narrow wrappers so they inherit the shared content system. */
+:is(.wrap--pillar-module) {
+  max-width: calc(var(--content-max-width-standard) + (var(--site-page-gutter) * 2)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--site-page-gutter) !important;
+  padding-right: var(--site-page-gutter) !important;
   box-sizing: border-box !important;
 }
 
@@ -839,8 +856,8 @@ body.insights-page .issue-card__meta {
 
 /* Page-edge and template alignment. */
 :where(.wrap, .container, .page-wrap, .page-shell, .content-wrap, .insights-wrap, .legal-page__content) {
-  padding-left: var(--site-page-margin) !important;
-  padding-right: var(--site-page-margin) !important;
+  padding-left: var(--site-page-gutter) !important;
+  padding-right: var(--site-page-gutter) !important;
 }
 
 #site-header-mount + main,

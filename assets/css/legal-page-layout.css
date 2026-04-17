@@ -273,7 +273,7 @@ body.contact-page .legal-page__main::before {
 }
 
 body.contact-page .contact-page__content {
-  max-width: 1080px;
+  max-width: var(--content-max-width-standard, 1320px);
 }
 
 body.contact-page .contact-page__header {
