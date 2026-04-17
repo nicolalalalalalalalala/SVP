@@ -152,18 +152,7 @@ body {
 }
 
 .nav__links a.active {
-  color: var(--sv-topbar-cinnabar);
-  font-weight: 600;
-}
-
-.nav__links a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -7px;
-  height: 2px;
-  background: var(--sv-topbar-cinnabar);
+  color: var(--red, #3d7070);
 }
 
 .nav__right {
@@ -211,9 +200,9 @@ body {
 }
 
 .nav__lp:hover {
-  background: var(--red, #3d7070);
+  background: var(--red-hover, #2f5a5a);
   color: var(--paper, #F2ECD8);
-  border-color: var(--red, #3d7070);
+  border-color: var(--red-hover, #2f5a5a);
 }
 
 .nav__lp.active {

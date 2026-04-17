@@ -1,0 +1,51 @@
+# Quantifying China’s NPL Market
+
+**Series:** China Debt Dynamics
+**Volume / Issue:** Volume 8 | Issue 4
+**Date:** 1 October 2024
+
+China's nonperforming-loan market is the world's largest, but opaque. This issue sizes primary and secondary NPL flows and outlines implications for investors.
+
+China's nonperforming loan (NPL) market is the biggest in the world, but it's also one of the most opaque.
+
+The annual volume of NPLs available to investors is larger than any other global market and is likely to remain so for years. Publicly available data on flows from banks to AMCs and then to secondary investors is limited, but regulator and market-participant data provides useful insight.
+
+Since 2019, China's banks have disposed of about RMB 3 trillion (USD 427 billion) in NPLs annually. We estimate about half is resolved internally through collateral liquidation, debt-for-equity swaps, or recoveries from third-party guarantors.
+
+Loans that banks cannot fully redeem are usually sold to AMCs ("bad banks"). China has five national AMCs (Cinda, Great Wall, Orient, CITIC, and Galaxy) and around 60 local AMCs that operate at the provincial level.
+
+## Primary-Market NPL Sales
+
+According to Zheshang Asset Management (ZSAMC), in 2023 China's banks raised RMB 400.7 billion (USD 57 billion) from NPL sales, up 0.5% from 2022.
+
+We estimate the face value of loans sold in the primary market was RMB 1.5 trillion, based on combining NPL sales with bank write-downs of RMB 1.1 trillion. That is roughly half of all NPLs disposed by banks in 2023.
+
+Joint-stock banks sold 40% of NPLs, the big five banks sold 23%, city commercial banks sold 16%, and rural commercial banks sold 18%.
+
+## Who Bought the Loans
+
+AMCs acquired RMB 326.6 billion (82%) of total bank NPL sales: Cinda 21%, CITIC 16%, Great Wall 10%, China Orient 9%, Galaxy 2%, and local AMCs 23% combined.
+
+The remaining RMB 73 billion (18%) was acquired by investors. While banks can only sell portfolios of three or more NPLs to AMCs, they can sell individual or paired loans to other buyers, often via JD.com and Taobao auction channels.
+
+After acquisition, AMCs either resolve loans internally or sell them onward to investors in the secondary market.
+
+## Secondary-Market Flow
+
+In 2023, AMCs raised RMB 379.7 billion (USD 54 billion) by selling NPLs into the secondary market.
+
+National AMCs accounted for 63% of secondary-market sales and local AMCs for 37%. These transactions form the core of China's investable secondary distressed-debt market.
+
+## What Comes Next
+
+Given China's economic slowdown, NPL disposal volumes are likely to remain elevated. The key constraint is pressure on bank profitability and capital replenishment.
+
+The National Financial Regulatory Administration's recapitalization plans for major commercial banks could create additional room for higher NPL disposals.
+
+For ShoreVest, persistent supply and limited institutional buyer depth create an opportunity to acquire larger portfolios as a preferred AMC counterparty.
+
+## Key Findings
+
+- Since 2019, China's banks have disposed of roughly RMB 3 trillion of NPLs per year.
+- In 2023, banks raised RMB 400.7 billion from NPL sales, with AMCs acquiring 82% of that volume.
+- AMCs sold RMB 379.7 billion of NPLs into the secondary market in 2023, with national AMCs accounting for 63% of sales.

@@ -288,9 +288,9 @@ html {
 
 #nav .nav__lp:hover,
 #nav .nav__lp:focus-visible {
-  border-color: var(--site-color-accent, #3d7070);
+  border-color: var(--site-color-accent-hover, #2f5a5a);
   color: var(--control-paper);
-  background: var(--site-color-accent, #3d7070);
+  background: var(--site-color-accent-hover, #2f5a5a);
   box-shadow: none;
   transform: translateY(-1px);
   letter-spacing: 0.16em;

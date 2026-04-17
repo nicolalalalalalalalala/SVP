@@ -55,7 +55,7 @@ body.legal-page {
   --off: #f6f4f0;
   padding: 0 0 var(--sv-section-gap-sm, clamp(40px, 4.2vw, 64px));
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 9pt;
   line-height: 1.55;
   letter-spacing: normal;
   color: var(--ink-soft);
@@ -65,7 +65,7 @@ body.legal-page {
 body.legal-page .legal-page__content p,
 body.legal-page .legal-page__content li {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 9pt;
   font-weight: 400;
   line-height: 1.55;
   max-width: none;
@@ -101,7 +101,7 @@ body.legal-page .legal-page__content section {
 
 body.legal-page .legal-page__content h1 {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 32px;
+  font-size: clamp(20px, 2.2vw, 23px) !important;
   font-weight: 700;
   line-height: 1.08;
   text-transform: uppercase;
@@ -110,7 +110,7 @@ body.legal-page .legal-page__content h1 {
 
 body.legal-page .legal-page__content h2 {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 20px;
+  font-size: clamp(14px, 1.4vw, 16px) !important;
   font-weight: 700;
   line-height: 1.16;
   text-transform: none;
@@ -138,7 +138,7 @@ body.legal-page .legal-page__content .muted,
 body.legal-page .legal-page__content small,
 body.legal-page .legal-page__content .effective-date {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 8pt;
+  font-size: 7.5pt;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: var(--sv-space-lg, clamp(28px, 2.7vw, 42px));
@@ -268,8 +268,8 @@ body.contact-page .legal-page__main::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(120% 70% at 0% 0%, color-mix(in srgb, var(--paper-light) 78%, transparent), transparent 56%),
-    radial-gradient(90% 55% at 100% 20%, color-mix(in srgb, var(--paper-light) 68%, transparent), transparent 58%);
+    radial-gradient(120% 68% at 0% 0%, color-mix(in srgb, var(--paper-light) 62%, transparent), transparent 60%),
+    radial-gradient(90% 50% at 100% 18%, color-mix(in srgb, var(--paper-light) 56%, transparent), transparent 62%);
 }
 
 body.contact-page .contact-page__content {
@@ -278,17 +278,18 @@ body.contact-page .contact-page__content {
 
 body.contact-page .contact-page__header {
   margin-bottom: clamp(30px, 3.8vw, 46px);
-  padding: clamp(24px, 2.9vw, 34px) clamp(24px, 2.7vw, 36px);
-  border: 1px solid color-mix(in srgb, var(--paper-dark) 72%, #c7cfd4 28%);
-  border-radius: 6px;
-  background: linear-gradient(
-    160deg,
-    color-mix(in srgb, var(--paper-light) 92%, #f7f8f5 8%),
-    color-mix(in srgb, var(--paper-light) 84%, #eff3f3 16%)
-  );
+  padding: clamp(28px, 3.2vw, 40px) clamp(26px, 3vw, 40px);
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 60%, #d3d9dc 40%);
+  border-radius: 3px;
+  background:
+    linear-gradient(
+      125deg,
+      color-mix(in srgb, var(--paper-light) 95%, #fff 5%) 0%,
+      color-mix(in srgb, var(--paper-light) 88%, #f6fafb 12%) 100%
+    );
   box-shadow:
-    0 8px 26px color-mix(in srgb, #0f1f29 8%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent);
+    0 3px 14px color-mix(in srgb, #15232a 5%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent);
 }
 
 body.contact-page .contact-page__kicker {
@@ -302,14 +303,34 @@ body.contact-page .contact-page__kicker {
 
 body.contact-page .contact-page__header h1 {
   color: color-mix(in srgb, var(--text-main) 90%, #000 10%);
-  margin-bottom: 12px;
-  letter-spacing: 0.045em;
+  margin-bottom: 14px;
+  letter-spacing: 0.058em;
 }
 
 body.contact-page .contact-page__header p {
   max-width: 62ch;
   color: color-mix(in srgb, var(--text-secondary) 78%, var(--text-main));
   line-height: 1.72;
+}
+
+body.contact-page .contact-page__meta {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+body.contact-page .contact-page__meta li {
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 40%, #c7d2d8 60%);
+  background: color-mix(in srgb, #fff 84%, var(--paper-light) 16%);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 7.5pt;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-main));
 }
 
 body.contact-page .contact-page__layout {
@@ -321,26 +342,20 @@ body.contact-page .contact-page__layout {
 }
 
 body.contact-page .contact-page__primary-contact {
-  border: 1px solid color-mix(in srgb, var(--paper-dark) 78%, #c2cbd1 22%);
-  background: linear-gradient(
-    170deg,
-    color-mix(in srgb, var(--paper-light) 90%, #f8f8f6 10%),
-    color-mix(in srgb, var(--paper-light) 82%, #edf2f1 18%)
-  );
-  border-radius: 6px;
-  box-shadow:
-    0 10px 28px color-mix(in srgb, #16242b 10%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent);
-  padding: clamp(24px, 2.7vw, 34px);
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 66%, #ccd3d8 34%);
+  background: color-mix(in srgb, var(--paper-light) 97%, #fff 3%);
+  border-radius: 3px;
+  box-shadow: 0 4px 16px color-mix(in srgb, #142126 5%, transparent);
+  padding: clamp(26px, 2.9vw, 36px);
   margin-bottom: 0;
 }
 
 body.contact-page .contact-page__form-section {
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: clamp(4px, 0.8vw, 10px) 0 0;
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 56%, #c8d1d6 44%);
+  background: color-mix(in srgb, #fff 94%, var(--paper-light) 6%);
+  box-shadow: 0 10px 26px color-mix(in srgb, #142126 6%, transparent);
+  border-radius: 3px;
+  padding: clamp(22px, 2.5vw, 34px);
   margin-bottom: 0;
 }
 
@@ -373,11 +388,11 @@ body.contact-page .contact-page__primary-contact .muted {
 body.contact-page .contact-page__divider {
   width: 100%;
   height: 1px;
-  margin: 6px 0 2px;
+  margin: 8px 0 4px;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--paper-dark) 34%, transparent),
-    color-mix(in srgb, var(--paper-dark) 10%, transparent)
+    color-mix(in srgb, var(--paper-dark) 24%, transparent),
+    color-mix(in srgb, var(--paper-dark) 6%, transparent)
   );
 }
 
@@ -386,6 +401,34 @@ body.contact-page .contact-page__supporting-copy {
   font-size: 8.6pt;
   line-height: 1.7;
   color: color-mix(in srgb, var(--text-secondary) 72%, var(--text-main));
+}
+
+body.contact-page .contact-page__details {
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+body.contact-page .contact-page__details div {
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 24%, transparent);
+  background: color-mix(in srgb, #fff 76%, var(--paper-light) 24%);
+}
+
+body.contact-page .contact-page__details dt {
+  margin: 0 0 2px;
+  font-size: 7.2pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--text-secondary) 74%, var(--text-main));
+}
+
+body.contact-page .contact-page__details dd {
+  margin: 0;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--text-main) 88%, #000 12%);
 }
 
 body.contact-page .contact-page__email a {
@@ -431,40 +474,40 @@ body.contact-page .contact-form__grid {
 }
 
 body.contact-page .contact-form label {
-  gap: 4px;
-  font-size: 7.5pt;
+  gap: 5px;
+  font-size: 7.3pt;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  color: color-mix(in srgb, var(--text-secondary) 74%, var(--text-main));
+  letter-spacing: 0.11em;
+  color: color-mix(in srgb, var(--text-secondary) 66%, var(--text-main));
 }
 
 body.contact-page .contact-form input,
 body.contact-page .contact-form textarea {
   border-width: 1px;
   border-style: solid;
-  border-color: color-mix(in srgb, var(--paper-dark) 62%, #9aa7b1 38%);
-  border-radius: 3px;
-  background: color-mix(in srgb, var(--paper-light) 93%, #f3f6f5 7%);
-  min-height: 39px;
-  padding: 9px 11px;
+  border-color: color-mix(in srgb, var(--paper-dark) 50%, #b8c2c8 50%);
+  border-radius: 2px;
+  background: color-mix(in srgb, #fff 90%, var(--paper-light) 10%);
+  min-height: 40px;
+  padding: 10px 12px;
   font-size: 9.5pt;
   line-height: 1.38;
-  color: color-mix(in srgb, var(--text-main) 92%, #000 8%);
+  color: color-mix(in srgb, var(--text-main) 90%, #000 10%);
   transition: border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
 }
 
 body.contact-page .contact-form input:hover,
 body.contact-page .contact-form textarea:hover {
-  border-color: color-mix(in srgb, var(--blue-green-dark) 44%, #95a5ae 56%);
-  background: color-mix(in srgb, var(--paper-light) 95%, #fff 5%);
+  border-color: color-mix(in srgb, var(--blue-green-dark) 30%, #a8b4bc 70%);
+  background: #fff;
 }
 
 body.contact-page .contact-form input:focus-visible,
 body.contact-page .contact-form textarea:focus-visible {
   outline: none;
-  border-color: color-mix(in srgb, var(--blue-green-dark) 72%, #24363d 28%);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--blue-green-dark) 12%, transparent);
-  background: color-mix(in srgb, var(--paper-light) 96%, #fff 4%);
+  border-color: color-mix(in srgb, var(--blue-green-dark) 58%, #3a4a52 42%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--blue-green-dark) 8%, transparent);
+  background: #fff;
 }
 
 body.contact-page .contact-form textarea {
@@ -474,24 +517,26 @@ body.contact-page .contact-form textarea {
 body.contact-page .contact-form button {
   min-width: 154px;
   min-height: 38px;
-  border-radius: 3px;
-  background: color-mix(in srgb, var(--blue-green-dark) 90%, #1a2a31 10%);
-  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 82%, #24353b 18%);
-  color: color-mix(in srgb, var(--paper-light) 95%, #fff 5%);
-  letter-spacing: 0.085em;
-  font-size: 8.2pt;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--blue-green-dark) 88%, #1c2f36 12%);
+  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 82%, #30424a 18%);
+  color: #fff;
+  letter-spacing: 0.11em;
+  font-size: 8pt;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 0 16px;
+  padding: 0 18px;
   justify-self: start;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--blue-green-dark) 22%, transparent);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 body.contact-page .contact-form button:hover,
 body.contact-page .contact-form button:focus-visible {
-  background: color-mix(in srgb, var(--blue-green-dark) 96%, #111f25 4%);
-  border-color: color-mix(in srgb, var(--blue-green-dark) 88%, #0f1c22 12%);
+  background: color-mix(in srgb, var(--blue-green-dark) 96%, #0d1a20 4%);
+  border-color: color-mix(in srgb, var(--blue-green-dark) 92%, #20323a 8%);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 920px) {
@@ -504,7 +549,7 @@ body.contact-page .contact-form button:focus-visible {
   }
 
   body.contact-page .contact-page__form-section {
-    padding-top: 0;
+    padding: clamp(20px, 4vw, 28px);
   }
 }
 
