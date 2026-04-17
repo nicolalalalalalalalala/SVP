@@ -820,7 +820,7 @@ blockquote.fs__q {
   background: var(--cdd-bg);
   border-top: 1px solid color-mix(in srgb, var(--cdd-structure) 60%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 80%, transparent);
-  padding: clamp(84px, 9vw, 128px) 0;
+  padding: clamp(64px, 7vw, 96px) 0;
   color: var(--cdd-signal-deep);
 }
 
@@ -834,24 +834,24 @@ blockquote.fs__q {
 
 .cdd-editorial__card {
   display: grid;
-  gap: clamp(22px, 2.6vw, 34px);
+  gap: clamp(16px, 2vw, 24px);
   background: linear-gradient(180deg, var(--cdd-surface) 0%, var(--cdd-secondary-surface) 100%);
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 14%, transparent);
-  padding: clamp(28px, 3.4vw, 44px);
+  padding: clamp(20px, 2.8vw, 32px);
   box-shadow: 0 14px 30px color-mix(in srgb, #8a7a56 18%, transparent);
 }
 
 .cdd-editorial__intro {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, .5fr);
-  gap: clamp(20px, 2.8vw, 40px);
-  padding-bottom: clamp(18px, 2.2vw, 26px);
+  gap: clamp(14px, 2vw, 28px);
+  padding-bottom: clamp(14px, 1.6vw, 20px);
   border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
 }
 
 .cdd-editorial__kicker {
   color: var(--cdd-signal);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   font-size: 10px;
   letter-spacing: .1em;
 }
@@ -861,10 +861,10 @@ blockquote.fs__q {
 }
 
 .cdd-editorial__title {
-  font-size: clamp(36px, 4.8vw, 60px);
+  font-size: clamp(30px, 4vw, 48px);
   line-height: .95;
   color: var(--cdd-text);
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   text-shadow: none;
 }
 
@@ -876,8 +876,8 @@ blockquote.fs__q {
 .cdd-editorial__lede {
   max-width: 62ch;
   font-family: var(--serif);
-  font-size: clamp(15px, 1.2vw, 18px);
-  line-height: 1.62;
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.55;
   color: var(--cdd-text);
   margin-bottom: 2px;
 }
@@ -924,17 +924,17 @@ blockquote.fs__q {
 .cdd-feature {
   background: #203626;
   border: 1px solid color-mix(in srgb, #f2ecd8 18%, transparent);
-  padding: clamp(22px, 2.4vw, 30px);
+  padding: clamp(16px, 1.8vw, 22px);
   box-shadow: 0 18px 38px color-mix(in srgb, #0f1b14 28%, transparent);
 }
 
 .cdd-feature__top {
-  padding: 0 0 14px;
+  padding: 0 0 10px;
   border-bottom: 1px solid color-mix(in srgb, #f2ecd8 20%, transparent);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -967,8 +967,8 @@ blockquote.fs__q {
 .cdd-feature__body {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: clamp(18px, 2.2vw, 28px);
-  padding: clamp(20px, 2.2vw, 28px) 0 clamp(8px, 1vw, 12px);
+  gap: clamp(12px, 1.4vw, 18px);
+  padding: clamp(12px, 1.4vw, 16px) 0 clamp(4px, .7vw, 8px);
   align-items: stretch;
 }
 
@@ -984,7 +984,7 @@ blockquote.fs__q {
 }
 
 .cdd-feature__main .cdd-cta-group {
-  margin-top: clamp(16px, 1.7vw, 22px);
+  margin-top: clamp(12px, 1.2vw, 16px);
   padding-top: 0;
   border-top: 0;
 }
@@ -995,7 +995,7 @@ blockquote.fs__q {
   letter-spacing: .1em;
   text-transform: uppercase;
   color: #c93b2a;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .cdd-feature__title {
@@ -1019,19 +1019,19 @@ blockquote.fs__q {
 }
 
 .cdd-feature__title--compact {
-  font-size: clamp(28px, 2.7vw, 38px);
-  line-height: 1.1;
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.06;
   letter-spacing: -.005em;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   width: 100%;
-  max-width: 26ch;
+  max-width: 22ch;
 }
 
 .cdd-feature__thesis {
   font-family: var(--serif);
-  font-size: clamp(14px, 1vw, 16px);
-  line-height: 1.66;
-  max-width: 62ch;
+  font-size: clamp(13px, .88vw, 14px);
+  line-height: 1.54;
+  max-width: 56ch;
   color: rgba(250, 246, 238, 0.82);
 }
 
@@ -1096,7 +1096,7 @@ blockquote.fs__q {
 
 .cdd-cta-group {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -1104,25 +1104,26 @@ blockquote.fs__q {
 .cdd-cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   border: 1px solid rgba(250, 246, 238, 0.3);
-  padding: 9px 12px 9px 14px;
+  padding: 7px 10px 7px 11px;
   font-size: 9px;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: #faf6ee;
   transition: border-color .2s, background .2s, color .2s, gap .2s;
 }
 
 .cdd-cta__ring {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(250, 246, 238, 0.35);
+  font-size: 11px;
   transition: border-color .2s, background .2s;
 }
 
