@@ -862,15 +862,23 @@ blockquote.fs__q {
 }
 
 .cdd-editorial__title {
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: .95;
+  font-family: var(--type-display-hero-font-family, var(--serif));
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: .9;
+  letter-spacing: -0.02em;
   color: var(--cdd-text);
   margin-bottom: 10px;
   text-shadow: none;
 }
 
+.cdd-editorial__title .cdd-editorial__title-main {
+  color: var(--cdd-surface);
+}
+
 .cdd-editorial__title em {
-  color: var(--cdd-text);
+  color: var(--cdd-signal);
   font-style: italic;
 }
 
@@ -2079,8 +2087,9 @@ body.homepage #cdd .cdd-editorial__lede {
     margin-bottom: 14px;
   }
   .cdd-editorial__title {
-    font-size: clamp(30px, 9.8vw, 42px);
-    line-height: .98;
+    font-size: clamp(36px, 10.2vw, 52px);
+    line-height: .92;
+    letter-spacing: -0.015em;
     margin-bottom: 10px;
   }
   .cdd-editorial__lede {
@@ -2555,7 +2564,7 @@ body.homepage #cdd .cdd-editorial__lede {
       <div class="cdd-editorial__intro">
         <div>
           <div class="eyebrow cdd-editorial__kicker rev">INSIGHTS</div>
-          <h2 class="cdd-editorial__title rev d1">China Debt Dynamics.</h2>
+          <h2 class="cdd-editorial__title type-display-hero rev d1"><span class="cdd-editorial__title-main">China Debt</span> <em>Dynamics.</em></h2>
           <p class="cdd-editorial__lede rev d2">An institutional research series on China’s private credit markets, policy trajectory, and the legal, structural, and enforcement realities that determine investor recoveries.</p>
         </div>
         <div class="cdd-editorial__brand rev d1">
