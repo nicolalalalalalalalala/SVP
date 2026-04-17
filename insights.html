@@ -1301,7 +1301,10 @@
     background-image: none !important;
   }
 
-  .eyebrow--ghost,
+  .eyebrow--ghost {
+    color: color-mix(in srgb, var(--text-dark-primary) 74%, white 26%) !important;
+  }
+
   .issue-live__k,
   .issue-live__meta,
   .issue-card__k {
@@ -1309,7 +1312,7 @@
   }
 
   .eyebrow--ghost::after {
-    background: var(--rule-dark) !important;
+    background: color-mix(in srgb, var(--text-dark-primary) 68%, white 32%) !important;
   }
 
   .issue-live {
@@ -1388,6 +1391,10 @@
 
   .research-sub p {
     color: var(--text-dark-secondary) !important;
+  }
+
+  .research-sub h3 {
+    color: var(--text-dark-primary) !important;
   }
 
   .research-sub__field input {
