@@ -79,6 +79,7 @@
   const markerButtons = [];
   const markerItems = [];
   const panelItems = [];
+  const cardItems = [];
 
   const createImagePanel = (milestone) => {
     const wrap = document.createElement('aside');
@@ -115,7 +116,13 @@
     markerButton.setAttribute('aria-controls', `history-panel-${index}`);
     markerButton.setAttribute('aria-label', `Go to ${milestone.year}`);
     markerButton.addEventListener('click', () => {
-      if (window.innerWidth < 980) return;
+      if (window.innerWidth < 980) {
+        const targetCard = cardItems[index];
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
+        }
+        return;
+      }
       const viewport = window.innerHeight || 1;
       const targetProgress = milestones.length === 1 ? 0 : index / (milestones.length - 1);
       const sectionTop = window.scrollY + scrollArea.getBoundingClientRect().top;
@@ -163,6 +170,7 @@
     `;
     card.appendChild(createImagePanel(milestone));
     cardStack.appendChild(card);
+    cardItems.push(card);
   });
 
   function updateConnector(index, floatIndex) {

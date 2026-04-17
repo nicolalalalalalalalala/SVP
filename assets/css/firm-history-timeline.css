@@ -294,6 +294,43 @@
 
 @media (max-width: 979px) {
   .history-timeline__scroll-area {
+    display: block;
+    min-height: 0;
+    margin-bottom: 14px;
+  }
+
+  .history-timeline__stage {
+    display: grid;
+    gap: 18px;
+  }
+
+  .history-track {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 2px 14px;
+    scrollbar-width: thin;
+  }
+
+  .history-track__list {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    width: max-content;
+    min-width: max(100%, 560px);
+    padding: 0 6px 4px;
+  }
+
+  .history-marker {
+    min-width: 72px;
+  }
+
+  .history-marker__button {
+    white-space: nowrap;
+    font-size: 11px;
+  }
+
+  .history-track__connector,
+  .history-panel {
     display: none;
   }
 
