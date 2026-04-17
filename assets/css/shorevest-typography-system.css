@@ -345,7 +345,7 @@ html body .press-hero h1 {
   font-size: var(--type-display-hero-font-size) !important;
   font-weight: var(--type-display-hero-font-weight) !important;
   font-style: var(--type-display-hero-font-style) !important;
-  text-transform: none !important;
+  text-transform: uppercase !important;
   letter-spacing: var(--type-display-hero-letter-spacing) !important;
   line-height: var(--type-display-hero-line-height) !important;
 }
