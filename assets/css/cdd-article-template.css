@@ -32,6 +32,9 @@
   /* Ensure the shared top bar matches this article's Xuan paper palette. */
   --sv-topbar-xuan-paper: var(--xuan-paper);
   --sv-topbar-xuan-paper-dark: var(--xuan-paper-dark);
+  --sv-header-paper-light: var(--xuan-paper-light);
+  --sv-header-paper: var(--xuan-paper);
+  --sv-header-paper-dark: var(--xuan-paper-dark);
 }
 
 @media (max-width: 1024px) {
