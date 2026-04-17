@@ -1169,7 +1169,7 @@ body {
   }
 
   #site-header-mount #nav .nav__logo-cn {
-    color: rgba(33, 33, 30, .66) !important;
+    color: var(--sv-header-cinnabar, #C93B2A) !important;
   }
 
   #site-header-mount #nav .nav__menu-btn {
