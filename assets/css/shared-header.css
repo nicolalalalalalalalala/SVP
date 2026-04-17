@@ -8,7 +8,7 @@ body {
 :root {
   --sv-topbar-xuan-paper: #F2ECD8;
   --sv-topbar-xuan-paper-dark: #D8CEB0;
-  --sv-topbar-cinnabar: #E44D2E;
+  --sv-topbar-cinnabar: #C93B2A;
 }
 
 /* Structural mount keeps header above page content without overlap */
@@ -152,7 +152,7 @@ body {
 }
 
 .nav__links a.active {
-  color: var(--sv-topbar-cinnabar, #E44D2E);
+  color: var(--sv-topbar-cinnabar, #C93B2A);
 }
 
 .nav__right {
@@ -1101,7 +1101,7 @@ body {
   }
 
   #site-header-mount #nav .nav__links a.active {
-    color: var(--sv-topbar-cinnabar, #E44D2E) !important;
+    color: var(--sv-topbar-cinnabar, #C93B2A) !important;
   }
 
   #site-header-mount #nav .nav__right {
