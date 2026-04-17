@@ -1071,16 +1071,12 @@
   }
 
   .press-row a {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "meta"
-      "headline"
-      "actions";
-    row-gap: 6px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     min-height: 0;
-    padding: 14px 16px 13px;
+    padding: 14px 16px;
     background: transparent !important;
   }
 
@@ -1097,19 +1093,18 @@
   }
 
   .press-publication {
-    grid-area: meta;
-    display: inline;
+    display: block;
     margin: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 
   .press-publication::after {
-    content: " \00B7 ";
-    color: color-mix(in srgb, var(--ink) 44%, transparent);
-    font-weight: 500;
+    content: "";
   }
 
   .press-headline {
-    grid-area: headline;
     margin: 0;
     display: block;
     -webkit-line-clamp: unset;
@@ -1117,41 +1112,14 @@
   }
 
   .press-date {
-    grid-area: meta;
-    display: inline;
+    display: block;
     margin: 0;
-    align-self: start;
-    justify-self: start;
+    align-self: flex-start;
     text-align: left;
   }
 
   .press-date::before {
-    content: "Published ";
-  }
-
-  .press-row a::after {
-    content: "Read article";
-    grid-area: actions;
-    width: fit-content;
-    border: 1px solid color-mix(in srgb, var(--qing) 34%, var(--xuan-dark) 66%);
-    background: color-mix(in srgb, var(--xuan-light) 90%, #fff 10%);
-    color: var(--qing-dark);
-    padding: 6px 11px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition:
-      background-color 0.24s ease,
-      border-color 0.24s ease,
-      color 0.24s ease;
-  }
-
-  .press-row:hover a::after,
-  .press-row:focus-within a::after {
-    background: color-mix(in srgb, var(--qing-light) 24%, var(--xuan-light) 76%);
-    border-color: color-mix(in srgb, var(--qing) 56%, var(--xuan-dark) 44%);
-    color: var(--qing-dark);
+    content: "";
   }
 
   @media (max-width: 960px) {
@@ -1173,11 +1141,8 @@
     }
 
     .press-row a {
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-areas:
-        "meta"
-        "headline"
-        "actions";
+      display: flex;
+      flex-direction: column;
       row-gap: 6px;
       align-items: start;
       min-height: 0;
@@ -1192,10 +1157,11 @@
     .press-date {
       display: block;
       text-align: left;
+      justify-self: start;
     }
 
     .press-date::before {
-      content: "Published ";
+      content: "";
     }
   }
 </style>

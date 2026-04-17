@@ -1,3 +1,7 @@
+## Manual update (2026-04-17)
+
+- Replaced `pdfs/china-debt-dynamics-into-the-shadows-of-us-private-credit.pdf` with the current formatted white-paper PDF asset `pdfs/20250624 White Paper - Into The Shadows of US Private Credit.pdf` so the downloadable file uses the same publication layout.
+
 # PDF Refresh Report
 
 | File | Before | After | Status |
