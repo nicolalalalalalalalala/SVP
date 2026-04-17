@@ -60,6 +60,8 @@
   if (!data.keyFindings?.length) {
     const sidecard = findings.closest('.cdd-sidecard');
     if (sidecard) sidecard.hidden = true;
+    const findingsRow = findings.closest('.cdd-findings-row');
+    if (findingsRow) findingsRow.hidden = true;
   }
 
   disclaimer.textContent = data.disclaimer;
