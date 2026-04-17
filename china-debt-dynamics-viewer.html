@@ -95,6 +95,7 @@
           edition: 'Allocator Edition',
           title: '',
           dek: '',
+          keyFindings: [],
           sections: [],
           disclaimer: '',
           contact: '',
@@ -155,6 +156,12 @@
               return;
             }
 
+            if (heading.toLowerCase() === 'key findings') {
+              mode = 'findings';
+              currentSection = null;
+              return;
+            }
+
             mode = 'body';
             currentSection = { heading, paragraphs: [] };
             article.sections.push(currentSection);
@@ -188,6 +195,14 @@
             return;
           }
 
+          if (mode === 'findings') {
+            if (line.startsWith('- ')) {
+              article.keyFindings.push(line.slice(2).replace(/\*\*/g, '').trim());
+              return;
+            }
+            mode = 'body';
+          }
+
           ensureSection().paragraphs.push(line.replace(/\*\*/g, '').trim());
         });
 
@@ -217,6 +232,18 @@
             contentEl.appendChild(p);
           });
         });
+
+        const findingsCardEl = document.getElementById('findings-card');
+        const findingsEl = document.getElementById('findings');
+        findingsEl.innerHTML = '';
+        if (article.keyFindings.length) {
+          article.keyFindings.forEach((finding) => {
+            const li = document.createElement('li');
+            li.textContent = finding;
+            findingsEl.appendChild(li);
+          });
+          findingsCardEl.hidden = false;
+        }
 
         disclaimerEl.textContent = article.disclaimer || 'No legal disclosure provided in source.';
         contactEl.textContent = article.contact || 'Contact information unavailable.';
