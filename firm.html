@@ -31,6 +31,7 @@
         --meta: #1e4040;
         --rule: #d8ceb0;
         --signal: #3d7070;
+        --shorevest-topbar-cinnabar: #c93b2a;
         --blue-green: #2f7f7f;
         --max: 1200px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
@@ -918,8 +919,10 @@
       }
 
       /* Firm page top bar: keep Chinese wordmark in cinnabar (not teal). */
-      #site-header-mount #nav .nav__logo-cn {
-        color: #c93b2a !important;
+      #site-header-mount #nav .nav__logo-cn,
+      #site-header-mount #nav .nav__logo:hover .nav__logo-cn,
+      #site-header-mount #nav .nav__logo:focus-visible .nav__logo-cn {
+        color: var(--shorevest-topbar-cinnabar, #c93b2a) !important;
       }
     </style>
   
