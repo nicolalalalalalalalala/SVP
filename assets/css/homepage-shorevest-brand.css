@@ -180,7 +180,7 @@ li,
 .nav__logo-en {
   font-family: "DIN 2014", var(--sans) !important;
   letter-spacing: var(--shorevest-lockup-tracking) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   text-transform: uppercase !important;
   color: var(--ink-green-dark) !important;
 }
