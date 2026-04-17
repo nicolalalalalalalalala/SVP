@@ -1619,6 +1619,15 @@
     border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent) !important;
   }
 
+  /* Keep the hero kicker on explicit xuan paper light for contrast consistency. */
+  body.insights-page .research-hero .eyebrow--ghost {
+    color: #faf6ee !important;
+  }
+
+  body.insights-page .research-hero .eyebrow--ghost::after {
+    background: #faf6ee !important;
+  }
+
   body.insights-page .issue-live {
     border: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent) !important;
     border-top: 2px solid color-mix(in srgb, var(--cdd-signal) 56%, var(--cdd-structure) 44%) !important;
