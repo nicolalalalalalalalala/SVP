@@ -1037,6 +1037,118 @@
   }
 </style>
 
+<style id="press-cohesion-pass">
+  /* Final cohesion pass: align spacing, panel rhythm, and archive scanability. */
+  .press-shell {
+    display: grid;
+    gap: 24px;
+  }
+
+  .press-overview,
+  .press-toolbar,
+  .press-list {
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--xuan-dark) 38%, transparent);
+  }
+
+  .press-overview {
+    margin-bottom: 0;
+    gap: 14px;
+  }
+
+  .press-overview__main {
+    padding: 22px 24px 24px;
+  }
+
+  .press-intro + .press-intro {
+    margin-top: 10px;
+  }
+
+  .contact,
+  .press-disclaimer {
+    padding: 16px;
+  }
+
+  .press-toolbar {
+    margin: 0;
+    padding: 16px;
+  }
+
+  .press-filters {
+    gap: 12px;
+  }
+
+  .press-list {
+    border-top: 0;
+  }
+
+  .press-row a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "publication date"
+      "headline date";
+    column-gap: 16px;
+    row-gap: 3px;
+    align-items: center;
+    min-height: 86px;
+    padding: 12px 16px;
+  }
+
+  .press-publication {
+    grid-area: publication;
+    margin: 0;
+  }
+
+  .press-headline {
+    grid-area: headline;
+    margin: 0;
+  }
+
+  .press-date {
+    grid-area: date;
+    margin: 0;
+    align-self: center;
+    justify-self: end;
+    text-align: right;
+  }
+
+  @media (max-width: 960px) {
+    .press-shell {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .press-shell {
+      gap: 16px;
+    }
+
+    .press-overview__main,
+    .contact,
+    .press-disclaimer,
+    .press-toolbar {
+      padding: 14px;
+    }
+
+    .press-row a {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "publication"
+        "headline"
+        "date";
+      row-gap: 4px;
+      align-items: start;
+      min-height: 102px;
+      padding: 14px;
+    }
+
+    .press-date {
+      justify-self: start;
+      text-align: left;
+    }
+  }
+</style>
+
 
     <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
