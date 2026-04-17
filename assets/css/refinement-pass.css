@@ -192,8 +192,16 @@ img[src*="map"] {
 .map-marker,
 .city-marker,
 .map-dot {
-  transform: translate(-50%, -50%) scale(0.9);
-  box-shadow: 0 0 0 4px rgba(179, 33, 63, 0.09);
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 0 6px rgba(179, 33, 63, 0.12);
+}
+
+.map-wrap .label,
+.market-map .label,
+.map-wrap [class*="label"],
+.market-map [class*="label"] {
+  font-size: clamp(12px, 0.9vw, 15px) !important;
+  line-height: 1.25;
 }
 
 /* Button polish */
