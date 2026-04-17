@@ -142,13 +142,19 @@
   };
 
   if (['contact.html', 'contact_cn.html'].includes(path)) {
-    nav.querySelectorAll(`a[href="${headerCtaHref}"]`).forEach((contactLink) => contactLink.classList.add('active'));
+    nav.querySelectorAll(`a[href="${headerCtaHref}"]`).forEach((contactLink) => {
+      contactLink.classList.add('active');
+      contactLink.setAttribute('aria-current', 'page');
+    });
   }
 
   Object.values(activeMap).forEach((hrefs) => {
     if (hrefs.includes(path)) {
       hrefs.forEach((href) => {
-        nav.querySelectorAll(`a[href="${href}"]`).forEach((activeLink) => activeLink.classList.add('active'));
+        nav.querySelectorAll(`a[href="${href}"]`).forEach((activeLink) => {
+          activeLink.classList.add('active');
+          activeLink.setAttribute('aria-current', 'page');
+        });
       });
     }
   });
