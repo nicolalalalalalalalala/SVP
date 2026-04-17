@@ -1214,6 +1214,14 @@ blockquote.fs__q {
   margin-left: 10px;
 }
 
+.cdd-brand-label {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: color-mix(in srgb, var(--cdd-muted) 90%, var(--cdd-text) 10%);
+  line-height: 1;
+}
+
 .cdd-brand-en {
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -1674,9 +1682,10 @@ body.homepage .ac {
 }
 body.homepage .ac + .ac { border-left: 1px solid color-mix(in srgb, var(--rule) 88%, transparent); }
 body.homepage #cdd .cdd-editorial__card {
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 76%, transparent);
-  background: linear-gradient(180deg, var(--cdd-surface) 0%, var(--cdd-secondary-surface) 100%);
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, #0f2206 64%, transparent) 0%, color-mix(in srgb, #16300f 70%, transparent) 100%);
   padding: clamp(28px, 3.2vw, 44px);
+  box-shadow: 0 20px 44px rgba(5, 10, 8, 0.34);
 }
 body.homepage #cdd .cdd-editorial__intro {
   border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 46%, transparent);
@@ -1684,7 +1693,7 @@ body.homepage #cdd .cdd-editorial__intro {
   margin-bottom: 14px;
 }
 body.homepage #cdd .cdd-feature {
-  background: #203626;
+  background: color-mix(in srgb, #16300f 88%, #0f2206);
   border: 1px solid color-mix(in srgb, #f2ecd8 18%, transparent);
 }
 body.homepage #cdd .cdd-feature__top,
@@ -1699,6 +1708,44 @@ body.homepage #cdd .cdd-feature__body {
 body.homepage #cdd .cdd-feature__panel,
 body.homepage #cdd .cdd-editorial__meta {
   display: none;
+}
+body.homepage #cdd {
+  --cdd-bg: #0f2206;
+  --cdd-surface: #faf6ee;
+  --cdd-secondary-surface: #f2ecd8;
+  --cdd-structure: rgba(242, 236, 216, 0.46);
+  --cdd-text: #faf6ee;
+  --cdd-muted: rgba(242, 236, 216, 0.76);
+  --cdd-signal: #e8998f;
+  --cdd-signal-deep: #f2d4cd;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(87, 138, 63, 0.34) 0%, rgba(33, 79, 24, 0) 52%),
+    linear-gradient(120deg, #193712 0%, #16300f 38%, #0f2206 100%);
+  border-top: 1px solid rgba(250, 246, 238, 0.2);
+  border-bottom: 1px solid rgba(250, 246, 238, 0.18);
+}
+body.homepage #cdd::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/images/image.jpg") center 44%/cover no-repeat;
+  filter: saturate(0.22) brightness(0.42) contrast(0.92);
+  opacity: 0.36;
+  pointer-events: none;
+}
+body.homepage #cdd > .wrap {
+  position: relative;
+  z-index: 1;
+}
+body.homepage #cdd .cdd-feature__thesis {
+  color: rgba(250, 246, 238, 0.88);
+}
+body.homepage #cdd .cdd-brand-en,
+body.homepage #cdd .cdd-brand-cn,
+body.homepage #cdd .cdd-editorial__lede {
+  color: rgba(250, 246, 238, 0.92);
 }
 @media (max-width: 900px) {
   body.homepage .principles__intro,
@@ -2514,6 +2561,7 @@ body.homepage #cdd .cdd-editorial__meta {
           <div class="cdd-brand-lockup">
             <img class="cdd-brand-mark" src="assets/images/edited-photo-3.svg" alt="ShoreVest">
             <div class="cdd-brand-text">
+              <span class="cdd-brand-label">ShoreVest</span>
               <span class="cdd-brand-en">S H O R E V E S T</span>
               <span class="cdd-brand-cn">新岸資本</span>
             </div>
@@ -2525,7 +2573,7 @@ body.homepage #cdd .cdd-editorial__meta {
         <div class="cdd-feature__top">
           <span class="cdd-live" aria-hidden="true">
             <span class="cdd-live__dot"></span>
-            <span class="cdd-live__label">Live</span>
+            <span class="cdd-live__label">LIVE</span>
           </span>
           <div class="cdd-feature__meta">
             <div class="cdd-feature__issue">CURRENT ISSUE · 46</div>
