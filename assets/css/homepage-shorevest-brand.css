@@ -868,6 +868,11 @@ body.homepage .home-hero__cta-arrow {
   color: #faf6ee !important;
 }
 
+body.homepage .home-hero__eyebrow {
+  /* Improve contrast when the hero image area behind this label is bright. */
+  color: #163a2f !important;
+}
+
 body.homepage .home-hero__headline-emphasis {
   color: var(--cinnabar) !important;
 }
