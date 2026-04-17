@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShoreVest | China Debt Dynamics</title>
-    <link rel="icon" type="image/svg+xml" href="assets/images/edited-photo-3.svg?v=6" />
-    <link rel="shortcut icon" href="assets/images/edited-photo-3.svg?v=6" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon.svg?v=2" />
+    <link rel="shortcut icon" href="assets/favicon.svg?v=2" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -1301,7 +1301,10 @@
     background-image: none !important;
   }
 
-  .eyebrow--ghost,
+  .eyebrow--ghost {
+    color: color-mix(in srgb, var(--text-dark-primary) 74%, white 26%) !important;
+  }
+
   .issue-live__k,
   .issue-live__meta,
   .issue-card__k {
@@ -1309,7 +1312,7 @@
   }
 
   .eyebrow--ghost::after {
-    background: var(--rule-dark) !important;
+    background: color-mix(in srgb, var(--text-dark-primary) 68%, white 32%) !important;
   }
 
   .issue-live {
@@ -1388,6 +1391,10 @@
 
   .research-sub p {
     color: var(--text-dark-secondary) !important;
+  }
+
+  .research-sub h3 {
+    color: var(--text-dark-primary) !important;
   }
 
   .research-sub__field input {
@@ -1612,6 +1619,15 @@
     border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 24%, transparent) !important;
   }
 
+  /* Keep the hero kicker on explicit xuan paper light for contrast consistency. */
+  body.insights-page .research-hero .eyebrow--ghost {
+    color: #faf6ee !important;
+  }
+
+  body.insights-page .research-hero .eyebrow--ghost::after {
+    background: #faf6ee !important;
+  }
+
   body.insights-page .issue-live {
     border: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent) !important;
     border-top: 2px solid color-mix(in srgb, var(--cdd-signal) 56%, var(--cdd-structure) 44%) !important;
@@ -1686,7 +1702,7 @@
               src="assets/images/edited-photo-3.svg"
               alt="ShoreVest logo"
             />
-            <h1 class="wordmark__title" id="cdd-hero-heading">China Debt <em>Dynamics.</em></h1>
+            <h1 class="wordmark__title type-display-hero" id="cdd-hero-heading">China Debt <em>Dynamics.</em></h1>
           </div>
           <p class="research-hero__desc">
             An ongoing institutional research series focused on China&apos;s private credit cycle,

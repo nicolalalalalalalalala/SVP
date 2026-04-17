@@ -750,7 +750,7 @@ html body.homepage #cdd .cdd-feature__quote {
   :is(body.homepage, body.press-page) #site-header-mount #nav .nav__logo-en {
     letter-spacing: 0.048em !important;
     font-size: 15px !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
     color: color-mix(in srgb, var(--ink-green-dark) 92%, #000 8%) !important;
   }
 

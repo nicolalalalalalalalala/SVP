@@ -12,7 +12,7 @@
   const footerTemplateEn = `
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
-      <div class="sv-footer__brand footer-brand-lockup">ShoreVest Partners</div>
+      <div class="sv-footer__brand footer-brand-lockup"><strong>ShoreVest Partners</strong></div>
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">CONTACT</span>
         <a href="mailto:partners@shorevest.com">PARTNERS@SHOREVEST.COM</a>
@@ -32,7 +32,7 @@
   const footerTemplateCn = `
   <div class="sv-footer__inner">
     <div class="sv-footer__main">
-      <div class="sv-footer__brand footer-brand-lockup">ShoreVest Partners</div>
+      <div class="sv-footer__brand footer-brand-lockup"><strong>ShoreVest Partners</strong></div>
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">联系我们</span>
         <a href="mailto:partners@shorevest.com">PARTNERS@SHOREVEST.COM</a>
