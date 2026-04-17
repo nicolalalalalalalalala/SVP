@@ -1122,6 +1122,74 @@
     content: "";
   }
 
+  .press-speaking {
+    border: 1px solid color-mix(in srgb, var(--xuan-dark) 54%, transparent);
+    background: color-mix(in srgb, var(--xuan-light) 94%, #fff 6%);
+    padding: 20px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .press-speaking__intro {
+    margin: 0;
+    max-width: 68ch;
+  }
+
+  .press-speaking__lead,
+  .press-speaking__item {
+    border: 1px solid color-mix(in srgb, var(--xuan-dark) 62%, transparent);
+    background: color-mix(in srgb, var(--xuan-light) 90%, #fff 10%);
+  }
+
+  .press-speaking__lead {
+    padding: 16px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .press-speaking__supporting {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .press-speaking__item {
+    padding: 14px;
+    display: grid;
+    gap: 6px;
+  }
+
+  .press-speaking__source,
+  .press-speaking__date {
+    display: block;
+  }
+
+  .press-speaking__title {
+    margin: 0;
+  }
+
+  .press-speaking__summary {
+    margin: 0;
+  }
+
+  .press-speaking__link {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .press-speaking__link:hover,
+  .press-speaking__link:focus-visible {
+    text-decoration: underline;
+  }
+
+  .press-speaking__archive {
+    display: inline-flex;
+    width: fit-content;
+  }
+
   @media (max-width: 960px) {
     .press-shell {
       gap: 20px;
@@ -1138,6 +1206,14 @@
     .press-disclaimer,
     .press-toolbar {
       padding: 14px;
+    }
+
+    .press-speaking {
+      padding: 14px;
+    }
+
+    .press-speaking__supporting {
+      grid-template-columns: 1fr;
     }
 
     .press-row a {
@@ -1229,6 +1305,51 @@
             </p>
           </section>
         </div>
+
+        <section class="press-speaking" aria-labelledby="selected-speaking-heading">
+          <p class="eyebrow">SELECTED SPEAKING ENGAGEMENTS</p>
+          <p class="press-overview__heading" id="selected-speaking-heading">SELECTED SPEAKING ENGAGEMENTS</p>
+          <p class="press-speaking__intro press-intro">
+            A curated selection of Benjamin Fanger's public appearances, interviews, and panel discussions across institutional, media, and industry platforms.
+          </p>
+
+          <article class="press-speaking__lead">
+            <span class="press-speaking__source press-publication">FII INSTITUTE · PANEL DISCUSSION</span>
+            <h3 class="press-speaking__title press-headline">Is Private Credit a Bubble?</h3>
+            <p class="press-speaking__summary press-intro">Discussion on private credit market conditions and dislocation risk.</p>
+            <time class="press-speaking__date press-date" datetime="2025-11-06">06 Nov 2025</time>
+            <a class="press-speaking__link press-more" href="https://fii-institute.org/en/videos/is-private-credit-a-bubble-2/" target="_blank" rel="noopener noreferrer">View feature</a>
+          </article>
+
+          <div class="press-speaking__supporting">
+            <article class="press-speaking__item">
+              <span class="press-speaking__source press-publication">THE ECONOMIST · MONEY TALKS</span>
+              <h3 class="press-speaking__title press-headline">China's financial system: crouching tiger, broken LGFV</h3>
+              <time class="press-speaking__date press-date" datetime="2024-02-14">14 Feb 2024</time>
+              <a class="press-speaking__link" href="https://www.economist.com/podcasts/2024/02/14/chinas-financial-system-crouching-tiger-broken-lgfv" target="_blank" rel="noopener noreferrer">View coverage</a>
+            </article>
+            <article class="press-speaking__item">
+              <span class="press-speaking__source press-publication">PRIVATE DEBT INVESTOR · YOUTUBE</span>
+              <h3 class="press-speaking__title press-headline">ShoreVest on The Case for China</h3>
+              <time class="press-speaking__date press-date" datetime="2025-06-08">08 Jun 2025</time>
+              <a class="press-speaking__link" href="https://www.youtube.com/watch?v=K6hZcl1Lups" target="_blank" rel="noopener noreferrer">Watch interview</a>
+            </article>
+            <article class="press-speaking__item">
+              <span class="press-speaking__source press-publication">INVESTMENT MAGAZINE · PODCAST</span>
+              <h3 class="press-speaking__title press-headline">Ben Fanger on China's special situations</h3>
+              <time class="press-speaking__date press-date" datetime="2020-05-17">17 May 2020</time>
+              <a class="press-speaking__link" href="https://investmentmagazine.com.au/2020/05/ben-fanger-on-chinas-special-situations/" target="_blank" rel="noopener noreferrer">Listen</a>
+            </article>
+            <article class="press-speaking__item">
+              <span class="press-speaking__source press-publication">MILKEN INSTITUTE · GLOBAL CONFERENCE</span>
+              <h3 class="press-speaking__title press-headline">Chinese Market Culture: How Well Can You Know a Company?</h3>
+              <time class="press-speaking__date press-date" datetime="2013-05-01">01 May 2013</time>
+              <a class="press-speaking__link" href="https://milkeninstitute.org/video/chinese-market-culture-how-well-can-you-know-company" target="_blank" rel="noopener noreferrer">View panel</a>
+            </article>
+          </div>
+
+          <a class="press-speaking__archive press-more" href="#press-archive">View full archive</a>
+        </section>
         <div class="press-toolbar" aria-label="Press archive controls">
           <div class="press-toolbar__meta">
             <p class="press-toolbar__label">Archive</p>
