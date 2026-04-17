@@ -160,6 +160,46 @@
   pointer-events: auto;
 }
 
+.history-timeline.is-static .history-timeline__scroll-area {
+  min-height: auto;
+}
+
+.history-timeline.is-static .history-timeline__stage {
+  position: static;
+  top: auto;
+  display: grid;
+  gap: clamp(18px, 2vw, 26px);
+}
+
+.history-timeline.is-static .history-track__progress,
+.history-timeline.is-static .history-track__connector {
+  display: none;
+}
+
+.history-timeline.is-static .history-panel {
+  min-height: auto;
+}
+
+.history-timeline.is-static .history-panel__stack {
+  position: static;
+  display: grid;
+  gap: clamp(14px, 1.6vw, 20px);
+}
+
+.history-timeline.is-static .history-panel__item {
+  position: static;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  border-top: 1px solid var(--sv-history-rule);
+  padding-top: clamp(16px, 1.8vw, 22px);
+}
+
+.history-timeline.is-static .history-panel__item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 .history-panel__content {
   display: grid;
   align-content: start;

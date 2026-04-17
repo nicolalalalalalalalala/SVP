@@ -65,6 +65,7 @@
     'This history tracks the development of a specialist onshore credit platform in China through shifting market cycles, legal frameworks, and regulatory conditions. The strategy history begins in 2004; ShoreVest as a formal firm begins in 2016.';
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const useStaticTimeline = reduceMotion;
   const trackList = section.querySelector('[data-timeline-track-list]');
   const panelStack = section.querySelector('[data-timeline-panel-stack]');
   const cardStack = section.querySelector('[data-timeline-mobile-stack]');
@@ -75,6 +76,7 @@
   if (!trackList || !panelStack || !cardStack || !introNode || !scrollArea || !track) return;
 
   introNode.textContent = introText;
+  section.classList.toggle('is-static', useStaticTimeline);
 
   const markerButtons = [];
   const markerItems = [];
@@ -120,6 +122,13 @@
         const targetCard = cardItems[index];
         if (targetCard) {
           targetCard.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
+        }
+        return;
+      }
+      if (useStaticTimeline) {
+        const targetPanel = panelItems[index];
+        if (targetPanel) {
+          targetPanel.scrollIntoView({ behavior: 'auto', block: 'start' });
         }
         return;
       }
@@ -261,6 +270,14 @@
   updateStage(0, 0, 0);
   resizeTimelineHeight();
   desktopTick();
+
+  if (useStaticTimeline) {
+    markerButtons.forEach((button) => {
+      button.removeAttribute('aria-current');
+      button.tabIndex = 0;
+    });
+    return;
+  }
 
   window.addEventListener('resize', () => {
     resizeTimelineHeight();
