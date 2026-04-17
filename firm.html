@@ -496,8 +496,8 @@
       }
       .operations-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-        gap: clamp(20px, 2.6vw, 34px);
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(18px, 2.2vw, 30px);
         align-items: stretch;
       }
       .geography-copy,
@@ -515,20 +515,19 @@
         display: grid;
         place-items: center;
         overflow: hidden;
-        background:
-          radial-gradient(circle at 20% 20%, rgba(201, 59, 42, 0.16), transparent 50%),
-          radial-gradient(circle at 82% 78%, rgba(31, 63, 76, 0.18), transparent 56%),
-          var(--xuan);
+        background: var(--xuan-light);
       }
       .operations-map img {
         width: 100%;
         height: auto;
-        max-height: clamp(360px, 46vw, 560px);
-        min-height: 250px;
+        max-height: clamp(360px, 43vw, 520px);
+        min-height: 280px;
         object-fit: contain;
-        object-position: 45% 52%;
-        transform: scale(2.35);
-        filter: saturate(0.85) contrast(1.05) hue-rotate(-10deg);
+        object-position: center;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        transform: none;
+        filter: none;
       }
 
       .metrics-shell {
