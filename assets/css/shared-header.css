@@ -6,7 +6,7 @@ body {
 }
 
 :root {
-  --sv-topbar-xuan-paper: #FAF6EE;
+  --sv-topbar-xuan-paper: #F2ECD8;
   --sv-topbar-xuan-paper-dark: #D8CEB0;
 }
 
@@ -548,7 +548,7 @@ body {
   /* Mobile top bar baseline: match Firm page styling across all routes. */
   #site-header-mount {
     min-height: 74px !important;
-    --sv-topbar-xuan-paper: #FAF6EE !important;
+    --sv-topbar-xuan-paper: #F2ECD8 !important;
     --sv-topbar-xuan-paper-dark: #D8CEB0 !important;
   }
 
