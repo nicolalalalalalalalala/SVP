@@ -37,6 +37,12 @@
   --sv-header-paper-dark: var(--xuan-paper-dark);
 }
 
+/* Force shared header mount-level tokens (including mobile overrides) to article Xuan paper colors. */
+#site-header-mount {
+  --sv-topbar-xuan-paper: var(--xuan-paper) !important;
+  --sv-topbar-xuan-paper-dark: var(--xuan-paper-dark) !important;
+}
+
 @media (max-width: 1024px) {
   :root {
     --site-page-margin: clamp(20px, 4.6vw, 44px);
