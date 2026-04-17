@@ -371,32 +371,17 @@ body.cdd-print-layout .cdd-dek {
   Body column: 174 − 58 sidebar − 7 gap = 109mm.
   At 10pt DIN 2014: ~58 characters per line — ideal measure.
 */
-body.cdd-print-layout .cdd-grid {
-  display:               grid                     !important;
-  grid-template-columns: minmax(0, 1fr) 58mm      !important;
-  grid-template-areas:   "body sidebar"            !important;
-  gap:                   7mm                      !important;
-  align-items:           start                    !important;
-  margin-top:            5mm                      !important;
+body.cdd-print-layout .cdd-findings-row {
+  margin-top: 5mm !important;
 }
 
 body.cdd-print-layout .cdd-body {
-  grid-area: body;
+  margin-top: 5mm !important;
   min-width: 0;
 }
 
-body.cdd-print-layout .cdd-sidecard {
-  grid-area: sidebar;
-}
-
-body.cdd-print-layout .cdd-sidecard[hidden] {
+body.cdd-print-layout .cdd-findings-row:has(.cdd-sidecard[hidden]) {
   display: none !important;
-}
-
-/* Collapse to single column when sidecard is absent */
-body.cdd-print-layout .cdd-grid:has(.cdd-sidecard[hidden]) {
-  grid-template-columns: minmax(0, 1fr) !important;
-  grid-template-areas:   "body"         !important;
 }
 
 
@@ -478,6 +463,7 @@ body.cdd-print-layout .cdd-sidecard {
   margin-top:    0                               !important;
   max-height:    none                            !important;
   overflow:      visible                         !important;
+  width:         100%                            !important;
 }
 
 body.cdd-print-layout .cdd-sidecard h3 {
@@ -500,9 +486,12 @@ body.cdd-print-layout .cdd-sidecard h3 {
 }
 
 body.cdd-print-layout .cdd-sidecard ul {
-  margin:      0          !important;
-  padding:     0          !important;
-  list-style:  none       !important;
+  margin:                0                          !important;
+  padding:               0                          !important;
+  list-style:            none                       !important;
+  display:               grid                       !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap:                   2.5mm 6mm                 !important;
 }
 
 body.cdd-print-layout .cdd-sidecard li {
@@ -512,7 +501,7 @@ body.cdd-print-layout .cdd-sidecard li {
   line-height:    1.52                !important;
   letter-spacing: 0                   !important;
   color:          var(--pr-ink-soft)  !important;
-  margin-bottom:  3mm                 !important;
+  margin-bottom:  0                   !important;
   padding-left:   10px                !important;
   position:       relative            !important;
 
@@ -530,6 +519,11 @@ body.cdd-print-layout .cdd-sidecard li {
 
 body.cdd-print-layout .cdd-sidecard li:last-child {
   margin-bottom: 0 !important;
+}
+
+body.cdd-print-layout .cdd-sidecard ul:has(li:nth-child(1):nth-last-child(1)),
+body.cdd-print-layout .cdd-sidecard ul:has(li:nth-child(1):nth-last-child(2)) {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
 
 /* Custom bullet: short cinnabar bar */
@@ -753,6 +747,7 @@ body.cdd-print-layout .cdd-disclaimer p + p {
 
   /* Key Findings sidecard: always keep whole */
   body.cdd-print-layout .cdd-sidecard,
+  body.cdd-print-layout .cdd-findings-row,
   body.cdd-print-layout .cdd-sidecard ul {
     break-inside:      avoid !important;
     page-break-inside: avoid !important;
