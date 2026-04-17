@@ -1,7 +1,7 @@
-# China, An Uncorrelated Harbor in a Stormy World
+# China: An Uncorrelated Harbor in a Stormy World
 
 **Series:** China Debt Dynamics  
-**Volume / Issue:** Volume 9, Issue 2  
+**Volume / Issue:** Volume 9 | Issue 2  
 **Date:** April 14, 2025
 
 ---
@@ -22,7 +22,7 @@ China also increasingly appears more friendly for both education and business th
 
 It is fair to say that the recent US abdication of its role as a leader of the democratic world paves the way for a multi-polar world, where China’s central government-managed approach to economic prosperity can happily coexist along with a legion of democracies. In this light, China will always remain an important global force that should not be underestimated. For global allocators, and especially those seeking all-weather strategies like private credit, ignoring China would be at one’s peril. Not only is China clearly investible (as seen in ShoreVest’s 20+ years of success in the country), it is likely the least correlated large market, driven by local idiosyncratic opportunities, affording a safer harbor during tumultuous times.
 
-In virtually every conversation we have had recently in China (from government to business leaders, even down to taxi drivers), the common refrain is this: “Can’t we just get back to doing win-win (共赢) business?” ShoreVest echoes this sentiment.
+In virtually every conversation we have had recently in China (from government to business leaders, even down to taxi drivers), the common refrain is this: “Can’t we just get back to doing win-win (共赢) business?” ShoreVest echos this sentiment.
 
 ---
 
@@ -39,4 +39,4 @@ No. 235 Tianhe North Road
 Guangzhou, China 510610  
 [inquiries@shorevest.com](mailto:inquiries@shorevest.com)
 
-© 2025 ShoreVest Partners. All rights reserved.
+Copyright © 2025 All rights reserved
