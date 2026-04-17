@@ -471,12 +471,6 @@ THE SOFTWARE.
  </path>
  <path d="M1839.8 405l-0.3 0-0.2-0.3 0.2-0.5 0.3 0.1 0.2 0.5-0.2 0.2z m-2.5-2.6l0.5 1.3-0.1 0.5-0.5 0.4-0.6-0.9-0.4-1.1 0-0.6 1 0.2 0.1 0.2z m1.3-0.4l0.4 0.1 0.7 0.4-1.5 0.4-0.5-0.3 0.1-0.7-0.3-0.6 0.3-0.4 0.4 0.4 0.4 0.7z" id="GP" name="Guadeloupe">
  </path>
- <circle cx="253.2" cy="191.5" id="0">
- </circle>
- <circle cx="1816.9" cy="733.4" id="1">
- </circle>
- <circle cx="1001.6" cy="728.5" id="2">
- </circle>
   <g id="shorevest-office-markers">
     <circle id="office-guangzhou-halo" cx="628.9" cy="322.1" r="9" fill="#C93B2A" opacity="0.16"/>
     <circle id="office-guangzhou" cx="628.9" cy="322.1" r="4.6" fill="#C93B2A" stroke="#FAF6EE" stroke-width="1.5"/>
