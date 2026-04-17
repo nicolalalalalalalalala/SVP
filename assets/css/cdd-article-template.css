@@ -29,6 +29,9 @@
   --red: #3D7070;
   --site-page-margin: clamp(22px, 4.8vw, 64px);
   --pad: var(--site-page-margin);
+  /* Ensure the shared top bar matches this article's Xuan paper palette. */
+  --sv-topbar-xuan-paper: var(--xuan-paper);
+  --sv-topbar-xuan-paper-dark: var(--xuan-paper-dark);
 }
 
 @media (max-width: 1024px) {

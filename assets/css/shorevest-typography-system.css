@@ -53,6 +53,14 @@
   --sv-type-meta-size:    var(--sv-size-meta);
   --sv-type-cta-size:     10px;
 
+  /* Display / Hero token (guide-locked, cross-site) */
+  --type-display-hero-font-family: var(--sv-font-en);
+  --type-display-hero-font-size: 72px;
+  --type-display-hero-line-height: 0.98;
+  --type-display-hero-letter-spacing: -0.01em;
+  --type-display-hero-font-style: italic;
+  --type-display-hero-font-weight: 300;
+
   /* Tracking (letter-spacing) */
   --sv-track-brand-lockup:  0.28em;  /* Footer brand: S H O R E V E S T */
   --sv-track-h1-spaced:     0.10em;  /* H1 formal/identity variant */
@@ -75,6 +83,18 @@
 
   /* Backward-compat */
   --sv-type-body-line: var(--sv-lh-body);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --type-display-hero-font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --type-display-hero-font-size: 40px;
+  }
 }
 
 /* ── GLOBAL FONT BASE — DIN 2014 for all English ─────────────────────────── */
@@ -312,16 +332,22 @@ html body .icard__date {
 /* ══════════════════════════════════════════════════════════════════════════
    HERO DISPLAY HEADING (special case — light italic editorial)
    ══════════════════════════════════════════════════════════════════════════ */
+.type-display-hero,
 html body .hero__hed,
 html body .pagehero h1,
 html body .hero__overlay h1.hero__hed,
-html body .display-title {
-  font-family: var(--sv-font-en) !important;
-  font-weight: 300 !important;
-  font-style: italic !important;
+html body .display-title,
+html body .home-hero__headline,
+html body .hero-title-block h1,
+html body .research-hero h1.wordmark__title,
+html body .press-hero h1 {
+  font-family: var(--type-display-hero-font-family) !important;
+  font-size: var(--type-display-hero-font-size) !important;
+  font-weight: var(--type-display-hero-font-weight) !important;
+  font-style: var(--type-display-hero-font-style) !important;
   text-transform: none !important;
-  letter-spacing: 0.005em !important;
-  line-height: var(--sv-lh-display) !important;
+  letter-spacing: var(--type-display-hero-letter-spacing) !important;
+  line-height: var(--type-display-hero-line-height) !important;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
