@@ -921,3 +921,133 @@ body.insights-page .issue-card__meta {
 :where(.article-layout, .article-shell, [class*="article-layout"]) :where(.article-content, .article-main) {
   margin-right: var(--sv-article-sidebar-gap);
 }
+
+/* ========================================================================== */
+/* Strict global gutter correction pass                                       */
+/* ========================================================================== */
+:root {
+  --site-max-width: 1520px;
+  --content-max-width-wide: 1520px;
+  --content-max-width-standard: 1360px;
+  --content-max-width-narrow: 980px;
+
+  --site-gutter-desktop: 72px;
+  --site-gutter-tablet: 48px;
+  --site-gutter-mobile: 28px;
+
+  --page-gutter-desktop: var(--site-gutter-desktop);
+  --page-gutter-tablet: var(--site-gutter-tablet);
+  --page-gutter-mobile: var(--site-gutter-mobile);
+  --site-page-gutter: var(--page-gutter-desktop);
+}
+
+@media (min-width: 1680px) {
+  :root {
+    --site-gutter-desktop: 80px;
+    --page-gutter-desktop: var(--site-gutter-desktop);
+    --site-page-gutter: var(--page-gutter-desktop);
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --site-page-gutter: var(--page-gutter-tablet);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-page-gutter: var(--page-gutter-mobile);
+  }
+}
+
+html:root {
+  --site-page-margin: var(--site-page-gutter) !important;
+  --pad: var(--site-page-gutter) !important;
+  --max: var(--content-max-width-standard) !important;
+}
+
+/* One shared outer container system for all top-level pages and modules. */
+:where(
+  .wrap,
+  .site-container,
+  .page-container,
+  .content-container,
+  .press-shell,
+  .issue-shell,
+  .legal-page__main,
+  .legal-page__content,
+  .research-main .wrap,
+  .track-record-section .wrap,
+  .wrap--pillar-module,
+  .sv-footer__inner,
+  .foot__inner
+) {
+  width: 100%;
+  max-width: calc(var(--content-max-width-standard) + (var(--site-page-gutter) * 2)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--site-page-gutter) !important;
+  padding-right: var(--site-page-gutter) !important;
+  box-sizing: border-box !important;
+}
+
+:where(.wrap--wide, .content-container--wide) {
+  max-width: calc(var(--content-max-width-wide) + (var(--site-page-gutter) * 2)) !important;
+}
+
+:where(.wrap--narrow, .content-container--narrow) {
+  max-width: calc(var(--content-max-width-narrow) + (var(--site-page-gutter) * 2)) !important;
+}
+
+/* Full-width sections keep full-bleed visuals while respecting safe text gutters. */
+:where(
+  #hero,
+  .hero,
+  .pagehero,
+  .home-hero__inner,
+  .num-band__inner,
+  .quote-band__inner,
+  .city-band__inner,
+  .press-hero__inner,
+  .press-overview__inner,
+  .research-sub__inner,
+  .map-wrap,
+  .market-map,
+  .cdd-editorial,
+  .cdd-feature,
+  .contact-grid,
+  .contact-page .section,
+  .contact-page form
+) {
+  padding-left: var(--site-page-gutter) !important;
+  padding-right: var(--site-page-gutter) !important;
+  box-sizing: border-box !important;
+}
+
+/* Calm interior spacing for dense modules (cards/forms/maps/editorial panels). */
+:where(
+  .card,
+  .icard,
+  .issue-card,
+  .team-card,
+  .press-card,
+  .strategy-block,
+  .contact-page .section,
+  .contact-page .section form,
+  .map-wrap,
+  .market-map,
+  .cdd-feature,
+  .research-sub,
+  .archive-panel
+) {
+  padding-inline: clamp(20px, 2.8vw, 34px) !important;
+}
+
+/* Harden against rogue narrow edge spacing values in page-level inline CSS. */
+body:is(.homepage, .strategy-page, .insights-page, .press-page, .contact-page)
+  :where(main, section, article)
+  > :where([class$='__inner'], [class*='__inner ']) {
+  padding-left: max(var(--site-page-gutter), env(safe-area-inset-left, 0px)) !important;
+  padding-right: max(var(--site-page-gutter), env(safe-area-inset-right, 0px)) !important;
+}
