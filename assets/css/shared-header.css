@@ -198,9 +198,9 @@ body {
 }
 
 .nav__lp:hover {
-  background: var(--red, #3d7070);
+  background: var(--red-hover, #2f5a5a);
   color: var(--paper, #F2ECD8);
-  border-color: var(--red, #3d7070);
+  border-color: var(--red-hover, #2f5a5a);
 }
 
 .nav__lp.active {
