@@ -55,7 +55,7 @@ body.legal-page {
   --off: #f6f4f0;
   padding: 0 0 var(--sv-section-gap-sm, clamp(40px, 4.2vw, 64px));
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 9pt;
   line-height: 1.55;
   letter-spacing: normal;
   color: var(--ink-soft);
@@ -65,7 +65,7 @@ body.legal-page {
 body.legal-page .legal-page__content p,
 body.legal-page .legal-page__content li {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 9pt;
   font-weight: 400;
   line-height: 1.55;
   max-width: none;
@@ -101,7 +101,7 @@ body.legal-page .legal-page__content section {
 
 body.legal-page .legal-page__content h1 {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.08;
   text-transform: uppercase;
@@ -110,7 +110,7 @@ body.legal-page .legal-page__content h1 {
 
 body.legal-page .legal-page__content h2 {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.16;
   text-transform: none;
@@ -138,7 +138,7 @@ body.legal-page .legal-page__content .muted,
 body.legal-page .legal-page__content small,
 body.legal-page .legal-page__content .effective-date {
   font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 8pt;
+  font-size: 7.5pt;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: var(--sv-space-lg, clamp(28px, 2.7vw, 42px));
