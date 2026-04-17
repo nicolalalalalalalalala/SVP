@@ -1530,38 +1530,6 @@ body.homepage .home-hero__image {
   object-position: 66% 43%;
   filter: saturate(1) hue-rotate(14deg) contrast(0.9) brightness(0.96);
 }
-body.homepage .home-hero__water-ambient {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: url("assets/images/image.jpg") 66% 43% / cover no-repeat;
-  opacity: 0.17;
-  filter: saturate(1) hue-rotate(14deg) contrast(0.9) brightness(0.96) blur(0.5px);
-  transform: translate3d(0, 0, 0) scale(1.014);
-  transform-origin: 76% 86%;
-  mask-image:
-    radial-gradient(125% 88% at 78% 92%, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.88) 34%, rgba(0, 0, 0, 0) 72%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.8) 48%, rgba(0, 0, 0, 0) 100%);
-  mask-composite: intersect;
-  -webkit-mask-image:
-    radial-gradient(125% 88% at 78% 92%, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.88) 34%, rgba(0, 0, 0, 0) 72%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.8) 48%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-composite: source-in;
-  animation: homeHeroWaterAmbient 18s ease-in-out infinite;
-  will-change: transform;
-}
-@keyframes homeHeroWaterAmbient {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1.014);
-  }
-  50% {
-    transform: translate3d(-0.42%, 0.58%, 0) scale(1.022);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1.014);
-  }
-}
 body.homepage .home-hero__inner {
   position: relative;
   z-index: 1;
@@ -1808,20 +1776,10 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .home-hero__image {
     object-position: 66% 14%;
   }
-  body.homepage .home-hero__water-ambient {
-    display: none;
-  }
 
   body.homepage .home-hero__headline {
     font-size: clamp(31px, 8vw, 42px);
     line-height: 1.12;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  body.homepage .home-hero__water-ambient {
-    animation: none;
-    transform: none;
-    opacity: 0;
   }
 }
 
@@ -2473,7 +2431,6 @@ body.homepage #cdd .cdd-editorial__lede {
     decoding="sync"
     fetchpriority="high"
     aria-hidden="true">
-  <div class="home-hero__water-ambient" aria-hidden="true"></div>
   <div class="home-hero__inner">
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
