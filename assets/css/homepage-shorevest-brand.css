@@ -862,11 +862,19 @@ body.homepage .home-hero::before {
 
 body.homepage .home-hero__eyebrow,
 body.homepage .home-hero__headline,
-body.homepage .home-hero__headline strong,
 body.homepage .home-hero__support,
 body.homepage .home-hero__cta,
 body.homepage .home-hero__cta-arrow {
   color: #faf6ee !important;
+}
+
+body.homepage .home-hero__eyebrow {
+  /* Improve contrast when the hero image area behind this label is bright. */
+  color: #163a2f !important;
+}
+
+body.homepage .home-hero__headline-emphasis {
+  color: var(--cinnabar) !important;
 }
 
 body.homepage .home-hero__support {
@@ -947,6 +955,24 @@ body.homepage .home-hero__cta-arrow {
     margin-top: 18px;
     font-size: 13.5px !important;
     line-height: 1.62 !important;
+  }
+}
+
+@media (max-width: 479px) {
+  body.homepage #stats .stat {
+    padding-top: 12px;
+    padding-bottom: 10px;
+  }
+
+  body.homepage #stats .stat__n {
+    font-size: clamp(44px, 13vw, 58px);
+    letter-spacing: -0.01em;
+    line-height: 0.98;
+  }
+
+  body.homepage #stats .stat__l {
+    font-size: 10px;
+    letter-spacing: 0.11em;
   }
 }
 
