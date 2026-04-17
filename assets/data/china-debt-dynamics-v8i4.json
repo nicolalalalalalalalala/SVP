@@ -1,24 +1,62 @@
 {
   "series": "China Debt Dynamics",
   "volumeIssue": "Volume 8 | Issue 4",
-  "published": "Q4 2024",
+  "published": "1 October 2024",
   "edition": "Quarterly Issue",
-  "title": "United States of China",
-  "dek": "An analysis of China’s strategic posture in a fragmenting global system and the implications for capital allocators.",
+  "title": "Quantifying China’s NPL Market",
+  "dek": "China's nonperforming-loan market is the world's largest, but opaque. This issue sizes primary and secondary NPL flows and outlines implications for investors.",
   "keyFindings": [
-    "Geopolitical fragmentation is reshaping capital-flow assumptions.",
-    "Domestic-policy stability influences relative market attractiveness.",
-    "Credit allocation opportunities can emerge during strategic realignment."
+    "Since 2019, China's banks have disposed of roughly RMB 3 trillion of NPLs per year.",
+    "In 2023, banks raised RMB 400.7 billion from NPL sales, with AMCs acquiring 82% of that volume.",
+    "AMCs sold RMB 379.7 billion of NPLs into the secondary market in 2023, with national AMCs accounting for 63% of sales."
   ],
   "sections": [
     {
       "heading": null,
       "paragraphs": [
-        "This issue is presented in ShoreVest’s unified print format for consistency across the China Debt Dynamics archive."
+        "China's nonperforming loan (NPL) market is the biggest in the world, but it's also one of the most opaque.",
+        "The annual volume of NPLs available to investors is larger than any other global market and is likely to remain so for years. Publicly available data on flows from banks to AMCs and then to secondary investors is limited, but regulator and market-participant data provides useful insight.",
+        "Since 2019, China's banks have disposed of about RMB 3 trillion (USD 427 billion) in NPLs annually. We estimate about half is resolved internally through collateral liquidation, debt-for-equity swaps, or recoveries from third-party guarantors.",
+        "Loans that banks cannot fully redeem are usually sold to AMCs (\"bad banks\"). China has five national AMCs (Cinda, Great Wall, Orient, CITIC, and Galaxy) and around 60 local AMCs that operate at the provincial level."
+      ]
+    },
+    {
+      "heading": "Primary-Market NPL Sales",
+      "paragraphs": [
+        "According to Zheshang Asset Management (ZSAMC), in 2023 China's banks raised RMB 400.7 billion (USD 57 billion) from NPL sales, up 0.5% from 2022.",
+        "We estimate the face value of loans sold in the primary market was RMB 1.5 trillion, based on combining NPL sales with bank write-downs of RMB 1.1 trillion. That is roughly half of all NPLs disposed by banks in 2023.",
+        "Joint-stock banks sold 40% of NPLs, the big five banks sold 23%, city commercial banks sold 16%, and rural commercial banks sold 18%."
+      ]
+    },
+    {
+      "heading": "Who Bought the Loans",
+      "paragraphs": [
+        "AMCs acquired RMB 326.6 billion (82%) of total bank NPL sales: Cinda 21%, CITIC 16%, Great Wall 10%, China Orient 9%, Galaxy 2%, and local AMCs 23% combined.",
+        "The remaining RMB 73 billion (18%) was acquired by investors. While banks can only sell portfolios of three or more NPLs to AMCs, they can sell individual or paired loans to other buyers, often via JD.com and Taobao auction channels.",
+        "After acquisition, AMCs either resolve loans internally or sell them onward to investors in the secondary market."
+      ]
+    },
+    {
+      "heading": "Secondary-Market Flow",
+      "paragraphs": [
+        "In 2023, AMCs raised RMB 379.7 billion (USD 54 billion) by selling NPLs into the secondary market.",
+        "National AMCs accounted for 63% of secondary-market sales and local AMCs for 37%. These transactions form the core of China's investable secondary distressed-debt market."
+      ]
+    },
+    {
+      "heading": "What Comes Next",
+      "paragraphs": [
+        "Given China's economic slowdown, NPL disposal volumes are likely to remain elevated. The key constraint is pressure on bank profitability and capital replenishment.",
+        "The National Financial Regulatory Administration's recapitalization plans for major commercial banks could create additional room for higher NPL disposals.",
+        "For ShoreVest, persistent supply and limited institutional buyer depth create an opportunity to acquire larger portfolios as a preferred AMC counterparty."
       ]
     }
   ],
-  "disclaimer": "This letter expresses the views of the author as of the date indicated and such views are subject to change without notice.",
-  "contact": "Guangzhou International Commercial Center Suite 1503 No.235 Tianhe North Road Guangzhou, China 510610 · inquiries@shorevest.com",
-  "copyright": "Copyright © 2024 All rights reserved."
+  "disclaimer": "This letter expresses the views of the author as of the date indicated and such views are subject to change without notice. ShoreVest Partners has no duty or obligation to update the information contained herein. Certain information concerning economic trends is based on independent third-party sources believed to be reliable, but accuracy and completeness are not guaranteed and have not been independently verified. This letter may not be copied, reproduced, republished, or posted in whole or in part, in any form without prior written consent of ShoreVest Partners.",
+  "contact": "Guangzhou International Commercial Center Suite 1503 · No. 235 Tianhe North Road · Guangzhou, China 510610 · inquiries@shorevest.com",
+  "copyright": "Copyright © 2024 All rights reserved.",
+  "sources": [
+    "China Banking and Insurance Regulatory Commission (CBIRC)",
+    "Zheshang Asset Management, 2023 China NPL Market Report"
+  ]
 }
