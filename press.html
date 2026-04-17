@@ -1054,38 +1054,104 @@
   }
 
   .press-list {
-    border-top: 0;
+    border: 0;
+    background: transparent !important;
+    box-shadow: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .press-row {
+    border: 1px solid color-mix(in srgb, var(--xuan-dark) 68%, transparent) !important;
+    background: color-mix(in srgb, var(--xuan-light) 88%, #fff 12%) !important;
+    transition:
+      background-color 0.24s ease,
+      box-shadow 0.24s ease,
+      border-color 0.24s ease;
   }
 
   .press-row a {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-      "publication date"
-      "headline date";
-    column-gap: 16px;
-    row-gap: 3px;
-    align-items: center;
-    min-height: 86px;
-    padding: 12px 16px;
+      "meta"
+      "headline"
+      "actions";
+    row-gap: 6px;
+    align-items: start;
+    min-height: 0;
+    padding: 14px 16px 13px;
+    background: transparent !important;
+  }
+
+  .press-row a:hover,
+  .press-row a:focus-visible {
+    background: transparent !important;
+  }
+
+  .press-row:hover,
+  .press-row:focus-within {
+    background: color-mix(in srgb, var(--xuan-light) 80%, #fff 20%) !important;
+    border-color: color-mix(in srgb, var(--qing) 36%, var(--xuan-dark) 64%) !important;
+    box-shadow: inset 3px 0 0 color-mix(in srgb, var(--qing) 44%, transparent);
   }
 
   .press-publication {
-    grid-area: publication;
+    grid-area: meta;
+    display: inline;
     margin: 0;
+  }
+
+  .press-publication::after {
+    content: " \00B7 ";
+    color: color-mix(in srgb, var(--ink) 44%, transparent);
+    font-weight: 500;
   }
 
   .press-headline {
     grid-area: headline;
     margin: 0;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
   }
 
   .press-date {
-    grid-area: date;
+    grid-area: meta;
+    display: inline;
     margin: 0;
-    align-self: center;
-    justify-self: end;
-    text-align: right;
+    align-self: start;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .press-date::before {
+    content: "Published ";
+  }
+
+  .press-row a::after {
+    content: "Read article";
+    grid-area: actions;
+    width: fit-content;
+    border: 1px solid color-mix(in srgb, var(--qing) 34%, var(--xuan-dark) 66%);
+    background: color-mix(in srgb, var(--xuan-light) 90%, #fff 10%);
+    color: var(--qing-dark);
+    padding: 6px 11px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition:
+      background-color 0.24s ease,
+      border-color 0.24s ease,
+      color 0.24s ease;
+  }
+
+  .press-row:hover a::after,
+  .press-row:focus-within a::after {
+    background: color-mix(in srgb, var(--qing-light) 24%, var(--xuan-light) 76%);
+    border-color: color-mix(in srgb, var(--qing) 56%, var(--xuan-dark) 44%);
+    color: var(--qing-dark);
   }
 
   @media (max-width: 960px) {
@@ -1107,20 +1173,29 @@
     }
 
     .press-row a {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       grid-template-areas:
-        "publication"
+        "meta"
         "headline"
-        "date";
-      row-gap: 4px;
+        "actions";
+      row-gap: 6px;
       align-items: start;
-      min-height: 102px;
+      min-height: 0;
       padding: 14px;
     }
 
+    .press-publication::after {
+      content: "";
+    }
+
+    .press-publication,
     .press-date {
-      justify-self: start;
+      display: block;
       text-align: left;
+    }
+
+    .press-date::before {
+      content: "Published ";
     }
   }
 </style>
