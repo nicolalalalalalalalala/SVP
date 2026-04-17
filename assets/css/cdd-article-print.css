@@ -457,10 +457,10 @@ body.cdd-print-layout .cdd-body li {
 body.cdd-print-layout .cdd-sidecard {
   background:    var(--pr-tint)                  !important;
   border-top:    2pt solid var(--pr-ink)         !important;
-  border-right:  0.5pt solid var(--pr-rule)      !important;
+  border-right:  none                            !important;
   border-bottom: 0.5pt solid var(--pr-rule)      !important;
-  border-left:   0.5pt solid var(--pr-rule)      !important;
-  padding:       4mm 4.5mm 4.5mm                 !important;
+  border-left:   none                            !important;
+  padding:       4mm 0 4.5mm                     !important;
   position:      static                          !important;
   top:           auto                            !important;
   margin-top:    0                               !important;
