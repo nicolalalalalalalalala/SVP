@@ -292,11 +292,11 @@ body.contact-page .contact-page__layout {
 
 body.contact-page .contact-page__primary-contact,
 body.contact-page .contact-page__form-section {
-  border: 1px solid color-mix(in srgb, var(--paper-dark) 58%, transparent);
+  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 20%, var(--paper-dark));
   background: linear-gradient(
     165deg,
-    color-mix(in srgb, var(--paper-light) 86%, #ffffff) 0%,
-    color-mix(in srgb, var(--paper) 72%, #ffffff) 100%
+    color-mix(in srgb, #e9edf0 88%, var(--paper)) 0%,
+    color-mix(in srgb, #dde3e8 86%, var(--paper-dark)) 100%
   );
   border-radius: 14px;
   box-shadow: 0 12px 28px color-mix(in srgb, var(--blue-green-dark) 8%, transparent);
@@ -367,9 +367,9 @@ body.contact-page .contact-form input,
 body.contact-page .contact-form textarea {
   border-width: 1px;
   border-style: solid;
-  border-color: color-mix(in srgb, var(--paper-dark) 72%, var(--text-main));
+  border-color: color-mix(in srgb, var(--blue-green-dark) 38%, var(--paper-dark));
   border-radius: 8px;
-  background: color-mix(in srgb, #fff 82%, var(--paper-light));
+  background: color-mix(in srgb, #dfe5ea 90%, var(--paper-dark));
   min-height: 44px;
   padding: 11px 13px;
   transition: border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
@@ -377,15 +377,16 @@ body.contact-page .contact-form textarea {
 
 body.contact-page .contact-form input:hover,
 body.contact-page .contact-form textarea:hover {
-  border-color: color-mix(in srgb, var(--blue-green) 44%, var(--paper-dark));
+  border-color: color-mix(in srgb, var(--blue-green-dark) 62%, var(--paper-dark));
+  background: color-mix(in srgb, #d8dfe5 92%, var(--paper-dark));
 }
 
 body.contact-page .contact-form input:focus-visible,
 body.contact-page .contact-form textarea:focus-visible {
   outline: none;
-  border-color: color-mix(in srgb, var(--blue-green) 72%, var(--blue-green-dark));
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue-green) 18%, transparent);
-  background: #fff;
+  border-color: color-mix(in srgb, var(--blue-green-dark) 84%, #23363e);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue-green-dark) 22%, transparent);
+  background: color-mix(in srgb, #e4eaf0 94%, var(--paper-dark));
 }
 
 body.contact-page .contact-form button {
