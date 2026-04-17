@@ -328,9 +328,18 @@ a { color: var(--qing-dark); }
 .cdd-reading-grid {
   display: grid;
   grid-template-columns: 1fr 248px;
+  grid-template-areas: "body sidecard";
   column-gap: 48px;
   row-gap: var(--cdd-column-gap);
   align-items: start;
+}
+
+.cdd-reading-grid .cdd-body {
+  grid-area: body;
+}
+
+.cdd-reading-grid .cdd-sidecard {
+  grid-area: sidecard;
 }
 
 .cdd-reading-grid .cdd-body p,
@@ -444,6 +453,9 @@ a { color: var(--qing-dark); }
 
   .cdd-reading-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "body"
+      "sidecard";
     gap: 26px;
   }
 
