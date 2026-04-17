@@ -129,16 +129,29 @@
   const activeMap = {
     firm: ['firm.html', 'firm_cn.html'],
     strategy: ['strategy.html', 'strategy_cn.html'],
-    insights: [
-      'insights.html',
-      'insights_cn.html',
-      'china-debt-dynamics-v10i1.html',
-      'china-debt-dynamics-v10i1-print.html',
-      'china-debt-dynamics-viewer.html'
-    ],
+    insights: ['insights.html', 'insights_cn.html'],
     press: ['press.html', 'press_cn.html'],
     team: ['team.html', 'team_cn.html'],
     investor: ['investor-access.html', 'investor-access_cn.html']
+  };
+
+  const inferActiveSection = (currentPath) => {
+    if (activeMap.firm.includes(currentPath)) return 'firm';
+    if (activeMap.strategy.includes(currentPath)) return 'strategy';
+    if (activeMap.press.includes(currentPath)) return 'press';
+    if (activeMap.team.includes(currentPath)) return 'team';
+    if (activeMap.investor.includes(currentPath)) return 'investor';
+    if (activeMap.insights.includes(currentPath)) return 'insights';
+
+    const insightsPatterns = [
+      /^insight-/i,
+      /^china-debt-dynamics/i,
+      /^insight-understanding-/i
+    ];
+
+    return insightsPatterns.some((pattern) => pattern.test(currentPath))
+      ? 'insights'
+      : null;
   };
 
   if (['contact.html', 'contact_cn.html'].includes(path)) {
@@ -148,14 +161,13 @@
     });
   }
 
-  Object.values(activeMap).forEach((hrefs) => {
-    if (hrefs.includes(path)) {
-      hrefs.forEach((href) => {
-        nav.querySelectorAll(`a[href="${href}"]`).forEach((activeLink) => {
-          activeLink.classList.add('active');
-          activeLink.setAttribute('aria-current', 'page');
-        });
+  const activeSection = inferActiveSection(path);
+  if (activeSection) {
+    activeMap[activeSection].forEach((href) => {
+      nav.querySelectorAll(`a[href="${href}"]`).forEach((activeLink) => {
+        activeLink.classList.add('active');
+        activeLink.setAttribute('aria-current', 'page');
       });
-    }
-  });
+    });
+  }
 })();
