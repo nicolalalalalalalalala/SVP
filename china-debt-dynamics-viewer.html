@@ -3,28 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>China Debt Dynamics Viewer</title>
-    <link rel="stylesheet" href="assets/css/article-typography-framework.css" />
-    <link rel="stylesheet" href="assets/css/typography-consistent.css" />
-    <link rel="stylesheet" href="assets/css/shared-header.css" />
-    <script src="assets/js/shared-header.js" defer></script>
-<link rel="stylesheet" href="assets/css/shared-footer.css">
+  <title>China Debt Dynamics | ShoreVest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/shared-header.css" />
+  <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
+  <link rel="stylesheet" href="assets/css/cdd-article-template.css" />
+  <script src="assets/js/shared-header.js" defer></script>
 </head>
-<body class="article-page">
+<body>
   <div id="site-header-mount"></div>
-  <div class="wrap">
-    <a class="back action-button" href="insights.html">← Back to Insights</a>
-    <div class="card">
-      <div class="cdd-logo-wrap" aria-hidden="true">
-        <img class="cdd-logo" src="assets/images/edited-photo-3.svg" alt="" />
-      </div>
-      <div id="meta" class="meta issue-meta-line">China Debt Dynamics</div>
-      <article id="content" class="article-body"></article>
+
+  <div class="cdd-topline">
+    <div class="wrap cdd-topline__inner">
+      <div class="cdd-label">ShoreVest Insights Publication</div>
+      <div class="cdd-lockup" lang="zh-Hant">新岸資本 · 中國債務動態</div>
     </div>
   </div>
+
+  <main class="cdd-page wrap">
+    <div class="cdd-intro">
+      <div class="cdd-intro__bar">
+        <div id="meta" class="cdd-meta"></div>
+        <div class="cdd-actions">
+          <a class="cdd-btn" href="insights.html">Back to Insights</a>
+        </div>
+      </div>
+      <div class="cdd-intro__grid">
+        <div class="cdd-intro__lede">
+          <h1 id="title" class="cdd-title"></h1>
+          <p id="dek" class="cdd-dek"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cdd-reading-grid">
+      <article id="content" class="cdd-body"></article>
+      <aside id="findings-card" class="cdd-sidecard" hidden>
+        <h3>Key Findings</h3>
+        <ul id="findings"></ul>
+      </aside>
+    </div>
+
+    <footer class="cdd-disclaimer">
+      <h4>Legal Information and Disclosures</h4>
+      <p id="disclaimer"></p>
+      <p><strong>Our contact details:</strong> <span id="contact"></span></p>
+      <p id="copyright"></p>
+    </footer>
+  </main>
+
   <script>
     const contentEl = document.getElementById('content');
     const metaEl = document.getElementById('meta');
+    const titleEl = document.getElementById('title');
+    const dekEl = document.getElementById('dek');
+    const disclaimerEl = document.getElementById('disclaimer');
+    const contactEl = document.getElementById('contact');
+    const copyrightEl = document.getElementById('copyright');
 
     const params = new URLSearchParams(window.location.search);
     const file = params.get('file');
@@ -39,24 +76,9 @@
       throw new Error('Invalid file path');
     }
 
-    const flushParagraph = (buf) => {
-      if (!buf.length) return null;
-      const p = document.createElement('p');
-      p.textContent = buf.join(' ').replace(/\*\*/g, '').trim();
-      buf.length = 0;
-      return p;
-    };
-
-    const flushList = (items) => {
-      if (!items.length) return null;
-      const ul = document.createElement('ul');
-      items.forEach((txt) => {
-        const li = document.createElement('li');
-        li.textContent = txt.replace(/^[-*]\s+/, '').replace(/\*\*/g, '').trim();
-        ul.appendChild(li);
-      });
-      items.length = 0;
-      return ul;
+    const isBodyHeading = (value) => {
+      const normalized = value.toLowerCase();
+      return normalized !== 'legal information and disclosures' && normalized !== 'contact';
     };
 
     fetch(file)
@@ -66,79 +88,149 @@
       })
       .then((md) => {
         const lines = md.split(/\r?\n/);
-        const pBuf = [];
-        const listBuf = [];
+        const article = {
+          series: 'China Debt Dynamics',
+          volumeIssue: '',
+          published: '',
+          edition: 'Allocator Edition',
+          title: '',
+          dek: '',
+          sections: [],
+          disclaimer: '',
+          contact: '',
+          copyright: 'All rights reserved.'
+        };
 
-        for (const raw of lines) {
-          const line = raw.trim();
+        let mode = 'body';
+        let currentSection = null;
+        const disclaimerParts = [];
+        const contactParts = [];
 
-          if (!line) {
-            const maybeP = flushParagraph(pBuf);
-            if (maybeP) contentEl.appendChild(maybeP);
-            const maybeList = flushList(listBuf);
-            if (maybeList) contentEl.appendChild(maybeList);
-            continue;
+        const ensureSection = () => {
+          if (!currentSection) {
+            currentSection = { heading: null, paragraphs: [] };
+            article.sections.push(currentSection);
           }
+          return currentSection;
+        };
+
+        lines.forEach((raw) => {
+          const line = raw.trim();
+          if (!line) return;
 
           if (line.startsWith('# ')) {
-            const maybeP = flushParagraph(pBuf);
-            if (maybeP) contentEl.appendChild(maybeP);
-            const maybeList = flushList(listBuf);
-            if (maybeList) contentEl.appendChild(maybeList);
-            const h1 = document.createElement('h1');
-            h1.textContent = line.slice(2).trim();
-            document.title = `${h1.textContent} | China Debt Dynamics`;
-            contentEl.appendChild(h1);
-            continue;
+            article.series = line.slice(2).trim() || article.series;
+            return;
+          }
+
+          const volumeMatch = line.match(/^\*\*Volume \/ Issue:\*\*\s*(.+)$/i);
+          if (volumeMatch) {
+            article.volumeIssue = volumeMatch[1].trim();
+            return;
+          }
+
+          const dateMatch = line.match(/^\*\*Date:\*\*\s*(.+)$/i);
+          if (dateMatch) {
+            article.published = dateMatch[1].trim();
+            return;
           }
 
           if (line.startsWith('## ')) {
-            const maybeP = flushParagraph(pBuf);
-            if (maybeP) contentEl.appendChild(maybeP);
-            const maybeList = flushList(listBuf);
-            if (maybeList) contentEl.appendChild(maybeList);
-            const h2 = document.createElement('h2');
-            h2.textContent = line.slice(3).replace(/\*\*/g, '').trim();
-            contentEl.appendChild(h2);
-            continue;
+            const heading = line.slice(3).replace(/\*\*/g, '').trim();
+            if (!article.title && isBodyHeading(heading)) {
+              article.title = heading;
+              mode = 'body';
+              return;
+            }
+
+            if (heading.toLowerCase() === 'legal information and disclosures') {
+              mode = 'legal';
+              currentSection = null;
+              return;
+            }
+
+            if (heading.toLowerCase() === 'contact') {
+              mode = 'contact';
+              currentSection = null;
+              return;
+            }
+
+            mode = 'body';
+            currentSection = { heading, paragraphs: [] };
+            article.sections.push(currentSection);
+            return;
           }
 
-          if (line.startsWith('### ')) {
-            const maybeP = flushParagraph(pBuf);
-            if (maybeP) contentEl.appendChild(maybeP);
-            const maybeList = flushList(listBuf);
-            if (maybeList) contentEl.appendChild(maybeList);
-            const h3 = document.createElement('h3');
-            h3.textContent = line.slice(4).replace(/\*\*/g, '').trim();
-            contentEl.appendChild(h3);
-            continue;
+          if (line.startsWith('### ') && mode === 'body') {
+            currentSection = { heading: line.slice(4).replace(/\*\*/g, '').trim(), paragraphs: [] };
+            article.sections.push(currentSection);
+            return;
           }
 
-          if (/^[-*]\s+/.test(line)) {
-            const maybeP = flushParagraph(pBuf);
-            if (maybeP) contentEl.appendChild(maybeP);
-            listBuf.push(line);
-            continue;
+          if (line.startsWith('Copyright')) {
+            article.copyright = line.replace(/\s+/g, ' ').trim();
+            return;
+          }
+          if (line.toLowerCase() === 'all rights reserved.') {
+            if (!article.copyright.toLowerCase().includes('all rights reserved')) {
+              article.copyright = `${article.copyright} ${line}`.trim();
+            }
+            return;
           }
 
-          if (line.startsWith('**Series:**') || line.startsWith('**Volume / Issue:**') || line.startsWith('**Date:**')) {
-            metaEl.textContent = `${metaEl.textContent} · ${line.replace(/\*\*/g, '').trim()}`;
-            continue;
+          if (mode === 'legal') {
+            disclaimerParts.push(line.replace(/\*\*/g, '').trim());
+            return;
           }
 
-          pBuf.push(line);
+          if (mode === 'contact') {
+            contactParts.push(line.replace(/\*\*/g, '').trim());
+            return;
+          }
+
+          ensureSection().paragraphs.push(line.replace(/\*\*/g, '').trim());
+        });
+
+        if (!article.dek && article.sections.length && article.sections[0].paragraphs.length) {
+          article.dek = article.sections[0].paragraphs.shift();
         }
 
-        const maybeP = flushParagraph(pBuf);
-        if (maybeP) contentEl.appendChild(maybeP);
-        const maybeList = flushList(listBuf);
-        if (maybeList) contentEl.appendChild(maybeList);
+        article.disclaimer = disclaimerParts.join(' ');
+        article.contact = contactParts.join(' · ');
+
+        metaEl.innerHTML = `<span>${article.series}</span><span>${article.volumeIssue || 'Special Edition'}</span><span>Published ${article.published || 'Undated'}</span><span>${article.edition}</span>`;
+        titleEl.textContent = article.title || 'China Debt Dynamics';
+        dekEl.textContent = article.dek || '';
+
+        document.title = `${titleEl.textContent} | ShoreVest`;
+
+        article.sections.forEach((section) => {
+          if (!section.paragraphs?.length && !section.heading) return;
+          if (section.heading) {
+            const h2 = document.createElement('h2');
+            h2.textContent = section.heading;
+            contentEl.appendChild(h2);
+          }
+          (section.paragraphs || []).forEach((paragraph) => {
+            const p = document.createElement('p');
+            p.textContent = paragraph;
+            contentEl.appendChild(p);
+          });
+        });
+
+        disclaimerEl.textContent = article.disclaimer || 'No legal disclosure provided in source.';
+        contactEl.textContent = article.contact || 'Contact information unavailable.';
+        copyrightEl.textContent = article.copyright;
       })
       .catch((err) => {
-        contentEl.innerHTML = `<p class="err">${err.message}</p>`;
+        titleEl.textContent = 'Unable to load article';
+        dekEl.textContent = '';
+        metaEl.innerHTML = '<span>China Debt Dynamics</span><span>Error</span>';
+        contentEl.innerHTML = `<p>${err.message}</p>`;
+        disclaimerEl.textContent = 'No legal disclosure provided in source.';
+        contactEl.textContent = 'Contact information unavailable.';
+        copyrightEl.textContent = '';
       });
   </script>
-<footer class="sv-footer" data-shared-footer></footer>
-<script src="assets/js/shared-footer.js" defer></script>
 </body>
 </html>
