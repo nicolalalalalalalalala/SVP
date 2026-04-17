@@ -513,20 +513,31 @@
       }
       .operations-map {
         display: grid;
-        place-items: center;
+        align-content: center;
         overflow: hidden;
         background: var(--xuan-light);
+        padding: clamp(12px, 1.4vw, 18px);
+      }
+      .operations-map-visual {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        aspect-ratio: 16 / 8.6;
+        overflow: hidden;
+        border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+        background: color-mix(in srgb, var(--xuan-light) 86%, #d7d2c4 14%);
       }
       .operations-map img {
+        position: absolute;
+        inset: 0;
         width: 100%;
-        height: auto;
-        max-height: clamp(360px, 43vw, 520px);
-        min-height: 280px;
-        object-fit: contain;
-        object-position: center;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 56%;
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
-        transform: none;
+        transform: scale(1.03);
+        transform-origin: center;
         filter: none;
       }
 
@@ -857,6 +868,13 @@
           border-top: 1px solid var(--rule);
           padding: 20px 0 0;
         }
+        .operations-map-visual {
+          aspect-ratio: 3 / 2;
+        }
+        .operations-map img {
+          object-position: 51% 58%;
+          transform: scale(1.08);
+        }
       }
       @media (max-width: 767px) {
         section {
@@ -889,6 +907,16 @@
         }
         .cta-panel .btn {
           width: 100%;
+        }
+        .operations-map {
+          padding: clamp(8px, 2vw, 12px);
+        }
+        .operations-map-visual {
+          aspect-ratio: 5 / 4;
+        }
+        .operations-map img {
+          object-position: 52% 60%;
+          transform: scale(1.18);
         }
         /* ── Mobile pillar card — hard reset ── */
         /* Kill all inherited vertical spacing; rebuild with per-element margins */
@@ -971,7 +999,9 @@
             <p>ShoreVest is headquartered in Guangzhou, with a satellite office in Shanghai, a tertiary Hong Kong presence supporting regional connectivity, and a California point supporting trans-Pacific coordination. Core investment, legal, servicing, and resolution functions remain coordinated onshore.</p>
           </article>
           <article class="operations-map">
-            <img src="assets/images/world-pacific.svg" alt="Map showing ShoreVest's operational footprint in Guangzhou, Shanghai, Hong Kong, and California" loading="lazy" />
+            <figure class="operations-map-visual" aria-label="ShoreVest operational geography map">
+              <img src="assets/images/world-pacific.svg" alt="Map showing ShoreVest's operational footprint in Guangzhou, Shanghai, Hong Kong, and California" loading="lazy" />
+            </figure>
           </article>
         </div>
       </section>
