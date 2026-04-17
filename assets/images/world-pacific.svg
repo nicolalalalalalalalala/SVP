@@ -472,17 +472,17 @@ THE SOFTWARE.
  <path d="M1839.8 405l-0.3 0-0.2-0.3 0.2-0.5 0.3 0.1 0.2 0.5-0.2 0.2z m-2.5-2.6l0.5 1.3-0.1 0.5-0.5 0.4-0.6-0.9-0.4-1.1 0-0.6 1 0.2 0.1 0.2z m1.3-0.4l0.4 0.1 0.7 0.4-1.5 0.4-0.5-0.3 0.1-0.7-0.3-0.6 0.3-0.4 0.4 0.4 0.4 0.7z" id="GP" name="Guadeloupe">
  </path>
   <g id="shorevest-office-markers">
-    <circle id="office-guangzhou-halo" cx="628.9" cy="322.1" r="9" fill="#C93B2A" opacity="0.16"/>
-    <circle id="office-guangzhou" cx="628.9" cy="322.1" r="4.6" fill="#C93B2A" stroke="#FAF6EE" stroke-width="1.5"/>
+    <circle id="office-guangzhou-halo" cx="628.9" cy="322.1" r="12" fill="#C93B2A" opacity="0.16"/>
+    <circle id="office-guangzhou" cx="628.9" cy="322.1" r="6.2" fill="#C93B2A" stroke="#FAF6EE" stroke-width="1.9"/>
 
-    <circle id="office-shanghai-halo" cx="674.8" cy="282.9" r="7" fill="#3D7070" opacity="0.14"/>
-    <circle id="office-shanghai" cx="674.8" cy="282.9" r="3.8" fill="#3D7070" stroke="#FAF6EE" stroke-width="1.3"/>
+    <circle id="office-shanghai-halo" cx="674.8" cy="282.9" r="9.4" fill="#3D7070" opacity="0.14"/>
+    <circle id="office-shanghai" cx="674.8" cy="282.9" r="5.1" fill="#3D7070" stroke="#FAF6EE" stroke-width="1.7"/>
 
-    <circle id="office-hongkong-halo" cx="634.2" cy="326.6" r="5.2" fill="#2E4A18" opacity="0.12"/>
-    <circle id="office-hongkong" cx="634.2" cy="326.6" r="3" fill="#2E4A18" stroke="#FAF6EE" stroke-width="1.1"/>
+    <circle id="office-hongkong-halo" cx="634.2" cy="326.6" r="7.1" fill="#2E4A18" opacity="0.12"/>
+    <circle id="office-hongkong" cx="634.2" cy="326.6" r="4" fill="#2E4A18" stroke="#FAF6EE" stroke-width="1.4"/>
 
-    <circle id="office-california-halo" cx="1322.4" cy="254.8" r="8" fill="#6F4A8E" opacity="0.14"/>
-    <circle id="office-california" cx="1322.4" cy="254.8" r="4" fill="#6F4A8E" stroke="#FAF6EE" stroke-width="1.3"/>
+    <circle id="office-california-halo" cx="1322.4" cy="254.8" r="10.6" fill="#6F4A8E" opacity="0.14"/>
+    <circle id="office-california" cx="1322.4" cy="254.8" r="5.4" fill="#6F4A8E" stroke="#FAF6EE" stroke-width="1.7"/>
   </g>
   <g id="shorevest-office-label-connectors" stroke-linecap="round" fill="none">
     <path d="M636.8 317L649 307" stroke="#C93B2A" stroke-opacity="0.46" stroke-width="1"/>
@@ -490,7 +490,7 @@ THE SOFTWARE.
     <path d="M638 330L654 340" stroke="#2E4A18" stroke-opacity="0.32" stroke-width="1"/>
     <path d="M1330 251L1350 242" stroke="#6F4A8E" stroke-opacity="0.4" stroke-width="1"/>
   </g>
-  <g id="shorevest-office-labels" font-family="'DIN 2014', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em" text-rendering="geometricPrecision">
+  <g id="shorevest-office-labels" font-family="'DIN 2014', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em" text-rendering="geometricPrecision">
     <rect x="649" y="296" width="126" height="18" rx="3" fill="#F8F3E8" fill-opacity="0.94" stroke="#D8CEB0" stroke-width="0.7"/>
     <text x="655" y="308" fill="#2A4A48">GUANGZHOU</text>
 
