@@ -375,8 +375,11 @@ body.cdd-print-layout .cdd-findings-row {
   margin-top: 5mm !important;
 }
 
-body.cdd-print-layout .cdd-body {
+body.cdd-print-layout .cdd-grid {
   margin-top: 5mm !important;
+}
+
+body.cdd-print-layout .cdd-body {
   min-width: 0;
 }
 
