@@ -1072,12 +1072,13 @@
 
   .press-row a {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      "meta"
+      "publication date"
       "headline"
       "actions";
     row-gap: 6px;
+    column-gap: 14px;
     align-items: start;
     min-height: 0;
     padding: 14px 16px 13px;
@@ -1097,15 +1098,16 @@
   }
 
   .press-publication {
-    grid-area: meta;
-    display: inline;
+    grid-area: publication;
+    display: block;
     margin: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 
   .press-publication::after {
-    content: " \00B7 ";
-    color: color-mix(in srgb, var(--ink) 44%, transparent);
-    font-weight: 500;
+    content: "";
   }
 
   .press-headline {
@@ -1117,16 +1119,16 @@
   }
 
   .press-date {
-    grid-area: meta;
-    display: inline;
+    grid-area: date;
+    display: block;
     margin: 0;
     align-self: start;
-    justify-self: start;
-    text-align: left;
+    justify-self: end;
+    text-align: right;
   }
 
   .press-date::before {
-    content: "Published ";
+    content: "";
   }
 
   .press-row a::after {
@@ -1175,7 +1177,8 @@
     .press-row a {
       grid-template-columns: minmax(0, 1fr);
       grid-template-areas:
-        "meta"
+        "publication"
+        "date"
         "headline"
         "actions";
       row-gap: 6px;
@@ -1192,10 +1195,11 @@
     .press-date {
       display: block;
       text-align: left;
+      justify-self: start;
     }
 
     .press-date::before {
-      content: "Published ";
+      content: "";
     }
   }
 </style>
