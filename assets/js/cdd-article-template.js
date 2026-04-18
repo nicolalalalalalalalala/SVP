@@ -83,4 +83,16 @@
       setTimeout(() => window.print(), 120);
     });
   }
+
+  const applyFixedCanvasScale = () => {
+    const fixedCanvasWidth = 960;
+    const minViewportPadding = 24;
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth || fixedCanvasWidth;
+    const availableWidth = Math.max(viewportWidth - minViewportPadding, 0);
+    const scale = Math.min(1, availableWidth / fixedCanvasWidth);
+    document.documentElement.style.setProperty('--cdd-mobile-scale', scale.toFixed(4));
+  };
+
+  applyFixedCanvasScale();
+  window.addEventListener('resize', applyFixedCanvasScale, { passive: true });
 })();
