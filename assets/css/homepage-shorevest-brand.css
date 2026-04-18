@@ -366,8 +366,8 @@ li,
   border-color: color-mix(in srgb, var(--cdd-structure) 34%, transparent) !important;
 }
 
-#cdd .cdd-editorial__title,
-#cdd .cdd-editorial__title em,
+#cdd .wordmark__title,
+#cdd .wordmark__title em,
 #cdd .cdd-feature__title,
 #cdd .cdd-feature__quote,
 #cdd .cdd-cta {
@@ -526,7 +526,7 @@ body.homepage #cdd .cdd-feature__quote {
   background: var(--cdd-surface) !important;
 }
 
-body.homepage #cdd .cdd-editorial__title,
+body.homepage #cdd .wordmark__title,
 body.homepage #cdd .cdd-editorial__lede,
 body.homepage #cdd .cdd-feature__title,
 body.homepage #cdd .cdd-feature__thesis,
@@ -684,11 +684,32 @@ html body.homepage #cdd {
 }
 
 /* LAYER 2: Explicit colour locks — heading-level text */
-html body.homepage #cdd .cdd-editorial__title,
-html body.homepage #cdd .cdd-editorial__title em,
+html body.homepage #cdd .wordmark__title,
+html body.homepage #cdd .wordmark__title em,
 html body.homepage #cdd .cdd-feature__title,
 html body.homepage #cdd .cdd-feature__title .cdd-feature__title-quoted {
   color: #f6f0e6 !important;
+}
+
+/* China Debt Dynamics title parity:
+   keep homepage and insights heading on the same typographic source. */
+body.insights-page .wordmark__title,
+body.homepage #cdd .wordmark__title {
+  font-family: var(--sv-type-sans) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.005em !important;
+  margin: 0 !important;
+}
+
+body.insights-page .research-hero .wordmark__title,
+body.homepage #cdd .wordmark__title {
+  color: #f2ecd8 !important;
+}
+
+body.insights-page .research-hero .wordmark__title em,
+body.homepage #cdd .wordmark__title em {
+  color: #c93b2a !important;
 }
 
 /* LAYER 2: Explicit colour locks — body/paragraph text */
