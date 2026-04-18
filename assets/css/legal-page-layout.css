@@ -21,6 +21,20 @@ body.legal-page .legal-page__content {
   overflow-wrap: anywhere;
 }
 
+
+
+/* Contact pages: use strategy-style wrap gutter logic directly. */
+body.legal-page.contact-align .legal-page__main {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body.legal-page.contact-align .legal-page__content.wrap {
+  max-width: var(--max, 1200px);
+  margin: 0 auto;
+  padding-left: var(--pad, var(--site-page-margin));
+  padding-right: var(--pad, var(--site-page-margin));
+}
 /* Keep legal pages visually flat: no card/panel or shaded container treatment. */
 body.legal-page .legal-page__main,
 body.legal-page .legal-page__content,
