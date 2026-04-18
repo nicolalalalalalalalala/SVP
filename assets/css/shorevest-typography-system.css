@@ -209,7 +209,7 @@ html body .h2 {
   font-family: var(--sv-font-en) !important;
   font-size: var(--sv-size-h2) !important;
   font-weight: 700 !important;
-  text-transform: none !important;
+  text-transform: uppercase !important;
   letter-spacing: 0.01em !important;
   line-height: 1.2 !important;
   color: var(--sv-ink) !important;
@@ -221,10 +221,19 @@ html body .h3 {
   font-family: var(--sv-font-en) !important;
   font-size: var(--sv-size-h3) !important;
   font-weight: 700 !important;
-  text-transform: none !important;
+  text-transform: uppercase !important;
   letter-spacing: 0.01em !important;
   line-height: 1.2 !important;
   color: var(--sv-ink) !important;
+}
+
+html body h4,
+html body h5,
+html body h6,
+html body .h4,
+html body .h5,
+html body .h6 {
+  text-transform: uppercase !important;
 }
 
 /* ── ROLE 4: HEADING LABEL / SECTION LABEL ───────────────────────────────── */
@@ -273,7 +282,7 @@ html body .strat__hed {
   font-weight: var(--sv-section-title-weight) !important;
   letter-spacing: 0.01em !important;
   line-height: var(--sv-section-title-line) !important;
-  text-transform: none !important;
+  text-transform: uppercase !important;
   margin-bottom: var(--sv-section-title-gap) !important;
   color: var(--sv-ink) !important;
 }
@@ -296,7 +305,7 @@ html body .alloc-name {
   font-weight: var(--sv-pillar-title-weight) !important;
   line-height: var(--sv-pillar-title-line) !important;
   letter-spacing: 0.01em !important;
-  text-transform: none !important;
+  text-transform: uppercase !important;
   margin-bottom: 0.55rem !important;
   color: var(--sv-ink) !important;
 }
