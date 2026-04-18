@@ -369,7 +369,7 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
 .about__intro--principles {
   margin-top:0;
 }
-h2.about__hed { font-size:32px; color:var(--ink); }
+h2.about__hed { color:var(--ink); }
 #about .eyebrow,
 #about .about__body p,
 #about .about__cta .cta,
@@ -384,9 +384,7 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 }
 #about .about__hed {
   font-family:var(--serif);
-  font-size:clamp(34px, 3.2vw, 44px);
   font-weight:400;
-  letter-spacing:0;
 }
 #about .about__hed em {
   font-style:italic !important;
@@ -394,8 +392,6 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 .about__subhed {
   margin:0;
   font-family:var(--serif);
-  font-size:clamp(24px, 2.4vw, 31px);
-  line-height:1.2;
   color:var(--ink);
   font-weight:400;
 }
@@ -644,9 +640,6 @@ h2.about__hed { font-size:32px; color:var(--ink); }
 h2.strat__hed {
   margin-top:clamp(18px, 1.8vw, 24px);
   margin-bottom:0;
-  font-size:clamp(38px, 3.6vw, 52px);
-  line-height:1.1;
-  letter-spacing:-.01em;
   color:var(--ink);
   text-wrap:balance;
 }
@@ -1641,8 +1634,10 @@ body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.
 body.homepage .about__hed,
 body.homepage .about__subhed,
 body.homepage .strat__hed {
-  text-transform: none !important;
-  letter-spacing: .01em !important;
+  /* Typography token source-of-truth is .sv-section-title from
+     assets/css/shorevest-typography-system.css. Keep homepage classes
+     free of local typography overrides so headings stay in sync with
+     strategy.html peer-level section titles. */
 }
 body.homepage .cta {
   gap: 14px;
@@ -1935,7 +1930,6 @@ body.homepage #cdd .cdd-editorial__lede {
     margin-bottom:36px;
   }
   h2.strat__hed {
-    font-size:clamp(34px, 11vw, 46px);
     margin-top:14px;
   }
 
@@ -2040,10 +2034,6 @@ body.homepage #cdd .cdd-editorial__lede {
     font-size:17px;
     line-height:1.72;
   }
-  .about__subhed {
-    font-size:clamp(23px, 6.8vw, 30px);
-  }
-
   .team__grid { gap:20px; }
 
   #strategy,
