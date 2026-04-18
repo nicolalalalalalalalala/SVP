@@ -1201,11 +1201,85 @@
       gap: 16px;
     }
 
+    .press-hero {
+      min-height: 500px;
+    }
+
+    .press-hero::before {
+      background-position: 72% 30%;
+    }
+
+    .press-hero__inner {
+      padding: 122px var(--pad) 34px !important;
+    }
+
+    .press-hero__copy {
+      max-width: 25rem;
+    }
+
+    .press-hero .eyebrow {
+      margin-bottom: 14px;
+      font-size: 10px !important;
+      letter-spacing: 0.14em !important;
+      gap: 10px;
+      line-height: 1.4;
+    }
+
+    .press-hero .eyebrow::after {
+      flex-basis: 28px;
+      width: 28px;
+      opacity: 0.7;
+    }
+
+    .press-hero .type-display-hero {
+      max-width: 11.5ch;
+      font-size: clamp(29px, 9.2vw, 36px) !important;
+      line-height: 1.02 !important;
+      font-weight: 300 !important;
+      font-style: italic !important;
+      text-transform: uppercase !important;
+      letter-spacing: -0.012em !important;
+      margin-bottom: 18px;
+    }
+
+    .press-hero .type-display-hero .press-hero__line {
+      display: block;
+      text-wrap: nowrap;
+    }
+
+    .press-hero .lead {
+      max-width: 31ch;
+      font-size: 15px !important;
+      line-height: 1.52 !important;
+      margin-bottom: 0;
+    }
+
     .press-overview__main,
     .contact,
     .press-disclaimer,
     .press-toolbar {
       padding: 14px;
+    }
+
+    .press-overview__main {
+      padding: 18px 16px 20px;
+    }
+
+    .press-overview__main .press-archive-note {
+      margin-bottom: 12px;
+    }
+
+    .press-overview__main .press-overview__heading {
+      margin-bottom: 10px;
+    }
+
+    .press-overview__main .press-intro {
+      max-width: 33ch;
+      line-height: 1.72 !important;
+    }
+
+    .press-overview__main .press-intro + .press-intro {
+      margin-top: 12px;
     }
 
     .press-speaking {
@@ -1257,7 +1331,10 @@
         <div class="press-hero__inner">
           <div class="press-hero__copy">
             <p class="eyebrow">MEDIA &amp; PRESS · 2008 TO PRESENT</p>
-            <h1 class="type-display-hero">Press and Announcements</h1>
+            <h1 class="type-display-hero">
+              <span class="press-hero__line">Press and</span>
+              <span class="press-hero__line">Announcements</span>
+            </h1>
             <p class="lead">
               Institutional commentary and third-party coverage on China's
               credit markets, spanning cycles since 2008.
