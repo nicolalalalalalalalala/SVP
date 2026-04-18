@@ -10,7 +10,7 @@
      Text content is normal mixed-case; CSS handles uppercase + tracking. */
 
   const footerTemplateEn = `
-  <div class="sv-footer__inner">
+  <div class="sv-footer__inner wrap">
     <div class="sv-footer__main">
       <div class="sv-footer__brand footer-brand-lockup"><strong>ShoreVest Partners</strong></div>
       <div class="sv-footer__contact">
@@ -30,7 +30,7 @@
   </div>`;
 
   const footerTemplateCn = `
-  <div class="sv-footer__inner">
+  <div class="sv-footer__inner wrap">
     <div class="sv-footer__main">
       <div class="sv-footer__brand footer-brand-lockup"><strong>ShoreVest Partners</strong></div>
       <div class="sv-footer__contact">
