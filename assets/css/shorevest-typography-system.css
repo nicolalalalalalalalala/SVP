@@ -81,6 +81,16 @@
   --sv-lh-label:   1.35;
   --sv-lh-meta:    1.5;
 
+  /* Cross-page section rhythm tokens */
+  --sv-section-label-gap: clamp(0.75rem, 1.4vw, 1rem);
+  --sv-section-title-size: clamp(1.45rem, 3.2vw, 2.2rem);
+  --sv-section-title-line: 1.2;
+  --sv-section-title-weight: 700;
+  --sv-section-title-gap: clamp(0.9rem, 1.8vw, 1.35rem);
+  --sv-pillar-title-size: clamp(1.02rem, 1.55vw, 1.2rem);
+  --sv-pillar-title-line: 1.3;
+  --sv-pillar-title-weight: 700;
+
   /* Backward-compat */
   --sv-type-body-line: var(--sv-lh-body);
 }
@@ -246,6 +256,49 @@ html body .it__label {
   letter-spacing: var(--sv-track-label) !important;
   line-height: var(--sv-lh-label) !important;
   color: var(--sv-cinnabar) !important;
+}
+
+/* ── ROLE 4A: SECTION LABEL RHYTHM NORMALIZATION (non-hero) ─────────────── */
+html body main :is(.eyebrow, .section-label, .kicker):not(.hero__kicker):not(.home-hero__eyebrow):not(.hero-kicker):not(.stats__eyebrow) {
+  margin-bottom: var(--sv-section-label-gap) !important;
+}
+
+/* ── SECTION TITLE SYSTEM (peer-level titles across pages) ───────────────── */
+.sv-section-title,
+html body .section-head > h2,
+html body .about__subhed,
+html body .strat__hed {
+  font-family: var(--sv-font-en) !important;
+  font-size: var(--sv-section-title-size) !important;
+  font-weight: var(--sv-section-title-weight) !important;
+  letter-spacing: 0.01em !important;
+  line-height: var(--sv-section-title-line) !important;
+  text-transform: none !important;
+  margin-bottom: var(--sv-section-title-gap) !important;
+  color: var(--sv-ink) !important;
+}
+
+/* Chinese mirror-page equivalent hierarchy (preserves Chinese type system). */
+html:lang(zh) .sv-section-title,
+html[lang^="zh"] .sv-section-title {
+  font-family: var(--sv-font-cn) !important;
+}
+
+/* ── PILLAR / NUMBERED BLOCK TITLE SYSTEM ────────────────────────────────── */
+.sv-pillar-title,
+html body .pillar-card h3,
+html body .execution-step h3,
+html body .thesis-item h3,
+html body .strategy-pillars h3,
+html body .alloc-name {
+  font-family: var(--sv-font-en) !important;
+  font-size: var(--sv-pillar-title-size) !important;
+  font-weight: var(--sv-pillar-title-weight) !important;
+  line-height: var(--sv-pillar-title-line) !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  margin-bottom: 0.55rem !important;
+  color: var(--sv-ink) !important;
 }
 
 /* ── ROLE 5: DIVIDER LABEL / RULE LABEL ──────────────────────────────────── */
