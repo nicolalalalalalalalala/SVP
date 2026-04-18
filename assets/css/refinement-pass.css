@@ -1255,3 +1255,152 @@ main > section {
     min-height: auto !important;
   }
 }
+
+/* ========================================================================== */
+/* Unified top-of-page hero/header spacing system (site-wide)                 */
+/* ========================================================================== */
+:root {
+  --sv-hero-max-width: var(--content-max-width-standard);
+  --sv-hero-gutter: var(--site-page-gutter);
+  --sv-hero-pad-top: clamp(68px, 7.8vw, 112px);
+  --sv-hero-pad-bottom: clamp(56px, 6.6vw, 94px);
+  --sv-hero-stack-eyebrow-title: clamp(10px, 1vw, 16px);
+  --sv-hero-stack-title-subtitle: clamp(16px, 1.8vw, 26px);
+  --sv-hero-stack-subtitle-meta: clamp(20px, 2.2vw, 34px);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sv-hero-pad-top: clamp(58px, 8vw, 86px);
+    --sv-hero-pad-bottom: clamp(44px, 6.8vw, 68px);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --sv-hero-pad-top: clamp(40px, 11vw, 56px);
+    --sv-hero-pad-bottom: clamp(34px, 8.6vw, 48px);
+    --sv-hero-stack-eyebrow-title: 10px;
+    --sv-hero-stack-title-subtitle: 14px;
+    --sv-hero-stack-subtitle-meta: 18px;
+  }
+}
+
+/* Shared hero wrapper vertical rhythm. */
+:where(
+  .home-hero,
+  .hero,
+  .pagehero,
+  .strategy-hero,
+  .research-hero,
+  .press-hero,
+  .contact-page__header,
+  .investor-shell,
+  body.legal-page .legal-page__content > h1,
+  body.legal-page > h1,
+  body:not(.homepage):not(.legal-page) #hero
+) {
+  padding-top: var(--sv-hero-pad-top) !important;
+  padding-bottom: var(--sv-hero-pad-bottom) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Shared hero content edge alignment + width lock. */
+:where(
+  .home-hero__inner,
+  .hero .wrap,
+  .hero-shell,
+  .pagehero .wrap,
+  .research-hero__inner,
+  .press-hero__inner,
+  .contact-page__header,
+  .investor-shell,
+  #hero .hero__intro,
+  .hero__overlay,
+  body.legal-page .legal-page__content,
+  body.legal-page > h1,
+  body.legal-page > p.muted
+) {
+  width: 100%;
+  max-width: calc(var(--sv-hero-max-width) + (var(--sv-hero-gutter) * 2)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--sv-hero-gutter) !important;
+  padding-right: var(--sv-hero-gutter) !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep legal-page freeform Chinese variants aligned when they skip <main>. */
+body.legal-page > :is(h1, p.muted, h2, p, section, article, ul, ol) {
+  max-width: calc(var(--sv-hero-max-width) + (var(--sv-hero-gutter) * 2));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sv-hero-gutter);
+  padding-right: var(--sv-hero-gutter);
+  box-sizing: border-box;
+}
+
+/* Shared hero text stack rhythm. */
+:where(
+  .home-hero,
+  .hero,
+  .pagehero,
+  .research-hero,
+  .press-hero,
+  .contact-page__header,
+  .investor-shell,
+  .hero__overlay,
+  #hero .hero__intro
+) :where(.eyebrow, .hero__kicker, .home-hero__eyebrow, .hero-kicker, .investor-stage-label, .contact-page__eyebrow) {
+  margin-bottom: var(--sv-hero-stack-eyebrow-title) !important;
+}
+
+:where(
+  .home-hero,
+  .hero,
+  .pagehero,
+  .research-hero,
+  .press-hero,
+  .contact-page__header,
+  .investor-shell,
+  .hero__overlay,
+  #hero .hero__intro
+) :where(h1 + p, h1 + .hero-support, h1 + .pagehero__lede, h1 + .press-intro, h1 + .investor-gate__prompt) {
+  margin-top: var(--sv-hero-stack-title-subtitle) !important;
+}
+
+:where(
+  .home-hero,
+  .hero,
+  .pagehero,
+  .research-hero,
+  .press-hero,
+  .contact-page__header,
+  .investor-shell,
+  .hero__overlay,
+  #hero .hero__intro
+) :where(
+  .hero-support + p,
+  .pagehero__lede + p,
+  .press-intro + .press-more,
+  .investor-gate__prompt + .investor-gate__list,
+  p + .stats,
+  p + .hero__stats
+) {
+  margin-top: var(--sv-hero-stack-subtitle-meta) !important;
+}
+
+/* First section after hero keeps one predictable interval. */
+:where(
+  .home-hero,
+  .hero,
+  .pagehero,
+  .strategy-hero,
+  .research-hero,
+  .press-hero,
+  .contact-page__header
+) + :is(section, main section:first-child) {
+  margin-top: 0 !important;
+  padding-top: var(--sv-section-breathing) !important;
+}
