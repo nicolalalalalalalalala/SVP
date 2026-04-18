@@ -23,6 +23,10 @@
   --sv-brand-accent: #3d7070;
   --sv-brand-accent-strong: #3d7070;
   --sv-brand-accent-ink: #ffffff;
+  --sv-hero-content-max: var(--content-max-width-standard);
+  --sv-hero-top-space: clamp(86px, 10vw, 132px);
+  --sv-hero-bottom-space: clamp(52px, 6vw, 84px);
+  --sv-hero-next-gap: clamp(16px, 2.3vw, 30px);
 }
 
 /* Layout system overrides: beat page-local inline :root declarations. */
@@ -133,11 +137,39 @@ h2 {
   text-transform: uppercase;
 }
 
-#hero,
-.hero,
-.pagehero {
-  padding-top: clamp(72px, 9vw, 120px);
-  padding-bottom: clamp(68px, 8vw, 116px);
+/* Shared hero wrapper system:
+   normalize top-row spacing, content width, and horizontal start point
+   across home + interior templates (EN/CN). */
+:is(#hero, .hero, .pagehero, .research-hero, .press-hero) {
+  padding-top: var(--sv-hero-top-space) !important;
+  padding-bottom: var(--sv-hero-bottom-space) !important;
+}
+
+:is(#hero, .hero, .pagehero, .research-hero, .press-hero) + * {
+  margin-top: var(--sv-hero-next-gap) !important;
+}
+
+:is(
+  #hero,
+  .hero > .wrap,
+  .pagehero > .wrap,
+  .research-hero > .wrap,
+  .press-hero__inner,
+  .legal-page__main
+) {
+  width: 100% !important;
+  max-width: calc(var(--sv-hero-content-max) + (var(--site-page-gutter) * 2)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--site-page-gutter) !important;
+  padding-right: var(--site-page-gutter) !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove one-off nesting drift that offset hero starts on some templates. */
+:is(.hero-shell, .press-hero__copy, .research-hero__desc, .contact-page__header) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* Rogue page-level margin overrides normalized to the global grid. */
