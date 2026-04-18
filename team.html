@@ -100,7 +100,7 @@
 
       .pagehero {
         min-height: 340px;
-        padding: 140px 0 56px;
+        padding: var(--sv-hero-top-space) var(--site-page-gutter) var(--sv-hero-bottom-space) !important;
         border-bottom: 1px solid var(--rule);
         background: transparent;
         display: flex;
@@ -108,6 +108,9 @@
       }
       .pagehero .wrap {
         width: 100%;
+        max-width: var(--sv-hero-content-max) !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
       }
       h1 {
         font-family: var(--team-type-heading);
