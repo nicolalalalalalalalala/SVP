@@ -10,18 +10,16 @@ html body footer.sv-footer,
 html body .sv-footer {
   background: #f2ecd8 !important;
   border-top: 1px solid #d8ceb0 !important;
-  padding:
-    clamp(40px, 4.2vw, 64px)
-    var(--site-page-gutter, var(--site-page-margin, var(--page-gutter-desktop, 56px)))
-    clamp(40px, 4.2vw, 64px) !important;
+  padding: clamp(40px, 4.2vw, 64px) 0 clamp(40px, 4.2vw, 64px) !important;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
   text-align: left !important;
 }
 
 html body footer.sv-footer .sv-footer__inner {
   width: 100% !important;
-  max-width: var(--page-max-width, 1320px) !important;
+  max-width: var(--max, var(--page-max-width, 1320px)) !important;
   margin: 0 auto !important;
+  padding: 0 var(--pad, var(--site-page-margin, clamp(22px, 4.8vw, 64px))) !important;
 }
 
 html body footer.sv-footer .sv-footer__main {
@@ -247,10 +245,7 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
 @media (max-width: 768px) {
   html body footer.sv-footer,
   html body .sv-footer {
-    padding:
-      26px
-      var(--site-page-gutter, var(--site-page-margin, clamp(16px, 4.8vw, 24px)))
-      calc(34px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 26px 0 calc(34px + env(safe-area-inset-bottom, 0px)) !important;
   }
 
   html body footer.sv-footer .sv-footer__main {
@@ -341,8 +336,8 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
 @media (min-width: 769px) and (max-width: 1024px) {
   html body footer.sv-footer,
   html body .sv-footer {
-    padding-left: clamp(20px, 4.8vw, 40px) !important;
-    padding-right: clamp(20px, 4.8vw, 40px) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
