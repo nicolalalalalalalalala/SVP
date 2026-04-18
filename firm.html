@@ -38,10 +38,6 @@
         --pad: var(--site-page-margin);
       }
 
-      #site-header-mount #nav .nav__logo-cn {
-        color: var(--shorevest-topbar-cinnabar) !important;
-      }
-
       * {
         box-sizing: border-box;
       }
@@ -955,8 +951,11 @@
         }
       }
 
-      /* Firm page top bar: keep Chinese wordmark in cinnabar without hover-state overrides. */
-      #site-header-mount #nav .nav__logo-cn {
+      /* Firm page top bar: override homepage lockup tint and keep Chinese wordmark in cinnabar. */
+      body.homepage #site-header-mount #nav .nav__logo-cn,
+      body.homepage #site-header-mount #nav .nav__logo:hover .nav__logo-cn,
+      body.homepage #site-header-mount #nav .nav__logo:focus .nav__logo-cn,
+      body.homepage #site-header-mount #nav .nav__logo:active .nav__logo-cn {
         color: var(--shorevest-topbar-cinnabar, #c93b2a) !important;
       }
     </style>
