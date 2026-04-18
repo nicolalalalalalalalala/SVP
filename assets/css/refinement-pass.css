@@ -1051,3 +1051,207 @@ body:is(.homepage, .strategy-page, .insights-page, .press-page, .contact-page)
   padding-left: max(var(--site-page-gutter), env(safe-area-inset-left, 0px)) !important;
   padding-right: max(var(--site-page-gutter), env(safe-area-inset-right, 0px)) !important;
 }
+
+/* ========================================================================== */
+/* Site-wide spacing and alignment cleanup pass (desktop + mobile)            */
+/* ========================================================================== */
+:root {
+  --sv-stack-label-to-heading: clamp(12px, 1.1vw, 16px);
+  --sv-stack-heading-to-copy: clamp(16px, 1.8vw, 26px);
+  --sv-stack-copy-to-cta: clamp(22px, 2.2vw, 34px);
+  --sv-stack-copy-to-grid: clamp(28px, 2.9vw, 42px);
+  --sv-section-breathing: clamp(74px, 8.4vw, 122px);
+  --sv-section-breathing-tight: clamp(56px, 6.2vw, 88px);
+  --sv-card-pad: clamp(24px, 2.8vw, 36px);
+  --sv-card-gap: clamp(18px, 2vw, 28px);
+  --sv-grid-gap-clean: clamp(22px, 2.4vw, 34px);
+}
+
+main > section {
+  padding-top: var(--sv-section-breathing) !important;
+  padding-bottom: var(--sv-section-breathing) !important;
+}
+
+/* Consistent internal rhythm: label > heading > copy > CTA > grid/cards. */
+:where(
+  .hero__kicker,
+  .eyebrow,
+  .home-hero__eyebrow,
+  .hero-kicker,
+  .section-label
+) {
+  margin-bottom: var(--sv-stack-label-to-heading) !important;
+}
+
+:where(
+  h1 + p,
+  h2 + p,
+  .home-hero__headline + p,
+  .pagehero__hed + .pagehero__lede,
+  .hero-title-block h1 + .hero-support,
+  .press-hero__line + .press-intro
+) {
+  margin-top: var(--sv-stack-heading-to-copy) !important;
+}
+
+:where(
+  p + .cta,
+  p + .home-hero__cta,
+  p + .press-more,
+  .hero-support + .cta,
+  .home-hero__headline + .home-hero__cta
+) {
+  margin-top: var(--sv-stack-copy-to-cta) !important;
+}
+
+:where(
+  .ops-intro + .card-grid,
+  .principles__intro + .principles__grid,
+  .strat__intro + .strat__grid,
+  .press-intro + .press-grid,
+  .archive__head + .archive__list,
+  .contact-page__form-intro + .contact-form
+) {
+  margin-top: var(--sv-stack-copy-to-grid) !important;
+}
+
+/* Section-specific cleanup for requested problem areas. */
+:where(
+  .home-hero,
+  .hero,
+  .pagehero,
+  .strategy-hero,
+  .research-hero,
+  .press-hero
+) {
+  padding-top: max(var(--sv-section-breathing-tight), 68px) !important;
+  padding-bottom: var(--sv-section-breathing-tight) !important;
+}
+
+:where(
+  #about,
+  #principles,
+  #strategy,
+  #cdd,
+  .geography-section,
+  .platform-ops-section,
+  .track-record-section,
+  .strategy-intro-section,
+  .research-main,
+  #press-archive,
+  .team-shell .group,
+  .contact-page__main
+) {
+  padding-top: var(--sv-section-breathing) !important;
+  padding-bottom: var(--sv-section-breathing) !important;
+}
+
+/* Card/grid neatness and proportion control. */
+:where(
+  .card-grid,
+  .metrics-grid,
+  .metrics-support-grid,
+  .strat__grid,
+  .grid,
+  .press-grid,
+  .archive__list,
+  .contact-form__grid,
+  .city-grid,
+  .risk-grid
+) {
+  gap: var(--sv-grid-gap-clean) !important;
+}
+
+:where(
+  .card,
+  .pillar-card,
+  .metric-card,
+  .strategy-block,
+  .alloc-card,
+  .risk-card,
+  .issue-card,
+  .press-row,
+  .archive__row,
+  .contact-page .section,
+  .contact-form
+) {
+  padding: var(--sv-card-pad) !important;
+}
+
+:where(
+  .card > *,
+  .metric-card > *,
+  .strategy-block > *,
+  .issue-card > *,
+  .press-row > *,
+  .archive__row > *,
+  .contact-form > *
+) + * {
+  margin-top: var(--sv-card-gap) !important;
+}
+
+/* Map/split/committee/execution blocks: cleaner edge alignment and breathing. */
+:where(
+  .operations-grid,
+  .context-grid,
+  .process-grid,
+  .process-flow,
+  .platform-diagram,
+  .market-map,
+  .map-wrap
+) {
+  gap: clamp(26px, 3vw, 42px) !important;
+  align-items: start !important;
+}
+
+:where(.operations-map, .operations-map-visual, .market-map, .map-wrap) {
+  margin-top: clamp(10px, 1.4vw, 18px) !important;
+  margin-bottom: clamp(12px, 1.6vw, 20px) !important;
+}
+
+/* Press hero/archive and contact form neatness pass. */
+:where(.press-hero__copy, .press-overview__inner, .press-speaking, .archive-panel) {
+  row-gap: clamp(16px, 1.8vw, 26px) !important;
+}
+
+:where(.contact-form__grid, .contact-form label, .contact-form__consent) {
+  row-gap: clamp(12px, 1.4vw, 20px) !important;
+}
+
+/* Footer spacing normalization to avoid cramped/legal collisions. */
+:where(footer.sv-footer, .sv-footer) {
+  margin-top: clamp(48px, 6vw, 84px) !important;
+  padding-top: clamp(28px, 3.2vw, 42px) !important;
+}
+
+:where(.sv-footer__main, .sv-footer__bottom) {
+  gap: clamp(14px, 1.8vw, 24px) !important;
+}
+
+/* Mobile: preserve edge comfort and stop cramped text/cards. */
+@media (max-width: 767px) {
+  :root {
+    --sv-stack-label-to-heading: 10px;
+    --sv-stack-heading-to-copy: 14px;
+    --sv-stack-copy-to-cta: 18px;
+    --sv-stack-copy-to-grid: 22px;
+    --sv-section-breathing: clamp(48px, 10vw, 68px);
+    --sv-section-breathing-tight: clamp(40px, 8.6vw, 58px);
+    --sv-card-pad: clamp(16px, 5vw, 22px);
+    --sv-grid-gap-clean: clamp(14px, 4.8vw, 20px);
+    --sv-card-gap: clamp(12px, 4.2vw, 16px);
+  }
+
+  :where(.contact-page .section, .contact-form, .archive__row, .press-row, .strategy-block) {
+    padding: var(--sv-card-pad) !important;
+  }
+
+  :where(.home-hero__text, .press-hero__copy, .research-hero__copy, .pagehero__grid) {
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  :where(.home-hero, .hero, .pagehero, .research-hero, .press-hero) {
+    min-height: auto !important;
+  }
+}
