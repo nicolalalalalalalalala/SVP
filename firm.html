@@ -513,16 +513,16 @@
         align-content: center;
         overflow: hidden;
         background: var(--xuan-light);
-        padding: clamp(12px, 1.4vw, 18px);
+        padding: clamp(8px, 1vw, 12px);
       }
       .operations-map-visual {
         position: relative;
         margin: 0;
         width: 100%;
-        aspect-ratio: 16 / 8.6;
+        aspect-ratio: 1.72 / 1;
         overflow: hidden;
         border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
-        background: color-mix(in srgb, var(--xuan-light) 86%, #d7d2c4 14%);
+        background: color-mix(in srgb, var(--xuan-light) 90%, #d7d2c4 10%);
       }
       .operations-map img {
         position: absolute;
@@ -530,12 +530,63 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 50% 56%;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        transform: scale(1.03);
+        object-position: 63% 52%;
+        transform: scale(1.06);
         transform-origin: center;
         filter: none;
+      }
+      .op-marker {
+        --dot: #355f67;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+      .op-marker::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        display: block;
+        background: var(--dot);
+        border: 1px solid color-mix(in srgb, var(--xuan-light) 90%, #fff 10%);
+        box-shadow: 0 0 0 1px color-mix(in srgb, #10241d 24%, transparent);
+      }
+      .op-marker > span {
+        position: absolute;
+        left: 11px;
+        top: -9px;
+        font-family: "DIN 2014", "DIN2014", "DIN Alternate", "Arial Narrow", Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: color-mix(in srgb, var(--ink-green-dark) 90%, #122823 10%);
+        white-space: nowrap;
+      }
+      .op-marker--guangzhou {
+        --dot: #C93B2A;
+        left: 66.6%;
+        top: 49.7%;
+      }
+      .op-marker--shanghai {
+        --dot: #3D7070;
+        left: 68.5%;
+        top: 43.4%;
+      }
+      .op-marker--hong-kong {
+        --dot: #2E4A18;
+        left: 66.9%;
+        top: 52.2%;
+      }
+      .op-marker--california {
+        --dot: #4f7273;
+        left: 24.1%;
+        top: 43.8%;
+      }
+      .op-marker--california > span {
+        left: auto;
+        right: 11px;
+        text-align: right;
       }
 
       .metrics-shell {
@@ -866,11 +917,11 @@
           padding: 20px 0 0;
         }
         .operations-map-visual {
-          aspect-ratio: 3 / 2;
+          aspect-ratio: 1.62 / 1;
         }
         .operations-map img {
-          object-position: 51% 58%;
-          transform: scale(1.08);
+          object-position: 62% 52%;
+          transform: scale(1.1);
         }
       }
       @media (max-width: 767px) {
@@ -906,14 +957,27 @@
           width: 100%;
         }
         .operations-map {
-          padding: clamp(8px, 2vw, 12px);
+          padding: clamp(6px, 1.6vw, 10px);
         }
         .operations-map-visual {
-          aspect-ratio: 5 / 4;
+          aspect-ratio: 1.38 / 1;
         }
         .operations-map img {
-          object-position: 52% 60%;
-          transform: scale(1.18);
+          object-position: 62% 53%;
+          transform: scale(1.15);
+        }
+        .op-marker::before {
+          width: 6px;
+          height: 6px;
+        }
+        .op-marker > span {
+          font-size: 10px;
+          letter-spacing: 0.07em;
+          left: 10px;
+          top: -8px;
+        }
+        .op-marker--california > span {
+          right: 10px;
         }
         /* ── Mobile pillar card — hard reset ── */
         /* Kill all inherited vertical spacing; rebuild with per-element margins */
@@ -1001,6 +1065,10 @@
           <article class="operations-map">
             <figure class="operations-map-visual" aria-label="ShoreVest operational geography map">
               <img src="assets/images/world-pacific.svg" alt="Map showing ShoreVest's operational footprint in Guangzhou, Shanghai, Hong Kong, and California" loading="lazy" />
+              <div class="op-marker op-marker--guangzhou" aria-hidden="true"><span>Guangzhou</span></div>
+              <div class="op-marker op-marker--shanghai" aria-hidden="true"><span>Shanghai</span></div>
+              <div class="op-marker op-marker--hong-kong" aria-hidden="true"><span>Hong Kong</span></div>
+              <div class="op-marker op-marker--california" aria-hidden="true"><span>California</span></div>
             </figure>
           </article>
         </div>
