@@ -1092,6 +1092,9 @@
         padding-bottom: 72px;
         background: linear-gradient(180deg, #F2ECD8 0%, #F2ECD8 100%);
       }
+      .market-context .wrap {
+        max-width: min(1360px, calc(100% - clamp(32px, 6vw, 96px)));
+      }
       .market-context + p {
         margin-top: 0;
       }
@@ -1116,8 +1119,9 @@
         background: #F2ECD8;
       }
       .market-context-content {
-        max-width: 1180px;
-        margin: 0 auto;
+        max-width: none;
+        width: 100%;
+        margin: 0;
         background: #F2ECD8;
         border: 1px solid rgba(31, 24, 18, 0.11);
         box-shadow: 0 18px 40px rgba(36, 31, 22, 0.05);
@@ -1156,7 +1160,7 @@
       .context-grid {
         margin-top: 28px;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
         gap: 14px;
       }
       .context-pullout {
@@ -1189,6 +1193,11 @@
         line-height: 1.6;
         color: #3D7070;
         font-family: var(--sans);
+      }
+      @media (max-width: 1180px) {
+        .context-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
       .strategy-intro-section {
         width: 100%;
