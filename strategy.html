@@ -1900,18 +1900,40 @@
       .next-links .cta {
         width: 100%;
         justify-content: space-between;
-        border: 1px solid rgba(179, 33, 63, 0.18);
+        border: 1px solid rgba(15, 34, 6, 0.18);
+        background: rgba(250, 246, 238, 0.88);
         padding: 12px 14px;
-        color: var(--red);
+        color: var(--ink);
+        transition:
+          border-color 0.22s ease,
+          background-color 0.22s ease,
+          box-shadow 0.22s ease,
+          transform 0.22s ease;
       }
       #cta-next .next-links .cta .cta__ring {
-        border: 1px solid rgba(179, 33, 63, 0.3);
-        color: var(--red);
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(15, 34, 6, 0.22);
+        color: currentColor;
+        background: transparent;
+        transition:
+          border-color 0.22s ease,
+          background-color 0.22s ease,
+          transform 0.22s ease;
       }
-      #cta-next .next-links .cta:hover .cta__ring {
-        background: var(--red);
-        border-color: var(--red);
-        color: var(--white);
+      #cta-next .next-links .cta:hover,
+      #cta-next .next-links .cta:focus-visible {
+        gap: 14px;
+        border-color: rgba(15, 34, 6, 0.32);
+        background: rgba(242, 236, 216, 0.75);
+        box-shadow: 0 8px 18px rgba(15, 34, 6, 0.08);
+        transform: translateY(-1px);
+      }
+      #cta-next .next-links .cta:hover .cta__ring,
+      #cta-next .next-links .cta:focus-visible .cta__ring {
+        border-color: rgba(15, 34, 6, 0.34);
+        background: rgba(15, 34, 6, 0.06);
+        transform: translateX(2px);
       }
       #cta-next {
         text-align: left;
@@ -2323,6 +2345,20 @@
     .cta--dark,.strategy-intro-link,.icard__link,.sg__link,.ac__link{color:var(--cinnabar)!important}
     .cta--dark .cta__ring,.strategy-intro-link .cta__ring{border:1px solid var(--cinnabar)!important;color:var(--cinnabar)!important;background:var(--xuan-light)!important}
     .cta--dark:hover .cta__ring,.strategy-intro-link:hover .cta__ring{background:var(--cinnabar)!important;color:var(--xuan-light)!important}
+    #cta-next .next-links .cta{color:var(--ink-dark)!important;background:var(--xuan-light)!important;border-color:var(--xuan-dark)!important}
+    #cta-next .next-links .cta .cta__ring{width:36px;height:36px;border:1px solid color-mix(in srgb,var(--ink-dark) 22%, transparent)!important;color:var(--ink-dark)!important;background:transparent!important}
+    #cta-next .next-links .cta:hover,#cta-next .next-links .cta:focus-visible{
+      background:color-mix(in srgb,var(--xuan) 82%, var(--xuan-light) 18%)!important;
+      border-color:color-mix(in srgb,var(--ink-dark) 34%, var(--xuan-dark) 66%)!important;
+      color:var(--ink-dark)!important;
+      box-shadow:0 8px 18px color-mix(in srgb,var(--ink-dark) 10%, transparent)!important;
+      transform:translateY(-1px)!important
+    }
+    #cta-next .next-links .cta:hover .cta__ring,#cta-next .next-links .cta:focus-visible .cta__ring{
+      background:color-mix(in srgb,var(--ink-dark) 6%, var(--xuan-light) 94%)!important;
+      border-color:color-mix(in srgb,var(--ink-dark) 36%, transparent)!important;
+      color:var(--ink-dark)!important
+    }
     .jump-nav button:hover,.jump-nav button:focus-visible,.jump-nav button.is-active,
     .viz-btn.is-active,.viz-btn:hover,.next-links .cta:hover{
       background:var(--cinnabar)!important;border-color:var(--cinnabar)!important;color:var(--xuan-light)!important
