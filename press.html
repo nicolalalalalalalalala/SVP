@@ -1122,7 +1122,7 @@
 
   .press-speaking {
     border: 1px solid color-mix(in srgb, var(--xuan-dark) 54%, transparent);
-    background: color-mix(in srgb, var(--xuan-light) 94%, #fff 6%);
+    background: color-mix(in srgb, var(--xuan-light) 95%, #fff 5%);
     padding: 20px;
     display: grid;
     gap: 16px;
@@ -1133,28 +1133,53 @@
     max-width: 68ch;
   }
 
-  .press-speaking__lead,
-  .press-speaking__item {
-    border: 1px solid color-mix(in srgb, var(--xuan-dark) 62%, transparent);
-    background: color-mix(in srgb, var(--xuan-light) 90%, #fff 10%);
+  .press-speaking__carousel {
+    border-top: 1px solid color-mix(in srgb, var(--xuan-dark) 20%, transparent);
+    padding-top: 16px;
+    display: grid;
+    gap: 12px;
   }
 
-  .press-speaking__lead {
+  .press-speaking__viewport {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .press-speaking__slide {
+    display: none;
+    gap: 18px;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .press-speaking__slide.is-active {
+    display: grid;
+  }
+
+  .press-speaking__media {
+    margin: 0;
+    aspect-ratio: 16 / 10;
+    border: 1px solid color-mix(in srgb, var(--xuan-dark) 36%, transparent);
+    background: color-mix(in srgb, var(--xuan-light) 88%, #fff 12%);
+    overflow: hidden;
+  }
+
+  .press-speaking__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: saturate(0.9) contrast(1.03);
+  }
+
+  .press-speaking__content {
+    border: 1px solid color-mix(in srgb, var(--xuan-dark) 42%, transparent);
+    background: color-mix(in srgb, var(--xuan-light) 90%, #fff 10%);
     padding: 16px;
     display: grid;
-    gap: 8px;
-  }
-
-  .press-speaking__supporting {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .press-speaking__item {
-    padding: 14px;
-    display: grid;
-    gap: 6px;
+    gap: 9px;
+    align-content: start;
   }
 
   .press-speaking__source,
@@ -1162,10 +1187,7 @@
     display: block;
   }
 
-  .press-speaking__title {
-    margin: 0;
-  }
-
+  .press-speaking__title,
   .press-speaking__summary {
     margin: 0;
   }
@@ -1181,6 +1203,45 @@
   .press-speaking__link:hover,
   .press-speaking__link:focus-visible {
     text-decoration: underline;
+  }
+
+  .press-speaking__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+  }
+
+  .press-speaking__nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .press-speaking__nav-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid color-mix(in srgb, var(--xuan-dark) 36%, transparent);
+    background: color-mix(in srgb, var(--xuan-light) 92%, #fff 8%);
+    color: color-mix(in srgb, var(--xuan-dark) 84%, black 16%);
+    border-radius: 0;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color .18s ease, border-color .18s ease;
+  }
+
+  .press-speaking__nav-btn:hover,
+  .press-speaking__nav-btn:focus-visible {
+    background: color-mix(in srgb, var(--xuan-light) 82%, #fff 18%);
+    border-color: color-mix(in srgb, var(--qing) 36%, var(--xuan-dark) 64%);
+  }
+
+  .press-speaking__counter {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--xuan-dark) 78%, #fff 22%);
   }
 
   .press-speaking__archive {
@@ -1284,8 +1345,13 @@
       padding: 14px;
     }
 
-    .press-speaking__supporting {
+    .press-speaking__slide.is-active {
       grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .press-speaking__content {
+      padding: 14px;
     }
 
     .press-row a {
@@ -1388,39 +1454,77 @@
             A curated selection of Benjamin Fanger's public appearances, interviews, and panel discussions across institutional, media, and industry platforms.
           </p>
 
-          <article class="press-speaking__lead">
-            <span class="press-speaking__source press-publication">FII INSTITUTE · PANEL DISCUSSION</span>
-            <h3 class="press-speaking__title press-headline">Is Private Credit a Bubble?</h3>
-            <p class="press-speaking__summary press-intro">Discussion on private credit market conditions and dislocation risk.</p>
-            <time class="press-speaking__date press-date" datetime="2025-11-06">06 Nov 2025</time>
-            <a class="press-speaking__link press-more" href="https://fii-institute.org/en/videos/is-private-credit-a-bubble-2/" target="_blank" rel="noopener noreferrer">View feature</a>
-          </article>
+          <div class="press-speaking__carousel" data-speaking-carousel>
+            <div class="press-speaking__viewport">
+              <article class="press-speaking__slide is-active">
+                <figure class="press-speaking__media">
+                  <img src="assets/images/press_hero.jpg" alt="FII Institute panel stage on private credit." loading="lazy" />
+                </figure>
+                <div class="press-speaking__content">
+                  <span class="press-speaking__source press-publication">FII INSTITUTE · PANEL DISCUSSION</span>
+                  <h3 class="press-speaking__title press-headline">Is Private Credit a Bubble?</h3>
+                  <p class="press-speaking__summary press-intro">Discussion on private credit market conditions and dislocation risk.</p>
+                  <time class="press-speaking__date press-date" datetime="2025-11-06">06 Nov 2025</time>
+                  <a class="press-speaking__link press-more" href="https://fii-institute.org/en/videos/is-private-credit-a-bubble-2/" target="_blank" rel="noopener noreferrer">View feature</a>
+                </div>
+              </article>
 
-          <div class="press-speaking__supporting">
-            <article class="press-speaking__item">
-              <span class="press-speaking__source press-publication">THE ECONOMIST · MONEY TALKS</span>
-              <h3 class="press-speaking__title press-headline">China's financial system: crouching tiger, broken LGFV</h3>
-              <time class="press-speaking__date press-date" datetime="2024-02-14">14 Feb 2024</time>
-              <a class="press-speaking__link" href="https://www.economist.com/podcasts/2024/02/14/chinas-financial-system-crouching-tiger-broken-lgfv" target="_blank" rel="noopener noreferrer">View coverage</a>
-            </article>
-            <article class="press-speaking__item">
-              <span class="press-speaking__source press-publication">PRIVATE DEBT INVESTOR · YOUTUBE</span>
-              <h3 class="press-speaking__title press-headline">ShoreVest on The Case for China</h3>
-              <time class="press-speaking__date press-date" datetime="2025-06-08">08 Jun 2025</time>
-              <a class="press-speaking__link" href="https://www.youtube.com/watch?v=K6hZcl1Lups" target="_blank" rel="noopener noreferrer">Watch interview</a>
-            </article>
-            <article class="press-speaking__item">
-              <span class="press-speaking__source press-publication">INVESTMENT MAGAZINE · PODCAST</span>
-              <h3 class="press-speaking__title press-headline">Ben Fanger on China's special situations</h3>
-              <time class="press-speaking__date press-date" datetime="2020-05-17">17 May 2020</time>
-              <a class="press-speaking__link" href="https://investmentmagazine.com.au/2020/05/ben-fanger-on-chinas-special-situations/" target="_blank" rel="noopener noreferrer">Listen</a>
-            </article>
-            <article class="press-speaking__item">
-              <span class="press-speaking__source press-publication">MILKEN INSTITUTE · GLOBAL CONFERENCE</span>
-              <h3 class="press-speaking__title press-headline">Chinese Market Culture: How Well Can You Know a Company?</h3>
-              <time class="press-speaking__date press-date" datetime="2013-05-01">01 May 2013</time>
-              <a class="press-speaking__link" href="https://milkeninstitute.org/video/chinese-market-culture-how-well-can-you-know-company" target="_blank" rel="noopener noreferrer">View panel</a>
-            </article>
+              <article class="press-speaking__slide">
+                <figure class="press-speaking__media">
+                  <img src="assets/images/homepage_hero2-2.jpg" alt="Editorial financial markets visual used for Economist feature." loading="lazy" />
+                </figure>
+                <div class="press-speaking__content">
+                  <span class="press-speaking__source press-publication">THE ECONOMIST · MONEY TALKS</span>
+                  <h3 class="press-speaking__title press-headline">China's financial system: crouching tiger, broken LGFV</h3>
+                  <time class="press-speaking__date press-date" datetime="2024-02-14">14 Feb 2024</time>
+                  <a class="press-speaking__link" href="https://www.economist.com/podcasts/2024/02/14/chinas-financial-system-crouching-tiger-broken-lgfv" target="_blank" rel="noopener noreferrer">View coverage</a>
+                </div>
+              </article>
+
+              <article class="press-speaking__slide">
+                <figure class="press-speaking__media">
+                  <img src="https://img.youtube.com/vi/K6hZcl1Lups/maxresdefault.jpg" alt="Private Debt Investor interview on YouTube." loading="lazy" />
+                </figure>
+                <div class="press-speaking__content">
+                  <span class="press-speaking__source press-publication">PRIVATE DEBT INVESTOR · YOUTUBE</span>
+                  <h3 class="press-speaking__title press-headline">ShoreVest on The Case for China</h3>
+                  <time class="press-speaking__date press-date" datetime="2025-06-08">08 Jun 2025</time>
+                  <a class="press-speaking__link" href="https://www.youtube.com/watch?v=K6hZcl1Lups" target="_blank" rel="noopener noreferrer">Watch interview</a>
+                </div>
+              </article>
+
+              <article class="press-speaking__slide">
+                <figure class="press-speaking__media">
+                  <img src="assets/images/benjamin_fanger.jpg" alt="Benjamin Fanger portrait for Investment Magazine podcast coverage." loading="lazy" />
+                </figure>
+                <div class="press-speaking__content">
+                  <span class="press-speaking__source press-publication">INVESTMENT MAGAZINE · PODCAST</span>
+                  <h3 class="press-speaking__title press-headline">Ben Fanger on China's special situations</h3>
+                  <time class="press-speaking__date press-date" datetime="2020-05-17">17 May 2020</time>
+                  <a class="press-speaking__link" href="https://investmentmagazine.com.au/2020/05/ben-fanger-on-chinas-special-situations/" target="_blank" rel="noopener noreferrer">Listen</a>
+                </div>
+              </article>
+
+              <article class="press-speaking__slide">
+                <figure class="press-speaking__media">
+                  <img src="assets/images/homepage_hero.jpg" alt="Conference atmosphere visual for Milken Institute panel." loading="lazy" />
+                </figure>
+                <div class="press-speaking__content">
+                  <span class="press-speaking__source press-publication">MILKEN INSTITUTE · GLOBAL CONFERENCE</span>
+                  <h3 class="press-speaking__title press-headline">Chinese Market Culture: How Well Can You Know a Company?</h3>
+                  <time class="press-speaking__date press-date" datetime="2013-05-01">01 May 2013</time>
+                  <a class="press-speaking__link" href="https://milkeninstitute.org/video/chinese-market-culture-how-well-can-you-know-company" target="_blank" rel="noopener noreferrer">View panel</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="press-speaking__controls">
+              <div class="press-speaking__nav" aria-label="Selected speaking navigation">
+                <button class="press-speaking__nav-btn" type="button" data-speaking-prev aria-label="Previous speaking engagement">←</button>
+                <button class="press-speaking__nav-btn" type="button" data-speaking-next aria-label="Next speaking engagement">→</button>
+              </div>
+              <p class="press-speaking__counter" data-speaking-counter aria-live="polite">01 / 05</p>
+            </div>
           </div>
 
           <a class="press-speaking__archive press-more" href="#press-archive">View full archive</a>
@@ -2024,6 +2128,48 @@
     </main>
 
     
+
+    <script>
+      (() => {
+        const carousel = document.querySelector("[data-speaking-carousel]");
+        if (!carousel) return;
+
+        const slides = Array.from(carousel.querySelectorAll(".press-speaking__slide"));
+        const prevButton = carousel.querySelector("[data-speaking-prev]");
+        const nextButton = carousel.querySelector("[data-speaking-next]");
+        const counter = carousel.querySelector("[data-speaking-counter]");
+
+        if (!slides.length || !prevButton || !nextButton || !counter) return;
+
+        let activeIndex = 0;
+        const total = slides.length;
+
+        const render = (index) => {
+          activeIndex = (index + total) % total;
+          slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === activeIndex;
+            slide.classList.toggle("is-active", isActive);
+            slide.setAttribute("aria-hidden", String(!isActive));
+          });
+          counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
+        };
+
+        prevButton.addEventListener("click", () => render(activeIndex - 1));
+        nextButton.addEventListener("click", () => render(activeIndex + 1));
+        carousel.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            render(activeIndex - 1);
+          }
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            render(activeIndex + 1);
+          }
+        });
+
+        render(0);
+      })();
+    </script>
 
     <script>
       (() => {
