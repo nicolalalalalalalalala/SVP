@@ -514,7 +514,7 @@
       .operations-map {
         border: 1px solid var(--rule);
         background: var(--xuan);
-        padding: clamp(22px, 2.4vw, 34px);
+        padding: clamp(20px, 2.2vw, 30px);
       }
       .geography-copy {
         display: grid;
@@ -526,15 +526,15 @@
         align-content: center;
         overflow: hidden;
         background: var(--xuan-light);
-        padding: clamp(8px, 1vw, 12px);
+        padding: clamp(4px, 0.6vw, 8px);
       }
       .operations-map-visual {
         position: relative;
         margin: 0;
         width: 100%;
-        aspect-ratio: 1.72 / 1;
+        aspect-ratio: 1.56 / 1;
         overflow: hidden;
-        border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+        border: 0;
         background: color-mix(in srgb, var(--xuan-light) 90%, #d7d2c4 10%);
       }
       .operations-map img {
@@ -543,8 +543,8 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 63% 52%;
-        transform: scale(1.06);
+        object-position: 61% 50%;
+        transform: scale(1.26);
         transform-origin: center;
         filter: none;
       }
@@ -575,31 +575,62 @@
         font-weight: 500;
         color: color-mix(in srgb, var(--ink-green-dark) 90%, #122823 10%);
         white-space: nowrap;
+        text-shadow: 0 0 0.5px var(--xuan-light);
+      }
+      .op-marker > span::after {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 50%;
+        width: 6px;
+        border-top: 1px solid color-mix(in srgb, var(--ink-green-dark) 34%, transparent);
+        opacity: 0;
       }
       .op-marker--guangzhou {
         --dot: #C93B2A;
-        left: 66.6%;
-        top: 49.7%;
+        left: 67.3%;
+        top: 52.9%;
+      }
+      .op-marker--guangzhou > span {
+        left: 12px;
+        top: -12px;
       }
       .op-marker--shanghai {
         --dot: #3D7070;
-        left: 68.5%;
-        top: 43.4%;
+        left: 69.5%;
+        top: 46.8%;
+      }
+      .op-marker--shanghai > span {
+        left: 14px;
+        top: -17px;
+      }
+      .op-marker--shanghai > span::after {
+        opacity: 1;
+        width: 10px;
       }
       .op-marker--hong-kong {
         --dot: #2E4A18;
-        left: 66.9%;
-        top: 52.2%;
+        left: 67.8%;
+        top: 54.9%;
+      }
+      .op-marker--hong-kong > span {
+        left: 14px;
+        top: 4px;
+      }
+      .op-marker--hong-kong > span::after {
+        opacity: 1;
+        width: 10px;
       }
       .op-marker--california {
         --dot: #4f7273;
-        left: 24.1%;
-        top: 43.8%;
+        left: 17.4%;
+        top: 41.4%;
       }
       .op-marker--california > span {
-        left: auto;
-        right: 11px;
-        text-align: right;
+        left: 10px;
+        right: auto;
+        top: -12px;
+        text-align: left;
       }
 
       .metrics-shell {
@@ -934,11 +965,11 @@
           padding: 20px 0 0;
         }
         .operations-map-visual {
-          aspect-ratio: 1.62 / 1;
+          aspect-ratio: 1.5 / 1;
         }
         .operations-map img {
-          object-position: 62% 52%;
-          transform: scale(1.1);
+          object-position: 60% 50%;
+          transform: scale(1.32);
         }
       }
       @media (max-width: 767px) {
@@ -974,14 +1005,14 @@
           width: 100%;
         }
         .operations-map {
-          padding: clamp(6px, 1.6vw, 10px);
+          padding: clamp(4px, 1.2vw, 8px);
         }
         .operations-map-visual {
-          aspect-ratio: 1.38 / 1;
+          aspect-ratio: 1.34 / 1;
         }
         .operations-map img {
-          object-position: 62% 53%;
-          transform: scale(1.15);
+          object-position: 60% 51%;
+          transform: scale(1.38);
         }
         .op-marker::before {
           width: 6px;
@@ -994,7 +1025,8 @@
           top: -8px;
         }
         .op-marker--california > span {
-          right: 10px;
+          left: 10px;
+          right: auto;
         }
         /* ── Mobile pillar card — hard reset ── */
         /* Kill all inherited vertical spacing; rebuild with per-element margins */
