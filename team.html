@@ -99,8 +99,9 @@
       }
 
       .pagehero {
+        --pagehero-inline-pad: clamp(18px, 3.6vw, 52px);
         min-height: 340px;
-        padding: var(--sv-hero-top-space) var(--site-page-gutter) var(--sv-hero-bottom-space) !important;
+        padding: var(--sv-hero-top-space) var(--pagehero-inline-pad) var(--sv-hero-bottom-space) !important;
         border-bottom: 1px solid var(--rule);
         background: transparent;
         display: flex;
@@ -112,6 +113,10 @@
         margin: 0 !important;
         padding: 0 !important;
       }
+      .pagehero__intro {
+        width: min(980px, 100%);
+        margin-inline: 0;
+      }
       h1 {
         font-family: var(--team-type-heading);
         font-size: clamp(42px, 6.2vw, 64px);
@@ -121,7 +126,7 @@
         letter-spacing: 0.005em;
         text-transform: none;
         margin-bottom: 14px;
-        max-width: 680px;
+        max-width: 860px;
       }
       .pagehero p {
         max-width: 640px;
@@ -132,7 +137,7 @@
         margin-top: 8px;
       }
       .pagehero p.pagehero__fullwidth {
-        max-width: none;
+        max-width: 860px;
       }
 
       .founder-note {
@@ -682,11 +687,13 @@
 
     <section class="pagehero">
       <div class="wrap">
-        <div class="eyebrow">TEAM</div>
-        <h1 class="type-display-hero">Investment and Operating Team</h1>
-        <p class="pagehero__fullwidth">
-          ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
-        </p>
+        <div class="pagehero__intro">
+          <div class="eyebrow">TEAM</div>
+          <h1 class="type-display-hero">Investment and Operating Team</h1>
+          <p class="pagehero__fullwidth">
+            ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
+          </p>
+        </div>
       </div>
     </section>
 
