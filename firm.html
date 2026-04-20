@@ -523,8 +523,8 @@
       }
       .operations-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: clamp(18px, 2.2vw, 30px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(16px, 2vw, 24px);
         align-items: stretch;
       }
       .geography-copy,
@@ -545,12 +545,13 @@
         border: 0;
         background: transparent;
         padding: 0;
+        height: 100%;
       }
       .operations-map-visual {
         position: relative;
         margin: 0;
         width: 100%;
-        aspect-ratio: 1.44 / 1;
+        height: 100%;
         overflow: hidden;
         border: 0;
         background: #e7e0d2;
@@ -994,6 +995,7 @@
           max-width: none;
         }
         .operations-map-visual {
+          height: auto;
           aspect-ratio: 1.38 / 1;
         }
         .operations-map img {
@@ -1037,6 +1039,7 @@
           padding: 0;
         }
         .operations-map-visual {
+          height: auto;
           aspect-ratio: 1.26 / 1;
         }
         .operations-map img {
