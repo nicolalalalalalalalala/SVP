@@ -1830,6 +1830,10 @@ body.homepage #about .about__intro--overview .about__body p {
   text-wrap: pretty;
   background: transparent !important;
 }
+body.homepage #strategy .strat__hd {
+  grid-template-columns: minmax(280px, 3.2fr) minmax(0, 9.8fr);
+  gap: clamp(34px, 4vw, 56px);
+}
 body.homepage #principles .about__body {
   max-width: var(--home-box-copy-max);
 }
@@ -1839,8 +1843,14 @@ body.homepage #principles .about__body p {
   background: transparent !important;
 }
 body.homepage #strategy .strat__intro {
-  max-width: var(--home-box-copy-max);
+  max-width: min(112ch, 100%);
   justify-self: stretch;
+  width: 100%;
+  background: transparent !important;
+}
+body.homepage #strategy .strat__intro p {
+  max-width: min(112ch, 100%) !important;
+  text-wrap: pretty;
   background: transparent !important;
 }
 body.homepage #stats :is(.stats__transition, .stats__context) {
