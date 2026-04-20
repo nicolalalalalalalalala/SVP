@@ -133,21 +133,26 @@
         padding: var(--section-space-tight) 0;
       }
       .hero .wrap {
-        max-width: min(1780px, 100%);
-        margin-left: 0;
-        margin-right: auto;
-        padding-left: clamp(0px, 0.45vw, 8px);
-        padding-right: clamp(24px, 3.2vw, 64px);
+        max-width: min(1680px, calc(100vw - (2 * var(--site-page-margin)))) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
       .hero-shell {
         border: 1px solid var(--rule);
         background: var(--xuan);
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
       .hero-row {
         display: grid;
         grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
         gap: clamp(10px, 1.2vw, 18px);
-        padding: clamp(30px, 3.4vw, 50px) clamp(16px, 1.6vw, 28px) clamp(30px, 3.4vw, 50px) clamp(8px, 0.8vw, 14px);
+        padding: clamp(30px, 3.4vw, 50px) clamp(24px, 2.2vw, 36px) clamp(30px, 3.4vw, 50px) clamp(18px, 1.6vw, 28px);
       }
       .hero-title-block {
         display: grid;
@@ -949,8 +954,11 @@
       }
       @media (max-width: 860px) {
         .hero .wrap {
-          margin-left: auto;
-          padding-right: var(--pad);
+          max-width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: var(--pad) !important;
+          padding-right: var(--pad) !important;
         }
         .hero-row,
         .ops-intro,
