@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Investment Magazine Podcast - Special situations, recovery rates, and Chinese distressed debt</title>
+  <desc id="desc">A podcast conversation on special situations and underwriting recovery outcomes in China. 17 May 2020.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <style>
+      .kicker { font: 500 38px 'Helvetica Neue', Arial, sans-serif; letter-spacing: 1.5px; fill: #c9a961; }
+      .title  { font: 700 72px 'Helvetica Neue', Arial, sans-serif; fill: #f8fafc; }
+      .body   { font: 400 44px 'Helvetica Neue', Arial, sans-serif; fill: #e2e8f0; }
+      .date   { font: 500 38px 'Helvetica Neue', Arial, sans-serif; fill: #c9a961; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect x="84" y="84" width="1032" height="1032" fill="none" stroke="#c9a961" stroke-width="4"/>
+
+  <text x="120" y="170" class="kicker">INVESTMENT MAGAZINE · PODCAST</text>
+
+  <text x="120" y="290" class="title">
+    <tspan x="120" dy="0">Special situations, recovery rates,</tspan>
+    <tspan x="120" dy="86">and Chinese distressed debt</tspan>
+  </text>
+
+  <text x="120" y="540" class="body">
+    <tspan x="120" dy="0">A podcast conversation on special situations and</tspan>
+    <tspan x="120" dy="60">underwriting recovery outcomes in China.</tspan>
+  </text>
+
+  <text x="120" y="1046" class="date">17 May 2020</text>
+</svg>
