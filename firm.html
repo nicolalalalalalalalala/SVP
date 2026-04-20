@@ -530,7 +530,7 @@
         display: grid;
         align-content: center;
         overflow: hidden;
-        background: var(--xuan-light);
+        background: color-mix(in srgb, var(--xuan-light) 86%, #d6cebe 14%);
         padding: clamp(4px, 0.6vw, 8px);
       }
       .operations-map-visual {
@@ -540,7 +540,7 @@
         aspect-ratio: 1.56 / 1;
         overflow: hidden;
         border: 0;
-        background: color-mix(in srgb, var(--xuan-light) 90%, #d7d2c4 10%);
+        background: #e7e0d2;
       }
       .operations-map img {
         position: absolute;
@@ -551,7 +551,8 @@
         object-position: 61% 50%;
         transform: scale(1.26);
         transform-origin: center;
-        filter: none;
+        opacity: 0.9;
+        filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
       }
       .op-marker {
         --dot: #355f67;
@@ -578,7 +579,7 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         font-weight: 500;
-        color: color-mix(in srgb, var(--ink-green-dark) 90%, #122823 10%);
+        color: #223a2c;
         white-space: nowrap;
         text-shadow: 0 0 0.5px var(--xuan-light);
       }
@@ -627,7 +628,7 @@
         width: 10px;
       }
       .op-marker--california {
-        --dot: #4f7273;
+        --dot: #4A6D6D;
         left: 17.4%;
         top: 41.4%;
       }
