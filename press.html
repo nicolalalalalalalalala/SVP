@@ -1018,6 +1018,11 @@
     gap: 24px;
   }
 
+  .press-archive-stack {
+    display: grid;
+    gap: 8px;
+  }
+
   .press-overview,
   .press-toolbar,
   .press-list {
@@ -1057,6 +1062,8 @@
     box-shadow: none;
     display: grid;
     gap: 10px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .press-row {
@@ -1264,6 +1271,10 @@
   @media (max-width: 767px) {
     .press-shell {
       gap: 16px;
+    }
+
+    .press-archive-stack {
+      gap: 6px;
     }
 
     .press-hero {
@@ -1523,30 +1534,31 @@
 
           <a class="press-speaking__archive press-more" href="#press-archive">View full archive</a>
         </section>
-        <div class="press-toolbar" aria-label="Press archive controls">
-          <div class="press-toolbar__meta">
-            <p class="press-toolbar__label">Archive</p>
-            <p class="press-toolbar__count" id="press-results-count" aria-live="polite"></p>
-          </div>
-          <div class="press-filters" id="press-filters" aria-label="Press archive filters">
-            <div class="press-filter-group">
-              <label class="press-filter-label" for="press-year-select">Year</label>
-              <select class="press-filter-select" id="press-year-select" aria-label="Filter by year">
-                <option value="All">All Years</option>
-              </select>
+        <div class="press-archive-stack">
+          <div class="press-toolbar" aria-label="Press archive controls">
+            <div class="press-toolbar__meta">
+              <p class="press-toolbar__label">Archive</p>
+              <p class="press-toolbar__count" id="press-results-count" aria-live="polite"></p>
             </div>
-            <div class="press-filter-group">
-              <label class="press-filter-label" for="press-publication-select">Publication</label>
-              <select class="press-filter-select" id="press-publication-select" aria-label="Filter by publication">
-                <option value="All">All Publications</option>
-              </select>
+            <div class="press-filters" id="press-filters" aria-label="Press archive filters">
+              <div class="press-filter-group">
+                <label class="press-filter-label" for="press-year-select">Year</label>
+                <select class="press-filter-select" id="press-year-select" aria-label="Filter by year">
+                  <option value="All">All Years</option>
+                </select>
+              </div>
+              <div class="press-filter-group">
+                <label class="press-filter-label" for="press-publication-select">Publication</label>
+                <select class="press-filter-select" id="press-publication-select" aria-label="Filter by publication">
+                  <option value="All">All Publications</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
-        <section
-          class="press-list"
-          id="press-archive"
-          aria-label="ShoreVest press archive">
+          <section
+            class="press-list"
+            id="press-archive"
+            aria-label="ShoreVest press archive">
           <article class="press-row">
             <a
               href="https://www.youtube.com/watch?v=t9BHji_UQlA"
@@ -2123,7 +2135,8 @@
               <span class="press-headline">Doing your homework pays in Chinese distressed debt</span>
               <time class="press-date" datetime="2008-08-11">11 Aug 2008</time></a>
           </article>
-        </section>
+          </section>
+        </div>
         <div class="press-more-wrap">
           <button
             class="press-more"
