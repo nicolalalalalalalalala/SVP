@@ -1834,8 +1834,13 @@ body.homepage #strategy .strat__intro {
   justify-self: stretch;
   background: transparent !important;
 }
-body.homepage #stats :is(.stats__transition, .stats__context, .stats__note) {
+body.homepage #stats :is(.stats__transition, .stats__context) {
   max-width: var(--home-box-copy-max);
+}
+body.homepage #stats .stats__note {
+  width: 100%;
+  max-width: none;
+  margin-bottom: clamp(24px, 3vw, 36px);
 }
 body.homepage #about .about__intro--overview > div:first-child,
 body.homepage #principles .principles__intro > div:first-child,
@@ -2218,7 +2223,7 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   .stats__note {
     margin-top:9px;
-    margin-bottom:16px;
+    margin-bottom:20px;
     font-size:8px;
     letter-spacing:.01em;
     line-height:1.4;
