@@ -1810,6 +1810,19 @@ body.homepage #about .about__intro--overview,
 body.homepage #strategy .strat__hd {
   gap: var(--home-intro-gap);
 }
+body.homepage #about .about__intro--overview {
+  grid-template-columns: minmax(280px, 3.9fr) minmax(0, 8.1fr);
+  gap: clamp(40px, 4.2vw, 64px);
+}
+body.homepage #about .about__intro--overview .about__body {
+  justify-self: stretch;
+  width: 100%;
+  max-width: 80ch;
+}
+body.homepage #about .about__intro--overview .about__body p {
+  max-width: 80ch !important;
+  background: transparent !important;
+}
 body.homepage #about .about__intro--overview > div:first-child,
 body.homepage #principles .principles__intro > div:first-child,
 body.homepage #strategy .strat__lead {
