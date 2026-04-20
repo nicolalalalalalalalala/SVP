@@ -408,6 +408,12 @@
         justify-content: center;
         max-width: var(--content);
         margin-top: 16px;
+        padding-bottom: clamp(20px, 2.2vw, 30px);
+      }
+
+      body.press-page main + footer.sv-footer,
+      body.press-page main + .sv-footer {
+        margin-top: 0 !important;
       }
       .press-more {
         font-size: 10px;
