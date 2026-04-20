@@ -1547,6 +1547,9 @@ body.homepage {
   --home-copy-max: 68ch;
   --home-heading-gap: clamp(18px, 2vw, 24px);
   --home-intro-gap: clamp(52px, 6vw, 88px);
+  --home-intro-left-col: minmax(280px, 4fr);
+  --home-intro-right-col: minmax(0, 8fr);
+  --home-intro-copy-max: 74ch;
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1798,29 +1801,36 @@ body.homepage #principles .about__body,
 body.homepage #strategy .strat__intro {
   max-width: var(--home-copy-max);
 }
-body.homepage #principles .about__body {
-  max-width: 80ch;
-}
-body.homepage #principles .about__body p {
-  max-width: 80ch !important;
-  text-wrap: pretty;
-  background: transparent !important;
-}
 body.homepage #about .about__intro--overview,
+body.homepage #principles .principles__intro,
 body.homepage #strategy .strat__hd {
+  grid-template-columns: var(--home-intro-left-col) var(--home-intro-right-col);
   gap: var(--home-intro-gap);
 }
 body.homepage #about .about__intro--overview {
-  grid-template-columns: minmax(280px, 3.9fr) minmax(0, 8.1fr);
-  gap: clamp(40px, 4.2vw, 64px);
+  gap: var(--home-intro-gap);
 }
 body.homepage #about .about__intro--overview .about__body {
   justify-self: stretch;
   width: 100%;
-  max-width: 80ch;
+  max-width: var(--home-intro-copy-max);
 }
 body.homepage #about .about__intro--overview .about__body p {
-  max-width: 80ch !important;
+  max-width: var(--home-intro-copy-max) !important;
+  text-wrap: pretty;
+  background: transparent !important;
+}
+body.homepage #principles .about__body {
+  max-width: var(--home-intro-copy-max);
+}
+body.homepage #principles .about__body p {
+  max-width: var(--home-intro-copy-max) !important;
+  text-wrap: pretty;
+  background: transparent !important;
+}
+body.homepage #strategy .strat__intro {
+  max-width: var(--home-intro-copy-max);
+  justify-self: stretch;
   background: transparent !important;
 }
 body.homepage #about .about__intro--overview > div:first-child,
