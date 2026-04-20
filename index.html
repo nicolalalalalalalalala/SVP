@@ -1798,6 +1798,9 @@ body.homepage #strategy .strat__hd {
   background: transparent;
   box-shadow: none;
 }
+body.homepage #about .home-section-shell {
+  padding-inline-end: clamp(10px, 1.6vw, 24px) !important;
+}
 body.homepage #about .about__body,
 body.homepage #principles .about__body,
 body.homepage #strategy .strat__intro {
@@ -1810,15 +1813,16 @@ body.homepage #strategy .strat__hd {
   gap: var(--home-intro-gap);
 }
 body.homepage #about .about__intro--overview {
-  gap: var(--home-intro-gap);
+  grid-template-columns: minmax(280px, 3.2fr) minmax(0, 9.8fr);
+  gap: clamp(34px, 4vw, 56px);
 }
 body.homepage #about .about__intro--overview .about__body {
   justify-self: stretch;
   width: 100%;
-  max-width: var(--home-box-copy-max);
+  max-width: min(96ch, 100%);
 }
 body.homepage #about .about__intro--overview .about__body p {
-  max-width: var(--home-box-copy-max) !important;
+  max-width: min(96ch, 100%) !important;
   text-wrap: pretty;
   background: transparent !important;
 }
