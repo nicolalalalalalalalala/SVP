@@ -1544,12 +1544,13 @@ body.homepage .home-hero {
 body.homepage {
   --home-frame-max: min(1320px, calc(var(--max) + 120px));
   --home-frame-pad: clamp(18px, 3vw, 42px);
-  --home-copy-max: 68ch;
+  --home-box-copy-max: min(82ch, 100%);
+  --home-copy-max: var(--home-box-copy-max);
   --home-heading-gap: clamp(18px, 2vw, 24px);
   --home-intro-gap: clamp(52px, 6vw, 88px);
   --home-intro-left-col: minmax(280px, 4fr);
   --home-intro-right-col: minmax(0, 8fr);
-  --home-intro-copy-max: 74ch;
+  --home-intro-copy-max: var(--home-box-copy-max);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1799,7 +1800,7 @@ body.homepage #strategy .strat__hd {
 body.homepage #about .about__body,
 body.homepage #principles .about__body,
 body.homepage #strategy .strat__intro {
-  max-width: var(--home-copy-max);
+  max-width: var(--home-box-copy-max);
 }
 body.homepage #about .about__intro--overview,
 body.homepage #principles .principles__intro,
@@ -1813,25 +1814,28 @@ body.homepage #about .about__intro--overview {
 body.homepage #about .about__intro--overview .about__body {
   justify-self: stretch;
   width: 100%;
-  max-width: var(--home-intro-copy-max);
+  max-width: var(--home-box-copy-max);
 }
 body.homepage #about .about__intro--overview .about__body p {
-  max-width: var(--home-intro-copy-max) !important;
+  max-width: var(--home-box-copy-max) !important;
   text-wrap: pretty;
   background: transparent !important;
 }
 body.homepage #principles .about__body {
-  max-width: var(--home-intro-copy-max);
+  max-width: var(--home-box-copy-max);
 }
 body.homepage #principles .about__body p {
-  max-width: var(--home-intro-copy-max) !important;
+  max-width: var(--home-box-copy-max) !important;
   text-wrap: pretty;
   background: transparent !important;
 }
 body.homepage #strategy .strat__intro {
-  max-width: var(--home-intro-copy-max);
+  max-width: var(--home-box-copy-max);
   justify-self: stretch;
   background: transparent !important;
+}
+body.homepage #stats :is(.stats__transition, .stats__context, .stats__note) {
+  max-width: var(--home-box-copy-max);
 }
 body.homepage #about .about__intro--overview > div:first-child,
 body.homepage #principles .principles__intro > div:first-child,
