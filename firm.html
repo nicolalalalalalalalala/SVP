@@ -554,21 +554,34 @@
         border: 0;
         background: #e7e0d2;
       }
+      .operations-map-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("assets/images/world-pacific.svg");
+        background-repeat: repeat-x;
+        background-size: auto 168%;
+        /* Seam-crossing Pacific wrap: keeps California on the left and China on the right. */
+        background-position: 79% 49.5%;
+        opacity: 0.9;
+        filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
+      }
       .operations-map img {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
+        opacity: 0;
         object-fit: cover;
         object-position: 57% 49.5%;
         transform: scale(1.68);
         transform-origin: center;
-        opacity: 0.9;
         filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
       }
       .op-marker {
         --dot: #355f67;
         position: absolute;
+        z-index: 1;
         transform: translate(-50%, -50%);
         pointer-events: none;
       }
@@ -995,6 +1008,10 @@
         .operations-map-visual {
           aspect-ratio: 1.38 / 1;
         }
+        .operations-map-visual::before {
+          background-size: auto 174%;
+          background-position: 79% 49.5%;
+        }
         .operations-map img {
           object-position: 56.5% 49.5%;
           transform: scale(1.74);
@@ -1037,6 +1054,10 @@
         }
         .operations-map-visual {
           aspect-ratio: 1.26 / 1;
+        }
+        .operations-map-visual::before {
+          background-size: auto 178%;
+          background-position: 78.5% 50%;
         }
         .operations-map img {
           object-position: 56% 50%;
