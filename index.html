@@ -1814,14 +1814,23 @@ body.homepage #cdd .wordmark__title {
   font-family: var(--serif) !important;
   font-size: clamp(62px, 7vw, 84px) !important;
   font-style: normal !important;
-  font-weight: 700 !important;
+  font-weight: 300 !important;
   line-height: 0.88 !important;
-  letter-spacing: -0.024em !important;
+  letter-spacing: -0.016em !important;
   color: var(--cdd-surface) !important;
+  background: transparent !important;
+}
+body.homepage #cdd .wordmark__title .cdd-headline-main {
+  font-weight: 300 !important;
+  color: var(--cdd-surface) !important;
+  background: transparent !important;
 }
 body.homepage #cdd .wordmark__title em {
-  color: var(--cdd-signal) !important;
+  color: #C93B2A !important;
+  -webkit-text-fill-color: #C93B2A !important;
   font-style: italic !important;
+  font-weight: 600 !important;
+  background: transparent !important;
 }
 body.homepage #cdd .cdd-editorial__kicker {
   color: #faf6ee !important;
@@ -2673,7 +2682,7 @@ body.homepage #cdd .cdd-editorial__lede {
       <div class="cdd-editorial__intro">
         <div>
           <div class="eyebrow eyebrow--ghost cdd-editorial__kicker cdd-franchise__eyebrow rev">ShoreVest Research Franchise · Established 2018</div>
-          <h2 class="wordmark__title cdd-franchise__headline type-display-hero rev d1">CHINA DEBT <em>DYNAMICS.</em></h2>
+          <h2 class="wordmark__title cdd-franchise__headline type-display-hero rev d1"><span class="cdd-headline-main">CHINA DEBT</span> <em>DYNAMICS.</em></h2>
           <p class="cdd-editorial__lede cdd-franchise__lede rev d2">An institutional research series on China’s private credit markets, policy trajectory, and the legal, structural, and enforcement realities that determine investor recoveries.</p>
         </div>
         <div class="cdd-editorial__brand rev d1">
