@@ -2147,6 +2147,9 @@
 
         let activeIndex = 0;
         const total = slides.length;
+        const autoplayDelayMs = 5000;
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let autoplayTimer = null;
 
         const render = (index) => {
           activeIndex = (index + total) % total;
@@ -2158,20 +2161,51 @@
           counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
         };
 
-        prevButton.addEventListener("click", () => render(activeIndex - 1));
-        nextButton.addEventListener("click", () => render(activeIndex + 1));
+        const stopAutoplay = () => {
+          if (!autoplayTimer) return;
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        };
+
+        const startAutoplay = () => {
+          if (reduceMotion || autoplayTimer) return;
+          autoplayTimer = window.setInterval(() => render(activeIndex + 1), autoplayDelayMs);
+        };
+
+        const goPrevious = () => {
+          render(activeIndex - 1);
+          stopAutoplay();
+          startAutoplay();
+        };
+
+        const goNext = () => {
+          render(activeIndex + 1);
+          stopAutoplay();
+          startAutoplay();
+        };
+
+        prevButton.addEventListener("click", goPrevious);
+        nextButton.addEventListener("click", goNext);
+        carousel.addEventListener("mouseenter", stopAutoplay);
+        carousel.addEventListener("mouseleave", startAutoplay);
+        carousel.addEventListener("focusin", stopAutoplay);
+        carousel.addEventListener("focusout", (event) => {
+          if (carousel.contains(event.relatedTarget)) return;
+          startAutoplay();
+        });
         carousel.addEventListener("keydown", (event) => {
           if (event.key === "ArrowLeft") {
             event.preventDefault();
-            render(activeIndex - 1);
+            goPrevious();
           }
           if (event.key === "ArrowRight") {
             event.preventDefault();
-            render(activeIndex + 1);
+            goNext();
           }
         });
 
         render(0);
+        startAutoplay();
       })();
     </script>
 
