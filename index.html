@@ -1910,6 +1910,17 @@ body.homepage #cdd > .wrap {
   position: relative;
   z-index: 1;
 }
+@media (min-width: 1025px) {
+  body.homepage #cdd > .wrap.cdd-editorial {
+    max-width: min(1440px, calc(100vw - (var(--pad) * 2))) !important;
+    padding-inline: clamp(18px, 2.2vw, 30px) !important;
+  }
+  body.homepage #cdd .cdd-feature__top,
+  body.homepage #cdd .cdd-feature__body,
+  body.homepage #cdd .cdd-feature__footer {
+    padding-inline: clamp(8px, 1vw, 14px);
+  }
+}
 body.homepage #cdd .home-section-shell--panel {
   border-color: transparent;
   background: transparent;
