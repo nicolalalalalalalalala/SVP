@@ -489,7 +489,7 @@ body.homepage .stats {
 }
 
 body.homepage #strategy .sg {
-  padding-top: clamp(26px, 2.8vw, 38px);
+  padding-top: clamp(8px, 0.8vw, 12px);
 }
 
 body.homepage #strategy .sg:nth-child(2) {
