@@ -65,6 +65,8 @@ section { position:relative; }
 }
 .eyebrow::after { content:''; flex:0 0 36px; height:1px; background:currentColor; }
 .eyebrow--red { color:var(--red); }
+.eyebrow--ghost { color: rgba(250, 246, 238, 0.68); }
+.eyebrow--ghost::after { background: rgba(250, 246, 238, 0.62); }
 h1 { font-family:var(--serif); font-weight:400; line-height:1.04; }
 h2 { font-family:var(--serif); font-weight:400; line-height:1.08; }
 h2 em { font-style:italic; }
@@ -1682,8 +1684,7 @@ body.homepage .sg__title {
 body.homepage #stats .stats__eyebrow,
 body.homepage #about .eyebrow,
 body.homepage #principles .eyebrow,
-body.homepage #strategy .eyebrow,
-body.homepage #cdd .eyebrow {
+body.homepage #strategy .eyebrow {
   color: #C93B2A !important;
 }
 body.homepage #principles {
@@ -1749,8 +1750,8 @@ body.homepage #cdd {
   --cdd-structure: rgba(242, 236, 216, 0.46);
   --cdd-text: #faf6ee;
   --cdd-muted: rgba(242, 236, 216, 0.76);
-  --cdd-signal: #e8998f;
-  --cdd-signal-deep: #f2d4cd;
+  --cdd-signal: #c93b2a;
+  --cdd-signal-deep: #9e2f22;
   position: relative;
   overflow: hidden;
   background:
@@ -1779,6 +1780,36 @@ body.homepage #cdd .cdd-brand-en,
 body.homepage #cdd .cdd-brand-cn,
 body.homepage #cdd .cdd-editorial__lede {
   color: rgba(250, 246, 238, 0.92);
+}
+body.homepage #cdd .wordmark__title {
+  font-family: var(--serif) !important;
+  font-size: clamp(62px, 7vw, 84px) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.024em !important;
+  color: var(--cdd-surface) !important;
+}
+body.homepage #cdd .wordmark__title em {
+  color: var(--cdd-signal) !important;
+  font-style: italic !important;
+}
+body.homepage #cdd .cdd-editorial__kicker {
+  color: #faf6ee !important;
+  font-size: 11.4px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+}
+body.homepage #cdd .cdd-editorial__kicker::after {
+  background: #faf6ee !important;
+}
+body.homepage #cdd .cdd-editorial__lede {
+  max-width: 490px !important;
+  font-family: var(--serif) !important;
+  font-size: 17px !important;
+  line-height: 1.72 !important;
+  color: rgba(250, 246, 238, 0.82) !important;
 }
 @media (max-width: 900px) {
   body.homepage .principles__intro,
@@ -2102,21 +2133,22 @@ body.homepage #cdd .cdd-editorial__lede {
     padding-top: 0;
   }
   .cdd-editorial__kicker {
-    font-size: 9px;
-    letter-spacing: .07em;
+    font-size: 11.4px;
+    letter-spacing: .2em;
     line-height: 1.5;
     margin-bottom: 14px;
   }
-  .cdd-editorial__title {
-    font-size: clamp(36px, 10.2vw, 52px);
+  #cdd .wordmark__title {
+    font-size: clamp(42px, 13vw, 60px);
     line-height: .92;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.024em;
     margin-bottom: 10px;
   }
   .cdd-editorial__lede {
-    max-width: 40ch;
-    font-size: 14px;
-    line-height: 1.62;
+    max-width: 31ch;
+    font-size: 17px;
+    line-height: 1.72;
+    color: rgba(255, 255, 255, 0.56);
   }
   .cdd-feature {
     border-color: color-mix(in srgb, var(--cdd-structure) 20%, transparent);
@@ -2587,7 +2619,7 @@ body.homepage #cdd .cdd-editorial__lede {
     <div class="cdd-editorial__card">
       <div class="cdd-editorial__intro">
         <div>
-          <div class="eyebrow cdd-editorial__kicker rev">INSIGHTS</div>
+          <div class="eyebrow eyebrow--ghost cdd-editorial__kicker rev">INSIGHTS</div>
           <h2 class="wordmark__title type-display-hero rev d1">China Debt <em>DYNAMICS.</em></h2>
           <p class="cdd-editorial__lede rev d2">An institutional research series on China’s private credit markets, policy trajectory, and the legal, structural, and enforcement realities that determine investor recoveries.</p>
         </div>
