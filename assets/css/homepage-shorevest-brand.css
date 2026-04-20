@@ -907,9 +907,10 @@ body.homepage .home-hero__support {
 }
 
 body.homepage .home-hero__cta-arrow {
-  border-color: rgba(250, 246, 238, 0.82) !important;
+  border-color: rgba(250, 246, 238, 0.72) !important;
   background: transparent !important;
   color: #faf6ee !important;
+  box-shadow: 0 0 0 1px rgba(18, 42, 42, 0.22);
   transition: background .16s ease-out, border-color .16s ease-out, color .16s ease-out, transform .16s ease-out;
 }
 
