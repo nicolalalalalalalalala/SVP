@@ -1715,13 +1715,15 @@ body.homepage #strategy .eyebrow {
 }
 body.homepage #principles {
   padding-top: clamp(36px, 4.5vw, 60px);
+  padding-bottom: clamp(92px, 10vw, 138px);
 }
 body.homepage .principles__intro {
   display: grid;
   grid-template-columns: minmax(280px, 4.35fr) minmax(0, 7.65fr);
   gap: clamp(52px, 6vw, 88px);
-  border-top: 1px solid var(--rule);
-  padding-top: clamp(38px, 4.2vw, 54px);
+  border-top: 0;
+  padding-top: clamp(8px, 1vw, 14px);
+  margin-bottom: clamp(30px, 3.6vw, 50px);
 }
 body.homepage .principles__text p {
   max-width: 66ch;
@@ -1729,7 +1731,7 @@ body.homepage .principles__text p {
   line-height: 1.7;
 }
 body.homepage .about__cols {
-  margin-top: clamp(26px, 3.3vw, 40px) !important;
+  margin-top: clamp(12px, 2vw, 22px) !important;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(22px, 2.3vw, 30px);
@@ -1739,8 +1741,28 @@ body.homepage .ac {
   border: 1px solid color-mix(in srgb, var(--rule) 88%, transparent);
   padding: 26px 22px;
   min-width: 0;
+  background: color-mix(in srgb, var(--paper-light) 72%, transparent);
 }
 body.homepage .ac + .ac { border-left: 1px solid color-mix(in srgb, var(--rule) 88%, transparent); }
+body.homepage #about .about__intro--overview,
+body.homepage #principles .principles__intro,
+body.homepage #strategy .strat__hd {
+  background: transparent;
+  box-shadow: none;
+}
+body.homepage #about .about__body,
+body.homepage #principles .about__body,
+body.homepage #strategy .strat__intro {
+  max-width: 70ch;
+}
+body.homepage #stats,
+body.homepage #principles .wrap,
+body.homepage #strategy .wrap {
+  max-width: min(1320px, calc(var(--max) + 120px));
+}
+body.homepage #stats .hero__stats {
+  max-width: 1140px;
+}
 body.homepage #cdd .cdd-editorial__card {
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
   background: linear-gradient(180deg, color-mix(in srgb, #0f2206 64%, transparent) 0%, color-mix(in srgb, #16300f 70%, transparent) 100%);
