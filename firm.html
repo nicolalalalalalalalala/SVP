@@ -133,7 +133,7 @@
         padding: var(--section-space-tight) 0;
       }
       .hero .wrap {
-        max-width: calc(100vw - (2 * var(--site-page-margin))) !important;
+        max-width: min(1380px, calc(100vw - (2 * clamp(16px, 2.2vw, 34px)))) !important;
         margin-left: auto !important;
         margin-right: auto !important;
         padding-left: 0 !important;
@@ -152,7 +152,7 @@
         display: grid;
         grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
         gap: clamp(10px, 1.2vw, 18px);
-        padding: clamp(30px, 3.4vw, 50px) clamp(28px, 2.4vw, 40px);
+        padding: clamp(30px, 3.4vw, 50px) clamp(30px, 2.8vw, 52px);
       }
       .hero-title-block {
         display: grid;
@@ -175,7 +175,7 @@
       }
       .hero-body {
         border-left: 1px solid var(--rule);
-        padding-left: clamp(10px, 1vw, 16px);
+        padding-left: clamp(12px, 1.2vw, 20px);
         display: grid;
         gap: 16px;
         align-content: center;
