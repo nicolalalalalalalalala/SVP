@@ -529,11 +529,11 @@
       }
       .geography-copy,
       .operations-map {
-        border: 1px solid var(--rule);
         background: var(--xuan);
         padding: clamp(20px, 2.2vw, 30px);
       }
       .geography-copy {
+        border: 1px solid var(--rule);
         display: grid;
         align-content: center;
         gap: 14px;
@@ -542,8 +542,9 @@
         display: grid;
         align-content: center;
         overflow: hidden;
-        background: color-mix(in srgb, var(--xuan-light) 86%, #d6cebe 14%);
-        padding: clamp(4px, 0.6vw, 8px);
+        border: 0;
+        background: transparent;
+        padding: 0;
       }
       .operations-map-visual {
         position: relative;
@@ -1033,7 +1034,7 @@
           width: 100%;
         }
         .operations-map {
-          padding: clamp(4px, 1.2vw, 8px);
+          padding: 0;
         }
         .operations-map-visual {
           aspect-ratio: 1.26 / 1;
