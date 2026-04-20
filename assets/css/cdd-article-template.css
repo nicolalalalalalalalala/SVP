@@ -35,10 +35,10 @@
   --sv-header-paper-light: var(--xuan-paper-light);
   --sv-header-paper: var(--xuan-paper);
   --sv-header-paper-dark: var(--xuan-paper-dark);
-  --cdd-page-max-width: 1248px;
+  --cdd-page-max-width: 1360px;
   --cdd-fixed-canvas-width: 960px;
-  --cdd-side-column-width: clamp(260px, 22vw, 312px);
-  --cdd-grid-gap: clamp(36px, 4vw, 56px);
+  --cdd-side-column-width: clamp(280px, 23vw, 340px);
+  --cdd-grid-gap: clamp(32px, 3.4vw, 48px);
   --cdd-mobile-scale: 1;
 }
 
@@ -189,7 +189,7 @@ a { color: var(--qing-dark); }
 
 .cdd-page {
   max-width: var(--cdd-page-max-width);
-  width: calc(100% - 64px);
+  width: calc(100% - 40px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 0 72px;
@@ -377,7 +377,7 @@ a { color: var(--qing-dark); }
   }
 
   .cdd-page {
-    width: calc(100% - 64px);
+    width: calc(100% - 48px);
   }
 
   .cdd-topline__inner {
@@ -526,7 +526,7 @@ a { color: var(--qing-dark); }
 
 @media (min-width: 1400px) {
   .cdd-page {
-    width: calc(100% - 48px);
+    width: calc(100% - 32px);
   }
 }
 
