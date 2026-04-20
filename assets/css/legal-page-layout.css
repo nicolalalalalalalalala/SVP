@@ -2,16 +2,16 @@ body.legal-page .legal-page__main {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding-left: var(--site-page-margin-legal, var(--site-page-margin, var(--page-gutter-desktop, 56px)));
-  padding-right: var(--site-page-margin-legal, var(--site-page-margin, var(--page-gutter-desktop, 56px)));
-  padding-top: var(--sv-header-content-gap, clamp(26px, 3.1vw, 42px));
+  padding-left: var(--site-page-margin-legal, clamp(28px, 3.5vw, 42px));
+  padding-right: var(--site-page-margin-legal, clamp(28px, 3.5vw, 42px));
+  padding-top: var(--sv-header-content-gap-legal, clamp(12px, 1.8vw, 24px));
   box-sizing: border-box;
   min-width: 0;
 }
 
 body.legal-page .legal-page__content {
   width: 100%;
-  max-width: var(--content-max-width-legal, 1040px);
+  max-width: var(--content-max-width-legal, 1160px);
   margin: 0;
   padding-left: 0;
   padding-right: 0;
@@ -192,7 +192,7 @@ body.legal-page .legal-contact-actions a:hover {
   }
 
   body.legal-page main {
-    padding-top: var(--sv-header-content-gap, clamp(22px, 4vw, 30px));
+    padding-top: var(--sv-header-content-gap-legal-mobile, clamp(14px, 3vw, 22px));
   }
 }
 
