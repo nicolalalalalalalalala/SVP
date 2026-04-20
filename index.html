@@ -638,8 +638,9 @@ h2.about__hed { color:var(--ink); }
 }
 .stats__note {
   margin-top:16px;
+  margin-bottom:clamp(18px, 2.2vw, 30px);
   width:100%;
-  max-width:80ch;
+  max-width:none;
   color:rgba(48, 45, 40, .5);
   font-size:9px;
   line-height:1.44;
@@ -649,6 +650,9 @@ h2.about__hed { color:var(--ink); }
 }
 .stats__context {
   margin-top:14px;
+  margin-bottom:0;
+  width:100%;
+  max-width:none;
   min-height:1.4em;
   font-size:11px;
   letter-spacing:.05em;
@@ -2176,13 +2180,14 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   .stats__note {
     margin-top:9px;
-    margin-bottom:0;
-    max-width:62ch;
+    margin-bottom:16px;
     font-size:8px;
     letter-spacing:.01em;
     line-height:1.4;
     color:rgba(48, 45, 40, .44);
-    padding:0 1px;
+    width:100%;
+    max-width:none;
+    padding:0;
   }
   @media (min-width: 520px) and (max-width: 900px) {
     .stats {
