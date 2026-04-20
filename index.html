@@ -1600,9 +1600,9 @@ body.homepage .home-hero__inner {
 }
 body.homepage .home-hero__text {
   width: min(620px, 100%);
-  padding: clamp(18px, 2vw, 26px) clamp(16px, 2vw, 24px) clamp(20px, 2.2vw, 30px);
-  border: 1px solid rgba(242, 236, 216, 0.3);
-  background: color-mix(in srgb, #0f2206 46%, transparent);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 body.homepage .home-hero__eyebrow {
   display: flex;
@@ -1756,8 +1756,8 @@ body.homepage #principles {
 }
 body.homepage .principles__intro {
   display: grid;
-  grid-template-columns: minmax(280px, 4.35fr) minmax(0, 7.65fr);
-  gap: var(--home-intro-gap);
+  grid-template-columns: minmax(280px, 4fr) minmax(0, 8fr);
+  gap: clamp(40px, 4.6vw, 72px);
   border-top: 0;
   padding-top: clamp(8px, 1vw, 14px);
   margin-bottom: clamp(30px, 3.6vw, 50px);
@@ -1795,10 +1795,13 @@ body.homepage #principles .about__body,
 body.homepage #strategy .strat__intro {
   max-width: var(--home-copy-max);
 }
-body.homepage #strategy .strat__intro {
-  width: 100%;
-  max-width: min(82ch, 100%);
-  background: transparent;
+body.homepage #principles .about__body {
+  max-width: 80ch;
+}
+body.homepage #principles .about__body p {
+  max-width: 80ch !important;
+  text-wrap: pretty;
+  background: transparent !important;
 }
 body.homepage #about .about__intro--overview,
 body.homepage #strategy .strat__hd {
@@ -1818,10 +1821,10 @@ body.homepage #stats .hero__stats {
   max-width: none;
 }
 body.homepage #cdd .cdd-editorial__card {
-  border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, #0f2206 64%, transparent) 0%, color-mix(in srgb, #16300f 70%, transparent) 100%);
-  padding: clamp(28px, 3.2vw, 44px);
-  box-shadow: 0 20px 44px rgba(5, 10, 8, 0.34);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 body.homepage #cdd .cdd-editorial__intro {
   border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 46%, transparent);
@@ -1882,8 +1885,8 @@ body.homepage #cdd > .wrap {
   z-index: 1;
 }
 body.homepage #cdd .home-section-shell--panel {
-  border-color: rgba(242, 236, 216, 0.3);
-  background: color-mix(in srgb, #13280b 90%, transparent);
+  border-color: transparent;
+  background: transparent;
 }
 body.homepage #cdd .cdd-feature__thesis {
   color: rgba(250, 246, 238, 0.88);
