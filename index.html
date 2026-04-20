@@ -1834,10 +1834,12 @@ body.homepage #strategy .strat__hd {
   gap: clamp(34px, 4vw, 56px);
 }
 body.homepage #principles .about__body {
-  max-width: var(--home-box-copy-max);
+  justify-self: stretch;
+  width: 100%;
+  max-width: min(96ch, 100%);
 }
 body.homepage #principles .about__body p {
-  max-width: var(--home-box-copy-max) !important;
+  max-width: min(96ch, 100%) !important;
   text-wrap: pretty;
   background: transparent !important;
 }
