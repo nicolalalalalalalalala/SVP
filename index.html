@@ -1537,6 +1537,35 @@ body.homepage .home-hero {
   background: #0F2206;
   overflow: hidden;
 }
+body.homepage {
+  --home-frame-max: min(1320px, calc(var(--max) + 120px));
+  --home-frame-pad: clamp(18px, 3vw, 42px);
+  --home-copy-max: 68ch;
+  --home-heading-gap: clamp(18px, 2vw, 24px);
+  --home-intro-gap: clamp(52px, 6vw, 88px);
+}
+body.homepage .home-section-shell {
+  width: 100%;
+  max-width: var(--home-frame-max) !important;
+  margin-inline: auto;
+  padding-inline: var(--home-frame-pad) !important;
+}
+body.homepage .home-section-shell--soft {
+  border: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
+  background: color-mix(in srgb, var(--off) 88%, transparent);
+  padding-block: clamp(34px, 4vw, 52px);
+}
+body.homepage .home-section-shell--panel {
+  border: 1px solid color-mix(in srgb, var(--rule) 66%, transparent);
+  background: color-mix(in srgb, #f8f2e3 86%, transparent);
+  padding-block: clamp(28px, 3.6vw, 44px);
+}
+body.homepage .home-copy-frame {
+  max-width: var(--home-copy-max);
+}
+body.homepage .home-copy-frame > p {
+  max-width: var(--home-copy-max) !important;
+}
 body.homepage .home-hero::before {
   content: "";
   position: absolute;
@@ -1565,9 +1594,16 @@ body.homepage .home-hero__inner {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: clamp(28px, 4.2vh, 42px) 0 0;
+  max-width: var(--home-frame-max);
+  margin-inline: auto;
+  padding: clamp(28px, 4.2vh, 42px) var(--home-frame-pad) 0;
 }
-body.homepage .home-hero__text { width: min(590px, 100%); }
+body.homepage .home-hero__text {
+  width: min(620px, 100%);
+  padding: clamp(18px, 2vw, 26px) clamp(16px, 2vw, 24px) clamp(20px, 2.2vw, 30px);
+  border: 1px solid rgba(242, 236, 216, 0.3);
+  background: color-mix(in srgb, #0f2206 46%, transparent);
+}
 body.homepage .home-hero__eyebrow {
   display: flex;
   align-items: center;
@@ -1721,7 +1757,7 @@ body.homepage #principles {
 body.homepage .principles__intro {
   display: grid;
   grid-template-columns: minmax(280px, 4.35fr) minmax(0, 7.65fr);
-  gap: clamp(52px, 6vw, 88px);
+  gap: var(--home-intro-gap);
   border-top: 0;
   padding-top: clamp(8px, 1vw, 14px);
   margin-bottom: clamp(30px, 3.6vw, 50px);
@@ -1735,16 +1771,19 @@ body.homepage .about__cols {
   margin-top: clamp(12px, 2vw, 22px) !important;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(22px, 2.3vw, 30px);
+  gap: 0;
   border-top: 0;
+  border: 1px solid color-mix(in srgb, var(--rule) 74%, transparent);
+  background: color-mix(in srgb, #f7f2e5 86%, transparent);
 }
 body.homepage .ac {
-  border: 1px solid color-mix(in srgb, var(--rule) 88%, transparent);
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
   padding: 26px 22px;
   min-width: 0;
-  background: color-mix(in srgb, var(--paper-light) 72%, transparent);
+  background: transparent;
 }
-body.homepage .ac + .ac { border-left: 1px solid color-mix(in srgb, var(--rule) 88%, transparent); }
+body.homepage .ac + .ac { border-left: 1px solid color-mix(in srgb, var(--rule) 70%, transparent); }
 body.homepage #about .about__intro--overview,
 body.homepage #principles .principles__intro,
 body.homepage #strategy .strat__hd {
@@ -1754,15 +1793,24 @@ body.homepage #strategy .strat__hd {
 body.homepage #about .about__body,
 body.homepage #principles .about__body,
 body.homepage #strategy .strat__intro {
-  max-width: 70ch;
+  max-width: var(--home-copy-max);
 }
-body.homepage #stats,
-body.homepage #principles .wrap,
-body.homepage #strategy .wrap {
-  max-width: min(1320px, calc(var(--max) + 120px));
+body.homepage #about .about__intro--overview,
+body.homepage #strategy .strat__hd {
+  gap: var(--home-intro-gap);
+}
+body.homepage #about .about__intro--overview > div:first-child,
+body.homepage #principles .principles__intro > div:first-child,
+body.homepage #strategy .strat__lead {
+  gap: var(--home-heading-gap);
+}
+body.homepage #stats {
+  max-width: var(--home-frame-max);
+  margin-inline: auto;
+  padding: clamp(52px, 6vw, 72px) var(--home-frame-pad) 0 !important;
 }
 body.homepage #stats .hero__stats {
-  max-width: 1140px;
+  max-width: none;
 }
 body.homepage #cdd .cdd-editorial__card {
   border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, transparent);
@@ -1828,6 +1876,10 @@ body.homepage #cdd > .wrap {
   position: relative;
   z-index: 1;
 }
+body.homepage #cdd .home-section-shell--panel {
+  border-color: rgba(242, 236, 216, 0.3);
+  background: color-mix(in srgb, #13280b 90%, transparent);
+}
 body.homepage #cdd .cdd-feature__thesis {
   color: rgba(250, 246, 238, 0.88);
 }
@@ -1881,6 +1933,10 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .about__cols {
     grid-template-columns: minmax(0, 1fr);
   }
+  body.homepage .ac + .ac {
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
+  }
 }
 @media (max-width: 767px) {
   body.homepage .home-hero__image {
@@ -1892,6 +1948,9 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .home-hero__headline {
     font-size: clamp(31px, 8vw, 42px);
     line-height: 1.12;
+  }
+  body.homepage .home-hero__text {
+    width: min(100%, 35rem);
   }
 }
 
@@ -1964,6 +2023,14 @@ body.homepage #cdd .cdd-editorial__lede {
   .wrap {
     padding-left:var(--pad);
     padding-right:var(--pad);
+  }
+  body.homepage {
+    --home-frame-pad: clamp(14px, 4.6vw, 20px);
+    --home-copy-max: 100%;
+  }
+  body.homepage .home-section-shell--soft,
+  body.homepage .home-section-shell--panel {
+    padding-block: clamp(22px, 5vw, 30px);
   }
 
   .eyebrow {
@@ -2622,7 +2689,7 @@ body.homepage #cdd .cdd-editorial__lede {
     decoding="sync"
     fetchpriority="high"
     aria-hidden="true">
-  <div class="wrap home-hero__inner">
+  <div class="wrap home-hero__inner home-section-shell">
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
       <h1 class="home-hero__headline type-display-hero">
@@ -2636,13 +2703,13 @@ body.homepage #cdd .cdd-editorial__lede {
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="wrap">
+  <div class="wrap home-section-shell home-section-shell--soft">
     <div class="about__intro about__intro--overview">
       <div>
         <div class="eyebrow eyebrow--red rev">THE FIRM</div>
         <h2 class="about__hed rev d1 sv-section-title">ROOTED IN TWO WORLDS</h2>
       </div>
-      <div class="about__body rev d2">
+      <div class="about__body home-copy-frame rev d2">
         <p>
           Institutional private credit platform for complex recoveries across China, built by a senior team with an onshore track record spanning market dislocations, restructurings, and policy transitions.
         </p>
@@ -2655,7 +2722,7 @@ body.homepage #cdd .cdd-editorial__lede {
 </section>
 
 <!-- HERO STATS -->
-<section id="stats" class="wrap">
+<section id="stats" class="wrap home-section-shell home-section-shell--panel">
   <div class="hero__stats">
     <div class="stats__eyebrow">TRACK RECORD</div>
     <p class="stats__transition">A two-decade onshore platform built for institutional capital, with realized execution across cycles.</p>
@@ -2685,13 +2752,13 @@ body.homepage #cdd .cdd-editorial__lede {
 
 
 <section id="principles">
-  <div class="wrap">
+  <div class="wrap home-section-shell home-section-shell--soft">
     <div class="principles__intro">
       <div>
         <div class="eyebrow rev">HOW WE WORK</div>
         <h2 class="about__hed rev d1 sv-section-title">Vision &amp; Principles</h2>
       </div>
-      <div class="about__body rev d2">
+      <div class="about__body home-copy-frame rev d2">
         <p>
           ShoreVest’s vision is to deliver consistent returns across cycles in China’s credit markets through a long-term platform with the local capability to source, analyze, and execute with discipline.
         </p>
@@ -2724,13 +2791,13 @@ body.homepage #cdd .cdd-editorial__lede {
 
 <!-- STRATEGY -->
 <section id="strategy">
-  <div class="wrap">
+  <div class="wrap home-section-shell home-section-shell--soft">
     <div class="strat__hd">
       <div class="strat__lead">
         <div class="eyebrow eyebrow--red rev">STRATEGY</div>
         <h2 class="strat__hed rev d1 sv-section-title">Investment Strategy</h2>
       </div>
-      <p class="strat__intro rev d2">ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China. Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
+      <p class="strat__intro home-copy-frame rev d2">ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China. Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
     </div>
     <div class="strat__grid">
       <div class="sg rev" id="asset-based-lending" role="button" tabindex="0" data-interactive-card>
@@ -2763,7 +2830,7 @@ body.homepage #cdd .cdd-editorial__lede {
 
 <!-- CDD -->
 <section id="cdd" class="cdd-franchise cdd-franchise--compact">
-  <div class="wrap cdd-editorial">
+  <div class="wrap cdd-editorial home-section-shell home-section-shell--panel">
     <div class="cdd-editorial__card">
       <div class="cdd-editorial__intro">
         <div>
