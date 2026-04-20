@@ -688,7 +688,10 @@ h2.strat__hed {
   font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
   max-width:72ch;
 }
-.strat__intro + .strat__intro {
+.strat__intro p {
+  margin:0;
+}
+.strat__intro p + p {
   margin-top:14px;
 }
 .strat__grid {
@@ -2860,9 +2863,11 @@ body.homepage #cdd .cdd-editorial__lede {
         <div class="eyebrow eyebrow--red rev">STRATEGY</div>
         <h2 class="strat__hed rev d1 sv-section-title">Investment Strategy</h2>
       </div>
-      <p class="strat__intro home-copy-frame rev d2">ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China.</p>
-      <p class="strat__intro home-copy-frame rev d2">Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
-      <p class="strat__intro home-copy-frame rev d2">Rather than relying on documentation alone, the strategy is built around collateral control, enforceable structures, and the ability to manage underwriting, servicing, and recovery through one integrated platform.</p>
+      <div class="strat__intro home-copy-frame rev d2">
+        <p>ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China.</p>
+        <p>Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
+        <p>Rather than relying on documentation alone, the strategy is built around collateral control, enforceable structures, and the ability to manage underwriting, servicing, and recovery through one integrated platform.</p>
+      </div>
     </div>
     <div class="strat__grid">
       <div class="sg rev" id="asset-based-lending" role="button" tabindex="0" data-interactive-card>
