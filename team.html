@@ -39,7 +39,7 @@
         --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
         --max: 1200px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
-        --team-intro-inline-pad: clamp(6px, 1.35vw, 18px);
+        --team-intro-inline-pad: clamp(4px, 0.9vw, 12px);
         --pad: var(--site-page-margin);
         --team-type-heading: var(--sv-type-sans, "DIN 2014", "Helvetica Neue", Arial, sans-serif);
         --team-type-body: var(--sv-type-sans, "DIN 2014", "Helvetica Neue", Arial, sans-serif);
@@ -101,7 +101,9 @@
 
       .pagehero {
         --pagehero-inline-pad: var(--team-intro-inline-pad);
-        min-height: 340px;
+        --sv-hero-top-space: clamp(72px, 7.2vw, 104px);
+        --sv-hero-bottom-space: clamp(28px, 3vw, 42px);
+        min-height: 0;
         padding: var(--sv-hero-top-space) var(--pagehero-inline-pad) var(--sv-hero-bottom-space) !important;
         border-bottom: 1px solid var(--rule);
         background: transparent;
@@ -115,7 +117,7 @@
         padding: 0 !important;
       }
       .pagehero__intro {
-        width: min(1240px, 100%);
+        width: min(1320px, 100%);
         margin-inline: 0;
       }
       h1 {
@@ -138,7 +140,7 @@
         margin-top: 8px;
       }
       .pagehero p.pagehero__fullwidth {
-        max-width: 980px;
+        max-width: 1040px;
       }
 
       .founder-note {
@@ -186,7 +188,7 @@
       }
 
       .team-groups {
-        padding: 64px 0 92px;
+        padding: 44px 0 92px;
         background: transparent;
       }
 
@@ -545,8 +547,8 @@
         }
       }
       .group--leadership {
-        margin-top: 10px;
-        padding: 48px 0 56px;
+        margin-top: 0;
+        padding: 38px 0 56px;
       }
       .group--leadership .grid {
         gap: 26px;
@@ -573,8 +575,8 @@
 
         .pagehero {
           min-height: auto;
-          padding-top: 140px;
-          padding-bottom: 46px;
+          padding-top: 120px;
+          padding-bottom: 34px;
         }
         .pagehero p {
           font-size: 17px;
@@ -614,7 +616,7 @@
 
       @media (max-width: 520px) {
         .team-groups {
-          padding-top: 44px;
+          padding-top: 34px;
         }
         .group {
           padding: 24px 0 34px;
