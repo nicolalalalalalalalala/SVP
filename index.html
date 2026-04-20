@@ -2183,16 +2183,26 @@ body.homepage #cdd .cdd-editorial__lede {
   #cdd {
     padding: 44px 0;
   }
+  #cdd > .wrap.cdd-editorial {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
   .cdd-editorial__card {
     gap: 16px;
     padding: 16px 12px;
     border-color: color-mix(in srgb, var(--cdd-structure) 22%, transparent);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .cdd-editorial__intro {
     display: flex;
     flex-direction: column;
     gap: 14px;
     padding-bottom: 14px;
+    width: 100%;
+    min-width: 0;
   }
   .cdd-editorial__intro > :first-child { order: 1; }
   .cdd-editorial__brand {
@@ -2200,6 +2210,8 @@ body.homepage #cdd .cdd-editorial__lede {
     justify-content: flex-start;
     align-items: center;
     padding-top: 0;
+    width: 100%;
+    min-width: 0;
   }
   .cdd-editorial__kicker {
     font-size: 11.4px;
@@ -2227,18 +2239,37 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   .cdd-brand-lockup {
     gap: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .cdd-brand-mark {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
   }
   .cdd-brand-text {
     margin-left: 8px;
     padding-left: 8px;
     gap: 2px;
+    min-width: 0;
+  }
+  .cdd-brand-en,
+  .cdd-brand-cn {
+    max-width: 100%;
+    white-space: nowrap;
+  }
+  .cdd-brand-en {
+    font-size: 12px;
+    letter-spacing: .035em;
+  }
+  .cdd-brand-cn {
+    letter-spacing: .2em;
   }
   .cdd-feature {
     border-color: color-mix(in srgb, var(--cdd-structure) 20%, transparent);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .cdd-feature__top {
     flex-direction: column;
@@ -2252,6 +2283,9 @@ body.homepage #cdd .cdd-editorial__lede {
     align-items: stretch;
     gap: 12px;
     padding: 14px 12px 16px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .cdd-feature__label {
     margin-bottom: 7px;
@@ -2288,6 +2322,9 @@ body.homepage #cdd .cdd-editorial__lede {
     border: 0;
     border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 18%, transparent);
     background: transparent;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .cdd-feature__finding {
     font-size: 13px;
@@ -2308,11 +2345,14 @@ body.homepage #cdd .cdd-editorial__lede {
     padding: 14px;
     gap: 12px;
     border-top-color: color-mix(in srgb, var(--cdd-structure) 16%, transparent);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .cdd-cta-group {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 8px;
   }
   .cdd-cta {
@@ -2320,11 +2360,30 @@ body.homepage #cdd .cdd-editorial__lede {
     justify-content: space-between;
     font-size: 10px;
     letter-spacing: .11em;
-    padding: 10px 12px 10px 14px;
+    padding: 10px 10px 10px 12px;
+    min-width: 0;
+    gap: 8px;
+  }
+  .cdd-cta > span:first-child {
+    min-width: 0;
+  }
+  .cdd-cta__ring {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    font-size: 11px;
   }
   @media (max-width: 460px) {
-    .cdd-cta-group {
-      grid-template-columns: 1fr;
+    .cdd-brand-mark {
+      width: 30px;
+      height: 30px;
+    }
+    .cdd-brand-en {
+      font-size: 11px;
+      letter-spacing: .028em;
+    }
+    .cdd-brand-cn {
+      letter-spacing: .16em;
     }
   }
   .cdd-editorial__meta {
