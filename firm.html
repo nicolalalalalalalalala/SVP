@@ -234,22 +234,22 @@
         margin-bottom: clamp(20px, 2.2vw, 32px);
       }
       .platform-ops-section .pillar-card {
-        min-height: clamp(184px, 15.2vw, 210px);
+        min-height: clamp(148px, 12.2vw, 170px);
       }
       .platform-ops-section .card {
         border: 1px solid var(--rule);
         background: var(--xuan);
-        padding: clamp(12px, 0.96vw, 15px) clamp(13px, 0.96vw, 16px)
-          clamp(13px, 1.05vw, 16px) !important;
+        padding: clamp(10px, 0.75vw, 12px) clamp(12px, 0.9vw, 14px)
+          clamp(11px, 0.88vw, 13px) !important;
         min-height: 0;
         display: grid;
         grid-template-rows: auto auto auto auto;
-        row-gap: clamp(4px, 0.4vw, 6px);
+        row-gap: clamp(2px, 0.24vw, 4px);
         align-content: start;
       }
       .card-icon {
-        width: min(100%, 56px);
-        height: clamp(44px, 3.6vw, 54px);
+        width: min(100%, 44px);
+        height: clamp(34px, 2.8vw, 42px);
         color: color-mix(in srgb, var(--cinnabar) 86%, var(--ink) 14%);
         margin: 0 auto;
         display: grid;
@@ -269,11 +269,11 @@
         align-items: center;
         margin-bottom: 0;
         padding-bottom: 0;
-        padding-top: clamp(3px, 0.35vw, 5px);
+        padding-top: clamp(1px, 0.16vw, 2px);
       }
       .card-index {
-        font-size: 11px;
-        letter-spacing: 0.16em;
+        font-size: 10px;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--cinnabar);
         font-weight: 500;
@@ -283,18 +283,18 @@
       }
       .pillar-card .card-index {
         margin-top: 0;
-        margin-bottom: clamp(2px, 0.3vw, 4px);
+        margin-bottom: clamp(1px, 0.14vw, 2px);
       }
       .platform-ops-section .card h3 {
         font-size: clamp(18px, 1.35vw, 21px);
-        line-height: 1.2;
+        line-height: 1.15;
         max-width: 18ch;
-        margin: 0 0 clamp(2px, 0.28vw, 4px);
+        margin: 0 0 clamp(1px, 0.15vw, 2px);
       }
       .platform-ops-section .card > p:last-child {
         margin: 0;
         font-size: clamp(13px, 0.92vw, 14px);
-        line-height: 1.44;
+        line-height: 1.38;
       }
       .platform-ops-section .card p:last-child {
         max-width: none;
@@ -404,7 +404,7 @@
         transition-delay: 0.75s;
       }
       #pillar-sourcing.is-in .card-icon {
-        animation: pc-icon-float 4s ease-in-out 1s infinite;
+        animation: none;
       }
 
       /* Card 2 – Disciplined Underwriting */
@@ -430,7 +430,7 @@
         animation: pc-draw-card 0.8s cubic-bezier(.22,1,.36,1) 0.18s both;
       }
       #pillar-underwriting.is-in .card-icon {
-        animation: pc-icon-float 4.2s ease-in-out 1.25s infinite;
+        animation: none;
       }
 
       /* Card 3 – Alignment of Responsibility */
@@ -456,7 +456,7 @@
         animation: pc-core-pop 0.55s cubic-bezier(.22,1,.36,1) 1.75s both;
       }
       #pillar-alignment.is-in .card-icon {
-        animation: pc-icon-float 4.5s ease-in-out 1.35s infinite;
+        animation: none;
       }
 
       /* Card 4 – Active Portfolio Control */
@@ -489,7 +489,7 @@
         animation: pc-center-pop 0.55s cubic-bezier(.22,1,.36,1) 1.5s both;
       }
       #pillar-portfolio-control.is-in .card-icon {
-        animation: pc-icon-float 4.8s ease-in-out 1.5s infinite;
+        animation: none;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -1085,7 +1085,7 @@
           min-height: 0;
           grid-template-rows: auto auto auto auto;
           row-gap: 0;
-          padding: 14px 14px 15px !important;
+          padding: 12px 13px 13px !important;
           align-content: start;
         }
         /* Icon wrapper: centered, height driven by the icon only */
@@ -1096,23 +1096,23 @@
           justify-content: center;
           align-items: center;
           padding: 0;
-          margin-bottom: 6px;
+          margin-bottom: 4px;
         }
         /* Icon: compact but still clearly readable */
         .pillar-card .card-icon {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           margin: 0;
         }
         /* Pillar label: tight beneath icon, tight above title */
         .pillar-card .card-index {
           margin-top: 0;
-          margin-bottom: 3px;
+          margin-bottom: 2px;
           text-align: left;
         }
         /* Title: close to label, small gap before body */
         .pillar-card h3 {
-          margin-bottom: 4px;
+          margin-bottom: 2px;
         }
       }
 
