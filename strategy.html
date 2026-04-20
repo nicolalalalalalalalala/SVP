@@ -2384,10 +2384,11 @@
     .strategy-hero .wrap{
       grid-template-columns:minmax(0, 1.95fr) minmax(360px, 0.95fr)!important;
       gap:clamp(18px, 1.9vw, 30px)!important;
-      max-width:min(1920px, calc(100% - (2 * clamp(4px, 0.7vw, 12px))))!important;
-      width:100%!important;
-      margin-inline:auto!important;
-      padding-inline:clamp(6px, 0.6vw, 10px)!important;
+      max-width:min(1940px, calc(100% - clamp(12px, 1.2vw, 24px)))!important;
+      width:calc(100% - clamp(12px, 1.2vw, 24px))!important;
+      margin-left:0!important;
+      margin-right:auto!important;
+      padding-inline:clamp(2px, 0.25vw, 6px)!important;
       align-items:end!important;
     }
     .strategy-hero .eyebrow{
