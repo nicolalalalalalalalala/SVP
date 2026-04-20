@@ -372,12 +372,12 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
   margin-bottom:0;
   border-bottom:0;
   padding-bottom:0;
-  grid-template-columns:minmax(280px, 4.2fr) minmax(0, 7.8fr);
-  gap:clamp(56px, 6.5vw, 94px);
+  grid-template-columns:minmax(280px, 4.35fr) minmax(0, 7.65fr);
+  gap:clamp(52px, 6vw, 88px);
 }
 .about__intro--overview .about__body {
-  max-width:78ch;
-  gap:clamp(24px, 2.6vw, 34px);
+  max-width:72ch;
+  gap:clamp(20px, 2.3vw, 30px);
 }
 .about__intro--overview .about__body p {
   text-align:left;
@@ -389,7 +389,7 @@ h1.hero__hed em { color:var(--red); font-style:italic; }
 }
 .about__intro--overview > div:first-child {
   display:grid;
-  gap:clamp(14px, 1.8vw, 24px);
+  gap:clamp(14px, 1.8vw, 22px);
 }
 .about__intro--overview .about__hed {
   max-width:22ch;
@@ -459,11 +459,11 @@ h2.about__hed { color:var(--ink); }
   text-transform:uppercase;
 }
 .about__intro--principles .about__body {
-  max-width:62ch;
-  gap:18px;
+  max-width:72ch;
+  gap:clamp(20px, 2.3vw, 30px);
 }
 .about__intro--principles .about__body p {
-  max-width:60ch;
+  max-width:72ch;
 }
 .about__intro--principles .about__supporting-line {
   margin-top:8px;
@@ -660,8 +660,8 @@ h2.about__hed { color:var(--ink); }
 #strategy { background:var(--off); padding:clamp(118px, 11vw, 164px) 0; margin-bottom:0; }
 .strat__hd {
   display:grid;
-  grid-template-columns:5fr 7fr;
-  gap:var(--content-gap);
+  grid-template-columns:minmax(280px, 4.35fr) minmax(0, 7.65fr);
+  gap:clamp(52px, 6vw, 88px);
   align-items:start;
   margin-bottom:clamp(54px, 6.5vw, 86px);
 }
@@ -681,8 +681,8 @@ h2.strat__hed {
   font-size:clamp(19px, 1.65vw, 22px);
   line-height:1.82;
   color:var(--mist);
-  font-family:var(--serif);
-  max-width:66ch;
+  font-family:"DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  max-width:72ch;
 }
 .strat__intro + .strat__intro {
   margin-top:14px;
@@ -1677,12 +1677,15 @@ body.homepage .strat__hed {
      free of local typography overrides so headings stay in sync with
      strategy.html peer-level section titles. */
 }
-body.homepage #strategy .strat__hed {
+body.homepage :is(#about,#principles,#strategy) .sv-section-title {
   font-family: var(--sv-font-en) !important;
   font-size: var(--sv-section-title-size) !important;
   font-weight: var(--sv-section-title-weight) !important;
   line-height: var(--sv-section-title-line) !important;
   letter-spacing: .01em !important;
+}
+body.homepage #strategy .strat__hed {
+  text-wrap: balance;
 }
 body.homepage .cta {
   gap: 14px;
@@ -1715,8 +1718,8 @@ body.homepage #principles {
 }
 body.homepage .principles__intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: clamp(28px, 3vw, 52px);
+  grid-template-columns: minmax(280px, 4.35fr) minmax(0, 7.65fr);
+  gap: clamp(52px, 6vw, 88px);
   border-top: 1px solid var(--rule);
   padding-top: clamp(38px, 4.2vw, 54px);
 }
