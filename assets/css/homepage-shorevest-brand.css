@@ -908,14 +908,17 @@ body.homepage .home-hero__support {
 
 body.homepage .home-hero__cta-arrow {
   border-color: rgba(250, 246, 238, 0.82) !important;
-  background: #3d7070 !important;
+  background: transparent !important;
+  color: #faf6ee !important;
+  transition: background .16s ease-out, border-color .16s ease-out, color .16s ease-out, transform .16s ease-out;
 }
 
 body.homepage .home-hero__cta:hover .home-hero__cta-arrow,
 body.homepage .home-hero__cta:focus-visible .home-hero__cta-arrow,
 body.homepage .home-hero__cta:active .home-hero__cta-arrow {
-  background: #1e4040 !important;
-  border-color: #1e4040 !important;
+  background: #3d7070 !important;
+  border-color: #3d7070 !important;
+  color: #faf6ee !important;
 }
 
 @media (max-width: 767px) {
