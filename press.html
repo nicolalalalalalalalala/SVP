@@ -1493,14 +1493,14 @@
               </article>
               <article class="press-speaking__slide" aria-hidden="true">
                 <figure class="press-speaking__media">
-                  <img src="https://i.ytimg.com/vi/vuP4GIRWX9w/hqdefault.jpg" alt="YouTube speaking feature with Benjamin Fanger." loading="lazy" />
+                  <img src="assets/images/1200x1200bf.webp" alt="China Money Network podcast featuring Benjamin Fanger." loading="lazy" />
                 </figure>
                 <div class="press-speaking__content">
-                  <span class="press-speaking__source press-publication">YOUTUBE · FEATURE</span>
-                  <h3 class="press-speaking__title press-headline">Featured speaking video</h3>
-                  <p class="press-speaking__summary press-intro">Selected video appearance featuring commentary on credit and special situations.</p>
-                  <time class="press-speaking__date press-date">Date unavailable</time>
-                  <a class="press-speaking__link press-more" href="https://www.youtube.com/watch?v=vuP4GIRWX9w" target="_blank" rel="noopener noreferrer">View feature</a>
+                  <span class="press-speaking__source press-publication">CHINA MONEY NETWORK · PODCAST</span>
+                  <h3 class="press-speaking__title press-headline">Ballooning bad loans in China are the next great opportunity</h3>
+                  <p class="press-speaking__summary press-intro">Benjamin Fanger discusses distressed debt investing dynamics, creditor enforcement, and non-performing loan opportunities in China.</p>
+                  <time class="press-speaking__date press-date" datetime="2014-07-23">23 Jul 2014</time>
+                  <a class="press-speaking__link press-more" href="https://shorevest.com/news-insights/podcast-benjamin-fanger-ballooning-bad-loans-in-china-are-the-next-great-opportunity/" target="_blank" rel="noopener noreferrer">Listen now</a>
                 </div>
               </article>
 
@@ -2147,6 +2147,9 @@
 
         let activeIndex = 0;
         const total = slides.length;
+        const autoplayDelayMs = 5000;
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let autoplayTimer = null;
 
         const render = (index) => {
           activeIndex = (index + total) % total;
@@ -2158,20 +2161,51 @@
           counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
         };
 
-        prevButton.addEventListener("click", () => render(activeIndex - 1));
-        nextButton.addEventListener("click", () => render(activeIndex + 1));
+        const stopAutoplay = () => {
+          if (!autoplayTimer) return;
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        };
+
+        const startAutoplay = () => {
+          if (reduceMotion || autoplayTimer) return;
+          autoplayTimer = window.setInterval(() => render(activeIndex + 1), autoplayDelayMs);
+        };
+
+        const goPrevious = () => {
+          render(activeIndex - 1);
+          stopAutoplay();
+          startAutoplay();
+        };
+
+        const goNext = () => {
+          render(activeIndex + 1);
+          stopAutoplay();
+          startAutoplay();
+        };
+
+        prevButton.addEventListener("click", goPrevious);
+        nextButton.addEventListener("click", goNext);
+        carousel.addEventListener("mouseenter", stopAutoplay);
+        carousel.addEventListener("mouseleave", startAutoplay);
+        carousel.addEventListener("focusin", stopAutoplay);
+        carousel.addEventListener("focusout", (event) => {
+          if (carousel.contains(event.relatedTarget)) return;
+          startAutoplay();
+        });
         carousel.addEventListener("keydown", (event) => {
           if (event.key === "ArrowLeft") {
             event.preventDefault();
-            render(activeIndex - 1);
+            goPrevious();
           }
           if (event.key === "ArrowRight") {
             event.preventDefault();
-            render(activeIndex + 1);
+            goNext();
           }
         });
 
         render(0);
+        startAutoplay();
       })();
     </script>
 
