@@ -155,9 +155,15 @@ section.research-hero.cdd-franchise {
     line-height: 1.58 !important;
   }
 
-  .cdd-franchise .cdd-franchise__eyebrow,
-  .cdd-franchise .eyebrow--ghost {
-    letter-spacing: 0.14em !important;
+  /* body prefix matches specificity of body.homepage .eyebrow in refinement-pass.css;
+     this file loads later so wins the cascade. ::after hidden to give text full width. */
+  body .cdd-franchise .cdd-franchise__eyebrow,
+  body .cdd-franchise .eyebrow--ghost {
+    letter-spacing: 0.08em !important;
     font-size: 10px !important;
+  }
+  body .cdd-franchise .cdd-franchise__eyebrow::after,
+  body .cdd-franchise .eyebrow--ghost::after {
+    display: none !important;
   }
 }
