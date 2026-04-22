@@ -1647,6 +1647,14 @@ body.homepage .home-hero__headline {
   color: #FAF6EE;
   text-wrap: balance;
 }
+body.homepage .home-hero__headline-box {
+  display: inline-block;
+  padding: clamp(12px, 1.8vw, 20px) clamp(16px, 2.2vw, 24px);
+  border: 1px solid #F2ECD8;
+  border-radius: 0;
+  background: #F2ECD8;
+  box-shadow: 0 10px 24px rgba(8, 14, 12, 0.16);
+}
 body.homepage .home-hero__headline-primary,
 body.homepage .home-hero__headline-emphasis {
   font-style: inherit;
@@ -2828,8 +2836,10 @@ body.homepage #cdd .cdd-editorial__lede {
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
       <h1 class="home-hero__headline type-display-hero">
-        <span class="home-hero__headline-primary">PRIVATE CREDIT</span><br>
-        <span class="home-hero__headline-primary">IN</span> <span class="home-hero__headline-emphasis">CHINA.</span>
+        <span class="home-hero__headline-box">
+          <span class="home-hero__headline-primary">PRIVATE CREDIT</span><br>
+          <span class="home-hero__headline-primary">IN</span> <span class="home-hero__headline-emphasis">CHINA.</span>
+        </span>
       </h1>
       <a href="firm.html" class="home-hero__cta"><span>EXPLORE SHOREVEST</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
     </div>
