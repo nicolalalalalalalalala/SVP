@@ -458,7 +458,7 @@
         display: flex;
         overflow: hidden;
         border-left: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
-        padding: clamp(10px, 1.2vw, 16px) clamp(10px, 1.2vw, 16px) clamp(9px, 1vw, 14px);
+        padding: clamp(7px, 0.85vw, 12px);
       }
       .operations-map-visual {
         position: relative;
@@ -479,8 +479,8 @@
         height: 100%;
         opacity: 1;
         object-fit: cover;
-        object-position: 72.6% 45.2%;
-        transform: scale(1.6);
+        object-position: 68.4% 43.8%;
+        transform: scale(1.92);
         transform-origin: center;
         filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
       }
@@ -526,41 +526,41 @@
       }
       .op-marker--guangzhou {
         --dot: #C93B2A;
-        left: 63.1%;
-        top: 54.1%;
+        left: 67.2%;
+        top: 56.4%;
       }
       .op-marker--guangzhou > span {
         left: auto;
-        right: 13px;
-        top: -14px;
+        right: 11px;
+        top: -13px;
         text-align: right;
       }
       .op-marker--shanghai {
         --dot: #3D7070;
-        left: 65.1%;
-        top: 46.8%;
+        left: 69.8%;
+        top: 45.1%;
       }
       .op-marker--shanghai > span {
-        left: auto;
-        right: 14px;
-        top: -17px;
-        text-align: right;
+        left: 10px;
+        right: auto;
+        top: -15px;
+        text-align: left;
       }
       .op-marker--shanghai > span::after {
         opacity: 1;
-        width: 10px;
-        left: auto;
-        right: -8px;
+        width: 8px;
+        left: -10px;
+        right: auto;
       }
       .op-marker--hong-kong {
         --dot: #2E4A18;
-        left: 64.4%;
-        top: 56.3%;
+        left: 69.4%;
+        top: 57.9%;
       }
       .op-marker--hong-kong > span {
         left: 11px;
         right: auto;
-        top: 5px;
+        top: 2px;
         text-align: left;
       }
       .op-marker--hong-kong > span::after {
@@ -571,13 +571,13 @@
       }
       .op-marker--california {
         --dot: #4A6D6D;
-        left: 88.7%;
-        top: 40.2%;
+        left: 23.6%;
+        top: 41.7%;
       }
       .op-marker--california > span {
         left: auto;
         right: 12px;
-        top: -12px;
+        top: -10px;
         text-align: right;
       }
 
@@ -974,11 +974,11 @@
         }
         .operations-map-visual {
           min-height: clamp(252px, 44vw, 324px);
-          aspect-ratio: 1.52 / 1;
+          aspect-ratio: 1.6 / 1;
         }
         .operations-map img {
-          object-position: 72.9% 45.2%;
-          transform: scale(1.63);
+          object-position: 68.2% 44%;
+          transform: scale(1.9);
         }
       }
       @media (max-width: 767px) {
@@ -1025,11 +1025,11 @@
         }
         .operations-map-visual {
           min-height: 224px;
-          aspect-ratio: 1.42 / 1;
+          aspect-ratio: 1.5 / 1;
         }
         .operations-map img {
-          object-position: 73.2% 45.8%;
-          transform: scale(1.66);
+          object-position: 68.6% 44.4%;
+          transform: scale(1.88);
         }
         .op-marker::before {
           width: 6px;
@@ -1132,10 +1132,10 @@
           <article class="operations-map">
             <figure class="operations-map-visual" aria-label="ShoreVest operational geography map">
               <img src="assets/images/world-pacific.svg" alt="Map showing ShoreVest's operational footprint in Guangzhou, Shanghai, Hong Kong, and California" loading="lazy" />
-              <div class="op-marker op-marker--guangzhou" aria-hidden="true"><span>Guangzhou</span></div>
-              <div class="op-marker op-marker--shanghai" aria-hidden="true"><span>Shanghai</span></div>
-              <div class="op-marker op-marker--hong-kong" aria-hidden="true"><span>Hong Kong</span></div>
-              <div class="op-marker op-marker--california" aria-hidden="true"><span>California</span></div>
+              <div class="op-marker op-marker--guangzhou" aria-hidden="true"><span>GUANGZHOU</span></div>
+              <div class="op-marker op-marker--shanghai" aria-hidden="true"><span>SHANGHAI</span></div>
+              <div class="op-marker op-marker--hong-kong" aria-hidden="true"><span>HONG KONG</span></div>
+              <div class="op-marker op-marker--california" aria-hidden="true"><span>CALIFORNIA</span></div>
             </figure>
           </article>
         </div>
