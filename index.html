@@ -1587,9 +1587,9 @@ body.homepage .home-hero::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(145% 120% at 12% 54%, rgba(7, 16, 21, 0.34) 0%, rgba(7, 16, 21, 0.18) 48%, rgba(7, 16, 21, 0) 74%),
-    linear-gradient(100deg, rgba(7, 16, 21, 0.46) 0%, rgba(7, 16, 21, 0.28) 34%, rgba(7, 16, 21, 0.12) 58%, rgba(7, 16, 21, 0.02) 82%),
-    linear-gradient(to bottom, rgba(7, 16, 21, 0.12) 0%, rgba(7, 16, 21, 0.04) 44%, rgba(7, 16, 21, 0.22) 100%);
+    radial-gradient(158% 132% at 10% 52%, rgba(7, 16, 21, 0.52) 0%, rgba(7, 16, 21, 0.34) 46%, rgba(7, 16, 21, 0.1) 74%, rgba(7, 16, 21, 0) 86%),
+    linear-gradient(102deg, rgba(7, 16, 21, 0.56) 0%, rgba(7, 16, 21, 0.38) 34%, rgba(7, 16, 21, 0.18) 58%, rgba(7, 16, 21, 0.04) 82%),
+    linear-gradient(to bottom, rgba(7, 16, 21, 0.16) 0%, rgba(7, 16, 21, 0.06) 44%, rgba(7, 16, 21, 0.24) 100%);
 }
 body.homepage .home-hero__image {
   position: absolute;
@@ -1611,8 +1611,23 @@ body.homepage .home-hero__inner {
   padding: clamp(34px, 4.5vh, 48px) var(--home-frame-pad) clamp(34px, 5.5vh, 56px);
 }
 body.homepage .home-hero__text {
+  position: relative;
   width: min(580px, 100%);
   padding: clamp(4px, 0.85vw, 8px) 0;
+}
+body.homepage .home-hero__text::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: clamp(-18px, -1.8vw, -14px);
+  bottom: clamp(-14px, -1.5vw, -10px);
+  left: clamp(-26px, -2.6vw, -18px);
+  right: clamp(42px, 6vw, 92px);
+  border-radius: 3px;
+  background:
+    linear-gradient(92deg, rgba(7, 16, 21, 0.44) 0%, rgba(7, 16, 21, 0.3) 56%, rgba(7, 16, 21, 0) 100%),
+    radial-gradient(138% 122% at 16% 52%, rgba(7, 16, 21, 0.26) 0%, rgba(7, 16, 21, 0.08) 66%, rgba(7, 16, 21, 0) 100%);
+  pointer-events: none;
 }
 body.homepage .home-hero__eyebrow {
   margin: 0 0 clamp(8px, 1.05vw, 12px);
@@ -1621,8 +1636,9 @@ body.homepage .home-hero__eyebrow {
   font-weight: 500;
   letter-spacing: .15em;
   line-height: 1.2;
-  color: rgba(243, 236, 219, 0.78);
+  color: rgba(250, 245, 232, 0.94);
   opacity: 1;
+  text-shadow: 0 1px 1px rgba(7, 16, 21, 0.26);
 }
 body.homepage .home-hero__headline {
   margin: 0;
@@ -1633,8 +1649,9 @@ body.homepage .home-hero__headline {
   line-height: 1.15;
   letter-spacing: .002em;
   text-transform: none;
-  color: #f3ecdb;
+  color: #fff8eb;
   text-wrap: balance;
+  text-shadow: 0 1px 2px rgba(7, 16, 21, 0.32);
 }
 body.homepage .home-hero__headline-box {
   display: inline;
@@ -1650,7 +1667,7 @@ body.homepage .home-hero__headline-primary {
   color: inherit;
 }
 body.homepage .home-hero__headline-emphasis {
-  color: #b53a3f;
+  color: #c4484d;
 }
 body.homepage .home-hero__support {
   margin: clamp(11px, 1.25vw, 15px) 0 0;
@@ -1659,7 +1676,8 @@ body.homepage .home-hero__support {
   font-size: clamp(13px, 0.94vw, 14px);
   line-height: 1.54;
   letter-spacing: .01em;
-  color: rgba(243, 236, 219, 0.85);
+  color: rgba(250, 245, 232, 0.92);
+  text-shadow: 0 1px 1px rgba(7, 16, 21, 0.26);
 }
 body.homepage .home-hero__actions {
   margin-top: clamp(14px, 1.45vw, 18px);
@@ -1675,28 +1693,28 @@ body.homepage .home-hero__cta {
   justify-content: center;
   min-height: 36px;
   padding: 0 15px;
-  border: 1px solid rgba(243, 236, 219, 0.44);
-  background: rgba(243, 236, 219, 0.03);
+  border: 1px solid rgba(250, 245, 232, 0.66);
+  background: rgba(7, 16, 21, 0.2);
   gap: 7px;
   font-family: "DIN 2014";
   font-size: 9.6px;
   font-weight: 500;
   letter-spacing: .125em;
   text-transform: uppercase;
-  color: rgba(243, 236, 219, 0.92);
+  color: rgba(255, 251, 243, 0.97);
   transition: border-color .14s ease-out, background .14s ease-out, color .14s ease-out, transform .14s ease-out;
 }
 body.homepage .home-hero__cta:hover,
 body.homepage .home-hero__cta:focus-visible {
-  border-color: rgba(243, 236, 219, 0.84);
-  background: rgba(243, 236, 219, 0.09);
+  border-color: rgba(255, 251, 243, 0.94);
+  background: rgba(250, 245, 232, 0.16);
   color: #ffffff;
   transform: translateY(-1px);
 }
 body.homepage .home-hero__cta--secondary {
-  border-color: rgba(243, 236, 219, 0.28);
-  background: transparent;
-  color: rgba(243, 236, 219, 0.82);
+  border-color: rgba(250, 245, 232, 0.5);
+  background: rgba(7, 16, 21, 0.1);
+  color: rgba(255, 250, 241, 0.92);
 }
 
 body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
