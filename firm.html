@@ -199,21 +199,21 @@
         grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
         gap: clamp(16px, 1.8vw, 28px);
         align-items: start;
-        margin-bottom: clamp(18px, 2.1vw, 26px);
+        margin-bottom: clamp(10px, 1.2vw, 16px);
         width: 100%;
       }
       .ops-intro .section-head {
         margin-bottom: 0;
       }
       .ops-intro > p {
-        max-width: 44ch;
-        margin-top: clamp(4px, 0.55vw, 8px);
-        font-size: clamp(15px, 1.02vw, 16px);
-        line-height: 1.58;
+        max-width: 42ch;
+        margin-top: clamp(2px, 0.4vw, 6px);
+        font-size: clamp(14px, 0.96vw, 15px);
+        line-height: 1.5;
       }
 
       .card-grid {
-        --pillar-grid-gap: clamp(12px, 1.1vw, 16px);
+        --pillar-grid-gap: clamp(10px, 0.95vw, 14px);
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: var(--pillar-grid-gap) !important;
@@ -231,29 +231,43 @@
         max-width: none;
       }
       .platform-ops-section .section-head {
-        margin-bottom: clamp(20px, 2.2vw, 32px);
+        margin-bottom: clamp(14px, 1.4vw, 20px);
       }
       .platform-ops-section .pillar-card {
-        min-height: clamp(148px, 12.2vw, 170px);
+        min-height: clamp(176px, 13.8vw, 196px);
       }
       .platform-ops-section .card {
-        border: 1px solid var(--rule);
+        border: 1px solid color-mix(in srgb, var(--rule) 76%, var(--qing-light) 24%);
         background: var(--xuan);
-        padding: clamp(10px, 0.75vw, 12px) clamp(12px, 0.9vw, 14px)
-          clamp(11px, 0.88vw, 13px) !important;
+        box-shadow: 0 1px 2px rgba(15, 30, 26, 0.03);
+        padding: clamp(12px, 0.95vw, 16px) clamp(12px, 0.95vw, 16px)
+          clamp(12px, 1vw, 16px) !important;
         min-height: 0;
         display: grid;
         grid-template-rows: auto auto auto auto;
-        row-gap: clamp(2px, 0.24vw, 4px);
+        row-gap: clamp(4px, 0.34vw, 6px);
         align-content: start;
+        transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1),
+          box-shadow 260ms cubic-bezier(0.22, 0.61, 0.36, 1),
+          border-color 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+      .platform-ops-section .card:hover {
+        transform: translateY(-2px);
+        border-color: color-mix(in srgb, var(--qing) 24%, var(--rule) 76%);
+        box-shadow: 0 6px 16px rgba(15, 30, 26, 0.08);
       }
       .card-icon {
-        width: min(100%, 44px);
-        height: clamp(34px, 2.8vw, 42px);
+        width: min(100%, 42px);
+        height: clamp(30px, 2.3vw, 36px);
         color: color-mix(in srgb, var(--cinnabar) 86%, var(--ink) 14%);
-        margin: 0 auto;
+        margin: 0;
         display: grid;
         align-items: center;
+        transition: color 220ms ease, transform 220ms ease;
+      }
+      .platform-ops-section .card:hover .card-icon {
+        color: color-mix(in srgb, var(--cinnabar) 90%, var(--ink) 10%);
+        transform: translateY(-1px);
       }
       .card-icon svg {
         width: 100%;
@@ -264,37 +278,42 @@
       .card-icon-wrap {
         width: 100%;
         min-height: 0;
-        border-radius: 10px;
         display: grid;
-        align-items: center;
+        justify-content: start;
+        align-items: start;
         margin-bottom: 0;
         padding-bottom: 0;
-        padding-top: clamp(1px, 0.16vw, 2px);
+        padding-top: 0;
       }
       .card-index {
-        font-size: 10px;
-        letter-spacing: 0.14em;
+        font-size: 9px;
+        letter-spacing: 0.17em;
         text-transform: uppercase;
-        color: var(--cinnabar);
-        font-weight: 500;
+        color: color-mix(in srgb, var(--cinnabar) 72%, var(--ink) 28%);
+        font-weight: 450;
         margin: 0;
         align-self: start;
         line-height: 1;
       }
       .pillar-card .card-index {
         margin-top: 0;
-        margin-bottom: clamp(1px, 0.14vw, 2px);
+        margin-bottom: clamp(4px, 0.34vw, 6px);
       }
       .platform-ops-section .card h3 {
-        font-size: clamp(18px, 1.35vw, 21px);
-        line-height: 1.15;
+        font-size: clamp(17px, 1.2vw, 19px);
+        line-height: 1.16;
         max-width: 18ch;
-        margin: 0 0 clamp(1px, 0.15vw, 2px);
+        min-height: calc(1.16em * 2);
+        margin: 0;
+        transition: color 220ms ease;
+      }
+      .platform-ops-section .card:hover h3 {
+        color: color-mix(in srgb, var(--ink-green-dark) 90%, var(--qing-dark) 10%);
       }
       .platform-ops-section .card > p:last-child {
         margin: 0;
-        font-size: clamp(13px, 0.92vw, 14px);
-        line-height: 1.38;
+        font-size: clamp(13px, 0.86vw, 14px);
+        line-height: 1.42;
       }
       .platform-ops-section .card p:last-child {
         max-width: none;
@@ -1087,8 +1106,8 @@
         .platform-ops-section .pillar-card {
           min-height: 0;
           grid-template-rows: auto auto auto auto;
-          row-gap: 0;
-          padding: 12px 13px 13px !important;
+          row-gap: 4px;
+          padding: 12px 13px 14px !important;
           align-content: start;
         }
         /* Icon wrapper: centered, height driven by the icon only */
@@ -1096,21 +1115,21 @@
           min-height: 0 !important;
           height: auto;
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
           padding: 0;
-          margin-bottom: 4px;
+          margin-bottom: 2px;
         }
         /* Icon: compact but still clearly readable */
         .pillar-card .card-icon {
-          width: 40px;
-          height: 40px;
+          width: 38px;
+          height: 34px;
           margin: 0;
         }
         /* Pillar label: tight beneath icon, tight above title */
         .pillar-card .card-index {
           margin-top: 0;
-          margin-bottom: 2px;
+          margin-bottom: 3px;
           text-align: left;
         }
         /* Title: close to label, small gap before body */
@@ -1189,12 +1208,13 @@
           </div>
           <div class="ops-intro">
             <div class="section-head">
-              <h2 class="sv-section-title">How the platform operates</h2>
+              <h2 class="sv-section-title">How ShoreVest Operates</h2>
             </div>
             <p>Four operating pillars govern origination, underwriting, and portfolio management in one integrated institutional process.</p>
           </div>
           <div class="card-grid">
             <article class="card pillar-card" id="pillar-sourcing">
+              <p class="card-index">PILLAR 01</p>
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1205,11 +1225,11 @@
                 </svg>
               </div>
               </div>
-              <p class="card-index">PILLAR 01</p>
               <h3>Proprietary Sourcing</h3>
               <p>Direct relationships with banks, AMCs, law firms, and servicers create access to complex situations before broad auction processes.</p>
             </article>
             <article class="card pillar-card" id="pillar-underwriting">
+              <p class="card-index">PILLAR 02</p>
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1220,11 +1240,11 @@
                 </svg>
               </div>
               </div>
-              <p class="card-index">PILLAR 02</p>
               <h3>Disciplined Underwriting</h3>
               <p>Transactions are structured around hard-asset collateral, conservative entry points, and enforceable claims under PRC law.</p>
             </article>
             <article class="card pillar-card" id="pillar-alignment">
+              <p class="card-index">PILLAR 03</p>
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1234,11 +1254,11 @@
                 </svg>
               </div>
               </div>
-              <p class="card-index">PILLAR 03</p>
               <h3>Alignment of Responsibility</h3>
               <p>The same investment team stays accountable from approval through monitoring and realization, reducing handoff risk.</p>
             </article>
             <article class="card pillar-card" id="pillar-portfolio-control">
+              <p class="card-index">PILLAR 04</p>
               <div class="card-icon-wrap" aria-hidden="true">
               <div class="card-icon" aria-hidden="true">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1249,7 +1269,6 @@
                 </svg>
               </div>
               </div>
-              <p class="card-index">PILLAR 04</p>
               <h3>Active Portfolio Control</h3>
               <p>Continuous monitoring and integrated workout execution support timing discipline and recovery outcomes across changing cycles.</p>
             </article>
