@@ -876,11 +876,17 @@ body.homepage .home-hero::before {
   background:
     linear-gradient(
       102deg,
-      rgba(8, 14, 12, 0.82) 0%,
-      rgba(8, 14, 12, 0.58) 34%,
-      rgba(8, 14, 12, 0.26) 58%,
-      rgba(8, 14, 12, 0.08) 76%,
+      rgba(8, 14, 12, 0.64) 0%,
+      rgba(8, 14, 12, 0.44) 30%,
+      rgba(8, 14, 12, 0.2) 52%,
+      rgba(8, 14, 12, 0.06) 74%,
       rgba(8, 14, 12, 0) 100%
+    ),
+    radial-gradient(
+      82% 88% at 16% 44%,
+      rgba(8, 14, 12, 0.22) 0%,
+      rgba(8, 14, 12, 0.1) 42%,
+      rgba(8, 14, 12, 0) 76%
     ) !important;
 }
 
@@ -893,8 +899,7 @@ body.homepage .home-hero__cta-arrow {
 }
 
 body.homepage .home-hero__eyebrow {
-  /* Improve contrast when the hero image area behind this label is bright. */
-  color: #163a2f !important;
+  color: rgba(250, 244, 232, 0.92) !important;
 }
 
 body.homepage .home-hero__headline-emphasis {
@@ -903,7 +908,7 @@ body.homepage .home-hero__headline-emphasis {
 
 body.homepage .home-hero__support {
   max-width: 34ch;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
 }
 
 body.homepage .home-hero__cta-arrow {
@@ -931,11 +936,17 @@ body.homepage .home-hero__cta:active .home-hero__cta-arrow {
     background:
       linear-gradient(
         105deg,
-        rgba(8, 14, 12, 0.88) 0%,
-        rgba(8, 14, 12, 0.66) 36%,
-        rgba(8, 14, 12, 0.32) 60%,
-        rgba(8, 14, 12, 0.1) 78%,
+        rgba(8, 14, 12, 0.72) 0%,
+        rgba(8, 14, 12, 0.5) 34%,
+        rgba(8, 14, 12, 0.26) 58%,
+        rgba(8, 14, 12, 0.08) 78%,
         rgba(8, 14, 12, 0) 100%
+      ),
+      radial-gradient(
+        86% 90% at 18% 46%,
+        rgba(8, 14, 12, 0.26) 0%,
+        rgba(8, 14, 12, 0.12) 44%,
+        rgba(8, 14, 12, 0) 78%
       ) !important;
   }
 
