@@ -1723,7 +1723,7 @@
         gap: 7px 14px;
         padding: 11px 0;
         border: 0;
-        background: transparent;
+        background: var(--blue-green);
       }
       .alloc-bar {
         grid-column: 1 / -1;
@@ -1748,14 +1748,14 @@
         font-size: 12px;
         letter-spacing: 0.075em;
         text-transform: uppercase;
-        color: var(--ink-dark);
+        color: var(--paper-light);
       }
       .alloc-value {
         margin: 0;
         font-family: var(--serif);
         font-size: 21px;
         line-height: 1;
-        color: var(--ink-dark);
+        color: var(--paper-light);
       }
       .alloc-range {
         grid-column: 1 / -1;
@@ -1763,7 +1763,7 @@
         font-size: 10px;
         letter-spacing: 0.065em;
         text-transform: uppercase;
-        color: rgba(15, 34, 6, 0.62);
+        color: color-mix(in srgb, var(--paper-light) 84%, transparent);
       }
       .alloc-footnote {
         margin-top: 8px;
@@ -2382,9 +2382,9 @@
       background:linear-gradient(180deg, var(--xuan-light) 0%, color-mix(in srgb, var(--xuan-light) 80%, var(--xuan) 20%) 100%)!important;
     }
     .strategy-hero .wrap{
-      grid-template-columns:minmax(0, 2.15fr) minmax(360px, 0.95fr)!important;
-      gap:clamp(20px, 2.1vw, 34px)!important;
-      max-width:min(1440px, calc(100% - clamp(28px, 4.2vw, 88px)))!important;
+      grid-template-columns:minmax(0, 2.45fr) minmax(300px, 0.85fr)!important;
+      gap:clamp(24px, 2.2vw, 36px)!important;
+      max-width:min(1360px, calc(100% - clamp(32px, 6vw, 96px)))!important;
       width:100%!important;
       margin-left:auto!important;
       margin-right:auto!important;
@@ -2398,7 +2398,7 @@
       font-weight:600!important;
     }
     .strategy-hero h1{
-      max-width:38ch!important;
+      max-width:46ch!important;
       font-size:clamp(32px, 4.2vw, 54px)!important;
       line-height:0.98!important;
       letter-spacing:-0.02em!important;
