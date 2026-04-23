@@ -591,31 +591,31 @@
       .metrics-shell {
         border-top: 1px solid color-mix(in srgb, var(--rule) 48%, transparent);
         background: color-mix(in srgb, var(--xuan) 96%, #ffffff 4%);
-        padding: clamp(4px, 0.6vw, 8px) 0;
+        padding: clamp(3px, 0.5vw, 6px) 0;
       }
       .metrics-grid {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: clamp(8px, 0.75vw, 11px);
+        column-gap: clamp(8px, 0.7vw, 10px);
+        row-gap: clamp(7px, 0.65vw, 9px);
         align-items: stretch;
       }
       .metric-card {
         border: 1px solid color-mix(in srgb, var(--rule) 64%, transparent);
         background: color-mix(in srgb, var(--xuan) 93%, #ffffff 7%);
-        padding: clamp(10px, 0.85vw, 14px) clamp(12px, 1vw, 16px) clamp(9px, 0.75vw, 12px);
+        padding: clamp(10px, 0.8vw, 13px) clamp(12px, 0.95vw, 15px) clamp(8px, 0.65vw, 10px);
         min-height: 0;
         display: flex;
         flex-direction: column;
         min-width: 0;
         justify-content: flex-start;
-        gap: clamp(3px, 0.35vw, 5px);
+        gap: clamp(2px, 0.26vw, 4px);
         grid-column: span 4;
-        transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        transition: background 180ms ease, border-color 180ms ease;
       }
       .metric-card:hover {
         background: color-mix(in srgb, var(--xuan) 90%, #ffffff 10%);
         border-color: color-mix(in srgb, var(--rule) 82%, transparent);
-        transform: translateY(-1px);
       }
       .metric-card--primary {
         grid-column: span 6;
@@ -628,28 +628,29 @@
           );
       }
       .metric-card--primary .metric-value {
-        font-size: clamp(34px, 3vw, 44px);
+        font-size: clamp(36px, 3.1vw, 46px);
       }
       .metric-card--primary .metric-copy {
-        max-width: 32ch;
+        max-width: 30ch;
       }
       .metric-card--wide {
         grid-column: span 4;
       }
       .metric-label {
-        font-size: 10px;
+        font-size: 10.5px;
         text-transform: uppercase;
-        letter-spacing: 0.17em;
+        letter-spacing: 0.15em;
         color: color-mix(in srgb, var(--cinnabar) 78%, var(--xuan-light) 22%);
         font-weight: 500;
+        line-height: 1.2;
       }
       .metric-value {
-        margin-top: clamp(2px, 0.24vw, 4px);
-        font-size: clamp(26px, 2.25vw, 34px);
-        line-height: 1.02;
-        letter-spacing: 0.005em;
+        margin-top: clamp(4px, 0.36vw, 6px);
+        font-size: clamp(28px, 2.35vw, 35px);
+        line-height: 0.98;
+        letter-spacing: 0.002em;
         color: var(--ink-green-dark);
-        font-weight: 450;
+        font-weight: 500;
         white-space: normal;
         overflow-wrap: normal;
         word-break: normal;
@@ -658,26 +659,31 @@
         max-width: 100%;
       }
       .metric-copy {
-        margin-top: 0;
-        font-size: 12.5px;
-        line-height: 1.3;
-        max-width: 34ch;
+        margin-top: auto;
+        padding-top: clamp(7px, 0.65vw, 10px);
+        border-top: 1px solid color-mix(in srgb, var(--rule) 62%, transparent);
+        font-size: 12.75px;
+        line-height: 1.34;
+        max-width: 32ch;
       }
       .track-record-intro {
         display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-        gap: clamp(14px, 1.6vw, 22px);
-        margin-bottom: clamp(10px, 1vw, 14px);
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: clamp(12px, 1.25vw, 17px);
+        align-items: end;
+        margin-bottom: clamp(9px, 0.75vw, 12px);
       }
       .track-record-intro p {
         margin: 0;
       }
       .track-record-note {
         border-left: 1px solid color-mix(in srgb, var(--rule) 82%, transparent);
-        padding-left: clamp(14px, 1.3vw, 20px);
+        max-width: 41ch;
+        justify-self: end;
+        padding-left: clamp(12px, 1vw, 16px);
         color: color-mix(in srgb, var(--ink-green-dark) 88%, black);
-        font-size: 14px;
-        line-height: 1.52;
+        font-size: 13.5px;
+        line-height: 1.44;
       }
 
       .thesis-list {
@@ -902,7 +908,7 @@
       }
       .track-record-section .section-head {
         gap: 5px;
-        margin-bottom: clamp(8px, 0.8vw, 12px);
+        margin-bottom: clamp(7px, 0.65vw, 10px);
       }
 
       @media (max-width: 1120px) {
@@ -917,13 +923,15 @@
         }
         .track-record-intro {
           grid-template-columns: 1fr;
-          gap: 8px;
+          gap: 7px;
         }
         .track-record-note {
           border-left: 0;
           border-top: 1px solid color-mix(in srgb, var(--rule) 82%, transparent);
           padding-left: 0;
           padding-top: 8px;
+          justify-self: stretch;
+          max-width: none;
         }
         .committee-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
