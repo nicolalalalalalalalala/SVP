@@ -101,14 +101,12 @@
 
       .pagehero {
         --pagehero-inline-pad: var(--team-intro-inline-pad);
-        --sv-hero-top-space: clamp(56px, 5.8vw, 82px);
-        --sv-hero-bottom-space: clamp(22px, 2.4vw, 34px);
+        --sv-hero-top-space: clamp(54px, 5.6vw, 78px);
+        --sv-hero-bottom-space: clamp(30px, 3.2vw, 46px);
         min-height: 0;
         padding: var(--sv-hero-top-space) var(--pagehero-inline-pad) var(--sv-hero-bottom-space) !important;
         border-bottom: 1px solid var(--rule);
         background: transparent;
-        display: flex;
-        align-items: center;
       }
       .pagehero .wrap {
         width: 100%;
@@ -119,11 +117,21 @@
       .pagehero__intro {
         width: min(1240px, 100%);
         margin-inline: 0;
-        padding: clamp(20px, 2.6vw, 30px) 0 clamp(16px, 2vw, 24px);
+        padding: clamp(24px, 2.8vw, 34px) 0 clamp(22px, 2.4vw, 30px);
         display: grid;
-        grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.9fr);
-        column-gap: clamp(28px, 4vw, 58px);
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+        grid-template-areas:
+          "eyebrow heading"
+          ". paragraph";
+        column-gap: clamp(28px, 4vw, 64px);
+        row-gap: clamp(10px, 1.1vw, 16px);
         border-top: 1px solid color-mix(in srgb, var(--rule) 88%, white);
+      }
+      .pagehero .eyebrow {
+        grid-area: eyebrow;
+        align-self: start;
+        margin-bottom: 0;
+        padding-top: clamp(8px, 1vw, 13px);
       }
       h1 {
         font-family: var(--team-type-heading);
@@ -134,20 +142,23 @@
         letter-spacing: 0.005em;
         text-transform: none;
         margin-bottom: 0;
-        max-width: 18.5ch;
+        max-width: 15ch;
+        grid-area: heading;
+        justify-self: start;
       }
       .pagehero p {
-        max-width: 52ch;
+        max-width: 50ch;
         font-size: var(--sv-type-body-size, 10pt);
         line-height: 1.68;
         color: var(--ink-soft);
         font-family: var(--team-type-body);
         margin-top: 0;
-        align-self: end;
-        padding-bottom: 2px;
+        grid-area: paragraph;
+        align-self: start;
+        padding-bottom: 0;
       }
       .pagehero p.pagehero__fullwidth {
-        max-width: 52ch;
+        max-width: 50ch;
       }
 
       .founder-note {
@@ -195,7 +206,7 @@
       }
 
       .team-groups {
-        padding: 44px 0 92px;
+        padding: 38px 0 92px;
         background: transparent;
       }
 
@@ -600,17 +611,25 @@
 
         .pagehero {
           min-height: auto;
-          padding-top: 108px;
-          padding-bottom: 26px;
+          padding-top: 102px;
+          padding-bottom: 30px;
         }
         .pagehero__intro {
           grid-template-columns: 1fr;
-          row-gap: 14px;
-          padding: 14px 0 6px;
+          grid-template-areas:
+            "eyebrow"
+            "heading"
+            "paragraph";
+          row-gap: 12px;
+          padding: 16px 0 10px;
+        }
+        .pagehero .eyebrow {
+          padding-top: 0;
         }
         .pagehero p {
           font-size: 17px;
           line-height: 1.6;
+          max-width: 42ch;
         }
         .founder-note {
           padding: 32px 0;
