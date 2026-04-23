@@ -215,13 +215,18 @@
       }
 
       .card-grid {
-        --pillar-grid-gap: clamp(10px, 0.88vw, 13px);
+        --pillar-grid-gap: clamp(9px, 0.82vw, 12px);
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.98fr) minmax(0, 1fr) minmax(0, 1.02fr);
         gap: var(--pillar-grid-gap) !important;
         width: 100%;
         margin: 0;
         padding: 0 !important;
+      }
+      .platform-ops-section {
+        --sv-pillar-title-size: clamp(14px, 0.95vw, 15.5px);
+        --sv-pillar-title-line: 1.18;
+        --sv-pillar-title-weight: 620;
       }
       .platform-ops-section .intro-frame,
       .platform-ops-section .card-grid {
@@ -236,18 +241,18 @@
         margin-bottom: clamp(14px, 1.4vw, 20px);
       }
       .platform-ops-section .pillar-card {
-        min-height: clamp(132px, 9.4vw, 148px);
+        min-height: clamp(116px, 8.6vw, 132px);
       }
       .platform-ops-section .card {
         border: 1px solid color-mix(in srgb, var(--rule) 76%, var(--qing-light) 24%);
         background: var(--xuan);
         box-shadow: 0 1px 2px rgba(15, 30, 26, 0.03);
-        padding: clamp(8px, 0.62vw, 10px) clamp(10px, 0.8vw, 12px)
-          clamp(8px, 0.66vw, 10px) !important;
+        padding: clamp(8px, 0.58vw, 9px) clamp(10px, 0.82vw, 13px)
+          clamp(9px, 0.72vw, 11px) !important;
         min-height: 0;
         display: grid;
-        grid-template-rows: auto auto auto auto;
-        row-gap: clamp(1px, 0.14vw, 2px);
+        grid-template-rows: auto auto auto 1fr;
+        row-gap: clamp(2px, 0.22vw, 4px);
         align-content: start;
         position: relative;
         transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -260,8 +265,8 @@
         position: absolute;
         inset: 0 auto auto 0;
         width: 100%;
-        height: 1px;
-        background: color-mix(in srgb, var(--rule) 58%, var(--qing-light) 42%);
+        height: 2px;
+        background: color-mix(in srgb, var(--cinnabar) 34%, var(--rule) 66%);
         pointer-events: none;
       }
       .platform-ops-section .card:hover {
@@ -271,9 +276,9 @@
         box-shadow: 0 5px 12px rgba(15, 30, 26, 0.06);
       }
       .card-icon {
-        width: min(100%, 36px);
-        height: clamp(25px, 1.64vw, 30px);
-        color: color-mix(in srgb, var(--cinnabar) 86%, var(--ink) 14%);
+        width: min(100%, 34px);
+        height: clamp(22px, 1.45vw, 26px);
+        color: color-mix(in srgb, var(--cinnabar) 82%, var(--ink) 18%);
         margin: 0;
         display: grid;
         align-items: center;
@@ -292,48 +297,51 @@
       .card-icon-wrap {
         width: 100%;
         min-height: 0;
-        display: grid;
-        justify-content: start;
-        align-items: start;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: 0;
-        margin-bottom: clamp(2px, 0.2vw, 4px);
+        margin-bottom: clamp(1px, 0.14vw, 2px);
         padding-bottom: 0;
-        padding-top: 0;
+        padding-top: clamp(1px, 0.12vw, 2px);
+        border-top: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
       }
       .card-index {
-        font-size: 8.6px;
-        letter-spacing: 0.18em;
+        font-size: 9px;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: color-mix(in srgb, var(--cinnabar) 66%, var(--ink) 34%);
-        font-weight: 600;
+        color: color-mix(in srgb, var(--ink) 70%, var(--cinnabar) 30%);
+        font-weight: 500;
         margin: 0;
         align-self: start;
-        line-height: 1.06;
+        line-height: 1.1;
+        opacity: 0.88;
       }
       .pillar-card .card-index {
         margin-top: 0;
-        margin-bottom: clamp(1px, 0.12vw, 2px);
+        margin-bottom: 0;
       }
       .platform-ops-section .card h3 {
-        font-size: clamp(15.5px, 1.03vw, 17px);
-        line-height: 1.14;
-        letter-spacing: 0.003em;
+        line-height: 1.18;
+        letter-spacing: 0.004em;
         max-width: 17ch;
         min-height: calc(1.16em * 2);
-        margin: 0 0 clamp(2px, 0.16vw, 3px);
+        margin: 0 0 clamp(1px, 0.14vw, 2px);
         transition: color 220ms ease;
+        text-wrap: balance;
       }
       .platform-ops-section .card:hover h3 {
         color: color-mix(in srgb, var(--ink-green-dark) 90%, var(--qing-dark) 10%);
       }
       .platform-ops-section .card > p:last-child {
         margin: 0;
-        font-size: clamp(12.35px, 0.79vw, 13.1px);
-        line-height: 1.38;
+        font-size: clamp(12.4px, 0.78vw, 12.9px);
+        line-height: 1.42;
         letter-spacing: 0.002em;
+        color: color-mix(in srgb, var(--ink) 89%, var(--qing-dark) 11%);
       }
       .platform-ops-section .card p:last-child {
-        max-width: 29ch;
+        max-width: 31ch;
       }
       .pillar-card .card-icon-wrap {
         transform: translateY(0);
@@ -1104,8 +1112,8 @@
         .platform-ops-section .pillar-card {
           min-height: 0;
           grid-template-rows: auto auto auto auto;
-          row-gap: 1px;
-          padding: 8px 10px 9px !important;
+          row-gap: 2px;
+          padding: 8px 10px 10px !important;
           align-content: start;
         }
         /* Icon wrapper: centered, height driven by the icon only */
@@ -1117,18 +1125,18 @@
           align-items: center;
           padding: 0;
           margin-top: 0;
-          margin-bottom: 3px;
+          margin-bottom: 1px;
         }
         /* Icon: compact but still clearly readable */
         .pillar-card .card-icon {
-          width: 30px;
-          height: 24px;
+          width: 28px;
+          height: 22px;
           margin: 0;
         }
         /* Pillar label: tight beneath icon, tight above title */
         .pillar-card .card-index {
           margin-top: 0;
-          margin-bottom: 2px;
+          margin-bottom: 0;
           text-align: left;
         }
         /* Title: close to label, small gap before body */
