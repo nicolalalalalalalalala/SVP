@@ -418,16 +418,16 @@
       }
       .operations-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
         gap: 0;
         align-items: stretch !important;
-        min-height: clamp(288px, 30vw, 368px);
+        min-height: clamp(300px, 31vw, 388px);
         background: color-mix(in srgb, var(--xuan) 97%, #ffffff 3%);
         border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
         overflow: hidden;
       }
       .operations-grid > article {
-        min-height: clamp(288px, 30vw, 368px);
+        min-height: clamp(300px, 31vw, 388px);
       }
       .geography-copy,
       .operations-map {
@@ -459,7 +459,7 @@
         display: flex;
         overflow: hidden;
         border-left: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
-        padding: clamp(7px, 0.85vw, 12px);
+        padding: clamp(10px, 1vw, 14px);
         margin: 0 !important;
       }
       .operations-map-visual {
@@ -468,6 +468,8 @@
         width: 100%;
         flex: 1 1 auto;
         min-height: 100%;
+        aspect-ratio: 1.68 / 1;
+        align-self: center;
         overflow: hidden;
         border: 0;
         isolation: isolate;
@@ -482,8 +484,8 @@
         height: 100%;
         opacity: 1;
         object-fit: cover;
-        object-position: 68.4% 43.8%;
-        transform: scale(1.92);
+        object-position: 61.8% 42.6%;
+        transform: scale(1.62);
         transform-origin: center;
         filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
         margin: 0;
@@ -530,24 +532,24 @@
       }
       .op-marker--guangzhou {
         --dot: #C93B2A;
-        left: 67.2%;
-        top: 56.4%;
+        left: 68.2%;
+        top: 57%;
       }
       .op-marker--guangzhou > span {
         left: auto;
-        right: 11px;
-        top: -13px;
+        right: 12px;
+        top: -12px;
         text-align: right;
       }
       .op-marker--shanghai {
         --dot: #3D7070;
-        left: 69.8%;
-        top: 45.1%;
+        left: 71.1%;
+        top: 46.2%;
       }
       .op-marker--shanghai > span {
-        left: 10px;
+        left: 11px;
         right: auto;
-        top: -15px;
+        top: -14px;
         text-align: left;
       }
       .op-marker--shanghai > span::after {
@@ -558,13 +560,13 @@
       }
       .op-marker--hong-kong {
         --dot: #2E4A18;
-        left: 69.4%;
-        top: 57.9%;
+        left: 68.9%;
+        top: 58.5%;
       }
       .op-marker--hong-kong > span {
-        left: 11px;
+        left: 10px;
         right: auto;
-        top: 2px;
+        top: 1px;
         text-align: left;
       }
       .op-marker--hong-kong > span::after {
@@ -575,13 +577,13 @@
       }
       .op-marker--california {
         --dot: #4A6D6D;
-        left: 23.6%;
-        top: 41.7%;
+        left: 34.2%;
+        top: 45.2%;
       }
       .op-marker--california > span {
         left: auto;
-        right: 12px;
-        top: -10px;
+        right: 11px;
+        top: -9px;
         text-align: right;
       }
 
@@ -977,12 +979,12 @@
           max-width: none;
         }
         .operations-map-visual {
-          min-height: clamp(252px, 44vw, 324px);
-          aspect-ratio: 1.6 / 1;
+          min-height: clamp(254px, 45vw, 328px);
+          aspect-ratio: 1.62 / 1;
         }
         .operations-map img {
-          object-position: 68.2% 44%;
-          transform: scale(1.9);
+          object-position: 62.1% 42.8%;
+          transform: scale(1.6);
         }
       }
       @media (max-width: 767px) {
@@ -1028,12 +1030,12 @@
           max-width: 100%;
         }
         .operations-map-visual {
-          min-height: 224px;
-          aspect-ratio: 1.5 / 1;
+          min-height: 228px;
+          aspect-ratio: 1.54 / 1;
         }
         .operations-map img {
-          object-position: 68.6% 44.4%;
-          transform: scale(1.88);
+          object-position: 62.6% 43%;
+          transform: scale(1.58);
         }
         .op-marker::before {
           width: 6px;
