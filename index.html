@@ -1555,6 +1555,8 @@ body.homepage {
   --home-intro-left-col: minmax(280px, 4fr);
   --home-intro-right-col: minmax(0, 8fr);
   --home-intro-copy-max: var(--home-box-copy-max);
+  --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
+  --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1814,18 +1816,23 @@ body.homepage .about__cols {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  border-top: 0;
-  border: 1px solid color-mix(in srgb, var(--rule) 74%, transparent);
-  background: color-mix(in srgb, #f7f2e5 86%, transparent);
+  border: 0;
+  background: transparent;
 }
 body.homepage .ac {
   border: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
   padding: 26px 22px;
   min-width: 0;
   background: transparent;
 }
-body.homepage .ac + .ac { border-left: 1px solid color-mix(in srgb, var(--rule) 70%, transparent); }
+body.homepage .ac + .ac { border-left: 1px solid var(--home-rule-quiet); }
+body.homepage .about__intro {
+  border-bottom: 0;
+}
+body.homepage .about__intro--principles .about__supporting-line {
+  border-top: 0;
+  padding-top: 0;
+}
 body.homepage #about .about__intro--overview,
 body.homepage #principles .principles__intro,
 body.homepage #strategy .strat__hd {
@@ -1863,6 +1870,18 @@ body.homepage #about .about__intro--overview .about__body p {
 body.homepage #strategy .strat__hd {
   grid-template-columns: minmax(280px, 3.2fr) minmax(0, 9.8fr);
   gap: clamp(34px, 4vw, 56px);
+}
+body.homepage .strat__grid {
+  border: 0;
+  gap: 10px;
+  background: transparent;
+}
+body.homepage .sg {
+  border-bottom: 0;
+}
+body.homepage .strat__actions {
+  border-top: 0;
+  padding-top: 22px;
 }
 body.homepage #principles .about__body {
   justify-self: stretch;
@@ -1954,8 +1973,14 @@ body.homepage #cdd {
   background:
     radial-gradient(circle at 18% 14%, rgba(87, 138, 63, 0.34) 0%, rgba(33, 79, 24, 0) 52%),
     linear-gradient(120deg, #193712 0%, #16300f 38%, #0f2206 100%);
-  border-top: 1px solid rgba(250, 246, 238, 0.2);
-  border-bottom: 1px solid rgba(250, 246, 238, 0.18);
+  border-top: 1px solid rgba(250, 246, 238, 0.1);
+  border-bottom: 0;
+}
+body.homepage #insights {
+  border-top: 0;
+}
+body.homepage .ins__hd {
+  border-bottom: 1px solid var(--home-rule-faint);
 }
 body.homepage #cdd::before {
   content: "";
@@ -2052,7 +2077,7 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   body.homepage .ac + .ac {
     border-left: 0;
-    border-top: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
+    border-top: 1px solid var(--home-rule-quiet);
   }
 }
 @media (max-width: 767px) {
