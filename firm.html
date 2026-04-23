@@ -697,53 +697,51 @@
       }
 
       .metrics-shell {
-        border-top: 1px solid var(--rule);
-        border-bottom: 1px solid var(--rule);
-        background: var(--xuan);
-        padding: clamp(8px, 1.2vw, 14px) 0;
+        border-top: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
+        background: color-mix(in srgb, var(--xuan) 96%, #ffffff 4%);
+        padding: clamp(6px, 0.9vw, 10px) 0;
       }
       .metrics-grid {
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: 0;
+        gap: clamp(8px, 0.8vw, 12px);
         align-items: start;
       }
       .metric-card {
-        border-top: 1px solid var(--rule);
-        border-right: 1px solid var(--rule);
-        background: transparent;
-        padding: clamp(12px, 1.1vw, 16px) clamp(14px, 1.4vw, 20px) clamp(10px, 1vw, 14px);
+        border: 1px solid color-mix(in srgb, var(--rule) 64%, transparent);
+        background: color-mix(in srgb, var(--xuan) 93%, #ffffff 7%);
+        padding: clamp(12px, 1vw, 16px) clamp(14px, 1.2vw, 18px) clamp(11px, 0.9vw, 14px);
         min-height: 0;
-        display: grid;
-        grid-template-rows: auto auto auto;
-        align-content: start;
+        display: flex;
+        flex-direction: column;
         min-width: 0;
         grid-column: span 2;
+        transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
       }
-      .metric-card:nth-child(3n) {
-        border-right: 0;
+      .metric-card:hover {
+        background: color-mix(in srgb, var(--xuan) 90%, #ffffff 10%);
+        border-color: color-mix(in srgb, var(--rule) 82%, transparent);
+        transform: translateY(-1px);
       }
       .metric-card:nth-child(4),
       .metric-card:nth-child(5) {
         grid-column: span 3;
       }
-      .metric-card:nth-child(5) {
-        border-right: 0;
-      }
       .metric-label {
-        font-size: 11px;
+        font-size: 10px;
         text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: var(--cinnabar);
+        letter-spacing: 0.17em;
+        color: color-mix(in srgb, var(--cinnabar) 78%, var(--xuan-light) 22%);
         font-weight: 500;
       }
       .metric-value {
-        margin-top: clamp(8px, 0.75vw, 11px);
-        font-size: clamp(34px, 3.1vw, 46px);
-        line-height: 1.04;
+        margin-top: clamp(5px, 0.45vw, 7px);
+        font-size: clamp(30px, 2.65vw, 40px);
+        line-height: 1.02;
         letter-spacing: 0.005em;
         color: var(--ink-green-dark);
-        font-weight: 400;
+        font-weight: 450;
         white-space: normal;
         overflow-wrap: normal;
         word-break: normal;
@@ -752,13 +750,15 @@
         max-width: 100%;
       }
       .metric-rule {
-        margin-top: clamp(8px, 0.75vw, 11px);
-        background: var(--rule);
+        margin-top: clamp(6px, 0.55vw, 8px);
+        background: color-mix(in srgb, var(--rule) 85%, transparent);
+        height: 1px;
       }
       .metric-copy {
-        margin-top: clamp(6px, 0.6vw, 9px);
-        font-size: 14px;
-        line-height: 1.45;
+        margin-top: clamp(5px, 0.45vw, 7px);
+        font-size: 13px;
+        line-height: 1.35;
+        max-width: 38ch;
       }
 
       .thesis-list {
@@ -975,15 +975,15 @@
       }
 
       .track-record-section {
-        padding: clamp(44px, 5vw, 64px) 0;
+        padding: clamp(32px, 3.7vw, 48px) 0;
       }
       .track-record-section .wrap {
         max-width: 1320px;
         padding: 0 clamp(16px, 2.8vw, 44px);
       }
       .track-record-section .section-head {
-        gap: 8px;
-        margin-bottom: 16px;
+        gap: 5px;
+        margin-bottom: 10px;
       }
 
       @media (max-width: 1120px) {
@@ -993,8 +993,8 @@
         .track-record-section .metrics-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        .track-record-section .metrics-grid .metric-card:last-child {
-          grid-column: 1 / -1;
+        .track-record-section .metric-card {
+          grid-column: span 1;
         }
         .committee-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
