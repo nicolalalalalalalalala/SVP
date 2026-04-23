@@ -563,7 +563,7 @@
         background-image: url("assets/images/world-pacific.svg");
         background-repeat: repeat-x;
         background-size: auto 172%;
-        /* Hard eastward recentering: keep California left, bring coastal China fully into frame, and trim open Pacific. */
+        /* Eastward recentering to keep coastal China in frame while retaining California on the right edge. */
         background-position: 92.2% 49.9%;
         opacity: 0.9;
         filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
@@ -667,14 +667,14 @@
       }
       .op-marker--california {
         --dot: #4A6D6D;
-        left: 7.2%;
+        left: 92.4%;
         top: 40.4%;
       }
       .op-marker--california > span {
-        left: 10px;
-        right: auto;
+        left: auto;
+        right: 12px;
         top: -12px;
-        text-align: left;
+        text-align: right;
       }
 
       .metrics-shell {
@@ -1079,8 +1079,8 @@
           top: -8px;
         }
         .op-marker--california > span {
-          left: 10px;
-          right: auto;
+          left: auto;
+          right: 10px;
         }
         /* ── Mobile pillar card — hard reset ── */
         /* Kill all inherited vertical spacing; rebuild with per-element margins */
