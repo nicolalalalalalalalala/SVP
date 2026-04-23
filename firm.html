@@ -723,19 +723,20 @@
       }
       .metrics-grid {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: clamp(8px, 0.8vw, 12px);
-        align-items: start;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: clamp(9px, 0.9vw, 13px);
+        align-items: stretch;
       }
       .metric-card {
         border: 1px solid color-mix(in srgb, var(--rule) 64%, transparent);
         background: color-mix(in srgb, var(--xuan) 93%, #ffffff 7%);
-        padding: clamp(12px, 1vw, 16px) clamp(14px, 1.2vw, 18px) clamp(11px, 0.9vw, 14px);
+        padding: clamp(13px, 1vw, 17px) clamp(14px, 1.2vw, 18px) clamp(12px, 0.95vw, 15px);
         min-height: 0;
         display: flex;
         flex-direction: column;
         min-width: 0;
-        grid-column: span 2;
+        justify-content: space-between;
+        grid-column: span 4;
         transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
       }
       .metric-card:hover {
@@ -743,9 +744,24 @@
         border-color: color-mix(in srgb, var(--rule) 82%, transparent);
         transform: translateY(-1px);
       }
-      .metric-card:nth-child(4),
-      .metric-card:nth-child(5) {
-        grid-column: span 3;
+      .metric-card--primary {
+        grid-column: span 6;
+        border-color: color-mix(in srgb, var(--qing) 26%, var(--rule));
+        background:
+          linear-gradient(
+            150deg,
+            color-mix(in srgb, var(--xuan-light) 90%, #ffffff) 0%,
+            color-mix(in srgb, var(--xuan-light) 72%, #d8ebe6) 100%
+          );
+      }
+      .metric-card--primary .metric-value {
+        font-size: clamp(36px, 3.2vw, 48px);
+      }
+      .metric-card--primary .metric-copy {
+        max-width: 34ch;
+      }
+      .metric-card--wide {
+        grid-column: span 6;
       }
       .metric-label {
         font-size: 10px;
@@ -778,6 +794,22 @@
         font-size: 13px;
         line-height: 1.35;
         max-width: 38ch;
+      }
+      .track-record-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: clamp(14px, 1.6vw, 22px);
+        margin-bottom: clamp(10px, 1vw, 14px);
+      }
+      .track-record-intro p {
+        margin: 0;
+      }
+      .track-record-note {
+        border-left: 1px solid color-mix(in srgb, var(--rule) 82%, transparent);
+        padding-left: clamp(14px, 1.3vw, 20px);
+        color: color-mix(in srgb, var(--ink-green-dark) 88%, black);
+        font-size: 14px;
+        line-height: 1.52;
       }
 
       .thesis-list {
@@ -1002,7 +1034,7 @@
       }
       .track-record-section .section-head {
         gap: 5px;
-        margin-bottom: 10px;
+        margin-bottom: clamp(8px, 0.8vw, 12px);
       }
 
       @media (max-width: 1120px) {
@@ -1014,6 +1046,16 @@
         }
         .track-record-section .metric-card {
           grid-column: span 1;
+        }
+        .track-record-intro {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+        .track-record-note {
+          border-left: 0;
+          border-top: 1px solid color-mix(in srgb, var(--rule) 82%, transparent);
+          padding-left: 0;
+          padding-top: 8px;
         }
         .committee-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1320,17 +1362,20 @@
         <div class="wrap">
           <div class="section-head">
             <h2 class="sv-section-title">Track record</h2>
-            <p>Cycle-tested performance metrics, presented in a clear institutional format.</p>
+          </div>
+          <div class="track-record-intro">
+            <p>Cycle-tested performance and underwriting discipline reflected across deployment scale, transaction outcomes, and team continuity.</p>
+            <p class="track-record-note">Metrics shown represent aggregate historical experience across ShoreVest fund vintages and operating periods.</p>
           </div>
           <div class="metrics-shell">
             <div class="metrics-grid">
-              <article class="metric-card">
+              <article class="metric-card metric-card--primary">
                 <p class="metric-label">Capital deployed</p>
                 <p class="metric-value">US$2B+</p>
                 <div class="metric-rule"></div>
                 <p class="metric-copy">Deployed across six fund vintages.</p>
               </article>
-              <article class="metric-card">
+              <article class="metric-card metric-card--primary">
                 <p class="metric-label">Operating history</p>
                 <p class="metric-value">Since 2004</p>
                 <div class="metric-rule"></div>
@@ -1348,7 +1393,7 @@
                 <div class="metric-rule"></div>
                 <p class="metric-copy">Typical portfolio LTV range.</p>
               </article>
-              <article class="metric-card">
+              <article class="metric-card metric-card--wide">
                 <p class="metric-label">Team continuity</p>
                 <p class="metric-value">~20 years</p>
                 <div class="metric-rule"></div>
