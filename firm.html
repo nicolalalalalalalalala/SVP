@@ -215,7 +215,7 @@
       }
 
       .card-grid {
-        --pillar-grid-gap: clamp(10px, 0.95vw, 14px);
+        --pillar-grid-gap: clamp(10px, 0.88vw, 13px);
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: var(--pillar-grid-gap) !important;
@@ -236,18 +236,18 @@
         margin-bottom: clamp(14px, 1.4vw, 20px);
       }
       .platform-ops-section .pillar-card {
-        min-height: clamp(158px, 11.9vw, 176px);
+        min-height: clamp(146px, 10.7vw, 166px);
       }
       .platform-ops-section .card {
         border: 1px solid color-mix(in srgb, var(--rule) 76%, var(--qing-light) 24%);
         background: var(--xuan);
         box-shadow: 0 1px 2px rgba(15, 30, 26, 0.03);
-        padding: clamp(11px, 0.82vw, 13px) clamp(11px, 0.9vw, 14px)
-          clamp(10px, 0.86vw, 13px) !important;
+        padding: clamp(10px, 0.72vw, 12px) clamp(11px, 0.86vw, 13px)
+          clamp(9px, 0.74vw, 11px) !important;
         min-height: 0;
         display: grid;
         grid-template-rows: auto auto auto auto;
-        row-gap: clamp(2px, 0.22vw, 4px);
+        row-gap: clamp(1px, 0.16vw, 3px);
         align-content: start;
         position: relative;
         transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -271,8 +271,8 @@
         box-shadow: 0 5px 12px rgba(15, 30, 26, 0.06);
       }
       .card-icon {
-        width: min(100%, 42px);
-        height: clamp(30px, 2.1vw, 36px);
+        width: min(100%, 39px);
+        height: clamp(28px, 1.84vw, 33px);
         color: color-mix(in srgb, var(--cinnabar) 86%, var(--ink) 14%);
         margin: 0;
         display: grid;
@@ -295,30 +295,32 @@
         display: grid;
         justify-content: start;
         align-items: start;
-        margin-bottom: clamp(1px, 0.12vw, 2px);
+        margin-top: -1px;
+        margin-bottom: 0;
         padding-bottom: 0;
         padding-top: 0;
       }
       .card-index {
-        font-size: 9px;
-        letter-spacing: 0.14em;
+        font-size: 8.2px;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: color-mix(in srgb, var(--cinnabar) 65%, var(--ink) 35%);
-        font-weight: 520;
+        color: color-mix(in srgb, var(--cinnabar) 59%, var(--ink) 41%);
+        font-weight: 560;
         margin: 0;
         align-self: start;
-        line-height: 1.05;
+        line-height: 1.12;
       }
       .pillar-card .card-index {
         margin-top: 0;
-        margin-bottom: clamp(3px, 0.22vw, 4px);
+        margin-bottom: clamp(2px, 0.18vw, 3px);
       }
       .platform-ops-section .card h3 {
-        font-size: clamp(16px, 1.1vw, 18px);
-        line-height: 1.14;
+        font-size: clamp(15.5px, 1.03vw, 17px);
+        line-height: 1.16;
+        letter-spacing: 0.003em;
         max-width: 18ch;
-        min-height: calc(1.14em * 2);
-        margin: 0 0 clamp(2px, 0.18vw, 3px);
+        min-height: calc(1.16em * 2);
+        margin: 0 0 clamp(1px, 0.12vw, 2px);
         transition: color 220ms ease;
       }
       .platform-ops-section .card:hover h3 {
@@ -326,11 +328,11 @@
       }
       .platform-ops-section .card > p:last-child {
         margin: 0;
-        font-size: clamp(12.5px, 0.82vw, 13.5px);
-        line-height: 1.38;
+        font-size: clamp(12.2px, 0.77vw, 13px);
+        line-height: 1.35;
       }
       .platform-ops-section .card p:last-child {
-        max-width: 32ch;
+        max-width: 30ch;
       }
       .pillar-card .card-icon-wrap {
         transform: translateY(0);
@@ -1056,8 +1058,8 @@
         .platform-ops-section .pillar-card {
           min-height: 0;
           grid-template-rows: auto auto auto auto;
-          row-gap: 3px;
-          padding: 11px 12px 12px !important;
+          row-gap: 2px;
+          padding: 10px 11px 11px !important;
           align-content: start;
         }
         /* Icon wrapper: centered, height driven by the icon only */
@@ -1068,23 +1070,24 @@
           justify-content: flex-start;
           align-items: center;
           padding: 0;
-          margin-bottom: 1px;
+          margin-top: -1px;
+          margin-bottom: 0;
         }
         /* Icon: compact but still clearly readable */
         .pillar-card .card-icon {
-          width: 34px;
-          height: 30px;
+          width: 32px;
+          height: 28px;
           margin: 0;
         }
         /* Pillar label: tight beneath icon, tight above title */
         .pillar-card .card-index {
           margin-top: 0;
-          margin-bottom: 2px;
+          margin-bottom: 1px;
           text-align: left;
         }
         /* Title: close to label, small gap before body */
         .pillar-card h3 {
-          margin-bottom: 1px;
+          margin-bottom: 0;
         }
       }
 
