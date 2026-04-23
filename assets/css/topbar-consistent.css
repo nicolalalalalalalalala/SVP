@@ -1304,7 +1304,7 @@ footer.sv-footer .sv-footer__legal-links a + a::before {
   -webkit-backdrop-filter: none !important;
 }
 #nav .nav__logo { display:inline-flex !important; align-items:center !important; gap:4px !important; height:100% !important; }
-#nav .nav__logo-mark { width:36px !important; height:36px !important; flex:0 0 36px !important; object-fit:cover !important; object-position:center !important; }
+#nav .nav__logo-mark { width:36px !important; height:36px !important; flex:0 0 36px !important; object-fit:contain !important; object-position:center !important; image-rendering:-webkit-optimize-contrast !important; image-rendering:crisp-edges !important; }
 #nav .nav__logo-lockup { display:inline-flex !important; flex-direction:column !important; justify-content:center !important; align-items:flex-start !important; line-height:1 !important; row-gap:1px !important; padding-left:8px !important; border-left:none !important; min-height:31px !important; }
 #nav .nav__logo-en { font-family:'DIN 2014', 'Inter', sans-serif !important; font-size:16px !important; font-weight:700 !important; letter-spacing:.03em !important; text-transform:uppercase !important; color:#171717 !important; line-height:1 !important; }
 #nav .nav__logo-cn { font-family:'Noto Serif SC',serif !important; margin-top:0 !important; font-size:10px !important; letter-spacing:.28em !important; color:rgba(33,33,30,.66) !important; opacity:1 !important; line-height:1 !important; }
