@@ -420,10 +420,11 @@
         display: grid;
         grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
         gap: 0;
-        align-items: stretch;
+        align-items: stretch !important;
         min-height: clamp(288px, 30vw, 368px);
         background: color-mix(in srgb, var(--xuan) 97%, #ffffff 3%);
         border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+        overflow: hidden;
       }
       .operations-grid > article {
         min-height: clamp(288px, 30vw, 368px);
@@ -459,15 +460,17 @@
         overflow: hidden;
         border-left: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
         padding: clamp(7px, 0.85vw, 12px);
+        margin: 0 !important;
       }
       .operations-map-visual {
         position: relative;
-        margin: 0;
+        margin: 0 !important;
         width: 100%;
         flex: 1 1 auto;
         min-height: 100%;
         overflow: hidden;
         border: 0;
+        isolation: isolate;
       }
       .operations-map-visual::before {
         content: none;
@@ -483,6 +486,7 @@
         transform: scale(1.92);
         transform-origin: center;
         filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
+        margin: 0;
       }
       .op-marker {
         --dot: #355f67;
