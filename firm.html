@@ -70,8 +70,10 @@
       }
       section {
         padding: clamp(72px, 8vw, 108px) 0;
-        border-top: 1px solid var(--rule);
         background: var(--xuan-light);
+      }
+      main > section + section {
+        border-top: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
       }
       main> section:nth-of-type(even) {
         background: var(--xuan);
@@ -91,7 +93,7 @@
         content: "";
         flex: 0 0 36px;
         height: 1px;
-        background: var(--qing);
+        background: color-mix(in srgb, var(--qing) 44%, transparent);
       }
       .section-head {
         display: grid;
@@ -140,7 +142,7 @@
         padding-right: var(--pad) !important;
       }
       .hero-shell {
-        border: 1px solid var(--rule);
+        border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
         background: var(--xuan);
         max-width: none !important;
         margin-left: 0 !important;
@@ -174,7 +176,7 @@
         font-style: italic;
       }
       .hero-body {
-        border-left: 1px solid var(--rule);
+        border-left: 1px solid color-mix(in srgb, var(--rule) 58%, transparent);
         padding-left: clamp(18px, 1.9vw, 30px);
         display: grid;
         gap: 14px;
@@ -715,8 +717,7 @@
       }
 
       .metrics-shell {
-        border-top: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
+        border-top: 1px solid color-mix(in srgb, var(--rule) 48%, transparent);
         background: color-mix(in srgb, var(--xuan) 96%, #ffffff 4%);
         padding: clamp(6px, 0.9vw, 10px) 0;
       }
@@ -769,7 +770,7 @@
       }
       .metric-rule {
         margin-top: clamp(6px, 0.55vw, 8px);
-        background: color-mix(in srgb, var(--rule) 85%, transparent);
+        background: color-mix(in srgb, var(--rule) 62%, transparent);
         height: 1px;
       }
       .metric-copy {
@@ -780,11 +781,11 @@
       }
 
       .thesis-list {
-        border-top: 1px solid var(--rule);
+        border-top: 0;
         padding-inline: 12px;
       }
       .thesis-item {
-        border-bottom: 1px solid var(--rule);
+        border-bottom: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
         display: grid;
         grid-template-columns: 44px minmax(0, 1fr);
         gap: 14px;
@@ -820,8 +821,8 @@
         gap: clamp(16px, 1.6vw, 20px);
       }
       .committee-block-head {
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
-        padding-bottom: 10px;
+        border-bottom: 0;
+        padding-bottom: 4px;
         margin-bottom: 6px;
       }
       .committee-block-head .eyebrow {
@@ -837,8 +838,7 @@
         gap: 10px 12px;
       }
       .member-card {
-        border-top: 1px solid color-mix(in srgb, var(--rule) 86%, transparent);
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 50%, transparent);
+        border: 1px solid color-mix(in srgb, var(--rule) 48%, transparent);
         background: color-mix(in srgb, var(--xuan-light) 62%, white);
         padding: 14px 14px 12px;
         min-height: 0;
@@ -868,7 +868,7 @@
       }
 
       .execution-strip {
-        border: 1px solid color-mix(in srgb, var(--qing) 24%, var(--rule));
+        border: 1px solid color-mix(in srgb, var(--qing) 16%, var(--rule));
         background: linear-gradient(
           150deg,
           color-mix(in srgb, var(--xuan-light) 88%, #ffffff) 0%,
@@ -898,8 +898,8 @@
         gap: 14px;
       }
       .execution-step {
-        border: 1px solid color-mix(in srgb, var(--qing) 24%, #7fb3a8);
-        border-left: 3px solid color-mix(in srgb, var(--qing-dark) 72%, #06473d);
+        border: 1px solid color-mix(in srgb, var(--qing) 18%, #7fb3a8);
+        border-left: 2px solid color-mix(in srgb, var(--qing-dark) 58%, #06473d);
         padding: 12px 12px 13px;
         background: color-mix(in srgb, #ffffff 88%, #e9f5f1);
         box-shadow: 0 6px 16px rgba(5, 39, 32, 0.08);
@@ -1050,7 +1050,7 @@
         }
         .hero-body {
           border-left: 0;
-          border-top: 1px solid var(--rule);
+          border-top: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
           padding: 20px 0 0;
         }
         .ops-intro > p {
