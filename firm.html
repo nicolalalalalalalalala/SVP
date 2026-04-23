@@ -70,8 +70,10 @@
       }
       section {
         padding: clamp(72px, 8vw, 108px) 0;
-        border-top: 1px solid var(--rule);
         background: var(--xuan-light);
+      }
+      main > section + section {
+        border-top: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
       }
       main> section:nth-of-type(even) {
         background: var(--xuan);
@@ -91,7 +93,7 @@
         content: "";
         flex: 0 0 36px;
         height: 1px;
-        background: var(--qing);
+        background: color-mix(in srgb, var(--qing) 44%, transparent);
       }
       .section-head {
         display: grid;
@@ -100,16 +102,16 @@
       }
       h1 {
         margin: 0;
-        font-size: clamp(48px, 6.2vw, 88px);
-        line-height: 1.04;
+        font-size: clamp(44px, 5.6vw, 76px);
+        line-height: 1.05;
         max-width: 12ch;
         font-weight: 400;
         letter-spacing: -0.01em;
       }
       h2 {
         margin: 0;
-        font-size: clamp(34px, 4.2vw, 56px);
-        line-height: 1.08;
+        font-size: clamp(30px, 3.7vw, 48px);
+        line-height: 1.1;
         max-width: 18ch;
         font-weight: 400;
       }
@@ -140,7 +142,7 @@
         padding-right: var(--pad) !important;
       }
       .hero-shell {
-        border: 1px solid var(--rule);
+        border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
         background: var(--xuan);
         max-width: none !important;
         margin-left: 0 !important;
@@ -166,15 +168,15 @@
         font-weight: 500;
       }
       .hero-support {
-        font-size: clamp(24px, 2.8vw, 38px);
-        line-height: 1.28;
+        font-size: clamp(21px, 2.3vw, 32px);
+        line-height: 1.3;
         color: var(--ink-green-dark);
         max-width: 38ch;
         font-weight: 300;
         font-style: italic;
       }
       .hero-body {
-        border-left: 1px solid var(--rule);
+        border-left: 1px solid color-mix(in srgb, var(--rule) 58%, transparent);
         padding-left: clamp(18px, 1.9vw, 30px);
         display: grid;
         gap: 14px;
@@ -543,23 +545,26 @@
       .operations-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(14px, 1.8vw, 22px);
+        gap: clamp(18px, 2.4vw, 30px);
         align-items: stretch;
-        min-height: clamp(270px, 30vw, 360px);
+        min-height: clamp(288px, 30vw, 368px);
+      }
+      .operations-grid > article {
+        min-height: clamp(288px, 30vw, 368px);
       }
       .geography-copy,
       .operations-map {
         background: var(--xuan);
         border: 1px solid color-mix(in srgb, var(--rule) 86%, transparent);
-        min-height: clamp(270px, 30vw, 360px);
+        height: 100%;
+        box-sizing: border-box;
       }
       .geography-copy {
-        padding: clamp(18px, 2vw, 26px) clamp(18px, 2vw, 28px) clamp(16px, 1.6vw, 22px);
-        height: 100%;
+        padding: clamp(20px, 2.1vw, 28px) clamp(20px, 2.2vw, 30px) clamp(18px, 1.8vw, 24px);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: clamp(8px, 0.95vw, 12px);
+        gap: clamp(10px, 1vw, 13px);
       }
       .geography-copy .section-head {
         margin-bottom: 0;
@@ -578,13 +583,14 @@
       .operations-map {
         display: flex;
         overflow: hidden;
-        padding: clamp(8px, 0.75vw, 10px);
+        padding: clamp(20px, 2.1vw, 28px) clamp(20px, 2.2vw, 30px) clamp(18px, 1.8vw, 24px);
       }
       .operations-map-visual {
         position: relative;
         margin: 0;
         width: 100%;
-        height: 100%;
+        flex: 1 1 auto;
+        min-height: 100%;
         overflow: hidden;
         border: 0;
         background: color-mix(in srgb, #e7e0d2 88%, #f3eee5 12%);
@@ -711,26 +717,26 @@
       }
 
       .metrics-shell {
-        border-top: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
+        border-top: 1px solid color-mix(in srgb, var(--rule) 48%, transparent);
         background: color-mix(in srgb, var(--xuan) 96%, #ffffff 4%);
         padding: clamp(6px, 0.9vw, 10px) 0;
       }
       .metrics-grid {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: clamp(8px, 0.8vw, 12px);
-        align-items: start;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: clamp(9px, 0.9vw, 13px);
+        align-items: stretch;
       }
       .metric-card {
         border: 1px solid color-mix(in srgb, var(--rule) 64%, transparent);
         background: color-mix(in srgb, var(--xuan) 93%, #ffffff 7%);
-        padding: clamp(12px, 1vw, 16px) clamp(14px, 1.2vw, 18px) clamp(11px, 0.9vw, 14px);
+        padding: clamp(13px, 1vw, 17px) clamp(14px, 1.2vw, 18px) clamp(12px, 0.95vw, 15px);
         min-height: 0;
         display: flex;
         flex-direction: column;
         min-width: 0;
-        grid-column: span 2;
+        justify-content: space-between;
+        grid-column: span 4;
         transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
       }
       .metric-card:hover {
@@ -738,9 +744,24 @@
         border-color: color-mix(in srgb, var(--rule) 82%, transparent);
         transform: translateY(-1px);
       }
-      .metric-card:nth-child(4),
-      .metric-card:nth-child(5) {
-        grid-column: span 3;
+      .metric-card--primary {
+        grid-column: span 6;
+        border-color: color-mix(in srgb, var(--qing) 26%, var(--rule));
+        background:
+          linear-gradient(
+            150deg,
+            color-mix(in srgb, var(--xuan-light) 90%, #ffffff) 0%,
+            color-mix(in srgb, var(--xuan-light) 72%, #d8ebe6) 100%
+          );
+      }
+      .metric-card--primary .metric-value {
+        font-size: clamp(36px, 3.2vw, 48px);
+      }
+      .metric-card--primary .metric-copy {
+        max-width: 34ch;
+      }
+      .metric-card--wide {
+        grid-column: span 6;
       }
       .metric-label {
         font-size: 10px;
@@ -751,8 +772,8 @@
       }
       .metric-value {
         margin-top: clamp(5px, 0.45vw, 7px);
-        font-size: clamp(30px, 2.65vw, 40px);
-        line-height: 1.02;
+        font-size: clamp(26px, 2.25vw, 34px);
+        line-height: 1.06;
         letter-spacing: 0.005em;
         color: var(--ink-green-dark);
         font-weight: 450;
@@ -765,7 +786,7 @@
       }
       .metric-rule {
         margin-top: clamp(6px, 0.55vw, 8px);
-        background: color-mix(in srgb, var(--rule) 85%, transparent);
+        background: color-mix(in srgb, var(--rule) 62%, transparent);
         height: 1px;
       }
       .metric-copy {
@@ -774,13 +795,29 @@
         line-height: 1.35;
         max-width: 38ch;
       }
+      .track-record-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: clamp(14px, 1.6vw, 22px);
+        margin-bottom: clamp(10px, 1vw, 14px);
+      }
+      .track-record-intro p {
+        margin: 0;
+      }
+      .track-record-note {
+        border-left: 1px solid color-mix(in srgb, var(--rule) 82%, transparent);
+        padding-left: clamp(14px, 1.3vw, 20px);
+        color: color-mix(in srgb, var(--ink-green-dark) 88%, black);
+        font-size: 14px;
+        line-height: 1.52;
+      }
 
       .thesis-list {
-        border-top: 1px solid var(--rule);
+        border-top: 0;
         padding-inline: 12px;
       }
       .thesis-item {
-        border-bottom: 1px solid var(--rule);
+        border-bottom: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
         display: grid;
         grid-template-columns: 44px minmax(0, 1fr);
         gap: 14px;
@@ -801,8 +838,9 @@
         font-weight: 500;
       }
       .thesis-item h3 {
-        margin-bottom: 8px;
-        font-size: clamp(25px, 2.3vw, 30px);
+        margin-bottom: 7px;
+        font-size: clamp(22px, 2vw, 27px);
+        line-height: 1.18;
       }
 
       .committee-section {
@@ -815,8 +853,8 @@
         gap: clamp(16px, 1.6vw, 20px);
       }
       .committee-block-head {
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 78%, transparent);
-        padding-bottom: 10px;
+        border-bottom: 0;
+        padding-bottom: 4px;
         margin-bottom: 6px;
       }
       .committee-block-head .eyebrow {
@@ -832,8 +870,7 @@
         gap: 10px 12px;
       }
       .member-card {
-        border-top: 1px solid color-mix(in srgb, var(--rule) 86%, transparent);
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 50%, transparent);
+        border: 1px solid color-mix(in srgb, var(--rule) 48%, transparent);
         background: color-mix(in srgb, var(--xuan-light) 62%, white);
         padding: 14px 14px 12px;
         min-height: 0;
@@ -844,8 +881,8 @@
       }
       .member-card h3 {
         margin: 0;
-        font-size: clamp(21px, 1.65vw, 25px);
-        line-height: 1.12;
+        font-size: clamp(19px, 1.45vw, 22px);
+        line-height: 1.15;
       }
       .member-role {
         margin: 5px 0 8px;
@@ -863,7 +900,7 @@
       }
 
       .execution-strip {
-        border: 1px solid color-mix(in srgb, var(--qing) 24%, var(--rule));
+        border: 1px solid color-mix(in srgb, var(--qing) 16%, var(--rule));
         background: linear-gradient(
           150deg,
           color-mix(in srgb, var(--xuan-light) 88%, #ffffff) 0%,
@@ -893,8 +930,8 @@
         gap: 14px;
       }
       .execution-step {
-        border: 1px solid color-mix(in srgb, var(--qing) 24%, #7fb3a8);
-        border-left: 3px solid color-mix(in srgb, var(--qing-dark) 72%, #06473d);
+        border: 1px solid color-mix(in srgb, var(--qing) 18%, #7fb3a8);
+        border-left: 2px solid color-mix(in srgb, var(--qing-dark) 58%, #06473d);
         padding: 12px 12px 13px;
         background: color-mix(in srgb, #ffffff 88%, #e9f5f1);
         box-shadow: 0 6px 16px rgba(5, 39, 32, 0.08);
@@ -997,7 +1034,7 @@
       }
       .track-record-section .section-head {
         gap: 5px;
-        margin-bottom: 10px;
+        margin-bottom: clamp(8px, 0.8vw, 12px);
       }
 
       @media (max-width: 1120px) {
@@ -1009,6 +1046,16 @@
         }
         .track-record-section .metric-card {
           grid-column: span 1;
+        }
+        .track-record-intro {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+        .track-record-note {
+          border-left: 0;
+          border-top: 1px solid color-mix(in srgb, var(--rule) 82%, transparent);
+          padding-left: 0;
+          padding-top: 8px;
         }
         .committee-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1045,7 +1092,7 @@
         }
         .hero-body {
           border-left: 0;
-          border-top: 1px solid var(--rule);
+          border-top: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
           padding: 20px 0 0;
         }
         .ops-intro > p {
@@ -1315,17 +1362,20 @@
         <div class="wrap">
           <div class="section-head">
             <h2 class="sv-section-title">Track record</h2>
-            <p>Cycle-tested performance metrics, presented in a clear institutional format.</p>
+          </div>
+          <div class="track-record-intro">
+            <p>Cycle-tested performance and underwriting discipline reflected across deployment scale, transaction outcomes, and team continuity.</p>
+            <p class="track-record-note">Metrics shown represent aggregate historical experience across ShoreVest fund vintages and operating periods.</p>
           </div>
           <div class="metrics-shell">
             <div class="metrics-grid">
-              <article class="metric-card">
+              <article class="metric-card metric-card--primary">
                 <p class="metric-label">Capital deployed</p>
                 <p class="metric-value">US$2B+</p>
                 <div class="metric-rule"></div>
                 <p class="metric-copy">Deployed across six fund vintages.</p>
               </article>
-              <article class="metric-card">
+              <article class="metric-card metric-card--primary">
                 <p class="metric-label">Operating history</p>
                 <p class="metric-value">Since 2004</p>
                 <div class="metric-rule"></div>
@@ -1343,7 +1393,7 @@
                 <div class="metric-rule"></div>
                 <p class="metric-copy">Typical portfolio LTV range.</p>
               </article>
-              <article class="metric-card">
+              <article class="metric-card metric-card--wide">
                 <p class="metric-label">Team continuity</p>
                 <p class="metric-value">~20 years</p>
                 <div class="metric-rule"></div>
