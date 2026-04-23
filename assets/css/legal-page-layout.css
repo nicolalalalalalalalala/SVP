@@ -183,6 +183,95 @@ body.legal-page .legal-contact-actions a:hover {
   color: #fff;
 }
 
+/* Privacy Policy page refinement: tighter measure, clearer hierarchy, calmer legal rhythm. */
+body.privacy-policy-page .legal-page__main {
+  padding-top: clamp(14px, 1.6vw, 24px);
+}
+
+body.privacy-policy-page .privacy-policy__content {
+  max-width: min(1060px, 100%) !important;
+  margin: 0 auto;
+  padding-bottom: clamp(24px, 2.8vw, 44px);
+}
+
+body.privacy-policy-page .privacy-policy__content :is(p, ul, ol, h2, .legal-contact-actions) {
+  max-width: 74ch;
+}
+
+body.privacy-policy-page .legal-page__intro-block {
+  max-width: 74ch;
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: clamp(16px, 1.8vw, 22px) 0 clamp(18px, 2vw, 26px);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink-soft) 22%, transparent);
+}
+
+body.privacy-policy-page .legal-page__kicker {
+  margin: 0 0 8px;
+  font-size: 7.1pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: color-mix(in srgb, var(--ink-soft) 72%, #7f786f 28%);
+}
+
+body.privacy-policy-page .privacy-policy__content h1 {
+  margin: 0 0 10px;
+  letter-spacing: 0.06em;
+}
+
+body.privacy-policy-page .privacy-policy__content .effective-date {
+  margin: 0;
+  font-size: 7.2pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.privacy-policy-page .privacy-policy__prologue {
+  margin-bottom: clamp(20px, 2.2vw, 30px);
+}
+
+body.privacy-policy-page .privacy-policy__prologue p {
+  color: color-mix(in srgb, var(--ink-soft) 94%, #000 6%);
+}
+
+body.privacy-policy-page .privacy-policy__content h2 {
+  max-width: 70ch;
+  margin-top: clamp(34px, 3.9vw, 52px);
+  margin-bottom: clamp(12px, 1.2vw, 16px);
+  padding-top: clamp(14px, 1.8vw, 20px);
+  border-top: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
+  font-size: clamp(14px, 1.25vw, 15px) !important;
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--ink-soft) 92%, #000 8%);
+}
+
+body.privacy-policy-page .privacy-policy__content p + p,
+body.privacy-policy-page .privacy-policy__content p + ul,
+body.privacy-policy-page .privacy-policy__content p + ol,
+body.privacy-policy-page .privacy-policy__content ul + p,
+body.privacy-policy-page .privacy-policy__content ol + p,
+body.privacy-policy-page .privacy-policy__content ul + ul,
+body.privacy-policy-page .privacy-policy__content ol + ol {
+  margin-top: clamp(10px, 1vw, 14px);
+}
+
+body.privacy-policy-page .privacy-policy__content ul,
+body.privacy-policy-page .privacy-policy__content ol {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  padding-left: 1.2rem;
+}
+
+body.privacy-policy-page .privacy-policy__content li + li {
+  margin-top: 5px;
+}
+
+body.privacy-policy-page .privacy-policy__content .legal-contact-actions {
+  margin-top: clamp(26px, 2.8vw, 38px);
+  padding-top: clamp(14px, 1.7vw, 20px);
+  border-top: 1px solid color-mix(in srgb, var(--ink-soft) 20%, transparent);
+}
+
 @media (max-width: 980px) {
   body.legal-page {
     padding-bottom: var(--sv-section-gap-sm, clamp(34px, 5vw, 46px));
@@ -200,6 +289,11 @@ body.legal-page .legal-contact-actions a:hover {
   body.legal-page .legal-page__content {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+
+  body.privacy-policy-page .privacy-policy__content :is(p, ul, ol, h2, .legal-contact-actions),
+  body.privacy-policy-page .legal-page__intro-block {
+    max-width: 100%;
   }
 }
 
