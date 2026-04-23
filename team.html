@@ -116,22 +116,23 @@
       }
       .pagehero__intro {
         width: min(1240px, 100%);
-        margin-inline: 0;
-        padding: clamp(24px, 2.8vw, 34px) 0 clamp(22px, 2.4vw, 30px);
+        margin-inline: auto;
+        padding: clamp(26px, 2.9vw, 36px) 0 clamp(30px, 3.2vw, 44px);
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+        grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-template-areas:
-          "eyebrow heading"
-          ". paragraph";
-        column-gap: clamp(28px, 4vw, 64px);
-        row-gap: clamp(10px, 1.1vw, 16px);
+          "eyebrow heading heading heading heading heading heading heading heading heading heading heading"
+          ". paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph . . .";
+        column-gap: clamp(16px, 2.3vw, 28px);
+        row-gap: clamp(12px, 1.4vw, 18px);
         border-top: 1px solid color-mix(in srgb, var(--rule) 88%, white);
       }
       .pagehero .eyebrow {
         grid-area: eyebrow;
+        grid-column: 1 / span 2;
         align-self: start;
         margin-bottom: 0;
-        padding-top: clamp(8px, 1vw, 13px);
+        padding-top: clamp(10px, 1.1vw, 14px);
       }
       h1 {
         font-family: var(--team-type-heading);
@@ -142,18 +143,23 @@
         letter-spacing: 0.005em;
         text-transform: none;
         margin-bottom: 0;
-        max-width: 15ch;
+        max-width: 13ch;
         grid-area: heading;
+        grid-column: 3 / span 8;
         justify-self: start;
       }
+      h1 .pagehero__line {
+        display: block;
+      }
       .pagehero p {
-        max-width: 50ch;
+        max-width: 47ch;
         font-size: var(--sv-type-body-size, 10pt);
         line-height: 1.68;
         color: var(--ink-soft);
         font-family: var(--team-type-body);
         margin-top: 0;
         grid-area: paragraph;
+        grid-column: 4 / span 6;
         align-self: start;
         padding-bottom: 0;
       }
@@ -206,7 +212,7 @@
       }
 
       .team-groups {
-        padding: 38px 0 92px;
+        padding: 54px 0 92px;
         background: transparent;
       }
 
@@ -233,7 +239,7 @@
       }
 
       .group:first-child {
-        border-top: 1px solid var(--rule);
+        border-top: 1px solid color-mix(in srgb, var(--rule) 72%, white);
       }
       .group__head {
         display: flex;
@@ -579,7 +585,7 @@
       }
       .group--leadership {
         margin-top: 0;
-        padding: 28px 0 58px;
+        padding: 22px 0 58px;
       }
       .group--leadership .grid {
         margin-top: 6px;
@@ -620,13 +626,19 @@
             "eyebrow"
             "heading"
             "paragraph";
-          row-gap: 12px;
-          padding: 16px 0 10px;
+          row-gap: 13px;
+          padding: 18px 0 14px;
         }
         .pagehero .eyebrow {
+          grid-column: 1;
           padding-top: 0;
         }
+        h1 {
+          grid-column: 1;
+          max-width: 14ch;
+        }
         .pagehero p {
+          grid-column: 1;
           font-size: 17px;
           line-height: 1.6;
           max-width: 42ch;
@@ -665,7 +677,7 @@
 
       @media (max-width: 520px) {
         .team-groups {
-          padding-top: 34px;
+          padding-top: 40px;
         }
         .group {
           padding: 24px 0 34px;
@@ -750,7 +762,7 @@
       <div class="wrap">
         <div class="pagehero__intro">
           <div class="eyebrow">TEAM</div>
-          <h1 class="type-display-hero">Investment and Operating Team</h1>
+          <h1 class="type-display-hero"><span class="pagehero__line">Investment and</span><span class="pagehero__line">Operating Team</span></h1>
           <p class="pagehero__fullwidth">
             ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
           </p>
