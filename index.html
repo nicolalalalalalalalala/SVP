@@ -1542,7 +1542,7 @@ body.homepage .home-hero {
   min-height: clamp(540px, 72vh, 680px);
   display: flex;
   align-items: flex-start;
-  background: #10171b;
+  background: #1a2328;
   overflow: hidden;
 }
 body.homepage {
@@ -1587,9 +1587,26 @@ body.homepage .home-hero::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(130% 124% at -8% 38%, rgba(5, 13, 19, 0.74) 0%, rgba(5, 13, 19, 0.48) 40%, rgba(5, 13, 19, 0.2) 63%, rgba(5, 13, 19, 0.04) 78%, rgba(5, 13, 19, 0) 88%),
-    linear-gradient(98deg, rgba(8, 17, 22, 0.5) 0%, rgba(8, 17, 22, 0.3) 31%, rgba(8, 17, 22, 0.13) 54%, rgba(8, 17, 22, 0.03) 71%, rgba(8, 17, 22, 0) 82%),
-    linear-gradient(to bottom, rgba(8, 17, 22, 0.14) 0%, rgba(8, 17, 22, 0.04) 42%, rgba(8, 17, 22, 0.22) 100%);
+    linear-gradient(
+      92deg,
+      rgba(20, 30, 36, 0.96) 0%,
+      rgba(20, 30, 36, 0.93) 29%,
+      rgba(20, 30, 36, 0.78) 45%,
+      rgba(20, 30, 36, 0.5) 57%,
+      rgba(20, 30, 36, 0.18) 68%,
+      rgba(20, 30, 36, 0) 79%
+    ),
+    linear-gradient(to bottom, rgba(11, 19, 24, 0.08) 0%, rgba(11, 19, 24, 0.24) 100%);
+}
+body.homepage .home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(96% 112% at 32% 44%, rgba(20, 30, 36, 0.32) 0%, rgba(20, 30, 36, 0.15) 45%, rgba(20, 30, 36, 0) 71%),
+    linear-gradient(104deg, rgba(8, 18, 24, 0.04) 56%, rgba(8, 18, 24, 0.26) 100%);
 }
 body.homepage .home-hero__image {
   position: absolute;
@@ -1597,8 +1614,8 @@ body.homepage .home-hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 56% 39%;
-  filter: contrast(1.04) saturate(1.01) brightness(0.99);
+  object-position: 74% 40%;
+  filter: contrast(1.01) saturate(0.94) brightness(0.95);
   transform: none;
   image-rendering: auto;
 }
@@ -1612,44 +1629,32 @@ body.homepage .home-hero__inner {
 }
 body.homepage .home-hero__text {
   position: relative;
-  width: min(592px, 100%);
+  width: min(520px, 100%);
   padding: 0;
   display: grid;
-  gap: clamp(10px, 1.05vw, 14px);
-  isolation: isolate;
-  transform: translateY(clamp(-4px, -0.4vw, -2px));
-}
-body.homepage .home-hero__text::before {
-  content: "";
-  position: absolute;
-  inset: -22px -28px -18px -28px;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(112% 124% at 15% 50%, rgba(6, 15, 21, 0.34) 0%, rgba(6, 15, 21, 0.18) 46%, rgba(6, 15, 21, 0.05) 71%, rgba(6, 15, 21, 0) 88%);
+  gap: clamp(9px, 0.9vw, 12px);
+  transform: translateY(clamp(-2px, -0.28vw, 0px));
 }
 body.homepage .home-hero__eyebrow {
   margin: 0;
   font-family: "DIN 2014";
   font-size: 11px;
-  font-weight: 560;
-  letter-spacing: .13em;
+  font-weight: 600;
+  letter-spacing: .12em;
   line-height: 1.2;
-  color: rgba(246, 237, 219, 0.95);
-  text-shadow: 0 1px 1px rgba(6, 13, 18, 0.52);
+  color: rgba(238, 230, 214, 0.9);
   opacity: 1;
 }
 body.homepage .home-hero__headline {
   margin: 0;
-  font-family: "DIN 2014";
-  font-size: clamp(36px, 3.45vw, 46px);
-  font-weight: 520;
+  font-family: var(--serif);
+  font-size: clamp(37px, 3.5vw, 47px);
+  font-weight: 500;
   font-style: normal;
-  line-height: 1.03;
-  letter-spacing: -.006em;
+  line-height: 1.04;
+  letter-spacing: -.002em;
   text-transform: none;
-  color: #f6efdf;
-  text-shadow: 0 1px 1px rgba(6, 13, 18, 0.5), 0 7px 18px rgba(6, 13, 18, 0.26);
+  color: #f4eee0;
   text-wrap: balance;
 }
 body.homepage .home-hero__headline-box {
@@ -1670,57 +1675,54 @@ body.homepage .home-hero__headline-primary {
 }
 body.homepage .home-hero__headline-emphasis {
   color: #c75258;
-  text-shadow: 0 1px 0 rgba(8, 14, 18, 0.45), 0 6px 14px rgba(12, 20, 26, 0.2);
 }
 body.homepage .home-hero__support {
   margin: 0;
-  max-width: 41ch;
+  max-width: 37ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(15.4px, 1.16vw, 17.2px);
-  line-height: 1.52;
-  letter-spacing: .004em;
-  color: rgba(244, 234, 217, 0.96);
-  text-shadow: 0 1px 1px rgba(6, 13, 18, 0.46);
+  font-size: clamp(15.2px, 1.08vw, 16.6px);
+  line-height: 1.5;
+  letter-spacing: .003em;
+  color: rgba(236, 229, 214, 0.88);
   text-wrap: pretty;
 }
 body.homepage .home-hero__actions {
-  margin-top: clamp(8px, 0.85vw, 12px);
+  margin-top: clamp(6px, 0.7vw, 10px);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 11px;
+  gap: 9px;
 }
 body.homepage .home-hero__cta {
   margin-top: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 0 19px;
-  border: 1px solid rgba(244, 234, 216, 0.76);
-  border-radius: 999px;
-  background: color-mix(in srgb, rgba(7, 16, 22, 0.5) 78%, rgba(44, 69, 73, 0.2));
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid rgba(233, 224, 208, 0.78);
+  border-radius: 0;
+  background: rgba(17, 28, 34, 0.48);
   gap: 7px;
   font-family: "DIN 2014";
   font-size: 10.5px;
-  font-weight: 560;
-  letter-spacing: .108em;
+  font-weight: 600;
+  letter-spacing: .104em;
   text-transform: uppercase;
-  color: rgba(252, 246, 235, 0.995);
-  text-shadow: 0 1px 1px rgba(6, 13, 18, 0.38);
+  color: #f2ebdd;
   transition: border-color .18s ease-out, background-color .18s ease-out, color .18s ease-out, transform .18s ease-out;
 }
 body.homepage .home-hero__cta:hover,
 body.homepage .home-hero__cta:focus-visible {
-  border-color: rgba(252, 246, 234, 0.94);
-  background: color-mix(in srgb, rgba(8, 16, 21, 0.62) 80%, rgba(46, 72, 75, 0.3));
-  color: #ffffff;
+  border-color: rgba(244, 234, 218, 0.94);
+  background: rgba(17, 28, 34, 0.66);
+  color: #fff9ed;
   transform: translateY(-1px);
 }
 body.homepage .home-hero__cta--secondary {
-  border-color: rgba(244, 234, 216, 0.62);
-  background: color-mix(in srgb, rgba(8, 16, 21, 0.34) 80%, rgba(42, 67, 71, 0.16));
-  color: rgba(249, 240, 226, 0.97);
+  border-color: rgba(233, 224, 208, 0.52);
+  background: rgba(17, 28, 34, 0.26);
+  color: rgba(244, 236, 221, 0.96);
 }
 
 body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
@@ -2066,7 +2068,7 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   body.homepage .home-hero__image {
     height: 112%;
-    object-position: 58% 34%;
+    object-position: 70% 34%;
     transform: none;
   }
 

@@ -872,34 +872,33 @@ html body.homepage #cdd .cdd-feature__quote {
    Homepage mobile readability + rhythm refinements (April 2026)
    ========================================================================== */
 body.homepage .home-hero::before {
-  /* Keep copy readable over image across all responsive breakpoints. */
+  /* Editorial split: quiet left reading field, atmospheric right image field. */
   background:
     linear-gradient(
-      102deg,
-      rgba(8, 14, 12, 0.64) 0%,
-      rgba(8, 14, 12, 0.44) 30%,
-      rgba(8, 14, 12, 0.2) 52%,
-      rgba(8, 14, 12, 0.06) 74%,
-      rgba(8, 14, 12, 0) 100%
+      92deg,
+      rgba(20, 30, 36, 0.96) 0%,
+      rgba(20, 30, 36, 0.93) 29%,
+      rgba(20, 30, 36, 0.78) 45%,
+      rgba(20, 30, 36, 0.5) 57%,
+      rgba(20, 30, 36, 0.18) 68%,
+      rgba(20, 30, 36, 0) 79%
     ),
-    radial-gradient(
-      82% 88% at 16% 44%,
-      rgba(8, 14, 12, 0.22) 0%,
-      rgba(8, 14, 12, 0.1) 42%,
-      rgba(8, 14, 12, 0) 76%
-    ) !important;
+    linear-gradient(to bottom, rgba(11, 19, 24, 0.08) 0%, rgba(11, 19, 24, 0.24) 100%) !important;
 }
 
 body.homepage .home-hero__eyebrow,
 body.homepage .home-hero__headline,
 body.homepage .home-hero__support,
-body.homepage .home-hero__cta,
-body.homepage .home-hero__cta-arrow {
-  color: #faf6ee !important;
+body.homepage .home-hero__cta {
+  color: #f2ebdd !important;
 }
 
 body.homepage .home-hero__eyebrow {
-  color: rgba(250, 244, 232, 0.92) !important;
+  color: rgba(238, 230, 214, 0.9) !important;
+}
+
+body.homepage .home-hero__headline {
+  color: #f4eee0 !important;
 }
 
 body.homepage .home-hero__headline-emphasis {
@@ -907,24 +906,8 @@ body.homepage .home-hero__headline-emphasis {
 }
 
 body.homepage .home-hero__support {
-  max-width: 34ch;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
-}
-
-body.homepage .home-hero__cta-arrow {
-  border-color: rgba(250, 246, 238, 0.72) !important;
-  background: transparent !important;
-  color: #faf6ee !important;
-  box-shadow: 0 0 0 1px rgba(18, 42, 42, 0.22);
-  transition: background .16s ease-out, border-color .16s ease-out, color .16s ease-out, transform .16s ease-out;
-}
-
-body.homepage .home-hero__cta:hover .home-hero__cta-arrow,
-body.homepage .home-hero__cta:focus-visible .home-hero__cta-arrow,
-body.homepage .home-hero__cta:active .home-hero__cta-arrow {
-  background: #3d7070 !important;
-  border-color: #3d7070 !important;
-  color: #faf6ee !important;
+  max-width: 37ch;
+  color: rgba(236, 229, 214, 0.88) !important;
 }
 
 @media (max-width: 767px) {
@@ -935,19 +918,15 @@ body.homepage .home-hero__cta:active .home-hero__cta-arrow {
   body.homepage .home-hero::before {
     background:
       linear-gradient(
-        105deg,
-        rgba(8, 14, 12, 0.72) 0%,
-        rgba(8, 14, 12, 0.5) 34%,
-        rgba(8, 14, 12, 0.26) 58%,
-        rgba(8, 14, 12, 0.08) 78%,
-        rgba(8, 14, 12, 0) 100%
+        96deg,
+        rgba(20, 30, 36, 0.98) 0%,
+        rgba(20, 30, 36, 0.94) 32%,
+        rgba(20, 30, 36, 0.82) 48%,
+        rgba(20, 30, 36, 0.58) 60%,
+        rgba(20, 30, 36, 0.24) 72%,
+        rgba(20, 30, 36, 0) 82%
       ),
-      radial-gradient(
-        86% 90% at 18% 46%,
-        rgba(8, 14, 12, 0.26) 0%,
-        rgba(8, 14, 12, 0.12) 44%,
-        rgba(8, 14, 12, 0) 78%
-      ) !important;
+      linear-gradient(to bottom, rgba(11, 19, 24, 0.06) 0%, rgba(11, 19, 24, 0.28) 100%) !important;
   }
 
   body.homepage .home-hero__inner {
