@@ -101,8 +101,8 @@
 
       .pagehero {
         --pagehero-inline-pad: var(--team-intro-inline-pad);
-        --sv-hero-top-space: clamp(72px, 7.2vw, 104px);
-        --sv-hero-bottom-space: clamp(28px, 3vw, 42px);
+        --sv-hero-top-space: clamp(56px, 5.8vw, 82px);
+        --sv-hero-bottom-space: clamp(22px, 2.4vw, 34px);
         min-height: 0;
         padding: var(--sv-hero-top-space) var(--pagehero-inline-pad) var(--sv-hero-bottom-space) !important;
         border-bottom: 1px solid var(--rule);
@@ -117,30 +117,37 @@
         padding: 0 !important;
       }
       .pagehero__intro {
-        width: min(1320px, 100%);
+        width: min(1240px, 100%);
         margin-inline: 0;
+        padding: clamp(20px, 2.6vw, 30px) 0 clamp(16px, 2vw, 24px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.9fr);
+        column-gap: clamp(28px, 4vw, 58px);
+        border-top: 1px solid color-mix(in srgb, var(--rule) 88%, white);
       }
       h1 {
         font-family: var(--team-type-heading);
-        font-size: clamp(42px, 6.2vw, 64px);
+        font-size: clamp(34px, 4.8vw, 52px);
         font-weight: 300;
         font-style: italic;
-        line-height: 1.08;
+        line-height: 1.04;
         letter-spacing: 0.005em;
         text-transform: none;
-        margin-bottom: 14px;
-        max-width: 1040px;
+        margin-bottom: 0;
+        max-width: 18.5ch;
       }
       .pagehero p {
-        max-width: 760px;
+        max-width: 52ch;
         font-size: var(--sv-type-body-size, 10pt);
-        line-height: var(--sv-type-body-line, 1.65);
+        line-height: 1.68;
         color: var(--ink-soft);
         font-family: var(--team-type-body);
-        margin-top: 8px;
+        margin-top: 0;
+        align-self: end;
+        padding-bottom: 2px;
       }
       .pagehero p.pagehero__fullwidth {
-        max-width: 1040px;
+        max-width: 52ch;
       }
 
       .founder-note {
@@ -204,7 +211,7 @@
         margin-bottom: 22px;
       }
       .group {
-        padding: 36px 0 44px;
+        padding: 34px 0 50px;
         border-bottom: 1px solid var(--rule);
         scroll-margin-top: 96px;
         background: transparent !important;
@@ -221,32 +228,36 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 6px;
-        margin-bottom: 16px;
+        gap: 9px;
+        margin-bottom: 24px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid color-mix(in srgb, var(--rule) 84%, white);
       }
       .group h2 {
         font-family: var(--team-type-heading);
         font-weight: 700;
-        font-size: clamp(24px, 2.2vw, 32px);
-        line-height: 1.1;
-        letter-spacing: 0;
+        font-size: clamp(21px, 1.9vw, 28px);
+        line-height: 1.14;
+        letter-spacing: 0.01em;
         white-space: normal;
       }
       .group__summary {
         font-family: var(--team-type-body);
         font-size: var(--sv-type-meta-size, 8pt);
-        line-height: 1.65;
-        letter-spacing: 0.02em;
+        line-height: 1.58;
+        letter-spacing: 0.035em;
         color: color-mix(in srgb, var(--ink-soft) 90%, white);
-        max-width: 760px;
+        max-width: 72ch;
         white-space: normal;
-        padding-top: 2px;
+        padding-top: 0;
+        text-transform: uppercase;
       }
 
       .grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
+        column-gap: clamp(18px, 2vw, 24px);
+        row-gap: clamp(28px, 3.2vw, 40px);
         align-items: start;
       }
       .team-profile {
@@ -267,7 +278,8 @@
         border-bottom: none;
         background: #f1eee7;
         overflow: hidden;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
+        box-shadow: 0 0 0 1px color-mix(in srgb, var(--rule) 65%, transparent);
       }
       .team-profile__photo-btn {
         border: 0;
@@ -329,7 +341,7 @@
         letter-spacing: 0.015em;
         color: var(--ink);
         min-height: calc(1.2em * var(--team-name-lines, 2));
-        margin-bottom: 4px;
+        margin-bottom: 5px;
         padding: 0;
         background: transparent;
       }
@@ -339,10 +351,18 @@
         letter-spacing: var(--team-role-track);
         text-transform: uppercase;
         color: var(--qing-dark);
-        line-height: 1.5;
+        line-height: 1.42;
         min-height: calc(1.5em * var(--team-role-lines, 2));
         padding: 0;
         background: transparent;
+      }
+      .group--leadership .team-profile {
+        padding-bottom: 14px;
+        border-bottom: 1px solid color-mix(in srgb, var(--rule) 58%, white);
+      }
+      .group--leadership .team-profile:nth-child(4n + 2),
+      .group--leadership .team-profile:nth-child(4n + 3) {
+        margin-top: 22px;
       }
       .team-profile__descriptor {
         font-size: 12px;
@@ -548,10 +568,10 @@
       }
       .group--leadership {
         margin-top: 0;
-        padding: 38px 0 56px;
+        padding: 28px 0 58px;
       }
       .group--leadership .grid {
-        gap: 26px;
+        margin-top: 6px;
       }
       @media (max-width: 1100px) {
         :root {
@@ -563,7 +583,12 @@
         }
         .group__head {
           gap: 6px;
-          margin-bottom: 12px;
+          margin-bottom: 16px;
+          padding-bottom: 10px;
+        }
+        .group--leadership .team-profile:nth-child(4n + 2),
+        .group--leadership .team-profile:nth-child(4n + 3) {
+          margin-top: 0;
         }
       }
 
@@ -575,12 +600,17 @@
 
         .pagehero {
           min-height: auto;
-          padding-top: 120px;
-          padding-bottom: 34px;
+          padding-top: 108px;
+          padding-bottom: 26px;
+        }
+        .pagehero__intro {
+          grid-template-columns: 1fr;
+          row-gap: 14px;
+          padding: 14px 0 6px;
         }
         .pagehero p {
           font-size: 17px;
-          line-height: 1.65;
+          line-height: 1.6;
         }
         .founder-note {
           padding: 32px 0;
@@ -647,6 +677,9 @@
         .team-profile__role {
           min-height: auto;
           padding: 0;
+        }
+        .group--leadership .team-profile {
+          padding-bottom: 10px;
         }
       }
 
