@@ -1611,20 +1611,20 @@ body.homepage .home-hero__inner {
 }
 body.homepage .home-hero__text {
   position: relative;
-  width: min(540px, 100%);
-  padding: clamp(16px, 2.2vw, 24px) clamp(16px, 2.4vw, 28px) clamp(18px, 2.4vw, 24px);
+  width: min(500px, 100%);
+  padding: clamp(10px, 1.35vw, 15px) clamp(10px, 1.4vw, 16px) clamp(12px, 1.45vw, 16px);
   isolation: isolate;
-  transform: translateY(clamp(-10px, -0.9vw, -6px));
+  transform: translateY(clamp(-6px, -0.6vw, -4px));
 }
 body.homepage .home-hero__text::before {
   content: "";
   position: absolute;
-  inset: -8% -10% -12% -10%;
+  inset: -9% -16% -15% -12%;
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(96deg, rgba(9, 18, 23, 0.72) 0%, rgba(9, 18, 23, 0.5) 44%, rgba(9, 18, 23, 0.14) 78%, rgba(9, 18, 23, 0) 100%),
-    radial-gradient(120% 95% at 20% 40%, rgba(9, 18, 23, 0.3) 0%, rgba(9, 18, 23, 0) 74%);
+    radial-gradient(128% 105% at 15% 42%, rgba(8, 16, 21, 0.28) 0%, rgba(8, 16, 21, 0.16) 40%, rgba(8, 16, 21, 0) 76%),
+    linear-gradient(96deg, rgba(8, 16, 21, 0.34) 0%, rgba(8, 16, 21, 0.2) 38%, rgba(8, 16, 21, 0.07) 62%, rgba(8, 16, 21, 0) 100%);
 }
 body.homepage .home-hero__eyebrow {
   margin: 0 0 clamp(9px, 0.95vw, 11px);
@@ -1639,11 +1639,11 @@ body.homepage .home-hero__eyebrow {
 body.homepage .home-hero__headline {
   margin: 0;
   font-family: "DIN 2014";
-  font-size: clamp(30px, 3.1vw, 39px);
-  font-weight: 500;
+  font-size: clamp(30px, 2.95vw, 37px);
+  font-weight: 510;
   font-style: normal;
-  line-height: 1.06;
-  letter-spacing: -.012em;
+  line-height: 1.08;
+  letter-spacing: -.008em;
   text-transform: none;
   color: #f7f0e2;
   text-wrap: balance;
@@ -1665,50 +1665,51 @@ body.homepage .home-hero__headline-emphasis {
   color: #c8474f;
 }
 body.homepage .home-hero__support {
-  margin: clamp(9px, 1vw, 12px) 0 0;
-  max-width: 37ch;
+  margin: clamp(10px, 1.05vw, 13px) 0 0;
+  max-width: 35ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(12.5px, 0.88vw, 13.4px);
-  line-height: 1.45;
+  font-size: clamp(12.3px, 0.84vw, 13px);
+  line-height: 1.5;
   letter-spacing: .008em;
   color: rgba(236, 227, 209, 0.96);
 }
 body.homepage .home-hero__actions {
-  margin-top: clamp(16px, 1.5vw, 20px);
+  margin-top: clamp(18px, 1.8vw, 24px);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 body.homepage .home-hero__cta {
   margin-top: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
-  padding: 0 16px;
-  border: 1px solid rgba(238, 228, 207, 0.84);
-  border-radius: 0;
-  background: rgba(9, 18, 23, 0.5);
+  min-height: 37px;
+  padding: 0 15px;
+  border: 1px solid rgba(239, 229, 209, 0.72);
+  border-radius: 999px;
+  background: color-mix(in srgb, rgba(8, 16, 21, 0.48) 74%, rgba(30, 52, 55, 0.3));
   gap: 6px;
   font-family: "DIN 2014";
-  font-size: 9.7px;
+  font-size: 9.4px;
   font-weight: 550;
   letter-spacing: .125em;
   text-transform: uppercase;
   color: rgba(251, 245, 233, 0.99);
-  transition: border-color .16s ease-out, background-color .16s ease-out, color .16s ease-out;
+  transition: border-color .16s ease-out, background-color .16s ease-out, color .16s ease-out, transform .16s ease-out;
 }
 body.homepage .home-hero__cta:hover,
 body.homepage .home-hero__cta:focus-visible {
-  border-color: rgba(251, 245, 233, 0.98);
-  background: rgba(9, 18, 23, 0.68);
+  border-color: rgba(252, 246, 234, 0.88);
+  background: color-mix(in srgb, rgba(8, 16, 21, 0.68) 82%, rgba(46, 72, 75, 0.44));
   color: #ffffff;
+  transform: translateY(-1px);
 }
 body.homepage .home-hero__cta--secondary {
-  border-color: rgba(238, 228, 207, 0.72);
-  background: rgba(9, 18, 23, 0.32);
-  color: rgba(245, 236, 221, 0.98);
+  border-color: rgba(239, 229, 209, 0.56);
+  background: color-mix(in srgb, rgba(8, 16, 21, 0.28) 78%, rgba(42, 67, 71, 0.18));
+  color: rgba(247, 238, 223, 0.97);
 }
 
 body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
