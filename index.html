@@ -702,17 +702,17 @@ h2.strat__hed {
   border-top:1px solid var(--rule);
   border-bottom:1px solid var(--rule);
 }
-body.homepage #strategy .sg {
-  background:linear-gradient(145deg, #0D4FA3 0%, #1E66C1 100%) !important;
-  border-bottom:1px solid rgba(232, 242, 255, 0.35);
+.sg {
+  background:#1F4E8C;
+  border-bottom:1px solid rgba(237, 245, 255, 0.24);
   min-height:100%;
   transition:background .22s ease;
 }
-body.homepage #strategy .sg:hover {
-  background:linear-gradient(145deg, #0A4289 0%, #1657A8 100%) !important;
+.sg:hover {
+  background:#275B9F;
 }
-body.homepage #strategy .sg.is-active {
-  background:linear-gradient(145deg, #083A77 0%, #124992 100%) !important;
+.sg.is-active {
+  background:#17457C;
 }
 .sg:last-child { border-bottom:none; }
 .sg__content {
@@ -728,14 +728,14 @@ body.homepage #strategy .sg__n {
   letter-spacing:.2em;
   line-height:1.2;
   text-transform:uppercase;
-  color:rgba(245, 250, 255, 0.9);
+  color:rgba(237, 245, 255, 0.84);
   margin-bottom:14px;
 }
 body.homepage #strategy .sg__title {
   min-height:0;
   font-family:var(--serif);
   font-size:clamp(25px, 2vw, 29px);
-  color:#FFFFFF;
+  color:#F4F9FF;
   line-height:1.16;
   margin-bottom:10px;
   text-wrap:balance;
@@ -745,7 +745,7 @@ body.homepage #strategy .sg__body {
   max-width:74ch;
   font-size:14px;
   line-height:1.76;
-  color:rgba(247, 251, 255, 0.96);
+  color:rgba(239, 246, 255, 0.94);
 }
 .ac,
 .sg {
@@ -1646,6 +1646,14 @@ body.homepage .home-hero__headline {
   text-transform: none;
   color: #FAF6EE;
   text-wrap: balance;
+}
+body.homepage .home-hero__headline-box {
+  display: inline-block;
+  padding: clamp(12px, 1.8vw, 20px) clamp(16px, 2.2vw, 24px);
+  border: 1px solid rgba(242, 236, 216, 0.72);
+  border-radius: 6px;
+  background: rgba(242, 236, 216, 0.12);
+  box-shadow: 0 10px 24px rgba(8, 14, 12, 0.16);
 }
 body.homepage .home-hero__headline-primary,
 body.homepage .home-hero__headline-emphasis {
@@ -2828,8 +2836,10 @@ body.homepage #cdd .cdd-editorial__lede {
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
       <h1 class="home-hero__headline type-display-hero">
-        <span class="home-hero__headline-primary">PRIVATE CREDIT</span><br>
-        <span class="home-hero__headline-primary">IN</span> <span class="home-hero__headline-emphasis">CHINA.</span>
+        <span class="home-hero__headline-box">
+          <span class="home-hero__headline-primary">PRIVATE CREDIT</span><br>
+          <span class="home-hero__headline-primary">IN</span> <span class="home-hero__headline-emphasis">CHINA.</span>
+        </span>
       </h1>
       <a href="firm.html" class="home-hero__cta"><span>EXPLORE SHOREVEST</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
     </div>
