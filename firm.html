@@ -416,46 +416,47 @@
       }
       .operations-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(18px, 2.4vw, 30px);
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: 0;
         align-items: stretch;
         min-height: clamp(288px, 30vw, 368px);
+        background: color-mix(in srgb, var(--xuan) 97%, #ffffff 3%);
+        border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
       }
       .operations-grid > article {
         min-height: clamp(288px, 30vw, 368px);
       }
       .geography-copy,
       .operations-map {
-        background: var(--xuan);
-        border: 1px solid color-mix(in srgb, var(--rule) 86%, transparent);
         height: 100%;
         box-sizing: border-box;
       }
       .geography-copy {
-        padding: clamp(20px, 2.1vw, 28px) clamp(20px, 2.2vw, 30px) clamp(18px, 1.8vw, 24px);
+        padding: clamp(18px, 1.9vw, 24px) clamp(20px, 2.2vw, 30px) clamp(16px, 1.7vw, 22px);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: clamp(10px, 1vw, 13px);
+        gap: clamp(7px, 0.7vw, 10px);
       }
       .geography-copy .section-head {
         margin-bottom: 0;
       }
       .geography-copy .sv-section-title {
         margin-bottom: 0;
-        max-width: 13ch;
+        max-width: 14ch;
         line-height: 0.98;
         text-wrap: balance;
       }
       .geography-copy p {
         margin: 0;
-        max-width: 52ch;
-        line-height: 1.55;
+        max-width: 48ch;
+        line-height: 1.5;
       }
       .operations-map {
         display: flex;
         overflow: hidden;
-        padding: clamp(20px, 2.1vw, 28px) clamp(20px, 2.2vw, 30px) clamp(18px, 1.8vw, 24px);
+        border-left: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
+        padding: clamp(10px, 1.2vw, 16px) clamp(10px, 1.2vw, 16px) clamp(9px, 1vw, 14px);
       }
       .operations-map-visual {
         position: relative;
@@ -465,29 +466,19 @@
         min-height: 100%;
         overflow: hidden;
         border: 0;
-        background: color-mix(in srgb, #e7e0d2 88%, #f3eee5 12%);
       }
       .operations-map-visual::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("assets/images/world-pacific.svg");
-        background-repeat: repeat-x;
-        background-size: auto 176%;
-        /* Slight zoom-out and westward pan to keep coastal China and the U.S. West Coast in-frame together. */
-        background-position: 88.6% 50.1%;
-        opacity: 0.9;
-        filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
+        content: none;
       }
       .operations-map img {
-        position: absolute;
-        inset: 0;
+        position: relative;
+        display: block;
         width: 100%;
         height: 100%;
-        opacity: 0;
+        opacity: 1;
         object-fit: cover;
-        object-position: 72.2% 45%;
-        transform: scale(1.66);
+        object-position: 72.6% 45.2%;
+        transform: scale(1.6);
         transform-origin: center;
         filter: sepia(18%) saturate(46%) hue-rotate(346deg) brightness(0.98) contrast(0.78);
       }
@@ -952,11 +943,15 @@
         }
         .operations-grid {
           min-height: 0;
-          gap: 14px;
+          gap: 0;
         }
         .geography-copy,
         .operations-map {
           min-height: 0;
+        }
+        .operations-map {
+          border-left: 0;
+          border-top: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
         }
         .hero-body {
           border-left: 0;
@@ -968,16 +963,12 @@
           max-width: none;
         }
         .operations-map-visual {
-          min-height: clamp(250px, 44vw, 320px);
+          min-height: clamp(252px, 44vw, 324px);
           aspect-ratio: 1.52 / 1;
         }
-        .operations-map-visual::before {
-          background-size: auto 170%;
-          background-position: 88.9% 50.2%;
-        }
         .operations-map img {
-          object-position: 72.5% 45.3%;
-          transform: scale(1.68);
+          object-position: 72.9% 45.2%;
+          transform: scale(1.63);
         }
       }
       @media (max-width: 767px) {
@@ -1011,31 +1002,24 @@
         .cta-panel .btn {
           width: 100%;
         }
-        .operations-map {
-          padding: 0;
-        }
         .geography-section {
           padding-top: 32px;
           padding-bottom: 48px;
         }
         .geography-copy {
-          padding: 16px 16px 15px;
-          gap: 8px;
+          padding: 15px 16px 14px;
+          gap: 7px;
         }
         .geography-copy .sv-section-title {
           max-width: 100%;
         }
         .operations-map-visual {
-          min-height: 220px;
+          min-height: 224px;
           aspect-ratio: 1.42 / 1;
         }
-        .operations-map-visual::before {
-          background-size: auto 168%;
-          background-position: 89.2% 50.6%;
-        }
         .operations-map img {
-          object-position: 72.9% 45.8%;
-          transform: scale(1.7);
+          object-position: 73.2% 45.8%;
+          transform: scale(1.66);
         }
         .op-marker::before {
           width: 6px;
