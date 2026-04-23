@@ -753,12 +753,12 @@
         background: transparent;
         padding: 0;
         display: grid;
-        gap: clamp(16px, 1.6vw, 20px);
+        gap: clamp(13px, 1.4vw, 18px);
       }
       .committee-block-head {
         border-bottom: 0;
-        padding-bottom: 4px;
-        margin-bottom: 6px;
+        padding-bottom: 2px;
+        margin-bottom: 4px;
       }
       .committee-block-head .eyebrow {
         margin-bottom: 6px;
@@ -770,12 +770,13 @@
       .committee-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 10px 12px;
+        gap: 10px 11px;
       }
       .member-card {
         border: 1px solid color-mix(in srgb, var(--rule) 48%, transparent);
-        background: color-mix(in srgb, var(--xuan-light) 62%, white);
-        padding: 14px 14px 12px;
+        border-top-color: color-mix(in srgb, var(--qing-dark) 30%, var(--rule));
+        background: color-mix(in srgb, var(--xuan-light) 68%, white);
+        padding: 12px 12px 11px;
         min-height: 0;
         display: flex;
         flex-direction: column;
@@ -783,23 +784,27 @@
         gap: 0;
       }
       .member-card h3 {
-        margin: 0;
-        font-size: clamp(19px, 1.45vw, 22px);
-        line-height: 1.15;
+        margin: 0 0 3px;
+        font-size: clamp(17px, 1.16vw, 19px);
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        min-height: calc(1em * 2.4);
+        text-wrap: balance;
       }
       .member-role {
-        margin: 5px 0 8px;
-        font-size: 11px;
+        margin: 0 0 7px;
+        font-size: 11.5px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--cinnabar);
-        font-weight: 500;
+        color: color-mix(in srgb, var(--qing-dark) 74%, #183730);
+        font-weight: 550;
       }
       .member-card p:last-child {
         margin: 0;
-        font-size: 14px;
-        line-height: 1.45;
-        color: color-mix(in srgb, var(--ink-green-dark) 88%, black);
+        font-size: 13.5px;
+        line-height: 1.42;
+        color: color-mix(in srgb, var(--ink-green-dark) 90%, black);
+        max-width: 33ch;
       }
 
       .execution-strip {
@@ -811,18 +816,21 @@
           color-mix(in srgb, var(--xuan-light) 78%, #f9f4e9) 100%
         );
         color: color-mix(in srgb, var(--ink-green-dark) 92%, black);
-        padding: clamp(16px, 1.8vw, 24px);
+        padding: clamp(14px, 1.6vw, 20px);
+        margin-top: 2px;
       }
       .execution-head {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 16px;
-        margin-bottom: 14px;
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+        gap: 12px;
+        margin-bottom: 11px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
       }
       .execution-head p {
         margin: 0;
         color: color-mix(in srgb, var(--ink-green-dark) 92%, black) !important;
-        line-height: 1.48;
+        line-height: 1.42;
       }
       .execution-head .eyebrow {
         color: color-mix(in srgb, var(--qing-dark) 78%, #00382f) !important;
@@ -830,50 +838,47 @@
       .execution-flow {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
+        gap: 10px;
       }
       .execution-step {
-        border: 1px solid color-mix(in srgb, var(--qing) 18%, #7fb3a8);
-        border-left: 2px solid color-mix(in srgb, var(--qing-dark) 58%, #06473d);
-        padding: 12px 12px 13px;
-        background: color-mix(in srgb, #ffffff 88%, #e9f5f1);
-        box-shadow: 0 6px 16px rgba(5, 39, 32, 0.08);
+        border: 1px solid color-mix(in srgb, var(--qing) 15%, #7fb3a8);
+        border-top: 2px solid color-mix(in srgb, var(--qing-dark) 49%, #06473d);
+        padding: 10px 10px 11px;
+        background: color-mix(in srgb, #ffffff 90%, #e9f5f1);
         position: relative;
       }
       .execution-step h3 {
-        margin: 0 0 6px;
-        font-size: 18px;
-        line-height: 1.22;
+        margin: 0 0 5px;
+        font-size: 15px;
+        line-height: 1.24;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
         color: color-mix(in srgb, var(--ink-green-dark) 94%, black) !important;
       }
       .execution-step p {
         margin: 0;
         color: color-mix(in srgb, var(--ink-green-dark) 86%, #0a1f1b) !important;
-        font-size: 14px;
-        line-height: 1.45;
+        font-size: 13px;
+        line-height: 1.42;
       }
       .execution-step::before {
         content: attr(data-step);
-        display: inline-grid;
-        place-items: center;
-        width: 24px;
-        height: 24px;
-        margin-bottom: 9px;
-        border-radius: 999px;
-        border: 1px solid color-mix(in srgb, var(--qing-dark) 42%, #0a2f28);
-        background: color-mix(in srgb, var(--xuan-light) 68%, #ffffff);
+        display: block;
+        margin-bottom: 5px;
         font-size: 9px;
-        letter-spacing: 0.08em;
-        color: color-mix(in srgb, var(--qing-dark) 84%, #002f27);
+        letter-spacing: 0.14em;
+        color: color-mix(in srgb, var(--qing-dark) 74%, #002f27);
         font-weight: 600;
       }
       .execution-step:not(:last-child)::after {
-        content: "→";
+        content: "";
         position: absolute;
-        right: -11px;
-        top: 14px;
-        color: color-mix(in srgb, var(--qing-dark) 45%, #2f6a5f);
-        font-weight: 600;
+        right: -6px;
+        top: 50%;
+        width: 6px;
+        height: 1px;
+        background: color-mix(in srgb, var(--qing-dark) 30%, #2f6a5f);
+        transform: translateY(-50%);
       }
 
       .cta-panel {
@@ -1041,13 +1046,13 @@
           margin-bottom: 12px;
         }
         .execution-step:nth-child(2)::after {
-          content: "↓";
+          content: "";
         }
         .execution-step:not(:last-child)::after {
-          content: "↓";
-          right: 12px;
+          content: "";
+          right: auto;
           top: auto;
-          bottom: -16px;
+          bottom: auto;
         }
         .cta-panel .btn {
           width: 100%;
