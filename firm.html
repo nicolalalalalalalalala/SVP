@@ -526,32 +526,33 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: clamp(16px, 2vw, 24px);
         align-items: stretch;
+        min-height: clamp(300px, 35vw, 420px);
       }
       .geography-copy,
       .operations-map {
         background: var(--xuan);
         padding: clamp(20px, 2.2vw, 30px);
+        height: 100%;
       }
       .geography-copy {
         border: 1px solid var(--rule);
-        display: grid;
-        align-content: center;
-        gap: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: clamp(10px, 1.1vw, 16px);
       }
       .operations-map {
-        display: grid;
-        align-content: center;
+        display: flex;
         overflow: hidden;
         border: 0;
         background: transparent;
         padding: 0;
-        height: 100%;
       }
       .operations-map-visual {
         position: relative;
         margin: 0;
         width: 100%;
-        aspect-ratio: 1.52 / 1;
+        height: 100%;
         overflow: hidden;
         border: 0;
         background: #e7e0d2;
@@ -1001,6 +1002,9 @@
         .execution-head,
         .cta-panel {
           grid-template-columns: 1fr;
+        }
+        .operations-grid {
+          min-height: 0;
         }
         .hero-body {
           border-left: 0;
