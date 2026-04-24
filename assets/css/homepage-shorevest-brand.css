@@ -1151,17 +1151,28 @@ body.homepage #stats .track-record__proof-grid {
   padding-top: clamp(12px, 1.4vw, 18px);
 }
 
-body.homepage #stats .track-record__metric {
-  padding: clamp(10px, 1.15vw, 14px) 0;
-  display: grid;
-  align-content: start;
-  row-gap: clamp(4px, 0.45vw, 7px);
-  min-height: 0;
-  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 14%, transparent);
+
+body.homepage #stats .track-record__heading .eyebrow::after {
+  display: none;
 }
 
-body.homepage #stats .track-record__metric:nth-child(-n + 2) {
-  border-top: 0;
+body.homepage #stats .track-record__metric {
+  border: 1px solid color-mix(in srgb, var(--paper-dark) 14%, transparent);
+  border-radius: 14px;
+  padding: clamp(14px, 1.5vw, 20px);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  cursor: pointer;
+}
+
+body.homepage #stats .track-record__metric:hover,
+body.homepage #stats .track-record__metric:focus-visible,
+body.homepage #stats .track-record__metric:focus-within {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--red) 40%, var(--paper-dark) 60%);
+  background: color-mix(in srgb, var(--paper) 96%, white 4%);
+  box-shadow: 0 14px 28px rgba(13, 28, 34, 0.08);
+  outline: none;
 }
 
 body.homepage #stats .track-record__metric-label {
@@ -1176,12 +1187,20 @@ body.homepage #stats .track-record__metric-label {
 body.homepage #stats .track-record__metric-value {
   margin: 0;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(1.7rem, 2.25vw, 2.08rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 2.8vw, 2.45rem);
+  line-height: 1.02;
   letter-spacing: -0.02em;
-  font-weight: 620;
+  font-weight: 650;
   font-variant-numeric: tabular-nums;
-  color: var(--text-main) !important;
+  color: color-mix(in srgb, var(--text-main) 84%, var(--red) 16%) !important;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+body.homepage #stats .track-record__metric:hover .track-record__metric-value,
+body.homepage #stats .track-record__metric:focus-visible .track-record__metric-value,
+body.homepage #stats .track-record__metric:focus-within .track-record__metric-value {
+  color: var(--red) !important;
+  transform: scale(1.06);
 }
 
 body.homepage #stats .track-record__metric-description {
@@ -1225,5 +1244,9 @@ body.homepage #stats .track-record__note {
 
   body.homepage #stats .track-record__metric + .track-record__metric {
     border-top: 1px solid color-mix(in srgb, var(--paper-dark) 18%, transparent);
+  }
+
+  body.homepage #stats .track-record__metric {
+    cursor: default;
   }
 }
