@@ -2482,6 +2482,7 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    overflow: clip;
   }
   .cdd-editorial__intro {
     display: flex;
@@ -2529,6 +2530,7 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    flex-wrap: wrap;
   }
   .cdd-brand-mark {
     width: 32px;
@@ -2543,7 +2545,8 @@ body.homepage #cdd .cdd-editorial__lede {
   .cdd-brand-en,
   .cdd-brand-cn {
     max-width: 100%;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
   .cdd-brand-en {
     font-size: 12px;
@@ -2557,12 +2560,30 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    overflow: hidden;
   }
   .cdd-feature__top {
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
     padding: 8px 10px 8px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .cdd-feature__meta {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+  }
+  .cdd-feature__issue,
+  .cdd-feature__date {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
   .cdd-feature__body {
     display: flex;
@@ -2582,8 +2603,9 @@ body.homepage #cdd .cdd-editorial__lede {
     line-height: 1.1;
     margin-bottom: 6px;
     width: min(100%, 20ch);
-    overflow-wrap: normal;
-    word-break: normal;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
     hyphens: none;
     text-wrap: balance;
   }
@@ -2602,6 +2624,8 @@ body.homepage #cdd .cdd-editorial__lede {
   .cdd-feature__thesis {
     font-size: 13px;
     line-height: 1.5;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
   .cdd-feature__panel {
     padding: 0 0 0 6px;
@@ -2671,6 +2695,32 @@ body.homepage #cdd .cdd-editorial__lede {
     }
     .cdd-brand-cn {
       letter-spacing: .16em;
+    }
+  }
+  @media (max-width: 390px) {
+    .cdd-editorial__card {
+      padding: 11px 9px;
+      gap: 9px;
+    }
+    .cdd-feature__top,
+    .cdd-feature__body,
+    .cdd-feature__footer {
+      padding-left: 9px;
+      padding-right: 9px;
+    }
+    .cdd-feature__title--compact {
+      font-size: clamp(18px, 5.8vw, 22px);
+      line-height: 1.12;
+    }
+    .cdd-feature__issue,
+    .cdd-feature__date {
+      font-size: 8.5px;
+      letter-spacing: .09em;
+      padding: 6px 8px 5px;
+    }
+    .cdd-cta {
+      padding-left: 9px;
+      padding-right: 7px;
     }
   }
   .cdd-editorial__meta {
