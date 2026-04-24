@@ -2561,6 +2561,52 @@
         gap:8px;
       }
     }
+
+
+/* Institutional composition reset: strategy hero width + rail rhythm */
+body.strategy-page .strategy-hero .wrap {
+  max-width: min(1360px, calc(100vw - (var(--pad) * 2)));
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, .82fr);
+  gap: clamp(30px, 3.1vw, 42px);
+  align-items: end;
+}
+body.strategy-page .strategy-hero h1 {
+  max-width: 20ch;
+  margin-bottom: 22px;
+}
+body.strategy-page .strategy-hero .pagehero__lede {
+  max-width: 64ch;
+}
+body.strategy-page .strategy-hero .hero-meta {
+  margin-top: 18px;
+  max-width: 62ch;
+}
+body.strategy-page .strategy-hero .hero-aside {
+  justify-self: stretch;
+  border-left: 1px solid color-mix(in srgb, var(--rule) 65%, transparent);
+  padding-left: clamp(18px, 2vw, 24px);
+}
+body.strategy-page .strategy-hero .hero-kpis {
+  gap: 14px;
+}
+body.strategy-page .strategy-hero .strategy-kpi {
+  padding: 0 0 14px;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 58%, transparent);
+}
+@media (max-width: 980px) {
+  body.strategy-page .strategy-hero .wrap {
+    grid-template-columns: minmax(0,1fr);
+    gap: 16px;
+  }
+  body.strategy-page .strategy-hero .hero-aside {
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--rule) 65%, transparent);
+    padding-left: 0;
+    padding-top: 16px;
+  }
+}
+
   </style>
 
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />

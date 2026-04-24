@@ -1272,3 +1272,49 @@ body {
   border-color: var(--accent-green, #284631) !important;
   color: var(--surface-inverse, #f8f3e8) !important;
 }
+
+
+/* Institutional header lockup and navigation precision refresh */
+#nav {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: clamp(18px, 2.3vw, 34px);
+  height: 64px;
+}
+.nav__logo {
+  gap: 0;
+}
+.nav__logo-mark {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+}
+.nav__logo-lockup {
+  margin-left: 6px;
+  row-gap: 1px;
+  min-height: 30px;
+}
+.nav__logo-en {
+  font-size: 15px;
+  letter-spacing: .03em;
+}
+.nav__logo-cn {
+  font-size: 10.8px;
+  letter-spacing: .16em;
+  color: rgba(33, 33, 30, .76);
+}
+.nav__links {
+  gap: clamp(24px, 2.1vw, 34px);
+  padding: 0 4px;
+}
+.nav__links a {
+  font-size: 11px;
+  letter-spacing: .13em;
+  opacity: .62;
+}
+.nav__right {
+  gap: 14px;
+}
+.nav__lp {
+  padding: 8px 14px;
+  letter-spacing: .12em;
+}

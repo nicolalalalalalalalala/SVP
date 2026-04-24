@@ -1529,3 +1529,80 @@ body.contact-page .contact-form button {
     min-width: 0;
   }
 }
+
+/* Institutional legal/contact unification reset (April 2026) */
+body.legal-page {
+  --sv-legal-main-top-pad: clamp(0px, 0.12vw, 2px);
+  --content-max-width-legal: 1480px;
+}
+body.legal-page .legal-page__main {
+  padding-top: clamp(0px, 0.1vw, 2px);
+}
+body.privacy-policy-page .privacy-policy__content,
+body.legal-document-page .legal-document__content {
+  max-width: min(1500px, 100%) !important;
+  padding-left: clamp(12px, 1.2vw, 20px) !important;
+  padding-right: clamp(12px, 1.2vw, 20px) !important;
+}
+body.privacy-policy-page .privacy-policy__content :is(p, ul, ol, h2, h3, .legal-contact-actions),
+body.legal-document-page .legal-document__content :is(p, ul, ol, h2, h3, .legal-contact-actions),
+body.privacy-policy-page .legal-page__intro-block,
+body.legal-document-page .legal-page__intro-block {
+  width: min(100%, 112ch);
+  max-width: 112ch;
+}
+body.privacy-policy-page .legal-page__intro-block,
+body.legal-document-page .legal-page__intro-block {
+  margin-bottom: clamp(18px, 2vw, 28px);
+  padding-top: clamp(8px, 1vw, 12px);
+}
+
+body.contact-page .legal-page__main::before { content: none; }
+body.contact-page .contact-page__content {
+  max-width: min(1320px, calc(100vw - (var(--pad, 32px) * 2)));
+  padding-bottom: clamp(54px, 6vw, 84px);
+}
+body.contact-page .contact-page__intro {
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  padding-bottom: clamp(26px, 3vw, 40px);
+  margin-bottom: clamp(28px, 3.2vw, 44px);
+}
+body.contact-page .contact-page__intro-main {
+  max-width: 78ch;
+  gap: 12px;
+}
+body.contact-page .contact-page__intro-support {
+  max-width: 62ch;
+}
+body.contact-page .contact-page__service-note {
+  margin: 2px 0 0;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 58%, transparent);
+}
+body.contact-page .contact-page__service-note--panel {
+  margin-top: 14px;
+}
+body.contact-page .contact-page__layout {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.25fr);
+  gap: clamp(20px, 2.2vw, 30px);
+}
+body.contact-page :is(.contact-page__primary-contact, .contact-page__form-section) {
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  background: color-mix(in srgb, #ffffff 28%, transparent);
+  padding: clamp(20px, 2.3vw, 30px);
+}
+body.contact-page .contact-page__primary-contact {
+  background: color-mix(in srgb, #faf6ee 82%, #ffffff 18%);
+}
+body.contact-page .contact-page__email a {
+  font-size: clamp(24px, 2.2vw, 34px);
+  letter-spacing: .02em;
+}
+body.contact-page .contact-form button {
+  width: auto;
+  min-width: 178px;
+  padding-inline: 22px;
+}

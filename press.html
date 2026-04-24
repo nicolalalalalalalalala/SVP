@@ -642,6 +642,49 @@
       }
       /* Homepage nav lockup parity */
 
+
+
+/* Institutional press palette + structure normalization */
+body {
+  background: #f3eee2;
+  color: #151b1d;
+}
+.press-shell {
+  margin-top: 36px;
+}
+.press-hero {
+  min-height: 500px;
+  background-color: #142126;
+  background-image:
+    linear-gradient(155deg, rgba(10, 20, 26, .84) 0%, rgba(11, 21, 27, .82) 56%, rgba(10, 18, 23, .78) 100%),
+    var(--press-hero-image);
+}
+.press-hero__inner {
+  padding: 124px 0 56px;
+  gap: 42px;
+}
+.press-list,
+.press-toolbar {
+  border-color: color-mix(in srgb, #1c2326 15%, transparent);
+  background: #f7f3e8;
+}
+.press-toolbar__label,
+.press-toolbar__count,
+.press-filter-label {
+  color: color-mix(in srgb, #1a2124 70%, transparent);
+}
+.press-filter-select {
+  background: #fcf9f1;
+  border-color: color-mix(in srgb, #162127 22%, transparent);
+}
+.press-item {
+  background: #f7f3e8;
+  border-bottom-color: color-mix(in srgb, #1a2327 16%, transparent);
+}
+.press-item:hover {
+  background: #f1ecdf;
+}
+
 </style>
   
 
