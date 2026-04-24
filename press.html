@@ -116,15 +116,21 @@
         overflow: hidden;
         width: 100%;
         min-height: 520px;
-        background: var(--qing-dark);
+        --press-hero-image: url("assets/images/_N1_1071.jpg");
+        background: #0f1f24;
         background-image:
           linear-gradient(
-            to bottom,
-            rgba(15, 34, 6, 0.42) 0%,
-            rgba(15, 34, 6, 0.58) 52%,
-            rgba(15, 34, 6, 0.7) 100%
+            160deg,
+            var(--hero-overlay-soft, rgba(13, 31, 36, 0.44)) 0%,
+            var(--hero-overlay-dark, rgba(4, 17, 20, 0.72)) 58%,
+            rgba(4, 17, 20, 0.86) 100%
           ),
-          url("assets/images/_N1_1071.jpg");
+          linear-gradient(
+            0deg,
+            transparent 0%,
+            var(--hero-overlay-tint, rgba(17, 49, 52, 0.18)) 100%
+          ),
+          var(--press-hero-image);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;

@@ -122,14 +122,20 @@
         pointer-events: none;
       }
       .press-hero::before {
-        background: var(--press-hero-image) 58% 34% / cover no-repeat;
+        background:
+          linear-gradient(
+            160deg,
+            var(--hero-overlay-soft, rgba(13, 31, 36, 0.44)) 0%,
+            transparent 52%
+          ),
+          var(--press-hero-image) 58% 34% / cover no-repeat;
       }
       .press-hero::after {
         background: linear-gradient(
-          to bottom,
-          rgba(12, 12, 10, 0.16) 0%,
-          rgba(12, 12, 10, 0.46) 45%,
-          rgba(12, 12, 10, 0.8) 100%
+          160deg,
+          var(--hero-overlay-soft, rgba(13, 31, 36, 0.44)) 0%,
+          var(--hero-overlay-dark, rgba(4, 17, 20, 0.72)) 58%,
+          rgba(4, 17, 20, 0.86) 100%
         );
       }
       .press-hero__inner {
