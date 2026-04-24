@@ -1692,7 +1692,9 @@
       }
       .alloc-board {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 2px;
+        width: 100%;
         border-top: 1px solid color-mix(in srgb, var(--xuan-dark) 45%, transparent);
         border-bottom: 1px solid color-mix(in srgb, var(--xuan-dark) 45%, transparent);
         margin-top: 10px;
@@ -1723,6 +1725,9 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 7px 14px;
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
         padding: 12px 14px;
         border: 1px solid color-mix(in srgb, var(--xuan-dark) 18%, transparent);
         background: color-mix(in srgb, var(--xuan-light) 72%, white 28%);
