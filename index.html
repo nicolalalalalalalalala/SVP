@@ -1034,6 +1034,10 @@ blockquote.fs__q {
   border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 28%, transparent);
 }
 
+.cdd-editorial__intro-main {
+  min-width: 0;
+}
+
 .cdd-editorial__kicker {
   color: var(--cdd-signal);
   margin-bottom: 14px;
@@ -1072,7 +1076,9 @@ blockquote.fs__q {
 }
 
 .cdd-editorial__lede {
-  max-width: 62ch;
+  grid-column: 1 / -1;
+  max-width: none;
+  width: 100%;
   font-family: var(--serif);
   font-size: clamp(14px, 1vw, 16px);
   line-height: 1.55;
@@ -2281,9 +2287,9 @@ body.homepage #cdd > .wrap {
     text-align: left;
   }
   body.homepage #cdd .cdd-editorial__lede {
-    max-width: min(72ch, 100%) !important;
+    max-width: none !important;
     width: 100%;
-    padding-right: clamp(10px, 1.45vw, 20px);
+    padding-right: 0;
     font-size: clamp(15px, 1.02vw, 17px);
     line-height: 1.7;
   }
@@ -3573,10 +3579,9 @@ body.homepage #cdd .cdd-editorial__lede {
   <div class="wrap cdd-editorial home-section-shell home-section-shell--panel">
     <div class="cdd-editorial__card">
       <div class="cdd-editorial__intro">
-        <div>
+        <div class="cdd-editorial__intro-main">
           <div class="eyebrow eyebrow--ghost cdd-editorial__kicker cdd-franchise__eyebrow rev">ShoreVest Research Franchise · Established 2018</div>
           <h2 class="wordmark__title cdd-franchise__headline type-display-hero rev d1"><span class="cdd-headline-main">CHINA DEBT</span> <em>DYNAMICS.</em></h2>
-          <p class="cdd-editorial__lede cdd-franchise__lede rev d2">An institutional research series on China’s private credit markets, policy trajectory, and the legal, structural, and enforcement realities that determine investor recoveries.</p>
         </div>
         <div class="cdd-editorial__brand rev d1">
           <div class="cdd-brand-lockup">
@@ -3587,6 +3592,7 @@ body.homepage #cdd .cdd-editorial__lede {
             </div>
           </div>
         </div>
+        <p class="cdd-editorial__lede cdd-franchise__lede rev d2">An institutional research series on China’s private credit markets, policy trajectory, and the legal, structural, and enforcement realities that determine investor recoveries.</p>
       </div>
 
       <article class="cdd-feature cdd-franchise__panel rev d3" aria-label="Featured issue of China Debt Dynamics">
