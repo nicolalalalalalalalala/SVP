@@ -8,6 +8,7 @@
 <link rel="shortcut icon" href="assets/favicon.svg?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/images/homepage_hero.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="assets/images/image.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="assets/images/edited-photo.png" fetchpriority="high">
 <link rel="preload" as="image" href="assets/images/vectorink-vectorizer-result.svg" fetchpriority="high">
@@ -1615,18 +1616,33 @@ body.homepage .home-hero::after {
 body.homepage .home-hero::before {
   z-index: -3;
   background-image: url("assets/images/homepage_hero.jpg");
-  background-position: 74% 56%;
+  background-position: 68% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: saturate(0.7) contrast(1.04) brightness(0.58);
-  transform: scale(1.02);
+  filter: saturate(0.52) contrast(1.10) brightness(0.54);
+  transform: scale(1.03);
 }
 body.homepage .home-hero::after {
   z-index: -2;
   background:
-    linear-gradient(98deg, rgba(6, 17, 20, 0.96) 0%, rgba(8, 20, 24, 0.93) 34%, rgba(8, 22, 25, 0.84) 56%, rgba(8, 22, 25, 0.74) 74%, rgba(8, 22, 25, 0.84) 100%),
-    linear-gradient(180deg, rgba(5, 14, 16, 0.5) 0%, rgba(6, 17, 20, 0.76) 58%, rgba(4, 12, 15, 0.9) 100%),
-    radial-gradient(120% 88% at 82% 44%, rgba(64, 93, 95, 0.2) 0%, rgba(10, 22, 26, 0.08) 42%, rgba(6, 14, 17, 0.52) 100%);
+    /* Left veil: near-opaque behind text, fades to clear on right to reveal image */
+    linear-gradient(95deg,
+      rgba(5, 12, 15, 0.96) 0%,
+      rgba(5, 12, 15, 0.94) 22%,
+      rgba(5, 13, 16, 0.88) 34%,
+      rgba(5, 14, 17, 0.72) 46%,
+      rgba(5, 14, 17, 0.46) 58%,
+      rgba(5, 14, 17, 0.20) 70%,
+      rgba(5, 14, 17, 0.06) 82%,
+      rgba(5, 14, 17, 0.00) 100%
+    ),
+    /* Top + bottom vignette for depth and containment */
+    linear-gradient(180deg,
+      rgba(4, 10, 13, 0.54) 0%,
+      rgba(4, 10, 13, 0.10) 14%,
+      rgba(4, 10, 13, 0.04) 50%,
+      rgba(4, 10, 13, 0.48) 100%
+    );
 }
 body.homepage .home-hero .home-hero__inner::after {
   content: "";
@@ -1634,9 +1650,9 @@ body.homepage .home-hero .home-hero__inner::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  /* Extra left-anchor shadow to seal text column against any residual image bleed */
   background:
-    radial-gradient(88% 72% at 8% 50%, rgba(4, 12, 15, 0.46), transparent 72%),
-    radial-gradient(110% 84% at 88% 12%, rgba(242, 236, 216, 0.05), transparent 68%);
+    radial-gradient(82% 68% at 5% 52%, rgba(4, 10, 13, 0.54), transparent 70%);
 }
 body.homepage .home-hero__inner {
   position: relative;
@@ -2173,13 +2189,26 @@ body.homepage #cdd .cdd-editorial__lede {
     min-height: clamp(500px, 84vh, 640px);
   }
   body.homepage .home-hero::before {
-    background-position: 66% 46%;
-    filter: saturate(0.68) contrast(1.02) brightness(0.54);
+    background-position: 76% 44%;
+    filter: saturate(0.46) contrast(1.12) brightness(0.44);
   }
   body.homepage .home-hero::after {
+    /* Mobile: single-column layout — left side still needs full text protection,
+       right edge allows faint image texture to show at the bottom half */
     background:
-      linear-gradient(100deg, rgba(5, 15, 18, 0.97) 0%, rgba(7, 19, 22, 0.94) 52%, rgba(7, 19, 22, 0.84) 100%),
-      linear-gradient(180deg, rgba(5, 13, 16, 0.54) 0%, rgba(5, 13, 16, 0.86) 100%);
+      linear-gradient(100deg,
+        rgba(5, 12, 15, 0.97) 0%,
+        rgba(5, 13, 16, 0.95) 28%,
+        rgba(5, 13, 16, 0.90) 52%,
+        rgba(5, 14, 17, 0.72) 74%,
+        rgba(5, 14, 17, 0.48) 100%
+      ),
+      linear-gradient(180deg,
+        rgba(4, 10, 13, 0.54) 0%,
+        rgba(4, 10, 13, 0.08) 18%,
+        rgba(4, 10, 13, 0.06) 58%,
+        rgba(4, 10, 13, 0.56) 100%
+      );
   }
   body.homepage .home-hero__inner {
     padding-top: clamp(78px, 15vw, 104px);
