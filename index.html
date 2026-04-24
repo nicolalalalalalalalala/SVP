@@ -1714,8 +1714,9 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-space: clamp(40px, 4.3vw, 58px);
-  --home-section-space-tight: clamp(30px, 3.2vw, 44px);
+  --home-section-space: clamp(30px, 3.2vw, 44px);
+  --home-section-space-tight: clamp(22px, 2.4vw, 32px);
+  --home-section-transition-gap: clamp(22px, 2.3vw, 34px);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1726,12 +1727,12 @@ body.homepage .home-section-shell {
 body.homepage .home-section-shell--soft {
   border: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
   background: color-mix(in srgb, var(--off) 88%, transparent);
-  padding-block: clamp(20px, 2.3vw, 30px);
+  padding-block: clamp(16px, 1.9vw, 24px);
 }
 body.homepage .home-section-shell--panel {
   border: 1px solid color-mix(in srgb, var(--rule) 66%, transparent);
   background: color-mix(in srgb, #f8f2e3 86%, transparent);
-  padding-block: clamp(20px, 2.2vw, 30px);
+  padding-block: clamp(16px, 1.9vw, 24px);
 }
 body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
   padding-top: var(--home-section-space);
@@ -1739,6 +1740,32 @@ body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signu
 }
 body.homepage :is(#principles, #strategy) {
   padding-top: var(--home-section-space-tight);
+}
+/* Homepage rhythm pass: tighten transitions between major modules while
+   preserving internal section breathing room. */
+body.homepage .home-hero + #about {
+  padding-top: var(--home-section-transition-gap);
+}
+body.homepage #about {
+  padding-bottom: clamp(20px, 2.2vw, 30px);
+}
+body.homepage #about + #principles {
+  padding-top: clamp(18px, 2vw, 28px);
+}
+body.homepage #principles {
+  padding-bottom: clamp(24px, 2.7vw, 36px);
+}
+body.homepage #principles + #strategy {
+  padding-top: clamp(20px, 2.2vw, 30px);
+}
+body.homepage #strategy {
+  padding-bottom: clamp(24px, 2.7vw, 36px);
+}
+body.homepage #strategy + #cdd {
+  padding-top: clamp(20px, 2.2vw, 30px);
+}
+body.homepage #cdd {
+  padding-bottom: clamp(26px, 3vw, 40px);
 }
 body.homepage .home-copy-frame {
   max-width: var(--home-copy-max);
@@ -2006,8 +2033,8 @@ body.homepage #principles .eyebrow {
   margin-bottom: clamp(10px, 1.1vw, 14px);
 }
 body.homepage #principles {
-  padding-top: clamp(14px, 2vw, 24px);
-  padding-bottom: clamp(34px, 4.6vw, 52px);
+  padding-top: clamp(12px, 1.6vw, 20px);
+  padding-bottom: clamp(24px, 3vw, 38px);
 }
 /* Homepage transition: principles -> strategy should be spacing-only (no horizontal rule). */
 body.homepage #principles,
@@ -2635,12 +2662,13 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage {
     --home-frame-pad: clamp(14px, 4.6vw, 20px);
     --home-copy-max: 100%;
-    --home-section-space: clamp(44px, 10vw, 52px);
-    --home-section-space-tight: clamp(34px, 8vw, 42px);
+    --home-section-space: clamp(34px, 8vw, 42px);
+    --home-section-space-tight: clamp(24px, 6.5vw, 32px);
+    --home-section-transition-gap: clamp(18px, 5vw, 26px);
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
-    padding-block: clamp(14px, 4vw, 20px);
+    padding-block: clamp(12px, 3.2vw, 16px);
   }
 
   .eyebrow {
