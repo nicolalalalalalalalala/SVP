@@ -6,8 +6,8 @@ body {
 }
 
 :root {
-  --sv-topbar-xuan-paper: #D8CEB0;
-  --sv-topbar-xuan-paper-dark: #D8CEB0;
+  --sv-topbar-xuan-paper: #F2ECD8;
+  --sv-topbar-xuan-paper-dark: #F2ECD8;
   --sv-topbar-cinnabar: #C93B2A;
 }
 
@@ -564,8 +564,8 @@ body {
   /* Mobile top bar baseline: match Firm page styling across all routes. */
   #site-header-mount {
     min-height: 74px !important;
-    --sv-topbar-xuan-paper: #D8CEB0 !important;
-    --sv-topbar-xuan-paper-dark: #D8CEB0 !important;
+    --sv-topbar-xuan-paper: #F2ECD8 !important;
+    --sv-topbar-xuan-paper-dark: #F2ECD8 !important;
   }
 
   #site-header-mount #nav {
@@ -721,8 +721,8 @@ body {
 /* Header normalization layer: keep all page top bars identical to the homepage baseline. */
 #site-header-mount {
   --sv-header-paper-light: #FAF6EE;
-  --sv-header-paper: #FAF6EE;
-  --sv-header-paper-dark: #D8CEB0;
+  --sv-header-paper: #F2ECD8;
+  --sv-header-paper-dark: #F2ECD8;
   --sv-header-ink: #0F2206;
   --sv-header-blue-green-dark: #1E4040;
   --sv-header-cinnabar: #C93B2A;
@@ -1241,12 +1241,12 @@ body {
 
 /* 2026 palette refinement: normalize shared header chrome to global tokens. */
 #site-header-mount {
-  background: var(--sv-topbar-xuan-paper, #D8CEB0) !important;
+  background: var(--sv-topbar-xuan-paper, #F2ECD8) !important;
 }
 
 #site-header-mount #nav {
-  background: var(--sv-topbar-xuan-paper, #D8CEB0) !important;
-  border-bottom-color: color-mix(in srgb, var(--sv-topbar-xuan-paper-dark, #D8CEB0) 82%, var(--text-primary, #102a18) 18%) !important;
+  background: var(--sv-topbar-xuan-paper, #F2ECD8) !important;
+  border-bottom-color: color-mix(in srgb, var(--sv-topbar-xuan-paper-dark, #F2ECD8) 82%, var(--text-primary, #102a18) 18%) !important;
 }
 
 #site-header-mount #nav.scrolled {
@@ -1272,7 +1272,7 @@ body {
 #site-header-mount #nav .nav__lp,
 #site-header-mount #nav .nav__menu-btn {
   border-color: color-mix(in srgb, var(--text-primary, #102a18) 22%, transparent) !important;
-  background: var(--sv-topbar-xuan-paper, #D8CEB0) !important;
+  background: var(--sv-topbar-xuan-paper, #F2ECD8) !important;
 }
 
 #site-header-mount #nav .nav__lp:hover,
