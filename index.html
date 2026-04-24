@@ -1926,6 +1926,11 @@ body.homepage .home-hero__support {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   padding-top: clamp(2px, 0.3vw, 5px);
 }
+body.homepage .home-hero__support-wrap {
+  width: min(980px, calc(100vw - (var(--home-frame-pad) * 2) - 32px));
+  max-width: none;
+  justify-self: start;
+}
 body.homepage .home-hero__actions {
   margin-top: clamp(14px, 1.4vw, 20px);
   display: flex;
@@ -2560,8 +2565,11 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .home-hero__support {
     font-size: clamp(14.8px, 3.6vw, 15.8px);
     line-height: 1.62;
-    width: min(100%, 33ch);
+    width: 100%;
     max-width: none;
+  }
+  body.homepage .home-hero__support-wrap {
+    width: min(100%, 33ch);
   }
   body.homepage .home-hero__actions {
     width: 100%;
@@ -3487,7 +3495,9 @@ body.homepage #cdd .cdd-editorial__lede {
       <h1 class="home-hero__headline type-display-hero">
         <span class="home-hero__headline-box"><span class="home-hero__headline-primary">Private credit</span><span class="home-hero__headline-secondline"><span class="home-hero__headline-nowrap"><span class="home-hero__headline-preposition">in</span> <span class="home-hero__headline-emphasis">China.</span></span></span></span>
       </h1>
-      <p class="home-hero__support">Specialist onshore execution platform spanning collateral-backed lending, special situations, restructurings, and disciplined recoveries for institutional partners.</p>
+      <div class="home-hero__support-wrap">
+        <p class="home-hero__support">Specialist onshore execution platform spanning collateral-backed lending, special situations, restructurings, and disciplined recoveries for institutional partners.</p>
+      </div>
       <div class="home-hero__actions">
         <a href="firm.html" class="home-hero__cta home-hero__cta--primary"><span>EXPLORE SHOREVEST</span></a>
         <a href="strategy.html" class="home-hero__cta home-hero__cta--secondary"><span>VIEW STRATEGY</span></a>
