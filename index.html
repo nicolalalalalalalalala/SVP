@@ -2138,7 +2138,7 @@ body.homepage #strategy .strat__content {
   justify-items: stretch;
 }
 body.homepage #strategy .strat__grid {
-  grid-column: 1;
+  grid-column: 1 / -1;
   justify-self: stretch;
   width: 100%;
   max-width: min(112ch, 100%);
@@ -2153,6 +2153,7 @@ body.homepage #strategy .sg {
   margin-inline: 0;
 }
 body.homepage #strategy .strat__actions {
+  grid-column: 1 / -1;
   width: 100%;
   max-width: min(112ch, 100%);
   justify-self: stretch;
@@ -3567,32 +3568,32 @@ body.homepage #cdd .cdd-editorial__lede {
           <p>Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
           <p>Rather than relying on documentation alone, the strategy is built around collateral control, enforceable structures, and the ability to manage underwriting, servicing, and recovery through one integrated platform.</p>
         </div>
-        <div class="strat__grid">
-          <div class="sg rev" id="asset-based-lending" role="button" tabindex="0" data-interactive-card>
-            <div class="sg__content">
-              <div class="sg__n">01</div>
-              <div class="sg__title">ASSET-BASED LENDING</div>
-              <div class="sg__body">Providing first-lien, asset-backed financing to operating businesses with defensible collateral and visible cash flow.</div>
-            </div>
-          </div>
-          <div class="sg rev d1" id="asset-restructuring" role="button" tabindex="0" data-interactive-card>
-            <div class="sg__content">
-              <div class="sg__n">02</div>
-              <div class="sg__title">ASSET RESTRUCTURING</div>
-              <div class="sg__body">Executing credit clean-up and recapitalization situations where strong underlying assets are burdened by stressed balance sheets.</div>
-            </div>
-          </div>
-          <div class="sg rev d2" id="debt-resolutions" role="button" tabindex="0" data-interactive-card>
-            <div class="sg__content">
-              <div class="sg__n">03</div>
-              <div class="sg__title">DEBT RESOLUTIONS</div>
-              <div class="sg__body">Partnering with financial institutions to resolve and divest distressed portfolios, including non-performing loans.</div>
-            </div>
+      </div>
+      <div class="strat__grid">
+        <div class="sg rev" id="asset-based-lending" role="button" tabindex="0" data-interactive-card>
+          <div class="sg__content">
+            <div class="sg__n">01</div>
+            <div class="sg__title">ASSET-BASED LENDING</div>
+            <div class="sg__body">Providing first-lien, asset-backed financing to operating businesses with defensible collateral and visible cash flow.</div>
           </div>
         </div>
-        <div class="strat__actions rev d3">
-          <a href="strategy.html" class="cta cta--dark strat__cta-inline"><span>FIND OUT MORE</span><span class="cta__ring" aria-hidden="true">→</span></a>
+        <div class="sg rev d1" id="asset-restructuring" role="button" tabindex="0" data-interactive-card>
+          <div class="sg__content">
+            <div class="sg__n">02</div>
+            <div class="sg__title">ASSET RESTRUCTURING</div>
+            <div class="sg__body">Executing credit clean-up and recapitalization situations where strong underlying assets are burdened by stressed balance sheets.</div>
+          </div>
         </div>
+        <div class="sg rev d2" id="debt-resolutions" role="button" tabindex="0" data-interactive-card>
+          <div class="sg__content">
+            <div class="sg__n">03</div>
+            <div class="sg__title">DEBT RESOLUTIONS</div>
+            <div class="sg__body">Partnering with financial institutions to resolve and divest distressed portfolios, including non-performing loans.</div>
+          </div>
+        </div>
+      </div>
+      <div class="strat__actions rev d3">
+        <a href="strategy.html" class="cta cta--dark strat__cta-inline"><span>FIND OUT MORE</span><span class="cta__ring" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
