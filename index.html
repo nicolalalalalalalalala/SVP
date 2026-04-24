@@ -1876,7 +1876,8 @@ body.homepage .home-hero__headline-emphasis {
 }
 body.homepage .home-hero__support {
   margin: 0;
-  max-width: 41ch;
+  width: min(100%, 52ch);
+  max-width: none;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(15.8px, 1.1vw, 17px);
   line-height: 1.58;
@@ -2440,7 +2441,8 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .home-hero__support {
     font-size: clamp(14.8px, 3.6vw, 15.8px);
     line-height: 1.62;
-    max-width: 31ch;
+    width: min(100%, 33ch);
+    max-width: none;
   }
   body.homepage .home-hero__actions {
     width: 100%;
