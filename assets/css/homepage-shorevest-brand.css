@@ -1157,18 +1157,18 @@ body.homepage #stats .track-record__item:nth-child(2n) {
   padding-right: 0;
 }
 
-body.homepage #stats .track-record__item:nth-last-child(-n + 2) {
-  border-bottom: none;
+body.homepage #stats .track-record__item:nth-child(even) {
+  padding-left: clamp(10px, 1.2vw, 14px);
 }
 
 body.homepage #stats .track-record__label {
   margin: 0;
-  font-size: 10px;
+  font-size: 10.25px;
   font-weight: 560;
   line-height: 1.3;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--text-main) 56%, var(--paper-dark) 44%) !important;
+  color: color-mix(in srgb, var(--text-main) 60%, var(--paper-dark) 40%) !important;
 }
 
 body.homepage #stats .track-record__value {
@@ -1189,7 +1189,7 @@ body.homepage #stats .track-record__description {
   line-height: 1.45;
   letter-spacing: 0.003em;
   text-transform: none;
-  color: color-mix(in srgb, var(--text-main) 68%, var(--paper-dark) 32%) !important;
+  color: color-mix(in srgb, var(--text-main) 66%, var(--paper-dark) 34%) !important;
 }
 
 body.homepage #stats .track-record__item--zero .track-record__value {
@@ -1209,14 +1209,18 @@ body.homepage #stats .track-record__note {
   line-height: 1.48;
   letter-spacing: 0.01em;
   text-transform: none;
-  color: color-mix(in srgb, var(--text-main) 48%, var(--paper-dark) 52%) !important;
+  color: color-mix(in srgb, var(--text-main) 43%, var(--paper-dark) 57%) !important;
 }
 
 @media (max-width: 980px) {
   body.homepage #stats .track-record__header {
     grid-template-columns: minmax(96px, 0.34fr) minmax(0, 1fr);
     align-items: start;
-    gap: 14px;
+    gap: 10px 16px;
+  }
+
+  body.homepage #stats .track-record__title {
+    grid-column: 1 / -1;
   }
 
   body.homepage #stats .track-record__asof {
@@ -1254,8 +1258,7 @@ body.homepage #stats .track-record__note {
   }
 
   body.homepage #stats .track-record__item {
-    min-height: 0;
-    padding: 16px 0;
+    padding: 13px 0 14px;
     border-right: none;
     border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 50%, transparent);
   }
