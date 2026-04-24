@@ -1081,29 +1081,27 @@ body.homepage .cdd-notice__copy {
    ========================================================================== */
 
 body.homepage #stats {
-  padding: clamp(28px, 3vw, 44px) 0 clamp(34px, 3.8vw, 56px) !important;
+  padding: clamp(34px, 3.8vw, 52px) 0 clamp(40px, 4.3vw, 60px) !important;
 }
 
 body.homepage #stats .hero__stats {
-  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 72%, transparent);
-  padding-top: clamp(14px, 1.6vw, 22px);
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 64%, transparent);
+  padding-top: clamp(14px, 1.6vw, 20px);
 }
 
 body.homepage #stats .track-record__header {
   display: grid;
-  grid-template-columns: minmax(120px, 0.45fr) minmax(0, 1.35fr) minmax(240px, 1fr);
-  gap: clamp(18px, 2.2vw, 32px);
-  align-items: start;
-  margin-bottom: clamp(14px, 1.8vw, 20px);
-  padding-bottom: clamp(13px, 1.4vw, 18px);
-  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 70%, transparent);
+  gap: clamp(10px, 1.2vw, 14px);
+  margin-bottom: clamp(14px, 1.7vw, 20px);
+  padding-bottom: clamp(12px, 1.4vw, 18px);
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 62%, transparent);
 }
 
 body.homepage #stats .stats__eyebrow {
   margin: 0;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 550;
-  letter-spacing: .16em;
+  letter-spacing: .15em;
   color: color-mix(in srgb, var(--text-main) 74%, var(--paper-dark) 26%);
 }
 
@@ -1113,59 +1111,46 @@ body.homepage #stats .stats__eyebrow::after {
 
 body.homepage #stats .track-record__lede {
   margin: 0;
-  max-width: 58ch;
-  font-family: var(--serif) !important;
-  font-size: clamp(18px, 1.5vw, 24px);
-  line-height: 1.25;
-  letter-spacing: 0.004em;
-  color: color-mix(in srgb, var(--text-main) 84%, var(--paper-dark) 16%) !important;
+  max-width: min(82ch, 100%);
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.7;
+  letter-spacing: 0.006em;
+  color: color-mix(in srgb, var(--text-main) 78%, var(--paper-dark) 22%) !important;
 }
 
 body.homepage #stats .track-record__asof {
   margin: 0;
-  justify-self: end;
-  max-width: 36ch;
-  font-size: 10.5px;
-  line-height: 1.5;
+  max-width: 72ch;
+  font-size: 11px;
+  line-height: 1.6;
   letter-spacing: 0.012em;
-  color: color-mix(in srgb, var(--text-main) 56%, var(--paper-dark) 44%) !important;
+  color: color-mix(in srgb, var(--text-main) 58%, var(--paper-dark) 42%) !important;
   text-align: left;
 }
 
 body.homepage #stats .track-record__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-  margin-top: clamp(4px, 0.7vw, 8px);
-  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 58%, transparent);
+  gap: clamp(14px, 1.8vw, 22px) clamp(18px, 2.1vw, 30px);
+  margin-top: clamp(2px, 0.5vw, 6px);
+  border-top: 0;
 }
 
 body.homepage #stats .track-record__item {
   display: grid;
   align-content: start;
   grid-template-rows: auto auto 1fr;
-  row-gap: clamp(6px, 0.8vw, 10px);
-  min-height: clamp(168px, 14vw, 214px);
-  padding: clamp(18px, 1.8vw, 24px) clamp(6px, 1.1vw, 12px) clamp(18px, 2vw, 26px) 0;
-  border-right: 1px solid color-mix(in srgb, var(--paper-dark) 52%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 52%, transparent);
-}
-
-body.homepage #stats .track-record__item:nth-child(2n) {
-  border-right: none;
-  padding-left: clamp(18px, 1.8vw, 24px);
-  padding-right: 0;
-}
-
-body.homepage #stats .track-record__item:nth-child(even) {
-  padding-left: clamp(10px, 1.2vw, 14px);
+  row-gap: clamp(7px, 0.8vw, 10px);
+  min-height: 0;
+  padding: clamp(14px, 1.6vw, 20px) 0;
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 52%, transparent);
 }
 
 body.homepage #stats .track-record__label {
   margin: 0;
-  font-size: 10.25px;
+  font-size: 10px;
   font-weight: 560;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--text-main) 60%, var(--paper-dark) 40%) !important;
@@ -1174,9 +1159,9 @@ body.homepage #stats .track-record__label {
 body.homepage #stats .track-record__value {
   margin: 0;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(54px, 4.6vw, 70px);
+  font-size: clamp(38px, 3.6vw, 52px);
   font-weight: 620;
-  line-height: .86;
+  line-height: .95;
   letter-spacing: -.018em;
   font-variant-numeric: tabular-nums;
   color: var(--text-main) !important;
@@ -1184,22 +1169,22 @@ body.homepage #stats .track-record__value {
 
 body.homepage #stats .track-record__description {
   margin: 0;
-  max-width: 34ch;
-  font-size: 12.5px;
-  line-height: 1.45;
+  max-width: 40ch;
+  font-size: 12px;
+  line-height: 1.65;
   letter-spacing: 0.003em;
   text-transform: none;
-  color: color-mix(in srgb, var(--text-main) 66%, var(--paper-dark) 34%) !important;
+  color: color-mix(in srgb, var(--text-main) 64%, var(--paper-dark) 36%) !important;
 }
 
 body.homepage #stats .track-record__item--zero .track-record__value {
-  color: color-mix(in srgb, var(--text-main) 89%, var(--cinnabar) 11%) !important;
+  color: var(--text-main) !important;
 }
 
 body.homepage #stats .track-record__footer {
-  margin-top: clamp(12px, 1.3vw, 16px);
+  margin-top: clamp(8px, 1vw, 14px);
   padding-top: clamp(10px, 1.1vw, 13px);
-  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 44%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 50%, transparent);
 }
 
 body.homepage #stats .track-record__note {
@@ -1214,24 +1199,15 @@ body.homepage #stats .track-record__note {
 
 @media (max-width: 980px) {
   body.homepage #stats .track-record__header {
-    grid-template-columns: minmax(96px, 0.34fr) minmax(0, 1fr);
-    align-items: start;
-    gap: 10px 16px;
-  }
-
-  body.homepage #stats .track-record__title {
-    grid-column: 1 / -1;
+    gap: 10px;
   }
 
   body.homepage #stats .track-record__asof {
-    grid-column: 2;
-    justify-self: start;
-    text-align: left;
-    max-width: 56ch;
+    max-width: 100%;
   }
 
   body.homepage #stats .track-record__value {
-    font-size: clamp(48px, 6.2vw, 60px);
+    font-size: clamp(36px, 5.8vw, 46px);
   }
 }
 
@@ -1241,43 +1217,27 @@ body.homepage #stats .track-record__note {
   }
 
   body.homepage #stats .track-record__header {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 10px;
-  }
-
-  body.homepage #stats .track-record__asof {
-    grid-column: auto;
-    justify-self: start;
-    max-width: 100%;
   }
 
   body.homepage #stats .track-record__grid {
     grid-template-columns: 1fr;
-    border-top: 1px solid color-mix(in srgb, var(--paper-dark) 55%, transparent);
+    gap: 0;
   }
 
   body.homepage #stats .track-record__item {
-    padding: 13px 0 14px;
-    border-right: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 50%, transparent);
-  }
-
-  body.homepage #stats .track-record__item:nth-child(2n) {
-    padding-left: 0;
-  }
-
-  body.homepage #stats .track-record__item:last-child {
-    border-bottom: none;
+    padding: 14px 0;
+    border-top: 1px solid color-mix(in srgb, var(--paper-dark) 50%, transparent);
   }
 
   body.homepage #stats .track-record__value {
-    font-size: clamp(36px, 10.2vw, 46px);
+    font-size: clamp(34px, 10vw, 42px);
   }
 
   body.homepage #stats .track-record__description {
     max-width: none;
-    font-size: 12.25px;
+    font-size: 11.75px;
   }
 
   body.homepage #stats .track-record__footer {
