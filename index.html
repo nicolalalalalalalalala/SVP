@@ -1714,9 +1714,10 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-space: clamp(18px, 2vw, 26px);
-  --home-section-space-tight: clamp(12px, 1.4vw, 18px);
-  --home-section-transition-gap: clamp(8px, 1vw, 14px);
+  --home-section-space: clamp(10px, 1.2vw, 16px);
+  --home-section-space-tight: clamp(6px, 0.8vw, 12px);
+  --home-section-transition-gap: clamp(4px, 0.6vw, 8px);
+  --home-section-stack-gap: clamp(4px, 0.65vw, 10px);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1727,12 +1728,12 @@ body.homepage .home-section-shell {
 body.homepage .home-section-shell--soft {
   border: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
   background: color-mix(in srgb, var(--off) 88%, transparent);
-  padding-block: clamp(12px, 1.4vw, 18px);
+  padding-block: clamp(8px, 1vw, 12px);
 }
 body.homepage .home-section-shell--panel {
   border: 1px solid color-mix(in srgb, var(--rule) 66%, transparent);
   background: color-mix(in srgb, #f8f2e3 86%, transparent);
-  padding-block: clamp(12px, 1.4vw, 18px);
+  padding-block: clamp(8px, 1vw, 12px);
 }
 body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
   padding-top: var(--home-section-space);
@@ -1747,25 +1748,25 @@ body.homepage .home-hero + #about {
   padding-top: var(--home-section-transition-gap);
 }
 body.homepage #about {
-  padding-bottom: clamp(10px, 1.2vw, 16px);
+  padding-bottom: var(--home-section-stack-gap);
 }
 body.homepage #about + #principles {
-  padding-top: clamp(8px, 1vw, 14px);
+  padding-top: var(--home-section-stack-gap);
 }
 body.homepage #principles {
-  padding-bottom: clamp(10px, 1.2vw, 16px);
+  padding-bottom: var(--home-section-stack-gap);
 }
 body.homepage #principles + #strategy {
-  padding-top: clamp(8px, 1vw, 14px);
+  padding-top: var(--home-section-stack-gap);
 }
 body.homepage #strategy {
-  padding-bottom: clamp(10px, 1.2vw, 16px);
+  padding-bottom: var(--home-section-stack-gap);
 }
 body.homepage #strategy + #cdd {
-  padding-top: clamp(8px, 1vw, 14px);
+  padding-top: var(--home-section-stack-gap);
 }
 body.homepage #cdd {
-  padding-bottom: clamp(10px, 1.2vw, 16px);
+  padding-bottom: clamp(6px, 0.8vw, 12px);
 }
 body.homepage .home-copy-frame {
   max-width: var(--home-copy-max);
@@ -2034,8 +2035,8 @@ body.homepage #principles .eyebrow {
   margin-bottom: clamp(10px, 1.1vw, 14px);
 }
 body.homepage #principles {
-  padding-top: clamp(10px, 1.2vw, 16px);
-  padding-bottom: clamp(10px, 1.2vw, 16px);
+  padding-top: var(--home-section-stack-gap);
+  padding-bottom: var(--home-section-stack-gap);
 }
 /* Ensure principles and strategy read as complete institutional boxes. */
 body.homepage :is(#principles, #strategy) .home-section-shell--soft {
@@ -2662,9 +2663,10 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage {
     --home-frame-pad: clamp(14px, 4.6vw, 20px);
     --home-copy-max: 100%;
-    --home-section-space: clamp(24px, 6vw, 30px);
-    --home-section-space-tight: clamp(18px, 4.8vw, 24px);
-    --home-section-transition-gap: clamp(12px, 3.4vw, 18px);
+    --home-section-space: clamp(14px, 3.6vw, 20px);
+    --home-section-space-tight: clamp(10px, 2.8vw, 14px);
+    --home-section-transition-gap: clamp(6px, 2vw, 10px);
+    --home-section-stack-gap: clamp(6px, 1.8vw, 10px);
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
