@@ -257,13 +257,14 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
         column-gap: clamp(18px, 2vw, 24px);
         row-gap: clamp(28px, 3.2vw, 40px);
-        align-items: start;
+        align-items: stretch;
       }
       .team-profile {
         display: flex;
         flex-direction: column;
         gap: 0;
-        align-self: start;
+        align-self: stretch;
+        height: 100%;
         border: none;
         background: transparent;
         transition: none;
@@ -356,12 +357,9 @@
         background: transparent;
       }
       .group--leadership .team-profile {
+        justify-content: flex-start;
         padding-bottom: 14px;
         border-bottom: 1px solid color-mix(in srgb, var(--rule) 58%, white);
-      }
-      .group--leadership .team-profile:nth-child(4n + 2),
-      .group--leadership .team-profile:nth-child(4n + 3) {
-        margin-top: 22px;
       }
       .team-profile__descriptor {
         font-size: 12px;
@@ -411,7 +409,7 @@
         --team-bio-xuan-paper-light: color-mix(in srgb, var(--white) 90%, var(--qing-light) 10%);
         --team-bio-xuan-paper: color-mix(in srgb, var(--stone) 78%, var(--qing-light) 22%);
         --team-bio-xuan-paper-dark: color-mix(in srgb, var(--sand) 70%, var(--qing) 30%);
-        margin-top: 10px;
+        margin-top: auto;
         width: fit-content;
         background: var(--team-bio-xuan-paper-light);
         border: 1px solid var(--team-bio-cinnabar);
@@ -578,16 +576,12 @@
           --pad: var(--site-page-margin);
         }
         .grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .group__head {
           gap: 6px;
           margin-bottom: 16px;
           padding-bottom: 10px;
-        }
-        .group--leadership .team-profile:nth-child(4n + 2),
-        .group--leadership .team-profile:nth-child(4n + 3) {
-          margin-top: 0;
         }
       }
 
@@ -648,7 +642,7 @@
         }
       }
 
-      @media (max-width: 520px) {
+      @media (max-width: 640px) {
         .team-groups {
           padding-top: 40px;
         }
