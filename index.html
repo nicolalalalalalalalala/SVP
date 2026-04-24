@@ -1563,9 +1563,9 @@ h2.su__hed {
 /* Homepage rebuild: controlled hierarchy and typography */
 body.homepage .home-hero {
   position: relative;
-  min-height: clamp(520px, 72vh, 700px);
+  min-height: clamp(520px, 74vh, 720px);
   display: flex;
-  align-items: stretch;
+  align-items: center;
   isolation: isolate;
   overflow: hidden;
   background: #102427;
@@ -1578,8 +1578,6 @@ body.homepage {
   --home-copy-max: var(--home-box-copy-max);
   --home-heading-gap: clamp(12px, 1.3vw, 16px);
   --home-intro-gap: clamp(52px, 6vw, 88px);
-  --home-intro-left-col: minmax(280px, 4fr);
-  --home-intro-right-col: minmax(0, 8fr);
   --home-intro-copy-max: var(--home-box-copy-max);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
@@ -1616,32 +1614,19 @@ body.homepage .home-hero::after {
 }
 body.homepage .home-hero::before {
   background:
-    linear-gradient(180deg, rgba(13, 32, 36, 0.38) 0%, rgba(13, 32, 36, 0.72) 100%),
-    linear-gradient(96deg, #102427 0%, #143338 52%, #102a2d 100%);
+    linear-gradient(90deg, rgba(9, 23, 26, 0.96) 0%, rgba(9, 23, 26, 0.9) 38%, rgba(9, 23, 26, 0.74) 70%, rgba(9, 23, 26, 0.82) 100%),
+    linear-gradient(180deg, rgba(9, 23, 26, 0.24) 0%, rgba(9, 23, 26, 0.72) 100%),
+    url("assets/images/homepage_hero.jpg");
+  background-position: center, center, right center;
+  background-size: cover, cover, cover;
+  filter: saturate(0.72) contrast(1.02) brightness(0.74);
 }
 body.homepage .home-hero::after {
   z-index: -1;
   background:
-    radial-gradient(126% 78% at 86% 10%, rgba(242, 236, 216, 0.07), transparent 70%),
-    radial-gradient(84% 72% at 12% 84%, rgba(242, 236, 216, 0.04), transparent 76%),
-    linear-gradient(122deg, rgba(242, 236, 216, 0.04), rgba(242, 236, 216, 0));
-  opacity: .66;
-}
-body.homepage .home-hero__field {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      102deg,
-      rgba(242, 236, 216, 0.032) 0,
-      rgba(242, 236, 216, 0.032) 1px,
-      transparent 1px,
-      transparent 34px
-    );
-  mix-blend-mode: soft-light;
-  opacity: .33;
+    radial-gradient(100% 72% at 78% 40%, rgba(242, 236, 216, 0.09), transparent 72%),
+    linear-gradient(110deg, rgba(242, 236, 216, 0.03), rgba(242, 236, 216, 0));
+  opacity: .42;
 }
 body.homepage .home-hero__inner {
   position: relative;
@@ -1649,49 +1634,21 @@ body.homepage .home-hero__inner {
   width: 100%;
   max-width: var(--home-frame-max);
   margin-inline: auto;
-  padding: clamp(104px, 12.5vh, 150px) var(--home-frame-pad) clamp(72px, 9vh, 110px);
+  padding: clamp(96px, 10.5vh, 134px) var(--home-frame-pad) clamp(72px, 8.5vh, 104px);
   display: grid;
-  grid-template-columns: minmax(0, 7.8fr) minmax(0, 4.2fr);
-  column-gap: clamp(26px, 3.4vw, 54px);
-  align-items: end;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+  column-gap: clamp(22px, 3vw, 46px);
+  align-items: center;
 }
 body.homepage .home-hero__text {
   position: relative;
-  width: min(760px, 100%);
+  width: min(680px, 100%);
   padding: 0;
   background: transparent;
   border: 0;
   box-shadow: none;
   display: grid;
-  gap: clamp(18px, 1.5vw, 24px);
-}
-body.homepage .home-hero__panel {
-  justify-self: end;
-  align-self: end;
-  width: min(100%, 440px);
-}
-body.homepage .home-hero__panel-frame {
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(242, 236, 216, 0.3);
-  background: rgba(8, 19, 21, 0.56);
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.28);
-  aspect-ratio: 4 / 5;
-}
-body.homepage .home-hero__panel-frame::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(242, 236, 216, 0.22);
-  pointer-events: none;
-}
-body.homepage .home-hero__panel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 62% center;
-  filter: saturate(0.84) contrast(1.04) brightness(0.78);
+  gap: clamp(15px, 1.5vw, 22px);
 }
 body.homepage .home-hero__eyebrow {
   margin: 0;
@@ -1717,18 +1674,17 @@ body.homepage .home-hero__eyebrow::after {
 body.homepage .home-hero__headline {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(44px, 4.5vw, 72px);
+  font-size: clamp(42px, 4.4vw, 66px);
   font-weight: 420;
   font-style: normal;
-  line-height: 1.02;
+  line-height: 1.03;
   letter-spacing: .002em;
   text-transform: none;
   color: #f2ecd8;
   text-wrap: initial;
 }
 body.homepage .home-hero__headline-box {
-  display: grid;
-  row-gap: .12em;
+  display: block;
 }
 body.homepage .home-hero__headline-primary,
 body.homepage .home-hero__headline-emphasis {
@@ -1742,10 +1698,11 @@ body.homepage .home-hero__headline-primary {
 }
 body.homepage .home-hero__headline-emphasis {
   color: #C93B2A;
+  margin-left: .14em;
 }
 body.homepage .home-hero__support {
   margin: 0;
-  max-width: 52ch;
+  max-width: 49ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(15px, 1.02vw, 17px);
   line-height: 1.68;
@@ -1765,11 +1722,11 @@ body.homepage .home-hero__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
+  min-height: 45px;
   min-width: 210px;
   padding: 0 24px;
   border: 1px solid rgba(242, 236, 216, 0.86);
-  border-radius: 2px;
+  border-radius: 0;
   background: linear-gradient(180deg, rgba(245, 240, 224, 0.98), rgba(234, 225, 201, 0.96));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
   gap: 7px;
@@ -2208,9 +2165,6 @@ body.homepage #cdd .cdd-editorial__lede {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 0;
   }
-  body.homepage .home-hero__panel {
-    display: none;
-  }
   body.homepage .home-hero__headline {
     font-size: clamp(34px, 8.8vw, 44px);
     line-height: 1.04;
@@ -2238,9 +2192,6 @@ body.homepage #cdd .cdd-editorial__lede {
   :root { --site-page-margin: clamp(20px, 4.8vw, 40px); }
   body.homepage .home-hero__inner {
     grid-template-columns: minmax(0, 1fr);
-  }
-  body.homepage .home-hero__panel {
-    display: none;
   }
   .wrap.cdd-editorial {
     max-width: 100%;
@@ -3090,26 +3041,17 @@ body.homepage #cdd .cdd-editorial__lede {
 <div id="site-header-mount"></div>
 
 <section class="home-hero" aria-label="ShoreVest introduction">
-  <div class="home-hero__field" aria-hidden="true"></div>
   <div class="wrap home-hero__inner home-section-shell">
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
       <h1 class="home-hero__headline type-display-hero">
-        <span class="home-hero__headline-box">
-          <span class="home-hero__headline-primary">Institutional private credit in</span>
-          <span class="home-hero__headline-emphasis">China.</span>
-        </span>
+        <span class="home-hero__headline-box"><span class="home-hero__headline-primary">Institutional private credit in</span> <span class="home-hero__headline-emphasis">China.</span></span>
       </h1>
       <p class="home-hero__support">Specialist onshore execution platform focused on collateral-backed lending, restructurings, and disciplined recoveries for institutional partners.</p>
       <div class="home-hero__actions">
         <a href="firm.html" class="home-hero__cta"><span>EXPLORE SHOREVEST</span></a>
         <a href="strategy.html" class="home-hero__cta home-hero__cta--secondary"><span>VIEW STRATEGY</span></a>
       </div>
-    </div>
-    <div class="home-hero__panel" aria-hidden="true">
-      <figure class="home-hero__panel-frame">
-        <img class="home-hero__panel-image" src="assets/images/homepage_hero.jpg" alt="" loading="eager" decoding="async">
-      </figure>
     </div>
   </div>
 </section>
