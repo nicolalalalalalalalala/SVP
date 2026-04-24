@@ -2139,14 +2139,18 @@ body.homepage #strategy .strat__content {
   width: 100%;
   max-width: none;
   padding-inline: 0;
-  justify-items: start;
+  justify-items: stretch;
 }
 body.homepage #strategy .strat__grid {
-  justify-self: start;
+  grid-column: 1;
+  justify-self: stretch;
   width: 100%;
   max-width: min(112ch, 100%);
   margin-inline: 0;
+  margin-left: 0 !important;
   padding-inline: 0;
+  padding-left: 0 !important;
+  transform: none !important;
 }
 body.homepage #strategy .sg {
   width: 100%;
