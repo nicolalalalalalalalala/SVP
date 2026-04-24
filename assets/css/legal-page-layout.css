@@ -246,7 +246,7 @@ body.privacy-policy-page .privacy-policy__prologue p {
 }
 
 body.privacy-policy-page .privacy-policy__content h2 {
-  max-width: 80ch;
+  max-width: 100%;
   margin-top: clamp(34px, 3.9vw, 52px);
   margin-bottom: clamp(12px, 1.2vw, 16px);
   padding-top: clamp(14px, 1.8vw, 20px);
@@ -296,7 +296,8 @@ body.legal-document-page .legal-document__content {
 
 body.legal-document-page .legal-document__content :is(p, ul, ol, h2, h3, .legal-contact-actions),
 body.legal-document-page .legal-page__intro-block {
-  max-width: 84ch;
+  width: 100%;
+  max-width: 100%;
 }
 
 body.legal-document-page .legal-page__intro-block {
@@ -335,7 +336,7 @@ body.legal-document-page .legal-document__prologue p {
 }
 
 body.legal-document-page .legal-document__content h2 {
-  max-width: 80ch;
+  max-width: 100%;
   margin-top: clamp(34px, 3.9vw, 52px);
   margin-bottom: clamp(12px, 1.2vw, 16px);
   padding-top: clamp(14px, 1.8vw, 20px);
@@ -346,7 +347,7 @@ body.legal-document-page .legal-document__content h2 {
 }
 
 body.legal-document-page .legal-document__content h3 {
-  max-width: 80ch;
+  max-width: 100%;
   margin-top: clamp(24px, 2.8vw, 34px);
   margin-bottom: clamp(10px, 1vw, 14px);
 }
@@ -1548,8 +1549,8 @@ body.privacy-policy-page .privacy-policy__content :is(p, ul, ol, h2, h3, .legal-
 body.legal-document-page .legal-document__content :is(p, ul, ol, h2, h3, .legal-contact-actions),
 body.privacy-policy-page .legal-page__intro-block,
 body.legal-document-page .legal-page__intro-block {
-  width: min(100%, 112ch);
-  max-width: 112ch;
+  width: 100%;
+  max-width: 100%;
 }
 body.privacy-policy-page .legal-page__intro-block,
 body.legal-document-page .legal-page__intro-block {
