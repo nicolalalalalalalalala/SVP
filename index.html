@@ -577,7 +577,7 @@ h2.about__hed { color:var(--ink); }
   font-family:var(--serif);
 }
 .stats__head {
-  display:contents;
+  display:block;
 }
 .stats__head-note {
   margin:0;
@@ -3103,8 +3103,10 @@ body.homepage #cdd .cdd-editorial__lede {
 <section id="stats" class="wrap home-section-shell home-section-shell--panel" aria-labelledby="track-record-title">
   <div class="hero__stats">
     <header class="stats__head">
-      <div class="stats__eyebrow" id="track-record-title">TRACK RECORD</div>
-      <p class="stats__transition">A two-decade onshore platform built for institutional capital, with realized execution across cycles.</p>
+      <div class="stats__head-main">
+        <div class="stats__eyebrow" id="track-record-title">TRACK RECORD</div>
+        <p class="stats__transition">A two-decade onshore platform built for institutional capital, with realized execution across cycles.</p>
+      </div>
       <p class="stats__head-note">As of January 2026. Reflects realized ShoreVest team investments since 2004.</p>
     </header>
 
