@@ -589,6 +589,12 @@ body.homepage #strategy {
   border-top: 1px solid var(--paper-dark) !important;
 }
 
+/* Remove stray divider between the principles and strategy boxes.
+   Keep borders on the inner .home-section-shell containers intact. */
+body.homepage #principles + #strategy {
+  border-top: 0 !important;
+}
+
 body.homepage #about,
 body.homepage .stats,
 body.homepage #strategy .sg,
