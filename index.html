@@ -1781,30 +1781,27 @@ body.homepage .home-hero__inner {
   margin-inline: auto;
   padding: clamp(122px, 12vh, 164px) var(--home-frame-pad) clamp(90px, 10vh, 126px);
   display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   column-gap: clamp(24px, 3.6vw, 64px);
   align-items: center;
+  justify-items: start;
 }
 body.homepage .home-hero__text {
   position: relative;
-  width: min(660px, 100%);
-  padding: clamp(24px, 2.8vw, 34px) clamp(24px, 2.9vw, 38px) clamp(22px, 2.5vw, 32px);
-  border: 1px solid rgba(241, 232, 212, 0.24);
-  border-left-width: 2px;
-  background: linear-gradient(144deg, rgba(7, 16, 24, 0.66) 0%, rgba(7, 16, 24, 0.3) 100%);
-  box-shadow: inset 0 0 0 1px rgba(241, 232, 212, 0.08);
+  width: min(560px, 100%);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
   display: grid;
   gap: clamp(14px, 1.3vw, 20px);
+  justify-self: start;
+  text-align: left;
 }
 body.homepage .home-hero__text::before,
 body.homepage .home-hero__text::after {
-  content: "";
-  position: absolute;
-  left: clamp(24px, 2.9vw, 38px);
-  right: clamp(24px, 2.9vw, 38px);
-  height: 1px;
-  background: rgba(241, 232, 212, 0.22);
-  pointer-events: none;
+  display: none;
 }
 body.homepage .home-hero__text::before {
   top: clamp(15px, 1.8vw, 22px);
@@ -1893,6 +1890,7 @@ body.homepage .home-hero__actions {
   margin-top: clamp(14px, 1.4vw, 20px);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 12px;
   padding-top: clamp(14px, 1.6vw, 20px);
@@ -2422,14 +2420,13 @@ body.homepage #cdd .cdd-editorial__lede {
     row-gap: 0;
   }
   body.homepage .home-hero__text {
-    width: min(100%, 40rem);
-    padding: 22px 18px 20px;
+    width: min(100%, 34rem);
+    padding: 0;
     gap: 12px;
   }
   body.homepage .home-hero__text::before,
   body.homepage .home-hero__text::after {
-    left: 18px;
-    right: 18px;
+    display: none;
   }
   body.homepage .home-hero__headline {
     font-size: clamp(34px, 8.8vw, 44px);
@@ -3388,51 +3385,6 @@ body.homepage #cdd .cdd-editorial__lede {
     </div>
   </div>
 </section>
-
-<!-- HERO STATS -->
-<section id="stats" aria-labelledby="track-record-title">
-  <div class="wrap home-section-shell home-section-shell--soft">
-    <div class="hero__stats track-record">
-      <div class="about__intro about__intro--overview track-record__toprow">
-        <div class="track-record__heading">
-          <div class="eyebrow eyebrow--red rev">TRACK RECORD</div>
-          <h2 class="about__hed rev d1 track-record__title sv-section-title" id="track-record-title"><span>TRACK</span><br><span>RECORD</span></h2>
-        </div>
-        <div class="about__body home-copy-frame rev d2 track-record__summary">
-          <p>Two decades of onshore private credit execution across cycles, led by a senior team with realized outcomes through dislocations, restructurings, and policy transitions.</p>
-          <p class="track-record__asof">As of January 2026, metrics reflect realized ShoreVest team investments since 2004.</p>
-        </div>
-      </div>
-
-      <div class="track-record__proof-grid" aria-label="ShoreVest track record proof points">
-        <article class="track-record__metric" tabindex="0">
-          <p class="track-record__metric-label">Capital Deployed</p>
-          <p class="track-record__metric-value" data-countup data-target="2" data-prefix="US$" data-suffix="B+">US$2B+</p>
-          <p class="track-record__metric-description">Aggregate realized deployment across ShoreVest team strategies.</p>
-        </article>
-        <article class="track-record__metric" tabindex="0">
-          <p class="track-record__metric-label">Institutional Fund Vintages</p>
-          <p class="track-record__metric-value" data-countup data-target="6">6</p>
-          <p class="track-record__metric-description">Six institutional vintages executed across the platform&rsquo;s history.</p>
-        </article>
-        <article class="track-record__metric" tabindex="0">
-          <p class="track-record__metric-label">Years Onshore Credit Execution</p>
-          <p class="track-record__metric-value" data-countup data-target="20" data-suffix="+">20+</p>
-          <p class="track-record__metric-description">Continuous onshore credit investing across multiple cycles.</p>
-        </article>
-        <article class="track-record__metric" tabindex="0">
-          <p class="track-record__metric-label">Deal-Level Principal Losses</p>
-          <p class="track-record__metric-value" data-countup data-target="0">0</p>
-          <p class="track-record__metric-description">No principal losses across realized team investments to date.</p>
-        </article>
-      </div>
-
-      <p class="track-record__note">Past performance is not indicative of future results.</p>
-    </div>
-  </div>
-</section>
-
-
 
 <section id="principles">
   <div class="wrap home-section-shell home-section-shell--soft">
