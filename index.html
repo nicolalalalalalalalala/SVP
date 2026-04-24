@@ -1617,25 +1617,24 @@ body.homepage .home-hero::after {
 body.homepage .home-hero::before {
   z-index: -3;
   background-image: url("assets/images/image.jpg");
-  background-position: 66% 58%;
+  background-position: 72% 56%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 body.homepage .home-hero::after {
   z-index: -2;
   background:
-    linear-gradient(92deg,
-      rgba(4, 9, 14, 0.84) 0%,
-      rgba(4, 9, 14, 0.76) 30%,
-      rgba(4, 9, 14, 0.48) 54%,
-      rgba(4, 9, 14, 0.18) 74%,
-      rgba(4, 9, 14, 0.08) 100%
+    linear-gradient(96deg,
+      rgba(4, 9, 14, 0.92) 0%,
+      rgba(4, 9, 14, 0.86) 24%,
+      rgba(4, 9, 14, 0.66) 46%,
+      rgba(4, 9, 14, 0.34) 66%,
+      rgba(4, 9, 14, 0.18) 100%
     ),
     linear-gradient(180deg,
-      rgba(3, 7, 11, 0.48) 0%,
-      rgba(3, 7, 11, 0.14) 18%,
-      rgba(3, 7, 11, 0.04) 42%,
-      rgba(3, 7, 11, 0.2) 100%
+      rgba(2, 7, 12, 0.46) 0%,
+      rgba(2, 7, 12, 0.4) 42%,
+      rgba(2, 7, 12, 0.52) 100%
     );
 }
 body.homepage .home-hero__inner {
@@ -1653,12 +1652,25 @@ body.homepage .home-hero__inner {
 body.homepage .home-hero__text {
   position: relative;
   width: min(740px, 100%);
-  padding: clamp(8px, 1.2vw, 14px) 0 clamp(8px, 1.3vw, 16px);
+  padding: clamp(16px, 1.8vw, 24px) clamp(18px, 2vw, 30px) clamp(18px, 2vw, 26px) 0;
   background: transparent;
   border: 0;
   box-shadow: none;
   display: grid;
   gap: clamp(12px, 1.3vw, 18px);
+}
+body.homepage .home-hero__text::before {
+  content: "";
+  position: absolute;
+  inset: -16px -24px -18px -48px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(102deg,
+      rgba(5, 11, 18, 0.86) 0%,
+      rgba(5, 11, 18, 0.8) 54%,
+      rgba(5, 11, 18, 0.12) 100%
+    );
 }
 body.homepage .home-hero__eyebrow {
   margin: 0;
@@ -1686,15 +1698,15 @@ body.homepage .home-hero__headline {
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(40px, 4.05vw, 58px);
-  font-weight: 430;
+  font-weight: 470;
   font-style: normal;
-  line-height: 1.06;
+  line-height: 1.04;
   letter-spacing: .005em;
   text-transform: none;
-  color: #f4efe2;
+  color: #f8f3e8;
   max-width: 13.5ch;
   text-wrap: initial;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.42);
 }
 body.homepage .home-hero__headline-box {
   display: block;
@@ -1707,7 +1719,9 @@ body.homepage .home-hero__headline-emphasis {
   text-transform: none;
 }
 body.homepage .home-hero__headline-primary {
+  display: block;
   color: inherit;
+  margin-bottom: .04em;
 }
 body.homepage .home-hero__headline-emphasis {
   color: #C93B2A;
@@ -1718,12 +1732,12 @@ body.homepage .home-hero__support {
   margin: 0;
   max-width: 46ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(15px, 1vw, 16.5px);
-  line-height: 1.8;
+  font-size: clamp(15.8px, 1.15vw, 17.6px);
+  line-height: 1.74;
   letter-spacing: .005em;
-  color: rgba(246, 241, 229, 0.96);
+  color: rgba(245, 239, 226, 0.97);
   text-wrap: pretty;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.26);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.34);
 }
 body.homepage .home-hero__actions {
   margin-top: clamp(8px, 1vw, 14px);
@@ -1740,10 +1754,10 @@ body.homepage .home-hero__cta {
   min-height: 47px;
   min-width: 212px;
   padding: 0 28px;
-  border: 1px solid rgba(244, 238, 220, 0.92);
+  border: 1px solid rgba(247, 241, 226, 0.96);
   border-radius: 0;
-  background: #efe4cb;
-  box-shadow: none;
+  background: #f1e7d2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
   gap: 7px;
   font-family: "DIN 2014";
   font-size: 10.2px;
@@ -1762,16 +1776,16 @@ body.homepage .home-hero__cta:focus-visible {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
 }
 body.homepage .home-hero__cta--secondary {
-  border-color: rgba(244, 238, 220, 0.84);
-  background: rgba(5, 13, 20, 0.38);
-  color: #f6efdf;
+  border-color: rgba(247, 241, 226, 0.88);
+  background: rgba(4, 12, 20, 0.66);
+  color: #faf4e6;
 }
 body.homepage .home-hero__cta--secondary:hover,
 body.homepage .home-hero__cta--secondary:focus-visible {
-  border-color: rgba(244, 238, 220, 0.95);
-  background: rgba(8, 19, 27, 0.52);
-  color: #f6f0e1;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(247, 241, 226, 0.95);
+  background: rgba(6, 16, 24, 0.78);
+  color: #fbf6ea;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
 }
 
 body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
@@ -2177,19 +2191,19 @@ body.homepage #cdd .cdd-editorial__lede {
     min-height: clamp(520px, 84vh, 660px);
   }
   body.homepage .home-hero::before {
-    background-position: 64% 55%;
+    background-position: 70% 54%;
   }
   body.homepage .home-hero::after {
     background:
       linear-gradient(98deg,
-        rgba(4, 9, 14, 0.86) 0%,
-        rgba(4, 9, 14, 0.74) 54%,
-        rgba(4, 9, 14, 0.44) 100%
+        rgba(4, 9, 14, 0.9) 0%,
+        rgba(4, 9, 14, 0.78) 56%,
+        rgba(4, 9, 14, 0.5) 100%
       ),
       linear-gradient(180deg,
-        rgba(3, 7, 11, 0.5) 0%,
-        rgba(3, 7, 11, 0.2) 28%,
-        rgba(3, 7, 11, 0.42) 100%
+        rgba(2, 7, 12, 0.52) 0%,
+        rgba(2, 7, 12, 0.42) 28%,
+        rgba(2, 7, 12, 0.54) 100%
       );
   }
   body.homepage .home-hero__inner {
@@ -2210,6 +2224,10 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .home-hero__text {
     width: min(100%, 38rem);
     gap: 14px;
+    padding: 16px 14px 16px 0;
+  }
+  body.homepage .home-hero__text::before {
+    inset: -14px -14px -16px -24px;
   }
   body.homepage .home-hero__actions {
     width: 100%;
@@ -3116,7 +3134,7 @@ body.homepage #cdd .cdd-editorial__lede {
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
       <h1 class="home-hero__headline type-display-hero">
-        <span class="home-hero__headline-box"><span class="home-hero__headline-primary">Institutional private credit in</span><br><span class="home-hero__headline-emphasis">China.</span></span>
+        <span class="home-hero__headline-box"><span class="home-hero__headline-primary">Institutional private credit in</span><span class="home-hero__headline-emphasis">China.</span></span>
       </h1>
       <p class="home-hero__support">Specialist onshore execution platform focused on collateral-backed lending, restructurings, and disciplined recoveries for institutional partners.</p>
       <div class="home-hero__actions">
@@ -3148,7 +3166,7 @@ body.homepage #cdd .cdd-editorial__lede {
 </section>
 
 <!-- HERO STATS -->
-<section id="stats" class="wrap home-section-shell home-section-shell--panel" aria-labelledby="track-record-title">
+<section id="stats" class="wrap home-section-shell home-section-shell--soft" aria-labelledby="track-record-title">
   <div class="hero__stats">
     <header class="track-record__header">
       <h2 class="track-record__title sv-section-title" id="track-record-title">Track Record</h2>
