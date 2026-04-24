@@ -738,37 +738,32 @@
 
 <link rel="stylesheet" href="assets/css/site-motion.css">
 <style id="press-brand-system-enforcement">
-  :root {
-    --xuan-light: #FAF6EE;
-    --xuan: #F2ECD8;
-    --xuan-dark: #D8CEB0;
-    --ink-dark: #10280e;
-    --ink: #2e5a26;
-    --ink-light: #5f8f53;
-    --qing: #2e5a26;
-    --qing-light: #88af7e;
-    --qing-dark: #1c3d17;
-    --cinnabar: #2e5a26;
-    --cinnabar-light: #88af7e;
-    --cinnabar-dark: #1c3d17;
+  body.press-page {
+    --press-hero-overlay: rgba(6, 14, 18, 0.58);
+    --press-hero-shadow: rgba(3, 8, 11, 0.38);
+    --press-kicker: rgba(244, 239, 228, 0.72);
+    --press-heading: #F4EFE4;
+    --press-body: rgba(244, 239, 228, 0.88);
+    --press-card-bg: #111A1A;
+    --press-card-bg-soft: #172122;
+    --press-card-border: rgba(220, 210, 188, 0.18);
+    --press-muted: rgba(244, 239, 228, 0.62);
+    --press-accent: #B54A36;
+    --press-accent-hover: #9D3E2D;
+    --press-button-bg: transparent;
+    --press-button-border: rgba(244, 239, 228, 0.34);
+    --press-divider: rgba(220, 210, 188, 0.14);
+    --press-page-bg: #0D1415;
+    --press-section-bg: #121C1D;
+    --press-section-alt: #162122;
 
-    --white: var(--xuan-light);
-    --off: var(--xuan);
-    --rule: var(--xuan-dark);
-    --ink: var(--ink-dark);
-    --ink2: var(--ink);
-    --red: var(--cinnabar);
-    --mist: var(--qing);
-    --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-    --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-    --sans-zh: "Noto Serif SC", "Songti SC", "STSong", serif;
-    --serif-zh: "Noto Serif SC", "Songti SC", "STSong", serif;
+    background: var(--press-page-bg) !important;
+    color: var(--press-body) !important;
+    font-family: var(--sans) !important;
   }
 
-  body {
-    background: var(--xuan-light) !important;
-    color: var(--ink-dark) !important;
-    font-family: var(--sans) !important;
+  body.press-page main {
+    background: var(--press-page-bg) !important;
   }
 
   :lang(zh),
@@ -778,21 +773,57 @@
     font-family: "Noto Serif SC", "Songti SC", "STSong", serif !important;
   }
 
-  .press-toolbar,
-  .press-list,
-  .press-row a,
-  .press-filter-select,
-  .contact,
-  .sv-footer {
-    background: var(--xuan-light) !important;
-    color: var(--ink-dark) !important;
+  .press-hero {
+    border-bottom: 1px solid var(--press-divider) !important;
+    background-image:
+      linear-gradient(180deg, var(--press-hero-overlay) 4%, var(--press-hero-shadow) 100%),
+      radial-gradient(circle at 60% 32%, rgba(80, 40, 34, 0.16), transparent 58%),
+      url("assets/images/_N1_1071.jpg") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
   }
 
-  main,
+  .press-hero .eyebrow,
+  .press-hero .press-note span {
+    color: var(--press-kicker) !important;
+  }
+
+  .press-hero .eyebrow::after {
+    background: currentColor !important;
+    opacity: 0.75;
+  }
+
+  .press-hero h1,
+  .press-hero .type-display-hero {
+    color: var(--press-heading) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.035em !important;
+    text-transform: uppercase !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  }
+
+  .press-hero .lead,
+  .press-note p {
+    color: var(--press-body) !important;
+  }
+
   .press-overview,
-  .press-disclaimer {
-    background: var(--xuan) !important;
-    color: var(--ink-dark) !important;
+  .press-toolbar,
+  .press-list,
+  .press-speaking {
+    background: var(--press-section-bg) !important;
+    color: var(--press-body) !important;
+  }
+
+  .press-overview__main,
+  .contact,
+  .press-disclaimer,
+  .press-speaking__content,
+  .press-speaking__media,
+  .press-row {
+    background: var(--press-card-bg) !important;
+    color: var(--press-body) !important;
   }
 
   .press-overview__main,
@@ -803,16 +834,10 @@
   .press-filter-select,
   .contact,
   .press-disclaimer,
-  .sv-footer,
-  .sv-footer__main,
   .eyebrow,
   .eyebrow::after,
   .press-archive-note {
-    border-color: var(--xuan-dark) !important;
-  }
-
-  .press-hero {
-    border-bottom: 1px solid var(--xuan-dark) !important;
+    border-color: var(--press-card-border) !important;
   }
 
   .press-hero__inner {
@@ -826,7 +851,7 @@
     font-size: 34px !important;
     letter-spacing: 0.05em !important;
     text-transform: uppercase !important;
-    color: var(--ink-dark) !important;
+    color: var(--press-heading) !important;
     font-style: normal !important;
   }
 
@@ -836,7 +861,7 @@
     font-style: italic !important;
     font-size: 24pt !important;
     line-height: 1.25 !important;
-    color: var(--ink-dark) !important;
+    color: var(--press-body) !important;
     max-width: 880px !important;
   }
 
@@ -844,17 +869,15 @@
     font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
     font-size: 10pt !important;
     line-height: 1.65 !important;
-    color: var(--ink-dark) !important;
+    color: var(--press-body) !important;
     font-weight: 400 !important;
   }
 
   .press-date,
   .press-disclaimer p,
-  .sv-footer__copyright,
-  .sv-footer__legal,
-  .sv-footer__legal-links {
+  .press-toolbar__count {
     font-size: 8pt !important;
-    color: var(--qing-dark) !important;
+    color: var(--press-muted) !important;
     font-weight: 400 !important;
   }
 
@@ -864,18 +887,17 @@
   .press-filter-label,
   .press-publication,
   .press-archive-note,
-  .contact span,
-  .sv-footer__contact-label {
+  .contact span {
     font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
     font-size: 7.5pt !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.16em !important;
-    color: var(--cinnabar) !important;
+    color: var(--press-kicker) !important;
   }
 
   .press-headline {
-    color: var(--ink-dark) !important;
+    color: var(--press-heading) !important;
     font-weight: 700 !important;
     font-size: 12pt !important;
     text-transform: none !important;
@@ -883,36 +905,98 @@
 
   .press-toolbar__count,
   .press-filter-select {
-    color: var(--ink) !important;
+    color: var(--press-body) !important;
   }
 
-  .contact a,
-  .sv-footer__legal-links a {
-    color: var(--ink) !important;
+  .press-toolbar__label,
+  .press-filter-label,
+  .press-overview__heading {
+    color: var(--press-kicker) !important;
   }
 
-  .press-row a:hover,
-  .press-row a:focus-visible {
-    background: color-mix(in srgb, var(--ink-light) 26%, var(--xuan-light)) !important;
+  .press-filter-select {
+    background-color: var(--press-card-bg-soft) !important;
+    border-color: var(--press-card-border) !important;
+    color: var(--press-body) !important;
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--press-muted) 50%),
+      linear-gradient(135deg, var(--press-muted) 50%, transparent 50%) !important;
+  }
+
+  .press-filter-select:focus-visible {
+    outline-color: color-mix(in srgb, var(--press-accent) 54%, white 46%) !important;
+  }
+
+  .press-row {
+    border-color: var(--press-card-border) !important;
+  }
+
+  .press-row:hover,
+  .press-row:focus-within {
+    background: var(--press-card-bg-soft) !important;
+    border-color: color-mix(in srgb, var(--press-accent) 48%, var(--press-card-border) 52%) !important;
+    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--press-accent) 72%, transparent) !important;
   }
 
   .press-row a:hover .press-headline,
-  .press-row a:focus-visible .press-headline,
-  .sv-footer__legal-links a:hover,
-  .contact a:hover {
-    color: var(--qing-dark) !important;
+  .press-row a:focus-visible .press-headline {
+    color: var(--press-body) !important;
   }
 
   .press-more {
-    background: var(--ink) !important;
-    color: var(--xuan-light) !important;
-    border: 1px solid var(--ink) !important;
+    background: var(--press-button-bg) !important;
+    color: var(--press-body) !important;
+    border: 1px solid var(--press-button-border) !important;
   }
 
   .press-more:hover {
-    background: var(--ink-dark) !important;
-    border-color: var(--ink-dark) !important;
-    color: var(--xuan-light) !important;
+    background: color-mix(in srgb, var(--press-accent) 22%, transparent) !important;
+    border-color: var(--press-accent) !important;
+    color: var(--press-heading) !important;
+  }
+
+  .press-speaking__nav-btn {
+    border-color: var(--press-card-border) !important;
+    background: var(--press-card-bg-soft) !important;
+    color: var(--press-body) !important;
+  }
+
+  .press-speaking__nav-btn:hover,
+  .press-speaking__nav-btn:focus-visible {
+    border-color: var(--press-accent) !important;
+    background: color-mix(in srgb, var(--press-accent) 16%, var(--press-card-bg-soft) 84%) !important;
+  }
+
+  .press-speaking__counter {
+    color: var(--press-muted) !important;
+  }
+
+  .contact a,
+  .press-speaking__link {
+    color: var(--press-body) !important;
+  }
+
+  .contact a:hover,
+  .press-speaking__link:hover {
+    color: var(--press-heading) !important;
+  }
+
+  .sv-footer,
+  .sv-footer__main {
+    background: #0F1718 !important;
+    border-color: var(--press-divider) !important;
+  }
+
+  .sv-footer__brand,
+  .sv-footer__contact a,
+  .sv-footer__legal-links a {
+    color: var(--press-body) !important;
+  }
+
+  .sv-footer__copyright,
+  .sv-footer__legal-links,
+  .sv-footer__legal {
+    color: var(--press-muted) !important;
   }
 
   @media (max-width: 767px) {
