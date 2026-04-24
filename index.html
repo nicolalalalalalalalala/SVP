@@ -864,11 +864,15 @@ h2.strat__hed {
   border-color:rgba(61,112,112,.4);
 }
 .sg__content {
-  padding:clamp(21px, 2.1vw, 30px) clamp(22px, 3.8vw, 52px) clamp(24px, 2.6vw, 34px);
+  padding-block:clamp(21px, 2.1vw, 30px) clamp(24px, 2.6vw, 34px);
+  padding-inline-start:clamp(22px, 3.8vw, 52px);
+  padding-inline-end:clamp(14px, 1.7vw, 24px);
   display:flex;
   flex-direction:column;
   gap:0;
   min-height:100%;
+  width:100%;
+  max-width:none;
 }
 body.homepage #strategy .sg__n {
   font-size:11px;
@@ -890,10 +894,14 @@ body.homepage #strategy .sg__title {
 }
 body.homepage #strategy .sg__body {
   margin-top:0;
-  max-width:74ch;
+  max-width:none;
   font-size:15px;
   line-height:1.74;
   color:var(--mist);
+}
+body.homepage #strategy .sg__content > :is(.sg__n, .sg__title, .sg__body) {
+  width:100%;
+  max-width:none;
 }
 .ac,
 .sg {
