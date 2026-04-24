@@ -1724,11 +1724,11 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-space: clamp(8px, 1vw, 12px);
-  --home-section-space-tight: clamp(5px, 0.7vw, 9px);
-  --home-section-transition-gap: clamp(4px, 0.6vw, 8px);
-  --home-section-stack-gap: clamp(3px, 0.45vw, 6px);
-  --home-section-pair-gap: clamp(2px, 0.35vw, 5px);
+  --home-section-space: clamp(4px, 0.55vw, 6px);
+  --home-section-space-tight: clamp(3px, 0.45vw, 5px);
+  --home-section-transition-gap: clamp(2px, 0.35vw, 4px);
+  --home-section-stack-gap: clamp(2px, 0.3vw, 3px);
+  --home-section-pair-gap: clamp(1px, 0.2vw, 2px);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1739,12 +1739,12 @@ body.homepage .home-section-shell {
 body.homepage .home-section-shell--soft {
   border: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
   background: color-mix(in srgb, var(--off) 88%, transparent);
-  padding-block: clamp(8px, 1vw, 12px);
+  padding-block: clamp(4px, 0.55vw, 6px);
 }
 body.homepage .home-section-shell--panel {
   border: 1px solid color-mix(in srgb, var(--rule) 66%, transparent);
   background: color-mix(in srgb, #f8f2e3 86%, transparent);
-  padding-block: clamp(8px, 1vw, 12px);
+  padding-block: clamp(4px, 0.55vw, 6px);
 }
 body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
   padding-top: var(--home-section-space);
@@ -1777,7 +1777,7 @@ body.homepage #strategy + #cdd {
   padding-top: var(--home-section-stack-gap);
 }
 body.homepage #cdd {
-  padding-bottom: clamp(6px, 0.8vw, 12px);
+  padding-bottom: clamp(3px, 0.45vw, 6px);
 }
 body.homepage .home-copy-frame {
   max-width: var(--home-copy-max);
@@ -2685,15 +2685,15 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage {
     --home-frame-pad: clamp(14px, 4.6vw, 20px);
     --home-copy-max: 100%;
-    --home-section-space: clamp(10px, 2.8vw, 14px);
-    --home-section-space-tight: clamp(8px, 2.4vw, 12px);
-    --home-section-transition-gap: clamp(6px, 2vw, 10px);
-    --home-section-stack-gap: clamp(4px, 1.2vw, 7px);
-    --home-section-pair-gap: clamp(3px, 1vw, 6px);
+    --home-section-space: clamp(5px, 1.5vw, 8px);
+    --home-section-space-tight: clamp(4px, 1.2vw, 6px);
+    --home-section-transition-gap: clamp(3px, 1vw, 5px);
+    --home-section-stack-gap: clamp(2px, 0.7vw, 4px);
+    --home-section-pair-gap: clamp(2px, 0.55vw, 3px);
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
-    padding-block: clamp(10px, 2.6vw, 14px);
+    padding-block: clamp(5px, 1.5vw, 8px);
   }
 
   .eyebrow {
