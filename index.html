@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="assets/favicon.svg?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/images/image.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/images/homepage_hero.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="assets/images/edited-photo.png" fetchpriority="high">
 <link rel="preload" as="image" href="assets/images/vectorink-vectorizer-result.svg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -1570,7 +1570,7 @@ body.homepage .home-hero {
   align-items: center;
   isolation: isolate;
   overflow: hidden;
-  background: linear-gradient(128deg, #08141b 0%, #0b1d26 46%, #0d202a 100%);
+  background: #081218;
   border-bottom: 1px solid rgba(216, 206, 176, 0.28);
 }
 body.homepage {
@@ -1616,26 +1616,30 @@ body.homepage .home-hero::after {
 }
 body.homepage .home-hero::before {
   z-index: -3;
-  background:
-    linear-gradient(118deg,
-      #07121a 0%,
-      #0a1a22 42%,
-      #0e2530 100%
-    );
+  background-image: url("assets/images/homepage_hero.jpg");
+  background-position: 74% 62%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 body.homepage .home-hero::after {
   z-index: -2;
   background:
-    linear-gradient(96deg,
-      rgba(3, 8, 11, 0.82) 0%,
-      rgba(4, 10, 13, 0.72) 42%,
-      rgba(6, 15, 20, 0.42) 68%,
-      rgba(8, 19, 24, 0.18) 100%
+    linear-gradient(98deg,
+      rgba(4, 10, 14, 0.9) 0%,
+      rgba(4, 11, 15, 0.82) 34%,
+      rgba(6, 15, 20, 0.58) 56%,
+      rgba(7, 18, 24, 0.32) 72%,
+      rgba(7, 18, 24, 0.18) 100%
     ),
     linear-gradient(180deg,
-      rgba(2, 7, 11, 0.28) 0%,
-      rgba(2, 7, 11, 0.06) 38%,
-      rgba(2, 7, 11, 0.32) 100%
+      rgba(2, 8, 12, 0.52) 0%,
+      rgba(3, 10, 14, 0.16) 36%,
+      rgba(2, 8, 12, 0.5) 100%
+    ),
+    linear-gradient(122deg,
+      rgba(6, 16, 19, 0.48) 0%,
+      rgba(8, 20, 23, 0.2) 50%,
+      rgba(8, 21, 24, 0.42) 100%
     );
 }
 body.homepage .home-hero .home-hero__inner::after {
@@ -1645,8 +1649,8 @@ body.homepage .home-hero .home-hero__inner::after {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(86% 82% at 87% 48%, rgba(16, 40, 52, 0.2), transparent 74%),
-    radial-gradient(72% 62% at 5% 52%, rgba(3, 8, 11, 0.38), transparent 70%);
+    radial-gradient(74% 72% at 83% 72%, rgba(17, 43, 54, 0.24), transparent 76%),
+    radial-gradient(56% 66% at 8% 54%, rgba(3, 8, 11, 0.42), transparent 72%);
 }
 body.homepage .home-hero__inner {
   position: relative;
@@ -1663,7 +1667,7 @@ body.homepage .home-hero__inner {
 body.homepage .home-hero__text {
   position: relative;
   width: min(660px, 100%);
-  padding: 0;
+  padding: clamp(8px, 1.2vw, 14px) 0 clamp(8px, 1.3vw, 16px);
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -1680,9 +1684,10 @@ body.homepage .home-hero__eyebrow {
   font-weight: 550;
   letter-spacing: .16em;
   line-height: 1.2;
-  color: rgba(244, 239, 226, 0.9);
+  color: rgba(246, 241, 230, 0.96);
   opacity: 1;
   text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 body.homepage .home-hero__eyebrow::after {
   content: "";
@@ -1703,6 +1708,7 @@ body.homepage .home-hero__headline {
   color: #f4efe2;
   max-width: 14ch;
   text-wrap: initial;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
 }
 body.homepage .home-hero__headline-box {
   display: block;
@@ -1726,10 +1732,11 @@ body.homepage .home-hero__support {
   max-width: 46ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(15.5px, 1.02vw, 17px);
-  line-height: 1.72;
+  line-height: 1.75;
   letter-spacing: .003em;
-  color: rgba(246, 241, 229, 0.92);
+  color: rgba(246, 241, 229, 0.95);
   text-wrap: pretty;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.26);
 }
 body.homepage .home-hero__actions {
   margin-top: clamp(8px, 1vw, 14px);
@@ -1748,7 +1755,7 @@ body.homepage .home-hero__cta {
   padding: 0 26px;
   border: 1px solid rgba(244, 238, 220, 0.84);
   border-radius: 0;
-  background: #eadfc7;
+  background: #e8ddc4;
   box-shadow: none;
   gap: 7px;
   font-family: "DIN 2014";
@@ -1756,7 +1763,7 @@ body.homepage .home-hero__cta {
   font-weight: 620;
   letter-spacing: .145em;
   text-transform: uppercase;
-  color: #0e1f22;
+  color: #0c1b20;
   transition: border-color .2s ease-out, background-color .2s ease-out, color .2s ease-out, transform .2s ease-out, box-shadow .2s ease-out;
 }
 body.homepage .home-hero__cta:hover,
@@ -1768,15 +1775,15 @@ body.homepage .home-hero__cta:focus-visible {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
 }
 body.homepage .home-hero__cta--secondary {
-  border-color: rgba(244, 238, 220, 0.56);
-  background: rgba(3, 11, 14, 0.38);
-  color: rgba(244, 238, 220, 0.97);
+  border-color: rgba(244, 238, 220, 0.64);
+  background: rgba(6, 16, 21, 0.26);
+  color: #f4eedf;
 }
 body.homepage .home-hero__cta--secondary:hover,
 body.homepage .home-hero__cta--secondary:focus-visible {
-  border-color: rgba(244, 238, 220, 0.86);
-  background: rgba(4, 14, 18, 0.58);
-  color: #faf6ee;
+  border-color: rgba(244, 238, 220, 0.9);
+  background: rgba(11, 27, 34, 0.5);
+  color: #f6f0e1;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.21);
 }
 
@@ -2183,19 +2190,19 @@ body.homepage #cdd .cdd-editorial__lede {
     min-height: clamp(500px, 84vh, 640px);
   }
   body.homepage .home-hero::before {
-    background: linear-gradient(124deg, #07121a 0%, #0b1d27 54%, #0f2a35 100%);
+    background-position: 68% 58%;
   }
   body.homepage .home-hero::after {
     background:
-      linear-gradient(104deg,
-        rgba(4, 10, 13, 0.86) 0%,
-        rgba(4, 10, 13, 0.74) 46%,
-        rgba(6, 14, 18, 0.42) 100%
+      linear-gradient(107deg,
+        rgba(4, 10, 14, 0.92) 0%,
+        rgba(4, 10, 14, 0.82) 48%,
+        rgba(6, 15, 20, 0.56) 100%
       ),
       linear-gradient(180deg,
-        rgba(3, 8, 11, 0.46) 0%,
-        rgba(3, 8, 11, 0.08) 34%,
-        rgba(3, 8, 11, 0.38) 100%
+        rgba(2, 8, 12, 0.62) 0%,
+        rgba(2, 8, 12, 0.2) 36%,
+        rgba(2, 8, 12, 0.54) 100%
       );
   }
   body.homepage .home-hero__inner {
