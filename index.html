@@ -1714,10 +1714,11 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-space: clamp(10px, 1.2vw, 16px);
-  --home-section-space-tight: clamp(6px, 0.8vw, 12px);
+  --home-section-space: clamp(8px, 1vw, 12px);
+  --home-section-space-tight: clamp(5px, 0.7vw, 9px);
   --home-section-transition-gap: clamp(4px, 0.6vw, 8px);
-  --home-section-stack-gap: clamp(4px, 0.65vw, 10px);
+  --home-section-stack-gap: clamp(3px, 0.45vw, 6px);
+  --home-section-pair-gap: clamp(2px, 0.35vw, 5px);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1751,10 +1752,10 @@ body.homepage #about {
   padding-bottom: var(--home-section-stack-gap);
 }
 body.homepage #about + #principles {
-  padding-top: var(--home-section-stack-gap);
+  padding-top: var(--home-section-pair-gap);
 }
 body.homepage #principles {
-  padding-bottom: var(--home-section-stack-gap);
+  padding-bottom: var(--home-section-pair-gap);
 }
 body.homepage #principles + #strategy {
   padding-top: var(--home-section-stack-gap);
@@ -2663,10 +2664,11 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage {
     --home-frame-pad: clamp(14px, 4.6vw, 20px);
     --home-copy-max: 100%;
-    --home-section-space: clamp(14px, 3.6vw, 20px);
-    --home-section-space-tight: clamp(10px, 2.8vw, 14px);
+    --home-section-space: clamp(10px, 2.8vw, 14px);
+    --home-section-space-tight: clamp(8px, 2.4vw, 12px);
     --home-section-transition-gap: clamp(6px, 2vw, 10px);
-    --home-section-stack-gap: clamp(6px, 1.8vw, 10px);
+    --home-section-stack-gap: clamp(4px, 1.2vw, 7px);
+    --home-section-pair-gap: clamp(3px, 1vw, 6px);
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
@@ -2872,7 +2874,7 @@ body.homepage #cdd .cdd-editorial__lede {
 
   #about {
     padding-top: var(--home-section-space);
-    padding-bottom: var(--home-section-space);
+    padding-bottom: var(--home-section-stack-gap);
   }
   #about .wrap {
     max-width: calc(var(--max) + 24px);
@@ -2919,8 +2921,8 @@ body.homepage #cdd .cdd-editorial__lede {
   }
 
   #principles {
-    padding-top: var(--home-section-space-tight);
-    padding-bottom: var(--home-section-space);
+    padding-top: var(--home-section-pair-gap);
+    padding-bottom: var(--home-section-stack-gap);
   }
   .principles__toprow {
     display: grid;
