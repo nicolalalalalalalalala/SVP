@@ -1714,9 +1714,9 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-space: clamp(30px, 3.2vw, 44px);
-  --home-section-space-tight: clamp(22px, 2.4vw, 32px);
-  --home-section-transition-gap: clamp(22px, 2.3vw, 34px);
+  --home-section-space: clamp(22px, 2.5vw, 32px);
+  --home-section-space-tight: clamp(16px, 1.9vw, 24px);
+  --home-section-transition-gap: clamp(12px, 1.5vw, 20px);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1747,25 +1747,25 @@ body.homepage .home-hero + #about {
   padding-top: var(--home-section-transition-gap);
 }
 body.homepage #about {
-  padding-bottom: clamp(20px, 2.2vw, 30px);
+  padding-bottom: clamp(14px, 1.6vw, 22px);
 }
 body.homepage #about + #principles {
-  padding-top: clamp(18px, 2vw, 28px);
+  padding-top: clamp(12px, 1.5vw, 20px);
 }
 body.homepage #principles {
-  padding-bottom: clamp(24px, 2.7vw, 36px);
+  padding-bottom: clamp(14px, 1.6vw, 24px);
 }
 body.homepage #principles + #strategy {
-  padding-top: clamp(20px, 2.2vw, 30px);
+  padding-top: clamp(12px, 1.5vw, 20px);
 }
 body.homepage #strategy {
-  padding-bottom: clamp(24px, 2.7vw, 36px);
+  padding-bottom: clamp(14px, 1.6vw, 24px);
 }
 body.homepage #strategy + #cdd {
-  padding-top: clamp(20px, 2.2vw, 30px);
+  padding-top: clamp(12px, 1.5vw, 20px);
 }
 body.homepage #cdd {
-  padding-bottom: clamp(26px, 3vw, 40px);
+  padding-bottom: clamp(14px, 1.6vw, 22px);
 }
 body.homepage .home-copy-frame {
   max-width: var(--home-copy-max);
@@ -2034,21 +2034,14 @@ body.homepage #principles .eyebrow {
 }
 body.homepage #principles {
   padding-top: clamp(12px, 1.6vw, 20px);
-  padding-bottom: clamp(24px, 3vw, 38px);
+  padding-bottom: clamp(14px, 1.9vw, 24px);
 }
-/* Homepage transition: principles -> strategy should be spacing-only (no horizontal rule). */
-body.homepage #principles,
-body.homepage #principles .home-section-shell,
-body.homepage #principles + #strategy,
-body.homepage #principles + #strategy .home-section-shell {
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
-}
-body.homepage #principles + #strategy::before,
-body.homepage #principles + #strategy::after {
-  content: none !important;
+/* Ensure principles and strategy read as complete institutional boxes. */
+body.homepage :is(#principles, #strategy) .home-section-shell--soft {
+  border: 1px solid color-mix(in srgb, var(--rule) 62%, transparent) !important;
+  background: color-mix(in srgb, var(--off) 92%, transparent);
+  box-shadow: none;
+  overflow: hidden;
 }
 body.homepage .principles__toprow {
   display: grid;
@@ -3330,7 +3323,7 @@ body.homepage #cdd .cdd-editorial__lede {
 .sv-footer {
   background: var(--off);
   border-top: 1px solid var(--rule);
-  padding: 34px var(--pad, var(--site-page-margin, 64px)) 40px;
+  padding: 24px var(--pad, var(--site-page-margin, 64px)) 30px;
 }
 .sv-footer__inner {
   max-width: var(--max, 1320px);
@@ -3412,7 +3405,7 @@ body.homepage #cdd .cdd-editorial__lede {
 }
 @media (max-width: 767px) {
   .sv-footer {
-    padding: 24px var(--pad, var(--site-page-margin, 18px)) 28px;
+    padding: 18px var(--pad, var(--site-page-margin, 18px)) 24px;
   }
   .sv-footer__main {
     flex-direction: column;
