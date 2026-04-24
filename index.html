@@ -704,8 +704,13 @@ h2.about__hed { color:var(--ink); }
   text-align:left;
 }
 body.homepage .track-record__summary {
-  justify-self: end;
-  padding-left: clamp(20px, 2.3vw, 42px);
+  justify-self: stretch;
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+}
+body.homepage .track-record__summary > p {
+  max-width: none !important;
 }
 .stats {
   width:100%;
