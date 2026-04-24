@@ -703,6 +703,10 @@ h2.about__hed { color:var(--ink); }
   color:color-mix(in srgb, var(--ink) 56%, var(--mist));
   text-align:left;
 }
+body.homepage .track-record__summary {
+  justify-self: end;
+  padding-left: clamp(20px, 2.3vw, 42px);
+}
 .stats {
   width:100%;
   display:grid;
@@ -2601,6 +2605,10 @@ body.homepage #cdd .cdd-editorial__lede {
     font-size:10px;
     line-height:1.45;
     letter-spacing:.08em;
+  }
+  body.homepage .track-record__summary {
+    justify-self: stretch;
+    padding-left: 0;
   }
   .stats {
     max-width:100%;
