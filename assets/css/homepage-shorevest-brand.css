@@ -898,7 +898,7 @@ body.homepage .home-hero__headline-emphasis {
 }
 
 body.homepage .home-hero__support {
-  max-width: 37ch;
+  max-width: min(100%, 52ch);
   color: rgba(236, 229, 214, 0.88) !important;
 }
 
