@@ -1087,6 +1087,30 @@
       body.homepage #site-header-mount #nav .nav__logo:active .nav__logo-cn {
         color: var(--shorevest-topbar-cinnabar, #c93b2a) !important;
       }
+
+
+      /* Geography section integration refinement */
+      .geography-section .operations-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.16fr);
+        background: color-mix(in srgb, var(--xuan) 98%, #fff 2%);
+      }
+      .geography-section .geography-copy {
+        padding: clamp(24px, 2.4vw, 34px) clamp(24px, 2.5vw, 34px);
+        gap: 12px;
+      }
+      .geography-section .geography-copy .sv-section-title {
+        max-width: 16ch;
+      }
+      .geography-section .geography-copy p {
+        max-width: 56ch;
+      }
+      .geography-section .operations-map {
+        padding: clamp(18px, 2vw, 26px);
+      }
+      .geography-section .operations-map-visual {
+        aspect-ratio: 1.92 / 1;
+      }
+
     </style>
   
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
