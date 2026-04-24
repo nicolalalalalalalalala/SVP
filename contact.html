@@ -25,9 +25,9 @@
       <header class="contact-page__intro" aria-labelledby="contact-page-title">
         <div class="contact-page__intro-main">
           <p class="contact-page__kicker">ShoreVest Partners</p>
-          <h1 id="contact-page-title">Contact</h1>
-          <p class="contact-page__intro-support">For investor, mandate, and strategic partnership enquiries, contact ShoreVest through the channels below.</p>
-          <p class="contact-page__service-note">Institutional enquiries are triaged by mandate fit, jurisdiction, and execution timeline before routing.</p>
+          <h1 id="contact-page-title">CONTACT</h1>
+          <p class="contact-page__intro-support">For investor, mandate, and strategic partnership enquiries, ShoreVest maintains a dedicated institutional contact channel with structured routing by mandate fit, jurisdiction, and execution timeline.</p>
+          <p class="contact-page__service-note">For urgent institutional matters, direct email is prioritised. Structured submissions are reviewed by the relevant ShoreVest team.</p>
           <ul class="contact-page__trust-points" aria-label="Contact handling standards">
             <li>Confidential handling</li>
             <li>Institutional scope</li>
@@ -39,17 +39,17 @@
       <div class="contact-page__layout" aria-label="Contact channels">
         <section class="section contact-page__primary-contact" aria-label="Direct contact details">
           <header class="contact-page__section-head">
-            <p class="contact-page__section-eyebrow">Primary Channel</p>
-            <h2>Direct Contact</h2>
+            <p class="contact-page__section-eyebrow">Primary Contact Route</p>
+            <h2>Direct Institutional Contact</h2>
           </header>
 
           <p class="contact-page__email"><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></p>
-          <p class="muted">Use direct email for time-sensitive institutional matters. For structured submissions, complete the enquiry form.</p>
-          <p class="contact-page__service-note contact-page__service-note--panel">Primary channel for investor dialogue and strategic mandates.</p>
+          <p class="muted">Use direct email for investor dialogue, active mandates, and strategic partnership discussions requiring expedited routing.</p>
 
-          <ul class="contact-page__support-list" aria-label="Submission guidance">
-            <li>Include mandate, geography, and timeline.</li>
-            <li>Coverage includes Asia Pacific and global LP relationships.</li>
+          <ul class="contact-page__support-list" aria-label="Direct contact guidance">
+            <li>Include enquiry type, geography, and preferred timeline.</li>
+            <li>Initial correspondence should be non-confidential and summary-level.</li>
+            <li>Institutional follow-up is coordinated by the relevant ShoreVest team.</li>
           </ul>
         </section>
 
@@ -59,32 +59,32 @@
             <h2>Submit Enquiry</h2>
           </header>
 
-          <p class="contact-page__form-intro">All submissions are reviewed by ShoreVest professionals. Please use a business email where possible.</p>
+          <p class="contact-page__form-intro">For non-urgent submissions, complete the structured form below to support efficient institutional routing.</p>
 
           <form class="contact-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain">
             <div class="contact-form__grid">
-              <label>
-                Full Name
-                <input type="text" name="full_name" autocomplete="name" required />
-              </label>
-              <label>
-                Email Address
-                <input type="email" name="email" autocomplete="email" required />
-              </label>
-              <label>
-                Company
-                <input type="text" name="company" autocomplete="organization" />
-              </label>
-              <label>
-                Phone Number
-                <input type="tel" name="phone" autocomplete="tel" />
-              </label>
+              <div class="contact-form__field">
+                <label for="contact-full-name">Full Name</label>
+                <input id="contact-full-name" type="text" name="full_name" autocomplete="name" placeholder="Enter full name" required />
+              </div>
+              <div class="contact-form__field">
+                <label for="contact-email">Business Email</label>
+                <input id="contact-email" type="email" name="email" autocomplete="email" placeholder="name@institution.com" required />
+              </div>
+              <div class="contact-form__field">
+                <label for="contact-company">Firm / Institution</label>
+                <input id="contact-company" type="text" name="company" autocomplete="organization" placeholder="Enter organisation" />
+              </div>
+              <div class="contact-form__field">
+                <label for="contact-phone">Phone Number</label>
+                <input id="contact-phone" type="tel" name="phone" autocomplete="tel" placeholder="Optional" />
+              </div>
             </div>
 
-            <label>
-              Message
-              <textarea name="message" rows="5" required></textarea>
-            </label>
+            <div class="contact-form__field contact-form__field--full">
+              <label for="contact-message">Enquiry Summary</label>
+              <textarea id="contact-message" name="message" rows="6" placeholder="Provide a concise summary of your mandate, objective, or partnership discussion." required></textarea>
+            </div>
 
             <p class="contact-form__notice">Provide only information required for initial routing. Do not include confidential transaction materials.</p>
             <button type="submit">Send Enquiry</button>
