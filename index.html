@@ -2112,13 +2112,24 @@ body.homepage #strategy .strat__content {
   width: 100%;
   max-width: none;
   padding-inline: 0;
+  justify-items: start;
 }
 body.homepage #strategy .strat__grid {
   justify-self: start;
   width: 100%;
-  max-width: none;
-  margin-inline-start: 0;
-  padding-inline-start: 0;
+  max-width: min(112ch, 100%);
+  margin-inline: 0;
+  padding-inline: 0;
+}
+body.homepage #strategy .sg {
+  width: 100%;
+  margin-inline: 0;
+}
+body.homepage #strategy .strat__actions {
+  width: 100%;
+  max-width: min(112ch, 100%);
+  justify-self: start;
+  margin-inline: 0;
 }
 body.homepage .strat__grid {
   border: 0;
