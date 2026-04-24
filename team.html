@@ -102,7 +102,7 @@
         --sv-hero-bottom-space: clamp(18px, 2.2vw, 28px);
         min-height: 0;
         padding: var(--sv-hero-top-space) var(--pagehero-inline-pad) var(--sv-hero-bottom-space) !important;
-        border-bottom: 1px solid var(--rule);
+        border-bottom: 0;
         background: transparent;
       }
       .pagehero .wrap {
@@ -117,7 +117,7 @@
         padding: clamp(14px, 1.8vw, 22px) 0 clamp(12px, 1.6vw, 20px);
         display: grid;
         row-gap: clamp(10px, 1.2vw, 14px);
-        border-top: 1px solid color-mix(in srgb, var(--rule) 84%, white);
+        border-top: 0;
       }
       .pagehero .eyebrow {
         padding-top: 0;
@@ -148,7 +148,7 @@
 
       .founder-note {
         padding: 48px 0;
-        border-bottom: 1px solid var(--rule);
+        border-bottom: 0;
         background: var(--off);
       }
       .founder-note__grid {
@@ -208,7 +208,7 @@
       }
       .group {
         padding: 34px 0 50px;
-        border-bottom: 1px solid var(--rule);
+        border-bottom: 0;
         scroll-margin-top: 96px;
         background: transparent !important;
       }
@@ -218,7 +218,7 @@
       }
 
       .group:first-child {
-        border-top: 1px solid color-mix(in srgb, var(--rule) 72%, white);
+        border-top: 0;
       }
       .group__head {
         display: flex;
@@ -227,7 +227,7 @@
         gap: 9px;
         margin-bottom: 0;
         padding-bottom: 14px;
-        border-bottom: 1px solid color-mix(in srgb, var(--rule) 84%, white);
+        border-bottom: 0;
       }
       .group h2 {
         font-family: var(--team-type-heading);
@@ -475,7 +475,7 @@
         margin-top: 12px;
         padding: 12px 0 0;
         width: 100%;
-        border-top: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
+        border-top: 0;
       }
       .team-profile__bio[hidden] {
         display: none;
@@ -502,7 +502,7 @@
         width: 100%;
         margin-top: 10px;
         padding: 20px 0 6px;
-        border-top: 1px solid color-mix(in srgb, var(--ink-soft) 20%, transparent);
+        border-top: 0;
       }
       .team-row-bio[hidden] {
         display: none;
@@ -710,6 +710,9 @@
       }
 
       /* Homepage nav lockup parity */
+      .team-groups :is(hr, .divider, .section-divider) {
+        display: none !important;
+      }
 
 </style>
 
