@@ -1112,11 +1112,11 @@ body.homepage #stats .track-record__heading .eyebrow {
 body.homepage #stats .track-record__title {
   margin: 0 !important;
   max-width: none;
-  font-size: clamp(1.5rem, 1.88vw, 1.84rem) !important;
-  line-height: 1.06 !important;
-  letter-spacing: 0.004em;
-  font-weight: 660 !important;
-  white-space: nowrap;
+  font-size: var(--sv-section-title-size) !important;
+  line-height: var(--sv-section-title-line) !important;
+  letter-spacing: 0.01em;
+  font-weight: var(--sv-section-title-weight) !important;
+  white-space: normal;
 }
 
 body.homepage #stats .track-record__summary {
@@ -1288,7 +1288,7 @@ body.homepage #stats .track-record__note {
   }
 
   body.homepage #stats .track-record__title {
-    font-size: clamp(1.38rem, 7.2vw, 1.64rem) !important;
-    line-height: 1.08 !important;
+    font-size: var(--sv-section-title-size) !important;
+    line-height: var(--sv-section-title-line) !important;
   }
 }
