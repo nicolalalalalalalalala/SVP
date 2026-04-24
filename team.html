@@ -90,19 +90,16 @@
         align-items: center;
         gap: 14px;
         min-height: 12px;
-        margin-bottom: 24px;
+        margin-bottom: 0;
       }
       .eyebrow::after {
-        content: "";
-        flex: 0 0 36px;
-        height: 1px;
-        background: currentColor;
+        content: none;
       }
 
       .pagehero {
-        --pagehero-inline-pad: var(--team-intro-inline-pad);
-        --sv-hero-top-space: clamp(54px, 5.6vw, 78px);
-        --sv-hero-bottom-space: clamp(30px, 3.2vw, 46px);
+        --pagehero-inline-pad: 0;
+        --sv-hero-top-space: clamp(44px, 4.6vw, 64px);
+        --sv-hero-bottom-space: clamp(18px, 2.2vw, 28px);
         min-height: 0;
         padding: var(--sv-hero-top-space) var(--pagehero-inline-pad) var(--sv-hero-bottom-space) !important;
         border-bottom: 1px solid var(--rule);
@@ -110,61 +107,39 @@
       }
       .pagehero .wrap {
         width: 100%;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--pad);
       }
       .pagehero__intro {
-        width: min(1240px, 100%);
-        margin-inline: auto;
-        padding: clamp(26px, 2.9vw, 36px) 0 clamp(30px, 3.2vw, 44px);
+        width: min(720px, 100%);
+        margin: 0;
+        padding: clamp(14px, 1.8vw, 22px) 0 clamp(12px, 1.6vw, 20px);
         display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-template-areas:
-          "eyebrow heading heading heading heading heading heading heading heading heading heading heading"
-          ". paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph . . .";
-        column-gap: clamp(16px, 2.3vw, 28px);
-        row-gap: clamp(12px, 1.4vw, 18px);
-        border-top: 1px solid color-mix(in srgb, var(--rule) 88%, white);
+        row-gap: clamp(10px, 1.2vw, 14px);
+        border-top: 1px solid color-mix(in srgb, var(--rule) 84%, white);
       }
       .pagehero .eyebrow {
-        grid-area: eyebrow;
-        grid-column: 1 / span 2;
-        align-self: start;
-        margin-bottom: 0;
-        padding-top: clamp(10px, 1.1vw, 14px);
+        padding-top: 0;
       }
       h1 {
         font-family: var(--team-type-heading);
-        font-size: clamp(34px, 4.8vw, 52px);
-        font-weight: 300;
-        font-style: italic;
-        line-height: 1.04;
-        letter-spacing: 0.005em;
+        font-size: clamp(32px, 4.1vw, 46px);
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.08;
+        letter-spacing: 0;
         text-transform: none;
         margin-bottom: 0;
-        max-width: 13ch;
-        grid-area: heading;
-        grid-column: 3 / span 8;
-        justify-self: start;
-      }
-      h1 .pagehero__line {
-        display: block;
+        max-width: 20ch;
       }
       .pagehero p {
-        max-width: 47ch;
+        max-width: 58ch;
         font-size: var(--sv-type-body-size, 10pt);
-        line-height: 1.68;
+        line-height: 1.7;
         color: var(--ink-soft);
         font-family: var(--team-type-body);
-        margin-top: 0;
-        grid-area: paragraph;
-        grid-column: 4 / span 6;
-        align-self: start;
-        padding-bottom: 0;
-      }
-      .pagehero p.pagehero__fullwidth {
-        max-width: 50ch;
+        margin-top: 2px;
       }
 
       .founder-note {
@@ -212,12 +187,12 @@
       }
 
       .team-groups {
-        padding: 54px 0 92px;
+        padding: 32px 0 92px;
         background: transparent;
       }
 
       .team-groups .wrap {
-        padding-inline: var(--team-intro-inline-pad);
+        padding-inline: var(--pad);
       }
       .team-groups__intro {
         font-family: var(--serif);
@@ -246,17 +221,24 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 9px;
-        margin-bottom: 24px;
+        margin-bottom: 0;
         padding-bottom: 14px;
         border-bottom: 1px solid color-mix(in srgb, var(--rule) 84%, white);
       }
       .group h2 {
         font-family: var(--team-type-heading);
         font-weight: 700;
-        font-size: clamp(21px, 1.9vw, 28px);
-        line-height: 1.14;
-        letter-spacing: 0.01em;
+        font-size: clamp(18px, 1.5vw, 22px);
+        line-height: 1.18;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
         white-space: normal;
+      }
+      .group__head .sv-section-title {
+        font-size: clamp(18px, 1.5vw, 22px);
+        line-height: 1.18;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
       }
       .group__summary {
         font-family: var(--team-type-body);
@@ -618,30 +600,19 @@
         .pagehero {
           min-height: auto;
           padding-top: 102px;
-          padding-bottom: 30px;
+          padding-bottom: 22px;
         }
         .pagehero__intro {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-            "eyebrow"
-            "heading"
-            "paragraph";
-          row-gap: 13px;
-          padding: 18px 0 14px;
-        }
-        .pagehero .eyebrow {
-          grid-column: 1;
-          padding-top: 0;
+          row-gap: 10px;
+          padding: 14px 0 10px;
         }
         h1 {
-          grid-column: 1;
-          max-width: 14ch;
+          max-width: 18ch;
         }
         .pagehero p {
-          grid-column: 1;
-          font-size: 17px;
-          line-height: 1.6;
-          max-width: 42ch;
+          font-size: 16px;
+          line-height: 1.58;
+          max-width: 44ch;
         }
         .founder-note {
           padding: 32px 0;
@@ -662,7 +633,9 @@
           box-shadow: none;
         }
         .group h2 {
-          font-size: clamp(20px, 4.4vw, 30px);
+          font-size: clamp(17px, 3.8vw, 20px);
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
           white-space: normal;
         }
         .group__summary {
@@ -735,12 +708,7 @@
         white-space: nowrap;
       }
       .eyebrow::after {
-        content: "";
-        display: block;
-        flex: 0 0 36px;
-        width: 36px;
-        height: 1px;
-        transform: translateY(0);
+        content: none;
       }
 
       /* Homepage nav lockup parity */
@@ -762,7 +730,7 @@
       <div class="wrap">
         <div class="pagehero__intro">
           <div class="eyebrow">TEAM</div>
-          <h1 class="type-display-hero"><span class="pagehero__line">Investment and</span><span class="pagehero__line">Operating Team</span></h1>
+          <h1 class="type-display-hero">Investment and operating team</h1>
           <p class="pagehero__fullwidth">
             ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
           </p>
