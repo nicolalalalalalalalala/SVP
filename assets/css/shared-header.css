@@ -1078,7 +1078,7 @@ body {
   #site-header-mount #nav .nav__logo-en {
     letter-spacing: 0.048em !important;
     font-size: 15px !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
     color: color-mix(in srgb, var(--sv-header-ink) 92%, #000 8%) !important;
   }
 
@@ -1086,7 +1086,7 @@ body {
     font-size: 9.6px !important;
     font-weight: 600 !important;
     letter-spacing: 0.16em !important;
-    color: var(--sv-header-cinnabar, #C93B2A) !important;
+    color: color-mix(in srgb, var(--sv-header-cinnabar) 78%, var(--sv-header-paper-dark) 22%) !important;
     transform: translateY(-0.5px) !important;
   }
 
@@ -1188,7 +1188,7 @@ body {
   }
 
   #site-header-mount #nav .nav__logo-cn {
-    color: var(--sv-header-cinnabar, #C93B2A) !important;
+    color: color-mix(in srgb, var(--sv-header-cinnabar) 78%, var(--sv-header-paper-dark) 22%) !important;
   }
 
   #site-header-mount #nav .nav__menu-btn {
