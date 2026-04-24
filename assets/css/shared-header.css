@@ -1081,7 +1081,7 @@ body {
     font-size: 9.6px !important;
     font-weight: 600 !important;
     letter-spacing: 0.16em !important;
-    color: color-mix(in srgb, var(--sv-header-cinnabar) 78%, var(--sv-header-paper-dark) 22%) !important;
+    color: var(--sv-header-cinnabar, #C93B2A) !important;
     transform: translateY(-0.5px) !important;
   }
 
