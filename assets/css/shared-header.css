@@ -48,6 +48,7 @@ body {
   gap: 0;
   height: 100%;
   text-decoration: none;
+  margin-left: -20px;
 }
 
 .nav__logo img { display: block; }
@@ -271,6 +272,8 @@ body {
     padding: 0 30px;
   }
 
+  .nav__logo { margin-left: -10px; }
+
   .nav__links { gap: 26px; }
 }
 
@@ -286,6 +289,7 @@ body {
   }
 
   .nav__menu-btn { display: inline-flex; }
+  .nav__logo { margin-left: 0; }
   .nav__zh { display: none; }
   .nav__mobile-lang { display: inline-flex; }
   .nav__mobile-investor { display: inline-flex; }
