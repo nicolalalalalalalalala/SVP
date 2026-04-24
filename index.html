@@ -1781,19 +1781,36 @@ body.homepage .home-hero__inner {
   margin-inline: auto;
   padding: clamp(122px, 12vh, 164px) var(--home-frame-pad) clamp(90px, 10vh, 126px);
   display: grid;
-  grid-template-columns: minmax(0, 5.8fr) minmax(0, 6.2fr);
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
   column-gap: clamp(24px, 3.6vw, 64px);
   align-items: center;
 }
 body.homepage .home-hero__text {
   position: relative;
-  width: min(640px, 100%);
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
+  width: min(660px, 100%);
+  padding: clamp(24px, 2.8vw, 34px) clamp(24px, 2.9vw, 38px) clamp(22px, 2.5vw, 32px);
+  border: 1px solid rgba(241, 232, 212, 0.24);
+  border-left-width: 2px;
+  background: linear-gradient(144deg, rgba(7, 16, 24, 0.66) 0%, rgba(7, 16, 24, 0.3) 100%);
+  box-shadow: inset 0 0 0 1px rgba(241, 232, 212, 0.08);
   display: grid;
-  gap: clamp(12px, 1.15vw, 17px);
+  gap: clamp(14px, 1.3vw, 20px);
+}
+body.homepage .home-hero__text::before,
+body.homepage .home-hero__text::after {
+  content: "";
+  position: absolute;
+  left: clamp(24px, 2.9vw, 38px);
+  right: clamp(24px, 2.9vw, 38px);
+  height: 1px;
+  background: rgba(241, 232, 212, 0.22);
+  pointer-events: none;
+}
+body.homepage .home-hero__text::before {
+  top: clamp(15px, 1.8vw, 22px);
+}
+body.homepage .home-hero__text::after {
+  bottom: clamp(15px, 1.8vw, 22px);
 }
 body.homepage .home-hero__eyebrow {
   margin: 0;
@@ -1830,6 +1847,8 @@ body.homepage .home-hero__headline {
   max-width: 13.2ch;
   text-wrap: initial;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.34);
+  padding-bottom: clamp(12px, 1.4vw, 16px);
+  border-bottom: 1px solid rgba(241, 232, 212, 0.2);
 }
 body.homepage .home-hero__headline-box {
   display: block;
@@ -1860,7 +1879,7 @@ body.homepage .home-hero__headline-emphasis {
 }
 body.homepage .home-hero__support {
   margin: 0;
-  max-width: 40ch;
+  max-width: 41ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(15.8px, 1.1vw, 17px);
   line-height: 1.58;
@@ -1868,64 +1887,25 @@ body.homepage .home-hero__support {
   color: rgba(247, 241, 228, 0.96);
   text-wrap: pretty;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
-}
-/* Hero proof points: restrained institutional stats strip under body copy. */
-body.homepage .home-hero__stats {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  gap: 0;
-  margin-top: clamp(4px, 0.7vw, 10px);
-  width: min(100%, 820px);
-}
-body.homepage .home-hero__stat {
-  display: grid;
-  gap: 4px;
-  padding: 2px 16px;
-  min-width: 0;
-}
-body.homepage .home-hero__stat:first-child {
-  padding-left: 0;
-}
-body.homepage .home-hero__stat + .home-hero__stat {
-  border-left: 1px solid rgba(243, 234, 214, 0.34);
-}
-body.homepage .home-hero__stat-value {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(22px, 1.7vw, 28px);
-  line-height: 1;
-  letter-spacing: .01em;
-  font-weight: 520;
-  color: #f6efde;
-  white-space: nowrap;
-}
-body.homepage .home-hero__stat-label {
-  margin: 0;
-  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 620;
-  line-height: 1.3;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(239, 230, 209, 0.88);
-  white-space: nowrap;
+  padding-top: clamp(2px, 0.3vw, 5px);
 }
 body.homepage .home-hero__actions {
-  margin-top: clamp(8px, 0.9vw, 12px);
+  margin-top: clamp(14px, 1.4vw, 20px);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
+  padding-top: clamp(14px, 1.6vw, 20px);
+  border-top: 1px solid rgba(241, 232, 212, 0.18);
 }
 body.homepage .home-hero__cta {
   margin-top: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: 47px;
   min-width: 210px;
-  padding: 0 26px;
+  padding: 0 24px;
   border: 1px solid rgba(246, 239, 223, 0.96);
   border-radius: 0;
   background: #f0e5cf;
@@ -2441,6 +2421,16 @@ body.homepage #cdd .cdd-editorial__lede {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 0;
   }
+  body.homepage .home-hero__text {
+    width: min(100%, 40rem);
+    padding: 22px 18px 20px;
+    gap: 12px;
+  }
+  body.homepage .home-hero__text::before,
+  body.homepage .home-hero__text::after {
+    left: 18px;
+    right: 18px;
+  }
   body.homepage .home-hero__headline {
     font-size: clamp(34px, 8.8vw, 44px);
     line-height: 1.05;
@@ -2451,44 +2441,11 @@ body.homepage #cdd .cdd-editorial__lede {
     line-height: 1.62;
     max-width: 31ch;
   }
-  /* Stack proof-point strip cleanly on small screens. */
-  body.homepage .home-hero__stats {
-    margin-top: 4px;
-    width: min(100%, 420px);
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 0;
-  }
-  body.homepage .home-hero__stat {
-    padding: 0 10px;
-    gap: 3px;
-  }
-  body.homepage .home-hero__stat:nth-child(odd) {
-    padding-left: 0;
-  }
-  body.homepage .home-hero__stat + .home-hero__stat {
-    border-left: 0;
-  }
-  body.homepage .home-hero__stat:nth-child(even) {
-    border-left: 1px solid rgba(243, 234, 214, 0.3);
-  }
-  body.homepage .home-hero__stat-value {
-    font-size: clamp(19px, 5.5vw, 23px);
-  }
-  body.homepage .home-hero__stat-label {
-    font-size: 9.5px;
-    letter-spacing: .13em;
-    white-space: normal;
-    max-width: 15ch;
-  }
-  body.homepage .home-hero__text {
-    width: min(100%, 38rem);
-    gap: 14px;
-    padding: 0;
-  }
   body.homepage .home-hero__actions {
     width: 100%;
-    gap: 10px;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 12px;
   }
   body.homepage .home-hero__cta {
     flex: 1 1 calc(50% - 5px);
@@ -3404,25 +3361,6 @@ body.homepage #cdd .cdd-editorial__lede {
         <span class="home-hero__headline-box"><span class="home-hero__headline-primary">Private credit</span><span class="home-hero__headline-secondline"><span class="home-hero__headline-nowrap"><span class="home-hero__headline-preposition">in</span> <span class="home-hero__headline-emphasis">China.</span></span></span></span>
       </h1>
       <p class="home-hero__support">Specialist onshore execution platform focused on collateral-backed lending, restructurings, and disciplined recoveries for institutional partners.</p>
-      <!-- Institutional proof-point strip: supportable hero stats with restrained dividers. -->
-      <div class="home-hero__stats" aria-label="ShoreVest track record highlights">
-        <div class="home-hero__stat">
-          <p class="home-hero__stat-value">$2B+</p>
-          <p class="home-hero__stat-label">AUM</p>
-        </div>
-        <div class="home-hero__stat">
-          <p class="home-hero__stat-value">6</p>
-          <p class="home-hero__stat-label">Fund vintages</p>
-        </div>
-        <div class="home-hero__stat">
-          <p class="home-hero__stat-value">20+ YEARS</p>
-          <p class="home-hero__stat-label">Onshore execution</p>
-        </div>
-        <div class="home-hero__stat">
-          <p class="home-hero__stat-value">30-60%</p>
-          <p class="home-hero__stat-label">Typical LTV / CTV</p>
-        </div>
-      </div>
       <div class="home-hero__actions">
         <a href="firm.html" class="home-hero__cta home-hero__cta--primary"><span>EXPLORE SHOREVEST</span></a>
         <a href="strategy.html" class="home-hero__cta home-hero__cta--secondary"><span>VIEW STRATEGY</span></a>
