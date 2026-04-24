@@ -2051,6 +2051,249 @@ body.contact-page .contact-page__content {
   }
 }
 
+/* ================================================================
+   Contact section — institutional box redesign
+   Clean hierarchy, boxy editorial treatment
+   ================================================================ */
+
+body.contact-page .contact-page__layout {
+  grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(22px, 2.8vw, 40px);
+  align-items: start;
+}
+
+body.contact-page :is(.contact-page__primary-contact, .contact-page__form-section) {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Left box — primary route */
+body.contact-page .contact-page__primary-contact {
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  border-top: 3px solid color-mix(in srgb, var(--blue-green-dark) 82%, #000 18%);
+  background: color-mix(in srgb, #f8f2e5 26%, #fff 74%);
+  padding: clamp(24px, 2.8vw, 38px) clamp(22px, 2.6vw, 34px) !important;
+  display: grid;
+  gap: 0;
+  align-content: start;
+  position: static;
+}
+
+body.contact-page .contact-page__primary-contact::after {
+  display: none;
+}
+
+/* Right box — structured submission */
+body.contact-page .contact-page__form-section {
+  border: 1px solid color-mix(in srgb, var(--ink) 17%, transparent);
+  border-top: 2px solid color-mix(in srgb, var(--ink) 44%, transparent);
+  background: #fff;
+  padding: clamp(24px, 2.8vw, 38px) clamp(22px, 2.6vw, 34px) !important;
+  display: grid;
+  gap: clamp(14px, 1.6vw, 20px);
+}
+
+/* Box headings — uppercase, tracked, authoritative */
+body.contact-page .contact-page__primary-contact h2,
+body.contact-page .contact-page__form-section h2 {
+  margin: 0 0 clamp(20px, 2.2vw, 28px);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--ink) 76%, transparent);
+  padding-bottom: clamp(14px, 1.6vw, 18px);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 13%, transparent);
+}
+
+/* Email — visual anchor of the left box */
+body.contact-page .contact-page__email {
+  margin: 0 0 clamp(18px, 2vw, 24px);
+}
+
+body.contact-page .contact-page__email a {
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 500;
+  letter-spacing: 0.014em;
+  line-height: 1.1;
+  color: color-mix(in srgb, var(--ink) 92%, transparent);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  transition: text-decoration-color 0.16s ease;
+}
+
+body.contact-page .contact-page__email a:hover,
+body.contact-page .contact-page__email a:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ink) 42%, transparent);
+}
+
+/* Support lines — 3 clean institutional paragraphs */
+body.contact-page .contact-page__support-lines {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 clamp(22px, 2.4vw, 32px);
+  padding-top: clamp(14px, 1.6vw, 20px);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+}
+
+body.contact-page .contact-page__support-lines p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+
+/* Email CTA — deliberate, readable */
+body.contact-page .contact-page__email-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 22px;
+  background: color-mix(in srgb, var(--blue-green-dark) 92%, #000 8%);
+  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 64%, #0a2828 36%);
+  color: var(--paper-light, #f8f3e8);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  align-self: start;
+  transition: background-color 0.18s ease;
+}
+
+body.contact-page .contact-page__email-cta:hover,
+body.contact-page .contact-page__email-cta:focus-visible {
+  background: color-mix(in srgb, var(--blue-green-dark) 84%, #000 16%);
+  color: var(--paper-light, #f8f3e8);
+  text-decoration: none;
+}
+
+/* Form — clean field treatment */
+body.contact-page .contact-form {
+  margin-top: 0;
+  display: grid;
+  gap: 14px;
+}
+
+body.contact-page .contact-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+body.contact-page .contact-form__field {
+  display: grid;
+  gap: 6px;
+}
+
+body.contact-page .contact-form label {
+  margin: 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+}
+
+body.contact-page .contact-form input,
+body.contact-page .contact-form textarea {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+  padding: 11px 12px;
+  min-height: 46px;
+  transition: border-color 0.16s ease;
+  box-shadow: none;
+}
+
+body.contact-page .contact-form input::placeholder,
+body.contact-page .contact-form textarea::placeholder {
+  color: color-mix(in srgb, var(--ink) 38%, transparent);
+}
+
+body.contact-page .contact-form input:hover,
+body.contact-page .contact-form textarea:hover {
+  border-color: color-mix(in srgb, var(--ink) 32%, transparent);
+}
+
+body.contact-page .contact-form input:focus-visible,
+body.contact-page .contact-form textarea:focus-visible {
+  outline: none;
+  border-color: color-mix(in srgb, var(--blue-green-dark) 62%, var(--ink) 38%);
+  background: #fff;
+  box-shadow: none;
+}
+
+body.contact-page .contact-form textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+body.contact-page .contact-form__notice {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 56%, transparent);
+}
+
+/* Submit button — strong and deliberate */
+body.contact-page .contact-form button[type="submit"] {
+  justify-self: start;
+  min-width: 186px;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--blue-green-dark) 64%, #0a2828 36%);
+  background: color-mix(in srgb, var(--blue-green-dark) 92%, #000 8%);
+  color: var(--paper-light, #f8f3e8);
+  font: inherit;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: none;
+  transform: none;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+body.contact-page .contact-form button[type="submit"]:hover,
+body.contact-page .contact-form button[type="submit"]:focus-visible {
+  background: color-mix(in srgb, var(--blue-green-dark) 84%, #000 16%);
+  color: var(--paper-light, #f8f3e8);
+  transform: none;
+}
+
+@media (max-width: 980px) {
+  body.contact-page .contact-page__layout {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 3.8vw, 28px);
+  }
+}
+
+@media (max-width: 700px) {
+  body.contact-page .contact-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.contact-page .contact-form button[type="submit"] {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 body.contact-page .contact-hero .home-hero__text {
   position: relative;
   margin: 0;
