@@ -1709,9 +1709,9 @@ body.homepage {
   --home-box-copy-max: min(82ch, 100%);
   --home-copy-max: var(--home-box-copy-max);
   --home-heading-gap: clamp(12px, 1.3vw, 16px);
-  --home-intro-gap: clamp(52px, 6vw, 88px);
+  --home-intro-gap: clamp(24px, 2.8vw, 36px);
   --home-intro-copy-max: var(--home-box-copy-max);
-  --home-body-start-line: clamp(320px, 31vw, 430px);
+  --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
 }
@@ -2057,12 +2057,12 @@ body.homepage #strategy .strat__hd {
   gap: var(--home-intro-gap);
 }
 body.homepage #about .about__intro--overview {
-  grid-template-columns: minmax(280px, 3.2fr) minmax(0, 9.8fr);
-  gap: clamp(34px, 4vw, 56px);
+  grid-template-columns: minmax(220px, 2.8fr) minmax(0, 9.2fr);
+  gap: clamp(24px, 2.8vw, 36px);
 }
 body.homepage #principles .principles__toprow {
-  grid-template-columns: minmax(280px, 3.2fr) minmax(0, 9.8fr);
-  gap: clamp(34px, 4vw, 56px);
+  grid-template-columns: minmax(220px, 2.8fr) minmax(0, 9.2fr);
+  gap: clamp(24px, 2.8vw, 36px);
 }
 body.homepage #about .about__intro--overview .about__body {
   justify-self: stretch;
@@ -2075,8 +2075,8 @@ body.homepage #about .about__intro--overview .about__body p {
   background: transparent !important;
 }
 body.homepage #strategy .strat__hd {
-  grid-template-columns: minmax(280px, 3.2fr) minmax(0, 9.8fr);
-  gap: clamp(34px, 4vw, 56px);
+  grid-template-columns: minmax(220px, 2.8fr) minmax(0, 9.2fr);
+  gap: clamp(24px, 2.8vw, 36px);
 }
 body.homepage .strat__grid {
   border: 0;
@@ -2104,11 +2104,11 @@ body.homepage #principles .about__body p {
 }
 @media (min-width: 768px) and (max-width: 980px) {
   body.homepage {
-    --home-body-start-line: clamp(240px, 34vw, 300px);
+    --home-body-start-line: clamp(200px, 30vw, 250px);
   }
   body.homepage #principles .principles__toprow {
-    grid-template-columns: minmax(220px, 4fr) minmax(0, 8fr);
-    gap: clamp(20px, 3vw, 32px);
+    grid-template-columns: minmax(200px, 3.4fr) minmax(0, 8.6fr);
+    gap: clamp(16px, 2.2vw, 24px);
     margin-bottom: clamp(12px, 2vw, 20px);
   }
 }
@@ -2146,6 +2146,10 @@ body.homepage #stats .track-record__proof-grid,
 body.homepage #principles .principles__grid {
   margin-inline-start: var(--home-body-start-line);
   width: calc(100% - var(--home-body-start-line));
+}
+body.homepage #principles .principles__grid {
+  margin-inline-start: 0;
+  width: 100%;
 }
 body.homepage #about .about__intro--overview > div:first-child,
 body.homepage #principles .principles__heading,
