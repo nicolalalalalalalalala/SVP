@@ -1097,7 +1097,7 @@ body.homepage #stats .track-record__header {
   border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 62%, transparent);
 }
 
-body.homepage #stats .stats__eyebrow {
+body.homepage #stats .track-record__title {
   margin: 0;
   font-size: 10px;
   font-weight: 550;
@@ -1105,8 +1105,12 @@ body.homepage #stats .stats__eyebrow {
   color: color-mix(in srgb, var(--text-main) 74%, var(--paper-dark) 26%);
 }
 
-body.homepage #stats .stats__eyebrow::after {
-  width: 26px;
+body.homepage #stats .track-record__intro {
+  margin-top: clamp(8px, 0.95vw, 12px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 1fr);
+  gap: clamp(12px, 1.5vw, 18px);
+  align-items: start;
 }
 
 body.homepage #stats .track-record__lede {
@@ -1190,9 +1194,9 @@ body.homepage #stats .track-record__footer {
 body.homepage #stats .track-record__note {
   margin: 0;
   max-width: none;
-  font-size: 10.5px;
-  line-height: 1.48;
-  letter-spacing: 0.01em;
+  font-size: 10px;
+  line-height: 1.35;
+  letter-spacing: 0.008em;
   text-transform: none;
   color: color-mix(in srgb, var(--text-main) 43%, var(--paper-dark) 57%) !important;
 }
@@ -1213,7 +1217,7 @@ body.homepage #stats .track-record__note {
 
 @media (max-width: 760px) {
   body.homepage #stats {
-    padding-top: 22px !important;
+    padding-top: 18px !important;
   }
 
   body.homepage #stats .track-record__header {
@@ -1241,6 +1245,6 @@ body.homepage #stats .track-record__note {
   }
 
   body.homepage #stats .track-record__footer {
-    margin-top: 14px;
+    margin-top: 8px;
   }
 }
