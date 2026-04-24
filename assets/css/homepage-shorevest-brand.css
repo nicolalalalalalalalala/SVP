@@ -1081,148 +1081,149 @@ body.homepage .cdd-notice__copy {
    ========================================================================== */
 
 body.homepage #stats {
-  padding: clamp(14px, 1.9vw, 24px) 0 clamp(22px, 2.6vw, 34px) !important;
+  padding: clamp(16px, 2vw, 26px) 0 clamp(28px, 3vw, 40px) !important;
 }
 
 body.homepage #stats .hero__stats {
   padding-top: 0;
 }
 
-body.homepage #stats .track-record__header {
-  grid-template-columns: minmax(320px, 3.6fr) minmax(0, 8.4fr);
-  gap: clamp(34px, 3.8vw, 54px);
+body.homepage #stats .track-record__toprow {
+  grid-template-columns: minmax(280px, 3.2fr) minmax(0, 9.8fr);
+  gap: clamp(34px, 4vw, 56px);
+  margin-bottom: clamp(18px, 2vw, 30px);
   padding-bottom: 0;
-  margin-bottom: clamp(14px, 1.8vw, 22px);
   border-bottom: 0;
 }
 
-body.homepage #stats .track-record__lead .eyebrow {
+body.homepage #stats .track-record__heading {
+  display: grid;
+  align-content: start;
+  gap: var(--home-heading-gap);
+}
+
+body.homepage #stats .track-record__heading .eyebrow {
   margin: 0 0 clamp(14px, 1.8vw, 22px);
 }
 
 body.homepage #stats .track-record__title {
   margin: 0 !important;
-  max-width: 14ch;
-  font-size: clamp(2.1rem, 3.1vw, 3rem) !important;
-  line-height: 0.96 !important;
-  text-wrap: balance;
+  max-width: none;
+  font-size: clamp(2rem, 2.7vw, 2.8rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: 0;
+  text-wrap: nowrap;
 }
 
-body.homepage #stats .track-record__intro {
+body.homepage #stats .track-record__summary {
   justify-self: stretch;
   width: 100%;
   max-width: min(112ch, 100%) !important;
-  gap: clamp(16px, 1.9vw, 24px);
+  gap: clamp(14px, 1.7vw, 22px);
 }
 
-body.homepage #stats .track-record__lede,
-body.homepage #stats .track-record__asof {
+body.homepage #stats .track-record__summary > p {
   margin: 0;
   max-width: min(112ch, 100%);
 }
 
-body.homepage #stats .track-record__lede {
+body.homepage #stats .track-record__summary > p:first-child {
   font-size: clamp(15px, 1.1vw, 19px);
-  line-height: 1.72;
+  line-height: 1.74;
   color: var(--text-secondary) !important;
 }
 
 body.homepage #stats .track-record__asof {
-  font-size: 0.68rem;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.66rem;
+  line-height: 1.48;
+  letter-spacing: 0.06em;
+  text-transform: none;
   color: color-mix(in srgb, var(--text-main) 58%, var(--paper-dark) 42%) !important;
 }
 
-body.homepage #stats .track-record__grid {
+body.homepage #stats .track-record__proof-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: minmax(0, auto);
+  column-gap: clamp(26px, 3vw, 40px);
+  row-gap: clamp(12px, 1.4vw, 20px);
   border-top: 1px solid color-mix(in srgb, var(--paper-dark) 28%, transparent);
-  border-bottom: 0;
-  column-gap: clamp(12px, 1.4vw, 18px);
-  row-gap: 0;
   margin-top: 0;
+  padding-top: clamp(12px, 1.4vw, 18px);
 }
 
-body.homepage #stats .track-record__item {
-  padding: clamp(16px, 1.7vw, 22px) clamp(8px, 1vw, 12px) clamp(14px, 1.4vw, 18px);
+body.homepage #stats .track-record__metric {
+  padding: clamp(10px, 1.15vw, 14px) 0;
   display: grid;
   align-content: start;
-  row-gap: clamp(5px, 0.55vw, 8px);
+  row-gap: clamp(4px, 0.45vw, 7px);
   min-height: 0;
-  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 18%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 14%, transparent);
 }
 
-body.homepage #stats .track-record__item:nth-child(2n) {
-  border-left: 1px solid color-mix(in srgb, var(--paper-dark) 14%, transparent);
-  padding-left: clamp(16px, 1.8vw, 24px);
+body.homepage #stats .track-record__metric:nth-child(-n + 2) {
+  border-top: 0;
 }
 
-body.homepage #stats .track-record__label {
+body.homepage #stats .track-record__metric-label {
   margin: 0;
-  font-size: 0.6rem;
+  font-size: 0.61rem;
   font-weight: 550;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--text-main) 54%, var(--paper-dark) 46%) !important;
 }
 
-body.homepage #stats .track-record__value {
+body.homepage #stats .track-record__metric-value {
   margin: 0;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(1.64rem, 2.15vw, 1.98rem);
-  line-height: 1;
+  font-size: clamp(1.7rem, 2.25vw, 2.08rem);
+  line-height: 1.05;
   letter-spacing: -0.02em;
   font-weight: 620;
   font-variant-numeric: tabular-nums;
   color: var(--text-main) !important;
 }
 
-body.homepage #stats .track-record__description {
+body.homepage #stats .track-record__metric-description {
   margin: 0;
   max-width: 42ch;
-  font-size: 0.68rem;
-  line-height: 1.5;
+  font-size: 0.67rem;
+  line-height: 1.46;
   color: color-mix(in srgb, var(--text-main) 62%, var(--paper-dark) 38%) !important;
 }
 
 body.homepage #stats .track-record__note {
-  margin: clamp(10px, 1vw, 14px) 0 0;
-  font-size: 0.58rem;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
+  margin: clamp(12px, 1.25vw, 18px) 0 0;
+  font-size: 0.56rem;
+  line-height: 1.38;
+  letter-spacing: 0.05em;
   text-transform: none;
   color: color-mix(in srgb, var(--text-main) 38%, var(--paper-dark) 62%) !important;
 }
 
 @media (max-width: 980px) {
-  body.homepage #stats .track-record__header {
+  body.homepage #stats .track-record__toprow {
     grid-template-columns: 1fr;
     gap: clamp(22px, 3vw, 30px);
   }
 
-  body.homepage #stats .track-record__title { max-width: 15ch; }
+  body.homepage #stats .track-record__title {
+    text-wrap: balance;
+  }
 
-  body.homepage #stats .track-record__value {
+  body.homepage #stats .track-record__metric-value {
     font-size: clamp(1.62rem, 5vw, 1.94rem);
   }
 }
 
 @media (max-width: 760px) {
-  body.homepage #stats .track-record__grid {
+  body.homepage #stats .track-record__proof-grid {
     grid-template-columns: 1fr;
+    row-gap: 0;
+    padding-top: clamp(8px, 1.6vw, 14px);
   }
 
-  body.homepage #stats .track-record__item,
-  body.homepage #stats .track-record__item:nth-child(2n) {
-    padding-left: clamp(14px, 4vw, 20px);
-    padding-right: clamp(14px, 4vw, 20px);
-    border-left: 0;
-  }
-
-  body.homepage #stats .track-record__item + .track-record__item {
+  body.homepage #stats .track-record__metric + .track-record__metric {
     border-top: 1px solid color-mix(in srgb, var(--paper-dark) 18%, transparent);
   }
 }
