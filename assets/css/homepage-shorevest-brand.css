@@ -871,20 +871,6 @@ html body.homepage #cdd .cdd-feature__quote {
 /* ==========================================================================
    Homepage mobile readability + rhythm refinements (April 2026)
    ========================================================================== */
-body.homepage .home-hero::before {
-  /* Editorial split: quiet left reading field, atmospheric right image field. */
-  background:
-    linear-gradient(
-      92deg,
-      rgba(20, 30, 36, 0.96) 0%,
-      rgba(20, 30, 36, 0.93) 29%,
-      rgba(20, 30, 36, 0.78) 45%,
-      rgba(20, 30, 36, 0.5) 57%,
-      rgba(20, 30, 36, 0.18) 68%,
-      rgba(20, 30, 36, 0) 79%
-    ),
-    linear-gradient(to bottom, rgba(11, 19, 24, 0.08) 0%, rgba(11, 19, 24, 0.24) 100%) !important;
-}
 
 body.homepage .home-hero__eyebrow,
 body.homepage .home-hero__headline,
@@ -916,17 +902,8 @@ body.homepage .home-hero__support {
   }
 
   body.homepage .home-hero::before {
-    background:
-      linear-gradient(
-        96deg,
-        rgba(20, 30, 36, 0.98) 0%,
-        rgba(20, 30, 36, 0.94) 32%,
-        rgba(20, 30, 36, 0.82) 48%,
-        rgba(20, 30, 36, 0.58) 60%,
-        rgba(20, 30, 36, 0.24) 72%,
-        rgba(20, 30, 36, 0) 82%
-      ),
-      linear-gradient(to bottom, rgba(11, 19, 24, 0.06) 0%, rgba(11, 19, 24, 0.28) 100%) !important;
+    background-position: 78% 44%;
+    filter: saturate(0.46) contrast(1.12) brightness(0.44);
   }
 
   body.homepage .home-hero__inner {
