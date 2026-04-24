@@ -1098,3 +1098,174 @@ body.homepage .cdd-notice__copy {
     border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 80%, transparent);
   }
 }
+
+/* ==========================================================================
+   Track Record section redesign (institutional grid, April 2026)
+   ========================================================================== */
+body.homepage #stats {
+  padding: clamp(28px, 3.6vw, 46px) 0 clamp(34px, 4.4vw, 58px) !important;
+}
+
+body.homepage #stats .hero__stats {
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 84%, transparent);
+  padding-top: clamp(16px, 1.8vw, 24px);
+}
+
+body.homepage #stats .stats__head {
+  display: grid;
+  grid-template-columns: minmax(132px, .32fr) minmax(0, 1.25fr) minmax(260px, .82fr);
+  column-gap: clamp(18px, 2.5vw, 42px);
+  row-gap: 0;
+  align-items: end;
+  padding-bottom: clamp(14px, 1.8vw, 22px);
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 88%, transparent);
+  margin-bottom: clamp(14px, 1.9vw, 24px);
+}
+
+body.homepage #stats .stats__eyebrow {
+  margin: 0;
+  align-self: baseline;
+}
+
+body.homepage #stats .stats__transition {
+  margin: 0;
+  max-width: 46ch;
+  font-size: clamp(22px, 2.1vw, 30px);
+  line-height: 1.28;
+  letter-spacing: 0.002em;
+  color: var(--text-main) !important;
+}
+
+body.homepage #stats .stats__head-note {
+  margin: 0;
+  justify-self: end;
+  max-width: 33ch;
+  font-size: 11px;
+  line-height: 1.46;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--text-main) 58%, var(--paper-dark) 42%);
+}
+
+body.homepage #stats .stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 82%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--paper-dark) 82%, transparent);
+}
+
+body.homepage #stats .stat {
+  min-height: clamp(196px, 16vw, 234px);
+  padding: clamp(18px, 2vw, 26px) clamp(18px, 2.1vw, 28px) clamp(18px, 2vw, 24px);
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 10px;
+  border: 0;
+  border-right: 1px solid color-mix(in srgb, var(--paper-dark) 82%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-dark) 82%, transparent);
+  background: color-mix(in srgb, var(--paper) 94%, var(--paper-light) 6%) !important;
+}
+
+body.homepage #stats .stat:hover,
+body.homepage #stats .stat:focus-visible,
+body.homepage #stats .stat.is-active {
+  background: color-mix(in srgb, var(--paper) 92%, var(--paper-light) 8%) !important;
+  box-shadow: none;
+  transform: none;
+}
+
+body.homepage #stats .stat__label {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--text-main) 64%, var(--paper-dark) 36%);
+}
+
+body.homepage #stats .stat__n {
+  margin: 0;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(46px, 4.15vw, 66px);
+  font-weight: 650;
+  line-height: .92;
+  letter-spacing: -.012em;
+  color: var(--text-main) !important;
+}
+
+body.homepage #stats .stat__l {
+  margin: 0;
+  align-self: end;
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in srgb, var(--paper-dark) 72%, transparent);
+  font-size: 13.5px;
+  line-height: 1.52;
+  letter-spacing: .002em;
+  color: var(--text-secondary) !important;
+  text-transform: none;
+}
+
+body.homepage #stats .stats__foot {
+  margin-top: 0;
+  padding-top: 12px;
+  border-top: 0;
+}
+
+body.homepage #stats .stats__note {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.55;
+  letter-spacing: .01em;
+  color: color-mix(in srgb, var(--text-main) 50%, var(--paper-dark) 50%) !important;
+  max-width: 100%;
+}
+
+@media (max-width: 980px) {
+  body.homepage #stats .stats__head {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 10px;
+    align-items: start;
+  }
+
+  body.homepage #stats .stats__head-note {
+    justify-self: start;
+    max-width: 52ch;
+  }
+
+  body.homepage #stats .stats__transition {
+    max-width: 100%;
+  }
+
+  body.homepage #stats .stat {
+    min-height: 188px;
+    padding: 16px;
+  }
+
+  body.homepage #stats .stat__n {
+    font-size: clamp(40px, 7.8vw, 58px);
+  }
+}
+
+@media (max-width: 640px) {
+  body.homepage #stats {
+    padding-top: 20px !important;
+  }
+
+  body.homepage #stats .stats {
+    grid-template-columns: 1fr;
+  }
+
+  body.homepage #stats .stat {
+    min-height: 0;
+  }
+
+  body.homepage #stats .stats__transition {
+    font-size: clamp(20px, 6vw, 26px);
+    line-height: 1.34;
+  }
+
+  body.homepage #stats .stats__note {
+    font-size: 10px;
+  }
+}
