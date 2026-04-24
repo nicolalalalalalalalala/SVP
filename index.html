@@ -926,9 +926,9 @@ body.homepage #strategy .sg__body {
 }
 
 .strat__actions .cta.strat__cta-inline {
-  width:auto;
-  justify-content:flex-start;
-  margin-left:auto;
+  width:100%;
+  justify-content:space-between;
+  margin-left:0;
 }
 #about .ac a.cta--dark[href="firm.html#ownership"],
 #strategy .strat__actions> a.cta--dark:not(.strat__cta-inline) {
@@ -2152,8 +2152,10 @@ body.homepage #strategy .sg {
 body.homepage #strategy .strat__actions {
   width: 100%;
   max-width: min(112ch, 100%);
-  justify-self: start;
+  justify-self: stretch;
   margin-inline: 0;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 body.homepage .strat__grid {
   border: 0;
