@@ -2091,7 +2091,10 @@ body.homepage #strategy .strat__hd {
 body.homepage #strategy .strat__content,
 body.homepage #strategy .strat__grid {
   justify-self: stretch;
-  margin-inline-start: 0;
+  margin-inline: 0;
+}
+body.homepage #strategy .strat__grid {
+  padding-inline-start: 0;
 }
 body.homepage .strat__grid {
   border: 0;
@@ -3609,7 +3612,7 @@ body.homepage #cdd .cdd-editorial__lede {
   if (!rootReference) return;
 
   const alignTargets = Array.from(document.querySelectorAll(
-    '#principles .ac__body, #strategy .sg__body, #stats .stat__l, #stats .track-record__description, #stats .track-record__metric-description'
+    '#principles .ac__body, #strategy .strat__grid, #stats .stat__l, #stats .track-record__description, #stats .track-record__metric-description'
   ));
   if (!alignTargets.length) return;
 
