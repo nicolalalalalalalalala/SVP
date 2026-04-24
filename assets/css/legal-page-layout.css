@@ -4,7 +4,7 @@ body.legal-page .legal-page__main {
   margin: 0;
   padding-left: var(--site-page-margin-legal, clamp(20px, 2.4vw, 32px)) !important;
   padding-right: var(--site-page-margin-legal, clamp(20px, 2.4vw, 32px)) !important;
-  padding-top: var(--sv-header-content-gap-legal, clamp(6px, 1vw, 14px));
+  padding-top: var(--sv-legal-main-top-pad, clamp(2px, 0.35vw, 6px));
   box-sizing: border-box;
   min-width: 0;
 }
@@ -76,6 +76,7 @@ body.legal-page {
   letter-spacing: normal;
   color: var(--ink-soft);
   background: var(--off);
+  --sv-header-content-gap: var(--sv-header-content-gap-legal, clamp(12px, 1.4vw, 20px));
 }
 
 body.legal-page .legal-page__content p,
@@ -185,7 +186,7 @@ body.legal-page .legal-contact-actions a:hover {
 
 /* Privacy Policy page refinement: tighter measure, clearer hierarchy, calmer legal rhythm. */
 body.privacy-policy-page .legal-page__main {
-  padding-top: clamp(14px, 1.6vw, 24px);
+  padding-top: clamp(4px, 0.6vw, 10px);
 }
 
 body.privacy-policy-page .privacy-policy__content {
@@ -283,7 +284,7 @@ body.privacy-policy-page .privacy-policy__content .legal-contact-actions {
   }
 
   body.legal-page main {
-    padding-top: var(--sv-header-content-gap-legal-mobile, clamp(8px, 2.2vw, 14px));
+    padding-top: var(--sv-header-content-gap-legal-mobile, clamp(8px, 2vw, 12px));
   }
 
   body.legal-page .legal-page__content {
