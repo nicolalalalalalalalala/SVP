@@ -918,16 +918,18 @@ body.homepage #strategy .sg__body {
   margin-top:34px;
   padding-top:28px;
   border-top:1px solid var(--rule);
+  display:flex;
+  justify-content:flex-end;
 }
 .strat__actions .cta {
-  width:100%;
-  display:flex;
-  justify-content:space-between;
+  width:auto;
+  display:inline-flex;
+  align-items:center;
 }
 
 .strat__actions .cta.strat__cta-inline {
-  width:100%;
-  justify-content:space-between;
+  width:auto;
+  justify-content:flex-start;
   margin-left:0;
 }
 #about .ac a.cta--dark[href="firm.html#ownership"],
@@ -2162,6 +2164,8 @@ body.homepage #strategy .strat__actions {
   width: 100%;
   max-width: min(112ch, 100%);
   justify-self: stretch;
+  display: flex;
+  justify-content: flex-end;
   margin-inline: 0;
   margin-left: 0 !important;
   padding-left: 0 !important;
