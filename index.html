@@ -889,7 +889,9 @@ blockquote.fs__q {
 }
 
 .wrap.cdd-editorial {
-  max-width: min(1312px, calc(100vw - (var(--pad) * 2)));
+  width: 100%;
+  max-width: 1312px;
+  min-width: 0;
 }
 
 .cdd-editorial {
@@ -2594,11 +2596,15 @@ body.homepage #cdd .cdd-editorial__lede {
 
   #cdd {
     padding: 30px 0;
+    min-width: 0;
   }
   #cdd > .wrap.cdd-editorial {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+    box-sizing: border-box;
   }
   .cdd-editorial__card {
     gap: 10px;
@@ -2608,6 +2614,7 @@ body.homepage #cdd .cdd-editorial__lede {
     max-width: 100%;
     min-width: 0;
     overflow: clip;
+    box-sizing: border-box;
   }
   .cdd-editorial__intro {
     display: flex;
@@ -2616,6 +2623,7 @@ body.homepage #cdd .cdd-editorial__lede {
     padding-bottom: 10px;
     width: 100%;
     min-width: 0;
+    box-sizing: border-box;
   }
   .cdd-editorial__intro > :first-child { order: 1; }
   .cdd-editorial__brand {
@@ -2686,6 +2694,7 @@ body.homepage #cdd .cdd-editorial__lede {
     max-width: 100%;
     min-width: 0;
     overflow: hidden;
+    box-sizing: border-box;
   }
   .cdd-feature__top {
     flex-direction: column;
@@ -2695,6 +2704,7 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    box-sizing: border-box;
   }
   .cdd-feature__meta {
     width: 100%;
@@ -2703,12 +2713,16 @@ body.homepage #cdd .cdd-editorial__lede {
     flex-wrap: wrap;
     gap: 6px;
     min-width: 0;
+    box-sizing: border-box;
   }
   .cdd-feature__issue,
   .cdd-feature__date {
+    display: inline-flex;
     max-width: 100%;
+    min-width: 0;
     overflow-wrap: anywhere;
     word-break: break-word;
+    box-sizing: border-box;
   }
   .cdd-feature__body {
     display: flex;
@@ -2719,6 +2733,13 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    box-sizing: border-box;
+  }
+  .cdd-feature__main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
   .cdd-feature__label {
     margin-bottom: 7px;
@@ -2761,6 +2782,7 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    box-sizing: border-box;
   }
   .cdd-feature__finding {
     font-size: 13px;
@@ -2784,6 +2806,7 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    box-sizing: border-box;
   }
   .cdd-cta-group {
     width: 100%;
@@ -2799,9 +2822,12 @@ body.homepage #cdd .cdd-editorial__lede {
     padding: 8px 8px 8px 10px;
     min-width: 0;
     gap: 8px;
+    box-sizing: border-box;
+    white-space: normal;
   }
   .cdd-cta > span:first-child {
     min-width: 0;
+    overflow-wrap: anywhere;
   }
   .cdd-cta__ring {
     width: 24px;
