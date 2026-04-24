@@ -63,7 +63,7 @@
   <a href="${isCnPath ? 'index_cn.html' : 'index.html'}" class="nav__logo">
     <img class="nav__logo-mark" src="assets/images/vectorink-vectorizer-result.svg" alt="ShoreVest logo">
     <span class="nav__logo-lockup">
-      <span class="nav__logo-en">S H O R E V E S T</span>
+      <span class="nav__logo-en">SHOREVEST</span>
       <span class="nav__logo-cn">${wordmark}</span>
     </span>
   </a>
