@@ -45,7 +45,7 @@ body {
 .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 0;
   height: 100%;
   text-decoration: none;
 }
@@ -70,7 +70,7 @@ body {
   align-items: flex-start;
   line-height: 1;
   row-gap: 2px;
-  padding-left: 4px;
+  padding-left: 0;
   border-left: none;
   min-height: 33px;
   flex: 0 0 auto;
@@ -489,7 +489,7 @@ body {
   }
 
   #site-header-mount #nav .nav__logo {
-    gap: 6px !important;
+    gap: 0 !important;
     min-width: 0 !important;
   }
 
@@ -572,7 +572,7 @@ body {
   }
 
   #site-header-mount #nav .nav__logo {
-    gap: 8px !important;
+    gap: 0 !important;
   }
 
   #site-header-mount #nav .nav__logo-mark {
