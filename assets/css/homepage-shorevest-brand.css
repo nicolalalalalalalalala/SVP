@@ -1,16 +1,16 @@
 :root {
-  --paper-light: #FAF6EE;
-  --paper: #F2ECD8;
-  --paper-dark: #D8CEB0;
-  --cinnabar: #C93B2A;
-  --cinnabar-light: #E8998F;
-  --cinnabar-dark: #8A1F12;
-  --blue-green: #3D7070;
-  --blue-green-light: #7AAFAF;
-  --blue-green-dark: #1E4040;
-  --ink-green-dark: #0F2206;
+  --paper-light: var(--surface-inverse, #f8f3e8);
+  --paper: var(--bg-main, #f5f0e4);
+  --paper-dark: var(--border-strong, #c8bda6);
+  --cinnabar: var(--accent-red, #b34734);
+  --cinnabar-light: #cc7b6f;
+  --cinnabar-dark: var(--accent-red-hover, #963625);
+  --blue-green: var(--accent-green, #284631);
+  --blue-green-light: #496755;
+  --blue-green-dark: #193126;
+  --ink-green-dark: var(--text-primary, #102a18);
   --text-main: var(--ink-green-dark);
-  --text-secondary: #2E4A18;
+  --text-secondary: var(--sv-text-secondary, #41543f);
 
   --red: var(--cinnabar);
   --white: var(--paper-light);
@@ -18,7 +18,7 @@
   --rule: var(--paper-dark);
   --ink: var(--text-main);
   --ink2: var(--text-secondary);
-  --mist: #1E4040;
+  --mist: var(--text-muted, #6b7264);
   --stone: var(--paper-light);
   --serif: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   --sans: "DIN 2014", "Helvetica Neue", Arial, sans-serif;

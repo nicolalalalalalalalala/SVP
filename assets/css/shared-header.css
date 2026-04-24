@@ -1230,3 +1230,42 @@ body {
   color: var(--paper, #F2ECD8) !important;
   -webkit-text-fill-color: var(--paper, #F2ECD8) !important;
 }
+
+/* 2026 palette refinement: normalize shared header chrome to global tokens. */
+#site-header-mount #nav {
+  background: var(--bg-main, #f5f0e4) !important;
+  border-bottom-color: var(--border-strong, #c8bda6) !important;
+}
+
+#site-header-mount #nav.scrolled {
+  box-shadow: 0 1px 14px rgba(16, 42, 24, 0.09) !important;
+}
+
+#site-header-mount #nav .nav__logo-en,
+#site-header-mount #nav .nav__links a,
+#site-header-mount #nav .nav__zh,
+#site-header-mount #nav .nav__lp,
+#site-header-mount #nav .nav__menu-btn {
+  color: var(--text-primary, #102a18) !important;
+}
+
+#site-header-mount #nav .nav__logo-cn {
+  color: color-mix(in srgb, var(--text-secondary, #41543f) 78%, transparent) !important;
+}
+
+#site-header-mount #nav .nav__links a.active {
+  color: var(--accent-red, #b34734) !important;
+}
+
+#site-header-mount #nav .nav__lp,
+#site-header-mount #nav .nav__menu-btn {
+  border-color: color-mix(in srgb, var(--text-primary, #102a18) 22%, transparent) !important;
+  background: var(--bg-main, #f5f0e4) !important;
+}
+
+#site-header-mount #nav .nav__lp:hover,
+#site-header-mount #nav .nav__lp.active {
+  background: var(--accent-green, #284631) !important;
+  border-color: var(--accent-green, #284631) !important;
+  color: var(--surface-inverse, #f8f3e8) !important;
+}
