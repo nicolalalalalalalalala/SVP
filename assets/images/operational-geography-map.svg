@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Pacific operational geography basemap</title>
+  <desc id="desc">Pacific-oriented map showing the US West Coast and East Asia coastlines.</desc>
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eff3f0"/>
+      <stop offset="100%" stop-color="#e5ece8"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#12261f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="560" fill="url(#water)"/>
+
+  <g stroke="#9baea6" stroke-opacity="0.28" stroke-width="1" fill="none">
+    <path d="M0 120H1000M0 200H1000M0 280H1000M0 360H1000M0 440H1000"/>
+    <path d="M140 0V560M320 0V560M500 0V560M680 0V560M860 0V560"/>
+  </g>
+
+  <g fill="#c8d2cb" stroke="#8f9f96" stroke-width="1.1" filter="url(#soft)">
+    <!-- Western North America + Baja -->
+    <path d="M18 62 L62 40 L106 44 L136 58 L148 82 L142 110 L156 136 L166 172 L170 208 L166 242 L154 278 L136 314 L114 344 L96 374 L86 410 L76 446 L60 492 L42 538 L0 560 L0 74 Z"/>
+    <path d="M102 372 L116 392 L122 418 L120 450 L111 486 L98 520 L84 546 L70 560 L58 560 L64 532 L78 494 L90 454 L95 418 L94 388 Z"/>
+
+    <!-- East China / Korean peninsula / South China coast -->
+    <path d="M804 62 L846 70 L886 90 L920 120 L944 152 L954 184 L952 214 L940 240 L948 274 L958 308 L968 348 L974 380 L972 414 L962 444 L948 470 L930 492 L908 510 L886 522 L858 532 L832 536 L812 526 L820 500 L832 474 L846 446 L860 418 L878 390 L892 356 L896 326 L888 296 L872 266 L854 238 L836 212 L822 182 L808 148 L798 112 Z"/>
+    <path d="M858 122 L878 140 L888 164 L884 186 L868 198 L854 178 L850 156 Z"/>
+
+    <!-- Japan / Taiwan / Philippines context -->
+    <path d="M942 168 L956 174 L962 188 L954 198 L944 194 L938 180 Z"/>
+    <path d="M962 210 L974 220 L980 236 L972 248 L960 242 L956 226 Z"/>
+    <path d="M906 316 L920 326 L922 344 L910 354 L900 344 L900 330 Z"/>
+    <path d="M930 380 L944 392 L950 412 L938 426 L924 412 L922 394 Z"/>
+  </g>
+
+  <rect x="0.5" y="0.5" width="999" height="559" fill="none" stroke="#7f9489" stroke-opacity="0.35"/>
+</svg>
