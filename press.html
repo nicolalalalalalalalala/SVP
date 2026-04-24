@@ -1369,6 +1369,167 @@ body {
 </style>
 
 
+<style id="press-controls-refinement">
+  /* Institutional control system — unified CTA, select filters, and carousel controls */
+  body.press-page {
+    --press-control-bg: color-mix(in srgb, #10191a 92%, #000 8%);
+    --press-control-bg-hover: color-mix(in srgb, #152022 86%, #000 14%);
+    --press-control-border: color-mix(in srgb, #f4efe4 22%, transparent);
+    --press-control-border-hover: color-mix(in srgb, #f4efe4 34%, transparent);
+    --press-control-text: rgba(244, 239, 228, 0.9);
+    --press-control-muted: rgba(244, 239, 228, 0.7);
+    --press-control-focus: color-mix(in srgb, #f4efe4 56%, #3d7070 44%);
+    --press-control-radius: 2px;
+    --press-control-track: 0.14em;
+  }
+
+  .press-toolbar {
+    padding: 14px 16px !important;
+  }
+
+  .press-toolbar__meta {
+    margin-bottom: 8px !important;
+    align-items: baseline !important;
+  }
+
+  .press-toolbar__count {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+    color: color-mix(in srgb, var(--press-control-muted) 92%, transparent) !important;
+  }
+
+  .press-filters {
+    gap: 12px !important;
+  }
+
+  .press-filter-group {
+    gap: 4px !important;
+  }
+
+  .press-filter-label {
+    font-size: 7px !important;
+    letter-spacing: 0.18em !important;
+    color: color-mix(in srgb, var(--press-control-muted) 90%, transparent) !important;
+  }
+
+  .press-filter-select {
+    min-height: 36px !important;
+    border-radius: var(--press-control-radius) !important;
+    border: 1px solid var(--press-control-border) !important;
+    background-color: var(--press-control-bg) !important;
+    color: var(--press-control-text) !important;
+    padding: 7px 34px 7px 12px !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: var(--press-control-track) !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image:
+      linear-gradient(45deg, transparent 50%, rgba(244, 239, 228, 0.58) 50%),
+      linear-gradient(135deg, rgba(244, 239, 228, 0.58) 50%, transparent 50%) !important;
+    background-position:
+      calc(100% - 16px) calc(50% - 2px),
+      calc(100% - 11px) calc(50% - 2px) !important;
+    background-size: 5px 5px, 5px 5px !important;
+    background-repeat: no-repeat !important;
+    transition:
+      border-color 0.18s ease,
+      background-color 0.18s ease,
+      color 0.18s ease !important;
+  }
+
+  .press-filter-select:hover {
+    border-color: var(--press-control-border-hover) !important;
+    background-color: var(--press-control-bg-hover) !important;
+  }
+
+  .press-filter-select:focus-visible {
+    outline: 1px solid var(--press-control-focus) !important;
+    outline-offset: 1px !important;
+    border-color: var(--press-control-border-hover) !important;
+  }
+
+  .press-more,
+  .press-speaking__archive,
+  .press-speaking__link.press-more {
+    border-radius: var(--press-control-radius) !important;
+    border: 1px solid var(--press-control-border) !important;
+    background: transparent !important;
+    color: var(--press-control-text) !important;
+    font-size: 9px !important;
+    font-weight: 500 !important;
+    letter-spacing: var(--press-control-track) !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+    padding: 10px 30px !important;
+    transition:
+      border-color 0.18s ease,
+      background-color 0.18s ease,
+      color 0.18s ease !important;
+  }
+
+  .press-speaking__link.press-more {
+    padding: 9px 18px !important;
+  }
+
+  .press-more:hover,
+  .press-more:focus-visible,
+  .press-speaking__archive:hover,
+  .press-speaking__archive:focus-visible,
+  .press-speaking__link.press-more:hover,
+  .press-speaking__link.press-more:focus-visible {
+    border-color: var(--press-control-border-hover) !important;
+    background: color-mix(in srgb, #f4efe4 8%, transparent) !important;
+    color: var(--press-heading) !important;
+    text-decoration: none !important;
+  }
+
+  .press-more:focus-visible,
+  .press-speaking__archive:focus-visible,
+  .press-speaking__link.press-more:focus-visible,
+  .press-speaking__nav-btn:focus-visible {
+    outline: 1px solid var(--press-control-focus) !important;
+    outline-offset: 1px !important;
+  }
+
+  .press-speaking__nav {
+    gap: 8px !important;
+  }
+
+  .press-speaking__nav-btn {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: var(--press-control-radius) !important;
+    border: 1px solid var(--press-control-border) !important;
+    background: color-mix(in srgb, #0f1718 94%, #000 6%) !important;
+    color: var(--press-control-text) !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    display: inline-grid !important;
+    place-items: center !important;
+    transition:
+      border-color 0.18s ease,
+      background-color 0.18s ease,
+      color 0.18s ease !important;
+  }
+
+  .press-speaking__nav-btn:hover {
+    border-color: var(--press-control-border-hover) !important;
+    background: color-mix(in srgb, #182325 88%, #000 12%) !important;
+  }
+
+  .press-speaking__counter {
+    font-size: 10px !important;
+    letter-spacing: 0.14em !important;
+    color: color-mix(in srgb, var(--press-control-muted) 92%, transparent) !important;
+  }
+</style>
+
+
     <link rel="stylesheet" href="assets/css/shared-header.css" />
     <script src="assets/js/shared-header.js" defer></script>
 
