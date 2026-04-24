@@ -2155,6 +2155,39 @@ body.homepage #principles .ac__body {
   max-width: 32ch;
   line-height: 1.66;
 }
+/* Principles cards: enforce one clean vertical flow per card (01/02/03). */
+body.homepage #principles .principles__grid > .ac {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+body.homepage #principles .principles__grid > .ac > .ac__meta,
+body.homepage #principles .principles__grid > .ac > .ac__title,
+body.homepage #principles .principles__grid > .ac > .ac__body {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+body.homepage #principles .principles__grid > .ac > .ac__meta,
+body.homepage #principles .principles__grid > .ac > .ac__title {
+  display: block;
+  flex: 0 0 auto;
+}
+body.homepage #principles .principles__grid > .ac > .ac__body {
+  display: block;
+  flex: 0 0 auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
 body.homepage .home-copy-align-target {
   --home-copy-shift: 0px;
   margin-inline-start: var(--home-copy-shift);
