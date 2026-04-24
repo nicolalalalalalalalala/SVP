@@ -1,7 +1,7 @@
 :root {
   --topbar-height: 72px;
   --topbar-pad: var(--site-page-margin, 64px);
-  --topbar-pad-left: var(--site-page-margin, 64px);
+  --topbar-pad-left: var(--site-page-margin-left, 40px);
   --nav-link-gap: 42px;
   --nav-group-gap: 36px;
   --nav-right-gap: 42px;
