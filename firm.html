@@ -468,7 +468,7 @@
         display: flex;
         overflow: hidden;
         border-left: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
-        padding: clamp(8px, 0.85vw, 12px);
+        padding: clamp(16px, 1.8vw, 24px);
         margin: 0 !important;
       }
       .operations-map-visual {
@@ -497,102 +497,6 @@
         transform: none;
         filter: none;
         margin: 0;
-      }
-      .op-marker {
-        --dot: #355f67;
-        position: absolute;
-        z-index: 1;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-      }
-      .op-marker::before {
-        content: "";
-        width: 7px;
-        height: 7px;
-        display: block;
-        background: var(--dot);
-        border-radius: 50%;
-        border: 1px solid color-mix(in srgb, var(--xuan-light) 90%, #fff 10%);
-        box-shadow: 0 0 0 1px color-mix(in srgb, #10241d 24%, transparent);
-      }
-      .op-marker > span {
-        position: absolute;
-        left: 11px;
-        top: -9px;
-        font-family: "DIN 2014", "DIN2014", "DIN Alternate", "Arial Narrow", Arial, sans-serif;
-        font-size: 11px;
-        line-height: 1;
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-        font-weight: 530;
-        color: #223a2c;
-        white-space: nowrap;
-        text-shadow: 0 0 0.5px var(--xuan-light);
-      }
-      .op-marker > span::after {
-        content: "";
-        position: absolute;
-        left: -8px;
-        top: 50%;
-        width: 6px;
-        border-top: 1px solid color-mix(in srgb, var(--ink-green-dark) 34%, transparent);
-        opacity: 0;
-      }
-      .op-marker--guangzhou {
-        --dot: #C93B2A;
-        left: 94.5%;
-        top: 79.7%;
-      }
-      .op-marker--guangzhou > span {
-        left: auto;
-        right: 13px;
-        top: -13px;
-        text-align: right;
-      }
-      .op-marker--shanghai {
-        --dot: #3D7070;
-        left: 89%;
-        top: 59.4%;
-      }
-      .op-marker--shanghai > span {
-        left: 12px;
-        right: auto;
-        top: -14px;
-        text-align: left;
-      }
-      .op-marker--shanghai > span::after {
-        opacity: 1;
-        width: 8px;
-        left: -10px;
-        right: auto;
-      }
-      .op-marker--hong-kong {
-        --dot: #2E4A18;
-        left: 93.9%;
-        top: 81.7%;
-      }
-      .op-marker--hong-kong > span {
-        left: 11px;
-        right: auto;
-        top: 5px;
-        text-align: left;
-      }
-      .op-marker--hong-kong > span::after {
-        opacity: 1;
-        width: 8px;
-        left: -10px;
-        right: auto;
-      }
-      .op-marker--california {
-        --dot: #4A6D6D;
-        left: 9.6%;
-        top: 45.6%;
-      }
-      .op-marker--california > span {
-        left: 12px;
-        right: auto;
-        top: -11px;
-        text-align: left;
       }
 
       .metrics-shell {
@@ -1156,32 +1060,6 @@
           min-height: 228px;
           aspect-ratio: 1.66 / 1;
         }
-        .op-marker::before {
-          width: 6px;
-          height: 6px;
-        }
-        .op-marker > span {
-          font-size: 10px;
-          letter-spacing: 0.07em;
-          left: 10px;
-          top: -8px;
-        }
-        .op-marker--shanghai > span {
-          top: -13px;
-        }
-        .op-marker--guangzhou > span {
-          right: 10px;
-          top: -12px;
-        }
-        .op-marker--hong-kong > span {
-          left: 9px;
-          top: 5px;
-        }
-        .op-marker--california > span {
-          left: 9px;
-          right: auto;
-          top: -10px;
-        }
         /* ── Mobile pillar card — hard reset ── */
         /* Kill all inherited vertical spacing; rebuild with per-element margins */
         .platform-ops-section .pillar-card {
@@ -1269,10 +1147,6 @@
           <article class="operations-map">
             <figure class="operations-map-visual" aria-label="ShoreVest operational geography map">
               <img src="assets/images/operational-geography-map.svg" alt="Pacific-oriented map showing ShoreVest's operational footprint in California, Shanghai, Guangzhou, and Hong Kong" loading="lazy" />
-              <div class="op-marker op-marker--guangzhou" aria-hidden="true"><span>GUANGZHOU</span></div>
-              <div class="op-marker op-marker--shanghai" aria-hidden="true"><span>SHANGHAI</span></div>
-              <div class="op-marker op-marker--hong-kong" aria-hidden="true"><span>HONG KONG</span></div>
-              <div class="op-marker op-marker--california" aria-hidden="true"><span>CALIFORNIA</span></div>
             </figure>
           </article>
         </div>
