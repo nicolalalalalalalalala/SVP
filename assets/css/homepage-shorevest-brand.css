@@ -1086,6 +1086,7 @@ body.homepage #stats {
 
 body.homepage #stats .hero__stats {
   padding-top: 0;
+  border-top: 0;
 }
 
 body.homepage #stats .track-record__toprow {
@@ -1119,12 +1120,14 @@ body.homepage #stats .track-record__title {
 }
 
 body.homepage #stats .track-record__summary {
-  justify-self: stretch;
-  width: 100%;
-  max-width: min(88ch, 100%) !important;
+  justify-self: end;
+  width: min(58ch, 100%);
+  max-width: min(58ch, 100%) !important;
+  margin-inline-start: auto;
   gap: clamp(3px, 0.45vw, 6px);
   align-content: start;
   padding-top: 0;
+  padding-left: clamp(24px, 3.1vw, 56px);
   justify-items: start;
 }
 
@@ -1233,6 +1236,14 @@ body.homepage #stats .track-record__note {
     white-space: normal;
   }
 
+  body.homepage #stats .track-record__summary {
+    width: 100%;
+    max-width: 100% !important;
+    margin-inline-start: 0;
+    padding-left: 0;
+    justify-self: start;
+  }
+
   body.homepage #stats .track-record__metric-value {
     font-size: clamp(1.48rem, 4.1vw, 1.78rem);
   }
@@ -1254,6 +1265,11 @@ body.homepage #stats .track-record__note {
 
   body.homepage #stats .track-record__summary {
     gap: 4px;
+    width: 100%;
+    max-width: 100% !important;
+    margin-inline-start: 0;
+    padding-left: 0;
+    justify-self: start;
   }
 
   body.homepage #stats .track-record__proof-grid {
