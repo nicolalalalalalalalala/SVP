@@ -79,7 +79,7 @@ body.homepage .home-section-shell {
   padding: clamp(36px, 4.4vw, 56px) clamp(20px, 2.8vw, 36px);
 }
 body.homepage .about__intro,
-body.homepage .principles__intro,
+body.homepage .principles__toprow,
 body.homepage #strategy .strat__hd,
 body.homepage .track-record__header {
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
@@ -125,7 +125,7 @@ body.homepage .track-record__note {
 @media (max-width: 980px) {
   body.homepage .home-hero__headline-nowrap { white-space: normal; }
   body.homepage .about__intro,
-  body.homepage .principles__intro,
+  body.homepage .principles__toprow,
   body.homepage #strategy .strat__hd,
   body.homepage .track-record__header {
     grid-template-columns: minmax(0,1fr);
@@ -1961,20 +1961,21 @@ body.homepage #principles {
   padding-top: clamp(24px, 3.2vw, 40px);
   padding-bottom: clamp(58px, 7.2vw, 84px);
 }
-body.homepage .principles__intro {
+body.homepage .principles__toprow {
   display: grid;
   grid-template-columns: minmax(280px, 4fr) minmax(0, 8fr);
-  gap: clamp(24px, 3.2vw, 38px);
+  gap: clamp(20px, 2.8vw, 34px);
+  align-items: start;
   border-top: 0;
-  padding-top: clamp(2px, 0.5vw, 8px);
-  margin-bottom: clamp(16px, 2.2vw, 24px);
+  padding-top: 0;
+  margin-bottom: clamp(8px, 1.4vw, 14px);
 }
 body.homepage .principles__text p {
   max-width: 66ch;
   font-size: 17px;
   line-height: 1.7;
 }
-body.homepage .about__cols {
+body.homepage .principles__grid {
   margin-top: clamp(4px, 0.8vw, 10px) !important;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1998,7 +1999,7 @@ body.homepage .about__intro--principles .about__supporting-line {
   padding-top: 0;
 }
 body.homepage #about .about__intro--overview,
-body.homepage #principles .principles__intro,
+body.homepage #principles .principles__toprow,
 body.homepage #strategy .strat__hd {
   background: transparent;
   box-shadow: none;
@@ -2012,7 +2013,7 @@ body.homepage #strategy .strat__intro {
   max-width: var(--home-box-copy-max);
 }
 body.homepage #about .about__intro--overview,
-body.homepage #principles .principles__intro,
+body.homepage #principles .principles__toprow,
 body.homepage #strategy .strat__hd {
   grid-template-columns: var(--home-intro-left-col) var(--home-intro-right-col);
   gap: var(--home-intro-gap);
@@ -2051,7 +2052,7 @@ body.homepage #principles .about__body {
   justify-self: stretch;
   width: 100%;
   max-width: min(96ch, 100%);
-  gap: clamp(12px, 1.4vw, 16px);
+  gap: clamp(10px, 1.2vw, 14px);
 }
 body.homepage #principles .about__body p {
   max-width: min(96ch, 100%) !important;
@@ -2090,11 +2091,11 @@ body.homepage #stats .stats__note {
   margin-bottom: clamp(24px, 3vw, 36px);
 }
 body.homepage #about .about__intro--overview > div:first-child,
-body.homepage #principles .principles__intro > div:first-child,
+body.homepage #principles .principles__heading,
 body.homepage #strategy .strat__lead {
   gap: var(--home-heading-gap);
 }
-body.homepage #principles .principles__intro > div:first-child {
+body.homepage #principles .principles__heading {
   gap: clamp(8px, 1vw, 12px);
 }
 body.homepage #stats {
@@ -2314,8 +2315,8 @@ body.homepage #cdd .cdd-editorial__lede {
   color: rgba(250, 246, 238, 0.82) !important;
 }
 @media (max-width: 900px) {
-  body.homepage .principles__intro,
-  body.homepage .about__cols {
+  body.homepage .principles__toprow,
+  body.homepage .principles__grid {
     grid-template-columns: minmax(0, 1fr);
   }
   body.homepage .ac + .ac {
@@ -2714,11 +2715,11 @@ body.homepage #cdd .cdd-editorial__lede {
     padding-top: 20px;
     padding-bottom: 42px;
   }
-  .principles__intro {
+  .principles__toprow {
     display: grid;
     grid-template-columns: minmax(0, 1fr) !important;
-    gap: 12px;
-    margin-bottom: 10px;
+    gap: 10px;
+    margin-bottom: 8px;
   }
   #principles .about__body,
   #principles .about__body p,
@@ -2729,7 +2730,7 @@ body.homepage #cdd .cdd-editorial__lede {
     max-width: 100% !important;
     text-align: left;
   }
-  .about__cols {
+  .principles__grid {
     margin-top: 4px !important;
   }
   .ac__body,
@@ -3352,12 +3353,12 @@ body.homepage #cdd .cdd-editorial__lede {
 
 <section id="principles">
   <div class="wrap home-section-shell home-section-shell--soft">
-    <div class="principles__intro">
-      <div>
+    <div class="principles__toprow">
+      <div class="principles__heading">
         <div class="eyebrow rev">HOW WE WORK</div>
         <h2 class="about__hed rev d1 sv-section-title">Vision &amp; Principles</h2>
       </div>
-      <div class="about__body home-copy-frame rev d2">
+      <div class="about__body home-copy-frame rev d2 principles__copy">
         <p>
           ShoreVest’s vision is to deliver consistent returns across cycles in China’s credit markets through a long-term platform with the local capability to source, analyze, and execute with discipline.
         </p>
@@ -3368,7 +3369,7 @@ body.homepage #cdd .cdd-editorial__lede {
       </div>
     </div>
     <!-- Three institutional principle modules -->
-    <div class="about__cols">
+    <div class="about__cols principles__grid">
       <div class="ac rev" id="ac-sourcing" role="button" tabindex="0" data-interactive-card>
         <div class="ac__meta">01</div>
         <h3 class="ac__title">Proprietary Sourcing</h3>
