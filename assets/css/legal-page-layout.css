@@ -2485,3 +2485,152 @@ body.contact-page .contact-hero .home-hero__cta.home-hero__cta--primary:hover sp
 body.contact-page .contact-hero .home-hero__cta.home-hero__cta--primary:focus-visible span {
   color: #111d20;
 }
+
+/* Contact section redesign: tighter institutional hierarchy below hero */
+body.contact-page {
+  --contact-type-section-label: 10.5px;
+  --contact-type-body: 13.5px;
+  --contact-type-label: 10.5px;
+  --contact-type-input: 14px;
+  --contact-type-note: 12px;
+  --contact-type-button: 10.5px;
+  --contact-type-email: clamp(19px, 1.5vw, 23px);
+  --contact-space-1: 6px;
+  --contact-space-2: 10px;
+  --contact-space-3: 14px;
+  --contact-space-4: 16px;
+  --contact-space-5: clamp(20px, 1.7vw, 26px);
+}
+
+body.contact-page .contact-page__content {
+  margin-top: clamp(16px, 1.6vw, 26px);
+}
+
+body.contact-page .contact-page__layout {
+  gap: clamp(18px, 2.2vw, 28px);
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+}
+
+body.contact-page :is(.contact-page__primary-contact, .contact-page__form-section) {
+  padding: var(--contact-space-5) clamp(20px, 2.2vw, 30px) !important;
+  border-color: color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+body.contact-page .contact-page__primary-contact {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, #f7f0e0 34%, #fff 66%) 0%,
+    #ffffff 68%
+  );
+}
+
+body.contact-page .contact-page__form-section {
+  background: color-mix(in srgb, #ffffff 94%, #f7f0e1 6%);
+  gap: 10px;
+}
+
+body.contact-page .contact-page__primary-contact h2,
+body.contact-page .contact-page__form-section h2 {
+  margin-bottom: 11px;
+  padding-bottom: 11px;
+  letter-spacing: 0.13em;
+  color: color-mix(in srgb, var(--ink) 61%, transparent);
+}
+
+body.contact-page .contact-page__email {
+  margin-bottom: 12px;
+}
+
+body.contact-page .contact-page__email a {
+  font-weight: 520;
+  letter-spacing: 0.003em;
+  color: color-mix(in srgb, var(--ink) 90%, #000 10%);
+}
+
+body.contact-page .contact-page__support-lines {
+  gap: 7px;
+  margin-bottom: 14px;
+  padding-top: 11px;
+  border-top-color: color-mix(in srgb, var(--ink) 9%, transparent);
+}
+
+body.contact-page .contact-page__support-lines p {
+  max-width: 50ch;
+  font-size: var(--contact-type-body);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 64%, transparent);
+}
+
+body.contact-page :is(.contact-page__email-cta, .contact-form button[type="submit"]) {
+  min-height: 40px;
+  padding-inline: 17px;
+  letter-spacing: 0.115em;
+}
+
+body.contact-page .contact-page__email-cta {
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  background: color-mix(in srgb, #fff 88%, #f7f0e0 12%);
+}
+
+body.contact-page .contact-form {
+  gap: 11px;
+}
+
+body.contact-page .contact-page__form-intro {
+  margin: 0;
+  padding: 0 0 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+body.contact-page .contact-form__grid {
+  gap: 12px 13px;
+}
+
+body.contact-page .contact-form__field {
+  gap: 5px;
+}
+
+body.contact-page .contact-form label {
+  font-size: var(--contact-type-label);
+  letter-spacing: 0.11em;
+  color: color-mix(in srgb, var(--ink) 47%, transparent);
+}
+
+body.contact-page .contact-form input,
+body.contact-page .contact-form textarea {
+  min-height: 42px;
+  padding: 9px 10px;
+  background: color-mix(in srgb, #fff 94%, #f5efdf 6%);
+  border-color: color-mix(in srgb, var(--ink) 23%, transparent);
+  font-size: var(--contact-type-input);
+  line-height: 1.4;
+}
+
+body.contact-page .contact-form textarea {
+  min-height: 106px;
+}
+
+body.contact-page .contact-form input::placeholder,
+body.contact-page .contact-form textarea::placeholder {
+  color: color-mix(in srgb, var(--ink) 38%, transparent);
+}
+
+body.contact-page .contact-form__notice {
+  max-width: 62ch;
+  font-size: var(--contact-type-note);
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--ink) 49%, transparent);
+}
+
+body.contact-page .contact-form button[type="submit"] {
+  min-width: 168px;
+}
+
+@media (max-width: 980px) {
+  body.contact-page .contact-page__layout {
+    gap: 16px;
+  }
+}
