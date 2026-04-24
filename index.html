@@ -1992,27 +1992,31 @@ body.homepage #cdd .cdd-editorial__card {
 }
 body.homepage #cdd .cdd-editorial__intro {
   border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 46%, transparent);
-  padding-bottom: 18px;
-  margin-bottom: 14px;
+  padding-bottom: clamp(18px, 2.1vw, 24px);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
 }
 body.homepage #cdd .cdd-editorial__brand {
   justify-self: end;
   width: 100%;
   justify-content: flex-end;
-  padding-right: clamp(8px, 1.2vw, 16px);
+  padding-right: clamp(10px, 1.35vw, 20px);
 }
 body.homepage #cdd .cdd-feature {
   background: color-mix(in srgb, #16300f 88%, #0f2206);
   border: 1px solid color-mix(in srgb, #f2ecd8 18%, transparent);
+  padding: clamp(16px, 1.75vw, 24px);
 }
 body.homepage #cdd .cdd-feature__top,
 body.homepage #cdd .cdd-feature__body,
 body.homepage #cdd .cdd-feature__footer {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: clamp(2px, 0.4vw, 6px);
+  padding-right: clamp(2px, 0.4vw, 6px);
 }
 body.homepage #cdd .cdd-feature__body {
   grid-template-columns: minmax(0, 1fr);
+  gap: clamp(12px, 1.4vw, 18px);
+  padding-top: clamp(14px, 1.45vw, 20px);
+  padding-bottom: clamp(8px, 1vw, 12px);
 }
 body.homepage #cdd .cdd-feature__panel,
 body.homepage #cdd .cdd-editorial__meta {
@@ -2056,25 +2060,83 @@ body.homepage #cdd > .wrap {
 }
 @media (min-width: 1025px) {
   body.homepage #cdd > .wrap.cdd-editorial {
-    max-width: min(1680px, calc(100vw - (var(--pad) * 1.15))) !important;
-    padding-inline: clamp(10px, 1.35vw, 20px) !important;
+    max-width: min(1760px, calc(100vw - (var(--pad) * 1.05))) !important;
+    padding-inline: clamp(16px, 1.6vw, 28px) !important;
   }
   body.homepage #cdd .cdd-editorial__intro {
-    grid-template-columns: minmax(0, 1.95fr) minmax(220px, 0.68fr);
-    gap: clamp(16px, 1.9vw, 26px);
+    grid-template-columns: minmax(0, 2.22fr) minmax(260px, 0.78fr);
+    gap: clamp(20px, 2.1vw, 34px);
+  }
+  body.homepage #cdd .wordmark__title {
+    display: grid;
+    row-gap: .02em;
+    max-width: min(15.4ch, 100%);
+  }
+  body.homepage #cdd .wordmark__title .cdd-headline-main {
+    display: block;
+    width: 100%;
+  }
+  body.homepage #cdd .wordmark__title em {
+    display: block;
+    width: 100%;
+    text-align: left;
   }
   body.homepage #cdd .cdd-editorial__lede {
-    max-width: none !important;
+    max-width: min(72ch, 100%) !important;
     width: 100%;
-    padding-right: clamp(14px, 2vw, 30px);
+    padding-right: clamp(10px, 1.45vw, 20px);
+    font-size: clamp(15px, 1.02vw, 17px);
+    line-height: 1.7;
   }
   body.homepage #cdd .cdd-feature__main {
-    max-width: min(1080px, 100%);
+    max-width: min(1240px, 100%);
   }
   body.homepage #cdd .cdd-feature__top,
   body.homepage #cdd .cdd-feature__body,
   body.homepage #cdd .cdd-feature__footer {
-    padding-inline: clamp(6px, 0.9vw, 12px);
+    padding-inline: clamp(8px, 1vw, 16px);
+  }
+  body.homepage #cdd .cdd-feature__top {
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 12px;
+  }
+  body.homepage #cdd .cdd-feature__meta {
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  body.homepage #cdd .cdd-feature__title--compact {
+    max-width: min(30ch, 100%);
+    margin-bottom: 12px;
+  }
+  body.homepage #cdd .cdd-feature__thesis {
+    max-width: min(98ch, 100%);
+    line-height: 1.68;
+  }
+  body.homepage #cdd .cdd-feature__main .cdd-cta-group {
+    margin-top: clamp(16px, 1.6vw, 22px);
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  body.homepage #cdd .cdd-cta {
+    min-width: 188px;
+  }
+  body.homepage #cdd .cdd-feature__footer {
+    padding-top: 16px;
+    gap: 12px;
+  }
+}
+@media (max-width: 1024px) {
+  body.homepage #cdd .wordmark__title .cdd-headline-main {
+    display: block;
+  }
+  body.homepage #cdd .wordmark__title em {
+    display: block;
+  }
+  body.homepage #cdd .cdd-feature__main .cdd-cta-group {
+    margin-bottom: 0;
   }
 }
 body.homepage #cdd .home-section-shell--panel {
