@@ -6,7 +6,7 @@ body {
 }
 
 :root {
-  --sv-topbar-xuan-paper: #F2ECD8;
+  --sv-topbar-xuan-paper: #D8CEB0;
   --sv-topbar-xuan-paper-dark: #D8CEB0;
   --sv-topbar-cinnabar: #C93B2A;
 }
@@ -17,6 +17,7 @@ body {
   top: 0;
   z-index: 220;
   min-height: 62px;
+  background: var(--sv-topbar-xuan-paper);
 }
 
 /* Canonical ShoreVest top bar: sourced from homepage implementation */
@@ -116,7 +117,7 @@ body {
 
 #site-header-mount #nav .nav__logo-cn {
   font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif !important;
-  color: rgba(33, 33, 30, .82) !important;
+  color: var(--sv-topbar-cinnabar, #C93B2A) !important;
   line-height: 1 !important;
   margin-top: 0 !important;
   transform: translateY(-0.5px) !important;
@@ -563,7 +564,7 @@ body {
   /* Mobile top bar baseline: match Firm page styling across all routes. */
   #site-header-mount {
     min-height: 74px !important;
-    --sv-topbar-xuan-paper: #F2ECD8 !important;
+    --sv-topbar-xuan-paper: #D8CEB0 !important;
     --sv-topbar-xuan-paper-dark: #D8CEB0 !important;
   }
 
@@ -1239,9 +1240,13 @@ body {
 }
 
 /* 2026 palette refinement: normalize shared header chrome to global tokens. */
+#site-header-mount {
+  background: var(--sv-topbar-xuan-paper, #D8CEB0) !important;
+}
+
 #site-header-mount #nav {
-  background: var(--bg-main, #f5f0e4) !important;
-  border-bottom-color: var(--border-strong, #c8bda6) !important;
+  background: var(--sv-topbar-xuan-paper, #D8CEB0) !important;
+  border-bottom-color: color-mix(in srgb, var(--sv-topbar-xuan-paper-dark, #D8CEB0) 82%, var(--text-primary, #102a18) 18%) !important;
 }
 
 #site-header-mount #nav.scrolled {
@@ -1257,7 +1262,7 @@ body {
 }
 
 #site-header-mount #nav .nav__logo-cn {
-  color: color-mix(in srgb, var(--text-secondary, #41543f) 78%, transparent) !important;
+  color: var(--sv-topbar-cinnabar, #C93B2A) !important;
 }
 
 #site-header-mount #nav .nav__links a.active {
@@ -1267,7 +1272,7 @@ body {
 #site-header-mount #nav .nav__lp,
 #site-header-mount #nav .nav__menu-btn {
   border-color: color-mix(in srgb, var(--text-primary, #102a18) 22%, transparent) !important;
-  background: var(--bg-main, #f5f0e4) !important;
+  background: var(--sv-topbar-xuan-paper, #D8CEB0) !important;
 }
 
 #site-header-mount #nav .nav__lp:hover,
