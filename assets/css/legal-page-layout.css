@@ -194,24 +194,24 @@ body.privacy-policy-page .legal-page__main {
 }
 
 body.privacy-policy-page .privacy-policy__content {
-  max-width: min(var(--content-max-width-legal-wide, 1520px), 100%) !important;
+  max-width: min(var(--content-max-width-standard, 1320px), 100%) !important;
   margin: 0 auto;
-  padding-left: clamp(14px, 1.4vw, 24px) !important;
-  padding-right: clamp(14px, 1.4vw, 24px) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   padding-bottom: clamp(24px, 2.8vw, 44px);
 }
 
 body.privacy-policy-page .privacy-policy__content :is(p, ul, ol, h2, .legal-contact-actions) {
-  width: min(100%, 102ch);
-  max-width: 102ch;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 body.privacy-policy-page .legal-page__intro-block {
-  width: min(100%, 124ch);
-  max-width: 124ch;
-  margin: 0 auto clamp(22px, 2.4vw, 34px);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 clamp(22px, 2.4vw, 34px);
   padding: clamp(12px, 1.3vw, 18px) 0 clamp(16px, 1.7vw, 24px);
   border-bottom: 1px solid color-mix(in srgb, var(--ink-soft) 22%, transparent);
 }
