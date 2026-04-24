@@ -2058,23 +2058,23 @@ body.contact-page .contact-page__content {
 
 body.contact-page {
   --contact-type-eyebrow: 11px;
-  --contact-type-section-label: 12px;
-  --contact-type-body: 15px;
-  --contact-type-label: 12px;
+  --contact-type-section-label: 11px;
+  --contact-type-body: 14px;
+  --contact-type-label: 11px;
   --contact-type-input: 15px;
-  --contact-type-note: 13px;
-  --contact-type-button: 12px;
-  --contact-type-email: clamp(27px, 2.25vw, 34px);
+  --contact-type-note: 12.5px;
+  --contact-type-button: 11px;
+  --contact-type-email: clamp(22px, 1.9vw, 28px);
   --contact-leading-body: 1.6;
   --contact-space-1: 8px;
   --contact-space-2: 12px;
   --contact-space-3: 16px;
-  --contact-space-4: 22px;
-  --contact-space-5: clamp(26px, 2.2vw, 34px);
+  --contact-space-4: 18px;
+  --contact-space-5: clamp(24px, 2vw, 30px);
   --contact-space-6: clamp(30px, 2.8vw, 40px);
-  --contact-btn-bg: color-mix(in srgb, var(--blue-green-dark) 90%, #04171b 10%);
-  --contact-btn-bg-hover: color-mix(in srgb, var(--blue-green-dark) 82%, #000 18%);
-  --contact-btn-border: color-mix(in srgb, var(--blue-green-dark) 70%, #08262d 30%);
+  --contact-btn-bg: color-mix(in srgb, var(--blue-green-dark) 84%, #14272d 16%);
+  --contact-btn-bg-hover: color-mix(in srgb, var(--blue-green-dark) 78%, #000 22%);
+  --contact-btn-border: color-mix(in srgb, var(--blue-green-dark) 58%, #08262d 42%);
   --contact-btn-text: #f7f1e5;
   --contact-btn-secondary-bg: #fff;
   --contact-btn-secondary-text: color-mix(in srgb, var(--ink) 88%, #000 12%);
@@ -2095,8 +2095,8 @@ body.contact-page :is(.contact-page__primary-contact, .contact-page__form-sectio
 }
 
 body.contact-page .contact-page__primary-contact {
-  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
-  border-top: 3px solid color-mix(in srgb, var(--blue-green-dark) 82%, #000 18%);
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-top: 2px solid color-mix(in srgb, var(--blue-green-dark) 62%, #000 38%);
   background: color-mix(in srgb, #f8f2e5 26%, #fff 74%);
   display: grid;
   gap: 0;
@@ -2109,8 +2109,8 @@ body.contact-page .contact-page__primary-contact::after {
 }
 
 body.contact-page .contact-page__form-section {
-  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
-  border-top: 3px solid color-mix(in srgb, var(--ink) 54%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-top: 2px solid color-mix(in srgb, var(--ink) 42%, transparent);
   background: #fff;
   display: grid;
   gap: var(--contact-space-3);
@@ -2120,25 +2120,25 @@ body.contact-page .contact-page__primary-contact h2,
 body.contact-page .contact-page__form-section h2 {
   margin: 0 0 var(--contact-space-4);
   font-size: var(--contact-type-section-label);
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-weight: 620;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   line-height: 1.25;
-  color: color-mix(in srgb, var(--ink) 80%, transparent);
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
   padding-bottom: var(--contact-space-3);
-  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
 }
 
 body.contact-page .contact-page__email {
-  margin: 0 0 var(--contact-space-4);
+  margin: 0 0 var(--contact-space-3);
 }
 
 body.contact-page .contact-page__email a {
   font-size: var(--contact-type-email);
-  font-weight: 520;
-  letter-spacing: 0.01em;
-  line-height: 1.12;
-  color: color-mix(in srgb, var(--ink) 94%, #000 6%);
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--ink) 88%, #000 12%);
   text-decoration: none;
   text-underline-offset: 0.2em;
   text-decoration-thickness: 1px;
@@ -2155,17 +2155,17 @@ body.contact-page .contact-page__email a:focus-visible {
 body.contact-page .contact-page__support-lines {
   display: grid;
   gap: var(--contact-space-1);
-  margin: 0 0 var(--contact-space-5);
-  padding-top: var(--contact-space-3);
-  border-top: 1px solid color-mix(in srgb, var(--ink) 13%, transparent);
+  margin: 0 0 var(--contact-space-4);
+  padding-top: var(--contact-space-2);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
   max-width: 52ch;
 }
 
 body.contact-page .contact-page__support-lines p {
   margin: 0;
   font-size: var(--contact-type-body);
-  line-height: var(--contact-leading-body);
-  color: color-mix(in srgb, var(--ink) 74%, transparent);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--ink) 67%, transparent);
 }
 
 /* CTA system: primary = filled dark, secondary = white with dark ink */
@@ -2173,13 +2173,13 @@ body.contact-page :is(.contact-page__email-cta, .contact-form button[type="submi
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 24px;
+  min-height: 44px;
+  padding: 0 21px;
   border-radius: 0;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: var(--contact-type-button);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 620;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   text-decoration: none;
   line-height: 1;
@@ -2205,14 +2205,14 @@ body.contact-page .contact-form button[type="submit"]:focus-visible {
 body.contact-page .contact-page__email-cta {
   align-self: start;
   background: var(--contact-btn-secondary-bg);
-  border: 1px solid var(--contact-btn-secondary-border);
+  border: 1px solid color-mix(in srgb, var(--contact-btn-secondary-border) 85%, transparent);
   color: var(--contact-btn-secondary-text);
 }
 
 body.contact-page .contact-page__email-cta:hover,
 body.contact-page .contact-page__email-cta:focus-visible {
-  background: color-mix(in srgb, #f6f1e6 60%, #fff 40%);
-  border-color: color-mix(in srgb, var(--ink) 52%, transparent);
+  background: color-mix(in srgb, #f6f1e6 44%, #fff 56%);
+  border-color: color-mix(in srgb, var(--ink) 42%, transparent);
   color: color-mix(in srgb, var(--ink) 94%, #000 6%);
   text-decoration: none;
 }
@@ -2237,17 +2237,17 @@ body.contact-page .contact-form__field {
 body.contact-page .contact-form label {
   margin: 0;
   font-size: var(--contact-type-label);
-  font-weight: 650;
-  letter-spacing: 0.1em;
+  font-weight: 560;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.25;
-  color: color-mix(in srgb, var(--ink) 66%, transparent);
+  color: color-mix(in srgb, var(--ink) 52%, transparent);
 }
 
 body.contact-page .contact-form input,
 body.contact-page .contact-form textarea {
   width: 100%;
-  border: 1px solid color-mix(in srgb, var(--ink) 26%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
   border-radius: 0;
   background: #fff;
   color: color-mix(in srgb, var(--ink) 96%, #000 4%);
@@ -2262,12 +2262,12 @@ body.contact-page .contact-form textarea {
 
 body.contact-page .contact-form input::placeholder,
 body.contact-page .contact-form textarea::placeholder {
-  color: color-mix(in srgb, var(--ink) 44%, transparent);
+  color: color-mix(in srgb, var(--ink) 34%, transparent);
 }
 
 body.contact-page .contact-form input:hover,
 body.contact-page .contact-form textarea:hover {
-  border-color: color-mix(in srgb, var(--ink) 40%, transparent);
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
 }
 
 body.contact-page .contact-form input:focus-visible,
@@ -2286,8 +2286,8 @@ body.contact-page .contact-form textarea {
 body.contact-page .contact-form__notice {
   margin: 0;
   font-size: var(--contact-type-note);
-  line-height: 1.5;
-  color: color-mix(in srgb, var(--ink) 60%, transparent);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--ink) 52%, transparent);
 }
 
 body.contact-page .contact-form button[type="submit"] {
