@@ -902,8 +902,8 @@ body.homepage .home-hero__support {
   }
 
   body.homepage .home-hero::before {
-    background-position: 78% 44%;
-    filter: saturate(0.46) contrast(1.12) brightness(0.44);
+    background-position: 63% 54%;
+    filter: saturate(0.96) contrast(1.02) brightness(0.9);
   }
 
   body.homepage .home-hero__inner {

@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="assets/favicon.svg?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/images/homepage_hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/images/image.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="assets/images/edited-photo.png" fetchpriority="high">
 <link rel="preload" as="image" href="assets/images/vectorink-vectorizer-result.svg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -1616,8 +1616,8 @@ body.homepage .home-hero::after {
 }
 body.homepage .home-hero::before {
   z-index: -3;
-  background-image: url("assets/images/homepage_hero.jpg");
-  background-position: 74% 62%;
+  background-image: url("assets/images/image.jpg");
+  background-position: 67% 56%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1625,32 +1625,22 @@ body.homepage .home-hero::after {
   z-index: -2;
   background:
     linear-gradient(98deg,
-      rgba(4, 10, 14, 0.9) 0%,
-      rgba(4, 11, 15, 0.82) 34%,
-      rgba(6, 15, 20, 0.58) 56%,
-      rgba(7, 18, 24, 0.32) 72%,
-      rgba(7, 18, 24, 0.18) 100%
+      rgba(4, 10, 18, 0.76) 0%,
+      rgba(5, 13, 22, 0.62) 34%,
+      rgba(8, 17, 28, 0.42) 56%,
+      rgba(10, 22, 34, 0.24) 74%,
+      rgba(10, 22, 34, 0.12) 100%
     ),
     linear-gradient(180deg,
-      rgba(2, 8, 12, 0.52) 0%,
-      rgba(3, 10, 14, 0.16) 36%,
-      rgba(2, 8, 12, 0.5) 100%
+      rgba(3, 8, 13, 0.44) 0%,
+      rgba(3, 9, 16, 0.08) 38%,
+      rgba(4, 10, 17, 0.42) 100%
     ),
-    linear-gradient(122deg,
-      rgba(6, 16, 19, 0.48) 0%,
-      rgba(8, 20, 23, 0.2) 50%,
-      rgba(8, 21, 24, 0.42) 100%
+    linear-gradient(128deg,
+      rgba(7, 16, 24, 0.3) 10%,
+      rgba(10, 22, 32, 0.1) 58%,
+      rgba(8, 18, 26, 0.24) 100%
     );
-}
-body.homepage .home-hero .home-hero__inner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(74% 72% at 83% 72%, rgba(17, 43, 54, 0.24), transparent 76%),
-    radial-gradient(56% 66% at 8% 54%, rgba(3, 8, 11, 0.42), transparent 72%);
 }
 body.homepage .home-hero__inner {
   position: relative;
@@ -1666,7 +1656,7 @@ body.homepage .home-hero__inner {
 }
 body.homepage .home-hero__text {
   position: relative;
-  width: min(660px, 100%);
+  width: min(700px, 100%);
   padding: clamp(8px, 1.2vw, 14px) 0 clamp(8px, 1.3vw, 16px);
   background: transparent;
   border: 0;
@@ -1706,7 +1696,7 @@ body.homepage .home-hero__headline {
   letter-spacing: .002em;
   text-transform: none;
   color: #f4efe2;
-  max-width: 14ch;
+  max-width: 13ch;
   text-wrap: initial;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
 }
@@ -1729,7 +1719,7 @@ body.homepage .home-hero__headline-emphasis {
 }
 body.homepage .home-hero__support {
   margin: 0;
-  max-width: 46ch;
+  max-width: 44ch;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(15.5px, 1.02vw, 17px);
   line-height: 1.75;
@@ -1753,9 +1743,9 @@ body.homepage .home-hero__cta {
   min-height: 46px;
   min-width: 208px;
   padding: 0 26px;
-  border: 1px solid rgba(244, 238, 220, 0.84);
+  border: 1px solid rgba(244, 238, 220, 0.94);
   border-radius: 0;
-  background: #e8ddc4;
+  background: #efe4cb;
   box-shadow: none;
   gap: 7px;
   font-family: "DIN 2014";
@@ -1763,21 +1753,21 @@ body.homepage .home-hero__cta {
   font-weight: 620;
   letter-spacing: .145em;
   text-transform: uppercase;
-  color: #0c1b20;
+  color: #0b1a20;
   transition: border-color .2s ease-out, background-color .2s ease-out, color .2s ease-out, transform .2s ease-out, box-shadow .2s ease-out;
 }
 body.homepage .home-hero__cta:hover,
 body.homepage .home-hero__cta:focus-visible {
   border-color: rgba(246, 241, 229, 0.98);
-  background: #f5ebd8;
+  background: #f6ecd8;
   color: #0b171a;
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
 }
 body.homepage .home-hero__cta--secondary {
-  border-color: rgba(244, 238, 220, 0.64);
-  background: rgba(6, 16, 21, 0.26);
-  color: #f4eedf;
+  border-color: rgba(244, 238, 220, 0.74);
+  background: rgba(5, 14, 23, 0.42);
+  color: #f6efdf;
 }
 body.homepage .home-hero__cta--secondary:hover,
 body.homepage .home-hero__cta--secondary:focus-visible {
@@ -2190,19 +2180,19 @@ body.homepage #cdd .cdd-editorial__lede {
     min-height: clamp(500px, 84vh, 640px);
   }
   body.homepage .home-hero::before {
-    background-position: 68% 58%;
+    background-position: 63% 54%;
   }
   body.homepage .home-hero::after {
     background:
       linear-gradient(107deg,
-        rgba(4, 10, 14, 0.92) 0%,
-        rgba(4, 10, 14, 0.82) 48%,
-        rgba(6, 15, 20, 0.56) 100%
+        rgba(4, 10, 18, 0.82) 0%,
+        rgba(5, 12, 20, 0.68) 48%,
+        rgba(8, 17, 28, 0.42) 100%
       ),
       linear-gradient(180deg,
-        rgba(2, 8, 12, 0.62) 0%,
-        rgba(2, 8, 12, 0.2) 36%,
-        rgba(2, 8, 12, 0.54) 100%
+        rgba(3, 8, 14, 0.5) 0%,
+        rgba(3, 9, 14, 0.18) 36%,
+        rgba(3, 9, 14, 0.46) 100%
       );
   }
   body.homepage .home-hero__inner {
@@ -2214,11 +2204,11 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .home-hero__headline {
     font-size: clamp(34px, 8.8vw, 44px);
     line-height: 1.06;
-    max-width: 12ch;
+    max-width: 11.8ch;
   }
   body.homepage .home-hero__support {
     font-size: clamp(14.8px, 3.6vw, 16px);
-    max-width: 36ch;
+    max-width: 34ch;
   }
   body.homepage .home-hero__text {
     width: min(100%, 38rem);
@@ -2232,6 +2222,19 @@ body.homepage #cdd .cdd-editorial__lede {
     flex: 1 1 calc(50% - 5px);
     min-width: 148px;
     padding-inline: 10px;
+  }
+}
+
+@media print {
+  body.homepage .home-hero {
+    background: #0a1520 !important;
+    min-height: auto;
+  }
+  body.homepage .home-hero::before {
+    background-image: url("assets/images/image.jpg") !important;
+    background-position: center 54% !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 
