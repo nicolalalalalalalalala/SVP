@@ -2009,12 +2009,12 @@ body.homepage #principles {
 }
 body.homepage .principles__toprow {
   display: grid;
-  grid-template-columns: minmax(280px, 4fr) minmax(0, 8fr);
-  gap: clamp(20px, 2.8vw, 34px);
+  grid-template-columns: minmax(260px, 4.5fr) minmax(0, 7.5fr);
+  gap: clamp(28px, 3.4vw, 46px);
   align-items: start;
   border-top: 0;
   padding-top: 0;
-  margin-bottom: clamp(8px, 1.4vw, 14px);
+  margin-bottom: clamp(14px, 2vw, 24px);
 }
 body.homepage .principles__text p {
   max-width: 66ch;
@@ -2106,6 +2106,13 @@ body.homepage #principles .about__body p {
   text-wrap: pretty;
   background: transparent !important;
 }
+@media (min-width: 768px) and (max-width: 980px) {
+  body.homepage #principles .principles__toprow {
+    grid-template-columns: minmax(220px, 4fr) minmax(0, 8fr);
+    gap: clamp(20px, 3vw, 32px);
+    margin-bottom: clamp(12px, 2vw, 20px);
+  }
+}
 body.homepage #principles .ac__meta {
   margin-bottom: 2px;
 }
@@ -2142,7 +2149,14 @@ body.homepage #strategy .strat__lead {
   gap: var(--home-heading-gap);
 }
 body.homepage #principles .principles__heading {
+  display: grid;
   gap: clamp(8px, 1vw, 12px);
+  align-content: start;
+  max-width: 24ch;
+}
+body.homepage #principles .principles__copy {
+  align-self: start;
+  padding-top: clamp(2px, 0.4vw, 8px);
 }
 body.homepage #stats {
   max-width: var(--home-frame-max);
