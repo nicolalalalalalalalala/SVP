@@ -148,11 +148,12 @@
         line-height: var(--sv-lh-body);
         color: var(--ink-soft);
         font-family: var(--team-type-body);
-        margin-top: 2px;
+        margin-top: 0;
       }
       .pagehero__fullwidth {
-        max-width: 100% !important;
-        width: 100%;
+        width: min(100%, 860px);
+        max-width: 100%;
+        line-height: 1.55;
       }
 
       .founder-note {
@@ -626,7 +627,10 @@
         .pagehero p {
           font-size: var(--sv-size-body);
           line-height: var(--sv-lh-body);
-          max-width: 44ch;
+          max-width: 100%;
+        }
+        .pagehero__fullwidth {
+          width: 100%;
         }
         .founder-note {
           padding: 32px 0;
