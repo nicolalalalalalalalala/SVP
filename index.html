@@ -2781,6 +2781,25 @@ body.homepage #cdd .cdd-editorial__lede {
     padding-block: clamp(18px, 4.2vw, 24px) clamp(16px, 3.8vw, 22px);
     overflow: hidden;
   }
+  /* Mobile seam cleanup: remove incidental hairline borders and rely on spacing rhythm. */
+  body.homepage .home-section-shell--soft,
+  body.homepage .home-section-shell--panel {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  body.homepage :is(#about, #principles, #strategy, #cdd, #insights, #signup),
+  body.homepage :is(#about, #principles, #strategy, #cdd, #insights, #signup) > .wrap,
+  body.homepage :is(#principles .principles__grid, #strategy .strat__grid, #cdd .cdd-editorial__card, #cdd .cdd-feature),
+  body.homepage :is(#principles .ac, #strategy .sg),
+  body.homepage .ins__hd,
+  body.homepage .sv-footer,
+  body.homepage .sv-footer__main {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+  body.homepage #principles .ac + .ac {
+    border-top: 0 !important;
+  }
 
   .eyebrow {
     margin-bottom:18px;
