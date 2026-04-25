@@ -43,11 +43,14 @@
       body.homepage main, .firm-page, .firm-page > section { background: var(--xuan-paper-light); }
       h1, h2, h3, p { margin: 0; }
 
-      .sv-page-shell {
-        width: min(100% - clamp(80px, 10vw, 160px), var(--content-max-wide));
+      .firm-container {
+        width: 100%;
+        max-width: calc(var(--content-max-width-standard) + (var(--site-page-gutter) * 2));
         margin-inline: auto;
-        padding-inline: var(--pad);
+        padding-inline: var(--site-page-gutter);
+        box-sizing: border-box;
       }
+
       .firm-panel {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 82%, var(--xuan-paper) 18%);
@@ -152,6 +155,13 @@
       .firm-panel--solid .firm-card { background: color-mix(in srgb, var(--qing-dark) 88%, black 12%); border-color: color-mix(in srgb, var(--qing-light) 40%, transparent); }
       .firm-panel--solid .firm-card h3 { color: var(--xuan-paper-light); }
 
+      .firm-section {
+        margin: 0;
+      }
+      .firm-section + .firm-section {
+        margin-top: var(--sv-section-gap-md);
+      }
+
       .firm-section-title {
         font-size: var(--sv-section-title-size);
         line-height: var(--sv-section-title-line);
@@ -244,9 +254,6 @@
           --pad: var(--site-page-margin);
           --sv-section-space: 56px;
         }
-        .sv-page-shell {
-          width: calc(100% - (var(--site-page-margin) * 2));
-        }
         .sv-editorial-hero,
         .sv-section-grid,
         .sv-statement {
@@ -271,7 +278,7 @@
 
     <main class="firm-page">
       <section class="firm-section">
-        <div class="firm-wrap">
+        <div class="wrap firm-container">
           <div class="firm-panel">
             <div class="firm-hero-grid">
               <div>
@@ -301,7 +308,7 @@
       </section>
 
       <section class="firm-section">
-        <div class="firm-wrap">
+        <div class="wrap firm-container">
           <div class="firm-panel firm-editorial-grid">
             <div>
               <p class="firm-label">Institutional Platform</p>
@@ -320,7 +327,7 @@
       </section>
 
       <section class="firm-section">
-        <div class="firm-wrap">
+        <div class="wrap firm-container">
           <div class="firm-panel firm-panel--solid">
             <p class="firm-label">Operational Geography</p>
             <h2 class="firm-section-title">Cross-border operating footprint with onshore execution control</h2>
@@ -335,7 +342,7 @@
       </section>
 
       <section class="firm-section">
-        <div class="firm-wrap">
+        <div class="wrap firm-container">
           <div class="firm-panel">
             <div>
               <p class="firm-label">Operating Model</p>
@@ -378,7 +385,7 @@
       </section>
 
       <section class="firm-section">
-        <div class="firm-wrap">
+        <div class="wrap firm-container">
           <div class="firm-panel">
             <div>
               <p class="firm-label">Governance</p>
@@ -403,7 +410,7 @@
       </section>
 
       <section class="firm-section">
-        <div class="firm-wrap">
+        <div class="wrap firm-container">
           <div class="firm-statement">
             <p class="firm-label">Capital Base</p>
             <p>LOCAL EXECUTION. <strong>GLOBAL STANDARD.</strong> Institutional private credit delivery built for enforceability, control, and disciplined realizations.</p>
