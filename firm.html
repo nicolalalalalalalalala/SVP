@@ -70,13 +70,7 @@
       }
       section {
         padding: clamp(72px, 8vw, 108px) 0;
-        background: var(--xuan-light);
-      }
-      main > section + section {
-        border-top: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
-      }
-      main> section:nth-of-type(even) {
-        background: var(--xuan);
+        background: transparent;
       }
       .eyebrow {
         font-size: 11px;
@@ -423,7 +417,7 @@
       .geography-section {
         padding-top: clamp(32px, 4.2vw, 56px);
         padding-bottom: clamp(52px, 6.2vw, 80px);
-        background: var(--xuan-light) !important;
+        background: transparent !important;
       }
       .operations-grid {
         display: grid;
@@ -1175,14 +1169,11 @@
       /* === Firm page standardization pass (aligned to homepage design system) === */
       body.homepage main > section {
         padding-block: var(--site-section-padding-y);
-        border-top: 1px solid color-mix(in srgb, var(--border-soft) 78%, transparent);
-        background: var(--bg-main) !important;
-      }
-      body.homepage main > section:first-child {
         border-top: 0;
+        background: transparent !important;
       }
       body.homepage main > section:nth-of-type(even) {
-        background: var(--bg-main) !important;
+        background: transparent !important;
       }
       .hero {
         padding-top: clamp(28px, 3.3vw, 44px) !important;
