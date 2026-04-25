@@ -3624,51 +3624,115 @@ body.homepage #cdd .cdd-editorial__lede {
 
   /* CDD block: reduce visual weight and keep hierarchy calm. */
   #cdd {
-    padding: 20px 0;
+    padding: 16px 0;
+  }
+  #cdd > .wrap.cdd-editorial {
+    padding-left: clamp(12px, 3.8vw, 16px) !important;
+    padding-right: clamp(12px, 3.8vw, 16px) !important;
   }
   .cdd-editorial__card {
-    padding: 14px 12px;
-    gap: 12px;
+    padding: 12px 11px;
+    gap: 10px;
+  }
+  .cdd-editorial__intro {
+    gap: 9px;
+    padding-bottom: 10px;
+  }
+  .cdd-editorial__brand {
+    transform: scale(.95);
+    transform-origin: left center;
   }
   .cdd-editorial__kicker {
-    font-size: 9px;
-    letter-spacing: .15em;
+    font-size: 8.1px;
+    letter-spacing: .13em;
+    line-height: 1.35;
   }
   #cdd .wordmark__title {
-    font-size: clamp(24px, 7vw, 32px);
+    font-size: clamp(21px, 6.2vw, 28px);
+    line-height: .94;
     max-width: 12ch;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
   .cdd-editorial__lede {
-    font-size: 12.2px;
-    line-height: 1.5;
+    font-size: 11.2px;
+    line-height: 1.46;
+  }
+  .cdd-feature {
+    border-width: 1px;
+  }
+  .cdd-feature__top,
+  .cdd-feature__body,
+  .cdd-feature__footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cdd-feature__top {
+    gap: 6px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+  .cdd-feature__meta {
+    gap: 5px;
   }
   .cdd-feature__issue,
   .cdd-feature__date,
   .cdd-live__label {
-    font-size: 7.8px;
-    letter-spacing: .095em;
+    font-size: 7.1px;
+    letter-spacing: .09em;
+    line-height: 1.18;
+  }
+  .cdd-feature__issue,
+  .cdd-feature__date {
+    padding: 4px 7px 3px;
+  }
+  .cdd-live {
+    gap: 4px;
+  }
+  .cdd-live__dot {
+    width: 5px;
+    height: 5px;
   }
   .cdd-feature__label {
-    font-size: 9.2px;
+    font-size: 8.5px;
+    margin-bottom: 6px;
   }
   .cdd-feature__title {
-    font-size: clamp(18px, 5.5vw, 22px);
-    line-height: 1.14;
+    font-size: clamp(16.8px, 5.15vw, 20.8px);
+    line-height: 1.12;
+    margin-bottom: 6px;
   }
   .cdd-feature__thesis,
   .cdd-feature__finding {
-    font-size: 12px;
-    line-height: 1.54;
+    font-size: 11.1px;
+    line-height: 1.48;
+  }
+  .cdd-feature__body {
+    gap: 10px;
+    padding-top: 11px;
+    padding-bottom: 12px;
+  }
+  .cdd-feature__body > div:first-child {
+    padding-left: 8px;
+  }
+  .cdd-feature__main .cdd-cta-group {
+    margin-top: 10px;
+  }
+  .cdd-feature__footer {
+    gap: 8px;
+    padding-top: 11px;
+    padding-bottom: 11px;
   }
   .cdd-cta {
-    min-height: 38px;
-    font-size: 9.6px;
-    padding: 8px 10px;
+    min-height: 34px;
+    font-size: 8.8px;
+    letter-spacing: .1em;
+    padding: 7px 9px;
   }
   .cdd-cta__ring {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    font-size: 10px;
   }
 
   /* Footer: structured and minimal. */
