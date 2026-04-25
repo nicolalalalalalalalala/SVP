@@ -2875,6 +2875,124 @@ body.strategy-page .strategy-hero .strategy-kpi span {
     }
 
   </style>
+  <style id="strategy-hero-refine-2026">
+    /* Strategy hero refinement: cohesive composition + clean section transition. */
+    body.strategy-page .strategy-hero {
+      padding-top: clamp(104px, 11vw, 138px) !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+      background: var(--xuan-light) !important;
+      border-bottom: 0 !important;
+    }
+
+    body.strategy-page .strategy-hero + .market-context {
+      margin-top: 0 !important;
+      padding-top: clamp(24px, 2.6vw, 34px) !important;
+      border-top: 0 !important;
+    }
+
+    body.strategy-page .market-context,
+    body.strategy-page .strategy-intro-section {
+      background: var(--xuan-light) !important;
+    }
+
+    body.strategy-page .strategy-hero .wrap {
+      grid-template-columns: minmax(0, 1.34fr) minmax(350px, 0.9fr) !important;
+      gap: clamp(28px, 3.2vw, 44px) !important;
+      align-items: stretch !important;
+      padding: clamp(34px, 4vw, 46px) clamp(28px, 3.8vw, 44px) !important;
+      border: 1px solid color-mix(in srgb, var(--xuan-dark) 78%, var(--ink-dark) 22%) !important;
+      background: color-mix(in srgb, var(--xuan-light) 74%, #efe6d3 26%) !important;
+      position: relative;
+    }
+
+    body.strategy-page .strategy-hero .wrap::before {
+      display: none !important;
+    }
+
+    body.strategy-page .strategy-hero .wrap > div {
+      display: grid;
+      align-content: start;
+      gap: 0;
+      padding-top: 2px;
+    }
+
+    body.strategy-page .strategy-hero .eyebrow {
+      margin-bottom: 14px !important;
+      color: color-mix(in srgb, var(--qing-dark) 35%, var(--ink-secondary) 65%) !important;
+    }
+
+    body.strategy-page .strategy-hero .eyebrow::after {
+      background: color-mix(in srgb, var(--cinnabar) 58%, var(--xuan-dark) 42%) !important;
+    }
+
+    body.strategy-page .strategy-hero h1 {
+      max-width: 19ch !important;
+      margin: 0 !important;
+      color: color-mix(in srgb, var(--ink-dark) 92%, #112e0d 8%) !important;
+      line-height: 0.99 !important;
+    }
+
+    body.strategy-page .strategy-hero .pagehero__lede {
+      max-width: 58ch !important;
+      margin-top: 18px !important;
+      color: color-mix(in srgb, var(--ink-secondary) 78%, var(--qing-dark) 22%) !important;
+      line-height: 1.55 !important;
+    }
+
+    body.strategy-page .strategy-hero .hero-meta {
+      margin-top: 18px !important;
+      color: color-mix(in srgb, var(--qing-dark) 36%, var(--ink-secondary) 64%) !important;
+      letter-spacing: 0.14em !important;
+    }
+
+    body.strategy-page .strategy-hero .hero-aside {
+      border-left: 1px solid color-mix(in srgb, var(--xuan-dark) 66%, var(--ink-secondary) 34%) !important;
+      padding-left: clamp(20px, 2vw, 30px) !important;
+      padding-right: 0 !important;
+      display: grid !important;
+      align-content: stretch !important;
+    }
+
+    body.strategy-page .strategy-hero .hero-kpis {
+      gap: 10px !important;
+    }
+
+    body.strategy-page .strategy-hero .strategy-kpi {
+      min-height: 96px;
+      padding: 14px 14px 15px !important;
+      border: 1px solid color-mix(in srgb, var(--xuan-dark) 58%, var(--ink-secondary) 42%) !important;
+      background: color-mix(in srgb, var(--xuan-light) 54%, #e7ddc8 46%) !important;
+      gap: 8px !important;
+    }
+
+    body.strategy-page .strategy-hero .strategy-kpi strong {
+      color: color-mix(in srgb, var(--cinnabar-dark) 82%, var(--cinnabar) 18%) !important;
+      letter-spacing: 0.13em !important;
+    }
+
+    body.strategy-page .strategy-hero .strategy-kpi strong::before {
+      color: color-mix(in srgb, var(--cinnabar) 60%, var(--ink-secondary) 40%) !important;
+    }
+
+    body.strategy-page .strategy-hero .strategy-kpi span {
+      color: color-mix(in srgb, var(--ink-dark) 90%, var(--ink-secondary) 10%) !important;
+      line-height: 1.48 !important;
+    }
+
+    @media (max-width: 1100px) {
+      body.strategy-page .strategy-hero .wrap {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      body.strategy-page .strategy-hero .hero-aside {
+        border-left: 0 !important;
+        border-top: 1px solid color-mix(in srgb, var(--xuan-dark) 70%, var(--ink-secondary) 30%) !important;
+        padding: 18px 0 0 !important;
+      }
+    }
+  </style>
 </head>
   <body id="top" class="homepage strategy-page">
     <div id="site-header-mount"></div>
