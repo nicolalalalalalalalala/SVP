@@ -67,9 +67,9 @@
     </span>
   </a>
   <ul class="nav__links" id="nav-links">
-    ${navItems.map((item) => `<li><a href="${item.href}">${item.label}</a></li>`).join('')}
-    <li class="nav__mobile-investor"><a href="${headerCtaHref}">${headerCtaLabel}</a></li>
-    <li class="nav__mobile-lang"><a href="${targetLocaleHref}" class="lang-toggle">${langLabel}</a></li>
+    ${navItems.map((item) => `<li class="nav__menu-row"><a class="nav__menu-link" href="${item.href}">${item.label}</a></li>`).join('')}
+    <li class="nav__menu-row nav__mobile-investor"><a class="nav__menu-link" href="${headerCtaHref}">${headerCtaLabel}</a></li>
+    <li class="nav__menu-row nav__mobile-lang"><a href="${targetLocaleHref}" class="nav__menu-link lang-toggle">${langLabel}</a></li>
   </ul>
   <div class="nav__right">
     <a href="${targetLocaleHref}" class="nav__zh lang-toggle">${langLabel}</a>
