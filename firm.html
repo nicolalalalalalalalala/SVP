@@ -467,7 +467,7 @@
       }
       .operations-network-card {
         display: grid;
-        gap: clamp(14px, 1.35vw, 18px);
+        gap: 0;
         width: 100%;
         height: 100%;
         background:
@@ -489,62 +489,19 @@
         width: 100%;
         height: 100%;
       }
-      .operations-network-svg .network-path-main {
-        stroke: color-mix(in srgb, var(--qing-dark) 62%, var(--qing) 38%);
-        stroke-width: 2.4;
-        fill: none;
+      .operations-network-svg .abstract-map-bg {
+        fill: #f5efe6;
       }
-      .operations-network-svg .network-path-secondary {
-        stroke: color-mix(in srgb, var(--qing) 54%, var(--xuan-dark) 46%);
-        stroke-width: 1.4;
-        fill: none;
-        stroke-dasharray: 4 4;
+      .operations-network-svg .abstract-map-coast-west {
+        fill: rgba(61, 112, 112, 0.18);
       }
-      .operations-network-svg .network-node-core {
-        fill: var(--cinnabar);
+      .operations-network-svg .abstract-map-coast-east {
+        fill: color-mix(in srgb, #2f4a3c 78%, #3d7070 22%);
+        opacity: 0.84;
       }
-      .operations-network-svg .network-node-secondary {
-        fill: color-mix(in srgb, var(--cinnabar) 74%, var(--xuan-dark) 26%);
-      }
-      .operations-network-svg .network-halo {
-        fill: color-mix(in srgb, var(--cinnabar) 15%, transparent);
-      }
-      .operations-network-svg .network-region {
-        stroke: color-mix(in srgb, var(--qing-dark) 20%, var(--rule));
-        fill: color-mix(in srgb, var(--xuan) 66%, var(--qing-light) 34%);
-      }
-      .operations-location-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 8px;
-      }
-      .operations-location-list li {
-        display: grid;
-        grid-template-columns: minmax(0, 165px) minmax(0, 1fr);
-        gap: 10px;
-        padding-top: 7px;
-        border-top: 1px solid color-mix(in srgb, var(--rule) 62%, transparent);
-      }
-      .operations-location-list li:first-child {
-        border-top: 0;
-        padding-top: 0;
-      }
-      .operations-location-list dt,
-      .operations-location-list dd {
-        margin: 0;
-      }
-      .operations-location-list dt {
-        font-size: 12px;
-        letter-spacing: 0.11em;
-        text-transform: uppercase;
-        color: color-mix(in srgb, var(--ink-green-dark) 92%, black);
-      }
-      .operations-location-list dd {
-        font-size: clamp(13px, 0.92vw, 14px);
-        line-height: 1.4;
-        color: color-mix(in srgb, var(--ink-green-dark) 82%, var(--qing-dark) 18%);
+      .operations-network-svg .abstract-map-contour {
+        fill: #3d7070;
+        opacity: 0.22;
       }
 
       .track-record-section {
@@ -1088,23 +1045,7 @@
         }
         .operations-network-card {
           padding: 12px;
-          gap: 12px;
-        }
-        .operations-location-list li {
-          grid-template-columns: 1fr;
-          gap: 2px;
-          padding-top: 6px;
-        }
-        .operations-location-list dt {
-          font-size: 11.5px;
-          letter-spacing: 0.09em;
-        }
-        .operations-location-list dd {
-          font-size: 13px;
-          line-height: 1.34;
-        }
-        .operations-network-svg text {
-          font-size: 0;
+          gap: 0;
         }
         /* ── Mobile pillar card — hard reset ── */
         /* Kill all inherited vertical spacing; rebuild with per-element margins */
@@ -1275,16 +1216,6 @@
         border: 1px solid color-mix(in srgb, var(--border-soft) 82%, transparent);
         padding: clamp(16px, 1.6vw, 22px);
       }
-      .operations-location-list dt {
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        color: var(--text-primary);
-      }
-      .operations-location-list dd {
-        font-size: clamp(14px, 1vw, 16px);
-        line-height: 1.5;
-        color: var(--text-secondary);
-      }
       @media (max-width: 860px) {
         .hero-row,
         .operations-grid,
@@ -1365,35 +1296,27 @@
           </article>
           <article class="operations-map">
             <div class="operations-network-card">
-              <figure class="operations-map-visual" aria-label="ShoreVest operating network centered on onshore China execution">
-                <svg class="operations-network-svg" viewBox="0 0 560 308" role="img" aria-label="Operating nodes in Guangzhou, Shanghai, Hong Kong, and California with onshore China emphasis">
-                  <path class="network-region" d="M290 46C324 32 363 32 392 48C418 62 431 86 430 112C431 142 412 172 382 190C355 207 324 218 295 225C263 233 238 227 224 211C206 193 211 165 222 140C235 109 246 82 269 63C275 57 282 51 290 46Z" />
-                  <path class="network-path-main" d="M312 206C338 164 354 126 366 94" />
-                  <path class="network-path-main" d="M312 206C333 187 349 170 365 153" />
-                  <path class="network-path-secondary" d="M74 150C145 133 205 132 274 158" />
-                  <path class="network-path-secondary" d="M74 150C152 170 210 185 287 197" />
-
-                  <circle class="network-halo" cx="312" cy="206" r="19" />
-                  <circle class="network-node-core" cx="312" cy="206" r="8" />
-                  <circle class="network-node-core" cx="366" cy="94" r="6" />
-                  <circle class="network-node-core" cx="365" cy="153" r="6" />
-                  <circle class="network-node-secondary" cx="74" cy="150" r="5" />
-
-                  <text x="327" y="205" fill="var(--ink-green-dark)" font-size="14" font-weight="600" letter-spacing="0.02em">Guangzhou</text>
-                  <text x="327" y="223" fill="color-mix(in srgb, var(--ink-green-dark) 72%, var(--qing-dark) 28%)" font-size="10.5" letter-spacing="0.06em">HEADQUARTERS</text>
-
-                  <text x="379" y="91" fill="var(--ink-green-dark)" font-size="12.5" font-weight="500">Shanghai</text>
-                  <text x="379" y="151" fill="var(--ink-green-dark)" font-size="12.5" font-weight="500">Hong Kong</text>
-
-                  <text x="18" y="147" fill="color-mix(in srgb, var(--ink-green-dark) 78%, var(--qing-dark) 22%)" font-size="12">California</text>
+              <figure class="operations-map-visual" aria-label="Abstract Pacific basin map with soft coastlines">
+                <svg class="operations-network-svg" viewBox="0 0 560 308" role="img" aria-label="Minimal abstract Pacific-focused cartographic composition">
+                  <rect class="abstract-map-bg" x="0" y="0" width="560" height="308" />
+                  <path
+                    class="abstract-map-coast-west"
+                    d="M20 46C40 61 55 80 63 101C74 129 72 151 84 176C94 197 116 214 126 238C132 252 130 268 121 286L0 286L0 28C7 30 14 35 20 46Z"
+                  />
+                  <path
+                    class="abstract-map-contour"
+                    d="M80 72C96 87 105 106 111 124C118 146 121 165 128 181C134 196 145 211 152 227C159 244 162 261 154 279L116 279C125 260 122 243 115 227C107 209 93 193 85 172C78 154 78 133 71 114C65 95 53 78 38 65L80 72Z"
+                  />
+                  <path
+                    class="abstract-map-coast-east"
+                    d="M560 18L560 292L410 292C404 278 405 260 414 244C424 226 442 209 454 192C467 174 473 156 482 136C489 119 500 102 512 87C525 71 542 56 560 45V18Z"
+                  />
+                  <path
+                    class="abstract-map-contour"
+                    d="M518 58C503 76 493 95 487 113C479 138 475 159 463 178C452 197 434 214 423 233C413 250 410 266 416 281L454 281C448 265 451 251 459 237C470 218 488 201 499 181C510 161 514 139 522 118C528 99 538 81 552 66L518 58Z"
+                  />
                 </svg>
               </figure>
-              <ul class="operations-location-list" aria-label="Operating location roles">
-                <li><dl><dt>Guangzhou</dt><dd>Headquarters · onshore investment platform</dd></dl></li>
-                <li><dl><dt>Shanghai</dt><dd>Satellite office · market coverage</dd></dl></li>
-                <li><dl><dt>Hong Kong</dt><dd>Regional connectivity</dd></dl></li>
-                <li><dl><dt>California</dt><dd>Trans-Pacific coordination</dd></dl></li>
-              </ul>
             </div>
           </article>
         </div>
