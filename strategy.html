@@ -27,6 +27,20 @@
         --max: 1200px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
         --pad: var(--site-page-margin);
+        --section-gap-desktop: 0px;
+        --section-gap-tablet: 0px;
+        --section-gap-mobile: 0px;
+        --section-block-gap: var(--section-gap-desktop);
+      }
+      @media (max-width: 1024px) {
+        :root {
+          --section-block-gap: var(--section-gap-tablet);
+        }
+      }
+      @media (max-width: 767px) {
+        :root {
+          --section-block-gap: var(--section-gap-mobile);
+        }
       }
       *,
       *::before,
@@ -1047,6 +1061,11 @@
         display: flex;
         align-items: center;
         overflow: hidden;
+      }
+      .pagehero + .market-context,
+      .market-context + .strategy-intro-section,
+      .strategy-intro-section + .pgsec {
+        margin-top: var(--section-block-gap);
       }
       .pagehero .wrap {
         display: grid;
