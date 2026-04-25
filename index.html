@@ -3507,23 +3507,6 @@ body.homepage #cdd .cdd-editorial__lede {
     --home-section-stack-gap: clamp(28px, 7vw, 40px);
   }
 
-  /* Cleaner mobile top bar balance. */
-  #site-header-mount #nav {
-    padding-left: max(22px, calc(env(safe-area-inset-left, 0px) + 18px)) !important;
-    padding-right: max(20px, calc(env(safe-area-inset-right, 0px) + 16px)) !important;
-    column-gap: 14px !important;
-  }
-  #site-header-mount #nav .nav__logo {
-    margin-left: 2px !important;
-  }
-  #site-header-mount #nav .nav__menu-btn {
-    min-width: 88px !important;
-    padding: 0 10px !important;
-  }
-  #site-header-mount #nav .nav__right {
-    margin-right: 1px !important;
-  }
-
   /* Hero: calmer typography, fewer decorative interruptions. */
   body.homepage .home-hero {
     min-height: clamp(500px, 80vh, 620px);
@@ -4016,49 +3999,6 @@ body.homepage #cdd .cdd-editorial__lede {
     --section-space: 34px;
     --section-space-tight: 28px;
     --content-gap: 16px;
-  }
-
-  /* Mobile header: intentional edge alignment without adding height. */
-  #site-header-mount #nav {
-    height: 64px !important;
-    min-height: 64px !important;
-    padding-left: max(20px, calc(env(safe-area-inset-left, 0px) + 16px)) !important;
-    padding-right: max(14px, calc(env(safe-area-inset-right, 0px) + 12px)) !important;
-    column-gap: 10px !important;
-  }
-  #site-header-mount #nav .nav__logo {
-    margin-left: 0 !important;
-  }
-  #site-header-mount #nav .nav__right {
-    justify-self: end !important;
-    margin-right: 0 !important;
-  }
-  #site-header-mount #nav .nav__menu-btn {
-    min-width: 82px !important;
-    height: 34px !important;
-    min-height: 34px !important;
-    padding: 0 10px !important;
-    font-size: 9px !important;
-    letter-spacing: .1em !important;
-  }
-
-  /* Mobile menu: equal rhythm, no stretched dead space. */
-  #site-header-mount #nav .nav__links {
-    top: 64px !important;
-    padding: 10px var(--site-page-margin, clamp(18px, 5.2vw, 24px)) 14px !important;
-    gap: 0 !important;
-  }
-  #site-header-mount #nav .nav__links li {
-    border-bottom-color: rgba(31, 24, 18, .075) !important;
-  }
-  #site-header-mount #nav .nav__links a {
-    min-height: 44px !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 10px 0 !important;
-    font-size: clamp(12px, 3.8vw, 14px) !important;
-    letter-spacing: .105em !important;
-    line-height: 1.2 !important;
   }
 
   /* Global section rhythm for mobile homepage. */
