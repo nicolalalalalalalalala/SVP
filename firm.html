@@ -103,7 +103,7 @@
       .firm-page .firm-hero-title {
         margin-top: 16px;
         font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-        font-size: clamp(36px, 4vw, 64px);
+        font-size: clamp(36px, 4vw, 60px) !important;
         font-weight: 700;
         font-style: normal;
         line-height: 1.05;
@@ -133,13 +133,13 @@
         display: grid;
         gap: 7px;
       }
-      .firm-card h3 {
-        font-size: var(--sv-size-label);
-        line-height: var(--sv-lh-label);
-        letter-spacing: var(--sv-track-label);
+      .firm-page .firm-card h3 {
+        font-size: clamp(17px, 1.35vw, 20px) !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.01em !important;
         text-transform: uppercase;
         color: var(--qing);
-        font-weight: 600;
+        font-weight: 700;
       }
       .sv-card-stack p,
       .card-copy {
@@ -166,9 +166,9 @@
         margin-top: var(--sv-section-gap-md);
       }
 
-      .firm-section-title {
-        font-size: var(--sv-section-title-size);
-        line-height: var(--sv-section-title-line);
+      .firm-page .firm-section-title {
+        font-size: clamp(30px, 3vw, 46px) !important;
+        line-height: 1.08 !important;
         letter-spacing: 0.01em;
         text-transform: uppercase;
       }
@@ -193,9 +193,9 @@
         border-bottom: 1px solid color-mix(in srgb, var(--qing-light) 46%, var(--xuan-paper-dark) 54%);
         padding-bottom: 8px;
       }
-      .firm-process-card h3 {
-        font-size: var(--sv-pillar-title-size);
-        line-height: var(--sv-pillar-title-line);
+      .firm-page .firm-process-card h3 {
+        font-size: clamp(17px, 1.35vw, 20px) !important;
+        line-height: 1.2 !important;
         letter-spacing: 0.01em;
         text-transform: uppercase;
         color: var(--qing-dark);
@@ -272,8 +272,16 @@
           font-size: clamp(34px, 10vw, 48px) !important;
         }
         .firm-page .firm-hero-title {
-          font-size: clamp(28px, 8vw, 40px);
+          font-size: clamp(28px, 8vw, 38px) !important;
           letter-spacing: 0.10em;
+        }
+        .firm-page .firm-section-title {
+          font-size: clamp(24px, 7vw, 32px) !important;
+          line-height: 1.1 !important;
+        }
+        .firm-page .firm-card h3,
+        .firm-page .firm-process-card h3 {
+          font-size: clamp(16px, 4.5vw, 18px) !important;
         }
       }
     </style>
