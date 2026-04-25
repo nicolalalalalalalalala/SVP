@@ -63,12 +63,15 @@
         padding-block: var(--sv-section-space);
       }
 
-      .sv-label {
+      .sv-label,
+      .section-kicker {
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        font-size: 11px;
-        letter-spacing: 0.2em;
+        font-size: var(--sv-size-label);
+        line-height: var(--sv-lh-label);
+        letter-spacing: var(--sv-track-label);
+        font-weight: 600;
         text-transform: uppercase;
         color: var(--qing);
       }
@@ -101,22 +104,23 @@
         align-items: start;
         margin-top: clamp(16px, 2vw, 22px);
       }
-      .sv-editorial-hero h1 {
+      .sv-editorial-hero h1,
+      .sv-editorial-hero .editorial-hero-title {
         margin-top: 16px;
-        font-family: "Noto Serif SC", Georgia, serif;
-        font-style: italic;
-        font-weight: 500;
-        font-size: clamp(38px, 5.1vw, 68px);
-        line-height: 1;
-        letter-spacing: -0.02em;
-        color: var(--ink);
+        font-size: var(--sv-size-h1) !important;
+        line-height: var(--sv-lh-display) !important;
+        letter-spacing: var(--sv-type-h1-track) !important;
       }
       .sv-editorial-hero__lede {
         margin-top: clamp(16px, 2vw, 22px);
-        font-size: clamp(17px, 1.45vw, 22px);
-        line-height: 1.52;
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: color-mix(in srgb, var(--ink-soft) 86%, var(--qing-dark) 14%);
         max-width: 34ch;
+      }
+      .section-body {
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
       }
 
       .sv-card-stack {
@@ -132,16 +136,19 @@
         display: grid;
         gap: 6px;
       }
-      .sv-card-stack h3 {
-        font-size: 11px;
-        letter-spacing: 0.15em;
+      .sv-card-stack h3,
+      .meta-label {
+        font-size: var(--sv-size-label);
+        line-height: var(--sv-lh-label);
+        letter-spacing: var(--sv-track-label);
         text-transform: uppercase;
         color: var(--qing);
-        font-weight: 500;
+        font-weight: 600;
       }
-      .sv-card-stack p {
-        font-size: 16px;
-        line-height: 1.45;
+      .sv-card-stack p,
+      .card-copy {
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: var(--ink-soft);
       }
 
@@ -160,17 +167,17 @@
         align-items: start;
       }
       .sv-editorial-block h2,
+      .section-title,
       .sv-section-title {
-        font-family: "Noto Serif SC", Georgia, serif;
-        font-size: clamp(30px, 3.4vw, 46px);
-        line-height: 1.08;
-        letter-spacing: -0.01em;
+        font-size: var(--sv-section-title-size);
+        line-height: var(--sv-section-title-line);
+        letter-spacing: 0.01em;
         color: var(--ink);
       }
       .sv-editorial-block p,
       .sv-block-copy {
-        font-size: 17px;
-        line-height: 1.72;
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: var(--ink-soft);
       }
 
@@ -187,21 +194,25 @@
         gap: 8px;
       }
       .sv-process-card__num {
-        font-size: 10px;
-        letter-spacing: 0.14em;
+        font-size: var(--sv-size-meta);
+        line-height: var(--sv-lh-label);
+        letter-spacing: var(--sv-track-divider);
         text-transform: uppercase;
         color: var(--qing);
         padding-bottom: 8px;
         border-bottom: 1px solid color-mix(in srgb, var(--qing-light) 46%, var(--xuan-paper-dark) 54%);
       }
-      .sv-process-card h3 {
-        font-size: 19px;
-        line-height: 1.2;
+      .sv-process-card h3,
+      .card-title {
+        font-size: var(--sv-pillar-title-size);
+        line-height: var(--sv-pillar-title-line);
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
         color: var(--qing-dark);
       }
       .sv-process-card p {
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: var(--ink-soft);
       }
 
@@ -215,15 +226,16 @@
         padding: 16px;
       }
       .sv-governance__row h3 {
-        font-size: 11px;
-        letter-spacing: 0.14em;
+        font-size: var(--sv-size-label);
+        line-height: var(--sv-lh-label);
+        letter-spacing: var(--sv-track-label);
         text-transform: uppercase;
         color: var(--qing);
         margin-bottom: 8px;
       }
       .sv-governance__row p {
-        font-size: 15px;
-        line-height: 1.62;
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: var(--ink-soft);
       }
 
@@ -244,10 +256,12 @@
       .sv-statement p {
         margin-block: 18px;
         font-family: "Noto Serif SC", Georgia, serif;
-        font-size: clamp(25px, 2.6vw, 36px);
-        line-height: 1.24;
+        font-size: var(--sv-size-h2);
+        line-height: var(--sv-lh-heading);
+        letter-spacing: 0.01em;
         color: var(--qing-dark);
         max-width: 28ch;
+        text-transform: uppercase;
       }
       .sv-statement p strong {
         color: var(--cinnabar);
@@ -284,6 +298,10 @@
         .sv-process-grid {
           grid-template-columns: 1fr;
         }
+        .sv-editorial-hero h1,
+        .sv-editorial-hero .editorial-hero-title {
+          font-size: clamp(34px, 10vw, 48px) !important;
+        }
       }
     </style>
 
@@ -299,24 +317,24 @@
           <div class="sv-editorial-hero">
             <div class="sv-editorial-hero__grid">
               <div>
-                <p class="sv-label">The Firm</p>
-                <h1 class="type-display-hero">ShoreVest Partners</h1>
-                <p class="sv-editorial-hero__lede">
+                <p class="sv-label section-kicker">The Firm</p>
+                <h1 class="type-display-hero editorial-hero-title">ShoreVest Partners</h1>
+                <p class="sv-editorial-hero__lede section-body">
                   Institutional private credit platform for complex recoveries across China, built for enforceability, downside protection, and disciplined realization outcomes.
                 </p>
               </div>
               <aside class="sv-card-stack" aria-label="Firm platform pillars">
                 <article>
-                  <h3>01 Platform</h3>
-                  <p>Locally embedded investment and servicing infrastructure across China.</p>
+                  <h3 class="meta-label">01 Platform</h3>
+                  <p class="card-copy">Locally embedded investment and servicing infrastructure across China.</p>
                 </article>
                 <article>
-                  <h3>02 Discipline</h3>
-                  <p>Collateral-first underwriting with institutional governance and risk control.</p>
+                  <h3 class="meta-label">02 Discipline</h3>
+                  <p class="card-copy">Collateral-first underwriting with institutional governance and risk control.</p>
                 </article>
                 <article>
-                  <h3>03 Continuity</h3>
-                  <p>A senior team executing China credit strategies across multiple cycles.</p>
+                  <h3 class="meta-label">03 Continuity</h3>
+                  <p class="card-copy">A senior team executing China credit strategies across multiple cycles.</p>
                 </article>
               </aside>
             </div>
@@ -328,10 +346,10 @@
         <div class="sv-page-shell">
           <div class="sv-section-grid sv-editorial-block">
             <div>
-              <p class="sv-label">Institutional platform</p>
-              <h2 class="sv-section-title">ROOTED IN CHINA, BUILT FOR INSTITUTIONAL CAPITAL</h2>
+              <p class="sv-label section-kicker">Institutional platform</p>
+              <h2 class="sv-section-title section-title">ROOTED IN CHINA, BUILT FOR INSTITUTIONAL CAPITAL</h2>
             </div>
-            <div class="sv-block-copy">
+            <div class="sv-block-copy section-body">
               <p>
                 ShoreVest&rsquo;s strategy dates to 2004, with the current platform established in 2016 by the senior team behind predecessor vehicles across collateral-backed lending, asset restructuring, and NPL resolution.
               </p>
@@ -347,39 +365,39 @@
         <div class="sv-page-shell">
           <div class="sv-section-grid">
             <div>
-              <p class="sv-label">Operating model</p>
-              <h2 class="sv-section-title">PLATFORM ARCHITECTURE</h2>
+              <p class="sv-label section-kicker">Operating model</p>
+              <h2 class="sv-section-title section-title">PLATFORM ARCHITECTURE</h2>
             </div>
             <div class="sv-process-grid">
               <article class="sv-process-card">
                 <p class="sv-process-card__num">01</p>
-                <h3>Origination</h3>
-                <p>Relationship-led sourcing through banks, AMCs, law firms, and servicing channels.</p>
+                <h3 class="card-title">Origination</h3>
+                <p class="card-copy">Relationship-led sourcing through banks, AMCs, law firms, and servicing channels.</p>
               </article>
               <article class="sv-process-card">
                 <p class="sv-process-card__num">02</p>
-                <h3>Underwriting</h3>
-                <p>Collateral-first analysis with conservative entry basis and downside protection discipline.</p>
+                <h3 class="card-title">Underwriting</h3>
+                <p class="card-copy">Collateral-first analysis with conservative entry basis and downside protection discipline.</p>
               </article>
               <article class="sv-process-card">
                 <p class="sv-process-card__num">03</p>
-                <h3>Legal structuring</h3>
-                <p>Enforceable PRC claims and documentary precision integrated at approval stage.</p>
+                <h3 class="card-title">Legal structuring</h3>
+                <p class="card-copy">Enforceable PRC claims and documentary precision integrated at approval stage.</p>
               </article>
               <article class="sv-process-card">
                 <p class="sv-process-card__num">04</p>
-                <h3>Servicing</h3>
-                <p>Active post-close monitoring and intervention capability embedded in the platform.</p>
+                <h3 class="card-title">Servicing</h3>
+                <p class="card-copy">Active post-close monitoring and intervention capability embedded in the platform.</p>
               </article>
               <article class="sv-process-card">
                 <p class="sv-process-card__num">05</p>
-                <h3>Enforcement</h3>
-                <p>Local execution in workout, restructuring, and claims realization across cycles.</p>
+                <h3 class="card-title">Enforcement</h3>
+                <p class="card-copy">Local execution in workout, restructuring, and claims realization across cycles.</p>
               </article>
               <article class="sv-process-card">
                 <p class="sv-process-card__num">06</p>
-                <h3>Exit management</h3>
-                <p>Coordinated timing, disposition, and recovery pathways tied to institutional governance.</p>
+                <h3 class="card-title">Exit management</h3>
+                <p class="card-copy">Coordinated timing, disposition, and recovery pathways tied to institutional governance.</p>
               </article>
             </div>
           </div>
@@ -390,20 +408,20 @@
         <div class="sv-page-shell">
           <div class="sv-section-grid sv-governance">
             <div>
-              <p class="sv-label">Governance</p>
-              <h2 class="sv-section-title">GOVERNANCE AND CONTINUITY</h2>
+              <p class="sv-label section-kicker">Governance</p>
+              <h2 class="sv-section-title section-title">GOVERNANCE AND CONTINUITY</h2>
             </div>
             <div class="sv-governance__row">
-              <h3>Investment committee</h3>
-              <p>Senior decision-makers maintain accountability for underwriting standards, legal control, and portfolio-level risk discipline.</p>
+              <h3 class="meta-label">Investment committee</h3>
+              <p class="section-body">Senior decision-makers maintain accountability for underwriting standards, legal control, and portfolio-level risk discipline.</p>
             </div>
             <div class="sv-governance__row">
-              <h3>Execution continuity</h3>
-              <p>One team owns each investment from origination through realization, reducing handoff risk and preserving institutional process integrity.</p>
+              <h3 class="meta-label">Execution continuity</h3>
+              <p class="section-body">One team owns each investment from origination through realization, reducing handoff risk and preserving institutional process integrity.</p>
             </div>
             <div class="sv-governance__row">
-              <h3>Capital stewardship</h3>
-              <p>ShoreVest is backed by sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
+              <h3 class="meta-label">Capital stewardship</h3>
+              <p class="section-body">ShoreVest is backed by sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
             </div>
           </div>
         </div>
