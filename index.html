@@ -3624,152 +3624,205 @@ body.homepage #cdd .cdd-editorial__lede {
 
   /* CDD block: reduce visual weight and keep hierarchy calm. */
   #cdd {
-    padding: 16px 0;
+    padding: 10px 0 8px;
   }
   #cdd > .wrap.cdd-editorial {
-    padding-left: clamp(12px, 3.8vw, 16px) !important;
-    padding-right: clamp(12px, 3.8vw, 16px) !important;
+    padding-left: clamp(11px, 3.6vw, 14px) !important;
+    padding-right: clamp(11px, 3.6vw, 14px) !important;
   }
   .cdd-editorial__card {
-    padding: 12px 11px;
-    gap: 10px;
+    padding: 10px 9px;
+    gap: 8px;
   }
   .cdd-editorial__intro {
-    gap: 9px;
-    padding-bottom: 10px;
+    gap: 6px;
+    padding-bottom: 6px;
   }
   .cdd-editorial__brand {
-    transform: scale(.95);
+    transform: scale(.88);
     transform-origin: left center;
   }
   .cdd-editorial__kicker {
-    font-size: 8.1px;
-    letter-spacing: .13em;
-    line-height: 1.35;
+    font-size: 7.2px;
+    letter-spacing: .095em;
+    line-height: 1.22;
   }
   #cdd .wordmark__title {
-    font-size: clamp(21px, 6.2vw, 28px);
-    line-height: .94;
+    font-size: clamp(18px, 5.5vw, 23px);
+    line-height: .96;
     max-width: 12ch;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
   .cdd-editorial__lede {
-    font-size: 11.2px;
-    line-height: 1.46;
+    font-size: 10.2px;
+    line-height: 1.35;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .cdd-feature {
     border-width: 1px;
+    border-color: color-mix(in srgb, var(--cdd-structure) 12%, transparent);
+    background: color-mix(in srgb, var(--cdd-surface) 78%, transparent);
   }
   .cdd-feature__top,
   .cdd-feature__body,
   .cdd-feature__footer {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   .cdd-feature__top {
-    gap: 6px;
-    padding-top: 9px;
-    padding-bottom: 9px;
+    gap: 5px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+    border-bottom: 0;
   }
   .cdd-feature__meta {
-    gap: 5px;
+    gap: 4px;
   }
   .cdd-feature__issue,
   .cdd-feature__date,
   .cdd-live__label {
-    font-size: 7.1px;
-    letter-spacing: .09em;
+    font-size: 6.8px;
+    letter-spacing: .065em;
     line-height: 1.18;
   }
   .cdd-feature__issue,
   .cdd-feature__date {
-    padding: 4px 7px 3px;
+    padding: 3px 6px 2px;
   }
   .cdd-live {
-    gap: 4px;
+    gap: 3px;
   }
   .cdd-live__dot {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
   }
   .cdd-feature__label {
-    font-size: 8.5px;
-    margin-bottom: 6px;
+    font-size: 7.8px;
+    letter-spacing: .09em;
+    margin-bottom: 4px;
   }
   .cdd-feature__title {
-    font-size: clamp(16.8px, 5.15vw, 20.8px);
-    line-height: 1.12;
-    margin-bottom: 6px;
+    font-size: clamp(15.6px, 4.8vw, 18px);
+    line-height: 1.1;
+    letter-spacing: -.004em;
+    margin-bottom: 4px;
+    max-width: 17.5ch;
   }
   .cdd-feature__thesis,
   .cdd-feature__finding {
-    font-size: 11.1px;
-    line-height: 1.48;
+    font-size: 10.3px;
+    line-height: 1.35;
   }
   .cdd-feature__body {
-    gap: 10px;
-    padding-top: 11px;
-    padding-bottom: 12px;
+    gap: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
   .cdd-feature__body > div:first-child {
-    padding-left: 8px;
+    padding-left: 0;
+    border-left: 0;
+  }
+  .cdd-feature__thesis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .cdd-feature__main .cdd-cta-group {
-    margin-top: 10px;
+    margin-top: 7px;
   }
   .cdd-feature__footer {
-    gap: 8px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    gap: 6px;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    border-top-color: color-mix(in srgb, var(--cdd-structure) 10%, transparent);
   }
   .cdd-cta {
-    min-height: 34px;
-    font-size: 8.8px;
-    letter-spacing: .1em;
-    padding: 7px 9px;
+    min-height: 30px;
+    font-size: 7.9px;
+    letter-spacing: .08em;
+    padding: 5px 8px;
+    border-width: 1px;
+    background: transparent;
+  }
+  .cdd-cta-group .cdd-cta:first-child {
+    background: color-mix(in srgb, var(--cdd-ink) 88%, transparent);
+    color: var(--cdd-surface);
+    border-color: color-mix(in srgb, var(--cdd-ink) 74%, transparent);
+  }
+  .cdd-cta-group .cdd-cta:last-child {
+    color: color-mix(in srgb, var(--cdd-ink) 78%, #fff 22%);
+    border-color: color-mix(in srgb, var(--cdd-structure) 12%, transparent);
   }
   .cdd-cta__ring {
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
-    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    font-size: 8px;
+    border-width: 1px;
   }
 
   /* Footer: structured and minimal. */
   .sv-footer {
-    padding-top: 22px;
-    padding-bottom: 20px;
-  }
-  .sv-footer__main {
-    gap: 12px;
+    padding-top: 14px;
     padding-bottom: 12px;
   }
+  .sv-footer__main {
+    gap: 7px;
+    padding-bottom: 8px;
+  }
   .sv-footer__brand {
-    font-size: 13px !important;
-    letter-spacing: .045em;
+    font-size: 11.4px !important;
+    letter-spacing: .08em;
   }
   .sv-footer__contact {
-    row-gap: 8px;
+    row-gap: 4px;
+  }
+  .sv-footer__contact-label {
+    font-size: 8px !important;
+    letter-spacing: .09em;
   }
   .sv-footer__contact a {
-    font-size: 10px;
-    letter-spacing: .07em;
-    padding: 8px 10px;
+    font-size: 9px;
+    letter-spacing: .01em;
+    padding: 0;
   }
   .sv-footer__bottom {
-    gap: 8px;
-    padding-top: 12px;
+    gap: 5px;
+    padding-top: 7px;
   }
-  .sv-footer__copyright,
-  .sv-footer__legal-links {
-    font-size: 7.3pt;
-    line-height: 1.5;
-    max-width: 44ch;
+  .sv-footer__copyright {
+    font-size: 7.2px;
+    line-height: 1.35;
+    max-width: 38ch;
+  }
+  .sv-footer__legal-toggle > summary {
+    font-size: 7.3px !important;
+    letter-spacing: .08em;
+    line-height: 1.15 !important;
   }
   .sv-footer__legal {
-    font-size: 6.6px;
-    line-height: 1.55;
-    max-width: 44ch;
+    font-size: 6.5px;
+    line-height: 1.35;
+    max-width: 38ch;
+  }
+  .sv-footer__legal-links {
+    display: none !important;
+    margin-top: 0 !important;
+    gap: 1px !important;
+  }
+  .sv-footer__legal-toggle[open] + .sv-footer__legal-links {
+    display: grid !important;
+  }
+  .sv-footer__legal-links a {
+    min-height: 24px !important;
+    padding: 1px 0 !important;
+    font-size: 7px !important;
+    line-height: 1.25 !important;
   }
 }
 

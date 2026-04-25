@@ -256,34 +256,34 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
 @media (max-width: 768px) {
   html body footer.sv-footer,
   html body .sv-footer {
-    padding: 16px 0 calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 12px 0 calc(10px + env(safe-area-inset-bottom, 0px)) !important;
   }
 
   html body footer.sv-footer .sv-footer__main {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 10px !important;
-    padding-bottom: 11px !important;
+    gap: 7px !important;
+    padding-bottom: 8px !important;
   }
 
   /* Brand Lockup: scale down tracking for small screens */
   html body footer.sv-footer .sv-footer__brand,
   html body footer.sv-footer .footer-brand-lockup {
-    font-size: 14px !important;
-    letter-spacing: 0.14em !important;
+    font-size: 12px !important;
+    letter-spacing: 0.11em !important;
   }
 
   html body footer.sv-footer .sv-footer__contact {
     width: 100% !important;
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 3px !important;
+    gap: 2px !important;
     align-items: stretch !important;
   }
 
   html body footer.sv-footer .sv-footer__contact-label {
-    font-size: 9.5px !important;
-    letter-spacing: 0.12em !important;
+    font-size: 8px !important;
+    letter-spacing: 0.09em !important;
     margin-bottom: 1px !important;
   }
 
@@ -293,8 +293,8 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    font-size: 10.5px !important;
-    letter-spacing: 0.05em !important;
+    font-size: 9px !important;
+    letter-spacing: 0.02em !important;
     padding: 0 !important;
     box-sizing: border-box !important;
     white-space: normal !important;
@@ -302,40 +302,43 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
   }
 
   html body footer.sv-footer .sv-footer__bottom {
-    gap: 8px !important;
-    padding-top: 11px !important;
+    gap: 5px !important;
+    padding-top: 7px !important;
   }
 
   html body footer.sv-footer .sv-footer__copyright,
   html body footer.sv-footer .sv-footer__legal,
   html body footer.sv-footer .sv-footer__legal-links,
   html body footer.sv-footer .sv-footer__legal-links a {
-    font-size: 0.61rem !important;
-    line-height: 1.42 !important;
+    font-size: 0.54rem !important;
+    line-height: 1.34 !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-toggle > summary {
-    font-size: 0.62rem !important;
+    font-size: 0.56rem !important;
     line-height: 1.2 !important;
   }
 
   html body footer.sv-footer .sv-footer__legal {
     margin-top: 0.2rem !important;
     padding-right: min(2vw, 10px) !important;
-    max-width: 70ch !important;
+    max-width: 56ch !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-links {
-    display: flex !important;
+    display: none !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 3px !important;
     margin-top: 0 !important;
     padding-bottom: 0 !important;
   }
+  html body footer.sv-footer .sv-footer__legal-toggle[open] + .sv-footer__legal-links {
+    display: grid !important;
+  }
 
   html body footer.sv-footer .sv-footer__legal-links a {
-    min-height: 32px !important;
+    min-height: 22px !important;
     padding: 2px 0 !important;
   }
 
