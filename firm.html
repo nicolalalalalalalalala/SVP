@@ -28,12 +28,14 @@
         --ink: #171410;
         --ink-soft: #3b342d;
         --rule: color-mix(in srgb, var(--qing) 42%, var(--xuan-paper-dark) 58%);
-        --content-max-wide: 1480px;
+        --content-max-wide: 1360px;
         --content-max-text: 760px;
         --content-max-text-intro: 900px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
         --pad: var(--site-page-margin);
         --sv-section-space: 72px;
+        --sv-panel-pad-inline: clamp(48px, 5vw, 76px);
+        --sv-panel-pad-block: clamp(48px, 5vw, 72px);
       }
 
       * { box-sizing: border-box; }
@@ -55,7 +57,7 @@
       h1, h2, h3, p { margin: 0; }
 
       .sv-page-shell {
-        width: min(100% - clamp(48px, 7vw, 96px), var(--content-max-wide));
+        width: min(100% - clamp(72px, 9vw, 144px), var(--content-max-wide));
         margin-inline: auto;
       }
 
@@ -85,7 +87,8 @@
       .sv-editorial-hero {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 88%, var(--xuan-paper) 12%);
-        padding: clamp(28px, 3.5vw, 48px);
+        padding-inline: var(--sv-panel-pad-inline);
+        padding-block: var(--sv-panel-pad-block);
         position: relative;
       }
       .sv-editorial-hero::before {
@@ -155,7 +158,8 @@
       .sv-section-grid {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 80%, var(--xuan-paper) 20%);
-        padding: clamp(22px, 2.5vw, 34px);
+        padding-inline: var(--sv-panel-pad-inline);
+        padding-block: var(--sv-panel-pad-block);
         display: grid;
         gap: clamp(18px, 2vw, 24px);
       }
@@ -246,7 +250,8 @@
       .sv-statement {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper) 36%, var(--xuan-paper-light) 64%);
-        padding: clamp(24px, 3vw, 38px);
+        padding-inline: var(--sv-panel-pad-inline);
+        padding-block: var(--sv-panel-pad-block);
         position: relative;
       }
       .sv-statement::before,
@@ -301,6 +306,12 @@
         }
         .sv-page-shell {
           width: calc(100% - (var(--site-page-margin) * 2));
+        }
+        .sv-editorial-hero,
+        .sv-section-grid,
+        .sv-statement {
+          padding-inline: clamp(24px, 5vw, 34px);
+          padding-block: clamp(28px, 6vw, 40px);
         }
         .sv-process-grid {
           grid-template-columns: 1fr;
