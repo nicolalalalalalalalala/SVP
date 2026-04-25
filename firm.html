@@ -427,16 +427,16 @@
       }
       .operations-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
         gap: 0;
         align-items: stretch !important;
-        min-height: clamp(300px, 31vw, 388px);
-        background: color-mix(in srgb, var(--xuan) 97%, #ffffff 3%);
+        min-height: clamp(360px, 33vw, 430px);
+        background: color-mix(in srgb, var(--xuan) 96%, #ffffff 4%);
         border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
         overflow: hidden;
       }
       .operations-grid > article {
-        min-height: clamp(300px, 31vw, 388px);
+        min-height: clamp(360px, 33vw, 430px);
       }
       .geography-copy,
       .operations-map {
@@ -444,59 +444,113 @@
         box-sizing: border-box;
       }
       .geography-copy {
-        padding: clamp(18px, 1.9vw, 24px) clamp(20px, 2.2vw, 30px) clamp(16px, 1.7vw, 22px);
+        padding: clamp(24px, 2.4vw, 34px) clamp(24px, 2.5vw, 34px);
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        gap: clamp(7px, 0.7vw, 10px);
+        justify-content: center;
+        gap: clamp(10px, 1vw, 14px);
       }
       .geography-copy .section-head {
         margin-bottom: 0;
       }
       .geography-copy .sv-section-title {
         margin-bottom: 0;
-        max-width: 14ch;
+        max-width: 18ch;
         line-height: 0.98;
         text-wrap: balance;
       }
       .geography-copy p {
         margin: 0;
-        max-width: 48ch;
+        max-width: 56ch;
         line-height: 1.5;
       }
       .operations-map {
-        display: flex;
-        overflow: hidden;
+        display: grid;
+        align-content: center;
         border-left: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
-        padding: clamp(16px, 1.8vw, 24px);
+        padding: clamp(18px, 2vw, 28px);
         margin: 0 !important;
+      }
+      .operations-network-card {
+        display: grid;
+        gap: clamp(14px, 1.35vw, 18px);
+        width: 100%;
+        height: 100%;
+        background:
+          linear-gradient(
+            160deg,
+            color-mix(in srgb, var(--xuan-light) 82%, #ffffff 18%) 0%,
+            color-mix(in srgb, var(--xuan) 88%, var(--qing-light) 12%) 100%
+          );
+        border: 1px solid color-mix(in srgb, var(--qing-dark) 22%, var(--rule));
+        padding: clamp(14px, 1.4vw, 18px);
       }
       .operations-map-visual {
-        position: relative;
-        margin: 0 !important;
+        margin: 0;
         width: 100%;
-        flex: 1 1 auto;
-        min-height: 100%;
-        aspect-ratio: 1.78 / 1;
-        align-self: center;
-        overflow: hidden;
-        border: 0;
-        isolation: isolate;
+        min-height: clamp(220px, 23vw, 286px);
       }
-      .operations-map-visual::before {
-        content: none;
-      }
-      .operations-map img {
-        position: relative;
+      .operations-network-svg {
         display: block;
         width: 100%;
         height: 100%;
-        opacity: 1;
-        object-fit: contain;
-        object-position: center;
-        transform: none;
-        filter: none;
+      }
+      .operations-network-svg .network-path-main {
+        stroke: color-mix(in srgb, var(--qing-dark) 62%, var(--qing) 38%);
+        stroke-width: 2.4;
+        fill: none;
+      }
+      .operations-network-svg .network-path-secondary {
+        stroke: color-mix(in srgb, var(--qing) 54%, var(--xuan-dark) 46%);
+        stroke-width: 1.4;
+        fill: none;
+        stroke-dasharray: 4 4;
+      }
+      .operations-network-svg .network-node-core {
+        fill: var(--cinnabar);
+      }
+      .operations-network-svg .network-node-secondary {
+        fill: color-mix(in srgb, var(--cinnabar) 74%, var(--xuan-dark) 26%);
+      }
+      .operations-network-svg .network-halo {
+        fill: color-mix(in srgb, var(--cinnabar) 15%, transparent);
+      }
+      .operations-network-svg .network-region {
+        stroke: color-mix(in srgb, var(--qing-dark) 20%, var(--rule));
+        fill: color-mix(in srgb, var(--xuan) 66%, var(--qing-light) 34%);
+      }
+      .operations-location-list {
+        list-style: none;
         margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 8px;
+      }
+      .operations-location-list li {
+        display: grid;
+        grid-template-columns: minmax(0, 165px) minmax(0, 1fr);
+        gap: 10px;
+        padding-top: 7px;
+        border-top: 1px solid color-mix(in srgb, var(--rule) 62%, transparent);
+      }
+      .operations-location-list li:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .operations-location-list dt,
+      .operations-location-list dd {
+        margin: 0;
+      }
+      .operations-location-list dt {
+        font-size: 12px;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--ink-green-dark) 92%, black);
+      }
+      .operations-location-list dd {
+        font-size: clamp(13px, 0.92vw, 14px);
+        line-height: 1.4;
+        color: color-mix(in srgb, var(--ink-green-dark) 82%, var(--qing-dark) 18%);
       }
 
       .track-record-section {
@@ -969,10 +1023,6 @@
           margin-top: 0;
           max-width: none;
         }
-        .operations-map-visual {
-          min-height: clamp(254px, 45vw, 328px);
-          aspect-ratio: 1.72 / 1;
-        }
       }
       @media (max-width: 767px) {
         section {
@@ -1033,15 +1083,34 @@
           padding-bottom: 48px;
         }
         .geography-copy {
-          padding: 15px 16px 14px;
+          padding: 16px 16px 12px;
           gap: 7px;
         }
         .geography-copy .sv-section-title {
           max-width: 100%;
         }
         .operations-map-visual {
-          min-height: 228px;
-          aspect-ratio: 1.66 / 1;
+          min-height: 184px;
+        }
+        .operations-network-card {
+          padding: 12px;
+          gap: 12px;
+        }
+        .operations-location-list li {
+          grid-template-columns: 1fr;
+          gap: 2px;
+          padding-top: 6px;
+        }
+        .operations-location-list dt {
+          font-size: 11.5px;
+          letter-spacing: 0.09em;
+        }
+        .operations-location-list dd {
+          font-size: 13px;
+          line-height: 1.34;
+        }
+        .operations-network-svg text {
+          font-size: 0;
         }
         /* ── Mobile pillar card — hard reset ── */
         /* Kill all inherited vertical spacing; rebuild with per-element margins */
@@ -1083,24 +1152,24 @@
 
       /* Geography section integration refinement */
       .geography-section .operations-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.16fr);
-        background: color-mix(in srgb, var(--xuan) 98%, #fff 2%);
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        background: color-mix(in srgb, var(--xuan) 96%, #fff 4%);
       }
       .geography-section .geography-copy {
         padding: clamp(24px, 2.4vw, 34px) clamp(24px, 2.5vw, 34px);
         gap: 12px;
       }
       .geography-section .geography-copy .sv-section-title {
-        max-width: 16ch;
+        max-width: 18ch;
       }
       .geography-section .geography-copy p {
         max-width: 56ch;
       }
       .geography-section .operations-map {
-        padding: clamp(18px, 2vw, 26px);
+        padding: clamp(18px, 2vw, 28px);
       }
       .geography-section .operations-map-visual {
-        aspect-ratio: 1.92 / 1;
+        min-height: clamp(220px, 23vw, 286px);
       }
 
     </style>
@@ -1138,14 +1207,42 @@
         <div class="wrap operations-grid">
           <article class="geography-copy">
             <div class="section-head">
-              <h2 class="sv-section-title">OPERATIONAL GEOGRAPHY</h2>
+              <h2 class="sv-section-title">ONSITE EXECUTION, CROSS-BORDER COORDINATION</h2>
             </div>
-            <p>ShoreVest is headquartered in Guangzhou, with a satellite office in Shanghai, a tertiary Hong Kong presence supporting regional connectivity, and a California point supporting trans-Pacific coordination. Core investment, legal, servicing, and resolution functions remain coordinated onshore.</p>
+            <p>ShoreVest is headquartered in Guangzhou, with a satellite office in Shanghai, a Hong Kong presence for regional connectivity, and a California point supporting trans-Pacific coordination. Core investment, legal, servicing, and resolution functions remain coordinated onshore.</p>
           </article>
           <article class="operations-map">
-            <figure class="operations-map-visual" aria-label="ShoreVest operational geography map">
-              <img src="assets/images/operational-geography-map.svg" alt="Pacific-oriented map showing ShoreVest's operational footprint in California, Shanghai, Guangzhou, and Hong Kong" loading="lazy" />
-            </figure>
+            <div class="operations-network-card">
+              <figure class="operations-map-visual" aria-label="ShoreVest operating network centered on onshore China execution">
+                <svg class="operations-network-svg" viewBox="0 0 560 308" role="img" aria-label="Operating nodes in Guangzhou, Shanghai, Hong Kong, and California with onshore China emphasis">
+                  <path class="network-region" d="M290 46C324 32 363 32 392 48C418 62 431 86 430 112C431 142 412 172 382 190C355 207 324 218 295 225C263 233 238 227 224 211C206 193 211 165 222 140C235 109 246 82 269 63C275 57 282 51 290 46Z" />
+                  <path class="network-path-main" d="M312 206C338 164 354 126 366 94" />
+                  <path class="network-path-main" d="M312 206C333 187 349 170 365 153" />
+                  <path class="network-path-secondary" d="M74 150C145 133 205 132 274 158" />
+                  <path class="network-path-secondary" d="M74 150C152 170 210 185 287 197" />
+
+                  <circle class="network-halo" cx="312" cy="206" r="19" />
+                  <circle class="network-node-core" cx="312" cy="206" r="8" />
+                  <circle class="network-node-core" cx="366" cy="94" r="6" />
+                  <circle class="network-node-core" cx="365" cy="153" r="6" />
+                  <circle class="network-node-secondary" cx="74" cy="150" r="5" />
+
+                  <text x="327" y="205" fill="var(--ink-green-dark)" font-size="14" font-weight="600" letter-spacing="0.02em">Guangzhou</text>
+                  <text x="327" y="223" fill="color-mix(in srgb, var(--ink-green-dark) 72%, var(--qing-dark) 28%)" font-size="10.5" letter-spacing="0.06em">HEADQUARTERS</text>
+
+                  <text x="379" y="91" fill="var(--ink-green-dark)" font-size="12.5" font-weight="500">Shanghai</text>
+                  <text x="379" y="151" fill="var(--ink-green-dark)" font-size="12.5" font-weight="500">Hong Kong</text>
+
+                  <text x="18" y="147" fill="color-mix(in srgb, var(--ink-green-dark) 78%, var(--qing-dark) 22%)" font-size="12">California</text>
+                </svg>
+              </figure>
+              <ul class="operations-location-list" aria-label="Operating location roles">
+                <li><dl><dt>Guangzhou</dt><dd>Headquarters · onshore investment platform</dd></dl></li>
+                <li><dl><dt>Shanghai</dt><dd>Satellite office · market coverage</dd></dl></li>
+                <li><dl><dt>Hong Kong</dt><dd>Regional connectivity</dd></dl></li>
+                <li><dl><dt>California</dt><dd>Trans-Pacific coordination</dd></dl></li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
