@@ -1093,9 +1093,9 @@
         background: linear-gradient(180deg, #F2ECD8 0%, #F2ECD8 100%);
       }
       .market-context-shell {
-        width: 100%;
+        width: min(100% - clamp(40px, 6vw, 112px), 1440px);
         margin: 0 auto;
-        max-width: none;
+        max-width: 1440px;
         padding: 0;
       }
       .market-context + p {
@@ -1128,7 +1128,8 @@
         background: #F2ECD8;
         border: 1px solid rgba(31, 24, 18, 0.11);
         box-shadow: 0 18px 40px rgba(36, 31, 22, 0.05);
-        padding: clamp(22px, 3.2vw, 36px);
+        padding-block: clamp(34px, 4vw, 48px);
+        padding-inline: clamp(36px, 4vw, 56px);
       }
       .market-context-content h2 {
         font-size: clamp(1.55rem, 2.45vw, 2.05rem);
@@ -1138,7 +1139,7 @@
         text-wrap: balance;
       }
       .market-context-content p {
-        max-width: 72ch;
+        max-width: 66ch;
         font-size: 16.5px;
         line-height: 1.7;
         color: #0F2206;
@@ -2475,8 +2476,8 @@
       padding-top:clamp(36px, 4vw, 52px)!important;
     }
     .strategy-hero + .market-context .market-context-shell{
-      width:100%!important;
-      max-width:none!important;
+      width:min(100% - clamp(40px, 6vw, 112px), 1440px)!important;
+      max-width:1440px!important;
       padding-inline:0!important;
     }
     .strategy-tools,.viz-controls,.expand,.expand__trigger,.funnel-detail,.city-detail{display:none!important}
@@ -2491,7 +2492,7 @@
       .strategy-hero h1{font-size:clamp(30px, 8.2vw, 48px)!important;max-width:21ch!important}
       .strategy-hero .pagehero__lede{font-size:clamp(16px, 4.8vw, 20px)!important;max-width:60ch!important}
       .hero-aside{border-left:0!important;border-top:1px solid var(--xuan-dark)!important;padding:20px 0 0!important}
-      .market-context-content{padding:26px}
+      .market-context-content{padding:clamp(26px, 4vw, 34px)!important}
       .strategy-block{padding:24px}
     }
       @media (max-width:767px){
