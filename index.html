@@ -1760,7 +1760,7 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-stack-gap: var(--section-block-gap);
+  --home-section-stack-gap: clamp(16px, 2.2vw, 28px);
   --home-panel-pad-top: clamp(16px, 1.8vw, 22px);
   --home-panel-pad-bottom: clamp(16px, 1.8vw, 22px);
   --home-card-pad-top: clamp(24px, 2.2vw, 30px);
@@ -1787,10 +1787,10 @@ body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signu
   padding-bottom: 0;
 }
 body.homepage .home-hero + #about {
-  margin-top: var(--home-section-stack-gap);
+  margin-top: var(--home-section-stack-gap) !important;
 }
 body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) + :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
-  margin-top: var(--home-section-stack-gap);
+  margin-top: var(--home-section-stack-gap) !important;
 }
 body.homepage .home-copy-frame {
   max-width: var(--home-copy-max);
