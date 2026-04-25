@@ -2877,6 +2877,10 @@ body.strategy-page .strategy-hero .strategy-kpi span {
   </style>
   <style id="strategy-hero-refine-2026">
     /* Strategy hero refinement: cohesive composition + clean section transition. */
+    body.strategy-page {
+      background: var(--xuan-light) !important;
+    }
+
     body.strategy-page .strategy-hero {
       padding-top: clamp(104px, 11vw, 138px) !important;
       padding-bottom: 0 !important;
@@ -2887,12 +2891,18 @@ body.strategy-page .strategy-hero .strategy-kpi span {
 
     body.strategy-page .strategy-hero + .market-context {
       margin-top: 0 !important;
-      padding-top: clamp(24px, 2.6vw, 34px) !important;
+      padding-top: 0 !important;
       border-top: 0 !important;
+      background: var(--xuan-light) !important;
     }
 
     body.strategy-page .market-context,
     body.strategy-page .strategy-intro-section {
+      background: var(--xuan-light) !important;
+    }
+
+    body.strategy-page .strategy-hero + .market-context .wrap {
+      padding-top: clamp(24px, 2.6vw, 34px) !important;
       background: var(--xuan-light) !important;
     }
 
