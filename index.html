@@ -1760,9 +1760,9 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-stack-gap: clamp(16px, 2.2vw, 28px);
-  --home-panel-pad-top: clamp(16px, 1.8vw, 22px);
-  --home-panel-pad-bottom: clamp(16px, 1.8vw, 22px);
+  --home-section-stack-gap: clamp(56px, 5.4vw, 76px);
+  --home-panel-pad-top: clamp(22px, 2.2vw, 30px);
+  --home-panel-pad-bottom: clamp(22px, 2.2vw, 30px);
   --home-card-pad-top: clamp(24px, 2.2vw, 30px);
   --home-card-pad-bottom: clamp(22px, 2vw, 28px);
 }
@@ -1786,11 +1786,12 @@ body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signu
   padding-top: 0;
   padding-bottom: 0;
 }
-body.homepage .home-hero + #about {
-  margin-top: var(--home-section-stack-gap) !important;
+body.homepage .homepage-section-stack {
+  display: grid;
+  gap: var(--home-section-stack-gap);
 }
-body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) + :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
-  margin-top: var(--home-section-stack-gap) !important;
+body.homepage .homepage-section-stack > section {
+  margin: 0 !important;
 }
 body.homepage .home-copy-frame {
   max-width: var(--home-copy-max);
@@ -2252,7 +2253,7 @@ body.homepage #principles .about__body p {
 @media (min-width: 768px) and (max-width: 980px) {
   body.homepage {
     --home-body-start-line: clamp(200px, 30vw, 250px);
-    --home-section-stack-gap: var(--section-block-gap);
+    --home-section-stack-gap: clamp(44px, 6vw, 62px);
   }
   body.homepage #principles .principles__toprow {
     grid-template-columns: minmax(200px, 3.4fr) minmax(0, 8.6fr);
@@ -2791,7 +2792,7 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage {
     --home-frame-pad: clamp(16px, 4.8vw, 22px);
     --home-copy-max: 100%;
-    --home-section-stack-gap: var(--section-block-gap);
+    --home-section-stack-gap: clamp(32px, 8vw, 42px);
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
@@ -3518,7 +3519,7 @@ body.homepage #cdd .cdd-editorial__lede {
 
   body.homepage {
     --home-frame-pad: clamp(18px, 5.4vw, 24px);
-    --home-section-stack-gap: var(--section-block-gap);
+    --home-section-stack-gap: clamp(32px, 8vw, 42px);
   }
 
   /* Hero: calmer typography, fewer decorative interruptions. */
@@ -4296,6 +4297,7 @@ body.homepage #cdd .cdd-editorial__lede {
   </div>
 </section>
 
+<div class="homepage-section-stack">
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap home-section-shell home-section-shell--soft">
@@ -4446,6 +4448,7 @@ body.homepage #cdd .cdd-editorial__lede {
     </div>
   </div>
 </section>
+</div>
 
 <!-- CITY BAND -->
 
