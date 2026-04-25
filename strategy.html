@@ -60,6 +60,11 @@
         line-height: 1.6;
         overflow-x: hidden;
       }
+      main,
+      .strategy-page,
+      .strategy-page > section {
+        background: var(--off);
+      }
       a {
         text-decoration: none;
         color: inherit;
@@ -1055,9 +1060,7 @@
       .pagehero {
         min-height: 460px;
         padding: 156px 0 94px;
-        background:
-          radial-gradient(circle at 82% 26%, rgba(143, 31, 55, 0.09), transparent 32%),
-          linear-gradient(180deg, #F2ECD8 0%, #F2ECD8 72%);
+        background: transparent;
         display: flex;
         align-items: center;
         overflow: hidden;
@@ -1109,7 +1112,7 @@
         margin-top: 0;
         padding-top: 64px;
         padding-bottom: 72px;
-        background: linear-gradient(180deg, #F2ECD8 0%, #F2ECD8 100%);
+        background: transparent;
       }
       .market-context + p {
         margin-top: 0;
@@ -1132,7 +1135,7 @@
       .market-context-section {
         width: 100%;
         padding: 64px 0;
-        background: #F2ECD8;
+        background: transparent;
       }
       .market-context-content {
         max-width: none;
@@ -1221,7 +1224,15 @@
       .strategy-intro-section {
         width: 100%;
         padding: 72px 0 72px;
-        background: #F2ECD8;
+        background: transparent;
+      }
+      .pagehero::before,
+      .pagehero::after,
+      .market-context::before,
+      .market-context::after,
+      .strategy-intro-section::before,
+      .strategy-intro-section::after {
+        content: none !important;
       }
       .strategy-intro-content {
         max-width: none;
