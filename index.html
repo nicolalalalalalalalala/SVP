@@ -2153,18 +2153,36 @@ body.homepage #strategy .strat__content {
   justify-items: stretch;
 }
 body.homepage #strategy .strat__grid {
-  grid-column: 2;
+  grid-column: 2 / -1;
   justify-self: stretch;
+  align-self: stretch;
+  min-width: 0;
   width: 100%;
+  inline-size: 100%;
   max-width: none;
+  max-inline-size: none;
   margin-inline: 0;
   margin-left: 0 !important;
   padding-inline: 0;
   padding-left: 0 !important;
   transform: none !important;
 }
+body.homepage #strategy .strat__grid > .sg {
+  justify-self: stretch;
+  align-self: stretch;
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+body.homepage #strategy .strat__grid > .sg > .sg__content {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
 body.homepage #strategy .sg {
   width: 100%;
+  max-width: none;
   margin-inline: 0;
 }
 body.homepage #strategy .strat__actions {
