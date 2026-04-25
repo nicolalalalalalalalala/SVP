@@ -1526,3 +1526,49 @@ body {
     text-transform: none !important;
   }
 }
+
+/* Cross-browser header rendering normalization (Safari parity baseline). */
+#site-header-mount,
+#site-header-mount #nav,
+#site-header-mount #nav * {
+  box-sizing: border-box;
+}
+
+#site-header-mount #nav {
+  min-height: 62px;
+}
+
+#site-header-mount #nav .nav__logo,
+#site-header-mount #nav .nav__right,
+#site-header-mount #nav .nav__links {
+  min-width: 0;
+}
+
+#site-header-mount #nav .nav__logo-en,
+#site-header-mount #nav .nav__logo-cn,
+#site-header-mount #nav .nav__links a {
+  line-height: 1 !important;
+  font-kerning: normal;
+}
+
+#site-header-mount #nav .nav__logo-cn {
+  -webkit-font-smoothing: antialiased;
+}
+
+#site-header-mount #nav .nav__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+#site-header-mount #nav .nav__lp,
+#site-header-mount #nav .nav__menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  line-height: 1.1;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
