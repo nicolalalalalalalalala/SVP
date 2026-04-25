@@ -1028,9 +1028,18 @@ body.insights-page .issue-card__meta {
     word-break: break-word;
   }
 
-  :where(h1, h2, h3, h4, p, li, a) {
-    overflow-wrap: anywhere;
+  :where(p, li, a) {
+    overflow-wrap: break-word;
     word-break: normal;
+    hyphens: none;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    text-wrap: balance;
   }
 
   /* Collapse common two-column desktop structures into one column on phones. */
@@ -1067,6 +1076,62 @@ body.insights-page .issue-card__meta {
   :where(.btn, .nav__lp, .research-sub__submit, .sv-topbar__btn) {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* ========================================================================== */
+/* Mobile heading wrap polish                                                 */
+/* ========================================================================== */
+@media (max-width: 767px) {
+  :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .sv-section-title,
+    .about__hed,
+    .strat__hed,
+    .issue-intro__title,
+    .press-speaking__title,
+    .pillar-card h3,
+    .execution-step h3,
+    .thesis-item h3,
+    .strategy-pillars h3,
+    .alloc-name,
+    .eyebrow,
+    .hero-kicker,
+    .alloc-kicker,
+    .contact-page__kicker
+  ) {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    max-width: 100%;
+  }
+
+  :where(h1, .hero__overlay h1.hero__hed, .pagehero__hed, .hero h1, #hero h1) {
+    font-size: clamp(34px, 9.2vw, 46px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  :where(h2, .sv-section-title, .about__hed, .strat__hed, .issue-intro__title, .press-speaking__title) {
+    font-size: clamp(24px, 6.8vw, 32px) !important;
+    line-height: 1.14 !important;
+    letter-spacing: 0.005em !important;
+  }
+
+  :where(h3, h4, h5, h6, .pillar-card h3, .execution-step h3, .thesis-item h3, .strategy-pillars h3, .alloc-name) {
+    font-size: clamp(17px, 4.8vw, 22px) !important;
+    line-height: 1.24 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  :where(.eyebrow, .hero-kicker, .alloc-kicker, .contact-page__kicker) {
+    letter-spacing: 0.14em !important;
   }
 }
 
