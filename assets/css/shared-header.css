@@ -1572,3 +1572,9 @@ body {
   appearance: none;
   border-radius: 0;
 }
+
+@media (min-width: 981px) {
+  #site-header-mount #nav .nav__menu-btn {
+    display: none !important;
+  }
+}
