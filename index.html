@@ -144,6 +144,7 @@ body.homepage .track-record__note {
   --ink2:  #2E4A18;
   --white: #FAF6EE;
   --off:   #F2ECD8;
+  --xuan-paper: var(--off);
   --rule:  #D8CEB0;
   --mist:  #1E4040;
   --stone: #F2ECD8;
@@ -172,7 +173,7 @@ body.homepage .track-record__note {
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; overflow-x:hidden; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
-body { background:var(--off); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; overflow-x:hidden; }
+body { background:var(--xuan-paper); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
 img { display:block; max-width:100%; }
 .wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
@@ -1774,17 +1775,21 @@ body.homepage .home-section-shell {
 }
 body.homepage .home-section-shell--soft {
   border: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
-  background: color-mix(in srgb, var(--off) 88%, transparent);
+  background: var(--xuan-paper);
   padding-block: var(--home-panel-pad-top) var(--home-panel-pad-bottom);
 }
 body.homepage .home-section-shell--panel {
   border: 1px solid color-mix(in srgb, var(--rule) 66%, transparent);
-  background: color-mix(in srgb, #f8f2e3 86%, transparent);
+  background: var(--xuan-paper);
   padding-block: var(--home-panel-pad-top) var(--home-panel-pad-bottom);
 }
 body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
   padding-top: 0;
   padding-bottom: 0;
+}
+body.homepage .homepage-section-stack,
+body.homepage :is(#about, #principles, #strategy, #team, #insights, #signup) {
+  background: var(--xuan-paper);
 }
 body.homepage .homepage-section-stack {
   display: grid;
