@@ -1724,13 +1724,9 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-space: clamp(4px, 0.55vw, 6px);
-  --home-section-space-tight: clamp(3px, 0.45vw, 5px);
-  --home-section-transition-gap: clamp(2px, 0.35vw, 4px);
-  --home-section-stack-gap: clamp(2px, 0.3vw, 3px);
-  --home-section-pair-gap: clamp(1px, 0.2vw, 2px);
-  --home-panel-pad-top: clamp(18px, 2.1vw, 28px);
-  --home-panel-pad-bottom: clamp(18px, 2vw, 26px);
+  --home-section-stack-gap: clamp(56px, 5.2vw, 72px);
+  --home-panel-pad-top: clamp(16px, 1.8vw, 22px);
+  --home-panel-pad-bottom: clamp(16px, 1.8vw, 22px);
   --home-card-pad-top: clamp(24px, 2.2vw, 30px);
   --home-card-pad-bottom: clamp(22px, 2vw, 28px);
 }
@@ -1751,37 +1747,14 @@ body.homepage .home-section-shell--panel {
   padding-block: var(--home-panel-pad-top) var(--home-panel-pad-bottom);
 }
 body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
-  padding-top: var(--home-section-space);
-  padding-bottom: var(--home-section-space);
+  padding-top: 0;
+  padding-bottom: 0;
 }
-body.homepage :is(#principles, #strategy) {
-  padding-top: var(--home-section-space-tight);
-}
-/* Homepage rhythm pass: tighten transitions between major modules while
-   preserving internal section breathing room. */
 body.homepage .home-hero + #about {
-  padding-top: var(--home-section-transition-gap);
+  margin-top: var(--home-section-stack-gap);
 }
-body.homepage #about {
-  padding-bottom: var(--home-section-stack-gap);
-}
-body.homepage #about + #principles {
-  padding-top: var(--home-section-pair-gap);
-}
-body.homepage #principles {
-  padding-bottom: var(--home-section-pair-gap);
-}
-body.homepage #principles + #strategy {
-  padding-top: var(--home-section-stack-gap);
-}
-body.homepage #strategy {
-  padding-bottom: var(--home-section-stack-gap);
-}
-body.homepage #strategy + #cdd {
-  padding-top: var(--home-section-stack-gap);
-}
-body.homepage #cdd {
-  padding-bottom: clamp(3px, 0.45vw, 6px);
+body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) + :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
+  margin-top: var(--home-section-stack-gap);
 }
 body.homepage .home-copy-frame {
   max-width: var(--home-copy-max);
@@ -2060,8 +2033,8 @@ body.homepage #principles .eyebrow {
   margin-bottom: clamp(10px, 1.1vw, 14px);
 }
 body.homepage #principles {
-  padding-top: var(--home-section-stack-gap);
-  padding-bottom: var(--home-section-stack-gap);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 /* Ensure principles and strategy read as complete institutional boxes. */
 body.homepage :is(#principles, #strategy) .home-section-shell--soft {
@@ -2112,6 +2085,9 @@ body.homepage #principles .principles__toprow,
 body.homepage #strategy .strat__hd {
   background: transparent;
   box-shadow: none;
+}
+body.homepage #strategy .strat__hd {
+  margin-bottom: 0;
 }
 body.homepage #about .home-section-shell {
   padding-inline-end: clamp(10px, 1.6vw, 24px) !important;
@@ -2222,7 +2198,8 @@ body.homepage .sg {
 }
 body.homepage .strat__actions {
   border-top: 0;
-  padding-top: 22px;
+  padding-top: clamp(12px, 1.4vw, 18px);
+  margin-top: clamp(12px, 1.4vw, 18px);
 }
 body.homepage #principles .about__body {
   justify-self: stretch;
@@ -2239,6 +2216,7 @@ body.homepage #principles .about__body p {
 @media (min-width: 768px) and (max-width: 980px) {
   body.homepage {
     --home-body-start-line: clamp(200px, 30vw, 250px);
+    --home-section-stack-gap: clamp(44px, 6vw, 56px);
   }
   body.homepage #principles .principles__toprow {
     grid-template-columns: minmax(200px, 3.4fr) minmax(0, 8.6fr);
@@ -2266,6 +2244,13 @@ body.homepage #principles .principles__grid > .ac {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+}
+body.homepage :is(#principles .ac, #strategy .sg, #strategy .sg__content) {
+  min-height: 0;
+  height: auto;
+}
+body.homepage #principles .ac__title {
+  min-height: 0;
 }
 body.homepage #principles .principles__grid > .ac > .ac__meta,
 body.homepage #principles .principles__grid > .ac > .ac__title,
@@ -2770,11 +2755,7 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage {
     --home-frame-pad: clamp(16px, 4.8vw, 22px);
     --home-copy-max: 100%;
-    --home-section-space: clamp(6px, 1.5vw, 10px);
-    --home-section-space-tight: clamp(5px, 1.2vw, 8px);
-    --home-section-transition-gap: clamp(4px, 1vw, 6px);
-    --home-section-stack-gap: clamp(2px, 0.7vw, 4px);
-    --home-section-pair-gap: clamp(2px, 0.55vw, 3px);
+    --home-section-stack-gap: clamp(28px, 7vw, 40px);
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
@@ -2999,8 +2980,8 @@ body.homepage #cdd .cdd-editorial__lede {
   }
 
   #about {
-    padding-top: var(--home-section-space);
-    padding-bottom: var(--home-section-stack-gap);
+    padding-top: 0;
+    padding-bottom: 0;
   }
   #about .wrap {
     max-width: calc(var(--max) + 24px);
@@ -3033,12 +3014,12 @@ body.homepage #cdd .cdd-editorial__lede {
   #team,
   #insights,
   #signup {
-    padding-top: var(--home-section-space);
-    padding-bottom: var(--home-section-space);
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   #strategy {
-    padding-top: var(--home-section-space-tight);
+    padding-top: 0;
   }
 
   #strategy .strat__actions {
@@ -3090,8 +3071,8 @@ body.homepage #cdd .cdd-editorial__lede {
   }
 
   #principles {
-    padding-top: var(--home-section-pair-gap);
-    padding-bottom: var(--home-section-stack-gap);
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .principles__toprow {
     display: grid;
@@ -3500,11 +3481,7 @@ body.homepage #cdd .cdd-editorial__lede {
 
   body.homepage {
     --home-frame-pad: clamp(18px, 5.4vw, 24px);
-    --home-section-space: clamp(24px, 7vw, 34px);
-    --home-section-space-tight: clamp(18px, 6vw, 26px);
-    --home-section-transition-gap: 10px;
-    --home-section-stack-gap: 10px;
-    --home-section-pair-gap: 8px;
+    --home-section-stack-gap: clamp(28px, 7vw, 40px);
   }
 
   /* Cleaner mobile top bar balance. */
