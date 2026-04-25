@@ -27,10 +27,15 @@
         --ink-green: #0f2a14;
         --ink: #171410;
         --ink-soft: #3b342d;
-        --max: 1200px;
+        --rule: color-mix(in srgb, var(--qing) 42%, var(--xuan-paper-dark) 58%);
+        --content-max-wide: 1360px;
+        --content-max-text: 760px;
+        --content-max-text-intro: 900px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
         --pad: var(--site-page-margin);
-        --rule: color-mix(in srgb, var(--qing) 42%, var(--xuan-paper-dark) 58%);
+        --sv-section-space: 72px;
+        --sv-panel-pad-inline: clamp(48px, 5vw, 76px);
+        --sv-panel-pad-block: clamp(48px, 5vw, 72px);
       }
 
       * { box-sizing: border-box; }
@@ -38,11 +43,8 @@
       body.homepage main, .firm-page, .firm-page > section { background: var(--xuan-paper-light); }
       h1, h2, h3, p { margin: 0; }
 
-      .firm-page { padding: clamp(104px, 10vw, 136px) 0 clamp(56px, 6vw, 84px); color: var(--ink); }
-      .firm-section + .firm-section { margin-top: clamp(18px, 2vw, 28px); }
-      .firm-wrap {
-        max-width: var(--max);
-        width: 100%;
+      .sv-page-shell {
+        width: min(100% - clamp(72px, 9vw, 144px), var(--content-max-wide));
         margin-inline: auto;
         padding-inline: var(--pad);
       }
@@ -73,7 +75,23 @@
       .firm-label::after { content: ""; width: 36px; height: 1px; background: currentColor; }
       .firm-panel--solid .firm-label { color: color-mix(in srgb, var(--xuan-paper-light) 72%, var(--qing-light) 28%); }
 
-      .firm-hero-grid, .firm-editorial-grid {
+      .sv-editorial-hero {
+        border: 1px solid var(--rule);
+        background: color-mix(in srgb, var(--xuan-paper-light) 88%, var(--xuan-paper) 12%);
+        padding-inline: var(--sv-panel-pad-inline);
+        padding-block: var(--sv-panel-pad-block);
+        position: relative;
+      }
+      .sv-editorial-hero::before {
+        content: "";
+        position: absolute;
+        left: clamp(28px, 3.5vw, 48px);
+        right: clamp(28px, 3.5vw, 48px);
+        top: clamp(16px, 1.8vw, 24px);
+        height: 1px;
+        background: color-mix(in srgb, var(--qing) 58%, var(--xuan-paper-dark) 42%);
+      }
+      .sv-editorial-hero__grid {
         display: grid;
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
         gap: clamp(22px, 2.5vw, 34px);
@@ -114,6 +132,22 @@
         letter-spacing: var(--sv-track-label);
         text-transform: uppercase;
         color: var(--qing);
+        font-weight: 600;
+      }
+      .sv-card-stack p,
+      .card-copy {
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
+        color: var(--ink-soft);
+      }
+
+      .sv-section-grid {
+        border: 1px solid var(--rule);
+        background: color-mix(in srgb, var(--xuan-paper-light) 80%, var(--xuan-paper) 20%);
+        padding-inline: var(--sv-panel-pad-inline);
+        padding-block: var(--sv-panel-pad-block);
+        display: grid;
+        gap: clamp(18px, 2vw, 24px);
       }
       .firm-panel--solid .firm-card { background: color-mix(in srgb, var(--qing-dark) 88%, black 12%); border-color: color-mix(in srgb, var(--qing-light) 40%, transparent); }
       .firm-panel--solid .firm-card h3 { color: var(--xuan-paper-light); }
@@ -178,10 +212,13 @@
         font-size: var(--sv-size-body);
         line-height: var(--sv-lh-body);
       }
-      .firm-statement {
-        border: 1px solid color-mix(in srgb, var(--qing-light) 38%, transparent);
-        background: color-mix(in srgb, var(--qing-dark) 92%, var(--ink-green) 8%);
-        padding: clamp(26px, 3vw, 40px);
+
+      .sv-statement {
+        border: 1px solid var(--rule);
+        background: color-mix(in srgb, var(--xuan-paper) 36%, var(--xuan-paper-light) 64%);
+        padding-inline: var(--sv-panel-pad-inline);
+        padding-block: var(--sv-panel-pad-block);
+        position: relative;
       }
       .firm-statement p {
         color: var(--xuan-paper-light);
@@ -202,12 +239,27 @@
       }
 
       @media (max-width: 767px) {
-        :root { --site-page-margin: clamp(16px, 5vw, 22px); --pad: var(--site-page-margin); }
-        .firm-page { padding-top: 94px; }
-        .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: 1fr; }
-        .firm-geo-list li { border-left: 0; padding-left: 0; border-top: 1px solid color-mix(in srgb, var(--qing-light) 45%, transparent); padding-top: 12px; }
-        .firm-geo-list li:first-child { border-top: 0; padding-top: 0; }
-        .firm-hero-title { font-size: clamp(28px, 9vw, 36px); line-height: 1.02; letter-spacing: -0.01em; }
+        :root {
+          --site-page-margin: clamp(16px, 5vw, 22px);
+          --pad: var(--site-page-margin);
+          --sv-section-space: 56px;
+        }
+        .sv-page-shell {
+          width: calc(100% - (var(--site-page-margin) * 2));
+        }
+        .sv-editorial-hero,
+        .sv-section-grid,
+        .sv-statement {
+          padding-inline: clamp(24px, 5vw, 34px);
+          padding-block: clamp(28px, 6vw, 40px);
+        }
+        .sv-process-grid {
+          grid-template-columns: 1fr;
+        }
+        .sv-editorial-hero h1,
+        .sv-editorial-hero .editorial-hero-title {
+          font-size: clamp(34px, 10vw, 48px) !important;
+        }
       }
     </style>
 
