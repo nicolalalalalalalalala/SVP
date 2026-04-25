@@ -1789,6 +1789,11 @@ body.homepage .home-copy-frame {
 body.homepage .home-copy-frame > p {
   max-width: var(--home-copy-max) !important;
 }
+body.homepage :is(.home-hero, #about, #principles, #strategy, #cdd, .sv-footer) *,
+body.homepage :is(.home-hero, #about, #principles, #strategy, #cdd, .sv-footer) *::before,
+body.homepage :is(.home-hero, #about, #principles, #strategy, #cdd, .sv-footer) *::after {
+  box-sizing: border-box;
+}
 body.homepage .home-hero::before,
 body.homepage .home-hero::after {
   content: "";
@@ -2559,6 +2564,19 @@ body.homepage #cdd .cdd-editorial__lede {
   }
 }
 @media (max-width: 767px) {
+  body.homepage :is(.home-hero, #about, #principles, #strategy, #cdd, .sv-footer) :is(h1, h2, h3, h4, p, li, a, span, small, strong, em) {
+    max-width: 100%;
+    min-width: 0;
+  }
+  body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title,.cdd-feature__thesis,.cdd-editorial__lede,.cdd-brand-en,.cdd-brand-cn,.home-hero__headline,.home-hero__support) {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+    text-wrap: pretty;
+  }
+  body.homepage :is(.eyebrow,.home-hero__eyebrow,.cdd-editorial__kicker) {
+    white-space: normal;
+  }
   body.homepage .home-hero {
     min-height: clamp(560px, 90vh, 720px);
   }
@@ -2728,6 +2746,7 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
     padding-block: clamp(18px, 4.2vw, 24px) clamp(16px, 3.8vw, 22px);
+    overflow: hidden;
   }
 
   .eyebrow {
@@ -2989,24 +3008,33 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
   }
   #strategy .strat__grid {
-    gap: 10px;
+    gap: 8px;
   }
   #strategy .sg {
     border-color: color-mix(in srgb, var(--rule) 70%, transparent);
     background: color-mix(in srgb, var(--paper-light) 78%, transparent);
+    width: 100%;
+    min-width: 0;
   }
   #strategy .sg__content {
-    padding: 18px 14px 16px !important;
+    padding: 20px 15px 17px !important;
     gap: 6px;
+    min-width: 0;
   }
   #strategy .sg__title {
     font-size: clamp(22px, 6.6vw, 28px);
     line-height: 1.14;
     margin-bottom: 2px;
+    min-height: 0;
+  }
+  #strategy .sg__body {
+    min-width: 0;
   }
   #strategy .strat__actions .cta {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     justify-content: space-between;
+    margin-left: auto;
   }
 
   #principles {
@@ -3032,16 +3060,21 @@ body.homepage #cdd .cdd-editorial__lede {
     margin-top: 8px !important;
   }
   #principles .ac {
-    padding: 18px 2px 16px;
+    padding: 20px 6px 17px;
     gap: 7px;
+    min-width: 0;
+    overflow: hidden;
   }
   #principles .ac__title {
     font-size: clamp(23px, 6.2vw, 28px);
     line-height: 1.16;
+    min-height: 0;
+    max-width: 100%;
   }
   #principles .ac__body {
     font-size: 15px;
     line-height: 1.6;
+    max-width: 100%;
   }
   .ac__body,
   .sg__body {
@@ -3070,7 +3103,7 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   .cdd-editorial__card {
     gap: 14px;
-    padding: 14px 12px;
+    padding: 16px 13px;
     border-color: color-mix(in srgb, var(--cdd-structure) 22%, transparent);
     width: 100%;
     max-width: 100%;
@@ -3191,7 +3224,7 @@ body.homepage #cdd .cdd-editorial__lede {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
-    padding: 12px 12px 14px;
+    padding: 13px 12px 15px;
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -3222,8 +3255,9 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
   }
   .cdd-feature__body > div:first-child {
-    padding-left: 8px;
+    padding-left: 10px;
     border-left: 1px solid color-mix(in srgb, var(--cdd-structure) 22%, transparent);
+    min-width: 0;
   }
   .cdd-feature__main .cdd-cta-group {
     margin-top: 12px;
@@ -3234,6 +3268,7 @@ body.homepage #cdd .cdd-editorial__lede {
     line-height: 1.62;
     max-width: 100%;
     overflow-wrap: anywhere;
+    min-width: 0;
   }
   .cdd-feature__panel {
     padding: 0 0 0 6px;
@@ -3262,7 +3297,7 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   .cdd-feature__footer {
     align-items: flex-start;
-    padding: 12px;
+    padding: 13px 12px;
     gap: 10px;
     border-top-color: color-mix(in srgb, var(--cdd-structure) 16%, transparent);
     width: 100%;
@@ -3286,6 +3321,7 @@ body.homepage #cdd .cdd-editorial__lede {
     gap: 10px;
     box-sizing: border-box;
     white-space: normal;
+    align-items: flex-start;
   }
   .cdd-cta > span:first-child {
     min-width: 0;
@@ -3558,6 +3594,7 @@ body.homepage #cdd .cdd-editorial__lede {
   .sv-footer__copyright,
   .sv-footer__legal-links {
     line-height: 1.55;
+    overflow-wrap: anywhere;
   }
 }
 
