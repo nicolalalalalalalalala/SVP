@@ -256,14 +256,20 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
 @media (max-width: 768px) {
   html body footer.sv-footer,
   html body .sv-footer {
-    padding: 12px 0 calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 10px 0 calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  html body footer.sv-footer .sv-footer__inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   html body footer.sv-footer .sv-footer__main {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 7px !important;
-    padding-bottom: 8px !important;
+    gap: 6px !important;
+    padding-bottom: 7px !important;
   }
 
   /* Brand Lockup: scale down tracking for small screens */
@@ -277,7 +283,7 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
     width: 100% !important;
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 2px !important;
+    gap: 1px !important;
     align-items: stretch !important;
   }
 
@@ -293,7 +299,7 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    font-size: 9px !important;
+    font-size: 11px !important;
     letter-spacing: 0.02em !important;
     padding: 0 !important;
     box-sizing: border-box !important;
@@ -302,44 +308,73 @@ html[lang^="zh"] body footer.sv-footer .sv-footer__legal-links a {
   }
 
   html body footer.sv-footer .sv-footer__bottom {
-    gap: 5px !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
     padding-top: 7px !important;
+    width: 100% !important;
   }
 
-  html body footer.sv-footer .sv-footer__copyright,
-  html body footer.sv-footer .sv-footer__legal,
-  html body footer.sv-footer .sv-footer__legal-links,
-  html body footer.sv-footer .sv-footer__legal-links a {
-    font-size: 0.54rem !important;
-    line-height: 1.34 !important;
+  html body footer.sv-footer .sv-footer__copyright {
+    font-size: 0.62rem !important;
+    line-height: 1.35 !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-toggle > summary {
-    font-size: 0.56rem !important;
-    line-height: 1.2 !important;
+    width: 100% !important;
+    font-size: 0.62rem !important;
+    line-height: 1.25 !important;
+    justify-content: space-between !important;
+  }
+
+  html body footer.sv-footer .sv-footer__legal-toggle,
+  html body footer.sv-footer .sv-footer__legal-toggle[open] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
   html body footer.sv-footer .sv-footer__legal {
-    margin-top: 0.2rem !important;
-    padding-right: min(2vw, 10px) !important;
-    max-width: 56ch !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 4px 0 0 !important;
+    padding: 0 !important;
+    font-size: clamp(13px, 3.5vw, 14px) !important;
+    line-height: 1.5 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+
+  html body footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 4px 0 0 !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-links {
-    display: none !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 3px !important;
-    margin-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  html body footer.sv-footer .sv-footer__legal-toggle[open] + .sv-footer__legal-links {
     display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    margin-top: 2px !important;
+    padding-bottom: 0 !important;
+    width: 100% !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-links a {
-    min-height: 22px !important;
-    padding: 2px 0 !important;
+    width: 100% !important;
+    min-height: 20px !important;
+    padding: 1px 0 !important;
+    font-size: 0.64rem !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-links a + a::before {
