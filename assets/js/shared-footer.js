@@ -74,6 +74,11 @@
     if (isCnPath) {
       ensureChineseFonts();
     }
+
+    const legalToggle = node.querySelector('.sv-footer__legal-toggle');
+    if (legalToggle && window.matchMedia('(max-width: 768px)').matches) {
+      legalToggle.removeAttribute('open');
+    }
   };
 
   document.querySelectorAll('footer.sv-footer, footer[data-shared-footer]').forEach(mountFooter);
