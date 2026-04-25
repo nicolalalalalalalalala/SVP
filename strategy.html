@@ -1212,12 +1212,22 @@
         color: #0F2206;
       }
       .market-context-content .market-context-disclaimer {
-        margin-top: 12px;
+        margin-top: clamp(24px, 2vw, 32px);
         max-width: none;
         font-size: 12.5px;
         line-height: 1.62;
         color: #3D7070;
         font-family: var(--sans);
+      }
+      @media (max-width: 1024px) {
+        .market-context-content .market-context-disclaimer {
+          margin-top: clamp(20px, 2.6vw, 28px);
+        }
+      }
+      @media (max-width: 680px) {
+        .market-context-content .market-context-disclaimer {
+          margin-top: clamp(18px, 5vw, 24px);
+        }
       }
       @media (max-width: 1180px) {
         .context-grid {
