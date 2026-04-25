@@ -43,6 +43,8 @@
         --pad: var(--site-page-margin);
         --team-type-heading: var(--sv-type-sans, "DIN 2014", "Helvetica Neue", Arial, sans-serif);
         --team-type-body: var(--sv-type-sans, "DIN 2014", "Helvetica Neue", Arial, sans-serif);
+        --team-group-title-size: calc(var(--sv-pillar-title-size) * 1.12);
+        --team-group-title-line: 1.15;
         --team-name-size: var(--sv-pillar-title-size);
         --team-role-size: var(--sv-size-meta);
         --team-role-track: var(--sv-track-divider);
@@ -231,7 +233,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 9px;
+        gap: 5px;
         margin-bottom: 0;
         padding-bottom: 14px;
         border-bottom: 0;
@@ -239,15 +241,15 @@
       .group h2 {
         font-family: var(--team-type-heading);
         font-weight: 700;
-        font-size: var(--sv-pillar-title-size);
-        line-height: 1.18;
+        font-size: var(--team-group-title-size);
+        line-height: var(--team-group-title-line);
         letter-spacing: 0.03em;
         text-transform: uppercase;
         white-space: normal;
       }
       .group__head .sv-section-title {
-        font-size: var(--sv-pillar-title-size) !important;
-        line-height: var(--sv-pillar-title-line) !important;
+        font-size: var(--team-group-title-size) !important;
+        line-height: var(--team-group-title-line) !important;
         letter-spacing: 0.01em !important;
         text-transform: uppercase;
         margin-bottom: 0 !important;
@@ -590,12 +592,13 @@
         :root {
           --site-page-margin: clamp(20px, 4.8vw, 40px);
           --pad: var(--site-page-margin);
+          --team-group-title-size: calc(var(--sv-pillar-title-size) * 1.1);
         }
         .grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .group__head {
-          gap: 6px;
+          gap: 4px;
           margin-bottom: 16px;
           padding-bottom: 10px;
         }
@@ -605,6 +608,7 @@
         :root {
           --site-page-margin: clamp(16px, 5vw, 22px);
           --pad: var(--site-page-margin);
+          --team-group-title-size: calc(var(--sv-pillar-title-size) * 1.08);
         }
 
         .pagehero {
@@ -643,7 +647,8 @@
           box-shadow: none;
         }
         .group h2 {
-          font-size: var(--sv-pillar-title-size);
+          font-size: var(--team-group-title-size);
+          line-height: var(--team-group-title-line);
           letter-spacing: 0.01em;
           text-transform: uppercase;
           white-space: normal;
