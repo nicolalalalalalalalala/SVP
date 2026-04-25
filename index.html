@@ -4009,6 +4009,314 @@ body.homepage #cdd .cdd-editorial__lede {
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 <link rel="stylesheet" href="assets/css/cdd-franchise-shared.css" />
 <link rel="stylesheet" href="assets/css/shared-footer.css">
+<style id="homepage-mobile-refinement-v2">
+@media (max-width: 767px) {
+  body.homepage {
+    --site-page-margin: clamp(18px, 5.2vw, 24px);
+    --section-space: 34px;
+    --section-space-tight: 28px;
+    --content-gap: 16px;
+  }
+
+  /* Mobile header: intentional edge alignment without adding height. */
+  #site-header-mount #nav {
+    height: 64px !important;
+    min-height: 64px !important;
+    padding-left: max(20px, calc(env(safe-area-inset-left, 0px) + 16px)) !important;
+    padding-right: max(14px, calc(env(safe-area-inset-right, 0px) + 12px)) !important;
+    column-gap: 10px !important;
+  }
+  #site-header-mount #nav .nav__logo {
+    margin-left: 0 !important;
+  }
+  #site-header-mount #nav .nav__right {
+    justify-self: end !important;
+    margin-right: 0 !important;
+  }
+  #site-header-mount #nav .nav__menu-btn {
+    min-width: 82px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    padding: 0 10px !important;
+    font-size: 9px !important;
+    letter-spacing: .1em !important;
+  }
+
+  /* Mobile menu: equal rhythm, no stretched dead space. */
+  #site-header-mount #nav .nav__links {
+    top: 64px !important;
+    padding: 10px var(--site-page-margin, clamp(18px, 5.2vw, 24px)) 14px !important;
+    gap: 0 !important;
+  }
+  #site-header-mount #nav .nav__links li {
+    border-bottom-color: rgba(31, 24, 18, .075) !important;
+  }
+  #site-header-mount #nav .nav__links a {
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px 0 !important;
+    font-size: clamp(12px, 3.8vw, 14px) !important;
+    letter-spacing: .105em !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Global section rhythm for mobile homepage. */
+  body.homepage :is(#about, #principles, #strategy, #cdd, #insights, #signup) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  body.homepage .home-section-shell {
+    padding-top: 20px !important;
+    padding-bottom: 18px !important;
+  }
+  body.homepage :is(#about, #principles, #strategy, #cdd) + :is(#about, #principles, #strategy, #cdd, #insights, #signup) {
+    margin-top: 2px !important;
+  }
+
+  /* Hero: controlled scale, less vertical bulk, cleaner CTA stack. */
+  body.homepage .home-hero {
+    min-height: clamp(440px, 70vh, 560px) !important;
+  }
+  body.homepage .home-hero__inner {
+    padding-top: clamp(78px, 19vw, 102px) !important;
+    padding-bottom: clamp(30px, 8vw, 44px) !important;
+  }
+  body.homepage .home-hero__text {
+    gap: 8px !important;
+  }
+  body.homepage .home-hero__headline {
+    font-size: clamp(25px, 7vw, 31px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 4px !important;
+    max-width: 14.2ch !important;
+  }
+  body.homepage .home-hero__support {
+    font-size: clamp(13px, 3.45vw, 14.2px) !important;
+    line-height: 1.5 !important;
+    max-width: 35ch !important;
+    margin-bottom: 0 !important;
+  }
+  body.homepage .home-hero__actions {
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+    gap: 7px !important;
+  }
+  body.homepage .home-hero__cta {
+    min-height: 40px !important;
+    padding-inline: 11px !important;
+    font-size: 9px !important;
+    letter-spacing: .1em !important;
+  }
+
+  /* Rooted + principles: tighter hierarchy and modular consistency. */
+  body.homepage #about .about__intro--overview {
+    gap: 12px !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 14px !important;
+  }
+  body.homepage #about .about__body p {
+    font-size: 14px !important;
+    line-height: 1.58 !important;
+  }
+  body.homepage #principles .principles__toprow {
+    gap: 10px !important;
+    margin-bottom: 8px !important;
+  }
+  body.homepage #principles .principles__grid {
+    margin-top: 6px !important;
+    gap: 5px !important;
+  }
+  body.homepage #principles .ac {
+    padding: 15px 0 14px !important;
+    gap: 6px !important;
+    border-top: 1px solid color-mix(in srgb, var(--rule) 70%, transparent) !important;
+  }
+  body.homepage #principles .ac:first-child {
+    border-top: 0 !important;
+  }
+  body.homepage #principles .ac__title {
+    font-size: clamp(20px, 5.6vw, 24px) !important;
+    line-height: 1.16 !important;
+  }
+  body.homepage #principles .ac__body {
+    font-size: 13.6px !important;
+    line-height: 1.56 !important;
+  }
+
+  /* Strategy cards + "Find Out More" transition row. */
+  body.homepage #strategy .strat__hd {
+    gap: 12px !important;
+    margin-bottom: 8px !important;
+  }
+  body.homepage #strategy .strat__intro p {
+    font-size: 14px !important;
+    line-height: 1.58 !important;
+  }
+  body.homepage #strategy .strat__grid {
+    gap: 6px !important;
+  }
+  body.homepage #strategy .sg {
+    background: color-mix(in srgb, var(--paper-light) 72%, transparent) !important;
+  }
+  body.homepage #strategy .sg__content {
+    padding: 15px 12px 14px !important;
+    gap: 5px !important;
+  }
+  body.homepage #strategy .sg__n {
+    font-size: 8.5px !important;
+    letter-spacing: .11em !important;
+  }
+  body.homepage #strategy .sg__title {
+    font-size: clamp(20px, 5.7vw, 24px) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 1px !important;
+  }
+  body.homepage #strategy .sg__body {
+    font-size: 13.6px !important;
+    line-height: 1.56 !important;
+  }
+  body.homepage #strategy .strat__actions {
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+  }
+  body.homepage #strategy .strat__actions .cta {
+    font-size: 9.2px !important;
+    letter-spacing: .1em !important;
+    gap: 9px !important;
+    align-items: center !important;
+  }
+  body.homepage #strategy .strat__actions .cta__ring {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 12px !important;
+  }
+
+  /* China Debt Dynamics: keep editorial look, reduce mass and clunk. */
+  body.homepage #cdd {
+    padding: 8px 0 6px !important;
+  }
+  body.homepage #cdd > .wrap.cdd-editorial {
+    padding-left: clamp(12px, 3.8vw, 15px) !important;
+    padding-right: clamp(12px, 3.8vw, 15px) !important;
+  }
+  body.homepage #cdd .cdd-editorial__card {
+    padding: 12px 11px !important;
+    gap: 10px !important;
+  }
+  body.homepage #cdd .cdd-editorial__intro {
+    gap: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  body.homepage #cdd .wordmark__title {
+    font-size: clamp(22px, 6.2vw, 27px) !important;
+    line-height: .95 !important;
+    margin-bottom: 4px !important;
+    max-width: 11.7ch !important;
+  }
+  body.homepage #cdd .cdd-editorial__lede {
+    font-size: 11.8px !important;
+    line-height: 1.46 !important;
+    -webkit-line-clamp: 3;
+  }
+  body.homepage #cdd .cdd-feature__top {
+    padding: 8px 10px 7px !important;
+    gap: 7px !important;
+  }
+  body.homepage #cdd .cdd-feature__issue,
+  body.homepage #cdd .cdd-feature__date {
+    font-size: 7.7px !important;
+    letter-spacing: .08em !important;
+    padding: 4px 7px 3px !important;
+  }
+  body.homepage #cdd .cdd-feature__body {
+    padding: 10px 10px 10px !important;
+    gap: 8px !important;
+  }
+  body.homepage #cdd .cdd-feature__label {
+    font-size: 8.8px !important;
+    letter-spacing: .1em !important;
+    margin-bottom: 5px !important;
+  }
+  body.homepage #cdd .cdd-feature__title {
+    font-size: clamp(18px, 5.2vw, 22px) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 6px !important;
+    max-width: 18.5ch !important;
+  }
+  body.homepage #cdd .cdd-feature__thesis,
+  body.homepage #cdd .cdd-feature__finding {
+    font-size: 11.4px !important;
+    line-height: 1.46 !important;
+  }
+  body.homepage #cdd .cdd-feature__footer {
+    padding: 9px 10px !important;
+    gap: 7px !important;
+  }
+  body.homepage #cdd .cdd-cta-group {
+    gap: 7px !important;
+  }
+  body.homepage #cdd .cdd-cta {
+    min-height: 38px !important;
+    padding: 6px 8px 6px 11px !important;
+    font-size: 8.8px !important;
+    letter-spacing: .09em !important;
+    gap: 10px !important;
+  }
+  body.homepage #cdd .cdd-cta__ring {
+    width: 21px !important;
+    height: 21px !important;
+    min-width: 21px !important;
+    font-size: 8px !important;
+  }
+
+  /* Footer: compressed, quieter hierarchy, cleaner legal area. */
+  body.homepage .sv-footer {
+    padding-top: 12px !important;
+    padding-bottom: 14px !important;
+    border-top-color: color-mix(in srgb, var(--rule) 76%, transparent);
+  }
+  body.homepage .sv-footer__main {
+    gap: 6px !important;
+    padding-bottom: 10px !important;
+  }
+  body.homepage .sv-footer__brand {
+    font-size: 11px !important;
+    letter-spacing: .075em !important;
+  }
+  body.homepage .sv-footer__contact-label {
+    font-size: 7.5px !important;
+    letter-spacing: .1em !important;
+  }
+  body.homepage .sv-footer__contact a {
+    font-size: 9.6px !important;
+    letter-spacing: .02em !important;
+    border-width: 1px !important;
+    padding: 6px 9px !important;
+  }
+  body.homepage .sv-footer__bottom {
+    gap: 4px !important;
+    padding-top: 8px !important;
+  }
+  body.homepage .sv-footer__copyright {
+    font-size: 7.4px !important;
+    line-height: 1.38 !important;
+  }
+  body.homepage .sv-footer__legal {
+    font-size: 6.8px !important;
+    line-height: 1.34 !important;
+  }
+  body.homepage .sv-footer__legal-links {
+    margin-top: 0 !important;
+    gap: 2px !important;
+  }
+  body.homepage .sv-footer__legal-links a {
+    min-height: 20px !important;
+    font-size: 7px !important;
+    padding: 0 !important;
+  }
+}
+</style>
 
 <!-- CDD PANEL CONTRAST REPAIR
      Loaded last so it wins over every external stylesheet's !important
