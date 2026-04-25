@@ -17,14 +17,14 @@
     <script src="assets/js/shared-header.js" defer></script>
     <style>
       :root {
-        --qing: #3D7070;
-        --qing-light: #7AAFAF;
-        --qing-dark: #1E4040;
-        --xuan-paper-light: #FAF6EE;
-        --xuan-paper: #F2ECD8;
-        --xuan-paper-dark: #D8CEB0;
-        --cinnabar: #C93B2A;
-
+        --qing: #3d7070;
+        --qing-light: #7aafaf;
+        --qing-dark: #1e4040;
+        --xuan-paper-light: #faf6ee;
+        --xuan-paper: #f2ecd8;
+        --xuan-paper-dark: #d8ceb0;
+        --cinnabar: #c93b2a;
+        --ink-green: #0f2a14;
         --ink: #171410;
         --ink-soft: #3b342d;
         --rule: color-mix(in srgb, var(--qing) 42%, var(--xuan-paper-dark) 58%);
@@ -39,37 +39,32 @@
       }
 
       * { box-sizing: border-box; }
-
-      html,
-      body {
-        margin: 0;
-        background: var(--xuan-paper-light);
-        color: var(--ink);
-      }
-
-      body.homepage main,
-      .firm-page,
-      .firm-page > section {
-        background: var(--xuan-paper-light);
-      }
-
-      img { display: block; max-width: 100%; }
+      html, body { margin: 0; }
+      body.homepage main, .firm-page, .firm-page > section { background: var(--xuan-paper-light); }
       h1, h2, h3, p { margin: 0; }
 
       .sv-page-shell {
         width: min(100% - clamp(72px, 9vw, 144px), var(--content-max-wide));
         margin-inline: auto;
+        padding-inline: var(--pad);
+      }
+      .firm-panel {
+        border: 1px solid var(--rule);
+        background: color-mix(in srgb, var(--xuan-paper-light) 82%, var(--xuan-paper) 18%);
+        padding: clamp(24px, 3vw, 38px);
+        display: grid;
+        gap: clamp(18px, 2vw, 24px);
+      }
+      .firm-panel--solid {
+        background: var(--qing-dark);
+        border-color: color-mix(in srgb, var(--qing-light) 40%, var(--qing-dark) 60%);
+        color: var(--xuan-paper-light);
       }
 
-      .sv-section {
-        padding-block: var(--sv-section-space);
-      }
-
-      .sv-label,
-      .section-kicker {
+      .firm-label {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
         font-size: var(--sv-size-label);
         line-height: var(--sv-lh-label);
         letter-spacing: var(--sv-track-label);
@@ -77,12 +72,8 @@
         text-transform: uppercase;
         color: var(--qing);
       }
-      .sv-label::after {
-        content: "";
-        width: 34px;
-        height: 1px;
-        background: color-mix(in srgb, var(--qing) 78%, var(--xuan-paper-dark) 22%);
-      }
+      .firm-label::after { content: ""; width: 36px; height: 1px; background: currentColor; }
+      .firm-panel--solid .firm-label { color: color-mix(in srgb, var(--xuan-paper-light) 72%, var(--qing-light) 28%); }
 
       .sv-editorial-hero {
         border: 1px solid var(--rule);
@@ -102,45 +93,40 @@
       }
       .sv-editorial-hero__grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-        gap: clamp(20px, 2.4vw, 34px);
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: clamp(22px, 2.5vw, 34px);
         align-items: start;
-        margin-top: clamp(16px, 2vw, 22px);
       }
-      .sv-editorial-hero h1,
-      .sv-editorial-hero .editorial-hero-title {
+      .firm-hero-title {
         margin-top: 16px;
-        font-size: var(--sv-size-h1) !important;
-        line-height: var(--sv-lh-display) !important;
-        letter-spacing: var(--sv-type-h1-track) !important;
+        font-size: var(--sv-size-h1);
+        line-height: var(--sv-lh-display);
+        letter-spacing: var(--sv-type-h1-track);
+        text-transform: uppercase;
       }
-      .sv-editorial-hero__lede {
-        margin-top: clamp(16px, 2vw, 22px);
+      .firm-body, .firm-card p {
         font-size: var(--sv-size-body);
         line-height: var(--sv-lh-body);
-        color: color-mix(in srgb, var(--ink-soft) 86%, var(--qing-dark) 14%);
-        max-width: min(52ch, var(--content-max-text-intro));
+        color: var(--ink-soft);
+        max-width: 62ch;
       }
-      .section-body {
-        font-size: var(--sv-size-body);
-        line-height: var(--sv-lh-body);
-      }
+      .firm-panel--solid .firm-body, .firm-panel--solid .firm-card p { color: color-mix(in srgb, var(--xuan-paper-light) 86%, white 14%); }
+      .firm-body + .firm-body { margin-top: 14px; }
 
-      .sv-card-stack {
+      .firm-stack {
         border-left: 1px solid var(--rule);
-        padding-left: clamp(16px, 1.8vw, 24px);
+        padding-left: clamp(18px, 2vw, 26px);
         display: grid;
         gap: 12px;
       }
-      .sv-card-stack article {
+      .firm-card {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 72%, var(--xuan-paper) 28%);
         padding: 14px 16px;
         display: grid;
-        gap: 6px;
+        gap: 7px;
       }
-      .sv-card-stack h3,
-      .meta-label {
+      .firm-card h3 {
         font-size: var(--sv-size-label);
         line-height: var(--sv-lh-label);
         letter-spacing: var(--sv-track-label);
@@ -163,88 +149,68 @@
         display: grid;
         gap: clamp(18px, 2vw, 24px);
       }
+      .firm-panel--solid .firm-card { background: color-mix(in srgb, var(--qing-dark) 88%, black 12%); border-color: color-mix(in srgb, var(--qing-light) 40%, transparent); }
+      .firm-panel--solid .firm-card h3 { color: var(--xuan-paper-light); }
 
-      .sv-editorial-block {
-        display: grid;
-        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-        gap: clamp(20px, 2vw, 32px);
-        align-items: start;
-      }
-      .sv-editorial-block h2,
-      .section-title,
-      .sv-section-title {
+      .firm-section-title {
         font-size: var(--sv-section-title-size);
         line-height: var(--sv-section-title-line);
         letter-spacing: 0.01em;
-        color: var(--ink);
+        text-transform: uppercase;
       }
-      .sv-editorial-block p,
-      .sv-block-copy {
-        font-size: var(--sv-size-body);
-        line-height: var(--sv-lh-body);
-        color: var(--ink-soft);
-      }
-      .sv-block-copy {
-        max-width: var(--content-max-text);
-      }
-
-      .sv-process-grid {
+      .firm-process-grid, .firm-governance-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
       }
-      .sv-process-card {
+      .firm-process-card {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 84%, var(--xuan-paper) 16%);
         padding: 16px;
         display: grid;
         gap: 8px;
       }
-      .sv-process-card__num {
+      .firm-process-num {
         font-size: var(--sv-size-meta);
         line-height: var(--sv-lh-label);
         letter-spacing: var(--sv-track-divider);
         text-transform: uppercase;
         color: var(--qing);
-        padding-bottom: 8px;
         border-bottom: 1px solid color-mix(in srgb, var(--qing-light) 46%, var(--xuan-paper-dark) 54%);
+        padding-bottom: 8px;
       }
-      .sv-process-card h3,
-      .card-title {
+      .firm-process-card h3 {
         font-size: var(--sv-pillar-title-size);
         line-height: var(--sv-pillar-title-line);
         letter-spacing: 0.01em;
         text-transform: uppercase;
         color: var(--qing-dark);
       }
-      .sv-process-card p {
-        font-size: var(--sv-size-body);
-        line-height: var(--sv-lh-body);
-        color: var(--ink-soft);
-      }
-
-      .sv-governance {
+      .firm-geo-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
         display: grid;
-        gap: 14px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
-      .sv-governance__row {
-        border: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper-light) 82%, var(--xuan-paper) 18%);
-        padding: 16px;
+      .firm-geo-list li {
+        border-left: 1px solid color-mix(in srgb, var(--qing-light) 45%, transparent);
+        padding: 8px 14px;
       }
-      .sv-governance__row h3 {
+      .firm-geo-list li:first-child { border-left: 0; padding-left: 0; }
+      .firm-geo-list strong {
+        display: block;
+        color: var(--xuan-paper-light);
         font-size: var(--sv-size-label);
         line-height: var(--sv-lh-label);
         letter-spacing: var(--sv-track-label);
         text-transform: uppercase;
-        color: var(--qing);
-        margin-bottom: 8px;
+        margin-bottom: 6px;
       }
-      .sv-governance__row p {
+      .firm-geo-list span {
+        color: color-mix(in srgb, var(--xuan-paper-light) 84%, var(--qing-light) 16%);
         font-size: var(--sv-size-body);
         line-height: var(--sv-lh-body);
-        color: var(--ink-soft);
-        max-width: var(--content-max-text);
       }
 
       .sv-statement {
@@ -254,48 +220,22 @@
         padding-block: var(--sv-panel-pad-block);
         position: relative;
       }
-      .sv-statement::before,
-      .sv-statement::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 1px;
-        background: color-mix(in srgb, var(--qing) 60%, var(--xuan-paper-dark) 40%);
-      }
-      .sv-statement p {
-        margin-block: 18px;
-        font-family: "Noto Serif SC", Georgia, serif;
+      .firm-statement p {
+        color: var(--xuan-paper-light);
         font-size: var(--sv-size-h2);
         line-height: var(--sv-lh-heading);
         letter-spacing: 0.01em;
-        color: var(--qing-dark);
-        max-width: 28ch;
         text-transform: uppercase;
+        max-width: 30ch;
       }
-      .sv-statement p strong {
-        color: var(--cinnabar);
-        font-weight: 500;
-      }
-
-      .sv-footer {
-        border-top: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper) 26%, var(--xuan-paper-light) 74%);
-      }
+      .firm-statement strong { color: color-mix(in srgb, var(--cinnabar) 70%, var(--xuan-paper-light) 30%); font-weight: 500; }
+      .sv-footer { border-top: 1px solid var(--rule); background: color-mix(in srgb, var(--xuan-paper) 22%, var(--xuan-paper-light) 78%); }
 
       @media (max-width: 980px) {
-        .sv-editorial-hero__grid,
-        .sv-editorial-block {
-          grid-template-columns: 1fr;
-        }
-        .sv-card-stack {
-          border-left: 0;
-          border-top: 1px solid var(--rule);
-          padding-left: 0;
-          padding-top: 16px;
-        }
-        .sv-process-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+        .firm-hero-grid, .firm-editorial-grid { grid-template-columns: 1fr; }
+        .firm-stack { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 16px; }
+        .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .firm-geo-list li:nth-child(odd) { border-left: 0; padding-left: 0; }
       }
 
       @media (max-width: 767px) {
@@ -330,29 +270,29 @@
     <div id="site-header-mount"></div>
 
     <main class="firm-page">
-      <section class="sv-section">
-        <div class="sv-page-shell">
-          <div class="sv-editorial-hero">
-            <div class="sv-editorial-hero__grid">
+      <section class="firm-section">
+        <div class="firm-wrap">
+          <div class="firm-panel">
+            <div class="firm-hero-grid">
               <div>
-                <p class="sv-label section-kicker">The Firm</p>
-                <h1 class="type-display-hero editorial-hero-title">ShoreVest Partners</h1>
-                <p class="sv-editorial-hero__lede section-body">
+                <p class="firm-label">The Firm</p>
+                <h1 class="type-display-hero firm-hero-title">ShoreVest Partners</h1>
+                <p class="firm-body">
                   Institutional private credit platform for complex recoveries across China, built for enforceability, downside protection, and disciplined realization outcomes.
                 </p>
               </div>
-              <aside class="sv-card-stack" aria-label="Firm platform pillars">
-                <article>
-                  <h3 class="meta-label">01 Platform</h3>
-                  <p class="card-copy">Locally embedded investment and servicing infrastructure across China.</p>
+              <aside class="firm-stack" aria-label="Firm platform pillars">
+                <article class="firm-card">
+                  <h3>01 Platform</h3>
+                  <p>Locally embedded investment and servicing infrastructure across China.</p>
                 </article>
-                <article>
-                  <h3 class="meta-label">02 Discipline</h3>
-                  <p class="card-copy">Collateral-first underwriting with institutional governance and risk control.</p>
+                <article class="firm-card">
+                  <h3>02 Discipline</h3>
+                  <p>Collateral-first underwriting with institutional governance and risk control.</p>
                 </article>
-                <article>
-                  <h3 class="meta-label">03 Continuity</h3>
-                  <p class="card-copy">A senior team executing China credit strategies across multiple cycles.</p>
+                <article class="firm-card">
+                  <h3>03 Continuity</h3>
+                  <p>A senior team executing China credit strategies across multiple cycles.</p>
                 </article>
               </aside>
             </div>
@@ -360,18 +300,18 @@
         </div>
       </section>
 
-      <section class="sv-section">
-        <div class="sv-page-shell">
-          <div class="sv-section-grid sv-editorial-block">
+      <section class="firm-section">
+        <div class="firm-wrap">
+          <div class="firm-panel firm-editorial-grid">
             <div>
-              <p class="sv-label section-kicker">Institutional platform</p>
-              <h2 class="sv-section-title section-title">ROOTED IN CHINA, BUILT FOR INSTITUTIONAL CAPITAL</h2>
+              <p class="firm-label">Institutional Platform</p>
+              <h2 class="firm-section-title">Rooted in China, built for institutional capital</h2>
             </div>
-            <div class="sv-block-copy section-body">
-              <p>
+            <div>
+              <p class="firm-body">
                 ShoreVest&rsquo;s strategy dates to 2004, with the current platform established in 2016 by the senior team behind predecessor vehicles across collateral-backed lending, asset restructuring, and NPL resolution.
               </p>
-              <p>
+              <p class="firm-body">
                 Headquartered in Guangzhou with additional presence in Shanghai, Hong Kong, and California, the firm keeps investment, legal, servicing, and realization execution coordinated through one onshore operating standard.
               </p>
             </div>
@@ -379,75 +319,93 @@
         </div>
       </section>
 
-      <section class="sv-section">
-        <div class="sv-page-shell">
-          <div class="sv-section-grid">
+      <section class="firm-section">
+        <div class="firm-wrap">
+          <div class="firm-panel firm-panel--solid">
+            <p class="firm-label">Operational Geography</p>
+            <h2 class="firm-section-title">Cross-border operating footprint with onshore execution control</h2>
+            <p class="firm-body">Capital formation, underwriting governance, and legal-servicing operations are coordinated through one institutional process across North America and Greater China.</p>
+            <ul class="firm-geo-list">
+              <li><strong>California</strong><span>Investor interface, portfolio reporting, and cross-border capital coordination.</span></li>
+              <li><strong>Hong Kong</strong><span>Regional structuring bridge, legal interface, and transaction coordination.</span></li>
+              <li><strong>Guangzhou / Shanghai</strong><span>Onshore sourcing, underwriting, servicing, and enforcement execution.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="firm-section">
+        <div class="firm-wrap">
+          <div class="firm-panel">
             <div>
-              <p class="sv-label section-kicker">Operating model</p>
-              <h2 class="sv-section-title section-title">PLATFORM ARCHITECTURE</h2>
+              <p class="firm-label">Operating Model</p>
+              <h2 class="firm-section-title">Platform Architecture</h2>
             </div>
-            <div class="sv-process-grid">
-              <article class="sv-process-card">
-                <p class="sv-process-card__num">01</p>
-                <h3 class="card-title">Origination</h3>
-                <p class="card-copy">Relationship-led sourcing through banks, AMCs, law firms, and servicing channels.</p>
+            <div class="firm-process-grid">
+              <article class="firm-process-card">
+                <p class="firm-process-num">01</p>
+                <h3>Origination</h3>
+                <p class="firm-body">Relationship-led sourcing through banks, AMCs, law firms, and servicing channels.</p>
               </article>
-              <article class="sv-process-card">
-                <p class="sv-process-card__num">02</p>
-                <h3 class="card-title">Underwriting</h3>
-                <p class="card-copy">Collateral-first analysis with conservative entry basis and downside protection discipline.</p>
+              <article class="firm-process-card">
+                <p class="firm-process-num">02</p>
+                <h3>Underwriting</h3>
+                <p class="firm-body">Collateral-first analysis with conservative entry basis and downside protection discipline.</p>
               </article>
-              <article class="sv-process-card">
-                <p class="sv-process-card__num">03</p>
-                <h3 class="card-title">Legal structuring</h3>
-                <p class="card-copy">Enforceable PRC claims and documentary precision integrated at approval stage.</p>
+              <article class="firm-process-card">
+                <p class="firm-process-num">03</p>
+                <h3>Legal structuring</h3>
+                <p class="firm-body">Enforceable PRC claims and documentary precision integrated at approval stage.</p>
               </article>
-              <article class="sv-process-card">
-                <p class="sv-process-card__num">04</p>
-                <h3 class="card-title">Servicing</h3>
-                <p class="card-copy">Active post-close monitoring and intervention capability embedded in the platform.</p>
+              <article class="firm-process-card">
+                <p class="firm-process-num">04</p>
+                <h3>Servicing</h3>
+                <p class="firm-body">Active post-close monitoring and intervention capability embedded in the platform.</p>
               </article>
-              <article class="sv-process-card">
-                <p class="sv-process-card__num">05</p>
-                <h3 class="card-title">Enforcement</h3>
-                <p class="card-copy">Local execution in workout, restructuring, and claims realization across cycles.</p>
+              <article class="firm-process-card">
+                <p class="firm-process-num">05</p>
+                <h3>Enforcement</h3>
+                <p class="firm-body">Local execution in workout, restructuring, and claims realization across cycles.</p>
               </article>
-              <article class="sv-process-card">
-                <p class="sv-process-card__num">06</p>
-                <h3 class="card-title">Exit management</h3>
-                <p class="card-copy">Coordinated timing, disposition, and recovery pathways tied to institutional governance.</p>
+              <article class="firm-process-card">
+                <p class="firm-process-num">06</p>
+                <h3>Exit management</h3>
+                <p class="firm-body">Coordinated timing, disposition, and recovery pathways tied to institutional governance.</p>
               </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="sv-section">
-        <div class="sv-page-shell">
-          <div class="sv-section-grid sv-governance">
+      <section class="firm-section">
+        <div class="firm-wrap">
+          <div class="firm-panel">
             <div>
-              <p class="sv-label section-kicker">Governance</p>
-              <h2 class="sv-section-title section-title">GOVERNANCE AND CONTINUITY</h2>
+              <p class="firm-label">Governance</p>
+              <h2 class="firm-section-title">Governance and continuity</h2>
             </div>
-            <div class="sv-governance__row">
-              <h3 class="meta-label">Investment committee</h3>
-              <p class="section-body">Senior decision-makers maintain accountability for underwriting standards, legal control, and portfolio-level risk discipline.</p>
-            </div>
-            <div class="sv-governance__row">
-              <h3 class="meta-label">Execution continuity</h3>
-              <p class="section-body">One team owns each investment from origination through realization, reducing handoff risk and preserving institutional process integrity.</p>
-            </div>
-            <div class="sv-governance__row">
-              <h3 class="meta-label">Capital stewardship</h3>
-              <p class="section-body">ShoreVest is backed by sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
+            <div class="firm-governance-grid">
+              <article class="firm-card">
+                <h3>Investment committee</h3>
+                <p>Senior decision-makers maintain accountability for underwriting standards, legal control, and portfolio-level risk discipline.</p>
+              </article>
+              <article class="firm-card">
+                <h3>Execution continuity</h3>
+                <p>One team owns each investment from origination through realization, reducing handoff risk and preserving institutional process integrity.</p>
+              </article>
+              <article class="firm-card">
+                <h3>Capital stewardship</h3>
+                <p>ShoreVest is backed by sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="sv-section">
-        <div class="sv-page-shell">
-          <div class="sv-statement">
+      <section class="firm-section">
+        <div class="firm-wrap">
+          <div class="firm-statement">
+            <p class="firm-label">Capital Base</p>
             <p>LOCAL EXECUTION. <strong>GLOBAL STANDARD.</strong> Institutional private credit delivery built for enforceability, control, and disciplined realizations.</p>
           </div>
         </div>
