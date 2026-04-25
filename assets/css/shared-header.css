@@ -559,6 +559,7 @@ body {
 @media (max-width: 980px) {
   :root {
     --sv-header-height-mobile: 62px;
+    --sv-mobile-header-inset-base: 18px;
   }
 
   /* Mobile top bar baseline: match Firm page styling across all routes. */
@@ -571,14 +572,21 @@ body {
   #site-header-mount #nav {
     min-height: 62px !important;
     height: 62px !important;
-    padding: 0 clamp(14px, 4vw, 20px) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: max(var(--sv-mobile-header-inset-base), calc(env(safe-area-inset-left, 0px) + 14px)) !important;
+    padding-right: max(var(--sv-mobile-header-inset-base), calc(env(safe-area-inset-right, 0px) + 14px)) !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
     column-gap: 10px !important;
     border-bottom: 1px solid rgba(31, 24, 18, .14) !important;
   }
 
   #site-header-mount #nav .nav__logo {
+    margin: 0 !important;
     gap: 0 !important;
     align-items: center !important;
+    min-height: 62px !important;
   }
 
   #site-header-mount #nav .nav__logo-lockup {
@@ -611,6 +619,9 @@ body {
     gap: 6px !important;
     display: inline-flex !important;
     align-items: center !important;
+    justify-content: flex-end !important;
+    justify-self: end !important;
+    margin: 0 !important;
   }
 
   #site-header-mount #nav .nav__menu-btn {
@@ -632,6 +643,7 @@ body {
     line-height: 1 !important;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    margin: 0 !important;
   }
 
   #site-header-mount #nav .nav__menu-btn-label {
