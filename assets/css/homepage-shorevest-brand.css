@@ -631,14 +631,12 @@ body.homepage .icard__link {
 
 body.homepage .cta--dark .cta__ring,
 body.homepage .cta--light .cta__ring,
-body.homepage .nav__lp,
 body.homepage .nav__menu-btn {
   border-color: color-mix(in srgb, var(--blue-green-dark) 28%, var(--paper-dark) 72%) !important;
 }
 
 body.homepage .cta--dark:hover .cta__ring,
 body.homepage .cta--light:hover .cta__ring,
-body.homepage .nav__lp:hover,
 body.homepage .nav__menu-btn:hover {
   background: var(--blue-green) !important;
   border-color: var(--blue-green) !important;

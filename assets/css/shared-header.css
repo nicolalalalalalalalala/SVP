@@ -149,30 +149,41 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: 11.4px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--sv-header-text) !important;
+  box-sizing: border-box;
+  min-height: 42px;
+  height: 42px;
+  padding-inline: 24px;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 11.4px !important;
+  font-weight: 600 !important;
+  line-height: 1;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: color-mix(in srgb, var(--sv-header-text) 96%, #162613 4%) !important;
   text-decoration: none;
-  border: 1px solid rgba(48, 40, 34, 0.15);
-  padding: 7px 16px;
-  background: var(--sv-header-bg);
+  border: 1px solid color-mix(in srgb, #2e4a18 34%, #d8ceb0 66%) !important;
+  background: color-mix(in srgb, var(--sv-header-bg) 92%, #faf6ee 8%) !important;
   border-radius: 0;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow: none;
+  transform: translateY(0);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
 }
 
 #site-header-mount #nav .nav__lp:hover {
-  background: var(--sv-header-btn-hover);
-  color: var(--sv-header-bg) !important;
-  border-color: var(--sv-header-btn-hover);
+  background: color-mix(in srgb, var(--sv-header-bg) 84%, #d8ceb0 16%) !important;
+  color: color-mix(in srgb, var(--sv-header-text) 96%, #162613 4%) !important;
+  border-color: color-mix(in srgb, #2e4a18 56%, #d8ceb0 44%) !important;
 }
 
 #site-header-mount #nav .nav__lp.active {
-  background: var(--sv-header-btn-active);
-  color: var(--sv-header-bg) !important;
-  border-color: var(--sv-header-btn-active);
+  background: color-mix(in srgb, var(--sv-header-bg) 76%, #d8ceb0 24%) !important;
+  color: color-mix(in srgb, var(--sv-header-text) 98%, #162613 2%) !important;
+  border-color: color-mix(in srgb, #2e4a18 64%, #d8ceb0 36%) !important;
+}
+
+#site-header-mount #nav .nav__lp:focus-visible {
+  outline: 2px solid color-mix(in srgb, #2e4a18 42%, #d8ceb0 58%);
+  outline-offset: 2px;
 }
 
 #site-header-mount #nav .nav__mobile-lang,
