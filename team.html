@@ -43,9 +43,9 @@
         --pad: var(--site-page-margin);
         --team-type-heading: var(--sv-type-sans, "DIN 2014", "Helvetica Neue", Arial, sans-serif);
         --team-type-body: var(--sv-type-sans, "DIN 2014", "Helvetica Neue", Arial, sans-serif);
-        --team-name-size: 12pt;
-        --team-role-size: var(--sv-type-label-size, 7.5pt);
-        --team-role-track: var(--sv-type-label-track, 0.16em);
+        --team-name-size: var(--sv-pillar-title-size);
+        --team-role-size: var(--sv-size-meta);
+        --team-role-track: var(--sv-track-divider);
         --team-bio-trigger-size: var(--sv-type-cta-size, 10px);
       }
 
@@ -124,19 +124,26 @@
       }
       h1 {
         font-family: var(--team-type-heading);
-        font-size: clamp(32px, 4.1vw, 46px);
-        font-weight: 500;
+        font-size: var(--sv-size-h1);
+        font-weight: 700;
         font-style: normal;
-        line-height: 1.08;
-        letter-spacing: 0;
-        text-transform: none;
+        line-height: var(--sv-lh-display);
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
         margin-bottom: 0;
         max-width: 20ch;
       }
+      .pagehero .type-display-hero {
+        font-size: var(--sv-size-h1) !important;
+        font-style: normal !important;
+        font-weight: 700 !important;
+        line-height: var(--sv-lh-display) !important;
+        letter-spacing: 0.02em !important;
+      }
       .pagehero p {
         max-width: 58ch;
-        font-size: var(--sv-type-body-size, 10pt);
-        line-height: 1.7;
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: var(--ink-soft);
         font-family: var(--team-type-body);
         margin-top: 2px;
@@ -199,9 +206,9 @@
         padding-inline: var(--pad);
       }
       .team-groups__intro {
-        font-family: var(--serif);
-        font-size: 21px;
-        line-height: 1.62;
+        font-family: var(--team-type-body);
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: var(--ink-soft);
         max-width: 980px;
         margin-bottom: 22px;
@@ -232,23 +239,24 @@
       .group h2 {
         font-family: var(--team-type-heading);
         font-weight: 700;
-        font-size: clamp(16px, 1.2vw, 19px);
+        font-size: var(--sv-pillar-title-size);
         line-height: 1.18;
         letter-spacing: 0.03em;
         text-transform: uppercase;
         white-space: normal;
       }
       .group__head .sv-section-title {
-        font-size: clamp(16px, 1.2vw, 19px);
-        line-height: 1.18;
-        letter-spacing: 0.03em;
+        font-size: var(--sv-pillar-title-size) !important;
+        line-height: var(--sv-pillar-title-line) !important;
+        letter-spacing: 0.01em !important;
         text-transform: uppercase;
+        margin-bottom: 0 !important;
       }
       .group__summary {
         font-family: var(--team-type-body);
-        font-size: var(--sv-type-meta-size, 8pt);
-        line-height: 1.58;
-        letter-spacing: 0.035em;
+        font-size: var(--sv-size-meta);
+        line-height: var(--sv-lh-meta);
+        letter-spacing: var(--sv-track-divider);
         color: color-mix(in srgb, var(--ink-soft) 90%, white);
         max-width: 72ch;
         white-space: normal;
@@ -366,8 +374,8 @@
         border-bottom: none;
       }
       .team-profile__descriptor {
-        font-size: 12px;
-        line-height: 1.5;
+        font-size: var(--sv-size-meta);
+        line-height: var(--sv-lh-meta);
         color: var(--ink-soft);
         margin-top: -2px;
       }
@@ -482,8 +490,8 @@
       }
       .team-profile__bio p {
         font-family: var(--team-type-body);
-        font-size: var(--sv-type-body-size, 10pt);
-        line-height: 1.75;
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: color-mix(in srgb, var(--ink-soft) 93%, black 7%);
         max-width: none;
         width: 100%;
@@ -536,8 +544,8 @@
       }
       .team-row-bio__content p {
         font-family: var(--team-type-body);
-        font-size: var(--sv-type-body-size, 10pt);
-        line-height: 1.75;
+        font-size: var(--sv-size-body);
+        line-height: var(--sv-lh-body);
         color: color-mix(in srgb, var(--ink-soft) 93%, black 7%);
         margin: 0;
         text-wrap: pretty;
@@ -608,8 +616,8 @@
           max-width: 18ch;
         }
         .pagehero p {
-          font-size: 16px;
-          line-height: 1.58;
+          font-size: var(--sv-size-body);
+          line-height: var(--sv-lh-body);
           max-width: 44ch;
         }
         .founder-note {
@@ -631,14 +639,14 @@
           box-shadow: none;
         }
         .group h2 {
-          font-size: clamp(15px, 3.4vw, 18px);
-          letter-spacing: 0.03em;
+          font-size: var(--sv-pillar-title-size);
+          letter-spacing: 0.01em;
           text-transform: uppercase;
           white-space: normal;
         }
         .group__summary {
-          font-size: 12px;
-          line-height: 1.52;
+          font-size: var(--sv-size-meta);
+          line-height: var(--sv-lh-meta);
           max-width: none;
           white-space: normal;
           overflow: visible;
@@ -654,8 +662,8 @@
           padding: 24px 0 34px;
         }
         .team-groups__intro {
-          font-size: 18px;
-          line-height: 1.5;
+          font-size: var(--sv-size-body);
+          line-height: var(--sv-lh-body);
           margin-bottom: 14px;
         }
         .grid {
