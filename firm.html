@@ -1121,8 +1121,10 @@
         padding-bottom: clamp(18px, 2.4vw, 30px) !important;
       }
       .hero .wrap {
-        max-width: calc(var(--content-max-width-wide) + (var(--site-page-gutter) * 2)) !important;
-        padding-inline: var(--site-page-gutter) !important;
+        max-width: calc(
+          var(--content-max-width-wide) + (var(--site-page-gutter) * 2) + clamp(140px, 12vw, 260px)
+        ) !important;
+        padding-inline: clamp(16px, 2.1vw, 34px) !important;
       }
       .hero-shell,
       .operations-grid,
@@ -1143,6 +1145,13 @@
       .execution-strip,
       .cta-panel {
         padding: clamp(20px, 2.2vw, 32px) !important;
+      }
+      .hero-row {
+        grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+        gap: clamp(24px, 2.5vw, 40px) !important;
+      }
+      .hero-body p {
+        max-width: 56ch;
       }
       .eyebrow,
       .hero-kicker {
