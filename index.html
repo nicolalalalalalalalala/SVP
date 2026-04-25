@@ -3489,6 +3489,226 @@ body.homepage #cdd .cdd-editorial__lede {
   }
 }
 
+/* Homepage mobile minimalist system (mobile only, desktop preserved). */
+@media (max-width: 767px) {
+  :root {
+    --site-page-margin: clamp(20px, 6vw, 26px);
+    --section-space: 40px;
+    --section-space-tight: 32px;
+    --content-gap: 18px;
+  }
+
+  body.homepage {
+    --home-frame-pad: clamp(18px, 5.4vw, 24px);
+    --home-section-space: clamp(24px, 7vw, 34px);
+    --home-section-space-tight: clamp(18px, 6vw, 26px);
+    --home-section-transition-gap: 10px;
+    --home-section-stack-gap: 10px;
+    --home-section-pair-gap: 8px;
+  }
+
+  /* Cleaner mobile top bar balance. */
+  #site-header-mount #nav {
+    padding-left: max(22px, calc(env(safe-area-inset-left, 0px) + 18px)) !important;
+    padding-right: max(20px, calc(env(safe-area-inset-right, 0px) + 16px)) !important;
+    column-gap: 14px !important;
+  }
+  #site-header-mount #nav .nav__logo {
+    margin-left: 2px !important;
+  }
+  #site-header-mount #nav .nav__menu-btn {
+    min-width: 88px !important;
+    padding: 0 10px !important;
+  }
+  #site-header-mount #nav .nav__right {
+    margin-right: 1px !important;
+  }
+
+  /* Hero: calmer typography, fewer decorative interruptions. */
+  body.homepage .home-hero {
+    min-height: clamp(500px, 80vh, 620px);
+    border-bottom: 0;
+  }
+  body.homepage .home-hero__inner {
+    padding-top: clamp(84px, 20vw, 112px);
+    padding-bottom: clamp(38px, 10vw, 56px);
+  }
+  body.homepage .home-hero__eyebrow::after,
+  body.homepage .eyebrow::after {
+    display: none;
+  }
+  body.homepage .home-hero__headline {
+    font-size: clamp(24px, 7vw, 31px);
+    line-height: 1.12;
+    max-width: 14.5ch;
+    margin-bottom: 8px;
+  }
+  body.homepage .home-hero__support {
+    font-size: clamp(12.6px, 3.4vw, 14px);
+    line-height: 1.54;
+    max-width: 36ch;
+  }
+  body.homepage .home-hero__actions {
+    gap: 9px;
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+  body.homepage .home-hero__cta {
+    min-height: 42px;
+    font-size: 9.1px;
+    letter-spacing: .1em;
+  }
+
+  /* Unified mobile type scale + wrap control. */
+  body.homepage :is(.about__hed, .strat__hed, .track-record__title, .principles__heading .about__subhed) {
+    font-size: clamp(23px, 6.5vw, 28px);
+    line-height: 1.15;
+    letter-spacing: .005em;
+    text-wrap: balance;
+  }
+  body.homepage :is(.about__body p, .strat__intro, .ac__body, .sg__body, .stats__transition) {
+    font-size: clamp(13.2px, 3.65vw, 14.4px);
+    line-height: 1.58;
+  }
+  body.homepage :is(.ac__title, .sg__title) {
+    font-size: clamp(19px, 5.3vw, 24px);
+    line-height: 1.17;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: none;
+    word-break: normal;
+  }
+  body.homepage :is(.about__hed, .strat__hed, .ac__title, .sg__title, .cdd-feature__title, .wordmark__title) {
+    hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Principles + strategy cards: cleaner proportions and no leakage. */
+  #principles .principles__grid,
+  #strategy .strat__grid {
+    gap: 6px;
+  }
+  #principles .ac {
+    padding: 24px 8px 18px;
+    gap: 8px;
+    overflow: hidden;
+  }
+  #strategy .sg__content {
+    padding: 24px 14px 18px !important;
+    gap: 7px;
+    overflow: hidden;
+  }
+  #principles .ac__meta,
+  #strategy .sg__n {
+    font-size: 9px;
+    letter-spacing: .12em;
+  }
+
+  /* Find out more row: keep aligned and anchored. */
+  #strategy .strat__actions {
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  #strategy .strat__actions .cta {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  #strategy .strat__actions .cta__ring {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  /* CDD block: reduce visual weight and keep hierarchy calm. */
+  #cdd {
+    padding: 20px 0;
+  }
+  .cdd-editorial__card {
+    padding: 14px 12px;
+    gap: 12px;
+  }
+  .cdd-editorial__kicker {
+    font-size: 9px;
+    letter-spacing: .15em;
+  }
+  #cdd .wordmark__title {
+    font-size: clamp(24px, 7vw, 32px);
+    max-width: 12ch;
+    margin-bottom: 6px;
+  }
+  .cdd-editorial__lede {
+    font-size: 12.2px;
+    line-height: 1.5;
+  }
+  .cdd-feature__issue,
+  .cdd-feature__date,
+  .cdd-live__label {
+    font-size: 7.8px;
+    letter-spacing: .095em;
+  }
+  .cdd-feature__label {
+    font-size: 9.2px;
+  }
+  .cdd-feature__title {
+    font-size: clamp(18px, 5.5vw, 22px);
+    line-height: 1.14;
+  }
+  .cdd-feature__thesis,
+  .cdd-feature__finding {
+    font-size: 12px;
+    line-height: 1.54;
+  }
+  .cdd-cta {
+    min-height: 38px;
+    font-size: 9.6px;
+    padding: 8px 10px;
+  }
+  .cdd-cta__ring {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Footer: structured and minimal. */
+  .sv-footer {
+    padding-top: 22px;
+    padding-bottom: 20px;
+  }
+  .sv-footer__main {
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .sv-footer__brand {
+    font-size: 13px !important;
+    letter-spacing: .045em;
+  }
+  .sv-footer__contact {
+    row-gap: 8px;
+  }
+  .sv-footer__contact a {
+    font-size: 10px;
+    letter-spacing: .07em;
+    padding: 8px 10px;
+  }
+  .sv-footer__bottom {
+    gap: 8px;
+    padding-top: 12px;
+  }
+  .sv-footer__copyright,
+  .sv-footer__legal-links {
+    font-size: 7.3pt;
+    line-height: 1.5;
+    max-width: 44ch;
+  }
+  .sv-footer__legal {
+    font-size: 6.6px;
+    line-height: 1.55;
+    max-width: 44ch;
+  }
+}
+
 @media (min-width: 1025px) and (max-width: 1280px) {
   .wrap.cdd-editorial {
     max-width: min(1180px, calc(100vw - (var(--pad) * 2)));
