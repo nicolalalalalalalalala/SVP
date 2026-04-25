@@ -1147,15 +1147,18 @@
         padding-block: clamp(34px, 4vw, 48px);
         padding-inline: clamp(36px, 4vw, 56px);
       }
+      .market-context-text {
+        width: min(100%, clamp(760px, 82vw, 960px));
+      }
       .market-context-content h2 {
         font-size: clamp(1.55rem, 2.45vw, 2.05rem);
-        max-width: 24ch;
+        max-width: min(100%, clamp(760px, 74vw, 900px));
         margin-bottom: 14px;
         line-height: 1.16;
         text-wrap: balance;
       }
       .market-context-content p {
-        max-width: 66ch;
+        max-width: min(100%, clamp(780px, 80vw, 960px));
         font-size: 16.5px;
         line-height: 1.7;
         color: #0F2206;
@@ -2123,6 +2126,12 @@
         .market-context-content {
           padding: 22px 18px;
         }
+        .market-context-text,
+        .market-context-content h2,
+        .market-context-content p {
+          max-width: 100%;
+          width: 100%;
+        }
         .market-context-content p,
         .strategy-intro-lead p {
           font-size: 16px;
@@ -2893,15 +2902,17 @@ body.strategy-page .strategy-hero .strategy-kpi span {
             <div class="wrap">
               <div class="market-context-content">
                 <div class="eyebrow eyebrow--red">Market Context</div>
-                <h2 id="market-context-heading" class="sv-section-title">
-                  Market dislocation is a structural entry condition.
-                </h2>
-                <p>
-                  China remains the world's second-largest credit market, yet many global portfolios remain materially under-allocated for non-fundamental reasons. That underexposure is itself an active risk decision.
-                </p>
-                <p>
-                  ShoreVest's strategy focuses on where spread and collateral coverage improve when complexity reduces competition. Structure, legal priority, and execution cadence determine outcomes more than macro narrative.
-                </p>
+                <div class="market-context-text">
+                  <h2 id="market-context-heading" class="sv-section-title">
+                    Market dislocation is a structural entry condition.
+                  </h2>
+                  <p>
+                    China remains the world's second-largest credit market, yet many global portfolios remain materially under-allocated for non-fundamental reasons. That underexposure is itself an active risk decision.
+                  </p>
+                  <p>
+                    ShoreVest's strategy focuses on where spread and collateral coverage improve when complexity reduces competition. Structure, legal priority, and execution cadence determine outcomes more than macro narrative.
+                  </p>
+                </div>
                 <div class="context-grid">
                   <div class="context-pullout"><b>Structural spread</b><span>Complexity can reduce competition and widen spread for enforceable secured claims.</span></div>
                   <div class="context-pullout"><b>Vintage effect</b><span>Periods of weaker sentiment have historically supported better entry basis and downside buffers.</span></div>
