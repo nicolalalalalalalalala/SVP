@@ -841,19 +841,19 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
 
   html body footer.sv-footer .sv-footer__contact a {
     width: 100% !important;
-    min-height: 40px !important;
-    display: flex !important;
+    min-height: 0 !important;
+    display: inline-flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    padding: 0 12px !important;
-    border: 1px solid var(--paper-dark, #D8CEB0) !important;
-    background: var(--paper, #F2ECD8) !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
     color: var(--ink-green-dark, #0F2206) !important;
     font-size: 11px !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+    text-transform: none !important;
     box-sizing: border-box !important;
-    text-align: center !important;
+    text-align: left !important;
     white-space: normal !important;
     word-break: break-word !important;
   }
@@ -869,30 +869,35 @@ footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
     color: color-mix(in srgb, var(--ink-green-dark, #0F2206) 62%, var(--paper-light, #FAF6EE) 38%) !important;
   }
 
-  html body footer.sv-footer .sv-footer__legal-toggle {
-    border: 1px solid var(--paper-dark, #D8CEB0) !important;
-    background: var(--paper, #F2ECD8) !important;
-  }
-
   html body footer.sv-footer .sv-footer__legal-toggle > summary {
-    min-height: 40px !important;
+    min-height: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0 14px 0 20px !important;
+    padding: 0 !important;
     font-size: 10px !important;
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal {
-    padding: 6px 16px 14px 22px !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 4px 0 0 !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
   }
 
   html body footer.sv-footer .sv-footer__legal,
   html body footer.sv-footer .sv-footer__legal p {
-    font-size: 10px !important;
-    line-height: 1.45 !important;
+    font-size: clamp(13px, 3.5vw, 14px) !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
   }
 
   html body footer.sv-footer .sv-footer__legal-links {
