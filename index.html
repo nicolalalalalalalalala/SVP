@@ -23,7 +23,7 @@
 
 /* === Institutional system reset: hero + section composition + track record === */
 body.homepage .home-hero {
-  min-height: clamp(560px, 72vh, 760px);
+  min-height: auto;
   align-items: center;
   border-bottom: 1px solid color-mix(in srgb, #e6ddc7 78%, transparent);
 }
@@ -155,6 +155,20 @@ body.homepage .track-record__note {
   --section-space: clamp(80px, 9vw, 120px);
   --section-space-tight: clamp(60px, 7vw, 88px);
   --content-gap: clamp(44px, 5.5vw, 82px);
+  --section-gap-desktop: 0px;
+  --section-gap-tablet: 0px;
+  --section-gap-mobile: 0px;
+  --section-block-gap: var(--section-gap-desktop);
+}
+@media (max-width: 1024px) {
+  :root {
+    --section-block-gap: var(--section-gap-tablet);
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --section-block-gap: var(--section-gap-mobile);
+  }
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; overflow-x:hidden; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
@@ -1727,7 +1741,7 @@ h2.su__hed {
 /* Homepage rebuild: controlled hierarchy and typography */
 body.homepage .home-hero {
   position: relative;
-  min-height: clamp(580px, 80vh, 780px);
+  min-height: auto;
   display: flex;
   align-items: center;
   isolation: isolate;
@@ -1746,7 +1760,7 @@ body.homepage {
   --home-body-start-line: clamp(240px, 24vw, 310px);
   --home-rule-quiet: color-mix(in srgb, var(--rule) 42%, transparent);
   --home-rule-faint: color-mix(in srgb, var(--rule) 26%, transparent);
-  --home-section-stack-gap: clamp(36px, 3.8vw, 52px);
+  --home-section-stack-gap: var(--section-block-gap);
   --home-panel-pad-top: clamp(16px, 1.8vw, 22px);
   --home-panel-pad-bottom: clamp(16px, 1.8vw, 22px);
   --home-card-pad-top: clamp(24px, 2.2vw, 30px);
@@ -2238,7 +2252,7 @@ body.homepage #principles .about__body p {
 @media (min-width: 768px) and (max-width: 980px) {
   body.homepage {
     --home-body-start-line: clamp(200px, 30vw, 250px);
-    --home-section-stack-gap: clamp(44px, 6vw, 56px);
+    --home-section-stack-gap: var(--section-block-gap);
   }
   body.homepage #principles .principles__toprow {
     grid-template-columns: minmax(200px, 3.4fr) minmax(0, 8.6fr);
@@ -2585,7 +2599,7 @@ body.homepage #cdd .cdd-editorial__lede {
     white-space: normal;
   }
   body.homepage .home-hero {
-    min-height: clamp(520px, 84vh, 680px);
+    min-height: auto;
   }
   body.homepage .home-hero::before {
     background-position: 74% 50%;
@@ -2777,7 +2791,7 @@ body.homepage #cdd .cdd-editorial__lede {
   body.homepage {
     --home-frame-pad: clamp(16px, 4.8vw, 22px);
     --home-copy-max: 100%;
-    --home-section-stack-gap: clamp(28px, 7vw, 40px);
+    --home-section-stack-gap: var(--section-block-gap);
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
@@ -3504,12 +3518,12 @@ body.homepage #cdd .cdd-editorial__lede {
 
   body.homepage {
     --home-frame-pad: clamp(18px, 5.4vw, 24px);
-    --home-section-stack-gap: clamp(28px, 7vw, 40px);
+    --home-section-stack-gap: var(--section-block-gap);
   }
 
   /* Hero: calmer typography, fewer decorative interruptions. */
   body.homepage .home-hero {
-    min-height: clamp(500px, 80vh, 620px);
+    min-height: auto;
     border-bottom: 0;
   }
   body.homepage .home-hero__inner {
