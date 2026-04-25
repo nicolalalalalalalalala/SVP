@@ -108,7 +108,7 @@ body.homepage .track-record__grid {
 }
 body.homepage .track-record__item {
   min-height: 0;
-  padding: clamp(18px, 2vw, 24px) clamp(18px, 2vw, 24px) clamp(18px, 1.9vw, 24px);
+  padding: clamp(22px, 2.2vw, 30px) clamp(18px, 2vw, 24px) clamp(20px, 2vw, 28px);
 }
 body.homepage .track-record__value { margin: 10px 0 8px; }
 body.homepage .track-record__description { max-width: 34ch; }
@@ -724,7 +724,7 @@ body.homepage .track-record__summary {
   align-content:start;
   gap:10px;
   min-height:clamp(196px, 16.4vw, 228px);
-  padding:clamp(16px, 1.6vw, 22px);
+  padding:var(--home-card-pad-top, clamp(21px, 2.1vw, 28px)) clamp(16px, 1.6vw, 22px) var(--home-card-pad-bottom, clamp(20px, 2vw, 26px));
   border:1px solid color-mix(in srgb, var(--rule) 88%, #b9b3a0 12%);
   background:color-mix(in srgb, var(--paper-light) 78%, #edf0eb 22%) !important;
   box-shadow:none;
@@ -864,7 +864,7 @@ h2.strat__hed {
   border-color:rgba(61,112,112,.4);
 }
 .sg__content {
-  padding-block:clamp(21px, 2.1vw, 30px) clamp(24px, 2.6vw, 34px);
+  padding-block:var(--home-card-pad-top, clamp(24px, 2.2vw, 30px)) var(--home-card-pad-bottom, clamp(22px, 2vw, 28px));
   padding-inline-start:clamp(22px, 3.8vw, 52px);
   padding-inline-end:clamp(14px, 1.7vw, 24px);
   display:flex;
@@ -1729,6 +1729,10 @@ body.homepage {
   --home-section-transition-gap: clamp(2px, 0.35vw, 4px);
   --home-section-stack-gap: clamp(2px, 0.3vw, 3px);
   --home-section-pair-gap: clamp(1px, 0.2vw, 2px);
+  --home-panel-pad-top: clamp(18px, 2.1vw, 28px);
+  --home-panel-pad-bottom: clamp(18px, 2vw, 26px);
+  --home-card-pad-top: clamp(24px, 2.2vw, 30px);
+  --home-card-pad-bottom: clamp(22px, 2vw, 28px);
 }
 body.homepage .home-section-shell {
   width: 100%;
@@ -1739,12 +1743,12 @@ body.homepage .home-section-shell {
 body.homepage .home-section-shell--soft {
   border: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
   background: color-mix(in srgb, var(--off) 88%, transparent);
-  padding-block: clamp(4px, 0.55vw, 6px);
+  padding-block: var(--home-panel-pad-top) var(--home-panel-pad-bottom);
 }
 body.homepage .home-section-shell--panel {
   border: 1px solid color-mix(in srgb, var(--rule) 66%, transparent);
   background: color-mix(in srgb, #f8f2e3 86%, transparent);
-  padding-block: clamp(4px, 0.55vw, 6px);
+  padding-block: var(--home-panel-pad-top) var(--home-panel-pad-bottom);
 }
 body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
   padding-top: var(--home-section-space);
@@ -2086,7 +2090,7 @@ body.homepage .principles__grid {
 body.homepage .ac {
   border: 0;
   gap: 10px;
-  padding: 20px 16px 22px;
+  padding: var(--home-card-pad-top) 16px var(--home-card-pad-bottom);
   min-width: 0;
   background: transparent;
 }
@@ -2718,7 +2722,7 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   body.homepage .home-section-shell--soft,
   body.homepage .home-section-shell--panel {
-    padding-block: clamp(5px, 1.5vw, 8px);
+    padding-block: clamp(14px, 3.2vw, 20px) clamp(14px, 3vw, 18px);
   }
 
   .eyebrow {
@@ -2808,7 +2812,7 @@ body.homepage #cdd .cdd-editorial__lede {
   .sg,
   .nb { border-right:none; }
   .sg__content {
-    padding:14px 0 14px !important;
+    padding:20px 0 18px !important;
   }
   .sg__title {
     min-height:0;
