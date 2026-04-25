@@ -3003,6 +3003,42 @@ body.strategy-page .strategy-hero .strategy-kpi span {
       }
     }
   </style>
+
+  <style id="strategy-xuan-paper-unify-2026">
+    /* Full-page xuan paper ground: remove top-half/off-white banding between sections. */
+    html,
+    body.strategy-page,
+    body.strategy-page main,
+    body.strategy-page .strategy-page,
+    body.strategy-page .strategy-main,
+    body.strategy-page .page-shell,
+    body.strategy-page .page-section,
+    body.strategy-page .section-band,
+    body.strategy-page .section-wrap,
+    body.strategy-page .pagehero,
+    body.strategy-page .strategy-hero,
+    body.strategy-page .market-context,
+    body.strategy-page .strategy-intro-section,
+    body.strategy-page .pgsec,
+    body.strategy-page .strategy-hero + .market-context,
+    body.strategy-page .strategy-hero + .market-context .wrap {
+      background: var(--xuan) !important;
+    }
+
+    body.strategy-page .pagehero::before,
+    body.strategy-page .pagehero::after,
+    body.strategy-page .market-context::before,
+    body.strategy-page .market-context::after,
+    body.strategy-page .strategy-intro-section::before,
+    body.strategy-page .strategy-intro-section::after,
+    body.strategy-page .pgsec::before,
+    body.strategy-page .pgsec::after,
+    body.strategy-page .section-band::before,
+    body.strategy-page .section-band::after {
+      background: transparent !important;
+      background-image: none !important;
+    }
+  </style>
 </head>
   <body id="top" class="homepage strategy-page">
     <div id="site-header-mount"></div>
