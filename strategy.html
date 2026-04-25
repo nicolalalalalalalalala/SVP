@@ -1092,8 +1092,10 @@
         padding-bottom: 72px;
         background: linear-gradient(180deg, #F2ECD8 0%, #F2ECD8 100%);
       }
-      .market-context .wrap {
+      .market-context-shell {
         max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--pad);
       }
       .market-context + p {
         margin-top: 0;
@@ -1161,7 +1163,7 @@
       .context-grid {
         margin-top: 24px;
         display: grid;
-        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
       }
       .context-pullout {
@@ -2481,7 +2483,7 @@
     .strategy-hero + .market-context{
       padding-top:clamp(36px, 4vw, 52px)!important;
     }
-    .strategy-hero + .market-context .wrap{
+    .strategy-hero + .market-context .market-context-shell{
       max-width:var(--max)!important;
       width:100%!important;
       padding-inline:var(--pad)!important;
@@ -2771,7 +2773,7 @@ body.strategy-page .strategy-hero .strategy-kpi {
     </section>
 
           <section class="market-context" aria-labelledby="market-context-heading">
-            <div class="wrap">
+            <div class="market-context-shell">
               <div class="market-context-content">
                 <div class="eyebrow eyebrow--red">Market Context</div>
                 <h2 id="market-context-heading" class="sv-section-title">
