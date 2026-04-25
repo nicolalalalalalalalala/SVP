@@ -2634,3 +2634,53 @@ body.contact-page .contact-form button[type="submit"] {
     gap: 16px;
   }
 }
+
+/* Mobile overflow guardrails for Contact / Institutional Enquiries */
+@media (max-width: 767px) {
+  body.contact-page {
+    overflow-x: hidden;
+  }
+
+  body.contact-page .contact-page__content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.contact-page .contact-page__layout {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  body.contact-page .contact-page__layout > * + * {
+    margin-top: 16px;
+  }
+
+  body.contact-page :is(.contact-page__primary-contact, .contact-page__form-section),
+  body.contact-page .contact-form,
+  body.contact-page .contact-form__grid,
+  body.contact-page .contact-form__field,
+  body.contact-page .contact-form label,
+  body.contact-page .contact-form input,
+  body.contact-page .contact-form textarea,
+  body.contact-page .contact-form button[type="submit"] {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.contact-page .contact-form__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body.contact-page .contact-form textarea {
+    min-width: 0;
+  }
+
+  body.contact-page .contact-form button[type="submit"] {
+    min-width: 0;
+  }
+}
