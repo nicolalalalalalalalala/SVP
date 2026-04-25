@@ -1324,41 +1324,63 @@ blockquote.fs__q {
 .cdd-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  border: 1px solid rgba(250, 246, 238, 0.3);
-  padding: 9px 12px 9px 13px;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 48px;
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 44%, var(--cdd-soft) 56%);
+  background: color-mix(in srgb, var(--cdd-ground) 90%, var(--cdd-card-alt) 10%);
+  padding: 9px 10px 9px 15px;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: #faf6ee;
-  transition: border-color .2s, background .2s, color .2s, gap .2s;
+  color: color-mix(in srgb, var(--cdd-soft) 92%, var(--white) 8%);
+  transition: border-color .2s, background .2s, color .2s;
+}
+
+.cdd-cta > span:first-child {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
 }
 
 .cdd-cta__ring {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(250, 246, 238, 0.35);
-  font-size: 13px;
-  transition: border-color .2s, background .2s;
+  border: 1px solid color-mix(in srgb, var(--cdd-structure) 48%, var(--cdd-soft) 52%);
+  background: color-mix(in srgb, var(--cdd-ground) 84%, var(--cdd-card-alt) 16%);
+  color: color-mix(in srgb, var(--cdd-soft) 74%, var(--white) 26%);
+  font-size: 12px;
+  transition: border-color .2s, background .2s, color .2s;
+}
+
+.cdd-feature__main .cdd-cta-group .cdd-cta:first-child {
+  border-color: color-mix(in srgb, var(--cdd-soft) 38%, var(--cdd-structure) 62%);
+  background: color-mix(in srgb, var(--cdd-ground) 80%, var(--cdd-card-alt) 20%);
+}
+
+.cdd-feature__main .cdd-cta-group .cdd-cta:first-child .cdd-cta__ring {
+  border-color: color-mix(in srgb, var(--cdd-soft) 42%, var(--cdd-structure) 58%);
+  background: color-mix(in srgb, var(--cdd-card-alt) 30%, var(--cdd-ground) 70%);
 }
 
 .cdd-cta:hover,
 .cdd-cta:focus-visible {
-  gap: 13px;
-  border-color: #c93b2a;
-  background: color-mix(in srgb, #c93b2a 18%, transparent);
-  color: #faf6ee;
+  border-color: color-mix(in srgb, var(--cdd-soft) 52%, var(--cdd-structure) 48%);
+  background: color-mix(in srgb, var(--cdd-card-alt) 28%, var(--cdd-ground) 72%);
+  color: color-mix(in srgb, var(--cdd-soft) 95%, var(--white) 5%);
 }
 
 .cdd-cta:hover .cdd-cta__ring,
 .cdd-cta:focus-visible .cdd-cta__ring {
-  border-color: #c93b2a;
-  background: color-mix(in srgb, #c93b2a 26%, transparent);
+  border-color: color-mix(in srgb, var(--cdd-soft) 48%, var(--cdd-structure) 52%);
+  background: color-mix(in srgb, var(--cdd-card-alt) 36%, var(--cdd-ground) 64%);
+  color: color-mix(in srgb, var(--cdd-soft) 84%, var(--white) 16%);
 }
 
 .cdd-cta:focus-visible {
@@ -3362,22 +3384,23 @@ body.homepage #cdd .cdd-editorial__lede {
     justify-content: space-between;
     font-size: 10.5px;
     letter-spacing: .11em;
-    padding: 9px 10px 9px 12px;
+    padding: 9px 10px 9px 13px;
     min-width: 0;
-    gap: 10px;
+    min-height: 44px;
+    gap: 12px;
     box-sizing: border-box;
     white-space: normal;
-    align-items: flex-start;
+    align-items: center;
   }
   .cdd-cta > span:first-child {
     min-width: 0;
     overflow-wrap: anywhere;
   }
   .cdd-cta__ring {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    font-size: 11px;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    font-size: 10px;
   }
   @media (max-width: 460px) {
     .cdd-brand-mark {
@@ -3719,26 +3742,16 @@ body.homepage #cdd .cdd-editorial__lede {
     border-top-color: color-mix(in srgb, var(--cdd-structure) 10%, transparent);
   }
   .cdd-cta {
-    min-height: 30px;
+    min-height: 34px;
     font-size: 7.9px;
     letter-spacing: .08em;
-    padding: 5px 8px;
+    padding: 5px 7px 5px 10px;
     border-width: 1px;
-    background: transparent;
-  }
-  .cdd-cta-group .cdd-cta:first-child {
-    background: color-mix(in srgb, var(--cdd-ink) 88%, transparent);
-    color: var(--cdd-surface);
-    border-color: color-mix(in srgb, var(--cdd-ink) 74%, transparent);
-  }
-  .cdd-cta-group .cdd-cta:last-child {
-    color: color-mix(in srgb, var(--cdd-ink) 78%, #fff 22%);
-    border-color: color-mix(in srgb, var(--cdd-structure) 12%, transparent);
   }
   .cdd-cta__ring {
-    width: 16px;
-    height: 16px;
-    min-width: 16px;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
     font-size: 8px;
     border-width: 1px;
   }
