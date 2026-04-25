@@ -91,6 +91,7 @@
 
     const setMenuState = (open) => {
       nav.classList.toggle('menu-open', open);
+      document.body.classList.toggle('menu-open', open);
       menuBtn.setAttribute('aria-expanded', String(open));
       menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       if (menuBtnLabel) menuBtnLabel.textContent = open ? 'Close' : 'Menu';
@@ -101,13 +102,25 @@
       }
     };
 
-    menuBtn.addEventListener('click', () => {
+    menuBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       const open = !nav.classList.contains('menu-open');
       setMenuState(open);
     });
 
+    navLinks.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
     document.addEventListener('click', (event) => {
-      if (!nav.contains(event.target)) {
+      if (nav.classList.contains('menu-open') && !nav.contains(event.target)) {
+        setMenuState(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('menu-open')) {
         setMenuState(false);
       }
     });
