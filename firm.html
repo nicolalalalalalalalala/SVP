@@ -19,6 +19,7 @@
       :root {
         --xuan-light: #faf6ee;
         --xuan: #f2ecd8;
+        --xuan-panel: #f0e8d2;
         --xuan-dark: #d8ceb0;
         --ink-green-dark: #0f2206;
         --ink-green: #2e4a18;
@@ -126,18 +127,19 @@
       }
 
       .hero {
-        padding: clamp(36px, 4.8vw, 64px) 0 clamp(32px, 4vw, 52px);
+        padding: clamp(20px, 3vw, 40px) 0 clamp(30px, 4.2vw, 56px);
       }
       .hero .wrap {
-        max-width: min(1760px, calc(100vw - clamp(24px, 3.2vw, 56px))) !important;
+        width: min(calc(100% - clamp(64px, 8vw, 120px)), 1480px);
+        max-width: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        padding-left: clamp(18px, 2.4vw, 40px) !important;
-        padding-right: clamp(18px, 2.4vw, 40px) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
       .hero-shell {
-        border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
-        background: var(--xuan);
+        border: 1px solid color-mix(in srgb, var(--xuan-dark) 72%, var(--qing-dark) 28%);
+        background: var(--xuan-panel);
         max-width: none !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
@@ -146,13 +148,15 @@
       }
       .hero-row {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: clamp(26px, 2.6vw, 42px);
-        padding: clamp(34px, 3.4vw, 52px) clamp(34px, 3.5vw, 64px);
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: clamp(56px, 6vw, 96px);
+        padding: clamp(48px, 5vw, 76px);
+        align-items: start;
       }
       .hero-title-block {
         display: grid;
-        gap: 18px;
+        gap: clamp(16px, 1.8vw, 24px);
+        align-content: start;
       }
       .hero-kicker {
         font-size: 11px;
@@ -162,25 +166,28 @@
         font-weight: 500;
       }
       .hero-support {
-        font-size: clamp(21px, 2.3vw, 32px);
-        line-height: 1.3;
+        font-size: clamp(19px, 1.55vw, 28px);
+        line-height: 1.36;
         color: var(--ink-green-dark);
-        max-width: 38ch;
+        max-width: 33ch;
         font-weight: 300;
         font-style: italic;
       }
       .hero-body {
-        border-left: 1px solid color-mix(in srgb, var(--rule) 58%, transparent);
-        padding-left: clamp(24px, 2.4vw, 40px);
         display: grid;
-        gap: clamp(12px, 1.2vw, 18px);
+        gap: clamp(14px, 1.5vw, 22px);
         align-content: center;
+        justify-items: start;
       }
       .hero-body p {
-        max-width: 62ch;
+        max-width: clamp(56ch, 40vw, 68ch);
+        line-height: 1.78;
       }
       .hero .type-display-hero {
-        max-width: 16ch;
+        max-width: 13ch;
+        font-size: clamp(56px, 5.2vw, 88px);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
       }
 
       .intro-frame {
@@ -887,17 +894,15 @@
 
       @media (max-width: 1120px) {
         .hero .wrap {
-          max-width: calc(var(--max) + clamp(80px, 8vw, 160px)) !important;
-          padding-left: var(--pad) !important;
-          padding-right: var(--pad) !important;
+          width: min(calc(100% - clamp(44px, 6vw, 84px)), 1320px);
+          max-width: none !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
         }
         .hero-row {
           grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
-          gap: clamp(20px, 2.2vw, 30px);
-          padding: clamp(28px, 3.2vw, 40px) clamp(24px, 3vw, 42px);
-        }
-        .hero-body {
-          padding-left: clamp(18px, 2vw, 28px);
+          gap: clamp(34px, 4.2vw, 56px);
+          padding: clamp(34px, 4.2vw, 54px);
         }
         .card-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -936,7 +941,8 @@
           padding: 14px 0;
         }
         .hero .wrap {
-          max-width: 100% !important;
+          width: 100%;
+          max-width: none !important;
           margin-left: auto !important;
           margin-right: auto !important;
           padding-left: var(--pad) !important;
@@ -966,9 +972,8 @@
           border-top: 1px solid color-mix(in srgb, var(--rule) 54%, transparent);
         }
         .hero-body {
-          border-left: 0;
-          border-top: 1px solid color-mix(in srgb, var(--rule) 56%, transparent);
-          padding: clamp(18px, 4.2vw, 26px) 0 0;
+          border-top: 0;
+          padding: 0;
         }
         .ops-intro > p {
           margin-top: 0;
