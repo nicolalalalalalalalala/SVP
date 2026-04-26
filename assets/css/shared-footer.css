@@ -158,7 +158,7 @@ html body footer.sv-footer .sv-footer__legal {
   max-width: none !important;
   text-wrap: pretty !important;
   margin-top: 0.3rem !important;
-  max-width: 78ch !important;
+  box-sizing: border-box !important;
 }
 
 html body footer.sv-footer .sv-footer__legal a {
@@ -173,6 +173,16 @@ html body footer.sv-footer .sv-footer__legal a {
 html body footer.sv-footer .sv-footer__legal-toggle {
   border: 0 !important;
   background: transparent !important;
+  width: 100% !important;
+  max-width: none !important;
+  grid-column: 1 / -1 !important;
+  justify-self: stretch !important;
+}
+
+html body footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal,
+html body footer.sv-footer .sv-footer__legal-toggle .sv-footer__legal > * {
+  width: 100% !important;
+  max-width: none !important;
 }
 
 /* Legal links: readable text, not over-spaced */
