@@ -727,23 +727,59 @@ body {
 
   .press-hero {
     border-bottom: 1px solid var(--press-divider) !important;
-    background-image:
-      linear-gradient(180deg, var(--press-hero-overlay) 0%, rgba(30, 64, 64, 0.48) 52%, var(--press-hero-shadow) 100%),
-      linear-gradient(102deg, rgba(61, 112, 112, 0.18) 8%, rgba(30, 64, 64, 0.08) 62%, rgba(30, 64, 64, 0.04) 100%),
-      url("assets/images/_N1_1071.jpg") !important;
+    position: relative !important;
+    isolation: isolate !important;
+    background-color: #0a1518 !important;
+    background-image: none !important;
+    overflow: hidden !important;
+  }
+
+  .press-hero::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background-image: url("assets/images/_N1_1071.jpg") !important;
     background-position: 35% 40% !important;
     background-size: 162% !important;
     background-repeat: no-repeat !important;
+    filter: brightness(0.72) saturate(0.82) contrast(1.02) !important;
+    transform: scale(1.01);
+  }
+
+  .press-hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 24, 24, 0.42) 0%,
+        rgba(8, 20, 22, 0.58) 45%,
+        rgba(5, 14, 16, 0.72) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(16, 34, 38, 0.22) 0%,
+        rgba(10, 24, 28, 0.14) 100%
+      ) !important;
+    pointer-events: none !important;
+  }
+
+  .press-hero__inner {
+    position: relative !important;
+    z-index: 2 !important;
   }
 
   @media (max-width: 1024px) {
-    .press-hero {
+    .press-hero::after {
       background-position: 34% 42% !important;
     }
   }
 
   @media (max-width: 767px) {
-    .press-hero {
+    .press-hero::after {
       background-position: 38% 43% !important;
     }
   }
