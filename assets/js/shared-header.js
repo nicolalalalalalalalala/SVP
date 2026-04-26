@@ -113,11 +113,15 @@
       event.stopPropagation();
     });
 
-    document.addEventListener('click', (event) => {
-      if (nav.classList.contains('menu-open') && !nav.contains(event.target)) {
-        setMenuState(false);
-      }
-    });
+    const closeOnOutsideInteraction = (event) => {
+      if (!nav.classList.contains('menu-open')) return;
+      const target = event.target;
+      if (target instanceof Node && nav.contains(target)) return;
+      setMenuState(false);
+    };
+
+    document.addEventListener('click', closeOnOutsideInteraction);
+    document.addEventListener('pointerdown', closeOnOutsideInteraction);
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && nav.classList.contains('menu-open')) {
