@@ -4292,6 +4292,25 @@ body.homepage .home-hero + .homepage-section-stack {
 }
 </style>
 
+<style id="homepage-xuan-paper-unification">
+/* Homepage-only canvas normalization: remove lighter cream banding between content panels. */
+body.homepage,
+body.homepage main,
+body.homepage .homepage-section-stack,
+body.homepage :is(#about, #principles, #strategy, #team, #insights, #signup),
+body.homepage :is(#about, #principles, #strategy, #team, #insights, #signup) > .wrap,
+body.homepage .homepage-section-stack > section {
+  background: #F2ECD8 !important;
+}
+
+body.homepage .homepage-section-stack::before,
+body.homepage .homepage-section-stack::after,
+body.homepage .homepage-section-stack > section::before,
+body.homepage .homepage-section-stack > section::after {
+  background: transparent !important;
+}
+</style>
+
 <!-- CDD PANEL CONTRAST REPAIR
      Loaded last so it wins over every external stylesheet's !important
      declarations. Uses body.homepage #cdd + class selectors (0,1,2,1)
