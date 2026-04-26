@@ -603,6 +603,23 @@ body.homepage .ac__panel {
   background: var(--paper) !important;
 }
 
+/* Homepage strategy cards only (01/02/03): Qing blue treatment */
+body.homepage #strategy .strat__grid > .sg {
+  background: #3D7070 !important;
+  border: 1px solid rgba(250, 246, 238, 0.22) !important;
+}
+
+body.homepage #strategy .strat__grid > .sg:hover,
+body.homepage #strategy .strat__grid > .sg:focus-visible,
+body.homepage #strategy .strat__grid > .sg.is-active {
+  background: #345F5F !important;
+  border-color: rgba(250, 246, 238, 0.34) !important;
+}
+
+body.homepage #strategy .strat__grid > .sg :is(.sg__n, .sg__title, .sg__body) {
+  color: #FAF6EE !important;
+}
+
 body.homepage p,
 body.homepage li,
 body.homepage .hero__copy,
