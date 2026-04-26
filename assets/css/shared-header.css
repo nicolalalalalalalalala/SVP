@@ -309,7 +309,7 @@ body {
     right: 0;
     top: 62px;
     bottom: 0;
-    z-index: 210;
+    z-index: 1200;
     margin: 0;
     padding: 12px var(--sv-header-side-pad) 14px;
     border-top: 1px solid rgba(31, 24, 18, 0.11);
