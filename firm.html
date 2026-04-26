@@ -204,10 +204,12 @@
       .firm-card--qing {
         background: var(--qing);
         border-color: color-mix(in srgb, var(--xuan-paper-light) 18%, var(--qing) 82%);
+        --firm-card-qing-heading: color-mix(in srgb, var(--xuan-paper-light) 82%, white 18%);
+        --firm-card-qing-copy: color-mix(in srgb, var(--xuan-paper-light) 76%, white 24%);
       }
       .firm-page .firm-card--qing h3,
       .firm-page .firm-card--qing p {
-        color: var(--xuan-paper-light);
+        color: var(--firm-card-qing-copy);
       }
       .firm-page .firm-card h3 {
         font-size: clamp(17px, 1.35vw, 20px) !important;
@@ -216,6 +218,9 @@
         text-transform: uppercase;
         color: var(--qing);
         font-weight: 700;
+      }
+      .firm-page .firm-card--qing h3 {
+        color: var(--firm-card-qing-heading);
       }
       .sv-card-stack p,
       .card-copy {
