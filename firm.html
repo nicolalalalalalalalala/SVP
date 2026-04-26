@@ -344,6 +344,27 @@
 
     <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
     <link rel="stylesheet" href="assets/css/shared-footer.css" />
+    <style>
+      .firm-page .firm-hero-title,
+      .firm-page .firm-wordmark-heading,
+      .firm-page .firm-hero-title span,
+      .firm-page .firm-wordmark-heading span {
+        letter-spacing: 0.24em !important;
+        text-transform: uppercase !important;
+        font-kerning: none;
+        max-width: 920px;
+        line-height: 1.15;
+      }
+
+      @media (max-width: 700px) {
+        .firm-page .firm-hero-title,
+        .firm-page .firm-wordmark-heading,
+        .firm-page .firm-hero-title span,
+        .firm-page .firm-wordmark-heading span {
+          letter-spacing: 0.14em !important;
+        }
+      }
+    </style>
   </head>
   <body class="homepage">
     <div id="site-header-mount"></div>
