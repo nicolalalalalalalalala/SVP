@@ -1749,7 +1749,7 @@ body.homepage .home-hero {
   isolation: isolate;
   overflow: hidden;
   background: #060d14;
-  border-bottom: 1px solid rgba(216, 206, 176, 0.28);
+  border-bottom: 0;
 }
 body.homepage {
   --home-frame-max: min(1320px, calc(var(--max) + 120px));
@@ -4271,11 +4271,6 @@ body.homepage .homepage-section-stack > section + section {
 }
 body.homepage .home-hero + .homepage-section-stack {
   margin-top: clamp(34px, 3.8vw, 52px);
-}
-
-/* Keep section panels visually distinct without rule collision at joins. */
-body.homepage #principles .home-section-shell--soft {
-  border-top-color: transparent !important;
 }
 
 @media (max-width: 1024px) {
