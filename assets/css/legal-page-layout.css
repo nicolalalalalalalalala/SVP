@@ -2764,3 +2764,27 @@ body.contact-page .contact-page__address-body p {
     gap: 16px;
   }
 }
+
+/* ── Contact layout: align bottom of address card with bottom of form card ── */
+@media (min-width: 981px) {
+  body.contact-page .contact-page__layout {
+    align-items: stretch;
+  }
+
+  body.contact-page .contact-page__left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  body.contact-page .contact-page__address {
+    margin-top: auto;
+  }
+}
+
+/* Tighten hero-to-content gap and remove stacked margin */
+body.contact-page .contact-page__content {
+  padding-top: clamp(48px, 4.8vw, 72px);
+  margin-top: 0;
+}
