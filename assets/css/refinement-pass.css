@@ -1797,3 +1797,75 @@ body.legal-page > :is(h1, p.muted, h2, p, section, article, ul, ol) {
   margin-top: 0 !important;
   padding-top: var(--sv-section-breathing) !important;
 }
+
+/* ========================================================================== */
+/* Main-page hero sizing standardization (index/firm/strategy/insights/press/team/cn) */
+/* ========================================================================== */
+:root {
+  --sv-main-hero-min-h-desktop: 390px;
+  --sv-main-hero-min-h-tablet: 340px;
+  --sv-main-hero-min-h-mobile: 280px;
+  --sv-main-hero-pad-top-desktop: clamp(106px, 10vw, 132px);
+  --sv-main-hero-pad-bottom-desktop: clamp(54px, 5.4vw, 72px);
+  --sv-main-hero-pad-top-tablet: clamp(92px, 11vw, 114px);
+  --sv-main-hero-pad-bottom-tablet: clamp(44px, 6.2vw, 62px);
+  --sv-main-hero-pad-top-mobile: clamp(78px, 17vw, 96px);
+  --sv-main-hero-pad-bottom-mobile: clamp(30px, 8vw, 44px);
+  --sv-main-hero-copy-max: 72ch;
+}
+
+body.homepage.homepage :is(.home-hero, .strategy-hero, .team-hero),
+body.homepage.strategy-page .strategy-hero,
+body.insights-page .research-hero,
+body.press-page .press-hero,
+body.homepage.homepage .firm-panel--hero,
+body.homepage.homepage .hero__sliver {
+  min-height: var(--sv-main-hero-min-h-desktop) !important;
+  padding-top: var(--sv-main-hero-pad-top-desktop) !important;
+  padding-bottom: var(--sv-main-hero-pad-bottom-desktop) !important;
+}
+
+/* Keep inner hero blocks vertically centered and width-consistent. */
+body.homepage.homepage :is(.home-hero__inner, .strategy-hero .wrap, .team-hero .wrap, .firm-hero-grid),
+body.insights-page .research-hero__grid,
+body.press-page .press-hero__inner,
+body.homepage.homepage .hero__overlay {
+  min-height: inherit !important;
+  align-items: center !important;
+}
+
+body.homepage.homepage :is(.home-hero__text, .strategy-hero .wrap > div, .team-hero .pagehero__intro, .firm-hero-copy, .hero__overlay),
+body.insights-page :is(.research-hero__copy, .research-hero__desc),
+body.press-page .press-hero__copy {
+  max-width: var(--sv-main-hero-copy-max) !important;
+}
+
+/* Normalize first section offset after each main hero variant. */
+body.homepage.homepage :is(.home-hero, .firm-panel--hero, .strategy-hero, .team-hero, .hero__sliver) + :is(section, .homepage-section-stack, .market-context, .team-groups),
+body.insights-page .research-hero + :is(section, .archive-panel),
+body.press-page .press-hero + :is(section, .press-grid-wrap) {
+  margin-top: 0 !important;
+  padding-top: clamp(50px, 5.5vw, 74px) !important;
+}
+
+@media (max-width: 1024px) {
+  body.homepage.homepage :is(.home-hero, .strategy-hero, .team-hero, .firm-panel--hero, .hero__sliver),
+  body.homepage.strategy-page .strategy-hero,
+  body.insights-page .research-hero,
+  body.press-page .press-hero {
+    min-height: var(--sv-main-hero-min-h-tablet) !important;
+    padding-top: var(--sv-main-hero-pad-top-tablet) !important;
+    padding-bottom: var(--sv-main-hero-pad-bottom-tablet) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.homepage.homepage :is(.home-hero, .strategy-hero, .team-hero, .firm-panel--hero, .hero__sliver),
+  body.homepage.strategy-page .strategy-hero,
+  body.insights-page .research-hero,
+  body.press-page .press-hero {
+    min-height: var(--sv-main-hero-min-h-mobile) !important;
+    padding-top: var(--sv-main-hero-pad-top-mobile) !important;
+    padding-bottom: var(--sv-main-hero-pad-bottom-mobile) !important;
+  }
+}
