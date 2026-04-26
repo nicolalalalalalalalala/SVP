@@ -4301,14 +4301,46 @@ body.homepage .home-hero + .homepage-section-stack {
 </style>
 
 <style id="homepage-xuan-paper-unification">
-/* Homepage-only canvas normalization: remove lighter cream banding between content panels. */
+/* ── Xuan Paper Light (#FAF6EE) fill for the three main content boxes ───────
+   Page chrome (body, stack, section wrappers) stays at Xuan Paper (#F2ECD8).
+   The inner .wrap shells for THE FIRM / HOW WE WORK / STRATEGY get the
+   lighter fill. This block is last in <head> so it beats all !important.    */
+
+/* Page canvas — stays at Xuan Paper #F2ECD8 */
 body.homepage,
 body.homepage main,
 body.homepage .homepage-section-stack,
 body.homepage :is(#about, #principles, #strategy, #team, #insights, #signup),
-body.homepage :is(#about, #principles, #strategy, #team, #insights, #signup) > .wrap,
+body.homepage :is(#team, #insights, #signup) > .wrap,
 body.homepage .homepage-section-stack > section {
   background: #F2ECD8 !important;
+}
+
+/* Content box shells — Xuan Paper Light #FAF6EE */
+body.homepage :is(#about, #principles, #strategy) > .wrap {
+  background: #FAF6EE !important;
+  border-color: color-mix(in srgb, var(--rule) 72%, transparent) !important;
+}
+
+/* Strategy grid cards — Xuan Paper Light (overrides dark green) */
+body.homepage #strategy .strat__grid > .sg {
+  background: #FAF6EE !important;
+  border-color: color-mix(in srgb, var(--rule) 58%, transparent) !important;
+}
+body.homepage #strategy .strat__grid > .sg:hover,
+body.homepage #strategy .strat__grid > .sg:focus-visible,
+body.homepage #strategy .strat__grid > .sg.is-active {
+  background: #F2ECD8 !important;
+  border-color: color-mix(in srgb, var(--rule) 78%, transparent) !important;
+}
+
+/* Text inside strategy cards: dark on light (reverses the white-on-dark-green set) */
+body.homepage #strategy .strat__grid > .sg .sg__n,
+body.homepage #strategy .strat__grid > .sg .sg__title {
+  color: #0F2206 !important;
+}
+body.homepage #strategy .strat__grid > .sg .sg__body {
+  color: #41543f !important;
 }
 
 body.homepage .homepage-section-stack::before,
