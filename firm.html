@@ -77,14 +77,16 @@
       .firm-page .sv-section-grid,
       .firm-page .sv-statement,
       .firm-page .firm-statement {
-        padding: clamp(40px, 4.5vw, 72px);
+        padding-block: clamp(40px, 4.5vw, 72px) !important;
+        padding-inline: clamp(64px, 6vw, 96px) !important;
       }
 
       .firm-page .firm-panel--hero,
       .firm-page .firm-hero-panel,
       .firm-page .firm-capital-box,
       .firm-page .capital-base-box {
-        padding: clamp(56px, 5.5vw, 88px);
+        padding-block: clamp(56px, 5.5vw, 88px) !important;
+        padding-inline: clamp(72px, 6.8vw, 104px) !important;
       }
 
       .firm-page .firm-card,
@@ -94,7 +96,12 @@
       .firm-page .firm-platform-card,
       .firm-page .firm-governance-card,
       .firm-page .firm-execution-card {
-        padding: clamp(36px, 3.5vw, 56px);
+        padding-block: clamp(36px, 3.5vw, 56px) !important;
+        padding-inline: clamp(56px, 4.8vw, 72px) !important;
+      }
+
+      .firm-page .capital-base-content {
+        padding-inline: clamp(8px, 1vw, 16px);
       }
 
       .firm-panel {
@@ -386,7 +393,21 @@
         .firm-page .sv-section-grid,
         .firm-page .sv-statement,
         .firm-page .firm-statement {
-          padding: 28px 24px !important;
+          padding-block: 28px !important;
+          padding-inline: 24px !important;
+        }
+        .firm-page .firm-card,
+        .firm-page .firm-process-card,
+        .firm-page .firm-section-card,
+        .firm-page .firm-overview-card,
+        .firm-page .firm-platform-card,
+        .firm-page .firm-governance-card,
+        .firm-page .firm-execution-card {
+          padding-block: 24px !important;
+          padding-inline: 24px !important;
+        }
+        .firm-page .capital-base-content {
+          padding-inline: 0;
         }
         .firm-page .firm-hero-title,
         .firm-page .firm-wordmark-heading {
