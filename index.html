@@ -4256,6 +4256,41 @@ body.homepage #cdd .cdd-editorial__lede {
   }
 }
 </style>
+<style id="homepage-section-stack-rhythm-tightening">
+/* Homepage-only: enforce one consistent vertical stack rhythm between panels. */
+body.homepage .homepage-section-stack {
+  gap: 0 !important;
+}
+body.homepage .homepage-section-stack > section {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+body.homepage .homepage-section-stack > section + section {
+  margin-top: clamp(48px, 5vw, 72px) !important;
+}
+body.homepage .home-hero + .homepage-section-stack {
+  margin-top: clamp(48px, 5vw, 72px);
+}
+
+@media (max-width: 1024px) {
+  body.homepage .homepage-section-stack > section + section {
+    margin-top: clamp(40px, 5.8vw, 56px) !important;
+  }
+  body.homepage .home-hero + .homepage-section-stack {
+    margin-top: clamp(40px, 5.8vw, 56px);
+  }
+}
+
+@media (max-width: 767px) {
+  body.homepage .homepage-section-stack > section + section {
+    margin-top: clamp(32px, 8vw, 44px) !important;
+  }
+  body.homepage .home-hero + .homepage-section-stack {
+    margin-top: clamp(32px, 8vw, 44px);
+  }
+}
+</style>
 
 <!-- CDD PANEL CONTRAST REPAIR
      Loaded last so it wins over every external stylesheet's !important
