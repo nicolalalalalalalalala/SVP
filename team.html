@@ -96,20 +96,22 @@
         padding: 0 var(--pad);
       }
 
-      .eyebrow {
-        font-size: 7.5pt;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--red);
-        display: flex;
+      .eyebrow,
+      .team-section-label {
+        display: inline-flex;
         align-items: center;
         gap: 14px;
         min-height: 12px;
-        margin-bottom: 0;
+        margin-bottom: 24px;
       }
-      .eyebrow::after {
-        content: none;
+      .eyebrow::after,
+      .team-section-label::after {
+        content: "";
+        display: block;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 1px;
+        background: currentColor;
       }
 
       .team-hero {
@@ -138,13 +140,11 @@
       }
       .team-hero .eyebrow {
         margin-bottom: 16px !important;
-        color: color-mix(in srgb, var(--qing-dark) 35%, var(--ink) 65%);
       }
       .team-hero .eyebrow::after {
-        content: "";
-        flex: 0 0 clamp(34px, 4vw, 48px);
-        height: 1px;
-        background: color-mix(in srgb, var(--cinnamon) 58%, var(--rule) 42%);
+        flex: 0 0 36px;
+        width: 36px;
+        background: currentColor;
       }
       .team-hero h1 {
         font-family: var(--team-type-heading);
@@ -205,11 +205,7 @@
         color: var(--qing-dark);
       }
       .founder-note .eyebrow {
-        font-size: 7.5pt;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--red);
+        color: var(--sv-cinnabar);
       }
       .founder-note__stat {
         font-family: var(--sans);
@@ -740,7 +736,10 @@
       }
 
       @media (max-width: 520px) {
-
+        .team-section-label::after {
+          flex-basis: 28px;
+          width: 28px;
+        }
       }
 
       /* ══ LEGAL DISCLAIMER FOOTER */
@@ -748,14 +747,20 @@
 }
 
       /* Global eyebrow stabilization */
-      .eyebrow {
+      .eyebrow,
+      .team-section-label {
         display: inline-flex;
         align-items: center;
         gap: 14px;
         white-space: nowrap;
       }
       .eyebrow::after {
-        content: none;
+        content: "";
+        display: block;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 1px;
+        background: currentColor;
       }
 
       /* Homepage nav lockup parity */
@@ -779,7 +784,7 @@
     <section class="pagehero team-hero">
       <div class="wrap">
         <div class="pagehero__intro">
-          <div class="eyebrow">TEAM</div>
+          <div class="eyebrow eyebrow--red team-section-label">TEAM</div>
           <h1 class="type-display-hero">Investment Team</h1>
           <p class="pagehero__lede">
             ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
@@ -793,6 +798,7 @@
       <div class="wrap">
         <section class="group group--leadership" aria-labelledby="leadership-investment">
           <div class="group__head">
+            <div class="eyebrow eyebrow--red team-section-label">Leadership and Investment</div>
             <h2 id="leadership-investment" class="sv-section-title">Leadership and Investment</h2>
             <p class="group__summary">
               Responsible for sourcing, underwriting, execution and portfolio
@@ -1114,6 +1120,7 @@
 
         <section class="group" aria-labelledby="client-solutions">
           <div class="group__head">
+            <div class="eyebrow eyebrow--red team-section-label">Client Solutions</div>
             <h2 id="client-solutions" class="sv-section-title">Client Solutions</h2>
             <p class="group__summary">
               Responsible for investor engagement and capital development.
@@ -1211,6 +1218,7 @@
 
         <section class="group" aria-labelledby="advisory-partners">
           <div class="group__head">
+            <div class="eyebrow eyebrow--red team-section-label">Advisory Partners</div>
             <h2 id="advisory-partners" class="sv-section-title">Advisory Partners</h2>
             <p class="group__summary">
               Provide strategic, market and execution insight.
