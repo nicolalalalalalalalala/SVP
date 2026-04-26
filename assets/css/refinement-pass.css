@@ -1834,7 +1834,7 @@ body.homepage.homepage .hero__overlay {
   align-items: center !important;
 }
 
-body.homepage.homepage :is(.home-hero__text, .strategy-hero .wrap > div, .team-hero .pagehero__intro, .firm-hero-copy, .hero__overlay),
+body.homepage.homepage :is(.home-hero__text, .strategy-hero .wrap > div, .team-hero .pagehero__intro, .hero__overlay),
 body.insights-page :is(.research-hero__copy, .research-hero__desc),
 body.press-page .press-hero__copy {
   max-width: var(--sv-main-hero-copy-max) !important;
