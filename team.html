@@ -109,11 +109,8 @@
         width: 100%;
         max-width: var(--max);
         margin: 0 auto;
-        padding: clamp(34px, 4vw, 46px) clamp(28px, 3.8vw, 44px) !important;
-        display: grid;
-        grid-template-columns: minmax(0, 1.34fr) minmax(350px, 0.9fr);
-        gap: clamp(28px, 3.2vw, 44px);
-        align-items: stretch;
+        padding: clamp(40px, 5vw, 56px) clamp(30px, 4vw, 48px) !important;
+        display: block;
         border: 1px solid color-mix(in srgb, var(--rule) 78%, var(--ink) 22%);
         background: color-mix(in srgb, var(--paper) 74%, #efe6d3 26%);
       }
@@ -123,9 +120,10 @@
         align-content: start;
         gap: 0;
         padding-top: 2px;
+        max-width: min(72ch, 100%);
       }
       .team-hero .eyebrow {
-        margin-bottom: 14px !important;
+        margin-bottom: 16px !important;
         color: color-mix(in srgb, var(--qing-dark) 35%, var(--ink) 65%);
       }
       .team-hero .eyebrow::after {
@@ -143,48 +141,30 @@
         letter-spacing: 0.02em !important;
         text-transform: uppercase;
         margin: 0;
-        max-width: 19ch;
+        max-width: 20ch;
       }
       .team-hero .pagehero__lede {
-        max-width: 58ch;
-        margin-top: 18px;
+        max-width: 60ch;
+        margin-top: 22px;
         font-size: var(--sv-size-body);
-        line-height: 1.55;
+        line-height: 1.6;
         color: var(--ink-soft);
         font-family: var(--team-type-body);
       }
-      .team-hero__aside {
-        border-left: 1px solid color-mix(in srgb, var(--rule) 66%, var(--ink) 34%);
-        padding-left: clamp(20px, 2vw, 30px);
-        display: grid;
-        align-content: stretch;
-      }
-      .team-hero__cards {
-        display: grid;
-        gap: 10px;
-      }
-      .team-hero__card {
-        min-height: 96px;
-        padding: 14px 14px 15px;
-        border: 1px solid color-mix(in srgb, var(--rule) 58%, var(--ink) 42%);
-        background: color-mix(in srgb, var(--paper) 54%, #e7ddc8 46%);
-        display: grid;
-        gap: 8px;
-      }
-      .team-hero__card strong {
-        color: color-mix(in srgb, var(--cinnamon-dark) 82%, var(--cinnamon) 18%);
-        letter-spacing: 0.13em;
+      .team-hero__meta {
+        margin-top: 18px;
+        padding-top: 12px;
+        max-width: 62ch;
+        border-top: 1px solid color-mix(in srgb, var(--rule) 72%, var(--ink) 28%);
+        color: color-mix(in srgb, var(--ink-soft) 85%, var(--ink) 15%);
         font-size: var(--sv-size-meta);
-        text-transform: uppercase;
-      }
-      .team-hero__card span {
-        color: color-mix(in srgb, var(--ink) 90%, var(--ink-soft) 10%);
-        font-size: var(--sv-size-body);
-        line-height: 1.48;
+        letter-spacing: 0.02em;
+        line-height: 1.55;
+        font-family: var(--team-type-body);
       }
       .team-hero + .team-groups {
         margin-top: 0 !important;
-        padding-top: clamp(24px, 2.6vw, 34px);
+        padding-top: clamp(28px, 3vw, 42px);
       }
 
       .founder-note {
@@ -635,13 +615,7 @@
           padding-bottom: 10px;
         }
         .team-hero .wrap {
-          grid-template-columns: minmax(0, 1fr);
-          gap: 20px;
-        }
-        .team-hero__aside {
-          border-left: 0;
-          border-top: 1px solid color-mix(in srgb, var(--rule) 70%, var(--ink) 30%);
-          padding: 18px 0 0;
+          padding: clamp(30px, 4.4vw, 40px) clamp(22px, 4vw, 34px) !important;
         }
       }
 
@@ -657,7 +631,6 @@
         }
         .team-hero .wrap {
           padding: clamp(24px, 6vw, 30px) clamp(16px, 4.8vw, 22px) !important;
-          gap: 16px;
         }
         .team-hero h1 {
           max-width: 18ch;
@@ -665,8 +638,8 @@
         .team-hero .pagehero__lede {
           max-width: 100%;
         }
-        .team-hero__card {
-          min-height: 0;
+        .team-hero__meta {
+          max-width: 100%;
         }
         .founder-note {
           padding: 32px 0;
@@ -792,14 +765,8 @@
           <p class="pagehero__lede">
             ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
           </p>
+          <p class="team-hero__meta">Integrated investment, legal, and operating professionals aligned around disciplined underwriting and portfolio execution.</p>
         </div>
-        <aside class="team-hero__aside" aria-label="Team pillars">
-          <div class="team-hero__cards">
-            <div class="team-hero__card"><strong>01 Leadership</strong><span>Senior investment and operating leadership across the platform.</span></div>
-            <div class="team-hero__card"><strong>02 Execution</strong><span>Sourcing, underwriting, portfolio management and recovery execution.</span></div>
-            <div class="team-hero__card"><strong>03 Governance</strong><span>Investment discipline supported by legal, finance and operating oversight.</span></div>
-          </div>
-        </aside>
       </div>
     </section>
 
