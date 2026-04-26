@@ -1,4 +1,5 @@
 :root {
+  --xuan-paper-light: #FAF6EE;
   --paper-light: var(--surface-inverse, #f8f3e8);
   --paper: var(--bg-main, #f5f0e4);
   --paper-dark: var(--border-strong, #c8bda6);
