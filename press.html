@@ -631,13 +631,7 @@
 
       @media (max-width: 767px) {
         .press-archive-note {
-          display: block;
-          white-space: normal;
-          letter-spacing: 0.14em;
-          line-height: 1.7;
-        }
-        .press-archive-note::after {
-          display: none;
+          display: inline-flex;
         }
       }
       /* Homepage nav lockup parity */
@@ -1573,6 +1567,49 @@ body {
     letter-spacing: 0.14em !important;
     color: color-mix(in srgb, var(--press-control-muted) 92%, transparent) !important;
   }
+
+
+  /* Align Press section labels with Strategy page Market Context eyebrow */
+  body.press-page .section-eyebrow {
+    font-family: var(--sans) !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    min-height: 12px !important;
+    margin-bottom: 24px !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    color: var(--red) !important;
+  }
+
+  body.press-page .section-eyebrow::after {
+    content: "";
+    display: block;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 1px;
+    background: currentColor;
+    transform: translateY(0);
+  }
+
+  body.press-page .press-hero .section-eyebrow {
+    color: var(--press-kicker) !important;
+  }
+
+  @media (max-width: 767px) {
+    body.press-page .section-eyebrow {
+      gap: 10px !important;
+    }
+
+    body.press-page .section-eyebrow::after {
+      flex-basis: 28px;
+      width: 28px;
+    }
+  }
 </style>
 
 
@@ -1589,7 +1626,7 @@ body {
       <section class="press-hero">
         <div class="wrap press-hero__inner">
           <div class="press-hero__copy">
-            <p class="eyebrow">MEDIA &amp; PRESS · 2008 TO PRESENT</p>
+            <p class="eyebrow section-eyebrow">MEDIA &amp; PRESS · 2008 TO PRESENT</p>
             <h1 class="type-display-hero">
               <span class="press-hero__line">Press and</span>
               <span class="press-hero__line">Announcements</span>
@@ -1605,8 +1642,8 @@ body {
       <div class="wrap press-shell">
         <div class="press-overview">
           <div class="press-overview__main">
-            <div class="eyebrow press-archive-note">COVERAGE THROUGH JANUARY 2026</div>
-            <p class="press-overview__heading">ARCHIVE SCOPE</p>
+            <div class="eyebrow press-archive-note section-eyebrow">COVERAGE THROUGH JANUARY 2026</div>
+            <p class="press-overview__heading section-eyebrow">ARCHIVE SCOPE</p>
             <p class="press-intro">
               The archive below presents a chronological record of third-party
               coverage and commentary.
@@ -1620,11 +1657,11 @@ body {
             </p>
           </div>
           <section class="contact" aria-label="Media inquiries">
-            <span>FOR MEDIA INQUIRIES</span>
+            <span class="section-eyebrow">FOR MEDIA INQUIRIES</span>
             <a href="mailto:press@shorevest.com">press@shorevest.com</a>
           </section>
           <section class="press-disclaimer" aria-label="Third-party disclaimer">
-            <p class="press-overview__heading">THIRD-PARTY DISCLAIMER</p>
+            <p class="press-overview__heading section-eyebrow">THIRD-PARTY DISCLAIMER</p>
             <p>
               Third-party media coverage and external commentary referenced on
               this page is provided for informational purposes only.
@@ -1643,7 +1680,7 @@ body {
         </div>
 
         <section class="press-speaking" aria-labelledby="selected-speaking-heading">
-          <p class="press-overview__heading" id="selected-speaking-heading">SELECTED SPEAKING ENGAGEMENTS</p>
+          <p class="press-overview__heading section-eyebrow" id="selected-speaking-heading">SELECTED SPEAKING ENGAGEMENTS</p>
           <p class="press-speaking__intro press-intro">
             A selected record of external speaking appearances, interviews, and public discussions relevant to ShoreVest’s market perspective.
           </p>
@@ -1715,18 +1752,18 @@ body {
         <div class="press-archive-stack">
           <div class="press-toolbar" aria-label="Press archive controls">
             <div class="press-toolbar__meta">
-              <p class="press-toolbar__label">Archive</p>
+              <p class="press-toolbar__label section-eyebrow">Archive</p>
               <p class="press-toolbar__count" id="press-results-count" aria-live="polite"></p>
             </div>
             <div class="press-filters" id="press-filters" aria-label="Press archive filters">
               <div class="press-filter-group">
-                <label class="press-filter-label" for="press-year-select">Year</label>
+                <label class="press-filter-label section-eyebrow" for="press-year-select">Year</label>
                 <select class="press-filter-select" id="press-year-select" aria-label="Filter by year">
                   <option value="All">All Years</option>
                 </select>
               </div>
               <div class="press-filter-group">
-                <label class="press-filter-label" for="press-publication-select">Publication</label>
+                <label class="press-filter-label section-eyebrow" for="press-publication-select">Publication</label>
                 <select class="press-filter-select" id="press-publication-select" aria-label="Filter by publication">
                   <option value="All">All Publications</option>
                 </select>
