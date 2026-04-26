@@ -33,6 +33,8 @@
         --max: 1200px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
         --pad: var(--site-page-margin);
+        --sv-page-title-size: clamp(48px, 4.5vw, 62px);
+        --sv-page-title-line-height: 0.98;
         --space-hero-to-utility: clamp(144px, 14vw, 208px);
         --space-cdd-section-gap: clamp(36px, 5vw, 72px);
       }
@@ -156,8 +158,8 @@
       }
       .wordmark__title {
         font-family: var(--serif);
-        font-size: clamp(62px, 7vw, 84px);
-        line-height: 0.88;
+        font-size: var(--sv-page-title-size);
+        line-height: var(--sv-page-title-line-height);
         color: #fff;
         letter-spacing: -0.024em;
       }
@@ -948,6 +950,8 @@
           --site-page-margin: clamp(16px, 5vw, 22px);
           --space-hero-to-utility: clamp(112px, 22vw, 168px);
           --space-cdd-section-gap: clamp(28px, 8vw, 52px);
+          --sv-page-title-size: clamp(30px, 9vw, 38px);
+          --sv-page-title-line-height: 1.05;
         }
         body {
           font-size: 14px;
@@ -984,8 +988,8 @@
           flex: 0 0 auto;
         }
         .wordmark__title {
-          font-size: clamp(42px, 13vw, 60px);
-          line-height: 0.92;
+          font-size: var(--sv-page-title-size);
+          line-height: var(--sv-page-title-line-height);
           overflow-wrap: anywhere;
         }
         .research-hero__desc {
@@ -1138,7 +1142,7 @@
           gap: 14px;
         }
         .wordmark__title {
-          font-size: clamp(36px, 12vw, 50px);
+          font-size: var(--sv-page-title-size);
         }
         .research-hero__desc {
           font-size: 17px;

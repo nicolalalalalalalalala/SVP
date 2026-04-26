@@ -27,6 +27,8 @@
         --max: 1200px;
         --site-page-margin: clamp(22px, 4.8vw, 64px);
         --pad: var(--site-page-margin);
+        --sv-page-title-size: clamp(48px, 4.5vw, 62px);
+        --sv-page-title-line-height: 0.98;
         --section-gap-desktop: 0px;
         --section-gap-tablet: 0px;
         --section-gap-mobile: 0px;
@@ -40,6 +42,8 @@
       @media (max-width: 767px) {
         :root {
           --section-block-gap: var(--section-gap-mobile);
+          --sv-page-title-size: clamp(30px, 9vw, 38px);
+          --sv-page-title-line-height: 1.05;
         }
       }
       *,
@@ -1077,10 +1081,10 @@
         align-items: end;
       }
       .pagehero h1 {
-        font-size: clamp(58px, 6.8vw, 70px);
+        font-size: var(--sv-page-title-size);
         max-width: 700px;
         letter-spacing: -0.025em;
-        line-height: 1.02;
+        line-height: var(--sv-page-title-line-height);
         text-wrap: balance;
       }
       .pagehero p {
@@ -2460,8 +2464,8 @@
     }
     .strategy-hero h1{
       max-width:62ch!important;
-      font-size:clamp(34px, 4.4vw, 58px)!important;
-      line-height:0.98!important;
+      font-size:var(--sv-page-title-size)!important;
+      line-height:var(--sv-page-title-line-height)!important;
       letter-spacing:-0.02em!important;
       text-transform:uppercase!important;
       margin:0!important;
@@ -2546,7 +2550,7 @@
         margin-left:auto!important;
         padding-inline:var(--pad)!important;
       }
-      .strategy-hero h1{font-size:clamp(30px, 8.2vw, 48px)!important;max-width:21ch!important}
+      .strategy-hero h1{font-size:var(--sv-page-title-size)!important;max-width:21ch!important}
       .strategy-hero .pagehero__lede{font-size:clamp(16px, 4.8vw, 20px)!important;max-width:60ch!important}
       .hero-aside{border-left:0!important;border-top:1px solid var(--xuan-dark)!important;padding:20px 0 0!important}
       .market-context-content{padding:clamp(26px, 4vw, 34px)!important}
@@ -2565,8 +2569,8 @@
       }
       .strategy-hero h1{
         max-width:100%!important;
-        font-size:clamp(28px, 9vw, 36px)!important;
-        line-height:1.02!important;
+        font-size:var(--sv-page-title-size)!important;
+        line-height:var(--sv-page-title-line-height)!important;
         letter-spacing:-0.01em!important;
       }
       .strategy-hero .pagehero__lede,
@@ -2768,8 +2772,8 @@ body.strategy-page .strategy-hero .strategy-kpi span {
     }
 
     body.strategy-page .strategy-hero h1 {
-      font-size: var(--sv-size-h1) !important;
-      line-height: var(--sv-lh-display) !important;
+      font-size: var(--sv-page-title-size) !important;
+      line-height: var(--sv-page-title-line-height) !important;
       letter-spacing: var(--sv-type-h1-track) !important;
     }
 
