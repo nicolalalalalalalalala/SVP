@@ -1945,31 +1945,19 @@ body.contact-page .contact-hero::after {
 body.contact-page .contact-hero::before {
   z-index: -3;
   background-image: url("assets/images/image.jpg");
-  background-position: 76% 52%;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 body.contact-page .contact-hero::after {
   z-index: -2;
-  background:
-    linear-gradient(92deg,
-      rgba(3, 9, 15, 0.97) 0%,
-      rgba(3, 9, 15, 0.9) 26%,
-      rgba(4, 12, 20, 0.78) 46%,
-      rgba(6, 15, 24, 0.5) 64%,
-      rgba(6, 15, 24, 0.32) 100%
-    ),
-    radial-gradient(120% 88% at 78% 54%,
-      rgba(12, 35, 50, 0.18) 0%,
-      rgba(6, 16, 24, 0.44) 56%,
-      rgba(4, 11, 18, 0.6) 100%
-    ),
-    linear-gradient(180deg,
-      rgba(2, 7, 12, 0.54) 0%,
-      rgba(3, 11, 17, 0.4) 36%,
-      rgba(2, 9, 16, 0.6) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(2, 10, 10, 0.82) 0%,
+    rgba(2, 10, 10, 0.62) 45%,
+    rgba(2, 10, 10, 0.42) 100%
+  );
 }
 
 body.contact-page .contact-hero .home-hero__inner {
@@ -2005,27 +1993,13 @@ body.contact-page .contact-page__content {
     min-height: clamp(520px, 84vh, 660px);
   }
 
-  body.contact-page .contact-hero::before {
-    background-position: 74% 50%;
-  }
-
   body.contact-page .contact-hero::after {
-    background:
-      linear-gradient(100deg,
-        rgba(3, 9, 15, 0.93) 0%,
-        rgba(4, 11, 18, 0.84) 58%,
-        rgba(6, 15, 24, 0.58) 100%
-      ),
-      radial-gradient(120% 92% at 75% 52%,
-        rgba(10, 30, 42, 0.15) 0%,
-        rgba(6, 16, 24, 0.46) 62%,
-        rgba(4, 11, 18, 0.62) 100%
-      ),
-      linear-gradient(180deg,
-        rgba(2, 8, 14, 0.62) 0%,
-        rgba(2, 8, 14, 0.47) 28%,
-        rgba(2, 8, 14, 0.64) 100%
-      );
+    background: linear-gradient(
+      90deg,
+      rgba(2, 10, 10, 0.88) 0%,
+      rgba(2, 10, 10, 0.72) 50%,
+      rgba(2, 10, 10, 0.55) 100%
+    );
   }
 
   body.contact-page .contact-hero .home-hero__inner {
