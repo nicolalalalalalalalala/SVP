@@ -110,6 +110,17 @@
 
       .firm-label {
         margin-bottom: var(--sv-section-label-gap);
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 12px;
+      }
+
+      .firm-label::after {
+        content: "";
+        flex: 0 0 36px;
+        height: 1px;
+        background: currentColor;
       }
 
       .sv-editorial-hero {
@@ -487,7 +498,7 @@
         <div class="wrap firm-container">
           <div class="firm-panel">
             <div>
-              <p class="firm-label eyebrow eyebrow--red">Operating Model</p>
+              <p class="firm-label eyebrow eyebrow--red">Execution Model</p>
               <h2 class="firm-section-title">Platform Architecture</h2>
             </div>
             <div class="firm-process-grid">
