@@ -377,6 +377,25 @@ html[lang^="zh"] :is(.sv-section-title, .legal-page__content h2, .contact-page__
   letter-spacing: 0.18em;
 }
 
+/* Keep section/eyebrow labels on a single line where space allows,
+   while preserving the trailing rule alignment. */
+:where(
+  .eyebrow,
+  .section-label,
+  .section-eyebrow,
+  .insights-section-label,
+  .team-section-label,
+  .firm-label,
+  .home-hero__eyebrow,
+  .contact-page__section-eyebrow
+) {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  max-width: 100%;
+}
+
 .eyebrow::after {
   flex-basis: 48px;
 }
