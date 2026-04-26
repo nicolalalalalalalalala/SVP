@@ -58,6 +58,10 @@
         display: grid;
         gap: clamp(18px, 2vw, 24px);
       }
+      .firm-panel--hero {
+        padding-top: clamp(32px, 3.6vw, 46px);
+        padding-bottom: clamp(36px, 4vw, 52px);
+      }
       .firm-panel--solid {
         background: var(--qing-dark);
         border-color: color-mix(in srgb, var(--qing-light) 40%, var(--qing-dark) 60%);
@@ -100,8 +104,22 @@
         gap: clamp(22px, 2.5vw, 34px);
         align-items: start;
       }
+      .firm-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: clamp(26px, 3.2vw, 44px);
+        align-items: start;
+      }
+      .firm-hero-copy {
+        display: grid;
+        align-content: start;
+      }
+      .firm-hero-copy .firm-label {
+        margin-bottom: clamp(24px, 3vw, 32px);
+      }
       .firm-page .firm-hero-title {
-        margin-top: 16px;
+        margin-top: 0;
+        margin-bottom: clamp(28px, 3.2vw, 36px);
         font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
         font-size: clamp(36px, 4vw, 60px) !important;
         font-weight: 700;
@@ -121,17 +139,18 @@
       .firm-body + .firm-body { margin-top: 14px; }
 
       .firm-stack {
-        border-left: 1px solid var(--rule);
-        padding-left: clamp(18px, 2vw, 26px);
+        margin-top: clamp(24px, 2.8vw, 34px);
         display: grid;
-        gap: 12px;
+        gap: clamp(16px, 2vw, 22px);
+        width: min(100%, 420px);
+        justify-self: start;
       }
       .firm-card {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 72%, var(--xuan-paper) 28%);
-        padding: 14px 16px;
+        padding: clamp(16px, 2vw, 22px) clamp(18px, 2.2vw, 24px);
         display: grid;
-        gap: 7px;
+        gap: 8px;
       }
       .firm-page .firm-card h3 {
         font-size: clamp(17px, 1.35vw, 20px) !important;
@@ -255,7 +274,7 @@
           padding-block: clamp(44px, 7vw, 64px);
         }
         .firm-hero-grid, .firm-editorial-grid { grid-template-columns: 1fr; }
-        .firm-stack { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 16px; }
+        .firm-stack { margin-top: clamp(20px, 5vw, 28px); width: 100%; }
         .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .firm-geo-list li:nth-child(odd) { border-left: 0; padding-left: 0; }
         .firm-page .firm-hero-title { letter-spacing: 0.18em; }
@@ -309,9 +328,9 @@
       <div class="section-stack">
         <section class="firm-section">
         <div class="wrap firm-container">
-          <div class="firm-panel">
+          <div class="firm-panel firm-panel--hero">
             <div class="firm-hero-grid">
-              <div>
+              <div class="firm-hero-copy">
                 <p class="firm-label">The Firm</p>
                 <h1 class="firm-hero-title">SHOREVEST PARTNERS</h1>
                 <p class="firm-body">
