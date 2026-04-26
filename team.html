@@ -218,7 +218,7 @@
       }
 
       .team-groups {
-        padding: 32px 0 92px;
+        padding: 0 0 64px;
         background: transparent;
       }
 
@@ -234,7 +234,7 @@
         margin-bottom: 22px;
       }
       .group {
-        padding: 34px 0 50px;
+        padding: 20px 0 44px;
         border-bottom: 0;
         scroll-margin-top: 96px;
         background: transparent !important;
@@ -285,7 +285,7 @@
         text-transform: uppercase;
       }
       .group__head .sv-section-title + .group__summary {
-        margin-top: 0;
+        margin-top: 10px;
       }
 
       .grid {
@@ -601,7 +601,7 @@
       }
       .group--leadership {
         margin-top: 0;
-        padding: 22px 0 58px;
+        padding: 18px 0 44px;
       }
       .group--leadership .group__summary {
         max-width: none;
@@ -763,6 +763,30 @@
       /* Homepage nav lockup parity */
       .team-groups :is(hr, .divider, .section-divider) {
         display: none !important;
+      }
+
+      /* Specificity overrides for refinement-pass.css hero/section gap rules.
+         The external stylesheet enforces padding-bottom on .team-hero and
+         padding-top on the following .team-groups via a (0,4,1) selector.
+         These rules match that specificity and appear later in source order. */
+      body.homepage.team-page .team-hero {
+        padding-bottom: 0 !important;
+      }
+      body.homepage.team-page .team-hero + .team-groups {
+        padding-top: clamp(44px, 5vw, 68px) !important;
+      }
+      @media (max-width: 767px) {
+        body.homepage.team-page .team-hero + .team-groups {
+          padding-top: clamp(32px, 6vw, 44px) !important;
+        }
+      }
+      @media (max-width: 640px) {
+        body.homepage.team-page .team-hero + .team-groups {
+          padding-top: 28px !important;
+        }
+        .group--leadership {
+          padding: 18px 0 34px;
+        }
       }
 
 </style>
