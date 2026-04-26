@@ -246,6 +246,28 @@
         display: grid;
         gap: var(--sv-strategy-box-title-gap);
       }
+      .capital-base-box {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.28fr) minmax(0, 0.72fr);
+        column-gap: clamp(48px, 6vw, 96px);
+        align-items: start;
+      }
+      .capital-base-content {
+        max-width: none;
+        width: 100%;
+        display: grid;
+        gap: 12px;
+      }
+      .firm-page .capital-base-box .capital-base-content,
+      .firm-page .capital-base-box .section-copy {
+        max-width: none;
+      }
+      .firm-page .capital-base-box p {
+        max-width: 900px;
+      }
+      .firm-page .capital-base-box .firm-section-title {
+        max-width: none;
+      }
       .firm-process-num {
         font-size: var(--sv-size-meta);
         line-height: var(--sv-lh-label);
@@ -371,6 +393,15 @@
           font-size: clamp(28px, 8vw, 38px) !important;
           letter-spacing: 0.18em;
           line-height: 1.16;
+        }
+        .capital-base-box {
+          display: block;
+        }
+        .capital-base-content {
+          margin-top: 24px;
+        }
+        .firm-page .capital-base-box p {
+          max-width: none;
         }
       }
     </style>
@@ -530,10 +561,12 @@
 
         <section class="firm-section">
         <div class="wrap firm-container">
-          <div class="firm-panel">
+          <div class="firm-panel capital-base-box">
             <p class="firm-label">CAPITAL BASE</p>
-            <h2 class="firm-section-title">LOCAL EXECUTION. GLOBAL STANDARD.</h2>
-            <p class="firm-body">Institutional private credit delivery built for enforceability, control, and disciplined realizations.</p>
+            <div class="capital-base-content">
+              <h2 class="firm-section-title">LOCAL EXECUTION. GLOBAL STANDARD.</h2>
+              <p class="firm-body">Institutional private credit delivery built for enforceability, control, and disciplined realizations.</p>
+            </div>
           </div>
         </div>
         </section>
