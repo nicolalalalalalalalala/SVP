@@ -96,16 +96,14 @@
         padding: 0 var(--pad);
       }
 
-      .eyebrow,
-      .team-section-label {
+      .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 14px;
         min-height: 12px;
         margin-bottom: 24px;
       }
-      .eyebrow::after,
-      .team-section-label::after {
+      .eyebrow::after {
         content: "";
         display: block;
         flex: 0 0 36px;
@@ -737,7 +735,7 @@
       }
 
       @media (max-width: 520px) {
-        .team-section-label::after {
+        .eyebrow::after {
           flex-basis: 28px;
           width: 28px;
         }
@@ -748,8 +746,7 @@
 }
 
       /* Global eyebrow stabilization */
-      .eyebrow,
-      .team-section-label {
+      .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 14px;
@@ -785,7 +782,7 @@
     <section class="pagehero team-hero">
       <div class="wrap">
         <div class="pagehero__intro">
-          <div class="eyebrow eyebrow--red team-section-label">TEAM</div>
+          <div class="eyebrow eyebrow--red">TEAM</div>
           <h1 class="type-display-hero">Investment Team</h1>
           <p class="pagehero__lede">
             ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
@@ -799,7 +796,7 @@
       <div class="wrap">
         <section class="group group--leadership" aria-labelledby="leadership-investment">
           <div class="group__head">
-            <div class="eyebrow eyebrow--red team-section-label">Leadership and Investment</div>
+            <div class="eyebrow eyebrow--red">Leadership and Investment</div>
             <h2 id="leadership-investment" class="sv-section-title">Leadership and Investment</h2>
             <p class="group__summary">
               Responsible for sourcing, underwriting, execution and portfolio
@@ -1121,7 +1118,7 @@
 
         <section class="group" aria-labelledby="client-solutions">
           <div class="group__head">
-            <div class="eyebrow eyebrow--red team-section-label">Client Solutions</div>
+            <div class="eyebrow eyebrow--red">Client Solutions</div>
             <h2 id="client-solutions" class="sv-section-title">Client Solutions</h2>
             <p class="group__summary">
               Responsible for investor engagement and capital development.
@@ -1219,7 +1216,7 @@
 
         <section class="group" aria-labelledby="advisory-partners">
           <div class="group__head">
-            <div class="eyebrow eyebrow--red team-section-label">Advisory Partners</div>
+            <div class="eyebrow eyebrow--red">Advisory Partners</div>
             <h2 id="advisory-partners" class="sv-section-title">Advisory Partners</h2>
             <p class="group__summary">
               Provide strategic, market and execution insight.
