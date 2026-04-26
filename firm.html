@@ -63,15 +63,45 @@
         box-sizing: border-box;
       }
 
+      .firm-page .firm-panel,
+      .firm-page .firm-box,
+      .firm-page .firm-card,
+      .firm-page .firm-hero-panel,
+      .firm-page .firm-section-card,
+      .firm-page .firm-overview-card,
+      .firm-page .firm-platform-card,
+      .firm-page .firm-governance-card,
+      .firm-page .firm-execution-card,
+      .firm-page .firm-capital-box,
+      .firm-page .capital-base-box,
+      .firm-page .sv-section-grid,
+      .firm-page .sv-statement,
+      .firm-page .firm-statement {
+        padding: clamp(40px, 4.5vw, 72px);
+      }
+
+      .firm-page .firm-panel--hero,
+      .firm-page .firm-hero-panel,
+      .firm-page .firm-capital-box,
+      .firm-page .capital-base-box {
+        padding: clamp(56px, 5.5vw, 88px);
+      }
+
+      .firm-page .firm-card,
+      .firm-page .firm-process-card,
+      .firm-page .firm-section-card,
+      .firm-page .firm-overview-card,
+      .firm-page .firm-platform-card,
+      .firm-page .firm-governance-card,
+      .firm-page .firm-execution-card {
+        padding: clamp(36px, 3.5vw, 56px);
+      }
+
       .firm-panel {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 82%, var(--xuan-paper) 18%);
-        padding: var(--sv-strategy-box-pad-desktop);
         display: grid;
         gap: var(--sv-strategy-box-title-gap);
-      }
-      .firm-panel--hero {
-        padding: var(--sv-strategy-box-pad-desktop);
       }
       .firm-panel--solid {
         background: var(--qing-dark);
@@ -161,7 +191,6 @@
       .firm-card {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 72%, var(--xuan-paper) 28%);
-        padding: var(--sv-strategy-box-pad-desktop);
         display: grid;
         gap: var(--sv-strategy-box-title-gap);
       }
@@ -183,7 +212,6 @@
       .sv-section-grid {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 80%, var(--xuan-paper) 20%);
-        padding: var(--sv-strategy-box-pad-desktop);
         display: grid;
         gap: var(--sv-strategy-box-title-gap);
       }
@@ -215,7 +243,6 @@
       .firm-process-card {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 84%, var(--xuan-paper) 16%);
-        padding: var(--sv-strategy-box-pad-desktop);
         display: grid;
         gap: var(--sv-strategy-box-title-gap);
       }
@@ -266,8 +293,13 @@
       .firm-statement {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper) 36%, var(--xuan-paper-light) 64%);
-        padding: var(--sv-strategy-box-pad-desktop);
         position: relative;
+      }
+
+      .firm-page .firm-panel > *,
+      .firm-page .firm-box > *,
+      .firm-page .firm-card > * {
+        box-sizing: border-box;
       }
       .firm-statement p {
         color: var(--xuan-paper-light);
@@ -286,13 +318,6 @@
           padding-block: clamp(44px, 7vw, 64px);
         }
         .firm-hero-grid, .firm-editorial-grid { grid-template-columns: 1fr; }
-        .firm-panel,
-        .firm-card,
-        .firm-process-card,
-        .sv-editorial-hero,
-        .sv-section-grid,
-        .sv-statement,
-        .firm-statement { padding: var(--sv-strategy-box-pad-tablet); }
         .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .firm-geo-list li:nth-child(odd) { border-left: 0; padding-left: 0; }
       }
@@ -322,17 +347,25 @@
         .firm-page .firm-process-card h3 {
           font-size: clamp(16px, 4.5vw, 18px) !important;
         }
-        .firm-panel,
-        .firm-card,
-        .firm-process-card,
-        .sv-editorial-hero,
-        .sv-section-grid,
-        .sv-statement,
-        .firm-statement {
-          padding: var(--sv-strategy-box-pad-mobile) !important;
-        }
       }
       @media (max-width: 700px) {
+        .firm-page .firm-panel,
+        .firm-page .firm-box,
+        .firm-page .firm-card,
+        .firm-page .firm-hero-panel,
+        .firm-page .firm-section-card,
+        .firm-page .firm-overview-card,
+        .firm-page .firm-platform-card,
+        .firm-page .firm-governance-card,
+        .firm-page .firm-execution-card,
+        .firm-page .firm-capital-box,
+        .firm-page .capital-base-box,
+        .firm-page .firm-process-card,
+        .firm-page .sv-section-grid,
+        .firm-page .sv-statement,
+        .firm-page .firm-statement {
+          padding: 28px 24px !important;
+        }
         .firm-page .firm-hero-title,
         .firm-page .firm-wordmark-heading {
           font-size: clamp(28px, 8vw, 38px) !important;
