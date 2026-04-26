@@ -154,12 +154,13 @@
         grid-template-columns: minmax(0, 1fr);
         gap: clamp(26px, 3.2vw, 44px);
         align-items: start;
+        width: 100%;
       }
       .firm-hero-copy {
         display: grid;
         align-content: start;
-        width: 100%;
-        max-width: none;
+        width: 100% !important;
+        max-width: none !important;
         grid-column: 1 / -1;
         flex: 1 1 100%;
       }
@@ -195,7 +196,7 @@
       }
       .firm-hero-copy-text {
         width: 100%;
-        max-width: none;
+        max-width: clamp(760px, 82vw, 900px);
         grid-column: 1 / -1;
         flex: 1 1 100%;
       }
