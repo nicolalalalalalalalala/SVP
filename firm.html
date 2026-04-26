@@ -131,7 +131,8 @@
       .firm-hero-copy .firm-label {
         margin-bottom: clamp(28px, 3vw, 36px);
       }
-      .firm-page .firm-hero-title {
+      .firm-page .firm-hero-title,
+      .firm-page .firm-wordmark-heading {
         margin-top: 0;
         margin-bottom: clamp(28px, 3vw, 36px);
         font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
@@ -139,23 +140,12 @@
         font-weight: 500;
         font-style: normal;
         line-height: 1.12;
-        letter-spacing: 0.26em;
-        text-transform: uppercase;
-        color: var(--ink-green);
-        max-width: 900px;
-        text-wrap: balance;
-      }
-      .firm-page .firm-wordmark-heading {
-        font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-        font-size: clamp(34px, 3.2vw, 56px) !important;
-        font-weight: 500;
-        font-style: normal;
-        line-height: 1.12;
-        letter-spacing: 0.26em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--ink-green);
         max-width: 900px;
       }
+      .firm-page .firm-hero-title { text-wrap: balance; }
       .firm-body, .firm-card p {
         font-size: var(--sv-size-body);
         line-height: var(--sv-lh-body);
@@ -346,7 +336,7 @@
         .firm-page .firm-hero-title,
         .firm-page .firm-wordmark-heading {
           font-size: clamp(28px, 8vw, 38px) !important;
-          letter-spacing: 0.16em;
+          letter-spacing: 0.18em;
           line-height: 1.16;
         }
       }
