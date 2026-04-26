@@ -1079,27 +1079,31 @@ body {
     background: transparent !important;
     box-shadow: none;
     display: grid;
-    gap: 10px;
+    gap: 0;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
 
   .press-row {
-    border: 1px solid color-mix(in srgb, var(--xuan-dark) 68%, transparent) !important;
-    background: color-mix(in srgb, var(--xuan-light) 88%, #fff 12%) !important;
+    border: 0 !important;
+    border-top: 1px solid rgba(122, 175, 175, 0.16) !important;
+    background: transparent !important;
     transition:
       background-color 0.24s ease,
-      box-shadow 0.24s ease,
-      border-color 0.24s ease;
+      box-shadow 0.24s ease;
+  }
+
+  .press-row:first-child {
+    border-top: 0 !important;
   }
 
   .press-row a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 6px;
     min-height: 0;
-    padding: 14px 16px;
+    padding: 18px 4px 17px;
     background: transparent !important;
   }
 
@@ -1110,9 +1114,8 @@ body {
 
   .press-row:hover,
   .press-row:focus-within {
-    background: color-mix(in srgb, var(--xuan-light) 80%, #fff 20%) !important;
-    border-color: color-mix(in srgb, var(--qing) 36%, var(--xuan-dark) 64%) !important;
-    box-shadow: inset 3px 0 0 color-mix(in srgb, var(--qing) 44%, transparent);
+    background: rgba(122, 175, 175, 0.04) !important;
+    box-shadow: inset 1px 0 0 rgba(122, 175, 175, 0.28);
   }
 
   .press-publication {
