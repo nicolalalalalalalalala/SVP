@@ -26,6 +26,11 @@
   --serif-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
 }
 
+body.homepage {
+  --bg-main: #F2ECD8;
+  --paper: #F2ECD8;
+}
+
 html,
 body,
 body * {
