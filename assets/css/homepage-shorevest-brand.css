@@ -50,13 +50,11 @@ body * {
 
 body,
 #nav,
-#hero,
 #about,
 #strategy,
 #team,
 #insights,
 #signup,
-#cdd,
 .quote-band,
 .num-band,
 .city-band,
@@ -576,7 +574,6 @@ body.homepage #cdd .cdd-cta:focus-visible {
 
 /* Strict institutional color-role enforcement (April 2026) */
 body.homepage,
-body.homepage #hero,
 body.homepage #stats,
 body.homepage #about,
 body.homepage #strategy,

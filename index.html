@@ -1783,7 +1783,7 @@ body.homepage .home-section-shell--panel {
   background: var(--xuan-paper);
   padding-block: var(--home-panel-pad-top) var(--home-panel-pad-bottom);
 }
-body.homepage :is(#about, #principles, #strategy, #cdd, #team, #insights, #signup) {
+body.homepage :is(#about, #principles, #strategy, #team, #insights, #signup) {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -1804,9 +1804,9 @@ body.homepage .home-copy-frame {
 body.homepage .home-copy-frame > p {
   max-width: var(--home-copy-max) !important;
 }
-body.homepage :is(.home-hero, #about, #principles, #strategy, #cdd, .sv-footer) *,
-body.homepage :is(.home-hero, #about, #principles, #strategy, #cdd, .sv-footer) *::before,
-body.homepage :is(.home-hero, #about, #principles, #strategy, #cdd, .sv-footer) *::after {
+body.homepage :is(.home-hero, #about, #principles, #strategy, .sv-footer) *,
+body.homepage :is(.home-hero, #about, #principles, #strategy, .sv-footer) *::before,
+body.homepage :is(.home-hero, #about, #principles, #strategy, .sv-footer) *::after {
   box-sizing: border-box;
 }
 body.homepage .home-hero::before,
@@ -2810,9 +2810,9 @@ body.homepage #cdd .cdd-editorial__lede {
     border: 0 !important;
     box-shadow: none !important;
   }
-  body.homepage :is(#about, #principles, #strategy, #cdd, #insights, #signup),
-  body.homepage :is(#about, #principles, #strategy, #cdd, #insights, #signup) > .wrap,
-  body.homepage :is(#principles .principles__grid, #strategy .strat__grid, #cdd .cdd-editorial__card, #cdd .cdd-feature),
+  body.homepage :is(#about, #principles, #strategy, #insights, #signup),
+  body.homepage :is(#about, #principles, #strategy, #insights, #signup) > .wrap,
+  body.homepage :is(#principles .principles__grid, #strategy .strat__grid),
   body.homepage :is(#principles .ac, #strategy .sg),
   body.homepage .ins__hd,
   body.homepage .sv-footer,
@@ -4014,7 +4014,7 @@ body.homepage #cdd .cdd-editorial__lede {
   }
 
   /* Global section rhythm for mobile homepage. */
-  body.homepage :is(#about, #principles, #strategy, #cdd, #insights, #signup) {
+  body.homepage :is(#about, #principles, #strategy, #insights, #signup) {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
@@ -4022,7 +4022,7 @@ body.homepage #cdd .cdd-editorial__lede {
     padding-top: 20px !important;
     padding-bottom: 18px !important;
   }
-  body.homepage :is(#about, #principles, #strategy, #cdd) + :is(#about, #principles, #strategy, #cdd, #insights, #signup) {
+  body.homepage :is(#about, #principles, #strategy) + :is(#about, #principles, #strategy, #insights, #signup) {
     margin-top: 2px !important;
   }
 
