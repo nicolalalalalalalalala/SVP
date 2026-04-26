@@ -24,7 +24,8 @@
         --white: #faf6ee;
         --cream: #e6e1d5;
         --off: #ded8cb;
-        --paper: #f2ecd8;
+        --xuan-paper: #f2ecd8;
+        --paper: var(--xuan-paper);
         --stone: #efe7d7;
         --off-warm: #f8f3ea;
         --sand: #d9d1bf;
@@ -62,7 +63,7 @@
         scroll-padding-top: 96px;
       }
       body {
-        background: #f7f5f1;
+        background: var(--xuan-paper);
         color: var(--ink);
         font-family: var(--team-type-body);
         font-size: 15px;
@@ -72,6 +73,19 @@
         text-decoration: none;
         color: inherit;
       }
+
+      body.team-page,
+      main.team-page,
+      .team-page,
+      .team-main,
+      .team-content,
+      .team-hero,
+      .team-groups,
+      .team-section,
+      .page-section {
+        background: var(--xuan-paper);
+      }
+
       img {
         display: block;
         max-width: 100%;
@@ -170,7 +184,7 @@
       .founder-note {
         padding: 48px 0;
         border-bottom: 0;
-        background: var(--off);
+        background: var(--xuan-paper);
       }
       .founder-note__grid {
         display: grid;
