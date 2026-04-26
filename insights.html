@@ -658,10 +658,6 @@
       .archive__head {
         padding: 16px 20px;
         border-bottom: 1px solid var(--rule);
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--mist);
         background: color-mix(in srgb, #fff 76%, var(--off) 24%);
       }
       .archive__row {
@@ -1691,6 +1687,45 @@
     border-color: var(--cdd-signal) !important;
     color: var(--cdd-signal-deep) !important;
   }
+
+  /* Insights section-label system: match Strategy page "MARKET CONTEXT" treatment exactly. */
+  body.insights-page .insights-section-label {
+    font-family: var(--sans) !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: var(--cinnabar) !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    min-height: 12px;
+    white-space: nowrap;
+    margin-bottom: 24px;
+    vertical-align: middle;
+  }
+
+  body.insights-page .insights-section-label::after {
+    content: "";
+    display: block;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  body.insights-page .archive__head.insights-section-label {
+    display: flex !important;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    body.insights-page .insights-section-label::after {
+      flex-basis: 28px;
+      width: 28px;
+    }
+  }
 </style>
 </head>
   <body class="insights-page">
@@ -1714,7 +1749,7 @@
           </p>
         </div>
         <article class="issue-live cdd-franchise__panel" aria-label="Current issue highlight">
-          <div class="issue-live__k">
+          <div class="issue-live__k insights-section-label">
             <span class="cdd-live" aria-hidden="true">
               <span class="cdd-live__dot"></span>
               <span class="cdd-live__label">Live</span>
@@ -1740,7 +1775,7 @@
 
     <main class="issue-shell wrap">
       <section class="archive-panel" id="archive" aria-labelledby="archive-heading">
-        <div class="archive__head" id="archive-heading">China Debt Dynamics Archive</div>
+        <div class="archive__head insights-section-label" id="archive-heading">China Debt Dynamics Archive</div>
         <div class="archive__list">
           <div class="archive__row">
             <small>Vol. 10, Issue 1 · Published 25 January 2026</small>
