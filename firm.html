@@ -36,6 +36,10 @@
         --sv-section-space: 72px;
         --sv-panel-pad-inline: clamp(48px, 5vw, 76px);
         --sv-panel-pad-block: clamp(48px, 5vw, 72px);
+        --sv-strategy-box-pad-desktop: 38px 42px;
+        --sv-strategy-box-pad-tablet: 28px;
+        --sv-strategy-box-pad-mobile: 22px 16px;
+        --sv-strategy-box-title-gap: 12px;
       }
 
       * { box-sizing: border-box; }
@@ -148,9 +152,9 @@
       .firm-card {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 72%, var(--xuan-paper) 28%);
-        padding: clamp(16px, 2vw, 22px) clamp(18px, 2.2vw, 24px);
+        padding: var(--sv-strategy-box-pad-desktop);
         display: grid;
-        gap: 8px;
+        gap: var(--sv-strategy-box-title-gap);
       }
       .firm-page .firm-card h3 {
         font-size: clamp(17px, 1.35vw, 20px) !important;
@@ -203,9 +207,9 @@
       .firm-process-card {
         border: 1px solid var(--rule);
         background: color-mix(in srgb, var(--xuan-paper-light) 84%, var(--xuan-paper) 16%);
-        padding: 16px;
+        padding: var(--sv-strategy-box-pad-desktop);
         display: grid;
-        gap: 8px;
+        gap: var(--sv-strategy-box-title-gap);
       }
       .firm-process-num {
         font-size: var(--sv-size-meta);
@@ -275,6 +279,8 @@
         }
         .firm-hero-grid, .firm-editorial-grid { grid-template-columns: 1fr; }
         .firm-stack { margin-top: clamp(20px, 5vw, 28px); width: 100%; }
+        .firm-card,
+        .firm-process-card { padding: var(--sv-strategy-box-pad-tablet); }
         .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .firm-geo-list li:nth-child(odd) { border-left: 0; padding-left: 0; }
         .firm-page .firm-hero-title { letter-spacing: 0.18em; }
@@ -314,6 +320,10 @@
         .firm-page .firm-card h3,
         .firm-page .firm-process-card h3 {
           font-size: clamp(16px, 4.5vw, 18px) !important;
+        }
+        .firm-card,
+        .firm-process-card {
+          padding: var(--sv-strategy-box-pad-mobile) !important;
         }
       }
     </style>
