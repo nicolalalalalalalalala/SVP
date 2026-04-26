@@ -98,62 +98,93 @@
         content: none;
       }
 
-      .pagehero {
-        --pagehero-inline-pad: 0;
-        --sv-hero-top-space: clamp(44px, 4.6vw, 64px);
-        --sv-hero-bottom-space: clamp(18px, 2.2vw, 28px);
-        min-height: 0;
-        padding: var(--sv-hero-top-space) var(--pagehero-inline-pad) var(--sv-hero-bottom-space) !important;
+      .team-hero {
+        padding-top: clamp(104px, 11vw, 138px) !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
         border-bottom: 0;
         background: transparent;
       }
-      .pagehero .wrap {
+      .team-hero .wrap {
         width: 100%;
         max-width: var(--max);
         margin: 0 auto;
-        padding: 0 var(--pad);
-      }
-      .pagehero__intro {
-        width: min(720px, 100%);
-        margin: 0;
-        padding: clamp(14px, 1.8vw, 22px) 0 clamp(12px, 1.6vw, 20px);
+        padding: clamp(34px, 4vw, 46px) clamp(28px, 3.8vw, 44px) !important;
         display: grid;
-        row-gap: clamp(10px, 1.2vw, 14px);
-        border-top: 0;
+        grid-template-columns: minmax(0, 1.34fr) minmax(350px, 0.9fr);
+        gap: clamp(28px, 3.2vw, 44px);
+        align-items: stretch;
+        border: 1px solid color-mix(in srgb, var(--rule) 78%, var(--ink) 22%);
+        background: color-mix(in srgb, var(--paper) 74%, #efe6d3 26%);
       }
-      .pagehero .eyebrow {
-        padding-top: 0;
+      .team-hero .pagehero__intro {
+        margin: 0;
+        display: grid;
+        align-content: start;
+        gap: 0;
+        padding-top: 2px;
       }
-      h1 {
+      .team-hero .eyebrow {
+        margin-bottom: 14px !important;
+        color: color-mix(in srgb, var(--qing-dark) 35%, var(--ink) 65%);
+      }
+      .team-hero .eyebrow::after {
+        content: "";
+        flex: 0 0 clamp(34px, 4vw, 48px);
+        height: 1px;
+        background: color-mix(in srgb, var(--cinnamon) 58%, var(--rule) 42%);
+      }
+      .team-hero h1 {
         font-family: var(--team-type-heading);
-        font-size: var(--sv-size-h1);
-        font-weight: 700;
-        font-style: normal;
-        line-height: var(--sv-lh-display);
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        margin-bottom: 0;
-        max-width: 20ch;
-      }
-      .pagehero .type-display-hero {
         font-size: var(--sv-size-h1) !important;
-        font-style: normal !important;
         font-weight: 700 !important;
+        font-style: normal !important;
         line-height: var(--sv-lh-display) !important;
         letter-spacing: 0.02em !important;
+        text-transform: uppercase;
+        margin: 0;
+        max-width: 19ch;
       }
-      .pagehero p {
+      .team-hero .pagehero__lede {
         max-width: 58ch;
+        margin-top: 18px;
         font-size: var(--sv-size-body);
-        line-height: var(--sv-lh-body);
+        line-height: 1.55;
         color: var(--ink-soft);
         font-family: var(--team-type-body);
-        margin-top: 0;
       }
-      .pagehero__fullwidth {
-        width: min(100%, 860px);
-        max-width: 100%;
-        line-height: 1.55;
+      .team-hero__aside {
+        border-left: 1px solid color-mix(in srgb, var(--rule) 66%, var(--ink) 34%);
+        padding-left: clamp(20px, 2vw, 30px);
+        display: grid;
+        align-content: stretch;
+      }
+      .team-hero__cards {
+        display: grid;
+        gap: 10px;
+      }
+      .team-hero__card {
+        min-height: 96px;
+        padding: 14px 14px 15px;
+        border: 1px solid color-mix(in srgb, var(--rule) 58%, var(--ink) 42%);
+        background: color-mix(in srgb, var(--paper) 54%, #e7ddc8 46%);
+        display: grid;
+        gap: 8px;
+      }
+      .team-hero__card strong {
+        color: color-mix(in srgb, var(--cinnamon-dark) 82%, var(--cinnamon) 18%);
+        letter-spacing: 0.13em;
+        font-size: var(--sv-size-meta);
+        text-transform: uppercase;
+      }
+      .team-hero__card span {
+        color: color-mix(in srgb, var(--ink) 90%, var(--ink-soft) 10%);
+        font-size: var(--sv-size-body);
+        line-height: 1.48;
+      }
+      .team-hero + .team-groups {
+        margin-top: 0 !important;
+        padding-top: clamp(24px, 2.6vw, 34px);
       }
 
       .founder-note {
@@ -603,6 +634,15 @@
           margin-bottom: 16px;
           padding-bottom: 10px;
         }
+        .team-hero .wrap {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 20px;
+        }
+        .team-hero__aside {
+          border-left: 0;
+          border-top: 1px solid color-mix(in srgb, var(--rule) 70%, var(--ink) 30%);
+          padding: 18px 0 0;
+        }
       }
 
       @media (max-width: 767px) {
@@ -612,25 +652,21 @@
           --team-group-title-size: calc(var(--sv-pillar-title-size) * 1.08);
         }
 
-        .pagehero {
-          min-height: auto;
-          padding-top: 102px;
-          padding-bottom: 22px;
+        .team-hero {
+          padding-top: clamp(92px, 16vw, 118px) !important;
         }
-        .pagehero__intro {
-          row-gap: 10px;
-          padding: 14px 0 10px;
+        .team-hero .wrap {
+          padding: clamp(24px, 6vw, 30px) clamp(16px, 4.8vw, 22px) !important;
+          gap: 16px;
         }
-        h1 {
+        .team-hero h1 {
           max-width: 18ch;
         }
-        .pagehero p {
-          font-size: var(--sv-size-body);
-          line-height: var(--sv-lh-body);
+        .team-hero .pagehero__lede {
           max-width: 100%;
         }
-        .pagehero__fullwidth {
-          width: 100%;
+        .team-hero__card {
+          min-height: 0;
         }
         .founder-note {
           padding: 32px 0;
@@ -745,18 +781,25 @@
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 <link rel="stylesheet" href="assets/css/shared-footer.css">
 </head>
-  <body class="homepage">
+  <body class="homepage team-page">
     <div id="site-header-mount"></div>
 
-    <section class="pagehero">
+    <section class="pagehero team-hero">
       <div class="wrap">
         <div class="pagehero__intro">
           <div class="eyebrow">TEAM</div>
-          <h1 class="type-display-hero">Investment and operating team</h1>
+          <h1 class="type-display-hero">Investment Team</h1>
+          <p class="pagehero__lede">
+            ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
+          </p>
         </div>
-        <p class="pagehero__fullwidth">
-          ShoreVest’s investment team integrates sourcing, underwriting, legal structuring and asset-level execution within a single platform, with biographies covering role scope, prior experience, and education background.
-        </p>
+        <aside class="team-hero__aside" aria-label="Team pillars">
+          <div class="team-hero__cards">
+            <div class="team-hero__card"><strong>01 Leadership</strong><span>Senior investment and operating leadership across the platform.</span></div>
+            <div class="team-hero__card"><strong>02 Execution</strong><span>Sourcing, underwriting, portfolio management and recovery execution.</span></div>
+            <div class="team-hero__card"><strong>03 Governance</strong><span>Investment discipline supported by legal, finance and operating oversight.</span></div>
+          </div>
+        </aside>
       </div>
     </section>
 
