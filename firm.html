@@ -39,8 +39,18 @@
       }
 
       * { box-sizing: border-box; }
-      html, body { margin: 0; }
-      body.homepage main, .firm-page, .firm-page > section { background: var(--xuan-paper-light); }
+      html, body {
+        margin: 0;
+        background: var(--xuan-paper);
+      }
+      body.homepage,
+      body.homepage main,
+      .firm-page,
+      .firm-page > .section-stack,
+      .firm-page .firm-container,
+      .firm-page .firm-section {
+        background: var(--xuan-paper);
+      }
       h1, h2, h3, p { margin: 0; }
 
       .firm-container {
