@@ -143,6 +143,16 @@
         text-transform: uppercase;
         color: var(--sv-header-wordmark, var(--ink-green));
       }
+      .firm-page .firm-wordmark-heading {
+        margin-bottom: clamp(30px, 3.6vw, 40px);
+        font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+        font-size: clamp(1rem, 1.4vw, 1.45rem) !important;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--sv-header-wordmark, var(--ink-green));
+      }
       .firm-body, .firm-card p {
         font-size: var(--sv-size-body);
         line-height: var(--sv-lh-body);
@@ -293,7 +303,7 @@
         .firm-process-card { padding: var(--sv-strategy-box-pad-tablet); }
         .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .firm-geo-list li:nth-child(odd) { border-left: 0; padding-left: 0; }
-        .firm-page .firm-hero-title { letter-spacing: 0.18em; }
+        .firm-page .firm-wordmark-heading { letter-spacing: 0.18em; }
       }
 
       @media (max-width: 767px) {
@@ -319,10 +329,7 @@
         .sv-editorial-hero .editorial-hero-title {
           font-size: clamp(34px, 10vw, 48px) !important;
         }
-        .firm-page .firm-hero-title {
-          font-size: clamp(28px, 8vw, 38px) !important;
-          letter-spacing: 0.15em;
-        }
+        .firm-page .firm-wordmark-heading { letter-spacing: 0.14em; }
         .firm-page .firm-section-title {
           font-size: clamp(24px, 7vw, 32px) !important;
           line-height: 1.1 !important;
@@ -334,6 +341,12 @@
         .firm-card,
         .firm-process-card {
           padding: var(--sv-strategy-box-pad-mobile) !important;
+        }
+      }
+      @media (max-width: 700px) {
+        .firm-page .firm-wordmark-heading {
+          letter-spacing: 0.14em;
+          font-size: 1rem !important;
         }
       }
     </style>
@@ -352,7 +365,7 @@
             <div class="firm-hero-grid">
               <div class="firm-hero-copy">
                 <p class="firm-label">The Firm</p>
-                <h1 class="firm-hero-title">SHOREVEST PARTNERS</h1>
+                <h1 class="firm-hero-title firm-wordmark-heading">SHOREVEST PARTNERS</h1>
                 <p class="firm-body">
                   Institutional private credit platform for complex recoveries across China, built for enforceability, downside protection, and disciplined realization outcomes.
                 </p>
