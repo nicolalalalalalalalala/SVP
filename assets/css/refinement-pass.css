@@ -400,6 +400,24 @@ html[lang^="zh"] :is(.sv-section-title, .legal-page__content h2, .contact-page__
   flex-basis: 48px;
 }
 
+:where(
+  .section-label,
+  .section-eyebrow,
+  .insights-section-label,
+  .team-section-label,
+  .firm-label,
+  .contact-page__section-eyebrow,
+  .home-hero__eyebrow
+)::after {
+  content: "";
+  display: block;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 1px;
+  margin-inline-start: 14px;
+  background: currentColor;
+}
+
 .hero__overlay h1.hero__hed,
 .pagehero__hed,
 .hero h1,
