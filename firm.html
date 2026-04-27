@@ -535,12 +535,28 @@
       .firm-page .firm-panel--hero .firm-wordmark-heading {
         color: #faf6ee !important;
         max-width: none !important;
+        width: 100% !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.26em !important;
+        letter-spacing: clamp(0.16em, 0.9vw, 0.28em) !important;
         word-spacing: 0.55em;
-        font-weight: 300 !important;
-        line-height: 1.1 !important;
+        font-weight: 600 !important;
+        font-size: clamp(48px, 5.2vw, 82px) !important;
+        line-height: 0.95 !important;
+        white-space: nowrap !important;
+        text-wrap: unset !important;
         margin: 0 0 clamp(24px, 2.6vw, 32px) 0 !important;
+      }
+
+      @media (max-width: 768px) {
+        .firm-panel--hero .firm-hero-title,
+        .firm-panel--hero .firm-wordmark-heading,
+        .firm-page .firm-panel--hero .firm-hero-title,
+        .firm-page .firm-panel--hero .firm-wordmark-heading {
+          white-space: normal !important;
+          font-size: clamp(42px, 12vw, 64px) !important;
+          letter-spacing: 0.14em !important;
+          line-height: 1.05 !important;
+        }
       }
 
       /* Body copy: Xuan Paper Light at comfortable reading opacity */
