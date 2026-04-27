@@ -178,3 +178,31 @@ body.insights-page .research-hero.hero--insights {
 .contact-hero.hero--contact::after {
   background: none !important;
 }
+
+/* ─── STRATEGY PAGE: Tighten hero → market-context gap ──────────────────
+   The main-hero sizing system in refinement-pass.css contributes ~72px
+   padding-bottom on the hero and ~74px padding-top on the first section,
+   creating a combined ~146px gap at desktop widths. These overrides halve
+   that gap so the cinnabar hero and Xuan Paper block sit closer together.
+   hero-variants.css loads after refinement-pass.css so these win the
+   cascade at equal specificity.
+   ──────────────────────────────────────────────────────────────────────*/
+body.homepage.strategy-page .strategy-hero {
+  padding-bottom: clamp(32px, 3.4vw, 48px) !important;
+}
+
+@media (max-width: 1024px) {
+  body.homepage.strategy-page .strategy-hero {
+    padding-bottom: clamp(24px, 3.2vw, 36px) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.homepage.strategy-page .strategy-hero {
+    padding-bottom: clamp(16px, 5vw, 24px) !important;
+  }
+}
+
+body.homepage.strategy-page .strategy-hero + .market-context {
+  padding-top: clamp(28px, 3.2vw, 40px) !important;
+}
