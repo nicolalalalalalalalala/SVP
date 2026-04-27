@@ -2974,17 +2974,16 @@ body.strategy-page .strategy-hero .strategy-kpi span {
       background: rgba(150, 54, 37, 0.46) !important;
     }
 
-    /* Main heading: Xuan Paper Light + focused cinnabar highlight field.
-       More minimal than TEAM — the background is deeper, the tonal accent
-       is tighter, keeping the composition leaner and sharper. */
+    /* Main heading: Xuan Paper Light on dark ground — typographic treatment only. */
     body.strategy-page .strategy-hero h1 {
       color: #faf6ee !important;
-      background: rgba(150, 54, 37, 0.12);
-      border-left: 1.5px solid rgba(150, 54, 37, 0.36);
-      padding: 12px 0 14px 18px;
-      margin: 4px 0 8px -18px !important;
-      /* Extend tonal strip full panel width via overflow-clipped shadow */
-      box-shadow: -500px 0 0 0 rgba(150, 54, 37, 0.12), 500px 0 0 0 rgba(150, 54, 37, 0.12);
+      background: none !important;
+      box-shadow: none !important;
+      border-left: none !important;
+      padding: 0 !important;
+      margin: 0 0 clamp(20px, 2.4vw, 28px) 0 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.14em !important;
       line-height: 0.99 !important;
       max-width: none !important;
     }
