@@ -270,7 +270,8 @@
       .firm-page > .section-stack {
         display: grid;
         gap: clamp(56px, 5vw, 80px);
-        padding-block: clamp(56px, 5vw, 80px);
+        padding-top: 0;
+        padding-bottom: clamp(56px, 5vw, 80px);
       }
       .firm-page .firm-section {
         margin: 0 !important;
@@ -392,7 +393,8 @@
       @media (max-width: 980px) {
         .firm-page > .section-stack {
           gap: clamp(44px, 7vw, 64px);
-          padding-block: clamp(44px, 7vw, 64px);
+          padding-top: 0;
+          padding-bottom: clamp(44px, 7vw, 64px);
         }
         .firm-hero-grid, .firm-editorial-grid { grid-template-columns: 1fr; }
         .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -407,7 +409,8 @@
         }
         .firm-page > .section-stack {
           gap: clamp(32px, 6vw, 44px);
-          padding-block: clamp(32px, 6vw, 44px);
+          padding-top: 0;
+          padding-bottom: clamp(32px, 6vw, 44px);
         }
         .sv-process-grid {
           grid-template-columns: 1fr;
@@ -566,6 +569,34 @@
       /* Body copy: Xuan Paper Light at comfortable reading opacity */
       .firm-panel--hero .firm-body {
         color: rgba(250, 246, 238, 0.76) !important;
+      }
+
+      /* ── Tighten nav-to-panel gap ──────────────────────────────────────────
+         1. Remove the 26–42 px beige padding-top that refinement-pass.css
+            applies via #site-header-mount + main.
+         2. Override the 132 px padding-top that refinement-pass.css applies
+            via body.homepage.homepage .firm-panel--hero. Both rules share
+            selector specificity (0,3,1); this inline <style> is later in
+            source order, so it wins.
+      ────────────────────────────────────────────────────────────────────── */
+      .firm-page {
+        padding-top: 0 !important;
+      }
+
+      body.homepage .firm-page .firm-panel--hero {
+        padding-top: clamp(44px, 4vw, 64px) !important;
+      }
+
+      @media (max-width: 1024px) {
+        body.homepage .firm-page .firm-panel--hero {
+          padding-top: clamp(36px, 4.5vw, 52px) !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        body.homepage .firm-page .firm-panel--hero {
+          padding-top: clamp(28px, 7vw, 40px) !important;
+        }
       }
     </style>
   </head>
