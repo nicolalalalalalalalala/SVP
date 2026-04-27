@@ -16,36 +16,13 @@
   <script src="assets/js/shared-header.js" defer></script>
   <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
   <link rel="stylesheet" href="assets/css/shared-footer.css" />
-
-  <style id="contact-hero-palette">
-    /* Hero palette — Contact: calm Qing-black base with subtle Ink Green depth.
-       Composed and service-oriented. No image; colour lives in the field itself.
-       Ink Green rises from the upper-right, Qing settles at the lower-left. */
-    body.contact-page .contact-hero {
-      background:
-        radial-gradient(ellipse at 72% 26%, rgba(46, 74, 24, 0.24) 0%, transparent 52%),
-        radial-gradient(ellipse at 20% 74%, rgba(30, 64, 64, 0.26) 0%, transparent 48%),
-        linear-gradient(152deg, #070f0e 0%, #050c0b 52%, #081311 100%) !important;
-      border-bottom: 1px solid rgba(30, 64, 64, 0.22) !important;
-    }
-
-    /* Remove the photo pseudo-element layers */
-    body.contact-page .contact-hero::before {
-      content: none !important;
-      display: none !important;
-    }
-
-    body.contact-page .contact-hero::after {
-      content: none !important;
-      display: none !important;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/hero-variants.css" />
 </head>
 <body class="legal-page homepage contact-page contact-align">
   <div id="site-header-mount"></div>
 
   <main class="legal-page__main">
-    <section class="home-hero contact-hero" aria-labelledby="contact-page-title">
+    <section class="home-hero contact-hero hero--contact" aria-labelledby="contact-page-title">
       <div class="wrap home-hero__inner home-section-shell">
         <div class="home-hero__text">
           <p class="home-hero__eyebrow">ENQUIRIES</p>

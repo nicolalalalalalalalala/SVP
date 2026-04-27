@@ -184,7 +184,7 @@
         font-style: normal;
         line-height: var(--sv-page-title-line-height);
         letter-spacing: 0.26em;
-        word-spacing: 0.55em;
+        word-spacing: 0.25em;
         text-transform: uppercase;
         color: var(--ink-green);
         max-width: none;
@@ -446,7 +446,7 @@
         .firm-page .firm-wordmark-heading {
           font-size: var(--sv-page-title-size) !important;
           letter-spacing: 0.2em;
-          word-spacing: 0.45em;
+          word-spacing: 0.2em;
           text-transform: uppercase;
           line-height: var(--sv-page-title-line-height);
         }
@@ -461,13 +461,14 @@
 
     <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
     <link rel="stylesheet" href="assets/css/shared-footer.css" />
+    <link rel="stylesheet" href="assets/css/hero-variants.css" />
     <style>
       .firm-page .firm-hero-title,
       .firm-page .firm-wordmark-heading,
       .firm-page .firm-hero-title span,
       .firm-page .firm-wordmark-heading span {
         letter-spacing: 0.26em !important;
-        word-spacing: 0.55em;
+        word-spacing: 0.25em;
         text-transform: uppercase !important;
         font-kerning: none;
         max-width: none;
@@ -484,7 +485,7 @@
         .firm-page .firm-hero-title span,
         .firm-page .firm-wordmark-heading span {
           letter-spacing: 0.18em !important;
-          word-spacing: 0.4em;
+          word-spacing: 0.2em;
         }
       }
     </style>
@@ -538,12 +539,28 @@
       .firm-page .firm-panel--hero .firm-wordmark-heading {
         color: #faf6ee !important;
         max-width: none !important;
+        width: 100% !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.26em !important;
-        word-spacing: 0.55em;
-        font-weight: 300 !important;
-        line-height: 1.1 !important;
+        letter-spacing: clamp(0.16em, 0.9vw, 0.28em) !important;
+        word-spacing: 0.25em;
+        font-weight: 600 !important;
+        font-size: clamp(48px, 5.2vw, 82px) !important;
+        line-height: 0.95 !important;
+        white-space: nowrap !important;
+        text-wrap: unset !important;
         margin: 0 0 clamp(24px, 2.6vw, 32px) 0 !important;
+      }
+
+      @media (max-width: 768px) {
+        .firm-panel--hero .firm-hero-title,
+        .firm-panel--hero .firm-wordmark-heading,
+        .firm-page .firm-panel--hero .firm-hero-title,
+        .firm-page .firm-panel--hero .firm-wordmark-heading {
+          white-space: normal !important;
+          font-size: clamp(42px, 12vw, 64px) !important;
+          letter-spacing: 0.14em !important;
+          line-height: 1.05 !important;
+        }
       }
 
       /* Body copy: Xuan Paper Light at comfortable reading opacity */
@@ -559,7 +576,7 @@
       <div class="section-stack">
         <section class="firm-section">
         <div class="wrap firm-container">
-          <div class="firm-panel firm-panel--hero">
+          <div class="firm-panel firm-panel--hero hero--firm">
             <div class="firm-hero-grid">
               <div class="firm-hero-copy">
                 <p class="firm-label eyebrow eyebrow--red">THE FIRM</p>
