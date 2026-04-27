@@ -806,23 +806,25 @@
        with layered gradient depth rather than a flat field.
        ═══════════════════════════════════════════════════════ */
 
-    /* Panel background: deep oxblood with a cinnabar tonal wash */
+    /* Panel: warm cinnabar anchors the left, Qing breathes in from the far corner —
+       more human and integrated than Strategy's compressed severity. */
     .team-hero .wrap {
       background:
-        radial-gradient(ellipse at 24% 36%, rgba(179, 71, 52, 0.21) 0%, transparent 56%),
-        linear-gradient(160deg, #220d07 0%, #160804 52%, #1f0c06 100%);
-      border: 1px solid rgba(179, 71, 52, 0.24);
+        radial-gradient(ellipse at 22% 34%, rgba(201, 59, 42, 0.26) 0%, transparent 54%),
+        radial-gradient(ellipse at 78% 70%, rgba(61, 112, 112, 0.16) 0%, transparent 48%),
+        linear-gradient(158deg, #1c0a06 0%, #110605 52%, #171007 100%);
+      border: 1px solid rgba(179, 71, 52, 0.20);
       position: relative !important;
       overflow: hidden !important;
     }
 
-    /* Restrained cinnabar hairline along the top edge */
+    /* Hairline transitions from cinnabar warmth to a faint Qing note */
     .team-hero .wrap::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, rgba(179, 71, 52, 0.58) 0%, rgba(179, 71, 52, 0.22) 100%);
+      background: linear-gradient(90deg, rgba(201, 59, 42, 0.54) 0%, rgba(61, 112, 112, 0.18) 100%);
       pointer-events: none;
     }
 

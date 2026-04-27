@@ -2932,29 +2932,31 @@ body.strategy-page .strategy-hero .strategy-kpi span {
       background: var(--xuan-light) !important;
     }
 
-    /* The panel itself: very dark near-black with a contained cinnabar wash */
+    /* Panel: near-black base — Cinnabar Dark anchors the left, a very faint Qing
+       tint at the far corner disciplines the heat without softening the mood. */
     body.strategy-page .strategy-hero .wrap {
       grid-template-columns: minmax(0, 1.34fr) minmax(350px, 0.9fr) !important;
       gap: clamp(28px, 3.2vw, 44px) !important;
       align-items: stretch !important;
       padding-block: clamp(34px, 4vw, 46px) !important;
       padding-inline: clamp(36px, 4vw, 56px) !important;
-      border: 1px solid rgba(150, 54, 37, 0.22) !important;
+      border: 1px solid rgba(138, 31, 18, 0.22) !important;
       background:
-        radial-gradient(ellipse at 18% 40%, rgba(150, 54, 37, 0.16) 0%, transparent 50%),
+        radial-gradient(ellipse at 18% 40%, rgba(138, 31, 18, 0.22) 0%, transparent 50%),
+        radial-gradient(ellipse at 84% 74%, rgba(30, 64, 64, 0.10) 0%, transparent 44%),
         linear-gradient(160deg, #0d0503 0%, #080302 52%, #0b0402 100%) !important;
       position: relative !important;
       overflow: hidden !important;
     }
 
-    /* Restrained hairline along the top of the panel */
+    /* Hairline: cinnabar-dominant, resolving to near-nothing */
     body.strategy-page .strategy-hero .wrap::before {
       content: "" !important;
       display: block !important;
       position: absolute !important;
       top: 0 !important; left: 0 !important; right: 0 !important;
       height: 1px !important;
-      background: linear-gradient(90deg, rgba(150, 54, 37, 0.48) 0%, rgba(150, 54, 37, 0.18) 100%) !important;
+      background: linear-gradient(90deg, rgba(138, 31, 18, 0.52) 0%, rgba(138, 31, 18, 0.16) 100%) !important;
       pointer-events: none !important;
     }
 
