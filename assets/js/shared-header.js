@@ -81,6 +81,20 @@
   </div>
 </nav>`;
 
+  // Mobile menu panel — appended directly to <body> to avoid stacking context
+  // issues caused by #nav / #site-header-mount creating their own stacking contexts.
+  const mobilePanel = document.createElement('div');
+  mobilePanel.className = 'mobile-menu-panel';
+  mobilePanel.setAttribute('aria-hidden', 'true');
+  mobilePanel.setAttribute('role', 'dialog');
+  mobilePanel.setAttribute('aria-label', 'Site navigation');
+  mobilePanel.innerHTML = `<nav class="mobile-menu-list">
+    ${navItems.map((item) => `<a class="mobile-menu-link" href="${item.href}">${item.label}</a>`).join('')}
+    <a class="mobile-menu-link mobile-menu-link--lang" href="${targetLocaleHref}">${langLabel}</a>
+    <a class="mobile-menu-link mobile-menu-link--contact" href="${headerCtaHref}">${headerCtaLabel}</a>
+  </nav>`;
+  document.body.appendChild(mobilePanel);
+
   const nav = document.getElementById('nav');
   const menuBtn = nav.querySelector('.nav__menu-btn');
   const navLinks = nav.querySelector('.nav__links');
@@ -92,6 +106,8 @@
     const setMenuState = (open) => {
       nav.classList.toggle('menu-open', open);
       document.body.classList.toggle('menu-open', open);
+      mobilePanel.classList.toggle('is-open', open);
+      mobilePanel.setAttribute('aria-hidden', String(!open));
       menuBtn.setAttribute('aria-expanded', String(open));
       menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       if (menuBtnLabel) menuBtnLabel.textContent = open ? 'Close' : 'Menu';
@@ -116,7 +132,7 @@
     const closeOnOutsideInteraction = (event) => {
       if (!nav.classList.contains('menu-open')) return;
       const target = event.target;
-      if (target instanceof Node && nav.contains(target)) return;
+      if (target instanceof Node && (nav.contains(target) || mobilePanel.contains(target))) return;
       setMenuState(false);
     };
 
@@ -130,6 +146,10 @@
     });
 
     nav.querySelectorAll('.nav__links a').forEach((link) => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+
+    mobilePanel.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => setMenuState(false));
     });
 
@@ -175,12 +195,20 @@
       contactLink.classList.add('active');
       contactLink.setAttribute('aria-current', 'page');
     });
+    mobilePanel.querySelectorAll(`a[href="${headerCtaHref}"]`).forEach((link) => {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    });
   }
 
   const activeSection = inferActiveSection(path);
   if (activeSection) {
     activeMap[activeSection].forEach((href) => {
       nav.querySelectorAll(`a[href="${href}"]`).forEach((activeLink) => {
+        activeLink.classList.add('active');
+        activeLink.setAttribute('aria-current', 'page');
+      });
+      mobilePanel.querySelectorAll(`a[href="${href}"]`).forEach((activeLink) => {
         activeLink.classList.add('active');
         activeLink.setAttribute('aria-current', 'page');
       });
