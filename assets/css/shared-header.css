@@ -342,3 +342,91 @@ body {
     letter-spacing: 0.08em;
   }
 }
+
+/* ─── Mobile menu panel ──────────────────────────────────────────────────────
+   Appended directly to <body> so it sits in the root stacking context,
+   free from any z-index / stacking-context issues inside #site-header-mount.
+   Hidden everywhere by default; shown only on ≤768px when is-open.
+────────────────────────────────────────────────────────────────────────────── */
+
+.mobile-menu-panel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Scroll lock while menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Raise the sticky header above the panel so it remains clickable */
+  #site-header-mount {
+    z-index: 10000 !important;
+    position: sticky !important;
+  }
+
+  /* Full-screen overlay panel */
+  .mobile-menu-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--sv-header-bg, #f2ecd8);
+    /* Push content below the sticky header */
+    padding-top: var(--sv-header-height, 62px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Hidden until .is-open is toggled by JS */
+    display: none;
+  }
+
+  .mobile-menu-panel.is-open {
+    display: block;
+  }
+
+  /* Vertical nav list inside the panel */
+  .mobile-menu-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-menu-link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px var(--sv-header-side-pad, 22px);
+    border-top: 1px solid rgba(15, 34, 6, 0.12);
+    font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--sv-header-text, #1e4a18) !important;
+    opacity: 1 !important;
+  }
+
+  .mobile-menu-panel.nav--cn .mobile-menu-link {
+    font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+    letter-spacing: 0.08em;
+    text-transform: none;
+  }
+
+  .mobile-menu-link.active,
+  .mobile-menu-link[aria-current="page"] {
+    color: var(--sv-header-cinnabar, #c93b2a) !important;
+  }
+
+  .mobile-menu-link--lang {
+    opacity: 0.6 !important;
+  }
+
+  /* Suppress the old in-nav dropdown on mobile — the panel replaces it */
+  #site-header-mount #nav .nav__links {
+    display: none !important;
+  }
+}
