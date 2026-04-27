@@ -1869,3 +1869,43 @@ body.press-page .press-hero + :is(section, .press-grid-wrap) {
     padding-bottom: var(--sv-main-hero-pad-bottom-mobile) !important;
   }
 }
+
+/* ========================================================================== */
+/* Inner-page hero spacing: tighten the nav-to-hero gap on Team / Strategy /  */
+/* Insights / Press. Shares selector specificity (0,3,1) with the             */
+/* --sv-main-hero-pad-top-desktop rules above; later source order wins.       */
+/* Does not affect the homepage hero (no .team-page/.strategy-page class).    */
+/* ========================================================================== */
+
+/* Remove the 26–42 px beige gap that #site-header-mount + main adds on press
+   pages where the hero sits directly inside <main>. press.html already zeroes
+   this out in its own inline <style>; the rule below covers press_cn.html. */
+body.press-page #site-header-mount + main {
+  padding-top: 0;
+}
+
+/* Desktop — reduce from clamp(106px, 10vw, 132px) down ~64–68 px. */
+body.homepage.team-page .team-hero,
+body.homepage.strategy-page .strategy-hero,
+body.insights-page .research-hero,
+body.press-page .press-hero {
+  padding-top: clamp(44px, 4.5vw, 64px) !important;
+}
+
+@media (max-width: 1024px) {
+  body.homepage.team-page .team-hero,
+  body.homepage.strategy-page .strategy-hero,
+  body.insights-page .research-hero,
+  body.press-page .press-hero {
+    padding-top: clamp(36px, 4.5vw, 52px) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.homepage.team-page .team-hero,
+  body.homepage.strategy-page .strategy-hero,
+  body.insights-page .research-hero,
+  body.press-page .press-hero {
+    padding-top: clamp(28px, 8vw, 40px) !important;
+  }
+}
