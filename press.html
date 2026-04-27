@@ -1622,6 +1622,31 @@ body {
 
     <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 <link rel="stylesheet" href="assets/css/shared-footer.css">
+
+<style id="press-hero-palette">
+  /* Hero palette — Press: deep Qing-black base with Ink Green atmospheric wash.
+     Archival, restrained. The faintest Cinnabar trace at far right keeps it in
+     the ShoreVest family without competing with the editorial restraint. */
+  body.press-page .press-hero {
+    background:
+      radial-gradient(ellipse at 68% 22%, rgba(15, 34, 6, 0.34) 0%, transparent 50%),
+      radial-gradient(ellipse at 18% 76%, rgba(30, 64, 64, 0.26) 0%, transparent 48%),
+      radial-gradient(ellipse at 90% 82%, rgba(138, 31, 18, 0.07) 0%, transparent 36%),
+      linear-gradient(148deg, #081316 0%, #060e11 50%, #091518 100%) !important;
+    border-bottom: 1px solid rgba(30, 64, 64, 0.22) !important;
+  }
+
+  /* Remove the photo-based pseudo-element layers */
+  body.press-page .press-hero::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  body.press-page .press-hero::before {
+    content: none !important;
+    display: none !important;
+  }
+</style>
 </head>
   <body class="press-page">
     <div id="site-header-mount"></div>

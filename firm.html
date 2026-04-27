@@ -496,24 +496,27 @@
          institutional without the heat of the red panels.
          ═══════════════════════════════════════════════════════ */
 
-      /* Panel: deep teal-black base with a Qing tonal wash */
+      /* Panel: deep teal-black base — Qing Dark anchors the left, Ink Green breathes
+         in from the far corner, a whisper of Xuan warmth rises at the base. */
       .firm-panel--hero {
         background:
-          radial-gradient(ellipse at 26% 40%, rgba(61, 112, 112, 0.26) 0%, transparent 55%),
-          linear-gradient(155deg, #091d1d 0%, #061414 52%, #081b1b 100%) !important;
-        border: 1px solid rgba(61, 112, 112, 0.24) !important;
+          radial-gradient(ellipse at 24% 38%, rgba(61, 112, 112, 0.32) 0%, transparent 52%),
+          radial-gradient(ellipse at 76% 72%, rgba(46, 74, 24, 0.22) 0%, transparent 50%),
+          radial-gradient(ellipse at 50% 100%, rgba(242, 236, 216, 0.04) 0%, transparent 48%),
+          linear-gradient(155deg, #081c1b 0%, #051211 52%, #071a16 100%) !important;
+        border: 1px solid rgba(61, 112, 112, 0.22) !important;
         color: #faf6ee !important;
         position: relative !important;
         overflow: hidden !important;
       }
 
-      /* Restrained Qing-light hairline across the top edge */
+      /* Hairline fades from Qing-light into a faint Ink Green note */
       .firm-panel--hero::after {
         content: "";
         position: absolute;
         top: 0; left: 0; right: 0;
         height: 1px;
-        background: linear-gradient(90deg, rgba(122, 175, 175, 0.48) 0%, rgba(122, 175, 175, 0.16) 100%);
+        background: linear-gradient(90deg, rgba(122, 175, 175, 0.48) 0%, rgba(87, 138, 63, 0.16) 100%);
         pointer-events: none;
       }
 
