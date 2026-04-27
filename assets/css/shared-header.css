@@ -373,7 +373,11 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     background: var(--sv-header-bg, #f2ecd8);
-    /* Push content below the sticky header */
+    /* Push content below the sticky header.
+       topbar-consistent.css overrides #nav height to 86px at ≤767px, so
+       use that value (+safe-area-inset-top for notched iPhones).
+       The default 62px fallback only applies at 768px where the override
+       doesn't fire. */
     padding-top: var(--sv-header-height, 62px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -428,5 +432,26 @@ body {
   /* Suppress the old in-nav dropdown on mobile — the panel replaces it */
   #site-header-mount #nav .nav__links {
     display: none !important;
+  }
+}
+
+/* ─── Mobile panel top-offset corrections ────────────────────────────────────
+   topbar-consistent.css overrides #nav height to 86px at ≤767px and 76px at
+   ≤520px (both with !important). The panel's base padding-top (62px) is not
+   enough to clear those taller headers, causing the first menu item (THE FIRM)
+   to be hidden under the sticky header. These overrides correct that.
+────────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .mobile-menu-panel {
+    /* header is 86px on this breakpoint; add safe-area for notched iPhones */
+    padding-top: calc(86px + env(safe-area-inset-top, 0px));
+  }
+}
+
+@media (max-width: 520px) {
+  .mobile-menu-panel {
+    /* header is 76px on this breakpoint */
+    padding-top: calc(76px + env(safe-area-inset-top, 0px));
   }
 }
