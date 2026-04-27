@@ -1,0 +1,542 @@
+/* =====================================================================
+   ShoreVest — Contact Page
+   contact-page.css — loaded after all shared stylesheets.
+
+   Redesign goal: lighter, institutional, administrative.
+   All rules scoped to body.contact-page to prevent cross-page bleed.
+   ===================================================================== */
+
+
+/* ── COLOUR TOKENS ─────────────────────────────────────────────────── */
+body.contact-page {
+  --cp-paper-light: #FAF6EE;
+  --cp-paper:       #F2ECD8;
+  --cp-rule:        #D8CEB0;
+  --cp-qing-light:  #7AAFAF;
+  --cp-qing:        #3D7070;
+  --cp-qing-dark:   #1E4040;
+  --cp-cinnabar:    #C93B2A;
+  --cp-cinnabar-dk: #8A1F12;
+  --cp-ink:         #0F2206;
+
+  background: var(--cp-paper-light) !important;
+  color: var(--cp-ink) !important;
+}
+
+
+/* ── RESET LAYOUT CONFLICTS ────────────────────────────────────────── */
+
+/* Override refinement-pass.css: main > section { padding: ... !important }
+   body.contact-page adds a class selector, winning the specificity contest
+   between two !important rules. */
+body.contact-page main > section {
+  padding-top:    0 !important;
+  padding-bottom: 0 !important;
+  margin-top:     0 !important;
+  margin-bottom:  0 !important;
+}
+
+/* Neutralise :where(.contact-page form) padding from refinement-pass.css */
+body.contact-page .cp-form {
+  padding: 0 !important;
+}
+
+/* Footer: honour shared-footer.css background (#f2ecd8) — warm but compatible.
+   shared-footer.css already sets border-top so no extra rule needed here. */
+
+
+/* ── HERO ──────────────────────────────────────────────────────────── */
+.cp-hero {
+  background:
+    radial-gradient(ellipse at 90% 8%, rgba(122, 175, 175, 0.07) 0%, transparent 42%),
+    linear-gradient(164deg, var(--cp-paper-light) 0%, var(--cp-paper) 100%);
+  border-bottom: 1px solid var(--cp-rule);
+}
+
+.cp-hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(22px, 4.8vw, 64px);
+  padding-top:    clamp(72px, 8.4vw, 112px);
+  padding-bottom: clamp(56px, 6.6vw, 90px);
+}
+
+.cp-hero__eyebrow {
+  display: block;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cp-qing);
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  line-height: 1.3;
+}
+
+.cp-hero__title {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(56px, 7.8vw, 104px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: var(--cp-ink);
+  margin: 0 0 clamp(22px, 2.6vw, 36px);
+}
+
+.cp-hero__desc {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.88rem, 1.04vw, 0.97rem);
+  font-weight: 400;
+  line-height: 1.72;
+  color: color-mix(in srgb, var(--cp-ink) 64%, var(--cp-qing-dark) 36%);
+  max-width: 58ch;
+  margin: 0;
+}
+
+
+/* ── SHARED SECTION LABEL ──────────────────────────────────────────── */
+.cp-label {
+  display: block;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cp-qing);
+  margin: 0 0 clamp(18px, 2vw, 28px);
+  line-height: 1.3;
+}
+
+
+/* ── ROUTING INDEX ─────────────────────────────────────────────────── */
+.cp-routing {
+  border-bottom: 1px solid var(--cp-rule);
+}
+
+.cp-routing__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(22px, 4.8vw, 64px);
+  padding-top:    clamp(56px, 6.4vw, 86px);
+  padding-bottom: clamp(56px, 6.4vw, 86px);
+}
+
+.cp-routing__table {
+  border-top: 1px solid var(--cp-rule);
+}
+
+.cp-routing__row {
+  display: grid;
+  grid-template-columns: 24ch 1fr auto;
+  column-gap: clamp(20px, 2.8vw, 40px);
+  align-items: baseline;
+  padding: clamp(18px, 2vw, 28px) 0;
+  border-bottom: 1px solid var(--cp-rule);
+}
+
+.cp-routing__type {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cp-ink);
+  line-height: 1.5;
+}
+
+.cp-routing__desc {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.8rem, 0.92vw, 0.88rem);
+  font-weight: 400;
+  line-height: 1.62;
+  color: color-mix(in srgb, var(--cp-ink) 60%, var(--cp-qing-dark) 40%);
+}
+
+.cp-routing__channel {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--cp-qing);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.18s;
+}
+
+.cp-routing__channel:hover {
+  color: var(--cp-cinnabar);
+}
+
+
+/* ── OFFICE FOOTPRINT ──────────────────────────────────────────────── */
+.cp-office {
+  border-bottom: 1px solid var(--cp-rule);
+}
+
+.cp-office__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(22px, 4.8vw, 64px);
+  padding-top:    clamp(56px, 6.4vw, 86px);
+  padding-bottom: clamp(56px, 6.4vw, 86px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(48px, 7.2vw, 96px);
+}
+
+.cp-address {
+  font-style: normal;
+  display: block;
+  margin: 0;
+}
+
+.cp-address__name {
+  display: block;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.86rem, 0.98vw, 0.93rem);
+  font-weight: 600;
+  color: var(--cp-ink);
+  margin-bottom: clamp(6px, 0.7vw, 10px);
+  line-height: 1.4;
+}
+
+.cp-address__line {
+  display: block;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.8rem, 0.9vw, 0.86rem);
+  font-weight: 400;
+  line-height: 1.78;
+  color: color-mix(in srgb, var(--cp-ink) 58%, var(--cp-qing-dark) 42%);
+}
+
+.cp-office__email-link {
+  display: inline-block;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.88rem, 1.02vw, 0.97rem);
+  font-weight: 500;
+  color: var(--cp-qing);
+  text-decoration: none;
+  margin-bottom: clamp(14px, 1.6vw, 22px);
+  line-height: 1.4;
+  transition: color 0.18s;
+}
+
+.cp-office__email-link:hover {
+  color: var(--cp-cinnabar);
+}
+
+.cp-office__note {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.78rem, 0.88vw, 0.84rem);
+  font-weight: 400;
+  line-height: 1.74;
+  color: color-mix(in srgb, var(--cp-ink) 52%, var(--cp-qing-dark) 48%);
+  max-width: 48ch;
+  margin: 0;
+}
+
+
+/* ── ENQUIRY FORM ──────────────────────────────────────────────────── */
+/* Note: cp-form-section has no border-bottom — the footer's built-in
+   border-top (shared-footer.css) provides the terminal divider. */
+
+.cp-form-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(22px, 4.8vw, 64px);
+  padding-top:    clamp(56px, 6.4vw, 86px);
+  padding-bottom: clamp(56px, 6.4vw, 86px);
+}
+
+.cp-form-section__intro {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.82rem, 0.94vw, 0.9rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--cp-ink) 62%, var(--cp-qing-dark) 38%);
+  max-width: 62ch;
+  margin: 0 0 clamp(32px, 3.6vw, 52px);
+}
+
+.cp-form {
+  max-width: 640px;
+}
+
+/* ── Enquiry-type selector ── */
+.cp-form__type-group {
+  margin-bottom: clamp(26px, 3vw, 40px);
+}
+
+.cp-form__type-label {
+  display: block;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cp-qing-dark);
+  margin-bottom: clamp(10px, 1.2vw, 16px);
+  line-height: 1.3;
+}
+
+.cp-form__type-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.cp-form__type-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.78rem, 0.88vw, 0.84rem);
+  font-weight: 400;
+  color: color-mix(in srgb, var(--cp-ink) 68%, var(--cp-qing-dark) 32%);
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.cp-form__type-option input[type="radio"] {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  accent-color: var(--cp-cinnabar);
+  cursor: pointer;
+  margin: 0;
+}
+
+/* ── Fields ── */
+.cp-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 1.8vw, 24px) clamp(20px, 2.4vw, 32px);
+  margin-bottom: clamp(18px, 2vw, 26px);
+}
+
+.cp-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cp-form__field--message {
+  margin-bottom: 0;
+}
+
+.cp-form__label {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cp-qing-dark);
+  line-height: 1.3;
+}
+
+.cp-form__label-opt {
+  font-weight: 400;
+  opacity: 0.58;
+  letter-spacing: 0.08em;
+}
+
+.cp-form__input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(9px, 1vw, 12px) clamp(11px, 1.1vw, 14px);
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.83rem, 0.93vw, 0.89rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--cp-ink);
+  background: color-mix(in srgb, white 55%, var(--cp-paper-light) 45%);
+  border: 1px solid var(--cp-rule);
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.16s, background 0.16s;
+}
+
+.cp-form__input:focus {
+  border-color: var(--cp-qing);
+  background: #ffffff;
+}
+
+.cp-form__input::placeholder {
+  color: color-mix(in srgb, var(--cp-ink) 26%, transparent 74%);
+}
+
+.cp-form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── Form bottom bar ── */
+.cp-form__bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(18px, 2.4vw, 32px);
+  margin-top: clamp(22px, 2.6vw, 34px);
+  flex-wrap: wrap;
+}
+
+.cp-form__notice {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.68;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, var(--cp-ink) 40%, var(--cp-qing-dark) 60%);
+  max-width: 44ch;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.cp-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(22px, 2.4vw, 32px);
+  height: clamp(42px, 4.4vw, 50px);
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cp-paper-light);
+  background: var(--cp-cinnabar);
+  border: 1px solid var(--cp-cinnabar);
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.18s, border-color 0.18s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.cp-form__submit:hover {
+  background: var(--cp-cinnabar-dk);
+  border-color: var(--cp-cinnabar-dk);
+}
+
+.cp-form__submit:focus-visible {
+  outline: 2px solid var(--cp-qing);
+  outline-offset: 3px;
+}
+
+
+/* ── RESPONSIVE ────────────────────────────────────────────────────── */
+
+/* Tablet: collapse routing to 2-col, email moves under desc */
+@media (max-width: 1024px) {
+  .cp-routing__row {
+    grid-template-columns: 20ch 1fr;
+    row-gap: 3px;
+  }
+
+  .cp-routing__channel {
+    grid-column: 2 / 3;
+    padding-top: 2px;
+  }
+}
+
+/* Mobile-landscape: single-column routing + stacked office blocks */
+@media (max-width: 768px) {
+  .cp-office__inner {
+    grid-template-columns: 1fr;
+    row-gap: clamp(40px, 8.4vw, 56px);
+  }
+
+  .cp-routing__row {
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+    padding: clamp(14px, 4.4vw, 20px) 0;
+  }
+
+  .cp-routing__channel {
+    grid-column: auto;
+  }
+
+  .cp-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cp-form__bottom {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cp-form__submit {
+    width: 100%;
+    justify-content: center;
+    height: clamp(44px, 11vw, 52px);
+  }
+
+  .cp-hero__title {
+    font-size: clamp(44px, 11vw, 68px);
+  }
+}
+
+/* Mobile-portrait: radio options stack vertically */
+@media (max-width: 480px) {
+  .cp-form__type-options {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+
+/* ── CHINESE VARIANT ───────────────────────────────────────────────── */
+
+html[lang="zh-CN"] .cp-label,
+html[lang="zh-CN"] .cp-hero__eyebrow {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+html[lang="zh-CN"] .cp-hero__title {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+html[lang="zh-CN"] .cp-hero__desc,
+html[lang="zh-CN"] .cp-office__note,
+html[lang="zh-CN"] .cp-form-section__intro,
+html[lang="zh-CN"] .cp-routing__desc,
+html[lang="zh-CN"] .cp-address {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+}
+
+html[lang="zh-CN"] .cp-routing__type {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+html[lang="zh-CN"] .cp-form__type-label,
+html[lang="zh-CN"] .cp-form__label {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+html[lang="zh-CN"] .cp-form__type-option,
+html[lang="zh-CN"] .cp-form__input {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+}
+
+html[lang="zh-CN"] .cp-form__notice {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  letter-spacing: 0;
+}
+
+html[lang="zh-CN"] .cp-form__submit {
+  letter-spacing: 0.08em;
+}

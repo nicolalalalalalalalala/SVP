@@ -7,62 +7,153 @@
   <link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml" sizes="any" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/refinement-pass.css" />
   <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
-  <link rel="stylesheet" href="assets/css/legal-page-layout.css" />
   <link rel="stylesheet" href="assets/css/shared-header.css" />
   <script src="assets/js/shared-header.js" defer></script>
   <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
   <link rel="stylesheet" href="assets/css/shared-footer.css" />
+  <link rel="stylesheet" href="assets/css/contact-page.css" />
 </head>
-<body class="legal-page homepage contact-align">
+<body class="contact-page">
   <div id="site-header-mount"></div>
 
-  <main class="legal-page__main">
-    <article class="legal-page__content wrap">
-      <h1>联系我们</h1>
-      <p>如有一般咨询，请通过以下方式联系 ShoreVest Partners。</p>
+  <main class="cp-main">
 
-      <section class="section">
-        <h2>电子邮箱</h2>
-        <p><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></p>
-      </section>
+    <!-- ── HERO ──────────────────────────────────────────────────── -->
+    <section class="cp-hero" aria-labelledby="cp-hero-title">
+      <div class="cp-hero__inner">
+        <p class="cp-hero__eyebrow">咨询渠道</p>
+        <h1 class="cp-hero__title" id="cp-hero-title">联系我们</h1>
+        <p class="cp-hero__desc">关于投资者关系、委托洽谈及战略合作方面的咨询，新岸资本设有专属联系渠道，按委托类型、司法管辖区及执行时间进行机构化路由分配。</p>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2>填写联系信息</h2>
-        <form class="contact-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain">
-          <div class="contact-form__grid">
-            <label>
-              姓名
-              <input type="text" name="full_name" autocomplete="name" required />
-            </label>
-            <label>
-              电子邮箱
-              <input type="email" name="email" autocomplete="email" required />
-            </label>
-            <label>
-              公司
-              <input type="text" name="company" autocomplete="organization" />
-            </label>
-            <label>
-              电话
-              <input type="tel" name="phone" autocomplete="tel" />
-            </label>
+    <!-- ── ROUTING INDEX ─────────────────────────────────────────── -->
+    <section class="cp-routing" aria-label="咨询路由索引">
+      <div class="cp-routing__inner">
+        <p class="cp-label">路由索引</p>
+        <div class="cp-routing__table" role="list">
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">投资者关系</span>
+            <span class="cp-routing__desc">基金认购、现有有限合伙人沟通及定期报告查询</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
           </div>
-          <label>
-            留言
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button type="submit">提交</button>
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">委托洽谈</span>
+            <span class="cp-routing__desc">新投资机会、项目级咨询及共同投资意向</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          </div>
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">战略合作</span>
+            <span class="cp-routing__desc">合营架构、联合基金管理人安排及机构平台讨论</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          </div>
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">一般咨询</span>
+            <span class="cp-routing__desc">其他来函、媒体关系及公共事务</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OFFICE FOOTPRINT ──────────────────────────────────────── -->
+    <section class="cp-office" aria-label="办公地点及直接联系">
+      <div class="cp-office__inner">
+
+        <div class="cp-office__block">
+          <p class="cp-label">办公室 — 广州</p>
+          <address class="cp-address">
+            <span class="cp-address__name">新岸资本（ShoreVest Partners）</span>
+            <span class="cp-address__line">天河北路235号</span>
+            <span class="cp-address__line">广州国际商贸中心1503室</span>
+            <span class="cp-address__line">中国广州 510610</span>
+          </address>
+        </div>
+
+        <div class="cp-office__block">
+          <p class="cp-label">直接联系</p>
+          <a class="cp-office__email-link" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          <p class="cp-office__note">适用于投资者沟通、在管委托及战略合作洽谈。来函请注明咨询类型、目标区域及时间安排。初次联系应为非保密信息，并保持摘要层级。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ENQUIRY FORM ──────────────────────────────────────────── -->
+    <section class="cp-form-section" aria-label="提交咨询">
+      <div class="cp-form-section__inner">
+        <p class="cp-label">提交咨询</p>
+        <p class="cp-form-section__intro">请通过此渠道进行结构化路由提交，仅提供初步分流所需信息。请勿附上机密交易材料。</p>
+
+        <form class="cp-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain" novalidate>
+
+          <div class="cp-form__type-group" role="group" aria-labelledby="cp-type-label-cn">
+            <p class="cp-form__type-label" id="cp-type-label-cn">咨询类型</p>
+            <div class="cp-form__type-options">
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="investor_relations" />
+                <span>投资者关系</span>
+              </label>
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="mandate_discussion" />
+                <span>委托洽谈</span>
+              </label>
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="strategic_partnership" />
+                <span>战略合作</span>
+              </label>
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="general" />
+                <span>一般咨询</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="cp-form__grid">
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-full-name-cn">姓名</label>
+              <input class="cp-form__input" id="cp-full-name-cn" type="text" name="full_name" autocomplete="name" required />
+            </div>
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-email-cn">工作邮箱</label>
+              <input class="cp-form__input" id="cp-email-cn" type="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-company-cn">机构</label>
+              <input class="cp-form__input" id="cp-company-cn" type="text" name="company" autocomplete="organization" />
+            </div>
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-phone-cn">电话 <span class="cp-form__label-opt">（选填）</span></label>
+              <input class="cp-form__input" id="cp-phone-cn" type="tel" name="phone" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="cp-form__field cp-form__field--message">
+            <label class="cp-form__label" for="cp-message-cn">咨询摘要</label>
+            <textarea class="cp-form__input cp-form__textarea" id="cp-message-cn" name="message" rows="5" required></textarea>
+          </div>
+
+          <div class="cp-form__bottom">
+            <p class="cp-form__notice">请只提供初步路由所需信息。请勿附上机密交易材料。</p>
+            <button class="cp-form__submit" type="submit">提交咨询</button>
+          </div>
+
         </form>
-      </section>
-    </article>
+      </div>
+    </section>
+
   </main>
 
   <footer class="sv-footer" data-shared-footer></footer>
-
   <script src="assets/js/shared-footer.js" defer></script>
 </body>
 </html>
