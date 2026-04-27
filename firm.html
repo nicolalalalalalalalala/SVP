@@ -180,13 +180,14 @@
         margin-bottom: clamp(28px, 3vw, 36px);
         font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
         font-size: var(--sv-page-title-size) !important;
-        font-weight: 500;
+        font-weight: 400;
         font-style: normal;
         line-height: var(--sv-page-title-line-height);
-        letter-spacing: 0.04em;
-        text-transform: none;
+        letter-spacing: 0.26em;
+        word-spacing: 0.55em;
+        text-transform: uppercase;
         color: var(--ink-green);
-        max-width: 900px;
+        max-width: none;
       }
       .firm-page .firm-hero-title { text-wrap: balance; }
       .firm-body, .firm-card p {
@@ -444,7 +445,9 @@
         .firm-page .firm-hero-title,
         .firm-page .firm-wordmark-heading {
           font-size: var(--sv-page-title-size) !important;
-          letter-spacing: 0.18em;
+          letter-spacing: 0.2em;
+          word-spacing: 0.45em;
+          text-transform: uppercase;
           line-height: var(--sv-page-title-line-height);
         }
         .firm-page .capital-base-box .firm-section-title {
@@ -463,23 +466,25 @@
       .firm-page .firm-wordmark-heading,
       .firm-page .firm-hero-title span,
       .firm-page .firm-wordmark-heading span {
-        letter-spacing: 0.04em !important;
-        text-transform: none !important;
+        letter-spacing: 0.26em !important;
+        word-spacing: 0.55em;
+        text-transform: uppercase !important;
         font-kerning: none;
-        max-width: 920px;
-        line-height: 1.15;
+        max-width: none;
+        line-height: 1.1;
       }
 
       @media (max-width: 700px) {
         :root {
-          --sv-page-title-size: clamp(30px, 9vw, 38px);
-          --sv-page-title-line-height: 1.05;
+          --sv-page-title-size: clamp(26px, 8vw, 34px);
+          --sv-page-title-line-height: 1.1;
         }
         .firm-page .firm-hero-title,
         .firm-page .firm-wordmark-heading,
         .firm-page .firm-hero-title span,
         .firm-page .firm-wordmark-heading span {
-          letter-spacing: 0.02em !important;
+          letter-spacing: 0.18em !important;
+          word-spacing: 0.4em;
         }
       }
     </style>
@@ -523,14 +528,18 @@
         background: rgba(61, 112, 112, 0.52) !important;
       }
 
-      /* Main heading: Xuan Paper Light sitting directly on the Qing panel */
+      /* Main heading: wordmark lockup sitting directly on the Qing panel */
       .firm-panel--hero .firm-hero-title,
       .firm-panel--hero .firm-wordmark-heading,
       .firm-page .firm-panel--hero .firm-hero-title,
       .firm-page .firm-panel--hero .firm-wordmark-heading {
         color: #faf6ee !important;
         max-width: none !important;
-        line-height: var(--sv-page-title-line-height) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.26em !important;
+        word-spacing: 0.55em;
+        font-weight: 300 !important;
+        line-height: 1.1 !important;
         margin: 0 0 clamp(24px, 2.6vw, 32px) 0 !important;
       }
 
