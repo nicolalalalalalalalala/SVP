@@ -2893,16 +2893,24 @@ body.strategy-page .strategy-hero .strategy-kpi span {
 
   </style>
   <style id="strategy-hero-refine-2026">
-    /* Strategy hero refinement: cohesive composition + clean section transition. */
+    /* ═══════════════════════════════════════════════════════
+       STRATEGY HERO — restrained cinnabar editorial panel
+       Darker, more austere than TEAM: near-black base with a
+       focused cinnabar wash only behind the heading, keeping
+       the rest of the panel compressed and severe.
+       The two cinnabar sections share a family; neither is a
+       duplicate of the other.
+       ═══════════════════════════════════════════════════════ */
     body.strategy-page {
       background: var(--xuan-light) !important;
     }
 
+    /* Section background stays page-colour; the panel (wrap) is the dark box */
     body.strategy-page .strategy-hero {
       padding-top: clamp(104px, 11vw, 138px) !important;
       padding-bottom: 0 !important;
       margin-bottom: 0 !important;
-      background: var(--xuan-light) !important;
+      background: transparent !important;
       border-bottom: 0 !important;
     }
 
@@ -2923,19 +2931,30 @@ body.strategy-page .strategy-hero .strategy-kpi span {
       background: var(--xuan-light) !important;
     }
 
+    /* The panel itself: very dark near-black with a contained cinnabar wash */
     body.strategy-page .strategy-hero .wrap {
       grid-template-columns: minmax(0, 1.34fr) minmax(350px, 0.9fr) !important;
       gap: clamp(28px, 3.2vw, 44px) !important;
       align-items: stretch !important;
       padding-block: clamp(34px, 4vw, 46px) !important;
       padding-inline: clamp(36px, 4vw, 56px) !important;
-      border: 1px solid color-mix(in srgb, var(--xuan-dark) 78%, var(--ink-dark) 22%) !important;
-      background: color-mix(in srgb, var(--xuan-light) 74%, #efe6d3 26%) !important;
-      position: relative;
+      border: 1px solid rgba(150, 54, 37, 0.22) !important;
+      background:
+        radial-gradient(ellipse at 18% 40%, rgba(150, 54, 37, 0.16) 0%, transparent 50%),
+        linear-gradient(160deg, #0d0503 0%, #080302 52%, #0b0402 100%) !important;
+      position: relative !important;
+      overflow: hidden !important;
     }
 
+    /* Restrained hairline along the top of the panel */
     body.strategy-page .strategy-hero .wrap::before {
-      display: none !important;
+      content: "" !important;
+      display: block !important;
+      position: absolute !important;
+      top: 0 !important; left: 0 !important; right: 0 !important;
+      height: 1px !important;
+      background: linear-gradient(90deg, rgba(150, 54, 37, 0.48) 0%, rgba(150, 54, 37, 0.18) 100%) !important;
+      pointer-events: none !important;
     }
 
     body.strategy-page .strategy-hero .wrap > div {
@@ -2945,37 +2964,49 @@ body.strategy-page .strategy-hero .strategy-kpi span {
       padding-top: 2px;
     }
 
+    /* Section label: muted cinnabar on very dark ground */
     body.strategy-page .strategy-hero .eyebrow {
       margin-bottom: 14px !important;
-      color: color-mix(in srgb, var(--qing-dark) 35%, var(--ink-secondary) 65%) !important;
+      color: rgba(191, 108, 92, 0.80) !important;
     }
 
     body.strategy-page .strategy-hero .eyebrow::after {
-      background: color-mix(in srgb, var(--cinnabar) 58%, var(--xuan-dark) 42%) !important;
+      background: rgba(150, 54, 37, 0.46) !important;
     }
 
+    /* Main heading: Xuan Paper Light + focused cinnabar highlight field.
+       More minimal than TEAM — the background is deeper, the tonal accent
+       is tighter, keeping the composition leaner and sharper. */
     body.strategy-page .strategy-hero h1 {
-      max-width: 19ch !important;
-      margin: 0 !important;
-      color: color-mix(in srgb, var(--ink-dark) 92%, #112e0d 8%) !important;
+      color: #faf6ee !important;
+      background: rgba(150, 54, 37, 0.12);
+      border-left: 1.5px solid rgba(150, 54, 37, 0.36);
+      padding: 12px 0 14px 18px;
+      margin: 4px 0 8px -18px !important;
+      /* Extend tonal strip full panel width via overflow-clipped shadow */
+      box-shadow: -500px 0 0 0 rgba(150, 54, 37, 0.12), 500px 0 0 0 rgba(150, 54, 37, 0.12);
       line-height: 0.99 !important;
+      max-width: none !important;
     }
 
+    /* Body: Xuan Paper Light at reading opacity */
     body.strategy-page .strategy-hero .pagehero__lede {
       max-width: 58ch !important;
       margin-top: 18px !important;
-      color: color-mix(in srgb, var(--ink-secondary) 78%, var(--qing-dark) 22%) !important;
+      color: rgba(250, 246, 238, 0.74) !important;
       line-height: 1.55 !important;
     }
 
+    /* Strapline: sparse, compact, clearly subordinate */
     body.strategy-page .strategy-hero .hero-meta {
       margin-top: 18px !important;
-      color: color-mix(in srgb, var(--qing-dark) 36%, var(--ink-secondary) 64%) !important;
+      color: rgba(250, 246, 238, 0.46) !important;
       letter-spacing: 0.14em !important;
     }
 
+    /* KPI column separator: muted cinnabar rule */
     body.strategy-page .strategy-hero .hero-aside {
-      border-left: 1px solid color-mix(in srgb, var(--xuan-dark) 66%, var(--ink-secondary) 34%) !important;
+      border-left: 1px solid rgba(150, 54, 37, 0.28) !important;
       padding-left: clamp(20px, 2vw, 30px) !important;
       padding-right: 0 !important;
       display: grid !important;
@@ -2986,25 +3017,26 @@ body.strategy-page .strategy-hero .strategy-kpi span {
       gap: 10px !important;
     }
 
+    /* KPI cards: dark cinnabar-tinted surface */
     body.strategy-page .strategy-hero .strategy-kpi {
       min-height: 96px;
       padding: 14px 14px 15px !important;
-      border: 1px solid color-mix(in srgb, var(--xuan-dark) 58%, var(--ink-secondary) 42%) !important;
-      background: color-mix(in srgb, var(--xuan-light) 54%, #e7ddc8 46%) !important;
+      border: 1px solid rgba(150, 54, 37, 0.24) !important;
+      background: rgba(150, 54, 37, 0.09) !important;
       gap: 8px !important;
     }
 
     body.strategy-page .strategy-hero .strategy-kpi strong {
-      color: color-mix(in srgb, var(--cinnabar-dark) 82%, var(--cinnabar) 18%) !important;
+      color: rgba(204, 123, 111, 0.86) !important;
       letter-spacing: 0.13em !important;
     }
 
     body.strategy-page .strategy-hero .strategy-kpi strong::before {
-      color: color-mix(in srgb, var(--cinnabar) 60%, var(--ink-secondary) 40%) !important;
+      color: rgba(204, 123, 111, 0.52) !important;
     }
 
     body.strategy-page .strategy-hero .strategy-kpi span {
-      color: color-mix(in srgb, var(--ink-dark) 90%, var(--ink-secondary) 10%) !important;
+      color: rgba(250, 246, 238, 0.80) !important;
       line-height: 1.48 !important;
     }
 
@@ -3016,7 +3048,7 @@ body.strategy-page .strategy-hero .strategy-kpi span {
 
       body.strategy-page .strategy-hero .hero-aside {
         border-left: 0 !important;
-        border-top: 1px solid color-mix(in srgb, var(--xuan-dark) 70%, var(--ink-secondary) 30%) !important;
+        border-top: 1px solid rgba(150, 54, 37, 0.24) !important;
         padding: 18px 0 0 !important;
       }
     }
