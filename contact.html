@@ -11,96 +11,150 @@
 
   <link rel="stylesheet" href="assets/css/refinement-pass.css" />
   <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
-  <link rel="stylesheet" href="assets/css/legal-page-layout.css" />
   <link rel="stylesheet" href="assets/css/shared-header.css" />
   <script src="assets/js/shared-header.js" defer></script>
   <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
   <link rel="stylesheet" href="assets/css/shared-footer.css" />
-  <link rel="stylesheet" href="assets/css/hero-variants.css" />
+  <link rel="stylesheet" href="assets/css/contact-page.css" />
 </head>
-<body class="legal-page homepage contact-page contact-align">
+<body class="contact-page">
   <div id="site-header-mount"></div>
 
-  <main class="legal-page__main">
-    <section class="home-hero contact-hero hero--contact" aria-labelledby="contact-page-title">
-      <div class="wrap home-hero__inner home-section-shell">
-        <div class="home-hero__text">
-          <p class="home-hero__eyebrow">ENQUIRIES</p>
-          <h1 class="home-hero__headline type-display-hero" id="contact-page-title">
-            <span class="home-hero__headline-box"><span class="home-hero__headline-primary">Contact</span></span>
-          </h1>
-          <p class="home-hero__support">For investor, mandate, and strategic partnership enquiries, ShoreVest maintains a dedicated channel with institutional routing by mandate fit, jurisdiction, and execution timeline.</p>
+  <main class="cp-main">
+
+    <!-- ── HERO ──────────────────────────────────────────────────── -->
+    <section class="cp-hero" aria-labelledby="cp-hero-title">
+      <div class="cp-hero__inner">
+        <p class="cp-hero__eyebrow">ENQUIRIES</p>
+        <h1 class="cp-hero__title" id="cp-hero-title">Contact</h1>
+        <p class="cp-hero__desc">For investor, mandate, and strategic partnership enquiries, ShoreVest maintains a dedicated channel with institutional routing by mandate fit, jurisdiction, and execution timeline.</p>
+      </div>
+    </section>
+
+    <!-- ── ROUTING INDEX ─────────────────────────────────────────── -->
+    <section class="cp-routing" aria-label="Enquiry routing index">
+      <div class="cp-routing__inner">
+        <p class="cp-label">ROUTING INDEX</p>
+        <div class="cp-routing__table" role="list">
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">INVESTOR RELATIONS</span>
+            <span class="cp-routing__desc">Fund subscriptions, existing LP communication, and periodic reporting enquiries</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          </div>
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">MANDATE DISCUSSION</span>
+            <span class="cp-routing__desc">New origination opportunities, deal-level enquiries, and co-investment interest</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          </div>
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">STRATEGIC PARTNERSHIP</span>
+            <span class="cp-routing__desc">Joint venture structures, co-GP arrangements, and institutional platform discussions</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          </div>
+
+          <div class="cp-routing__row" role="listitem">
+            <span class="cp-routing__type">GENERAL ENQUIRY</span>
+            <span class="cp-routing__desc">All other correspondence, media relations, and public affairs</span>
+            <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <article class="legal-page__content contact-page__content wrap">
-      <div class="contact-page__layout" aria-label="Contact channels">
-        <div class="contact-page__left-column">
-          <section class="section contact-page__primary-contact" aria-label="Direct contact details">
-            <h2>DIRECT CONTACT</h2>
+    <!-- ── OFFICE FOOTPRINT ──────────────────────────────────────── -->
+    <section class="cp-office" aria-label="Office location and direct contact">
+      <div class="cp-office__inner">
 
-            <p class="contact-page__email"><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></p>
-
-            <div class="contact-page__support-lines" role="note" aria-label="Contact guidance">
-              <p>For investor dialogue, active mandates, and strategic partnership discussions.</p>
-              <p>Please include enquiry type, geography, and preferred timeline.</p>
-              <p>Initial outreach should be non-confidential and summary-level.</p>
-            </div>
-
-          </section>
-
-          <section class="section contact-page__address" aria-label="Office address">
-            <h2>OFFICE ADDRESS</h2>
-            <address class="contact-page__address-body">
-              <p class="contact-page__address-name">ShoreVest Partners</p>
-              <p>Suite 1503</p>
-              <p>Guangzhou International Commercial Center</p>
-              <p>No. 235 Tianhe North Road</p>
-              <p>Guangzhou, China 510610</p>
-            </address>
-          </section>
+        <div class="cp-office__block">
+          <p class="cp-label">OFFICE — GUANGZHOU</p>
+          <address class="cp-address">
+            <span class="cp-address__name">ShoreVest Partners</span>
+            <span class="cp-address__line">Suite 1503</span>
+            <span class="cp-address__line">Guangzhou International Commercial Center</span>
+            <span class="cp-address__line">No. 235 Tianhe North Road</span>
+            <span class="cp-address__line">Guangzhou, China 510610</span>
+          </address>
         </div>
 
-        <section class="section contact-page__form-section" aria-label="Contact form">
-          <h2>SUBMIT ENQUIRY</h2>
-          <p class="contact-page__form-intro">Use this channel for submissions requiring structured routing.</p>
+        <div class="cp-office__block">
+          <p class="cp-label">DIRECT CONTACT</p>
+          <a class="cp-office__email-link" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
+          <p class="cp-office__note">For investor dialogue, active mandates, and strategic partnership discussions. Please include enquiry type, geography, and preferred timeline. Initial outreach should be non-confidential and summary-level.</p>
+        </div>
 
-          <form class="contact-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain">
-            <div class="contact-form__grid">
-              <div class="contact-form__field">
-                <label for="contact-full-name">Full Name</label>
-                <input id="contact-full-name" type="text" name="full_name" autocomplete="name" placeholder="Full name" required />
-              </div>
-              <div class="contact-form__field">
-                <label for="contact-email">Business Email</label>
-                <input id="contact-email" type="email" name="email" autocomplete="email" placeholder="name@institution.com" required />
-              </div>
-              <div class="contact-form__field">
-                <label for="contact-company">Firm / Institution</label>
-                <input id="contact-company" type="text" name="company" autocomplete="organization" placeholder="Firm or institution" />
-              </div>
-              <div class="contact-form__field">
-                <label for="contact-phone">Phone Number</label>
-                <input id="contact-phone" type="tel" name="phone" autocomplete="tel" placeholder="+1 212 000 0000 (optional)" />
-              </div>
-            </div>
-
-            <div class="contact-form__field contact-form__field--full">
-              <label for="contact-message">Enquiry Summary</label>
-              <textarea id="contact-message" name="message" rows="5" placeholder="Briefly summarise your mandate, objective, or partnership context." required></textarea>
-            </div>
-
-            <p class="contact-form__notice">Provide only information required for initial routing. Do not include confidential transaction materials.</p>
-            <button type="submit">Send Enquiry</button>
-          </form>
-        </section>
       </div>
-    </article>
+    </section>
+
+    <!-- ── ENQUIRY FORM ──────────────────────────────────────────── -->
+    <section class="cp-form-section" aria-label="Submit an enquiry">
+      <div class="cp-form-section__inner">
+        <p class="cp-label">SUBMIT ENQUIRY</p>
+        <p class="cp-form-section__intro">Use this channel for structured routing. Provide only information required for initial triage. Do not include confidential transaction materials.</p>
+
+        <form class="cp-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain" novalidate>
+
+          <div class="cp-form__type-group" role="group" aria-labelledby="cp-type-label">
+            <p class="cp-form__type-label" id="cp-type-label">ENQUIRY TYPE</p>
+            <div class="cp-form__type-options">
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="investor_relations" />
+                <span>Investor Relations</span>
+              </label>
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="mandate_discussion" />
+                <span>Mandate Discussion</span>
+              </label>
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="strategic_partnership" />
+                <span>Strategic Partnership</span>
+              </label>
+              <label class="cp-form__type-option">
+                <input type="radio" name="enquiry_type" value="general" />
+                <span>General Enquiry</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="cp-form__grid">
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-full-name">FULL NAME</label>
+              <input class="cp-form__input" id="cp-full-name" type="text" name="full_name" autocomplete="name" required />
+            </div>
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-email">BUSINESS EMAIL</label>
+              <input class="cp-form__input" id="cp-email" type="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-company">FIRM / INSTITUTION</label>
+              <input class="cp-form__input" id="cp-company" type="text" name="company" autocomplete="organization" />
+            </div>
+            <div class="cp-form__field">
+              <label class="cp-form__label" for="cp-phone">PHONE <span class="cp-form__label-opt">(OPTIONAL)</span></label>
+              <input class="cp-form__input" id="cp-phone" type="tel" name="phone" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="cp-form__field cp-form__field--message">
+            <label class="cp-form__label" for="cp-message">ENQUIRY SUMMARY</label>
+            <textarea class="cp-form__input cp-form__textarea" id="cp-message" name="message" rows="5" required></textarea>
+          </div>
+
+          <div class="cp-form__bottom">
+            <p class="cp-form__notice">Provide only information required for initial routing. Do not include confidential transaction materials.</p>
+            <button class="cp-form__submit" type="submit">SEND ENQUIRY</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="sv-footer" data-shared-footer></footer>
-
   <script src="assets/js/shared-footer.js" defer></script>
 </body>
 </html>
