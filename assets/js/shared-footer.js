@@ -76,8 +76,24 @@
     }
 
     const legalToggle = node.querySelector('.sv-footer__legal-toggle');
-    if (legalToggle && window.matchMedia('(max-width: 768px)').matches) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (legalToggle && isMobile) {
       legalToggle.removeAttribute('open');
+
+      // Move legal links inside the accordion so they collapse with the panel
+      const legalLinks = node.querySelector('.sv-footer__legal-links');
+      if (legalLinks) {
+        legalToggle.appendChild(legalLinks);
+      }
+
+      // Swap in the shorter mobile legal summary (English only)
+      if (!isCnPath) {
+        const legalBody = legalToggle.querySelector('.sv-footer__legal');
+        if (legalBody) {
+          legalBody.textContent = 'This website uses cookies and related technologies for core functionality, analytics, and security. By continuing to use the site, you acknowledge the Cookie Notice, Privacy Policy, Terms of Use, and Legal Notices & Disclaimers.';
+        }
+      }
     }
   };
 
