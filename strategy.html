@@ -3097,6 +3097,25 @@ body.strategy-page .strategy-hero .strategy-kpi span {
       background-image: none !important;
     }
   </style>
+
+  <style id="strategy-hero-no-inner-border">
+    /* Move cinnabar background to the full-width section; remove inner box border */
+    body.strategy-page .strategy-hero {
+      background:
+        radial-gradient(ellipse at 18% 40%, rgba(138, 31, 18, 0.22) 0%, transparent 50%),
+        radial-gradient(ellipse at 84% 74%, rgba(30, 64, 64, 0.10) 0%, transparent 44%),
+        linear-gradient(160deg, #0d0503 0%, #080302 52%, #0b0402 100%) !important;
+    }
+    body.strategy-page .strategy-hero .wrap {
+      border: none !important;
+      background: transparent !important;
+      overflow: visible !important;
+      position: static !important;
+    }
+    body.strategy-page .strategy-hero .wrap::before {
+      display: none !important;
+    }
+  </style>
 </head>
   <body id="top" class="homepage strategy-page">
     <div id="site-header-mount"></div>
