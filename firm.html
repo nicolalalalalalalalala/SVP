@@ -183,8 +183,8 @@
         font-weight: 500;
         font-style: normal;
         line-height: var(--sv-page-title-line-height);
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        text-transform: none;
         color: var(--ink-green);
         max-width: 900px;
       }
@@ -463,8 +463,8 @@
       .firm-page .firm-wordmark-heading,
       .firm-page .firm-hero-title span,
       .firm-page .firm-wordmark-heading span {
-        letter-spacing: 0.24em !important;
-        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+        text-transform: none !important;
         font-kerning: none;
         max-width: 920px;
         line-height: 1.15;
@@ -479,7 +479,7 @@
         .firm-page .firm-wordmark-heading,
         .firm-page .firm-hero-title span,
         .firm-page .firm-wordmark-heading span {
-          letter-spacing: 0.14em !important;
+          letter-spacing: 0.02em !important;
         }
       }
     </style>
@@ -523,21 +523,15 @@
         background: rgba(61, 112, 112, 0.52) !important;
       }
 
-      /* Main heading: Xuan Paper Light + Qing tonal highlight field.
-         The strip runs full panel width via overflow-clipped box-shadow,
-         with a subtle Qing-tinted left border anchoring the heading. */
+      /* Main heading: Xuan Paper Light sitting directly on the Qing panel */
       .firm-panel--hero .firm-hero-title,
       .firm-panel--hero .firm-wordmark-heading,
       .firm-page .firm-panel--hero .firm-hero-title,
       .firm-page .firm-panel--hero .firm-wordmark-heading {
         color: #faf6ee !important;
-        background: rgba(61, 112, 112, 0.13);
-        border-left: 1.5px solid rgba(61, 112, 112, 0.40);
-        padding: 12px 0 14px 18px;
-        margin: 4px 0 10px -18px !important;
-        box-shadow: -500px 0 0 0 rgba(61, 112, 112, 0.13), 500px 0 0 0 rgba(61, 112, 112, 0.13);
         max-width: none !important;
         line-height: var(--sv-page-title-line-height) !important;
+        margin: 0 0 clamp(24px, 2.6vw, 32px) 0 !important;
       }
 
       /* Body copy: Xuan Paper Light at comfortable reading opacity */
@@ -557,7 +551,7 @@
             <div class="firm-hero-grid">
               <div class="firm-hero-copy">
                 <p class="firm-label eyebrow eyebrow--red">THE FIRM</p>
-                <h1 class="firm-hero-title firm-wordmark-heading">SHOREVEST PARTNERS</h1>
+                <h1 class="firm-hero-title firm-wordmark-heading">ShoreVest Partners</h1>
                 <p class="firm-body firm-hero-copy-text">
                   ShoreVest Partners is an institutional private credit platform focused on complex, asset-backed and recovery-led investments in China, with the underwriting discipline, legal structuring, and servicing infrastructure required to operate in a market where outcomes depend on execution rather than theory.
                 </p>
