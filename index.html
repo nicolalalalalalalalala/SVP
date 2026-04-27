@@ -3616,7 +3616,8 @@ body.homepage #cdd .cdd-editorial__lede {
     font-size: 13px;
   }
 
-  /* CDD block: reduce visual weight and keep hierarchy calm. */
+  /* CDD block: mobile simplification — proper hierarchy, compact spacing.
+     Uses body.homepage #cdd prefix to win over desktop !important overrides. */
   #cdd {
     padding: 10px 0 8px;
   }
@@ -3624,130 +3625,156 @@ body.homepage #cdd .cdd-editorial__lede {
     padding-left: clamp(11px, 3.6vw, 14px) !important;
     padding-right: clamp(11px, 3.6vw, 14px) !important;
   }
-  .cdd-editorial__card {
-    padding: 10px 9px;
-    gap: 8px;
+  /* Shell: tighter vertical breathing room on mobile. */
+  body.homepage #cdd .home-section-shell--panel {
+    padding-block: 10px 8px;
   }
-  .cdd-editorial__intro {
-    gap: 6px;
-    padding-bottom: 6px;
+  /* Card: transparent on homepage; just controls intro↔feature gap. */
+  body.homepage #cdd .cdd-editorial__card {
+    gap: 10px !important;
   }
-  .cdd-editorial__brand {
-    transform: scale(.88);
-    transform-origin: left center;
+  /* Intro block: compact single-column, correct reading order. */
+  body.homepage #cdd .cdd-editorial__intro {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 8px !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--cdd-structure) 18%, transparent) !important;
   }
-  .cdd-editorial__kicker {
-    font-size: 7.2px;
-    letter-spacing: .095em;
-    line-height: 1.22;
+  body.homepage #cdd .cdd-editorial__intro-main {
+    order: 0 !important;
   }
-  #cdd .wordmark__title {
-    font-size: clamp(18px, 5.5vw, 23px);
-    line-height: .96;
-    max-width: 12ch;
-    margin-bottom: 3px;
+  body.homepage #cdd .cdd-editorial__lede {
+    order: 1 !important;
   }
-  .cdd-editorial__lede {
-    font-size: 10.2px;
-    line-height: 1.35;
-    margin: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  /* Logo lock-up: hidden on mobile — header logo is sufficient. */
+  body.homepage #cdd .cdd-editorial__brand {
+    display: none !important;
+  }
+  /* Eyebrow: single compact line; clips 'ESTABLISHED …' on narrow viewports. */
+  body.homepage #cdd .cdd-editorial__kicker {
+    font-size: 9px !important;
+    letter-spacing: 0.1em !important;
+    line-height: 1.35 !important;
+    margin-bottom: 4px !important;
+    height: 1.35em;
     overflow: hidden;
   }
-  .cdd-feature {
-    border-width: 1px;
-    border-color: color-mix(in srgb, var(--cdd-structure) 12%, transparent);
-    background: color-mix(in srgb, var(--cdd-surface) 78%, transparent);
+  /* Main title: strong visual anchor, right-sized for mobile. */
+  body.homepage #cdd .wordmark__title {
+    font-size: clamp(26px, 7.2vw, 32px) !important;
+    line-height: 0.93 !important;
+    letter-spacing: -0.014em !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
   }
-  .cdd-feature__top,
-  .cdd-feature__body,
-  .cdd-feature__footer {
-    padding-left: 8px;
-    padding-right: 8px;
+  /* Lede: readable body size, secondary in the hierarchy. */
+  body.homepage #cdd .cdd-editorial__lede {
+    font-size: 13px !important;
+    line-height: 1.52 !important;
+    letter-spacing: 0 !important;
+    margin: 0 !important;
   }
-  .cdd-feature__top {
-    gap: 5px;
-    padding-top: 7px;
-    padding-bottom: 6px;
-    border-bottom: 0;
+  /* Feature card: zero outer padding; children own their spacing. */
+  body.homepage #cdd .cdd-feature {
+    padding: 0 !important;
   }
-  .cdd-feature__meta {
-    gap: 4px;
+  /* Feature top: inline row of LIVE + meta pills, no column stack. */
+  body.homepage #cdd .cdd-feature__top {
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    padding: 8px 12px 7px !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--cdd-fr-muted) 14%, transparent) !important;
   }
-  .cdd-feature__issue,
-  .cdd-feature__date,
-  .cdd-live__label {
-    font-size: 6.8px;
-    letter-spacing: .065em;
-    line-height: 1.18;
+  body.homepage #cdd .cdd-feature__meta {
+    gap: 5px !important;
   }
-  .cdd-feature__issue,
-  .cdd-feature__date {
-    padding: 3px 6px 2px;
+  body.homepage #cdd .cdd-feature__issue,
+  body.homepage #cdd .cdd-feature__date {
+    font-size: 8px !important;
+    letter-spacing: 0.09em !important;
+    padding: 4px 7px 3px !important;
+    line-height: 1.2 !important;
   }
-  .cdd-live {
-    gap: 3px;
+  body.homepage #cdd .cdd-live {
+    gap: 4px !important;
   }
-  .cdd-live__dot {
-    width: 4px;
-    height: 4px;
+  body.homepage #cdd .cdd-live__dot {
+    width: 5px !important;
+    height: 5px !important;
   }
-  .cdd-feature__label {
-    font-size: 7.8px;
-    letter-spacing: .09em;
-    margin-bottom: 4px;
+  body.homepage #cdd .cdd-live__label {
+    font-size: 8px !important;
+    letter-spacing: 0.1em !important;
   }
-  .cdd-feature__title {
-    font-size: clamp(15.6px, 4.8vw, 18px);
-    line-height: 1.1;
-    letter-spacing: -.004em;
-    margin-bottom: 4px;
-    max-width: 17.5ch;
+  /* Feature body: compact, no left-rule clutter. */
+  body.homepage #cdd .cdd-feature__body {
+    padding: 10px 12px 12px !important;
+    gap: 7px !important;
   }
-  .cdd-feature__thesis,
-  .cdd-feature__finding {
-    font-size: 10.3px;
-    line-height: 1.35;
+  body.homepage #cdd .cdd-feature__body > div:first-child {
+    padding-left: 0 !important;
+    border-left: 0 !important;
   }
-  .cdd-feature__body {
-    gap: 7px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+  body.homepage #cdd .cdd-feature__label {
+    font-size: 9px !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 5px !important;
   }
-  .cdd-feature__body > div:first-child {
-    padding-left: 0;
-    border-left: 0;
+  /* Featured report heading: punchy but not oversized on mobile. */
+  body.homepage #cdd .cdd-feature__title--compact {
+    font-size: clamp(20px, 5.6vw, 24px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.003em !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    width: 100% !important;
   }
-  .cdd-feature__thesis {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  /* Thesis: 3-line clamp keeps card height controlled. */
+  body.homepage #cdd .cdd-feature__thesis {
+    font-size: 13px !important;
+    line-height: 1.52 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
   }
-  .cdd-feature__main .cdd-cta-group {
-    margin-top: 7px;
+  /* CTAs: primary full-width, secondary minimal ghost. */
+  body.homepage #cdd .cdd-feature__main .cdd-cta-group {
+    margin-top: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
   }
-  .cdd-feature__footer {
-    gap: 6px;
-    padding-top: 8px;
-    padding-bottom: 7px;
-    border-top-color: color-mix(in srgb, var(--cdd-structure) 10%, transparent);
+  body.homepage #cdd .cdd-cta {
+    width: 100% !important;
+    min-height: 40px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+    padding: 8px 10px 8px 13px !important;
+    justify-content: space-between !important;
   }
-  .cdd-cta {
-    min-height: 34px;
-    font-size: 7.9px;
-    letter-spacing: .08em;
-    padding: 5px 7px 5px 10px;
-    border-width: 1px;
+  body.homepage #cdd .cdd-cta__ring {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    font-size: 10px !important;
   }
-  .cdd-cta__ring {
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    font-size: 8px;
-    border-width: 1px;
+  body.homepage #cdd .cdd-cta-group .cdd-cta:last-child {
+    background: transparent !important;
+    border-color: color-mix(in srgb, var(--cdd-fr-muted) 22%, transparent) !important;
+    min-height: 32px !important;
+    font-size: 9px !important;
+    padding: 5px 8px 5px 11px !important;
+  }
+  body.homepage #cdd .cdd-cta-group .cdd-cta:last-child .cdd-cta__ring {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    font-size: 9px !important;
   }
 
   /* Footer: structured and minimal. */
