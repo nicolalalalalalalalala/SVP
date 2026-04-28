@@ -4356,193 +4356,233 @@ body.homepage .homepage-section-stack > section::after {
 </style>
 <style id="homepage-hero-nav-tightening">
 body.homepage {
-  --max: 1440px;
-  --home-frame-max: min(1440px, calc(100vw - (var(--site-page-margin) * 2)));
-  background: #FAF6EE !important;
+  --cinnabar: #C93B2A;
+  --cinnabar-dark: #8A1F12;
+  --qing: #3D7070;
+  --qing-dark: #1E4040;
+  --ink-green: #2E4A18;
+  --ink-green-dark: #0F2206;
+  --xuan-paper-light: #FAF6EE;
+  --xuan-paper: #F2ECD8;
+  --xuan-paper-dark: #D8CEB0;
+  background: var(--xuan-paper-light) !important;
 }
+
 body.homepage #site-header-mount {
   --sv-header-bg: #FAF6EE;
-  --sv-header-rule: rgba(216, 206, 176, 0.65);
-  --sv-header-height: 122px;
+  --sv-header-rule: rgba(216, 206, 176, 0.75);
+  --sv-header-height: 124px;
   --sv-header-subband: 0px;
-  --sv-header-height-desktop: 122px;
-  --sv-header-side-pad: clamp(64px, 7vw, 120px);
+  --sv-header-height-desktop: 124px;
+  --sv-header-side-pad: clamp(28px, 4.8vw, 72px);
 }
+
+body.homepage #site-header-mount #nav {
+  background: #FAF6EE !important;
+  border-bottom: 1px solid rgba(216, 206, 176, 0.75) !important;
+}
+
 body.homepage #site-header-mount .nav__subband {
   display: none !important;
 }
+
+body.homepage #site-header-mount #nav .nav__logo-en,
+body.homepage #site-header-mount #nav .nav__links a,
+body.homepage #site-header-mount #nav .nav__lp,
+body.homepage #site-header-mount #nav .home-hero__cta {
+  font-family: "DIN 2014", "DIN", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+body.homepage #site-header-mount #nav .nav__logo-cn,
+body.homepage #site-header-mount #nav .nav__zh {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif !important;
+}
+
 body.homepage #site-header-mount #nav .nav__links a {
   color: #1E4040 !important;
-  opacity: 0.92 !important;
-  font-size: 12px !important;
-  letter-spacing: 0.16em !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
 }
+
 body.homepage #site-header-mount #nav .nav__right::before {
-  height: 34px !important;
-  background: #D8CEB0 !important;
+  height: 30px !important;
+  background: rgba(216, 206, 176, 0.92) !important;
 }
+
 body.homepage #site-header-mount #nav .nav__lp {
-  border: 1px solid rgba(30, 64, 64, 0.7) !important;
-  color: #1E4040 !important;
-  height: 34px !important;
-  padding: 0 16px !important;
-  font-size: 12px !important;
-  letter-spacing: 0.16em !important;
-}
-body.homepage #site-header-mount #nav .nav__lp:hover,
-body.homepage #site-header-mount #nav .nav__lp:focus-visible {
+  border: 1px solid #1E4040 !important;
   background: transparent !important;
   color: #1E4040 !important;
-  border-color: rgba(30, 64, 64, 0.85) !important;
+  height: 38px !important;
+  padding: 0 24px !important;
 }
+
 body.homepage .home-hero {
-  min-height: clamp(620px, 64vh, 660px) !important;
+  min-height: clamp(620px, 66vh, 680px) !important;
   border-top: 0 !important;
+  border-bottom: 1px solid rgba(216, 206, 176, 0.75) !important;
 }
+
 body.homepage .home-hero::before {
   background-image: url("assets/images/image.jpg") !important;
-  background-position: 64% center !important;
   background-size: cover !important;
-  filter: saturate(0.93) contrast(0.98) brightness(1.02) !important;
+  background-position: 62% center !important;
+  filter: none !important;
 }
+
 body.homepage .home-hero::after {
   background:
     linear-gradient(90deg,
-      rgba(250,246,238,0.92) 0%,
-      rgba(250,246,238,0.82) 24%,
-      rgba(250,246,238,0.52) 43%,
-      rgba(250,246,238,0.20) 62%,
-      rgba(250,246,238,0.04) 82%,
+      rgba(250,246,238,0.98) 0%,
+      rgba(250,246,238,0.92) 22%,
+      rgba(250,246,238,0.62) 42%,
+      rgba(250,246,238,0.18) 64%,
       rgba(250,246,238,0.00) 100%
     ),
     linear-gradient(180deg,
-      rgba(250,246,238,0.20) 0%,
-      rgba(250,246,238,0.00) 26%
-    ),
-    linear-gradient(180deg,
-      rgba(250,246,238,0.00) 76%,
-      rgba(250,246,238,0.28) 100%
+      rgba(250,246,238,0.13) 0%,
+      rgba(250,246,238,0.00) 20%,
+      rgba(250,246,238,0.00) 82%,
+      rgba(250,246,238,0.16) 100%
     ) !important;
 }
+
 body.homepage .home-hero__inner {
-  min-height: clamp(620px, 64vh, 660px) !important;
-  align-items: start !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  min-height: clamp(620px, 66vh, 680px) !important;
+  align-items: flex-start !important;
   justify-content: flex-start !important;
+  padding: 0 !important;
 }
+
 body.homepage .home-hero__text {
-  position: relative !important;
-  top: 44% !important;
-  transform: translateY(-50%) !important;
-  margin-left: clamp(64px, 7vw, 120px) !important;
-  max-width: 680px !important;
-  width: min(680px, 100%) !important;
-  gap: clamp(11px, 1vw, 16px) !important;
+  margin-left: clamp(28px, 4.8vw, 72px) !important;
+  margin-top: clamp(178px, 29vh, 218px) !important;
+  transform: none !important;
+  top: auto !important;
+  max-width: 560px !important;
+  gap: 0 !important;
 }
+
 body.homepage .home-hero__eyebrow {
-  font-size: 12.5px !important;
-  letter-spacing: 0.22em !important;
+  font-family: "DIN 2014", "DIN", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 0.2em !important;
   color: #1E4040 !important;
-  opacity: 0.9 !important;
+  margin-bottom: 18px !important;
 }
+
 body.homepage .home-hero__eyebrow::after {
-  width: clamp(44px, 4.2vw, 56px) !important;
-  height: 1px !important;
+  width: 44px !important;
   background: #C93B2A !important;
-  opacity: 1 !important;
 }
-body.homepage .home-hero__headline {
-  font-size: clamp(48px, 4.4vw, 66px) !important;
-  line-height: 1.04 !important;
-  letter-spacing: -0.025em !important;
+
+body.homepage .home-hero__headline,
+body.homepage .home-hero__headline-box,
+body.homepage .home-hero__headline-primary,
+body.homepage .home-hero__headline-emphasis {
+  font-family: "DIN 2014", "DIN", "Helvetica Neue", Arial, sans-serif !important;
+  font-style: italic !important;
   font-weight: 300 !important;
-  font-style: normal !important;
-  margin-top: -2px;
+  font-size: clamp(54px, 5.4vw, 84px) !important;
+  line-height: 0.98 !important;
 }
+
+body.homepage .home-hero__headline {
+  margin-bottom: 22px !important;
+  letter-spacing: -0.01em !important;
+}
+
+body.homepage .home-hero__headline-primary {
+  color: #1E4040 !important;
+}
+
 body.homepage .home-hero__headline-emphasis {
   color: #C93B2A !important;
 }
+
 body.homepage .home-hero__support {
-  max-width: 540px !important;
-  font-size: 17px !important;
-  line-height: 1.55 !important;
-  color: rgba(30,64,64,0.88) !important;
-  opacity: 1 !important;
-  margin-top: 26px !important;
+  font-family: "DIN 2014", "DIN", "Helvetica Neue", Arial, sans-serif !important;
+  color: #1E4040 !important;
+  font-size: clamp(17px, 1.18vw, 19px) !important;
+  line-height: 1.45 !important;
+  max-width: 520px !important;
+  margin: 0 !important;
 }
+
+body.homepage .home-hero__support-wrap {
+  margin-bottom: 28px !important;
+}
+
+body.homepage .home-hero__actions {
+  margin-top: 0 !important;
+}
+
 body.homepage .home-hero__cta {
-  display: inline-block !important;
-  font-size: 12px !important;
-  letter-spacing: 0.16em !important;
-  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
   border: 0 !important;
   border-bottom: 1px solid #C93B2A !important;
-  padding: 0 0 6px !important;
-  margin-top: 34px !important;
   background: transparent !important;
-  transition: color .22s ease !important;
+  color: #1E4040 !important;
+  padding: 0 0 5px !important;
+  font-family: "DIN 2014", "DIN", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
 }
+
 body.homepage .home-hero__cta .home-hero__cta-arrow {
   color: #C93B2A !important;
-  margin-left: 10px !important;
-  transform: translateX(0);
-  transition: transform .22s ease;
+  margin-left: 2px !important;
 }
-body.homepage .home-hero__cta:hover,
-body.homepage .home-hero__cta:focus-visible {
-  color: #1E4040 !important;
-}
-body.homepage .home-hero__cta:hover .home-hero__cta-arrow,
-body.homepage .home-hero__cta:focus-visible .home-hero__cta-arrow {
-  transform: translateX(3px);
-}
+
 body.homepage .home-hero + .homepage-section-stack {
-  margin-top: clamp(72px, 7vw, 96px) !important;
-  border-top: 0 !important;
+  margin-top: 0 !important;
 }
-body.homepage #about > .wrap {
-  background: #FAF6EE !important;
-  border: 0 !important;
-  border-top: 0 !important;
-  padding-top: clamp(16px, 2.5vw, 28px) !important;
-}
-@media (max-width: 767px) {
+
+@media (max-width: 980px) {
   body.homepage #site-header-mount {
-    --sv-header-height: 64px;
-    --sv-header-height-desktop: 64px;
+    --sv-header-height: 68px;
+    --sv-header-height-desktop: 68px;
   }
+
   body.homepage .home-hero {
-    min-height: 76vh !important;
+    min-height: clamp(620px, 88vh, 760px) !important;
   }
+
+  body.homepage .home-hero__inner {
+    min-height: inherit !important;
+  }
+
+  body.homepage .home-hero__text {
+    margin-left: clamp(20px, 5.2vw, 32px) !important;
+    margin-right: 20px !important;
+    margin-top: clamp(152px, 26vh, 200px) !important;
+    max-width: 92vw !important;
+  }
+
+  body.homepage .home-hero__headline,
+  body.homepage .home-hero__headline-box,
+  body.homepage .home-hero__headline-primary,
+  body.homepage .home-hero__headline-emphasis {
+    font-size: clamp(42px, 10vw, 52px) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.homepage .home-hero::before {
+    background-position: 68% center !important;
+  }
+
   body.homepage .home-hero::after {
     background:
       linear-gradient(90deg,
-        rgba(250,246,238,0.96) 0%,
-        rgba(250,246,238,0.90) 40%,
-        rgba(250,246,238,0.52) 66%,
-        rgba(250,246,238,0.18) 86%,
-        rgba(250,246,238,0.00) 100%
-      ),
-      linear-gradient(180deg,
-        rgba(250,246,238,0.00) 74%,
-        rgba(250,246,238,0.62) 100%
+        rgba(250,246,238,0.98) 0%,
+        rgba(250,246,238,0.94) 38%,
+        rgba(250,246,238,0.68) 60%,
+        rgba(250,246,238,0.24) 82%,
+        rgba(250,246,238,0.02) 100%
       ) !important;
-  }
-  body.homepage .home-hero__inner {
-    min-height: 76vh !important;
-  }
-  body.homepage .home-hero__text {
-    margin-left: clamp(8px, 1.5vw, 16px) !important;
-    transform: translateY(-34%) !important;
-  }
-  body.homepage .home-hero__headline {
-    font-size: clamp(40px, 10.2vw, 48px) !important;
-    line-height: 1.05 !important;
-  }
-  body.homepage .home-hero__support {
-    font-size: clamp(15px, 4.2vw, 17px) !important;
-    max-width: 34ch !important;
   }
 }
 </style>
@@ -4572,7 +4612,7 @@ body.homepage #about > .wrap {
         <p class="home-hero__support">Asset-backed private credit, structured around collateral discipline, legal enforceability, and local execution.</p>
       </div>
       <div class="home-hero__actions">
-        <a href="firm.html" class="home-hero__cta home-hero__cta--primary"><span>EXPLORE SHOREVEST</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
+        <a href="firm.html" class="home-hero__cta home-hero__cta--primary"><span>Explore ShoreVest</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
