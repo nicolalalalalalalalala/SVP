@@ -34,27 +34,28 @@ body {
 
   /* Header tokens */
   --sv-header-bg:           var(--sv-xuan-paper-light);
-  --sv-header-rule:         var(--sv-xuan-paper-dark);
-  --sv-header-height:       82px;   /* upper nav band */
-  --sv-header-subband:      30px;   /* lower empty cream band */
+  --sv-header-rule:         rgba(30, 64, 64, 0.18);
+  --sv-header-height:       116px;  /* upper nav band — institutional masthead */
+  --sv-header-subband:      60px;   /* lower paper spacer band */
   /* Total sticky height used by other CSS (cdd, timeline): */
-  --sv-header-height-desktop: 112px; /* 82 + 30 */
-  --sv-header-side-pad:     clamp(18px, 3.4vw, 44px);
+  --sv-header-height-desktop: 176px; /* 116 + 60 */
+  --sv-header-side-pad:     clamp(32px, 4.5vw, 68px);
   --sv-header-z-mount:      220;
 }
 
 /* ── Mount: sticky wrapper for the entire two-band header ───── */
 #site-header-mount {
-  position: sticky;
-  top: 0;
-  z-index: var(--sv-header-z-mount);
-  background: var(--sv-header-bg);
+  position: sticky !important;
+  top: 0 !important;
+  z-index: var(--sv-header-z-mount) !important;
+  background: var(--sv-header-bg) !important;
+  box-shadow: none !important;
 }
 
 /* ── Upper nav band ─────────────────────────────────────────── */
 #site-header-mount #nav {
   /* Not independently sticky — the mount handles stickiness */
-  height: var(--sv-header-height);
+  height: var(--sv-header-height) !important;
   display: grid;
   /* 1fr columns ensure the centre nav is always optically centred */
   grid-template-columns: 1fr minmax(0, auto) 1fr;
@@ -74,10 +75,10 @@ body {
   box-sizing: border-box;
 }
 
-/* ── Lower empty cream band (below the thin rule) ───────────── */
+/* ── Lower paper spacer band (below the thin rule) ─────────── */
 #site-header-mount .nav__subband {
-  height: var(--sv-header-subband);
-  background: var(--sv-header-bg);
+  height: var(--sv-header-subband) !important;
+  background: var(--sv-xuan-paper) !important;
 }
 
 /* ── Brand lockup ───────────────────────────────────────────── */
@@ -103,11 +104,11 @@ body {
 #site-header-mount #nav .nav__logo-en {
   display: block;
   font-family: var(--font-en) !important;
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.22em !important;
-  line-height: 1;
-  text-transform: uppercase;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.30em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
   color: #181410 !important;
 }
 
@@ -115,20 +116,20 @@ body {
 #site-header-mount #nav .nav__logo-cn {
   display: block;
   font-family: var(--font-zh) !important;
-  font-size: 9.5px;
-  font-weight: 400;
-  letter-spacing: 0.18em !important;
-  line-height: 1;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1 !important;
   color: var(--sv-cinnabar) !important;
   transform: none !important;
 }
 
 /* ── Centre nav links ───────────────────────────────────────── */
 #site-header-mount #nav .nav__links {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 44px !important;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -137,9 +138,9 @@ body {
 
 #site-header-mount #nav .nav__links a {
   font-family: var(--font-en) !important;
-  font-size: 10px !important;
+  font-size: 11.5px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.13em !important;
+  letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
   color: var(--sv-qing-dark) !important;
   opacity: 0.68;
@@ -170,7 +171,7 @@ body {
   display: flex;
   align-items: center;
   justify-self: end;
-  gap: 20px;
+  gap: 26px;
   min-width: 0;
 }
 
@@ -179,15 +180,15 @@ body {
   content: "";
   display: block;
   width: 1px;
-  height: 18px;
-  background: rgba(30, 64, 64, 0.20);
+  height: 28px;
+  background: rgba(30, 64, 64, 0.18);
   flex-shrink: 0;
 }
 
 /* 中文 — Noto Serif SC, Cinnabar (EN pages) */
 #site-header-mount #nav .nav__zh {
   font-family: var(--font-zh) !important;
-  font-size: 12.5px !important;
+  font-size: 13px !important;
   font-weight: 400 !important;
   letter-spacing: 0 !important;
   line-height: 1;
@@ -225,17 +226,18 @@ body {
   align-items: center !important;
   justify-content: center !important;
   font-family: var(--font-en) !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.13em !important;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
   line-height: 1 !important;
   color: var(--sv-qing-dark) !important;
   text-decoration: none !important;
-  border: 1px solid rgba(30, 64, 64, 0.35) !important;
+  border: 1px solid rgba(30, 64, 64, 0.45) !important;
   background: transparent !important;
   box-shadow: none !important;
-  padding: 8px 22px !important;
+  height: 38px !important;
+  padding: 0 28px !important;
   border-radius: 0 !important;
   min-height: 0 !important;
   transform: none !important;
@@ -248,7 +250,7 @@ body {
   border-color: var(--sv-qing-dark) !important;
   transform: none !important;
   box-shadow: none !important;
-  letter-spacing: 0.13em !important;
+  letter-spacing: 0.16em !important;
 }
 #site-header-mount #nav .nav__lp:focus-visible {
   outline: 2px solid var(--sv-qing-dark);
@@ -260,9 +262,10 @@ body {
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
+  height: auto !important;
   padding: 0 !important;
-  font-size: 10px !important;
-  letter-spacing: 0.13em !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.18em !important;
   color: var(--sv-cinnabar) !important;
   text-decoration: underline !important;
   text-decoration-thickness: 1px !important;
@@ -288,13 +291,13 @@ body {
   font-family: var(--font-zh) !important;
   letter-spacing: 0.06em !important;
   text-transform: none !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 #site-header-mount #nav.nav--cn .nav__lp {
   font-family: var(--font-zh) !important;
   letter-spacing: 0.06em !important;
   text-transform: none !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 /* ================================================================
