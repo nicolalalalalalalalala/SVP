@@ -1828,27 +1828,22 @@ body.homepage .home-hero::before {
   background-position: 76% 52%;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: brightness(0.95) contrast(1.08) saturate(1.04);
+  filter: saturate(0.78) contrast(0.92) brightness(1.01);
 }
 body.homepage .home-hero::after {
   z-index: -2;
   background:
-    linear-gradient(92deg,
-      rgba(3, 9, 15, 0.93) 0%,
-      rgba(3, 9, 15, 0.86) 24%,
-      rgba(4, 12, 20, 0.62) 44%,
-      rgba(6, 15, 24, 0.3) 66%,
-      rgba(6, 15, 24, 0.12) 100%
+    linear-gradient(90deg,
+      rgba(250, 246, 238, 0.96) 0%,
+      rgba(250, 246, 238, 0.90) 24%,
+      rgba(250, 246, 238, 0.62) 43%,
+      rgba(250, 246, 238, 0.18) 62%,
+      rgba(250, 246, 238, 0.00) 78%
     ),
-    radial-gradient(120% 88% at 78% 54%,
-      rgba(12, 35, 50, 0.12) 0%,
-      rgba(6, 16, 24, 0.28) 56%,
-      rgba(4, 11, 18, 0.38) 100%
-    ),
-    linear-gradient(180deg,
-      rgba(2, 7, 12, 0.42) 0%,
-      rgba(3, 11, 17, 0.28) 36%,
-      rgba(2, 9, 16, 0.44) 100%
+    linear-gradient(96deg,
+      rgba(61, 112, 112, 0.06) 8%,
+      rgba(46, 74, 24, 0.03) 44%,
+      rgba(30, 64, 64, 0.07) 100%
     );
 }
 body.homepage .home-hero__inner {
@@ -1857,7 +1852,8 @@ body.homepage .home-hero__inner {
   width: 100%;
   max-width: var(--home-frame-max);
   margin-inline: auto;
-  padding: clamp(122px, 12vh, 164px) var(--home-frame-pad) clamp(90px, 10vh, 126px);
+  min-height: clamp(540px, 72vh, 760px);
+  padding: clamp(98px, 9.2vh, 132px) var(--home-frame-pad) clamp(68px, 8vh, 96px);
   display: grid;
   grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
   column-gap: clamp(24px, 3.6vw, 64px);
@@ -1866,7 +1862,7 @@ body.homepage .home-hero__inner {
 }
 body.homepage .home-hero__text {
   position: relative;
-  width: min(920px, 100%);
+  width: min(620px, 100%);
   margin: 0;
   padding: 0;
   border: 0;
@@ -1897,10 +1893,10 @@ body.homepage .home-hero__eyebrow {
   font-weight: 560;
   letter-spacing: .18em;
   line-height: 1.2;
-  color: rgba(247, 241, 226, 0.98);
+  color: #1E4040;
   opacity: 1;
   text-transform: uppercase;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: none;
 }
 body.homepage .home-hero__eyebrow::after {
   content: "";
@@ -1911,29 +1907,23 @@ body.homepage .home-hero__eyebrow::after {
 }
 body.homepage .home-hero__headline {
   margin: 0;
-  font-family: var(--serif);
-  font-size: var(--sv-page-title-size);
-  font-weight: 500;
-  font-style: normal;
-  line-height: var(--sv-page-title-line-height);
-  letter-spacing: .003em;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(44px, 5.3vw, 64px);
+  font-weight: 340;
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -.006em;
   text-transform: none;
-  color: #f9f4e8;
-  max-width: 13.2ch;
-  text-wrap: initial;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.34);
-  padding-bottom: clamp(12px, 1.4vw, 16px);
-  border-bottom: 1px solid rgba(241, 232, 212, 0.2);
+  color: #1E4040;
+  max-width: none;
+  text-wrap: balance;
+  text-shadow: none;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 body.homepage .home-hero__headline-box {
-  display: block;
-}
-body.homepage .home-hero__headline-secondline {
-  display: block;
+  display: inline;
   white-space: nowrap;
-}
-body.homepage .home-hero__headline-preposition {
-  text-transform: none;
 }
 body.homepage .home-hero__headline-primary,
 body.homepage .home-hero__headline-emphasis {
@@ -1943,13 +1933,13 @@ body.homepage .home-hero__headline-emphasis {
   text-transform: none;
 }
 body.homepage .home-hero__headline-primary {
-  display: block;
-  color: inherit;
-  margin-bottom: .04em;
+  display: inline;
+  color: #1E4040;
+  margin-bottom: 0;
 }
 body.homepage .home-hero__headline-emphasis {
   color: #C93B2A;
-  margin-left: 0;
+  margin-left: .15ch;
   font-style: italic;
 }
 body.homepage .home-hero__support {
@@ -1960,70 +1950,64 @@ body.homepage .home-hero__support {
   font-size: clamp(15.8px, 1.1vw, 17px);
   line-height: 1.58;
   letter-spacing: .005em;
-  color: rgba(247, 241, 228, 0.96);
+  color: color-mix(in srgb, #1E4040 82%, #0F2206 18%);
   text-wrap: pretty;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
   padding-top: clamp(2px, 0.3vw, 5px);
 }
 body.homepage .home-hero__support-wrap {
-  width: min(980px, calc(100vw - (var(--home-frame-pad) * 2) - 32px));
+  width: min(620px, calc(100vw - (var(--home-frame-pad) * 2) - 32px));
   max-width: none;
   justify-self: start;
 }
 body.homepage .home-hero__actions {
-  margin-top: clamp(14px, 1.4vw, 20px);
+  margin-top: clamp(6px, 1vw, 12px);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 12px;
-  padding-top: clamp(14px, 1.6vw, 20px);
-  border-top: 1px solid rgba(241, 232, 212, 0.18);
+  gap: 10px;
+  padding-top: 0;
+  border-top: 0;
 }
 body.homepage .home-hero__cta {
   margin-top: 0;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 47px;
-  min-width: 210px;
-  padding: 0 24px;
-  border: 1px solid rgba(246, 239, 223, 0.96);
+  justify-content: flex-start;
+  min-height: auto;
+  min-width: 0;
+  padding: 0 0 2px;
+  border: 0;
+  border-bottom: 1px solid #C93B2A;
   border-radius: 0;
-  background: #f0e5cf;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
-  gap: 7px;
+  background: transparent;
+  box-shadow: none;
+  gap: 8px;
   font-family: "DIN 2014";
   font-size: 11px;
-  font-weight: 650;
-  letter-spacing: .115em;
+  font-weight: 560;
+  letter-spacing: .11em;
   text-transform: uppercase;
-  color: #08151d;
-  transition: border-color .22s ease-out, background-color .22s ease-out, color .22s ease-out, transform .22s ease-out, box-shadow .22s ease-out;
+  color: #1E4040;
+  transition: border-color .22s ease-out, color .22s ease-out, gap .22s ease-out;
 }
 body.homepage .home-hero__cta:hover,
 body.homepage .home-hero__cta:focus-visible {
-  border-color: rgba(249, 243, 230, 0.96);
-  background: #f6edde;
-  color: #08131a;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.26);
+  border-color: color-mix(in srgb, #C93B2A 80%, #1E4040 20%);
+  background: transparent;
+  color: #C93B2A;
+  transform: none;
+  box-shadow: none;
+  gap: 11px;
 }
 body.homepage .home-hero__cta:focus-visible {
-  outline: 2px solid rgba(249, 243, 230, 0.92);
+  outline: 1px solid rgba(30, 64, 64, 0.34);
   outline-offset: 2px;
 }
-body.homepage .home-hero__cta--secondary {
-  border-color: rgba(241, 232, 212, 0.82);
-  background: rgba(6, 15, 24, 0.5);
-  color: #f7efdc;
-}
-body.homepage .home-hero__cta--secondary:hover,
-body.homepage .home-hero__cta--secondary:focus-visible {
-  border-color: rgba(247, 239, 220, 0.94);
-  background: rgba(7, 18, 28, 0.68);
-  color: #fcf7ea;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+body.homepage .home-hero__cta .home-hero__cta-arrow {
+  color: #C93B2A;
+  line-height: 1;
 }
 
 body.homepage :is(.about__hed,.about__subhed,.strat__hed,.cdd-editorial__title,.ac__title,.sg__title,.cdd-feature__title) {
@@ -2614,20 +2598,15 @@ body.homepage #cdd .cdd-editorial__lede {
   }
   body.homepage .home-hero::after {
     background:
-      linear-gradient(100deg,
-        rgba(3, 9, 15, 0.9) 0%,
-        rgba(4, 11, 18, 0.74) 56%,
-        rgba(6, 15, 24, 0.34) 100%
+      linear-gradient(175deg,
+        rgba(250, 246, 238, 0.96) 0%,
+        rgba(250, 246, 238, 0.84) 42%,
+        rgba(250, 246, 238, 0.14) 100%
       ),
-      radial-gradient(120% 92% at 75% 52%,
-        rgba(10, 30, 42, 0.1) 0%,
-        rgba(6, 16, 24, 0.3) 62%,
-        rgba(4, 11, 18, 0.42) 100%
-      ),
-      linear-gradient(180deg,
-        rgba(2, 8, 14, 0.5) 0%,
-        rgba(2, 8, 14, 0.34) 28%,
-        rgba(2, 8, 14, 0.48) 100%
+      linear-gradient(102deg,
+        rgba(61, 112, 112, 0.05) 8%,
+        rgba(46, 74, 24, 0.03) 60%,
+        rgba(30, 64, 64, 0.08) 100%
       );
   }
   body.homepage .home-hero__inner {
@@ -2656,14 +2635,12 @@ body.homepage #cdd .cdd-editorial__lede {
     opacity: .56;
   }
   body.homepage .home-hero__headline {
-    font-size: var(--sv-page-title-size);
-    line-height: var(--sv-page-title-line-height);
-    max-width: 13.8ch;
+    font-size: clamp(30px, 8.3vw, 40px);
+    line-height: 1.08;
+    max-width: 16ch;
     letter-spacing: .002em;
-    padding-bottom: 10px;
-  }
-  body.homepage .home-hero__headline-secondline {
-    margin-top: .04em;
+    white-space: normal;
+    padding-bottom: 0;
   }
   body.homepage .home-hero__support {
     font-size: clamp(13.3px, 3.5vw, 14.6px);
@@ -2676,22 +2653,22 @@ body.homepage #cdd .cdd-editorial__lede {
     width: 100%;
   }
   body.homepage .home-hero__actions {
-    width: 100%;
+    width: auto;
     gap: 8px;
     margin-top: 8px;
-    padding-top: 12px;
-    flex-direction: column;
-    align-items: stretch;
+    padding-top: 0;
+    flex-direction: row;
+    align-items: flex-start;
   }
   body.homepage .home-hero__cta {
-    flex: 1 1 auto;
-    width: 100%;
+    flex: 0 0 auto;
+    width: auto;
     min-width: 0;
-    min-height: 44px;
-    justify-content: space-between;
-    padding-inline: 12px;
+    min-height: auto;
+    justify-content: flex-start;
+    padding-inline: 0;
     font-size: 9.6px;
-    letter-spacing: .11em;
+    letter-spacing: .1em;
   }
 
   body.homepage :is(.about__hed, .strat__hed, .track-record__title, .principles__heading .about__subhed) {
@@ -4397,14 +4374,13 @@ body.homepage .homepage-section-stack > section::after {
     <div class="home-hero__text">
       <p class="home-hero__eyebrow">ESTABLISHED 2004</p>
       <h1 class="home-hero__headline type-display-hero">
-        <span class="home-hero__headline-box"><span class="home-hero__headline-primary">PRIVATE CREDIT</span><span class="home-hero__headline-secondline"><span class="home-hero__headline-nowrap"><span class="home-hero__headline-preposition">IN</span> <span class="home-hero__headline-emphasis">CHINA.</span></span></span></span>
+        <span class="home-hero__headline-box"><span class="home-hero__headline-primary">Private credit in</span><span class="home-hero__headline-emphasis">China.</span></span>
       </h1>
       <div class="home-hero__support-wrap">
-        <p class="home-hero__support">Specialist onshore execution platform spanning collateral-backed lending, special situations, restructurings, and disciplined recoveries for institutional partners.</p>
+        <p class="home-hero__support">Asset-backed private credit, structured around collateral discipline, legal enforceability, and local execution.</p>
       </div>
       <div class="home-hero__actions">
-        <a href="firm.html" class="home-hero__cta home-hero__cta--primary"><span>EXPLORE SHOREVEST</span></a>
-        <a href="strategy.html" class="home-hero__cta home-hero__cta--secondary"><span>VIEW STRATEGY</span></a>
+        <a href="firm.html" class="home-hero__cta home-hero__cta--primary"><span>Explore ShoreVest</span><span class="home-hero__cta-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
