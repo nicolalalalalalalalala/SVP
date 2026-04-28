@@ -323,8 +323,8 @@
 
   .history-timeline__stage {
     position: sticky;
-    top: calc(var(--sv-header-height-desktop, 62px) + 20px);
-    min-height: calc(100vh - var(--sv-header-height-desktop, 62px) - 40px);
+    top: calc(var(--sv-header-height-desktop, 112px) + 20px);
+    min-height: calc(100vh - var(--sv-header-height-desktop, 112px) - 40px);
     align-content: start;
     display: grid;
     grid-template-rows: auto minmax(0, 1fr);

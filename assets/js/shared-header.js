@@ -62,7 +62,7 @@
   mount.innerHTML = `<nav id="nav" class="${isCnPath ? 'nav--cn' : 'nav--en'}">
   <a href="${isCnPath ? 'index_cn.html' : 'index.html'}" class="nav__logo">
     <span class="nav__logo-lockup">
-      <span class="nav__logo-en">SHOREVEST PARTNERS</span>
+      <span class="nav__logo-en">SHOREVEST</span>
       <span class="nav__logo-cn">${wordmark}</span>
     </span>
   </a>
@@ -79,7 +79,8 @@
       <span class="nav__menu-btn-icon" aria-hidden="true"></span>
     </button>
   </div>
-</nav>`;
+</nav>
+<div class="nav__subband"></div>`;
 
   // Mobile menu panel — appended directly to <body> to avoid stacking context
   // issues caused by #nav / #site-header-mount creating their own stacking contexts.
