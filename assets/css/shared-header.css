@@ -34,7 +34,7 @@ body {
   --font-zh: "Noto Serif SC", "Songti SC", "SimSun", serif;
 
   /* Header tokens */
-  --sv-header-bg:           var(--sv-xuan-paper-light);
+  --sv-header-bg:           var(--sv-xuan-paper);
   --sv-header-rule:         rgba(216, 206, 176, 0.75);
   --sv-header-height:       124px;  /* upper nav band — institutional masthead */
   --sv-header-subband:      0px;   /* removed lower spacer band */
@@ -427,7 +427,7 @@ body {
     z-index: 9999;
     min-height: 100vh;
     min-height: 100dvh;
-    background: var(--sv-header-bg, #FAF6EE);
+    background: var(--sv-header-bg, #F2ECD8);
     padding-top: 62px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
