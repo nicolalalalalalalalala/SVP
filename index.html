@@ -5351,13 +5351,18 @@ body.homepage #strategy .strat__grid>.sg:nth-child(even){ background:#F2ECD8 !im
 body.homepage #strategy .sg__n { font-size:11px !important; letter-spacing:.16em !important; color:#3D7070 !important; }
 body.homepage #strategy .sg__title { font-size:clamp(20px,1.7vw,28px) !important; }
 
-/* Track record robust cards */
-body.homepage .track-record__grid { display:grid !important; grid-template-columns:repeat(4,minmax(0,1fr)) !important; gap:0 !important; margin-top: clamp(48px, 5vw, 80px) !important; border-top:1px solid rgba(216,206,176,.7); border-bottom:1px solid rgba(216,206,176,.7); }
-body.homepage .track-record__item { min-width:0 !important; display:grid !important; grid-template-rows:auto auto 1fr !important; align-items:start !important; row-gap:14px !important; padding:24px 22px 26px !important; overflow-wrap:anywhere; }
-body.homepage .track-record__item:not(:first-child){ border-left:1px solid rgba(216,206,176,.52); }
-body.homepage .track-record__label { font-size:11px !important; letter-spacing:.16em !important; color:#3D7070 !important; }
-body.homepage .track-record__value { font-size:clamp(30px,2.5vw,44px) !important; line-height:1.03 !important; color:#1E4040 !important; }
-body.homepage .track-record__description { margin:0 !important; font-size:16px !important; line-height:1.62 !important; color:rgba(30,64,64,.84) !important; }
+/* Track record refined proof strip */
+body.homepage #stats.track-record { background:#FAF6EE !important; border:0 !important; box-shadow:none !important; outline:0 !important; }
+body.homepage #stats .home-section-shell { max-width:min(1240px, calc(100vw - clamp(40px, 8vw, 132px))) !important; padding-inline:clamp(28px,3vw,44px) !important; }
+body.homepage #stats .track-record__header { display:grid !important; grid-template-columns:minmax(0,48%) minmax(0,42%) !important; column-gap:clamp(32px,4vw,72px) !important; row-gap:clamp(22px,2.5vw,30px) !important; align-items:start !important; margin:0 !important; }
+body.homepage #stats .track-record__title { max-width:680px !important; }
+body.homepage #stats .track-record__intro { margin:clamp(28px,2.8vw,38px) 0 0 !important; max-width:600px !important; }
+body.homepage #stats .track-record__grid { display:grid !important; grid-template-columns:repeat(4,minmax(0,1fr)) !important; gap:0 !important; margin-top:clamp(48px,5vw,64px) !important; border-top:1px solid rgba(216,206,176,.45) !important; border-bottom:1px solid rgba(216,206,176,.45) !important; border-left:0 !important; border-right:0 !important; }
+body.homepage #stats .track-record__item { min-width:0 !important; min-height:0 !important; display:grid !important; grid-template-rows:auto auto auto !important; align-items:start !important; justify-content:start !important; row-gap:0 !important; padding:30px 26px 32px !important; border:0 !important; }
+body.homepage #stats .track-record__item:not(:first-child){ border-left:1px solid rgba(216,206,176,.35) !important; }
+body.homepage #stats .track-record__label { font-size:11px !important; font-weight:400 !important; text-transform:uppercase !important; letter-spacing:.16em !important; color:rgba(61,112,112,.9) !important; margin:0 0 24px !important; }
+body.homepage #stats .track-record__value { margin:0 0 16px !important; font-size:clamp(34px,3.2vw,48px) !important; line-height:1 !important; font-weight:300 !important; color:#1E4040 !important; white-space:nowrap !important; }
+body.homepage #stats .track-record__description { margin:0 !important; font-size:15px !important; line-height:1.56 !important; color:rgba(30,64,64,.84) !important; max-width:34ch !important; }
 
 /* Firm + principles hierarchy */
 body.homepage .firm-editorial-section { background:#F2ECD8 !important; }
@@ -5377,11 +5382,12 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
 
 @media (max-width: 1024px){
   body.homepage #strategy .strat__hd { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
-  body.homepage .track-record__header { grid-template-columns:1fr !important; }
-  body.homepage .track-record__intro { margin:0 !important; max-width:600px !important; }
-  body.homepage .track-record__grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
-  body.homepage .track-record__item:nth-child(odd){ border-left:0 !important; }
-  body.homepage .track-record__item:nth-child(n+3){ border-top:1px solid rgba(216,206,176,.4) !important; }
+  body.homepage #stats .track-record__header { grid-template-columns:1fr !important; }
+  body.homepage #stats .track-record__intro { margin:0 !important; max-width:600px !important; }
+  body.homepage #stats .track-record__grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  body.homepage #stats .track-record__item { padding:30px 24px !important; }
+  body.homepage #stats .track-record__item:nth-child(odd){ border-left:0 !important; }
+  body.homepage #stats .track-record__item:nth-child(n+3){ border-top:1px solid rgba(216,206,176,.35) !important; }
 }
 
 @media (max-width: 1024px){
@@ -5401,9 +5407,10 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
 @media (max-width: 768px){
   body.homepage .home-hero__actions{ flex-direction:column; align-items:flex-start !important; gap:14px !important; }
   body.homepage #strategy .strat__hd { grid-template-columns:1fr !important; row-gap: clamp(24px, 4vw, 32px) !important; }
-  body.homepage .track-record__grid { grid-template-columns:1fr !important; }
-  body.homepage .track-record__item { border-left:0 !important; }
-  body.homepage .track-record__item:not(:first-child){ border-top:1px solid rgba(216,206,176,.42) !important; }
+  body.homepage #stats .track-record__grid { grid-template-columns:1fr !important; margin-top:clamp(32px,7vw,48px) !important; }
+  body.homepage #stats .track-record__item { border-left:0 !important; padding:28px 0 !important; }
+  body.homepage #stats .track-record__value { font-size:clamp(30px,9vw,40px) !important; }
+  body.homepage #stats .track-record__item:not(:first-child){ border-top:1px solid rgba(216,206,176,.35) !important; }
 }
 </style>
 
@@ -5527,8 +5534,8 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
       </article>
       <article class="track-record__item rev d3" role="listitem">
         <div class="track-record__label">SENIOR CONTINUITY</div>
-        <p class="track-record__value">17-20 years</p>
-        <p class="track-record__description">Four founding partners and senior IC members have worked together for nearly two decades.</p>
+        <p class="track-record__value">17-20</p>
+        <p class="track-record__description">Years of senior continuity among four founding partners and senior IC members.</p>
       </article>
     </div>
   </div>
