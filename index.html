@@ -2198,6 +2198,114 @@ body.homepage #strategy .sg {
   max-width: none;
   margin-inline: 0;
 }
+body.homepage #strategy .strat__hd {
+  grid-template-columns: minmax(260px, 3.1fr) minmax(0, 8.9fr);
+  gap: clamp(20px, 2.2vw, 30px);
+  margin-bottom: 0;
+}
+body.homepage #strategy .strat__lead {
+  gap: clamp(8px, 0.8vw, 12px);
+  max-width: 24ch;
+}
+body.homepage #strategy .strat__hed {
+  font-size: clamp(38px, 3.1vw, 50px);
+  line-height: 1.03;
+  letter-spacing: .004em;
+  text-wrap: initial;
+}
+body.homepage #strategy .strat__content {
+  padding-top: clamp(2px, .3vw, 6px);
+}
+body.homepage #strategy .strat__intro {
+  max-width: clamp(560px, 41vw, 620px);
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.6;
+}
+body.homepage #strategy .strat__grid {
+  margin-top: clamp(16px, 1.7vw, 24px);
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(216, 206, 176, .72);
+  border-bottom: 1px solid rgba(216, 206, 176, .72);
+  background: transparent;
+}
+body.homepage #strategy .strat__grid > .sg {
+  border: 0;
+  border-radius: 0;
+  min-height: 0;
+  background: rgba(250, 246, 238, .62);
+}
+body.homepage #strategy .strat__grid > .sg:nth-child(even) {
+  background: rgba(242, 236, 216, .88);
+}
+body.homepage #strategy .strat__grid > .sg + .sg {
+  border-top: 1px solid rgba(216, 206, 176, .64);
+}
+body.homepage #strategy .strat__grid > .sg:hover {
+  background: rgba(250, 246, 238, .78);
+}
+body.homepage #strategy .sg__content {
+  display: grid;
+  grid-template-columns: minmax(56px, 9%) minmax(220px, 34%) minmax(0, 57%);
+  align-items: center;
+  column-gap: clamp(14px, 1.8vw, 28px);
+  row-gap: 0;
+  padding: clamp(48px, 3.6vw, 58px) clamp(12px, 1.4vw, 22px) clamp(48px, 3.6vw, 58px) clamp(8px, .8vw, 14px);
+}
+body.homepage #strategy .sg__n {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: .14em;
+  line-height: 1;
+  font-weight: 500;
+  color: #1E4040;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  align-self: center;
+}
+body.homepage #strategy .sg__title {
+  margin: 0;
+  font-size: clamp(22px, 1.65vw, 27px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0F2206;
+  text-wrap: nowrap;
+}
+body.homepage #strategy .sg__body {
+  margin: 0;
+  max-width: 44ch;
+  font-size: clamp(16px, 1.08vw, 18px);
+  line-height: 1.58;
+  color: #1E4040;
+}
+@media (max-width: 1024px){
+  body.homepage #strategy .strat__hd {
+    grid-template-columns: minmax(220px, 3fr) minmax(0, 9fr) !important;
+    gap: clamp(18px, 2vw, 24px);
+  }
+  body.homepage #strategy .sg__content {
+    grid-template-columns: minmax(52px, 10%) minmax(180px, 35%) minmax(0, 55%);
+    padding-block: clamp(38px, 4.4vw, 52px);
+  }
+}
+@media (max-width: 768px){
+  body.homepage #strategy .strat__lead { max-width: none; }
+  body.homepage #strategy .strat__hed {
+    font-size: clamp(30px, 8.4vw, 38px);
+    line-height: 1.07;
+  }
+  body.homepage #strategy .strat__intro {
+    max-width: none;
+    line-height: 1.58;
+  }
+  body.homepage #strategy .sg__content {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    padding: 30px 0;
+  }
+  body.homepage #strategy .sg__title { text-wrap: balance; }
+  body.homepage #strategy .sg__body { max-width: none; }
+}
 body.homepage #strategy .strat__actions {
   grid-column: 2;
   width: 100%;
@@ -5311,7 +5419,7 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
     <div class="strat__hd">
       <div class="strat__lead">
         <div class="eyebrow eyebrow--red rev">INVESTMENT STRATEGY</div>
-        <h2 class="strat__hed rev d1 sv-section-title">WHERE CONVENTIONAL CREDIT FAILS, COLLATERAL AND PROCESS DEFINE RECOVERY.</h2>
+        <h2 class="strat__hed rev d1 sv-section-title">WHERE CONVENTIONAL<br>CREDIT FAILS,<br>COLLATERAL AND PROCESS<br>DEFINE RECOVERY.</h2>
       </div>
       <div class="strat__content">
         <div class="strat__intro home-copy-frame rev d2">
