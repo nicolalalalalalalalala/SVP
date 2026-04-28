@@ -24,6 +24,7 @@ body {
 /* ── Design system variables ────────────────────────────────── */
 :root {
   --sv-cinnabar:         #C93B2A;
+  --sv-cinnabar-dark:    #8A1F12;
   --sv-qing-dark:        #1E4040;
   --sv-ink-green-dark:   #0F2206;
   --sv-xuan-paper-light: #FAF6EE;
@@ -203,10 +204,29 @@ body {
   opacity: 0.85;
   text-decoration: none;
   text-transform: none !important;
-  transition: opacity 0.18s;
+  position: relative;
+  transition: color 0.2s, opacity 0.2s;
 }
-#site-header-mount #nav .nav__zh:hover {
+#site-header-mount #nav .nav__zh::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: var(--sv-cinnabar);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s;
+}
+#site-header-mount #nav .nav__zh:hover,
+#site-header-mount #nav .nav__zh:focus-visible {
+  color: var(--sv-cinnabar-dark) !important;
   opacity: 1;
+}
+#site-header-mount #nav .nav__zh:hover::after,
+#site-header-mount #nav .nav__zh:focus-visible::after {
+  transform: scaleX(1);
 }
 
 /* EN toggle on CN pages — DIN, subdued */
@@ -220,6 +240,10 @@ body {
 }
 #site-header-mount #nav.nav--cn .nav__zh:hover {
   opacity: 1;
+}
+#site-header-mount #nav.nav--cn .nav__zh.active::after,
+#site-header-mount #nav.nav--cn .nav__zh[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 
 /* lang-toggle alias */
@@ -260,7 +284,7 @@ body {
   letter-spacing: 0.16em !important;
 }
 #site-header-mount #nav .nav__lp:focus-visible {
-  outline: 2px solid var(--sv-qing-dark);
+  outline: 2px solid var(--sv-cinnabar);
   outline-offset: 2px;
 }
 
