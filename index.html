@@ -4463,25 +4463,25 @@ body.homepage .homepage-section-stack > section::after {
 }
 </style>
 <style id="homepage-firm-editorial-density">
-body.homepage .firm-editorial-section { padding-top: clamp(42px,4.8vw,68px) !important; padding-bottom: clamp(72px,8vw,112px) !important; }
+body.homepage .firm-editorial-section { padding-top: clamp(80px,8vw,120px) !important; padding-bottom: clamp(72px,8vw,112px) !important; }
 body.homepage .firm-editorial-section .home-section-shell--soft { border: none !important; }
-body.homepage .firm-editorial-beat { display:grid; grid-template-columns:minmax(320px,44%) minmax(360px,46%); justify-content:space-between; gap:clamp(24px,3vw,52px); align-items:center; }
+body.homepage .firm-editorial-beat { display:grid; grid-template-columns:minmax(0,48%) minmax(0,44%); justify-content:space-between; gap:clamp(72px,8vw,140px); align-items:start; }
 body.homepage .firm-editorial-beat > :first-child { max-width:620px; }
 body.homepage .firm-editorial-beat .eyebrow { margin-bottom: clamp(10px,1vw,14px); }
 body.homepage .firm-editorial-beat .eyebrow::after { width: 38px; margin-top: 10px; }
-body.homepage .firm-editorial-beat .about__hed { font-size: clamp(36px,3.2vw,54px); line-height: 1.08; }
-body.homepage .firm-editorial-beat .about__body { max-width:600px; justify-self:start; align-self:center; }
+body.homepage .firm-editorial-beat .about__hed { font-size: clamp(34px,3vw,50px); line-height: 1.08; }
+body.homepage .firm-editorial-beat .about__body { max-width:620px; justify-self:start; align-self:start; padding-top:clamp(8px,1.1vw,18px); }
 body.homepage .firm-editorial-beat .about__body p { max-width:600px; color:#1E4040; line-height:1.6; }
-body.homepage .firm-stats-row { margin-top:clamp(40px,4.2vw,58px); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-top:1px solid rgba(216,206,176,.72); border-bottom:1px solid rgba(216,206,176,.72); }
-body.homepage .firm-stat { min-width:0; padding:clamp(24px,2.2vw,32px) clamp(14px,1.2vw,20px); display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:clamp(8px,0.8vw,12px); }
-body.homepage .firm-stat:not(:first-child) { border-left:1px solid rgba(216,206,176,.24); }
-body.homepage .firm-stat__figure { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(44px,4.2vw,64px); font-weight:280; line-height:1.02; letter-spacing:-0.01em; color:#1E4040; white-space:nowrap; }
+body.homepage .firm-stats-row { margin-top:clamp(56px,5vw,84px); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-top:1px solid rgba(216,206,176,.56); border-bottom:1px solid rgba(216,206,176,.56); }
+body.homepage .firm-stat { min-width:0; padding:clamp(42px,3vw,52px) clamp(14px,1.2vw,20px); display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:clamp(18px,1.7vw,24px); }
+body.homepage .firm-stat:not(:first-child) { border-left:1px solid rgba(216,206,176,.3); }
+body.homepage .firm-stat__figure { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(48px,4.5vw,68px); font-weight:300; line-height:1; letter-spacing:-0.01em; color:#1E4040; white-space:nowrap; }
 body.homepage .firm-stat__sup { font-size:1em; vertical-align:baseline; line-height:1; }
-body.homepage .firm-stat__label { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(11px,0.76vw,12px); font-weight:380; letter-spacing:0.08em; line-height:1.45; text-transform:uppercase; color:rgba(30,64,64,.74); max-width:24ch; }
-body.homepage .firm-stat:nth-child(2) .firm-stat__label { letter-spacing:0.095em; }
+body.homepage .firm-stat__label { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(13px,0.9vw,14px); font-weight:380; letter-spacing:0.055em; line-height:1.4; text-transform:uppercase; color:rgba(61,112,112,.88); max-width:22ch; }
+body.homepage .firm-stat:nth-child(2) .firm-stat__label { letter-spacing:0.06em; }
 body.homepage .firm-editorial-divider { margin:64px 0; border:0; border-top:1px solid #D8CEB0; }
 @media (max-width:1024px){ body.homepage .firm-editorial-beat{grid-template-columns:1fr; gap:24px;} body.homepage .firm-stats-row{grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:34px;} body.homepage .firm-stat:nth-child(odd){border-left:0;} body.homepage .firm-stat:nth-child(n+3){border-top:1px solid rgba(216,206,176,.24);} }
-@media (max-width:767px){ body.homepage .firm-editorial-section{padding-top:48px !important; padding-bottom:64px !important;} body.homepage .firm-stats-row{margin-top:30px; grid-template-columns:1fr; border-bottom:1px solid rgba(216,206,176,.72);} body.homepage .firm-stat{padding:22px 0; gap:8px;} body.homepage .firm-stat:not(:first-child){border-left:0; border-top:1px solid rgba(216,206,176,.36);} body.homepage .firm-editorial-divider{margin:52px 0;} }
+@media (max-width:767px){ body.homepage .firm-editorial-section{padding-top:clamp(64px,12vw,88px) !important; padding-bottom:64px !important;} body.homepage .firm-stats-row{margin-top:30px; grid-template-columns:1fr; border-bottom:1px solid rgba(216,206,176,.72);} body.homepage .firm-stat{padding:22px 0; gap:8px;} body.homepage .firm-stat:not(:first-child){border-left:0; border-top:1px solid rgba(216,206,176,.36);} body.homepage .firm-editorial-divider{margin:52px 0;} }
 </style>
 
 <style id="homepage-hero-nav-tightening">
@@ -5342,14 +5342,33 @@ body.homepage #strategy .strat__hd { display:grid !important; grid-template-colu
 body.homepage #strategy .strat__lead { max-width: 560px !important; }
 body.homepage #strategy .strat__hed { font-size: clamp(34px, 3.1vw, 50px) !important; line-height:1.1 !important; }
 body.homepage #strategy .strat__content { max-width: 680px !important; }
-body.homepage #strategy .strat__grid { grid-column:1 / -1 !important; margin-top: clamp(48px, 5vw, 80px) !important; }
+body.homepage #strategy .strat__grid { grid-column:1 / -1 !important; margin-top: clamp(48px, 5vw, 72px) !important; }
 
 /* Strategy rows */
-body.homepage #strategy .strat__grid>.sg { min-height:auto !important; padding-block:clamp(20px,2.4vw,30px) !important; border-color:rgba(216,206,176,.78) !important; }
-body.homepage #strategy .strat__grid>.sg:nth-child(odd){ background:#FAF6EE !important; }
-body.homepage #strategy .strat__grid>.sg:nth-child(even){ background:#F2ECD8 !important; }
-body.homepage #strategy .sg__n { font-size:11px !important; letter-spacing:.16em !important; color:#3D7070 !important; }
-body.homepage #strategy .sg__title { font-size:clamp(20px,1.7vw,28px) !important; }
+body.homepage #strategy .strat__grid{
+  border-top:1px solid rgba(216,206,176,.56) !important;
+  border-bottom:1px solid rgba(216,206,176,.56) !important;
+}
+body.homepage #strategy .strat__grid>.sg{
+  min-height:auto !important;
+  height:auto !important;
+  padding-block:clamp(36px,2.6vw,44px) !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+body.homepage #strategy .strat__grid>.sg + .sg{ border-top:1px solid rgba(216,206,176,.56) !important; }
+body.homepage #strategy .strat__grid>.sg:nth-child(odd),
+body.homepage #strategy .strat__grid>.sg:nth-child(even){ background:transparent !important; }
+body.homepage #strategy .sg__content{
+  grid-template-columns:7% 33% 60% !important;
+  align-items:center !important;
+  gap:clamp(14px,1.6vw,22px) !important;
+  padding:0 !important;
+}
+body.homepage #strategy .sg__n { font-size:11.5px !important; letter-spacing:.08em !important; color:#1E4040 !important; padding-top:0 !important; }
+body.homepage #strategy .sg__title { font-size:clamp(22px,1.7vw,26px) !important; font-weight:600 !important; color:#0F2206 !important; text-transform:none !important; line-height:1.2 !important; }
+body.homepage #strategy .sg__body { font-size:clamp(15.5px,1.1vw,17px) !important; line-height:1.5 !important; color:#1E4040 !important; max-width:58ch !important; }
 
 /* Track record refined proof strip */
 body.homepage #stats.track-record { background:#FAF6EE !important; border:0 !important; box-shadow:none !important; outline:0 !important; }
@@ -5366,14 +5385,14 @@ body.homepage #stats .track-record__description { margin:0 !important; font-size
 
 /* Firm + principles hierarchy */
 body.homepage .firm-editorial-section { background:#F2ECD8 !important; }
-body.homepage .firm-stats-row { border-top:1px solid rgba(216,206,176,.72); border-bottom:1px solid rgba(216,206,176,.72); }
+body.homepage .firm-stats-row { border-top:1px solid rgba(216,206,176,.56); border-bottom:1px solid rgba(216,206,176,.56); }
 body.homepage .firm-stat { min-width:0; }
-body.homepage .firm-stat__figure { font-size:clamp(44px,4.2vw,64px) !important; color:#1E4040 !important; white-space:nowrap !important; }
-body.homepage .firm-stat__label { color:rgba(30,64,64,.82) !important; }
+body.homepage .firm-stat__figure { font-size:clamp(48px,4.5vw,68px) !important; font-weight:300 !important; line-height:1 !important; color:#1E4040 !important; white-space:nowrap !important; }
+body.homepage .firm-stat__label { font-size:clamp(13px,0.9vw,14px) !important; line-height:1.4 !important; letter-spacing:0.055em !important; color:rgba(61,112,112,.88) !important; }
 body.homepage .firm-stat__label br { display:block; }
-body.homepage .firm-editorial-beat { gap:clamp(28px,3.2vw,44px) !important; }
+body.homepage .firm-editorial-beat { gap:clamp(72px,8vw,140px) !important; }
 body.homepage .firm-editorial-beat .eyebrow { margin-bottom: clamp(14px, 1.6vw, 22px) !important; }
-body.homepage .firm-stats-row { margin-top: clamp(56px, 5vw, 88px) !important; }
+body.homepage .firm-stats-row { margin-top: clamp(56px, 5vw, 84px) !important; }
 body.homepage .firm-editorial-divider { margin: var(--section-gap-md) 0 !important; }
 
 /* CDD transition */
@@ -5382,22 +5401,28 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
 
 @media (max-width: 1024px){
   body.homepage #strategy .strat__hd { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
-  body.homepage #stats .track-record__header { grid-template-columns:1fr !important; }
-  body.homepage #stats .track-record__intro { margin:0 !important; max-width:600px !important; }
-  body.homepage #stats .track-record__grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
-  body.homepage #stats .track-record__item { padding:30px 24px !important; }
-  body.homepage #stats .track-record__item:nth-child(odd){ border-left:0 !important; }
-  body.homepage #stats .track-record__item:nth-child(n+3){ border-top:1px solid rgba(216,206,176,.35) !important; }
+  body.homepage #strategy .strat__grid>.sg{ padding-block:clamp(32px,3.8vw,40px) !important; }
+  body.homepage #strategy .sg__content{
+    grid-template-columns:minmax(52px,8%) minmax(220px,34%) minmax(0,58%) !important;
+    align-items:start !important;
+  }
+  body.homepage .track-record__header { grid-template-columns:1fr !important; }
+  body.homepage .track-record__intro { margin:0 !important; max-width:600px !important; }
+  body.homepage .track-record__grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  body.homepage .track-record__item:nth-child(odd){ border-left:0 !important; }
+  body.homepage .track-record__item:nth-child(n+3){ border-top:1px solid rgba(216,206,176,.4) !important; }
 }
 
 @media (max-width: 1024px){
   body.homepage :is(#about, #strategy, #stats, #cdd) { padding-block: clamp(64px, 8vw, 92px) !important; }
+  body.homepage #about { padding-top: clamp(80px, 8vw, 120px) !important; }
   body.homepage .firm-stats-row,
   body.homepage #strategy .strat__grid,
   body.homepage .track-record__grid { margin-top: clamp(40px, 4.8vw, 64px) !important; }
 }
 @media (max-width: 768px){
   body.homepage :is(#about, #strategy, #stats, #cdd) { padding-block: clamp(56px, 10vw, 80px) !important; }
+  body.homepage #about { padding-top: clamp(64px, 12vw, 88px) !important; }
   body.homepage #cdd { margin-top: clamp(40px, 8vw, 64px) !important; }
   body.homepage .firm-stats-row,
   body.homepage #strategy .strat__grid,
@@ -5407,10 +5432,17 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
 @media (max-width: 768px){
   body.homepage .home-hero__actions{ flex-direction:column; align-items:flex-start !important; gap:14px !important; }
   body.homepage #strategy .strat__hd { grid-template-columns:1fr !important; row-gap: clamp(24px, 4vw, 32px) !important; }
-  body.homepage #stats .track-record__grid { grid-template-columns:1fr !important; margin-top:clamp(32px,7vw,48px) !important; }
-  body.homepage #stats .track-record__item { border-left:0 !important; padding:28px 0 !important; }
-  body.homepage #stats .track-record__value { font-size:clamp(30px,9vw,40px) !important; }
-  body.homepage #stats .track-record__item:not(:first-child){ border-top:1px solid rgba(216,206,176,.35) !important; }
+  body.homepage #strategy .strat__grid{ margin-top:clamp(32px,7vw,48px) !important; }
+  body.homepage #strategy .strat__grid>.sg{ padding-block:clamp(28px,7vw,36px) !important; }
+  body.homepage #strategy .sg__content{
+    grid-template-columns:1fr !important;
+    align-items:start !important;
+    gap:10px !important;
+  }
+  body.homepage #strategy .sg__body{ max-width:100% !important; }
+  body.homepage .track-record__grid { grid-template-columns:1fr !important; }
+  body.homepage .track-record__item { border-left:0 !important; }
+  body.homepage .track-record__item:not(:first-child){ border-top:1px solid rgba(216,206,176,.42) !important; }
 }
 </style>
 
@@ -5447,7 +5479,7 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
     </div>
 
     <div class="firm-stats-row rev" role="list" aria-label="Institutional proof points">
-      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">20+</p><p class="firm-stat__label">YEARS IN CHINA PRIVATE CREDIT</p></article>
+      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">20+</p><p class="firm-stat__label">YEARS IN CHINA PRIVATE<br>CREDIT</p></article>
       <article class="firm-stat" role="listitem"><p class="firm-stat__figure">$2B+</p><p class="firm-stat__label">MANAGED ACROSS 6<br>FUND VINTAGES</p></article>
       <article class="firm-stat" role="listitem"><p class="firm-stat__figure">50+</p><p class="firm-stat__label">ASSET-BACKED CREDIT<br>DEALS</p></article>
       <article class="firm-stat" role="listitem"><p class="firm-stat__figure">30-60%</p><p class="firm-stat__label">TYPICAL LTV / CTV</p></article>
