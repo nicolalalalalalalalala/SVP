@@ -4354,6 +4354,19 @@ body.homepage .homepage-section-stack > section::after {
   background: transparent !important;
 }
 </style>
+<style id="homepage-firm-editorial-density">
+body.homepage .firm-editorial-section { padding-top: 96px !important; padding-bottom: 96px !important; }
+body.homepage .firm-editorial-section .home-section-shell--soft { border: none !important; }
+body.homepage .firm-editorial-beat { display:grid; grid-template-columns:minmax(280px,1fr) minmax(360px,560px); gap:clamp(28px,4vw,80px); align-items:start; }
+body.homepage .firm-stats-row { margin-top:96px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(20px,2vw,34px); }
+body.homepage .firm-stat__figure { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(48px,4.5vw,64px); font-weight:300; line-height:0.98; letter-spacing:-0.02em; color:#0F2206; }
+body.homepage .firm-stat__sup { font-size:0.7em; vertical-align:super; line-height:0; }
+body.homepage .firm-stat__label { margin:16px 0 0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:11px; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:rgba(15,34,6,0.7); }
+body.homepage .firm-editorial-divider { margin:64px 0; border:0; border-top:1px solid #D8CEB0; }
+@media (max-width:1024px){ body.homepage .firm-editorial-beat{grid-template-columns:1fr;} body.homepage .firm-stats-row{grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media (max-width:767px){ body.homepage .firm-editorial-section{padding-top:64px !important; padding-bottom:64px !important;} body.homepage .firm-stats-row{margin-top:72px; grid-template-columns:1fr;} body.homepage .firm-editorial-divider{margin:52px 0;} }
+</style>
+
 <style id="homepage-hero-nav-tightening">
 body.homepage {
   --cinnabar: #C93B2A;
@@ -5119,34 +5132,35 @@ body.homepage #cdd .cdd-live__dot { background: #c93b2a; }
 
 <div class="homepage-section-stack">
 <!-- PLATFORM -->
-<section id="about" class="platform-section">
+<section id="about" class="platform-section firm-editorial-section">
   <div class="wrap home-section-shell home-section-shell--soft">
-    <div class="platform__intro">
+    <div class="firm-editorial-beat">
       <div>
-        <div class="eyebrow eyebrow--red rev">THE PLATFORM</div>
-        <h2 class="about__hed rev d1 sv-section-title">Built around collateral, enforcement, and recovery.</h2>
+        <div class="eyebrow eyebrow--red rev">THE FIRM</div>
+        <h2 class="about__hed rev d1 sv-section-title">ROOTED IN TWO<br>WORLDS.</h2>
       </div>
       <div class="about__body home-copy-frame rev d2">
-        <p>ShoreVest combines onshore sourcing, legal structuring, collateral analysis, and workout execution to invest in asset-backed opportunistic credit in China.</p>
-        <p>The platform is organised around three underwriting disciplines that shape every investment from origination to exit.</p>
+        <p>An institutional private credit platform built for complex recoveries across China. Our senior team has operated through market dislocations, restructurings, and policy transitions since 2004 — with the current platform established in 2016 across collateral-backed lending, asset restructuring, and NPL resolution.</p>
       </div>
     </div>
-    <div class="platform__principles" role="list" aria-label="Platform principles">
-      <article class="platform__module rev" role="listitem">
-        <div class="platform__module-n">01</div>
-        <h3 class="platform__module-title">Collateral discipline</h3>
-        <p class="platform__module-body">Investments begin with asset value, entry basis, and multiple recovery paths, not optimistic refinancing assumptions.</p>
-      </article>
-      <article class="platform__module rev d1" role="listitem">
-        <div class="platform__module-n">02</div>
-        <h3 class="platform__module-title">Legal enforceability</h3>
-        <p class="platform__module-body">Structures are underwritten around creditor rights, documentation, jurisdiction, and practical enforcement mechanics.</p>
-      </article>
-      <article class="platform__module rev d2" role="listitem">
-        <div class="platform__module-n">03</div>
-        <h3 class="platform__module-title">Local execution</h3>
-        <p class="platform__module-body">Origination, monitoring, restructuring, and recovery depend on onshore relationships and operating capability.</p>
-      </article>
+
+    <div class="firm-stats-row rev" role="list" aria-label="Institutional proof points">
+      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">20+</p><p class="firm-stat__label">YEARS IN CHINA PRIVATE CREDIT</p></article>
+      <article class="firm-stat" role="listitem"><p class="firm-stat__figure"><span class="firm-stat__sup">$</span>2BN+</p><p class="firm-stat__label">MANAGED ACROSS 6 FUND VINTAGES</p></article>
+      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">50+</p><p class="firm-stat__label">ASSET-BACKED CREDIT DEALS</p></article>
+      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">30–60<span class="firm-stat__sup">%</span></p><p class="firm-stat__label">TYPICAL LTV / CTV</p></article>
+    </div>
+
+    <hr class="firm-editorial-divider" aria-hidden="true">
+
+    <div class="firm-editorial-beat">
+      <div>
+        <div class="eyebrow eyebrow--red rev">HOW WE WORK</div>
+        <h2 class="about__hed rev d1 sv-section-title">VISION &amp; PRINCIPLES</h2>
+      </div>
+      <div class="about__body home-copy-frame rev d2">
+        <p>To deliver consistent returns across cycles in China's credit markets through a long-term platform with the local capability to source, analyze, and execute with discipline. The approach is grounded in trust — with the networks that originate opportunities, and with the investors who commit capital to the platform.</p>
+      </div>
     </div>
   </div>
 </section>
