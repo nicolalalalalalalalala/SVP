@@ -4940,6 +4940,145 @@ body.homepage #strategy .strat__actions .strat__cta-inline .cta__ring {
   }
 }
 </style>
+
+<style id="homepage-platform-cleanup-2026-04">
+body.homepage .platform-section,
+body.homepage .strategy-section,
+body.homepage .track-record {
+  padding: clamp(42px, 5.2vw, 72px) 0;
+}
+body.homepage .platform-section { background: #faf6ee; }
+body.homepage .strategy-section { background: #f2ecd8; }
+body.homepage .track-record { background: #faf6ee; }
+
+body.homepage .platform__intro,
+body.homepage #strategy .strat__hd,
+body.homepage .track-record__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.2vw, 40px);
+}
+body.homepage .platform__principles {
+  margin-top: clamp(26px, 3vw, 38px);
+  border-top: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+}
+body.homepage .platform__module {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 10px 18px;
+  padding: clamp(16px, 2vw, 22px) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+}
+body.homepage .platform__module-n {
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #c93b2a;
+  padding-top: 3px;
+}
+body.homepage .platform__module-title {
+  font-size: clamp(20px, 2.1vw, 26px);
+  line-height: 1.2;
+  color: #1e4040;
+}
+body.homepage .platform__module-body {
+  grid-column: 2;
+  color: #0f2206;
+  max-width: 68ch;
+}
+
+body.homepage #strategy .strat__content { margin-top: 0; }
+body.homepage #strategy .strat__intro p { max-width: 66ch; }
+body.homepage #strategy .strat__grid {
+  margin-top: clamp(22px, 2.8vw, 32px);
+  border-top: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+}
+body.homepage #strategy .sg {
+  padding: clamp(16px, 2vw, 22px) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+}
+body.homepage #strategy .sg__content {
+  display: grid;
+  grid-template-columns: 64px minmax(220px, 1.1fr) minmax(0, 1.9fr);
+  gap: 14px 18px;
+  align-items: start;
+}
+body.homepage #strategy .sg__n { color: #c93b2a; font-size: 11px; letter-spacing: .18em; padding-top: 2px; }
+body.homepage #strategy .sg__title { font-size: clamp(20px, 2vw, 25px); color: #1e4040; text-transform: none; letter-spacing: .01em; }
+body.homepage #strategy .sg__body { color: #0f2206; max-width: 60ch; }
+body.homepage #strategy .strat__actions { display: none; }
+
+body.homepage .track-record__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+}
+body.homepage .track-record__item {
+  border-right: 1px solid color-mix(in srgb, var(--rule) 64%, transparent);
+}
+body.homepage .track-record__item:last-child { border-right: 0; }
+body.homepage .track-record__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: #1e4040;
+}
+body.homepage .track-record__value {
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.05;
+  color: #0f2206;
+}
+body.homepage .track-record__description {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #1e4040;
+}
+
+body.homepage #cdd { background: #1e4040; }
+body.homepage #cdd .cdd-editorial__card {
+  background: linear-gradient(160deg, #1e4040 0%, #163233 60%, #102425 100%);
+  border: 1px solid rgba(201, 59, 42, 0.22);
+}
+body.homepage #cdd .cdd-franchise__headline {
+  font-size: clamp(36px, 4.1vw, 54px);
+  line-height: 1.02;
+  letter-spacing: .02em;
+}
+body.homepage #cdd .cdd-feature__label,
+body.homepage #cdd .cdd-feature__issue,
+body.homepage #cdd .cdd-feature__date {
+  letter-spacing: .14em;
+}
+body.homepage #cdd .cdd-live__dot { background: #c93b2a; }
+
+@media (max-width: 980px) {
+  body.homepage .platform__intro,
+  body.homepage #strategy .strat__hd,
+  body.homepage .track-record__header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body.homepage #strategy .sg__content {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+  body.homepage #strategy .sg__body {
+    grid-column: 2;
+  }
+  body.homepage .track-record__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body.homepage .track-record__item:nth-child(2n) { border-right: 0; }
+}
+@media (max-width: 640px) {
+  body.homepage .platform__module,
+  body.homepage #strategy .sg__content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  body.homepage .platform__module-body,
+  body.homepage #strategy .sg__body { grid-column: auto; }
+  body.homepage .track-record__grid { grid-template-columns: 1fr; }
+  body.homepage .track-record__item { border-right: 0; }
+}
+</style>
 </head>
 <body id="top" class="homepage">
 
@@ -4964,98 +5103,108 @@ body.homepage #strategy .strat__actions .strat__cta-inline .cta__ring {
 </section>
 
 <div class="homepage-section-stack">
-<!-- ABOUT -->
-<section id="about">
+<!-- PLATFORM -->
+<section id="about" class="platform-section">
   <div class="wrap home-section-shell home-section-shell--soft">
-    <div class="about__intro about__intro--overview">
+    <div class="platform__intro">
       <div>
-        <div class="eyebrow eyebrow--red rev">THE FIRM</div>
-        <h2 class="about__hed rev d1 sv-section-title">Rooted in two worlds.</h2>
+        <div class="eyebrow eyebrow--red rev">THE PLATFORM</div>
+        <h2 class="about__hed rev d1 sv-section-title">Rooted in China. Built around collateral, enforcement, and recovery.</h2>
       </div>
       <div class="about__body home-copy-frame rev d2">
-        <p>
-          An institutional private credit platform built for complex recoveries across China. Our senior team has operated through market dislocations, restructurings, and policy transitions since 2004 &mdash; with the current platform established in 2016 across collateral-backed lending, asset restructuring, and NPL resolution.
-        </p>
+        <p>ShoreVest combines onshore sourcing, legal structuring, collateral analysis, and workout execution to invest in asset-backed opportunistic credit in China. The platform is designed around three non-negotiables: collateral discipline, legal enforceability, and local execution.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="principles">
-  <div class="wrap home-section-shell home-section-shell--soft">
-    <div class="principles__toprow">
-      <div class="principles__heading">
-        <div class="eyebrow eyebrow--red rev">HOW WE WORK</div>
-        <h2 class="about__hed rev d1 sv-section-title">Vision &amp; Principles</h2>
-      </div>
-      <div class="about__body home-copy-frame rev d2 principles__copy">
-        <p>
-          To deliver consistent returns across cycles in China&rsquo;s credit markets through a long-term platform with the local capability to source, analyze, and execute with discipline. The approach is grounded in trust &mdash; with the networks that originate opportunities, and with the investors who commit capital to the platform.
-        </p>
-        
-      </div>
-    </div>
-    <!-- Three institutional principle modules -->
-    <div class="about__cols principles__grid">
-      <div class="ac rev" id="ac-sourcing" role="button" tabindex="0" data-interactive-card>
-        <div class="ac__meta">01 /</div>
-        <h3 class="ac__title">Proprietary Sourcing</h3>
-        <p class="ac__body">Two decades of onshore relationships generate opportunities that never reach broad market processes.</p>
-      </div>
-      <div class="ac rev d1" id="ac-underwriting" role="button" tabindex="0" data-interactive-card>
-        <div class="ac__meta">02 /</div>
-        <h3 class="ac__title">Disciplined Analysis</h3>
-        <p class="ac__body">Every position is underwritten to protected downside, enforceable collateral, and a credible work-out path before capital moves.</p>
-      </div>
-      <div class="ac rev d2" id="ac-alignment" role="button" tabindex="0" data-interactive-card>
-        <div class="ac__meta">03 /</div>
-        <h3 class="ac__title">Alignment&nbsp;of Interests</h3>
-        <p class="ac__body">Structural and governance alignment with our investors, maintained from origination through exit.</p>
-      </div>
+    <div class="platform__principles" role="list" aria-label="Platform principles">
+      <article class="platform__module rev" role="listitem">
+        <div class="platform__module-n">01</div>
+        <h3 class="platform__module-title">Collateral Discipline</h3>
+        <p class="platform__module-body">Investments begin with asset value, entry basis, and multiple recovery paths, not optimistic refinancing assumptions.</p>
+      </article>
+      <article class="platform__module rev d1" role="listitem">
+        <div class="platform__module-n">02</div>
+        <h3 class="platform__module-title">Legal Enforceability</h3>
+        <p class="platform__module-body">Structures are underwritten around creditor rights, documentation, jurisdiction, and practical enforcement mechanics.</p>
+      </article>
+      <article class="platform__module rev d2" role="listitem">
+        <div class="platform__module-n">03</div>
+        <h3 class="platform__module-title">Local Execution</h3>
+        <p class="platform__module-body">Origination, monitoring, restructuring, and recovery depend on onshore relationships and operating capability.</p>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- STRATEGY -->
-<section id="strategy">
+<section id="strategy" class="strategy-section">
   <div class="wrap home-section-shell home-section-shell--soft">
     <div class="strat__hd">
       <div class="strat__lead">
-        <div class="eyebrow eyebrow--red rev">STRATEGY</div>
-        <h2 class="strat__hed rev d1 sv-section-title">Investment Strategy</h2>
+        <div class="eyebrow eyebrow--red rev">INVESTMENT STRATEGY</div>
+        <h2 class="strat__hed rev d1 sv-section-title">Three ways to invest where conventional credit fails.</h2>
       </div>
       <div class="strat__content">
         <div class="strat__intro home-copy-frame rev d2">
-          <p>ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China. Across every strategy, the discipline is the same — conservative entry, downside protection, and situations where local execution creates value.</p>
-          <p>Rather than relying on documentation alone, the platform is built around collateral control, enforceable structures, and the ability to underwrite, service, and recover through one integrated team.</p>
+          <p>Across asset-based lending, asset restructuring, and debt resolutions, ShoreVest focuses on situations where collateral control, legal process, and local execution can define recovery.</p>
         </div>
       </div>
       <div class="strat__grid" role="list" aria-label="Investment strategy pillars">
         <article class="sg rev" id="asset-based-lending" role="listitem">
           <div class="sg__content">
             <div class="sg__n">01</div>
-            <div class="sg__title">ASSET-BASED LENDING</div>
-            <div class="sg__body">First-lien financing to operating businesses with defensible collateral and visible cash flow.</div>
+            <div class="sg__title">Asset-Based Lending</div>
+            <div class="sg__body">First-lien, asset-backed financing to operating businesses with defensible collateral and visible cash flow.</div>
           </div>
         </article>
         <article class="sg rev d1" id="asset-restructuring" role="listitem">
           <div class="sg__content">
             <div class="sg__n">02</div>
-            <div class="sg__title">ASSET RESTRUCTURING</div>
-            <div class="sg__body">Credit clean-up and recapitalization where strong underlying assets are burdened by stressed balance sheets.</div>
+            <div class="sg__title">Asset Restructuring</div>
+            <div class="sg__body">Credit clean-up and recapitalisation situations where strong assets are burdened by stressed balance sheets.</div>
           </div>
         </article>
         <article class="sg rev d2" id="debt-resolutions" role="listitem">
           <div class="sg__content">
             <div class="sg__n">03</div>
-            <div class="sg__title">DEBT RESOLUTIONS</div>
-            <div class="sg__body">Partnering with financial institutions to resolve and divest distressed portfolios, including non-performing loans.</div>
+            <div class="sg__title">Debt Resolutions</div>
+            <div class="sg__body">Resolution and divestment of distressed portfolios, including non-performing loans.</div>
           </div>
         </article>
       </div>
-      <div class="strat__actions rev d3">
-        <a href="strategy.html" class="cta cta--dark strat__cta-inline"><span>FIND OUT MORE</span><span class="cta__ring" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="stats" class="track-record">
+  <div class="wrap home-section-shell home-section-shell--soft">
+    <div class="track-record__header">
+      <div>
+        <div class="eyebrow eyebrow--red rev">TRACK RECORD</div>
+        <h2 class="track-record__title rev d1">Two decades of disciplined credit investing across cycles.</h2>
       </div>
+      <p class="track-record__intro rev d2">Built through credit cycles and restructuring environments in China, with discipline anchored in collateral quality, legal process, and local execution.</p>
+    </div>
+    <div class="track-record__grid" role="list" aria-label="Track record highlights">
+      <article class="track-record__item rev" role="listitem">
+        <div class="track-record__label">Strategy roots</div>
+        <p class="track-record__value">2004</p>
+        <p class="track-record__description">Platform experience rooted in China private credit and workouts.</p>
+      </article>
+      <article class="track-record__item rev d1" role="listitem">
+        <div class="track-record__label">Experience</div>
+        <p class="track-record__value">20+ years</p>
+        <p class="track-record__description">Institutional private credit investing across market cycles.</p>
+      </article>
+      <article class="track-record__item rev d2" role="listitem">
+        <div class="track-record__label">Fund vintages</div>
+        <p class="track-record__value">Multiple</p>
+        <p class="track-record__description">Institutional capital base developed through successive fund vintages.</p>
+      </article>
+      <article class="track-record__item rev d3" role="listitem">
+        <div class="track-record__label">Investments executed</div>
+        <p class="track-record__value">Ongoing</p>
+        <p class="track-record__description">Asset-backed private credit execution across lending, restructuring, and recovery situations.</p>
+      </article>
     </div>
   </div>
 </section>
