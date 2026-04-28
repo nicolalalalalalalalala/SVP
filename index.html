@@ -4361,16 +4361,16 @@ body.homepage .firm-editorial-beat { display:grid; grid-template-columns:minmax(
 body.homepage .firm-editorial-beat > :first-child { max-width:620px; }
 body.homepage .firm-editorial-beat .about__body { max-width:620px; justify-self:start; }
 body.homepage .firm-editorial-beat .about__body p { max-width:620px; color:#1E4040; line-height:1.6; }
-body.homepage .firm-stats-row { margin-top:clamp(52px,5vw,72px); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-top:1px solid rgba(216,206,176,.68); border-bottom:1px solid rgba(216,206,176,.68); }
-body.homepage .firm-stat { min-width:0; padding:clamp(20px,2.2vw,30px) clamp(16px,1.8vw,24px) clamp(18px,2vw,26px); display:flex; flex-direction:column; justify-content:space-between; gap:12px; }
-body.homepage .firm-stat:not(:first-child) { border-left:1px solid rgba(216,206,176,.55); }
-body.homepage .firm-stat__figure { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(48px,5vw,76px); font-weight:300; line-height:1; letter-spacing:-0.01em; color:#1E4040; min-height:1em; display:flex; align-items:flex-end; }
+body.homepage .firm-stats-row { margin-top:clamp(72px,6vw,96px); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-top:1px solid rgba(216,206,176,.58); border-bottom:1px solid rgba(216,206,176,.58); }
+body.homepage .firm-stat { min-width:0; padding:clamp(40px,3.2vw,48px) clamp(16px,1.8vw,24px); display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:clamp(18px,1.5vw,24px); }
+body.homepage .firm-stat:not(:first-child) { border-left:1px solid rgba(216,206,176,.28); }
+body.homepage .firm-stat__figure { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(44px,4.6vw,68px); font-weight:300; line-height:1.01; letter-spacing:-0.01em; color:#1E4040; white-space:nowrap; }
 body.homepage .firm-stat__sup { font-size:1em; vertical-align:baseline; line-height:1; }
-body.homepage .firm-stat__label { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(12px,0.85vw,14px); font-weight:400; letter-spacing:0.11em; line-height:1.45; text-transform:uppercase; color:rgba(30,64,64,.92); min-height:2.9em; display:flex; align-items:flex-start; }
+body.homepage .firm-stat__label { margin:0; font-family:"DIN 2014","DIN","Helvetica Neue",Arial,sans-serif; font-size:clamp(12px,0.8vw,13px); font-weight:400; letter-spacing:0.06em; line-height:1.45; text-transform:uppercase; color:rgba(30,64,64,.82); max-width:22ch; }
 body.homepage .firm-stat:nth-child(2) .firm-stat__label { letter-spacing:0.095em; }
 body.homepage .firm-editorial-divider { margin:64px 0; border:0; border-top:1px solid #D8CEB0; }
-@media (max-width:1024px){ body.homepage .firm-editorial-beat{grid-template-columns:1fr;} body.homepage .firm-stats-row{grid-template-columns:repeat(2,minmax(0,1fr));} body.homepage .firm-stat:nth-child(odd){border-left:0;} }
-@media (max-width:767px){ body.homepage .firm-editorial-section{padding-top:64px !important; padding-bottom:64px !important;} body.homepage .firm-stats-row{margin-top:56px; grid-template-columns:1fr; border-bottom:0;} body.homepage .firm-stat{padding-left:0; padding-right:0;} body.homepage .firm-stat:not(:first-child){border-left:0; border-top:1px solid rgba(216,206,176,.62);} body.homepage .firm-stat__label{min-height:0;} body.homepage .firm-editorial-divider{margin:52px 0;} }
+@media (max-width:1024px){ body.homepage .firm-editorial-beat{grid-template-columns:1fr;} body.homepage .firm-stats-row{grid-template-columns:repeat(2,minmax(0,1fr));} body.homepage .firm-stat:nth-child(odd){border-left:0;} body.homepage .firm-stat:nth-child(n+3){border-top:1px solid rgba(216,206,176,.28);} }
+@media (max-width:767px){ body.homepage .firm-editorial-section{padding-top:64px !important; padding-bottom:64px !important;} body.homepage .firm-stats-row{margin-top:56px; grid-template-columns:1fr; border-bottom:0;} body.homepage .firm-stat{padding:32px 0;} body.homepage .firm-stat:not(:first-child){border-left:0; border-top:1px solid rgba(216,206,176,.4);} body.homepage .firm-editorial-divider{margin:52px 0;} }
 </style>
 
 <style id="homepage-hero-nav-tightening">
@@ -5225,10 +5225,10 @@ body.homepage .track-record__description { margin:0 !important; font-size:16px !
 
 /* Firm + principles hierarchy */
 body.homepage .firm-editorial-section { background:#F2ECD8 !important; }
-body.homepage .firm-stats-row { border-top:1px solid rgba(216,206,176,.68); }
+body.homepage .firm-stats-row { border-top:1px solid rgba(216,206,176,.58); border-bottom:1px solid rgba(216,206,176,.58); }
 body.homepage .firm-stat { min-width:0; }
-body.homepage .firm-stat__figure { font-size:clamp(48px,5vw,76px) !important; color:#1E4040 !important; }
-body.homepage .firm-stat__label { color:rgba(30,64,64,.86) !important; }
+body.homepage .firm-stat__figure { font-size:clamp(44px,4.6vw,68px) !important; color:#1E4040 !important; white-space:nowrap !important; }
+body.homepage .firm-stat__label { color:rgba(30,64,64,.82) !important; }
 body.homepage .firm-editorial-beat { gap:clamp(24px,3vw,56px) !important; }
 
 /* CDD transition */
@@ -5282,9 +5282,9 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
 
     <div class="firm-stats-row rev" role="list" aria-label="Institutional proof points">
       <article class="firm-stat" role="listitem"><p class="firm-stat__figure">20+</p><p class="firm-stat__label">YEARS IN CHINA PRIVATE CREDIT</p></article>
-      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">$2BN+</p><p class="firm-stat__label">MANAGED ACROSS 6 FUND VINTAGES</p></article>
+      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">$2B+</p><p class="firm-stat__label">MANAGED ACROSS 6 FUND VINTAGES</p></article>
       <article class="firm-stat" role="listitem"><p class="firm-stat__figure">50+</p><p class="firm-stat__label">ASSET-BACKED CREDIT DEALS</p></article>
-      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">30–60%</p><p class="firm-stat__label">TYPICAL LTV / CTV</p></article>
+      <article class="firm-stat" role="listitem"><p class="firm-stat__figure">30-60%</p><p class="firm-stat__label">TYPICAL LTV / CTV</p></article>
     </div>
 
     <hr class="firm-editorial-divider" aria-hidden="true">
