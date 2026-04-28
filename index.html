@@ -4618,13 +4618,13 @@ body.homepage :is(#about, #principles) {
 
 body.homepage :is(#about, #principles) .home-section-shell--soft {
   background: #F2ECD8 !important;
-  min-height: clamp(520px, 58vw, 760px);
-  padding-top: clamp(160px, 13vw, 196px) !important;
-  padding-bottom: clamp(160px, 13vw, 196px) !important;
+  min-height: 0;
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
 }
 
 body.homepage #principles {
-  margin-top: clamp(108px, 8vw, 124px);
+  margin-top: 64px;
 }
 
 body.homepage :is(#about .about__intro--overview, #principles .principles__toprow) {
@@ -4634,12 +4634,12 @@ body.homepage :is(#about .about__intro--overview, #principles .principles__topro
 }
 
 body.homepage :is(#about .about__body, #principles .about__body) {
-  max-width: 62ch !important;
+  max-width: 560px !important;
   color: #0F2206 !important;
 }
 
 body.homepage :is(#about .about__body p, #principles .about__body p) {
-  max-width: 62ch !important;
+  max-width: 560px !important;
   line-height: 1.62 !important;
   color: #0F2206 !important;
 }
@@ -4663,7 +4663,7 @@ body.homepage :is(#about .eyebrow, #principles .eyebrow)::after {
 }
 
 body.homepage #principles .principles__grid {
-  margin-top: clamp(44px, 4.6vw, 64px) !important;
+  margin-top: 64px !important;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(48px, 5.6vw, 80px) !important;
 }
@@ -4671,8 +4671,9 @@ body.homepage #principles .principles__grid {
 body.homepage #principles .principles__grid > .ac {
   padding: 0 !important;
   border: 0 !important;
-  border-top: 1px solid rgba(216, 206, 176, 0.7) !important;
-  padding-top: 24px !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+  padding-top: 0 !important;
   gap: 10px !important;
 }
 
@@ -4681,8 +4682,9 @@ body.homepage #principles .ac__meta {
   font-variant-caps: all-small-caps;
   text-transform: uppercase;
   letter-spacing: 0.15em !important;
-  font-size: 11px !important;
-  color: #0F2206 !important;
+  font-size: 13px !important;
+  color: #C93B2A !important;
+  margin-bottom: 16px !important;
 }
 
 body.homepage #principles .ac__title {
@@ -4696,19 +4698,19 @@ body.homepage #principles .ac__title {
 
 body.homepage #principles .ac__body {
   color: #0F2206 !important;
-  max-width: 50ch !important;
+  max-width: 320px !important;
   line-height: 1.6 !important;
 }
 
 @media (max-width: 1024px) {
   body.homepage :is(#about, #principles) .home-section-shell--soft {
     min-height: 0;
-    padding-top: clamp(88px, 11vw, 116px) !important;
-    padding-bottom: clamp(88px, 11vw, 116px) !important;
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
   }
 
   body.homepage #principles {
-    margin-top: 64px;
+    margin-top: 48px;
   }
 
   body.homepage :is(#about .about__intro--overview, #principles .principles__toprow) {
@@ -4719,18 +4721,24 @@ body.homepage #principles .ac__body {
   body.homepage #principles .principles__grid {
     grid-template-columns: 1fr;
     gap: 64px !important;
-    margin-top: 40px !important;
+    margin-top: 48px !important;
+  }
+
+  body.homepage :is(#about .about__body, #principles .about__body),
+  body.homepage :is(#about .about__body p, #principles .about__body p),
+  body.homepage #principles .ac__body {
+    max-width: 100% !important;
   }
 }
 
 @media (max-width: 767px) {
   body.homepage :is(#about, #principles) .home-section-shell--soft {
-    padding-top: 88px !important;
-    padding-bottom: 88px !important;
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
   }
 
   body.homepage #principles {
-    margin-top: 64px;
+    margin-top: 48px;
   }
 }
 </style>
