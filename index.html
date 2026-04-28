@@ -4748,9 +4748,9 @@ body.homepage #strategy {
 }
 
 body.homepage #strategy .home-section-shell--soft {
-  min-height: clamp(620px, 72vh, 860px);
-  padding-top: clamp(140px, 11vw, 160px) !important;
-  padding-bottom: clamp(140px, 11vw, 160px) !important;
+  min-height: 0;
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
   border: 0 !important;
   background: transparent !important;
 }
@@ -4764,31 +4764,36 @@ body.homepage #strategy .strat__hd {
 body.homepage #strategy .strat__lead {
   width: 100%;
   max-width: 30ch;
+  align-self: start;
 }
 
 body.homepage #strategy .strat__lead .eyebrow {
   position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 12px;
+  display: inline-block;
+  padding-bottom: 12px;
   margin-bottom: 0;
   color: #C93B2A !important;
 }
 
 body.homepage #strategy .strat__lead .eyebrow::after {
   content: "";
-  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 80px;
   height: 1px;
   background: #C93B2A;
+  flex: none;
 }
 
 body.homepage #strategy .strat__hed {
   color: #1E4040;
+  margin-top: 32px !important;
 }
 
 body.homepage #strategy .strat__content {
   grid-column: 2 !important;
+  align-self: start;
 }
 
 body.homepage #strategy .strat__intro,
@@ -4824,12 +4829,12 @@ body.homepage #strategy .sg + .sg {
 }
 
 body.homepage #strategy .sg:hover {
-  background: #FAF6EE !important;
+  background: transparent !important;
 }
 
 body.homepage #strategy .sg__content {
   display: grid !important;
-  grid-template-columns: minmax(80px, 15%) minmax(180px, 30%) minmax(0, 55%);
+  grid-template-columns: 8% 32% 60%;
   align-items: start;
   gap: clamp(16px, 2.2vw, 28px);
   padding: 48px 0 !important;
@@ -4838,11 +4843,11 @@ body.homepage #strategy .sg__content {
 body.homepage #strategy .sg__n {
   margin: 0 !important;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: 12px !important;
+  font-size: 13px !important;
   font-weight: 560;
   letter-spacing: 0.15em !important;
   text-transform: uppercase;
-  color: #0F2206 !important;
+  color: #C93B2A !important;
 }
 
 body.homepage #strategy .sg__title {
@@ -4868,7 +4873,7 @@ body.homepage #strategy .strat__actions {
   grid-column: 1 / -1 !important;
   justify-content: flex-start !important;
   border-top: 0 !important;
-  margin-top: 80px !important;
+  margin-top: 48px !important;
   padding-top: 0 !important;
 }
 
@@ -4894,8 +4899,8 @@ body.homepage #strategy .strat__actions .strat__cta-inline .cta__ring {
 @media (max-width: 1024px) {
   body.homepage #strategy .home-section-shell--soft {
     min-height: 0;
-    padding-top: clamp(96px, 10vw, 118px) !important;
-    padding-bottom: clamp(96px, 10vw, 118px) !important;
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
   }
 
   body.homepage #strategy .strat__hd {
@@ -4931,7 +4936,7 @@ body.homepage #strategy .strat__actions .strat__cta-inline .cta__ring {
   }
 
   body.homepage #strategy .strat__actions {
-    margin-top: 56px !important;
+    margin-top: 48px !important;
   }
 }
 </style>
@@ -5004,7 +5009,7 @@ body.homepage #strategy .strat__actions .strat__cta-inline .cta__ring {
       </div>
       <div class="ac rev d2" id="ac-alignment" role="button" tabindex="0" data-interactive-card>
         <div class="ac__meta">03 /</div>
-        <h3 class="ac__title">Alignment of Interests</h3>
+        <h3 class="ac__title">Alignment&nbsp;of Interests</h3>
         <p class="ac__body">Structural and governance alignment with our investors, maintained from origination through exit.</p>
       </div>
     </div>
