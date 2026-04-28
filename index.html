@@ -4610,6 +4610,130 @@ body.homepage .home-hero + .homepage-section-stack {
      any equal-specificity tie. Hard hex values — no CSS variable risk.
 -->
 
+
+<style id="homepage-firm-editorial-refactor">
+body.homepage :is(#about, #principles) {
+  background: #F2ECD8;
+}
+
+body.homepage :is(#about, #principles) .home-section-shell--soft {
+  background: #F2ECD8 !important;
+  min-height: clamp(520px, 58vw, 760px);
+  padding-top: clamp(160px, 13vw, 196px) !important;
+  padding-bottom: clamp(160px, 13vw, 196px) !important;
+}
+
+body.homepage #principles {
+  margin-top: clamp(108px, 8vw, 124px);
+}
+
+body.homepage :is(#about .about__intro--overview, #principles .principles__toprow) {
+  grid-template-columns: minmax(220px, 30%) minmax(0, 1fr) !important;
+  gap: clamp(34px, 4vw, 56px) !important;
+  align-items: start;
+}
+
+body.homepage :is(#about .about__body, #principles .about__body) {
+  max-width: 62ch !important;
+  color: #0F2206 !important;
+}
+
+body.homepage :is(#about .about__body p, #principles .about__body p) {
+  max-width: 62ch !important;
+  line-height: 1.62 !important;
+  color: #0F2206 !important;
+}
+
+body.homepage :is(#about .eyebrow, #principles .eyebrow) {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+  margin-bottom: 14px;
+  color: #C93B2A !important;
+}
+
+body.homepage :is(#about .eyebrow, #principles .eyebrow)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 1px;
+  background: #C93B2A;
+}
+
+body.homepage #principles .principles__grid {
+  margin-top: clamp(44px, 4.6vw, 64px) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(48px, 5.6vw, 80px) !important;
+}
+
+body.homepage #principles .principles__grid > .ac {
+  padding: 0 !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(216, 206, 176, 0.7) !important;
+  padding-top: 24px !important;
+  gap: 10px !important;
+}
+
+body.homepage #principles .ac__meta {
+  font-family: "DIN 2014", "DIN", "Helvetica Neue", Arial, sans-serif !important;
+  font-variant-caps: all-small-caps;
+  text-transform: uppercase;
+  letter-spacing: 0.15em !important;
+  font-size: 11px !important;
+  color: #0F2206 !important;
+}
+
+body.homepage #principles .ac__title {
+  font-family: "DIN 2014", "DIN", "Helvetica Neue", Arial, sans-serif !important;
+  text-transform: uppercase;
+  color: #0F2206 !important;
+  font-size: clamp(22px, 1.95vw, 27px) !important;
+  line-height: 1.14 !important;
+  max-width: 13ch !important;
+}
+
+body.homepage #principles .ac__body {
+  color: #0F2206 !important;
+  max-width: 50ch !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 1024px) {
+  body.homepage :is(#about, #principles) .home-section-shell--soft {
+    min-height: 0;
+    padding-top: clamp(88px, 11vw, 116px) !important;
+    padding-bottom: clamp(88px, 11vw, 116px) !important;
+  }
+
+  body.homepage #principles {
+    margin-top: 64px;
+  }
+
+  body.homepage :is(#about .about__intro--overview, #principles .principles__toprow) {
+    grid-template-columns: 1fr !important;
+    gap: clamp(24px, 4vw, 36px) !important;
+  }
+
+  body.homepage #principles .principles__grid {
+    grid-template-columns: 1fr;
+    gap: 64px !important;
+    margin-top: 40px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.homepage :is(#about, #principles) .home-section-shell--soft {
+    padding-top: 88px !important;
+    padding-bottom: 88px !important;
+  }
+
+  body.homepage #principles {
+    margin-top: 64px;
+  }
+}
+</style>
 </head>
 <body id="top" class="homepage">
 
@@ -4644,10 +4768,7 @@ body.homepage .home-hero + .homepage-section-stack {
       </div>
       <div class="about__body home-copy-frame rev d2">
         <p>
-          Institutional private credit platform for complex recoveries across China, built by a senior team with an onshore track record spanning market dislocations, restructurings, and policy transitions.
-        </p>
-        <p>
-          ShoreVest&rsquo;s strategy dates to 2004, with the current platform established in 2016 across collateral-backed lending, asset restructuring, and NPL resolution.
+          An institutional private credit platform built for complex recoveries across China. Our senior team has operated through market dislocations, restructurings, and policy transitions since 2004 &mdash; with the current platform established in 2016 across collateral-backed lending, asset restructuring, and NPL resolution.
         </p>
       </div>
     </div>
@@ -4658,15 +4779,12 @@ body.homepage .home-hero + .homepage-section-stack {
   <div class="wrap home-section-shell home-section-shell--soft">
     <div class="principles__toprow">
       <div class="principles__heading">
-        <div class="eyebrow rev">HOW WE WORK</div>
+        <div class="eyebrow eyebrow--red rev">HOW WE WORK</div>
         <h2 class="about__hed rev d1 sv-section-title">Vision &amp; Principles</h2>
       </div>
       <div class="about__body home-copy-frame rev d2 principles__copy">
         <p>
-          ShoreVest’s vision is to deliver consistent returns across cycles in China’s credit markets through a long-term platform with the local capability to source, analyze, and execute with discipline.
-        </p>
-        <p>
-          The firm’s approach is grounded in trust: with the networks that originate opportunities, and with the investors who commit capital to the platform.
+          To deliver consistent returns across cycles in China&rsquo;s credit markets through a long-term platform with the local capability to source, analyze, and execute with discipline. The approach is grounded in trust &mdash; with the networks that originate opportunities, and with the investors who commit capital to the platform.
         </p>
         
       </div>
@@ -4674,19 +4792,19 @@ body.homepage .home-hero + .homepage-section-stack {
     <!-- Three institutional principle modules -->
     <div class="about__cols principles__grid">
       <div class="ac rev" id="ac-sourcing" role="button" tabindex="0" data-interactive-card>
-        <div class="ac__meta">01</div>
+        <div class="ac__meta">01 /</div>
         <h3 class="ac__title">Proprietary Sourcing</h3>
-        <p class="ac__body">Originate opportunities through longstanding onshore networks and local execution channels not broadly intermediated in market processes.</p>
+        <p class="ac__body">Two decades of onshore relationships generate opportunities that never reach broad market processes.</p>
       </div>
       <div class="ac rev d1" id="ac-underwriting" role="button" tabindex="0" data-interactive-card>
-        <div class="ac__meta">02</div>
+        <div class="ac__meta">02 /</div>
         <h3 class="ac__title">Disciplined Analysis</h3>
-        <p class="ac__body">Underwrite to protected downside, enforceable collateral and practical work-out pathways before capital is committed.</p>
+        <p class="ac__body">Every position is underwritten to protected downside, enforceable collateral, and a credible work-out path before capital moves.</p>
       </div>
       <div class="ac rev d2" id="ac-alignment" role="button" tabindex="0" data-interactive-card>
-        <div class="ac__meta">03</div>
+        <div class="ac__meta">03 /</div>
         <h3 class="ac__title">Alignment of Interests</h3>
-        <p class="ac__body">Maintain structural and governance alignment with investors through the full investment lifecycle, from origination to exit.</p>
+        <p class="ac__body">Structural and governance alignment with our investors, maintained from origination through exit.</p>
       </div>
     </div>
   </div>
