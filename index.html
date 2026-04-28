@@ -4794,12 +4794,28 @@ body.homepage :is(#about, #principles) {
 body.homepage :is(#about, #principles) .home-section-shell--soft {
   background: #F2ECD8 !important;
   min-height: 0;
-  padding-top: 96px !important;
-  padding-bottom: 96px !important;
 }
 
-body.homepage #principles {
-  margin-top: 64px;
+/* Vision block spacing: avoid full-screen cream gap between Vision and Strategy. */
+body.homepage #about {
+  padding-top: var(--section-pad-md) !important;
+  padding-bottom: clamp(56px, 6vw, 96px) !important;
+}
+
+body.homepage #about .home-section-shell--soft {
+  padding-top: clamp(72px, 7vw, 112px) !important;
+  padding-bottom: clamp(72px, 7vw, 112px) !important;
+}
+
+@media (max-width: 768px) {
+  body.homepage #about {
+    padding-bottom: clamp(56px, 10vw, 72px) !important;
+  }
+
+  body.homepage #about .home-section-shell--soft {
+    padding-top: clamp(56px, 10vw, 72px) !important;
+    padding-bottom: clamp(56px, 10vw, 72px) !important;
+  }
 }
 
 body.homepage :is(#about .about__intro--overview, #principles .principles__toprow) {
