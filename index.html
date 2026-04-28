@@ -4363,26 +4363,31 @@ body.homepage {
 body.homepage #site-header-mount {
   --sv-header-bg: #FAF6EE;
   --sv-header-rule: rgba(216, 206, 176, 0.65);
-  --sv-header-height: 96px;
+  --sv-header-height: 122px;
   --sv-header-subband: 0px;
-  --sv-header-height-desktop: 96px;
+  --sv-header-height-desktop: 122px;
+  --sv-header-side-pad: clamp(64px, 7vw, 120px);
 }
 body.homepage #site-header-mount .nav__subband {
   display: none !important;
 }
 body.homepage #site-header-mount #nav .nav__links a {
   color: #1E4040 !important;
-  opacity: 0.9 !important;
+  opacity: 0.92 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.16em !important;
 }
 body.homepage #site-header-mount #nav .nav__right::before {
-  height: 22px !important;
-  background: rgba(216, 206, 176, 0.9) !important;
+  height: 34px !important;
+  background: #D8CEB0 !important;
 }
 body.homepage #site-header-mount #nav .nav__lp {
   border: 1px solid rgba(30, 64, 64, 0.7) !important;
   color: #1E4040 !important;
   height: 34px !important;
-  padding: 0 20px !important;
+  padding: 0 16px !important;
+  font-size: 12px !important;
+  letter-spacing: 0.16em !important;
 }
 body.homepage #site-header-mount #nav .nav__lp:hover,
 body.homepage #site-header-mount #nav .nav__lp:focus-visible {
@@ -4391,30 +4396,36 @@ body.homepage #site-header-mount #nav .nav__lp:focus-visible {
   border-color: rgba(30, 64, 64, 0.85) !important;
 }
 body.homepage .home-hero {
-  min-height: clamp(620px, 66vh, 680px) !important;
+  min-height: clamp(620px, 64vh, 660px) !important;
   border-top: 0 !important;
 }
 body.homepage .home-hero::before {
   background-image: url("assets/images/image.jpg") !important;
-  background-position: 62% center !important;
+  background-position: 64% center !important;
+  background-size: cover !important;
   filter: saturate(0.93) contrast(0.98) brightness(1.02) !important;
 }
 body.homepage .home-hero::after {
   background:
     linear-gradient(90deg,
-      rgba(250,246,238,0.96) 0%,
-      rgba(250,246,238,0.88) 28%,
-      rgba(250,246,238,0.42) 52%,
-      rgba(250,246,238,0.08) 78%,
+      rgba(250,246,238,0.92) 0%,
+      rgba(250,246,238,0.82) 24%,
+      rgba(250,246,238,0.52) 43%,
+      rgba(250,246,238,0.20) 62%,
+      rgba(250,246,238,0.04) 82%,
       rgba(250,246,238,0.00) 100%
     ),
     linear-gradient(180deg,
-      rgba(250,246,238,0.00) 72%,
-      rgba(250,246,238,0.56) 100%
+      rgba(250,246,238,0.20) 0%,
+      rgba(250,246,238,0.00) 26%
+    ),
+    linear-gradient(180deg,
+      rgba(250,246,238,0.00) 76%,
+      rgba(250,246,238,0.28) 100%
     ) !important;
 }
 body.homepage .home-hero__inner {
-  min-height: clamp(620px, 66vh, 680px) !important;
+  min-height: clamp(620px, 64vh, 660px) !important;
   align-items: start !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -4422,10 +4433,11 @@ body.homepage .home-hero__inner {
 }
 body.homepage .home-hero__text {
   position: relative !important;
-  top: 50% !important;
-  transform: translateY(-42%) !important;
-  margin-left: clamp(20px, 6vw, 96px) !important;
-  width: min(720px, 100%) !important;
+  top: 44% !important;
+  transform: translateY(-50%) !important;
+  margin-left: clamp(64px, 7vw, 120px) !important;
+  max-width: 680px !important;
+  width: min(680px, 100%) !important;
   gap: clamp(11px, 1vw, 16px) !important;
 }
 body.homepage .home-hero__eyebrow {
@@ -4435,60 +4447,65 @@ body.homepage .home-hero__eyebrow {
   opacity: 0.9 !important;
 }
 body.homepage .home-hero__eyebrow::after {
-  width: clamp(48px, 4.6vw, 64px) !important;
+  width: clamp(44px, 4.2vw, 56px) !important;
+  height: 1px !important;
   background: #C93B2A !important;
   opacity: 1 !important;
 }
 body.homepage .home-hero__headline {
-  font-size: clamp(48px, 5.2vw, 76px) !important;
-  line-height: 1.05 !important;
-  letter-spacing: -0.01em !important;
+  font-size: clamp(48px, 4.4vw, 66px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
   margin-top: -2px;
 }
 body.homepage .home-hero__headline-emphasis {
   color: #C93B2A !important;
 }
 body.homepage .home-hero__support {
-  max-width: 560px !important;
-  font-size: clamp(17px, 1.2vw, 19px) !important;
+  max-width: 540px !important;
+  font-size: 17px !important;
   line-height: 1.55 !important;
-  color: rgba(30,64,64,0.86) !important;
+  color: rgba(30,64,64,0.88) !important;
   opacity: 1 !important;
+  margin-top: 26px !important;
 }
 body.homepage .home-hero__cta {
-  font-size: 12.5px !important;
-  letter-spacing: 0.14em !important;
-  font-weight: 500 !important;
+  display: inline-block !important;
+  font-size: 12px !important;
+  letter-spacing: 0.16em !important;
+  font-weight: 600 !important;
   border: 0 !important;
-  padding: 0 0 3px !important;
-  background-image: linear-gradient(#C93B2A, #C93B2A);
-  background-repeat: no-repeat;
-  background-size: 88% 1px;
-  background-position: left calc(100% - 1px);
-  transition: color .22s ease, background-size .22s ease !important;
+  border-bottom: 1px solid #C93B2A !important;
+  padding: 0 0 6px !important;
+  margin-top: 34px !important;
+  background: transparent !important;
+  transition: color .22s ease !important;
 }
 body.homepage .home-hero__cta .home-hero__cta-arrow {
+  color: #C93B2A !important;
+  margin-left: 10px !important;
   transform: translateX(0);
   transition: transform .22s ease;
 }
 body.homepage .home-hero__cta:hover,
 body.homepage .home-hero__cta:focus-visible {
   color: #1E4040 !important;
-  background-size: 100% 1px;
 }
 body.homepage .home-hero__cta:hover .home-hero__cta-arrow,
 body.homepage .home-hero__cta:focus-visible .home-hero__cta-arrow {
   transform: translateX(3px);
 }
 body.homepage .home-hero + .homepage-section-stack {
-  margin-top: 0 !important;
-  border-top: 1px solid rgba(216,206,176,0.6) !important;
+  margin-top: clamp(72px, 7vw, 96px) !important;
+  border-top: 0 !important;
 }
 body.homepage #about > .wrap {
   background: #FAF6EE !important;
   border: 0 !important;
-  border-top: 1px solid #D8CEB0 !important;
-  padding-top: clamp(36px, 4.5vw, 60px) !important;
+  border-top: 0 !important;
+  padding-top: clamp(16px, 2.5vw, 28px) !important;
 }
 @media (max-width: 767px) {
   body.homepage #site-header-mount {
