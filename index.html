@@ -4734,6 +4734,199 @@ body.homepage #principles .ac__body {
   }
 }
 </style>
+<style id="homepage-strategy-editorial-refactor-2026">
+body.homepage #strategy {
+  background: #F2ECD8;
+}
+
+body.homepage #strategy .home-section-shell--soft {
+  min-height: clamp(620px, 72vh, 860px);
+  padding-top: clamp(140px, 11vw, 160px) !important;
+  padding-bottom: clamp(140px, 11vw, 160px) !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.homepage #strategy .strat__hd {
+  grid-template-columns: minmax(220px, 30%) minmax(0, 70%) !important;
+  gap: clamp(26px, 3vw, 40px) !important;
+  margin-bottom: 0 !important;
+}
+
+body.homepage #strategy .strat__lead {
+  width: 100%;
+  max-width: 30ch;
+}
+
+body.homepage #strategy .strat__lead .eyebrow {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 0;
+  color: #C93B2A !important;
+}
+
+body.homepage #strategy .strat__lead .eyebrow::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: #C93B2A;
+}
+
+body.homepage #strategy .strat__hed {
+  color: #1E4040;
+}
+
+body.homepage #strategy .strat__content {
+  grid-column: 2 !important;
+}
+
+body.homepage #strategy .strat__intro,
+body.homepage #strategy .strat__intro p {
+  max-width: 62ch !important;
+}
+
+body.homepage #strategy .strat__intro {
+  color: #0F2206;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(16px, 1.1vw, 18px);
+  line-height: 1.72;
+}
+
+body.homepage #strategy .strat__grid {
+  grid-column: 1 / -1 !important;
+  margin-top: clamp(44px, 4.8vw, 64px);
+  gap: 0 !important;
+  border-top: 1px solid rgba(201, 183, 139, 0.4);
+  border-bottom: 1px solid rgba(201, 183, 139, 0.4);
+}
+
+body.homepage #strategy .sg {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  cursor: default;
+  transition: background-color 200ms ease;
+}
+
+body.homepage #strategy .sg + .sg {
+  border-top: 1px solid rgba(201, 183, 139, 0.4) !important;
+}
+
+body.homepage #strategy .sg:hover {
+  background: #FAF6EE !important;
+}
+
+body.homepage #strategy .sg__content {
+  display: grid !important;
+  grid-template-columns: minmax(80px, 15%) minmax(180px, 30%) minmax(0, 55%);
+  align-items: start;
+  gap: clamp(16px, 2.2vw, 28px);
+  padding: 48px 0 !important;
+}
+
+body.homepage #strategy .sg__n {
+  margin: 0 !important;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px !important;
+  font-weight: 560;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase;
+  color: #0F2206 !important;
+}
+
+body.homepage #strategy .sg__title {
+  margin: 0 !important;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: clamp(18px, 1.7vw, 22px) !important;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #1E4040 !important;
+  line-height: 1.22 !important;
+}
+
+body.homepage #strategy .sg__body {
+  margin: 0 !important;
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  color: #0F2206 !important;
+  line-height: 1.6 !important;
+  max-width: 64ch;
+}
+
+body.homepage #strategy .strat__actions {
+  grid-column: 1 / -1 !important;
+  justify-content: flex-start !important;
+  border-top: 0 !important;
+  margin-top: 80px !important;
+  padding-top: 0 !important;
+}
+
+body.homepage #strategy .strat__actions .strat__cta-inline {
+  margin-left: 0 !important;
+}
+
+body.homepage #strategy .strat__actions .strat__cta-inline span:first-child {
+  font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C93B2A;
+}
+
+body.homepage #strategy .strat__actions .strat__cta-inline .cta__ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #C93B2A !important;
+  color: #C93B2A;
+}
+
+@media (max-width: 1024px) {
+  body.homepage #strategy .home-section-shell--soft {
+    min-height: 0;
+    padding-top: clamp(96px, 10vw, 118px) !important;
+    padding-bottom: clamp(96px, 10vw, 118px) !important;
+  }
+
+  body.homepage #strategy .strat__hd {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  body.homepage #strategy .strat__content {
+    grid-column: 1 / -1 !important;
+  }
+
+  body.homepage #strategy .strat__intro,
+  body.homepage #strategy .strat__intro p {
+    max-width: 100% !important;
+  }
+
+  body.homepage #strategy .sg__content {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 !important;
+  }
+
+  body.homepage #strategy .sg {
+    padding: 32px 0;
+  }
+
+  body.homepage #strategy .sg:hover {
+    background: transparent !important;
+  }
+
+  body.homepage #strategy .sg__body {
+    max-width: 100%;
+  }
+
+  body.homepage #strategy .strat__actions {
+    margin-top: 56px !important;
+  }
+}
+</style>
 </head>
 <body id="top" class="homepage">
 
@@ -4820,33 +5013,32 @@ body.homepage #principles .ac__body {
       </div>
       <div class="strat__content">
         <div class="strat__intro home-copy-frame rev d2">
-          <p>ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China.</p>
-          <p>Across each strategy, the common discipline is the same: conservative entry points, downside protection, and a focus on situations where local execution can create value.</p>
-          <p>Rather than relying on documentation alone, the strategy is built around collateral control, enforceable structures, and the ability to manage underwriting, servicing, and recovery through one integrated platform.</p>
+          <p>ShoreVest is a multi-strategy private credit platform specializing in asset-backed opportunities in China. Across every strategy, the discipline is the same — conservative entry, downside protection, and situations where local execution creates value.</p>
+          <p>Rather than relying on documentation alone, the platform is built around collateral control, enforceable structures, and the ability to underwrite, service, and recover through one integrated team.</p>
         </div>
       </div>
-      <div class="strat__grid">
-        <div class="sg rev" id="asset-based-lending" role="button" tabindex="0" data-interactive-card>
+      <div class="strat__grid" role="list" aria-label="Investment strategy pillars">
+        <article class="sg rev" id="asset-based-lending" role="listitem">
           <div class="sg__content">
             <div class="sg__n">01</div>
             <div class="sg__title">ASSET-BASED LENDING</div>
-            <div class="sg__body">Providing first-lien, asset-backed financing to operating businesses with defensible collateral and visible cash flow.</div>
+            <div class="sg__body">First-lien financing to operating businesses with defensible collateral and visible cash flow.</div>
           </div>
-        </div>
-        <div class="sg rev d1" id="asset-restructuring" role="button" tabindex="0" data-interactive-card>
+        </article>
+        <article class="sg rev d1" id="asset-restructuring" role="listitem">
           <div class="sg__content">
             <div class="sg__n">02</div>
             <div class="sg__title">ASSET RESTRUCTURING</div>
-            <div class="sg__body">Executing credit clean-up and recapitalization situations where strong underlying assets are burdened by stressed balance sheets.</div>
+            <div class="sg__body">Credit clean-up and recapitalization where strong underlying assets are burdened by stressed balance sheets.</div>
           </div>
-        </div>
-        <div class="sg rev d2" id="debt-resolutions" role="button" tabindex="0" data-interactive-card>
+        </article>
+        <article class="sg rev d2" id="debt-resolutions" role="listitem">
           <div class="sg__content">
             <div class="sg__n">03</div>
             <div class="sg__title">DEBT RESOLUTIONS</div>
             <div class="sg__body">Partnering with financial institutions to resolve and divest distressed portfolios, including non-performing loans.</div>
           </div>
-        </div>
+        </article>
       </div>
       <div class="strat__actions rev d3">
         <a href="strategy.html" class="cta cta--dark strat__cta-inline"><span>FIND OUT MORE</span><span class="cta__ring" aria-hidden="true">→</span></a>
