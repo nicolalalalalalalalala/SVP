@@ -43,6 +43,10 @@ body {
   --sv-header-side-pad-left: var(--site-page-gutter, var(--sv-header-side-pad));
   --sv-header-side-pad-right: var(--sv-header-side-pad);
   --sv-header-z-mount:      220;
+
+  /* Align header edges to the same centered content frame used below. */
+  --sv-page-gutter:         var(--site-page-gutter, 64px);
+  --sv-page-frame-max:      calc(var(--content-max-width-standard, 1320px) + (var(--sv-page-gutter) * 2));
 }
 
 /* ── Mount: sticky wrapper for the entire two-band header ───── */
@@ -170,6 +174,7 @@ body {
   justify-self: end;
   gap: 26px;
   min-width: 0;
+  margin-right: max(0px, calc((100vw - var(--sv-page-frame-max)) / 2));
 }
 
 /* Thin vertical divider — delicate, restrained */
