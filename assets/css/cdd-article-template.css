@@ -18,7 +18,7 @@
   --cdd-sidecard-width: minmax(250px, 300px);
   --cdd-column-gap: clamp(18px, 2.4vw, 32px);
   --cdd-body-measure: 98ch;
-  --cdd-sticky-top: calc(var(--sv-header-height-desktop, 62px) + 22px);
+  --cdd-sticky-top: calc(var(--sv-header-height-desktop, 112px) + 22px);
   /* Shared header tokens so nav styling stays consistent with the rest of the site. */
   --paper-light: #FAF6EE;
   --paper: #F2ECD8;
