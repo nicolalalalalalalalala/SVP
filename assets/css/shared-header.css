@@ -39,8 +39,8 @@ body {
   --sv-header-subband:      0px;   /* removed lower spacer band */
   /* Total sticky height used by other CSS (cdd, timeline): */
   --sv-header-height-desktop: 124px; /* single-band masthead */
-  --sv-header-side-pad:     clamp(32px, 4.5vw, 68px);
-  --sv-header-side-pad-left: var(--site-page-gutter, var(--sv-header-side-pad));
+  --sv-header-side-pad:     var(--site-page-gutter, clamp(32px, 4.5vw, 68px));
+  --sv-header-side-pad-left: var(--sv-header-side-pad);
   --sv-header-side-pad-right: var(--sv-header-side-pad);
   --sv-header-z-mount:      220;
 
@@ -67,7 +67,11 @@ body {
   grid-template-columns: 1fr minmax(0, auto) 1fr;
   align-items: center;
   column-gap: 0;
-  padding: 0 var(--sv-header-side-pad-right) 0 var(--sv-header-side-pad-left);
+  width: 100%;
+  max-width: calc(var(--content-max-width-standard, 1360px) + (var(--site-page-gutter, 64px) * 2));
+  margin: 0 auto;
+  padding-left: var(--site-page-gutter, var(--sv-header-side-pad-left));
+  padding-right: var(--site-page-gutter, var(--sv-header-side-pad-right));
   background: var(--sv-header-bg) !important;
   border-bottom: 1px solid var(--sv-header-rule) !important;
   box-shadow: none !important;
@@ -93,7 +97,7 @@ body {
   height: 100%;
   text-decoration: none;
   justify-self: start;
-  margin-left: clamp(-40px, -2.5vw, -24px);
+  margin-left: 0;
 }
 
 #site-header-mount #nav .nav__logo-lockup {
@@ -175,7 +179,7 @@ body {
   justify-self: end;
   gap: 26px;
   min-width: 0;
-  margin-right: max(0px, calc((100vw - var(--sv-page-frame-max)) / 2));
+  margin-right: 0;
 }
 
 /* Thin vertical divider — delicate, restrained */
