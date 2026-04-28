@@ -57,12 +57,12 @@
 
   const headerCtaHref = isCnPath ? 'contact_cn.html' : 'contact.html';
   const headerCtaLabel = isCnPath ? '联系我们' : 'CONTACT';
-  const wordmark = '新岸資本';
+  const wordmark = '新岸资本';
 
   mount.innerHTML = `<nav id="nav" class="${isCnPath ? 'nav--cn' : 'nav--en'}">
   <a href="${isCnPath ? 'index_cn.html' : 'index.html'}" class="nav__logo">
     <span class="nav__logo-lockup">
-      <span class="nav__logo-en">S H O R E V E S T</span>
+      <span class="nav__logo-en">SHOREVEST PARTNERS</span>
       <span class="nav__logo-cn">${wordmark}</span>
     </span>
   </a>
@@ -84,7 +84,7 @@
   // Mobile menu panel — appended directly to <body> to avoid stacking context
   // issues caused by #nav / #site-header-mount creating their own stacking contexts.
   const mobilePanel = document.createElement('div');
-  mobilePanel.className = 'mobile-menu-panel';
+  mobilePanel.className = `mobile-menu-panel ${isCnPath ? 'nav--cn' : 'nav--en'}`;
   mobilePanel.setAttribute('aria-hidden', 'true');
   mobilePanel.setAttribute('role', 'dialog');
   mobilePanel.setAttribute('aria-label', 'Site navigation');
