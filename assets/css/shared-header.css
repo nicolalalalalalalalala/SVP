@@ -40,6 +40,8 @@ body {
   /* Total sticky height used by other CSS (cdd, timeline): */
   --sv-header-height-desktop: 124px; /* single-band masthead */
   --sv-header-side-pad:     clamp(32px, 4.5vw, 68px);
+  --sv-header-side-pad-left: var(--site-page-gutter, var(--sv-header-side-pad));
+  --sv-header-side-pad-right: var(--sv-header-side-pad);
   --sv-header-z-mount:      220;
 }
 
@@ -61,7 +63,7 @@ body {
   grid-template-columns: 1fr minmax(0, auto) 1fr;
   align-items: center;
   column-gap: 0;
-  padding: 0 var(--sv-header-side-pad);
+  padding: 0 var(--sv-header-side-pad-right) 0 var(--sv-header-side-pad-left);
   background: var(--sv-header-bg) !important;
   border-bottom: 1px solid var(--sv-header-rule) !important;
   box-shadow: none !important;
