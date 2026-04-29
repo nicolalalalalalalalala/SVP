@@ -1,6 +1,6 @@
 .strategy-page {
-  --strategy-max: 1320px;
-  --strategy-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
+  --strategy-max: var(--sv-content-max-standard, 1320px);
+  --strategy-gutter: var(--sv-page-gutter, clamp(28px, 5vw, 72px));
   --strategy-paper: #F2ECD8;
   --strategy-paper-light: #FAF6EE;
   --strategy-rule: #D8CEB0;
@@ -98,7 +98,7 @@
 .strategy-hero .pagehero__lede,
 .strategy-hero .hero-meta {
   max-width: 62ch;
-  color: rgba(250, 246, 238, 0.78);
+  color: rgba(250, 246, 238, 0.9);
 }
 
 .strategy-hero .pagehero__lede {
@@ -120,9 +120,9 @@
   max-width: 440px;
   justify-self: end;
   padding: clamp(28px, 3vw, 40px);
-  border: 1px solid rgba(250, 246, 238, 0.24);
+  border: 1px solid rgba(250, 246, 238, 0.36);
   border-top: 2px solid #E8998F;
-  background: rgba(15, 34, 6, 0.22);
+  background: rgba(15, 34, 6, 0.3);
   box-sizing: border-box;
 }
 
@@ -141,7 +141,7 @@
   line-height: 1.3;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(250, 246, 238, 0.72);
+  color: rgba(250, 246, 238, 0.82);
 }
 
 .strategy-kpi span {
@@ -160,6 +160,20 @@
 .next-steps,
 .disclosures {
   padding-block: clamp(76px, 8vw, 116px);
+}
+
+.strategy-page :is(
+  .market-context,
+  .strategy-sleeves,
+  .underwriting-standard,
+  .execution-model,
+  .recovery-section,
+  .risk-return,
+  .next-steps,
+  .disclosures
+) > .wrap {
+  display: grid;
+  gap: clamp(28px, 3vw, 44px);
 }
 
 .market-context + .strategy-sleeves,
@@ -207,7 +221,7 @@
   display: grid;
   gap: 0;
   border: 1px solid #D8CEB0;
-  background: rgba(250, 246, 238, 0.35);
+  background: rgba(250, 246, 238, 0.44);
 }
 
 .context-grid,
