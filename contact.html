@@ -9,8 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/refinement-pass.css" />
-  <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
   <link rel="stylesheet" href="assets/css/shared-header.css" />
   <script src="assets/js/shared-header.js" defer></script>
   <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
@@ -21,54 +19,49 @@
   <div id="site-header-mount"></div>
 
   <main class="cp-main">
-
-    <!-- ── HERO ──────────────────────────────────────────────────── -->
     <section class="cp-hero" aria-labelledby="cp-hero-title">
       <div class="cp-hero__inner">
-        <p class="cp-hero__eyebrow">ENQUIRIES</p>
-        <h1 class="cp-hero__title" id="cp-hero-title">Contact</h1>
-        <p class="cp-hero__desc">For investor, mandate, and strategic partnership enquiries, ShoreVest maintains a dedicated channel with institutional routing by mandate fit, jurisdiction, and execution timeline.</p>
+        <div class="cp-hero__head">
+          <p class="cp-hero__eyebrow">ENQUIRIES</p>
+          <h1 class="cp-hero__title" id="cp-hero-title">Contact</h1>
+        </div>
+        <p class="cp-hero__desc">For investor, mandate, and strategic partnership enquiries, ShoreVest maintains a dedicated channel for institutional routing by mandate fit, jurisdiction, and execution timeline.</p>
       </div>
     </section>
 
-    <!-- ── ROUTING INDEX ─────────────────────────────────────────── -->
     <section class="cp-routing" aria-label="Enquiry routing index">
       <div class="cp-routing__inner">
         <p class="cp-label">ROUTING INDEX</p>
         <div class="cp-routing__table" role="list">
-
           <div class="cp-routing__row" role="listitem">
-            <span class="cp-routing__type">INVESTOR RELATIONS</span>
-            <span class="cp-routing__desc">Fund subscriptions, existing LP communication, and periodic reporting enquiries</span>
+            <span class="cp-routing__type">Investor Relations</span>
+            <span class="cp-routing__desc">Fund subscriptions, existing LP communications, and periodic reporting.</span>
             <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
           </div>
 
           <div class="cp-routing__row" role="listitem">
-            <span class="cp-routing__type">MANDATE DISCUSSION</span>
-            <span class="cp-routing__desc">New origination opportunities, deal-level enquiries, and co-investment interest</span>
+            <span class="cp-routing__type">Mandate Discussion</span>
+            <span class="cp-routing__desc">New origination opportunities, deal-level enquiries, and co-investment interest.</span>
             <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
           </div>
 
           <div class="cp-routing__row" role="listitem">
-            <span class="cp-routing__type">STRATEGIC PARTNERSHIP</span>
-            <span class="cp-routing__desc">Joint venture structures, co-GP arrangements, and institutional platform discussions</span>
+            <span class="cp-routing__type">Strategic Partnership</span>
+            <span class="cp-routing__desc">Joint ventures, co-GP structures, and institutional platform discussions.</span>
             <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
           </div>
 
           <div class="cp-routing__row" role="listitem">
-            <span class="cp-routing__type">GENERAL ENQUIRY</span>
-            <span class="cp-routing__desc">All other correspondence, media relations, and public affairs</span>
+            <span class="cp-routing__type">General Enquiry</span>
+            <span class="cp-routing__desc">Media, public affairs, and all other correspondence.</span>
             <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ── OFFICE FOOTPRINT ──────────────────────────────────────── -->
     <section class="cp-office" aria-label="Office location and direct contact">
       <div class="cp-office__inner">
-
         <div class="cp-office__block">
           <p class="cp-label">OFFICE — GUANGZHOU</p>
           <address class="cp-address">
@@ -83,39 +76,24 @@
         <div class="cp-office__block">
           <p class="cp-label">DIRECT CONTACT</p>
           <a class="cp-office__email-link" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
-          <p class="cp-office__note">For investor dialogue, active mandates, and strategic partnership discussions. Please include enquiry type, geography, and preferred timeline. Initial outreach should be non-confidential and summary-level.</p>
+          <p class="cp-office__note">For investor dialogue, active mandates, and strategic partnership discussions, please include enquiry type, geography, and preferred timeline. Initial outreach should be non-confidential and summary-level.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- ── ENQUIRY FORM ──────────────────────────────────────────── -->
     <section class="cp-form-section" aria-label="Submit an enquiry">
       <div class="cp-form-section__inner">
         <p class="cp-label">SUBMIT ENQUIRY</p>
-        <p class="cp-form-section__intro">Use this channel for structured routing. Provide only information required for initial triage. Do not include confidential transaction materials.</p>
+        <p class="cp-form-section__intro">Use this channel for structured routing. Provide only information required for initial triage and do not include confidential transaction materials.</p>
 
         <form class="cp-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain" novalidate>
-
           <div class="cp-form__type-group" role="group" aria-labelledby="cp-type-label">
             <p class="cp-form__type-label" id="cp-type-label">ENQUIRY TYPE</p>
             <div class="cp-form__type-options">
-              <label class="cp-form__type-option">
-                <input type="radio" name="enquiry_type" value="investor_relations" />
-                <span>Investor Relations</span>
-              </label>
-              <label class="cp-form__type-option">
-                <input type="radio" name="enquiry_type" value="mandate_discussion" />
-                <span>Mandate Discussion</span>
-              </label>
-              <label class="cp-form__type-option">
-                <input type="radio" name="enquiry_type" value="strategic_partnership" />
-                <span>Strategic Partnership</span>
-              </label>
-              <label class="cp-form__type-option">
-                <input type="radio" name="enquiry_type" value="general" />
-                <span>General Enquiry</span>
-              </label>
+              <label class="cp-form__type-option"><input type="radio" name="enquiry_type" value="investor_relations" /><span>Investor Relations</span></label>
+              <label class="cp-form__type-option"><input type="radio" name="enquiry_type" value="mandate_discussion" /><span>Mandate Discussion</span></label>
+              <label class="cp-form__type-option"><input type="radio" name="enquiry_type" value="strategic_partnership" /><span>Strategic Partnership</span></label>
+              <label class="cp-form__type-option"><input type="radio" name="enquiry_type" value="general" /><span>General Enquiry</span></label>
             </div>
           </div>
 
@@ -147,11 +125,9 @@
             <p class="cp-form__notice">Provide only information required for initial routing. Do not include confidential transaction materials.</p>
             <button class="cp-form__submit" type="submit">SEND ENQUIRY</button>
           </div>
-
         </form>
       </div>
     </section>
-
   </main>
 
   <footer class="sv-footer" data-shared-footer></footer>
