@@ -980,3 +980,169 @@ body.homepage #cdd .cdd-cta:last-child::after {
   body.homepage #cdd .cdd-card { padding: 28px 22px; }
   body.homepage #cdd .cdd-actions { flex-direction: column; align-items: flex-start; gap: 18px; }
 }
+
+/* Homepage typography scale refinement: quieter institutional hierarchy */
+:root {
+  --section-pad: clamp(64px, 6vw, 92px);
+  --section-pad-tight: clamp(46px, 4.8vw, 68px);
+  --module-gap: clamp(32px, 3.5vw, 48px);
+}
+
+.homepage .home-hero__headline {
+  font-size: clamp(40px, 4.8vw, 68px) !important;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  max-width: 760px;
+}
+
+.homepage .home-hero__eyebrow {
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.homepage .home-hero__support {
+  font-size: clamp(14.5px, 1vw, 16px);
+  line-height: 1.65;
+  max-width: 540px;
+  font-weight: 400;
+}
+
+.homepage .section-eyebrow {
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.homepage .section-eyebrow::after {
+  width: 54px;
+  margin-top: 15px;
+}
+
+.homepage .section-title {
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 680px;
+}
+
+.homepage .strategy-section .section-title {
+  font-size: clamp(34px, 3.4vw, 50px);
+  line-height: 1.04;
+  max-width: 660px;
+}
+
+.homepage .section-copy {
+  font-size: clamp(14.5px, 0.95vw, 16px);
+  line-height: 1.62;
+  font-weight: 400;
+  max-width: 580px;
+}
+
+.homepage .section-copy p { margin: 0 0 14px; }
+.homepage .section-copy p:last-child { margin-bottom: 0; }
+
+.homepage .firm-stats-row { padding-block: clamp(28px, 3vw, 38px); }
+
+.homepage .firm-stat__value {
+  font-size: clamp(36px, 3.2vw, 50px);
+  line-height: 0.96;
+  font-weight: 300;
+  letter-spacing: -0.035em;
+}
+
+.homepage .firm-stat:last-child .firm-stat__value {
+  font-size: clamp(34px, 3vw, 46px);
+}
+
+.homepage .firm-stat__label {
+  font-size: 10px;
+  line-height: 1.42;
+  letter-spacing: 0.105em;
+  font-weight: 600;
+  max-width: 170px;
+}
+
+.homepage .strategy-row { padding-block: clamp(28px, 3vw, 38px); }
+.homepage .strategy-row__number { font-size: 10px; letter-spacing: 0.12em; font-weight: 600; }
+
+.homepage .strategy-row__title {
+  text-transform: none !important;
+  font-size: clamp(21px, 1.8vw, 28px);
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  max-width: 320px;
+}
+
+.homepage .strategy-row__body {
+  font-size: clamp(14px, 0.9vw, 15.5px);
+  line-height: 1.6;
+  max-width: 660px;
+}
+
+.homepage .track-record-section .section-title {
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1.06;
+  font-weight: 600;
+  max-width: 580px;
+}
+
+.homepage .track-record-section .section-copy {
+  font-size: clamp(14.5px, 0.95vw, 16px);
+  line-height: 1.66;
+  max-width: 580px;
+}
+
+.homepage .track-record-grid { margin-top: clamp(34px, 4vw, 52px); }
+.homepage .track-record-item__label { font-size: 10px; letter-spacing: 0.13em; }
+
+.homepage .track-record-item__value {
+  font-size: clamp(30px, 2.8vw, 42px);
+  line-height: 1;
+  font-weight: 500;
+}
+
+.homepage .track-record-item:first-child .track-record-item__value {
+  font-size: clamp(26px, 2.4vw, 36px);
+}
+
+.homepage .track-record-item__description { font-size: 13.5px; line-height: 1.55; }
+
+.homepage .cdd-card { padding: clamp(38px, 4.5vw, 62px); }
+.homepage .cdd-title { font-size: clamp(40px, 5vw, 76px); line-height: 0.92; letter-spacing: -0.035em; }
+.homepage .cdd-lede,
+.homepage .cdd-feature__body { font-size: clamp(14.5px, 0.95vw, 15.5px); line-height: 1.62; }
+.homepage .cdd-feature__title { font-size: clamp(26px, 3vw, 40px); line-height: 1.06; font-weight: 600; }
+.homepage .cdd-eyebrow,
+.homepage .cdd-status,
+.homepage .cdd-feature__label { font-size: 10px; letter-spacing: 0.14em; }
+.homepage .cdd-cta { font-size: 10.5px; letter-spacing: 0.12em; }
+
+@media (max-width: 767px) {
+  .homepage .home-hero__headline {
+    font-size: clamp(34px, 10vw, 48px) !important;
+    line-height: 1.02;
+  }
+
+  .homepage .section-title,
+  .homepage .strategy-section .section-title,
+  .homepage .track-record-section .section-title {
+    font-size: clamp(28px, 8.2vw, 38px);
+    line-height: 1.08;
+  }
+
+  .homepage .section-copy,
+  .homepage .home-hero__support { font-size: 14.5px; }
+
+  .homepage .firm-stat__value { font-size: 38px; }
+  .homepage .strategy-row__title { font-size: clamp(21px, 6vw, 28px); }
+  .homepage .track-record-item__value { font-size: 34px; }
+  .homepage .cdd-title { font-size: clamp(34px, 11vw, 48px); }
+  .homepage .cdd-feature__title { font-size: clamp(24px, 7vw, 32px); }
+}
