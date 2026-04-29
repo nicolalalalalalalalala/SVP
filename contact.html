@@ -23,35 +23,43 @@
       <div class="cp-hero__inner">
         <div class="cp-hero__head">
           <p class="cp-hero__eyebrow">ENQUIRIES</p>
-          <h1 class="cp-hero__title" id="cp-hero-title">Contact</h1>
+          <h1 class="cp-hero__title" id="cp-hero-title">Contact ShoreVest</h1>
         </div>
-        <p class="cp-hero__desc">For investor, mandate, and partnership enquiries.<br>Each enquiry type is routed to the team best placed to respond.</p>
+        <p class="cp-hero__desc">For investor, mandate, and partnership enquiries. Each enquiry is routed by mandate fit, geography, and response timeline.</p>
       </div>
     </section>
 
-    <section class="cp-routing" aria-label="Enquiry routing index">
+    <section class="cp-routing" aria-labelledby="cp-routing-title">
       <div class="cp-routing__inner">
-        <p class="cp-label">ROUTING INDEX</p>
+        <div class="cp-routing__head">
+          <div class="cp-heading-block">
+            <p class="cp-label">ROUTING INDEX</p>
+            <h2 class="cp-heading" id="cp-routing-title">Direct the enquiry to the right channel.</h2>
+          </div>
+          <p class="cp-section-intro">Use the relevant channel below for initial routing. Please keep first outreach summary-level and avoid confidential transaction materials.</p>
+        </div>
+
         <div class="cp-routing__table" role="list">
           <div class="cp-routing__row" role="listitem">
-            <span class="cp-routing__type">INVESTOR RELATIONS</span>
+            <span class="cp-routing__type">Investor Relations</span>
             <span class="cp-routing__desc">Fund subscriptions, existing LP communication, and periodic reporting.</span>
             <a class="cp-routing__channel" href="mailto:investors@shorevest.com">investors@shorevest.com</a>
           </div>
 
           <div class="cp-routing__row" role="listitem">
-            <span class="cp-routing__type">MANDATES &amp; PARTNERSHIPS</span>
-            <span class="cp-routing__desc">New origination, deal-level enquiries, co-investment, joint ventures, and platform-level discussions.</span>
+            <span class="cp-routing__type">Mandates &amp; Partnerships</span>
+            <span class="cp-routing__desc">Origination, deal-level enquiries, co-investment, strategic partnerships, and platform-level discussions.</span>
             <a class="cp-routing__channel" href="mailto:partners@shorevest.com">partners@shorevest.com</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cp-office" aria-label="Office location and direct contact">
+    <section class="cp-office" aria-labelledby="cp-office-title">
       <div class="cp-office__inner">
         <div class="cp-office__block">
-          <p class="cp-label">OFFICE — GUANGZHOU</p>
+          <p class="cp-label">OFFICE</p>
+          <h2 class="cp-heading" id="cp-office-title">Guangzhou</h2>
           <address class="cp-address">
             <span class="cp-address__name">ShoreVest Partners</span>
             <span class="cp-address__line">Suite 1503</span>
@@ -61,17 +69,27 @@
           </address>
         </div>
 
+        <aside class="cp-direct" aria-labelledby="cp-direct-title">
+          <p class="cp-direct__eyebrow">Direct Contact</p>
+          <h3 class="cp-direct__title" id="cp-direct-title"><a href="mailto:partners@shorevest.com">partners@shorevest.com</a></h3>
+          <p class="cp-direct__body">For investor dialogue, active mandates, and partnership discussions. Include enquiry type, geography, institution name, and preferred timeline.</p>
+        </aside>
       </div>
     </section>
 
-    <section class="cp-form-section" aria-label="Submit an enquiry">
+    <section class="cp-form-section" aria-labelledby="cp-form-title">
       <div class="cp-form-section__inner">
-        <p class="cp-label">SUBMIT ENQUIRY</p>
-        <p class="cp-form-section__intro">For structured routing. Provide only what's needed for initial triage.</p>
+        <div class="cp-form-section__head">
+          <div class="cp-heading-block">
+            <p class="cp-label">SUBMIT ENQUIRY</p>
+            <h2 class="cp-heading" id="cp-form-title">Structured Routing</h2>
+          </div>
+          <p class="cp-section-intro">Provide only the information required for initial triage. Do not include confidential deal materials.</p>
+        </div>
 
         <form class="cp-form" action="mailto:partners@shorevest.com" method="post" enctype="text/plain" novalidate>
           <div class="cp-form__type-group" role="group" aria-labelledby="cp-type-label">
-            <p class="cp-form__type-label" id="cp-type-label">ENQUIRY TYPE</p>
+            <p class="cp-form__type-label" id="cp-type-label">Enquiry Type</p>
             <div class="cp-form__type-options">
               <label class="cp-form__type-option"><input type="radio" name="enquiry_type" value="investor_relations" /><span>Investor Relations</span></label>
               <label class="cp-form__type-option"><input type="radio" name="enquiry_type" value="mandate_discussion" /><span>Mandate Discussion</span></label>
@@ -82,31 +100,31 @@
 
           <div class="cp-form__grid">
             <div class="cp-form__field">
-              <label class="cp-form__label" for="cp-full-name">FULL NAME</label>
+              <label class="cp-form__label" for="cp-full-name">Full Name</label>
               <input class="cp-form__input" id="cp-full-name" type="text" name="full_name" autocomplete="name" required />
             </div>
             <div class="cp-form__field">
-              <label class="cp-form__label" for="cp-email">BUSINESS EMAIL</label>
+              <label class="cp-form__label" for="cp-email">Business Email</label>
               <input class="cp-form__input" id="cp-email" type="email" name="email" autocomplete="email" required />
             </div>
             <div class="cp-form__field">
-              <label class="cp-form__label" for="cp-company">FIRM / INSTITUTION</label>
+              <label class="cp-form__label" for="cp-company">Firm / Institution</label>
               <input class="cp-form__input" id="cp-company" type="text" name="company" autocomplete="organization" />
             </div>
             <div class="cp-form__field">
-              <label class="cp-form__label" for="cp-phone">PHONE <span class="cp-form__label-opt">(OPTIONAL)</span></label>
+              <label class="cp-form__label" for="cp-phone">Phone <span class="cp-form__label-opt">(Optional)</span></label>
               <input class="cp-form__input" id="cp-phone" type="tel" name="phone" autocomplete="tel" />
             </div>
           </div>
 
           <div class="cp-form__field cp-form__field--message">
-            <label class="cp-form__label" for="cp-message">ENQUIRY SUMMARY</label>
+            <label class="cp-form__label" for="cp-message">Enquiry Summary</label>
             <textarea class="cp-form__input cp-form__textarea" id="cp-message" name="message" rows="5" required></textarea>
           </div>
 
           <div class="cp-form__bottom">
             <p class="cp-form__notice">Brief description only. No confidential deal materials.</p>
-            <button class="cp-form__submit" type="submit">SEND ENQUIRY</button>
+            <button class="cp-form__submit" type="submit">Send Enquiry</button>
           </div>
         </form>
       </div>
