@@ -1,6 +1,6 @@
 body.firm-page {
-  --firm-page-max: var(--home-container-max, var(--sv-page-max, 1320px));
-  --firm-page-gutter: var(--home-container-gutter, var(--sv-page-gutter, clamp(22px, 4.8vw, 64px)));
+  --firm-max: 1320px;
+  --firm-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
   --firm-qing-dark: #1e4040;
   --firm-qing: #3d7070;
   --firm-ink-green-dark: #0f2206;
@@ -23,18 +23,25 @@ body.firm-page h3,
 body.firm-page p { margin: 0; }
 
 body.firm-page .wrap,
+body.firm-page .firm-container,
 body.firm-page .section-stack {
-  width: min(100%, var(--firm-page-max));
-  max-width: var(--firm-page-max);
+  width: 100%;
+  max-width: var(--firm-max);
   margin-inline: auto;
-  padding-inline: var(--firm-page-gutter);
+  padding-inline: var(--firm-gutter);
+  box-sizing: border-box;
 }
 
-body.firm-page .firm-container {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0;
+body.firm-page .wrap.firm-container {
+  max-width: var(--firm-max);
+  margin-inline: auto;
+  padding-inline: var(--firm-gutter);
+}
+
+body.firm-page .wrap.section-stack {
+  max-width: var(--firm-max);
+  margin-inline: auto;
+  padding-inline: var(--firm-gutter);
 }
 
 body.firm-page,
@@ -50,16 +57,25 @@ body.firm-page .firm-panel--hero {
     radial-gradient(circle at 16% 22%, rgba(84, 143, 143, 0.38) 0%, transparent 46%),
     linear-gradient(124deg, #1e4040 0%, #1a3a2a 50%, #0f2206 100%);
   color: #faf6ee;
+  width: 100%;
+  margin: 0;
   min-height: clamp(520px, 60vh, 640px);
   display: flex;
   align-items: end;
-  padding-block: clamp(86px, 8.5vw, 126px) clamp(68px, 6.5vw, 96px);
+  padding-block: clamp(96px, 9vw, 132px) clamp(76px, 7vw, 108px);
+}
+
+body.firm-page .firm-hero-band .wrap,
+body.firm-page .firm-hero-band .firm-container {
+  max-width: var(--firm-max);
+  margin-inline: auto;
+  padding-inline: var(--firm-gutter);
 }
 
 body.firm-page .firm-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.52fr);
-  gap: clamp(48px, 6vw, 88px);
+  grid-template-columns: minmax(0, 0.62fr) minmax(360px, 0.38fr);
+  gap: clamp(56px, 7vw, 112px);
   align-items: end;
 }
 
@@ -115,15 +131,15 @@ body.firm-page .firm-hero-proof-item {
 
 body.firm-page .section-stack {
   display: grid;
-  gap: clamp(54px, 6.5vw, 90px);
-  padding-top: clamp(72px, 8vw, 110px);
-  padding-bottom: clamp(82px, 9vw, 126px);
+  gap: clamp(72px, 8vw, 112px);
+  padding-top: clamp(72px, 8vw, 112px);
+  padding-bottom: clamp(88px, 9vw, 128px);
 }
 
 body.firm-page .firm-editorial {
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-  gap: clamp(44px, 5.5vw, 84px);
+  grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr);
+  gap: clamp(48px, 7vw, 112px);
   align-items: start;
   border-top: 1px solid #d8ceb0;
   padding-top: clamp(34px, 3.8vw, 52px);
@@ -151,8 +167,11 @@ body.firm-page .firm-panel--solid {
     radial-gradient(circle at 85% 15%, rgba(201, 59, 42, 0.14) 0%, transparent 42%),
     linear-gradient(126deg, #234c4c 0%, #1d3f2f 54%, #10240b 100%);
   color: #faf6ee;
-  border: 1px solid rgba(216, 206, 176, 0.24);
-  padding: clamp(42px, 4.8vw, 66px);
+  margin: 0;
+  width: 100%;
+  border: 1px solid rgba(216, 206, 176, 0.34);
+  padding: clamp(52px, 6vw, 80px);
+  box-sizing: border-box;
 }
 
 body.firm-page .firm-dark-band .firm-heading,
@@ -192,9 +211,12 @@ body.firm-page .firm-geo-grid h3 {
 }
 
 body.firm-page .firm-process-panel {
+  width: 100%;
+  margin: 0;
   background: #faf6ee;
   border: 1px solid #d8ceb0;
-  padding: clamp(34px, 4.2vw, 58px);
+  padding: clamp(52px, 6vw, 80px);
+  box-sizing: border-box;
 }
 
 body.firm-page .firm-process-grid {
@@ -234,6 +256,9 @@ body.firm-page .num {
 body.firm-page .firm-governance-section {
   display: grid;
   gap: 26px;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body.firm-page .firm-governance-grid {
@@ -262,8 +287,11 @@ body.firm-page .firm-card--qing p {
 }
 
 body.firm-page .firm-capital-note {
+  width: 100%;
+  margin: 0;
   border-top: 1px solid #d8ceb0;
   padding-top: clamp(36px, 4.5vw, 56px);
+  box-sizing: border-box;
 }
 
 body.firm-page .firm-capital-note .firm-heading {
@@ -300,5 +328,20 @@ body.firm-page .firm-capital-note .firm-body {
 
   body.firm-page .firm-process-card {
     min-height: auto;
+  }
+
+  body.firm-page .firm-hero-proof {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  body.firm-page {
+    --firm-gutter: var(--sv-page-gutter, clamp(18px, 5vw, 24px));
+  }
+
+  body.firm-page .firm-dark-band,
+  body.firm-page .firm-process-panel {
+    padding: clamp(32px, 7vw, 44px);
   }
 }
