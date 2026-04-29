@@ -398,3 +398,87 @@ body.homepage {
   .cdd-title { font-size: clamp(34px, 10vw, 48px); }
   .cdd-card { padding: 32px 24px; }
 }
+
+.homepage .home-hero__eyebrow {
+  color: #E8998F !important;
+  opacity: 1 !important;
+  letter-spacing: 0.16em;
+}
+
+.homepage .home-hero__headline,
+.homepage .home-hero__headline-primary,
+.homepage .home-hero__headline-emphasis {
+  color: #FAF6EE !important;
+  opacity: 1 !important;
+}
+
+.homepage .home-hero__support {
+  color: rgba(250, 246, 238, 0.9) !important;
+  opacity: 1 !important;
+  max-width: 560px;
+}
+
+.homepage .home-hero__cta,
+.homepage .home-hero__cta:link,
+.homepage .home-hero__cta:visited,
+.homepage .home-hero__cta:hover,
+.homepage .home-hero__cta:focus {
+  text-decoration: none !important;
+}
+
+.homepage .home-hero__cta span {
+  text-decoration: none !important;
+}
+
+.homepage .home-hero__cta--primary {
+  background: #C93B2A !important;
+  border: 1px solid #C93B2A !important;
+  color: #FAF6EE !important;
+}
+
+.homepage .home-hero__cta--primary:hover,
+.homepage .home-hero__cta--primary:focus-visible {
+  background: #8A1F12 !important;
+  border-color: #8A1F12 !important;
+  color: #FAF6EE !important;
+}
+
+.homepage .home-hero__cta--secondary {
+  position: relative;
+  color: #FAF6EE !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+}
+
+.homepage .home-hero__cta--secondary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: #C93B2A;
+}
+
+.homepage .home-hero__cta--secondary:hover,
+.homepage .home-hero__cta--secondary:focus-visible {
+  color: #FAF6EE !important;
+  opacity: 0.86;
+}
+
+.homepage .home-hero::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 34, 6, 0.82) 0%,
+      rgba(30, 64, 64, 0.58) 42%,
+      rgba(30, 64, 64, 0.22) 72%,
+      rgba(30, 64, 64, 0.08) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(15, 34, 6, 0.08) 0%,
+      rgba(15, 34, 6, 0.36) 100%
+    ) !important;
+}
