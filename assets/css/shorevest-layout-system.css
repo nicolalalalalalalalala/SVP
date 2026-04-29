@@ -8,8 +8,10 @@
 
 :root {
   --sv-site-max: 1440px;
+  --sv-content-max-standard: 1320px;
+  --sv-content-max-legal: 960px;
   --sv-page-gutter: clamp(28px, 5vw, 72px);
-  --sv-content-max: var(--sv-site-max);
+  --sv-content-max: var(--sv-content-max-standard);
   --sv-content-wide: 1440px;
   --sv-text-max: 760px;
 
@@ -129,4 +131,13 @@ body :is(
 
 .text-measure {
   max-width: var(--sv-text-max);
+}
+
+/* Shared vertical rhythm helpers for editorial pages. */
+.sv-section {
+  padding-block: clamp(76px, 8vw, 116px);
+}
+
+.sv-section + .sv-section {
+  border-top: 1px solid rgba(216, 206, 176, 0.72);
 }
