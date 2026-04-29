@@ -31,12 +31,6 @@ body.homepage {
   overflow-x: hidden;
 }
 
-.home-container {
-  width: min(calc(100% - (var(--sv-page-gutter) * 2)), var(--sv-site-max));
-  max-width: none;
-  margin-inline: auto;
-  padding-inline: 0;
-}
 
 .homepage-section-stack {
   width: 100%;
@@ -52,7 +46,8 @@ body.homepage {
 
 .home-hero {
   position: relative;
-  min-height: clamp(620px, 72vh, 780px);
+  width: 100%;
+  min-height: clamp(640px, 76vh, 820px);
   overflow: hidden;
   isolation: isolate;
   background: var(--ink-green-dark);
@@ -87,11 +82,7 @@ body.homepage {
 .home-hero__inner {
   position: relative;
   z-index: 2;
-  width: min(calc(100% - (var(--sv-page-gutter) * 2)), var(--sv-site-max));
-  max-width: none;
-  margin-inline: auto;
-  padding-inline: 0;
-  min-height: clamp(620px, 72vh, 780px);
+  min-height: clamp(640px, 76vh, 820px);
   display: flex;
   align-items: center;
   padding-top: clamp(28px, 4vh, 44px);
@@ -100,7 +91,9 @@ body.homepage {
 .home-hero__text {
   position: relative;
   z-index: 3;
-  max-width: 760px;
+  max-width: 720px;
+  margin: 0;
+  padding: 0;
 }
 
 .home-hero__eyebrow {
