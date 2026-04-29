@@ -1,6 +1,6 @@
 body.firm-page {
   --firm-max: 1320px;
-  --firm-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  --firm-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
   --firm-qing-dark: #1e4040;
   --firm-qing: #3d7070;
   --firm-ink-green-dark: #0f2206;
@@ -25,23 +25,25 @@ body.firm-page p { margin: 0; }
 body.firm-page .wrap,
 body.firm-page .firm-container,
 body.firm-page .section-stack {
-  width: 100%;
-  max-width: var(--firm-max);
+  width: min(calc(100% - (var(--firm-gutter) * 2)), var(--firm-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--firm-gutter);
+  padding-inline: 0;
   box-sizing: border-box;
 }
 
 body.firm-page .wrap.firm-container {
-  max-width: var(--firm-max);
+  width: min(calc(100% - (var(--firm-gutter) * 2)), var(--firm-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--firm-gutter);
+  padding-inline: 0;
 }
 
 body.firm-page .wrap.section-stack {
-  max-width: var(--firm-max);
+  width: min(calc(100% - (var(--firm-gutter) * 2)), var(--firm-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--firm-gutter);
+  padding-inline: 0;
 }
 
 body.firm-page,
@@ -67,9 +69,10 @@ body.firm-page .firm-panel--hero {
 
 body.firm-page .firm-hero-band .wrap,
 body.firm-page .firm-hero-band .firm-container {
-  max-width: var(--firm-max);
+  width: min(calc(100% - (var(--firm-gutter) * 2)), var(--firm-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--firm-gutter);
+  padding-inline: 0;
 }
 
 body.firm-page .firm-hero-grid {
@@ -336,10 +339,6 @@ body.firm-page .firm-capital-note .firm-body {
 }
 
 @media (max-width: 767px) {
-  body.firm-page {
-    --firm-gutter: var(--sv-page-gutter, clamp(18px, 5vw, 24px));
-  }
-
   body.firm-page .firm-dark-band,
   body.firm-page .firm-process-panel {
     padding: clamp(32px, 7vw, 44px);
