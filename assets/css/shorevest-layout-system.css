@@ -7,7 +7,7 @@
 ================================================================ */
 
 :root {
-  --sv-page-gutter: clamp(28px, 4.2vw, 72px);
+  --sv-page-gutter: clamp(28px, 5vw, 72px);
   --sv-site-max: 1440px;
   --sv-content-max: var(--sv-site-max);
   --sv-content-wide: 1440px;
@@ -37,10 +37,16 @@
 .cp-routing__inner,
 .cp-office__inner,
 .cp-form-section__inner {
-  width: min(100% - (var(--sv-page-gutter) * 2), var(--sv-site-max));
-  max-width: var(--sv-site-max);
+  width: min(calc(100% - (var(--sv-page-gutter) * 2)), var(--sv-site-max));
+  max-width: none;
   margin-inline: auto;
   padding-inline: 0;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --sv-page-gutter: clamp(18px, 5vw, 24px);
+  }
 }
 
 /* Inner shells that already sit inside .wrap/.home-container must not add a second page gutter. */
