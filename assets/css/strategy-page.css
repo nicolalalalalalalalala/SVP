@@ -1,6 +1,6 @@
 .strategy-page {
   --strategy-max: 1320px;
-  --strategy-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  --strategy-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
   --strategy-paper: #F2ECD8;
   --strategy-paper-light: #FAF6EE;
   --strategy-rule: #D8CEB0;
@@ -19,10 +19,10 @@
 }
 
 .strategy-page .wrap {
-  width: 100%;
-  max-width: var(--strategy-max);
+  width: min(calc(100% - (var(--strategy-gutter) * 2)), var(--strategy-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--strategy-gutter);
+  padding-inline: 0;
   box-sizing: border-box;
 }
 
