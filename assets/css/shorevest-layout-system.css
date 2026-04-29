@@ -1,7 +1,20 @@
 :root {
-  --site-max: 1240px;
-  --site-page-margin: clamp(28px, 4.8vw, 72px);
-  --site-gutter: var(--site-page-margin);
+  --site-page-gutter: clamp(22px, 4.8vw, 64px);
+  --site-content-max: 1200px;
+  --site-content-max-wide: 1320px;
+  --pad: var(--site-page-gutter);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --site-page-gutter: clamp(20px, 4.8vw, 40px);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-page-gutter: clamp(16px, 5vw, 22px);
+  }
 }
 
 .site-wrap,
@@ -31,9 +44,9 @@
 .legal-content,
 .operational-geography__inner {
   width: 100%;
-  max-width: var(--site-max);
+  max-width: var(--site-content-max);
   margin-inline: auto;
-  padding-inline: var(--site-gutter);
+  padding-inline: var(--site-page-gutter);
   box-sizing: border-box;
 }
 
