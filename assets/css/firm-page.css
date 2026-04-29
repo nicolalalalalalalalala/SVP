@@ -26,14 +26,10 @@ body.firm-page .wrap,
 body.firm-page .section-stack {
   width: min(100%, var(--firm-page-max));
   max-width: var(--firm-page-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--firm-page-gutter);
-  padding-right: var(--firm-page-gutter);
-  box-sizing: border-box;
+  margin-inline: auto;
+  padding-inline: var(--firm-page-gutter);
 }
 
-/* Avoid nested page-gutter duplication when firm-container sits inside .wrap. */
 body.firm-page .firm-container {
   width: 100%;
   max-width: none;
@@ -50,19 +46,20 @@ body.firm-page .firm-main {
 body.firm-page .firm-hero-band,
 body.firm-page .firm-panel--hero {
   background:
-    radial-gradient(circle at 18% 18%, rgba(61,112,112,0.36) 0%, transparent 46%),
-    linear-gradient(125deg, #1e4040 0%, #173923 48%, #0f2206 100%);
+    linear-gradient(120deg, rgba(9, 24, 10, 0.22) 0%, rgba(9, 24, 10, 0.1) 48%, rgba(9, 24, 10, 0.2) 100%),
+    radial-gradient(circle at 16% 22%, rgba(84, 143, 143, 0.38) 0%, transparent 46%),
+    linear-gradient(124deg, #1e4040 0%, #1a3a2a 50%, #0f2206 100%);
   color: #faf6ee;
-  min-height: clamp(520px, 62vh, 680px);
+  min-height: clamp(520px, 60vh, 640px);
   display: flex;
   align-items: end;
-  padding-block: clamp(92px, 9vw, 132px) clamp(72px, 7vw, 104px);
+  padding-block: clamp(86px, 8.5vw, 126px) clamp(68px, 6.5vw, 96px);
 }
 
 body.firm-page .firm-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.55fr);
-  gap: clamp(56px, 7vw, 104px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.52fr);
+  gap: clamp(48px, 6vw, 88px);
   align-items: end;
 }
 
@@ -79,104 +76,125 @@ body.firm-page .firm-label {
 
 body.firm-page .firm-hero-title {
   font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
-  font-size: clamp(48px, 5.8vw, 84px);
-  line-height: 0.95;
+  font-size: clamp(46px, 5.5vw, 78px);
+  line-height: 0.98;
   font-weight: 700;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: #faf6ee;
+  color: #fffdf9;
+  text-wrap: balance;
   max-width: 13ch;
 }
 
 body.firm-page .firm-panel--hero .firm-label,
 body.firm-page .firm-dark-band .firm-label {
-  color: rgba(250,246,238,0.72);
+  color: rgba(250, 246, 238, 0.86);
 }
 
 body.firm-page .firm-hero-support {
-  max-width: 58ch;
-  color: rgba(250,246,238,0.78);
-  font-size: 16px;
-  line-height: 1.65;
-  margin-top: 24px;
+  max-width: 60ch;
+  color: rgba(250, 246, 238, 0.88);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: 26px;
 }
 
 body.firm-page .firm-hero-proof {
-  border-left: 1px solid rgba(250,246,238,0.28);
-  padding-left: clamp(24px, 3vw, 40px);
-  color: rgba(250,246,238,0.78);
+  border-left: 1px solid rgba(250, 246, 238, 0.42);
+  padding-left: clamp(22px, 3vw, 38px);
+  color: rgba(250, 246, 238, 0.9);
+  display: grid;
+  gap: 12px;
 }
 
 body.firm-page .firm-hero-proof-item {
-  color: rgba(250,246,238,0.78);
+  color: rgba(250, 246, 238, 0.9);
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 body.firm-page .section-stack {
   display: grid;
-  gap: clamp(56px, 7vw, 96px);
-  padding-top: clamp(72px, 8vw, 112px);
-  padding-bottom: clamp(80px, 9vw, 128px);
+  gap: clamp(54px, 6.5vw, 90px);
+  padding-top: clamp(72px, 8vw, 110px);
+  padding-bottom: clamp(82px, 9vw, 126px);
 }
 
 body.firm-page .firm-editorial {
   display: grid;
-  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
-  gap: clamp(48px, 6vw, 88px);
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(44px, 5.5vw, 84px);
   align-items: start;
   border-top: 1px solid #d8ceb0;
-  padding-top: clamp(36px, 4vw, 56px);
+  padding-top: clamp(34px, 3.8vw, 52px);
 }
 
 body.firm-page .firm-heading {
   color: #0f2206;
+  line-height: 1.14;
 }
 
 body.firm-page .firm-body {
-  color: rgba(15,34,6,0.76);
+  color: rgba(15, 34, 6, 0.82);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.75;
+  max-width: 68ch;
+}
+
+body.firm-page .firm-editorial .firm-body + .firm-body {
+  margin-top: 18px;
 }
 
 body.firm-page .firm-dark-band,
 body.firm-page .firm-panel--solid {
   background:
-    radial-gradient(circle at 85% 15%, rgba(201,59,42,0.10) 0%, transparent 42%),
-    linear-gradient(125deg, #1e4040 0%, #173923 54%, #0f2206 100%);
+    radial-gradient(circle at 85% 15%, rgba(201, 59, 42, 0.14) 0%, transparent 42%),
+    linear-gradient(126deg, #234c4c 0%, #1d3f2f 54%, #10240b 100%);
   color: #faf6ee;
-  border: 1px solid rgba(216,206,176,0.24);
-  padding: clamp(44px, 5vw, 72px);
+  border: 1px solid rgba(216, 206, 176, 0.24);
+  padding: clamp(42px, 4.8vw, 66px);
 }
 
 body.firm-page .firm-dark-band .firm-heading,
 body.firm-page .firm-dark-band h2,
 body.firm-page .firm-dark-band h3 {
-  color: #faf6ee;
+  color: #fffdf9;
 }
 
 body.firm-page .firm-dark-band .firm-body,
 body.firm-page .firm-dark-band p,
 body.firm-page .firm-dark-band .firm-geo-grid p {
-  color: rgba(250,246,238,0.76);
+  color: rgba(250, 246, 238, 0.88);
+}
+
+body.firm-page .firm-dark-band > .firm-body {
+  margin-top: 14px;
+  max-width: 74ch;
 }
 
 body.firm-page .firm-geo-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(24px, 4vw, 44px);
-  margin-top: 30px;
+  gap: clamp(22px, 3.2vw, 38px);
+  margin-top: 34px;
 }
 
 body.firm-page .firm-geo-grid article {
-  border-top: 1px solid rgba(250,246,238,0.22);
-  padding-top: 20px;
+  border-top: 1px solid rgba(250, 246, 238, 0.34);
+  padding-top: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+body.firm-page .firm-geo-grid h3 {
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: 0.02em;
 }
 
 body.firm-page .firm-process-panel {
   background: #faf6ee;
   border: 1px solid #d8ceb0;
-  padding: clamp(40px, 5vw, 72px);
+  padding: clamp(34px, 4.2vw, 58px);
 }
 
 body.firm-page .firm-process-grid {
@@ -185,17 +203,37 @@ body.firm-page .firm-process-grid {
   gap: 1px;
   background: #d8ceb0;
   border: 1px solid #d8ceb0;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 body.firm-page .firm-process-card {
   background: #faf6ee;
-  padding: clamp(24px, 2.8vw, 36px);
+  padding: clamp(22px, 2.2vw, 30px);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 190px;
+}
+
+body.firm-page .firm-process-card p {
+  color: rgba(15, 34, 6, 0.8);
+  line-height: 1.65;
+}
+
+body.firm-page .firm-process-card h3 {
+  line-height: 1.25;
 }
 
 body.firm-page .firm-process-num,
 body.firm-page .num {
   color: #c93b2a;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+body.firm-page .firm-governance-section {
+  display: grid;
+  gap: 26px;
 }
 
 body.firm-page .firm-governance-grid {
@@ -205,23 +243,35 @@ body.firm-page .firm-governance-grid {
 }
 
 body.firm-page .firm-card--qing {
-  background: #1e4040;
+  background: linear-gradient(165deg, #244c4c 0%, #1d3f3f 100%);
+  border: 1px solid rgba(216, 206, 176, 0.28);
   border-top: 2px solid #c93b2a;
   color: #faf6ee;
-  padding: clamp(28px, 3vw, 40px);
+  padding: clamp(26px, 2.8vw, 36px);
 }
 
 body.firm-page .firm-card--qing h3 {
-  color: #faf6ee;
+  color: #fffdf9;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
 body.firm-page .firm-card--qing p {
-  color: rgba(250,246,238,0.76);
+  color: rgba(250, 246, 238, 0.9);
+  line-height: 1.72;
 }
 
 body.firm-page .firm-capital-note {
   border-top: 1px solid #d8ceb0;
-  padding-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(36px, 4.5vw, 56px);
+}
+
+body.firm-page .firm-capital-note .firm-heading {
+  max-width: 24ch;
+}
+
+body.firm-page .firm-capital-note .firm-body {
+  margin-top: 14px;
 }
 
 @media (max-width: 900px) {
@@ -234,17 +284,21 @@ body.firm-page .firm-capital-note {
   }
 
   body.firm-page .firm-hero-grid {
-    gap: 32px;
+    gap: 30px;
   }
 
   body.firm-page .firm-hero-proof {
     border-left: 0;
-    border-top: 1px solid rgba(250,246,238,0.24);
+    border-top: 1px solid rgba(250, 246, 238, 0.32);
     padding-left: 0;
-    padding-top: 24px;
+    padding-top: 20px;
   }
 
   body.firm-page .firm-hero-title {
-    font-size: clamp(40px, 11vw, 58px);
+    font-size: clamp(38px, 10.5vw, 56px);
+  }
+
+  body.firm-page .firm-process-card {
+    min-height: auto;
   }
 }
