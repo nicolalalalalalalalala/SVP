@@ -10,8 +10,8 @@
      Text content is normal mixed-case; CSS handles uppercase + tracking. */
 
   const footerTemplateEn = `
-  <div class="sv-footer__inner wrap">
-    <div class="sv-footer__main">
+  <div class="sv-footer__inner">
+    <div class="sv-footer__top">
       <div class="sv-footer__brand footer-brand-lockup"><strong>ShoreVest Partners</strong></div>
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">CONTACT</span>
@@ -25,13 +25,13 @@
         <summary>LEGAL NOTICE</summary>
         <div class="sv-footer__legal">This website uses cookies and similar technologies for operational, analytical, and security purposes. Certain cookies are required for core site functionality. By continuing to use this website, you acknowledge our use of cookies as described in the Cookie Notice and encourage you to review our Privacy Policy, Terms of Use, and Legal Notices &amp; Disclaimers.</div>
       </details>
-      <nav class="sv-footer__legal-links" aria-label="Footer legal links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="legal-notices-disclaimers.html">Legal Notices &amp; Disclaimers</a></nav>
+      <nav class="sv-footer__links sv-footer__legal-links" aria-label="Footer legal links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-notice.html">Cookie Notice</a><a href="terms-of-use.html">Terms of Use</a><a href="legal-notices-disclaimers.html">Legal Notices &amp; Disclaimers</a></nav>
     </div>
   </div>`;
 
   const footerTemplateCn = `
-  <div class="sv-footer__inner wrap">
-    <div class="sv-footer__main">
+  <div class="sv-footer__inner">
+    <div class="sv-footer__top">
       <div class="sv-footer__brand footer-brand-lockup"><strong>ShoreVest Partners</strong></div>
       <div class="sv-footer__contact">
         <span class="sv-footer__contact-label">联系我们</span>
@@ -45,7 +45,7 @@
         <summary>法律声明</summary>
         <div class="sv-footer__legal">本网站使用 Cookie 及类似技术用于网站运行、分析和安全目的。为保障网站正常功能，某些 Cookie 可能为必需。继续使用本网站即表示您确认并同意本《Cookie 通知》所述内容；另请同时查阅《隐私政策》《使用条款》及《法律声明与免责声明》。</div>
       </details>
-      <nav class="sv-footer__legal-links" aria-label="页脚法律链接"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice_cn.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="legal-notices-disclaimers_cn.html">法律声明与免责声明</a></nav>
+      <nav class="sv-footer__links sv-footer__legal-links" aria-label="页脚法律链接"><a href="privacy-policy_cn.html">隐私政策</a><a href="cookie-notice_cn.html">Cookie 通知</a><a href="terms-of-use_cn.html">使用条款</a><a href="legal-notices-disclaimers_cn.html">法律声明与免责声明</a></nav>
     </div>
   </div>`;
 
