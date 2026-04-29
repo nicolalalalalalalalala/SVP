@@ -45,59 +45,65 @@ body.strategy-page li {
   line-height: 1.6;
 }
 
-.strategy-hero {
+body.strategy-page .strategy-hero {
   position: relative;
-  min-height: clamp(520px, 56vw, 660px);
+  min-height: clamp(520px, 62vh, 690px);
   display: flex;
-  align-items: end;
+  align-items: center;
   overflow: hidden;
-  background: #0f2206;
+  background:
+    linear-gradient(90deg,
+      rgba(15, 34, 6, 0.86) 0%,
+      rgba(15, 34, 6, 0.74) 34%,
+      rgba(30, 64, 64, 0.54) 62%,
+      rgba(15, 34, 6, 0.72) 100%),
+    linear-gradient(135deg,
+      rgba(138, 31, 18, 0.34) 0%,
+      rgba(15, 34, 6, 0.20) 48%,
+      rgba(15, 34, 6, 0.58) 100%),
+    url("../ChatGPT Image Apr 29, 2026 at 12_01_36 AM.png") center 48% / cover no-repeat !important;
+  border-bottom: 1px solid rgba(216, 206, 176, 0.42);
 }
 
-.strategy-hero::before {
+body.strategy-page .strategy-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(90deg, rgba(15, 34, 6, 0.88) 0%, rgba(15, 34, 6, 0.72) 34%, rgba(30, 64, 64, 0.44) 64%, rgba(138, 31, 18, 0.24) 100%),
-    url("../images/strategy-hero-2026-04-29.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: 0;
-}
-
-.strategy-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 18% 42%, rgba(201, 59, 42, 0.18), transparent 42%), linear-gradient(180deg, rgba(15, 34, 6, 0.04), rgba(15, 34, 6, 0.44));
-  z-index: 1;
+  background:
+    radial-gradient(ellipse at 20% 48%, rgba(0, 0, 0, 0.44) 0%, rgba(0, 0, 0, 0.20) 42%, transparent 68%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.28) 100%);
   pointer-events: none;
 }
 
-.strategy-hero .wrap {
+body.strategy-page .strategy-hero .wrap {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--max, 1200px);
   margin: 0 auto;
-  padding: clamp(78px, 8vw, 112px) clamp(28px, 4.8vw, 72px);
+  padding: clamp(76px, 8vw, 116px) var(--pad, clamp(22px, 4.8vw, 64px));
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.58fr);
-  gap: clamp(56px, 7vw, 104px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.75fr);
+  gap: clamp(48px, 7vw, 110px);
   align-items: end;
 }
 
-.strategy-hero .eyebrow { color: #e8998f; }
-.strategy-hero h1 { color: var(--strategy-xuan-light); max-width: 12ch; }
-.strategy-hero .pagehero__lede { color: rgba(250, 246, 238, 0.84); max-width: 52ch; margin-top: 20px; }
-.strategy-hero .hero-meta { color: rgba(250, 246, 238, 0.58); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 16px; }
+body.strategy-page .strategy-hero .hero-main { max-width: 690px; }
+body.strategy-page .strategy-hero .eyebrow { color: #e8998f !important; margin-bottom: 18px; font-size: 11px; letter-spacing: 0.20em; font-weight: 700; }
+body.strategy-page .strategy-hero .eyebrow::after { background: #e8998f !important; }
+body.strategy-page .strategy-hero h1,
+body.strategy-page .strategy-hero .type-display-hero { color: #faf6ee !important; font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif) !important; font-size: clamp(54px, 6vw, 88px) !important; line-height: 0.98 !important; font-weight: 300 !important; font-style: italic !important; letter-spacing: -0.035em !important; text-transform: uppercase !important; max-width: 12ch; margin: 0 !important; text-shadow: 0 2px 22px rgba(0, 0, 0, 0.42); opacity: 1 !important; }
+body.strategy-page .strategy-hero .pagehero__lede { margin-top: 28px !important; max-width: 620px; color: rgba(250, 246, 238, 0.88) !important; font-size: 16px !important; line-height: 1.68 !important; font-weight: 400 !important; text-shadow: 0 1px 16px rgba(0, 0, 0, 0.34); }
+body.strategy-page .strategy-hero .hero-meta { margin-top: 20px !important; max-width: 640px; color: rgba(250, 246, 238, 0.64) !important; font-size: 12px !important; line-height: 1.55 !important; letter-spacing: 0.10em !important; text-transform: uppercase !important; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.30); }
 
-.hero-aside { border-left: 1px solid rgba(216, 206, 176, 0.34); padding-left: clamp(28px, 3vw, 44px); }
-.strategy-kpi { padding: 16px 0; border-bottom: 1px solid rgba(216, 206, 176, 0.24); }
-.strategy-kpi:last-child { border-bottom: 0; }
-.strategy-kpi strong { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: #e8998f; margin-bottom: 7px; }
-.strategy-kpi span { color: var(--strategy-xuan-light); }
+body.strategy-page .strategy-hero .hero-aside { border-left: 1px solid rgba(250, 246, 238, 0.24); padding-left: clamp(28px, 3vw, 42px); }
+body.strategy-page .strategy-hero .hero-kpis { display: grid; gap: 0; }
+body.strategy-page .strategy-hero .strategy-kpi { padding: 18px 0 20px; border-bottom: 1px solid rgba(250, 246, 238, 0.20); background: transparent !important; }
+body.strategy-page .strategy-hero .strategy-kpi:first-child { padding-top: 0; }
+body.strategy-page .strategy-hero .strategy-kpi:last-child { border-bottom: 0; padding-bottom: 0; }
+body.strategy-page .strategy-hero .strategy-kpi strong { display: block; margin-bottom: 8px; color: #e8998f !important; font-size: 11px !important; letter-spacing: 0.18em !important; text-transform: uppercase !important; font-weight: 700 !important; }
+body.strategy-page .strategy-hero .strategy-kpi span { display: block; color: rgba(250, 246, 238, 0.92) !important; font-size: 16px !important; line-height: 1.42 !important; font-weight: 500 !important; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.30); }
 
 .market-context,
 .strategy-sleeves,
@@ -162,7 +168,7 @@ body.strategy-page li {
 .disclosure { max-width: 90ch; color: rgba(46, 74, 24, 0.72); font-size: 12px; line-height: 1.6; }
 
 @media (max-width: 900px) {
-  .strategy-hero .wrap,
+  body.strategy-page .strategy-hero .wrap,
   .market-context-content,
   .context-grid,
   .strategy-sleeve,
@@ -172,7 +178,11 @@ body.strategy-page li {
   .risk-return-grid,
   .next-links { grid-template-columns: 1fr; }
 
-  .hero-aside { border-left: 0; border-top: 1px solid rgba(216, 206, 176, 0.34); padding-left: 0; padding-top: 20px; }
+  body.strategy-page .strategy-hero { min-height: auto; }
+  body.strategy-page .strategy-hero .wrap { gap: 36px; padding-top: 84px; padding-bottom: 72px; }
+  body.strategy-page .strategy-hero .hero-aside { border-left: 0; border-top: 1px solid rgba(250, 246, 238, 0.24); padding-left: 0; padding-top: 28px; }
+  body.strategy-page .strategy-hero h1,
+  body.strategy-page .strategy-hero .type-display-hero { font-size: clamp(42px, 11vw, 62px) !important; max-width: 11ch; }
 
   .underwriting-item,
   .strategy-sleeve,
