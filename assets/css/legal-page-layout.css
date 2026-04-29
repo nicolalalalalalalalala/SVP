@@ -1,54 +1,252 @@
-.legal-main {
-  background: var(--xuan-paper, #f2ecd8);
-  width: 100%;
-  padding-block: clamp(16px, 2vw, 28px) clamp(40px, 4.2vw, 64px);
+body.legal-page,
+body.privacy-page,
+body.cookie-page,
+body.cookies-page,
+body.terms-page,
+body.disclaimers-page {
+  --legal-max: 1320px;
+  --legal-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  --legal-text-max: 920px;
+  background: #f2ecd8;
+  color: #0f2206;
 }
 
-.legal-container {
+body.legal-page .wrap,
+body.privacy-page .wrap,
+body.cookie-page .wrap,
+body.cookies-page .wrap,
+body.terms-page .wrap,
+body.disclaimers-page .wrap,
+body.legal-page .legal-container,
+body.privacy-page .legal-container,
+body.cookie-page .legal-container,
+body.cookies-page .legal-container,
+body.terms-page .legal-container,
+body.disclaimers-page .legal-container {
   width: 100%;
-  max-width: var(--sv-content-max, 1320px);
+  max-width: var(--legal-max);
   margin-inline: auto;
-  padding-inline: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
+  padding-inline: var(--legal-gutter);
   box-sizing: border-box;
 }
 
-.legal-content {
-  max-width: 880px;
-  color: #3f3b36;
-  font-family: "DIN 2014", "Arial Narrow", Arial, sans-serif;
-  font-size: 9pt;
-  line-height: 1.55;
+.legal-main,
+.policy-main,
+.terms-main,
+.disclaimer-main {
+  width: 100%;
+  max-width: var(--legal-max);
+  margin-inline: auto;
+  padding-inline: var(--legal-gutter);
+  padding-top: clamp(72px, 8vw, 112px);
+  padding-bottom: clamp(88px, 9vw, 128px);
+  box-sizing: border-box;
 }
 
+.legal-main > .legal-container,
+.policy-main > .legal-container,
+.terms-main > .legal-container,
+.disclaimer-main > .legal-container {
+  padding-inline: 0;
+}
+
+.legal-content,
+.policy-content,
+.terms-content,
+.disclaimer-content {
+  max-width: var(--legal-text-max);
+  margin: 0;
+  color: #24331e;
+}
+
+.legal-page__intro-block,
+.legal-hero,
+.policy-hero,
+.terms-hero,
+.disclaimer-hero {
+  max-width: var(--legal-max);
+  margin-inline: auto;
+  padding-top: clamp(72px, 8vw, 112px);
+  padding-bottom: clamp(44px, 5vw, 72px);
+  box-sizing: border-box;
+  border-bottom: 1px solid #d8ceb0;
+  margin-bottom: clamp(36px, 4vw, 48px);
+}
+
+.legal-page__intro-block h1,
+.legal-hero h1,
+.policy-hero h1,
+.terms-hero h1,
+.disclaimer-hero h1,
+.legal-content h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: clamp(44px, 5.6vw, 82px);
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0f2206;
+}
+
+.legal-page__kicker,
+.legal-eyebrow,
+.policy-eyebrow,
+.terms-eyebrow,
+.disclaimer-eyebrow,
+.legal-updated,
+.effective-date {
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #c93b2a;
+  margin-bottom: 20px;
+}
+
+.effective-date strong { font-weight: 700; }
+
 .legal-content p,
-.legal-content li {
+.legal-content li,
+.policy-content p,
+.policy-content li,
+.terms-content p,
+.terms-content li,
+.disclaimer-content p,
+.disclaimer-content li {
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: 15.5px;
+  line-height: 1.72;
+  font-weight: 400;
+  color: #24331e;
   overflow-wrap: anywhere;
 }
 
-.legal-content h1 {
-  margin: 0 0 10px;
-  font-size: clamp(20px, 2.2vw, 23px);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.legal-content p,
+.policy-content p,
+.terms-content p,
+.disclaimer-content p {
+  margin-bottom: 18px;
 }
 
-.legal-content h2 {
-  margin-top: clamp(28px, 2.7vw, 42px);
-  margin-bottom: clamp(14px, 1.2vw, 18px);
-  font-size: clamp(14px, 1.4vw, 16px);
-  line-height: 1.16;
+.legal-content h2,
+.policy-content h2,
+.terms-content h2,
+.disclaimer-content h2 {
+  margin-top: clamp(44px, 5vw, 64px);
+  margin-bottom: 16px;
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #0f2206;
+}
+
+.legal-content h3,
+.policy-content h3,
+.terms-content h3,
+.disclaimer-content h3 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1e4040;
 }
 
 .legal-content ul,
-.legal-content ol {
-  padding-left: 20px;
+.legal-content ol,
+.policy-content ul,
+.policy-content ol,
+.terms-content ul,
+.terms-content ol,
+.disclaimer-content ul,
+.disclaimer-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 24px;
 }
 
-.legal-content .muted,
-.legal-content small,
-.legal-content .effective-date {
-  color: #5b554f;
-  font-size: 7.5pt;
+.legal-content table,
+.policy-content table,
+.terms-content table,
+.disclaimer-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 32px;
+  font-size: 14px;
+}
+
+.legal-content th,
+.legal-content td,
+.policy-content th,
+.policy-content td,
+.terms-content th,
+.terms-content td,
+.disclaimer-content th,
+.disclaimer-content td {
+  border: 1px solid #d8ceb0;
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.legal-content a,
+.policy-content a,
+.terms-content a,
+.disclaimer-content a {
+  color: #c93b2a;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  body.legal-page,
+  body.privacy-page,
+  body.cookie-page,
+  body.cookies-page,
+  body.terms-page,
+  body.disclaimers-page {
+    --legal-gutter: var(--sv-page-gutter, clamp(18px, 5vw, 24px));
+  }
+
+  .legal-main,
+  .policy-main,
+  .terms-main,
+  .disclaimer-main {
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+
+  .legal-page__intro-block,
+  .legal-hero,
+  .policy-hero,
+  .terms-hero,
+  .disclaimer-hero {
+    padding-top: 56px;
+    padding-bottom: 36px;
+  }
+
+  .legal-page__intro-block h1,
+  .legal-hero h1,
+  .policy-hero h1,
+  .terms-hero h1,
+  .disclaimer-hero h1,
+  .legal-content h1 {
+    font-size: clamp(38px, 11vw, 54px);
+  }
+
+  .legal-content,
+  .policy-content,
+  .terms-content,
+  .disclaimer-content {
+    max-width: 100%;
+  }
 }
