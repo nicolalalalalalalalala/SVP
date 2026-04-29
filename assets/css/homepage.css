@@ -482,3 +482,137 @@ body.homepage {
       rgba(15, 34, 6, 0.36) 100%
     ) !important;
 }
+
+/* Hero CTA refinement override */
+.homepage .home-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.homepage .home-hero__cta,
+.homepage .home-hero__cta:link,
+.homepage .home-hero__cta:visited,
+.homepage .home-hero__cta:hover,
+.homepage .home-hero__cta:focus,
+.homepage .home-hero__cta:focus-visible,
+.homepage .home-hero__cta span {
+  text-decoration: none !important;
+}
+
+.homepage .home-hero__cta--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 50px;
+  padding: 0 27px;
+  background: #C93B2A;
+  border: 1px solid #C93B2A;
+  color: #FAF6EE;
+  border-radius: 2px;
+  font-family: "Inter", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.homepage .home-hero__cta--primary:hover,
+.homepage .home-hero__cta--primary:focus-visible {
+  background: #8A1F12;
+  border-color: #8A1F12;
+  color: #FAF6EE;
+}
+
+.homepage .home-hero__cta--primary .cta-arrow,
+.homepage .home-hero__cta--primary svg,
+.homepage .home-hero__cta--primary .arrow {
+  transform: translateX(0);
+  transition: transform 180ms ease;
+}
+
+.homepage .home-hero__cta--primary:hover .cta-arrow,
+.homepage .home-hero__cta--primary:focus-visible .cta-arrow,
+.homepage .home-hero__cta--primary:hover svg,
+.homepage .home-hero__cta--primary:focus-visible svg,
+.homepage .home-hero__cta--primary:hover .arrow,
+.homepage .home-hero__cta--primary:focus-visible .arrow {
+  transform: translateX(3px);
+}
+
+.homepage .home-hero__cta--secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 0 8px;
+  color: #FAF6EE;
+  background: transparent;
+  border: 0;
+  font-family: "Xuan Paper", "Inter", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  opacity: 0.94;
+  transform: translateY(-1px);
+  transition: opacity 180ms ease;
+}
+
+.homepage .home-hero__cta--secondary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 18px);
+  height: 1px;
+  background: #C93B2A;
+  opacity: 0.96;
+}
+
+.homepage .home-hero__cta--secondary:hover,
+.homepage .home-hero__cta--secondary:focus-visible {
+  color: #FAF6EE;
+  opacity: 1;
+}
+
+.homepage .home-hero__cta--secondary .cta-arrow,
+.homepage .home-hero__cta--secondary svg,
+.homepage .home-hero__cta--secondary .arrow {
+  transform: translateX(0);
+  transition: transform 180ms ease;
+}
+
+.homepage .home-hero__cta--secondary:hover .cta-arrow,
+.homepage .home-hero__cta--secondary:focus-visible .cta-arrow,
+.homepage .home-hero__cta--secondary:hover svg,
+.homepage .home-hero__cta--secondary:focus-visible svg,
+.homepage .home-hero__cta--secondary:hover .arrow,
+.homepage .home-hero__cta--secondary:focus-visible .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .homepage .home-hero__actions {
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .homepage .home-hero__cta--primary {
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 13px;
+  }
+
+  .homepage .home-hero__cta--secondary {
+    font-size: 13px;
+    padding-bottom: 7px;
+  }
+}
