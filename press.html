@@ -36,7 +36,7 @@
         </div>
       </section>
 
-      <div class="press-shell">
+      <div class="wrap press-shell">
         <div class="press-overview">
           <div class="press-overview__main">
             <div class="eyebrow press-archive-note section-eyebrow">COVERAGE THROUGH JANUARY 2026</div>
@@ -149,18 +149,18 @@
         <div class="press-archive-stack">
           <div class="press-toolbar" aria-label="Press archive controls">
             <div class="press-toolbar__meta">
-              <p class="press-toolbar__label section-eyebrow">Archive</p>
+              <p class="press-toolbar__label">Archive</p>
               <p class="press-toolbar__count" id="press-results-count" aria-live="polite"></p>
             </div>
             <div class="press-filters" id="press-filters" aria-label="Press archive filters">
               <div class="press-filter-group">
-                <label class="press-filter-label section-eyebrow" for="press-year-select">Year</label>
+                <label class="press-filter-label" for="press-year-select">Year</label>
                 <select class="press-filter-select" id="press-year-select" aria-label="Filter by year">
                   <option value="All">All Years</option>
                 </select>
               </div>
               <div class="press-filter-group">
-                <label class="press-filter-label section-eyebrow" for="press-publication-select">Publication</label>
+                <label class="press-filter-label" for="press-publication-select">Publication</label>
                 <select class="press-filter-select" id="press-publication-select" aria-label="Filter by publication">
                   <option value="All">All Publications</option>
                 </select>
@@ -761,217 +761,8 @@
 
       </div>
     </main>
-
-    
-
-    <script>
-      (() => {
-        const carousel = document.querySelector("[data-speaking-carousel]");
-        if (!carousel) return;
-
-        const slides = Array.from(carousel.querySelectorAll(".press-speaking__slide"));
-        const prevButton = carousel.querySelector("[data-speaking-prev]");
-        const nextButton = carousel.querySelector("[data-speaking-next]");
-        const counter = carousel.querySelector("[data-speaking-counter]");
-
-        if (!slides.length || !prevButton || !nextButton || !counter) return;
-
-        let activeIndex = 0;
-        const total = slides.length;
-        const autoplayDelayMs = 5000;
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        let autoplayTimer = null;
-
-        const render = (index) => {
-          activeIndex = (index + total) % total;
-          slides.forEach((slide, slideIndex) => {
-            const isActive = slideIndex === activeIndex;
-            slide.classList.toggle("is-active", isActive);
-            slide.setAttribute("aria-hidden", String(!isActive));
-          });
-          counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
-        };
-
-        const stopAutoplay = () => {
-          if (!autoplayTimer) return;
-          clearInterval(autoplayTimer);
-          autoplayTimer = null;
-        };
-
-        const startAutoplay = () => {
-          if (reduceMotion || autoplayTimer) return;
-          autoplayTimer = window.setInterval(() => render(activeIndex + 1), autoplayDelayMs);
-        };
-
-        const goPrevious = () => {
-          render(activeIndex - 1);
-          stopAutoplay();
-          startAutoplay();
-        };
-
-        const goNext = () => {
-          render(activeIndex + 1);
-          stopAutoplay();
-          startAutoplay();
-        };
-
-        prevButton.addEventListener("click", goPrevious);
-        nextButton.addEventListener("click", goNext);
-        carousel.addEventListener("mouseenter", stopAutoplay);
-        carousel.addEventListener("mouseleave", startAutoplay);
-        carousel.addEventListener("focusin", stopAutoplay);
-        carousel.addEventListener("focusout", (event) => {
-          if (carousel.contains(event.relatedTarget)) return;
-          startAutoplay();
-        });
-        carousel.addEventListener("keydown", (event) => {
-          if (event.key === "ArrowLeft") {
-            event.preventDefault();
-            goPrevious();
-          }
-          if (event.key === "ArrowRight") {
-            event.preventDefault();
-            goNext();
-          }
-        });
-
-        render(0);
-        startAutoplay();
-      })();
-    </script>
-
-    <script>
-      (() => {
-        const archive = document.getElementById("press-archive");
-        const yearSelect = document.getElementById("press-year-select");
-        const publicationSelect = document.getElementById("press-publication-select");
-        const countLabel = document.getElementById("press-results-count");
-        const moreButton = document.getElementById("press-more-btn");
-
-        if (!archive || !yearSelect || !publicationSelect || !countLabel || !moreButton) {
-          return;
-        }
-
-        const PAGE_SIZE = 16;
-        const rows = Array.from(archive.querySelectorAll(".press-row"));
-        const rowMeta = rows.map((row) => {
-          const publication = row.querySelector(".press-publication")?.textContent?.trim() ?? "";
-          const datetime = row.querySelector(".press-date")?.getAttribute("datetime") ?? "";
-          const year = datetime ? String(new Date(datetime).getUTCFullYear()) : "";
-          return { row, publication, year };
-        });
-
-        const uniqueYears = Array.from(new Set(rowMeta.map((item) => item.year).filter(Boolean))).sort(
-          (a, b) => Number(b) - Number(a),
-        );
-        const uniquePublications = Array.from(
-          new Set(rowMeta.map((item) => item.publication).filter(Boolean)),
-        ).sort((a, b) => a.localeCompare(b));
-
-        uniqueYears.forEach((year) => {
-          yearSelect.insertAdjacentHTML("beforeend", `<option value="${year}">${year}</option>`);
-        });
-        uniquePublications.forEach((publication) => {
-          publicationSelect.insertAdjacentHTML(
-            "beforeend",
-            `<option value="${publication}">${publication}</option>`,
-          );
-        });
-
-        let visibleLimit = PAGE_SIZE;
-
-        const renderRows = () => {
-          const selectedYear = yearSelect.value;
-          const selectedPublication = publicationSelect.value;
-          const filtered = rowMeta.filter((item) => {
-            const yearMatch = selectedYear === "All" || item.year === selectedYear;
-            const publicationMatch =
-              selectedPublication === "All" || item.publication === selectedPublication;
-            return yearMatch && publicationMatch;
-          });
-
-          rowMeta.forEach((item) => {
-            item.row.style.display = "none";
-          });
-          filtered.slice(0, visibleLimit).forEach((item) => {
-            item.row.style.display = "";
-          });
-
-          const shownCount = Math.min(filtered.length, visibleLimit);
-          countLabel.textContent = `${shownCount} of ${filtered.length}`;
-          moreButton.hidden = shownCount>= filtered.length;
-          moreButton.disabled = shownCount>= filtered.length;
-        };
-
-        const refreshFromFilters = () => {
-          visibleLimit = PAGE_SIZE;
-          renderRows();
-        };
-
-        yearSelect.addEventListener("change", refreshFromFilters);
-        publicationSelect.addEventListener("change", refreshFromFilters);
-        moreButton.addEventListener("click", () => {
-          visibleLimit += PAGE_SIZE;
-          renderRows();
-        });
-
-        renderRows();
-      })();
-    </script>
-
-    <script>
-      (() => {
-        if (window.__svScrollAnimationsInit) return;
-        window.__svScrollAnimationsInit = true;
-
-        const style = document.createElement("style");
-        style.textContent = `
-    .auto-rev { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
-    .auto-rev.auto-rev--in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .auto-rev { opacity: 1 !important; transform: none !important; transition: none !important; }
-    }
-  `;
-        document.head.appendChild(style);
-
-        const targets = document.querySelectorAll(
-          "section, .wrap> div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
-        );
-        targets.forEach((el, i) => {
-          if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
-            return;
-          if (el.closest("nav")) return;
-          el.classList.add("auto-rev");
-          el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
-        });
-
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          document
-            .querySelectorAll(".auto-rev")
-            .forEach((el) => el.classList.add("auto-rev--in"));
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) return;
-              entry.target.classList.add("auto-rev--in");
-              observer.unobserve(entry.target);
-            });
-          },
-          { threshold: 0.01, rootMargin: "35% 0px 35% 0px" },
-        );
-
-        document
-          .querySelectorAll(".auto-rev")
-          .forEach((el) => observer.observe(el));
-      })();
-    </script>
-
 <footer class="sv-footer" data-shared-footer></footer>
-
-<script src="assets/js/site-motion.js" defer></script>
+<script src="assets/js/press-page.js" defer></script>
 <script src="assets/js/shared-footer.js" defer></script>
 </body>
 </html>
