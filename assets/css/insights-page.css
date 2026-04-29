@@ -15,8 +15,8 @@ body.insights-page {
   --insights-rule: rgba(61, 112, 112, 0.18);
   --insights-rule-warm: rgba(216, 206, 176, 0.88);
 
-  --site-page-margin: clamp(22px, 4.8vw, 64px);
-  --pad: var(--site-page-margin);
+  --site-page-margin: var(--site-page-gutter);
+  --pad: var(--site-page-gutter);
 
   background: var(--insights-xuan-light);
   color: var(--insights-text-primary);
