@@ -4,7 +4,7 @@ body.firm-page {
   --cinnabar: #c93b2a;
   --xuan-paper: #f2ecd8;
   --xuan-paper-dark: #d8ceb0;
-  --site-page-margin: clamp(22px, 4.8vw, 64px);
+  --site-page-margin: var(--site-page-gutter);
   margin: 0;
   background: var(--xuan-paper);
   color: var(--ink-green-dark);
@@ -14,9 +14,9 @@ body.firm-page * { box-sizing: border-box; }
 body.firm-page h1, body.firm-page h2, body.firm-page h3, body.firm-page p { margin: 0; }
 
 body.firm-page .wrap {
-  width: min(1300px, 100%);
+  width: 100%;
   margin: 0 auto;
-  padding-inline: var(--site-page-margin);
+  padding-inline: var(--site-page-gutter);
 }
 
 body.firm-page .firm-main { background: var(--xuan-paper); }
