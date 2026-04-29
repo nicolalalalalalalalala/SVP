@@ -121,40 +121,39 @@ body.contact-page {
 
 .cp-routing__row {
   display: grid;
-  grid-template-columns: minmax(180px, 0.24fr) minmax(360px, 1fr) minmax(240px, 0.28fr);
-  column-gap: clamp(28px, 4vw, 64px);
-  align-items: center;
+  row-gap: 12px;
   padding-block: clamp(28px, 3vw, 38px);
 }
 
 .cp-routing__row + .cp-routing__row {
   border-top: 1px solid var(--contact-rule);
+  margin-top: 64px;
 }
 
 .cp-routing__type {
   color: var(--qing-dark);
-  font-size: clamp(18px, 1.65vw, 24px);
-  line-height: 1.12;
-  letter-spacing: -0.015em;
-  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .cp-routing__desc {
-  color: var(--qing-dark);
-  font-size: 14.5px;
+  color: rgba(30, 64, 64, 0.7);
+  font-size: 16px;
   line-height: 1.6;
-  max-width: 620px;
+  max-width: 360px;
 }
 
 .cp-routing__channel {
-  color: var(--qing);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin-top: 12px;
+  color: var(--cinnabar);
+  font-size: 16px;
+  line-height: 1.4;
   text-decoration: none;
-  justify-self: end;
-  border-bottom: 1px solid var(--cinnabar);
-  padding-bottom: 8px;
+  justify-self: start;
+  white-space: nowrap;
 }
 
 .cp-routing__channel:hover,
@@ -170,8 +169,7 @@ body.contact-page {
 
 .cp-office__inner {
   display: grid;
-  grid-template-columns: minmax(0, 0.48fr) minmax(360px, 0.42fr);
-  column-gap: clamp(56px, 7vw, 112px);
+  grid-template-columns: 1fr;
   align-items: start;
 }
 
@@ -283,8 +281,7 @@ body.contact-page {
   .cp-hero__inner,
   .cp-office__inner { grid-template-columns: 1fr; row-gap: 32px; }
 
-  .cp-routing__row { grid-template-columns: 1fr; row-gap: 14px; }
-  .cp-routing__channel { justify-self: start; }
+  .cp-routing__row + .cp-routing__row { margin-top: 48px; }
   .cp-form__type-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cp-form__grid { grid-template-columns: 1fr; }
 }
