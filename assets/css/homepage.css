@@ -23,6 +23,20 @@
   --intro-gap: clamp(56px, 7vw, 112px);
 }
 
+.homepage {
+  --home-max: 1320px;
+  --home-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
+  background: #F2ECD8;
+}
+
+.home-container {
+  width: min(calc(100% - (var(--home-gutter) * 2)), var(--home-max));
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+  box-sizing: border-box;
+}
+
 body.homepage {
   margin: 0;
   background: var(--page-bg);
@@ -44,14 +58,24 @@ body.homepage {
   padding-inline: 0;
 }
 
+.firm-section .home-container,
+.strategy-section .home-container,
+.track-record-section .home-container,
+.cdd-section .home-container {
+  width: min(calc(100% - (var(--home-gutter) * 2)), var(--home-max));
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
 .home-hero {
   position: relative;
-  width: 100%;
-  min-height: clamp(640px, 76vh, 820px);
+  min-height: clamp(620px, 76vh, 860px);
   overflow: hidden;
-  isolation: isolate;
-  background: var(--ink-green-dark);
+  display: grid;
+  align-items: end;
 }
+
 
 .home-hero__media {
   position: absolute;
@@ -64,7 +88,7 @@ body.homepage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 63% center;
+  object-position: center;
   filter: saturate(1.02) contrast(1.03) brightness(0.92);
 }
 
@@ -82,16 +106,19 @@ body.homepage {
 .home-hero__inner {
   position: relative;
   z-index: 2;
-  min-height: clamp(640px, 76vh, 820px);
-  display: flex;
-  align-items: center;
-  padding-top: clamp(28px, 4vh, 44px);
+  width: min(calc(100% - (var(--home-gutter) * 2)), var(--home-max));
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+  padding-block: clamp(92px, 9vw, 132px) clamp(72px, 7vw, 104px);
+  box-sizing: border-box;
 }
+
 
 .home-hero__text {
   position: relative;
   z-index: 3;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0;
   padding: 0;
 }
@@ -110,30 +137,31 @@ body.homepage {
 .home-hero__support { color: var(--xuan-paper-light); }
 
 .home-hero__headline {
+  margin: 0;
   font-size: clamp(42px, 5.2vw, 76px);
   line-height: 0.98;
   letter-spacing: -0.025em;
   font-weight: 400;
-  max-width: 760px;
+  max-width: 11ch;
 }
 
 .home-hero__support-wrap {
   margin-top: 24px;
+  max-width: 620px;
 }
 
 .home-hero__support {
   font-size: clamp(15.5px, 1.15vw, 18px);
   line-height: 1.65;
-  max-width: 560px;
+  max-width: 58ch;
   font-weight: 400;
 }
 
 .home-hero__actions {
   display: flex;
-  align-items: center;
-  gap: clamp(28px, 3vw, 48px);
-  margin-top: clamp(28px, 3.2vw, 42px);
   flex-wrap: wrap;
+  gap: 18px 28px;
+  margin-top: clamp(28px, 3vw, 42px);
 }
 
 .homepage .home-hero__cta,
@@ -575,6 +603,36 @@ body.homepage {
   }
 }
 
+@media (max-width: 767px) {
+  .homepage {
+    --home-gutter: var(--sv-page-gutter, clamp(16px, 5vw, 22px));
+  }
+
+  .home-hero {
+    min-height: auto;
+  }
+
+  .home-hero__inner {
+    padding-block: clamp(72px, 18vw, 108px) clamp(48px, 12vw, 72px);
+  }
+
+  .home-hero__text,
+  .home-hero__support-wrap,
+  .home-hero__support {
+    max-width: 100%;
+  }
+
+  .home-hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-hero__cta {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
 @media (max-width: 560px) {
   .home-hero,
   .home-hero__inner { min-height: clamp(560px, 74vh, 640px); }
@@ -647,7 +705,7 @@ body.homepage {
   line-height: 0.98 !important;
   letter-spacing: -0.025em !important;
   font-weight: 400 !important;
-  max-width: 760px;
+  max-width: 11ch;
 }
 
 .homepage .home-hero__support-wrap {
@@ -726,15 +784,6 @@ body.homepage {
       rgba(15, 34, 6, 0.08) 0%,
       rgba(15, 34, 6, 0.36) 100%
     ) !important;
-}
-
-/* Hero CTA refinement override */
-.homepage .home-hero__actions {
-  display: flex;
-  align-items: center;
-  gap: 44px;
-  flex-wrap: wrap;
-  margin-top: 28px;
 }
 
 .homepage .home-hero__cta,
@@ -842,24 +891,6 @@ body.homepage {
 .homepage .home-hero__cta--secondary:hover .arrow,
 .homepage .home-hero__cta--secondary:focus-visible .arrow {
   transform: translateX(3px);
-}
-
-@media (max-width: 768px) {
-  .homepage .home-hero__actions {
-    gap: 18px;
-    align-items: flex-start;
-  }
-
-  .homepage .home-hero__cta--primary {
-    min-height: 46px;
-    padding: 0 22px;
-    font-size: 13px;
-  }
-
-  .homepage .home-hero__cta--secondary {
-    font-size: 13px;
-    padding-bottom: 7px;
-  }
 }
 
 /* China Debt Dynamics transitional module redesign (April 2026) */
@@ -1004,7 +1035,7 @@ body.homepage #cdd .cdd-cta:last-child::after {
   line-height: 0.98;
   letter-spacing: -0.025em;
   font-weight: 400;
-  max-width: 760px;
+  max-width: 11ch;
 }
 
 .homepage .home-hero__eyebrow {
