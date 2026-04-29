@@ -94,23 +94,13 @@ body.press-page .press-hero .lead {
   line-height: 1.65;
   color: rgba(15, 34, 6, 0.78);
 }
-
-body.press-page .press-hero__note {
-  align-self: end;
-  border-left: 2px solid var(--press-cinnabar);
-  padding-left: clamp(18px, 2vw, 26px);
-  max-width: 34ch;
-}
-body.press-page .press-hero__note span {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+body.press-page .press-hero__meta {
+  margin-top: 24px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--press-cinnabar);
+  color: rgba(61, 112, 112, 0.6);
 }
-body.press-page .press-hero__note p { font-size: 13px; line-height: 1.62; color: #1e4040; }
 
 body.press-page .press-shell {
   padding-top: clamp(56px, 6vw, 88px);
@@ -119,25 +109,21 @@ body.press-page .press-shell {
   gap: clamp(32px, 4vw, 56px);
 }
 
-body.press-page .press-overview { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.75fr); gap: 18px; }
-body.press-page .press-overview__main,
+body.press-page .press-overview { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
 body.press-page .contact,
-body.press-page .press-disclaimer,
 body.press-page .press-speaking,
 body.press-page .press-toolbar,
 body.press-page .press-list { background: #faf6ee; border: 1px solid var(--press-xuan-dark); }
-body.press-page .press-overview__main { padding: clamp(26px, 3vw, 40px); border-top: 2px solid var(--press-cinnabar); }
-body.press-page .contact,
-body.press-page .press-disclaimer { padding: 22px; }
+body.press-page .contact { padding: 22px; border-top: 2px solid var(--press-cinnabar); }
 body.press-page .press-intro { max-width: 70ch; font-size: 15px; line-height: 1.68; color: rgba(15, 34, 6, 0.78); }
 body.press-page .press-intro + .press-intro { margin-top: 14px; }
 body.press-page .press-overview__heading,
 body.press-page .contact span { display: block; margin-bottom: 10px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--press-cinnabar); }
-body.press-page .press-disclaimer p { font-size: 13px; line-height: 1.58; color: rgba(15, 34, 6, 0.66); }
-body.press-page .press-disclaimer p + p { margin-top: 10px; }
+body.press-page .contact a { display: inline-block; margin-top: 12px; font-size: 16px; color: var(--press-cinnabar); }
+body.press-page .contact p { margin-top: 12px; font-size: 14px; line-height: 1.6; color: rgba(61, 112, 112, 0.7); }
 
 body.press-page .press-speaking { padding: clamp(24px, 3vw, 40px); border-top: 2px solid var(--press-qing); }
-body.press-page .press-speaking__intro { margin-bottom: 20px; }
+body.press-page .press-speaking__title-heading { margin: 0 0 20px; font-size: clamp(28px, 3vw, 42px); line-height: 1.05; font-weight: 600; color: var(--press-ink); text-transform: uppercase; }
 body.press-page .press-speaking__carousel { border-top: 1px solid var(--press-xuan-dark); padding-top: 22px; }
 body.press-page .press-speaking__slide { display: none; grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.75fr); gap: clamp(22px, 3vw, 40px); align-items: stretch; }
 body.press-page .press-speaking__slide.is-active { display: grid; }
@@ -184,11 +170,19 @@ body.press-page .press-more:hover,
 body.press-page .press-more:focus-visible { background: #3d7070; color: #faf6ee; border-color: #3d7070; }
 body.press-page .press-more-wrap { display: flex; justify-content: center; margin-top: 24px; }
 
+body.press-page .press-disclosures { padding: 48px 0 24px; }
+body.press-page .press-disclosures__inner {
+  max-width: var(--sv-site-max, 1440px);
+  width: calc(100% - (var(--sv-page-gutter) * 2));
+  margin-inline: auto;
+}
+body.press-page .press-disclosures__heading { margin-bottom: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(61, 112, 112, 0.62); }
+body.press-page .press-disclosures__body { max-width: 720px; font-size: 13px; line-height: 1.62; color: rgba(61, 112, 112, 0.5); }
+
 @media (max-width: 960px) {
   body.press-page .press-hero__inner,
   body.press-page .press-overview,
   body.press-page .press-speaking__slide.is-active { grid-template-columns: 1fr; }
-  body.press-page .press-hero__note { margin-top: 4px; }
   body.press-page .press-row a { grid-template-columns: 1fr; gap: 8px; }
   body.press-page .press-row .press-date { justify-self: start; }
 }
@@ -196,9 +190,7 @@ body.press-page .press-more-wrap { display: flex; justify-content: center; margi
 @media (max-width: 767px) {
   body.press-page .press-hero h1 { font-size: clamp(40px, 12vw, 58px); }
   body.press-page .press-shell { gap: 24px; }
-  body.press-page .press-overview__main,
   body.press-page .contact,
-  body.press-page .press-disclaimer,
   body.press-page .press-speaking,
   body.press-page .press-toolbar { padding: 18px 16px; }
   body.press-page .press-speaking__media { aspect-ratio: 4 / 3; }

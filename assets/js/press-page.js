@@ -73,7 +73,7 @@
     });
 
     const visibleCount = Math.min(filtered.length, shownCount);
-    countLabel.textContent = `${visibleCount} of ${filtered.length}`;
+    countLabel.textContent = `Showing ${visibleCount} of ${filtered.length}`;
     moreButton.hidden = shownCount >= filtered.length;
     moreButton.disabled = shownCount >= filtered.length;
   };
