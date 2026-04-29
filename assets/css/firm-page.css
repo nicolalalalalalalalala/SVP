@@ -14,9 +14,10 @@ body.firm-page * { box-sizing: border-box; }
 body.firm-page h1, body.firm-page h2, body.firm-page h3, body.firm-page p { margin: 0; }
 
 body.firm-page .wrap {
-  width: 100%;
-  margin: 0 auto;
-  padding-inline: var(--site-page-gutter);
+  width: min(100% - (var(--sv-page-gutter) * 2), var(--sv-site-max));
+  max-width: var(--sv-site-max);
+  margin-inline: auto;
+  padding-inline: 0;
 }
 
 body.firm-page .firm-main { background: var(--xuan-paper); }

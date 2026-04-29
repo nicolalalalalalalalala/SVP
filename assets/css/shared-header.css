@@ -48,7 +48,7 @@ body {
 
   /* Align header edges to the same centered content frame used below. */
   --sv-page-gutter:         var(--site-page-gutter, 64px);
-  --sv-page-frame-max:      calc(var(--site-content-max, 1200px) + (var(--sv-page-gutter) * 2));
+  --sv-page-frame-max:      var(--sv-site-max, 1440px);
 }
 
 /* ── Mount: sticky wrapper for the entire two-band header ───── */
@@ -70,10 +70,11 @@ body {
   align-items: center;
   column-gap: 0;
   width: 100%;
-  max-width: calc(var(--site-content-max, 1200px) + (var(--site-page-gutter, 64px) * 2));
-  margin: 0 auto;
-  padding-left: var(--site-page-gutter, var(--sv-header-side-pad-left));
-  padding-right: var(--site-page-gutter, var(--sv-header-side-pad-right));
+  width: min(100% - (var(--sv-page-gutter) * 2), var(--sv-site-max));
+  max-width: var(--sv-site-max);
+  margin-inline: auto;
+  padding-left: 0;
+  padding-right: 0;
   background: var(--sv-header-bg) !important;
   border-bottom: 1px solid var(--sv-header-rule) !important;
   box-shadow: none !important;
@@ -549,7 +550,7 @@ body {
 #site-header-mount #nav,
 .site-header__inner {
   width: 100%;
-  max-width: calc(var(--site-content-max, 1200px) + (var(--site-page-gutter, 64px) * 2));
+  max-width: var(--sv-site-max);
   margin-inline: auto;
   padding-inline: var(--site-page-gutter, 64px);
   box-sizing: border-box;
