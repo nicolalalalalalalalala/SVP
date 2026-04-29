@@ -1,353 +1,389 @@
-body.strategy-page {
-  --strategy-cinnabar: #c93b2a;
-  --strategy-cinnabar-dark: #8a1f12;
-  --strategy-cinnabar-light: #e8998f;
-  --strategy-qing-dark: #1e4040;
-  --strategy-qing: #3d7070;
-  --strategy-ink-dark: #0f2206;
-  --strategy-xuan: #f2ecd8;
-  --strategy-xuan-light: #faf6ee;
-  --strategy-xuan-dark: #d8ceb0;
-  --strategy-page-max: 1320px;
-  --strategy-page-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
-  background: #f2ecd8;
-  color: #0f2206;
+.strategy-page {
+  --strategy-max: 1320px;
+  --strategy-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  --strategy-paper: #F2ECD8;
+  --strategy-paper-light: #FAF6EE;
+  --strategy-rule: #D8CEB0;
+  --strategy-text: #0F2206;
+  --strategy-muted: #2E4A18;
+  --strategy-qing: #1E4040;
+  --strategy-cinnabar: #C93B2A;
+  background: var(--strategy-paper);
+  color: var(--strategy-text);
   overflow-x: clip;
 }
 
-body.strategy-page,
-body.strategy-page main {
-  background: #f2ecd8;
-  color: #0f2206;
+.strategy-page main {
+  background: var(--strategy-paper);
+  color: var(--strategy-text);
 }
 
-body.strategy-page .wrap,
-body.strategy-page .strategy-container,
-body.strategy-page .section-stack {
+.strategy-page .wrap {
   width: 100%;
-  max-width: var(--strategy-page-max);
+  max-width: var(--strategy-max);
   margin-inline: auto;
-  padding-inline: var(--strategy-page-gutter);
+  padding-inline: var(--strategy-gutter);
   box-sizing: border-box;
 }
 
-body.strategy-page section {
+.strategy-page section {
   scroll-margin-top: var(--sv-header-height, 120px);
 }
 
-body.strategy-page .eyebrow,
-body.strategy-page .section-eyebrow,
-body.strategy-page .strategy-label {
-  font-size: 10px;
-  line-height: 1;
-  letter-spacing: 0.2em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--strategy-cinnabar);
-  margin-bottom: 16px;
-}
-
-body.strategy-page h2,
-body.strategy-page .strategy-heading {
-  color: #0f2206;
-  font-size: clamp(30px, 3.4vw, 46px);
-  line-height: 1.06;
-  margin: 0;
-}
-
-body.strategy-page p,
-body.strategy-page li,
-body.strategy-page .strategy-body {
-  color: rgba(15, 34, 6, 0.82);
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-body.strategy-page .strategy-hero {
-  position: relative;
-  isolation: isolate;
-  min-height: clamp(520px, 62vh, 680px);
-  display: flex;
-  align-items: end;
-  padding-block: clamp(92px, 9vw, 132px) clamp(72px, 7vw, 104px);
-  background:
-    radial-gradient(circle at 0% 18%, rgba(201, 59, 42, 0.3) 0%, transparent 42%),
-    radial-gradient(circle at 58% 35%, rgba(61, 112, 112, 0.26) 0%, transparent 48%),
-    linear-gradient(125deg, #8a1f12 0%, #1e4040 45%, #0f2206 100%);
-  color: #faf6ee;
-}
-
-body.strategy-page .strategy-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 34, 6, 0.18);
-  z-index: -1;
-}
-
-body.strategy-page .strategy-hero .wrap,
-body.strategy-page .strategy-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.58fr);
-  gap: clamp(56px, 7vw, 104px);
-  align-items: end;
-}
-
-body.strategy-page .strategy-hero h1,
-body.strategy-page .strategy-hero-title,
-body.strategy-page .type-display-hero {
+.strategy-page h2 {
   font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
   font-style: normal;
-  font-size: clamp(58px, 6.4vw, 94px);
-  line-height: 0.94;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: 0.005em;
   text-transform: uppercase;
-  color: #faf6ee;
-  max-width: 14ch;
+  color: #0F2206;
+}
+
+.market-context h2,
+.strategy-sleeves h2,
+.underwriting-standard h2,
+.execution-model h2,
+.recovery-section h2,
+.risk-return h2,
+.next-steps h2 {
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.02;
   margin: 0;
 }
 
-body.strategy-page .strategy-hero .eyebrow,
-body.strategy-page .strategy-hero .section-eyebrow,
-body.strategy-page .strategy-hero .strategy-label {
+.strategy-page .eyebrow {
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1E4040;
+  margin-bottom: 20px;
+}
+
+.strategy-hero {
+  min-height: clamp(560px, 68vh, 760px);
+  padding-block: clamp(96px, 9vw, 136px) clamp(80px, 8vw, 112px);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(201, 59, 42, 0.22) 0%, transparent 42%),
+    radial-gradient(circle at 72% 28%, rgba(61, 112, 112, 0.32) 0%, transparent 48%),
+    linear-gradient(125deg, #8A1F12 0%, #1E4040 42%, #0F2206 100%);
+  color: #FAF6EE;
+  overflow: hidden;
+}
+
+.strategy-hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.54fr);
+  gap: clamp(56px, 7vw, 108px);
+  align-items: end;
+}
+
+.strategy-hero .eyebrow { color: rgba(250, 246, 238, 0.78); }
+
+.strategy-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: clamp(58px, 6.6vw, 96px);
+  line-height: 0.94;
+  letter-spacing: 0.005em;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FAF6EE;
+}
+
+.strategy-hero .pagehero__lede,
+.strategy-hero .hero-meta {
+  max-width: 62ch;
   color: rgba(250, 246, 238, 0.78);
 }
 
-body.strategy-page .strategy-hero p,
-body.strategy-page .strategy-hero .pagehero__lede,
-body.strategy-page .strategy-hero .strategy-hero__lede,
-body.strategy-page .strategy-hero .strategy-hero__support,
-body.strategy-page .strategy-hero-support,
-body.strategy-page .strategy-hero .lead {
-  max-width: 58ch;
-  color: rgba(250, 246, 238, 0.78);
+.strategy-hero .pagehero__lede {
+  margin-top: 24px;
   font-size: 16px;
   line-height: 1.65;
 }
 
-body.strategy-page .strategy-hero .hero-meta {
-  margin-top: 18px;
-  color: rgba(250, 246, 238, 0.82);
+.strategy-hero .hero-meta {
+  margin-top: 26px;
   font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-body.strategy-page .hero-aside,
-body.strategy-page .strategy-hero-proof,
-body.strategy-page .strategy-hero-card {
-  background: rgba(15, 34, 6, 0.22);
-  border-left: 1px solid rgba(250, 246, 238, 0.24);
-  padding-left: clamp(28px, 3vw, 44px);
-  color: #faf6ee;
-}
-
-body.strategy-page .strategy-kpi {
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(250, 246, 238, 0.18);
-}
-
-body.strategy-page .strategy-kpi:last-child { border-bottom: 0; }
-
-body.strategy-page .strategy-kpi strong {
-  display: block;
-  margin-bottom: 8px;
-  color: rgba(250, 246, 238, 0.7);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-body.strategy-page .strategy-kpi span,
-body.strategy-page .strategy-hero-proof p,
-body.strategy-page .strategy-hero-card p,
-body.strategy-page .strategy-hero-proof-item {
-  color: rgba(250, 246, 238, 0.86);
-  font-size: 16px;
   line-height: 1.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-body.strategy-page .section-stack,
-body.strategy-page .market-context,
-body.strategy-page .strategy-sleeves,
-body.strategy-page .underwriting-standard,
-body.strategy-page .execution-model,
-body.strategy-page .recovery-section,
-body.strategy-page .risk-return,
-body.strategy-page .next-steps,
-body.strategy-page .disclosures {
-  padding-block: clamp(72px, 8vw, 112px);
-}
-
-body.strategy-page .market-context {
-  border-top: 1px solid rgba(30, 64, 64, 0.18);
-  padding-top: clamp(56px, 6vw, 84px);
-}
-
-body.strategy-page .market-context-content {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.38fr) minmax(0, 1fr);
-  gap: clamp(48px, 6vw, 88px);
-  align-items: start;
-}
-
-body.strategy-page .context-grid,
-body.strategy-page .strategy-sleeves__rows,
-body.strategy-page .execution-flow,
-body.strategy-page .underwriting-grid,
-body.strategy-page .recovery-cards,
-body.strategy-page .next-links {
-  margin-top: clamp(30px, 4vw, 42px);
-  display: grid;
-  gap: clamp(18px, 2vw, 28px);
-}
-
-body.strategy-page .context-grid,
-body.strategy-page .strategy-sleeves__rows,
-body.strategy-page .execution-flow {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-body.strategy-page .context-pullout,
-body.strategy-page .strategy-sleeve,
-body.strategy-page .execution-step,
-body.strategy-page .recovery-card,
-body.strategy-page .underwriting-item,
-body.strategy-page .risk-return-item,
-body.strategy-page .next-links a {
-  background: rgba(250, 246, 238, 0.58);
-  border: 1px solid rgba(216, 206, 176, 0.85);
-  padding: clamp(34px, 3vw, 48px);
-  color: #0f2206;
-  min-height: 0;
+.hero-aside {
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  padding: clamp(28px, 3vw, 40px);
+  border: 1px solid rgba(250, 246, 238, 0.24);
+  border-top: 2px solid #E8998F;
+  background: rgba(15, 34, 6, 0.22);
   box-sizing: border-box;
 }
 
-body.strategy-page .context-pullout h3,
-body.strategy-page .strategy-sleeve__title,
-body.strategy-page .execution-step h3,
-body.strategy-page .recovery-card h3,
-body.strategy-page .underwriting-item h3,
-body.strategy-page .risk-return-item h3 {
-  margin: 0 0 10px;
-  color: #0f2206;
-  font-weight: 700;
-  line-height: 1.05;
-  font-size: clamp(20px, 2vw, 28px);
+.strategy-kpi {
+  padding-block: 18px;
+  border-bottom: 1px solid rgba(250, 246, 238, 0.16);
 }
 
-body.strategy-page .context-pullout p,
-body.strategy-page .strategy-sleeve__body,
-body.strategy-page .execution-step p,
-body.strategy-page .recovery-card p,
-body.strategy-page .underwriting-item p,
-body.strategy-page .risk-return-item p,
-body.strategy-page .risk-return-item li {
-  margin: 0;
-  color: rgba(15, 34, 6, 0.82);
-  line-height: 1.6;
-}
+.strategy-kpi:first-child { padding-top: 0; }
+.strategy-kpi:last-child { border-bottom: 0; padding-bottom: 0; }
 
-body.strategy-page .strategy-sleeve__number {
-  color: #c93b2a;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+.strategy-kpi strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 1.3;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  color: rgba(250, 246, 238, 0.72);
 }
 
-body.strategy-page .underwriting-standard {
-  background: #f2ecd8;
-  color: #0f2206;
+.strategy-kpi span {
+  display: block;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #FAF6EE;
 }
 
-body.strategy-page .underwriting-standard h2,
-body.strategy-page .underwriting-standard h3,
-body.strategy-page .underwriting-standard p {
-  color: inherit;
+.market-context,
+.strategy-sleeves,
+.underwriting-standard,
+.execution-model,
+.recovery-section,
+.risk-return,
+.next-steps,
+.disclosures {
+  padding-block: clamp(76px, 8vw, 116px);
 }
 
-body.strategy-page .underwriting-grid {
+.market-context + .strategy-sleeves,
+.strategy-sleeves + .underwriting-standard,
+.underwriting-standard + .execution-model,
+.execution-model + .recovery-section,
+.recovery-section + .risk-return,
+.risk-return + .next-steps,
+.next-steps + .disclosures {
+  border-top: 1px solid rgba(216, 206, 176, 0.75);
+}
+
+.market-context-content,
+.recovery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: clamp(48px, 6vw, 96px);
+  align-items: start;
+}
+
+.strategy-sleeves__head,
+.underwriting-standard > .wrap > .eyebrow,
+.execution-model > .wrap > .eyebrow,
+.risk-return > .wrap > .eyebrow,
+.next-steps > .wrap > .eyebrow {
+  max-width: 900px;
+}
+
+.strategy-sleeves__head p,
+.underwriting-standard > .wrap > p,
+.market-context-content > p,
+.recovery-grid > div > p {
+  max-width: 68ch;
+  font-size: 16px;
+  line-height: 1.68;
+  color: #2E4A18;
+}
+
+.context-grid,
+.strategy-sleeves__rows,
+.underwriting-grid,
+.execution-flow,
+.risk-return-grid,
+.recovery-cards {
+  display: grid;
+  gap: 0;
+  border: 1px solid #D8CEB0;
+  background: rgba(250, 246, 238, 0.35);
+}
+
+.context-grid,
+.strategy-sleeves__rows,
+.execution-flow {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-body.strategy-page .recovery-grid {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.38fr) minmax(0, 1fr);
-  gap: clamp(48px, 6vw, 88px);
-}
-
-body.strategy-page .risk-return-grid,
-body.strategy-page .strategy-risk-grid,
-body.strategy-page .strategy-discipline-grid {
-  margin-top: 24px;
-  display: grid;
+.underwriting-grid,
+.recovery-cards,
+.risk-return-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 2vw, 28px);
 }
 
-body.strategy-page .next-links {
+.context-pullout,
+.strategy-sleeve,
+.underwriting-item,
+.execution-step,
+.recovery-card,
+.risk-return-item {
+  padding: clamp(30px, 3.4vw, 48px);
+  border-right: 1px solid #D8CEB0;
+  border-bottom: 1px solid #D8CEB0;
+  background: rgba(250, 246, 238, 0.34);
+  box-sizing: border-box;
+}
+
+.context-pullout:nth-child(3n),
+.strategy-sleeve:nth-child(3n),
+.execution-step:nth-child(3n),
+.underwriting-item:nth-child(2n),
+.recovery-card:nth-child(2n),
+.risk-return-item:nth-child(2n) {
+  border-right: 0;
+}
+
+.context-pullout h3,
+.strategy-sleeve__title,
+.underwriting-item h3,
+.execution-step h3,
+.recovery-card h3,
+.risk-return-item h3 {
+  margin: 0 0 14px;
+  font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif);
+  font-size: clamp(25px, 2.8vw, 40px);
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: #0F2206;
+}
+
+.context-pullout p,
+.strategy-sleeve__body,
+.underwriting-item p,
+.execution-step p,
+.recovery-card p,
+.risk-return-item li {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #2E4A18;
+}
+
+.strategy-sleeve__number {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: #C93B2A;
+}
+
+.next-links {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 36px;
+  border: 1px solid #D8CEB0;
 }
 
-body.strategy-page .next-links a {
-  text-decoration: none;
+.next-links a {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  border-right: 1px solid #D8CEB0;
+  color: #0F2206;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-body.strategy-page .disclosures {
-  border-top: 1px solid #d8ceb0;
+.next-links a:last-child { border-right: 0; }
+
+.next-links a:hover,
+.next-links a:focus-visible {
+  background: rgba(201, 59, 42, 0.08);
+  color: #8A1F12;
 }
 
-body.strategy-page .disclosure {
-  max-width: 90ch;
-  font-size: 12px;
-  color: rgba(15, 34, 6, 0.62);
+.disclosures { background: #FAF6EE; }
+
+.disclosure {
+  max-width: 92ch;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(15, 34, 6, 0.74);
 }
 
 @media (max-width: 900px) {
-  body.strategy-page .strategy-hero .wrap,
-  body.strategy-page .strategy-hero-grid,
-  body.strategy-page .market-context-content,
-  body.strategy-page .context-grid,
-  body.strategy-page .strategy-sleeves__rows,
-  body.strategy-page .underwriting-grid,
-  body.strategy-page .recovery-grid,
-  body.strategy-page .risk-return-grid,
-  body.strategy-page .strategy-risk-grid,
-  body.strategy-page .strategy-discipline-grid,
-  body.strategy-page .next-links,
-  body.strategy-page .execution-flow {
+  .strategy-hero {
+    min-height: auto;
+    padding-block: 72px;
+  }
+
+  .strategy-hero .wrap,
+  .market-context-content,
+  .recovery-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-aside {
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .context-grid,
+  .strategy-sleeves__rows,
+  .underwriting-grid,
+  .execution-flow,
+  .recovery-cards,
+  .risk-return-grid,
+  .next-links {
     grid-template-columns: 1fr;
   }
 
-  body.strategy-page .hero-aside,
-  body.strategy-page .strategy-hero-proof,
-  body.strategy-page .strategy-hero-card {
-    border-left: 0;
-    border-top: 1px solid rgba(250, 246, 238, 0.24);
-    padding-left: 0;
-    padding-top: 24px;
+  .context-pullout,
+  .strategy-sleeve,
+  .underwriting-item,
+  .execution-step,
+  .recovery-card,
+  .risk-return-item,
+  .next-links a {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .strategy-page {
+    --strategy-gutter: var(--sv-page-gutter, clamp(18px, 5vw, 24px));
   }
 
-  body.strategy-page .strategy-hero h1,
-  body.strategy-page .strategy-hero-title,
-  body.strategy-page .type-display-hero {
+  .strategy-hero h1 {
     font-size: clamp(42px, 12vw, 58px);
   }
 
-  body.strategy-page .section-stack,
-  body.strategy-page .market-context,
-  body.strategy-page .strategy-sleeves,
-  body.strategy-page .underwriting-standard,
-  body.strategy-page .execution-model,
-  body.strategy-page .recovery-section,
-  body.strategy-page .risk-return,
-  body.strategy-page .next-steps,
-  body.strategy-page .disclosures {
-    padding-block: clamp(56px, 8vw, 84px);
+  .market-context,
+  .strategy-sleeves,
+  .underwriting-standard,
+  .execution-model,
+  .recovery-section,
+  .risk-return,
+  .next-steps,
+  .disclosures {
+    padding-block: 60px;
+  }
+
+  .context-pullout,
+  .strategy-sleeve,
+  .underwriting-item,
+  .execution-step,
+  .recovery-card,
+  .risk-return-item {
+    padding: 28px 22px;
   }
 }
