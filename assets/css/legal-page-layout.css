@@ -5,10 +5,15 @@ body.cookies-page,
 body.terms-page,
 body.disclaimers-page {
   --legal-max: 1320px;
-  --legal-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  --legal-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
   --legal-text-max: 920px;
   background: #f2ecd8;
   color: #0f2206;
+}
+
+body.cookie-page,
+body.cookies-page {
+  --legal-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
 }
 
 body.legal-page .wrap,
@@ -215,6 +220,11 @@ body.disclaimers-page .legal-container {
   body.terms-page,
   body.disclaimers-page {
     --legal-gutter: var(--sv-page-gutter, clamp(18px, 5vw, 24px));
+  }
+
+  body.cookie-page,
+  body.cookies-page {
+    --legal-gutter: var(--sv-page-gutter, clamp(16px, 5vw, 22px));
   }
 
   .legal-main,
