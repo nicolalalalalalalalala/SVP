@@ -406,19 +406,21 @@ body.homepage {
 .strategy-row__title { margin: 0; color: #0F2206; text-transform: none !important; font-size: clamp(22px, 2vw, 30px); line-height: 1.12; letter-spacing: -0.015em; font-weight: 600; max-width: 330px; }
 .strategy-row__body { margin: 0; color: #1E4040; font-size: clamp(14.5px, 0.95vw, 16px); line-height: 1.6; font-weight: 400; max-width: 680px; }
 
-.track-record-section {
+.track-record-section,
+.platform-team-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(30, 64, 64, 0.96) 0%, rgba(24, 58, 58, 0.94) 32%, rgba(17, 46, 34, 0.92) 68%, rgba(15, 34, 6, 0.94) 100%);
-  color: #FAF6EE;
-  padding-block: clamp(88px, 8vw, 112px);
+  background: linear-gradient(90deg, #1E4040 0%, #183A38 34%, #163226 68%, #0F2206 100%);
+  color: #FAF6EE !important;
+  padding-block: clamp(78px, 7vw, 104px);
 }
 
-.track-record-section::before {
+.track-record-section::before,
+.platform-team-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(140deg, rgba(6, 18, 18, 0.48) 0%, rgba(5, 14, 11, 0.58) 52%, rgba(7, 15, 6, 0.66) 100%);
+  background: linear-gradient(140deg, rgba(6, 18, 18, 0.18) 0%, rgba(5, 14, 11, 0.24) 52%, rgba(7, 15, 6, 0.28) 100%);
   pointer-events: none;
 }
 
@@ -427,33 +429,56 @@ body.homepage {
   z-index: 1;
 }
 
-.track-record-intro {
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
-  column-gap: clamp(56px, 7vw, 110px);
+.track-record-intro,
+.platform-team-section .section-intro {
+  grid-template-columns: minmax(0, 0.48fr) minmax(360px, 0.44fr);
+  column-gap: clamp(56px, 7vw, 108px);
   align-items: start;
-  margin-bottom: 56px;
+  margin-bottom: clamp(48px, 5vw, 64px);
 }
 
-.track-record-section .section-eyebrow { color: #E8998F; }
-.track-record-section .section-title {
+.track-record-section .section-eyebrow,
+.platform-team-section .section-eyebrow { color: #E8998F !important; }
+.platform-team-section .section-eyebrow::after,
+.track-record-section .section-eyebrow::after { background: #E8998F; }
+.track-record-section .section-title,
+.platform-team-section .section-title {
   max-width: 520px;
-  color: #FAF6EE;
-  font-size: clamp(42px, 4.2vw, 64px);
-  line-height: 0.96;
-  letter-spacing: -0.03em;
+  color: #FAF6EE !important;
+  font-size: clamp(34px, 3.3vw, 50px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  max-width: 560px;
 }
-.track-record-section .section-copy {
-  max-width: 520px;
-  color: rgba(250, 246, 238, 0.84);
-  font-size: 15.5px;
-  line-height: 1.7;
+.track-record-section .section-copy,
+.track-record-section .section-copy p,
+.platform-team-section .section-copy,
+.platform-team-section .section-copy p {
+  color: rgba(250, 246, 238, 0.86) !important;
 }
-.track-record-grid { border-top: 1px solid rgba(250, 246, 238, 0.14); border-bottom: 1px solid rgba(250, 246, 238, 0.14); }
-.track-record-item { padding: 32px 26px 36px; }
-.track-record-item + .track-record-item { border-left: 1px solid rgba(250, 246, 238, 0.10); }
-.track-record-item__label { display:block; color: #7AAFAF; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
-.track-record-item__value { display:block; color: #FAF6EE; font-size: clamp(44px, 3.2vw, 60px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 500; margin-bottom: 18px; white-space: nowrap; }
-.track-record-item__description { margin:0; max-width: 230px; color: rgba(250, 246, 238, 0.68); font-size: 14.5px; line-height: 1.55; }
+.track-record-section .section-copy,
+.platform-team-section .section-copy {
+  max-width: 600px;
+  font-size: clamp(15px, 1vw, 16.5px);
+  line-height: 1.68;
+  font-weight: 400;
+}
+.track-record-grid,
+.platform-team-stats { border-top: 1px solid rgba(250, 246, 238, 0.18); border-bottom: 1px solid rgba(250, 246, 238, 0.18); }
+.track-record-grid,
+.platform-team-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.track-record-item,
+.platform-team-stat { padding: clamp(28px, 3vw, 38px) clamp(22px, 2.6vw, 34px); }
+.track-record-item + .track-record-item,
+.platform-team-stat + .platform-team-stat { border-left: 1px solid rgba(250, 246, 238, 0.12); }
+.track-record-item__label,
+.platform-team-stat__label { display:block; color: #7AAFAF !important; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px; }
+.track-record-item__value,
+.platform-team-stat__value { display:block; color: #FAF6EE !important; font-size: clamp(34px, 3vw, 48px); line-height: 1; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 18px; white-space: nowrap; }
+.track-record-item__description,
+.platform-team-stat__description,
+.platform-team-stat__desc { margin:0; max-width: 230px; color: rgba(250, 246, 238, 0.72) !important; font-size: 14.5px; line-height: 1.55; }
 
 .cdd-section {
   background: linear-gradient(160deg, #162e0d 0%, #0F2206 100%);
@@ -516,7 +541,8 @@ body.homepage {
   .cdd-header { gap: 32px; }
 
   .firm-stats-row,
-  .track-record-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .track-record-grid,
+  .platform-team-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .strategy-row { row-gap: 14px; }
 
@@ -529,7 +555,12 @@ body.homepage {
     padding-top: 28px;
   }
 
-  .track-record-item + .track-record-item { border-left: 0; }
+  .track-record-item + .track-record-item,
+  .platform-team-stat + .platform-team-stat { border-left: 0; }
+  .track-record-item:nth-child(n+3),
+  .platform-team-stat:nth-child(n+3) {
+    border-top: 1px solid rgba(250, 246, 238, 0.12);
+  }
 }
 
 @media (max-width: 560px) {
@@ -554,10 +585,12 @@ body.homepage {
   .cdd-actions { flex-direction: column; align-items: flex-start; }
 
   .firm-stats-row,
-  .track-record-grid { grid-template-columns: 1fr; }
+  .track-record-grid,
+  .platform-team-stats { grid-template-columns: 1fr; }
 
   .firm-stat,
-  .track-record-item { padding-inline: 0; }
+  .track-record-item,
+  .platform-team-stat { padding-inline: 0; }
 
   .firm-stat:nth-child(odd) { border-right: 0; }
 
@@ -566,7 +599,8 @@ body.homepage {
     padding-top: 28px;
   }
 
-  .track-record-item + .track-record-item { border-top: 1px solid rgba(250, 246, 238, 0.16); padding-top: 24px; }
+  .track-record-item + .track-record-item,
+  .platform-team-stat + .platform-team-stat { border-top: 1px solid rgba(250, 246, 238, 0.16); padding-top: 24px; }
 
   .section-title,
   .strategy-section .section-title { font-size: clamp(30px, 8.8vw, 38px); }
