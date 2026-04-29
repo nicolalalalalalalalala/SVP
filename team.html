@@ -26,8 +26,8 @@
       <div class="wrap">
         <div class="pagehero__intro">
           <div class="eyebrow eyebrow--red">TEAM</div>
-          <h1 class="type-display-hero">THE PEOPLE BEHIND THE PLATFORM.</h1>
-          <p class="pagehero__lede team-hero__meta">
+          <h1 class="type-display-hero">INVESTMENT<br />TEAM</h1>
+          <p class="pagehero__lede">
             ShoreVest's senior team has built and operated the firm's China private credit platform for nearly two decades — across sourcing, underwriting, legal structuring, asset servicing, and investor engagement. Continuity at the top means the people who built the firm are still running it.
           </p>
         </div>
@@ -643,7 +643,27 @@
     </main>
 <footer class="sv-footer" data-shared-footer></footer>
 
-<script src="assets/js/team-bios.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const profiles = document.querySelectorAll(".team-profile[data-team-profile]");
+    profiles.forEach((profile) => {
+      const toggles = profile.querySelectorAll(".team-profile__bio-toggle, .team-profile__photo-btn");
+      const bio = profile.querySelector(".team-profile__bio");
+      if (!bio) return;
+      toggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const isOpen = !bio.hasAttribute("hidden");
+          if (isOpen) {
+            bio.setAttribute("hidden", "");
+          } else {
+            bio.removeAttribute("hidden");
+          }
+          toggles.forEach((el) => el.setAttribute("aria-expanded", String(!isOpen)));
+        });
+      });
+    });
+  });
+</script>
 <script src="assets/js/site-motion.js" defer></script>
 <script src="assets/js/shared-footer.js" defer></script>
 </body>
