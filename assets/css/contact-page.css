@@ -10,6 +10,11 @@
   --cp-ink: #0F2206;
 }
 
+
+.contact-page {
+  --cp-max: 1320px;
+  --cp-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
+}
 * { box-sizing: border-box; }
 
 body.contact-page,
@@ -25,10 +30,10 @@ body.contact-page,
 .contact-page .cp-routing__inner,
 .contact-page .cp-office__inner,
 .contact-page .cp-form-section__inner {
-  width: 100%;
-  max-width: 1320px;
+  width: min(calc(100% - (var(--cp-gutter) * 2)), var(--cp-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  padding-inline: 0;
 }
 
 .cp-main > section {
