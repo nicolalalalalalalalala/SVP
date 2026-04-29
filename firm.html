@@ -10,764 +10,95 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/refinement-pass.css" />
-    <link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
-    <link rel="stylesheet" href="assets/css/site-motion.css" />
-    <link rel="stylesheet" href="assets/css/shared-header.css" />
-    <script src="assets/js/shared-header.js" defer></script>
-    <style>
-      :root {
-        --qing: #3d7070;
-        --qing-light: #7aafaf;
-        --qing-dark: #1e4040;
-        --xuan-paper-light: #faf6ee;
-        --xuan-paper: #f2ecd8;
-        --xuan-paper-dark: #d8ceb0;
-        --cinnabar: #c93b2a;
-        --ink-green: #0f2a14;
-        --ink: #171410;
-        --ink-soft: #3b342d;
-        --rule: color-mix(in srgb, var(--xuan-paper-dark) 70%, var(--qing) 30%);
-        --content-max-wide: 1300px;
-        --content-max-text: 760px;
-        --content-max-text-intro: 1100px;
-        --site-page-margin: clamp(22px, 4.8vw, 64px);
-        --pad: var(--site-page-margin);
-        --sv-page-title-size: clamp(48px, 4.5vw, 62px);
-        --sv-page-title-line-height: 0.98;
-        --sv-section-space: 72px;
-        --sv-strategy-box-pad-desktop: 38px 42px;
-        --sv-strategy-box-pad-tablet: 28px;
-        --sv-strategy-box-pad-mobile: 22px 18px;
-        --sv-strategy-box-title-gap: 12px;
-      }
-
-      * { box-sizing: border-box; }
-      html, body {
-        margin: 0;
-        background: var(--xuan-paper);
-      }
-      body.firm-body-page,
-      body.firm-body-page main,
-      .firm-page,
-      .firm-page > .section-stack,
-      .firm-page .firm-container,
-      .firm-page .firm-section {
-        background: var(--xuan-paper);
-      }
-      h1, h2, h3, p { margin: 0; }
-
-      .firm-container {
-        width: 100%;
-        max-width: var(--content-max-wide);
-        margin-inline: auto;
-        padding-inline: var(--pad);
-        box-sizing: border-box;
-      }
-
-      .firm-page .firm-panel,
-      .firm-page .firm-box,
-      .firm-page .firm-hero-panel,
-      .firm-page .firm-capital-box,
-      .firm-page .capital-base-box,
-      .firm-page .sv-section-grid,
-      .firm-page .sv-statement,
-      .firm-page .firm-statement {
-        padding: clamp(44px, 4vw, 64px) !important;
-      }
-
-      .firm-page .firm-card,
-      .firm-page .firm-process-card,
-      .firm-page .firm-section-card,
-      .firm-page .firm-overview-card,
-      .firm-page .firm-platform-card,
-      .firm-page .firm-governance-card,
-      .firm-page .firm-execution-card {
-        padding: clamp(28px, 3vw, 44px) !important;
-      }
-
-      .firm-page .firm-panel-inner,
-      .firm-page .firm-box-inner,
-      .firm-page .firm-card-inner,
-      .firm-page .firm-content,
-      .firm-page .firm-copy,
-      .firm-page .capital-base-content {
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .firm-panel {
-        border: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper-light) 82%, var(--xuan-paper) 18%);
-        display: grid;
-        gap: var(--sv-strategy-box-title-gap);
-      }
-      .firm-panel--solid {
-        background: var(--qing-dark);
-        border-color: color-mix(in srgb, var(--qing-light) 40%, var(--qing-dark) 60%);
-        color: var(--xuan-paper-light);
-      }
-      .firm-panel--solid .firm-section-title {
-        color: var(--xuan-paper-light) !important;
-      }
-      .firm-panel--solid .firm-geo-title {
-        color: #faf6ee !important;
-      }
-      .firm-panel--solid .firm-section-title span,
-      .firm-panel--solid .firm-geo-title span {
-        color: inherit !important;
-      }
-
-      .firm-label {
-        margin-bottom: var(--sv-section-label-gap);
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-        min-height: 12px;
-      }
-
-      .firm-label::after {
-        content: "";
-        flex: 0 0 36px;
-        height: 1px;
-        background: currentColor;
-      }
-
-      .sv-editorial-hero {
-        border: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper-light) 88%, var(--xuan-paper) 12%);
-        padding: var(--sv-strategy-box-pad-desktop);
-        position: relative;
-      }
-      .sv-editorial-hero::before {
-        content: "";
-        position: absolute;
-        left: clamp(28px, 3.5vw, 48px);
-        right: clamp(28px, 3.5vw, 48px);
-        top: clamp(16px, 1.8vw, 24px);
-        height: 1px;
-        background: color-mix(in srgb, var(--qing) 58%, var(--xuan-paper-dark) 42%);
-      }
-      .sv-editorial-hero__grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: clamp(22px, 2.5vw, 34px);
-        align-items: start;
-      }
-      .firm-hero-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: clamp(26px, 3.2vw, 44px);
-        align-items: start;
-        width: 100%;
-      }
-      .firm-hero-copy {
-        display: grid;
-        align-content: start;
-        width: 100% !important;
-        max-width: none !important;
-        grid-column: 1 / -1;
-        flex: 1 1 100%;
-      }
-      .firm-hero-copy .firm-label {
-        margin-bottom: var(--sv-section-label-gap);
-      }
-      .firm-page .firm-hero-title,
-      .firm-page .firm-wordmark-heading {
-        margin-top: 0;
-        margin-bottom: clamp(28px, 3vw, 36px);
-        font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-        font-size: var(--sv-page-title-size) !important;
-        font-weight: 400;
-        font-style: normal;
-        line-height: var(--sv-page-title-line-height);
-        letter-spacing: 0.26em;
-        word-spacing: 0.25em;
-        text-transform: uppercase;
-        color: var(--ink-green);
-        max-width: none;
-      }
-      .firm-page .firm-hero-title { text-wrap: balance; }
-      .firm-body, .firm-card p {
-        font-size: var(--sv-size-body);
-        line-height: var(--sv-lh-body);
-        color: var(--ink-soft);
-        max-width: none;
-      }
-      .firm-page .firm-hero-copy-text,
-      .firm-page .capital-base-content,
-      .firm-page .firm-panel .firm-body {
-        width: 100%;
-        max-width: none !important;
-      }
-      .firm-hero-copy-text {
-        width: 100%;
-        max-width: clamp(760px, 82vw, 900px);
-        grid-column: 1 / -1;
-        flex: 1 1 100%;
-      }
-      .firm-hero-copy-text + .firm-hero-copy-text {
-        margin-top: 14px;
-      }
-      .firm-panel--solid .firm-body, .firm-panel--solid .firm-card p { color: rgba(250, 246, 238, 0.82); }
-      .firm-panel--solid .firm-geo-intro { color: rgba(250, 246, 238, 0.82) !important; }
-      .firm-body + .firm-body { margin-top: 14px; }
-
-      .firm-card {
-        border: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper-light) 72%, var(--xuan-paper) 28%);
-        display: grid;
-        gap: var(--sv-strategy-box-title-gap);
-      }
-      .firm-card--qing {
-        background: color-mix(in srgb, #1E4040 82%, var(--ink-green) 18%);
-        border-color: rgba(122, 175, 175, 0.28);
-        --firm-card-qing-heading: color-mix(in srgb, white 94%, var(--xuan-paper-light) 6%);
-        --firm-card-qing-copy: color-mix(in srgb, white 88%, var(--xuan-paper-light) 12%);
-      }
-      .firm-page .firm-card--qing h3,
-      .firm-page .firm-card--qing p {
-        color: var(--firm-card-qing-copy);
-      }
-      .firm-page .firm-card--qing h3,
-      .firm-page .firm-panel--solid .firm-card h3 {
-        color: #faf6ee !important;
-      }
-      .firm-page .firm-card--qing p,
-      .firm-page .firm-panel--solid .firm-card p,
-      .firm-page .firm-panel--solid .firm-card .firm-body {
-        color: rgba(250, 246, 238, 0.78) !important;
-      }
-      .firm-page .firm-card h3 {
-        font-size: clamp(17px, 1.35vw, 20px) !important;
-        line-height: 1.2 !important;
-        letter-spacing: 0.01em !important;
-        text-transform: uppercase;
-        color: var(--qing);
-        font-weight: 700;
-      }
-      .firm-page .firm-card--qing h3 {
-        color: var(--firm-card-qing-heading);
-      }
-      .sv-card-stack p,
-      .card-copy {
-        font-size: var(--sv-size-body);
-        line-height: var(--sv-lh-body);
-        color: var(--ink-soft);
-      }
-
-      .sv-section-grid {
-        border: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper-light) 80%, var(--xuan-paper) 20%);
-        display: grid;
-        gap: var(--sv-strategy-box-title-gap);
-      }
-      .firm-panel--solid .firm-card { background: color-mix(in srgb, var(--qing-dark) 88%, black 12%); border-color: color-mix(in srgb, var(--qing-light) 40%, transparent); }
-      .firm-panel--solid .firm-card h3 { color: var(--xuan-paper-light); }
-
-      .firm-page > .section-stack {
-        display: grid;
-        gap: clamp(48px, 5vw, 72px);
-        padding-top: 0;
-        padding-bottom: clamp(56px, 5vw, 80px);
-      }
-      .firm-page .firm-section {
-        margin: 0 !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-      }
-
-      .firm-page .firm-section-title {
-        font-family: var(--sv-font-en) !important;
-        font-size: var(--sv-section-title-size) !important;
-        font-weight: var(--sv-section-title-weight) !important;
-        line-height: var(--sv-section-title-line) !important;
-        letter-spacing: 0.01em !important;
-        text-transform: uppercase;
-        margin-bottom: var(--sv-section-title-gap) !important;
-      }
-      .firm-process-grid, .firm-governance-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-      }
-      .firm-process-card {
-        border: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper-light) 84%, var(--xuan-paper) 16%);
-        display: grid;
-        gap: var(--sv-strategy-box-title-gap);
-      }
-      .capital-base-box {
-        align-items: start;
-      }
-      .capital-base-content {
-        width: 100%;
-        display: grid;
-        gap: clamp(14px, 1.6vw, 20px);
-        max-width: none;
-      }
-      .firm-page .capital-base-box .firm-label {
-        white-space: nowrap;
-      }
-      .firm-page .capital-base-box .firm-section-title {
-        font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-        font-size: clamp(20px, 1.85vw, 26px) !important;
-        line-height: 1.2 !important;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: var(--qing-dark);
-        margin-bottom: 0;
-        max-width: none;
-      }
-      .firm-page .capital-base-box .firm-body {
-        max-width: none;
-      }
-      .firm-process-num {
-        font-size: var(--sv-size-meta);
-        line-height: var(--sv-lh-label);
-        letter-spacing: var(--sv-track-divider);
-        text-transform: uppercase;
-        color: var(--qing);
-        border-bottom: 1px solid color-mix(in srgb, var(--qing-light) 46%, var(--xuan-paper-dark) 54%);
-        padding-bottom: 8px;
-      }
-      .firm-page .firm-process-card h3 {
-        font-size: clamp(17px, 1.35vw, 20px) !important;
-        line-height: 1.2 !important;
-        letter-spacing: 0.01em;
-        text-transform: uppercase;
-        color: var(--qing-dark);
-      }
-      .firm-geo-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .firm-geo-list li {
-        border-left: 1px solid rgba(250, 246, 238, 0.22);
-        padding: 8px 14px;
-      }
-      .firm-geo-list li:first-child { border-left: 0; padding-left: 0; }
-      .firm-geo-list strong {
-        display: block;
-        color: var(--xuan-paper-light);
-        font-size: var(--sv-size-label);
-        line-height: var(--sv-lh-label);
-        letter-spacing: var(--sv-track-label);
-        text-transform: uppercase;
-        margin-bottom: 6px;
-      }
-      .firm-geo-list span {
-        color: rgba(250, 246, 238, 0.76);
-        font-size: var(--sv-size-body);
-        line-height: var(--sv-lh-body);
-      }
-
-      .sv-statement,
-      .firm-statement {
-        border: 1px solid var(--rule);
-        background: color-mix(in srgb, var(--xuan-paper) 36%, var(--xuan-paper-light) 64%);
-        position: relative;
-      }
-
-      .firm-page .firm-panel > *,
-      .firm-page .firm-box > *,
-      .firm-page .firm-card > * {
-        box-sizing: border-box;
-      }
-      .firm-statement p {
-        color: var(--xuan-paper-light);
-        font-size: var(--sv-size-h2);
-        line-height: var(--sv-lh-heading);
-        letter-spacing: 0.01em;
-        text-transform: uppercase;
-        max-width: 30ch;
-      }
-      .firm-statement strong { color: color-mix(in srgb, var(--cinnabar) 70%, var(--xuan-paper-light) 30%); font-weight: 500; }
-      .sv-footer { border-top: 1px solid var(--rule); background: color-mix(in srgb, var(--xuan-paper) 22%, var(--xuan-paper-light) 78%); }
-
-      @media (max-width: 980px) {
-        .firm-page > .section-stack {
-          gap: clamp(44px, 7vw, 64px);
-          padding-top: 0;
-          padding-bottom: clamp(44px, 7vw, 64px);
-        }
-        .firm-hero-grid, .firm-editorial-grid { grid-template-columns: 1fr; }
-        .firm-process-grid, .firm-governance-grid, .firm-geo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .firm-geo-list li:nth-child(odd) { border-left: 0; padding-left: 0; }
-      }
-
-      @media (max-width: 767px) {
-        :root {
-          --site-page-margin: clamp(16px, 5vw, 22px);
-          --pad: var(--site-page-margin);
-          --sv-section-space: 56px;
-        }
-        .firm-page > .section-stack {
-          gap: clamp(32px, 6vw, 44px);
-          padding-top: 0;
-          padding-bottom: clamp(32px, 6vw, 44px);
-        }
-        .sv-process-grid {
-          grid-template-columns: 1fr;
-        }
-        .firm-process-grid,
-        .firm-geo-list {
-          grid-template-columns: 1fr;
-        }
-        .sv-editorial-hero h1,
-        .sv-editorial-hero .editorial-hero-title {
-          font-size: clamp(34px, 10vw, 48px) !important;
-        }
-        .firm-page .firm-card h3,
-        .firm-page .firm-process-card h3 {
-          font-size: clamp(16px, 4.5vw, 18px) !important;
-        }
-      }
-      @media (max-width: 700px) {
-        .firm-page .firm-panel,
-        .firm-page .firm-box,
-        .firm-page .firm-card,
-        .firm-page .firm-hero-panel,
-        .firm-page .firm-section-card,
-        .firm-page .firm-overview-card,
-        .firm-page .firm-platform-card,
-        .firm-page .firm-governance-card,
-        .firm-page .firm-execution-card,
-        .firm-page .firm-capital-box,
-        .firm-page .capital-base-box,
-        .firm-page .firm-process-card,
-        .firm-page .sv-section-grid,
-        .firm-page .sv-statement,
-        .firm-page .firm-statement {
-          padding: 24px 20px !important;
-        }
-        .firm-page .capital-base-content {
-          padding-inline: 0;
-        }
-        .firm-page .firm-hero-title,
-        .firm-page .firm-wordmark-heading {
-          font-size: clamp(28px, 8vw, 38px) !important;
-          letter-spacing: 0.03em;
-          word-spacing: 0.04em;
-          max-width: 100% !important;
-          text-transform: uppercase;
-          line-height: var(--sv-page-title-line-height);
-        }
-        .firm-page .capital-base-box .firm-section-title {
-          font-size: clamp(20px, 6vw, 24px) !important;
-        }
-        .firm-page .capital-base-box .firm-body {
-          max-width: none;
-        }
-      }
-    </style>
-
     <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
+    <link rel="stylesheet" href="assets/css/shared-header.css" />
     <link rel="stylesheet" href="assets/css/shared-footer.css" />
-    <link rel="stylesheet" href="assets/css/hero-variants.css" />
-    
-    <style id="firm-hero-dark-panel">
-      /* ═══════════════════════════════════════════════════════
-         THE FIRM HERO — deep Qing / blue-green editorial panel
-         Same editorial language as TEAM and STRATEGY but in
-         Qing rather than cinnabar: calmer, more foundational,
-         institutional without the heat of the red panels.
-         ═══════════════════════════════════════════════════════ */
-
-      /* Panel: deep teal-black base — Qing Dark anchors the left, Ink Green breathes
-         in from the far corner, a whisper of Xuan warmth rises at the base. */
-      .firm-panel--hero {
-        background:
-          repeating-linear-gradient(
-            0deg,
-            rgba(250, 246, 238, 0.016) 0,
-            rgba(250, 246, 238, 0.016) 1px,
-            transparent 1px,
-            transparent 3px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            rgba(242, 236, 216, 0.014) 0,
-            rgba(242, 236, 216, 0.014) 1px,
-            transparent 1px,
-            transparent 4px
-          ),
-          radial-gradient(ellipse at 20% 28%, rgba(61, 112, 112, 0.26) 0%, transparent 52%),
-          radial-gradient(ellipse at 78% 72%, rgba(46, 74, 24, 0.20) 0%, transparent 50%),
-          linear-gradient(142deg, #1e4040 0%, #17362e 46%, #0f2206 100%) !important;
-        border: 1px solid rgba(122, 175, 175, 0.24) !important;
-        color: #faf6ee !important;
-        position: relative !important;
-        overflow: hidden !important;
-      }
-
-      /* Hairline fades from Qing-light into a faint Ink Green note */
-      .firm-panel--hero::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, rgba(201, 59, 42, 0.75) 0%, rgba(201, 59, 42, 0.2) 100%);
-        pointer-events: none;
-      }
-
-      /* Section label: Qing-light on deep teal ground */
-      .firm-panel--hero .firm-label,
-      .firm-panel--hero .eyebrow,
-      .firm-panel--hero .eyebrow--red {
-        color: rgba(122, 175, 175, 0.9) !important;
-        font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.26em !important;
-      }
-      .firm-panel--hero .firm-label::after,
-      .firm-panel--hero .eyebrow::after {
-        background: rgba(201, 59, 42, 0.68) !important;
-      }
-
-      /* Main heading: wordmark lockup sitting directly on the Qing panel */
-      .firm-panel--hero .firm-hero-title,
-      .firm-panel--hero .firm-wordmark-heading,
-      .firm-page .firm-panel--hero .firm-hero-title,
-      .firm-page .firm-panel--hero .firm-wordmark-heading {
-        color: #FAF6EE !important;
-        font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-        font-size: clamp(34px, 4.2vw, 54px) !important;
-        line-height: 1.05 !important;
-        letter-spacing: 0.04em !important;
-        word-spacing: 0.04em !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        max-width: 17ch !important;
-        width: 100% !important;
-        white-space: normal !important;
-        text-wrap: balance !important;
-        margin: 0 0 clamp(20px, 2.2vw, 30px) 0 !important;
-      }
-
-      @media (max-width: 768px) {
-        .firm-panel--hero .firm-hero-title,
-        .firm-panel--hero .firm-wordmark-heading,
-        .firm-page .firm-panel--hero .firm-hero-title,
-        .firm-page .firm-panel--hero .firm-wordmark-heading {
-          font-size: clamp(30px, 9.4vw, 42px) !important;
-          letter-spacing: 0.05em !important;
-          line-height: 1.05 !important;
-        }
-      }
-
-      /* Body copy: Xuan Paper Light at comfortable reading opacity */
-      .firm-panel--hero .firm-body {
-        color: rgba(250, 246, 238, 0.84) !important;
-        font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif !important;
-        font-weight: 400 !important;
-        max-width: 760px !important;
-      }
-
-      .firm-panel--hero .firm-hero-proof {
-        margin-top: clamp(24px, 2.6vw, 34px);
-        padding-top: clamp(16px, 1.8vw, 22px);
-        border-top: 1px solid rgba(216, 206, 176, 0.34);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 18px;
-      }
-
-      .firm-panel--hero .firm-hero-proof-item {
-        margin: 0;
-        padding: 0;
-        white-space: normal;
-        font-size: 10px;
-        line-height: 1.45;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(250, 246, 238, 0.72);
-      }
-
-      .firm-panel--hero .firm-hero-proof-item::after {
-        content: none;
-      }
-
-      /* ── Tighten nav-to-panel gap ──────────────────────────────────────────
-         1. Remove the 26–42 px beige padding-top that refinement-pass.css
-            applies via #site-header-mount + main.
-         2. Override the 132 px padding-top that refinement-pass.css applies
-            via body.homepage.homepage .firm-panel--hero. Both rules share
-            selector specificity (0,3,1); this inline <style> is later in
-            source order, so it wins.
-      ────────────────────────────────────────────────────────────────────── */
-      .firm-page {
-        padding-top: 0 !important;
-      }
-
-      body.firm-body-page .firm-page .firm-panel--hero {
-        padding-top: clamp(44px, 4vw, 64px) !important;
-      }
-
-      @media (max-width: 1024px) {
-        body.firm-body-page .firm-page .firm-panel--hero {
-          padding-top: clamp(36px, 4.5vw, 52px) !important;
-        }
-      }
-
-      @media (max-width: 767px) {
-        body.firm-body-page .firm-page .firm-panel--hero {
-          padding-top: clamp(28px, 7vw, 40px) !important;
-        }
-      }
-    </style>
-  <link rel="stylesheet" href="assets/css/shorevest-layout-system.css" />
-</head>
-  <body class="firm-body-page">
+    <link rel="stylesheet" href="assets/css/firm-page.css" />
+    <script src="assets/js/shared-header.js" defer></script>
+    <script src="assets/js/site-motion.js" defer></script>
+    <script src="assets/js/shared-footer.js" defer></script>
+  </head>
+  <body class="firm-page">
     <div id="site-header-mount"></div>
 
-    <main class="firm-page">
-      <div class="section-stack">
-        <section class="firm-section">
-        <div class="wrap firm-container">
-          <div class="firm-panel firm-panel--hero hero--firm">
-            <div class="firm-hero-grid">
-              <div class="firm-hero-copy">
-                <p class="firm-label eyebrow eyebrow--red">THE FIRM</p>
-                <h1 class="firm-hero-title firm-wordmark-heading">ROOTED IN CHINA,<br />BUILT FOR INSTITUTIONAL CAPITAL</h1>
-                <p class="firm-body firm-hero-copy-text">
-                  ShoreVest Partners is an institutional private credit platform focused on asset-backed, recovery-led investments in China, combining onshore execution capability with international risk discipline.
-                </p>
-                <div class="firm-hero-proof" aria-label="Firm platform proof points">
-                  <p class="firm-hero-proof-item">2004 - Strategy roots</p>
-                  <p class="firm-hero-proof-item">20+ years - China private credit experience</p>
-                  <p class="firm-hero-proof-item">Guangzhou + Shanghai - Onshore execution platform</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </section>
-
-        <section class="firm-section">
-        <div class="wrap firm-container">
-          <div class="firm-panel firm-editorial-grid">
+    <main class="firm-main">
+      <section class="firm-hero-band">
+        <div class="wrap">
+          <div class="firm-hero-grid">
             <div>
-              <p class="firm-label eyebrow eyebrow--red">Institutional Platform</p>
-              <h2 class="firm-section-title">Institutional platform</h2>
-            </div>
-            <div>
-              <p class="firm-body">
-                ShoreVest&rsquo;s strategy dates to 2004, with the current platform established in 2016 by the senior team behind predecessor vehicles across collateral-backed lending, asset restructuring, and NPL resolution.
-              </p>
-              <p class="firm-body">
-                Headquartered in Guangzhou with additional presence in Shanghai, Hong Kong, and California, the firm keeps investment, legal, servicing, and realization execution coordinated through one onshore operating standard.
+              <p class="firm-label">THE FIRM</p>
+              <h1 class="firm-hero-title">ROOTED IN CHINA,<br />BUILT FOR INSTITUTIONAL CAPITAL</h1>
+              <p class="firm-body firm-hero-support">
+                ShoreVest is an institutional private credit platform focused on asset-backed, recovery-led investments in China, combining onshore execution capability with international risk discipline.
               </p>
             </div>
+            <div class="firm-hero-proof" aria-label="Firm platform proof points">
+              <p>2004 - strategy roots</p>
+              <p>20+ years - China private credit experience</p>
+              <p>Guangzhou + Shanghai - onshore execution platform</p>
+            </div>
           </div>
         </div>
+      </section>
+
+      <div class="wrap section-stack">
+        <section class="firm-editorial">
+          <div>
+            <p class="firm-label">INSTITUTIONAL PLATFORM</p>
+            <h2 class="firm-heading">INSTITUTIONAL PLATFORM</h2>
+          </div>
+          <div>
+            <p class="firm-body">ShoreVest&rsquo;s strategy dates to 2004, with the current platform established in 2016 by the senior team behind predecessor vehicles across collateral-backed lending, asset restructuring, and NPL resolution.</p>
+            <p class="firm-body">Headquartered in Guangzhou with additional presence in Shanghai, Hong Kong, and California, the firm keeps investment, legal, servicing, and realization execution coordinated through one onshore operating standard.</p>
+          </div>
         </section>
 
-        <section class="firm-section">
-        <div class="wrap firm-container">
-          <div class="firm-panel firm-panel--solid">
-            <p class="firm-label eyebrow eyebrow--red">Operational Geography</p>
-            <h2 class="firm-section-title firm-geo-title">Cross-border operating footprint with onshore execution control</h2>
-            <p class="firm-body firm-geo-intro">Capital formation, underwriting governance, and legal-servicing operations are coordinated through one institutional process across North America and Greater China.</p>
-            <ul class="firm-geo-list">
-              <li><strong>California</strong><span>Investor interface, portfolio reporting, and cross-border capital coordination.</span></li>
-              <li><strong>Hong Kong</strong><span>Regional structuring bridge, legal interface, and transaction coordination.</span></li>
-              <li><strong>Guangzhou / Shanghai</strong><span>Onshore sourcing, underwriting, servicing, and enforcement execution.</span></li>
-            </ul>
+        <section class="firm-dark-band">
+          <p class="firm-label">OPERATIONAL GEOGRAPHY</p>
+          <h2 class="firm-heading">Cross-border operating footprint with onshore execution control</h2>
+          <p class="firm-body">Capital formation, underwriting governance, and legal-servicing operations are coordinated through one institutional process across North America and Greater China.</p>
+          <div class="firm-geo-grid">
+            <article><h3>California</h3><p>Investor interface, portfolio reporting, and cross-border capital coordination.</p></article>
+            <article><h3>Hong Kong</h3><p>Regional structuring bridge, legal interface, and transaction coordination.</p></article>
+            <article><h3>Guangzhou / Shanghai</h3><p>Onshore sourcing, underwriting, servicing, and enforcement execution.</p></article>
           </div>
-        </div>
         </section>
 
-        <section class="firm-section">
-        <div class="wrap firm-container">
-          <div class="firm-panel">
-            <div>
-              <p class="firm-label eyebrow eyebrow--red">Execution Model</p>
-              <h2 class="firm-section-title">Platform Architecture</h2>
-            </div>
-            <div class="firm-process-grid">
-              <article class="firm-process-card">
-                <p class="firm-process-num">01</p>
-                <h3>Origination</h3>
-                <p class="firm-body">Relationship-led sourcing through banks, AMCs, law firms, and servicing channels.</p>
-              </article>
-              <article class="firm-process-card">
-                <p class="firm-process-num">02</p>
-                <h3>Underwriting</h3>
-                <p class="firm-body">Collateral-first analysis with conservative entry basis and downside protection discipline.</p>
-              </article>
-              <article class="firm-process-card">
-                <p class="firm-process-num">03</p>
-                <h3>Legal structuring</h3>
-                <p class="firm-body">Enforceable PRC claims and documentary precision integrated at approval stage.</p>
-              </article>
-              <article class="firm-process-card">
-                <p class="firm-process-num">04</p>
-                <h3>Servicing</h3>
-                <p class="firm-body">Active post-close monitoring and intervention capability embedded in the platform.</p>
-              </article>
-              <article class="firm-process-card">
-                <p class="firm-process-num">05</p>
-                <h3>Enforcement</h3>
-                <p class="firm-body">Local execution in workout, restructuring, and claims realization across cycles.</p>
-              </article>
-              <article class="firm-process-card">
-                <p class="firm-process-num">06</p>
-                <h3>Exit management</h3>
-                <p class="firm-body">Coordinated timing, disposition, and recovery pathways tied to institutional governance.</p>
-              </article>
-            </div>
+        <section class="firm-process-panel">
+          <div>
+            <p class="firm-label">EXECUTION MODEL</p>
+            <h2 class="firm-heading">Platform Architecture</h2>
           </div>
-        </div>
+          <div class="firm-process-grid">
+            <article><p class="num">01</p><h3>Origination</h3><p>Relationship-led sourcing through banks, AMCs, law firms, and servicing channels.</p></article>
+            <article><p class="num">02</p><h3>Underwriting</h3><p>Collateral-first analysis with conservative entry basis and downside protection discipline.</p></article>
+            <article><p class="num">03</p><h3>Legal structuring</h3><p>Enforceable PRC claims and documentary precision integrated at approval stage.</p></article>
+            <article><p class="num">04</p><h3>Servicing</h3><p>Active post-close monitoring and intervention capability embedded in the platform.</p></article>
+            <article><p class="num">05</p><h3>Enforcement</h3><p>Local execution in workout, restructuring, and claims realization across cycles.</p></article>
+            <article><p class="num">06</p><h3>Exit management</h3><p>Coordinated timing, disposition, and recovery pathways tied to institutional governance.</p></article>
+          </div>
         </section>
 
-        <section class="firm-section">
-        <div class="wrap firm-container">
-          <div class="firm-panel">
-            <div>
-              <p class="firm-label eyebrow eyebrow--red">Governance</p>
-              <h2 class="firm-section-title">Governance and continuity</h2>
-            </div>
-            <div class="firm-governance-grid">
-              <article class="firm-card firm-card--qing">
-                <h3>INVESTMENT COMMITTEE</h3>
-                <p>Senior decision-makers maintain accountability for underwriting standards, legal control, and portfolio-level risk discipline.</p>
-              </article>
-              <article class="firm-card firm-card--qing">
-                <h3>EXECUTION CONTINUITY</h3>
-                <p>One team owns each investment from origination through realisation, reducing handoff risk and preserving institutional process integrity.</p>
-              </article>
-              <article class="firm-card firm-card--qing">
-                <h3>CAPITAL STEWARDSHIP</h3>
-                <p>ShoreVest is backed by sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p>
-              </article>
-            </div>
+        <section>
+          <div>
+            <p class="firm-label">GOVERNANCE</p>
+            <h2 class="firm-heading">Governance and continuity</h2>
           </div>
-        </div>
+          <div class="firm-governance-grid">
+            <article><h3>INVESTMENT COMMITTEE</h3><p>Senior decision-makers maintain accountability for underwriting standards, legal control, and portfolio-level risk discipline.</p></article>
+            <article><h3>EXECUTION CONTINUITY</h3><p>One team owns each investment from origination through realisation, reducing handoff risk and preserving institutional process integrity.</p></article>
+            <article><h3>CAPITAL STEWARDSHIP</h3><p>ShoreVest is backed by sovereign wealth funds, pensions, endowments, insurers, and family offices across North America, Asia, the Middle East, and Europe.</p></article>
+          </div>
         </section>
 
-        <section class="firm-section">
-        <div class="wrap firm-container">
-          <div class="firm-panel capital-base-box">
-            <p class="firm-label eyebrow eyebrow--red">CAPITAL BASE</p>
-            <div class="capital-base-content">
-              <h2 class="firm-section-title">LOCAL EXECUTION. INSTITUTIONAL STANDARDS.</h2>
-              <p class="firm-body">ShoreVest manages capital on behalf of sovereign wealth funds, pensions, endowments, insurers, family offices, and other institutional investors, pairing global reporting and governance expectations with onshore China credit execution.</p>
-            </div>
-          </div>
-        </div>
+        <section class="firm-capital-note">
+          <p class="firm-label">CAPITAL BASE</p>
+          <h2 class="firm-heading">LOCAL EXECUTION. INSTITUTIONAL STANDARDS.</h2>
+          <p class="firm-body">ShoreVest manages capital on behalf of sovereign wealth funds, pensions, endowments, insurers, family offices, and other institutional investors, pairing global reporting and governance expectations with onshore China credit execution.</p>
         </section>
       </div>
     </main>
 
     <footer class="sv-footer" data-shared-footer></footer>
-
-    <script src="assets/js/site-motion.js" defer></script>
-    <script src="assets/js/shared-footer.js" defer></script>
   </body>
 </html>
