@@ -61,7 +61,7 @@ body.strategy-page .strategy-hero {
       rgba(138, 31, 18, 0.34) 0%,
       rgba(15, 34, 6, 0.20) 48%,
       rgba(15, 34, 6, 0.58) 100%),
-    url("../ChatGPT Image Apr 29, 2026 at 12_01_36 AM.png") center 48% / cover no-repeat !important;
+    url("assets/ChatGPT Image Apr 29, 2026 at 12_01_36 AM.png") center 48% / cover no-repeat !important;
   border-bottom: 1px solid rgba(216, 206, 176, 0.42);
 }
 
@@ -73,6 +73,22 @@ body.strategy-page .strategy-hero::before {
   background:
     radial-gradient(ellipse at 20% 48%, rgba(0, 0, 0, 0.44) 0%, rgba(0, 0, 0, 0.20) 42%, transparent 68%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.28) 100%);
+  pointer-events: none;
+}
+
+body.strategy-page .strategy-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(58%, 820px);
+  z-index: 0;
+  background: linear-gradient(
+    95deg,
+    rgba(6, 12, 8, 0.84) 0%,
+    rgba(15, 34, 6, 0.72) 46%,
+    rgba(15, 34, 6, 0.34) 74%,
+    transparent 100%
+  );
   pointer-events: none;
 }
 
@@ -89,7 +105,19 @@ body.strategy-page .strategy-hero .wrap {
   align-items: end;
 }
 
-body.strategy-page .strategy-hero .hero-main { max-width: 690px; }
+body.strategy-page .strategy-hero .hero-main {
+  max-width: 690px;
+  position: relative;
+  padding: clamp(14px, 2.1vw, 26px) clamp(14px, 2.2vw, 32px);
+  margin-left: clamp(-14px, -1.7vw, -6px);
+  border-radius: 4px;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.16) 46%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+}
 body.strategy-page .strategy-hero .eyebrow { color: #e8998f !important; margin-bottom: 18px; font-size: 11px; letter-spacing: 0.20em; font-weight: 700; }
 body.strategy-page .strategy-hero .eyebrow::after { background: #e8998f !important; }
 body.strategy-page .strategy-hero h1,
