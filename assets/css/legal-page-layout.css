@@ -4,8 +4,8 @@ body.cookie-page,
 body.cookies-page,
 body.terms-page,
 body.disclaimers-page {
-  --legal-max: 1320px;
-  --legal-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
+  --legal-max: var(--sv-site-max, 1440px);
+  --legal-gutter: var(--sv-page-gutter, clamp(28px, 5vw, 72px));
   --legal-text-max: 920px;
   background: #f2ecd8;
   color: #0f2206;
@@ -28,10 +28,10 @@ body.cookie-page .legal-container,
 body.cookies-page .legal-container,
 body.terms-page .legal-container,
 body.disclaimers-page .legal-container {
-  width: 100%;
-  max-width: var(--legal-max);
+  width: min(calc(100% - (var(--legal-gutter) * 2)), var(--legal-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--legal-gutter);
+  padding-inline: 0;
   box-sizing: border-box;
 }
 
@@ -39,10 +39,10 @@ body.disclaimers-page .legal-container {
 .policy-main,
 .terms-main,
 .disclaimer-main {
-  width: 100%;
-  max-width: var(--legal-max);
+  width: min(calc(100% - (var(--legal-gutter) * 2)), var(--legal-max));
+  max-width: none;
   margin-inline: auto;
-  padding-inline: var(--legal-gutter);
+  padding-inline: 0;
   padding-top: clamp(72px, 8vw, 112px);
   padding-bottom: clamp(88px, 9vw, 128px);
   box-sizing: border-box;
@@ -219,7 +219,7 @@ body.disclaimers-page .legal-container {
   body.cookies-page,
   body.terms-page,
   body.disclaimers-page {
-    --legal-gutter: var(--sv-page-gutter, clamp(18px, 5vw, 24px));
+    --legal-gutter: var(--sv-page-gutter, clamp(16px, 5vw, 22px));
   }
 
   body.cookie-page,
