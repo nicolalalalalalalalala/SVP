@@ -6,12 +6,6 @@
     <title>ShoreVest | China Debt Dynamics</title>
     <link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon.svg?v=3" />
     <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
     <link rel="stylesheet" href="assets/css/shorevest-layout-system.css" />
     <link rel="stylesheet" href="assets/css/shared-header.css" />
@@ -19,9 +13,8 @@
     <link rel="stylesheet" href="assets/css/cdd-franchise-shared.css" />
     <link rel="stylesheet" href="assets/css/insights-page.css" />
     <link rel="stylesheet" href="assets/css/insights-print.css" media="print" />
-
     <script src="assets/js/shared-header.js" defer></script>
-</head>
+  </head>
   <body class="insights-page">
     <div id="site-header-mount"></div>
 
@@ -203,75 +196,9 @@
         </div>
       </div>
     </section>
-
-    
-
-    <script>
-      (() => {
-        if (window.__svScrollAnimationsInit) return;
-        window.__svScrollAnimationsInit = true;
-
-        const style = document.createElement("style");
-        style.textContent = `
-    .auto-rev { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
-    .auto-rev.auto-rev--in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .auto-rev { opacity: 1 !important; transform: none !important; transition: none !important; }
-    }
-  `;
-        document.head.appendChild(style);
-
-        const targets = document.querySelectorAll(
-          "section, .wrap> div, .ac, .sg, .tm, .icard, .issue-card, .su__form, .foot__top, .foot__btm",
-        );
-        targets.forEach((el, i) => {
-          if (el.classList.contains("rev") || el.classList.contains("auto-rev"))
-            return;
-          if (el.closest("nav")) return;
-          if (
-            el.closest(".reading-grid") ||
-            el.classList.contains("issue-header") ||
-            el.classList.contains("issue-intro")
-          ) {
-            return;
-          }
-          el.classList.add("auto-rev");
-          el.style.transitionDelay = `${Math.min((i % 6) * 0.08, 0.4)}s`;
-        });
-
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          document
-            .querySelectorAll(".auto-rev")
-            .forEach((el) => el.classList.add("auto-rev--in"));
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) return;
-              entry.target.classList.add("auto-rev--in");
-              observer.unobserve(entry.target);
-            });
-          },
-          { threshold: 0.01, rootMargin: "35% 0px 35% 0px" },
-        );
-
-        document
-          .querySelectorAll(".auto-rev")
-          .forEach((el) => observer.observe(el));
-
-        window.setTimeout(() => {
-          document
-            .querySelectorAll(".auto-rev:not(.auto-rev--in)")
-            .forEach((el) => el.classList.add("auto-rev--in"));
-        }, 1000);
-      })();
-    </script>
 <footer class="sv-footer" data-shared-footer></footer>
-
-<script src="assets/js/site-motion.js" defer></script>
-<script src="assets/js/shared-footer.js" defer></script>
-<script src="assets/js/cdd-pdf-actions.js" defer></script>
+    <script src="assets/js/site-motion.js" defer></script>
+    <script src="assets/js/shared-footer.js" defer></script>
+    <script src="assets/js/cdd-pdf-actions.js" defer></script>
 </body>
 </html>
