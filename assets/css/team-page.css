@@ -12,7 +12,7 @@
 
 body.team-page {
   --team-max: 1320px;
-  --team-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  --team-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
   margin: 0;
   background: var(--team-xuan);
   color: var(--team-qing-dark);
