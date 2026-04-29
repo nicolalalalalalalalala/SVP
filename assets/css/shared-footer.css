@@ -510,3 +510,12 @@ html body footer.sv-footer .sv-footer__legal-links a:hover,
 html body footer.sv-footer .sv-footer__legal-links a:focus-visible {
   color: var(--accent-red, #b34734) !important;
 }
+
+/* Site layout system alignment */
+html body footer.sv-footer .sv-footer__inner {
+  width: 100% !important;
+  max-width: var(--site-max) !important;
+  margin-inline: auto !important;
+  padding-inline: var(--site-gutter) !important;
+  box-sizing: border-box !important;
+}
