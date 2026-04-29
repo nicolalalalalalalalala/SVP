@@ -5,7 +5,7 @@ body.cookies-page,
 body.terms-page,
 body.disclaimers-page {
   --legal-max: 1320px;
-  --legal-gutter: var(--sv-page-gutter, clamp(24px, 5vw, 72px));
+  --legal-gutter: var(--sv-page-gutter, clamp(22px, 4.8vw, 64px));
   --legal-text-max: 920px;
   background: #f2ecd8;
   color: #0f2206;
