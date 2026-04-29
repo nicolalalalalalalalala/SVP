@@ -28,8 +28,8 @@ body.strategy-page .eyebrow {
 body.strategy-page h1 {
   font-size: clamp(46px, 5vw, 72px);
   line-height: 0.98;
-  letter-spacing: 0.06em;
-  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-weight: 600;
   text-transform: uppercase;
   margin: 0;
 }
@@ -60,35 +60,42 @@ body.strategy-page p {
   max-width: 66ch;
 }
 
-.strategy-hero {
-  min-height: clamp(430px, 52vh, 610px);
-  display: flex;
-  align-items: center;
+body.strategy-page .strategy-hero {
   background:
-    radial-gradient(ellipse at 18% 38%, rgba(201, 59, 42, 0.24) 0%, transparent 46%),
-    radial-gradient(ellipse at 82% 74%, rgba(30, 64, 64, 0.18) 0%, transparent 44%),
-    linear-gradient(105deg, #8A1F12 0%, #421109 34%, #171006 58%, #0F2206 100%);
-  border-bottom: 1px solid rgba(201, 183, 139, 0.42);
+    radial-gradient(circle at 18% 42%, rgba(138,31,18,0.58) 0%, rgba(138,31,18,0.22) 38%, transparent 62%),
+    radial-gradient(circle at 84% 50%, rgba(30,64,64,0.28) 0%, transparent 48%),
+    linear-gradient(112deg, #8A1F12 0%, #351006 34%, #101707 68%, #0F2206 100%) !important;
+  padding: clamp(86px, 8vw, 122px) 0 clamp(78px, 7vw, 112px) !important;
+  border-bottom: 1px solid rgba(216,206,176,0.32);
 }
-.strategy-hero .wrap { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.68fr); gap: clamp(56px, 7vw, 112px); align-items: end; }
-.strategy-hero .eyebrow { color: rgba(250, 246, 238, 0.78); }
-.strategy-hero h1 { color: #FAF6EE; }
-.strategy-hero .pagehero__lede { color: rgba(250, 246, 238, 0.78); margin-top: 22px; }
-.strategy-hero .hero-meta { color: rgba(250, 246, 238, 0.5); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 18px; }
-.hero-aside { border-left: 1px solid rgba(201, 183, 139, 0.34); padding-left: clamp(24px, 2.6vw, 38px); }
-.strategy-kpi { padding-bottom: 18px; border-bottom: 1px solid rgba(201, 183, 139, 0.26); margin-bottom: 16px; }
-.strategy-kpi strong { color: #E8998F; display: block; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 6px; }
-.strategy-kpi span { color: rgba(250, 246, 238, 0.78); }
+body.strategy-page .strategy-hero .wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(28px, 4.8vw, 72px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 0.62fr); gap: clamp(56px, 7vw, 104px); align-items: end; }
+body.strategy-page .strategy-hero .eyebrow { color: #E8998F !important; font-size: 10px !important; line-height: 1 !important; letter-spacing: 0.18em !important; text-transform: uppercase !important; font-weight: 700 !important; margin-bottom: 22px !important; }
+body.strategy-page .strategy-hero .eyebrow::after { background: rgba(232,153,143,0.72) !important; }
+body.strategy-page .strategy-hero h1 { color: #FAF6EE !important; font-family: var(--sv-type-sans, "DIN 2014", Arial, sans-serif) !important; font-style: normal !important; font-weight: 700 !important; text-transform: uppercase !important; font-size: clamp(44px, 5.4vw, 72px) !important; line-height: 0.98 !important; letter-spacing: -0.018em !important; max-width: 12ch !important; margin: 0 !important; }
+body.strategy-page .strategy-hero .pagehero__lede { margin-top: clamp(22px, 2.6vw, 32px) !important; max-width: 58ch !important; color: rgba(250,246,238,0.82) !important; font-size: clamp(15px, 1.1vw, 17px) !important; line-height: 1.62 !important; font-weight: 400 !important; }
+body.strategy-page .strategy-hero .hero-meta { margin-top: 18px !important; max-width: 58ch !important; color: rgba(250,246,238,0.58) !important; font-size: 11px !important; line-height: 1.6 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; }
+body.strategy-page .hero-aside { border-left: 1px solid rgba(216,206,176,0.28) !important; padding-left: clamp(28px, 3vw, 44px) !important; }
+body.strategy-page .hero-kpis { display: grid; gap: 0; }
+body.strategy-page .strategy-kpi { padding: 20px 0 22px !important; border-bottom: 1px solid rgba(216,206,176,0.22) !important; background: transparent !important; margin-bottom: 0; }
+body.strategy-page .strategy-kpi:first-child { padding-top: 0 !important; }
+body.strategy-page .strategy-kpi:last-child { border-bottom: 0 !important; padding-bottom: 0 !important; }
+body.strategy-page .strategy-kpi strong { display: block !important; margin-bottom: 8px !important; color: #E8998F !important; font-size: 10px !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; font-weight: 700 !important; }
+body.strategy-page .strategy-kpi span { display: block !important; color: rgba(250,246,238,0.86) !important; font-size: 15px !important; line-height: 1.48 !important; text-align: left !important; }
 
-.market-context, .execution-model, .next-steps { background: var(--strategy-xuan); padding-block: clamp(86px, 7vw, 112px); }
-.market-context-text, .strategy-sleeves__head { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(360px, 0.58fr); column-gap: clamp(64px, 8vw, 128px); align-items: start; }
-.market-context-text { padding-bottom: clamp(42px, 4vw, 58px); border-bottom: 1px solid var(--strategy-rule); }
-.market-context-text p { color: var(--strategy-ink-dark); }
-.context-grid { margin-top: clamp(34px, 4vw, 52px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--strategy-rule); border-bottom: 1px solid var(--strategy-rule); }
-.context-pullout { border-right: 1px solid var(--strategy-rule); padding: clamp(24px, 2.8vw, 36px); }
-.context-pullout:last-child { border-right: 0; }
-.context-pullout b { color: var(--strategy-cinnabar); display: block; font-size: 10.5px; letter-spacing: 0.16em; margin-bottom: 12px; }
-.context-pullout span { color: var(--strategy-qing-dark); }
+.market-context { background: #F2ECD8 !important; padding: clamp(80px, 7vw, 112px) 0 !important; }
+.execution-model, .next-steps { background: var(--strategy-xuan); padding-block: clamp(86px, 7vw, 112px); }
+body.strategy-page .market-context .wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(28px, 4.8vw, 72px); }
+body.strategy-page .market-context-content { border: none !important; background: transparent !important; box-shadow: none !important; padding: 0 !important; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(380px, 0.72fr); gap: clamp(56px, 7vw, 104px); align-items: start; border-bottom: 1px solid rgba(216,206,176,0.88) !important; padding-bottom: clamp(54px, 5vw, 76px) !important; }
+body.strategy-page .market-context-content .eyebrow { color: #1E4040 !important; font-size: 10px !important; letter-spacing: 0.18em !important; font-weight: 700 !important; margin-bottom: 22px !important; }
+body.strategy-page .market-context-content .eyebrow::after { background: #C93B2A !important; }
+body.strategy-page .market-context-content h2 { color: #0F2206 !important; font-size: clamp(30px, 3.3vw, 48px) !important; line-height: 1.08 !important; letter-spacing: -0.012em !important; text-transform: uppercase !important; max-width: 18ch !important; }
+body.strategy-page .market-context-content p { color: #2E4A18 !important; font-size: 15.5px !important; line-height: 1.68 !important; max-width: 58ch !important; }
+body.strategy-page .context-grid { grid-column: 1 / -1; margin-top: clamp(34px, 4vw, 48px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(216,206,176,0.82); border-bottom: 1px solid rgba(216,206,176,0.82); }
+body.strategy-page .context-pullout { background: transparent !important; border: 0 !important; border-right: 1px solid rgba(216,206,176,0.72) !important; padding: 26px 28px !important; }
+body.strategy-page .context-pullout:last-child { border-right: 0 !important; }
+body.strategy-page .context-pullout b { color: #C93B2A !important; font-size: 10px !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; font-weight: 700 !important; margin-bottom: 10px !important; display: block; }
+body.strategy-page .context-pullout span { color: #2E4A18 !important; font-size: 14px !important; line-height: 1.58 !important; }
+body.strategy-page .market-context-disclaimer { grid-column: 1 / -1; margin-top: 18px !important; color: #3D7070 !important; font-size: 12px !important; line-height: 1.55 !important; max-width: 90ch !important; }
 
 .strategy-sleeves { background: var(--strategy-xuan-light); padding-block: clamp(86px, 7vw, 116px); border-top: 1px solid var(--strategy-rule); border-bottom: 1px solid var(--strategy-rule); }
 .strategy-sleeves__head { margin-bottom: clamp(46px, 5vw, 68px); }
@@ -133,8 +140,8 @@ body.strategy-page p {
 .next-links a:hover { color: var(--strategy-cinnabar); background: rgba(250, 246, 238, 0.48); }
 
 @media (max-width: 900px) {
-  .strategy-hero .wrap,
-  .market-context-text,
+  body.strategy-page .strategy-hero .wrap,
+  .market-context-content,
   .strategy-sleeves__head,
   .context-grid,
   .underwriting-grid,
@@ -144,7 +151,7 @@ body.strategy-page p {
   .strategy-sleeve {
     grid-template-columns: 1fr;
   }
-  .hero-aside { border-left: 0; border-top: 1px solid rgba(201, 183, 139, 0.34); padding-left: 0; padding-top: 20px; }
+  body.strategy-page .hero-aside { border-left: 0 !important; border-top: 1px solid rgba(216,206,176,0.34) !important; padding-left: 0 !important; padding-top: 20px !important; }
   .strategy-sleeve { padding-block: 24px; gap: 14px; min-height: 0; }
   .context-pullout, .underwriting-item, .execution-step, .risk-return-item, .next-links a { border-right: 0; border-bottom: 1px solid var(--strategy-rule); }
   .context-grid > :last-child,
@@ -155,9 +162,11 @@ body.strategy-page p {
 }
 
 @media (max-width: 560px) {
-  body.strategy-page h1 { font-size: min(40px, 11.5vw); }
-  body.strategy-page h2 { font-size: min(34px, 8.5vw); }
+  body.strategy-page .strategy-hero h1 { font-size: min(44px, 11.5vw) !important; }
+  body.strategy-page .market-context-content h2 { font-size: min(34px, 8.5vw) !important; }
   body.strategy-page p,
   body.strategy-page span { font-size: 14.5px; }
   body.strategy-page { overflow-x: hidden; }
+  body.strategy-page .strategy-hero { padding: 72px 0 64px !important; }
+  body.strategy-page .market-context { padding: 64px 0 !important; }
 }
