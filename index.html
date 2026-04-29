@@ -5307,20 +5307,21 @@ body.homepage #cdd .cdd-live__dot { background: #c93b2a; }
 <div id="site-header-mount"></div>
 
 <style id="homepage-institutional-balance-pass">
-body.homepage {
-  --section-pad-lg: clamp(88px, 9vw, 136px);
-  --section-pad-md: clamp(72px, 7vw, 112px);
-  --section-pad-sm: clamp(48px, 5vw, 80px);
-  --section-gap-lg: clamp(72px, 7vw, 112px);
-  --section-gap-md: clamp(48px, 5vw, 80px);
-  --section-gap-sm: clamp(28px, 3vw, 48px);
-}
 body.homepage .home-hero + .homepage-section-stack { margin-top: 0 !important; }
 body.homepage .homepage-section-stack > section + section { margin-top: 0 !important; }
-body.homepage :is(#about, #strategy, #stats) { padding-block: var(--section-pad-md) !important; }
-body.homepage #cdd { padding-block: var(--section-pad-md) !important; margin-top: clamp(56px, 6vw, 96px) !important; }
-body.homepage .home-section-shell { max-width: min(1240px, calc(100vw - clamp(40px, 8vw, 132px))) !important; }
-body.homepage :is(#about .home-section-shell, #strategy .home-section-shell, #stats .home-section-shell, #cdd .home-section-shell) {
+body.homepage {
+  --section-pad-lg: clamp(88px, 8vw, 128px);
+  --section-pad-md: clamp(72px, 7vw, 112px);
+  --section-pad-sm: clamp(48px, 5vw, 80px);
+  --module-gap-lg: clamp(56px, 5vw, 88px);
+  --module-gap-md: clamp(40px, 4vw, 64px);
+  --rule-colour: rgba(216, 206, 176, 0.65);
+}
+body.homepage :is(#about, #strategy, #stats, #cdd) { padding-block: var(--section-pad-md) !important; }
+body.homepage #about { padding-top: var(--section-pad-sm) !important; }
+body.homepage #cdd { margin-top: var(--section-pad-sm) !important; }
+body.homepage .home-section-shell {
+  max-width: min(1240px, calc(100vw - clamp(40px, 8vw, 132px))) !important;
   padding-inline: clamp(28px, 3vw, 44px) !important;
 }
 
@@ -5355,11 +5356,11 @@ body.homepage #strategy .strat__grid>.sg{
   padding-block:clamp(36px,2.6vw,44px) !important;
   border:0 !important;
   border-radius:0 !important;
-  background:transparent !important;
+  background:#FAF6EE !important;
 }
 body.homepage #strategy .strat__grid>.sg + .sg{ border-top:1px solid rgba(216,206,176,.56) !important; }
 body.homepage #strategy .strat__grid>.sg:nth-child(odd),
-body.homepage #strategy .strat__grid>.sg:nth-child(even){ background:transparent !important; }
+body.homepage #strategy .strat__grid>.sg:nth-child(even){ background:#FAF6EE !important; }
 body.homepage #strategy .sg__content{
   grid-template-columns:7% 33% 60% !important;
   align-items:center !important;
@@ -5370,19 +5371,36 @@ body.homepage #strategy .sg__n { font-size:11.5px !important; letter-spacing:.08
 body.homepage #strategy .sg__title { font-size:clamp(22px,1.7vw,26px) !important; font-weight:600 !important; color:#0F2206 !important; text-transform:none !important; line-height:1.2 !important; }
 body.homepage #strategy .sg__body { font-size:clamp(15.5px,1.1vw,17px) !important; line-height:1.5 !important; color:#1E4040 !important; max-width:58ch !important; }
 
-/* Track record refined proof strip */
-body.homepage #stats.track-record { background:#FAF6EE !important; border:0 !important; box-shadow:none !important; outline:0 !important; }
-body.homepage #stats .home-section-shell { max-width:min(1240px, calc(100vw - clamp(40px, 8vw, 132px))) !important; padding-inline:clamp(28px,3vw,44px) !important; }
-body.homepage #stats .track-record__header { display:grid !important; grid-template-columns:minmax(0,48%) minmax(0,42%) !important; column-gap:clamp(32px,4vw,72px) !important; row-gap:clamp(22px,2.5vw,30px) !important; align-items:start !important; margin:0 !important; }
-body.homepage #stats .track-record__title { max-width:680px !important; }
-body.homepage #stats .track-record__intro { margin:clamp(28px,2.8vw,38px) 0 0 !important; max-width:600px !important; }
-body.homepage #stats .track-record__grid { display:grid !important; grid-template-columns:repeat(4,minmax(0,1fr)) !important; gap:0 !important; margin-top:clamp(48px,5vw,64px) !important; border-top:1px solid rgba(216,206,176,.45) !important; border-bottom:1px solid rgba(216,206,176,.45) !important; border-left:0 !important; border-right:0 !important; }
-body.homepage #stats .track-record__item { min-width:0 !important; min-height:0 !important; display:grid !important; grid-template-rows:auto auto auto !important; align-items:start !important; justify-content:start !important; row-gap:0 !important; padding:30px 26px 32px !important; border:0 !important; }
-body.homepage #stats .track-record__item:not(:first-child){ border-left:1px solid rgba(216,206,176,.35) !important; }
-body.homepage #stats .track-record__label { font-size:11px !important; font-weight:400 !important; text-transform:uppercase !important; letter-spacing:.16em !important; color:rgba(61,112,112,.9) !important; margin:0 0 24px !important; }
-body.homepage #stats .track-record__value { margin:0 0 16px !important; font-size:clamp(34px,3.2vw,48px) !important; line-height:1 !important; font-weight:300 !important; color:#1E4040 !important; white-space:nowrap !important; }
-body.homepage #stats .track-record__description { margin:0 !important; font-size:15px !important; line-height:1.56 !important; color:rgba(30,64,64,.84) !important; max-width:34ch !important; }
-
+/* Track record institutional proof band */
+body.homepage #stats.track-record {
+  background: linear-gradient(135deg, #1E4040 0%, #0F2206 100%) !important;
+  border:0 !important;
+}
+body.homepage #stats .track-record__header {
+  display:grid !important;
+  grid-template-columns:minmax(0,48%) minmax(0,42%) !important;
+  column-gap:clamp(32px,4vw,72px) !important;
+  align-items:start !important;
+  margin:0 !important;
+  padding-bottom: clamp(30px, 3vw, 44px) !important;
+  border-bottom:1px solid rgba(250, 246, 238, 0.16) !important;
+}
+body.homepage #stats .eyebrow { color:#E8998F !important; }
+body.homepage #stats .eyebrow::after { background:#E8998F !important; }
+body.homepage #stats .track-record__title { max-width:680px !important; color:#FAF6EE !important; }
+body.homepage #stats .track-record__intro { margin:0 !important; max-width:600px !important; color:rgba(250,246,238,.82) !important; }
+body.homepage #stats .track-record__grid {
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  margin-top: clamp(48px,5vw,72px) !important;
+  border-top:1px solid rgba(250, 246, 238, 0.16) !important;
+  border-bottom:1px solid rgba(250, 246, 238, 0.16) !important;
+}
+body.homepage #stats .track-record__item { padding:30px 24px 34px !important; border:0 !important; }
+body.homepage #stats .track-record__item:not(:first-child){ border-left:1px solid rgba(250, 246, 238, 0.16) !important; }
+body.homepage #stats .track-record__label { font-size:11.5px !important; letter-spacing:.16em !important; color:#D8CEB0 !important; margin:0 0 20px !important; }
+body.homepage #stats .track-record__value { margin:0 0 14px !important; font-size:clamp(36px,3.5vw,52px) !important; line-height:1 !important; color:#FAF6EE !important; }
+body.homepage #stats .track-record__description { margin:0 !important; font-size:15px !important; line-height:1.52 !important; color:rgba(250,246,238,.78) !important; max-width:33ch !important; }
 /* Firm + principles hierarchy */
 body.homepage .firm-editorial-section { background:#F2ECD8 !important; }
 body.homepage .firm-stats-row { border-top:1px solid rgba(216,206,176,.56); border-bottom:1px solid rgba(216,206,176,.56); }
@@ -5393,10 +5411,10 @@ body.homepage .firm-stat__label br { display:block; }
 body.homepage .firm-editorial-beat { gap:clamp(72px,8vw,140px) !important; }
 body.homepage .firm-editorial-beat .eyebrow { margin-bottom: clamp(14px, 1.6vw, 22px) !important; }
 body.homepage .firm-stats-row { margin-top: clamp(56px, 5vw, 84px) !important; }
-body.homepage .firm-editorial-divider { margin: var(--section-gap-md) 0 !important; }
+body.homepage .firm-editorial-divider { margin: var(--module-gap-lg) 0 !important; }
 
 /* CDD transition */
-body.homepage #cdd { margin-top: clamp(56px, 6vw, 96px) !important; background:linear-gradient(155deg,#1E4040 0%,#1A3630 42%,#0F2206 100%) !important; }
+body.homepage #cdd { margin-top: var(--section-pad-sm) !important; background:linear-gradient(155deg,#1E4040 0%,#1A3630 42%,#0F2206 100%) !important; }
 body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !important; }
 
 @media (max-width: 1024px){
@@ -5410,19 +5428,19 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
   body.homepage .track-record__intro { margin:0 !important; max-width:600px !important; }
   body.homepage .track-record__grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
   body.homepage .track-record__item:nth-child(odd){ border-left:0 !important; }
-  body.homepage .track-record__item:nth-child(n+3){ border-top:1px solid rgba(216,206,176,.4) !important; }
+  body.homepage .track-record__item:nth-child(n+3){ border-top:1px solid rgba(250, 246, 238, 0.16) !important; }
 }
 
 @media (max-width: 1024px){
   body.homepage :is(#about, #strategy, #stats, #cdd) { padding-block: clamp(64px, 8vw, 92px) !important; }
-  body.homepage #about { padding-top: clamp(80px, 8vw, 120px) !important; }
+  body.homepage #about { padding-top: clamp(56px, 6vw, 84px) !important; }
   body.homepage .firm-stats-row,
   body.homepage #strategy .strat__grid,
   body.homepage .track-record__grid { margin-top: clamp(40px, 4.8vw, 64px) !important; }
 }
 @media (max-width: 768px){
   body.homepage :is(#about, #strategy, #stats, #cdd) { padding-block: clamp(56px, 10vw, 80px) !important; }
-  body.homepage #about { padding-top: clamp(64px, 12vw, 88px) !important; }
+  body.homepage #about { padding-top: clamp(48px, 9vw, 72px) !important; }
   body.homepage #cdd { margin-top: clamp(40px, 8vw, 64px) !important; }
   body.homepage .firm-stats-row,
   body.homepage #strategy .strat__grid,
@@ -5442,7 +5460,7 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
   body.homepage #strategy .sg__body{ max-width:100% !important; }
   body.homepage .track-record__grid { grid-template-columns:1fr !important; }
   body.homepage .track-record__item { border-left:0 !important; }
-  body.homepage .track-record__item:not(:first-child){ border-top:1px solid rgba(216,206,176,.42) !important; }
+  body.homepage .track-record__item:not(:first-child){ border-top:1px solid rgba(250, 246, 238, 0.16) !important; }
 }
 </style>
 
@@ -5493,7 +5511,7 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
         <h2 class="about__hed rev d1 sv-section-title">VISION &amp; PRINCIPLES</h2>
       </div>
       <div class="about__body home-copy-frame rev d2">
-        <p>ShoreVest's vision is to deliver consistent returns across cycles in China's private credit market by maintaining a long-term platform with the local capability to source proprietary opportunities, apply disciplined analysis, and uphold proper alignment of interests with our investors. At its core, this is a human business, built on relationships of trust with the networks that originate opportunities and the institutions that commit capital to the platform.</p>
+        <p>ShoreVest is built around long-term trust: with the investors who commit capital, the local networks that originate opportunities, and the counterparties that rely on the firm to solve credit problems. The platform is designed to source proprietary opportunities, apply disciplined analysis, and maintain alignment of interests across market cycles.</p>
       </div>
     </div>
   </div>
@@ -5509,7 +5527,7 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
       </div>
       <div class="strat__content">
         <div class="strat__intro home-copy-frame rev d2">
-          <p>ShoreVest is a multi-strategy credit solution provider focused on asset-backed private credit in China, situations where a low loan-to-value or cost-to-value provides a significant margin of safety, and where the firm's ability to deliver tailored credit solutions creates returns that conventional lenders cannot.</p>
+          <p>ShoreVest focuses on asset-backed private credit situations where entry price, collateral quality, and enforceable seniority create a defined margin of safety. The firm invests where conventional lenders lack flexibility and where tailored credit solutions can command a return premium.</p>
         </div>
       </div>
       <div class="strat__grid" role="list" aria-label="Investment strategy pillars">
@@ -5544,30 +5562,30 @@ body.homepage #cdd .cdd-editorial__card { background:rgba(14,28,28,.9) !importan
     <div class="track-record__header">
       <div>
         <div class="eyebrow eyebrow--red rev">TRACK RECORD</div>
-        <h2 class="track-record__title rev d1">TWO DECADES OF DISCIPLINED CREDIT INVESTING ACROSS CYCLES.</h2>
+        <h2 class="track-record__title rev d1">TWO DECADES OF DISCIPLINED CREDIT INVESTING.</h2>
       </div>
-      <p class="track-record__intro rev d2">Built through multiple market cycles and restructuring environments in China, with discipline anchored in collateral quality, legal enforceability, and local execution.</p>
+      <p class="track-record__intro rev d2">Across six fund vintages, ShoreVest has deployed capital through changing credit conditions, regulatory cycles, and restructuring environments, with underwriting anchored in collateral quality, enforceable seniority, and local execution.</p>
     </div>
     <div class="track-record__grid" role="list" aria-label="Track record highlights">
       <article class="track-record__item rev" role="listitem">
         <div class="track-record__label">STRATEGY ESTABLISHED</div>
         <p class="track-record__value">2004</p>
-        <p class="track-record__description">Pioneered private credit solutions in China’s institutional market.</p>
+        <p class="track-record__description">Private credit strategy first established in China.</p>
       </article>
       <article class="track-record__item rev d1" role="listitem">
         <div class="track-record__label">INSTITUTIONAL CAPITAL</div>
         <p class="track-record__value">$2B+</p>
-        <p class="track-record__description">Managed across six fund vintages on behalf of sovereign wealth funds, pensions, insurers, endowments, and family offices.</p>
+        <p class="track-record__description">Managed across six fund vintages.</p>
       </article>
       <article class="track-record__item rev d2" role="listitem">
         <div class="track-record__label">INVESTMENT TEAM</div>
         <p class="track-record__value">~30</p>
-        <p class="track-record__description">Professionals based locally in China, headquartered in Guangzhou with a Shanghai office.</p>
+        <p class="track-record__description">Professionals, with the investment team based locally in China.</p>
       </article>
       <article class="track-record__item rev d3" role="listitem">
         <div class="track-record__label">SENIOR CONTINUITY</div>
         <p class="track-record__value">17-20</p>
-        <p class="track-record__description">Years of senior continuity among four founding partners and senior IC members.</p>
+        <p class="track-record__description">Years of continuity among founding partners and senior IC members.</p>
       </article>
     </div>
   </div>
