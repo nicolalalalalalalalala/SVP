@@ -12,9 +12,10 @@ body.strategy-page {
 }
 
 body.strategy-page .wrap {
-  max-width: var(--site-content-max);
-  margin: 0 auto;
-  padding-inline: var(--site-page-gutter);
+  width: min(100% - (var(--sv-page-gutter) * 2), var(--sv-site-max));
+  max-width: var(--sv-site-max);
+  margin-inline: auto;
+  padding-inline: 0;
 }
 
 body.strategy-page .eyebrow {
@@ -96,7 +97,6 @@ body.strategy-page .strategy-hero .wrap {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: var(--max, 1200px);
   margin: 0 auto;
   padding: clamp(76px, 8vw, 116px) var(--site-page-gutter);
   display: grid;

@@ -43,7 +43,7 @@ body.press-page a {
 
 body.press-page .press-hero { position: relative; overflow: hidden; margin: 0; min-height: clamp(460px, 52vh, 600px); padding-block: clamp(92px, 10vw, 136px) clamp(72px, 8vw, 104px); background: linear-gradient(90deg, #FAF6EE 0%, #F2ECD8 46%, rgba(122, 175, 175, 0.32) 100%); border-top: 1px solid rgba(216, 206, 176, 0.5); border-bottom: 1px solid rgba(216, 206, 176, 0.75); }
 body.press-page .press-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(250, 246, 238, 0.18) 0%, rgba(250, 246, 238, 0) 62%, rgba(122, 175, 175, 0.06) 100%); pointer-events: none; }
-body.press-page .press-hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.55fr); gap: clamp(48px, 6vw, 88px); align-items: end; max-width: min(var(--sv-content-max, 1320px), 1320px); padding-inline: var(--sv-page-gutter); margin-inline: auto; }
+body.press-page .press-hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.55fr); gap: clamp(48px, 6vw, 88px); align-items: end; width: min(100% - (var(--sv-page-gutter) * 2), var(--sv-site-max)); max-width: var(--sv-site-max); padding-inline: 0; margin-inline: auto; }
 body.press-page .press-hero__copy { max-width: 880px; }
 body.press-page .press-hero h1 { max-width: 12ch; font-family: var(--sv-type-sans, "DIN 2014", "Helvetica Neue", Arial, sans-serif); font-size: clamp(54px, 6vw, 88px); line-height: 0.95; font-weight: 600; font-style: normal; letter-spacing: 0.01em; text-transform: uppercase; color: var(--press-ink); }
 body.press-page .press-hero .lead { max-width: 56ch; margin-top: 22px; font-size: 16px; line-height: 1.6; color: rgba(30, 64, 64, 0.9); }

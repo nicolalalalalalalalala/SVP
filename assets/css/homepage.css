@@ -32,10 +32,10 @@ body.homepage {
 }
 
 .home-container {
-  width: 100%;
-  max-width: var(--site-content-max);
+  width: min(100% - (var(--sv-page-gutter) * 2), var(--sv-site-max));
+  max-width: var(--sv-site-max);
   margin-inline: auto;
-  padding-inline: var(--site-page-gutter);
+  padding-inline: 0;
 }
 
 .homepage-section-stack {
