@@ -21,18 +21,13 @@
   font-display: swap;
 }
 </style>
-<link rel="stylesheet" href="assets/css/refinement-pass.css" />
-
 <link rel="stylesheet" href="assets/css/site-motion.css">
-<link rel="stylesheet" href="assets/css/homepage-shorevest-brand.css" />
-<link rel="stylesheet" href="assets/css/homepage.css" />
-
-    <link rel="stylesheet" href="assets/css/shared-header.css" />
-    <script src="assets/js/shared-header.js" defer></script>
-
+<link rel="stylesheet" href="assets/css/shared-header.css" />
+<script src="assets/js/shared-header.js" defer></script>
 <link rel="stylesheet" href="assets/css/shorevest-typography-system.css" />
 <link rel="stylesheet" href="assets/css/cdd-franchise-shared.css" />
 <link rel="stylesheet" href="assets/css/shared-footer.css">
+<link rel="stylesheet" href="assets/css/homepage.css" />
 
 
 
@@ -139,7 +134,7 @@
   </div>
 </section>
 
-<section id="stats" class="track-record track-record-section">
+<section id="track-record" class="track-record-section">
   <div class="home-container home-section-shell">
     <div class="track-record__header">
       <div>
@@ -236,7 +231,7 @@
   `;
   document.head.appendChild(style);
 
-  const targets = document.querySelectorAll('section, .wrap> div, .ac, .sg, .tm, .icard, .cdd-feature, .su__form, .foot__top, .foot__btm');
+  const targets = document.querySelectorAll('section, .sg, .cdd-feature, .su__form, .foot__top, .foot__btm');
   targets.forEach((el, i) => {
     if (el.classList.contains('rev') || el.classList.contains('auto-rev')) return;
     if (el.closest('nav')) return;
@@ -279,118 +274,11 @@
 })();
 </script>
 
-<script>
-(() => {
-  const rootReference = document.querySelector('#about .about__body p');
-  if (!rootReference) return;
 
-  const alignTargets = Array.from(document.querySelectorAll(
-    '#principles .ac__body, #stats .stat__l, #stats .track-record__description, #stats .track-record__metric-description'
-  ));
-  if (!alignTargets.length) return;
 
-  let rafId = null;
-  const alignBodyCopyStarts = () => {
-    const targetLeft = rootReference.getBoundingClientRect().left;
-    alignTargets.forEach((node) => {
-      const currentLeft = node.getBoundingClientRect().left;
-      const shift = targetLeft - currentLeft;
-      node.classList.add('home-copy-align-target');
-      node.style.setProperty('--home-copy-shift', `${shift.toFixed(2)}px`);
-    });
-  };
 
-  const queueAlignment = () => {
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = requestAnimationFrame(alignBodyCopyStarts);
-  };
 
-  queueAlignment();
-  window.addEventListener('resize', queueAlignment, { passive: true });
-  window.addEventListener('orientationchange', queueAlignment, { passive: true });
-  if (document.fonts?.ready) {
-    document.fonts.ready.then(queueAlignment);
-  }
-})();
-</script>
 
-<script>
-(() => {
-  const interactiveCards = document.querySelectorAll('[data-interactive-card]');
-  const statsContext = document.querySelector('[data-stats-context]');
-  if (!interactiveCards.length) return;
-
-  const setActive = (card) => {
-    interactiveCards.forEach((node) => {
-      const isActive = node === card;
-      node.classList.toggle('is-active', isActive);
-      node.setAttribute('aria-pressed', String(isActive));
-    });
-    if (!statsContext || !card.dataset.context) return;
-    statsContext.textContent = card.dataset.context;
-  };
-
-  interactiveCards.forEach((card) => {
-    card.setAttribute('aria-pressed', 'false');
-    card.addEventListener('click', () => setActive(card));
-    card.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      setActive(card);
-    });
-  });
-})();
-</script>
-
-<script>
-(() => {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const counters = document.querySelectorAll('[data-countup]');
-  if (!counters.length) return;
-
-  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-  const animateCounter = (node) => {
-    const target = Number(node.dataset.target || 0);
-    const prefix = node.dataset.prefix || '';
-    const suffix = node.dataset.suffix || '';
-    const delay = Number(node.dataset.delay || 0);
-    if (!Number.isFinite(target)) return;
-
-    if (reduceMotion) {
-      node.textContent = `${prefix}${target}${suffix}`;
-      return;
-    }
-
-    const duration = 1250;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const value = Math.floor(easeOut(progress) * target);
-      node.textContent = `${prefix}${value}${suffix}`;
-      if (progress < 1) requestAnimationFrame(tick);
-      else node.textContent = `${prefix}${target}${suffix}`;
-    };
-
-    window.setTimeout(() => requestAnimationFrame(tick), Math.max(delay, 0));
-  };
-
-  if (!('IntersectionObserver' in window) || reduceMotion) {
-    counters.forEach(animateCounter);
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      animateCounter(entry.target);
-      obs.unobserve(entry.target);
-    });
-  }, { threshold: 0.45 });
-
-  counters.forEach((counter) => observer.observe(counter));
-})();
-</script>
 
 <script src="assets/js/newsletter-signup.js" defer></script>
 <footer class="sv-footer" data-shared-footer></footer>
