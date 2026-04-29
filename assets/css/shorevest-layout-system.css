@@ -54,12 +54,41 @@ body :is(
   .cp-routing__inner,
   .cp-office__inner,
   .cp-form-section__inner
-) {
+),
+html body.homepage .home-container,
+html body.strategy-page .wrap,
+html body.firm-body-page .firm-container,
+html body.homepage .firm-container,
+html body.team-page .wrap,
+html body.press-page .press-shell,
+html body.insights-page .wrap,
+html body.contact-page :is(.cp-hero__inner, .cp-routing__inner, .cp-office__inner, .cp-form-section__inner),
+html body :is(.legal-wrap, .legal-content, .policy-wrap, .policy-content) {
   width: 100% !important;
   max-width: var(--site-content-max) !important;
-  margin-inline: auto !important;
-  padding-inline: var(--site-page-gutter) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--site-page-gutter) !important;
+  padding-right: var(--site-page-gutter) !important;
   box-sizing: border-box !important;
+}
+
+/* Inner shells that already sit inside .wrap/.home-container must not add a second page gutter. */
+html body :is(
+  .pagehero__intro,
+  .team-hero__proof,
+  .firm-hero-copy,
+  .section-intro,
+  .firm-stats-row,
+  .strategy-rows,
+  .track-record-grid,
+  .cdd-card,
+  .press-overview,
+  .press-speaking,
+  .press-archive-stack,
+  .archive-panel
+) {
+  box-sizing: border-box;
 }
 
 /* Wider frame utility for pages that intentionally need more span. */
