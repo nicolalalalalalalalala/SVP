@@ -298,10 +298,27 @@ body.team-page .team-profile__linkedin::after {
 }
 body.team-page .team-profile > .team-profile__linkedin { display: none; }
 body.team-page .team-profile__bio {
+  display: none;
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid rgba(216, 206, 176, 0.85);
   color: #2E4A18;
+}
+body.team-page .team-profile.is-open .team-profile__bio {
+  display: block;
+}
+body.team-page .team-profile__bio[hidden],
+body.team-page .team-profile__bio:empty,
+body.team-page .team-bio-drawer:empty,
+body.team-page .bio-drawer:empty {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
 }
 body.team-page .team-profile__bio p {
   font-size: 14px;
