@@ -409,3 +409,90 @@ body.homepage {
     align-items: flex-start;
   }
 }
+
+.homepage .home-hero {
+  position: relative !important;
+  min-height: clamp(620px, 72vh, 780px) !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  display: block !important;
+  background: #0F2206 !important;
+}
+
+.homepage .home-hero__media {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+}
+
+.homepage .home-hero__media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 63% center !important;
+  filter: saturate(1.02) contrast(1.03) brightness(0.9) !important;
+}
+
+.homepage .home-hero::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 34, 6, 0.78) 0%,
+      rgba(30, 64, 64, 0.52) 42%,
+      rgba(30, 64, 64, 0.18) 72%,
+      rgba(30, 64, 64, 0.06) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(15, 34, 6, 0.06) 0%,
+      rgba(15, 34, 6, 0.34) 100%
+    ) !important;
+}
+
+.homepage .home-hero__inner {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: clamp(620px, 72vh, 780px) !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.homepage .home-hero__text {
+  position: relative !important;
+  z-index: 3 !important;
+  max-width: 560px !important;
+}
+
+.homepage .home-hero__eyebrow {
+  color: #C93B2A !important;
+}
+
+.homepage .home-hero__headline,
+.homepage .home-hero__headline-primary,
+.homepage .home-hero__headline-emphasis {
+  color: #FAF6EE !important;
+}
+
+.homepage .home-hero__support {
+  color: rgba(250, 246, 238, 0.9) !important;
+}
+
+.homepage .home-hero__cta--primary {
+  background: #C93B2A !important;
+  border-color: #C93B2A !important;
+  color: #FAF6EE !important;
+}
+
+.homepage .home-hero__cta--secondary {
+  color: #FAF6EE !important;
+  border-bottom: 1px solid #C93B2A !important;
+}
