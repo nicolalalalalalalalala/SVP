@@ -1,0 +1,46 @@
+:root {
+  --site-max: 1240px;
+  --site-page-margin: clamp(28px, 4.8vw, 72px);
+  --site-gutter: var(--site-page-margin);
+}
+
+.site-wrap,
+.wrap,
+.home-container,
+.firm-container,
+.strategy-container,
+.team-container,
+.press-container,
+.insights-container,
+.contact-container,
+.page-shell,
+.page-section,
+.pagehero__inner,
+.press-hero__inner,
+.insights-hero__inner,
+.team-hero__inner,
+.contact-hero__inner,
+.firm-hero__inner,
+.strategy-hero__inner,
+.archive-panel,
+.archive-content,
+.team-grid-wrap,
+.contact-grid,
+.legal-main,
+.legal-wrap,
+.legal-content,
+.operational-geography__inner {
+  width: 100%;
+  max-width: var(--site-max);
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+  box-sizing: border-box;
+}
+
+.full-bleed-section {
+  width: 100%;
+}
+
+.text-measure {
+  max-width: 760px;
+}
