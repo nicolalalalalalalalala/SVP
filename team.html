@@ -60,7 +60,7 @@
               Sourcing, underwriting, legal structuring, and portfolio execution across ShoreVest's China private credit platform — including the captive servicer, ShoreVest Asset Solutions.
             </p>
           </div>
-          <div class="grid">
+          <div class="grid" data-team-grid>
             <article class="team-profile" data-team-profile>
 
               <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-benjamin-fanger">
@@ -370,6 +370,9 @@
               </div>
 
             </article>
+            <div class="team-grid__bio-panel" data-bio-panel hidden aria-live="polite">
+              <div class="team-grid__bio-inner" data-bio-panel-content></div>
+            </div>
           </div>
         </section>
 
@@ -383,7 +386,7 @@
               Investor engagement, mandate dialogue, and capital development across Asia and international markets.
             </p>
           </div>
-          <div class="grid">
+          <div class="grid" data-team-grid>
             <article class="team-profile" data-team-profile>
 
               <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-john-jones">
@@ -470,6 +473,9 @@
               </div>
 
             </article>
+            <div class="team-grid__bio-panel" data-bio-panel hidden aria-live="polite">
+              <div class="team-grid__bio-inner" data-bio-panel-content></div>
+            </div>
           </div>
         </section>
 
@@ -483,7 +489,7 @@
               Strategic, market, and policy insight contributed to the firm and the investment committee.
             </p>
           </div>
-          <div class="grid">
+          <div class="grid" data-team-grid>
             <article class="team-profile" data-team-profile>
 
               <button class="team-profile__photo team-profile__photo-btn" type="button" aria-expanded="false" aria-controls="bio-michael-chang">
@@ -643,6 +649,9 @@
               </div>
 
             </article>
+            <div class="team-grid__bio-panel" data-bio-panel hidden aria-live="polite">
+              <div class="team-grid__bio-inner" data-bio-panel-content></div>
+            </div>
           </div>
         </section>
       </div>
@@ -651,20 +660,41 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const profiles = document.querySelectorAll(".team-profile[data-team-profile]");
-    profiles.forEach((profile) => {
-      const toggles = profile.querySelectorAll(".team-profile__bio-toggle, .team-profile__photo-btn");
-      const bio = profile.querySelector(".team-profile__bio");
-      if (!bio) return;
-      toggles.forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-          const isOpen = !bio.hasAttribute("hidden");
-          if (isOpen) {
-            bio.setAttribute("hidden", "");
-          } else {
-            bio.removeAttribute("hidden");
-          }
-          toggles.forEach((el) => el.setAttribute("aria-expanded", String(!isOpen)));
+    const grids = document.querySelectorAll(".grid[data-team-grid]");
+    grids.forEach((grid) => {
+      const profiles = grid.querySelectorAll(".team-profile[data-team-profile]");
+      const panel = grid.querySelector("[data-bio-panel]");
+      const panelContent = grid.querySelector("[data-bio-panel-content]");
+      if (!panel || !panelContent) return;
+
+      const closeAll = () => {
+        profiles.forEach((profile) => {
+          profile.classList.remove("is-bio-active");
+          profile.querySelectorAll(".team-profile__bio-toggle, .team-profile__photo-btn").forEach((el) => {
+            el.setAttribute("aria-expanded", "false");
+          });
+        });
+        panelContent.innerHTML = "";
+        panel.setAttribute("hidden", "");
+      };
+
+      profiles.forEach((profile) => {
+        const toggles = profile.querySelectorAll(".team-profile__bio-toggle, .team-profile__photo-btn");
+        const bio = profile.querySelector(".team-profile__bio");
+        if (!bio) return;
+
+        toggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const isOpen = profile.classList.contains("is-bio-active");
+            closeAll();
+            if (isOpen) return;
+
+            profile.classList.add("is-bio-active");
+            toggles.forEach((el) => el.setAttribute("aria-expanded", "true"));
+            panelContent.innerHTML = bio.innerHTML;
+            panel.removeAttribute("hidden");
+            panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          });
         });
       });
     });
