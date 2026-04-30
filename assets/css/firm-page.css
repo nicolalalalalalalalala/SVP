@@ -1,50 +1,66 @@
-body.firm-page {
-  --firm-cinnabar: #c93b2a;
-  --firm-cinnabar-light: #e8998f;
-  --firm-qing-dark: #1e4040;
-  --firm-ink-dark: #0f2206;
-  --firm-xuan-light: #faf6ee;
-  --firm-xuan: #f2ecd8;
-  --firm-xuan-dark: #d8ceb0;
-  margin: 0;
-  background: var(--firm-xuan);
-  color: var(--firm-ink-dark);
+:root {
+  --sv-cinnabar: #c93b2a;
+  --sv-cinnabar-light: #e8998f;
+  --sv-qing: #3d7070;
+  --sv-qing-dark: #1e4040;
+  --sv-ink-green: #2e4a18;
+  --sv-ink-green-dark: #0f2206;
+  --sv-xuan-light: #faf6ee;
+  --sv-xuan: #f2ecd8;
+  --sv-xuan-dark: #d8ceb0;
 }
 
-body.firm-page *, body.firm-page *::before, body.firm-page *::after { box-sizing: border-box; }
-body.firm-page h1, body.firm-page h2, body.firm-page h3, body.firm-page p { margin: 0; }
-body.firm-page .firm-main { background: var(--firm-xuan); }
+.firm-page {
+  margin: 0;
+  background: var(--sv-xuan);
+  color: var(--sv-ink-green-dark);
+  font-family: "DIN 2014", Arial, sans-serif;
+}
 
-body.firm-page .firm-hero-band {
+.firm-main {
+  background: var(--sv-xuan);
+  color: var(--sv-ink-green-dark);
+}
+
+.firm-main * {
+  box-sizing: border-box;
+}
+
+.firm-hero-band {
   position: relative;
   min-height: clamp(620px, 72vh, 820px);
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #1e4040;
-  color: #faf6ee;
+  background: var(--sv-qing-dark);
+  color: var(--sv-xuan-light);
+  border-bottom: 1px solid rgba(216, 206, 176, 0.55);
 }
 
-body.firm-page .firm-hero-band::before {
+.firm-hero-band::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(90deg, rgba(15, 34, 6, 0.86) 0%, rgba(30, 64, 64, 0.68) 42%, rgba(15, 34, 6, 0.38) 100%),
+    linear-gradient(
+      90deg,
+      rgba(15, 34, 6, 0.88) 0%,
+      rgba(30, 64, 64, 0.74) 44%,
+      rgba(15, 34, 6, 0.48) 100%
+    ),
     url("../images/ChatGPT Image Apr 29, 2026 at 08_43_27 PM.png");
   background-size: cover;
   background-position: center;
   z-index: 0;
 }
 
-body.firm-page .firm-hero-band > .wrap { position: relative; z-index: 1; }
-
-
-body.firm-page .wrap {
-  width: min(calc(100% - (var(--sv-page-gutter) * 2)), 1320px);
+.firm-hero-band > .wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
-body.firm-page .firm-hero-grid {
+.firm-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.55fr);
   gap: clamp(64px, 8vw, 140px);
@@ -52,205 +68,312 @@ body.firm-page .firm-hero-grid {
   padding-block: clamp(96px, 12vh, 148px) clamp(72px, 10vh, 112px);
 }
 
-body.firm-page .firm-label {
+.firm-label {
+  margin: 0 0 22px;
   font-family: "DIN 2014", Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
   font-size: 12px;
   line-height: 1;
-  color: #c93b2a;
-  margin-bottom: 22px;
-}
-
-body.firm-page .firm-hero-band .firm-label,
-body.firm-page .firm-dark-band .firm-label { color: #e8998f; }
-
-body.firm-page .firm-hero-title {
-  font-family: "DIN 2014", Arial, sans-serif;
-  font-size: clamp(54px, 7.2vw, 108px);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #faf6ee;
-  max-width: 920px;
-  margin: 0;
+  color: var(--sv-cinnabar);
 }
 
-body.firm-page .firm-hero-support {
-  color: rgba(250, 246, 238, 0.86);
+.firm-hero-band .firm-label {
+  color: var(--sv-cinnabar-light);
+}
+
+.firm-hero-title {
+  max-width: 1040px;
+  margin: 0;
+  font-family: "DIN 2014", Arial, sans-serif;
+  font-size: clamp(54px, 7vw, 108px);
+  line-height: 0.92;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  color: var(--sv-xuan-light);
+}
+
+.firm-body {
+  margin: 0;
+  font-family: "DIN 2014", Arial, sans-serif;
+  font-size: clamp(17px, 1.2vw, 20px);
+  line-height: 1.62;
+  font-weight: 400;
+  color: rgba(15, 34, 6, 0.84);
+}
+
+.firm-body + .firm-body {
+  margin-top: 18px;
+}
+
+.firm-hero-support {
   max-width: 620px;
   margin-top: 34px;
-  font-size: clamp(17px, 1.2vw, 20px);
-  line-height: 1.55;
+  color: rgba(250, 246, 238, 0.88);
 }
 
-body.firm-page .firm-hero-proof {
+.firm-hero-proof {
   border-left: 1px solid rgba(250, 246, 238, 0.34);
   padding-left: clamp(28px, 4vw, 48px);
-  color: rgba(250, 246, 238, 0.82);
 }
 
-body.firm-page .firm-hero-proof-item {
-  border-top: 1px solid rgba(250, 246, 238, 0.22);
+.firm-hero-proof-item {
+  margin: 0;
   padding: 18px 0;
+  border-top: 1px solid rgba(250, 246, 238, 0.22);
+  color: rgba(250, 246, 238, 0.84);
   font-size: 15px;
   line-height: 1.45;
 }
 
-body.firm-page .section-stack { padding: clamp(88px, 10vw, 140px) 0; }
-body.firm-page .section-stack > section {
+.firm-hero-proof-item:first-child {
+  border-top: 0;
+}
+
+.section-stack {
+  padding: clamp(88px, 10vw, 140px) 0;
+}
+
+.section-stack > section {
   margin: 0;
   padding: clamp(72px, 8vw, 112px) 0;
   border-top: 1px solid rgba(216, 206, 176, 0.9);
 }
 
-body.firm-page .firm-editorial,
-body.firm-page .firm-capital-note {
+.section-stack > section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.firm-editorial,
+.firm-capital-note {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
   gap: clamp(64px, 8vw, 140px);
   align-items: start;
 }
 
-body.firm-page .firm-heading {
+.firm-heading {
+  margin: 0;
+  max-width: 980px;
   font-family: "DIN 2014", Arial, sans-serif;
-  color: #0f2206;
   font-size: clamp(38px, 4.6vw, 72px);
   line-height: 0.96;
+  font-weight: 700;
   letter-spacing: -0.035em;
   text-transform: uppercase;
-  margin: 0;
+  color: var(--sv-ink-green-dark);
 }
 
-body.firm-page .firm-body {
-  font-family: "DIN 2014", Arial, sans-serif;
-  color: rgba(15, 34, 6, 0.86);
-  font-size: clamp(17px, 1.25vw, 20px);
-  line-height: 1.62;
-  margin: 0;
-}
-
-body.firm-page .firm-body + .firm-body { margin-top: 18px; }
-
-body.firm-page .firm-dark-band {
+.firm-dark-band {
   padding: clamp(56px, 6vw, 84px);
-  background: linear-gradient(110deg, rgba(30, 64, 64, 0.95) 0%, rgba(15, 34, 6, 0.98) 100%);
-  color: #faf6ee;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(30, 64, 64, 0.98) 0%,
+      rgba(15, 34, 6, 0.98) 100%
+    );
+  color: var(--sv-xuan-light);
   border: 1px solid rgba(242, 236, 216, 0.18);
 }
-body.firm-page .firm-dark-band .firm-heading { color: #faf6ee; max-width: 1050px; }
-body.firm-page .firm-dark-band .firm-body,
-body.firm-page .firm-dark-band p { color: rgba(242, 236, 216, 0.82); }
-body.firm-page .firm-dark-band > .firm-body { margin-top: 14px; }
 
-body.firm-page .firm-geo-grid {
+.firm-dark-band .firm-label {
+  color: var(--sv-cinnabar-light);
+}
+
+.firm-dark-band .firm-heading {
+  color: var(--sv-xuan-light);
+  max-width: 1100px;
+}
+
+.firm-dark-band .firm-body,
+.firm-dark-band p {
+  color: rgba(242, 236, 216, 0.84);
+}
+
+.firm-geo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   margin-top: clamp(48px, 5vw, 72px);
   border-top: 1px solid rgba(242, 236, 216, 0.24);
 }
-body.firm-page .firm-geo-grid article {
+
+.firm-geo-grid article {
   padding: 32px 32px 0 0;
   border-right: 1px solid rgba(242, 236, 216, 0.16);
 }
-body.firm-page .firm-geo-grid article:last-child { border-right: 0; }
-body.firm-page .firm-geo-grid h3 {
-  color: #faf6ee;
-  font-size: clamp(24px, 2.4vw, 40px);
-  line-height: 1;
-  margin: 0 0 16px;
-  text-transform: uppercase;
+
+.firm-geo-grid article:last-child {
+  border-right: 0;
 }
 
-body.firm-page .firm-process-panel {
-  background: #faf6ee;
-  border: 1px solid rgba(216, 206, 176, 0.9);
-  padding: clamp(52px, 6vw, 84px);
+.firm-geo-grid h3 {
+  margin: 0 0 16px;
+  font-family: "DIN 2014", Arial, sans-serif;
+  font-size: clamp(24px, 2.4vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--sv-xuan-light);
 }
-body.firm-page .firm-process-grid {
+
+.firm-geo-grid p {
+  margin: 0;
+  max-width: 360px;
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.firm-process-panel {
+  padding: clamp(52px, 6vw, 84px);
+  background: var(--sv-xuan-light);
+  border: 1px solid rgba(216, 206, 176, 0.9);
+}
+
+.firm-process-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: clamp(42px, 5vw, 64px);
-  border-top: 1px solid #d8ceb0;
-  border-left: 1px solid #d8ceb0;
+  border-top: 1px solid var(--sv-xuan-dark);
+  border-left: 1px solid var(--sv-xuan-dark);
 }
-body.firm-page .firm-process-card {
+
+.firm-process-card {
   min-height: 250px;
   padding: clamp(28px, 3.4vw, 44px);
-  border-right: 1px solid #d8ceb0;
-  border-bottom: 1px solid #d8ceb0;
+  border-right: 1px solid var(--sv-xuan-dark);
+  border-bottom: 1px solid var(--sv-xuan-dark);
 }
-body.firm-page .firm-process-num {
-  color: #c93b2a;
+
+.firm-process-num {
+  margin: 0 0 26px;
+  color: var(--sv-cinnabar);
   font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 26px;
 }
-body.firm-page .firm-process-card h3 {
-  color: #0f2206;
+
+.firm-process-card h3 {
+  margin: 0 0 18px;
+  color: var(--sv-ink-green-dark);
   font-size: clamp(26px, 2.5vw, 42px);
   line-height: 0.98;
+  font-weight: 700;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  margin: 0 0 18px;
 }
-body.firm-page .firm-process-card p { color: rgba(15, 34, 6, 0.78); font-size: 16px; line-height: 1.55; }
 
-body.firm-page .firm-governance-grid {
+.firm-process-card p {
+  margin: 0;
+  color: rgba(15, 34, 6, 0.78);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.firm-governance-section {
+  padding-bottom: clamp(84px, 9vw, 128px);
+}
+
+.firm-governance-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(20px, 2vw, 32px);
   margin-top: clamp(36px, 4vw, 56px);
 }
-body.firm-page .firm-card--qing {
-  background: #1e4040;
-  color: #faf6ee;
-  border-top: 3px solid #c93b2a;
-  padding: clamp(34px, 4vw, 52px);
+
+.firm-card--qing {
   min-height: 280px;
+  padding: clamp(34px, 4vw, 52px);
+  background: var(--sv-qing-dark);
+  border-top: 3px solid var(--sv-cinnabar);
+  color: var(--sv-xuan-light);
 }
-body.firm-page .firm-card--qing h3 {
-  color: #faf6ee;
+
+.firm-card--qing h3 {
+  margin: 0 0 22px;
+  color: var(--sv-xuan-light);
   font-size: clamp(26px, 2.5vw, 42px);
   line-height: 0.98;
+  font-weight: 700;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  margin: 0 0 22px;
-}
-body.firm-page .firm-card--qing p { color: rgba(242, 236, 216, 0.82); font-size: 16px; line-height: 1.6; margin: 0; }
-
-body.firm-page .firm-capital-note {
-  background: #faf6ee;
-  border-top: 3px solid #c93b2a;
-  padding: clamp(52px, 6vw, 84px);
 }
 
-@media (max-width: 900px) {
-  body.firm-page .firm-hero-grid,
-  body.firm-page .firm-editorial,
-  body.firm-page .firm-capital-note {
+.firm-card--qing p {
+  margin: 0;
+  color: rgba(242, 236, 216, 0.84);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.firm-capital-note {
+  padding: clamp(52px, 6vw, 84px) !important;
+  background: var(--sv-xuan-light);
+  border: 1px solid rgba(216, 206, 176, 0.9) !important;
+  border-top: 3px solid var(--sv-cinnabar) !important;
+}
+
+@media (max-width: 1100px) {
+  .firm-hero-grid,
+  .firm-editorial,
+  .firm-capital-note {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  body.firm-page .firm-hero-proof {
+  .firm-hero-proof {
+    max-width: 640px;
     border-left: 0;
-    padding-left: 0;
     border-top: 1px solid rgba(250, 246, 238, 0.3);
+    padding-left: 0;
     padding-top: 24px;
   }
 
-  body.firm-page .firm-geo-grid,
-  body.firm-page .firm-process-grid,
-  body.firm-page .firm-governance-grid {
+  .firm-geo-grid,
+  .firm-process-grid,
+  .firm-governance-grid {
     grid-template-columns: 1fr;
   }
 
-  body.firm-page .firm-geo-grid article {
+  .firm-geo-grid article {
     border-right: 0;
     border-bottom: 1px solid rgba(242, 236, 216, 0.16);
     padding: 28px 0;
+  }
+
+  .firm-geo-grid article:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .firm-hero-band {
+    min-height: 680px;
+  }
+
+  .firm-hero-title {
+    font-size: clamp(42px, 13vw, 68px);
+  }
+
+  .section-stack {
+    padding: 72px 0;
+  }
+
+  .section-stack > section {
+    padding: 58px 0;
+  }
+
+  .firm-dark-band,
+  .firm-process-panel,
+  .firm-capital-note {
+    padding: 34px !important;
+  }
+
+  .firm-process-card,
+  .firm-card--qing {
+    min-height: auto;
   }
 }
