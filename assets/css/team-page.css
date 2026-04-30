@@ -161,26 +161,37 @@ body.team-page .wrap {
 
 .team-groups {
   background: var(--team-xuan);
-  padding-top: clamp(72px, 8vw, 112px);
-  padding-bottom: clamp(88px, 9vw, 128px);
+  padding-top: clamp(80px, 9vw, 128px);
+  padding-bottom: clamp(80px, 9vw, 128px);
 }
 
 .team-groups > .wrap {
   display: grid;
-  gap: clamp(72px, 8vw, 112px);
+  gap: clamp(52px, 6vw, 84px);
 }
 
 .group {
-  border-top: 1px solid var(--team-xuan-dark);
-  padding-top: clamp(36px, 4vw, 56px);
+  padding-top: clamp(34px, 4vw, 52px);
+  scroll-margin-top: 124px;
+}
+
+.group + .group {
+  border-top: 1px solid rgba(61, 112, 112, 0.3);
 }
 
 .group__head {
   display: grid;
-  grid-template-columns: minmax(260px, 0.48fr) minmax(0, 0.52fr);
-  gap: clamp(40px, 6vw, 96px);
+  grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 1.1fr);
+  column-gap: clamp(48px, 8vw, 120px);
+  row-gap: 20px;
   align-items: start;
-  margin-bottom: clamp(36px, 5vw, 64px);
+  margin-bottom: clamp(42px, 5vw, 68px);
+}
+
+.group__head-main {
+  display: grid;
+  gap: 14px;
+  align-content: start;
 }
 
 .group__summary {
@@ -192,10 +203,10 @@ body.team-page .wrap {
 }
 
 .sv-section-title {
-  margin: 14px 0 0;
+  margin: 0;
   font-family: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(34px, 4vw, 56px);
-  line-height: 0.98;
+  font-size: clamp(30px, 3.7vw, 50px);
+  line-height: 1.02;
   font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -204,8 +215,9 @@ body.team-page .wrap {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: clamp(28px, 3vw, 44px) clamp(22px, 2.4vw, 32px);
+  align-items: start;
 }
 
 .team-profile {
@@ -279,6 +291,14 @@ body.team-page .wrap {
   cursor: pointer;
 }
 
+.team-profile__bio-toggle {
+  margin-top: 16px;
+}
+
+.team-profile__linkedin {
+  margin-top: 10px;
+}
+
 .team-profile__bio-toggle:hover,
 .team-profile__linkedin:hover {
   color: #c93b2a;
@@ -307,6 +327,10 @@ body.team-page .wrap {
   display: none !important;
 }
 
+[id^="bio-"] {
+  scroll-margin-top: 132px;
+}
+
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -317,6 +341,11 @@ body.team-page .wrap {
   .team-hero > .wrap,
   .group__head {
     grid-template-columns: 1fr;
+  }
+
+  .group__head {
+    row-gap: 18px;
+    margin-bottom: clamp(34px, 4vw, 52px);
   }
 
   .team-hero__proof {
