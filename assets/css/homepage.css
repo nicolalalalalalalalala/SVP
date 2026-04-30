@@ -109,13 +109,13 @@ body.homepage {
 }
 
 .home-hero__eyebrow {
-  color: #E8998F;
+  color: #FAF6EE;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 10px;
   font-weight: 600;
   margin: 0 0 20px;
-  opacity: 1;
+  opacity: 0.96;
   text-shadow: 0 1px 18px rgba(15, 34, 6, 0.75);
 }
 
@@ -145,8 +145,8 @@ body.homepage {
   font-size: clamp(14.8px, 1.02vw, 16.8px);
   line-height: 1.66;
   max-width: 56ch;
-  color: rgba(250, 246, 238, 0.92);
-  opacity: 1;
+  color: #FAF6EE;
+  opacity: 0.94;
   text-shadow: 0 1px 20px rgba(15, 34, 6, 0.82);
 }
 
