@@ -8,6 +8,7 @@
   --strategy-muted: #2E4A18;
   --strategy-qing: #1E4040;
   --strategy-cinnabar: #C93B2A;
+  --strategy-cinnabar-dark: #8A1F12;
   background: var(--strategy-paper);
   color: var(--strategy-text);
   overflow-x: clip;
@@ -66,9 +67,14 @@
   min-height: clamp(560px, 68vh, 760px);
   padding-block: clamp(96px, 9vw, 136px) clamp(80px, 8vw, 112px);
   background:
-    radial-gradient(circle at 12% 18%, rgba(201, 59, 42, 0.22) 0%, transparent 42%),
-    radial-gradient(circle at 72% 28%, rgba(61, 112, 112, 0.32) 0%, transparent 48%),
-    linear-gradient(125deg, #8A1F12 0%, #1E4040 42%, #0F2206 100%);
+    linear-gradient(108deg, rgba(15, 34, 6, 0.88) 10%, rgba(15, 34, 6, 0.52) 46%, rgba(15, 34, 6, 0.78) 100%),
+    radial-gradient(circle at 86% 28%, rgba(138, 31, 18, 0.28) 0%, transparent 42%),
+    radial-gradient(circle at 18% 80%, rgba(30, 64, 64, 0.36) 0%, transparent 48%),
+    linear-gradient(126deg, rgba(30, 64, 64, 0.88) 0%, rgba(17, 44, 31, 0.92) 58%, rgba(15, 34, 6, 0.96) 100%),
+    url("../images/strategy-hero-2026-04-29.png");
+  background-repeat: no-repeat;
+  background-size: auto, auto, auto, auto, cover;
+  background-position: 0 0, 88% 24%, 14% 80%, 0 0, 76% center;
   color: #FAF6EE;
   overflow: hidden;
 }
@@ -337,6 +343,7 @@
   .strategy-hero {
     min-height: auto;
     padding-block: 72px;
+    background-position: 0 0, 78% 18%, 12% 84%, 0 0, 64% center;
   }
 
   .strategy-hero .wrap,
@@ -379,6 +386,10 @@
 
   .strategy-hero h1 {
     font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .strategy-hero {
+    background-position: 0 0, 76% 14%, 10% 88%, 0 0, 58% center;
   }
 
   .market-context,
