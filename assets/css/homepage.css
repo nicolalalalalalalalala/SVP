@@ -671,3 +671,37 @@ body.homepage {
   .cdd-card { padding: 30px 22px; }
   .cdd-actions { flex-direction: column; align-items: flex-start; gap: 18px; }
 }
+
+/* Track record section contrast fix */
+.homepage #track-record.track-record-section,
+.homepage #track-record.track-record-section * {
+  color-scheme: dark;
+}
+
+.homepage #track-record.track-record-section .section-eyebrow,
+.homepage #track-record.track-record-section .track-record-item__label {
+  color: #E8998F !important;
+  opacity: 1 !important;
+}
+
+.homepage #track-record.track-record-section .section-title,
+.homepage #track-record.track-record-section .track-record-item__value {
+  color: #FAF6EE !important;
+  opacity: 1 !important;
+}
+
+.homepage #track-record.track-record-section .section-copy,
+.homepage #track-record.track-record-section .section-copy p,
+.homepage #track-record.track-record-section .track-record-item__description {
+  color: rgba(250, 246, 238, 0.86) !important;
+  opacity: 1 !important;
+}
+
+.homepage #track-record.track-record-section .track-record-item {
+  border-color: rgba(216, 206, 176, 0.34) !important;
+}
+
+.homepage #track-record.track-record-section .section-divider,
+.homepage #track-record.track-record-section .track-record-grid {
+  border-color: rgba(216, 206, 176, 0.34) !important;
+}
