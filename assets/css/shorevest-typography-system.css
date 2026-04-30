@@ -6,6 +6,14 @@
    ========================================================================== */
 
 /* ── CSS CUSTOM PROPERTIES ────────────────────────────────────────────────── */
+@font-face {
+  font-family: "DIN 2014";
+  src: local("DIN 2014"), local("DIN2014"), local("DIN 2014 Regular");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
 :root {
   /* Fonts */
   --sv-font-en: "DIN 2014", "Helvetica Neue", Arial, sans-serif;
