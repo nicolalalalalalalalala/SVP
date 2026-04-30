@@ -11,6 +11,7 @@
 }
 
 .team-page {
+  --sv-site-max: 1320px;
   margin: 0;
   background: var(--sv-xuan);
   color: var(--sv-ink-green-dark);
