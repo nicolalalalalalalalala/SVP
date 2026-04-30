@@ -479,6 +479,45 @@ body.homepage {
   border-top: 1px solid #D8CEB0;
 }
 .cdd-status { margin-bottom: 10px; display: block; }
+
+.cdd-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #C93B2A;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.cdd-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #C93B2A;
+  box-shadow: 0 0 0 0 rgba(201, 59, 42, 0.28);
+  animation: cddLivePulse 1.8s ease-out infinite;
+}
+
+@keyframes cddLivePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 59, 42, 0.28);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(201, 59, 42, 0);
+    opacity: 0.78;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 59, 42, 0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cdd-live-dot {
+    animation: none;
+  }
+}
 .cdd-feature__label { margin-bottom: 14px; display: block; color: #C93B2A; }
 .cdd-feature__title {
   margin: 0 0 12px;
