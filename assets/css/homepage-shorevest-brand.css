@@ -762,15 +762,18 @@ body.homepage .home-hero__eyebrow,
 body.homepage .home-hero__headline,
 body.homepage .home-hero__support,
 body.homepage .home-hero__cta {
-  color: #f2ebdd !important;
+  color: #FAF6EE !important;
 }
 
 body.homepage .home-hero__eyebrow {
-  color: rgba(238, 230, 214, 0.9) !important;
+  color: #E8998F !important;
+  opacity: 1;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
 }
 
 body.homepage .home-hero__headline {
-  color: #f4eee0 !important;
+  color: #FAF6EE !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.42);
 }
 
 body.homepage .home-hero__headline-emphasis {
@@ -779,17 +782,30 @@ body.homepage .home-hero__headline-emphasis {
 
 body.homepage .home-hero__support {
   max-width: min(100%, 52ch);
-  color: rgba(236, 229, 214, 0.88) !important;
+  color: #FAF6EE !important;
+  opacity: 0.96;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.42);
+}
+
+body.homepage .home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 34, 6, 0.86) 0%,
+      rgba(30, 64, 64, 0.68) 34%,
+      rgba(30, 64, 64, 0.28) 58%,
+      rgba(15, 34, 6, 0.08) 100%
+    ) !important;
 }
 
 @media (max-width: 767px) {
   body.homepage .home-hero {
     min-height: clamp(560px, 77vh, 700px);
-  }
-
-  body.homepage .home-hero::before {
-    background-position: 63% 54%;
-    filter: saturate(0.96) contrast(1.02) brightness(0.9);
   }
 
   body.homepage .home-hero__inner {
