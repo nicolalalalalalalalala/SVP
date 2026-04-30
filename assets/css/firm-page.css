@@ -88,7 +88,7 @@
 }
 
 .firm-hero-band .firm-label {
-  color: var(--sv-cinnabar-light);
+  color: #E8998F;
 }
 
 .firm-hero-title {
@@ -100,7 +100,7 @@
   font-weight: 500;
   letter-spacing: -0.045em;
   text-transform: uppercase;
-  color: var(--sv-xuan-light);
+  color: #FAF6EE;
 }
 
 .firm-body {
@@ -131,7 +131,7 @@
   margin: 0;
   padding: 18px 0;
   border-top: 1px solid rgba(250, 246, 238, 0.22);
-  color: rgba(250, 246, 238, 0.84);
+  color: #D8CEB0;
   font-size: 15px;
   line-height: 1.45;
 }
