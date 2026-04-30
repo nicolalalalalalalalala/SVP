@@ -409,7 +409,7 @@ body.homepage {
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
 }
 .track-record-section .section-copy,
-.track-record-section .section-copy p { color: rgba(250, 246, 238, 0.84); }
+.track-record-section .section-copy p { color: rgba(250, 246, 238, 0.88); }
 .track-record-section .section-copy {
   padding-top: clamp(36px, 3.6vw, 56px);
 }
@@ -445,7 +445,7 @@ body.homepage {
 .track-record-item__description {
   margin: 0;
   max-width: 28ch;
-  color: rgba(250, 246, 238, 0.82);
+  color: rgba(250, 246, 238, 0.88);
   font-size: 14.4px;
   line-height: 1.56;
 }
