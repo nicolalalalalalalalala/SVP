@@ -217,6 +217,27 @@ body.homepage {
 .home-hero__cta--secondary:hover,
 .home-hero__cta--secondary:focus-visible { opacity: 0.88; }
 
+.homepage .home-hero .home-hero__eyebrow {
+  color: #FAF6EE !important;
+  opacity: 0.96 !important;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.34);
+}
+
+.homepage .home-hero .home-hero__support {
+  color: #FAF6EE !important;
+  opacity: 0.94 !important;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.36);
+}
+
+.homepage .home-hero .home-hero__support-wrap {
+  color: #FAF6EE !important;
+}
+
+.homepage .home-hero .home-hero__support *,
+.homepage .home-hero .home-hero__eyebrow * {
+  color: inherit !important;
+}
+
 /* Main sections */
 .firm-section { background: var(--xuan-paper); padding-block: var(--section-pad-tight); }
 .strategy-section,
