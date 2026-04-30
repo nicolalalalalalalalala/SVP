@@ -11,27 +11,21 @@
 }
 
 .team-page {
-  --sv-site-max: 1320px;
   margin: 0;
   background: var(--sv-xuan);
   color: var(--sv-ink-green-dark);
-  font-family: "DIN 2014", Arial, sans-serif;
-}
-
-.team-page :lang(zh),
-.team-page :lang(zh-CN),
-.team-page :lang(zh-Hans) {
-  font-family: "Noto Serif SC", "Songti SC", serif;
-}
-
-.team-page * {
-  box-sizing: border-box;
 }
 
 
 
 .team-section {
   width: 100%;
+}
+
+.team-page .team-hero,
+.team-page .team-groups,
+.team-page .team-groups * {
+  box-sizing: border-box;
 }
 
 .team-inner {
