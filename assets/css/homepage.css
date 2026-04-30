@@ -85,10 +85,16 @@ body.homepage {
   background:
     linear-gradient(
       90deg,
-      rgba(15, 34, 6, 0.86) 0%,
-      rgba(30, 64, 64, 0.68) 34%,
-      rgba(30, 64, 64, 0.28) 58%,
-      rgba(15, 34, 6, 0.08) 100%
+      rgba(15, 34, 6, 0.88) 0%,
+      rgba(15, 34, 6, 0.72) 26%,
+      rgba(30, 64, 64, 0.36) 52%,
+      rgba(15, 34, 6, 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(15, 34, 6, 0.22) 0%,
+      rgba(15, 34, 6, 0.04) 45%,
+      rgba(15, 34, 6, 0.32) 100%
     );
 }
 
@@ -110,7 +116,7 @@ body.homepage {
   font-weight: 600;
   margin: 0 0 20px;
   opacity: 1;
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 18px rgba(15, 34, 6, 0.75);
 }
 
 .home-hero__headline,
@@ -139,14 +145,14 @@ body.homepage {
   font-size: clamp(14.8px, 1.02vw, 16.8px);
   line-height: 1.66;
   max-width: 56ch;
-  color: #FAF6EE;
-  opacity: 0.96;
-  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.42);
+  color: rgba(250, 246, 238, 0.92);
+  opacity: 1;
+  text-shadow: 0 1px 20px rgba(15, 34, 6, 0.82);
 }
 
 .home-hero__headline {
   color: #FAF6EE;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.42);
+  text-shadow: 0 2px 24px rgba(15, 34, 6, 0.58);
 }
 
 .home-hero__actions {
