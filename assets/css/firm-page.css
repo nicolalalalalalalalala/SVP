@@ -22,6 +22,15 @@
   color: var(--sv-ink-green-dark);
 }
 
+.firm-section {
+  width: 100%;
+}
+
+.firm-inner {
+  width: min(100% - clamp(44px, 8vw, 128px), 1320px);
+  margin-inline: auto;
+}
+
 .firm-main * {
   box-sizing: border-box;
 }
@@ -54,7 +63,7 @@
   z-index: 0;
 }
 
-.firm-hero-band > .wrap {
+.firm-hero-band > .firm-inner {
   position: relative;
   z-index: 1;
 }
@@ -131,13 +140,9 @@
   border-top: 0;
 }
 
-.section-stack {
-  padding: clamp(88px, 10vw, 140px) 0;
-}
-
 .section-stack > section {
   margin: 0;
-  padding: clamp(72px, 8vw, 112px) 0;
+  padding: clamp(96px, 9vw, 128px) 0;
   border-top: 1px solid rgba(216, 206, 176, 0.9);
 }
 
@@ -167,7 +172,7 @@
 }
 
 .firm-dark-band {
-  padding: clamp(56px, 6vw, 84px);
+  padding: clamp(96px, 9vw, 128px) 0;
   background:
     linear-gradient(
       110deg,
@@ -175,7 +180,8 @@
       rgba(15, 34, 6, 0.98) 100%
     );
   color: var(--sv-xuan-light);
-  border: 1px solid rgba(242, 236, 216, 0.18);
+  border-top: 1px solid rgba(242, 236, 216, 0.18);
+  border-bottom: 1px solid rgba(242, 236, 216, 0.18);
 }
 
 .firm-dark-band .firm-label {
@@ -195,18 +201,14 @@
 .firm-geo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: clamp(24px, 2.4vw, 32px);
   margin-top: clamp(48px, 5vw, 72px);
+  padding-top: clamp(22px, 2.4vw, 32px);
   border-top: 1px solid rgba(242, 236, 216, 0.24);
 }
 
 .firm-geo-grid article {
-  padding: 32px 32px 0 0;
-  border-right: 1px solid rgba(242, 236, 216, 0.16);
-}
-
-.firm-geo-grid article:last-child {
-  border-right: 0;
+  padding-right: clamp(8px, 1vw, 16px);
 }
 
 .firm-geo-grid h3 {
@@ -227,14 +229,16 @@
 }
 
 .firm-process-panel {
-  padding: clamp(52px, 6vw, 84px);
+  padding: clamp(96px, 9vw, 128px) 0;
   background: var(--sv-xuan-light);
-  border: 1px solid rgba(216, 206, 176, 0.9);
+  border-top: 1px solid rgba(216, 206, 176, 0.9);
+  border-bottom: 1px solid rgba(216, 206, 176, 0.9);
 }
 
 .firm-process-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 0;
   margin-top: clamp(42px, 5vw, 64px);
   border-top: 1px solid var(--sv-xuan-dark);
   border-left: 1px solid var(--sv-xuan-dark);
@@ -279,7 +283,7 @@
 .firm-governance-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 2vw, 32px);
+  gap: clamp(24px, 2.4vw, 32px);
   margin-top: clamp(36px, 4vw, 56px);
 }
 
@@ -309,10 +313,15 @@
 }
 
 .firm-capital-note {
-  padding: clamp(52px, 6vw, 84px) !important;
+  padding: clamp(96px, 9vw, 128px) 0 !important;
   background: var(--sv-xuan-light);
   border: 1px solid rgba(216, 206, 176, 0.9) !important;
   border-top: 3px solid var(--sv-cinnabar) !important;
+}
+
+.firm-page .sv-footer {
+  --footer-max: 1320px;
+  --footer-gutter: clamp(22px, 4vw, 64px);
 }
 
 @media (max-width: 1100px) {
@@ -357,18 +366,12 @@
     font-size: clamp(42px, 13vw, 68px);
   }
 
-  .section-stack {
-    padding: 72px 0;
-  }
-
   .section-stack > section {
-    padding: 58px 0;
+    padding: clamp(56px, 10vw, 72px) 0;
   }
 
-  .firm-dark-band,
-  .firm-process-panel,
-  .firm-capital-note {
-    padding: 34px !important;
+  .firm-inner {
+    width: min(100% - 40px, 100%);
   }
 
   .firm-process-card,
