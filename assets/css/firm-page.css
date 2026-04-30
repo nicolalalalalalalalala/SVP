@@ -39,6 +39,11 @@ body.firm-page .firm-hero-band::before {
 
 body.firm-page .firm-hero-band > .wrap { position: relative; z-index: 1; }
 
+
+body.firm-page .wrap {
+  width: min(calc(100% - (var(--sv-page-gutter) * 2)), 1320px);
+}
+
 body.firm-page .firm-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.55fr);
