@@ -215,115 +215,107 @@ body.team-page .wrap {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(26px, 2.6vw, 36px) clamp(20px, 2vw, 28px);
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: stretch;
 }
 
 .team-profile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 0 0 22px;
-  border-bottom: 1px solid var(--team-xuan-dark);
-  color: var(--team-qing-dark);
+  display: grid;
+  grid-template-columns: clamp(120px, 11vw, 150px) minmax(0, 1fr) auto;
+  grid-template-areas:
+    "photo identity toggle"
+    "bio bio bio";
+  column-gap: clamp(20px, 2.6vw, 34px);
+  row-gap: 14px;
+  align-items: center;
+  padding: clamp(18px, 2.2vw, 24px);
+  border: 1px solid rgba(30, 64, 64, 0.16);
+  background: var(--team-xuan-light);
 }
 
-.team-profile__photo,
-.team-profile__photo-btn {
+.team-profile__photo {
+  grid-area: photo;
   width: 100%;
   aspect-ratio: 4 / 5;
-  min-height: 0;
   overflow: hidden;
-  border: 1px solid rgba(30, 64, 64, 0.18);
-  background: var(--team-xuan-light);
-  padding: 0;
-  cursor: pointer;
+  border: 1px solid rgba(30, 64, 64, 0.2);
+  background: var(--team-xuan);
 }
 
-.team-profile__photo img,
-.team-profile__photo-btn img {
+.team-profile__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: saturate(0.92) contrast(0.98);
-  transition: transform 0.45s ease, filter 0.45s ease;
 }
 
-.team-profile:hover .team-profile__photo img,
-.team-profile:hover .team-profile__photo-btn img {
-  transform: scale(1.025);
-  filter: saturate(0.98) contrast(1.02);
+.team-profile__identity,
+.team-profile__name,
+.team-profile__role,
+.team-profile__descriptor,
+.team-profile__chinese {
+  min-width: 0;
 }
 
 .team-profile__name {
-  margin-top: 18px;
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: var(--team-qing-dark);
+  grid-area: identity;
+  margin: 0;
+  font-size: clamp(22px, 2.1vw, 30px);
+  line-height: 1.15;
+  font-weight: 650;
 }
 
 .team-profile__role {
-  margin-top: 6px;
-  min-height: 2.8em;
-  font-size: 13px;
-  line-height: 1.45;
+  grid-area: identity;
+  margin: 34px 0 0;
+  font-size: 14px;
   color: var(--team-qing);
 }
 
-.team-profile__bio-toggle,
-.team-profile__linkedin {
-  margin-top: 14px;
-  align-self: flex-start;
+.team-profile__bio-toggle {
+  grid-area: toggle;
+  justify-self: end;
+  align-self: start;
   border: 0;
-  border-bottom: 1px solid rgba(30, 64, 64, 0.32);
+  border-bottom: 1px solid rgba(201, 59, 42, 0.45);
   background: transparent;
-  padding: 0 0 4px;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  padding: 2px 0;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--team-qing-dark);
-  text-decoration: none;
   cursor: pointer;
 }
 
-.team-profile__bio-toggle {
-  margin-top: 16px;
-}
-
-.team-profile__linkedin {
-  margin-top: 10px;
-}
-
 .team-profile__bio-toggle:hover,
-.team-profile__linkedin:hover {
+.team-profile__bio-toggle:focus-visible {
   color: #c93b2a;
   border-color: #c93b2a;
+  outline: none;
 }
 
-.team-profile[data-expanded="true"] .team-profile__name {
-  color: #c93b2a;
-}
+.team-profile__linkedin { display:none; }
 
 .team-profile__bio {
-  margin-top: 16px;
+  grid-area: bio;
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(30, 64, 64, 0.14);
   font-size: 14px;
   line-height: 1.62;
   color: rgba(30, 64, 64, 0.88);
+  opacity: 1;
+  transition: opacity 220ms ease;
 }
 
-.team-profile__bio p {
-  margin: 0 0 12px;
+.team-profile__bio[hidden] {
+  display: none;
+  opacity: 0;
 }
 
-.team-profile__bio p:last-child {
-  margin-bottom: 0;
-}
+.team-profile__bio p { margin: 0 0 12px; }
+.team-profile__bio p:last-child { margin-bottom: 0; }
 
 [id^="bio-"] {
   scroll-margin-top: 132px;
@@ -344,9 +336,6 @@ body.team-page .wrap {
     max-width: 100%;
   }
 
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 767px) {
@@ -372,12 +361,24 @@ body.team-page .wrap {
     font-size: 15px;
   }
 
-  .grid {
+  .team-profile {
     grid-template-columns: 1fr;
-    gap: 34px;
+    grid-template-areas:
+      "photo"
+      "identity"
+      "toggle"
+      "bio";
+  }
+
+  .team-profile__photo {
+    max-width: 220px;
+  }
+
+  .team-profile__bio-toggle {
+    justify-self: start;
   }
 
   .team-profile__role {
-    min-height: auto;
+    margin-top: 10px;
   }
 }
