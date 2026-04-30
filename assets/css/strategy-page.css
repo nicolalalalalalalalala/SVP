@@ -195,7 +195,6 @@
   .market-context,
   .strategy-sleeves,
   .underwriting-standard,
-  .execution-model,
   .recovery-section,
   .risk-return,
   .next-steps,
@@ -216,8 +215,11 @@
 }
 
 .execution-model {
-  background: linear-gradient(180deg, rgba(242, 236, 216, 0.34) 0%, rgba(30, 64, 64, 0.98) 14%, rgba(15, 34, 6, 0.98) 100%);
+  background:
+    linear-gradient(rgba(15, 34, 6, 0.18), rgba(15, 34, 6, 0.18)),
+    linear-gradient(110deg, #8A1F12 0%, #1E4040 42%, #0F2206 100%);
   color: #FAF6EE;
+  padding: clamp(64px, 8vw, 96px) 0 clamp(72px, 9vw, 112px);
 }
 
 .execution-model h2,
@@ -227,16 +229,39 @@
   color: #FAF6EE;
 }
 
-.execution-model .eyebrow { color: rgba(250, 246, 238, 0.82); }
+.execution-model .eyebrow {
+  color: rgba(250, 246, 238, 0.64);
+  margin-bottom: 54px;
+  letter-spacing: 0.18em;
+}
+
+.execution-model h2 {
+  color: #FAF6EE;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
 
 .execution-flow {
-  border: 1px solid rgba(216, 206, 176, 0.36);
-  background: rgba(15, 34, 6, 0.22);
+  border: 1px solid rgba(242, 236, 216, 0.32);
+  background: rgba(250, 246, 238, 0.06);
 }
 
 .execution-step {
-  background: transparent;
-  border-color: rgba(216, 206, 176, 0.24);
+  position: relative;
+  background: rgba(250, 246, 238, 0.055);
+  border-color: rgba(242, 236, 216, 0.24);
+}
+
+.execution-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(28px, 4vw, 48px);
+  right: clamp(28px, 4vw, 48px);
+  height: 2px;
+  background: linear-gradient(90deg, #C93B2A, rgba(201, 183, 139, 0.72));
 }
 
 .market-context-content,
@@ -336,6 +361,23 @@
   font-size: 15.5px;
   line-height: 1.65;
   color: #2E4A18;
+}
+
+
+.execution-step h3 {
+  color: #FAF6EE;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+
+.execution-step p {
+  color: rgba(242, 236, 216, 0.82);
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.65;
+  max-width: 30em;
+  margin: 0;
 }
 
 .strategy-sleeve__number {
@@ -442,7 +484,6 @@
   .market-context,
   .strategy-sleeves,
   .underwriting-standard,
-  .execution-model,
   .recovery-section,
   .risk-return,
   .next-steps,
@@ -457,5 +498,13 @@
   .recovery-card,
   .risk-return-item {
     padding: 28px 22px;
+  }
+
+  .execution-model {
+    padding: 64px 0 72px;
+  }
+
+  .execution-model .eyebrow {
+    margin-bottom: 36px;
   }
 }
