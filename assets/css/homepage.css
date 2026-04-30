@@ -200,12 +200,12 @@ body.homepage {
 /* Main sections */
 .firm-section { background: var(--xuan-paper); padding-block: var(--section-pad-tight); }
 .strategy-section,
-.track-record-section,
 .cdd-section { padding-block: var(--section-pad); }
 
 .strategy-section {
   background: linear-gradient(180deg, #F2ECD8 0%, #FAF6EE 100%);
   border-top: 1px solid rgba(216, 206, 176, 0.6);
+  padding-bottom: clamp(56px, 7vw, 96px);
 }
 
 .section-intro {
@@ -346,13 +346,32 @@ body.homepage {
   overflow: hidden;
   background: linear-gradient(96deg, #1E4040 0%, #1A3832 42%, #0F2206 100%);
   color: #FAF6EE;
-  margin-top: clamp(16px, 2vw, 26px);
+  margin-top: 0;
+  padding-top: clamp(72px, 8vw, 120px);
+  padding-bottom: clamp(80px, 9vw, 132px);
+  border-top: 1px solid rgba(216, 206, 176, 0.56);
 }
 .track-record-section::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(8, 18, 16, 0.08) 0%, rgba(8, 18, 16, 0.26) 100%);
+}
+.track-record-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(calc(100% - (var(--home-gutter) * 2)), var(--home-max));
+  margin-left: max(var(--home-gutter), calc((100% - var(--home-max)) / 2));
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(232, 153, 143, 0.95) 0,
+    rgba(232, 153, 143, 0.95) clamp(52px, 6.5vw, 84px),
+    rgba(216, 206, 176, 0.52) clamp(52px, 6.5vw, 84px),
+    rgba(216, 206, 176, 0.52) 100%
+  );
 }
 .track-record-section > .home-container { position: relative; z-index: 1; }
 .track-record-intro {
@@ -368,20 +387,23 @@ body.homepage {
 }
 .track-record-section .section-copy,
 .track-record-section .section-copy p { color: rgba(250, 246, 238, 0.9); }
+.track-record-section .section-copy {
+  padding-top: clamp(36px, 3.6vw, 56px);
+}
 
 .track-record-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgba(250, 246, 238, 0.2);
-  border-bottom: 1px solid rgba(250, 246, 238, 0.2);
+  border-top: 1px solid rgba(250, 246, 238, 0.18);
+  border-bottom: 1px solid rgba(250, 246, 238, 0.18);
 }
 .track-record-item {
   padding: clamp(30px, 3vw, 40px) clamp(20px, 2.2vw, 30px);
 }
-.track-record-item + .track-record-item { border-left: 1px solid rgba(250, 246, 238, 0.14); }
+.track-record-item + .track-record-item { border-left: 1px solid rgba(250, 246, 238, 0.18); }
 .track-record-item__label {
   display: block;
-  color: #7AAFAF;
+  color: #E8998F;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
