@@ -651,22 +651,60 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const profiles = document.querySelectorAll(".team-profile[data-team-profile]");
-    profiles.forEach((profile) => {
-      const toggles = profile.querySelectorAll(".team-profile__bio-toggle, .team-profile__photo-btn");
-      const bio = profile.querySelector(".team-profile__bio");
-      if (!bio) return;
-      toggles.forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-          const isOpen = !bio.hasAttribute("hidden");
-          if (isOpen) {
-            bio.setAttribute("hidden", "");
-          } else {
-            bio.removeAttribute("hidden");
-          }
-          toggles.forEach((el) => el.setAttribute("aria-expanded", String(!isOpen)));
+    const groups = document.querySelectorAll(".team-groups .group");
+
+    groups.forEach((group, groupIndex) => {
+      const grid = group.querySelector(".grid");
+      const profiles = group.querySelectorAll(".team-profile[data-team-profile]");
+      if (!grid || !profiles.length) return;
+
+      const panel = document.createElement("div");
+      panel.className = "group-bio-panel";
+      panel.hidden = true;
+      panel.innerHTML = '<div class="group-bio-panel__inner"></div>';
+      grid.insertAdjacentElement("afterend", panel);
+
+      const panelInner = panel.querySelector(".group-bio-panel__inner");
+
+      const setExpandedState = (profile, expanded) => {
+        profile.setAttribute("data-expanded", expanded ? "true" : "false");
+        profile
+          .querySelectorAll(".team-profile__bio-toggle, .team-profile__photo-btn")
+          .forEach((toggle) => toggle.setAttribute("aria-expanded", String(expanded)));
+      };
+
+      const openBio = (profile) => {
+        const bio = profile.querySelector(".team-profile__bio");
+        if (!bio || !panelInner) return;
+        panelInner.innerHTML = bio.innerHTML;
+        panel.hidden = false;
+        profiles.forEach((p) => setExpandedState(p, p === profile));
+      };
+
+      const closeBio = () => {
+        panel.hidden = true;
+        if (panelInner) panelInner.innerHTML = "";
+        profiles.forEach((profile) => setExpandedState(profile, false));
+      };
+
+      profiles.forEach((profile) => {
+        profile.querySelector(".team-profile__bio")?.setAttribute("hidden", "");
+        const toggles = profile.querySelectorAll(".team-profile__bio-toggle, .team-profile__photo-btn");
+        toggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const isOpen = profile.getAttribute("data-expanded") === "true";
+            if (isOpen) {
+              closeBio();
+            } else {
+              openBio(profile);
+            }
+          });
         });
       });
+
+      if (groupIndex === 0) {
+        openBio(profiles[0]);
+      }
     });
   });
 </script>

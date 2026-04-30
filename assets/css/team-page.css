@@ -305,26 +305,34 @@ body.team-page .wrap {
   border-color: #c93b2a;
 }
 
-.team-profile__bio {
-  margin-top: 18px;
-  padding: 18px 0 0;
-  border-top: 1px solid rgba(30, 64, 64, 0.16);
+.team-profile[data-expanded="true"] .team-profile__name {
+  color: #c93b2a;
 }
 
-.team-profile__bio p {
+.team-profile__bio {
+  display: none !important;
+}
+
+.group-bio-panel {
+  grid-column: 1 / -1;
+  margin-top: clamp(22px, 3vw, 34px);
+  padding-top: clamp(20px, 2.2vw, 30px);
+  border-top: 1px solid rgba(30, 64, 64, 0.18);
+}
+
+.group-bio-panel__inner {
+  max-width: min(78ch, 100%);
+}
+
+.group-bio-panel__inner p {
   margin: 0 0 14px;
   font-size: 14px;
   line-height: 1.65;
   color: rgba(30, 64, 64, 0.88);
 }
 
-.team-profile__bio p:last-child {
+.group-bio-panel__inner p:last-child {
   margin-bottom: 0;
-}
-
-.team-profile__bio[hidden],
-.team-profile__bio:empty {
-  display: none !important;
 }
 
 [id^="bio-"] {
