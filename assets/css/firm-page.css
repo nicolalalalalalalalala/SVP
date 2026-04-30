@@ -55,8 +55,10 @@ body.firm-page .firm-main {
 body.firm-page .firm-hero-band,
 body.firm-page .firm-panel--hero {
   background:
-    linear-gradient(120deg, rgba(9, 24, 10, 0.46) 0%, rgba(9, 24, 10, 0.2) 50%, rgba(9, 24, 10, 0.48) 100%),
-    radial-gradient(circle at 14% 18%, rgba(122, 175, 175, 0.3) 0%, transparent 48%),
+    linear-gradient(124deg, rgba(15, 34, 6, 0.74) 0%, rgba(30, 64, 64, 0.54) 46%, rgba(15, 34, 6, 0.82) 100%),
+    radial-gradient(circle at 18% 20%, rgba(61, 112, 112, 0.24) 0%, transparent 50%),
+    linear-gradient(106deg, rgba(15, 34, 6, 0.36) 0%, rgba(15, 34, 6, 0.68) 100%),
+    url("../images/_N1_1071.jpg") center 28% / cover no-repeat,
     linear-gradient(126deg, #1e4040 0%, #224a41 47%, #0f2206 100%);
   color: #faf6ee;
   width: 100%;
@@ -343,5 +345,20 @@ body.firm-page .firm-capital-note .firm-body {
   body.firm-page .firm-dark-band,
   body.firm-page .firm-process-panel {
     padding: clamp(32px, 7vw, 44px);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  body.firm-page .firm-hero-band,
+  body.firm-page .firm-panel--hero {
+    background-position: center 32%, center 32%, center 32%, 62% 36%, center;
+  }
+}
+
+@media (max-width: 767px) {
+  body.firm-page .firm-hero-band,
+  body.firm-page .firm-panel--hero {
+    background-position: center 36%, center 36%, center 36%, 68% 40%, center;
   }
 }
